@@ -1,6 +1,6 @@
 // import "../assets/globals.css"
 
-import { GlobalStyle } from "./styles/index.js"
+import GlobalStyle from "./styles/index.js"
 import PageLayout from "../components/PageLayout.js"
 import { LoginCtxProvider } from "../context/LoginCtx"
 

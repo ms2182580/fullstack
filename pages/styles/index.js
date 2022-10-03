@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 // import Regular from "../../assets/Fonts/Poppins/Poppins-Regular.ttf"
 // import Semibold from "../../assets/Fonts/Poppins/Poppins-SemiBold.ttf"
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 *,
 *::after,
 *::before {
@@ -31,3 +31,4 @@ code {
 
 
 `
+export default GlobalStyle
