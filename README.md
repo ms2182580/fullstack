@@ -1,4 +1,4 @@
 # Here the code for INCLUSIVE project
 
-## Actual URL: https://inclusive-dev.vercel.app/
+## Actual URL: https://inclusive-next.vercel.app/
 
