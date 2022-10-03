@@ -1,11 +1,10 @@
 import { useState } from "react"
 import { ButtonMedium } from "../../components/ui/buttons/general"
-import {
+import H4_PASSWORD_SIGNUP, {
   CaptionSignUp,
   DisplayErrorComponent,
   Form,
   H4_EMAIL_SIGNUP,
-  H4_PASSWORD_SIGNUP,
   InputEmail,
   InputPassword,
   StyleInputFirst,

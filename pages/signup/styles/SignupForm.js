@@ -94,7 +94,7 @@ export const DisplayErrorComponent = styled.div`
   }
 `
 
-export const H4_PASSWORD_SIGNUP = styled(H4)``
+const H4_PASSWORD_SIGNUP = styled(H4)``
 
 export const StyleInputSecond = styled.div`
   display: flex;
@@ -159,3 +159,5 @@ export const CaptionSignUp = styled(Caption)`
 export const TermsAndServices = styled.div`
   margin-bottom: 24px;
 `
+
+export default H4_PASSWORD_SIGNUP

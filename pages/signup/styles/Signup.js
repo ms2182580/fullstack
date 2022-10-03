@@ -20,7 +20,7 @@ export const LeftSignup = styled.div`
   }
 `
 
-export const Img = styled.img``
+const Img = styled.img``
 
 export const RightSignup = styled.div`
   display: flex;
@@ -73,3 +73,5 @@ export const RightSignup = styled.div`
     }
   }
 `
+
+export default Img
