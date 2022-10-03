@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styled from "styled-components"
 import { COLORS } from "../variables"
 
@@ -30,6 +31,8 @@ export const LoginBtnsStyled = styled.button`
   p{
     font-size: 16px;
     font-weight: 600;
+    /* outline:5px red solid; */
+    margin-left: ${SharedVariables.ImgMargin};
   }
   
 
@@ -46,8 +49,20 @@ export const LoginBtnsStyled = styled.button`
   &:focus-visible{
     outline: 4px solid ${COLORS.FocusOutline};
   }
-
-  img {
-    margin-right: ${SharedVariables.ImgMargin};
+  
+  .facebookIcon{
+    outline:5px red solid;
   }
+
+  & img {
+    /* margin-right: ${SharedVariables.ImgMargin}; */
+    outline:5px red solid;
+    
+  }
+`
+
+export const Img = styled(Image)`
+ width:24px;
+ height:24px;
+
 `

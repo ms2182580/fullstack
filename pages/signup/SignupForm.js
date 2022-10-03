@@ -1,4 +1,4 @@
-import  { useState } from "react"
+import { useState } from "react"
 import { ButtonMedium } from "../../components/ui/buttons/general"
 import {
   CaptionSignUp,
@@ -15,19 +15,21 @@ import {
 import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
 import { useLoginCtx } from "../../context/LoginCtx"
-import EmailIcon from "../../assets/Icons/EmailIcon.png"
-import LockIcon from "../../assets/Icons/LockIcon.png"
-import EyeIcon from "../../assets/Icons/EyeIcon.png"
-import { Img } from "./styles/SignupForm"
-import { ExclamationSvg } from "../../assets/Icons"
+import {
+  EmailSvg,
+  ExclamationSvg,
+  EyeSvg,
+  LockSvg
+} from "../../assets/Icons"
 import { useRouter } from "next/router"
+import Image from "next/image"
 
 const LOGIN_URL = "https://jsonplaceholder.typicode.com/posts"
 
 const SignupForm = () => {
   const { setIsLogin, setWhoIsLogin } = useLoginCtx()
   const router = useRouter()
-  
+
   const [email, setEmail] = useState({
     value: "",
     hasError: false,
@@ -46,7 +48,6 @@ const SignupForm = () => {
     e.preventDefault()
 
     try {
-
       const fetching = await fetch(LOGIN_URL, {
         method: "POST",
         body: JSON.stringify({
@@ -114,7 +115,7 @@ const SignupForm = () => {
 
   const onChangeEmail = (e) => {
     const inputValue = e.target.value.trim().toLowerCase()
-    console.log("inputValue:", inputValue)
+    // console.log("inputValue:", inputValue)
     let emailHasError = false
 
     if (
@@ -125,7 +126,7 @@ const SignupForm = () => {
       emailHasError = true
     }
 
-    console.log("emailHasError:", emailHasError)
+    // console.log("emailHasError:", emailHasError)
 
     setEmail((prevState) => ({
       ...prevState,
@@ -209,7 +210,8 @@ const SignupForm = () => {
               hasTouched: email.touched
             }}
           >
-            <Img src={EmailIcon.src} alt="Email icon" className="EmailIconSF" />
+            <EmailSvg className="EmailIconSF" />
+
             <InputEmail
               value={email.value}
               type="email"
@@ -236,7 +238,7 @@ const SignupForm = () => {
 
                 <Caption>
                   {emailAlreadyRegistered}{" "}
-                  <HyperlinkXS href="/login" name="log in?"/>
+                  <HyperlinkXS href="/login" name="log in?" />
                 </Caption>
               </DisplayErrorComponent>
             )}
@@ -253,13 +255,9 @@ const SignupForm = () => {
           )}
 
           <StyleInputSecond>
-            <Img src={LockIcon.src} alt="Key icon" className="lockIconSF" />
-            <Img
-              src={EyeIcon.src}
-              alt="Eye icon"
-              className="eyeIconSF"
-              onClick={showPassword}
-            />
+            <LockSvg className="lockIconSF" />
+
+            <EyeSvg className="eyeIconSF" onClick={showPassword} />
 
             <InputPassword
               value={password.value}
@@ -292,7 +290,7 @@ const SignupForm = () => {
               By signing up, you agree to our{" "}
               <HyperlinkXS href="/work-in-progress" name="Terms of Service" />
               and
-              <HyperlinkXS href="/work-in-progress" name="Privacy Policy"/>
+              <HyperlinkXS href="/work-in-progress" name="Privacy Policy" />
             </Caption>
           </TermsAndServices>
 

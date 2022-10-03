@@ -31,7 +31,7 @@ const NavBar = () => {
     dataAccount.isLogin = false
 
     localStorage.setItem(whoIsLogin, JSON.stringify(dataAccount))
-    console.log(localStorage.getItem(whoIsLogin))
+    // console.log(localStorage.getItem(whoIsLogin))
 
     setIsLogin(false)
   }

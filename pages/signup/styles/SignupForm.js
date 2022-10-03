@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styled from "styled-components"
 import { NEUTRALS, SEMANTICS } from "../../../assets/Colors"
 import { Caption } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
@@ -25,8 +26,9 @@ export const Form = styled.form`
   }
 `
 
-export const Img = styled.img`
-  width: 16px;
+export const Img = styled(Image)`
+  /* width: 16px;
+  height:16px; */
 `
 
 export const StyleInputFirst = styled.div`
@@ -57,6 +59,7 @@ export const StyleInputFirst = styled.div`
     margin-left: 14px;
     margin-bottom: 24px;
   }
+  
 `
 
 export const InputEmail = styled.input`
