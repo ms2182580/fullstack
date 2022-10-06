@@ -2,7 +2,10 @@ import { createContext, useState, useEffect, useContext } from "react"
 
 const LoginCtx = createContext(null)
 
+// console.log("🍅 CTX outside function");
+
 export const LoginCtxProvider = ({ children }) => {
+  // console.log("🍅🍅 CTX inside function");
   const [isLogin, setIsLogin] = useState(false)
   const [whoIsLogin, setWhoIsLogin] = useState("")
 
