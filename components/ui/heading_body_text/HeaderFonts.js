@@ -11,15 +11,20 @@ import { PRIMARY, NEUTRALS } from "../../../assets/Colors"
 import { device } from "../../../assets/screenSizes/ScreenSizes.js"
 import { FontsWeights } from "../../../assets/Fonts/Weights"
 
-
-
 export const D1 = styled.p`
   font-size: ${FontsHeadDesktop.DISPLAY_1};
   line-height: ${LineHeightHeadDesktop.DISPLAY_1};
   font-weight: ${(x) =>
     x.bold ? FontsWeights.BOLD_700 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.DISPLAY_1};
-  color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};  
+  color: ${(x) =>
+    x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
 
   @media (${device.tablet}) {
     font-size: ${FontsHeadMobile.DISPLAY_1};
@@ -27,7 +32,14 @@ export const D1 = styled.p`
     font-weight: ${(x) =>
       x.bold ? FontsWeights.BOLD_700 : FontsWeights.SEMIBOLD_600};
     letter-spacing: ${LetterSpacingHeadMobile.DISPLAY_1};
-    color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+    color: ${(x) =>
+      x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
   }
 `
 
@@ -37,8 +49,14 @@ export const H1 = styled.h1`
   font-weight: ${(x) =>
     x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_1};
-  color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
-  
+  color: ${(x) =>
+    x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
 
   @media (${device.tablet}) {
     font-size: ${FontsHeadMobile.HEADING_1};
@@ -46,7 +64,14 @@ export const H1 = styled.h1`
     font-weight: ${(x) =>
       x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
     letter-spacing: ${LetterSpacingHeadMobile.HEADING_1};
-    color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+    color: ${(x) =>
+      x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
   }
 `
 
@@ -56,7 +81,14 @@ export const H2 = styled.h2`
   font-weight: ${(x) =>
     x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_2};
-  color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+  color: ${(x) =>
+    x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
 
   @media (${device.tablet}) {
     font-size: ${FontsHeadMobile.HEADING_2};
@@ -64,7 +96,14 @@ export const H2 = styled.h2`
     font-weight: ${(x) =>
       x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
     letter-spacing: ${LetterSpacingHeadMobile.HEADING_2};
-    color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+    color: ${(x) =>
+      x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
   }
 `
 
@@ -74,7 +113,14 @@ export const H3 = styled.h3`
   font-weight: ${(x) =>
     x.bold ? FontsWeights.BOLDER_8000 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_3};
-  color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+  color: ${(x) =>
+    x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
 
   @media (${device.tablet}) {
     font-size: ${FontsHeadMobile.HEADING_3};
@@ -82,7 +128,14 @@ export const H3 = styled.h3`
     font-weight: ${(x) =>
       x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
     letter-spacing: ${LetterSpacingHeadMobile.HEADING_3};
-    color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+    color: ${(x) =>
+      x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
   }
 `
 
@@ -92,14 +145,28 @@ export const H4 = styled.h4`
   font-weight: ${(x) =>
     x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_4};
-  color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+  color: ${(x) =>
+    x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
 
   @media (${device.tablet}) {
     font-size: ${FontsHeadMobile.HEADING_4};
     line-height: ${LineHeightHeadMobile.HEADING_4};
     font-weight: ${(x) =>
       x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
-      letter-spacing: ${LetterSpacingHeadMobile.HEADING_4};
-      color:${x => x.logo ? PRIMARY.PRIMARY_LOGO : NEUTRALS.BLACK};
+    letter-spacing: ${LetterSpacingHeadMobile.HEADING_4};
+    color: ${(x) =>
+      x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+      ? PRIMARY.PRIMARY_CTA
+      : x.darkGrey
+      ? NEUTRALS.DARK_GREY
+      : NEUTRALS.BLACK};
   }
 `

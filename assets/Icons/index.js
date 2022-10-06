@@ -135,3 +135,64 @@ export const LockSvg = (props) => (
   </svg>
 )
 
+
+
+export const ArrowDown = (props) => (
+  <svg
+    width="1em"
+    height="1em"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path
+        d="M9.368 12.413c-2.412-1.523-2.766-4.424-.789-6.48 1.977-2.057 5.535-2.49 7.947-.968L42.13 21.123l-7.159 7.448L9.368 12.413Z"
+        fill="#6C6C6C"
+      />
+      <path
+        d="M60.632 12.413c2.412-1.523 2.766-4.424.789-6.48-1.977-2.057-5.535-2.49-7.947-.968L27.87 21.123l7.159 7.448 25.603-16.158Z"
+        fill="#6C6C6C"
+      />
+      <path
+        d="M9.368 34.053c-2.412-1.522-2.766-4.423-.789-6.48 1.977-2.057 5.535-2.49 7.947-.967L42.13 42.764l-7.159 7.448L9.368 34.053Z"
+        fill="#FCFDFE"
+      />
+      <path
+        d="M60.632 34.053c2.412-1.522 2.766-4.423.789-6.48-1.977-2.057-5.535-2.49-7.947-.967L27.87 42.764l7.159 7.448 25.603-16.159Z"
+        fill="#FCFDFE"
+      />
+    </g>
+    <defs>
+      <filter
+        id="a"
+        x={-2}
+        y={-1.789}
+        width={74}
+        height={62}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={3} />
+        <feGaussianBlur stdDeviation={3.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_5649_319927"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_5649_319927"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+)

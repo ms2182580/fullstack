@@ -3,6 +3,7 @@ import Link from "next/link"
 
 const DefaultLink = styled.a`
   all: unset;
+  cursor: pointer;
 `
 
 export const LinkNoStyle = ({ href, children }) => (
