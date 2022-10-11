@@ -14,14 +14,11 @@ import H4_PASSWORD_SIGNUP, {
 import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
 import { useLoginCtx } from "../../context/LoginCtx"
-import {
-  EmailSvg,
-  ExclamationSvg,
-  EyeSvg,
-  LockSvg
-} from "../../assets/Icons"
+import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/Icons"
 import { useRouter } from "next/router"
 import Image from "next/image"
+import { supabase } from "../../utils/supabaseClient"
+// console.log('supabase:', supabase)
 
 const LOGIN_URL = "https://jsonplaceholder.typicode.com/posts"
 
@@ -47,52 +44,58 @@ const SignupForm = () => {
     e.preventDefault()
 
     try {
-      const fetching = await fetch(LOGIN_URL, {
-        method: "POST",
-        body: JSON.stringify({
-          email: `${email}`
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
+      // const fetching = await fetch(LOGIN_URL, {
+      //   method: "POST",
+      //   body: JSON.stringify({
+      //     email: `${email}`
+      //   }),
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8"
+      //   }
+      // })
+
+      // if (fetching.ok !== true) {
+      //   throw new Error("Something happend")
+      // }
+
+      // const toJson = await fetching.json()
+
+      // let keyToPush = `INCLUSIVE_ACCOUNT_${email.value}`
+
+      // let isUserAlreayCreated = localStorage.getItem(keyToPush)
+
+      // if (isUserAlreayCreated === null) {
+      //   let valueToAdd = {
+      //     isLogin: true,
+      //     "Speech-Therapists-saved": []
+      //   }
+      //   localStorage.setItem(keyToPush, JSON.stringify(valueToAdd))
+      // }
+
+      // if (isUserAlreayCreated) {
+      //   // ?TODO This is the logic of log in
+      //   // let parseDataUser = JSON.parse(localStorage.getItem(keyToPush))
+      //   // parseDataUser.isLogin = true
+      //   // localStorage.setItem(keyToPush, JSON.stringify(parseDataUser))
+
+      //   setEmailAlreadyRegistered("This email is already registered. Want to")
+
+      //   throw new Error("Email already used")
+      // }
+      const { user, session, error } = await supabase.auth.signUp({
+        email: email.value,
+        password: password.value
       })
 
-      // console.log('fetching:', fetching)
-
-      if (fetching.ok !== true) {
-        throw new Error("Something happend")
+      if (error) {
+        throw error
       }
 
-      const toJson = await fetching.json()
-      // console.log("toJson:", toJson)
+      console.log('user, session, error:', user, session, error)
 
-      let keyToPush = `INCLUSIVE_ACCOUNT_${email.value}`
-      // console.log("keyToPush:", keyToPush)
-
-      let isUserAlreayCreated = localStorage.getItem(keyToPush)
-      // console.log("isUserAlreayCreated:", isUserAlreayCreated)
-
-      if (isUserAlreayCreated === null) {
-        let valueToAdd = {
-          isLogin: true,
-          "Speech-Therapists-saved": []
-        }
-        localStorage.setItem(keyToPush, JSON.stringify(valueToAdd))
-      }
-
-      if (isUserAlreayCreated) {
-        // ?TODO This is the log in logic
-        // let parseDataUser = JSON.parse(localStorage.getItem(keyToPush))
-        // parseDataUser.isLogin = true
-        // localStorage.setItem(keyToPush, JSON.stringify(parseDataUser))
-
-        setEmailAlreadyRegistered("This email is already registered. Want to")
-
-        throw new Error("Email already used")
-      }
-
-      setEmailAlreadyRegistered("")
-      setWhoIsLogin(keyToPush)
+      // setEmailAlreadyRegistered("")
+      // setWhoIsLogin(keyToPush)
+      localStorage.setItem("INCLUSIVE_ACCOUNT", "true")
       setIsLogin(true)
       router.push("/")
     } catch (error) {
