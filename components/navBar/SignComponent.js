@@ -18,6 +18,8 @@ import { supabase } from "../../utils/supabaseClient"
 const SignComponent = () => {
   const { isLogin, setIsLogin, whoIsLogin } = useLoginCtx()
   const [showSignup, setShowSignup] = useState(true)
+  console.log("showSignup:", showSignup)
+  console.log("isLogin:", isLogin)
 
   useEffect(() => {
     const getActualUser = async () => {
@@ -26,17 +28,21 @@ const SignComponent = () => {
         console.log("data, error:", data, error)
         if (error) throw error
         if (data?.user) {
+          console.log("Enter here")
           setIsLogin(true)
-          setShowSignup(false)
-
         }
       } catch (error) {
         console.log("error:", error)
-      } 
+      }
     }
     getActualUser()
-
   }, [])
+
+  useEffect(() => {
+    if (isLogin) {
+      setShowSignup(false)
+    }
+  }, [isLogin])
 
   const logoutHandler = async () => {
     try {
@@ -49,7 +55,7 @@ const SignComponent = () => {
       setShowSignup(true)
     } catch (error) {
       console.log("error:", error)
-    } 
+    }
   }
 
   return (
