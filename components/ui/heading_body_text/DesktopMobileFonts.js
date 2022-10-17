@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { NEUTRALS, SEMANTICS } from "../../../assets/Colors"
 import { FontsDesktopAndMobile } from "../../../assets/Fonts/HeadingValues"
 import { FontsWeights } from "../../../assets/Fonts/Weights"
 
@@ -28,6 +29,17 @@ export const P = styled.p`
       : x.linethrough && x.underline
       ? SharedVariables.Underline && SharedVariables.LineThrough
       : null};
+  color: ${(x) => 
+    x.dark_gray
+      ? NEUTRALS.DARK_GREY
+      : x.light_gray
+      ? NEUTRALS.LIGHT_GREY
+      : x.success
+      ? SEMANTICS.SUCCESS_STATE
+      : x.error
+      ? SEMANTICS.ERROR_STATE
+      : NEUTRALS.BLACK
+  };
 `
 export const Caption = styled.span`
   font-size: ${SharedVariables.FontSizeCaption};
@@ -45,4 +57,15 @@ export const Caption = styled.span`
       : x.linethrough && x.underline
       ? SharedVariables.Underline && SharedVariables.LineThrough
       : null};
+  color: ${(x) => 
+    x.dark_gray
+      ? NEUTRALS.DARK_GREY
+      : x.light_gray
+      ? NEUTRALS.LIGHT_GREY
+      : x.success
+      ? SEMANTICS.SUCCESS_STATE
+      : x.error
+      ? SEMANTICS.ERROR_STATE
+      : NEUTRALS.BLACK
+  };
 `

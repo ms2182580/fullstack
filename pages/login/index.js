@@ -51,7 +51,6 @@ const Login = () => {
   }
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("juanpastencastillo@gmail.com")
   }
   const copyPassword = () => {
     navigator.clipboard.writeText("password1")

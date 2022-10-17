@@ -15,7 +15,6 @@ export const ButtonMedium = ({ children, secondary, disabled }) => {
   )
 }
 export const ButtonLarge = ({ children, secondary, disabled }) => {
-  console.log('disabled:', disabled)
   return (
     <BtnLarge secondary={secondary} disabled={disabled}>
       <p>{children}</p>

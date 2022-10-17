@@ -18,17 +18,17 @@ import { supabase } from "../../utils/supabaseClient"
 const SignComponent = () => {
   const { isLogin, setIsLogin, whoIsLogin } = useLoginCtx()
   const [showSignup, setShowSignup] = useState(true)
-  console.log("showSignup:", showSignup)
-  console.log("isLogin:", isLogin)
+  // console.log("showSignup:", showSignup)
+  // console.log("isLogin:", isLogin)
 
   useEffect(() => {
     const getActualUser = async () => {
       try {
         const { data, error } = await supabase.auth.getUser()
-        console.log("data, error:", data, error)
+        // console.log("data, error:", data, error)
         if (error) throw error
         if (data?.user) {
-          console.log("Enter here")
+          // console.log("Enter here")
           setIsLogin(true)
         }
       } catch (error) {
@@ -63,7 +63,7 @@ const SignComponent = () => {
       {isLogin && (
         <LoginComponent>
           <BtnSmall>My account</BtnSmall>
-          <Caption bold onClick={logoutHandler}>
+          <Caption bold onClick={logoutHandler} tabIndex={0}>
             Log out
           </Caption>
         </LoginComponent>
@@ -74,7 +74,7 @@ const SignComponent = () => {
           <LinkNoStyle href="/signup">
             <BtnSmall>Sign up</BtnSmall>
           </LinkNoStyle>
-          <LinkNoStyle href="/login">
+          <LinkNoStyle href="/login" tabIndex={0}>
             <P>Log in</P>
           </LinkNoStyle>
         </LoginComponent>

@@ -1,4 +1,5 @@
 import PageLayout from "../../components/PageLayout"
+import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 
 
 
@@ -6,7 +7,7 @@ const About = () => {
   return (
     <>
       
-      <p>About here</p>
+      <P>About here</P>
       
       
       

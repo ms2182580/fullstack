@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Poppins', sans-serif;
 }
 
+*:focus {
+  outline: 4px solid #64AFFB;
+  border-radius: 8px;
+}
+
 html{
   font-size: 16px;
 }
