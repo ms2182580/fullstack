@@ -2,12 +2,13 @@ import { useRef, useState } from "react"
 import { ButtonSmall } from "../../components/ui/buttons/general"
 import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_KeywordsCtx } from "../../context/ORG_Keywords"
+import DropdownSuggestions from "../../components/ORG/DropdownSuggestions"
 import ORGDropdown from "./ORGDropdown"
 import SearchComponentWrapper, {
   OptionsWrapper,
   SuggestionsKeywordWrapper,
   EverySingleSuggestionWrapper,
-  EverySingleSuggestion,
+  EverySingleSuggestion
 } from "./styles/SearchComponentWrapper"
 import EverySingleSuggestionKeyword from "./EverySingleSuggestionKeyword.js"
 import SearchIcon from "../../assets/Icons/SearchIcon.png"
@@ -19,19 +20,28 @@ import Image from "next/image"
 const SearchComponent = () => {
   const { setKeywordsToSearch } = useORG_KeywordsCtx()
 
-  const suggestions = [
+  const suggestionsKeywords = [
     "Physical Therapist",
     "Occupational Therapist",
     "Speech Therapist"
   ]
-  const [isFocus, setIsFocus] = useState(false)
-  // console.log('isFocus:', isFocus)
-  const [isHovered, setIsHovered] = useState(false)
-  console.log('isHovered:', isHovered)
-  const [clickOnSingleElement, setClickOnSingleElement] = useState(false)
-  console.log('clickOnSingleElement:', clickOnSingleElement)
-  const inputRef = useRef()
-  const [inputValue, setInputValue] = useState("")
+  const [isFocusKeyword, setIsFocusKeyword] = useState(false)
+  const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
+  const inputRefKeyword = useRef()
+  const [keywordInput, setKeywordInput] = useState("")
+  
+  const suggestionsCity = [
+    "Current location",
+    "The Bronx",
+    "Manhattan",
+    "Queens",
+    "Brooklyn",
+    "Staten Island"
+  ]
+  const [isFocusCity, setIsFocusCity] = useState(false)
+  const [isHoveredCity, setIsHoveredCIty] = useState(false)
+  const inputRefCity = useRef()
+  const [cityInput, setCityInput] = useState("")
 
   return (
     <>
@@ -46,69 +56,31 @@ const SearchComponent = () => {
             </span>
             <input
               placeholder="Example: Therapist, Accessible Dance Class, etc"
-              onFocus={() => setIsFocus(true)}
+              onFocus={() => setIsFocusKeyword(true)}
               onBlur={() => {
-                if (!isHovered) {
-                  setIsFocus(false)
+                if (!isHoveredKeyword) {
+                  setIsFocusKeyword(false)
                 }
-                setClickOnSingleElement(false)
               }}
-              value={inputValue}
+              value={keywordInput}
               onChange={(e) => {
-                setInputValue(e.target.value)
+                setKeywordInput(e.target.value)
               }}
-              ref={inputRef} /* This is local */
+              ref={inputRefKeyword} 
             />
           </span>
 
           <SuggestionsKeywordWrapper>
-            {isFocus && (
-              <EverySingleSuggestionWrapper
-                onMouseEnter={() => {
-                  setIsHovered(true)
-                  
-                }}
-                onMouseLeave={() => {
-                  setIsHovered(false)
-                  // setIsFocus(false)
-                  // setClickOnSingleElement(false)
-                }}
-                
-                isHover={isHovered}
-                isClick={clickOnSingleElement}
-                
-              >
-                {suggestions.map((suggestion, index) => {
-                  const isMatch =
-                    suggestion.toLowerCase().indexOf(inputValue.toLowerCase()) >
-                    -1
-                  return (
-                    <div key={index}>
-                      {isMatch && (
-                        <EverySingleSuggestion
-                          onClick={() => {
-                            setInputValue(suggestion) /* This is local */
-                            inputRef.current.focus() /* This is local */
-                            setClickOnSingleElement(true)
-                            // setIsFocus(false)
-                            // setIsHovered(false)
-                          }}
-                          
-                          
-                          
-                        >
-                          {suggestion}
-                        </EverySingleSuggestion>
-                      )}
-                    </div>
-                  )
-                })}
-              </EverySingleSuggestionWrapper>
-            )}
+            <DropdownSuggestions
+              isFocus={isFocusKeyword}
+              setIsFocus={setIsHoveredKeyword}
+              suggestions={suggestionsKeywords}
+              keywordClickByUser={keywordInput}
+              setKeywordClickByUser={setKeywordInput}
+              inputRefFocus={inputRefKeyword}
+            />
           </SuggestionsKeywordWrapper>
 
-          {/* let result3 = array.filter(x => x.toLowerCase().indexOf(typed3.toLowerCase()) > -1)
-console.log(result3) */}
         </div>
         <div>
           <P dark_gray bold>
@@ -118,7 +90,20 @@ console.log(result3) */}
             <span>
               <Image src={SearchIcon} alt="" />
             </span>
-            <input placeholder="Example: 12345" />
+            <input
+              placeholder="Example: 12345"
+              onFocus={() => setIsFocusKeyword(true)}
+              onBlur={() => {
+                if (!isHoveredKeyword) {
+                  setIsFocusKeyword(false)
+                }
+              }}
+              value={keywordInput}
+              onChange={(e) => {
+                setKeywordInput(e.target.value)
+              }}
+              ref={inputRefKeyword} 
+            />
           </span>
         </div>
         <ButtonSmall>Search</ButtonSmall>

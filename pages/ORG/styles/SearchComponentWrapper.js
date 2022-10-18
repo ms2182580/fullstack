@@ -89,95 +89,17 @@ export const OptionsWrapper = styled.div`
 `
 
 export const SuggestionsKeywordWrapper = styled.div`
-  /* display: ${(x) => (x.isVisible === true ? "block" : "none")}; */
   position: absolute;
-  /* border:1px red solid; */
   width: 100%;
-  /* display:grid; */
   top: 84px;
   z-index: 2;
   background-color: ${NEUTRALS.OFF_WHITE};
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  /* border: crimson 2px solid; */
-
-  & > div > div:nth-last-child(1) {
-    /* margin: 1.5rem 0rem; */
-    /* padding: 0rem 1.5rem; */
-    /* border:1px crimson solid; */
-    /* padding: 1.5rem; */
-    /* cursor: pointer; */
-    /* border: red 20px solid; */
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-
-  & > div > div > div {
-    /* margin: 1.5rem 0rem; */
-    /* padding: 0rem 1.5rem; */
-    /* border:1px crimson solid; */
-    /* border: cornflowerblue 2px solid; */
-    padding: 1.5rem;
-    cursor: pointer;
-  }
-
-  & > div > div > div:hover {
-    background-color: ${NEUTRALS.DARK_GREY};
-    color: ${NEUTRALS.OFF_WHITE};
-    border-bottom-right-radius: ${(x) => x.isHover === true && "8px"};
-    border-bottom-left-radius: ${(x) => x.isHover === true && "8px"};
-    /* border: cornflowerblue 2px solid; */
-    /* border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px; */
-  }
-
-  /* & > div > div:nth-last-child(1) > div:hover {
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-  } */
-`
-export const EverySingleSuggestionWrapper = styled.div`
-  /* border: cornflowerblue 2px solid; */
-
-  /* border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px; */
-
-  & > div {
-    /* background-color: ${(x) => x.isHover && x.isClick && NEUTRALS.DARK_GREY};
-    color: ${(x) => x.isHover && x.isClick && NEUTRALS.OFF_WHITE};
-    border-bottom-right-radius: ${(x) => x.isHover && x.isClick && "8px"};
-    border-bottom-left-radius: ${(x) => x.isHover && x.isClick && "8px"}; */
-  }
-
-  & > div:nth-last-child(1) {
-    /* border: white 2px solid; */
-  }
-
-  & > div:hover {
-    /* background-color: ${(x) => x.isHover && x.isClick && NEUTRALS.DARK_GREY}; */
-    /* color: ${(x) => x.isHover && x.isClick && NEUTRALS.OFF_WHITE}; */
-    /* border-bottom-right-radius: ${(x) => x.isHover && x.isClick && "8px"};
-    border-bottom-left-radius: ${(x) => x.isHover && x.isClick && "8px"}; */
-    
-    
-    /* background-color: ${NEUTRALS.DARK_GREY}; */
-    /* color: ${NEUTRALS.OFF_WHITE}; */
-    /* border-bottom-right-radius: 8px; */
-    /* border-bottom-left-radius: 8px; */
-  }
+  cursor: pointer;
+  
+  
 `
 
-export const EverySingleSuggestion = styled.div`
-  /* background-color: ${(x) => console.dir(x)}; */
 
-  /* border:2px crimson solid; */
-
-  /* border-bottom-right-radius: ${(x) => x.isClick === true && "8px"}; */
-  /* border-bottom-left-radius: ${(x) => x.isClick === true && "8px"}; */
-
-  /* &:hover {
-    border-bottom-right-radius: ${(x) => x.isClick === true && "8px"};
-    border-bottom-left-radius: ${(x) => x.isClick === true && "8px"};
-  } */
-`
