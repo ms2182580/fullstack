@@ -18,3 +18,18 @@ export const DropdownSuggestionsWrapper = styled.div`
     color: ${NEUTRALS.OFF_WHITE};
   }
 `
+
+export const KeywordCities = styled.div`
+  & > div > span {
+    margin-left: 2.1rem;
+    font-weight: 700;
+  }
+
+  & > svg {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 1rem;
+    left: 0.5rem;
+  }
+`

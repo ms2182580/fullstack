@@ -8,8 +8,10 @@ import SearchComponentWrapper, {
   OptionsWrapper,
   SuggestionsKeywordWrapper,
   EverySingleSuggestionWrapper,
-  EverySingleSuggestion
+  EverySingleSuggestion,
+  SuggestionsCityWrapper
 } from "./styles/SearchComponentWrapper"
+import { CurrentLocationSvg } from "../../assets/Icons/index.js"
 import EverySingleSuggestionKeyword from "./EverySingleSuggestionKeyword.js"
 import SearchIcon from "../../assets/Icons/SearchIcon.png"
 import ORG_Landing_CC from "../../assets/Icons/ORG_Landing_CC.png"
@@ -29,7 +31,7 @@ const SearchComponent = () => {
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")
-  
+
   const suggestionsCity = [
     "Current location",
     "The Bronx",
@@ -66,7 +68,7 @@ const SearchComponent = () => {
               onChange={(e) => {
                 setKeywordInput(e.target.value)
               }}
-              ref={inputRefKeyword} 
+              ref={inputRefKeyword}
             />
           </span>
 
@@ -80,7 +82,6 @@ const SearchComponent = () => {
               inputRefFocus={inputRefKeyword}
             />
           </SuggestionsKeywordWrapper>
-
         </div>
         <div>
           <P dark_gray bold>
@@ -92,19 +93,32 @@ const SearchComponent = () => {
             </span>
             <input
               placeholder="Example: 12345"
-              onFocus={() => setIsFocusKeyword(true)}
+              onFocus={() => setIsFocusCity(true)}
               onBlur={() => {
-                if (!isHoveredKeyword) {
-                  setIsFocusKeyword(false)
+                if (!isHoveredCity) {
+                  setIsFocusCity(false)
                 }
               }}
-              value={keywordInput}
+              value={cityInput}
               onChange={(e) => {
-                setKeywordInput(e.target.value)
+                setCityInput(e.target.value)
               }}
-              ref={inputRefKeyword} 
+              ref={inputRefCity}
             />
           </span>
+
+          <SuggestionsKeywordWrapper>
+            <DropdownSuggestions
+              isFocus={isFocusCity}
+              setIsFocus={setIsHoveredCIty}
+              suggestions={suggestionsCity}
+              keywordClickByUser={cityInput}
+              setKeywordClickByUser={setCityInput}
+              inputRefFocus={inputRefCity}
+              haveIcon={true}
+              whichIcon={CurrentLocationSvg}
+            />
+          </SuggestionsKeywordWrapper>
         </div>
         <ButtonSmall>Search</ButtonSmall>
       </SearchComponentWrapper>

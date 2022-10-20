@@ -1,4 +1,6 @@
-import { DropdownSuggestionsWrapper } from "./DropdownSuggestionsStyles"
+import { DropdownSuggestionsWrapper, KeywordCities } from "./DropdownSuggestionsStyles"
+// import { CurrentLocationSvg } from "../../assets/Icons"
+// console.log('CurrentLocationSvg:', CurrentLocationSvg)
 
 const DropdownSuggestions = ({
   isFocus,
@@ -6,8 +8,14 @@ const DropdownSuggestions = ({
   suggestions,
   keywordClickByUser,
   setKeywordClickByUser,
-  inputRefFocus
+  inputRefFocus,
+  haveIcon = false,
+  whichIcon
 }) => {
+  // console.log("haveIcon:", haveIcon)
+  // console.log('whichIcon:', whichIcon)
+  let IconSvg = whichIcon
+  // console.log("IconSvg:", IconSvg)
   return (
     <DropdownSuggestionsWrapper>
       {isFocus && (
@@ -26,16 +34,42 @@ const DropdownSuggestions = ({
                 .indexOf(keywordClickByUser.toLowerCase()) > -1
             return (
               <div key={index}>
-                {isMatch && (
-                  <div
-                    onClick={() => {
-                      setKeywordClickByUser(suggestion)
-                      inputRefFocus.current.focus()
-                    }}
-                  >
-                    {suggestion}
-                  </div>
-                )}
+                {isMatch && haveIcon && index === 0 ? (
+                  <KeywordCities>
+                    <IconSvg />
+                    <div
+                      onClick={() => {
+                        setKeywordClickByUser(suggestion)
+                        inputRefFocus.current.focus()
+                      }}
+                    >
+                      <span>{suggestion}</span>
+                    </div>
+                  </KeywordCities>
+                ) : isMatch && index === 0 ? (
+                  <>
+                    <div
+                      onClick={() => {
+                        setKeywordClickByUser(suggestion)
+                        inputRefFocus.current.focus()
+                      }}
+                    >
+                      <span>{suggestion}</span>
+                    </div>
+                  </>
+                ) : isMatch && (
+                  <>
+                    <div
+                      onClick={() => {
+                        setKeywordClickByUser(suggestion)
+                        inputRefFocus.current.focus()
+                      }}
+                    >
+                      <span>{suggestion}</span>
+                    </div>
+                  </>
+                )
+                }
               </div>
             )
           })}

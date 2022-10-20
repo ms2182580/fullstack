@@ -135,3 +135,17 @@ export const LockSvg = (props) => (
   </svg>
 )
 
+export const CurrentLocationSvg = (props) => (
+  <svg
+    width="1em"
+    height="1em"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M24 20c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 25 15.06V13h-2v2.06A8.994 8.994 0 0 0 15.06 23H13v2h2.06A8.994 8.994 0 0 0 23 32.94V35h2v-2.06A8.994 8.994 0 0 0 32.94 25H35v-2h-2.06zM24 31c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+      fill="#00080B"
+    />
+  </svg>
+)

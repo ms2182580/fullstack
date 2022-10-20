@@ -98,8 +98,16 @@ export const SuggestionsKeywordWrapper = styled.div`
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   cursor: pointer;
-  
-  
 `
 
-
+export const SuggestionsCityWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 84px;
+  z-index: 2;
+  background-color: ${NEUTRALS.OFF_WHITE};
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  cursor: pointer;
+`
