@@ -11,28 +11,28 @@ import { supabase } from "../../../utils/supabaseClient"
 //   return {first_250, error}
 // }
 
-const ORGSpeechTherapiestsDeepest = () => {
+const ORGSpeechTherapistsDeepest = () => {
   const { keywordsToSearch } = useORG_KeywordsCtx()
   // console.log('keywordsToSearch:', keywordsToSearch)
 
   // const dataSupabase = getData().then(x => console.log(x))
   // console.log("dataSupabase:", dataSupabase)
-  useEffect(() => {
-    const databaseSupabase = async () => {
-      // const retrieveData = await getData()
-      // console.log('retrieveData:', retrieveData)
+  // useEffect(() => {
+  //   const databaseSupabase = async () => {
+  //     // const retrieveData = await getData()
+  //     // console.log('retrieveData:', retrieveData)
 
-      let { data: first_250, error } = await supabase
-        .from("first_250")
-        .select("*")
-        .range(0, 9)
-       console.log(first_250, error)
+  //     let { data: first_250, error } = await supabase
+  //       .from("first_250")
+  //       .select("*")
+  //       .range(0, 9)
+  //      console.log(first_250, error)
         
-    }
-    databaseSupabase()
-  }, [])
+  //   }
+  //   databaseSupabase()
+  // }, [])
 
-  return <div>ORGSpeechTherapiestsDeepest</div>
+  return <div>ORGSpeechTherapistsDeepest</div>
 }
 
-export default ORGSpeechTherapiestsDeepest
+export default ORGSpeechTherapistsDeepest

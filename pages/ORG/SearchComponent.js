@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { ButtonSmall } from "../../components/ui/buttons/general"
 import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_KeywordsCtx } from "../../context/ORG_Keywords"
-import DropdownSuggestions from "../../components/ORG/DropdownSuggestions"
+import DropdownSuggestionsInput from "../../components/ORG/DropdownSuggestionsInput"
 import ORGDropdown from "./ORGDropdown"
 import SearchComponentWrapper, {
   OptionsWrapper,
@@ -45,6 +45,15 @@ const SearchComponent = () => {
   const inputRefCity = useRef()
   const [cityInput, setCityInput] = useState("")
 
+  const suggestionDropdownTP = [
+    "Speech Therapist",
+    "Behavioral Therapist",
+    "Physical Therapist",
+    "Occupational Therapist"
+  ]
+  const suggestionDropdownSSA = []
+  const suggestionDropdownCC = []
+
   return (
     <>
       <SearchComponentWrapper>
@@ -73,7 +82,7 @@ const SearchComponent = () => {
           </span>
 
           <SuggestionsKeywordWrapper>
-            <DropdownSuggestions
+            <DropdownSuggestionsInput
               isFocus={isFocusKeyword}
               setIsFocus={setIsHoveredKeyword}
               suggestions={suggestionsKeywords}
@@ -108,7 +117,7 @@ const SearchComponent = () => {
           </span>
 
           <SuggestionsKeywordWrapper>
-            <DropdownSuggestions
+            <DropdownSuggestionsInput
               isFocus={isFocusCity}
               setIsFocus={setIsHoveredCIty}
               suggestions={suggestionsCity}
@@ -124,9 +133,21 @@ const SearchComponent = () => {
       </SearchComponentWrapper>
 
       <OptionsWrapper>
-        <ORGDropdown icon={ORG_Landing_TP} title="Therapeutic Providers" />
-        <ORGDropdown icon={ORG_Landing_SSA} title="Social Service Agencies" />
-        <ORGDropdown icon={ORG_Landing_CC} title="Community Classes" />
+        <ORGDropdown
+          icon={ORG_Landing_TP}
+          title="Therapeutic Providers"
+          suggestions={suggestionDropdownTP}
+        />
+        <ORGDropdown
+          icon={ORG_Landing_SSA}
+          title="Social Service Agencies"
+          suggestions={suggestionDropdownSSA}
+        />
+        <ORGDropdown
+          icon={ORG_Landing_CC}
+          title="Community Classes"
+          suggestions={suggestionDropdownCC}
+        />
       </OptionsWrapper>
     </>
   )

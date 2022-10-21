@@ -83,8 +83,9 @@ export const OptionsWrapper = styled.div`
   margin-bottom: 17.5rem;
   margin-left: 0.75rem;
 
-  & > * {
-    margin-right: 3.625rem;
+  & > *:not(:nth-last-child(1)) {
+    margin-right: clamp(10px, 3.625rem, 5vw);
+    /* outline: 1px black solid; */
   }
 `
 

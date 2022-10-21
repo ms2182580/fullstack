@@ -5,8 +5,8 @@ const DefaultLink = styled.a`
   all: unset;
 `
 
-export const LinkNoStyle = ({ href, children }) => (
-  <Link href={href}>
+export const LinkNoStyle = ({ href, children, replace }) => (
+  <Link href={href} replace={replace}>
     <DefaultLink>{children}</DefaultLink>
   </Link>
 )

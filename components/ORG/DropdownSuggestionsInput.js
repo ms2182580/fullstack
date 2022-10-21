@@ -1,8 +1,6 @@
-import { DropdownSuggestionsWrapper, KeywordCities } from "./DropdownSuggestionsStyles"
-// import { CurrentLocationSvg } from "../../assets/Icons"
-// console.log('CurrentLocationSvg:', CurrentLocationSvg)
+import { DropdownSuggestionsWrapper, KeywordCities } from "./DropdownSuggestionsInputStyles"
 
-const DropdownSuggestions = ({
+const DropdownSuggestionsInput = ({
   isFocus,
   setIsFocus,
   suggestions,
@@ -12,10 +10,7 @@ const DropdownSuggestions = ({
   haveIcon = false,
   whichIcon
 }) => {
-  // console.log("haveIcon:", haveIcon)
-  // console.log('whichIcon:', whichIcon)
   let IconSvg = whichIcon
-  // console.log("IconSvg:", IconSvg)
   return (
     <DropdownSuggestionsWrapper>
       {isFocus && (
@@ -80,4 +75,4 @@ const DropdownSuggestions = ({
   )
 }
 
-export default DropdownSuggestions
+export default DropdownSuggestionsInput
