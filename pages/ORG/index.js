@@ -17,11 +17,8 @@ const ORG = () => {
   //   }
   // }, [geolocationLocalStorage])
   
-  const imgStyles = {
-    border:"7px crimson solid",
-  }
   
-
+  
   return (
     <ORGWrapperFather >
       
@@ -30,8 +27,6 @@ const ORG = () => {
         <Image
           src={ORG_Landing_Page}
           alt=""
-          // className={styles.Img}
-          // style={imgStyles}
         />
       </div>
 
@@ -40,6 +35,7 @@ const ORG = () => {
       </H1>
 
       <SearchComponent />
+      
       
       
 

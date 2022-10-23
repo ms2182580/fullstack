@@ -68,7 +68,7 @@ const SearchComponentWrapper = styled.div`
     border: 1px ${NEUTRALS.DARK_GREY} solid;
   }
 
-  & > button {
+  & > a:nth-last-child(1) {
     /* border: 6px red solid; */
     align-self: end;
   }
@@ -78,30 +78,17 @@ export default SearchComponentWrapper
 
 export const OptionsWrapper = styled.div`
   display: flex;
-  /* border: 1px red solid; */
   margin-right: auto;
   margin-bottom: 17.5rem;
   margin-left: 0.75rem;
 
   & > *:not(:nth-last-child(1)) {
     margin-right: clamp(10px, 3.625rem, 5vw);
-    /* outline: 1px black solid; */
+    /* margin-right: min(3.625rem); */
   }
 `
 
 export const SuggestionsKeywordWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 84px;
-  z-index: 2;
-  background-color: ${NEUTRALS.OFF_WHITE};
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  cursor: pointer;
-`
-
-export const SuggestionsCityWrapper = styled.div`
   position: absolute;
   width: 100%;
   top: 84px;

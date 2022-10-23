@@ -10,10 +10,7 @@ const PageLayout = ({ children, title = "INCLUSIVE" }) => {
         <meta name="description" content="inclusive - website" />
       </Head>
 
-
-
-
-        <NavBar />
+      <NavBar />
 
       <main>{children}</main>
 

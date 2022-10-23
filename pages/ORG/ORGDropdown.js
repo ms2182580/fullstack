@@ -16,21 +16,16 @@ const ORGDropdown = ({
 }) => {
   const [showDropdown, setShowDropdown] = useState(false)
   const router = useRouter()
-  console.log("router:", router.pathname)
 
-  const handleDropdown = () => {
+  const handleDropdownClick = () => {
     setShowDropdown((prevstate) => !prevstate)
   }
-  // console.log("suggestions:", suggestions)
-
-  const handleClickEverySpeech = (props) => {
-    console.log("Clciked!", props.target.textContent)
+  
+  const handleDropdownKey = (e) => {
+    if(e.key === "Enter"){
+      setShowDropdown((prevstate) => !prevstate)
+    }
   }
-
-  const goToSpeechTherapist = () => {
-    router.push("/ORG/SpeechTherapists")
-  }
-
   const suggestionsValidated =
     suggestions.length === 0 ? "Coming soon" : suggestions
 
@@ -40,7 +35,7 @@ const ORGDropdown = ({
         <div>
           <Image src={icon} alt="" />
         </div>
-        <span onClick={handleDropdown}>
+        <span onClick={handleDropdownClick} onKeyDown={handleDropdownKey} tabIndex={0}>
           <P bold>{title}</P>
           <span>
             {showDropdown ? (
@@ -60,13 +55,12 @@ const ORGDropdown = ({
                 return (
                   <Fragment key={x}>
                     {isSpeechTherapist ? (
-                      // <p onClick={goToSpeechTherapist}>{x}</p>
                       <LinkNoStyle href={`${router.pathname}/SpeechTherapists`}>
                         <p>{x}</p>
                       </LinkNoStyle>
                     ) : (
                       <LinkNoStyle href="/404">
-                      <p >{x}</p>
+                        <p>{x}</p>
                       </LinkNoStyle>
                     )}
                   </Fragment>
@@ -79,7 +73,7 @@ const ORGDropdown = ({
 
         <div className="ORGDropdownComingSoon">
           {showDropdown && typeof suggestionsValidated === "string" && (
-            <div onClick={handleDropdown}>
+            <div onClick={handleDropdownClick}>
               <div></div>
               <p>Coming Soon!</p>
             </div>

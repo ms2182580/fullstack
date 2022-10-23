@@ -7,13 +7,13 @@ const GlobalStyle = createGlobalStyle`
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+  box-sizing: border-box; 
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-*:focus {
+*:focus-visible {
   outline: 4px solid #64AFFB;
   border-radius: 8px;
 }

@@ -1,26 +1,25 @@
 import { useRef, useState } from "react"
 import { ButtonSmall } from "../../components/ui/buttons/general"
 import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts"
-import { useORG_KeywordsCtx } from "../../context/ORG_Keywords"
+import { useORG_InputCtx } from "../../context/ORG_Input"
 import DropdownSuggestionsInput from "../../components/ORG/DropdownSuggestionsInput"
 import ORGDropdown from "./ORGDropdown"
 import SearchComponentWrapper, {
   OptionsWrapper,
-  SuggestionsKeywordWrapper,
-  EverySingleSuggestionWrapper,
-  EverySingleSuggestion,
-  SuggestionsCityWrapper
+  SuggestionsKeywordWrapper
 } from "./styles/SearchComponentWrapper"
 import { CurrentLocationSvg } from "../../assets/Icons/index.js"
-import EverySingleSuggestionKeyword from "./EverySingleSuggestionKeyword.js"
 import SearchIcon from "../../assets/Icons/SearchIcon.png"
 import ORG_Landing_CC from "../../assets/Icons/ORG_Landing_CC.png"
 import ORG_Landing_SSA from "../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_Landing_TP from "../../assets/Icons/ORG_Landing_TP.png"
 import Image from "next/image"
+import { LinkNoStyle } from "../../components/ui/hyperlink/HyperlinkNoStyles"
+import { useRouter } from "next/router"
 
 const SearchComponent = () => {
-  const { setKeywordsToSearch } = useORG_KeywordsCtx()
+  const { setKeywordsContext, setCitiesContext } = useORG_InputCtx()
+  const router = useRouter()
 
   const suggestionsKeywords = [
     "Physical Therapist",
@@ -76,6 +75,7 @@ const SearchComponent = () => {
               value={keywordInput}
               onChange={(e) => {
                 setKeywordInput(e.target.value)
+                setKeywordsContext(e.target.value)
               }}
               ref={inputRefKeyword}
             />
@@ -111,6 +111,7 @@ const SearchComponent = () => {
               value={cityInput}
               onChange={(e) => {
                 setCityInput(e.target.value)
+                setCitiesContext(e.target.value)
               }}
               ref={inputRefCity}
             />
@@ -129,7 +130,10 @@ const SearchComponent = () => {
             />
           </SuggestionsKeywordWrapper>
         </div>
-        <ButtonSmall>Search</ButtonSmall>
+
+        <LinkNoStyle href={`${router.pathname}/SpeechTherapists`}>
+          <ButtonSmall>Search</ButtonSmall>
+        </LinkNoStyle>
       </SearchComponentWrapper>
 
       <OptionsWrapper>

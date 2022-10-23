@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useORG_KeywordsCtx } from "../../../context/ORG_Keywords"
+import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { supabase } from "../../../utils/supabaseClient"
 
 // const getData = async () => {
@@ -12,7 +12,8 @@ import { supabase } from "../../../utils/supabaseClient"
 // }
 
 const ORGSpeechTherapistsDeepest = () => {
-  const { keywordsToSearch } = useORG_KeywordsCtx()
+  const { keywordsContext, citiesContext } = useORG_InputCtx()
+  console.log('keywordsContext, citiesContext:', keywordsContext, citiesContext)
   // console.log('keywordsToSearch:', keywordsToSearch)
 
   // const dataSupabase = getData().then(x => console.log(x))
