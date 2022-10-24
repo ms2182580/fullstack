@@ -66,8 +66,8 @@ const Login = () => {
         <input type="password" onChange={handlePassword} />
         <button>Submit</button>
       </form>
-      <p onClick={copyEmail}>Email</p>
-      <p onClick={copyPassword}>Password</p>
+      {/* <p onClick={copyEmail}>Email</p> */}
+      {/* <p onClick={copyPassword}>Password</p> */}
     </>
   )
 }
