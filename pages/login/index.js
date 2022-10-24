@@ -59,7 +59,8 @@ const Login = () => {
   return (
     <>
       Login here
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}> */}
+      <form >
         <label>Email</label>
         <input type="email" onChange={handleEmail} />
         <label>Password</label>

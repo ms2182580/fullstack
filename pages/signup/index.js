@@ -1,4 +1,3 @@
-import React from "react"
 import { SignupWrapper, Img, RightSignup, LeftSignup } from "./styles/Signup.js"
 import LoginImage from "../../assets/images/LoginImage.png"
 import Breadcrumbs from "../../components/ui/breadcrumbs/Breadcrumbs.js"

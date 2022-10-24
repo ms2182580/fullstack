@@ -184,7 +184,8 @@ const SignupForm = () => {
   return (
     <>
       <section>
-        <Form onSubmit={handleSubmit}>
+        {/* <Form onSubmit={handleSubmit}> */}
+        <Form >
           <H4_EMAIL_SIGNUP
             displayRedEmail={{
               emailAlreadyRegistered,
