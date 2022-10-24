@@ -9,6 +9,7 @@ import SixSection from "./SNT_Home/SixSection.js"
 const SNT = () => {
   return (
     <SNTWrapper>
+      {/* //TODO Change all the svg images for an Image component of next using layout="responsive" */}
       <FirstSection/>
       <SecondSection/>
       <ThirdSection/>
