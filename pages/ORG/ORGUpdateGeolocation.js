@@ -10,8 +10,10 @@ const ORGUpdateGeolocation = (props) => {
     // const getLocalStorage = localStorage.getItem("INCLUSIVE")
     // const {isLogged, matchRegex} = checkIfAnyLogged()
     // console.log('isLogged, matchRegex:', isLogged, matchRegex)
-    const actualCity = props.actualLocation.city
-    const nearbyCities = props.nearbyCities.map(x => x.city)
+    
+    // *This work
+    // const actualCity = props.actualLocation.city
+    // const nearbyCities = props.nearbyCities.map(x => x.city)
     
     // console.log('isLogged, matchRegex:', isLogged, matchRegex)
     
