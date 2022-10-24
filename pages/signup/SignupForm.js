@@ -17,7 +17,7 @@ import { useLoginCtx } from "../../context/LoginCtx"
 import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/Icons"
 import { useRouter } from "next/router"
 import Image from "next/image"
-import { supabase } from "../../utils/supabaseClient"
+// import { supabase } from "../../utils/supabaseClient"
 // console.log('supabase:', supabase)
 
 const LOGIN_URL = "https://jsonplaceholder.typicode.com/posts"
@@ -40,80 +40,80 @@ const SignupForm = () => {
   const [passwordReveal, setPasswordReveal] = useState(false)
   const [emailAlreadyRegistered, setEmailAlreadyRegistered] = useState("")
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
 
-    try {
-      // const fetching = await fetch(LOGIN_URL, {
-      //   method: "POST",
-      //   body: JSON.stringify({
-      //     email: `${email}`
-      //   }),
-      //   headers: {
-      //     "Content-type": "application/json; charset=UTF-8"
-      //   }
-      // })
+  //   try {
+  //     // const fetching = await fetch(LOGIN_URL, {
+  //     //   method: "POST",
+  //     //   body: JSON.stringify({
+  //     //     email: `${email}`
+  //     //   }),
+  //     //   headers: {
+  //     //     "Content-type": "application/json; charset=UTF-8"
+  //     //   }
+  //     // })
 
-      // if (fetching.ok !== true) {
-      //   throw new Error("Something happend")
-      // }
+  //     // if (fetching.ok !== true) {
+  //     //   throw new Error("Something happend")
+  //     // }
 
-      // const toJson = await fetching.json()
+  //     // const toJson = await fetching.json()
 
-      // let keyToPush = `INCLUSIVE_ACCOUNT_${email.value}`
+  //     // let keyToPush = `INCLUSIVE_ACCOUNT_${email.value}`
 
-      // let isUserAlreayCreated = localStorage.getItem(keyToPush)
+  //     // let isUserAlreayCreated = localStorage.getItem(keyToPush)
 
-      // if (isUserAlreayCreated === null) {
-      //   let valueToAdd = {
-      //     isLogin: true,
-      //     "Speech-Therapists-saved": []
-      //   }
-      //   localStorage.setItem(keyToPush, JSON.stringify(valueToAdd))
-      // }
+  //     // if (isUserAlreayCreated === null) {
+  //     //   let valueToAdd = {
+  //     //     isLogin: true,
+  //     //     "Speech-Therapists-saved": []
+  //     //   }
+  //     //   localStorage.setItem(keyToPush, JSON.stringify(valueToAdd))
+  //     // }
 
-      // if (isUserAlreayCreated) {
-      //   // ?TODO This is the logic of log in
-      //   // let parseDataUser = JSON.parse(localStorage.getItem(keyToPush))
-      //   // parseDataUser.isLogin = true
-      //   // localStorage.setItem(keyToPush, JSON.stringify(parseDataUser))
+  //     // if (isUserAlreayCreated) {
+  //     //   // ?TODO This is the logic of log in
+  //     //   // let parseDataUser = JSON.parse(localStorage.getItem(keyToPush))
+  //     //   // parseDataUser.isLogin = true
+  //     //   // localStorage.setItem(keyToPush, JSON.stringify(parseDataUser))
 
-      //   setEmailAlreadyRegistered("This email is already registered. Want to")
+  //     //   setEmailAlreadyRegistered("This email is already registered. Want to")
 
-      //   throw new Error("Email already used")
-      // }
-      const { user, session, error } = await supabase.auth.signUp({
-        email: email.value,
-        password: password.value
-      })
+  //     //   throw new Error("Email already used")
+  //     // }
+  //     const { user, session, error } = await supabase.auth.signUp({
+  //       email: email.value,
+  //       password: password.value
+  //     })
 
-      if (error) {
-        throw error
-      }
+  //     if (error) {
+  //       throw error
+  //     }
 
-      console.log('user, session, error:', user, session, error)
+  //     console.log('user, session, error:', user, session, error)
 
-      // setEmailAlreadyRegistered("")
-      // setWhoIsLogin(keyToPush)
-      localStorage.setItem("INCLUSIVE_ACCOUNT", "true")
-      setIsLogin(true)
-      router.push("/")
-    } catch (error) {
-      console.log("error:", error)
+  //     // setEmailAlreadyRegistered("")
+  //     // setWhoIsLogin(keyToPush)
+  //     localStorage.setItem("INCLUSIVE_ACCOUNT", "true")
+  //     setIsLogin(true)
+  //     router.push("/")
+  //   } catch (error) {
+  //     console.log("error:", error)
 
-      // if (!error?.response) {
-      //   setErrMsg("No server response")
-      // } else if (error.response?.status === 400) {
-      //   setErrMsg("Missing Username or Password")
-      // } else if (error.response?.status === 401) {
-      //   setErrMsg("Unauthorized")
-      // } else {
-      //   setErrMsg("Login Failed")
-      // }
+  //     // if (!error?.response) {
+  //     //   setErrMsg("No server response")
+  //     // } else if (error.response?.status === 400) {
+  //     //   setErrMsg("Missing Username or Password")
+  //     // } else if (error.response?.status === 401) {
+  //     //   setErrMsg("Unauthorized")
+  //     // } else {
+  //     //   setErrMsg("Login Failed")
+  //     // }
 
-      // errRef.current.focus()
-    }
-  }
+  //     // errRef.current.focus()
+  //   }
+  // }
 
   const onChangeEmail = (e) => {
     const inputValue = e.target.value.trim().toLowerCase()

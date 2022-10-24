@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { supabase } from "../../utils/supabaseClient"
+// import { supabase } from "../../utils/supabaseClient"
 import { useRouter } from "next/router"
 import { useLoginCtx } from "../../context/LoginCtx"
 // console.log('supabase:', supabase)
@@ -9,33 +9,33 @@ const initialState = {
   password: ""
 }
 
-const signInWithEmail = async (email, password) => {
-  const result = await supabase.auth.signInWithPassword({
-    email,
-    password
-  })
-  return result
-}
+// const signInWithEmail = async (email, password) => {
+//   const result = await supabase.auth.signInWithPassword({
+//     email,
+//     password
+//   })
+//   return result
+// }
 
 const Login = () => {
   const [formValues, setFormValues] = useState(initialState)
   const router = useRouter()
   const { setIsLogin } = useLoginCtx()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const { email, password } = formValues
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const { email, password } = formValues
 
-    const result = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
-    console.log("result:", result)
+  //   const result = await supabase.auth.signInWithPassword({
+  //     email,
+  //     password
+  //   })
+  //   console.log("result:", result)
 
-    // console.log("Finish")
-    setIsLogin(true)
-    router.push("/")
-  }
+  //   // console.log("Finish")
+  //   setIsLogin(true)
+  //   router.push("/")
+  // }
 
   const handleEmail = (e) => {
     setFormValues((prevState) => ({
