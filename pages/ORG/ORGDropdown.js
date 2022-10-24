@@ -12,7 +12,7 @@ import { useRouter } from "next/router.js"
 const ORGDropdown = ({
   icon = "not found",
   title = "no title",
-  suggestions
+  suggestions = []
 }) => {
   const [showDropdown, setShowDropdown] = useState(false)
   const router = useRouter()
