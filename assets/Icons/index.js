@@ -1,7 +1,7 @@
 export const HomeSvg = (props) => (
   <svg
-    width="1em"
-    height="1em"
+    width="1.25rem"
+    height="1rem"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -12,8 +12,8 @@ export const HomeSvg = (props) => (
 
 export const ArrowRightSvg = (props) => (
   <svg
-    width="1em"
-    height="1em"
+    width="0.735rem"
+    height="1.5rem"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -145,6 +145,21 @@ export const CurrentLocationSvg = (props) => (
   >
     <path
       d="M24 20c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 25 15.06V13h-2v2.06A8.994 8.994 0 0 0 15.06 23H13v2h2.06A8.994 8.994 0 0 0 23 32.94V35h2v-2.06A8.994 8.994 0 0 0 32.94 25H35v-2h-2.06zM24 31c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+      fill="#00080B"
+    />
+  </svg>
+)
+
+export const BackArrow = (props) => (
+  <svg
+    width="1.25rem"
+    height="1rem"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M20 8a1 1 0 0 1-1 1H3.17l4.59 5.35a1 1 0 1 1-1.52 1.3l-6-7a.83.83 0 0 1-.09-.16.83.83 0 0 1-.08-.12A1.16 1.16 0 0 1 0 8a1.16 1.16 0 0 1 .07-.37.83.83 0 0 1 .08-.12.83.83 0 0 1 .09-.16l6-7a1 1 0 1 1 1.52 1.3L3.17 7H19a1 1 0 0 1 1 1Z"
       fill="#00080B"
     />
   </svg>

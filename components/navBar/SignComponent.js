@@ -71,11 +71,12 @@ const SignComponent = () => {
 
       {showSignup && (
         <LoginComponent>
-          <LinkNoStyle href="/signup">
-            <BtnSmall>Sign up</BtnSmall>
-          </LinkNoStyle>
           <LinkNoStyle href="/login" tabIndex={0}>
             <P tabIndex={0}>Log in</P>
+          </LinkNoStyle>
+
+          <LinkNoStyle href="/signup">
+            <BtnSmall>Sign up</BtnSmall>
           </LinkNoStyle>
         </LoginComponent>
       )}

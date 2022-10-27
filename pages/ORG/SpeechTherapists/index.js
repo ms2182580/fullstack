@@ -8,6 +8,10 @@ import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
 import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
+import { BackArrow } from "../../../assets/Icons"
+import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
+import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
+import SpeechTherapistList from "./styles/SpeechTherapistList"
 
 const ORGSpeechTherapists = () => {
   const {
@@ -16,9 +20,6 @@ const ORGSpeechTherapists = () => {
     setKeywordsContext,
     setCitiesContext
   } = useORG_InputCtx()
-  const [keywordValue, setKeywordValue] = useState(keywordsContext)
-  const [citiesValue, setCitiesValue] = useState(citiesContext)
-
   const router = useRouter()
 
   const suggestionDropdownTP = [
@@ -27,58 +28,69 @@ const ORGSpeechTherapists = () => {
     "Physical Therapist",
     "Occupational Therapist"
   ]
-  
+
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
 
   return (
-    <SpeechTherapistWraper>
-      <div>Back thing</div>
-      <div>The breadcrumbs</div>
-      <div>Reusable input keyword and cities</div>
-      <div>Reusable seelect options</div>
+    <>
+      <SpeechTherapistWraper>
+        <div>
+          {" "}
+          <span>
+            <LinkNoStyle href="/ORG">
+              <BackArrow /> Back
+            </LinkNoStyle>
+          </span>{" "}
+        </div>
 
-      <CustomInput
-        setKeywordsContext={setKeywordsContext}
-        setCitiesContext={setCitiesContext}
-        keywordValueContext={keywordsContext}
-        citiesValueContext={citiesContext}
-        actualRoute={router}
-        toWhere=""
-      />
-
-      <OptionsWrapper>
-        <Customdropdown
-          icon={ORG_LANDING_TP}
-          title="Speech Therapist"
-          suggestions={suggestionDropdownTP}
+        <Breadcrumbs
+          whichDisplay={[
+            ["Resource Directory", "/ORG"],
+            ["Speech Therapist", ""]
+          ]}
         />
-        <Customdropdown
-          icon={ORG_LANDING_SSA}
-          title="Social Service Agencies"
-          suggestions={suggestionDropdownSSA}
-        />
-        <Customdropdown
-          icon={ORG_LANDING_CC}
-          title="Community Classes"
-          suggestions={suggestionDropdownCC}
-        />
-        
-      </OptionsWrapper>
 
+        <CustomInput
+          setKeywordsContext={setKeywordsContext}
+          setCitiesContext={setCitiesContext}
+          keywordValueContext={keywordsContext}
+          citiesValueContext={citiesContext}
+          actualRoute={router}
+          toWhere=""
+        />
 
-      {/* <label>Keyword here</label>
+        <OptionsWrapper>
+          <Customdropdown
+            icon={ORG_LANDING_TP}
+            title="Speech Therapist"
+            suggestions={suggestionDropdownTP}
+          />
+          <Customdropdown
+            icon={ORG_LANDING_SSA}
+            title="Social Service Agencies"
+            suggestions={suggestionDropdownSSA}
+          />
+          <Customdropdown
+            icon={ORG_LANDING_CC}
+            title="Community Classes"
+            suggestions={suggestionDropdownCC}
+          />
+        </OptionsWrapper>
+
+        {/* <label>Keyword here</label>
       <input value={keywordValue} onChange={(e)=> setKeywordValue(e.target.value)}/>
       
       <label>Cities here</label>
       <input value={citiesValue} onChange={(e)=> setCitiesValue(e.target.value)} /> */}
-
-      <div>
-        <h2>The speech therapist</h2>
+      </SpeechTherapistWraper>
+      <SpeechTherapistList>
+        <h2>Speech therapist list</h2>
         <div>Left side filter</div>
         <div>Right side summary of speech therapist</div>
-      </div>
-    </SpeechTherapistWraper>
+        <div>Buttons here</div>
+      </SpeechTherapistList>
+    </>
   )
 }
 

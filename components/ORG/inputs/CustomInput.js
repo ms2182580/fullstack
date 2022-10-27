@@ -25,7 +25,7 @@ const CustomInput = ({
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")
-  console.log('✅ keywordInput:', keywordInput)
+  // console.log('✅ keywordInput:', keywordInput)
 
   const suggestionsCity = [
     "Current location",
@@ -39,10 +39,10 @@ const CustomInput = ({
   const [isHoveredCity, setIsHoveredCIty] = useState(false)
   const inputRefCity = useRef()
   const [cityInput, setCityInput] = useState("")
-  console.log('✅ cityInput:', cityInput)
+  // console.log('✅ cityInput:', cityInput)
   
   useEffect(() => {
-    console.log("👀 useEffect()",keywordValueContext)
+    // console.log("👀 useEffect()",keywordValueContext)
     setKeywordInput(keywordValueContext)
   }, [keywordValueContext])
 

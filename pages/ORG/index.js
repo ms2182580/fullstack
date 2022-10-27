@@ -56,7 +56,6 @@ const ORGLanding = () => {
         Find Healthcare Providers and <br /> Activities for your Child in NYC
       </H1>
 
-      {/* <SearchComponent /> */}
 
       <CustomInput
         setKeywordsContext={setKeywordsContext}

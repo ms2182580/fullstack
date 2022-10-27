@@ -62,7 +62,7 @@ export const LoginComponent = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: auto;
-  margin-right: 104px;
+  margin-right: 6rem;
   
   & > :nth-child(2){
     margin-left: 34px;
