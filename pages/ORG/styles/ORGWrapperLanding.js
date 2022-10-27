@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../assets/Colors"
 
-const ORGWrapperFather = styled.div`
+const ORGWrapperLanding = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
   place-items: center;
@@ -20,4 +20,4 @@ const ORGWrapperFather = styled.div`
   }
 `
 
-export default ORGWrapperFather
+export default ORGWrapperLanding

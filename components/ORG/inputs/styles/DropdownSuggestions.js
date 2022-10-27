@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../assets/Colors"
+import { NEUTRALS } from "../../../../assets/Colors"
 
 export const DropdownSuggestionsWrapper = styled.div`
   & > div > div:nth-last-child(1) {

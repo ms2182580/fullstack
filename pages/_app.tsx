@@ -5,15 +5,13 @@ import PageLayout from "../components/PageLayout.js"
 import { LoginCtxProvider } from "../context/LoginCtx"
 import { ORG_InputCtxProvider } from "../context/ORG_Input"
 
-
 function MyApp({ Component, pageProps }) {
   return (
-
     <LoginCtxProvider>
       <ORG_InputCtxProvider>
-
         <PageLayout>
           <GlobalStyle />
+          <link rel="icon" href="/favicon.ico" />
 
           <Component {...pageProps} />
         </PageLayout>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../assets/Colors"
-import { COLORS } from "../../../components/ui/buttons/variables"
+import { NEUTRALS } from "../../../../assets/Colors"
+import { COLORS } from "../../../ui/buttons/variables"
 
 const SearchComponentWrapper = styled.div`
   /* border: 1px hsl(0, 50%, 30%) solid; */
@@ -80,23 +80,11 @@ const SearchComponentWrapper = styled.div`
 
 export default SearchComponentWrapper
 
-export const OptionsWrapper = styled.div`
-  display: flex;
-  margin-right: auto;
-  margin-bottom: ${(x) => (x.landingHere === "true" ? "17.5rem" : "2.5rem")};
-  /* margin-bottom: 17.5rem; */
-  margin-left: 0.75rem;
-
-  & > *:not(:nth-last-child(1)) {
-    margin-right: clamp(1px, 3.625rem, 15px);
-  }
-`
-
 export const SuggestionsKeywordWrapper = styled.div`
   position: absolute;
   width: 100%;
   top: 84px;
-  z-index: 2;
+  z-index: 99;
   background-color: ${NEUTRALS.OFF_WHITE};
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
   border-bottom-right-radius: 8px;

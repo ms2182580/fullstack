@@ -1,25 +1,25 @@
 import Image from "next/image.js"
-import ORGDropdownWrapper, {
-  DropdownComingSoon
-} from "./styles/ORGDropdownWrapper.js"
-import ArrowDown from "../../assets/Icons/ArrowDown.png"
-import ArrowUp from "../../assets/Icons/ArrowUp.png"
-import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts.js"
-import { useState, Fragment } from "react"
-import { LinkNoStyle } from "../../components/ui/hyperlink/HyperlinkNoStyles"
-import { useRouter } from "next/router.js"
-import { useORG_InputCtx } from "../../context/ORG_Input.js"
+import { Fragment, useState } from "react"
+import { useORG_InputCtx } from "../../../context/ORG_Input"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import { SingleDropdownWrapper } from "./styles/Singledropdown"
+import ArrowUp from "../../../assets/Icons/ArrowUp.png"
+import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 
-const ORGDropdown = ({
+const Singledropdown = ({
   icon = "not found",
   title = "no title",
   suggestions = [],
   landingHere = false,
+  actualRoute,
+  toWhere
 }) => {
-  const { setKeywordsContext } = useORG_InputCtx()
+  const { setKeywordsContext, keywordsContext } = useORG_InputCtx()
+  // console.log('setKeywordsContext:', setKeywordsContext)
+  // console.log('keywordsContext:', keywordsContext)
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const router = useRouter()
 
   const handleDropdownClick = () => {
     setShowDropdown((prevstate) => !prevstate)
@@ -35,11 +35,15 @@ const ORGDropdown = ({
 
   return (
     <>
-      <ORGDropdownWrapper className="ORGDropdownWrapper">
+      <SingleDropdownWrapper >
         {/* // ?TODO ICON should not be mandatory */}
-        <div>
-          <Image src={icon} alt="" />
-        </div>
+
+        {icon !== "not found" && (
+          <div>
+            <Image src={icon} alt="" />
+          </div>
+        )}
+
         <span
           onClick={handleDropdownClick}
           onKeyDown={handleDropdownKey}
@@ -62,13 +66,14 @@ const ORGDropdown = ({
                 const isSpeechTherapist = x.toLowerCase() === "speech therapist"
                 const updateInput = (e) => {
                   // console.log('e:', e.target.textContent)
+                  // setKeywordsContext(e.target.textContent)
+                  // updateTry(e.target.textContent)
                 }
-                
+
                 return (
                   <Fragment key={x}>
                     {isSpeechTherapist && landingHere ? (
-                      
-                      <LinkNoStyle href={`${router.pathname}/SpeechTherapists`}>
+                      <LinkNoStyle href={`${actualRoute.pathname}/${toWhere}`}>
                         <p
                           onClick={() => setKeywordsContext("Speech Therapist")}
                         >
@@ -85,9 +90,15 @@ const ORGDropdown = ({
 
                     {landingHere === false && (
                       <Fragment>
-                        <p onClick={(e)=> {
-                          updateInput(e)
-                          }}>{x}</p>
+                        <p
+                          onClick={(e) => {
+                            // setKeywordsContext("hard coded")
+                            // console.log("clicked!", e.target.textContent)
+                            setKeywordsContext(e.target.textContent)
+                          }}
+                        >
+                          {x}
+                        </p>
                       </Fragment>
                     )}
                   </Fragment>
@@ -106,9 +117,9 @@ const ORGDropdown = ({
             </div>
           )}
         </div>
-      </ORGDropdownWrapper>
+      </SingleDropdownWrapper>
     </>
   )
 }
 
-export default ORGDropdown
+export default Singledropdown

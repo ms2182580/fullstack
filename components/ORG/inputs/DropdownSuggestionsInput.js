@@ -1,4 +1,4 @@
-import { DropdownSuggestionsWrapper, KeywordCities } from "./DropdownSuggestionsInputStyles"
+import {  DropdownSuggestionsWrapper,  KeywordCities} from "./styles/DropdownSuggestions"
 
 const DropdownSuggestionsInput = ({
   isFocus,
@@ -6,6 +6,7 @@ const DropdownSuggestionsInput = ({
   suggestions,
   keywordClickByUser,
   setKeywordClickByUser,
+  setKeywordClickByUserContext,
   inputRefFocus,
   haveIcon = false,
   whichIcon
@@ -35,6 +36,7 @@ const DropdownSuggestionsInput = ({
                     <div
                       onClick={() => {
                         setKeywordClickByUser(suggestion)
+                        setKeywordClickByUserContext(suggestion)
                         inputRefFocus.current.focus()
                       }}
                     >
@@ -46,25 +48,28 @@ const DropdownSuggestionsInput = ({
                     <div
                       onClick={() => {
                         setKeywordClickByUser(suggestion)
+                        setKeywordClickByUserContext(suggestion)
                         inputRefFocus.current.focus()
                       }}
                     >
                       <span>{suggestion}</span>
                     </div>
                   </>
-                ) : isMatch && (
-                  <>
-                    <div
-                      onClick={() => {
-                        setKeywordClickByUser(suggestion)
-                        inputRefFocus.current.focus()
-                      }}
-                    >
-                      <span>{suggestion}</span>
-                    </div>
-                  </>
-                )
-                }
+                ) : (
+                  isMatch && (
+                    <>
+                      <div
+                        onClick={() => {
+                          setKeywordClickByUser(suggestion)
+                          setKeywordClickByUserContext(suggestion)
+                          inputRefFocus.current.focus()
+                        }}
+                      >
+                        <span>{suggestion}</span>
+                      </div>
+                    </>
+                  )
+                )}
               </div>
             )
           })}

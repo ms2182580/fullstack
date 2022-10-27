@@ -1,53 +1,85 @@
-import { useEffect } from "react"
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
+import Customdropdown from "../../../components/ORG/dropdown/CustomDropdown"
+import { OptionsWrapper } from "../../../components/ORG/dropdown/styles/Customdropdown"
+import CustomInput from "../../../components/ORG/inputs/CustomInput"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
-// import { supabase } from "../../../utils/supabaseClient"
+import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
+import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
+import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
+import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 
-// const getData = async () => {
-//   let { data: first_250, error } = await supabase
-//     .from("first_250")
-//     .select("*")
-//     .range(0, 9)
+const ORGSpeechTherapists = () => {
+  const {
+    keywordsContext,
+    citiesContext,
+    setKeywordsContext,
+    setCitiesContext
+  } = useORG_InputCtx()
+  const [keywordValue, setKeywordValue] = useState(keywordsContext)
+  const [citiesValue, setCitiesValue] = useState(citiesContext)
 
-//   return {first_250, error}
-// }
+  const router = useRouter()
 
-const ORGSpeechTherapistsDeepest = () => {
-  const { keywordsContext, citiesContext } = useORG_InputCtx()
-  // console.log('keywordsContext, citiesContext:', keywordsContext, citiesContext)
-  // console.log('keywordsToSearch:', keywordsToSearch)
-
-  // const dataSupabase = getData().then(x => console.log(x))
-  // console.log("dataSupabase:", dataSupabase)
-  // useEffect(() => {
-  //   const databaseSupabase = async () => {
-  //     // const retrieveData = await getData()
-  //     // console.log('retrieveData:', retrieveData)
-
-  //     let { data: first_250, error } = await supabase
-  //       .from("first_250")
-  //       .select("*")
-  //       .range(0, 9)
-  //      console.log(first_250, error)
-  //   }
-  //   databaseSupabase()
-  // }, [])
+  const suggestionDropdownTP = [
+    "Speech Therapist",
+    "Behavioral Therapist",
+    "Physical Therapist",
+    "Occupational Therapist"
+  ]
+  
+  const suggestionDropdownSSA = []
+  const suggestionDropdownCC = []
 
   return (
-    <div>
+    <SpeechTherapistWraper>
       <div>Back thing</div>
       <div>The breadcrumbs</div>
       <div>Reusable input keyword and cities</div>
       <div>Reusable seelect options</div>
+
+      <CustomInput
+        setKeywordsContext={setKeywordsContext}
+        setCitiesContext={setCitiesContext}
+        keywordValueContext={keywordsContext}
+        citiesValueContext={citiesContext}
+        actualRoute={router}
+        toWhere=""
+      />
+
+      <OptionsWrapper>
+        <Customdropdown
+          icon={ORG_LANDING_TP}
+          title="Speech Therapist"
+          suggestions={suggestionDropdownTP}
+        />
+        <Customdropdown
+          icon={ORG_LANDING_SSA}
+          title="Social Service Agencies"
+          suggestions={suggestionDropdownSSA}
+        />
+        <Customdropdown
+          icon={ORG_LANDING_CC}
+          title="Community Classes"
+          suggestions={suggestionDropdownCC}
+        />
+        
+      </OptionsWrapper>
+
+
+      {/* <label>Keyword here</label>
+      <input value={keywordValue} onChange={(e)=> setKeywordValue(e.target.value)}/>
+      
+      <label>Cities here</label>
+      <input value={citiesValue} onChange={(e)=> setCitiesValue(e.target.value)} /> */}
+
       <div>
         <h2>The speech therapist</h2>
         <div>Left side filter</div>
         <div>Right side summary of speech therapist</div>
       </div>
-      
-      
-      ORGSpeechTherapistsDeepest
-    </div>
+    </SpeechTherapistWraper>
   )
 }
 
-export default ORGSpeechTherapistsDeepest
+export default ORGSpeechTherapists

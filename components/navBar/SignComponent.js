@@ -75,7 +75,7 @@ const SignComponent = () => {
             <BtnSmall>Sign up</BtnSmall>
           </LinkNoStyle>
           <LinkNoStyle href="/login" tabIndex={0}>
-            <P>Log in</P>
+            <P tabIndex={0}>Log in</P>
           </LinkNoStyle>
         </LoginComponent>
       )}
