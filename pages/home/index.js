@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import HeroImage from "./HeroImage.js"
+import Main from './Main.js'
 
 import styled from "styled-components"
 
@@ -20,9 +21,7 @@ export default function HomeIndex() {
     <>
       <HeroImage />
 
-      <MaincontentProvisional id="MainContent">
-        Main Content
-      </MaincontentProvisional>
+      <Main />
     </>
   )
 }
