@@ -3,19 +3,23 @@ import { useEffect, useRef, useState } from "react"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import SearchIcon from "../../../assets/Icons/SearchIcon.png"
 import { CurrentLocationSvg } from "../../../assets/Icons"
-import SearchComponentWrapper, { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
+import SearchComponentWrapper, {
+  SuggestionsKeywordWrapper
+} from "./styles/SearchComponentWrapper"
 import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { ButtonSmall } from "../../ui/buttons/general"
+import { useRouter } from "next/router"
 
 const CustomInput = ({
   setKeywordsContext,
   setCitiesContext,
   keywordValueContext,
   citiesValueContext,
-  actualRoute,
-  toWhere,
+  toWhere = "undefined"
 }) => {
+  const router = useRouter()
+
   const suggestionsKeywords = [
     "Physical Therapist",
     "Occupational Therapist",
@@ -25,7 +29,6 @@ const CustomInput = ({
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")
-  // console.log('✅ keywordInput:', keywordInput)
 
   const suggestionsCity = [
     "Current location",
@@ -39,12 +42,11 @@ const CustomInput = ({
   const [isHoveredCity, setIsHoveredCIty] = useState(false)
   const inputRefCity = useRef()
   const [cityInput, setCityInput] = useState("")
-  // console.log('✅ cityInput:', cityInput)
-  
+
   useEffect(() => {
-    // console.log("👀 useEffect()",keywordValueContext)
     setKeywordInput(keywordValueContext)
-  }, [keywordValueContext])
+    setCityInput(citiesValueContext)
+  }, [keywordValueContext, citiesValueContext])
 
   return (
     <>
@@ -126,9 +128,15 @@ const CustomInput = ({
           </SuggestionsKeywordWrapper>
         </div>
 
-        <LinkNoStyle href={`${actualRoute.pathname}/${toWhere}`}>
-          <ButtonSmall>Search</ButtonSmall>
-        </LinkNoStyle>
+        {toWhere !== "undefined" ? (
+          <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
+            <ButtonSmall>Search</ButtonSmall>
+          </LinkNoStyle>
+        ) : (
+          <LinkNoStyle href={`${router.pathname}`}>
+            <ButtonSmall>Search</ButtonSmall>
+          </LinkNoStyle>
+        )}
       </SearchComponentWrapper>
     </>
   )

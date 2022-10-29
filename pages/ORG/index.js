@@ -20,7 +20,11 @@ const ORGLanding = () => {
     citiesContext
   } = useORG_InputCtx()
   const router = useRouter()
-  console.log("router:", router.pathname)
+  // const formatRouter = router.pathname.split("/")[1]
+  const formatRouter = router.pathname
+  console.log('formatRouter:', formatRouter)
+  
+  
 
   useEffect(() => {
     setKeywordsContext("")
@@ -62,19 +66,17 @@ const ORGLanding = () => {
         setCitiesContext={setCitiesContext}
         keywordValueContext={keywordsContext}
         citiesValueContext={citiesContext}
-        actualRoute={router}
         toWhere="SpeechTherapists"
       />
 
       <OptionsWrapper landingHere="true">
         <Customdropdown
-        /* //TODO Make this component have more space if they need more space in the widht extend strings */
         
           icon={ORG_LANDING_TP}
           title="Therapeutic Providers"
           suggestions={suggestionDropdownTP}
           landingHere={true}
-          actualRoute={router}
+          actualRoute={formatRouter}
           toWhere="SpeechTherapists"
         />
         <Customdropdown
@@ -82,7 +84,7 @@ const ORGLanding = () => {
           title="Social Service Agencies"
           suggestions={suggestionDropdownSSA}
           landingHere={true}
-          actualRoute={router}
+          // actualRoute={formatRouter}
           toWhere="SpeechTherapists"
         />
         <Customdropdown
@@ -90,7 +92,7 @@ const ORGLanding = () => {
           title="Community Classes"
           suggestions={suggestionDropdownCC}
           landingHere={true}
-          actualRoute={router}
+          // actualRoute={formatRouter}
           toWhere="SpeechTherapists"
         />
       </OptionsWrapper>

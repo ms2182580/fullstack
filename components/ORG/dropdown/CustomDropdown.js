@@ -12,6 +12,7 @@ import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
+import { useRouter } from "next/router"
 
 
 const Customdropdown = ({
@@ -20,9 +21,10 @@ const Customdropdown = ({
   suggestions = [],
   landingHere = false,
   actualRoute,
-  toWhere,
+  toWhere = "undefined",
   noIcon = false
 }) => {
+  
   const { setKeywordsContext } = useORG_InputCtx()
 
   const [showDropdown, setShowDropdown] = useState(false)
@@ -80,7 +82,7 @@ const Customdropdown = ({
                 return (
                   <Fragment key={x}>
                     {isSpeechTherapist && landingHere ? (
-                      <LinkNoStyle href={`${actualRoute.pathname}/${toWhere}`}>
+                      <LinkNoStyle href={`${actualRoute}/${toWhere}`}>
                         <p
                           onClick={() => setKeywordsContext("Speech Therapist")}
                         >

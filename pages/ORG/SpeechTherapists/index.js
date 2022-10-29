@@ -20,8 +20,7 @@ const ORGSpeechTherapists = () => {
     setKeywordsContext,
     setCitiesContext
   } = useORG_InputCtx()
-  const router = useRouter()
-
+  
   const suggestionDropdownTP = [
     "Speech Therapist",
     "Behavioral Therapist",
@@ -46,7 +45,7 @@ const ORGSpeechTherapists = () => {
 
         <Breadcrumbs
           whichDisplay={[
-            ["Resource Directory", "/ORG"],
+            ["Resource Directory", "ORG"],
             ["Speech Therapist", ""]
           ]}
         />
@@ -56,8 +55,6 @@ const ORGSpeechTherapists = () => {
           setCitiesContext={setCitiesContext}
           keywordValueContext={keywordsContext}
           citiesValueContext={citiesContext}
-          actualRoute={router}
-          toWhere=""
         />
 
         <OptionsWrapper>

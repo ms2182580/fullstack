@@ -1,7 +1,7 @@
 export const HomeSvg = (props) => (
   <svg
-    width="1.25rem"
-    height="1rem"
+    width="1.25em"
+    height="1em"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -12,8 +12,8 @@ export const HomeSvg = (props) => (
 
 export const ArrowRightSvg = (props) => (
   <svg
-    width="0.735rem"
-    height="1.5rem"
+    width="0.735em"
+    height="1.5em"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -152,8 +152,8 @@ export const CurrentLocationSvg = (props) => (
 
 export const BackArrow = (props) => (
   <svg
-    width="1.25rem"
-    height="1rem"
+    width="1.25em"
+    height="1em"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
