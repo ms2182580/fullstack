@@ -133,7 +133,7 @@ export const OptionsWrapper = styled.div`
     @media (max-width:659px){
       
       &{
-        outline:2px purple solid;  
+        // outline:2px purple solid;  
       }
      
      & > *{
