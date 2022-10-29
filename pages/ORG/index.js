@@ -68,8 +68,10 @@ const ORGLanding = () => {
 
       <OptionsWrapper landingHere="true">
         <Customdropdown
+        /* //TODO Make this component have more space if they need more space in the widht extend strings */
+        
           icon={ORG_LANDING_TP}
-          title="Speech Therapist"
+          title="Therapeutic Providers"
           suggestions={suggestionDropdownTP}
           landingHere={true}
           actualRoute={router}

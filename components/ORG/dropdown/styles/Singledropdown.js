@@ -1,23 +1,29 @@
-import styled from "styled-components";
-import { NEUTRALS } from "../../../../assets/Colors";
+import styled from "styled-components"
+import { NEUTRALS } from "../../../../assets/Colors"
 
 export const SingleDropdownWrapper = styled.div`
   display: grid;
   /* grid-template-columns: 48px 1fr; */
-  grid-template-columns: ${x => x.noIcon ? "1fr" : "48px 1fr"};
+  grid-template-columns: ${(x) => (x.noIcon ? "1fr" : "48px 1fr")};
   grid-template-rows: 1fr;
   position: relative;
+  /* outline: 2px hsl(120, 80%, 75.1%) solid; */
   
+
   & > div:nth-child(1) {
-    margin-left: 0.813rem;
+    /* margin-left: 0.813rem; */
   }
 
   & > :nth-child(2) {
     display: flex;
+    align-items: flex-start;
     cursor: pointer;
     & > p {
       margin-right: 1.25rem;
       user-select: none;
+    }
+    & > span {
+      width: 2.5rem;
     }
   }
 
@@ -29,18 +35,21 @@ export const SingleDropdownWrapper = styled.div`
     background-color: ${NEUTRALS.OFF_WHITE};
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    z-index: 99;
 
     & > div:nth-child(1) {
       height: 0.375rem;
       background-color: ${NEUTRALS.BLACK};
     }
 
-    & > p, & > a > p {
+    & > p,
+    & > a > p {
       padding: 0.5rem 1.5rem;
       cursor: pointer;
     }
 
-    & > p:hover, & > a> p:hover {
+    & > p:hover,
+    & > a > p:hover {
       background-color: ${NEUTRALS.DARK_GREY};
       color: ${NEUTRALS.OFF_WHITE};
     }
@@ -49,8 +58,10 @@ export const SingleDropdownWrapper = styled.div`
       height: 0.5rem;
     }
     
+    
+    
   }
-  
+
   & > .ORGDropdownComingSoon {
     position: absolute;
     top: 100%;
@@ -60,15 +71,16 @@ export const SingleDropdownWrapper = styled.div`
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     cursor: pointer;
-    
+    z-index: 99;
+
     & > div > div:nth-child(1) {
       height: 0.375rem;
       background-color: ${NEUTRALS.BLACK};
     }
     & > div > p {
-      margin:1rem;
+      margin: 1rem;
     }
   }
-  
+
   
 `

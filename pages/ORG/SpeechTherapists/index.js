@@ -63,7 +63,7 @@ const ORGSpeechTherapists = () => {
         <OptionsWrapper>
           <Customdropdown
             icon={ORG_LANDING_TP}
-            title="Speech Therapist"
+            title="Therapeutic Providers"
             suggestions={suggestionDropdownTP}
           />
           <Customdropdown
