@@ -1,5 +1,3 @@
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
 import Customdropdown from "../../../components/ORG/dropdown/CustomDropdown"
 import { OptionsWrapper } from "../../../components/ORG/dropdown/styles/Customdropdown"
 import CustomInput from "../../../components/ORG/inputs/CustomInput"
@@ -11,7 +9,7 @@ import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { BackArrow } from "../../../assets/Icons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
-import SpeechTherapistList from "./styles/SpeechTherapistList"
+import SpeechTherapistList from "./SpeechTherapistList"
 
 const ORGSpeechTherapists = () => {
   const {
@@ -20,7 +18,7 @@ const ORGSpeechTherapists = () => {
     setKeywordsContext,
     setCitiesContext
   } = useORG_InputCtx()
-  
+
   const suggestionDropdownTP = [
     "Speech Therapist",
     "Behavioral Therapist",
@@ -74,19 +72,11 @@ const ORGSpeechTherapists = () => {
             suggestions={suggestionDropdownCC}
           />
         </OptionsWrapper>
-
-        {/* <label>Keyword here</label>
-      <input value={keywordValue} onChange={(e)=> setKeywordValue(e.target.value)}/>
-      
-      <label>Cities here</label>
-      <input value={citiesValue} onChange={(e)=> setCitiesValue(e.target.value)} /> */}
       </SpeechTherapistWraper>
-      <SpeechTherapistList>
-        <h2>Speech therapist list</h2>
-        <div>Left side filter</div>
-        <div>Right side summary of speech therapist</div>
-        <div>Buttons here</div>
-      </SpeechTherapistList>
+      
+      <SpeechTherapistList/>
+
+
     </>
   )
 }
