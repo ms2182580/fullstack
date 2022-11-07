@@ -1,10 +1,10 @@
 import { useEffect } from "react"
 import { useReducer } from "react"
-import FilterCheckboxComponent from "./FilterCheckboxComponent"
+import FilterCheckboxComponent from "../../../components/ORG/speech-therapist-list/FilterCheckboxComponent"
 
 const reducer = (state, action) => {
-  console.log('action:', action)
-  console.log('state:', state)
+  // console.log('action:', action)
+  // console.log('state:', state)
   const setFilter = action.payload[0]
   const toUpdate = action.payload[2]
 
@@ -20,8 +20,8 @@ const reducer = (state, action) => {
   } else {
     setFilter((prevStatus) => {
       let shouldStay = prevStatus[toUpdate].filter((x) => x !== action.type.x)
-      console.log("toUpdate:", toUpdate)
-      console.log("shouldStay:", shouldStay)
+      // console.log("toUpdate:", toUpdate)
+      // console.log("shouldStay:", shouldStay)
 
       return {
         ...prevStatus,
@@ -237,6 +237,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
           "Traveling",
         ]}
         title="Provider Type"
+        toUpdate="providerType"
       />
       
       

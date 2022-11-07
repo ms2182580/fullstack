@@ -32,7 +32,7 @@ const SpeechTherapistList = () => {
     transportation: [],
     providerType: []
   })
-  console.dir("🚝 IN MAIN PAGE filterData:", filterData)
+  // console.dir("🚝 IN MAIN PAGE filterData:", filterData)
 
   // console.log("pagination:", pagination)
   // console.log('data:', userFetched)
