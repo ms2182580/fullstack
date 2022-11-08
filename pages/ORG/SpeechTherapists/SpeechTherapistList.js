@@ -16,9 +16,8 @@ const SpeechTherapistList = () => {
     pagination
   )
   
-  // 👀 Add fake data to userFetched: distance, rating and so on
 
-  // console.log('userFetched:', userFetched)
+  console.log('userFetched:', userFetched)
 
   const [filterData, setFilterData] = useState({
     distance: [],
