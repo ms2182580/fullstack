@@ -15,6 +15,8 @@ const SpeechTherapistList = () => {
     "https://randomuser.me/api/?results=5&nat=us&page=",
     pagination
   )
+  
+  // 👀 Add fake data to userFetched: distance, rating and so on
 
   // console.log('userFetched:', userFetched)
 

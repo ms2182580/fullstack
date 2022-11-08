@@ -3,8 +3,6 @@ import { useReducer } from "react"
 import FilterCheckboxComponent from "../../../components/ORG/speech-therapist-list/FilterCheckboxComponent"
 
 const reducer = (state, action) => {
-  // console.log('action:', action)
-  // console.log('state:', state)
   const setFilter = action.payload[0]
   const toUpdate = action.payload[2]
 
@@ -16,10 +14,12 @@ const reducer = (state, action) => {
       }
     })
 
-    return state
+    // return state
   } else {
     setFilter((prevStatus) => {
+      // console.log('prevStatus:', prevStatus)
       let shouldStay = prevStatus[toUpdate].filter((x) => x !== action.type.x)
+      // console.log('shouldStay:', shouldStay)
       // console.log("toUpdate:", toUpdate)
       // console.log("shouldStay:", shouldStay)
 
@@ -28,8 +28,9 @@ const reducer = (state, action) => {
         [toUpdate]: [...shouldStay]
       }
     })
-    return state
+    // return state
   }
+  return state
 }
 
 // const initial = [{

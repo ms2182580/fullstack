@@ -1,3 +1,6 @@
+import { useState } from "react"
+import { useEffect } from "react"
+
 const FilterCheckboxComponent = ({
   dispatch,
   setFilterData,
@@ -5,24 +8,9 @@ const FilterCheckboxComponent = ({
   title,
   toUpdate = undefined
 }) => {
-  let toUpdateFilters =
-    typeof toUpdate !== undefined ? toUpdate : title.toLowerCase()
+  let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
+  
 
-  // console.log(
-  //   dispatch,
-  //   "\n",
-  //   setFilterData,
-  //   "\n",
-  //   categoriesToDisplay,
-  //   "\n",
-  //   title,
-  //   "\n",
-  //   toUpdate)
-  // console.log('title:', title.toLowerCase())
-
-  // console.log('toUpdateFilters:', typeof toUpdateFilters)
-  // console.log('toUpdateFilters:', toUpdateFilters)
-  // console.log('toUpdateFilters:', toUpdateFilters)
 
   return (
     <>
@@ -30,7 +18,6 @@ const FilterCheckboxComponent = ({
 
       <ul>
         {categoriesToDisplay?.map((x) => {
-          // console.log('x:', x)
 
           return (
             <li key={x}>
