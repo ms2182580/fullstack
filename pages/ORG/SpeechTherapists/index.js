@@ -30,69 +30,76 @@ const ORGSpeechTherapists = () => {
   ]
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
-  
+
   const [pagination, setPagination] = useState(1)
 
   const { data: userFetched } = useFetch(
     "https://randomuser.me/api/?results=5&nat=us&page=",
     pagination
   )
-  
-  
+
+  console.log("userFetched:", userFetched)
+
   // const userFetched = undefined
-  
-  if(userFetched === undefined){
+
+  if (userFetched === undefined) {
     return <LoadingSpeechTherapists />
   }
 
   return (
     <>
-      <SpeechTherapistWraper>
-        <div>
-          {" "}
-          <span>
-            <LinkNoStyle href="/ORG">
-              <BackArrow /> Back
-            </LinkNoStyle>
-          </span>{" "}
-        </div>
+      {userFetched !== undefined && (
+        <>
+          <SpeechTherapistWraper>
+            <div>
+              {" "}
+              <span>
+                <LinkNoStyle href="/ORG">
+                  <BackArrow /> Back
+                </LinkNoStyle>
+              </span>{" "}
+            </div>
 
-        <Breadcrumbs
-          whichDisplay={[
-            ["Resource Directory", "ORG"],
-            ["Speech Therapist", ""]
-          ]}
-        />
+            <Breadcrumbs
+              whichDisplay={[
+                ["Resource Directory", "ORG"],
+                ["Speech Therapist", ""]
+              ]}
+            />
 
-        <CustomInput
-          setKeywordsContext={setKeywordsContext}
-          setCitiesContext={setCitiesContext}
-          keywordValueContext={keywordsContext}
-          citiesValueContext={citiesContext}
-        />
+            <CustomInput
+              setKeywordsContext={setKeywordsContext}
+              setCitiesContext={setCitiesContext}
+              keywordValueContext={keywordsContext}
+              citiesValueContext={citiesContext}
+            />
 
-        <OptionsWrapper>
-          <Customdropdown
-            icon={ORG_LANDING_TP}
-            title="Therapeutic Providers"
-            suggestions={suggestionDropdownTP}
+            <OptionsWrapper>
+              <Customdropdown
+                icon={ORG_LANDING_TP}
+                title="Therapeutic Providers"
+                suggestions={suggestionDropdownTP}
+              />
+              <Customdropdown
+                icon={ORG_LANDING_SSA}
+                title="Social Service Agencies"
+                suggestions={suggestionDropdownSSA}
+              />
+              <Customdropdown
+                icon={ORG_LANDING_CC}
+                title="Community Classes"
+                suggestions={suggestionDropdownCC}
+              />
+            </OptionsWrapper>
+          </SpeechTherapistWraper>
+
+          <SpeechTherapistList
+            userFetched={userFetched}
+            pagination={pagination}
+            setPagination={setPagination}
           />
-          <Customdropdown
-            icon={ORG_LANDING_SSA}
-            title="Social Service Agencies"
-            suggestions={suggestionDropdownSSA}
-          />
-          <Customdropdown
-            icon={ORG_LANDING_CC}
-            title="Community Classes"
-            suggestions={suggestionDropdownCC}
-          />
-        </OptionsWrapper>
-      </SpeechTherapistWraper>
-      
-      <SpeechTherapistList userFetched={userFetched} pagination={pagination} setPagination={setPagination}/>
-
-
+        </>
+      )}
     </>
   )
 }

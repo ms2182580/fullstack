@@ -4,7 +4,8 @@ import EverySingleSpeechTherapistWrapper from "./styles/EverySingleSpeechTherapi
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import Image from "next/image"
 
-export const SpeechtherapistList = ({ userFetched = [], filterData }) => {
+export const SpeechtherapistList = ({ userFetched, filterData }) => {
+  console.log('userFetched:', userFetched)
   // console.log('filterData:', filterData)
   // console.dir('filterData:', filterData, userFetched)
   
@@ -26,7 +27,7 @@ export const SpeechtherapistList = ({ userFetched = [], filterData }) => {
   return (
     <EverySingleSpeechTherapistWrapper>
       Speech Therapist in list
-      {userFetched.allData.map((everySingleValue, i) => {
+      {userFetched && userFetched.allData.map((everySingleValue, i) => {
         // console.log('everySingleValue:', everySingleValue, userFetched.filters[i])
         return (
           <div
