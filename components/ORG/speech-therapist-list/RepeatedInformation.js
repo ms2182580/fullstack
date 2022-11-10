@@ -8,7 +8,7 @@ import EverySingleSpeechTherapistWrapper_Right from "./styles/EverySingleSpeechT
 import EverySingleSpeechTherapistWrapper_Left from "./styles/EverySingleSpeechTherapistWrapper_Left"
 import Image from "next/image"
 
-export const SpeechtherapistList = ({ userFetched, ORG_Filterdata_Distance, filterData }) => {
+export const SpeechtherapistList = ({ userFetched = [], ORG_Filterdata_Distance, filterData }) => {
   // console.log('filterData:', filterData)
   // console.log("userFetched:", userFetched)
   
@@ -17,6 +17,7 @@ export const SpeechtherapistList = ({ userFetched, ORG_Filterdata_Distance, filt
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
+  // console.log('userFetched:', userFetched)
   if (Object.keys(userFetched).length === 0) {
     return <LoadingSpeechTherapists />
   }

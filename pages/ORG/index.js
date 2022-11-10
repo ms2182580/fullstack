@@ -22,7 +22,7 @@ const ORGLanding = () => {
   const router = useRouter()
   // const formatRouter = router.pathname.split("/")[1]
   const formatRouter = router.pathname
-  console.log('formatRouter:', formatRouter)
+  // console.log('formatRouter:', formatRouter)
   
   
 

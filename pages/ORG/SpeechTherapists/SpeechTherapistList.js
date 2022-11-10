@@ -17,7 +17,9 @@ const SpeechTherapistList = () => {
   )
   
 
-  console.log('userFetched:', userFetched)
+  // console.log('userFetched:', userFetched)
+  
+  // console.log('data:', data)
 
   const [filterData, setFilterData] = useState({
     distance: [],
