@@ -1,4 +1,4 @@
-const FinalButtons = ({setPagination, pagination}) => {
+const SpeechtherapistFinalButtons = ({setPagination, pagination}) => {
   return (
     <div>
         <button
@@ -19,4 +19,4 @@ const FinalButtons = ({setPagination, pagination}) => {
   );
 }
 
-export default FinalButtons;
+export default SpeechtherapistFinalButtons;

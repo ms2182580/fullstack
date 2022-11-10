@@ -1,5 +1,5 @@
 import { useReducer } from "react"
-import FilterCheckboxComponent from "../../../components/ORG/speech-therapist-list/FilterCheckboxComponent"
+import FilterCheckboxComponent from "../../../components/ORG/speech-therapists/FilterCheckboxComponent"
 
 const reducer = (state, action) => {
   const setFilter = action.payload[0]
@@ -30,11 +30,6 @@ const reducer = (state, action) => {
   }
   return state
 }
-
-// const initial = [{
-//   distance:[],
-//   rating:[]
-// }]
 
 const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
   // console.log('🍅filterData:', filterData)

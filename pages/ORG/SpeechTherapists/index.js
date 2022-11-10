@@ -9,10 +9,12 @@ import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { BackArrow } from "../../../assets/Icons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
-import SpeechTherapistList from "./SpeechTherapistList"
+// import SpeechTherapistList from "./SpeechTherapistList"
 import { useState } from "react"
 import { useFetch } from "../../../utils/ORG_dummydata_speechtherapists"
-import LoadingSpeechTherapists from "../../../components/ORG/speech-therapist-list/LoadingSpeechTherapists"
+import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
+// import AllSpeechtherapists from "../../../components/ORG/speech-therapists/AllSpeechtherapists"
+import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/AllSpeechtherapists"
 
 const ORGSpeechTherapists = () => {
   const {
@@ -93,7 +95,7 @@ const ORGSpeechTherapists = () => {
             </OptionsWrapper>
           </SpeechTherapistWraper>
 
-          <SpeechTherapistList
+          <STFiltersTherapistsButtons
             userFetched={userFetched}
             pagination={pagination}
             setPagination={setPagination}

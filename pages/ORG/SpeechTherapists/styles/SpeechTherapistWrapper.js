@@ -1,8 +1,6 @@
 import styled from "styled-components"
 
 const SpeechTherapistWraper = styled.div`
-  /* border:7px crimson solid; */
-
   margin: 2rem 6rem;
 
   & > div:nth-child(1) {

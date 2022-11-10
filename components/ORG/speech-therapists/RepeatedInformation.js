@@ -5,17 +5,9 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_I
 import Image from "next/image"
 
 export const SpeechtherapistList = ({ userFetched, filterData }) => {
-  console.log('userFetched:', userFetched)
-  // console.log('filterData:', filterData)
-  // console.dir('filterData:', filterData, userFetched)
-  
+  console.log("userFetched:", userFetched)
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
-
-  // console.log('userFetched:', userFetched)
-  // if (Object.keys(userFetched).length === 0) {
-  //   return <LoadingSpeechTherapists />
-  // }
 
   const goToDynamic = (e, everySingleValue) => {
     setSpeechtherapist([everySingleValue])
@@ -23,46 +15,51 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
     router.push(toWhere)
   }
 
-
   return (
     <EverySingleSpeechTherapistWrapper>
-      Speech Therapist in list
-      {userFetched && userFetched.allData.map((everySingleValue, i) => {
-        // console.log('everySingleValue:', everySingleValue, userFetched.filters[i])
-        return (
-          <div
-            key={`${everySingleValue.id.name}${everySingleValue.id.value}`}
-          >
-            <div>
-              <Image
-                src={everySingleValue.picture.large}
-                layout="responsive"
-                width="500"
-                height="500"
-                alt={`Portrait of ${everySingleValue.name.first} ${everySingleValue.name.last} `}
-              />
+      <div>
+        <p>Showing X from X results</p> <span>Sort by </span>
+      </div>
+
+      {userFetched &&
+        userFetched.allData.map((everySingleValue, i) => {
+          return (
+            <div
+              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}
+            >
+              <div>
+                <Image
+                  src={everySingleValue.picture.large}
+                  layout="responsive"
+                  width="500"
+                  height="500"
+                  alt={`Portrait of ${everySingleValue.name.first} ${everySingleValue.name.last} `}
+                />
+                <div>Phone: {everySingleValue.phone}</div>
+              </div>
+              <div>
+                <p>
+                  Name: {everySingleValue.name.first}{" "}
+                  {everySingleValue.name.last}
+                </p>
+
+                
+                <div>Some data here</div>
+                <button onClick={(e) => goToDynamic(e, everySingleValue)}>
+                  Button here
+                </button>
+              </div>
             </div>
-            <div>
-              <p>Name: {everySingleValue.name.first} {everySingleValue.name.last}</p>
-            
-            <div>Phone: {everySingleValue.phone}</div>
-            <div>Some data here</div>
-            <button onClick={(e) => goToDynamic(e, everySingleValue)}>
-              Button here
-            </button>
-            </div>
-          </div>
-        )
-      })}
+          )
+        })}
     </EverySingleSpeechTherapistWrapper>
   )
-
 }
 
 // export const SpeechtherapistDetail = () => {
 //   const {speechtherapist} = useORG_Ctx_IndividualSpeechtherapist()
 //   // console.log('speechtherapist:', speechtherapist)
-  
+
 //   if(speechtherapist === ""){
 //     return(
 //       <>
@@ -70,7 +67,7 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
 //       </>
 //     )
 //   }
-  
+
 //   return (
 //     <>
 //      {speechtherapist.map(x => (
@@ -80,7 +77,7 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
 //      ))}
 //     </>
 //   )
-  
+
 // }
 
 // export const LeftPartST = ({ userFetched }) => {

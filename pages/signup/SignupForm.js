@@ -67,7 +67,7 @@ const SignupForm = () => {
   //     // if (isUserAlreayCreated === null) {
   //     //   let valueToAdd = {
   //     //     isLogin: true,
-  //     //     "Speech-Therapists-saved": []
+  //     //     "speech-therapistss-saved": []
   //     //   }
   //     //   localStorage.setItem(keyToPush, JSON.stringify(valueToAdd))
   //     // }
