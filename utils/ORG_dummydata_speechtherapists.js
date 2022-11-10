@@ -17,7 +17,7 @@ import {
 export const useFetch = (url, pagination) => {
   // This code is for debuggin purposes. When is uncommented you have to comment the code below of them to display always the loading state
   
-  // const data = {}
+  // const data = {undefined}
   // return {data}
   
   

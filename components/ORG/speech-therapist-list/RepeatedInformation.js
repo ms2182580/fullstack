@@ -12,9 +12,9 @@ export const SpeechtherapistList = ({ userFetched = [], filterData }) => {
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
   // console.log('userFetched:', userFetched)
-  if (Object.keys(userFetched).length === 0) {
-    return <LoadingSpeechTherapists />
-  }
+  // if (Object.keys(userFetched).length === 0) {
+  //   return <LoadingSpeechTherapists />
+  // }
 
   const goToDynamic = (e, everySingleValue) => {
     setSpeechtherapist([everySingleValue])
@@ -27,7 +27,7 @@ export const SpeechtherapistList = ({ userFetched = [], filterData }) => {
     <EverySingleSpeechTherapistWrapper>
       Speech Therapist in list
       {userFetched.allData.map((everySingleValue, i) => {
-        console.log('everySingleValue:', everySingleValue, userFetched.filters[i])
+        // console.log('everySingleValue:', everySingleValue, userFetched.filters[i])
         return (
           <div
             key={`${everySingleValue.id.name}${everySingleValue.id.value}`}

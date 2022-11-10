@@ -10,6 +10,9 @@ import { BackArrow } from "../../../assets/Icons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
 import SpeechTherapistList from "./SpeechTherapistList"
+import { useState } from "react"
+import { useFetch } from "../../../utils/ORG_dummydata_speechtherapists"
+import LoadingSpeechTherapists from "../../../components/ORG/speech-therapist-list/LoadingSpeechTherapists"
 
 const ORGSpeechTherapists = () => {
   const {
@@ -25,9 +28,22 @@ const ORGSpeechTherapists = () => {
     "Physical Therapist",
     "Occupational Therapist"
   ]
-
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
+  
+  const [pagination, setPagination] = useState(1)
+
+  const { data: userFetched } = useFetch(
+    "https://randomuser.me/api/?results=5&nat=us&page=",
+    pagination
+  )
+  
+  
+  // const userFetched = undefined
+  
+  if(userFetched === undefined){
+    return <LoadingSpeechTherapists />
+  }
 
   return (
     <>
@@ -74,7 +90,7 @@ const ORGSpeechTherapists = () => {
         </OptionsWrapper>
       </SpeechTherapistWraper>
       
-      <SpeechTherapistList/>
+      <SpeechTherapistList userFetched={userFetched} pagination={pagination} setPagination={setPagination}/>
 
 
     </>

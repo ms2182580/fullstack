@@ -6,14 +6,15 @@ import { ORG_Filterdata_Distance } from "../../../utils/ORG_Filterdata"
 import SpeechTherapistListFilter from "./SpeechTherapistListFilter"
 import FinalButtons from "./FinalButtons"
 import { useEffect } from "react"
+import LoadingSpeechTherapists from "../../../components/ORG/speech-therapist-list/LoadingSpeechTherapists"
 
-const SpeechTherapistList = () => {
-  const [pagination, setPagination] = useState(1)
+const SpeechTherapistList = ({userFetched, pagination, setPagination}) => {
+  // const [pagination, setPagination] = useState(1)
 
-  const { data: userFetched } = useFetch(
-    "https://randomuser.me/api/?results=5&nat=us&page=",
-    pagination
-  )
+  // const { data: userFetched } = useFetch(
+  //   "https://randomuser.me/api/?results=5&nat=us&page=",
+  //   pagination
+  // )
   
   const [filterData, setFilterData] = useState({
     distance: [],
@@ -29,9 +30,19 @@ const SpeechTherapistList = () => {
     transportation: [],
     providerType: []
   })
+  
+  console.log('🚝 filterData:', filterData)
+  console.log('userFetched:', userFetched)
+  
+  // if(userFetched===undefined){
+  //   return <LoadingSpeechTherapists />
+  // }
 
   return (
     <SpeechTherapistListWrapper>
+      
+      
+      
       <SpeechTherapistListFilter
         setFilterData={setFilterData}
         filterData={filterData}
