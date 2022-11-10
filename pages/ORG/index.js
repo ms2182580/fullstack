@@ -20,9 +20,7 @@ const ORGLanding = () => {
     citiesContext
   } = useORG_InputCtx()
   const router = useRouter()
-  // const formatRouter = router.pathname.split("/")[1]
   const formatRouter = router.pathname
-  // console.log('formatRouter:', formatRouter)
   
   
 

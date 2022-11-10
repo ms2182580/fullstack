@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useFetch } from "../../../utils/ORG_dummydata_speechthrapists"
+import { useFetch } from "../../../utils/ORG_dummydata_speechtherapists"
 import SpeechTherapistListWrapper from "./styles/SpeechTherapistList"
 import { SpeechtherapistList } from "../../../components/ORG/speech-therapist-list/RepeatedInformation"
 import { ORG_Filterdata_Distance } from "../../../utils/ORG_Filterdata"
@@ -9,17 +9,15 @@ import { useEffect } from "react"
 
 const SpeechTherapistList = () => {
   const [pagination, setPagination] = useState(1)
-  const [allData, setAllData] = useState()
+  // const [allData, setAllData] = useState()
 
   const { data: userFetched } = useFetch(
     "https://randomuser.me/api/?results=5&nat=us&page=",
     pagination
   )
   
+  console.log('userFetched:', userFetched)
 
-  // console.log('userFetched:', userFetched)
-  
-  // console.log('data:', data)
 
   const [filterData, setFilterData] = useState({
     distance: [],
