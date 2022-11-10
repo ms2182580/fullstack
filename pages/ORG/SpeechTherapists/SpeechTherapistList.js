@@ -9,16 +9,12 @@ import { useEffect } from "react"
 
 const SpeechTherapistList = () => {
   const [pagination, setPagination] = useState(1)
-  // const [allData, setAllData] = useState()
 
   const { data: userFetched } = useFetch(
     "https://randomuser.me/api/?results=5&nat=us&page=",
     pagination
   )
   
-  console.log('userFetched:', userFetched)
-
-
   const [filterData, setFilterData] = useState({
     distance: [],
     rating: [],
@@ -33,11 +29,6 @@ const SpeechTherapistList = () => {
     transportation: [],
     providerType: []
   })
-  // console.dir("🚝 IN MAIN PAGE filterData:", filterData)
-
-  // console.log("pagination:", pagination)
-  // console.log('data:', userFetched)
-  // console.log('ORG_Filterdata_Distance:', ORG_Filterdata_Distance)
 
   return (
     <SpeechTherapistListWrapper>

@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
-import { SpeechtherapistComponent, SpeechtherapistDetail } from "../../../components/ORG/speech-therapist-list/RepeatedInformation";
+import { SpeechtherapistComponent } from "../../../components/ORG/speech-therapist-list/RepeatedInformation";
+import { SpeechtherapistDetail } from "../../../components/ORG/speech-therapist-list/SpeechtherapistDetail";
 import {useORG_Ctx_IndividualSpeechtherapist} from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
 
 
@@ -24,7 +25,7 @@ const SPDetail = () => {
     router.back()
   }
   
-  console.log('router:',router, router.query.SPDetail)
+  // console.log('router:',router, router.query.SPDetail)
   return (
     <div>
       <SpeechtherapistDetail/>

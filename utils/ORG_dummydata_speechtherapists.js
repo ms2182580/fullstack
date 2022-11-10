@@ -15,6 +15,12 @@ import {
 } from "./ORG_Filterdata"
 
 export const useFetch = (url, pagination) => {
+  // This code is for debuggin purposes. When is uncommented you have to comment the code below of them to display always the loading state
+  
+  // const data = {}
+  // return {data}
+  
+  
   const [data, setData] = useState()
   useEffect(() => {
     let getData = { actualPage: "", allData: "", filters: [] }
@@ -60,6 +66,5 @@ export const useFetch = (url, pagination) => {
         setData(getData)
       })
   }, [url, pagination])
-
   return { data }
 }

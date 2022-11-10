@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useReducer } from "react"
 import FilterCheckboxComponent from "../../../components/ORG/speech-therapist-list/FilterCheckboxComponent"
 
@@ -14,7 +13,6 @@ const reducer = (state, action) => {
       }
     })
 
-    // return state
   } else {
     setFilter((prevStatus) => {
       // console.log('prevStatus:', prevStatus)

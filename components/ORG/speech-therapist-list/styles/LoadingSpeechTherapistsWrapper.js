@@ -1,7 +1,28 @@
 import styled from "styled-components";
+import { NEUTRALS } from "../../../../assets/Colors";
 
 const LoadingSpeechTherapistsWrapper = styled.div`
- background-color: crimson;
+ background-color: ${NEUTRALS.OFF_WHITE};
+ display: grid;
+ align-self: start;
+ padding-bottom: 4.978rem;
+ & > * {
+  justify-self: center;
+ }
+ 
+ & > :nth-child(1){
+  margin-bottom: 1.5rem;
+ }
+ 
+ & > :nth-child(2){
+  text-align: center;
+  margin-bottom: 3rem;
+ }
+ & > :nth-child(3){
+  width:10rem;
+  margin-bottom: 3rem;
+ }
+ 
 `
 
 export default LoadingSpeechTherapistsWrapper
