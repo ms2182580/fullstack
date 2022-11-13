@@ -36,7 +36,7 @@ const ORGSpeechTherapists = () => {
   const [pagination, setPagination] = useState(1)
 
   const { data: userFetched } = useFetch(
-    "https://randomuser.me/api/?results=5&nat=us&page=",
+    "https://randomuser.me/api/?results=3&nat=us&page=",
     pagination
   )
 

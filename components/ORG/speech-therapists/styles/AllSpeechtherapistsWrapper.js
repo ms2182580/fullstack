@@ -5,7 +5,8 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
   background-color: ${NEUTRALS.LIGHT_GREY};
 
   & > :nth-child(1) {
-    margin: 2rem 6rem;
+    
+    padding: 2rem 6rem;
     display: grid;
 
     grid-template-columns: auto;

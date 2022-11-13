@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { SpeechtherapistList } from "../../../components/ORG/speech-therapists/RepeatedInformation"
+// import { SpeechtherapistList } from "../../../components/ORG/speech-therapists/RepeatedInformation"
 import SpeechTherapistListFilter from "./SpeechTherapistListFilter"
 import FinalButtons from "./SpeechtherapistFinalButtons"
 import STFiltersTherapistsButtonsWrapper from "./styles/AllSpeechtherapistsWrapper"
+import { SpeechtherapistList } from "./EverySingleSpeechTherapist"
 
 const STFiltersTherapistsButtons = ({
   userFetched,
