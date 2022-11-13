@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
-import { SpeechtherapistComponent } from "../../../components/ORG/speech-therapists/RepeatedInformation";
 import { SpeechtherapistDetail } from "../../../components/ORG/speech-therapists/SpeechtherapistDetail";
 import {useORG_Ctx_IndividualSpeechtherapist} from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
 
