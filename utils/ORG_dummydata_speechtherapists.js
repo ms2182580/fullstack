@@ -60,6 +60,7 @@ export const useFetch = (url, pagination) => {
               sessionType:sessionType,
               transportation:transportation,
               providerType:providerType,
+              CCC_SLP: "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA)."
             }
           ]
         }

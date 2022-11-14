@@ -1,5 +1,6 @@
 import { useReducer } from "react"
-import FilterCheckboxComponent from "../../../components/ORG/speech-therapists/FilterCheckboxComponent"
+import FilterCheckboxComponent from "./FilterCheckboxComponent.js"
+import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
 
 const reducer = (state, action) => {
   const setFilter = action.payload[0]
@@ -12,7 +13,6 @@ const reducer = (state, action) => {
         [toUpdate]: [...prevStatus[toUpdate], action.type.x]
       }
     })
-
   } else {
     setFilter((prevStatus) => {
       // console.log('prevStatus:', prevStatus)
@@ -38,48 +38,47 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
 
   // console.log("🔰Render")
 
-  const handleDistance = (e) => {
-    if (e.target.checked) {
-      setFilterData((prevStatus) => {
-        return {
-          ...prevStatus,
-          distance: [...prevStatus.distance, e.target.name]
-        }
-      })
-    } else {
-      setFilterData((prevStatus) => {
-        let shouldStay = prevStatus.distance.filter((x) => x !== e.target.name)
+  // const handleDistance = (e) => {
+  //   if (e.target.checked) {
+  //     setFilterData((prevStatus) => {
+  //       return {
+  //         ...prevStatus,
+  //         distance: [...prevStatus.distance, e.target.name]
+  //       }
+  //     })
+  //   } else {
+  //     setFilterData((prevStatus) => {
+  //       let shouldStay = prevStatus.distance.filter((x) => x !== e.target.name)
 
-        return {
-          ...prevStatus,
-          distance: [...shouldStay]
-        }
-      })
-    }
-  }
+  //       return {
+  //         ...prevStatus,
+  //         distance: [...shouldStay]
+  //       }
+  //     })
+  //   }
+  // }
+  // const handleDiagnoses = (e) => {
+  //   if (e.target.checked) {
+  //     setFilterData((prevStatus) => {
+  //       return {
+  //         ...prevStatus,
+  //         diagnoses: [...prevStatus.diagnoses, e.target.name]
+  //       }
+  //     })
+  //   } else {
+  //     setFilterData((prevStatus) => {
+  //       let shouldStay = prevStatus.diagnoses.filter((x) => x !== e.target.name)
 
-  const handleDiagnoses = (e) => {
-    if (e.target.checked) {
-      setFilterData((prevStatus) => {
-        return {
-          ...prevStatus,
-          diagnoses: [...prevStatus.diagnoses, e.target.name]
-        }
-      })
-    } else {
-      setFilterData((prevStatus) => {
-        let shouldStay = prevStatus.diagnoses.filter((x) => x !== e.target.name)
-
-        return {
-          ...prevStatus,
-          diagnoses: [...shouldStay]
-        }
-      })
-    }
-  }
+  //       return {
+  //         ...prevStatus,
+  //         diagnoses: [...shouldStay]
+  //       }
+  //     })
+  //   }
+  // }
 
   return (
-    <div>
+    <SpeechTherapistListFilterWrapper>
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
@@ -91,17 +90,11 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         ]}
         title="Distance"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
-        categoriesToDisplay={[
-          "1 star",
-          "2 star",
-          "3 star",
-          "4 star",
-          "5 star",
-        ]}
+        categoriesToDisplay={["1 star", "2 star", "3 star", "4 star", "5 star"]}
         title="Rating"
       />
       <FilterCheckboxComponent
@@ -117,7 +110,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         ]}
         title="Diagnoses"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
@@ -129,12 +122,12 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
           "12-21 years",
           "22-40 years",
           "41-64 years",
-          "65+ years",
+          "65+ years"
         ]}
         title="Ages Served"
         toUpdate="agesServed"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
@@ -143,11 +136,11 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
           "Spanish",
           "Chinese",
           "Tagalog",
-          "French",
+          "French"
         ]}
         title="Languages"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
@@ -156,25 +149,20 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
           "3+ Years",
           "5+ Years",
           "7+ Years",
-          "10+ Years",
+          "10+ Years"
         ]}
         title="Years of Practice"
         toUpdate="yearsOfPractice"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
-        categoriesToDisplay={[
-          "Clinic",
-          "Home",
-          "School",
-          "Community",
-        ]}
+        categoriesToDisplay={["Clinic", "Home", "School", "Community"]}
         title="Service Setting"
         toUpdate="serviceSetting"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
@@ -182,33 +170,27 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
           "Medicaid",
           "Insurance",
           "Private Pay",
-          "DOE approved",
+          "DOE approved"
         ]}
         title="Accepts"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
-        categoriesToDisplay={[
-          "Virtual",
-          "In-Person",
-        ]}
+        categoriesToDisplay={["Virtual", "In-Person"]}
         title="Meeting Format"
         toUpdate="meetingFormat"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
-        categoriesToDisplay={[
-          "Individual",
-          "Group",
-        ]}
+        categoriesToDisplay={["Individual", "Group"]}
         title="Session Type"
         toUpdate="sessionType"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
@@ -217,26 +199,19 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
           "Near Bus",
           "Meter Parking",
           "Street Parking",
-          "Parking Lot",
+          "Parking Lot"
         ]}
         title="Transportation"
       />
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
-        categoriesToDisplay={[
-          "Independent",
-          "Agency-based",
-          "Traveling",
-        ]}
+        categoriesToDisplay={["Independent", "Agency-based", "Traveling"]}
         title="Provider Type"
         toUpdate="providerType"
       />
-      
-      
-
-    </div>
+    </SpeechTherapistListFilterWrapper>
   )
 }
 

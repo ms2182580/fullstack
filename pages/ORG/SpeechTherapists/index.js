@@ -40,10 +40,6 @@ const ORGSpeechTherapists = () => {
     pagination
   )
 
-  console.log("userFetched:", userFetched)
-
-  // const userFetched = undefined
-
   if (userFetched === undefined) {
     return <LoadingSpeechTherapists />
   }

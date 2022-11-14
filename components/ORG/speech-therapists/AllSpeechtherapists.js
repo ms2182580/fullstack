@@ -25,8 +25,8 @@ const STFiltersTherapistsButtons = ({
     providerType: []
   })
 
-  console.log("🚝 filterData:", filterData)
-  console.log("userFetched:", userFetched)
+  // console.log("🚝 filterData:", filterData)
+  // console.log("userFetched:", userFetched)
 
   // if(userFetched===undefined){
   //   return <LoadingSpeechTherapists />

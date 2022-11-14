@@ -1,3 +1,5 @@
+import FilterCheckboxComponentWrapper from "./styles/FilterCheckboxComponentWrapper.js"
+
 const FilterCheckboxComponent = ({
   dispatch,
   setFilterData,
@@ -7,32 +9,39 @@ const FilterCheckboxComponent = ({
 }) => {
   let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
 
-
-
   return (
     <>
-      <h3>{title}</h3>
+      <div>
+        <p>Filter by</p>
+        <p>Clear all</p>
+      </div>
 
-      <ul>
-        {categoriesToDisplay?.map((x) => {
-          return (
-            <li key={x}>
-              <input
-                type="checkbox"
-                name={x}
-                onClick={(e) => {
-                  
-                  dispatch({
-                    type: { x },
-                    payload: [setFilterData, e, toUpdateFilters]
-                  })
-                }}
-              />
-              {x}
-            </li>
-          )
-        })}
-      </ul>
+      <FilterCheckboxComponentWrapper>
+        <div>
+          <h3>{title}</h3>
+          <span>ICON</span>
+        </div>
+
+        <ul>
+          {categoriesToDisplay?.map((x) => {
+            return (
+              <li key={x}>
+                <input
+                  type="checkbox"
+                  name={x}
+                  onClick={(e) => {
+                    dispatch({
+                      type: { x },
+                      payload: [setFilterData, e, toUpdateFilters]
+                    })
+                  }}
+                />
+                {x}
+              </li>
+            )
+          })}
+        </ul>
+      </FilterCheckboxComponentWrapper>
     </>
   )
 }
