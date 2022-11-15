@@ -7,6 +7,7 @@ import { SpeechtherapistList } from "./EverySingleSpeechTherapist"
 
 const STFiltersTherapistsButtons = ({
   userFetched,
+  filtersST,
   pagination,
   setPagination
 }) => {
@@ -42,6 +43,7 @@ const STFiltersTherapistsButtons = ({
 
         <SpeechtherapistList
           userFetched={userFetched}
+          filtersST={filtersST}
           filterData={filterData}
         />
 

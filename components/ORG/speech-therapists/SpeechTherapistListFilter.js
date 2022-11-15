@@ -15,67 +15,19 @@ const reducer = (state, action) => {
     })
   } else {
     setFilter((prevStatus) => {
-      // console.log('prevStatus:', prevStatus)
       let shouldStay = prevStatus[toUpdate].filter((x) => x !== action.type.x)
-      // console.log('shouldStay:', shouldStay)
-      // console.log("toUpdate:", toUpdate)
-      // console.log("shouldStay:", shouldStay)
 
       return {
         ...prevStatus,
         [toUpdate]: [...shouldStay]
       }
     })
-    // return state
   }
   return state
 }
 
 const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
-  // console.log('🍅filterData:', filterData)
   const [state, dispatch] = useReducer(reducer, filterData)
-  // console.log("🍅state:", state)
-
-  // console.log("🔰Render")
-
-  // const handleDistance = (e) => {
-  //   if (e.target.checked) {
-  //     setFilterData((prevStatus) => {
-  //       return {
-  //         ...prevStatus,
-  //         distance: [...prevStatus.distance, e.target.name]
-  //       }
-  //     })
-  //   } else {
-  //     setFilterData((prevStatus) => {
-  //       let shouldStay = prevStatus.distance.filter((x) => x !== e.target.name)
-
-  //       return {
-  //         ...prevStatus,
-  //         distance: [...shouldStay]
-  //       }
-  //     })
-  //   }
-  // }
-  // const handleDiagnoses = (e) => {
-  //   if (e.target.checked) {
-  //     setFilterData((prevStatus) => {
-  //       return {
-  //         ...prevStatus,
-  //         diagnoses: [...prevStatus.diagnoses, e.target.name]
-  //       }
-  //     })
-  //   } else {
-  //     setFilterData((prevStatus) => {
-  //       let shouldStay = prevStatus.diagnoses.filter((x) => x !== e.target.name)
-
-  //       return {
-  //         ...prevStatus,
-  //         diagnoses: [...shouldStay]
-  //       }
-  //     })
-  //   }
-  // }
 
   return (
     <SpeechTherapistListFilterWrapper>

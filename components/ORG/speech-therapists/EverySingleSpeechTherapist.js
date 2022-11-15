@@ -13,12 +13,13 @@ import { HeaderEverySingleSP } from "./HeaderEverySingleSP.js"
 import {
   EverySingleSpeechTherapist_Phone,
   EverySingleSpeechTherapist_Email,
-  EverySingleSpeechTherapist_Location,
+  EverySingleSpeechTherapist_Location
 } from "./SingleSpeechtherapistComponents_Left.js"
 import { FriendlyDiagnoses } from "./SingleSpeechtherapistComponents_Right"
 import { Verified } from "./Verified"
 
-export const SpeechtherapistList = ({ userFetched, filterData }) => {
+export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
+  // console.log('filterData:', filterData)
   // console.log("userFetched:", userFetched)
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
@@ -33,21 +34,33 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
     <EverySingleSpeechTherapistWrapper>
       <HeaderEverySingleSP />
 
-      {userFetched &&
+      {userFetched && Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
           // console.log("userFetched.filters[i]:", userFetched.filters[i])
 
-          let accepts = userFetched.filters[i].accepts.join(", ")
-          let agesServed = userFetched.filters[i].agesServed.join(", ")
-          let diagnoses = userFetched.filters[i].diagnoses.map((x) => {
+          let accepts = filtersST[i].accepts.join(", ")
+          // console.log('accepts:', accepts)
+          // let accepts = userFetched.filters[i].accepts.join(", ")
+          // let agesServed = userFetched.filters[i].agesServed.join(", ")
+          let agesServed = filtersST[i].agesServed.join(", ")
+          // let diagnoses = userFetched.filters[i].diagnoses.map((x) => {
+          //   if (x !== "Other") return `${x} Friendly`
+          //   return x
+          // })
+          let diagnoses = filtersST[i].diagnoses.map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
-          let languages = userFetched.filters[i].languages.join(", ")
-          let meetingFormat = userFetched.filters[i].meetingFormat.join(", ")
-          let serviceSetting = userFetched.filters[i].serviceSetting.join(", ")
-          let sessionType = userFetched.filters[i].sessionType.join(", ")
-          let transportation = userFetched.filters[i].transportation.join(", ")
+          // let languages = userFetched.filters[i].languages.join(", ")
+          let languages = filtersST[i].languages.join(", ")
+          // let meetingFormat = userFetched.filters[i].meetingFormat.join(", ")
+          let meetingFormat = filtersST[i].meetingFormat.join(", ")
+          // let serviceSetting = userFetched.filters[i].serviceSetting.join(", ")
+          let serviceSetting = filtersST[i].serviceSetting.join(", ")
+          // let sessionType = userFetched.filters[i].sessionType.join(", ")
+          let sessionType = filtersST[i].sessionType.join(", ")
+          // let transportation = userFetched.filters[i].transportation.join(", ")
+          let transportation = filtersST[i].transportation.join(", ")
 
           return (
             <EverySingleSpeechTherapistWrapper_Card
@@ -74,7 +87,7 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
                   />
                   <EverySingleSpeechTherapist_Location
                     location={everySingleValue.location}
-                    howFar={userFetched.filters[i].distance}
+                    howFar={filtersST[i].distance}
                   />
                 </EverySPT_LeftInfo>
               </EverySingleSpeechTherapistWrapper_Left>
@@ -90,7 +103,7 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
                 <div>Tool tip</div>
 
                 <div>
-                  <strong>Rating :</strong> {userFetched.filters[i].rating}{" "}
+                  <strong>Rating :</strong> {filtersST[i].rating}{" "}
                   stars
                 </div>
 
@@ -104,7 +117,7 @@ export const SpeechtherapistList = ({ userFetched, filterData }) => {
                 </div>
                 <div>
                   <strong>Years of practice</strong>{" "}
-                  {userFetched.filters[i].yearsOfPractice}
+                  {filtersST[i].yearsOfPractice}
                 </div>
                 <div>
                   <strong>Service Setting:</strong> {serviceSetting}

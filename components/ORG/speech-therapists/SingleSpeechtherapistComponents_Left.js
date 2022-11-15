@@ -33,7 +33,6 @@ export const EverySingleSpeechTherapist_Email = ({ email }) => {
 }
 
 export const EverySingleSpeechTherapist_Location = ({ location, howFar }) => {
-  console.log("location:", location)
   return (
     <EverySingleSpeechTherapist_LocationWrapper>
       <div>
