@@ -95,7 +95,7 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
               </EverySingleSpeechTherapistWrapper_Left>
 
               <EverySingleSpeechTherapistWrapper_Right>
-                <BookmarkSaveSTSvg />
+                <BookmarkSaveSTSvg tabIndex={0}  />
 
                 <H3>
                   {everySingleValue.name.first} {everySingleValue.name.last}
@@ -108,12 +108,13 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
                 <FriendlyDiagnoses diagnoses={diagnoses} />
 
                 <div>
-                  <P bold>Ages served:</P> <P>{agesServed}</P>
+                  <P bold>Ages served:</P> {agesServed}
                 </div>
 
                 <div>
-                  <P bold>Languages:</P> {languages}
+                  <P bold>Languages: </P> <span>{languages}</span>
                 </div>
+                
                 <div>
                   <P bold>Years of Practice:</P> {filtersST[i].yearsOfPractice}
                 </div>

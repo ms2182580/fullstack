@@ -18,7 +18,8 @@ const BtnDefault = styled.button`
   color: ${(x) =>
     x.secondary ? COLORS.Secondary.TextColor : COLORS.Primary.TextColor};
 
-  border: ${(x) => (x.secondary ? `2px ${COLORS.Secondary.TextColor} solid`  : "none")};
+  border: ${(x) =>
+    x.secondary ? `2px ${COLORS.Secondary.TextColor} solid` : "none"};
 
   font-weight: ${FontsWeights.SEMIBOLD_600};
   cursor: pointer;

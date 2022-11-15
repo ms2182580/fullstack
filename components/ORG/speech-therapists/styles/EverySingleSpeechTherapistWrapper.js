@@ -10,9 +10,10 @@ export const EverySingleSpeechTherapistWrapper_Card = styled.div`
   /* background-color: purple; */
   display: grid;
   grid-template-columns: 1fr 2fr;
+  /* grid-template-rows: auto; */
   grid-template-areas: "leftPart rightPart";
 
-  /* border:purple 1px solid; */
+  /* border:purple 8px solid; */
   margin-bottom: 2rem;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
   /* border-radius: 8px; */
@@ -57,7 +58,6 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   padding-top: 42px;
   padding-left: 24px;
-  /* padding-left: 3rem; */
   position: relative;
 
   & > :nth-child(1) {
@@ -154,11 +154,15 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
     }
   }
   
+  
   & > :last-child{
     display:flex;
     justify-content: end;
     margin-right: 24px;
     margin-bottom: 40px;
+    position:absolute;
+    bottom:-1px;
+    right:-1px;
   }
   
 `
