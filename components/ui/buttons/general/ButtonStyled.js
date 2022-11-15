@@ -11,13 +11,14 @@ const BtnDefault = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: none;
   border-radius: ${SharedVariables.BorderRadius};
   background-color: ${(x) =>
-    x.secondary ? `${COLORS.Secondary.BgColor}` : `${COLORS.Primary.BgColor}`};
+    x.secondary ? COLORS.Secondary.BgColor : COLORS.Primary.BgColor};
 
   color: ${(x) =>
     x.secondary ? COLORS.Secondary.TextColor : COLORS.Primary.TextColor};
+
+  border: ${(x) => (x.secondary ? `2px ${COLORS.Secondary.TextColor} solid`  : "none")};
 
   font-weight: ${FontsWeights.SEMIBOLD_600};
   cursor: pointer;
@@ -47,7 +48,6 @@ const BtnDefault = styled.button`
 `
 
 export const BtnSmall = styled(BtnDefault)`
-  /* width: 152px; */
   font-size: 16px;
   height: 48px;
   padding: 8px 48px;

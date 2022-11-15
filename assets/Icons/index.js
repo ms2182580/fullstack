@@ -376,3 +376,33 @@ export const QuestionTooltip_STSvg = (props) => (
     />
   </svg>
 )
+
+export const StartFullSvg = (props) => (
+  <svg
+    width="16px"
+    height="16px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M8 12.859 12.944 16l-1.312-5.92L16 6.097l-5.752-.514L8 0 5.752 5.583 0 6.097l4.368 3.983L3.056 16 8 12.859Z"
+      fill="#00080B"
+    />
+  </svg>
+)
+
+export const StartEmptySvg = (props) => (
+  <svg
+    width="16px"
+    height="16px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m16 6.097-5.752-.522L8 0 5.752 5.583 0 6.097l4.368 3.983L3.056 16 8 12.859 12.944 16l-1.304-5.92L16 6.097Zm-8 5.187-3.008 1.912.8-3.604-2.656-2.426 3.504-.32L8 3.453l1.368 3.402 3.504.32L10.216 9.6l.8 3.604L8 11.284Z"
+      fill="#00080B"
+    />
+  </svg>
+)

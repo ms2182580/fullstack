@@ -15,11 +15,17 @@ import {
   EverySingleSpeechTherapist_Email,
   EverySingleSpeechTherapist_Location
 } from "./SingleSpeechtherapistComponents_Left.js"
-import { FriendlyDiagnoses } from "./SingleSpeechtherapistComponents_Right"
+import {
+  FriendlyDiagnoses,
+  Tooltip,
+  StarsRating
+} from "./SingleSpeechtherapistComponents_Right"
 import { Verified } from "./Verified"
 import { BookmarkSaveSTSvg, QuestionTooltip_STSvg } from "../../../assets/Icons"
 import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { ButtonSmall } from "../../ui/buttons/general"
+import { Fragment } from "react"
 
 export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
   // console.log('filterData:', filterData)
@@ -51,7 +57,6 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
           let languages = filtersST[i].languages
             .map((x) => x[0].toUpperCase() + x.slice(1))
             .join(", ")
-          console.log("languages:", languages)
           let meetingFormat = filtersST[i].meetingFormat.join(", ")
           let serviceSetting = filtersST[i].serviceSetting
             .map((x) => x[0].toUpperCase() + x.slice(1))
@@ -96,54 +101,32 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
                   {everySingleValue.name.first} {everySingleValue.name.last}
                 </H3>
 
-                <div>
-                  <P>Speech Language Pathologist, CCC-SLP</P>
-                  <span>
-                    <QuestionTooltip_STSvg />
-                    <span>
-                      <H4>
-                        <span>CCC-SLP</span>
-                      </H4>
-                      <P>
-                        Certificate of Clinical Competence in Speech Language
-                        pathology
-                      </P>
-                      <P>
-                        - Nationally recognized professional from the American
-                        Speech-
-                      </P>
-                      <P>Language-Hearing Association (ASHA).</P>
-                    </span>
-                  </span>
-                </div>
+                <Tooltip />
 
-                <div>
-                  <strong>Rating :</strong> {filtersST[i].rating} stars (4
-                  reviews)
-                </div>
+                <StarsRating rating={filtersST[i].rating} />
 
                 <FriendlyDiagnoses diagnoses={diagnoses} />
 
                 <div>
-                  <strong>Ages served:</strong> {agesServed}
-                </div>
-                <div>
-                  <strong>Languages:</strong> {languages}
-                </div>
-                <div>
-                  <strong>Years of practice:</strong>{" "}
-                  {filtersST[i].yearsOfPractice}
-                </div>
-                <div>
-                  <strong>Service Setting:</strong> {serviceSetting}
-                </div>
-                <div>
-                  <strong>Accepts:</strong> {accepts}
+                  <P bold>Ages served:</P> <P>{agesServed}</P>
                 </div>
 
-                <button onClick={(e) => goToDynamic(e, everySingleValue)}>
-                  More details
-                </button>
+                <div>
+                  <P bold>Languages:</P> {languages}
+                </div>
+                <div>
+                  <P bold>Years of Practice:</P> {filtersST[i].yearsOfPractice}
+                </div>
+                <div>
+                  <P bold>Service Setting:</P> {serviceSetting}
+                </div>
+                <div>
+                  <P bold>Accepts:</P> {accepts}
+                </div>
+
+                <span onClick={(e) => goToDynamic(e, everySingleValue)}>
+                  <ButtonSmall secondary>More details</ButtonSmall>
+                </span>
               </EverySingleSpeechTherapistWrapper_Right>
             </EverySingleSpeechTherapistWrapper_Card>
           )

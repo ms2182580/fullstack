@@ -67,8 +67,25 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
     cursor: pointer;
   }
 
-  & > :nth-child(2) {
+  & > :nth-child(2),
+  & > :nth-child(3),
+  & > :nth-child(4) {
     margin-bottom: 12px;
+  }
+
+  & > :nth-child(5) {
+    margin-bottom: 40px;
+  }
+
+  & > :nth-child(6),
+  & > :nth-child(7),
+  & > :nth-child(8),
+  & > :nth-child(9) {
+    margin-bottom: 24px;
+  }
+
+  & > :nth-child(10) {
+    margin-bottom: 40px;
   }
 
   & > :nth-child(3) {
@@ -80,16 +97,16 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
     }
     & > :nth-child(2) {
       position: relative;
-      /* background-color: aquamarine; */
+      display: flex;
     }
-    
-    & > :nth-child(2):before{
-      content:"";
+
+    & > :nth-child(2):before {
+      content: "";
       visibility: hidden;
       position: absolute;
       filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.3));
-      top:27px;
-      right:-7px;
+      top: 27px;
+      right: -7px;
       border-style: solid;
       border-width: 0 16.5px 28px 16.5px;
       border-color: transparent transparent ${NEUTRALS.OFF_WHITE} transparent;
@@ -115,15 +132,33 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
     & > :nth-child(2) > :nth-child(2) > :nth-child(1) {
       color: ${PRIMARY.PRIMARY_HOVER};
     }
-    
-    & > :nth-child(2) > :nth-child(2) > *{
+
+    & > :nth-child(2) > :nth-child(2) > * {
       padding-bottom: 8px;
     }
-    
 
-    & > :nth-child(2):hover > :nth-child(2), & > :nth-child(2):hover:before {
+    & > :nth-child(2):hover > :nth-child(2),
+    & > :nth-child(2):hover:before {
       visibility: visible;
-      /* position: absolute; */
     }
   }
+
+  & > div:nth-child(6),
+  & > div:nth-child(7),
+  & > div:nth-child(8),
+  & > div:nth-child(9),
+  & > div:nth-child(10) {
+    margin-right: 24px;
+    & > * {
+      display: inline;
+    }
+  }
+  
+  & > :last-child{
+    display:flex;
+    justify-content: end;
+    margin-right: 24px;
+    margin-bottom: 40px;
+  }
+  
 `
