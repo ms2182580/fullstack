@@ -17,6 +17,9 @@ import {
 } from "./SingleSpeechtherapistComponents_Left.js"
 import { FriendlyDiagnoses } from "./SingleSpeechtherapistComponents_Right"
 import { Verified } from "./Verified"
+import { BookmarkSaveSTSvg, QuestionTooltip_STSvg } from "../../../assets/Icons"
+import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 
 export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
   // console.log('filterData:', filterData)
@@ -34,32 +37,26 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
     <EverySingleSpeechTherapistWrapper>
       <HeaderEverySingleSP />
 
-      {userFetched && Array.isArray(filtersST) &&
+      {userFetched &&
+        Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          // console.log("userFetched.filters[i]:", userFetched.filters[i])
-
-          let accepts = filtersST[i].accepts.join(", ")
-          // console.log('accepts:', accepts)
-          // let accepts = userFetched.filters[i].accepts.join(", ")
-          // let agesServed = userFetched.filters[i].agesServed.join(", ")
+          let accepts = filtersST[i].accepts
+            .map((x) => x[0].toUpperCase() + x.slice(1))
+            .join(", ")
           let agesServed = filtersST[i].agesServed.join(", ")
-          // let diagnoses = userFetched.filters[i].diagnoses.map((x) => {
-          //   if (x !== "Other") return `${x} Friendly`
-          //   return x
-          // })
           let diagnoses = filtersST[i].diagnoses.map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
-          // let languages = userFetched.filters[i].languages.join(", ")
-          let languages = filtersST[i].languages.join(", ")
-          // let meetingFormat = userFetched.filters[i].meetingFormat.join(", ")
+          let languages = filtersST[i].languages
+            .map((x) => x[0].toUpperCase() + x.slice(1))
+            .join(", ")
+          console.log("languages:", languages)
           let meetingFormat = filtersST[i].meetingFormat.join(", ")
-          // let serviceSetting = userFetched.filters[i].serviceSetting.join(", ")
-          let serviceSetting = filtersST[i].serviceSetting.join(", ")
-          // let sessionType = userFetched.filters[i].sessionType.join(", ")
+          let serviceSetting = filtersST[i].serviceSetting
+            .map((x) => x[0].toUpperCase() + x.slice(1))
+            .join(", ")
           let sessionType = filtersST[i].sessionType.join(", ")
-          // let transportation = userFetched.filters[i].transportation.join(", ")
           let transportation = filtersST[i].transportation.join(", ")
 
           return (
@@ -93,18 +90,36 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
               </EverySingleSpeechTherapistWrapper_Left>
 
               <EverySingleSpeechTherapistWrapper_Right>
-                <div>Button to save speech therapists</div>
+                <BookmarkSaveSTSvg />
 
-                <p>
-                  Name: {everySingleValue.name.first}{" "}
-                  {everySingleValue.name.last}
-                </p>
-
-                <div>Tool tip</div>
+                <H3>
+                  {everySingleValue.name.first} {everySingleValue.name.last}
+                </H3>
 
                 <div>
-                  <strong>Rating :</strong> {filtersST[i].rating}{" "}
-                  stars
+                  <P>Speech Language Pathologist, CCC-SLP</P>
+                  <span>
+                    <QuestionTooltip_STSvg />
+                    <span>
+                      <H4>
+                        <span>CCC-SLP</span>
+                      </H4>
+                      <P>
+                        Certificate of Clinical Competence in Speech Language
+                        pathology
+                      </P>
+                      <P>
+                        - Nationally recognized professional from the American
+                        Speech-
+                      </P>
+                      <P>Language-Hearing Association (ASHA).</P>
+                    </span>
+                  </span>
+                </div>
+
+                <div>
+                  <strong>Rating :</strong> {filtersST[i].rating} stars (4
+                  reviews)
                 </div>
 
                 <FriendlyDiagnoses diagnoses={diagnoses} />
@@ -113,10 +128,10 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
                   <strong>Ages served:</strong> {agesServed}
                 </div>
                 <div>
-                  <strong>Languages</strong> {languages}
+                  <strong>Languages:</strong> {languages}
                 </div>
                 <div>
-                  <strong>Years of practice</strong>{" "}
+                  <strong>Years of practice:</strong>{" "}
                   {filtersST[i].yearsOfPractice}
                 </div>
                 <div>
@@ -127,7 +142,7 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
                 </div>
 
                 <button onClick={(e) => goToDynamic(e, everySingleValue)}>
-                  Button here
+                  More details
                 </button>
               </EverySingleSpeechTherapistWrapper_Right>
             </EverySingleSpeechTherapistWrapper_Card>

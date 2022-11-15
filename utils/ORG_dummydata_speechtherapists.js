@@ -117,12 +117,5 @@ export const useFetch = (url, pagination) => {
     }
   }, [data])
 
-  /* 
-  !FH Order the filters by distance, from lowest to highest
-  
-  */
-
-  // console.log('data, filters:', data, filters)
-  // console.log("data:", data, filters)
   return { data, filters }
 }

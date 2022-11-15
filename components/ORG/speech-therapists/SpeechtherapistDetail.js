@@ -26,3 +26,14 @@ export const SpeechtherapistDetail = () => {
   )
   
 }
+
+
+/* 
+Get the usernames: https://jsonplaceholder.typicode.com/users
+Get the comments: https://jsonplaceholder.typicode.com/posts/1/comments
+
+For the date, make a function that create a random date
+For the stars, make a function that make coherent the level of stars for that speech therapist
+
+
+*/
