@@ -3,7 +3,7 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_I
 
 export const SpeechtherapistDetail = () => {
   const {speechtherapist} = useORG_Ctx_IndividualSpeechtherapist()
-  // console.log('speechtherapist:', speechtherapist)
+  console.log('speechtherapist:', speechtherapist)
   
   if(speechtherapist === ""){
     return(
@@ -15,7 +15,7 @@ export const SpeechtherapistDetail = () => {
   
   return (
     <>
-     {speechtherapist.map(x => (
+     {speechtherapist && speechtherapist.map(x => (
       <Fragment key={`${x.name.first}${x.name.last}`}>
         Rendering {x.name.first} {x.name.last}
         

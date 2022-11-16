@@ -30,6 +30,9 @@ export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
   width: 21.5rem;
+  
+  /* background-color: red; */
+  
 `
 
 export const EverySPT_LeftImage = styled.div`
@@ -53,12 +56,15 @@ export const EverySPT_LeftInfo = styled.div`
 
 export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   grid-area: rightPart;
+  display: grid;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: ${NEUTRALS.OFF_WHITE};
   padding-top: 42px;
   padding-left: 24px;
+  /* padding-right: 24px; */
   position: relative;
+  /* outline:2px solid fuchsia;  */
 
   & > :nth-child(1) {
     position: absolute;
@@ -82,10 +88,13 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   & > :nth-child(8),
   & > :nth-child(9) {
     margin-bottom: 24px;
+    
+    
   }
 
   & > :nth-child(10) {
-    margin-bottom: 40px;
+    /* background-color: coral; */
+    /* margin-bottom: 40px; */
   }
 
   & > :nth-child(3) {
@@ -157,12 +166,17 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   
   & > :last-child{
     display:flex;
-    justify-content: end;
+    align-items: center;
+    width:201px;
+    margin-left: auto;
     margin-right: 24px;
+    margin-top: 40px;
     margin-bottom: 40px;
-    position:absolute;
-    bottom:-1px;
-    right:-1px;
+  }
+  
+  & > :last-child > button{
+    /* outline:4px solid black; */
+    height:100%;
   }
   
 `

@@ -29,7 +29,17 @@ export const EverySingleSpeechTherapist_EmailWrapper = styled.div`
   }
   & > :nth-child(2) {
     margin-left: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
+  
+  /* & > :nth-child(2):before{
+    content:"...";
+    position:absolute;
+    right:2px;
+  } */
+  
 `
 
 export const EverySingleSpeechTherapist_LocationWrapper = styled.div`
@@ -55,8 +65,11 @@ export const EverySingleSpeechTherapist_LocationWrapper = styled.div`
   }
   
   & > :not(:first-child){
-    /* background-color: peru; */
     margin-left: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
   }
   
 `

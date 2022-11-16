@@ -26,6 +26,7 @@ import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { Fragment } from "react"
+import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 
 export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
   // console.log('filterData:', filterData)
@@ -33,7 +34,10 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
+  // const toWhere = `${router.pathname}/IndividualProvider`
+
   const goToDynamic = (e, everySingleValue) => {
+    console.log("everySingleValue:", everySingleValue)
     setSpeechtherapist([everySingleValue])
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
@@ -46,23 +50,28 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          let accepts = filtersST[i].accepts
-            .map((x) => x[0].toUpperCase() + x.slice(1))
-            .join(", ")
-          let agesServed = filtersST[i].agesServed.join(", ")
+          // console.log("everySingleValue:", everySingleValue)
+          let accepts = filtersST[i].accepts.map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+
+          let agesServed = filtersST[i].agesServed
+          // console.log("agesServed:", agesServed)
           let diagnoses = filtersST[i].diagnoses.map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
-          let languages = filtersST[i].languages
-            .map((x) => x[0].toUpperCase() + x.slice(1))
-            .join(", ")
-          let meetingFormat = filtersST[i].meetingFormat.join(", ")
-          let serviceSetting = filtersST[i].serviceSetting
-            .map((x) => x[0].toUpperCase() + x.slice(1))
-            .join(", ")
-          let sessionType = filtersST[i].sessionType.join(", ")
-          let transportation = filtersST[i].transportation.join(", ")
+          let languages = filtersST[i].languages.map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+
+          let meetingFormat = filtersST[i].meetingFormat
+          let serviceSetting = filtersST[i].serviceSetting.map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+
+          let sessionType = filtersST[i].sessionType
+          let transportation = filtersST[i].transportation
 
           return (
             <EverySingleSpeechTherapistWrapper_Card
@@ -95,7 +104,7 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
               </EverySingleSpeechTherapistWrapper_Left>
 
               <EverySingleSpeechTherapistWrapper_Right>
-                <BookmarkSaveSTSvg tabIndex={0}  />
+                <BookmarkSaveSTSvg tabIndex={0} />
 
                 <H3>
                   {everySingleValue.name.first} {everySingleValue.name.last}
@@ -107,23 +116,27 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
 
                 <FriendlyDiagnoses diagnoses={diagnoses} />
 
-                <div>
-                  <P bold>Ages served:</P> {agesServed}
-                </div>
+                <TherapistInfoSecondPage
+                  title="Ages served"
+                  dataToShow={agesServed}
+                />
 
-                <div>
-                  <P bold>Languages: </P> <span>{languages}</span>
-                </div>
-                
-                <div>
-                  <P bold>Years of Practice:</P> {filtersST[i].yearsOfPractice}
-                </div>
-                <div>
-                  <P bold>Service Setting:</P> {serviceSetting}
-                </div>
-                <div>
-                  <P bold>Accepts:</P> {accepts}
-                </div>
+                <TherapistInfoSecondPage
+                  title="Languages"
+                  dataToShow={languages}
+                />
+
+                <TherapistInfoSecondPage
+                  title="Years of Practice"
+                  dataToShow={filtersST[i].yearsOfPractice}
+                />
+
+                <TherapistInfoSecondPage
+                  title="Service Setting"
+                  dataToShow={serviceSetting}
+                />
+
+                <TherapistInfoSecondPage title="Accepts" dataToShow={accepts} />
 
                 <span onClick={(e) => goToDynamic(e, everySingleValue)}>
                   <ButtonSmall secondary>More details</ButtonSmall>
