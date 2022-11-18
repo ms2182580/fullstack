@@ -4,6 +4,7 @@ import { SECONDARY_BG_BIGBLOCKS_TEXT } from "../../../../assets/Colors";
 export const FriendlyDiagnosesWrapper = styled.div`
 
  display: flex;
+ align-items: center;
  
  flex-wrap: wrap;
  gap:8px;

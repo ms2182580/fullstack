@@ -21,23 +21,16 @@ import {
   StarsRating
 } from "./SingleSpeechtherapistComponents_Right"
 import { Verified } from "./Verified"
-import { BookmarkSaveSTSvg, QuestionTooltip_STSvg } from "../../../assets/Icons"
-import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { BookmarkSaveSTSvg} from "../../../assets/Icons"
+import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import { ButtonSmall } from "../../ui/buttons/general"
-import { Fragment } from "react"
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 
 export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
-  // console.log('filterData:', filterData)
-  // console.log("userFetched:", userFetched)
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
-  // const toWhere = `${router.pathname}/IndividualProvider`
-
   const goToDynamic = (e, everySingleValue) => {
-    console.log("everySingleValue:", everySingleValue)
     setSpeechtherapist([everySingleValue])
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
@@ -50,13 +43,11 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          // console.log("everySingleValue:", everySingleValue)
           let accepts = filtersST[i].accepts.map(
             (x) => x[0].toUpperCase() + x.slice(1)
           )
 
           let agesServed = filtersST[i].agesServed
-          // console.log("agesServed:", agesServed)
           let diagnoses = filtersST[i].diagnoses.map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x

@@ -1,7 +1,7 @@
 import FacebookIcon from "../../../../assets/Icons/FacebookIcon.jpg"
 import GoogleIcon from "../../../../assets/Icons/GoogleIcon.png"
 import EmailIcon from "../../../../assets/Icons/EmailIcon.png"
-import { LoginBtnsStyled} from "./LoginBtnsStyled.js"
+import { LoginBtnsStyled} from "./styles/LoginBtnsStyled.js"
 import Image from "next/image"
 
 export const FacebookLoginBtn = () => {

@@ -3,17 +3,24 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const EverySingleSpeechTherapistWrapper = styled.div`
   /* background-color: cornflowerblue; */
-  width: 52rem;
+  /* width: 52rem; */
+  display: grid;
 `
 
+/* 
+!FH 1
+Check the styles of the cards
+
+*/
+
 export const EverySingleSpeechTherapistWrapper_Card = styled.div`
-  /* background-color: purple; */
+  /* background-color: rebeccapurple; */
   display: grid;
   grid-template-columns: 1fr 2fr;
-  /* grid-template-rows: auto; */
+  grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
 
-  /* border:purple 8px solid; */
+  /* outline:purple 8px solid; */
   margin-bottom: 2rem;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
   /* border-radius: 8px; */
@@ -26,13 +33,14 @@ export const EverySingleSpeechTherapistWrapper_Card = styled.div`
 export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
+  /* display: grid; */
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
-  width: 21.5rem;
-  
+
+  /* width: 21.5rem; */
+
   /* background-color: red; */
-  
 `
 
 export const EverySPT_LeftImage = styled.div`
@@ -52,19 +60,23 @@ export const EverySPT_LeftImage = styled.div`
 export const EverySPT_LeftInfo = styled.div`
   margin-left: 14px;
   margin-right: 14px;
+
+  /* border: 4px solid black; */
 `
 
 export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   grid-area: rightPart;
   display: grid;
+  justify-self: stretch;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: ${NEUTRALS.OFF_WHITE};
   padding-top: 42px;
   padding-left: 24px;
-  /* padding-right: 24px; */
   position: relative;
-  /* outline:2px solid fuchsia;  */
+  /* border: 2px solid black; */
+  min-width: 440px;
+  /* width:100%; */
 
   & > :nth-child(1) {
     position: absolute;
@@ -88,13 +100,6 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   & > :nth-child(8),
   & > :nth-child(9) {
     margin-bottom: 24px;
-    
-    
-  }
-
-  & > :nth-child(10) {
-    /* background-color: coral; */
-    /* margin-bottom: 40px; */
   }
 
   & > :nth-child(3) {
@@ -162,21 +167,18 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
       display: inline;
     }
   }
-  
-  
-  & > :last-child{
-    display:flex;
+
+  & > :last-child {
+    display: flex;
     align-items: center;
-    width:201px;
+    width: 201px;
     margin-left: auto;
     margin-right: 24px;
     margin-top: 40px;
     margin-bottom: 40px;
   }
-  
-  & > :last-child > button{
-    /* outline:4px solid black; */
-    height:100%;
+
+  & > :last-child > button {
+    height: 100%;
   }
-  
 `

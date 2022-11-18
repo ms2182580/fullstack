@@ -1,5 +1,4 @@
 import { useState } from "react"
-// import { SpeechtherapistList } from "../../../components/ORG/speech-therapists/RepeatedInformation"
 import SpeechTherapistListFilter from "./SpeechTherapistListFilter"
 import FinalButtons from "./SpeechtherapistFinalButtons"
 import STFiltersTherapistsButtonsWrapper from "./styles/AllSpeechtherapistsWrapper"
@@ -26,12 +25,6 @@ const STFiltersTherapistsButtons = ({
     providerType: []
   })
 
-  // console.log("🚝 filterData:", filterData)
-  // console.log("userFetched:", userFetched)
-
-  // if(userFetched===undefined){
-  //   return <LoadingSpeechTherapists />
-  // }
 
   return (
     <STFiltersTherapistsButtonsWrapper>

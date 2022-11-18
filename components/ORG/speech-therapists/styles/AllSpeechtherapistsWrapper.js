@@ -5,19 +5,18 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
   background-color: ${NEUTRALS.LIGHT_GREY};
 
   & > :nth-child(1) {
-    
     padding: 2rem 6rem;
     display: grid;
 
-    grid-template-columns: auto;
-
     grid-template-areas:
       "filter list"
-      "filter buttons";
+      " . buttons";
   }
 
   & > :nth-child(1) > :nth-child(1) {
     grid-area: filter;
+    margin-right: 72px;
+    
   }
   & > :nth-child(1) > :nth-child(2) {
     grid-area: list;

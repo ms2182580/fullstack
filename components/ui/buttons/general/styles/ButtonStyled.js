@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { FontsWeights } from "../../../../assets/Fonts/Weights"
-import { COLORS } from "../variables"
+import { FontsWeights } from "../../../../../assets/Fonts/Weights"
+import { COLORS } from "../../variables"
 
 const SharedVariables = {
   BorderRadius: "8px"

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styled from "styled-components"
-import { COLORS } from "../variables"
+import { COLORS } from "../../variables"
 
 const SharedVariables = {
   Height: "48px",

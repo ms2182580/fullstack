@@ -1,8 +1,8 @@
-import { BtnSmall, BtnMedium, BtnLarge } from "./ButtonStyled.js"
+import { BtnSmall, BtnMedium, BtnLarge } from "./styles/ButtonStyled.js"
 
 export const ButtonSmall = ({ children, secondary, disabled }) => {
   return (
-    <BtnSmall secondary={secondary} disabled={disabled} >
+    <BtnSmall secondary={secondary} disabled={disabled}>
       <p >{children}</p>
     </BtnSmall>
   )

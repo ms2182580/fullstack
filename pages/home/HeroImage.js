@@ -4,7 +4,7 @@ import HeroImageWrapper from "./styles/HeroImageWrapper.js"
 import homeImage_communityPeople from "../../assets/images/homeImage_communityPeople.png"
 import Image from 'next/image'
 import { H1 } from "../../components/ui/heading_body_text/HeaderFonts.js"
-import { BtnLarge } from "../../components/ui/buttons/general/ButtonStyled.js"
+import { ButtonLarge as BtnLarge } from "../../components/ui/buttons/general/index.js"
 import { LinkNoStyle } from "../../components/ui/hyperlink/HyperlinkNoStyles.js"
 
 

@@ -406,3 +406,33 @@ export const StartEmptySvg = (props) => (
     />
   </svg>
 )
+
+export const LeftArrowSvg = (props) => (
+  <svg
+    width="21px"
+    height="21px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m10 18.812-6.18-7.81L10 3.192 8.097.791 0 11.002 8.097 21.21 10 18.81Z"
+      fill="#00080B"
+    />
+  </svg>
+)
+
+export const RightArrowSvg = (props) => (
+  <svg
+    width="21px"
+    height="21px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m0 18.812 6.18-7.81L0 3.192l1.903-2.4L10 11.002 1.903 21.21 0 18.81Z"
+      fill="#00080B"
+    />
+  </svg>
+)
