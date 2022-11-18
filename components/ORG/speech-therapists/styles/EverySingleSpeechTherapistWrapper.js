@@ -37,6 +37,7 @@ export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
+  min-width:398px;
 
   /* width: 21.5rem; */
 
