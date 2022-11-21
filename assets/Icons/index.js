@@ -409,7 +409,7 @@ export const StartEmptySvg = (props) => (
 
 export const LeftArrowSvg = (props) => (
   <svg
-    width="21px"
+    width="10px"
     height="21px"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +424,7 @@ export const LeftArrowSvg = (props) => (
 
 export const RightArrowSvg = (props) => (
   <svg
-    width="21px"
+    width="10px"
     height="21px"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

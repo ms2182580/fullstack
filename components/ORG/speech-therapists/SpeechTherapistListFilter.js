@@ -30,7 +30,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
   const [state, dispatch] = useReducer(reducer, filterData)
 
   return (
-    <SpeechTherapistListFilterWrapper>
+    <SpeechTherapistListFilterWrapper id="topOfSTL">
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}

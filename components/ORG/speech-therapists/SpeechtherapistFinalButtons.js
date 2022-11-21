@@ -1,8 +1,14 @@
-import { LeftArrowSvg } from "../../../assets/Icons/index.js"
-import { PrevButton, SpeechtherapistFinalButtonsWrapper } from "./styles/SpeechtherapistFinalButtonsWrapper.js"
+import { LeftArrowSvg, RightArrowSvg } from "../../../assets/Icons/index.js"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import {
+  NextButton,
+  PrevButton,
+  SpeechtherapistFinalButtonsWrapper
+} from "./styles/SpeechtherapistFinalButtonsWrapper.js"
+import { NavigationButtonsNumbers } from "./NavigationButtonsNumbers.js"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
 
 const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
-  console.log("pagination:", pagination)
   const toPrevious = () => {
     setPagination((prevState) => {
       if (pagination > 1) return pagination - 1
@@ -12,15 +18,24 @@ const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
 
   return (
     <SpeechtherapistFinalButtonsWrapper>
-      <PrevButton onClick={() => toPrevious}>
-        <LeftArrowSvg />
-        
-        <p>Previous</p>
-      </PrevButton>
-      <button onClick={() => setPagination(1)}>1</button>
-      <button onClick={() => setPagination(2)}>2</button>
-      <button onClick={() => setPagination(3)}>3</button>
-      <button onClick={() => setPagination(pagination + 1)}>Next</button>
+      <LinkNoStyle href="#topOfSTL">
+        <PrevButton onClick={() => toPrevious()}>
+          <LeftArrowSvg />
+          <P bold>Previous</P>
+        </PrevButton>
+      </LinkNoStyle>
+
+      <NavigationButtonsNumbers
+        pagination={pagination}
+        setPagination={setPagination}
+      />
+
+      <LinkNoStyle href="#topOfSTL">
+        <NextButton onClick={() => setPagination(pagination + 1)}>
+          <P bold>Next</P>
+          <RightArrowSvg />
+        </NextButton>
+      </LinkNoStyle>
     </SpeechtherapistFinalButtonsWrapper>
   )
 }

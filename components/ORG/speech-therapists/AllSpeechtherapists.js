@@ -32,6 +32,7 @@ const STFiltersTherapistsButtons = ({
         <SpeechTherapistListFilter
           setFilterData={setFilterData}
           filterData={filterData}
+          
         />
 
         <SpeechtherapistList

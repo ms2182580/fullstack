@@ -2,46 +2,28 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const EverySingleSpeechTherapistWrapper = styled.div`
-  /* background-color: cornflowerblue; */
-  /* width: 52rem; */
   display: grid;
 `
 
-/* 
-!FH 1
-Check the styles of the cards
-
-*/
 
 export const EverySingleSpeechTherapistWrapper_Card = styled.div`
-  /* background-color: rebeccapurple; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
 
-  /* outline:purple 8px solid; */
   margin-bottom: 2rem;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-  /* border-radius: 8px; */
-
-  /* & > :nth-child(1) > :nth-child(1) > :nth-child(1){
-    border: 7px gold solid;
-  } */
 `
 
 export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
-  /* display: grid; */
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
   min-width:398px;
 
-  /* width: 21.5rem; */
-
-  /* background-color: red; */
 `
 
 export const EverySPT_LeftImage = styled.div`
@@ -62,7 +44,6 @@ export const EverySPT_LeftInfo = styled.div`
   margin-left: 14px;
   margin-right: 14px;
 
-  /* border: 4px solid black; */
 `
 
 export const EverySingleSpeechTherapistWrapper_Right = styled.div`
@@ -75,9 +56,7 @@ export const EverySingleSpeechTherapistWrapper_Right = styled.div`
   padding-top: 42px;
   padding-left: 24px;
   position: relative;
-  /* border: 2px solid black; */
   min-width: 440px;
-  /* width:100%; */
 
   & > :nth-child(1) {
     position: absolute;
