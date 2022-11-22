@@ -8,7 +8,7 @@ const STFiltersTherapistsButtons = ({
   userFetched,
   filtersST,
   pagination,
-  setPagination
+  setPagination,
 }) => {
   const [filterData, setFilterData] = useState({
     distance: [],
@@ -25,21 +25,20 @@ const STFiltersTherapistsButtons = ({
     providerType: []
   })
 
-
   return (
     <STFiltersTherapistsButtonsWrapper>
       <div>
         <SpeechTherapistListFilter
           setFilterData={setFilterData}
           filterData={filterData}
-          
         />
 
+        
         <SpeechtherapistList
-          userFetched={userFetched}
-          filtersST={filtersST}
-          filterData={filterData}
-        />
+            userFetched={userFetched}
+            filtersST={filtersST}
+            filterData={filterData}
+          />
 
         <FinalButtons setPagination={setPagination} pagination={pagination} />
       </div>

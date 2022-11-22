@@ -9,7 +9,7 @@ import {
   EverySPT_LeftImage,
   EverySPT_LeftInfo
 } from "./styles/EverySingleSpeechTherapistWrapper"
-import { HeaderEverySingleSP } from "./HeaderEverySingleSP.js"
+import { HeaderSPList } from "./HeaderSPList.js"
 import {
   EverySingleSpeechTherapist_Phone,
   EverySingleSpeechTherapist_Email,
@@ -38,7 +38,7 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
 
   return (
     <EverySingleSpeechTherapistWrapper>
-      <HeaderEverySingleSP />
+      <HeaderSPList />
 
       {userFetched &&
         Array.isArray(filtersST) &&

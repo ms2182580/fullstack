@@ -25,6 +25,7 @@ export const useFetch = (url, pagination) => {
 
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
+  
   useEffect(() => {
     let getData = { actualPage: "", allData: "" }
 
@@ -91,6 +92,7 @@ export const useFetch = (url, pagination) => {
         }
         setData(getData)
         setFilters(getFilters)
+        
       })
   }, [url, pagination])
 
@@ -111,11 +113,11 @@ export const useFetch = (url, pagination) => {
         if (filtersOrder.length === filters.filters.length) {
           setFilters(filtersOrder)
           break
-          
         }
       }
     }
   }, [data])
+  
 
   return { data, filters }
 }

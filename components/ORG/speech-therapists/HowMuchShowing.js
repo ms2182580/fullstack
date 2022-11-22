@@ -1,9 +1,33 @@
+import { useEffect, useState } from "react"
+import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { HeaderSPList_HowMuchShowingWrapper } from "./styles/HeaderSPListWrapper"
+
 const HowMuchShowing = () => {
+  const { pagination, howMuchShow } = useORG_Ctx_PaginationAndHowMuchShow()
+  // console.log("pagination, howMuchShow:", pagination, howMuchShow)
+  const [actualShow, setActualShow] = useState(howMuchShow)
+  // console.log('actualShow:', actualShow)
+  const [theTotal, setTheTotal] = useState(howMuchShow * 5)
+  // console.log('theTotal:', theTotal)
+
+  useEffect(() => {
+    setActualShow(pagination * howMuchShow)
+  }, [pagination])
+
+  useEffect(() => {
+    if (actualShow >= theTotal - howMuchShow) {
+      setTheTotal(theTotal + 20)
+    }
+  }, [actualShow])
+
   return (
-    <div>
-      HowMuchShowing
-    </div>
-  );
+    <HeaderSPList_HowMuchShowingWrapper>
+      <P semibold>
+        {actualShow} of {theTotal} results shown
+      </P>
+    </HeaderSPList_HowMuchShowingWrapper>
+  )
 }
 
-export default HowMuchShowing;
+export default HowMuchShowing

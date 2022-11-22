@@ -9,12 +9,11 @@ import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { BackArrow } from "../../../assets/Icons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
-// import SpeechTherapistList from "./SpeechTherapistList"
-import { useState } from "react"
 import { useFetch } from "../../../utils/ORG_dummydata_speechtherapists"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
-// import AllSpeechtherapists from "../../../components/ORG/speech-therapists/AllSpeechtherapists"
 import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/AllSpeechtherapists"
+import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { useState } from "react"
 
 const ORGSpeechTherapists = () => {
   const {
@@ -33,13 +32,13 @@ const ORGSpeechTherapists = () => {
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
 
-  const [pagination, setPagination] = useState(1)
+  const { pagination, howMuchShow, setPagination } = useORG_Ctx_PaginationAndHowMuchShow()
 
-  const { data: userFetched, filters: filtersST } = useFetch(
-    "https://randomuser.me/api/?results=10&nat=us&page=",
-    pagination
+  const { data: userFetched, filters: filtersST} = useFetch(
+    `https://randomuser.me/api/?results=${howMuchShow}&nat=us&page=${pagination}`
   )
-
+  
+  
   if (userFetched === undefined) {
     return <LoadingSpeechTherapists />
   }

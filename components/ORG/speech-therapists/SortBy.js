@@ -1,8 +1,10 @@
+import { HeaderSPList_SortByWrapper } from "./styles/HeaderSPListWrapper";
+
 const SortBy = () => {
   return (
-    <div>
+    <HeaderSPList_SortByWrapper>
       SortBy
-    </div>
+    </HeaderSPList_SortByWrapper>
   );
 }
 

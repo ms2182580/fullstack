@@ -18,12 +18,19 @@ const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
 
   return (
     <SpeechtherapistFinalButtonsWrapper>
-      <LinkNoStyle href="#topOfSTL">
+      {pagination === 1 ? (
         <PrevButton onClick={() => toPrevious()}>
           <LeftArrowSvg />
           <P bold>Previous</P>
         </PrevButton>
-      </LinkNoStyle>
+      ) : (
+        <LinkNoStyle href="#topOfSTL">
+          <PrevButton onClick={() => toPrevious()}>
+            <LeftArrowSvg />
+            <P bold>Previous</P>
+          </PrevButton>
+        </LinkNoStyle>
+      )}
 
       <NavigationButtonsNumbers
         pagination={pagination}
@@ -41,13 +48,3 @@ const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
 }
 
 export default SpeechtherapistFinalButtons
-
-/* 
-!FH 2
-
-
-Style buttons
-Create the logic for change numbers of buttons when the user is beyond number three
-When the user click in the next page, should move to the top of the page
-
-*/

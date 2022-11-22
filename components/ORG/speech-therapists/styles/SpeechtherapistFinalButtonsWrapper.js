@@ -45,7 +45,8 @@ export const NextButton = styled(NavigationButton)`
 `
 
 export const NumberPage = styled.button`
-  width: 48px;
+  /* width: 48px; */
+  padding:8px 20.5px;
   height: 48px;
   cursor: pointer;
   background-color: ${(x) =>
