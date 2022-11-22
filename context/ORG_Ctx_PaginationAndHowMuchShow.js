@@ -4,7 +4,7 @@ const ORG_Ctx_Pagination = createContext(null)
 
 export const ORG_CtxIndividualPaginationAndHowMuchShow_Provider = ({ children }) => {
   const [pagination, setPagination] = useState(1)
-  const [howMuchShow, setHowMuchShow] = useState(4)
+  const [howMuchShow, setHowMuchShow] = useState(10)
 
   return (
     <ORG_Ctx_Pagination.Provider
