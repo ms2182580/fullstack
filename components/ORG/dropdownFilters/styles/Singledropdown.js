@@ -3,23 +3,17 @@ import { NEUTRALS } from "../../../../assets/Colors"
 
 export const SingleDropdownWrapper = styled.div`
   display: grid;
-  grid-template-columns: ${(x) => (x.noIcon ? "1fr" : "48px 1fr")};
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: relative;
+  
+  /* background-color: crimson; */
 
-  & > div:nth-child(1) {
-    /* margin-left: 0.813rem; */
 
-    /* outline: 2px crimson solid; */
-    /* width:0px; */
-    /* display: none; */
-
-    /* display: ${(x) => (x.noIcon ? "none" : "visible")}; */
-  }
-
-  & > :nth-child(2) {
+  & > :nth-child(1) {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 12px;
     cursor: pointer;
     & > p {
       margin-right: 1.25rem;
@@ -30,7 +24,7 @@ export const SingleDropdownWrapper = styled.div`
     }
   }
 
-  & > .ORGDropdownSuggestion {
+  & > :nth-child(2) {
     position: absolute;
     top: 100%;
     width: 100%;
@@ -38,10 +32,15 @@ export const SingleDropdownWrapper = styled.div`
     background-color: ${NEUTRALS.OFF_WHITE};
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
     z-index: 99;
+    width:188px;
+    /* background-color: crimson; */
 
     & > div:nth-child(1) {
-      height: 0.375rem;
+      height: 1.67px;
+      width:174px;
+      margin-bottom: 8px;
       background-color: ${NEUTRALS.BLACK};
     }
 
@@ -62,23 +61,4 @@ export const SingleDropdownWrapper = styled.div`
     }
   }
 
-  & > .ORGDropdownComingSoon {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
-    background-color: ${NEUTRALS.OFF_WHITE};
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    cursor: pointer;
-    z-index: 99;
-
-    & > div > div:nth-child(1) {
-      height: 0.375rem;
-      background-color: ${NEUTRALS.BLACK};
-    }
-    & > div > p {
-      margin: 1rem;
-    }
-  }
 `

@@ -4,6 +4,7 @@ import { LoginCtxProvider } from "../context/LoginCtx"
 import { ORG_InputCtxProvider } from "../context/ORG_Input"
 import { ORG_CtxIndividualSpeechtherapist_Provider } from "../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_CtxIndividualPaginationAndHowMuchShow_Provider } from "../context/ORG_Ctx_PaginationAndHowMuchShow.js"
+import {ORG_CtxUserFetchedAndFilters_Provider} from "../context/ORG_Ctx_userFetchedAndFilters.js"
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,12 +12,14 @@ function MyApp({ Component, pageProps }) {
       <ORG_InputCtxProvider>
         <ORG_CtxIndividualSpeechtherapist_Provider>
           <ORG_CtxIndividualPaginationAndHowMuchShow_Provider>
-            <PageLayout>
-              <GlobalStyle />
-              <link rel="icon" href="/favicon.ico" />
+            <ORG_CtxUserFetchedAndFilters_Provider>
+              <PageLayout>
+                <GlobalStyle />
+                <link rel="icon" href="/favicon.ico" />
 
-              <Component {...pageProps} />
-            </PageLayout>
+                <Component {...pageProps} />
+              </PageLayout>
+            </ORG_CtxUserFetchedAndFilters_Provider>
           </ORG_CtxIndividualPaginationAndHowMuchShow_Provider>
         </ORG_CtxIndividualSpeechtherapist_Provider>
       </ORG_InputCtxProvider>

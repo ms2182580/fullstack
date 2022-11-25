@@ -29,7 +29,6 @@ const pickMoreThanOne = (arr, pickEnglish = false, diagnoses = false) => {
 
   let toReturn = getCorrectOrder(shuffledArr, arr)
   return toReturn
-  
 }
 
 export const ORG_Filterdata_Distance = () => {
@@ -40,6 +39,11 @@ export const ORG_Filterdata_Distance = () => {
 export const ORG_Filterdata_Rating = () => {
   const rating = ["1", "2", "3", "4", "5"]
   return pickJustOne(rating)
+}
+
+export const ORG_Filterdata_Reviews = () => {
+  const reviews = ["1", "2", "3", "4", "5", "5+"]
+  return pickJustOne(reviews)
 }
 
 export const ORG_Filterdata_Diagnoses = () => {

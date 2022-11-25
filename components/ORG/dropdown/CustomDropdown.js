@@ -1,9 +1,3 @@
-// import Singledropdown from "./Singledropdown"
-// import { OptionsWrapper } from "./styles/Customdropdown"
-// import ORG_Landing_CC from "../../../assets/Icons/ORG_Landing_CC.png"
-// import ORG_Landing_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
-// import ORG_Landing_TP from "../../../assets/Icons/ORG_Landing_TP.png"
-
 import Image from "next/image.js"
 import { Fragment, useState } from "react"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
@@ -12,11 +6,10 @@ import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
-import { useRouter } from "next/router"
 
 
 const Customdropdown = ({
-  icon = "not found",
+  icon = "no icon found",
   title = "no title",
   suggestions = [],
   landingHere = false,
@@ -45,9 +38,7 @@ const Customdropdown = ({
     <>
       <SingleDropdownWrapper noIcon={noIcon} landingHere={landingHere}>
         
-        {/* // ?TODO ICON should not be mandatory */}
-
-        {icon !== "not found" ? (
+        {icon !== "no icon found" ? (
           <div>
             <Image src={icon} alt="" />
           </div>
@@ -73,11 +64,6 @@ const Customdropdown = ({
               <div></div>
               {suggestionsValidated.map((x) => {
                 const isSpeechTherapist = x.toLowerCase() === "speech therapist"
-                const updateInput = (e) => {
-                  // console.log('e:', e.target.textContent)
-                  // setKeywordsContext(e.target.textContent)
-                  // updateTry(e.target.textContent)
-                }
 
                 return (
                   <Fragment key={x}>
@@ -101,8 +87,6 @@ const Customdropdown = ({
                       <Fragment>
                         <p
                           onClick={(e) => {
-                            // setKeywordsContext("hard coded")
-                            // console.log("clicked!", e.target.textContent)
                             setKeywordsContext(e.target.textContent)
                           }}
                         >

@@ -5,11 +5,8 @@ import { HeaderSPList_HowMuchShowingWrapper } from "./styles/HeaderSPListWrapper
 
 const HowMuchShowing = () => {
   const { pagination, howMuchShow } = useORG_Ctx_PaginationAndHowMuchShow()
-  // console.log("pagination, howMuchShow:", pagination, howMuchShow)
   const [actualShow, setActualShow] = useState(howMuchShow)
-  // console.log('actualShow:', actualShow)
   const [theTotal, setTheTotal] = useState(howMuchShow * 5)
-  // console.log('theTotal:', theTotal)
 
   useEffect(() => {
     setActualShow(pagination * howMuchShow)

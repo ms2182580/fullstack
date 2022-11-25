@@ -69,7 +69,6 @@ const ORGLanding = () => {
 
       <OptionsWrapper landingHere="true">
         <Customdropdown
-        
           icon={ORG_LANDING_TP}
           title="Therapeutic Providers"
           suggestions={suggestionDropdownTP}

@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const SpeechtherapistFinalButtonsWrapper = styled.div`
-  /* background-color: peru; */
   display: flex;
   align-items: center;
   justify-content: end;
@@ -45,8 +44,7 @@ export const NextButton = styled(NavigationButton)`
 `
 
 export const NumberPage = styled.button`
-  /* width: 48px; */
-  padding:8px 20.5px;
+  padding: 8px 20.5px;
   height: 48px;
   cursor: pointer;
   background-color: ${(x) =>
@@ -54,9 +52,10 @@ export const NumberPage = styled.button`
   border: 1px solid ${NEUTRALS.BLACK};
   border-radius: 8px;
 
-  &:hover, &:hover > p {
+  &:hover,
+  &:hover > p {
     background-color: ${(x) => (x.isActive ? "" : `${PRIMARY.PRIMARY_HOVER}`)};
-    color:${NEUTRALS.OFF_WHITE}
+    color: ${NEUTRALS.OFF_WHITE};
   }
 
   & > p {

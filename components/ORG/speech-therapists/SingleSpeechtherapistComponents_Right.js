@@ -28,7 +28,7 @@ export const Tooltip = () => {
   )
 }
 
-export const StarsRating = ({ rating }) => {
+export const StarsRatingAndReview = ({ rating, reviews }) => {
 
   let ratingPattern = Array(5)
     .fill(0)
@@ -59,7 +59,7 @@ export const StarsRating = ({ rating }) => {
         })}
       </div>
       <P>{rating}.0</P>
-      <P dark_gray>(4 reviews)</P>
+      <P dark_gray>({reviews} reviews)</P>
     </StarsRatingWrapper>
   )
 }

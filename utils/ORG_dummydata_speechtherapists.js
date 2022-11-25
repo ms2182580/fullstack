@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-import { isForOfStatement } from "typescript"
-import { isBuffer } from "util"
 import {
   ORG_Filterdata_Accepts,
   ORG_Filterdata_AgesServed,
@@ -10,6 +8,7 @@ import {
   ORG_Filterdata_MeetingFormat,
   ORG_Filterdata_ProviderType,
   ORG_Filterdata_Rating,
+  ORG_Filterdata_Reviews,
   ORG_Filterdata_ServiceSetting,
   ORG_Filterdata_SessionType,
   ORG_Filterdata_Transportation,
@@ -22,10 +21,9 @@ export const useFetch = (url, pagination) => {
   // const data = {undefined}
   // return {data}
 
-
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
-  
+
   useEffect(() => {
     let getData = { actualPage: "", allData: "" }
 
@@ -40,6 +38,7 @@ export const useFetch = (url, pagination) => {
         for (let index = 0; index < howMuchGet; index++) {
           const distance = ORG_Filterdata_Distance()
           const rating = ORG_Filterdata_Rating()
+          const reviews = ORG_Filterdata_Reviews()
           const diagnoses = ORG_Filterdata_Diagnoses()
           const agesServed = ORG_Filterdata_AgesServed()
           const languages = ORG_Filterdata_Languages()
@@ -51,30 +50,12 @@ export const useFetch = (url, pagination) => {
           const transportation = ORG_Filterdata_Transportation()
           const providerType = ORG_Filterdata_ProviderType()
 
-          // getData.filters = [
-          //   ...getData.filters,
-          //   {
-          //     distance: distance,
-          //     rating: rating,
-          //     diagnoses: diagnoses,
-          //     agesServed: agesServed,
-          //     languages:languages,
-          //     yearsOfPractice:yearsOfPractice,
-          //     serviceSetting:serviceSetting,
-          //     accepts:accepts,
-          //     meetingFormat:meetingFormat,
-          //     sessionType:sessionType,
-          //     transportation:transportation,
-          //     providerType:providerType,
-          //     CCC_SLP: "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA)."
-          //   }
-          // ]
-
           getFilters.filters = [
             ...getFilters.filters,
             {
               distance: distance,
               rating: rating,
+              reviews: reviews,
               diagnoses: diagnoses,
               agesServed: agesServed,
               languages: languages,
@@ -92,13 +73,11 @@ export const useFetch = (url, pagination) => {
         }
         setData(getData)
         setFilters(getFilters)
-        
       })
   }, [url, pagination])
 
-
   useEffect(() => {
-    if (filters.length !== 0) {
+    if (filters.length !== 0 && filters.filters !== undefined) {
       const actualDistanceMiles = ["0-5", "5-10", "10-20", "+20"]
       let filtersOrder = []
 
@@ -109,7 +88,6 @@ export const useFetch = (url, pagination) => {
           }
         }
 
-
         if (filtersOrder.length === filters.filters.length) {
           setFilters(filtersOrder)
           break
@@ -117,7 +95,6 @@ export const useFetch = (url, pagination) => {
       }
     }
   }, [data])
-  
 
-  return { data, filters }
+  return { data,setData,  filters, setFilters }
 }

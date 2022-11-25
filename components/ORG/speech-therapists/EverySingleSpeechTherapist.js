@@ -18,15 +18,49 @@ import {
 import {
   FriendlyDiagnoses,
   Tooltip,
-  StarsRating
+  StarsRatingAndReview
 } from "./SingleSpeechtherapistComponents_Right"
 import { Verified } from "./Verified"
-import { BookmarkSaveSTSvg} from "../../../assets/Icons"
+import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import { ButtonSmall } from "../../ui/buttons/general"
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
+import { useORG_Ctx_UserFetchedAndFilters } from "../../../context/ORG_Ctx_userFetchedAndFilters"
+import { useEffect } from "react"
 
-export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
+export const SpeechtherapistList = ({
+  filterData,
+  userFetched,
+  filtersST,
+  setData,
+  setFilters,
+  handleSetData, handleSetFilters
+}) => {
+  // console.log('userFetched2:', userFetched2)
+  // console.log('userFetched:', userFetched)
+  // console.log('filtersST:', filtersST)
+  // console.log('userFetched:', userFetched)
+  // const {
+  //   userFetchedDone: userFetched,
+  //   setUserFetchedDone,
+  //   filtersUserFetchedDone: filtersST,
+  //   setFiltersUserFetchedDone
+  // } = useORG_Ctx_UserFetchedAndFilters()
+
+  // console.dir('userFetched:', userFetched)
+  useEffect(() => {
+    // console.log("Enter in useEffect 🔰");
+    if (userFetched !== undefined) {
+      // console.dir("userFetched:", userFetched.allData)
+      // console.log(setFiltersUserFetchedDone, setUserFetchedDone)
+      // setUserFetchedDone(userFetched2)
+      // setFiltersUserFetchedDone(filtersST2)
+    }
+  })
+
+  // console.log('userFetched:', userFetched)
+  // console.log('filtersST:', filtersST)
+
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
@@ -38,7 +72,14 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
 
   return (
     <EverySingleSpeechTherapistWrapper>
-      <HeaderSPList />
+      <HeaderSPList
+        userFetched={userFetched}
+        filtersST={filtersST}
+        setData={setData}
+        setFilters={setFilters}
+        handleSetData={handleSetData}
+handleSetFilters={handleSetFilters}
+      />
 
       {userFetched &&
         Array.isArray(filtersST) &&
@@ -103,7 +144,10 @@ export const SpeechtherapistList = ({ userFetched, filtersST, filterData }) => {
 
                 <Tooltip />
 
-                <StarsRating rating={filtersST[i].rating} />
+                <StarsRatingAndReview
+                  rating={filtersST[i].rating}
+                  reviews={filtersST[i].reviews}
+                />
 
                 <FriendlyDiagnoses diagnoses={diagnoses} />
 

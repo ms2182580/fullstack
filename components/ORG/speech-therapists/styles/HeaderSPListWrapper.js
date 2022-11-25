@@ -1,18 +1,20 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HeaderSPListWrapper = styled.div`
- display: flex;
- justify-content: space-between;
- margin-bottom: 56px;
- 
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 56px;
 `
 
+export const HeaderSPList_HowMuchShowingWrapper = styled.div``
 
-export const HeaderSPList_HowMuchShowingWrapper = styled.div`
- /* background-color: crimson; */
-`
+export const HeaderSPList_SortByWrapper = styled.div`
+  margin-right: 88px;
+  /* display: flex; */
+  /* justify-content: left; */
+  /* background-color: goldenrod; */
 
-export const HeaderSPList_SortByWrapper  = styled.div`
-margin-right: 88px;
-/* background-color: cornflowerblue; */
+  & > :nth-child(1) {
+    /* background-color: greenyellow; */
+  }
 `
