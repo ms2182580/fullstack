@@ -35,13 +35,12 @@ const STFiltersTherapistsButtons = () => {
   } = useFetch(
     `https://randomuser.me/api/?results=${howMuchShow}&nat=us&page=${pagination}`
   )
-  
+
   const handleSetData = () => setData()
   const handleSetFilters = () => setFilters()
   // console.log('userFetched:', userFetched)
   // console.log('filtersST:', filtersST)
-  
-  
+
   // console.log('setData, setFilters:', setData, setFilters)
 
   const {
@@ -68,6 +67,7 @@ const STFiltersTherapistsButtons = () => {
           setFilterData={setFilterData}
           filterData={filterData}
         />
+
         <SpeechtherapistList
           filterData={filterData}
           userFetched={userFetched}
@@ -76,9 +76,8 @@ const STFiltersTherapistsButtons = () => {
           setFilters={setFilters}
           handleSetData={handleSetData}
           handleSetFilters={handleSetFilters}
-          
-          
         />
+
         <FinalButtons setPagination={setPagination} pagination={pagination} />
       </div>
     </STFiltersTherapistsButtonsWrapper>

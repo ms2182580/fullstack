@@ -5,6 +5,7 @@ import { SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 import { useORG_Ctx_UserFetchedAndFilters } from "../../../context/ORG_Ctx_userFetchedAndFilters"
+import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 
 export const CustomDropdownFilters = ({
   icon = "no icon found",
@@ -46,57 +47,26 @@ export const CustomDropdownFilters = ({
 
   const getSelection = (e) => {
     let elementSelected = e.target.textContent
+    console.log("elementSelected:", elementSelected)
     /* 
     
     !FH
-    Make a filter to filter by nearest, rating, review count
-    Clean all the consoles.log
+    Make the filter nearest, rating and review count presist between pages changes
     */
-    
-
-    console.log("filtersST:", filtersST)
-    const newOrder = filtersST
-      .map((x, i) => [Number(x.rating), i])
-      .sort((a, b) => {
-        return b[0] - a[0]
-      })
-      .map((x) => x[1])
-
-    console.log("newOrder:", newOrder)
-
-    const newOrderData = []
-    const newOrderFilters = []
-    for (const x in newOrder) {
-      for (const y in userFetched.allData) {
-        console.log(
-          "newOrder[x] === Number(y):",
-          newOrder[x] === Number(y),
-          "newOrder[x], Number(y)",
-          newOrder[x],
-          Number(y),
-          y
-        )
-        if (newOrder[x] === Number(y)) {
-          newOrderData.push(userFetched.allData[y])
-          newOrderFilters.push(filtersST[y])
-          break
-        }
-      }
-    }
-
-    console.log("newOrderData:", newOrderData)
-    console.log("newOrderFilters:", newOrderFilters)
+   
+    const {newOrderData, newOrderFilters} = ORG_Sortyby(elementSelected, filtersST, userFetched)
 
     setData((prevState) => ({
       ...prevState,
       allData: newOrderData
     }))
     setFilters(newOrderFilters)
+    
+    
     // console.dir('newOrderFinal:', newOrderFinal)
 
     // console.log('setUserFetchedDone:', setUserFetchedDone)
     // console.log('setFiltersUserFetchedDone:', setFiltersUserFetchedDone)
-    console.log("🔰 setData:")
     // console.log("🔰 userFetchedDone:", userFetchedDone)
     handleDropdownClick()
   }

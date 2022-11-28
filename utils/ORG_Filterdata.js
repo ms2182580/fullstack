@@ -42,7 +42,7 @@ export const ORG_Filterdata_Rating = () => {
 }
 
 export const ORG_Filterdata_Reviews = () => {
-  const reviews = ["1", "2", "3", "4", "5", "5+"]
+  const reviews = ["1", "2", "3", "4", "5", "+5"]
   return pickJustOne(reviews)
 }
 

@@ -34,7 +34,8 @@ export const SpeechtherapistList = ({
   filtersST,
   setData,
   setFilters,
-  handleSetData, handleSetFilters
+  handleSetData,
+  handleSetFilters
 }) => {
   // console.log('userFetched2:', userFetched2)
   // console.log('userFetched:', userFetched)
@@ -78,7 +79,7 @@ export const SpeechtherapistList = ({
         setData={setData}
         setFilters={setFilters}
         handleSetData={handleSetData}
-handleSetFilters={handleSetFilters}
+        handleSetFilters={handleSetFilters}
       />
 
       {userFetched &&
