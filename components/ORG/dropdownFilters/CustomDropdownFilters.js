@@ -1,38 +1,29 @@
 import Image from "next/image.js"
 import { Fragment, useState } from "react"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { SingleDropdownWrapper } from "./styles/Singledropdown"
+import { CustomP, SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
-import { useORG_Ctx_UserFetchedAndFilters } from "../../../context/ORG_Ctx_userFetchedAndFilters"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
+import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
 
 export const CustomDropdownFilters = ({
   icon = "no icon found",
   title = "no title",
   suggestions = [],
-  noIcon = false,
-  userFetched,
-  filtersST,
-  setData,
-  setFilters,
-  handleSetData,
-  handleSetFilters
+  noIcon = false
 }) => {
-  // const {
-  //   userFetchedDone,
-  //   filtersUserFetchedDone,
-  //   setUserFetchedDone,
-  //   setFiltersUserFetchedDone
-  // } = useORG_Ctx_UserFetchedAndFilters()
-
-  // console.log('setData, setFilters:', setData, setFilters)
-
-  // console.log('userFetchedDone, filtersUserFetchedDone:', userFetchedDone, filtersUserFetchedDone)
-
+  const {
+    userFetched,
+    setData,
+    filtersST,
+    setFilters,
+    actualSort,
+    setActualSort
+  } = useORG_Ctx_PaginationAndHowMuchShow()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  const handleDropdownClick = () => {
+  const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)
   }
 
@@ -47,30 +38,23 @@ export const CustomDropdownFilters = ({
 
   const getSelection = (e) => {
     let elementSelected = e.target.textContent
-    console.log("elementSelected:", elementSelected)
-    /* 
-    
-    !FH
-    Make the filter nearest, rating and review count presist between pages changes
-    */
-   
-    const {newOrderData, newOrderFilters} = ORG_Sortyby(elementSelected, filtersST, userFetched)
+    setActualSort(elementSelected)
+
+    const { newOrderData, newOrderFilters } = ORG_Sortyby(
+      elementSelected,
+      filtersST,
+      userFetched,
+      "CustomDropdownFilters"
+    )
 
     setData((prevState) => ({
       ...prevState,
       allData: newOrderData
     }))
     setFilters(newOrderFilters)
-    
-    
-    // console.dir('newOrderFinal:', newOrderFinal)
 
-    // console.log('setUserFetchedDone:', setUserFetchedDone)
-    // console.log('setFiltersUserFetchedDone:', setFiltersUserFetchedDone)
-    // console.log("🔰 userFetchedDone:", userFetchedDone)
     handleDropdownClick()
   }
-  // console.log('✨ userFetchedDone:', userFetchedDone)
 
   return (
     <>
@@ -96,17 +80,20 @@ export const CustomDropdownFilters = ({
             <>
               <div></div>
               {suggestionsValidated.map((x) => {
+                let highlight = x === actualSort
+
                 return (
                   <Fragment key={x}>
                     {
                       <Fragment>
-                        <p
+                        <CustomP
+                          highlight={highlight}
                           onClick={(e) => {
                             getSelection(e)
                           }}
                         >
                           {x}
-                        </p>
+                        </CustomP>
                       </Fragment>
                     }
                   </Fragment>

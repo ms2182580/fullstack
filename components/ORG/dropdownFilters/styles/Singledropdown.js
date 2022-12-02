@@ -6,9 +6,8 @@ export const SingleDropdownWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: relative;
-  
-  /* background-color: crimson; */
 
+  /* background-color: crimson; */
 
   & > :nth-child(1) {
     display: flex;
@@ -34,12 +33,12 @@ export const SingleDropdownWrapper = styled.div`
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
     z-index: 99;
-    width:188px;
+    width: 188px;
     /* background-color: crimson; */
 
     & > div:nth-child(1) {
       height: 1.67px;
-      width:174px;
+      width: 174px;
       margin-bottom: 8px;
       background-color: ${NEUTRALS.BLACK};
     }
@@ -48,6 +47,8 @@ export const SingleDropdownWrapper = styled.div`
     & > a > p {
       padding: 0.5rem 1.5rem;
       cursor: pointer;
+
+      background-color: ${(x) => x.highlight === "highlight" && crimson};
     }
 
     & > p:hover,
@@ -60,5 +61,9 @@ export const SingleDropdownWrapper = styled.div`
       height: 0.5rem;
     }
   }
+`
 
+export const CustomP = styled.p`
+  background-color: ${(x) => (x.highlight ? NEUTRALS.BLACK : "")};
+  color: ${(x) => (x.highlight ? NEUTRALS.OFF_WHITE : "")};
 `

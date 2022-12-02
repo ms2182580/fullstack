@@ -11,11 +11,6 @@ const FilterCheckboxComponent = ({
 
   return (
     <>
-      <div>
-        <p>Filter by</p>
-        <p>Clear all</p>
-      </div>
-
       <FilterCheckboxComponentWrapper>
         <div>
           <h3>{title}</h3>

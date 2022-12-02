@@ -7,8 +7,11 @@ import {
 } from "./styles/SpeechtherapistFinalButtonsWrapper.js"
 import { NavigationButtonsNumbers } from "./NavigationButtonsNumbers.js"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
+import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow.js"
 
-const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
+export const SpeechtherapistFinalButtons = () => {
+  const { pagination, setPagination } = useORG_Ctx_PaginationAndHowMuchShow()
+
   const toPrevious = () => {
     setPagination((prevState) => {
       if (pagination > 1) return pagination - 1
@@ -32,10 +35,7 @@ const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
         </LinkNoStyle>
       )}
 
-      <NavigationButtonsNumbers
-        pagination={pagination}
-        setPagination={setPagination}
-      />
+      <NavigationButtonsNumbers />
 
       <LinkNoStyle href="#topOfSTL">
         <NextButton onClick={() => setPagination(pagination + 1)}>
@@ -46,5 +46,3 @@ const SpeechtherapistFinalButtons = ({ setPagination, pagination }) => {
     </SpeechtherapistFinalButtonsWrapper>
   )
 }
-
-export default SpeechtherapistFinalButtons

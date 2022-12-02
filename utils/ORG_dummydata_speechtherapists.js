@@ -23,6 +23,7 @@ export const useFetch = (url, pagination) => {
 
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
+  const [actualSort, setActualSort] = useState("Nearest")
 
   useEffect(() => {
     let getData = { actualPage: "", allData: "" }
@@ -72,29 +73,9 @@ export const useFetch = (url, pagination) => {
           ]
         }
         setData(getData)
-        setFilters(getFilters)
+        setFilters(getFilters.filters)
       })
   }, [url, pagination])
 
-  useEffect(() => {
-    if (filters.length !== 0 && filters.filters !== undefined) {
-      const actualDistanceMiles = ["0-5", "5-10", "10-20", "+20"]
-      let filtersOrder = []
-
-      for (const y of actualDistanceMiles) {
-        for (const x of filters.filters) {
-          if (y === x.distance) {
-            filtersOrder.push(x)
-          }
-        }
-
-        if (filtersOrder.length === filters.filters.length) {
-          setFilters(filtersOrder)
-          break
-        }
-      }
-    }
-  }, [data])
-
-  return { data,setData,  filters, setFilters }
+  return { data, setData, filters, setFilters, actualSort, setActualSort }
 }

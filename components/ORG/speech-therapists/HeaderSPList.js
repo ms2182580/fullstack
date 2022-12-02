@@ -2,18 +2,11 @@ import HowMuchShowing from "./HowMuchShowing.js"
 import SortBy from "./SortBy.js"
 import { HeaderSPListWrapper } from "./styles/HeaderSPListWrapper.js"
 
-export const HeaderSPList = ({userFetched, filtersST, setData, setFilters, handleSetData, handleSetFilters }) => {
+export const HeaderSPList = () => {
   return (
     <HeaderSPListWrapper>
       <HowMuchShowing />
-      <SortBy
-        userFetched={userFetched}
-        filtersST={filtersST}
-        setData={setData}
-        setFilters={setFilters}
-        handleSetData={handleSetData}
-handleSetFilters={handleSetFilters}
-      />
+      <SortBy />
     </HeaderSPListWrapper>
   )
 }

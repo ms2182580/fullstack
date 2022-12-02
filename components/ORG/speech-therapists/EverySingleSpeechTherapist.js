@@ -25,62 +25,45 @@ import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import { ButtonSmall } from "../../ui/buttons/general"
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
-import { useORG_Ctx_UserFetchedAndFilters } from "../../../context/ORG_Ctx_userFetchedAndFilters"
 import { useEffect } from "react"
+import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 
-export const SpeechtherapistList = ({
-  filterData,
-  userFetched,
-  filtersST,
-  setData,
-  setFilters,
-  handleSetData,
-  handleSetFilters
-}) => {
-  // console.log('userFetched2:', userFetched2)
-  // console.log('userFetched:', userFetched)
-  // console.log('filtersST:', filtersST)
-  // console.log('userFetched:', userFetched)
-  // const {
-  //   userFetchedDone: userFetched,
-  //   setUserFetchedDone,
-  //   filtersUserFetchedDone: filtersST,
-  //   setFiltersUserFetchedDone
-  // } = useORG_Ctx_UserFetchedAndFilters()
-
-  // console.dir('userFetched:', userFetched)
-  useEffect(() => {
-    // console.log("Enter in useEffect 🔰");
-    if (userFetched !== undefined) {
-      // console.dir("userFetched:", userFetched.allData)
-      // console.log(setFiltersUserFetchedDone, setUserFetchedDone)
-      // setUserFetchedDone(userFetched2)
-      // setFiltersUserFetchedDone(filtersST2)
-    }
-  })
-
-  // console.log('userFetched:', userFetched)
-  // console.log('filtersST:', filtersST)
-
+export const SpeechtherapistList = ({ filterData }) => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+
+  const {
+    pagination,
+    userFetched,
+    setData,
+    filtersST,
+    setFilters,
+    actualSort,
+  } = useORG_Ctx_PaginationAndHowMuchShow()
 
   const goToDynamic = (e, everySingleValue) => {
     setSpeechtherapist([everySingleValue])
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
   }
+  useEffect(() => {
+    const { newOrderData, newOrderFilters } = ORG_Sortyby(
+      actualSort,
+      filtersST,
+      userFetched,
+      "SpeechtherapistList"
+    )
+    setData((prevState) => ({
+      ...prevState,
+      allData: newOrderData
+    }))
+    setFilters(newOrderFilters)
+  }, [actualSort, pagination])
 
   return (
     <EverySingleSpeechTherapistWrapper>
-      <HeaderSPList
-        userFetched={userFetched}
-        filtersST={filtersST}
-        setData={setData}
-        setFilters={setFilters}
-        handleSetData={handleSetData}
-        handleSetFilters={handleSetFilters}
-      />
+      <HeaderSPList />
 
       {userFetched &&
         Array.isArray(filtersST) &&

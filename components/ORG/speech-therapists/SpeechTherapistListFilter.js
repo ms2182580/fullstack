@@ -31,6 +31,11 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
 
   return (
     <SpeechTherapistListFilterWrapper id="topOfSTL">
+      <div>
+        <p>Filter by</p>
+        <p>Clear all</p>
+      </div>
+      
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}

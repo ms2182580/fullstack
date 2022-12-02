@@ -1,4 +1,4 @@
-export const ORG_Sortyby = (whichSort, sourceArr, userFetched) => {
+export const ORG_Sortyby = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
   let newOrder
   if (whichSort.toLowerCase() === "highest rating") {
     newOrder = sourceArr
@@ -21,7 +21,6 @@ export const ORG_Sortyby = (whichSort, sourceArr, userFetched) => {
   }
 
   if (whichSort.toLowerCase() === "review count") {
-    console.log("sourceArr:", sourceArr)
     let toSplit = sourceArr
       .map((x, i) => {
         if (/(?<!\+)[0-9]/g.test(x.reviews)) {
@@ -62,6 +61,5 @@ export const ORG_Sortyby = (whichSort, sourceArr, userFetched) => {
       }
     }
   }
-  return { newOrderData, newOrderFilters }
-
+  return { newOrderData, newOrderFilters}
 }
