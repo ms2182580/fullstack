@@ -13,7 +13,6 @@ const MaincontentProvisional = styled.h2`
 
 export default function HomeIndex() {
   useEffect(() => {
-    // console.log("Render ones");
     window.scrollTo(0, 0)
   }, [])
 

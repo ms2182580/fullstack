@@ -3,7 +3,6 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_I
 
 export const SpeechtherapistDetail = () => {
   const {speechtherapist} = useORG_Ctx_IndividualSpeechtherapist()
-  console.log('speechtherapist:', speechtherapist)
   
   if(speechtherapist === ""){
     return(

@@ -30,7 +30,7 @@ const ORGSpeechTherapists = () => {
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
 
-  const { userFetched, actualSort } = useORG_Ctx_PaginationAndHowMuchShow()
+  const { userFetched } = useORG_Ctx_PaginationAndHowMuchShow()
 
   if (userFetched === undefined) {
     return <LoadingSpeechTherapists />
@@ -84,6 +84,7 @@ const ORGSpeechTherapists = () => {
           </SpeechTherapistWraper>
 
           <STFiltersTherapistsButtons />
+          
         </>
       }
     </>

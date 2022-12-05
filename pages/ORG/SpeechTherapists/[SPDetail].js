@@ -24,7 +24,6 @@ const SPDetail = () => {
     router.back()
   }
   
-  // console.log('router:',router, router.query.SPDetail)
   return (
     <div>
       <SpeechtherapistDetail/>

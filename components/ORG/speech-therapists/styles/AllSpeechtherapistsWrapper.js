@@ -10,11 +10,12 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
 
     grid-template-areas:
       "filter list"
-      " . buttons";
+      "filter buttons";
   }
 
   & > :nth-child(1) > :nth-child(1) {
     grid-area: filter;
+    align-self: start;
     margin-right: 72px;
     
   }

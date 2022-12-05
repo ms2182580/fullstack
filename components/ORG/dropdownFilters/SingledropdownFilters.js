@@ -85,8 +85,6 @@ const Singledropdown = ({
                       <Fragment>
                         <p
                           onClick={(e) => {
-                            // setKeywordsContext("hard coded")
-                            // console.log("clicked!", e.target.textContent)
                             setKeywordsContext(e.target.textContent)
                           }}
                         >

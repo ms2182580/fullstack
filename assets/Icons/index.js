@@ -107,7 +107,6 @@ export const EmailORGSvg = (props) => (
   </svg>
 )
 
-
 export const ExclamationSvg = (props) => (
   <svg
     width="1em"
@@ -432,6 +431,36 @@ export const RightArrowSvg = (props) => (
   >
     <path
       d="m0 18.812 6.18-7.81L0 3.192l1.903-2.4L10 11.002 1.903 21.21 0 18.81Z"
+      fill="#00080B"
+    />
+  </svg>
+)
+
+export const DownArrowSvg = (props) => (
+  <svg
+    width="24px"
+    height="12px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M21.18 0 12 7.265 2.82 0 0 2.237l12 9.517 12-9.517L21.18 0Z"
+      fill="#00080B"
+    />
+  </svg>
+)
+
+export const UpArrowSvg = (props) => (
+  <svg
+    width="24px"
+    height="12px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M2.82 11.754 12 4.489l9.18 7.265L24 9.517 12 0 0 9.517l2.82 2.237Z"
       fill="#00080B"
     />
   </svg>

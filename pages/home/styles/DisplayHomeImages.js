@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components"
 import homeImage_background from "../../../assets/images/homeImage_background.png"
-// console.log('homeImage_background:', homeImage_background)
 
 const fromBelow = keyframes`
 0%

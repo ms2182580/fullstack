@@ -1,41 +1,116 @@
-import FilterCheckboxComponentWrapper from "./styles/FilterCheckboxComponentWrapper.js"
+import { Fragment } from "react"
+import { useEffect, useState } from "react"
+import { DownArrowSvg, StartEmptySvg, StartFullSvg, UpArrowSvg } from "../../../assets/Icons/index.js"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import FilterCheckboxComponentWrapper, {
+  FilterCheckboxComponent_UL, StarsWrapper
+} from "./styles/FilterCheckboxComponentWrapper.js"
+import { StarsRatingWrapper } from "./styles/StarsRatingWrapper.js"
 
 const FilterCheckboxComponent = ({
   dispatch,
   setFilterData,
   categoriesToDisplay = ["nothing here"],
   title,
-  toUpdate = undefined
+  toUpdate = undefined,
+  clearAll,
+  setClearAll
 }) => {
   let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
+  const [show, setShow] = useState(false)
+
+  const handleShow = () => {
+    setShow(!show)
+  }
+
+  useEffect(() => {
+    setShow(false)
+  }, [clearAll])
+
+  useEffect(() => {
+    setClearAll(false)
+  }, [show])
 
   return (
     <>
       <FilterCheckboxComponentWrapper>
         <div>
-          <h3>{title}</h3>
-          <span>ICON</span>
+          <P>{title}</P>
+          <span onClick={handleShow}>
+            {show ? <UpArrowSvg /> : <DownArrowSvg />}
+          </span>
         </div>
 
-        <ul>
-          {categoriesToDisplay?.map((x) => {
-            return (
-              <li key={x}>
-                <input
-                  type="checkbox"
-                  name={x}
-                  onClick={(e) => {
-                    dispatch({
-                      type: { x },
-                      payload: [setFilterData, e, toUpdateFilters]
-                    })
-                  }}
-                />
-                {x}
-              </li>
-            )
-          })}
-        </ul>
+        <FilterCheckboxComponent_UL show={show}>
+          {title.toLowerCase() === "rating"
+            ? categoriesToDisplay?.map((x) => {
+
+                let ratingPattern = Array(5)
+                  .fill(0)
+                  .map((xMap, i) => {
+                    if (x - 1 < i) {
+                      return "empty"
+                    }
+                    return "fully"
+                  })
+
+                return (
+                  <li key={x}>
+                    <label>
+                      <StarsWrapper>
+                        {ratingPattern.map((x, i) => {
+                          if (x === "fully") {
+                            return (
+                              <Fragment key={`${x}${i}`}>
+                                <StartFullSvg />
+                              </Fragment>
+                            )
+                          } else {
+                            return (
+                              <Fragment key={`${x}${i}`}>
+                                <StartEmptySvg />
+                              </Fragment>
+                            )
+                          }
+                        })}
+                      </StarsWrapper>
+                      <input
+                        type="checkbox"
+                        name={x}
+                        onClick={(e) => {
+                          dispatch({
+                            type: { x },
+                            payload: [setFilterData, e, toUpdateFilters]
+                          })
+                        }}
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              })
+            : categoriesToDisplay?.map((x) => {
+                return (
+                  <li key={x}>
+                    <label>
+                      <P>{x}</P>
+                      <input
+                        type="checkbox"
+                        name={x}
+                        onClick={(e) => {
+                          dispatch({
+                            type: { x },
+                            payload: [setFilterData, e, toUpdateFilters]
+                          })
+                        }}
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              })}
+
+        </FilterCheckboxComponent_UL>
       </FilterCheckboxComponentWrapper>
     </>
   )

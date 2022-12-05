@@ -1,4 +1,6 @@
-import { useReducer } from "react"
+import { useReducer, useState } from "react"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import FilterCheckboxComponent from "./FilterCheckboxComponent.js"
 import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
 
@@ -28,17 +30,24 @@ const reducer = (state, action) => {
 
 const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
   const [state, dispatch] = useReducer(reducer, filterData)
+  const [clearAll, setClearAll] = useState(false)
+  
+  const handleClearAll = () => {
+    setClearAll(true)
+  }
 
   return (
     <SpeechTherapistListFilterWrapper id="topOfSTL">
       <div>
-        <p>Filter by</p>
-        <p>Clear all</p>
+        <H4>Filter by</H4>
+        <P onClick={handleClearAll}>Clear all</P>
       </div>
-      
+
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "0-5 miles",
           "5-10 miles",
@@ -51,12 +60,16 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
-        categoriesToDisplay={["1 star", "2 star", "3 star", "4 star", "5 star"]}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
+        categoriesToDisplay={["1", "2", "3", "4", "5"]}
         title="Rating"
       />
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "Autism (ASD)",
           "ADHD",
@@ -71,6 +84,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "0-18 months",
           "2-3 years",
@@ -88,6 +103,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "English",
           "Spanish",
@@ -101,6 +118,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "1+ Years",
           "3+ Years",
@@ -115,6 +134,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={["Clinic", "Home", "School", "Community"]}
         title="Service Setting"
         toUpdate="serviceSetting"
@@ -123,6 +144,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "Medicaid",
           "Insurance",
@@ -135,6 +158,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={["Virtual", "In-Person"]}
         title="Meeting Format"
         toUpdate="meetingFormat"
@@ -143,6 +168,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={["Individual", "Group"]}
         title="Session Type"
         toUpdate="sessionType"
@@ -151,6 +178,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={[
           "Near Metro",
           "Near Bus",
@@ -164,6 +193,8 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
       <FilterCheckboxComponent
         dispatch={dispatch}
         setFilterData={setFilterData}
+        clearAll={clearAll}
+        setClearAll={setClearAll}
         categoriesToDisplay={["Independent", "Agency-based", "Traveling"]}
         title="Provider Type"
         toUpdate="providerType"

@@ -50,7 +50,7 @@ export const H1 = styled.h1`
     x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_1};
   color: ${(x) =>
-    x.logo
+    x.logo    
       ? PRIMARY.PRIMARY_LOGO
       : x.cta
       ? PRIMARY.PRIMARY_CTA
