@@ -1,9 +1,15 @@
 import { Fragment } from "react"
 import { useEffect, useState } from "react"
-import { DownArrowSvg, StartEmptySvg, StartFullSvg, UpArrowSvg } from "../../../assets/Icons/index.js"
+import {
+  DownArrowSvg,
+  StartEmptySvg,
+  StartFullSvg,
+  UpArrowSvg
+} from "../../../assets/Icons/index.js"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import FilterCheckboxComponentWrapper, {
-  FilterCheckboxComponent_UL, StarsWrapper
+  FilterCheckboxComponent_UL,
+  StarsWrapper
 } from "./styles/FilterCheckboxComponentWrapper.js"
 import { StarsRatingWrapper } from "./styles/StarsRatingWrapper.js"
 
@@ -14,7 +20,8 @@ const FilterCheckboxComponent = ({
   title,
   toUpdate = undefined,
   clearAll,
-  setClearAll
+  setClearAll,
+  showStateChildren,
 }) => {
   let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
   const [show, setShow] = useState(false)
@@ -29,6 +36,7 @@ const FilterCheckboxComponent = ({
 
   useEffect(() => {
     setClearAll(false)
+    showStateChildren(show)
   }, [show])
 
   return (
@@ -44,7 +52,6 @@ const FilterCheckboxComponent = ({
         <FilterCheckboxComponent_UL show={show}>
           {title.toLowerCase() === "rating"
             ? categoriesToDisplay?.map((x) => {
-
                 let ratingPattern = Array(5)
                   .fill(0)
                   .map((xMap, i) => {
@@ -109,7 +116,6 @@ const FilterCheckboxComponent = ({
                   </li>
                 )
               })}
-
         </FilterCheckboxComponent_UL>
       </FilterCheckboxComponentWrapper>
     </>

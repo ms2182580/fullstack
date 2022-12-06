@@ -1,11 +1,10 @@
 import { useState } from "react"
 import SpeechTherapistListFilter from "./SpeechTherapistListFilter"
-import {SpeechtherapistFinalButtons} from "./SpeechtherapistFinalButtons"
+import { SpeechtherapistFinalButtons } from "./SpeechtherapistFinalButtons"
 import STFiltersTherapistsButtonsWrapper from "./styles/AllSpeechtherapistsWrapper"
 import { SpeechtherapistList } from "./EverySingleSpeechTherapist"
 
 const STFiltersTherapistsButtons = () => {
-
   const [filterData, setFilterData] = useState({
     distance: [],
     rating: [],
@@ -21,7 +20,6 @@ const STFiltersTherapistsButtons = () => {
     providerType: []
   })
 
-
   return (
     <STFiltersTherapistsButtonsWrapper>
       <div>
@@ -30,7 +28,10 @@ const STFiltersTherapistsButtons = () => {
           filterData={filterData}
         />
 
-        <SpeechtherapistList filterData={filterData} />
+        <SpeechtherapistList
+          filterData={filterData}
+          setFilterData={setFilterData}
+        />
 
         <SpeechtherapistFinalButtons />
       </div>

@@ -25,11 +25,14 @@ import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import { ButtonSmall } from "../../ui/buttons/general"
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
+import { useFetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
 
-export const SpeechtherapistList = ({ filterData }) => {
+export const SpeechtherapistList = ({ filterData, setFilterData }) => {
+  // console.log('👌 filterData:', filterData)
+  const [filtersLeft, setFiltersLeft] = useState()
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
@@ -39,7 +42,7 @@ export const SpeechtherapistList = ({ filterData }) => {
     setData,
     filtersST,
     setFilters,
-    actualSort,
+    actualSort
   } = useORG_Ctx_PaginationAndHowMuchShow()
 
   const goToDynamic = (e, everySingleValue) => {
@@ -60,6 +63,39 @@ export const SpeechtherapistList = ({ filterData }) => {
     }))
     setFilters(newOrderFilters)
   }, [actualSort, pagination])
+
+  // console.log('filterData:', filterData)
+  const {
+    dataF,
+    filtersF,
+    setDataF,
+    setFiltersF,
+    actualSortF,
+    setActualSortF
+  } = useFetchFiltered(
+    "https://randomuser.me/api/?results=10&nat=us",
+    filterData
+  )
+  console.log(
+    // setDataF,
+    // dataF,
+    // filtersF
+    // actualSortF,
+    // setFiltersF,
+    // setActualSortF
+    )
+    
+
+  useEffect(() => {
+    // console.log("Filter data change", filterData)
+    console.log(dataF, filtersF)
+
+    setFiltersLeft(filterData)
+
+    /* 
+    Simulate the request to the API with the data used
+    */
+  }, [dataF, filtersF, setDataF, setFiltersF])
 
   return (
     <EverySingleSpeechTherapistWrapper>

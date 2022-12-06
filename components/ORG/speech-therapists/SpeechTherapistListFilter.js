@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useReducer, useState } from "react"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
@@ -31,16 +32,21 @@ const reducer = (state, action) => {
 const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
-  
+  const [show, setShow] = useState(false)
+
   const handleClearAll = () => {
-    setClearAll(true)
+    if (show) {
+      setClearAll(true)
+    }
   }
 
   return (
     <SpeechTherapistListFilterWrapper id="topOfSTL">
       <div>
         <H4>Filter by</H4>
-        <P onClick={handleClearAll}>Clear all</P>
+
+        <P onClick={() => handleClearAll()}>Clear all</P>
+
       </div>
 
       <FilterCheckboxComponent
@@ -48,6 +54,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "0-5 miles",
           "5-10 miles",
@@ -62,6 +69,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={["1", "2", "3", "4", "5"]}
         title="Rating"
       />
@@ -70,6 +78,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "Autism (ASD)",
           "ADHD",
@@ -86,6 +95,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "0-18 months",
           "2-3 years",
@@ -105,6 +115,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "English",
           "Spanish",
@@ -120,6 +131,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "1+ Years",
           "3+ Years",
@@ -136,6 +148,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={["Clinic", "Home", "School", "Community"]}
         title="Service Setting"
         toUpdate="serviceSetting"
@@ -146,6 +159,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "Medicaid",
           "Insurance",
@@ -160,6 +174,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={["Virtual", "In-Person"]}
         title="Meeting Format"
         toUpdate="meetingFormat"
@@ -170,6 +185,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={["Individual", "Group"]}
         title="Session Type"
         toUpdate="sessionType"
@@ -180,6 +196,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={[
           "Near Metro",
           "Near Bus",
@@ -195,6 +212,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         setFilterData={setFilterData}
         clearAll={clearAll}
         setClearAll={setClearAll}
+        showStateChildren={setShow}
         categoriesToDisplay={["Independent", "Agency-based", "Traveling"]}
         title="Provider Type"
         toUpdate="providerType"
