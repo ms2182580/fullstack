@@ -31,7 +31,7 @@ const pickMoreThanOne = (arr, pickEnglish = false, diagnoses = false) => {
   return toReturn
 }
 
-export const ORG_Filterdata_Distance = (whichSelect) => {
+export const ORG_Filterdata_Distance = (whichSelect = []) => {
   console.log("DISTANCE_whichSelect:", whichSelect)
   // console.log()
 

@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const SpeechtherapistFinalButtonsWrapper = styled.div`
+  align-self: end;
   display: flex;
   align-items: center;
   justify-content: end;

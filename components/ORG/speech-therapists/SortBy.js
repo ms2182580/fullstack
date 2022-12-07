@@ -1,4 +1,3 @@
-import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomDropdownFilters } from "../dropdownFilters/CustomDropdownFilters"
 import { HeaderSPList_SortByWrapper } from "./styles/HeaderSPListWrapper"
 

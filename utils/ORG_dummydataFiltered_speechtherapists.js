@@ -28,7 +28,7 @@ export const useFetchFiltered = (url, filtersSelected = {}) => {
   
   console.log('💖filtersSelected:', filtersSelected)
 
-  console.log('ORG_Filterdata_Distance(filtersSelected.distance):', ORG_Filterdata_Distance(filtersSelected.distance))
+  // console.log('ORG_Filterdata_Distance(filtersSelected.distance):', ORG_Filterdata_Distance(filtersSelected.distance))
 
   useEffect(() => {
     let getData = { allData: "" }

@@ -2,16 +2,14 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const EverySingleSpeechTherapistWrapper = styled.div`
-  display: grid;
+  margin-left: 72px;
 `
-
 
 export const EverySingleSpeechTherapistWrapper_Card = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
-
   margin-bottom: 2rem;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 `
@@ -22,8 +20,7 @@ export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
-  min-width:398px;
-
+  min-width: 398px;
 `
 
 export const EverySPT_LeftImage = styled.div`
@@ -43,7 +40,6 @@ export const EverySPT_LeftImage = styled.div`
 export const EverySPT_LeftInfo = styled.div`
   margin-left: 14px;
   margin-right: 14px;
-
 `
 
 export const EverySingleSpeechTherapistWrapper_Right = styled.div`

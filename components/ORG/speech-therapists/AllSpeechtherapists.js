@@ -22,19 +22,17 @@ const STFiltersTherapistsButtons = () => {
 
   return (
     <STFiltersTherapistsButtonsWrapper>
-      <div>
-        <SpeechTherapistListFilter
-          setFilterData={setFilterData}
-          filterData={filterData}
-        />
+      <SpeechTherapistListFilter
+        setFilterData={setFilterData}
+        filterData={filterData}
+      />
 
-        <SpeechtherapistList
-          filterData={filterData}
-          setFilterData={setFilterData}
-        />
+      <SpeechtherapistList
+        filterData={filterData}
+        setFilterData={setFilterData}
+      />
 
-        <SpeechtherapistFinalButtons />
-      </div>
+      <SpeechtherapistFinalButtons />
     </STFiltersTherapistsButtonsWrapper>
   )
 }

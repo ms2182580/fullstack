@@ -44,9 +44,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
     <SpeechTherapistListFilterWrapper id="topOfSTL">
       <div>
         <H4>Filter by</H4>
-
         <P onClick={() => handleClearAll()}>Clear all</P>
-
       </div>
 
       <FilterCheckboxComponent

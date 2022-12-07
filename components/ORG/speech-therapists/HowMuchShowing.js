@@ -19,11 +19,11 @@ const HowMuchShowing = () => {
   }, [actualShow])
 
   return (
-    <HeaderSPList_HowMuchShowingWrapper>
+    <>
       <P semibold>
         {actualShow} of {theTotal} results shown
       </P>
-    </HeaderSPList_HowMuchShowingWrapper>
+    </>
   )
 }
 
