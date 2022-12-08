@@ -12,7 +12,6 @@ export const SpeechtherapistList = ({ filterData, setFilterData }) => {
     let filterHaveAtLeastOneValue = Object.values(filterData).some(
       (x) => x.length > 0
     )
-
     if (filterHaveAtLeastOneValue) {
       setFilterHaveAtLeastOneValueState(true)
     } else {
@@ -26,7 +25,10 @@ export const SpeechtherapistList = ({ filterData, setFilterData }) => {
 
       {filterHaveAtLeastOneValueState ? (
         <>
-          <SpeechTherapistsCardWithFilter filterData={filterData} />
+          <SpeechTherapistsCardWithFilter
+            filterHaveAtLeastOneValueState={filterHaveAtLeastOneValueState}
+            filterData={filterData}
+          />
         </>
       ) : (
         <SpeechTherapistsCardNoFilter />

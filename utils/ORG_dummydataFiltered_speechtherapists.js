@@ -13,9 +13,9 @@ import {
   ORG_Filterdata_SessionType,
   ORG_Filterdata_Transportation,
   ORG_Filterdata_YoP
-} from "./ORG_FilterdataSelection"
+} from "./ORG_Filterdata"
 
-export const useFetchFiltered = (url, filtersSelected = {}) => {
+export const FetchFiltered = (url, filtersSelected = {}) => {
   // This code is for debuggin purposes. When is uncommented you have to comment the code below of them to display always the loading state
 
   // const data = {undefined}
@@ -23,7 +23,6 @@ export const useFetchFiltered = (url, filtersSelected = {}) => {
 
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
-  const [filtersRecibed, setFiltersRecibed] = useState({})
   const [actualSortF, setActualSortF] = useState("Nearest")
   
   console.log('💖filtersSelected:', filtersSelected)
@@ -79,7 +78,7 @@ export const useFetchFiltered = (url, filtersSelected = {}) => {
         setDataF(getData)
         setFiltersF(getFilters.filters)
       })
-  }, [url])
+  }, [url, filtersSelected])
 
   return { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF }
 }

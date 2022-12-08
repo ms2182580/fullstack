@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { useFetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
+import { FetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import {
@@ -25,7 +26,15 @@ import {
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { Verified } from "./Verified"
 
-export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
+export const SpeechTherapistsCardWithFilter = ({
+  filterData,
+  filterHaveAtLeastOneValueState
+}) => {
+  const [newFilters, setNewFilters] = useState(filterData)
+  // const [dataFetch, setDataFetch] = useState()
+  // const [filtersFetch, setFiltersFetch] = useState()
+  // console.log('filterHaveAtLeastOneValueState:', filterHaveAtLeastOneValueState)
+
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = (e, everySingleValue) => {
@@ -34,6 +43,12 @@ export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
     router.push(toWhere)
   }
 
+  // console.log("filterData:", filterData)
+
+  // useEffect(() => {
+  //   setNewFilters(filterData)
+  // }, [filterData])
+
   const {
     dataF,
     filtersF,
@@ -41,14 +56,39 @@ export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
     setFiltersF,
     actualSortF,
     setActualSortF
-  } = useFetchFiltered(
-    "https://randomuser.me/api/?results=10&nat=us",
-    filterData
-  )
+  } = FetchFiltered("https://randomuser.me/api/?results=10&nat=us", filterData)
+
+  // const {
+  //   dataF,
+  //   filtersF,
+  //   setDataF,
+  //   setFiltersF,
+  //   actualSortF,
+  //   setActualSortF
+  // } = FetchFiltered("https://randomuser.me/api/?results=10&nat=us", newFilters)
+
+  console.log("💛 newFilters:", newFilters)
+
+  // const {
+  //   dataF,
+  //   filtersF,
+  //   setDataF,
+  //   setFiltersF,
+  //   actualSortF,
+  //   setActualSortF
+  // } = FetchFiltered(
+  //   "https://randomuser.me/api/?results=10&nat=us",
+  //   newFilters
+  // )
+
+  // useEffect(() => {
+  //   console.log("newFilters:", newFilters)
+  // }, [filterData])
 
   // !FH Make this a context to use in "CustomDropdownFilters"
+  // !FH Make this render every time filderData change
 
-  console.log("dataF,filtersF:", dataF, filtersF)
+  // console.log("dataF,filtersF:", dataF, filtersF)
 
   return (
     <>
@@ -78,8 +118,7 @@ export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
 
           return (
             <EverySingleSpeechTherapistWrapper_Card
-              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}
-            >
+              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <EverySingleSpeechTherapistWrapper_Left>
                 <EverySPT_LeftImage>
                   <Image

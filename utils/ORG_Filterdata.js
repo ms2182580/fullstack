@@ -31,13 +31,15 @@ const pickMoreThanOne = (arr, pickEnglish = false, diagnoses = false) => {
   return toReturn
 }
 
-export const ORG_Filterdata_Distance = () => {
-  const actualDistanceMiles = ["0-5", "5-10", "10-20", "+20"]
+export const ORG_Filterdata_Distance = (whichSelect = []) => {
+  const actualDistanceMiles =
+    whichSelect.length === 0 ? ["0-5", "5-10", "10-20", "+20"] : whichSelect
   return pickJustOne(actualDistanceMiles)
 }
 
-export const ORG_Filterdata_Rating = () => {
-  const rating = ["1", "2", "3", "4", "5"]
+export const ORG_Filterdata_Rating = (whichSelect = []) => {
+  const rating =
+    whichSelect.length === 0 ? ["1", "2", "3", "4", "5"] : whichSelect
   return pickJustOne(rating)
 }
 
@@ -45,8 +47,11 @@ export const ORG_Filterdata_Reviews = () => {
   const reviews = ["1", "2", "3", "4", "5", "+5"]
   return pickJustOne(reviews)
 }
+export const ORG_Filterdata_Diagnoses = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
 
-export const ORG_Filterdata_Diagnoses = () => {
   const diagnoses = [
     "Autism (ASD)",
     "ADHD",
@@ -55,10 +60,15 @@ export const ORG_Filterdata_Diagnoses = () => {
     "Fragile X",
     "Other"
   ]
+
   return pickMoreThanOne(diagnoses)
 }
 
-export const ORG_Filterdata_AgesServed = () => {
+export const ORG_Filterdata_AgesServed = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
+
   const agesServed = [
     "0-18 months",
     "2-3 years",
@@ -73,46 +83,64 @@ export const ORG_Filterdata_AgesServed = () => {
   return pickMoreThanOne(agesServed)
 }
 
-export const ORG_Filterdata_Languages = () => {
+export const ORG_Filterdata_Languages = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
   const languages = ["english", "spanish", "chinese", "tagalog", "french"]
-
   return pickMoreThanOne(languages, true)
 }
 
-export const ORG_Filterdata_YoP = () => {
-  const yearsOfPractice = [
-    "1+ years",
-    "3+ years",
-    "5+ years",
-    "7+ years",
-    "10+ years"
-  ]
+export const ORG_Filterdata_YoP = (whichSelect = []) => {
+  const yearsOfPractice =
+    whichSelect.length === 0
+      ? ["1+ years", "3+ years", "5+ years", "7+ years", "10+ years"]
+      : whichSelect
+
   return pickJustOne(yearsOfPractice)
 }
-export const ORG_Filterdata_ServiceSetting = () => {
+export const ORG_Filterdata_ServiceSetting = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
+
   const serviceSetting = ["clinic", "home", "school", "community"]
 
   return pickMoreThanOne(serviceSetting)
 }
 
-export const ORG_Filterdata_Accepts = () => {
+export const ORG_Filterdata_Accepts = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
   const accepts = ["medicaid", "insurance", "private pay", "DOE approved"]
 
   return pickMoreThanOne(accepts)
 }
 
-export const ORG_Filterdata_MeetingFormat = () => {
+export const ORG_Filterdata_MeetingFormat = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
+
   const meetingFormat = ["virtual", "in-person"]
 
   return pickMoreThanOne(meetingFormat)
 }
 
-export const ORG_Filterdata_SessionType = () => {
+export const ORG_Filterdata_SessionType = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
   const sessionType = ["individual", "group"]
   return pickMoreThanOne(sessionType)
 }
 
-export const ORG_Filterdata_Transportation = () => {
+export const ORG_Filterdata_Transportation = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
+
   const transportation = [
     "near metro",
     "near bus",
@@ -124,8 +152,11 @@ export const ORG_Filterdata_Transportation = () => {
   return pickMoreThanOne(transportation)
 }
 
-export const ORG_Filterdata_ProviderType = () => {
-  const providerType = ["independent", "agency-based", "traveling"]
+export const ORG_Filterdata_ProviderType = (whichSelect = []) => {
+  const providerType =
+    whichSelect.length === 0
+      ? ["independent", "agency-based", "traveling"]
+      : whichSelect
 
   return pickJustOne(providerType)
 }
