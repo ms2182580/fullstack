@@ -3,7 +3,8 @@ import { useFetch } from "../utils/ORG_dummydata_speechtherapists"
 
 const ORG_Ctx_Pagination = createContext(null)
 
-export const ORG_CtxIndividualPaginationAndHowMuchShow_Provider = ({
+// ORG_CtxIndividualPaginationAndHowMuchShow_Provider
+export const ORG_CtxFetchNoFilters_Provider = ({
   children
 }) => {
   const [pagination, setPagination] = useState(1)
@@ -40,6 +41,6 @@ export const ORG_CtxIndividualPaginationAndHowMuchShow_Provider = ({
   )
 }
 
-export const useORG_Ctx_PaginationAndHowMuchShow = () => {
+export const useORG_Ctx_FetchNoFilters = () => {
   return useContext(ORG_Ctx_Pagination)
 }

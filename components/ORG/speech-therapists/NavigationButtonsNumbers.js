@@ -1,12 +1,12 @@
 import { Fragment, useEffect } from "react"
-import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { NumberPage } from "./styles/SpeechtherapistFinalButtonsWrapper"
 
 export const NavigationButtonsNumbers = () => {
-  const { pagination, setPagination } = useORG_Ctx_PaginationAndHowMuchShow()
+  const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
 
   let amountOfPagesToClick = Array(3).fill(0)
 

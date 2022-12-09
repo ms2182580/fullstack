@@ -7,10 +7,10 @@ import {
 } from "./styles/SpeechtherapistFinalButtonsWrapper.js"
 import { NavigationButtonsNumbers } from "./NavigationButtonsNumbers.js"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
-import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow.js"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider.js"
 
 export const SpeechtherapistFinalButtons = () => {
-  const { pagination, setPagination } = useORG_Ctx_PaginationAndHowMuchShow()
+  const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
 
   const toPrevious = () => {
     setPagination((prevState) => {

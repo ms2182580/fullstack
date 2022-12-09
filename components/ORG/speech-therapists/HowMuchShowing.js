@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { HeaderSPList_HowMuchShowingWrapper } from "./styles/HeaderSPListWrapper"
 
 const HowMuchShowing = () => {
-  const { pagination, howMuchShow } = useORG_Ctx_PaginationAndHowMuchShow()
+  const { pagination, howMuchShow } = useORG_Ctx_FetchNoFilters()
   const [actualShow, setActualShow] = useState(howMuchShow)
   const [theTotal, setTheTotal] = useState(howMuchShow * 5)
 

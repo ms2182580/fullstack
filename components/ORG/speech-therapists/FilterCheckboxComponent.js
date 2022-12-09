@@ -96,31 +96,27 @@ const FilterCheckboxComponent = ({
                   </li>
                 )
               })
-            : title.toLowerCase() === "distance" ?
-            
-            categoriesToDisplay?.map((x) => {
-              return (
-                <li key={x}>
-                  <label>
-                    <P>{x} miles</P>
-                    <CustomCheckboxInput
-                      type="checkbox"
-                      name={x}
-                      dispatch={dispatch}
-                      setFilterData={setFilterData}
-                      toUpdateFilters={toUpdateFilters}
-                      clearAll={clearAll}
-                    />
+            : title.toLowerCase() === "distance"
+            ? categoriesToDisplay?.map((x) => {
+                return (
+                  <li key={x}>
+                    <label>
+                      <P>{x} miles</P>
+                      <CustomCheckboxInput
+                        type="checkbox"
+                        name={x}
+                        dispatch={dispatch}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
+                      />
 
-                    <span></span>
-                  </label>
-                </li>
-              )
-            }):
-            
-            
-            
-            categoriesToDisplay?.map((x) => {
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              })
+            : categoriesToDisplay?.map((x) => {
                 return (
                   <li key={x}>
                     <label>
@@ -133,7 +129,6 @@ const FilterCheckboxComponent = ({
                         toUpdateFilters={toUpdateFilters}
                         clearAll={clearAll}
                       />
-
                       <span></span>
                     </label>
                   </li>

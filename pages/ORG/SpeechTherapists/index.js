@@ -10,7 +10,7 @@ import { BackArrow } from "../../../assets/Icons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
 import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/AllSpeechtherapists"
-import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
 
 const ORGSpeechTherapists = () => {
@@ -30,7 +30,7 @@ const ORGSpeechTherapists = () => {
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
 
-  const { userFetched } = useORG_Ctx_PaginationAndHowMuchShow()
+  const { userFetched } = useORG_Ctx_FetchNoFilters()
 
   if (userFetched === undefined) {
     return <LoadingSpeechTherapists />

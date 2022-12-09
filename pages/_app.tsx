@@ -3,14 +3,14 @@ import PageLayout from "../components/PageLayout.js"
 import { LoginCtxProvider } from "../context/LoginCtx"
 import { ORG_InputCtxProvider } from "../context/ORG_Input"
 import { ORG_CtxIndividualSpeechtherapist_Provider } from "../context/ORG_Ctx_IndividualSpeechtherapist"
-import { ORG_CtxIndividualPaginationAndHowMuchShow_Provider } from "../context/ORG_Ctx_PaginationAndHowMuchShow.js"
+import { ORG_CtxFetchNoFilters_Provider } from "../context/ORG_CtxFetchNoFilters_Provider.js"
 
 function MyApp({ Component, pageProps }) {
   return (
     <LoginCtxProvider>
       <ORG_InputCtxProvider>
         <ORG_CtxIndividualSpeechtherapist_Provider>
-          <ORG_CtxIndividualPaginationAndHowMuchShow_Provider>
+          <ORG_CtxFetchNoFilters_Provider>
             
               <PageLayout>
                 <GlobalStyle />
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
 
                 <Component {...pageProps} />
               </PageLayout>
-          </ORG_CtxIndividualPaginationAndHowMuchShow_Provider>
+          </ORG_CtxFetchNoFilters_Provider>
         </ORG_CtxIndividualSpeechtherapist_Provider>
       </ORG_InputCtxProvider>
     </LoginCtxProvider>

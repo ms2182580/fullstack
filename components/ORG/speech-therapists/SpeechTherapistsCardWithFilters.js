@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { BookmarkSaveSTSvg } from "../../../assets/Icons"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { FetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
 import { ButtonSmall } from "../../ui/buttons/general"
@@ -25,9 +26,7 @@ import {
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { Verified } from "./Verified"
 
-export const SpeechTherapistsCardWithFilter = ({
-  filterData
-}) => {
+export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = (e, everySingleValue) => {
@@ -36,6 +35,7 @@ export const SpeechTherapistsCardWithFilter = ({
     router.push(toWhere)
   }
 
+  const { pagination } = useORG_Ctx_FetchNoFilters()
 
   const {
     dataF,
@@ -44,12 +44,13 @@ export const SpeechTherapistsCardWithFilter = ({
     setFiltersF,
     actualSortF,
     setActualSortF
-  } = FetchFiltered("https://randomuser.me/api/?results=10&nat=us", filterData)
+  } = FetchFiltered(
+    "https://randomuser.me/api/?results=10&nat=us",
+    filterData,
+    pagination
+  )
 
   // !FH Make this a context to use in "CustomDropdownFilters"
-
-  
-  
 
   return (
     <>

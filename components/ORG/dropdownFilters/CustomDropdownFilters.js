@@ -5,7 +5,7 @@ import { CustomP, SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
-import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 
 export const CustomDropdownFilters = ({
   icon = "no icon found",
@@ -20,7 +20,7 @@ export const CustomDropdownFilters = ({
     setFilters,
     actualSort,
     setActualSort
-  } = useORG_Ctx_PaginationAndHowMuchShow()
+  } = useORG_Ctx_FetchNoFilters()
   const [showDropdown, setShowDropdown] = useState(false)
 
   const handleDropdownClick = (e) => {

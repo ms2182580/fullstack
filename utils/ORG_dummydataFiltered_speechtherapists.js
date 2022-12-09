@@ -15,7 +15,7 @@ import {
   ORG_Filterdata_YoP
 } from "./ORG_Filterdata"
 
-export const FetchFiltered = (url, filtersSelected = {}) => {
+export const FetchFiltered = (url, filtersSelected = {}, pagination) => {
 
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
@@ -70,7 +70,7 @@ export const FetchFiltered = (url, filtersSelected = {}) => {
         setDataF(getData)
         setFiltersF(getFilters.filters)
       })
-  }, [url, filtersSelected])
+  }, [url, filtersSelected, pagination])
 
   return { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF }
 }

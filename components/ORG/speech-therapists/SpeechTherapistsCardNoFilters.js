@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { useORG_Ctx_PaginationAndHowMuchShow } from "../../../context/ORG_Ctx_PaginationAndHowMuchShow"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
@@ -27,7 +27,11 @@ import {
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { Verified } from "./Verified"
 
-export const SpeechTherapistsCardNoFilter = () => {
+export const SpeechTherapistsCardNoFilter = ({
+  // userFetched,
+  // filtersST,
+}) => {
+  
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = (e, everySingleValue) => {
@@ -35,7 +39,7 @@ export const SpeechTherapistsCardNoFilter = () => {
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
   }
-
+  
   const {
     pagination,
     userFetched,
@@ -43,8 +47,8 @@ export const SpeechTherapistsCardNoFilter = () => {
     filtersST,
     setFilters,
     actualSort
-  } = useORG_Ctx_PaginationAndHowMuchShow()
-
+  } = useORG_Ctx_FetchNoFilters()
+  
   useEffect(() => {
     const { newOrderData, newOrderFilters } = ORG_Sortyby(
       actualSort,
@@ -58,7 +62,10 @@ export const SpeechTherapistsCardNoFilter = () => {
     }))
     setFilters(newOrderFilters)
   }, [actualSort, pagination])
-
+  
+  
+  
+  
   return (
     <>
       {userFetched &&
@@ -87,7 +94,8 @@ export const SpeechTherapistsCardNoFilter = () => {
 
           return (
             <EverySingleSpeechTherapistWrapper_Card
-              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
+              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}
+            >
               <EverySingleSpeechTherapistWrapper_Left>
                 <EverySPT_LeftImage>
                   <Image
