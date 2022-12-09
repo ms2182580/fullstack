@@ -16,10 +16,6 @@ import {
 } from "./ORG_Filterdata"
 
 export const useFetch = (url, pagination) => {
-  // This code is for debuggin purposes. When is uncommented you have to comment the code below of them to display always the loading state
-
-  // const data = {undefined}
-  // return {data}
 
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])

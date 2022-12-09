@@ -3,22 +3,10 @@ import SpeechTherapistListFilter from "./SpeechTherapistListFilter"
 import { SpeechtherapistFinalButtons } from "./SpeechtherapistFinalButtons"
 import STFiltersTherapistsButtonsWrapper from "./styles/AllSpeechtherapistsWrapper"
 import { SpeechtherapistList } from "./EverySingleSpeechTherapist"
+import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters"
 
 const STFiltersTherapistsButtons = () => {
-  const [filterData, setFilterData] = useState({
-    distance: [],
-    rating: [],
-    diagnoses: [],
-    agesServed: [],
-    languages: [],
-    yearsOfPractice: [],
-    serviceSetting: [],
-    accepts: [],
-    meetingFormat: [],
-    sessionType: [],
-    transportation: [],
-    providerType: []
-  })
+  const [filterData, setFilterData] = useState(ORG_INITIAL_LEFT_FILTERS)
 
   return (
     <STFiltersTherapistsButtonsWrapper>
@@ -28,7 +16,6 @@ const STFiltersTherapistsButtons = () => {
       />
 
       <SpeechtherapistList
-      
         filterData={filterData}
         setFilterData={setFilterData}
       />

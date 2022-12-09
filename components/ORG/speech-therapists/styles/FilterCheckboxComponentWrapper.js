@@ -24,7 +24,6 @@ export const FilterCheckboxComponent_UL = styled.ul`
 
   & > li {
     margin-bottom: 31px;
-    /* background-color: cornflowerblue; */
 
     & > label {
       display: flex;
@@ -36,7 +35,6 @@ export const FilterCheckboxComponent_UL = styled.ul`
       user-select: none;
 
       & > p {
-        /* background-color: crimson; */
         white-space: nowrap;
       }
 
@@ -87,6 +85,11 @@ export const FilterCheckboxComponent_UL = styled.ul`
       }
     }
   }
+`
+
+export const CustomCheckboxInputWrapper = styled.label`
+
+
 `
 
 export const StarsWrapper = styled.div`

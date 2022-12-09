@@ -16,19 +16,11 @@ import {
 } from "./ORG_Filterdata"
 
 export const FetchFiltered = (url, filtersSelected = {}) => {
-  // This code is for debuggin purposes. When is uncommented you have to comment the code below of them to display always the loading state
-
-  // const data = {undefined}
-  // return {data}
 
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
   const [actualSortF, setActualSortF] = useState("Nearest")
   
-  console.log('💖filtersSelected:', filtersSelected)
-
-  // console.log('ORG_Filterdata_Distance(filtersSelected.distance):', ORG_Filterdata_Distance(filtersSelected.distance))
-
   useEffect(() => {
     let getData = { allData: "" }
 

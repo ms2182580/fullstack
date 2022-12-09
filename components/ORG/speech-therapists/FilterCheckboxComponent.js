@@ -7,11 +7,11 @@ import {
   UpArrowSvg
 } from "../../../assets/Icons/index.js"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { CustomCheckboxInput } from "./CustomCheckboxInput.js"
 import FilterCheckboxComponentWrapper, {
   FilterCheckboxComponent_UL,
   StarsWrapper
 } from "./styles/FilterCheckboxComponentWrapper.js"
-import { StarsRatingWrapper } from "./styles/StarsRatingWrapper.js"
 
 const FilterCheckboxComponent = ({
   dispatch,
@@ -22,6 +22,8 @@ const FilterCheckboxComponent = ({
   clearAll,
   setClearAll,
   showStateChildren,
+  shouldClear,
+  setShouldClear
 }) => {
   let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
   const [show, setShow] = useState(false)
@@ -60,7 +62,6 @@ const FilterCheckboxComponent = ({
                     }
                     return "fully"
                   })
-
                 return (
                   <li key={x}>
                     <label>
@@ -81,36 +82,58 @@ const FilterCheckboxComponent = ({
                           }
                         })}
                       </StarsWrapper>
-                      <input
+
+                      <CustomCheckboxInput
                         type="checkbox"
                         name={x}
-                        onClick={(e) => {
-                          dispatch({
-                            type: { x },
-                            payload: [setFilterData, e, toUpdateFilters]
-                          })
-                        }}
+                        dispatch={dispatch}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
                       />
                       <span></span>
                     </label>
                   </li>
                 )
               })
-            : categoriesToDisplay?.map((x) => {
+            : title.toLowerCase() === "distance" ?
+            
+            categoriesToDisplay?.map((x) => {
+              return (
+                <li key={x}>
+                  <label>
+                    <P>{x} miles</P>
+                    <CustomCheckboxInput
+                      type="checkbox"
+                      name={x}
+                      dispatch={dispatch}
+                      setFilterData={setFilterData}
+                      toUpdateFilters={toUpdateFilters}
+                      clearAll={clearAll}
+                    />
+
+                    <span></span>
+                  </label>
+                </li>
+              )
+            }):
+            
+            
+            
+            categoriesToDisplay?.map((x) => {
                 return (
                   <li key={x}>
                     <label>
                       <P>{x}</P>
-                      <input
+                      <CustomCheckboxInput
                         type="checkbox"
                         name={x}
-                        onClick={(e) => {
-                          dispatch({
-                            type: { x },
-                            payload: [setFilterData, e, toUpdateFilters]
-                          })
-                        }}
+                        dispatch={dispatch}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
                       />
+
                       <span></span>
                     </label>
                   </li>
