@@ -17,6 +17,7 @@ export const SpeechtherapistFinalButtons = () => {
       if (pagination > 1) return pagination - 1
       else return prevState
     })
+
   }
 
   return (

@@ -1,46 +1,46 @@
 import { createContext, useState, useContext } from "react"
-import { useFetch } from "../utils/ORG_dummydata_speechtherapists"
+import { FetchFiltered } from "../utils/ORG_dummydataFiltered_speechtherapists"
+import { useORG_Ctx_FetchNoFilters } from "./ORG_CtxFetchNoFilters_Provider"
+import { useORG_Ctx_filtersLeft } from "./ORG_CtxFiltersLeft_Provider"
+const ORG_Ctx_fetchWithFilters = createContext(null)
 
-const ORG_Ctx_Pagination = createContext(null)
-
-// ORG_CtxIndividualPaginationAndHowMuchShow_Provider
-export const ORG_CtxFetchNoFilters_Provider = ({
-  children
-}) => {
-  const [pagination, setPagination] = useState(1)
+export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
   const [howMuchShow, setHowMuchShow] = useState(10)
+  const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
+
+  // const { filtersLeftContext: filterData } = useORG_Ctx_filtersLeft()
 
   const {
-    data: userFetched,
-    filters: filtersST,
-    setData,
-    setFilters,
-    actualSort,
-    setActualSort
-  } = useFetch(
-    `https://randomuser.me/api/?results=${howMuchShow}&nat=us&page=${pagination}`
+    dataF,
+    setDataF,
+    filtersF,
+    setFiltersF,
+    actualSortF,
+    setActualSortF
+  } = FetchFiltered(
+    `https://randomuser.me/api/?results=${howMuchShow}&nat=us&page=${pagination}`,
+    pagination
   )
 
   return (
-    <ORG_Ctx_Pagination.Provider
+    <ORG_Ctx_fetchWithFilters.Provider
       value={{
         pagination,
         setPagination,
         howMuchShow,
         setHowMuchShow,
-        userFetched,
-        setData,
-        filtersST,
-        setFilters,
-        actualSort,
-        setActualSort
-      }}
-    >
+        dataF,
+        setDataF,
+        filtersF,
+        setFiltersF,
+        actualSortF,
+        setActualSortF
+      }}>
       {children}
-    </ORG_Ctx_Pagination.Provider>
+    </ORG_Ctx_fetchWithFilters.Provider>
   )
 }
 
-export const useORG_Ctx_FetchNoFilters = () => {
-  return useContext(ORG_Ctx_Pagination)
+export const useORG_Ctx_FetchWithFilters = () => {
+  return useContext(ORG_Ctx_fetchWithFilters)
 }

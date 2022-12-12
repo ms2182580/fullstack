@@ -1,12 +1,9 @@
 import { createContext, useState, useContext } from "react"
 import { useFetch } from "../utils/ORG_dummydata_speechtherapists"
 
-const ORG_Ctx_Pagination = createContext(null)
+const ORG_Ctx_fetchNoFilters = createContext(null)
 
-// ORG_CtxIndividualPaginationAndHowMuchShow_Provider
-export const ORG_CtxFetchNoFilters_Provider = ({
-  children
-}) => {
+export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
   const [pagination, setPagination] = useState(1)
   const [howMuchShow, setHowMuchShow] = useState(10)
 
@@ -22,7 +19,7 @@ export const ORG_CtxFetchNoFilters_Provider = ({
   )
 
   return (
-    <ORG_Ctx_Pagination.Provider
+    <ORG_Ctx_fetchNoFilters.Provider
       value={{
         pagination,
         setPagination,
@@ -34,13 +31,12 @@ export const ORG_CtxFetchNoFilters_Provider = ({
         setFilters,
         actualSort,
         setActualSort
-      }}
-    >
+      }}>
       {children}
-    </ORG_Ctx_Pagination.Provider>
+    </ORG_Ctx_fetchNoFilters.Provider>
   )
 }
 
 export const useORG_Ctx_FetchNoFilters = () => {
-  return useContext(ORG_Ctx_Pagination)
+  return useContext(ORG_Ctx_fetchNoFilters)
 }

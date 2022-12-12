@@ -6,18 +6,20 @@ import { SpeechtherapistList } from "./EverySingleSpeechTherapist"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters"
 
 const STFiltersTherapistsButtons = () => {
-  const [filterData, setFilterData] = useState(ORG_INITIAL_LEFT_FILTERS)
+  // const [filterData, setFilterData] = useState(ORG_INITIAL_LEFT_FILTERS)
+  // const filtersLe
 
   return (
     <STFiltersTherapistsButtonsWrapper>
       <SpeechTherapistListFilter
-        setFilterData={setFilterData}
-        filterData={filterData}
+      
+        // setFilterData={setFilterData}
+        // filterData={filterData}
       />
 
       <SpeechtherapistList
-        filterData={filterData}
-        setFilterData={setFilterData}
+        // filterData={filterData}
+        // setFilterData={setFilterData}
       />
 
       <SpeechtherapistFinalButtons />

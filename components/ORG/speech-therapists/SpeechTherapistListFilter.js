@@ -4,8 +4,10 @@ import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import FilterCheckboxComponent from "./FilterCheckboxComponent.js"
 import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
+import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
 
 const reducer = (state, action) => {
+  // console.log("action:", action)
   const setFilterData = action.payload[0]
   const toUpdateFilters = action.payload[2]
 
@@ -35,7 +37,16 @@ const reducer = (state, action) => {
   }
 }
 
-const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
+const SpeechTherapistListFilter = (
+  {
+    // setFilterData,
+    // filterData
+  }
+) => {
+  const {
+    filtersLeftContext: filterData,
+    setFiltersLeftContext: setFilterData
+  } = useORG_Ctx_filtersLeft()
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
@@ -68,12 +79,7 @@ const SpeechTherapistListFilter = ({ setFilterData, filterData }) => {
         showStateChildren={setShow}
         shouldClear={shouldClear}
         setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "0-5",
-          "5-10",
-          "10-20",
-          "20+"
-        ]}
+        categoriesToDisplay={["0-5", "5-10", "10-20", "20+"]}
         title="Distance"
       />
 

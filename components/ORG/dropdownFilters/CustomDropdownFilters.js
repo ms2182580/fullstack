@@ -6,6 +6,9 @@ import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
+import { FetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
+import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider"
+import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
 
 export const CustomDropdownFilters = ({
   icon = "no icon found",
@@ -19,9 +22,43 @@ export const CustomDropdownFilters = ({
     filtersST,
     setFilters,
     actualSort,
-    setActualSort
+    setActualSort,
+    pagination
   } = useORG_Ctx_FetchNoFilters()
   const [showDropdown, setShowDropdown] = useState(false)
+
+  // const {
+  //   filtersLeftContext: filterData,
+  //   setFiltersLeftContext: setFilterData
+  // } = useORG_Ctx_filtersLeft()
+
+  // console.log("filterData:", filterData)
+
+  // const {
+  //   dataF,
+  //   filtersF,
+  //   setDataF,
+  //   setFiltersF,
+  //   actualSortF,
+  //   setActualSortF
+  // } = FetchFiltered(
+  //   "https://randomuser.me/api/?results=10&nat=us",
+  //   filterData,
+  //   pagination
+  // )
+  
+  const {
+    // pagination,
+    setPagination,
+    howMuchShow,
+    setHowMuchShow,
+    dataF,
+    setDataF,
+    filtersF,
+    setFiltersF,
+    actualSortF,
+    setActualSortF
+  } = useORG_Ctx_FetchWithFilters()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)
@@ -44,7 +81,7 @@ export const CustomDropdownFilters = ({
       elementSelected,
       filtersST,
       userFetched,
-      "CustomDropdownFilters"
+      "CustomDropdownFilters. Fetch no filters"
     )
 
     setData((prevState) => ({
@@ -52,6 +89,22 @@ export const CustomDropdownFilters = ({
       allData: newOrderData
     }))
     setFilters(newOrderFilters)
+
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } =
+      ORG_Sortyby(
+        elementSelected,
+        filtersF,
+        dataF,
+        "CustomDropdownFilters. Fetch with filters"
+      )
+      console.log('newOrderDataF:', newOrderDataF)
+      console.log('newOrderFiltersF:', newOrderFiltersF)
+
+    setDataF((prevState) => ({
+      ...prevState,
+      allData: newOrderDataF
+    }))
+    setFiltersF(newOrderFiltersF)
 
     handleDropdownClick()
   }
@@ -64,8 +117,7 @@ export const CustomDropdownFilters = ({
           onKeyDown={(e) => {
             handleDropdownKey(e)
           }}
-          tabIndex={0}
-        >
+          tabIndex={0}>
           <P bold>{title}</P>
           <span>
             {showDropdown ? (
@@ -90,8 +142,7 @@ export const CustomDropdownFilters = ({
                           highlight={highlight}
                           onClick={(e) => {
                             getSelection(e)
-                          }}
-                        >
+                          }}>
                           {x}
                         </CustomP>
                       </Fragment>

@@ -2,8 +2,10 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
+import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider"
+import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { FetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
+// import { FetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import {
@@ -26,7 +28,11 @@ import {
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { Verified } from "./Verified"
 
-export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
+export const SpeechTherapistsCardWithFilter = (
+  {
+    // filterData
+  }
+) => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = (e, everySingleValue) => {
@@ -35,22 +41,37 @@ export const SpeechTherapistsCardWithFilter = ({ filterData }) => {
     router.push(toWhere)
   }
 
-  const { pagination } = useORG_Ctx_FetchNoFilters()
+  // const { pagination } = useORG_Ctx_FetchNoFilters()
+
+  // const {userFetched:dataF, filtersST:filtersF} = useORG_Ctx_FetchWithFilters()
+  // const {
+  //   filtersLeftContext: filterData,
+  //   setFiltersLeftContext: setFilterData
+  // } = useORG_Ctx_filtersLeft()
+
+  // console.log("filterData:", filterData)
+
+  // const {
+  //   dataF,
+  //   filtersF,
+  //   setDataF,
+  //   setFiltersF,
+  //   actualSortF,
+  //   setActualSortF
+  // } = FetchFiltered(
+  //   "https://randomuser.me/api/?results=10&nat=us",
+  //   filterData,
+  //   pagination
+  // )
 
   const {
     dataF,
     filtersF,
-    setDataF,
-    setFiltersF,
-    actualSortF,
-    setActualSortF
-  } = FetchFiltered(
-    "https://randomuser.me/api/?results=10&nat=us",
-    filterData,
-    pagination
-  )
+  } = useORG_Ctx_FetchWithFilters()
 
   // !FH Make this a context to use in "CustomDropdownFilters"
+
+  // return null
 
   return (
     <>
