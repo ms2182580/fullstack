@@ -27,19 +27,15 @@ import {
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { Verified } from "./Verified"
 
-export const SpeechTherapistsCardNoFilter = ({
-  // userFetched,
-  // filtersST,
-}) => {
-  
+export const SpeechTherapistsCardNoFilter = () => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
-  const goToDynamic = (e, everySingleValue) => {
-    setSpeechtherapist([everySingleValue])
+  const goToDynamic = (e, everySingleValue, filters) => {
+    setSpeechtherapist({ data: [everySingleValue], filters: [filters] })
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
   }
-  
+
   const {
     pagination,
     userFetched,
@@ -48,7 +44,7 @@ export const SpeechTherapistsCardNoFilter = ({
     setFilters,
     actualSort
   } = useORG_Ctx_FetchNoFilters()
-  
+
   useEffect(() => {
     const { newOrderData, newOrderFilters } = ORG_Sortyby(
       actualSort,
@@ -62,10 +58,7 @@ export const SpeechTherapistsCardNoFilter = ({
     }))
     setFilters(newOrderFilters)
   }, [actualSort, pagination])
-  
-  
-  
-  
+
   return (
     <>
       {userFetched &&
@@ -94,8 +87,7 @@ export const SpeechTherapistsCardNoFilter = ({
 
           return (
             <EverySingleSpeechTherapistWrapper_Card
-              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}
-            >
+              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <EverySingleSpeechTherapistWrapper_Left>
                 <EverySPT_LeftImage>
                   <Image
@@ -160,7 +152,10 @@ export const SpeechTherapistsCardNoFilter = ({
 
                 <TherapistInfoSecondPage title="Accepts" dataToShow={accepts} />
 
-                <span onClick={(e) => goToDynamic(e, everySingleValue)}>
+                <span
+                  onClick={(e) =>
+                    goToDynamic(e, everySingleValue, filtersST[i])
+                  }>
                   <ButtonSmall secondary>More details</ButtonSmall>
                 </span>
               </EverySingleSpeechTherapistWrapper_Right>

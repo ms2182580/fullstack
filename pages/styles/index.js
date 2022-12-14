@@ -1,7 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-// import Extrabold from "../../assets/Fonts/Poppins/Poppins-ExtraBold.ttf"
-// import Regular from "../../assets/Fonts/Poppins/Poppins-Regular.ttf"
-// import Semibold from "../../assets/Fonts/Poppins/Poppins-SemiBold.ttf"
 
 const GlobalStyle = createGlobalStyle`
 *,

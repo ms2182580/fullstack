@@ -1,26 +1,24 @@
-import Customdropdown from "../../../components/ORG/dropdown/CustomDropdown"
-import { OptionsWrapper } from "../../../components/ORG/dropdown/styles/Customdropdown"
-import CustomInput from "../../../components/ORG/inputs/CustomInput"
-import { useORG_InputCtx } from "../../../context/ORG_Input"
-import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
-import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
-import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
-import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
+import { useEffect, useState } from "react"
 import { BackArrow } from "../../../assets/Icons"
-import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
-import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
-import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/STFiltersTherapistsButtons"
-import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
-import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
+import SpeechTherapistWraper from "../../../pages/ORG/SpeechTherapists/styles/SpeechTherapistWrapper"
+import Breadcrumbs from "../../ui/breadcrumbs/Breadcrumbs"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import Customdropdown from "../dropdown/CustomDropdown"
+import { OptionsWrapper } from "../dropdown/styles/Customdropdown"
+import CustomInput from "../inputs/CustomInput"
+import ORG_LANDING_CC from "../../../assets/Icons/ORG_LANDING_CC.png"
+import ORG_LANDING_SSA from "../../../assets/Icons/ORG_LANDING_SSA.png"
+import ORG_LANDING_TP from "../../../assets/Icons/ORG_LANDING_TP.png"
+import { useORG_InputCtx } from "../../../context/ORG_Input"
 
-const ORGSpeechTherapists = () => {
+export const STDetail_Header = ({STData}) => {
   const {
     keywordsContext,
     citiesContext,
     setKeywordsContext,
     setCitiesContext
   } = useORG_InputCtx()
-
+  
   const suggestionDropdownTP = [
     "Speech Therapist",
     "Behavioral Therapist",
@@ -29,16 +27,13 @@ const ORGSpeechTherapists = () => {
   ]
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
+  
 
-  const { userFetched } = useORG_Ctx_FetchNoFilters()
-
-  if (userFetched === undefined) {
-    return <LoadingSpeechTherapists />
-  }
-
+  
+  
   return (
     <>
-      <SpeechTherapistWraper>
+    <SpeechTherapistWraper inDetail={true}>
         <div>
           {" "}
           <span>
@@ -51,7 +46,8 @@ const ORGSpeechTherapists = () => {
         <Breadcrumbs
           whichDisplay={[
             ["Resource Directory", "ORG"],
-            ["Speech Therapist", ""]
+            ["Speech Therapist", "ORG/SpeechTherapists"],
+            [`${STData.data[0].name.first} ${STData.data[0].name.last}`, ""]
           ]}
         />
 
@@ -60,6 +56,7 @@ const ORGSpeechTherapists = () => {
           setCitiesContext={setCitiesContext}
           keywordValueContext={keywordsContext}
           citiesValueContext={citiesContext}
+          toWhere={"no where"}
         />
 
         <OptionsWrapper>
@@ -80,10 +77,6 @@ const ORGSpeechTherapists = () => {
           />
         </OptionsWrapper>
       </SpeechTherapistWraper>
-
-      <STFiltersTherapistsButtons />
     </>
   )
 }
-
-export default ORGSpeechTherapists

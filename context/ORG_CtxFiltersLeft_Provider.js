@@ -7,7 +7,6 @@ export const ORG_CtxFiltersLeft_Provider = ({ children }) => {
   const [filtersLeftContext, setFiltersLeftContext] = useState(
     ORG_INITIAL_LEFT_FILTERS
   )
-  console.log("filtersLeftContext:", filtersLeftContext)
   return (
     <ORG_Ctx_filtersLeft.Provider
       value={{ filtersLeftContext, setFiltersLeftContext }}>

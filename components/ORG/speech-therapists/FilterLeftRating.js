@@ -15,9 +15,7 @@ export const FilterLeftRating = ({
   shouldClear,
   setShouldClear
 }) => {
-  // console.log("shouldClear:", shouldClear)
   const [checked, setChecked] = useState(false)
-  // console.log("categoriesToDisplay:", categoriesToDisplay)
   const isChecked = (e) => {
     console.log("e:", e)
     const isAlreadyChecked = e.target.checked
@@ -27,10 +25,6 @@ export const FilterLeftRating = ({
       console.log("🟥 Is not checked")
     }
   }
-
-  // useEffect(() => {
-  //   setChecked(prevState=> !prevState)
-  // }, [shouldClear])
 
   return categoriesToDisplay?.map((x) => {
     let ratingPattern = Array(5)

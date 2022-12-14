@@ -128,8 +128,12 @@ const CustomInput = ({
           </SuggestionsKeywordWrapper>
         </div>
 
-        {toWhere !== "undefined" ? (
+        {toWhere === "SpeechTherapists" ? (
           <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
+            <ButtonSmall>Search</ButtonSmall>
+          </LinkNoStyle>
+        ) : toWhere === "no where" ? (
+          <LinkNoStyle href="#">
             <ButtonSmall>Search</ButtonSmall>
           </LinkNoStyle>
         ) : (

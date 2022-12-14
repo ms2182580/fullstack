@@ -23,41 +23,15 @@ export const CustomDropdownFilters = ({
     setFilters,
     actualSort,
     setActualSort,
-    pagination
   } = useORG_Ctx_FetchNoFilters()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  // const {
-  //   filtersLeftContext: filterData,
-  //   setFiltersLeftContext: setFilterData
-  // } = useORG_Ctx_filtersLeft()
-
-  // console.log("filterData:", filterData)
-
-  // const {
-  //   dataF,
-  //   filtersF,
-  //   setDataF,
-  //   setFiltersF,
-  //   actualSortF,
-  //   setActualSortF
-  // } = FetchFiltered(
-  //   "https://randomuser.me/api/?results=10&nat=us",
-  //   filterData,
-  //   pagination
-  // )
   
   const {
-    // pagination,
-    setPagination,
-    howMuchShow,
-    setHowMuchShow,
     dataF,
     setDataF,
     filtersF,
     setFiltersF,
-    actualSortF,
-    setActualSortF
   } = useORG_Ctx_FetchWithFilters()
 
   const handleDropdownClick = (e) => {

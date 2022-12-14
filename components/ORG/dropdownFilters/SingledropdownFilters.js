@@ -34,8 +34,6 @@ const Singledropdown = ({
   return (
     <>
       <SingleDropdownWrapper >
-        {/* // ?TODO ICON should not be mandatory */}
-
         {icon !== "not found" && (
           <div>
             <Image src={icon} alt="" />

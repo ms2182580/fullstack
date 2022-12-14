@@ -1,15 +1,11 @@
 import { createContext, useState, useContext } from "react"
 import { FetchFiltered } from "../utils/ORG_dummydataFiltered_speechtherapists"
 import { useORG_Ctx_FetchNoFilters } from "./ORG_CtxFetchNoFilters_Provider"
-import { useORG_Ctx_filtersLeft } from "./ORG_CtxFiltersLeft_Provider"
 const ORG_Ctx_fetchWithFilters = createContext(null)
 
 export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
   const [howMuchShow, setHowMuchShow] = useState(10)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
-
-  // const { filtersLeftContext: filterData } = useORG_Ctx_filtersLeft()
-
   const {
     dataF,
     setDataF,

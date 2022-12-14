@@ -15,14 +15,25 @@ const Breadcrumbs = ({ whichDisplay }) => {
       {whichDisplay.map((x) => {
         let defaultRoute = x[1] === "" ? "" : "/" + x[1]
 
-        return (
-          <React.Fragment key={x[0]}>
-            <LinkNoStyle href={defaultRoute}>
-              <ArrowRightSvg />
-              <P>{x[0]}</P>
-            </LinkNoStyle>
-          </React.Fragment>
-        )
+        if (defaultRoute === "") {
+          return (
+            <React.Fragment key={x[0]}>
+              <LinkNoStyle href="#">
+                <ArrowRightSvg />
+                <P>{x[0]}</P>
+              </LinkNoStyle>
+            </React.Fragment>
+          )
+        } else {
+          return (
+            <React.Fragment key={x[0]}>
+              <LinkNoStyle href={defaultRoute}>
+                <ArrowRightSvg />
+                <P>{x[0]}</P>
+              </LinkNoStyle>
+            </React.Fragment>
+          )
+        }
       })}
     </BreadcrumbsWrapper>
   )

@@ -1,35 +1,29 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
-import { useEffect } from "react";
-import { SpeechtherapistDetail } from "../../../components/ORG/speech-therapists/SpeechtherapistDetail";
-import {useORG_Ctx_IndividualSpeechtherapist} from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
-
-
+import { useRouter } from "next/router"
+import { useState } from "react"
+import { useEffect } from "react"
+import { SpeechtherapistDetail } from "../../../components/ORG/speech-therapists/SpeechtherapistDetail"
 const SPDetail = () => {
-  
   const [loaded, setLoaded] = useState(false)
   const router = useRouter()
   useEffect(() => {
-    if(router.isReady){
+    if (router.isReady) {
       setLoaded(true)
     }
-  },[router.isReady])
-  
-  
-  if(!loaded){
+  }, [router.isReady])
+
+  if (!loaded) {
     return null
   }
-  
+
   const goBack = () => {
     router.back()
   }
-  
+
   return (
-    <div>
-      <SpeechtherapistDetail/>
-      
-    </div>
-  );
+    <>
+      <SpeechtherapistDetail />
+    </>
+  )
 }
 
-export default SPDetail;
+export default SPDetail

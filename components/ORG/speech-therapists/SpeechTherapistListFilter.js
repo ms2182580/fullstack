@@ -7,7 +7,6 @@ import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
 
 const reducer = (state, action) => {
-  // console.log("action:", action)
   const setFilterData = action.payload[0]
   const toUpdateFilters = action.payload[2]
 
@@ -37,12 +36,7 @@ const reducer = (state, action) => {
   }
 }
 
-const SpeechTherapistListFilter = (
-  {
-    // setFilterData,
-    // filterData
-  }
-) => {
+const SpeechTherapistListFilter = () => {
   const {
     filtersLeftContext: filterData,
     setFiltersLeftContext: setFilterData

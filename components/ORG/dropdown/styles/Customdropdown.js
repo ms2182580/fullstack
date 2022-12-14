@@ -12,6 +12,7 @@ export const OptionsWrapper = styled.div`
     margin-right: 3.625rem;
   }
 
+  // TODO THIS TYPE OF MEDIA QUERY (write inside a string) SHOULD BE DIFFERENT. FOUND ANOTHER WAY
   & {
     ${(x) =>
       x.landingHere === "true"
