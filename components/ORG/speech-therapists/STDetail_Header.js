@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { BackArrow } from "../../../assets/Icons"
 import SpeechTherapistWraper from "../../../pages/ORG/SpeechTherapists/styles/SpeechTherapistWrapper"
 import Breadcrumbs from "../../ui/breadcrumbs/Breadcrumbs"
@@ -6,19 +5,27 @@ import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import Customdropdown from "../dropdown/CustomDropdown"
 import { OptionsWrapper } from "../dropdown/styles/Customdropdown"
 import CustomInput from "../inputs/CustomInput"
-import ORG_LANDING_CC from "../../../assets/Icons/ORG_LANDING_CC.png"
-import ORG_LANDING_SSA from "../../../assets/Icons/ORG_LANDING_SSA.png"
-import ORG_LANDING_TP from "../../../assets/Icons/ORG_LANDING_TP.png"
+import ORG_Icon_CC from "../../../assets/Icons/ORG_Landing_CC.png"
+import ORG_Icon_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
+import ORG_Icon_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
 
-export const STDetail_Header = ({STData}) => {
+/* 
+
+!FH
+
+Fix the bug with .png
+*/
+
+
+export const STDetail_Header = ({ STData }) => {
   const {
     keywordsContext,
     citiesContext,
     setKeywordsContext,
     setCitiesContext
   } = useORG_InputCtx()
-  
+
   const suggestionDropdownTP = [
     "Speech Therapist",
     "Behavioral Therapist",
@@ -27,13 +34,10 @@ export const STDetail_Header = ({STData}) => {
   ]
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
-  
 
-  
-  
   return (
     <>
-    <SpeechTherapistWraper inDetail={true}>
+      <SpeechTherapistWraper inDetail={true}>
         <div>
           {" "}
           <span>
@@ -61,17 +65,17 @@ export const STDetail_Header = ({STData}) => {
 
         <OptionsWrapper>
           <Customdropdown
-            icon={ORG_LANDING_TP}
+            icon={ORG_Icon_TP}
             title="Therapeutic Providers"
             suggestions={suggestionDropdownTP}
           />
           <Customdropdown
-            icon={ORG_LANDING_SSA}
+            icon={ORG_Icon_SSA}
             title="Social Service Agencies"
             suggestions={suggestionDropdownSSA}
           />
           <Customdropdown
-            icon={ORG_LANDING_CC}
+            icon={ORG_Icon_CC}
             title="Community Classes"
             suggestions={suggestionDropdownCC}
           />

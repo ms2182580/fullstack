@@ -26,6 +26,11 @@ import { Verified } from "./Verified"
 
 export const STDetail_STDetails = ({ STData }) => {
   // console.log("STData:", STData)
+  
+  /* 
+  !FH Finish the details of Speehc therapists details
+  
+  */
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
