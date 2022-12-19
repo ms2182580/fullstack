@@ -10,13 +10,6 @@ import ORG_Icon_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_Icon_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
 
-/* 
-
-!FH
-
-Fix the bug with .png
-*/
-
 
 export const STDetail_Header = ({ STData }) => {
   const {

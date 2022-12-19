@@ -39,14 +39,18 @@ export const EverySingleSpeechTherapist_Location = ({ location, howFar }) => {
         <LocationSvg />
         <P bold>Location: </P>
       </div>
-      <P>{location.city} Speech Therapy</P>
-      <P>{location.street.number} {location.street.name}</P>
-      <P>{location.state} </P>
-      
-      <Caption bolder primary_cta>
-        {" "}
-        ({howFar} miles away)
-      </Caption>
+      <div>
+        <P>{location.city} Speech Therapy</P>
+        <P>
+          {location.street.number} {location.street.name}
+        </P>
+        <P>{location.state} </P>
+
+        <Caption bolder primary_cta>
+          {" "}
+          ({howFar} miles away)
+        </Caption>
+      </div>
     </EverySingleSpeechTherapist_LocationWrapper>
   )
 }

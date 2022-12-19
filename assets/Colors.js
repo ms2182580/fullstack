@@ -42,3 +42,7 @@ export const SEMANTICS = {
   HYPERLINK_VISITED:"#884488", /* Only for visited hyperlinked text */
   FOCUS_RING:"#64AFFB", /* Focus state ring around components */
 }
+
+export const ORG = {
+  BACKGROUND:"#DBD6DC"
+}

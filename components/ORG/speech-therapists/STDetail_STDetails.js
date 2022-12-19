@@ -20,17 +20,11 @@ import {
   EverySPT_LeftImage,
   EverySPT_LeftInfo
 } from "./styles/EverySingleSpeechTherapistWrapper"
-import { STDetail_CardWrapper } from "./styles/STDetail_CardWrapper"
+import { EverySingleSpeechTherapistWrapper_Card_Detail, STDetail_CardWrapper } from "./styles/STDetail_CardWrapper"
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { Verified } from "./Verified"
 
 export const STDetail_STDetails = ({ STData }) => {
-  // console.log("STData:", STData)
-  
-  /* 
-  !FH Finish the details of Speehc therapists details
-  
-  */
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
@@ -56,7 +50,7 @@ export const STDetail_STDetails = ({ STData }) => {
         let transportation = STData.filters[0].transportation
 
         return (
-          <EverySingleSpeechTherapistWrapper_Card
+          <EverySingleSpeechTherapistWrapper_Card_Detail
             key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
             <EverySingleSpeechTherapistWrapper_Left>
               <EverySPT_LeftImage>
@@ -126,7 +120,7 @@ export const STDetail_STDetails = ({ STData }) => {
                 <ButtonSmall secondary>Nothing</ButtonSmall>
               </span>
             </EverySingleSpeechTherapistWrapper_Right>
-          </EverySingleSpeechTherapistWrapper_Card>
+          </EverySingleSpeechTherapistWrapper_Card_Detail>
         )
       })}
     </STDetail_CardWrapper>
