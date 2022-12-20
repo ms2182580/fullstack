@@ -20,7 +20,7 @@ export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
-  min-width: 398px;
+  min-width: ${x => x.STDetail ? "432px": "398px"};
 `
 
 export const EverySPT_LeftImage = styled.div`

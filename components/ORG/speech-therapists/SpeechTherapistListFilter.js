@@ -5,6 +5,7 @@ import FilterCheckboxComponent from "./FilterCheckboxComponent.js"
 import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
+import { useEffect } from "react"
 
 const reducer = (state, action) => {
   const setFilterData = action.payload[0]
@@ -57,6 +58,15 @@ const SpeechTherapistListFilter = () => {
       payload: [setFilterData, "clearAll"]
     })
   }
+  
+  useEffect(() => {
+    handleClearAll()
+  },[])
+  
+  /* 
+  !FH
+  Make all the filter component accesible with tab
+  */
 
   return (
     <SpeechTherapistListFilterWrapper id="topOfSTL">

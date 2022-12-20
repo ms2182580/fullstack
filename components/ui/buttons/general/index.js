@@ -1,9 +1,10 @@
+import { P } from "../../heading_body_text/DesktopMobileFonts.js"
 import { BtnSmall, BtnMedium, BtnLarge } from "./styles/ButtonStyled.js"
 
 export const ButtonSmall = ({ children, secondary, disabled }) => {
   return (
     <BtnSmall secondary={secondary} disabled={disabled}>
-      <p >{children}</p>
+      <p>{children}</p>
     </BtnSmall>
   )
 }

@@ -1,8 +1,9 @@
 import Image from "next/image"
 import React from "react"
 import { BookmarkSaveSTSvg } from "../../../assets/Icons"
-import { ButtonSmall } from "../../ui/buttons/general"
-import { H3 } from "../../ui/heading_body_text/HeaderFonts"
+import { H2 } from "../../ui/heading_body_text/HeaderFonts"
+import { EmailGetDirectionComponent } from "./EmailGetFirectionWrapper"
+import { MapComponent } from "./MapWrapper"
 import {
   EverySingleSpeechTherapist_Email,
   EverySingleSpeechTherapist_Location,
@@ -14,20 +15,27 @@ import {
   Tooltip
 } from "./SingleSpeechtherapistComponents_Right"
 import {
-  EverySingleSpeechTherapistWrapper_Card,
   EverySingleSpeechTherapistWrapper_Left,
-  EverySingleSpeechTherapistWrapper_Right,
   EverySPT_LeftImage,
   EverySPT_LeftInfo
 } from "./styles/EverySingleSpeechTherapistWrapper"
-import { EverySingleSpeechTherapistWrapper_Card_Detail, STDetail_CardWrapper } from "./styles/STDetail_CardWrapper"
-import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
+import {
+  EverySingleSpeechTherapistWrapper_Card_Detail,
+  EverySingleSpeechTherapistWrapper_Right_Detail,
+  FirstRow,
+  LeftPart,
+  RightPart,
+  SecondRow,
+  STDetail_CardWrapper
+} from "./styles/STDetail_CardWrapper"
+import { TherapistInfoThirdPage } from "./TherapistInfoThirdPage"
 import { Verified } from "./Verified"
 
 export const STDetail_STDetails = ({ STData }) => {
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
+        // console.log("STData.filters[0]:", STData.filters[0])
         let accepts = STData.filters[0].accepts.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
@@ -40,8 +48,12 @@ export const STDetail_STDetails = ({ STData }) => {
         let languages = STData.filters[0].languages.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
-
-        let meetingFormat = STData.filters[0].meetingFormat
+        console.log('meetingFormat:', meetingFormat)
+        let meetingFormat = new Intl.ListFormat("en").format(
+          STData.filters[0].meetingFormat.map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+        )
         let serviceSetting = STData.filters[0].serviceSetting.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
@@ -52,7 +64,7 @@ export const STDetail_STDetails = ({ STData }) => {
         return (
           <EverySingleSpeechTherapistWrapper_Card_Detail
             key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
-            <EverySingleSpeechTherapistWrapper_Left>
+            <EverySingleSpeechTherapistWrapper_Left STDetail>
               <EverySPT_LeftImage>
                 <Image
                   src={everySingleValue.picture.large}
@@ -76,50 +88,66 @@ export const STDetail_STDetails = ({ STData }) => {
                   howFar={STData.filters[0].distance}
                 />
               </EverySPT_LeftInfo>
+
+              <EmailGetDirectionComponent />
+
+              <MapComponent />
             </EverySingleSpeechTherapistWrapper_Left>
 
-            <EverySingleSpeechTherapistWrapper_Right>
-              <BookmarkSaveSTSvg tabIndex={0} />
+            <EverySingleSpeechTherapistWrapper_Right_Detail>
+              <FirstRow>
+                <BookmarkSaveSTSvg tabIndex={0} />
+                <H2>
+                  {everySingleValue.name.first} {everySingleValue.name.last}
+                </H2>
+                <Tooltip />
+                <StarsRatingAndReview
+                  rating={STData.filters[0].rating}
+                  reviews={STData.filters[0].reviews}
+                />
+                <FriendlyDiagnoses diagnoses={diagnoses} />
+              </FirstRow>
 
-              <H3>
-                {everySingleValue.name.first} {everySingleValue.name.last}
-              </H3>
+              <SecondRow>
+                <LeftPart>
+                  <TherapistInfoThirdPage
+                    title="Ages served"
+                    dataToShow={agesServed}
+                  />
+                  <TherapistInfoThirdPage
+                    title="Languages"
+                    dataToShow={languages}
+                  />
+                  <TherapistInfoThirdPage
+                    title="Years of Practice"
+                    dataToShow={STData.filters[0].yearsOfPractice}
+                  />
+                  <TherapistInfoThirdPage
+                    title="Practice Setting"
+                    dataToShow={serviceSetting}
+                  />
+                  <TherapistInfoThirdPage
+                    title="Insurance"
+                    dataToShow={accepts}
+                  />
+                  <TherapistInfoThirdPage
+                    title="Meeting Format"
+                    dataToShow={meetingFormat}
+                  />
+                </LeftPart>
 
-              <Tooltip />
-
-              <StarsRatingAndReview
-                rating={STData.filters[0].rating}
-                reviews={STData.filters[0].reviews}
-              />
-
-              <FriendlyDiagnoses diagnoses={diagnoses} />
-
-              <TherapistInfoSecondPage
-                title="Ages served"
-                dataToShow={agesServed}
-              />
-
-              <TherapistInfoSecondPage
-                title="Languages"
-                dataToShow={languages}
-              />
-
-              <TherapistInfoSecondPage
-                title="Years of Practice"
-                dataToShow={STData.filters[0].yearsOfPractice}
-              />
-
-              <TherapistInfoSecondPage
-                title="Service Setting"
-                dataToShow={serviceSetting}
-              />
-
-              <TherapistInfoSecondPage title="Accepts" dataToShow={accepts} />
-
-              <span>
-                <ButtonSmall secondary>Nothing</ButtonSmall>
-              </span>
-            </EverySingleSpeechTherapistWrapper_Right>
+                <RightPart>
+                  <TherapistInfoThirdPage
+                    title="Qualifications"
+                    dataToShow={serviceSetting}
+                  />
+                  <TherapistInfoThirdPage
+                    title="Additional Credentials"
+                    dataToShow={serviceSetting}
+                  />
+                </RightPart>
+              </SecondRow>
+            </EverySingleSpeechTherapistWrapper_Right_Detail>
           </EverySingleSpeechTherapistWrapper_Card_Detail>
         )
       })}

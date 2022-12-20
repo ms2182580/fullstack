@@ -1,11 +1,10 @@
 import { Fragment } from "react"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import {TherapistInfoSecondPageWrapper} from "./styles/TherapistInfoSecondPageWrapper.js"
+import {TherapistInfoThirdPageWrapper} from "./styles/TherapistInfoThirdPageWrapper.js"
 
-const TherapistInfoSecondPage = ({ title, dataToShow }) => {
-  // console.log('dataToShow:', dataToShow)
+export const TherapistInfoThirdPage = ({ title, dataToShow }) => {
   return (
-    <TherapistInfoSecondPageWrapper>
+    <TherapistInfoThirdPageWrapper>
       <P bold>{title}:</P>
       {Array.isArray(dataToShow) &&  dataToShow.map((x, i) => {
         if (dataToShow.length - 1 === i) {
@@ -26,8 +25,7 @@ const TherapistInfoSecondPage = ({ title, dataToShow }) => {
       {typeof dataToShow === "string" && <span> {dataToShow}</span>}
       
       
-    </TherapistInfoSecondPageWrapper>
+    </TherapistInfoThirdPageWrapper>
   )
 }
 
-export default TherapistInfoSecondPage
