@@ -35,7 +35,7 @@ export const STDetail_STDetails = ({ STData }) => {
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
-        // console.log("STData.filters[0]:", STData.filters[0])
+        console.log('everySingleValue:', everySingleValue)
         let accepts = STData.filters[0].accepts.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
@@ -140,10 +140,14 @@ export const STDetail_STDetails = ({ STData }) => {
                   <TherapistInfoThirdPage
                     title="Qualifications"
                     dataToShow={serviceSetting}
+                    rightRowQualification
+                    rightRowQualification_Data={STData.filters[0].yearsOfPractice}
+                    state={everySingleValue.location.state}
                   />
                   <TherapistInfoThirdPage
                     title="Additional Credentials"
-                    dataToShow={serviceSetting}
+                    rightRowCredentials
+                    dataToShow={"Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)"}
                   />
                 </RightPart>
               </SecondRow>

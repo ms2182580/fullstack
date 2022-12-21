@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { ORG } from "../../../../assets/Colors"
+import { NEUTRALS } from "../../../../assets/Colors"
 
 export const STDetail_MainWrapper = styled.div`
   & > * {
@@ -7,7 +7,7 @@ export const STDetail_MainWrapper = styled.div`
   }
 
   & > :not(:first-child) {
-    background-color: ${ORG.BACKGROUND};
+    background-color: ${NEUTRALS.OFF_WHITE};
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   }
 

@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { ORG } from "../../../../assets/Colors"
+import { NEUTRALS} from "../../../../assets/Colors"
 
 const STFiltersTherapistsButtonsWrapper = styled.div`
-  background-color: ${ORG.BACKGROUND};
+  background-color: ${NEUTRALS.OFF_WHITE};
   padding: 2rem 6rem;
   display: grid;
   grid-template-columns: 1fr 10fr;

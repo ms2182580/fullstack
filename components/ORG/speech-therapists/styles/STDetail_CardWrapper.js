@@ -1,14 +1,11 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
-import {
-  EverySingleSpeechTherapistWrapper_Card,
-  EverySingleSpeechTherapistWrapper_Right
-} from "./EverySingleSpeechTherapistWrapper"
+import { EverySingleSpeechTherapistWrapper_Card } from "./EverySingleSpeechTherapistWrapper"
 
 export const STDetail_CardWrapper = styled.div`
   padding-inline: 96px;
   padding-top: 40px;
-
+  
   & > :nth-child(1) {
     margin-bottom: 0px;
   }
@@ -44,6 +41,7 @@ export const EverySingleSpeechTherapistWrapper_Right_Detail = styled.div`
   padding-left: 32px;
   position: relative;
   min-width: 440px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 `
 
 export const FirstRow = styled.div`
@@ -125,15 +123,13 @@ export const SecondRow = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "leftPart rightPart";
   /* border:1px red solid; */
-  margin-inline-end:61px;
+  margin-inline-end: 61px;
   margin-bottom: 93px;
 `
 
 export const LeftPart = styled.div`
   grid-area: leftPart;
-  display: grid;
 `
 export const RightPart = styled.div`
   grid-area: rightPart;
-  display: grid;
 `
