@@ -1,9 +1,7 @@
-import { useEffect } from "react"
-import { Fragment, useState } from "react"
+import { Fragment } from "react"
 import { StartEmptySvg, StartFullSvg } from "../../../assets/Icons"
 import { CustomCheckboxInput } from "./CustomCheckboxInput"
 import {
-  CustomCheckbox,
   StarsWrapper
 } from "./styles/FilterCheckboxComponentWrapper"
 
@@ -12,20 +10,7 @@ export const FilterLeftRating = ({
   dispatch,
   setFilterData,
   toUpdateFilters,
-  shouldClear,
-  setShouldClear
 }) => {
-  const [checked, setChecked] = useState(false)
-  const isChecked = (e) => {
-    console.log("e:", e)
-    const isAlreadyChecked = e.target.checked
-    if (isAlreadyChecked) {
-      console.log("✅ Is checked")
-    } else {
-      console.log("🟥 Is not checked")
-    }
-  }
-
   return categoriesToDisplay?.map((x) => {
     let ratingPattern = Array(5)
       .fill(0)
@@ -64,16 +49,6 @@ export const FilterLeftRating = ({
             toUpdateFilters={toUpdateFilters}
           />
 
-          {/* <input
-              type="checkbox"
-              name={x}
-              onClick={(e) => {
-                dispatch({
-                  type: { x },
-                  payload: [setFilterData, e, toUpdateFilters]
-                })
-              }}
-            /> */}
           <span></span>
         </label>
       </li>

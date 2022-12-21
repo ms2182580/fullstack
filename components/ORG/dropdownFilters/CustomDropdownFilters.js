@@ -6,8 +6,6 @@ import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
-import { FetchFiltered } from "../../../utils/ORG_dummydataFiltered_speechtherapists"
-import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider"
 import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
 
 export const CustomDropdownFilters = ({
@@ -71,8 +69,6 @@ export const CustomDropdownFilters = ({
         dataF,
         "CustomDropdownFilters. Fetch with filters"
       )
-      console.log('newOrderDataF:', newOrderDataF)
-      console.log('newOrderFiltersF:', newOrderFiltersF)
 
     setDataF((prevState) => ({
       ...prevState,

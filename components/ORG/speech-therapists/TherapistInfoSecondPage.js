@@ -3,9 +3,9 @@ import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import {TherapistInfoSecondPageWrapper} from "./styles/TherapistInfoSecondPageWrapper.js"
 
 const TherapistInfoSecondPage = ({ title, dataToShow }) => {
-  // console.log('dataToShow:', dataToShow)
   return (
     <TherapistInfoSecondPageWrapper>
+      
       <P bold>{title}:</P>
       {Array.isArray(dataToShow) &&  dataToShow.map((x, i) => {
         if (dataToShow.length - 1 === i) {

@@ -14,6 +14,7 @@ const SharedVariables = {
 }
 
 export const P = styled.p`
+  line-height: 32px;
   font-size: ${SharedVariables.FontSizeBody};
   font-weight: ${(x) =>
     x.bold
@@ -43,6 +44,7 @@ export const P = styled.p`
       : NEUTRALS.BLACK};
 `
 export const Caption = styled.span`
+  line-height: 24px;
   font-size: ${SharedVariables.FontSizeCaption};
   font-weight: ${(x) =>
     x.bolder

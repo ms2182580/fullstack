@@ -77,14 +77,9 @@ export const SpeechTherapistsCardNoFilter = () => {
             (x) => x[0].toUpperCase() + x.slice(1)
           )
 
-          let meetingFormat = filtersST[i].meetingFormat
           let serviceSetting = filtersST[i].serviceSetting.map(
             (x) => x[0].toUpperCase() + x.slice(1)
           )
-
-          let sessionType = filtersST[i].sessionType
-          let transportation = filtersST[i].transportation
-
           return (
             <EverySingleSpeechTherapistWrapper_Card
               key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>

@@ -40,7 +40,7 @@ export const EverySingleSpeechTherapistWrapper_Right_Detail = styled.div`
   padding-top: 42px;
   padding-left: 32px;
   position: relative;
-  min-width: 440px;
+  min-width: 792px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 `
 
@@ -122,8 +122,7 @@ export const SecondRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "leftPart rightPart";
-  /* border:1px red solid; */
-  margin-inline-end: 61px;
+  margin-inline-end: 24px;
   margin-bottom: 93px;
 `
 

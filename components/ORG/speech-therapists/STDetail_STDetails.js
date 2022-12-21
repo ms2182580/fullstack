@@ -35,7 +35,6 @@ export const STDetail_STDetails = ({ STData }) => {
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
-        console.log('everySingleValue:', everySingleValue)
         let accepts = STData.filters[0].accepts.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
@@ -48,7 +47,6 @@ export const STDetail_STDetails = ({ STData }) => {
         let languages = STData.filters[0].languages.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
-        console.log('meetingFormat:', meetingFormat)
         let meetingFormat = new Intl.ListFormat("en").format(
           STData.filters[0].meetingFormat.map(
             (x) => x[0].toUpperCase() + x.slice(1)
@@ -57,10 +55,6 @@ export const STDetail_STDetails = ({ STData }) => {
         let serviceSetting = STData.filters[0].serviceSetting.map(
           (x) => x[0].toUpperCase() + x.slice(1)
         )
-
-        let sessionType = STData.filters[0].sessionType
-        let transportation = STData.filters[0].transportation
-
         return (
           <EverySingleSpeechTherapistWrapper_Card_Detail
             key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
@@ -147,7 +141,7 @@ export const STDetail_STDetails = ({ STData }) => {
                   <TherapistInfoThirdPage
                     title="Additional Credentials"
                     rightRowCredentials
-                    dataToShow={"Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)"}
+                    dataToShow={["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)"]}
                   />
                 </RightPart>
               </SecondRow>
