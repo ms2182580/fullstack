@@ -1,11 +1,14 @@
 import styled from "styled-components"
 
 export const STDetail_AboutWrapper = styled.div`
-  height: 400px;
-  /* background-color: cornflowerblue; */
-  /* border:1px red solid; */
-  padding-inline:96px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 32px;
   
+  & > :nth-child(1){
+    margin-bottom: 8px;
+  }
   
   
 `

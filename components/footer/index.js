@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FooterPrivisional = styled.div`
   height: 100vh;
-  border: 3px cornflowerblue solid;
+  /* outline: 1px cornflowerblue solid; */
   display:grid;
   place-items: center;
 `

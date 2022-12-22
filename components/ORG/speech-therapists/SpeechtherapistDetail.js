@@ -10,9 +10,14 @@ import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
-
+  console.log("speechtherapist:", speechtherapist)
 
   if (speechtherapist === "") {
+    /* 
+    !FH
+    This should just redirect the user to the previous page
+    
+    */
     return <>You should click in some speech therapist before</>
   }
 
@@ -28,14 +33,18 @@ export const SpeechtherapistDetail = () => {
 
   return (
     <STDetail_MainWrapper>
-      <STDetail_Header STData={speechtherapist}/>
-      
-      <STDetail_STDetails STData={speechtherapist}/>
+      <STDetail_Header STData={speechtherapist} />
 
-      <STDetail_About/>
-      <STDetail_Reviews/>
-      <STDetail_PageLastUpdated/>
+      <div>
+        <STDetail_STDetails STData={speechtherapist} />
+
+        <STDetail_About
+          name={speechtherapist.data[0].name.first}
+          lastName={speechtherapist.data[0].name.last}
+        />
+        <STDetail_Reviews />
+        <STDetail_PageLastUpdated />
+      </div>
     </STDetail_MainWrapper>
   )
 }
-

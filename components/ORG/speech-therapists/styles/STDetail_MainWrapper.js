@@ -5,9 +5,8 @@ export const STDetail_MainWrapper = styled.div`
   & > * {
     padding-inline: 96px;
   }
-
-  & > :not(:first-child) {
-    background-color: ${NEUTRALS.OFF_WHITE};
+  
+  & > :nth-child(2){
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   }
 
