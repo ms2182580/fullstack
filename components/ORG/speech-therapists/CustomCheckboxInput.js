@@ -30,7 +30,7 @@ export const CustomCheckboxInput = ({
         setChecked((prevState) => !prevState)
       }}
       
-      tabIndex={0}
+      // tabIndex={0}
       
       
     />

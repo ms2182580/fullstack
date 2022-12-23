@@ -42,6 +42,12 @@ const FilterCheckboxComponent = ({
     setClearAll(false)
     showStateChildren(show)
   }, [show])
+  
+  /* 
+  !FH
+  
+  Add tabIndex and make it work
+  */
 
   return (
     <>
@@ -103,7 +109,7 @@ const FilterCheckboxComponent = ({
             ? categoriesToDisplay?.map((x) => {
                 return (
                   <li key={x}>
-                    <label tabIndex={0}>
+                    <label>
                       <P>{x} miles</P>
                       <CustomCheckboxInput
                         type="checkbox"
