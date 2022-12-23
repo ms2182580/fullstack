@@ -28,8 +28,10 @@ const FilterCheckboxComponent = ({
   let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
   const [show, setShow] = useState(false)
 
-  const handleShow = () => {
-    setShow(!show)
+  const handleShow = (e) => {
+    if (e.type === "click" || e.key === "Enter"){
+      setShow(!show)
+    }
   }
 
   useEffect(() => {
@@ -44,9 +46,9 @@ const FilterCheckboxComponent = ({
   return (
     <>
       <FilterCheckboxComponentWrapper>
-        <div>
+        <div tabIndex={0} onKeyDown={(e) => handleShow(e)}>
           <P>{title}</P>
-          <span onClick={handleShow}>
+          <span onClick={handleShow} >
             {show ? <UpArrowSvg /> : <DownArrowSvg />}
           </span>
         </div>
@@ -63,7 +65,7 @@ const FilterCheckboxComponent = ({
                     return "fully"
                   })
                 return (
-                  <li key={x}>
+                  <li key={x} tabIndex={0} >
                     <label>
                       <StarsWrapper>
                         {ratingPattern.map((x, i) => {
@@ -90,8 +92,9 @@ const FilterCheckboxComponent = ({
                         setFilterData={setFilterData}
                         toUpdateFilters={toUpdateFilters}
                         clearAll={clearAll}
+                        
                       />
-                      <span></span>
+                      <span ></span>
                     </label>
                   </li>
                 )
@@ -100,7 +103,7 @@ const FilterCheckboxComponent = ({
             ? categoriesToDisplay?.map((x) => {
                 return (
                   <li key={x}>
-                    <label>
+                    <label tabIndex={0}>
                       <P>{x} miles</P>
                       <CustomCheckboxInput
                         type="checkbox"

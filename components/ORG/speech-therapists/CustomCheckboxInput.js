@@ -29,6 +29,10 @@ export const CustomCheckboxInput = ({
       onChange={() => {
         setChecked((prevState) => !prevState)
       }}
+      
+      tabIndex={0}
+      
+      
     />
   )
 }

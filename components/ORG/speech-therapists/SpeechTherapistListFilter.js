@@ -25,9 +25,7 @@ const reducer = (state, action) => {
     })
   } else {
     setFilterData((prevStatus) => {
-      let shouldStay = prevStatus[toUpdateFilters].filter(
-        (x) => x !== action.type.x
-      )
+      let shouldStay = prevStatus[toUpdateFilters].filter((x) => x !== action.type.x)
 
       return {
         ...prevStatus,
@@ -38,41 +36,40 @@ const reducer = (state, action) => {
 }
 
 const SpeechTherapistListFilter = () => {
-  const {
-    filtersLeftContext: filterData,
-    setFiltersLeftContext: setFilterData
-  } = useORG_Ctx_filtersLeft()
+  const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
 
-  const handleClearAll = () => {
-    setShouldClear((prevState) => !prevState)
-    if (show) {
-      setClearAll(true)
-    }
+  const handleClearAll = (e) => {
+    if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
+      setShouldClear((prevState) => !prevState)
+      if (show) {
+        setClearAll(true)
+      }
 
-    dispatch({
-      type: { x: "clearAll" },
-      payload: [setFilterData, "clearAll"]
-    })
+      dispatch({
+        type: { x: "clearAll" },
+        payload: [setFilterData, "clearAll"]
+      })
+    }
   }
-  
+
   useEffect(() => {
-    handleClearAll()
-  },[])
-  
-  /* 
-  !FH
-  Make all the filter component accesible with tab
-  */
+    handleClearAll("from useEffect")
+  }, [])
 
   return (
     <SpeechTherapistListFilterWrapper id="topOfSTL">
       <div>
         <H4>Filter by</H4>
-        <P onClick={() => handleClearAll()}>Clear all</P>
+        <P
+          onClick={(e) => handleClearAll(e)}
+          onKeyDown={(e) => handleClearAll(e)}
+          tabIndex={0}>
+          Clear all
+        </P>
       </div>
 
       <FilterCheckboxComponent
@@ -85,6 +82,7 @@ const SpeechTherapistListFilter = () => {
         setShouldClear={setShouldClear}
         categoriesToDisplay={["0-5", "5-10", "10-20", "20+"]}
         title="Distance"
+        
       />
 
       <FilterCheckboxComponent
@@ -106,14 +104,7 @@ const SpeechTherapistListFilter = () => {
         showStateChildren={setShow}
         shouldClear={shouldClear}
         setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "Autism (ASD)",
-          "ADHD",
-          "Down Syndrome",
-          "Cerebral Palsy",
-          "Fragile X",
-          "Other"
-        ]}
+        categoriesToDisplay={["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Fragile X", "Other"]}
         title="Diagnoses"
       />
 
@@ -147,13 +138,7 @@ const SpeechTherapistListFilter = () => {
         showStateChildren={setShow}
         shouldClear={shouldClear}
         setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "English",
-          "Spanish",
-          "Chinese",
-          "Tagalog",
-          "French"
-        ]}
+        categoriesToDisplay={["English", "Spanish", "Chinese", "Tagalog", "French"]}
         title="Languages"
       />
 
@@ -165,13 +150,7 @@ const SpeechTherapistListFilter = () => {
         showStateChildren={setShow}
         shouldClear={shouldClear}
         setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "1+ Years",
-          "3+ Years",
-          "5+ Years",
-          "7+ Years",
-          "10+ Years"
-        ]}
+        categoriesToDisplay={["1+ Years", "3+ Years", "5+ Years", "7+ Years", "10+ Years"]}
         title="Years of Practice"
         toUpdate="yearsOfPractice"
       />
@@ -197,12 +176,7 @@ const SpeechTherapistListFilter = () => {
         showStateChildren={setShow}
         shouldClear={shouldClear}
         setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "Medicaid",
-          "Insurance",
-          "Private Pay",
-          "DOE approved"
-        ]}
+        categoriesToDisplay={["Medicaid", "Insurance", "Private Pay", "DOE approved"]}
         title="Accepts"
       />
 
@@ -240,13 +214,7 @@ const SpeechTherapistListFilter = () => {
         showStateChildren={setShow}
         shouldClear={shouldClear}
         setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "Near Metro",
-          "Near Bus",
-          "Meter Parking",
-          "Street Parking",
-          "Parking Lot"
-        ]}
+        categoriesToDisplay={["Near Metro", "Near Bus", "Meter Parking", "Street Parking", "Parking Lot"]}
         title="Transportation"
       />
 

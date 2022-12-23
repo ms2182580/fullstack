@@ -11,7 +11,7 @@ import ORG_Map_SpeechTherapistDetail from "../../../assets/Icons/ORG_Map_SpeechT
 
 export const MapComponent = () => {
   return (
-    <MapWrapper>
+    <MapWrapper tabIndex={0}>
       <Image src={ORG_Map_SpeechTherapistDetail} alt={"Map image"}/>
     </MapWrapper>
   )

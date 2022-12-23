@@ -10,7 +10,6 @@ import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
-  console.log("speechtherapist:", speechtherapist)
 
   if (speechtherapist === "") {
     /* 
@@ -27,8 +26,8 @@ export const SpeechtherapistDetail = () => {
   Create all the things of this third page of ORG section:
   ✅- Header is already a component
   ✅- Speech therapist card should be already created
-    - About is a new component. Maybe use a placeholder
-    - Reviews: use the jsonplaceholder api
+  ✅- About is a new component. Maybe use a placeholder
+  ✅- Reviews: use the jsonplaceholder api
   */
 
   return (
@@ -42,8 +41,13 @@ export const SpeechtherapistDetail = () => {
           name={speechtherapist.data[0].name.first}
           lastName={speechtherapist.data[0].name.last}
         />
-        <STDetail_Reviews />
+        <STDetail_Reviews 
+          name={speechtherapist.data[0].name.first}
+          lastName={speechtherapist.data[0].name.last}
+        />
+        
         <STDetail_PageLastUpdated />
+        
       </div>
     </STDetail_MainWrapper>
   )

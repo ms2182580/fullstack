@@ -19,6 +19,7 @@ const theLink = styled.a`
   text-decoration: ${SharedVariables.Underline};
   border-radius: 8px;
   padding: 12px;
+  line-height: 32px;
 
   cursor: ${SharedVariables.CursorPointer};
   &:hover {

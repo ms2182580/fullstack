@@ -6,7 +6,9 @@ const Custom404 = () => {
       <h1>
         NotFound
       </h1>
-      <LinkNoStyle href="/"> GO back home </LinkNoStyle>
+      <button>
+        <LinkNoStyle href="/"> GO back home </LinkNoStyle>
+      </button>
     </>
   );
 }

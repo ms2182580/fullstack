@@ -1,18 +1,44 @@
-import React from 'react'
+import React from "react"
+import { ORG_ReviewsUsersName } from "../../../utils/ORG_ReviewsUsersName"
+import { ORG_ST_Review } from "../../../utils/ORG_ST_Review"
+import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { ReviewIndividualComponent } from "./ReviewIndividualComponent"
+import { ReviewAllIndividualComponentWrapper, STDetail_ReviewsWrapper } from "./styles/STDetail_ReviewsWrapper"
+import { HyperlinkS } from "../../ui/hyperlink/HyperlinkFonts"
 
-export const STDetail_Reviews = () => {
+export const STDetail_Reviews = ({ name, lastName }) => {
+  const getReviews = ORG_ST_Review(name, lastName)
+  const allUserNames = ORG_ReviewsUsersName()
+
   return (
-    <div>STDetail_Reviews</div>
+    <STDetail_ReviewsWrapper>
+      <H4 cta>Reviews</H4>
+      <Caption>All reviews are submitted by verified patients or their responsible party.</Caption>
+
+      <ReviewAllIndividualComponentWrapper>
+        
+        <ReviewIndividualComponent
+          review={getReviews[0]}
+          userName={allUserNames[0]}
+        />
+        <ReviewIndividualComponent
+          review={getReviews[1]}
+          userName={allUserNames[1]}
+        />
+        <ReviewIndividualComponent
+          review={getReviews[3]}
+          userName={allUserNames[3]}
+        />
+        <ReviewIndividualComponent
+          review={getReviews[2]}
+          userName={allUserNames[2]}
+        />
+      </ReviewAllIndividualComponentWrapper>
+      
+      
+      <HyperlinkS href="/work-in-progress" name="View All"/>
+      
+    </STDetail_ReviewsWrapper>
   )
 }
-
-
-/* 
-Get the usernames: https://jsonplaceholder.typicode.com/users
-Get the comments: https://jsonplaceholder.typicode.com/posts/1/comments
-
-This is for the comments. Idea: make some very possitive, possitive, neutral, negative and very negative comments from the chat GPT and save that to show to in the final product. The rating should be coherent with this.
-"Write a very short review in first person like you have been take the service of this professional, could be a positive one, negative one or something in between. Omit the details of the professional itself and focus on your own experience.: Elaine Davis have a CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA), accepts medicaid, insurance, DOE approved, serve ages of 0-18 months, 2-3 years, 4-5 years, 6-1 years, 12-21 years, 22-40 years, 41-64 years, 65+ years. Make diagnoses of Autism (ASD), ADHD, Cerebral Palsy, Fragile X, is from +20 miles from the current location of the user, speak english, spanish and tagalog, have a meeting format in virtual and in-person, is a independent provider, have a rating of 1, have 4 reviews, have a service setting of school, it allows individual and group session type, have a tranportation of near bus and have 10+ years of practice"
-
-
-*/
