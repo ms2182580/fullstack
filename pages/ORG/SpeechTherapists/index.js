@@ -35,6 +35,12 @@ const ORGSpeechTherapists = () => {
   if (userFetched === undefined) {
     return <LoadingSpeechTherapists />
   }
+  
+  // console.log("Some log, work?")
+  console.log(userFetched)
+  
+  
+
 
   return (
     <>

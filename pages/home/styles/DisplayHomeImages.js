@@ -44,7 +44,6 @@ const DisplayHomeImages = styled.div`
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-    /* border: 4px crimson solid; */
     opacity: 0;
   }
 
@@ -71,7 +70,6 @@ const DisplayHomeImages = styled.div`
     & > a {
       all: unset;
       margin-top: 32px;
-      
     }
   }
 `

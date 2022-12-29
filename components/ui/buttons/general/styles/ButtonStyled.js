@@ -12,6 +12,7 @@ const BtnDefault = styled.button`
   align-items: center;
   cursor: pointer;
   border-radius: ${SharedVariables.BorderRadius};
+  white-space: nowrap;
   
   background-color: ${(x) =>
     x.secondary ? "transparent" : COLORS.Primary.BgColor};
@@ -31,9 +32,7 @@ const BtnDefault = styled.button`
 
   &:hover {
     background-color: ${COLORS.HoverBgColor};
-    p {
-      color: ${COLORS.Primary.TextColor};
-    }
+    color: ${COLORS.Primary.TextColor};
   }
 
   &:active {
@@ -53,12 +52,6 @@ export const BtnSmall = styled(BtnDefault)`
   height: 48px;
   padding: 12px 48px;
   font-size: 16px;
-  white-space: nowrap;
-  & > p {
-    /* font-size: 16px; */
-    
-  }
-  
 `
 export const BtnMedium = styled(BtnDefault)`
   font-size: 20px;
