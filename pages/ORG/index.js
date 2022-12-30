@@ -48,6 +48,12 @@ const ORGLanding = () => {
   //     setGeolocationLocalStorage(null)
   //   }
   // }, [geolocationLocalStorage])
+  
+  /* 
+  !FH
+  
+  Make this responsive!
+  */
 
   return (
     <ORGWrapperLanding>
@@ -64,7 +70,7 @@ const ORGLanding = () => {
         </H1>
       ) : (
         <H3>
-          Find Healthcare Providers <br /> and Activities for your Child in NYC
+          Find Healthcare Providers <br /> and Activities for your Child
         </H3>
       )}
 

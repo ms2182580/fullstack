@@ -36,12 +36,6 @@ const ORGSpeechTherapists = () => {
     return <LoadingSpeechTherapists />
   }
   
-  // console.log("Some log, work?")
-  console.log(userFetched)
-  
-  
-
-
   return (
     <>
       <SpeechTherapistWraper>

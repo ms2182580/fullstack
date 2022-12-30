@@ -7,7 +7,7 @@ const DefaultLink = styled.a`
 `
 
 export const LinkNoStyle = ({ href, children, replace }) => (
-  <Link href={href} replace={replace}>
+  <Link href={href} replace={replace} >
     <DefaultLink>{children}</DefaultLink>
   </Link>
 )

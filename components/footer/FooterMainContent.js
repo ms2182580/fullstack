@@ -19,8 +19,10 @@ export let FooterMainContent = ({ title, dataToShow = [], dataLink }) => {
         }
 
         return (
-          <Fragment key={x.title}>
-            <LinkNoStyle href={x.route}>{x.title}</LinkNoStyle>
+          <Fragment key={x.title} >
+              <span tabIndex={0}>
+                <LinkNoStyle  href={x.route}>{x.title}</LinkNoStyle>
+              </span>
           </Fragment>
         )
       })}

@@ -5,7 +5,7 @@ export const FooterMainContentWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  & > a {
+  & > span > a {
     font-size: 14px;
   }
 `
