@@ -15,20 +15,28 @@ const ORGWrapperLanding = styled.div`
   & > :nth-child(2) {
     margin-bottom: 72px;
     text-align: center;
-    font-size: clamp(20px, 4vw, 48px);
+    font-size: clamp(20px, 5.5vw, 48px);
     @media (${device.tablet}) {
       margin-bottom: 24px;
     }
   }
 
   @media (${device.tablet}) {
-    padding-inline: 16px;
+    padding: 32px 16px 0px 16px;
+    /* padding-inline: 16px; */
     display: flex;
     flex-direction: column;
     
 
     & > :nth-child(1) {
+      /* margin: 32px 53.01px 16px 41px; */
+      /* width:100%; */
+      /* width:225.99px; */
+      /* width:clamp(100%, 225.99px, 100%); */
+      /* height:64px; */
       margin-bottom: 16px;
+      /* border: 2px solid crimson; */
+      
     }
   }
 `

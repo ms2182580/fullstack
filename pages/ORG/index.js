@@ -15,7 +15,6 @@ import { useState } from "react"
 
 const ORGLanding = () => {
   const [windowSize, setWindowSize] = useState()
-  // console.log("windowSize:", windowSize)
   const { setKeywordsContext, setCitiesContext, keywordsContext, citiesContext } = useORG_InputCtx()
   const router = useRouter()
   const formatRouter = router.pathname
@@ -80,6 +79,8 @@ const ORGLanding = () => {
         keywordValueContext={keywordsContext}
         citiesValueContext={citiesContext}
         toWhere="SpeechTherapists"
+        windowWidth={windowSize}
+        landingHere="true"
       />
 
       <OptionsWrapper landingHere="true">
@@ -96,7 +97,6 @@ const ORGLanding = () => {
           title="Social Service Agencies"
           suggestions={suggestionDropdownSSA}
           landingHere={true}
-          // actualRoute={formatRouter}
           toWhere="SpeechTherapists"
         />
         <Customdropdown
@@ -104,7 +104,6 @@ const ORGLanding = () => {
           title="Community Classes"
           suggestions={suggestionDropdownCC}
           landingHere={true}
-          // actualRoute={formatRouter}
           toWhere="SpeechTherapists"
         />
       </OptionsWrapper>

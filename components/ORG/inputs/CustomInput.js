@@ -1,11 +1,9 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import SearchIcon from "../../../assets/Icons/SearchIcon.png"
 import { CurrentLocationSvg } from "../../../assets/Icons"
-import SearchComponentWrapper, {
-  SuggestionsKeywordWrapper
-} from "./styles/SearchComponentWrapper"
+import SearchComponentWrapper, { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
 import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { ButtonSmall } from "../../ui/buttons/general"
@@ -16,28 +14,21 @@ const CustomInput = ({
   setCitiesContext,
   keywordValueContext,
   citiesValueContext,
-  toWhere = "undefined"
+  toWhere = "undefined",
+  windowWidth,
+  landingHere
 }) => {
   const router = useRouter()
+  // console.log('windowWidth:', windowWidth)
 
-  const suggestionsKeywords = [
-    "Physical Therapist",
-    "Occupational Therapist",
-    "Speech Therapist"
-  ]
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")
 
-  const suggestionsCity = [
-    "Current location",
-    "The Bronx",
-    "Manhattan",
-    "Queens",
-    "Brooklyn",
-    "Staten Island"
-  ]
+  const suggestionsKeywords = ["Physical Therapist", "Occupational Therapist", "Speech Therapist"]
+
+  const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
   const [isFocusCity, setIsFocusCity] = useState(false)
   const [isHoveredCity, setIsHoveredCIty] = useState(false)
   const inputRefCity = useRef()
@@ -50,14 +41,29 @@ const CustomInput = ({
 
   return (
     <>
-      <SearchComponentWrapper>
+      <SearchComponentWrapper landingHere={landingHere}>
         <div>
-          <P dark_gray bold>
-            Enter Keyword
-          </P>
+          {windowWidth > 768 ? (
+            <P
+              dark_gray
+              bold>
+              Enter Keyword
+            </P>
+          ) : (
+            <Caption
+              dark_gray
+              bold>
+              {" "}
+              Enter Keyword{" "}
+            </Caption>
+          )}
+
           <span>
             <span>
-              <Image src={SearchIcon} alt="" />
+              <Image
+                src={SearchIcon}
+                alt=""
+              />
             </span>
             <input
               placeholder="Example: Therapist, Accessible Dance Class, etc"
@@ -89,12 +95,27 @@ const CustomInput = ({
           </SuggestionsKeywordWrapper>
         </div>
         <div>
-          <P dark_gray bold>
-            Enter City or Zip Code
-          </P>
+          {windowWidth > 768 ? (
+            <P
+              dark_gray
+              bold>
+              Enter City or Zip Code
+            </P>
+          ) : (
+            <Caption
+              dark_gray
+              bold>
+              {" "}
+              Enter City or Zip Code{" "}
+            </Caption>
+          )}
+
           <span>
             <span>
-              <Image src={SearchIcon} alt="" />
+              <Image
+                src={SearchIcon}
+                alt=""
+              />
             </span>
             <input
               placeholder="Example: 12345"

@@ -1,18 +1,14 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
+import { device } from "../../../../assets/screenSizes/ScreenSizes"
 import { COLORS } from "../../../ui/buttons/variables"
 
 const SearchComponentWrapper = styled.div`
-  /* border: 1px hsl(0, 50%, 30%) solid; */
   margin-bottom: 2.5rem;
-  /* background-color: black; */
-
   display: grid;
   grid-template-columns: 8fr 8fr 1fr;
-  /* width:100%; */
 
   & > :nth-child(2) {
-    /* border:5px rebeccapurple solid; */
     margin-right: 2rem;
   }
 
@@ -20,33 +16,28 @@ const SearchComponentWrapper = styled.div`
     position: relative;
   }
 
-  & > div > p {
-    /* border:1px red solid; */
+  & > div > :nth-child(1) {
     height: 2rem;
   }
 
   & > div > span {
-    /* border: 1px black solid; */
     display: flex;
     position: relative;
   }
 
   & > div > span > span {
-    /* border: 1px black solid; */
     position: absolute;
     z-index: 2;
-    /* left:1.438rem; */
   }
 
   & > div > span > input {
     width: 100%;
     height: 48px;
     padding: 0.5rem 4rem;
-    
+
     @media (max-width: 888px) {
       padding: 0.5rem 2rem 0.5rem 4rem;
-  }
-    
+    }
   }
 
   & > div > span > input:focus,
@@ -62,11 +53,6 @@ const SearchComponentWrapper = styled.div`
   & > div:nth-child(1) > span > input {
     border-radius: 5px 0px 0px 5px;
     border: 1px ${NEUTRALS.DARK_GREY} solid;
-    /* position:absol */
-    /* margin-right: 10px; */
-    /* outline:1px crimson solid; */
-
-    /* outline: 4px solid ${(x) => console.log(x.focused)} */
   }
   & > div:nth-child(2) > span > input {
     border-radius: 0px 5px 5px 0px;
@@ -75,6 +61,53 @@ const SearchComponentWrapper = styled.div`
 
   & > a:nth-last-child(1) {
     align-self: end;
+  }
+
+  @media (${device.tablet}) {
+    /* border: 2px solid crimson; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* width: ${(x) => (x.landingHere === "true" ? "100%" : "100%")}; */
+    /* border: 2px solid ${(x) => (x.landingHere === "true" ? "green" : "blue")}; */
+
+    & > :nth-child(2) {
+      margin-right: 0;
+    }
+
+    & > div > :nth-child(1) {
+      margin-bottom: 4px;
+      height: 16px;
+    }
+    & > div:nth-child(1) > :nth-child(2) {
+      margin-bottom: 16px;
+    }
+
+    & > div:nth-child(2) > :nth-child(2) {
+      margin-bottom: 94px;
+    }
+
+    & > div:nth-child(1) > span > input,
+    & > div:nth-child(2) > span > input {
+      border-radius: 4px;
+      padding: 12px 8px;
+    }
+
+    & > div > span > :nth-child(1) {
+      display: none;
+    }
+
+    & > a:nth-last-child(1) {
+      /* align-self: stretch; */
+      /* border: 2px solid crimson; */
+      width:100%;
+    }
+    
+    & > a:nth-last-child(1) > button{
+      /* border: 2px solid cornflowerblue; */
+      width:100%;
+      
+    }
   }
 `
 
