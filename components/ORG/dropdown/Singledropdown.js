@@ -28,29 +28,36 @@ const Singledropdown = ({
       setShowDropdown((prevstate) => !prevstate)
     }
   }
-  const suggestionsValidated =
-    suggestions.length === 0 ? "Coming soon" : suggestions
+  const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
   return (
     <>
-      <SingleDropdownWrapper >
+      <SingleDropdownWrapper>
         {icon !== "not found" && (
           <div>
-            <Image src={icon} alt="" />
+            <Image
+              src={icon}
+              alt=""
+            />
           </div>
         )}
 
         <span
           onClick={handleDropdownClick}
           onKeyDown={handleDropdownKey}
-          tabIndex={0}
-        >
+          tabIndex={0}>
           <P bold>{title}</P>
           <span>
             {showDropdown ? (
-              <Image src={ArrowUp} alt="" />
+              <Image
+                src={ArrowUp}
+                alt=""
+              />
             ) : (
-              <Image src={ArrowDown} alt="" />
+              <Image
+                src={ArrowDown}
+                alt=""
+              />
             )}
           </span>
         </span>
@@ -65,11 +72,7 @@ const Singledropdown = ({
                   <Fragment key={x}>
                     {isSpeechTherapist && landingHere ? (
                       <LinkNoStyle href={`${actualRoute.pathname}/${toWhere}`}>
-                        <p
-                          onClick={() => setKeywordsContext("Speech Therapist")}
-                        >
-                          {x}
-                        </p>
+                        <p onClick={() => setKeywordsContext("Speech Therapist")}>{x}</p>
                       </LinkNoStyle>
                     ) : (
                       landingHere && (
@@ -84,8 +87,7 @@ const Singledropdown = ({
                         <p
                           onClick={(e) => {
                             setKeywordsContext(e.target.textContent)
-                          }}
-                        >
+                          }}>
                           {x}
                         </p>
                       </Fragment>
@@ -98,14 +100,14 @@ const Singledropdown = ({
           )}
         </div>
 
-        <div className="ORGDropdownComingSoon">
-          {showDropdown && typeof suggestionsValidated === "string" && (
+        {showDropdown && typeof suggestionsValidated === "string" && (
+          <div className="ORGDropdownComingSoon">
             <div onClick={handleDropdownClick}>
               <div></div>
               <p>Coming Soon!</p>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </SingleDropdownWrapper>
     </>
   )

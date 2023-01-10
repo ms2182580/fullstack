@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
+import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 export const SingleDropdownWrapper = styled.div`
   display: grid;
@@ -7,20 +8,11 @@ export const SingleDropdownWrapper = styled.div`
   grid-template-rows: 1fr;
   position: relative;
 
-  & > div:nth-child(1) {
-    /* margin-left: 0.813rem; */
-
-    /* outline: 2px crimson solid; */
-    /* width:0px; */
-    /* display: none; */
-
-    /* display: ${(x) => (x.noIcon ? "none" : "visible")}; */
-  }
-
   & > :nth-child(2) {
     display: flex;
     align-items: flex-start;
     cursor: pointer;
+
     & > p {
       margin-right: 1.25rem;
       user-select: none;
@@ -31,7 +23,7 @@ export const SingleDropdownWrapper = styled.div`
   }
 
   & > .ORGDropdownSuggestion {
-    position: absolute;
+    position: ${(x) => (x.isMobile ? "null" : "absolute")};
     top: 100%;
     width: 100%;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
@@ -60,10 +52,18 @@ export const SingleDropdownWrapper = styled.div`
     & > div:nth-last-child(1) {
       height: 0.5rem;
     }
+
+    @media (${device.tablet}) {
+      width: calc(100vw - 33px);
+      box-shadow: none;
+      & > :nth-child(1) {
+        display: none;
+      }
+    }
   }
 
   & > .ORGDropdownComingSoon {
-    position: absolute;
+    position: ${(x) => (x.isMobile ? "null" : "absolute")};
     top: 100%;
     width: 100%;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
@@ -79,6 +79,25 @@ export const SingleDropdownWrapper = styled.div`
     }
     & > div > p {
       margin: 1rem;
+    }
+
+    @media (${device.tablet}) {
+      box-shadow: none;
+      width: calc(100vw - 32px);
+      margin-left: -48px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+
+      &:hover {
+        background-color: ${NEUTRALS.DARK_GREY};
+        color: ${NEUTRALS.OFF_WHITE};
+      }
+
+
+      & > :nth-child(1) > :nth-child(1) {
+        display: none;
+      }
+
     }
   }
 `

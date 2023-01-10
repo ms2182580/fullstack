@@ -1,18 +1,23 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 export const OptionsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-right: auto;
   margin-bottom: ${(x) => (x.landingHere === "true" ? "17.5rem" : "2.5rem")};
-  /* margin-left: 0.75rem; */
 
   & > * {
     margin-right: 3.625rem;
   }
+  
+  @media (${device.tablet}) {
+    flex-direction: column;
+    margin: auto;
+  }
+  
 
-  // TODO THIS TYPE OF MEDIA QUERY (write inside a string) SHOULD BE DIFFERENT. FOUND ANOTHER WAY
+  //!FH FIX THIS MESS: THIS TYPE OF MEDIA QUERY (write inside a string) SHOULD BE DIFFERENT. FOUND ANOTHER WAY
   & {
     ${(x) =>
       x.landingHere === "true"

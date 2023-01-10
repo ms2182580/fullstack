@@ -8,6 +8,12 @@ import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { useRouter } from "next/router"
+import { OptionsMobile } from "../dropdown/OptionsMobile.js"
+import Customdropdown from "../dropdown/CustomDropdown"
+import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
+import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
+import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
+import { PlaceholderComponent } from "../placeholders/searchPage"
 
 const CustomInput = ({
   setKeywordsContext,
@@ -15,11 +21,11 @@ const CustomInput = ({
   keywordValueContext,
   citiesValueContext,
   toWhere = "undefined",
-  windowWidth,
-  landingHere
+  landingHere,
+  windowSize
 }) => {
   const router = useRouter()
-  // console.log('windowWidth:', windowWidth)
+  const formatRouter = router.pathname
 
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
@@ -39,11 +45,20 @@ const CustomInput = ({
     setCityInput(citiesValueContext)
   }, [keywordValueContext, citiesValueContext])
 
+  const suggestionDropdownTP = [
+    "Speech Therapist",
+    "Behavioral Therapist",
+    "Physical Therapist",
+    "Occupational Therapist"
+  ]
+  const suggestionDropdownSSA = []
+  const suggestionDropdownCC = []
+
   return (
     <>
       <SearchComponentWrapper landingHere={landingHere}>
         <div>
-          {windowWidth > 768 ? (
+          {windowSize > 768 ? (
             <P
               dark_gray
               bold>
@@ -82,20 +97,56 @@ const CustomInput = ({
             />
           </span>
 
-          <SuggestionsKeywordWrapper>
-            <DropdownSuggestionsInput
+          {windowSize === undefined ? (
+            <PlaceholderComponent />
+          ) : windowSize !== undefined && windowSize > 768 ? (
+            <SuggestionsKeywordWrapper>
+              <DropdownSuggestionsInput
+                isFocus={isFocusKeyword}
+                setIsFocus={setIsHoveredKeyword}
+                suggestions={suggestionsKeywords}
+                keywordClickByUser={keywordInput}
+                setKeywordClickByUser={setKeywordInput}
+                setKeywordClickByUserContext={setKeywordsContext}
+                inputRefFocus={inputRefKeyword}
+              />
+            </SuggestionsKeywordWrapper>
+          ) : windowSize !== undefined && windowSize <= 768 ? (
+            <OptionsMobile
               isFocus={isFocusKeyword}
-              setIsFocus={setIsHoveredKeyword}
-              suggestions={suggestionsKeywords}
-              keywordClickByUser={keywordInput}
-              setKeywordClickByUser={setKeywordInput}
-              setKeywordClickByUserContext={setKeywordsContext}
-              inputRefFocus={inputRefKeyword}
-            />
-          </SuggestionsKeywordWrapper>
+              setIsFocus={setIsHoveredKeyword}>
+              <Caption bolder>QUICK LINKS</Caption>
+              <div></div>
+              <Customdropdown
+                icon={ORG_LANDING_TP}
+                title="Therapeutic Providers"
+                suggestions={suggestionDropdownTP}
+                landingHere={true}
+                actualRoute={formatRouter}
+                toWhere="SpeechTherapists"
+                isMobile={true}
+              />
+              <Customdropdown
+                icon={ORG_LANDING_SSA}
+                title="Social Service Agencies"
+                suggestions={suggestionDropdownSSA}
+                landingHere={true}
+                toWhere="SpeechTherapists"
+                isMobile={true}
+              />
+              <Customdropdown
+                icon={ORG_LANDING_CC}
+                title="Community Classes"
+                suggestions={suggestionDropdownCC}
+                landingHere={true}
+                toWhere="SpeechTherapists"
+                isMobile={true}
+              />
+            </OptionsMobile>
+          ) : null}
         </div>
         <div>
-          {windowWidth > 768 ? (
+          {windowSize > 768 ? (
             <P
               dark_gray
               bold>

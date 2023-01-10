@@ -4,6 +4,13 @@ import { P } from "../heading_body_text/DesktopMobileFonts.js"
 import { LinkNoStyle } from "../hyperlink/HyperlinkNoStyles.js"
 import { BreadcrumbsWrapper } from "./BreadcrumbsStyled.js"
 
+/* 
+!FH
+
+Make the Breadcrumbs responsive
+*/
+
+
 const Breadcrumbs = ({ whichDisplay }) => {
   return (
     <BreadcrumbsWrapper>

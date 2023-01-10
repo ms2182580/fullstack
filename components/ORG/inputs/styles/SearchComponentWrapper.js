@@ -65,8 +65,9 @@ const SearchComponentWrapper = styled.div`
 
   @media (${device.tablet}) {
     /* border: 2px solid crimson; */
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
+    grid-template-columns: 1fr;
     width: 100%;
     /* width: ${(x) => (x.landingHere === "true" ? "100%" : "100%")}; */
     /* border: 2px solid ${(x) => (x.landingHere === "true" ? "green" : "blue")}; */
@@ -97,16 +98,18 @@ const SearchComponentWrapper = styled.div`
       display: none;
     }
 
-    & > a:nth-last-child(1) {
-      /* align-self: stretch; */
-      /* border: 2px solid crimson; */
-      width:100%;
+    & > div > span > input:focus,
+    & > div:nth-child(1) > span > input:focus,
+    & > div:nth-child(2) > span > input:focus {
+      position: relative;
     }
-    
-    & > a:nth-last-child(1) > button{
-      /* border: 2px solid cornflowerblue; */
-      width:100%;
-      
+
+    & > a:nth-last-child(1) {
+      width: 100%;
+    }
+
+    & > a:nth-last-child(1) > button {
+      width: 100%;
     }
   }
 `
@@ -123,4 +126,9 @@ export const SuggestionsKeywordWrapper = styled.div`
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   cursor: pointer;
+  
+  @media (${device.tablet}){
+    top:72px;
+  }
+  
 `

@@ -7,7 +7,6 @@ import { SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 
-
 const Customdropdown = ({
   icon = "no icon found",
   title = "no title",
@@ -15,9 +14,9 @@ const Customdropdown = ({
   landingHere = false,
   actualRoute,
   toWhere = "undefined",
-  noIcon = false
+  noIcon = false,
+  isMobile = false
 }) => {
-  
   const { setKeywordsContext } = useORG_InputCtx()
 
   const [showDropdown, setShowDropdown] = useState(false)
@@ -31,30 +30,41 @@ const Customdropdown = ({
       setShowDropdown((prevstate) => !prevstate)
     }
   }
-  const suggestionsValidated =
-    suggestions.length === 0 ? "Coming soon" : suggestions
+  const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
   return (
     <>
-      <SingleDropdownWrapper noIcon={noIcon} landingHere={landingHere}>
-        
+      <SingleDropdownWrapper
+        noIcon={noIcon}
+        landingHere={landingHere}
+        isMobile={isMobile}>
         {icon !== "no icon found" ? (
           <div>
-            <Image src={icon} alt="" />
+            <Image
+              src={icon}
+              alt=""
+            />
           </div>
-        ) : (<div></div>)}
+        ) : (
+          <div></div>
+        )}
 
         <span
           onClick={handleDropdownClick}
           onKeyDown={handleDropdownKey}
-          tabIndex={0}
-        >
+          tabIndex={0}>
           <P bold>{title}</P>
           <span>
             {showDropdown ? (
-              <Image src={ArrowUp} alt="" />
+              <Image
+                src={ArrowUp}
+                alt=""
+              />
             ) : (
-              <Image src={ArrowDown} alt="" />
+              <Image
+                src={ArrowDown}
+                alt=""
+              />
             )}
           </span>
         </span>
@@ -69,11 +79,7 @@ const Customdropdown = ({
                   <Fragment key={x}>
                     {isSpeechTherapist && landingHere ? (
                       <LinkNoStyle href={`${actualRoute}/${toWhere}`}>
-                        <p
-                          onClick={() => setKeywordsContext("Speech Therapist")}
-                        >
-                          {x}
-                        </p>
+                        <p onClick={() => setKeywordsContext("Speech Therapist")}>{x}</p>
                       </LinkNoStyle>
                     ) : (
                       landingHere && (
@@ -88,8 +94,7 @@ const Customdropdown = ({
                         <p
                           onClick={(e) => {
                             setKeywordsContext(e.target.textContent)
-                          }}
-                        >
+                          }}>
                           {x}
                         </p>
                       </Fragment>
@@ -102,14 +107,16 @@ const Customdropdown = ({
           )}
         </div>
 
-        <div className="ORGDropdownComingSoon">
-          {showDropdown && typeof suggestionsValidated === "string" && (
-            <div onClick={handleDropdownClick}>
+        {showDropdown && typeof suggestionsValidated === "string" && (
+          <div
+            className="ORGDropdownComingSoon"
+            onClick={handleDropdownClick}>
+            <div>
               <div></div>
               <p>Coming Soon!</p>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </SingleDropdownWrapper>
     </>
   )
