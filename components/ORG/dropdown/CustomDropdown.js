@@ -15,7 +15,9 @@ const Customdropdown = ({
   actualRoute,
   toWhere = "undefined",
   noIcon = false,
-  isMobile = false
+  isMobile = false,
+  isHover = undefined,
+  setIsFocusKeyword = undefined
 }) => {
   const { setKeywordsContext } = useORG_InputCtx()
 
@@ -30,6 +32,7 @@ const Customdropdown = ({
       setShowDropdown((prevstate) => !prevstate)
     }
   }
+
   const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
   return (
@@ -37,7 +40,14 @@ const Customdropdown = ({
       <SingleDropdownWrapper
         noIcon={noIcon}
         landingHere={landingHere}
-        isMobile={isMobile}>
+        isMobile={isMobile}
+        onBlur={() => {
+          if (isHover === false) {
+            setIsFocusKeyword(false)
+          }
+        }}
+
+      >
         {icon !== "no icon found" ? (
           <div>
             <Image

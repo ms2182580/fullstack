@@ -114,7 +114,8 @@ const CustomInput = ({
           ) : windowSize !== undefined && windowSize <= 768 ? (
             <OptionsMobile
               isFocus={isFocusKeyword}
-              setIsFocus={setIsHoveredKeyword}>
+              setIsHover={setIsHoveredKeyword}
+              >
               <Caption bolder>QUICK LINKS</Caption>
               <div></div>
               <Customdropdown
@@ -125,6 +126,8 @@ const CustomInput = ({
                 actualRoute={formatRouter}
                 toWhere="SpeechTherapists"
                 isMobile={true}
+                setIsFocusKeyword={setIsFocusKeyword}
+                isHover={isHoveredKeyword}
               />
               <Customdropdown
                 icon={ORG_LANDING_SSA}
@@ -133,6 +136,8 @@ const CustomInput = ({
                 landingHere={true}
                 toWhere="SpeechTherapists"
                 isMobile={true}
+                isHover={isHoveredKeyword}
+                setIsFocusKeyword={setIsFocusKeyword}
               />
               <Customdropdown
                 icon={ORG_LANDING_CC}
@@ -141,6 +146,8 @@ const CustomInput = ({
                 landingHere={true}
                 toWhere="SpeechTherapists"
                 isMobile={true}
+                isHover={isHoveredKeyword}
+                setIsFocusKeyword={setIsFocusKeyword}
               />
             </OptionsMobile>
           ) : null}
