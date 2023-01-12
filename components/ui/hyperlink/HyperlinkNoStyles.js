@@ -6,11 +6,28 @@ const DefaultLink = styled.a`
   cursor: pointer;
 `
 
-export const LinkNoStyle = ({ href, children, replace }) => (
-  <Link href={href} replace={replace} >
-    <DefaultLink>{children}</DefaultLink>
-  </Link>
-)
+export const LinkNoStyle = ({ href, children, replace, query = undefined }) => {
+  if (query !== undefined) {
+    return (
+      <Link
+        as={href}
+        href={{
+          pathname: href,
+          query: {data: query}
+        }}
+        replace={replace}>
+        <DefaultLink>{children}</DefaultLink>
+      </Link>
+    )
+  }
+  return (
+    <Link
+      href={href}
+      replace={replace}>
+      <DefaultLink>{children}</DefaultLink>
+    </Link>
+  )
+}
 
 export const NavLinkNoStyle = styled(Link)`
   all: unset;

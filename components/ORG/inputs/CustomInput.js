@@ -208,7 +208,7 @@ const CustomInput = ({
         </div>
 
         {toWhere === "SpeechTherapists" ? (
-          <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
+          <LinkNoStyle href={`${router.pathname}/${toWhere}`} query={windowSize}>
             <ButtonSmall>Search</ButtonSmall>
           </LinkNoStyle>
         ) : toWhere === "no where" ? (
