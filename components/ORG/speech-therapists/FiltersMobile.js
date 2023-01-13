@@ -19,7 +19,7 @@ export const FiltersMobile = () => {
           Advanced Filters
         </Caption>
         <ORG_Mobile_FilterIcon />
-        {mustShowFilters ? <>Showing filters</> : null}
+        {/* {mustShowFilters ? <>Showing filters</> : null} */}
       </FiltersMobileWrapper>
 
       
