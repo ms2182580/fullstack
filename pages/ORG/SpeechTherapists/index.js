@@ -23,6 +23,7 @@ const ORGSpeechTherapists = () => {
   const widthRoute = route.query.data
 
   const [widthWindow, setWidthWindow] = useState(widthRoute)
+  
 
   const [imInClient, setImInClient] = useState(() => {
     if (typeof window === "object") {

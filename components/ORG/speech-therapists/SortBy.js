@@ -1,12 +1,15 @@
 import { CustomDropdownFilters } from "../dropdownFilters/CustomDropdownFilters"
 import { HeaderSPList_SortByWrapper } from "./styles/HeaderSPListWrapper"
+import { ORG_SortByOrder } from "../../../utils/ORG_SortByOrder"
 
 const SortBy = () => {
-  const toSort = ["Nearest", "Highest Rating", "Review Count"]
-
   return (
     <HeaderSPList_SortByWrapper>
-      <CustomDropdownFilters title="Sort By" suggestions={toSort} noIcon />
+      <CustomDropdownFilters
+        title="Sort By"
+        suggestions={ORG_SortByOrder}
+        noIcon
+      />
     </HeaderSPList_SortByWrapper>
   )
 }

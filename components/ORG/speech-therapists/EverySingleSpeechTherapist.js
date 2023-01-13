@@ -6,7 +6,7 @@ import { SpeechTherapistsCardNoFilter } from "./SpeechTherapistsCardNoFilters.js
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider"
 
-export const SpeechtherapistList = () => {
+export const SpeechtherapistList = ({widthWindow}) => {
   const [filterHaveAtLeastOneValueState, setFilterHaveAtLeastOneValueState] =
     useState(false)
   const { pagination } = useORG_Ctx_FetchNoFilters()
@@ -28,7 +28,7 @@ export const SpeechtherapistList = () => {
 
   return (
     <EverySingleSpeechTherapistWrapper>
-      <HeaderSPList />
+      <HeaderSPList widthWindow={widthWindow} />
 
       {filterHaveAtLeastOneValueState ? (
         <>

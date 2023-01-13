@@ -1,7 +1,7 @@
 import Image from "next/image.js"
 import { Fragment, useState } from "react"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { CustomP, SingleDropdownWrapper } from "./styles/Singledropdown"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
@@ -88,7 +88,7 @@ export const CustomDropdownFilters = ({
             handleDropdownKey(e)
           }}
           tabIndex={0}>
-          <P bold>{title}</P>
+          <Caption bold>{title}</Caption>
           <span>
             {showDropdown ? (
               <Image src={ArrowUp} alt="" />
@@ -108,13 +108,13 @@ export const CustomDropdownFilters = ({
                   <Fragment key={x}>
                     {
                       <Fragment>
-                        <CustomP
+                        <CustomC
                           highlight={highlight}
                           onClick={(e) => {
                             getSelection(e)
                           }}>
                           {x}
-                        </CustomP>
+                        </CustomC>
                       </Fragment>
                     }
                   </Fragment>

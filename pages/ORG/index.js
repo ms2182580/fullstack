@@ -3,6 +3,7 @@ import SearchpageORG from "./SearchpageORG.js"
 
 const ORGLanding = () => {
   const [widthWindow, setWidthWindow] = useState()
+  // console.log('widthWindow:', widthWindow)
   
   const [imInClient, setImInClient] = useState(() => {
     if (typeof window === "object") {

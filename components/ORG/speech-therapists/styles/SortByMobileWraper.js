@@ -1,44 +1,47 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const SingleDropdownWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+export const SortByMobileWrapper = styled.div`
+  border: 1px solid ${NEUTRALS.DARK_GREY};
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: ${x => x.showDropdown ? "8px 8px 0px 0px" : "8px" };
   position: relative;
+  cursor: pointer;
+  width: 116px;
 
   & > :nth-child(1) {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 12px;
-    cursor: pointer;
-    & > span:nth-child(1) {
-      margin-right: 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    & > span {
+      margin-inline: 1.25rem;
+      white-space: nowrap;
       user-select: none;
     }
-    & > span:nth-child(2) {
-      width: 2.5rem;
+    & > span:nth-child(3) > svg > path {
+      fill: ${PRIMARY.PRIMARY_CTA};
     }
   }
 
   & > :nth-child(2) {
     position: absolute;
     top: 100%;
+    right: 0%;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
     background-color: ${NEUTRALS.OFF_WHITE};
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     z-index: 99;
-    width: 188px;
+    width: calc(130px + 6px + 28px);
     display: flex;
     flex-direction: column;
-    cursor: pointer;
-    /* background-color: crimson; */
 
     & > div:nth-child(1) {
-      height: 1.67px;
-      width: 174px;
+      height: 2px;
+      margin-left: 28px;
       margin-bottom: 8px;
       background-color: ${NEUTRALS.BLACK};
     }
@@ -47,8 +50,6 @@ export const SingleDropdownWrapper = styled.div`
     & > a > span {
       padding: 0.5rem 1.5rem;
       cursor: pointer;
-
-      background-color: ${(x) => x.highlight === "highlight" && crimson};
     }
 
     & > span:hover,
@@ -58,12 +59,8 @@ export const SingleDropdownWrapper = styled.div`
     }
 
     & > div:nth-last-child(1) {
-      height: 0.5rem;
+      height: 10px;
     }
   }
-`
 
-export const CustomC = styled.span`
-  background-color: ${(x) => (x.highlight ? NEUTRALS.BLACK : "")};
-  color: ${(x) => (x.highlight ? NEUTRALS.OFF_WHITE : "")};
 `

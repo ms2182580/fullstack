@@ -3,14 +3,14 @@ import { SpeechtherapistFinalButtons } from "./SpeechtherapistFinalButtons"
 import STFiltersTherapistsButtonsWrapper from "./styles/AllSpeechtherapistsWrapper"
 import { SpeechtherapistList } from "./EverySingleSpeechTherapist"
 
-const STFiltersTherapistsButtons = () => {
+const STFiltersTherapistsButtons = ({widthWindow}) => {
   return (
     <STFiltersTherapistsButtonsWrapper>
-      <SpeechTherapistListFilter />
+      <SpeechTherapistListFilter widthWindow={widthWindow}/>
 
-      <SpeechtherapistList />
+      <SpeechtherapistList widthWindow={widthWindow}/>
 
-      <SpeechtherapistFinalButtons />
+      <SpeechtherapistFinalButtons widthWindow={widthWindow}/>
     </STFiltersTherapistsButtonsWrapper>
   )
 }

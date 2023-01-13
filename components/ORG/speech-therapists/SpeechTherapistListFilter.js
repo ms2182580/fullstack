@@ -6,6 +6,9 @@ import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilter
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
 import { useEffect } from "react"
+import { SortByMobile } from "./SortByMobile.js"
+import { STFilterSortbyMobileWrapper } from "./styles/STFilterSortbyMobileWrapper.js"
+import {FiltersMobile} from "./FiltersMobile.js"
 
 const reducer = (state, action) => {
   const setFilterData = action.payload[0]
@@ -35,7 +38,7 @@ const reducer = (state, action) => {
   }
 }
 
-const SpeechTherapistListFilter = () => {
+const SpeechTherapistListFilter = ({ widthWindow }) => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
@@ -61,177 +64,190 @@ const SpeechTherapistListFilter = () => {
   }, [])
 
   return (
-    <SpeechTherapistListFilterWrapper id="topOfSTL">
-      <div>
-        <H4>Filter by</H4>
-        <P
-          onClick={(e) => handleClearAll(e)}
-          onKeyDown={(e) => handleClearAll(e)}
-          tabIndex={0}>
-          Clear all
-        </P>
-      </div>
+    <>
+      {widthWindow > 768 ? (
+        <SpeechTherapistListFilterWrapper id="topOfSTL">
+          <div>
+            <H4>Filter by</H4>
+            <P
+              onClick={(e) => handleClearAll(e)}
+              onKeyDown={(e) => handleClearAll(e)}
+              tabIndex={0}>
+              Clear all
+            </P>
+          </div>
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["0-5", "5-10", "10-20", "20+"]}
-        title="Distance"
-        
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["0-5", "5-10", "10-20", "20+"]}
+            title="Distance"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["1", "2", "3", "4", "5"]}
-        title="Rating"
-      />
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Fragile X", "Other"]}
-        title="Diagnoses"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["1", "2", "3", "4", "5"]}
+            title="Rating"
+          />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Fragile X", "Other"]}
+            title="Diagnoses"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={[
-          "0-18 months",
-          "2-3 years",
-          "4-5 years",
-          "6-11 years",
-          "12-21 years",
-          "22-40 years",
-          "41-64 years",
-          "65+ years"
-        ]}
-        title="Ages Served"
-        toUpdate="agesServed"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={[
+              "0-18 months",
+              "2-3 years",
+              "4-5 years",
+              "6-11 years",
+              "12-21 years",
+              "22-40 years",
+              "41-64 years",
+              "65+ years"
+            ]}
+            title="Ages Served"
+            toUpdate="agesServed"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["English", "Spanish", "Chinese", "Tagalog", "French"]}
-        title="Languages"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["English", "Spanish", "Chinese", "Tagalog", "French"]}
+            title="Languages"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["1+ Years", "3+ Years", "5+ Years", "7+ Years", "10+ Years"]}
-        title="Years of Practice"
-        toUpdate="yearsOfPractice"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["1+ Years", "3+ Years", "5+ Years", "7+ Years", "10+ Years"]}
+            title="Years of Practice"
+            toUpdate="yearsOfPractice"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Clinic", "Home", "School", "Community"]}
-        title="Service Setting"
-        toUpdate="serviceSetting"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Clinic", "Home", "School", "Community"]}
+            title="Service Setting"
+            toUpdate="serviceSetting"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Medicaid", "Insurance", "Private Pay", "DOE approved"]}
-        title="Accepts"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Medicaid", "Insurance", "Private Pay", "DOE approved"]}
+            title="Accepts"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Virtual", "In-Person"]}
-        title="Meeting Format"
-        toUpdate="meetingFormat"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Virtual", "In-Person"]}
+            title="Meeting Format"
+            toUpdate="meetingFormat"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Individual", "Group"]}
-        title="Session Type"
-        toUpdate="sessionType"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Individual", "Group"]}
+            title="Session Type"
+            toUpdate="sessionType"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Near Metro", "Near Bus", "Meter Parking", "Street Parking", "Parking Lot"]}
-        title="Transportation"
-      />
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Near Metro", "Near Bus", "Meter Parking", "Street Parking", "Parking Lot"]}
+            title="Transportation"
+          />
 
-      <FilterCheckboxComponent
-        dispatch={dispatch}
-        setFilterData={setFilterData}
-        clearAll={clearAll}
-        setClearAll={setClearAll}
-        showStateChildren={setShow}
-        shouldClear={shouldClear}
-        setShouldClear={setShouldClear}
-        categoriesToDisplay={["Independent", "Agency-based", "Traveling"]}
-        title="Provider Type"
-        toUpdate="providerType"
-      />
-    </SpeechTherapistListFilterWrapper>
+          <FilterCheckboxComponent
+            dispatch={dispatch}
+            setFilterData={setFilterData}
+            clearAll={clearAll}
+            setClearAll={setClearAll}
+            showStateChildren={setShow}
+            shouldClear={shouldClear}
+            setShouldClear={setShouldClear}
+            categoriesToDisplay={["Independent", "Agency-based", "Traveling"]}
+            title="Provider Type"
+            toUpdate="providerType"
+          />
+        </SpeechTherapistListFilterWrapper>
+      ) : (
+        <STFilterSortbyMobileWrapper>
+          <FiltersMobile/>
+          <SortByMobile />
+        </STFilterSortbyMobileWrapper>
+      )}
+    </>
   )
 }
 
 export default SpeechTherapistListFilter
+
+/* 
+!FH
+Create the styles of the cards: responsive (filter) and "sort by"
+*/
