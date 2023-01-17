@@ -7,6 +7,7 @@ import { H2 } from "../ui/heading_body_text/HeaderFonts"
 
 const Footer = () => {
   const FooterMainContent_SandP_dataToShow = [{ title: "Resource Directory", route: "/ORG" }]
+  
   const FooterMainContent_LandG_dataToShow = [
     { title: "I/DD Community Classes", route: "/404" },
     { title: "Family Learning Center", route: "/404" }
@@ -40,10 +41,10 @@ const Footer = () => {
             title="Learn & Grow"
             dataToShow={FooterMainContent_LandG_dataToShow}
           />
-          <FooterMainContent
+          {/* <FooterMainContent
             title="Set Life Goals"
             dataToShow={FooterMainContent_SLG_dataToShow}
-          />
+          /> */}
           <FooterMainContent
             title="Getting Help"
             dataToShow={FooterMainContent_GH_dataToShow}
