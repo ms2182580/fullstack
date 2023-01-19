@@ -7,8 +7,10 @@ import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC } from "../dropdownFilters/styles/Singledropdown"
 import { SortByMobileWrapper } from "./styles/SortByMobileWraper.js"
 import { DownArrowSvg, UpArrowSvg } from "../../../assets/Icons/index.js"
+import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
 
-export const SortByMobile = ({ title = "Sort By" }) => {
+export const SortByMobile = ({ title = "Sort By"}) => {
+  const {mustShowFiltersMobile} = useORG_Ctx_ShowFiltersMobile()
   const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFilters()
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -51,65 +53,61 @@ export const SortByMobile = ({ title = "Sort By" }) => {
     handleDropdownClick()
   }
 
-  /* 
-  !FH
-  Think how to solve the problem of the variable width. Maybe use the flex property that, when something doesn't fit, go to the next row
-  Fix the width that change with every change name
-  */
-
   return (
     <>
-      <SortByMobileWrapper
-        showDropdown={showDropdown}
-        onClick={handleDropdownClick}>
-        <span
-          // onKeyDown={(e) => {
-          //   handleDropdownKey(e)
-          // }}
-          tabIndex={0}>
-          <Caption
-            bold
-            primary_cta>
-            {title}:{" "}
-          </Caption>
-          <Caption
-            bold
-            primary_cta>
-            {" "}
-            {actualSort}
-          </Caption>
-          <span>{showDropdown ? <UpArrowSvg /> : <DownArrowSvg />}</span>
-        </span>
-        <div className="dropdownSuggestions">
-          {showDropdown && ORG_SortByOrder.length !== 0 && (
-            <>
-              <div></div>
-              {ORG_SortByOrder.map((x) => {
-                let highlight = x === actualSort
+      {mustShowFiltersMobile === false ? (
+        <SortByMobileWrapper
+          showDropdown={showDropdown}
+          onClick={handleDropdownClick}>
+          <span
+            // onKeyDown={(e) => {
+            //   handleDropdownKey(e)
+            // }}
+            tabIndex={0}>
+            <Caption
+              bold
+              primary_cta>
+              {title}:{" "}
+            </Caption>
+            <Caption
+              bold
+              primary_cta>
+              {" "}
+              {actualSort}
+            </Caption>
+            <span>{showDropdown ? <UpArrowSvg /> : <DownArrowSvg />}</span>
+          </span>
+          <div className="dropdownSuggestions">
+            {showDropdown && ORG_SortByOrder.length !== 0 && (
+              <>
+                <div></div>
+                {ORG_SortByOrder.map((x) => {
+                  let highlight = x === actualSort
 
-                return (
-                  <Fragment key={x}>
-                    {
-                      <Fragment>
-                        <CustomC
-                          highlight={highlight}
-                          onClick={(e) => {
-                            getSelection(e)
-                            handleDropdownClick()
-                            // setShowDropdown(false)
-                          }}>
-                          {x}
-                        </CustomC>
-                      </Fragment>
-                    }
-                  </Fragment>
-                )
-              })}
-              <div></div>
-            </>
-          )}
-        </div>
-      </SortByMobileWrapper>
+                  return (
+                    <Fragment key={x}>
+                      {
+                        <Fragment>
+                          <CustomC
+                            highlight={highlight}
+                            onClick={(e) => {
+                              getSelection(e)
+                              handleDropdownClick()
+                              // setShowDropdown(false)
+                            }}>
+                            {x}
+                          </CustomC>
+                        </Fragment>
+                      }
+                    </Fragment>
+                  )
+                })}
+                <div></div>
+              </>
+            )}
+          </div>
+        </SortByMobileWrapper>
+      ) : null}
     </>
   )
 }

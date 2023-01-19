@@ -14,7 +14,6 @@ import ORG_LANDING_TP from "../../assets/Icons/ORG_Landing_TP.png"
 import { PlaceholderComponent } from "../../components/ORG/placeholders/searchPage.js"
 
 const SearchpageORG = ({ windowSize }) => {
-  console.log('windowSize:', windowSize)
   const { setKeywordsContext, setCitiesContext, keywordsContext, citiesContext } = useORG_InputCtx()
   const router = useRouter()
   const formatRouter = router.pathname

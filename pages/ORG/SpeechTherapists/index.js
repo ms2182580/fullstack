@@ -15,15 +15,17 @@ import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/L
 import { useEffect, useState } from "react"
 import { P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { useRouter } from "next/router"
+import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
 
 const ORGSpeechTherapists = () => {
+  const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
+
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
-  
+
   const route = useRouter()
   const widthRoute = route.query.data
 
   const [widthWindow, setWidthWindow] = useState(widthRoute)
-  
 
   const [imInClient, setImInClient] = useState(() => {
     if (typeof window === "object") {
@@ -76,7 +78,7 @@ const ORGSpeechTherapists = () => {
               </LinkNoStyle>
             </span>{" "}
           </div>
-        ) : (
+        ) : widthWindow <= 768 && mustShowFiltersMobile === false ? (
           <div>
             {" "}
             <span>
@@ -86,7 +88,7 @@ const ORGSpeechTherapists = () => {
               </LinkNoStyle>
             </span>{" "}
           </div>
-        )}
+        ) : null}
 
         {widthWindow > 768 ? (
           <>
@@ -124,7 +126,7 @@ const ORGSpeechTherapists = () => {
         ) : null}
       </SpeechTherapistWraper>
 
-      <STFiltersTherapistsButtons widthWindow={widthWindow}/>
+      <STFiltersTherapistsButtons widthWindow={widthWindow} />
     </>
   )
 }

@@ -2,19 +2,29 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
+/* 
+
+!FH
+
+Finish the styles of the advances filters on the mobile version
+
+*/
+
 const SpeechTherapistListFilterWrapper = styled.div`
+  display: ${(x) => (x.mustShowFiltersMobile || x.isMobile === undefined ? "block" : "none")};
   background-color: ${NEUTRALS.OFF_WHITE};
-  border: 1px solid ${NEUTRALS.DARK_GREY};
+  border: ${(x) => (x.isMobile ? "none" : `1px solid ${NEUTRALS.DARK_GREY}`)};
   border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  padding: 1.5rem 2rem 48px 2rem;
-  width: 21.5rem;
+  box-shadow: ${(x) => (x.isMobile ? "none" : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
+  padding: ${(x) => (x.isMobile ? "50px 0px 0px 0px" : `1.5rem 2rem 48px 2rem`)};
+  width: ${(x) => (x.isMobile ? "100%" : "21.5rem")};
 
   & > div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 56px;
+    padding-bottom: ${(x) => (x.isMobile ? "40px" : "56px")};
+    margin-inline: ${(x) => (x.isMobile ? "53px" : "null")};
 
     & > :nth-child(2) {
       cursor: pointer;
@@ -33,11 +43,42 @@ const SpeechTherapistListFilterWrapper = styled.div`
   }
 
   & > *:not(:first-child) {
-    margin-inline: 24px 24px;
+    margin-inline: ${(x) => (x.isMobile ? "44px 44px" : "24px 24px")};
     border-bottom: 1px solid ${NEUTRALS.BLACK};
 
     & > ul > li:last-child {
       margin-bottom: 21px;
+    }
+  }
+
+  @media (${device.tablet}) {
+    /* background-color: darkcyan; */
+    /* outline: 2px solid green; */
+    /* border: 2px solid green; */
+    
+    
+    
+    & > :nth-last-child(3){
+      margin-bottom:40px;
+    }
+
+    & > :nth-last-child(2) > button,
+    & > :nth-last-child(1) > button {
+      margin-inline:16px;
+      width:calc(100vw - 32px);
+    }
+    
+    & > :nth-last-child(2) > button{
+      margin-bottom:16px;
+    }
+    & > :nth-last-child(1) > button{
+      /* margin-bottom:32px; */
+    }
+
+    & > button:nth-child(1) {
+      /* border: 2px solid crimson; */
+
+      /* background-color: darkcyan; */
     }
   }
 `
