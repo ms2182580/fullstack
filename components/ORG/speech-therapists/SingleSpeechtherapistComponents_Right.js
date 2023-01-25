@@ -77,7 +77,7 @@ export const StarsRatingAndReview = ({ rating, reviews, isMobile = false }) => {
 
 export const FriendlyDiagnoses = ({ diagnoses, isMobile = false }) => {
   return (
-    <FriendlyDiagnosesWrapper>
+    <FriendlyDiagnosesWrapper isMobile={isMobile}>
       {diagnoses.map((x) => (
         <div key={x}>
           {isMobile === false ? (

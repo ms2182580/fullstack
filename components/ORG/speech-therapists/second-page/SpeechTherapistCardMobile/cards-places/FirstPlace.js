@@ -42,7 +42,7 @@ export const FirstPlace = ({
             {firstName} {lastName}
           </H4>
           <Caption
-            bold
+            bolder
             primary_cta>
             ({howFar} miles away)
           </Caption>

@@ -58,7 +58,7 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     display: flex;
     white-space: nowrap;
     & > :nth-child(1) {
-      margin-right: 16px;
+      margin-right: 8px;
     }
   }
 
@@ -126,6 +126,10 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(3) > :nth-child(1),
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(4) {
     white-space: nowrap;
+  }
+  
+  & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(5){
+    padding-right: 0px;
   }
 
   .prevCard {
