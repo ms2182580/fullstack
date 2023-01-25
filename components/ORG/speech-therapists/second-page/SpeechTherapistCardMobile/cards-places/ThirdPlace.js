@@ -1,4 +1,3 @@
-import { ThirdPlaceWrapper } from "./styles/thirdPlaceWrapper"
 
 export const ThirdPlace = ({ handlePointerEvent, cardStyle, phone }) => {
   return (

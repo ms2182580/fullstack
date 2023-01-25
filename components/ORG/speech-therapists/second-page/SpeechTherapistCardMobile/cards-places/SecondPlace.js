@@ -1,5 +1,3 @@
-import { SecondPlaceWrapper } from "./styles/secondPlaceWrapper"
-
 export const SecondPlace = ({ handlePointerEvent, cardStyle, languages }) => {
   return (
     <article

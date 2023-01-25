@@ -1,6 +1,6 @@
-import { FirstPlace } from "./FirstPlace";
-import { SecondPlace } from "./SecondPlace";
-import { ThirdPlace } from "./ThirdPlace";
+import { FirstPlace } from "./FirstPlace.js";
+import { SecondPlace } from "./SecondPlace.js";
+import { ThirdPlace } from "./ThirdPlace.js";
 
 export const DataComponents = [
   <FirstPlace key={"firstPlaceComponent"}/>,

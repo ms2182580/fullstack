@@ -4,7 +4,6 @@ import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.
 import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../../SingleSpeechtherapistComponents_Right.js"
 import { Verified } from "../../../Verified.js"
-import { FirstPlaceWrapper } from "./styles/FirstPlaceWrapper.js"
 
 export const FirstPlace = ({
   handlePointerEvent,
