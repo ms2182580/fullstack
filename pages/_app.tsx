@@ -7,6 +7,8 @@ import { ORG_CtxFetchNoFilters_Provider } from "../context/ORG_CtxFetchNoFilters
 import { ORG_CtxFetchWithFilters_Provider } from "../context/ORG_CtxFetchWithFilters_Provider.js"
 import { ORG_CtxFiltersLeft_Provider } from "../context/ORG_CtxFiltersLeft_Provider.js"
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile.js"
+import { ORG_CtxFetchNoFiltersMobile_Provider } from "../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
+import { ORG_CtxFetchWithFiltersMobile_Provider } from "../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -17,6 +19,8 @@ function MyApp({ Component, pageProps }) {
             <ORG_CtxFiltersLeft_Provider>
               <ORG_CtxFetchWithFilters_Provider>
                 <ORG_CtxShowFiltersMobile_Provider>
+                  <ORG_CtxFetchNoFiltersMobile_Provider>
+                    <ORG_CtxFetchWithFiltersMobile_Provider>
                   
                   <PageLayout>
                     <GlobalStyle />
@@ -27,6 +31,8 @@ function MyApp({ Component, pageProps }) {
                     <Component {...pageProps} />
                   </PageLayout>
                   
+                  </ORG_CtxFetchWithFiltersMobile_Provider>
+                  </ORG_CtxFetchNoFiltersMobile_Provider>
                 </ORG_CtxShowFiltersMobile_Provider>
               </ORG_CtxFetchWithFilters_Provider>
             </ORG_CtxFiltersLeft_Provider>

@@ -12,11 +12,7 @@ import {
   EverySingleSpeechTherapist_Location,
   EverySingleSpeechTherapist_Phone
 } from "./SingleSpeechtherapistComponents_Left"
-import {
-  FriendlyDiagnoses,
-  StarsRatingAndReview,
-  Tooltip
-} from "./SingleSpeechtherapistComponents_Right"
+import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "./SingleSpeechtherapistComponents_Right"
 import {
   EverySingleSpeechTherapistWrapper_Card,
   EverySingleSpeechTherapistWrapper_Left,
@@ -36,22 +32,10 @@ export const SpeechTherapistsCardNoFilter = () => {
     router.push(toWhere)
   }
 
-  const {
-    pagination,
-    userFetched,
-    setData,
-    filtersST,
-    setFilters,
-    actualSort
-  } = useORG_Ctx_FetchNoFilters()
+  const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFilters()
 
   useEffect(() => {
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(
-      actualSort,
-      filtersST,
-      userFetched,
-      "SpeechtherapistList"
-    )
+    const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistList")
     setData((prevState) => ({
       ...prevState,
       allData: newOrderData
@@ -64,25 +48,18 @@ export const SpeechTherapistsCardNoFilter = () => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          let accepts = filtersST[i].accepts.map(
-            (x) => x[0].toUpperCase() + x.slice(1)
-          )
+          let accepts = filtersST[i].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
 
           let agesServed = filtersST[i].agesServed
           let diagnoses = filtersST[i].diagnoses.map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
-          let languages = filtersST[i].languages.map(
-            (x) => x[0].toUpperCase() + x.slice(1)
-          )
+          let languages = filtersST[i].languages.map((x) => x[0].toUpperCase() + x.slice(1))
 
-          let serviceSetting = filtersST[i].serviceSetting.map(
-            (x) => x[0].toUpperCase() + x.slice(1)
-          )
+          let serviceSetting = filtersST[i].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
           return (
-            <EverySingleSpeechTherapistWrapper_Card
-              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
+            <EverySingleSpeechTherapistWrapper_Card key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <EverySingleSpeechTherapistWrapper_Left>
                 <EverySPT_LeftImage>
                   <Image
@@ -96,12 +73,8 @@ export const SpeechTherapistsCardNoFilter = () => {
                 </EverySPT_LeftImage>
 
                 <EverySPT_LeftInfo>
-                  <EverySingleSpeechTherapist_Phone
-                    phoneNumber={everySingleValue.phone}
-                  />
-                  <EverySingleSpeechTherapist_Email
-                    email={everySingleValue.email}
-                  />
+                  <EverySingleSpeechTherapist_Phone phoneNumber={everySingleValue.phone} />
+                  <EverySingleSpeechTherapist_Email email={everySingleValue.email} />
                   <EverySingleSpeechTherapist_Location
                     location={everySingleValue.location}
                     howFar={filtersST[i].distance}
@@ -145,12 +118,12 @@ export const SpeechTherapistsCardNoFilter = () => {
                   dataToShow={serviceSetting}
                 />
 
-                <TherapistInfoSecondPage title="Accepts" dataToShow={accepts} />
+                <TherapistInfoSecondPage
+                  title="Accepts"
+                  dataToShow={accepts}
+                />
 
-                <span
-                  onClick={(e) =>
-                    goToDynamic(e, everySingleValue, filtersST[i])
-                  }>
+                <span onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}>
                   <ButtonSmall secondary>More details</ButtonSmall>
                 </span>
               </EverySingleSpeechTherapistWrapper_Right>

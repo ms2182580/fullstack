@@ -1,8 +1,14 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 export const EverySingleSpeechTherapistWrapper = styled.div`
   margin-left: 72px;
+  
+  @media (${device.tablet}) {
+    margin-inline: 16px;
+  }
+  
 `
 
 export const EverySingleSpeechTherapistWrapper_Card = styled.div`

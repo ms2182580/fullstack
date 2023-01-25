@@ -1,6 +1,4 @@
 import { Fragment, useState } from "react"
-import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
-import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
 import { ORG_SortByOrder } from "../../../utils/ORG_SortByOrder"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
@@ -8,13 +6,15 @@ import { CustomC } from "../dropdownFilters/styles/Singledropdown"
 import { SortByMobileWrapper } from "./styles/SortByMobileWraper.js"
 import { DownArrowSvg, UpArrowSvg } from "../../../assets/Icons/index.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
+import { useORG_Ctx_FetchWithFiltersMobile } from "../../../context/ORG_CtxFetchWithFiltersMobile_Provider"
 
 export const SortByMobile = ({ title = "Sort By"}) => {
   const {mustShowFiltersMobile} = useORG_Ctx_ShowFiltersMobile()
-  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFilters()
+  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFilters()
+  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFiltersMobile()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)

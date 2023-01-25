@@ -1,18 +1,21 @@
 import { Fragment } from "react"
-import {
-  QuestionTooltip_STSvg,
-  StartEmptySvg,
-  StartFullSvg
-} from "../../../assets/Icons"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { QuestionTooltip_STSvg, StartEmptySvg, StartFullSvg } from "../../../assets/Icons"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnosesWrapper } from "./styles/FriendlyDiagnosesWrapper"
 import { StarsRatingWrapper } from "./styles/StarsRatingWrapper.js"
 
-export const Tooltip = () => {
+export const Tooltip = ({ isMobile }) => {
   return (
     <div>
-      <P>Speech Language Pathologist, CCC-SLP</P>
+      {isMobile === undefined ? (
+        <P>Speech Language Pathologist, CCC-SLP</P>
+      ) : (
+        <Caption>
+          Speech Language Pathologist, <br /> CCC-SLP
+        </Caption>
+      )}
+
       <span>
         <QuestionTooltip_STSvg />
         <span>
@@ -28,8 +31,7 @@ export const Tooltip = () => {
   )
 }
 
-export const StarsRatingAndReview = ({ rating, reviews }) => {
-
+export const StarsRatingAndReview = ({ rating, reviews, isMobile = false }) => {
   let ratingPattern = Array(5)
     .fill(0)
     .map((x, i) => {
@@ -58,17 +60,36 @@ export const StarsRatingAndReview = ({ rating, reviews }) => {
           }
         })}
       </div>
-      <P>{rating}.0</P>
-      <P dark_gray>({reviews} reviews)</P>
+      {isMobile === false ? (
+        <>
+          <P>{rating}.0</P>
+          <P dark_gray>({reviews} reviews)</P>
+        </>
+      ) : (
+        <>
+          <Caption>{rating}.0</Caption>
+          <Caption dark_gray>({reviews} reviews)</Caption>
+        </>
+      )}
     </StarsRatingWrapper>
   )
 }
 
-export const FriendlyDiagnoses = ({ diagnoses }) => {
+export const FriendlyDiagnoses = ({ diagnoses, isMobile = false }) => {
   return (
     <FriendlyDiagnosesWrapper>
       {diagnoses.map((x) => (
-        <div key={x}><P>{x}</P> </div>
+        <div key={x}>
+          {isMobile === false ? (
+            <>
+              <P>{x}</P>{" "}
+            </>
+          ) : (
+            <>
+              <Caption>{x}</Caption>{" "}
+            </>
+          )}
+        </div>
       ))}
     </FriendlyDiagnosesWrapper>
   )
