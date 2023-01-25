@@ -22,7 +22,9 @@ export const FirstPlace = ({
       className={cardStyle}
       onMouseDown={handlePointerEvent}
       onTouchStart={handlePointerEvent}>
-      <div className={`card FirstPlace`}>
+      <div
+        className={`card FirstPlace`}
+        >
         <div>
           <span>
             <Image
@@ -56,7 +58,10 @@ export const FirstPlace = ({
           isMobile={true}
         />
 
-        <FriendlyDiagnoses diagnoses={diagnoses} isMobile={true} />
+        <FriendlyDiagnoses
+          diagnoses={diagnoses}
+          isMobile={true}
+        />
       </div>
     </article>
   )

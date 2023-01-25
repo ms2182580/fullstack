@@ -24,20 +24,17 @@ export const ThreeCardsComponents = ({ ...props }) => {
     setIndex(index + n)
   }
 
-  const handlePointerEvent = (e) => {
+  const handlePointerEvent = (eP) => {
     /* check which type of event we have, 
     and set a flag variable */
-    let isTouchEvent = e.type === "touchstart"  ? true : false
-    // console.log('isTouchEvent:', isTouchEvent)
+    let isTouchEvent = eP.type === "touchstart"  ? true : false
 
     /* this is our card we will move */
-    let card = e.target
-    // console.log('card:', card)
+    let card = eP.target
     /* to keep track of the value to offset the card left */
     let offset = 0
     /* keeps the initial mouse click x value */
-    let initialX = isTouchEvent ? e.touches[0].clientX : e.clientX
-    // console.log('initialX:', initialX)
+    let initialX = isTouchEvent ? eP.touches[0].clientX : eP.clientX
 
     /* mouse events */
     /* set the documents onmousemove event to use this function */
@@ -53,52 +50,50 @@ export const ThreeCardsComponents = ({ ...props }) => {
 
     /* when the mouse moves we handle the event here */
     function onPointerMove(e) {
-      // console.log('e:', e)
       /* set offset to the current position of the cursor,
       minus the initial starting position  */
       offset = (isTouchEvent ? e.touches[0].clientX : e.clientX) - initialX
-      // console.log('offset:', offset)
       if (offset <= -100) {
         slideRight()
         /* if we're at the last card, snap back to center */
-        // if (index === DataComponents.length - 1) {
-        //   card.style.left = 0
-        // } else {
-        //   /* hide the shift back to center 
-        // until after the transition */
-        //   setTimeout(() => {
-        //     card.style.left = 0
-        //   }, 1000)
-        // }
+        if (index === DataComponents.length - 1) {
+          card.style.left = 0
+        } else {
+          /* hide the shift back to center 
+        until after the transition */
+          setTimeout(() => {
+            card.style.left = 0
+          }, 1000)
+        }
         return
       }
       if (offset >= 100) {
         slideLeft()
         /* if we're at the first card, snap back to center */
-        // if (index === 0) {
-        //   card.style.left = 0
-        // } else {
-        //   /* hide the shift back to center 
-        // until after the transition */
-        //   setTimeout(() => {
-        //     card.style.left = 0
-        //   }, 1000)
-        // }
+        if (index === 0) {
+          card.style.left = 0
+        } else {
+          /* hide the shift back to center 
+        until after the transition */
+          setTimeout(() => {
+            card.style.left = 0
+          }, 1000)
+        }
         return
       }
       /* set the left style property of the card to the offset value */
-      // card.style.left = offset + "px"
+      card.style.left = offset + "px"
     }
 
     function onPointerEnd(e) {
       /* if user releases mouse early,
       card needs to snap back */
-      // if (offset < 0 && offset > -100) {
-      //   card.style.left = 0
-      // }
-      // if (offset > 0 && offset < 100) {
-      //   card.style.left = 0
-      // }
+      if (offset < 0 && offset > -100) {
+        card.style.left = 0
+      }
+      if (offset > 0 && offset < 100) {
+        card.style.left = 0
+      }
       /* remove functions from event listeners
       (stop tracking pointer movements) */
       document.onmousemove = null
