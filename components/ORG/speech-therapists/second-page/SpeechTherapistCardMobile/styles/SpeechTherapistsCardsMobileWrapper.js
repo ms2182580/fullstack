@@ -34,8 +34,13 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     padding-bottom: 16px;
   }
 
+  & > :nth-child(1) > .activeCard > .FirstPlace{
+    width: 288px;
+  }
+  
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(1) {
     position: relative;
+    
 
     & > :nth-child(2) {
       position: absolute;
