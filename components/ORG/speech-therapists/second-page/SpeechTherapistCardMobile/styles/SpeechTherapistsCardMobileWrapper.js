@@ -10,6 +10,8 @@ export const SpeechTherapistsCardMobileWrapper = styled.div`
   
   display: flex;
   flex-direction: column;
+  
+  position: relative;
 
   & > :nth-child(2) {
     background-color: ${NEUTRALS.OFF_WHITE};

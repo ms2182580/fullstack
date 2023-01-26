@@ -52,10 +52,6 @@ export const FirstRow = styled.div`
   & > :nth-child(4) {
     margin-bottom: 16px;
   }
-  
-  /* 
-  !FH0 Copy this behaviorr to re use it in other component
-  */
 
   & > :nth-child(3) {
     display: flex;

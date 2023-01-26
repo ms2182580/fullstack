@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
-import { useEffect} from "react"
+import { useEffect } from "react"
+import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
@@ -26,7 +27,6 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
     }))
     setFilters(newOrderFilters)
   }, [actualSort, pagination])
-
 
   return (
     <>
@@ -64,8 +64,12 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
                 email={everySingleValue.email}
                 location={everySingleValue.location}
               />
-              <span onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}>
-                <ButtonSmall secondary>See details</ButtonSmall>
+              <span>
+                <ButtonSmall
+                  goToDynamic={(e) => goToDynamic(e, everySingleValue, filtersST[i])}
+                  secondary>
+                  See details
+                </ButtonSmall>
               </span>
             </SpeechTherapistsCardMobileWrapper>
           )

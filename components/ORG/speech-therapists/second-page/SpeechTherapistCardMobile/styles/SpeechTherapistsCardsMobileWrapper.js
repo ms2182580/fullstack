@@ -2,13 +2,25 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const SpeechTherapistsCardsMobileWrapper = styled.div`
-  background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+  
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 
   & > .card-container {
+    
+    
     position: relative;
+    & > :nth-child(1){
+      position: absolute;
+      z-index: 1;
+      right: 8px;
+      top:-16px;
+    }
+    
   }
 
   article {
+    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     cursor: pointer;
     transition: all 1s;
   }
@@ -25,29 +37,24 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
-
-  & > :nth-child(1) > .activeCard > .card > :not(:first-child) {
-    padding-inline: 16px;
-    margin-bottom: 8px;
-  }
+  
   & > :nth-child(1) > .activeCard > .card > :last-child {
     padding-bottom: 16px;
   }
 
-  & > :nth-child(1) > .activeCard > .FirstPlace{
+  & > :nth-child(1) > .activeCard > .FirstPlace {
     width: 288px;
+  }
+
+  & > :nth-child(1) > .activeCard > .FirstPlace > :not(:first-child) {
+    padding-inline: 16px;
+    margin-bottom: 8px;
   }
   
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(1) {
     position: relative;
-    
 
     & > :nth-child(2) {
-      position: absolute;
-      right: 5px;
-      top: -16px;
-    }
-    & > :nth-child(3) {
       position: absolute;
       right: 8px;
       bottom: 14px;
@@ -127,9 +134,24 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(4) {
     white-space: nowrap;
   }
-  
-  & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(5){
+
+  & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(5) {
     padding-right: 0px;
+  }
+
+  & > :nth-child(1) > .activeCard > .SecondPlace {
+    /* border: 2px solid crimson; */
+    /* padding-inline: 16px; */
+    padding: 16px 16px 18px 16px;
+    background-color: ${NEUTRALS.OFF_WHITE};
+    /* transition:all 0s; */
+    
+    & > :not(:last-child) {
+      /* border: 2px solid crimson; */
+      margin-bottom: 8px;
+      
+    }
+    
   }
 
   .prevCard {

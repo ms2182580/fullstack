@@ -1,5 +1,4 @@
 import Image from "next/image.js"
-import { BookmarkSaveSTMobileSvg, BookmarkSaveSTSvg } from "../../../../../../assets/Icons/index.js"
 import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../../SingleSpeechtherapistComponents_Right.js"
@@ -22,9 +21,7 @@ export const FirstPlace = ({
       className={cardStyle}
       onMouseDown={handlePointerEvent}
       onTouchStart={handlePointerEvent}>
-      <div
-        className={`card FirstPlace`}
-        >
+      <div className={`card FirstPlace`}>
         <div>
           <span>
             <Image
@@ -35,7 +32,6 @@ export const FirstPlace = ({
               height="112px"
             />
           </span>
-          <BookmarkSaveSTMobileSvg />
           <Verified />
         </div>
 

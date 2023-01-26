@@ -1,10 +1,11 @@
 import { cloneElement, Fragment, useState } from "react"
 import { Paginator } from "./Paginator"
 import { SpeechTherapistsCardsMobileWrapper } from "./styles/SpeechTherapistsCardsMobileWrapper"
-import { DataComponents } from './cards-places/DataComponents'
-
+import { DataComponents } from "./cards-places/DataComponents"
+import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
 
 export const ThreeCardsComponents = ({ ...props }) => {
+  console.log("props:", props)
   const [index, setIndex] = useState(0)
 
   const slideLeft = () => {
@@ -27,7 +28,7 @@ export const ThreeCardsComponents = ({ ...props }) => {
   const handlePointerEvent = (eP) => {
     /* check which type of event we have, 
     and set a flag variable */
-    let isTouchEvent = eP.type === "touchstart"  ? true : false
+    let isTouchEvent = eP.type === "touchstart" ? true : false
 
     /* this is our card we will move */
     let card = eP.target
@@ -104,10 +105,10 @@ export const ThreeCardsComponents = ({ ...props }) => {
     }
   }
 
-
   return (
     <SpeechTherapistsCardsMobileWrapper>
       <div className="card-container">
+        <BookmarkSaveSTMobileSvg tabIndex={0} />
         <Paginator
           dataLength={DataComponents.length}
           activeIndex={index}
@@ -121,14 +122,19 @@ export const ThreeCardsComponents = ({ ...props }) => {
               {cloneElement(person, {
                 cardStyle: position,
                 handlePointerEvent: handlePointerEvent,
-                image:props.image,
-                alt:props.alt,
-                firstName:props.firstName,
-                lastName:props.lastName,
-                howFar:props.howFar,
-                rating:props.rating,
-                reviews:props.reviews,
-                diagnoses:props.diagnoses,
+                image: props.image,
+                alt: props.alt,
+                firstName: props.firstName,
+                lastName: props.lastName,
+                howFar: props.howFar,
+                rating: props.rating,
+                reviews: props.reviews,
+                diagnoses: props.diagnoses,
+                agesServed: props.agesServed,
+                languages: props.language,
+                yearsOfPractice: props.yearsOfPractice,
+                serviceSetting: props.serviceSetting,
+                insurance: props.accepts
               })}
             </Fragment>
           )

@@ -52,6 +52,10 @@ export const SortByMobile = ({ title = "Sort By"}) => {
 
     handleDropdownClick()
   }
+  /* 
+  !FH
+  Make it work with onBlur to close when the user clock outside. 
+  */
 
   return (
     <>
