@@ -5,8 +5,8 @@ export const SpeechtherapistFinalButtonsWrapper = styled.div`
   align-self: end;
   display: flex;
   align-items: center;
-  justify-content: end;
-
+  justify-content: ${(x) => (x.isMobile ? `center` : `end`)};
+  
   & > *:not(:last-child),
   & > :nth-child(2) > *:not(:last-child) {
     margin-right: 16px;
@@ -16,8 +16,8 @@ export const SpeechtherapistFinalButtonsWrapper = styled.div`
 const NavigationButton = styled.button`
   display: flex;
   align-items: center;
-  padding: 8px 24px;
   background-color: transparent;
+  height: 48px;
   border-radius: 8px;
   border: 1px solid ${NEUTRALS.BLACK};
   cursor: pointer;
@@ -33,12 +33,19 @@ const NavigationButton = styled.button`
 `
 
 export const PrevButton = styled(NavigationButton)`
+  
+  padding:${(x) => x.isMobile ? `14px 19px` : `8px 24px`};
+  
+  
+
   & > svg {
-    margin-right: 16px;
+    margin-right: ${(x) => x.isMobile ? `0px` : `16px`};
   }
 `
 
 export const NextButton = styled(NavigationButton)`
+  padding:${(x) => x.isMobile ? `14px 19px` : `8px 24px`};
+
   & > p {
     margin-right: 16px;
   }
@@ -48,10 +55,10 @@ export const NumberPage = styled.button`
   padding: 8px 20.5px;
   height: 48px;
   cursor: pointer;
-  background-color: ${(x) =>
-    x.isActive ? `${PRIMARY.PRIMARY_CTA}` : "transparent"};
+  background-color: ${(x) => (x.isActive ? `${PRIMARY.PRIMARY_CTA}` : "transparent")};
   border: 1px solid ${NEUTRALS.BLACK};
   border-radius: 8px;
+  
 
   &:hover,
   &:hover > p {
@@ -60,7 +67,6 @@ export const NumberPage = styled.button`
   }
 
   & > p {
-    color: ${(x) =>
-      x.isActive ? `${NEUTRALS.OFF_WHITE}` : `${NEUTRALS.BLACK}`};
+    color: ${(x) => (x.isActive ? `${NEUTRALS.OFF_WHITE}` : `${NEUTRALS.BLACK}`)};
   }
 `

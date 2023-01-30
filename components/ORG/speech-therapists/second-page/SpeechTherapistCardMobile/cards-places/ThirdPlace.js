@@ -10,8 +10,6 @@ export const ThirdPlace = ({
   locationStreetNumber,
   locationState
 }) => {
-  // console.log('location:', location)
-  // console.log('phone:', phone)
   return (
     <article
       className={cardStyle}
@@ -36,7 +34,3 @@ export const ThirdPlace = ({
   )
 }
 
-/* 
-!FH0
-Make this styles
-*/

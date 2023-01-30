@@ -48,7 +48,6 @@ export const SpeechTherapistsCardNoFilter = () => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          console.log('everySingleValue:', everySingleValue)
           let accepts = filtersST[i].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
 
           let agesServed = filtersST[i].agesServed

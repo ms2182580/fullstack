@@ -37,10 +37,3 @@ export const TherapistInfoSecondPageWrapper = styled.div`
     }
   }
 `
-
-/* 
-!FH0
-Finisht styles of second card
-Actual problems:
-°) The data of ages served gets overflowed on the box
-*/
