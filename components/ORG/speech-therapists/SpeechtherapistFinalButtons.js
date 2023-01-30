@@ -9,11 +9,12 @@ import { NavigationButtonsNumbers } from "./NavigationButtonsNumbers.js"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider.js"
 import { useEffect, useState } from "react"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 
 export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
   const [isMobile, setIsMobile] = useState(false)
-  console.log('isMobile:', isMobile)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
+  const { pagination: paginationMobile, setPagination: setPaginationMobile } = useORG_Ctx_FetchNoFiltersMobile()
 
   const toPrevious = () => {
     setPagination((prevState) => {
@@ -21,65 +22,104 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
       else return prevState
     })
   }
-  
+
+  const toPreviousMobile = (parameters) => {
+    setPaginationMobile((prevState) => {
+      if (paginationMobile > 1) return paginationMobile - 1
+      else return prevState
+    })
+  }
+
   useEffect(() => {
-    if(widthWindow <= 768){
+    if (widthWindow <= 768) {
       setIsMobile(true)
     } else {
       setIsMobile(false)
     }
-    
-  
-  },[widthWindow])
+  }, [widthWindow])
 
   return (
     <SpeechtherapistFinalButtonsWrapper isMobile={isMobile}>
-      {pagination === 1 ? (
-        <PrevButton onClick={() => toPrevious()}  isMobile={isMobile}>
-          {isMobile === false ? (
-            <>
-              <LeftArrowSvg />
-              <P bold>Previous</P>
-            </>
+      {isMobile === false ? (
+        <>
+          {pagination === 1 ? (
+            <PrevButton
+              onClick={() => toPrevious()}
+              isMobile={isMobile}>
+              <>
+                <LeftArrowSvg />
+                <P bold>Previous</P>
+              </>
+            </PrevButton>
           ) : (
-            <>
-              <LeftArrowSvg />
-            </>
+            <LinkNoStyle href="#topOfSTL">
+              <PrevButton
+                onClick={() => toPrevious()}
+                isMobile={isMobile}>
+                <>
+                  <LeftArrowSvg />
+                  <P bold>Previous</P>
+                </>
+              </PrevButton>
+            </LinkNoStyle>
           )}
-        </PrevButton>
+        </>
       ) : (
-        <LinkNoStyle href="#topOfSTL">
-          <PrevButton onClick={() => toPrevious()} isMobile={isMobile}>
-          {isMobile === false ? (
-            <>
-              <LeftArrowSvg />
-              <P bold>Previous</P>
-            </>
+        <>
+          {" "}
+          {pagination === 1 ? (
+            <PrevButton
+              onClick={() => toPreviousMobile()}
+              isMobile={isMobile}>
+              <>
+                <LeftArrowSvg />
+              </>
+            </PrevButton>
           ) : (
-            <>
-              <LeftArrowSvg />
-            </>
+            <LinkNoStyle href="#topOfSTL">
+              <PrevButton
+                onClick={() => toPreviousMobile()}
+                isMobile={isMobile}>
+                <>
+                  <LeftArrowSvg />
+                </>
+              </PrevButton>
+            </LinkNoStyle>
           )}
-          </PrevButton>
-        </LinkNoStyle>
+        </>
       )}
 
-      <NavigationButtonsNumbers />
 
-      <LinkNoStyle href="#topOfSTL">
-        <NextButton onClick={() => setPagination(pagination + 1)} isMobile={isMobile}>
-        {isMobile === false? (
-            <>
-              <P bold>Previous</P>
-              <RightArrowSvg />
-            </>
-          ) : (
-            <>
-              <RightArrowSvg />
-            </>
-          )}
-        </NextButton>
-      </LinkNoStyle>
+      <NavigationButtonsNumbers isMobile={isMobile} />
+
+      {isMobile === false ? (
+        <>
+          <LinkNoStyle href="#topOfSTL">
+            <NextButton
+              onClick={() => setPagination(pagination + 1)}
+              isMobile={isMobile}>
+              <>
+                <P bold>Next</P>
+                <RightArrowSvg />
+              </>
+            </NextButton>
+          </LinkNoStyle>
+        </>
+      ) : (
+        <>
+          <LinkNoStyle href="#topOfSTL">
+            <NextButton
+              onClick={() => setPaginationMobile(paginationMobile + 1)}
+              isMobile={isMobile}>
+              <>
+                <RightArrowSvg />
+              </>
+            </NextButton>
+          </LinkNoStyle>
+        </>
+      )}
+
+      
     </SpeechtherapistFinalButtonsWrapper>
   )
 }

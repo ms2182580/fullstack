@@ -90,7 +90,7 @@ const SpeechTherapistListFilter = ({ widthWindow }) => {
           />
         </SpeechTherapistListFilterWrapper>
       ) : (
-        <STFilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
+        <STFilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile} id="topOfSTL">
           <FiltersMobile
             dispatch={dispatch}
             setFilterData={setFilterData}
