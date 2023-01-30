@@ -48,6 +48,7 @@ export const SpeechTherapistsCardNoFilter = () => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
+          console.log('everySingleValue:', everySingleValue)
           let accepts = filtersST[i].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
 
           let agesServed = filtersST[i].agesServed
@@ -76,7 +77,10 @@ export const SpeechTherapistsCardNoFilter = () => {
                   <EverySingleSpeechTherapist_Phone phoneNumber={everySingleValue.phone} />
                   <EverySingleSpeechTherapist_Email email={everySingleValue.email} />
                   <EverySingleSpeechTherapist_Location
-                    location={everySingleValue.location}
+                    locationCity={everySingleValue.location.city}
+                    locationStreetNumber={everySingleValue.location.street.number}
+                    locationStreetName={everySingleValue.location.street.name}
+                    locationState={everySingleValue.location.state}
                     howFar={filtersST[i].distance}
                   />
                 </EverySPT_LeftInfo>

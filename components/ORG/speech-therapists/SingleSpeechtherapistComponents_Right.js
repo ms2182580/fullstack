@@ -11,9 +11,11 @@ export const Tooltip = ({ isMobile }) => {
       {isMobile === undefined ? (
         <P>Speech Language Pathologist, CCC-SLP</P>
       ) : (
-        <Caption>
-          Speech Language Pathologist, <br /> CCC-SLP
-        </Caption>
+        <span>
+          <Caption>Speech Language Pathologist,</Caption>
+
+          <Caption> CCC-SLP</Caption>
+        </span>
       )}
 
       <span>

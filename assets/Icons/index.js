@@ -480,8 +480,8 @@ export const BookmarkSaveSTMobileSvg = (props) => (
 
 export const QuestionTooltip_STSvg = (props) => (
   <svg
-    width="16px"
-    height="16px"
+    width="17px"
+    height="17px"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

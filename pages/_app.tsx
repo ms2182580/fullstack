@@ -21,17 +21,15 @@ function MyApp({ Component, pageProps }) {
                 <ORG_CtxShowFiltersMobile_Provider>
                   <ORG_CtxFetchNoFiltersMobile_Provider>
                     <ORG_CtxFetchWithFiltersMobile_Provider>
-                  
-                  <PageLayout>
-                    <GlobalStyle />
-                    <link
-                      rel="icon"
-                      href="/favicon.ico"
-                    />
-                    <Component {...pageProps} />
-                  </PageLayout>
-                  
-                  </ORG_CtxFetchWithFiltersMobile_Provider>
+                      <PageLayout>
+                        <GlobalStyle />
+                        <link
+                          rel="icon"
+                          href="/favicon.ico"
+                        />
+                        <Component {...pageProps} />
+                      </PageLayout>
+                    </ORG_CtxFetchWithFiltersMobile_Provider>
                   </ORG_CtxFetchNoFiltersMobile_Provider>
                 </ORG_CtxShowFiltersMobile_Provider>
               </ORG_CtxFetchWithFilters_Provider>

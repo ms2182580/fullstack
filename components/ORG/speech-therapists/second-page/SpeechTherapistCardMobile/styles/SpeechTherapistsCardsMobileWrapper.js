@@ -2,21 +2,17 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const SpeechTherapistsCardsMobileWrapper = styled.div`
-  
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
   & > .card-container {
-    
-    
     position: relative;
-    & > :nth-child(1){
+    & > :nth-child(1) {
       position: absolute;
       z-index: 1;
       right: 8px;
-      top:-16px;
+      top: -16px;
     }
-    
   }
 
   article {
@@ -37,7 +33,7 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
-  
+
   & > :nth-child(1) > .activeCard > .card > :last-child {
     padding-bottom: 16px;
   }
@@ -50,7 +46,7 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     padding-inline: 16px;
     margin-bottom: 8px;
   }
-  
+
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(1) {
     position: relative;
 
@@ -72,9 +68,11 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(3) {
     display: flex;
 
+
     & > :nth-child(1) {
       margin-right: 16px;
-      text-align: left;
+      display:flex;
+      flex-direction: column;
     }
     & > :nth-child(2) {
       position: relative;
@@ -95,11 +93,10 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
 
     & > :nth-child(2) > :nth-child(1) {
       cursor: pointer;
-      width: 18px;
-      height: 18px;
       position: absolute;
       bottom: 3px;
-      left: -138px;
+      left: -137px;
+      
     }
     & > :nth-child(2) > :nth-child(2) {
       visibility: hidden;
@@ -140,19 +137,28 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   }
 
   & > :nth-child(1) > .activeCard > .SecondPlace {
-    /* border: 2px solid crimson; */
-    /* padding-inline: 16px; */
     padding: 16px 16px 18px 16px;
     background-color: ${NEUTRALS.OFF_WHITE};
-    /* transition:all 0s; */
-    
+
     & > :not(:last-child) {
-      /* border: 2px solid crimson; */
       margin-bottom: 8px;
+    }
+  }
+  
+  & > :nth-child(1) > .activeCard > .ThirdPlace{
+    background-color: ${NEUTRALS.OFF_WHITE};
+    width:100%;
+    padding: 28px 16px 18px 16px;
+    
+    & > :not(:last-child){
+      margin-bottom: 34px;
+      
       
     }
     
   }
+  
+  
 
   .prevCard {
     left: 0;

@@ -6,10 +6,7 @@ export const EverySingleSpeechTherapist_PhoneWrapper = styled.div`
   margin-bottom: 20px;
 
   & > :nth-child(1) {
-    /* margin-left: 14px; */
     margin-right: 14px;
-    /* width:200px; */
-    /* border:1px red solid; */
   }
   & > :nth-child(2) {
     margin-right: 4px;
@@ -25,7 +22,6 @@ export const EverySingleSpeechTherapist_EmailWrapper = styled.div`
     align-items: center;
   }
   & > div:nth-child(1) > :nth-child(1) {
-    /* display: flex; */
     margin-right: 14px;
   }
   & > :nth-child(2) {
@@ -35,28 +31,13 @@ export const EverySingleSpeechTherapist_EmailWrapper = styled.div`
     white-space: nowrap;
   }
   
-  /* & > :nth-child(2):before{
-    content:"...";
-    position:absolute;
-    right:2px;
-  } */
   
 `
 
 export const EverySingleSpeechTherapist_LocationWrapper = styled.div`
-  /* background-color: pink; */
-  /* width:1000px; */
-
-  /* display: flex; */
-  /* align-items: center; */
-  /* border: 1px blue solid; */
-
-  & * {
-    /* border: 1px blue solid; */
-  }
-
   display: grid;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: auto 1fr;
+  
 
   & > :nth-child(1) {
     display: flex;
@@ -68,9 +49,14 @@ export const EverySingleSpeechTherapist_LocationWrapper = styled.div`
   
   & > :nth-child(2){
     margin-left: 4px;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
   }
+  
   & > :nth-child(2) > :not(:last-child) {
-    /* border: crimson solid 2px; */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -80,12 +66,6 @@ export const EverySingleSpeechTherapist_LocationWrapper = styled.div`
   
   
   
-  /* & > :not(:first-child){
-    margin-left: 34px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  } */
   
   
   

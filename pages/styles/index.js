@@ -19,10 +19,6 @@ html{
   font-size: 16px;
 }
 
-body {
-  /* background-color: #282c34; */
-  /* background-color: hsl(37.9, 65.5%, 94.3%); */
-}
 
 
 code {

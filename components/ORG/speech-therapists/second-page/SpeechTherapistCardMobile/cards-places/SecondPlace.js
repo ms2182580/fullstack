@@ -51,9 +51,3 @@ export const SecondPlace = ({
   )
 }
 
-/* 
-
-!FH0
-
-Make all the styles here
-*/

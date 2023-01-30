@@ -117,6 +117,8 @@ export const ThreeCardsComponents = ({ ...props }) => {
 
         {DataComponents.map((person, n) => {
           let position = n > index ? "nextCard" : n === index ? "activeCard" : "prevCard"
+          
+
           return (
             <Fragment key={`${person.key}${n}`}>
               {cloneElement(person, {
@@ -134,7 +136,13 @@ export const ThreeCardsComponents = ({ ...props }) => {
                 languages: props.language,
                 yearsOfPractice: props.yearsOfPractice,
                 serviceSetting: props.serviceSetting,
-                insurance: props.accepts
+                insurance: props.accepts,
+                phone: props.phoneNumber,
+                email: props.email,
+                locationCity:props.location.city,
+                locationStreetName:props.location.street.name,
+                locationStreetNumber:props.location.street.number,
+                locationState:props.location.state,
               })}
             </Fragment>
           )
