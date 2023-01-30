@@ -34,17 +34,15 @@ const NavigationButton = styled.button`
 
 export const PrevButton = styled(NavigationButton)`
   
-  padding:${(x) => x.isMobile ? `14px 19px` : `8px 24px`};
+  padding:${(x) => x.isMobile ? `14px 17px` : `8px 24px`};
   
-  
-
   & > svg {
     margin-right: ${(x) => x.isMobile ? `0px` : `16px`};
   }
 `
 
 export const NextButton = styled(NavigationButton)`
-  padding:${(x) => x.isMobile ? `14px 19px` : `8px 24px`};
+  padding:${(x) => x.isMobile ? `14px 17px` : `8px 24px`};
 
   & > p {
     margin-right: 16px;
@@ -52,8 +50,8 @@ export const NextButton = styled(NavigationButton)`
 `
 
 export const NumberPage = styled.button`
-  padding: 8px 20.5px;
   height: 48px;
+  width:48px;
   cursor: pointer;
   background-color: ${(x) => (x.isActive ? `${PRIMARY.PRIMARY_CTA}` : "transparent")};
   border: 1px solid ${NEUTRALS.BLACK};

@@ -12,6 +12,7 @@ import { useEffect, useState } from "react"
 
 export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
   const [isMobile, setIsMobile] = useState(false)
+  console.log('isMobile:', isMobile)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
 
   const toPrevious = () => {
@@ -35,7 +36,7 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
     <SpeechtherapistFinalButtonsWrapper isMobile={isMobile}>
       {pagination === 1 ? (
         <PrevButton onClick={() => toPrevious()}  isMobile={isMobile}>
-          {isMobile === false? (
+          {isMobile === false ? (
             <>
               <LeftArrowSvg />
               <P bold>Previous</P>
@@ -49,7 +50,7 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
       ) : (
         <LinkNoStyle href="#topOfSTL">
           <PrevButton onClick={() => toPrevious()} isMobile={isMobile}>
-          {isMobile === false? (
+          {isMobile === false ? (
             <>
               <LeftArrowSvg />
               <P bold>Previous</P>
