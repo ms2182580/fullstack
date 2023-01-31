@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import { Fragment } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
@@ -9,6 +10,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
   const { pagination: paginationMobile, setPagination: setPaginationMobile } = useORG_Ctx_FetchNoFiltersMobile()
   let amountOfPagesToClick = Array(3).fill(0)
+
+  const router = useRouter()
+  const { pathname } = router
 
   if (isMobile === false) {
     if (pagination < 3) {
@@ -28,7 +32,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
 
             return (
               <Fragment key={i}>
-                <LinkNoStyle href="#topOfSTL">
+                <LinkNoStyle
+                  href="#topOfSTL"
+                  as={pathname}>
                   <NumberPage onClick={() => setPagination(toMoveToThatPage)}>
                     <P bold> {i + 1}</P>
                   </NumberPage>
@@ -38,7 +44,7 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
           })}
         </div>
       )
-    } else if(pagination >= 3) {
+    } else if (pagination >= 3) {
       return (
         <div>
           {amountOfPagesToClick.map((x, i) => {
@@ -52,7 +58,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
             if (i === 0) {
               return (
                 <Fragment key={i}>
-                  <LinkNoStyle href="#topOfSTL">
+                  <LinkNoStyle
+                    href="#topOfSTL"
+                    as={pathname}>
                     <NumberPage onClick={() => setPagination(theNewOrder[0])}>
                       <P bold> {theNewOrder[i]}</P>
                     </NumberPage>
@@ -74,7 +82,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
             if (i === 2) {
               return (
                 <Fragment key={i}>
-                  <LinkNoStyle href="#topOfSTL">
+                  <LinkNoStyle
+                    href="#topOfSTL"
+                    as={pathname}>
                     <NumberPage onClick={() => setPagination(theNewOrder[2])}>
                       <P bold> {theNewOrder[i]}</P>
                     </NumberPage>
@@ -87,7 +97,7 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
       )
     }
   }
-  
+
   if (isMobile) {
     if (paginationMobile < 3) {
       return (
@@ -106,7 +116,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
 
             return (
               <Fragment key={i}>
-                <LinkNoStyle href="#topOfSTL">
+                <LinkNoStyle
+                  href="#topOfSTL"
+                  as={pathname}>
                   <NumberPage onClick={() => setPaginationMobile(toMoveToThatPage)}>
                     <P bold> {i + 1}</P>
                   </NumberPage>
@@ -116,7 +128,7 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
           })}
         </div>
       )
-    } else if(paginationMobile >= 3) {
+    } else if (paginationMobile >= 3) {
       return (
         <div>
           {amountOfPagesToClick.map((x, i) => {
@@ -130,7 +142,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
             if (i === 0) {
               return (
                 <Fragment key={i}>
-                  <LinkNoStyle href="#topOfSTL">
+                  <LinkNoStyle
+                    href="#topOfSTL"
+                    as={pathname}>
                     <NumberPage onClick={() => setPaginationMobile(theNewOrder[0])}>
                       <P bold> {theNewOrder[i]}</P>
                     </NumberPage>
@@ -152,7 +166,9 @@ export const NavigationButtonsNumbers = ({ isMobile = false }) => {
             if (i === 2) {
               return (
                 <Fragment key={i}>
-                  <LinkNoStyle href="#topOfSTL">
+                  <LinkNoStyle
+                    href="#topOfSTL"
+                    as={pathname}>
                     <NumberPage onClick={() => setPaginationMobile(theNewOrder[2])}>
                       <P bold> {theNewOrder[i]}</P>
                     </NumberPage>
