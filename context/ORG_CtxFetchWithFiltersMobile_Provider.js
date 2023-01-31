@@ -5,8 +5,8 @@ import { useORG_Ctx_FetchNoFiltersMobile } from "./ORG_CtxFetchNoFiltersMobile_P
 const ORG_Ctx_fetchWithFiltersMobile = createContext(null)
 
 export const ORG_CtxFetchWithFiltersMobile_Provider = ({ children }) => {
-  const [pagination, setPagination] = useState(1)
   const [howMuchShow, setHowMuchShow] = useState(4)
+  const {pagination, setPagination} = useORG_Ctx_FetchNoFiltersMobile()
   
   const {
     dataF,

@@ -35,6 +35,7 @@ export const SpeechTherapistsCardWithFilter = () => {
   }
 
   const { dataF, filtersF } = useORG_Ctx_FetchWithFilters()
+  console.dir('dataF, filtersF:', dataF, filtersF)
 
   return (
     <>
@@ -54,7 +55,6 @@ export const SpeechTherapistsCardWithFilter = () => {
             (x) => x[0].toUpperCase() + x.slice(1)
           )
 
-          let meetingFormat = filtersF[i].meetingFormat
           let serviceSetting = filtersF[i].serviceSetting.map(
             (x) => x[0].toUpperCase() + x.slice(1)
           )
@@ -81,7 +81,10 @@ export const SpeechTherapistsCardWithFilter = () => {
                     email={everySingleValue.email}
                   />
                   <EverySingleSpeechTherapist_Location
-                    location={everySingleValue.location}
+                    locationCity={everySingleValue.location.city}
+                    locationStreetNumber={everySingleValue.location.street.number}
+                    locationStreetName={everySingleValue.location.street.name}
+                    locationState={everySingleValue.location.state}
                     howFar={filtersF[i].distance}
                   />
                 </EverySPT_LeftInfo>

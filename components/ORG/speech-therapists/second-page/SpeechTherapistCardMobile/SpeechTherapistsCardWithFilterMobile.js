@@ -1,13 +1,12 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import {useORG_Ctx_FetchWithFiltersMobile} from '../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js'
+import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { SpeechTherapistsCardMobileWrapper } from "./styles/SpeechTherapistsCardMobileWrapper"
 import { ThreeCardsComponents } from "./ThreeCardsComponents"
-
 
 export const SpeechTherapistsCardWithFilterMobile = () => {
   const router = useRouter()
@@ -18,8 +17,7 @@ export const SpeechTherapistsCardWithFilterMobile = () => {
     router.push(toWhere)
   }
 
-  const { dataF: userFetched, filtersF:filtersST} = useORG_Ctx_FetchWithFiltersMobile()
-  
+  const { dataF: userFetched, filtersF: filtersST } = useORG_Ctx_FetchWithFiltersMobile()
 
   return (
     <>

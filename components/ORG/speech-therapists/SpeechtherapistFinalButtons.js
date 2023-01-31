@@ -23,7 +23,7 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
     })
   }
 
-  const toPreviousMobile = (parameters) => {
+  const toPreviousMobile = () => {
     setPaginationMobile((prevState) => {
       if (paginationMobile > 1) return paginationMobile - 1
       else return prevState

@@ -18,12 +18,8 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFiltersMobile()
 
-  // console.log('pagination, userFetched, setData, filtersST, setFilters, actualSort:', pagination, userFetched, setData, filtersST, setFilters, actualSort)
-  
-  
   useEffect(() => {
     const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistListNoFilterMobile")
-    // console.log('newOrderData, newOrderFilters:', newOrderData, newOrderFilters)
     setData((prevState) => ({
       ...prevState,
       allData: newOrderData

@@ -1,4 +1,3 @@
-import { Fragment } from "react"
 import { PaginatorWrapper } from "./styles/PaginatorWapper"
 
 export const Paginator = ({ dataLength, activeIndex, handlePageChange }) => {
