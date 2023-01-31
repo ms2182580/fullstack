@@ -19,6 +19,7 @@ import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFilte
 
 const ORGSpeechTherapists = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
+  console.log('mustShowFiltersMobile:', mustShowFiltersMobile)
 
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
 
@@ -60,6 +61,13 @@ const ORGSpeechTherapists = () => {
   const suggestionDropdownCC = []
 
   const { userFetched } = useORG_Ctx_FetchNoFilters()
+
+  useEffect(() => {
+    if (userFetched !== undefined && mustShowFiltersMobile === false) {
+      const element = document.getElementById("topOfSTL")
+      element.scrollIntoView()
+    }
+  }, [mustShowFiltersMobile])
 
   if (userFetched === undefined) {
     return <LoadingSpeechTherapists />
