@@ -13,7 +13,6 @@ import Customdropdown from "../dropdown/CustomDropdown"
 import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
-import { PlaceholderComponent } from "../placeholders/searchPage"
 
 const CustomInput = ({
   setKeywordsContext,
@@ -97,9 +96,7 @@ const CustomInput = ({
             />
           </span>
 
-          {windowSize === undefined ? (
-            <PlaceholderComponent />
-          ) : windowSize !== undefined && windowSize > 768 ? (
+          {windowSize > 768 ? (
             <SuggestionsKeywordWrapper>
               <DropdownSuggestionsInput
                 isFocus={isFocusKeyword}
@@ -111,11 +108,10 @@ const CustomInput = ({
                 inputRefFocus={inputRefKeyword}
               />
             </SuggestionsKeywordWrapper>
-          ) : windowSize !== undefined && windowSize <= 768 ? (
+          ) : windowSize <= 768 ? (
             <OptionsMobile
               isFocus={isFocusKeyword}
-              setIsHover={setIsHoveredKeyword}
-              >
+              setIsHover={setIsHoveredKeyword}>
               <Caption bolder>QUICK LINKS</Caption>
               <div></div>
               <Customdropdown
@@ -208,7 +204,9 @@ const CustomInput = ({
         </div>
 
         {toWhere === "SpeechTherapists" ? (
-          <LinkNoStyle href={`${router.pathname}/${toWhere}`} query={windowSize}>
+          <LinkNoStyle
+            href={`${router.pathname}/${toWhere}`}
+            >
             <ButtonSmall>Search</ButtonSmall>
           </LinkNoStyle>
         ) : toWhere === "no where" ? (

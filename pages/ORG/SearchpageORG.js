@@ -11,7 +11,6 @@ import { OptionsWrapper } from "../../components/ORG/dropdown/styles/Customdropd
 import ORG_LANDING_CC from "../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../assets/Icons/ORG_Landing_TP.png"
-import { PlaceholderComponent } from "../../components/ORG/placeholders/searchPage.js"
 
 const SearchpageORG = ({ windowSize }) => {
   const { setKeywordsContext, setCitiesContext, keywordsContext, citiesContext } = useORG_InputCtx()
@@ -21,7 +20,6 @@ const SearchpageORG = ({ windowSize }) => {
     setKeywordsContext("")
     setCitiesContext("")
   }, [])
-  
 
   const suggestionDropdownTP = [
     "Speech Therapist",
@@ -63,9 +61,7 @@ const SearchpageORG = ({ windowSize }) => {
           />
         </div>
 
-        {windowSize === undefined ? (
-          <PlaceholderComponent />
-        ) : windowSize > 768 ? (
+        {windowSize > 768 ? (
           <H1>
             Find Healthcare Providers and <br /> Activities for your Child in NYC
           </H1>
@@ -112,8 +108,9 @@ const SearchpageORG = ({ windowSize }) => {
           </OptionsWrapper>
         ) : null}
 
-        {/* //? Achieve conditional rendering for geolocation with, i think, bad practices*/}
-        {/* {geolocationLocalStorage === null ? (
+        {/* 
+        //? Achieve conditional rendering for geolocation with, i think, bad practices
+        {geolocationLocalStorage === null ? (
         <HyperlinkM
           href={"/ORG/UpdateGeolocation"}
           name="To next phase (not have geolocation)"

@@ -15,13 +15,8 @@ const STFiltersTherapistsButtons = ({ widthWindow }) => {
           <SpeechtherapistList widthWindow={widthWindow} />
 
           <SpeechtherapistFinalButtons widthWindow={widthWindow} />
-          
         </>
       ) : null}
-      
-      
-      
-      
     </STFiltersTherapistsButtonsWrapper>
   )
 }

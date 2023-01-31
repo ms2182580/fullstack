@@ -10,8 +10,9 @@ import ORG_Icon_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_Icon_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { useWidthWindow } from "../../../utils/useWidthWindow"
 
-export const STDetail_Header = ({ STData }) => {
+export const STDetail_Header = ({ STData, widthWindow }) => {
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
 
   const suggestionDropdownTP = [
@@ -29,7 +30,7 @@ export const STDetail_Header = ({ STData }) => {
         <div>
           {" "}
           <span>
-            <LinkNoStyle href="/ORG">
+            <LinkNoStyle href="/ORG/SpeechTherapists">
               <BackArrow /> <P semibold>Back</P>
             </LinkNoStyle>
           </span>{" "}

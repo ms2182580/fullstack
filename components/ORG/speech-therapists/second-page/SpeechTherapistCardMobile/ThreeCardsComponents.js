@@ -5,7 +5,6 @@ import { DataComponents } from "./cards-places/DataComponents"
 import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
 
 export const ThreeCardsComponents = ({ ...props }) => {
-  // console.log("props:", props)
   const [index, setIndex] = useState(0)
 
   const slideLeft = () => {

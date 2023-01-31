@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: grid;
   grid-template-columns: repeat(2, 1fr);

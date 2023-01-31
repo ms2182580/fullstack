@@ -5,6 +5,7 @@ import { SpeechtherapistDetail } from "../../../components/ORG/speech-therapists
 const SPDetail = () => {
   const [loaded, setLoaded] = useState(false)
   const router = useRouter()
+  
   useEffect(() => {
     if (router.isReady) {
       setLoaded(true)
@@ -15,9 +16,9 @@ const SPDetail = () => {
     return null
   }
 
-  const goBack = () => {
-    router.back()
-  }
+  // const goBack = () => {
+  //   router.back()
+  // }
 
   return (
     <>

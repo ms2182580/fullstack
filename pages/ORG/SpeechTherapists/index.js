@@ -12,44 +12,17 @@ import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
 import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/STFiltersTherapistsButtons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
-import { useRouter } from "next/router"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
+import { useWidthWindow } from "../../../utils/useWidthWindow"
 
 const ORGSpeechTherapists = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-  console.log('mustShowFiltersMobile:', mustShowFiltersMobile)
 
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
 
-  const route = useRouter()
-  const widthRoute = route.query.data
-
-  const [widthWindow, setWidthWindow] = useState(widthRoute)
-
-  const [imInClient, setImInClient] = useState(() => {
-    if (typeof window === "object") {
-      return true
-    }
-  })
-  useEffect(() => {
-    window.onresize = () => {
-      setWidthWindow(window.innerWidth)
-    }
-
-    if (imInClient) {
-      setWidthWindow(window.innerWidth)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (typeof window === "object") {
-      setImInClient(true)
-    } else {
-      setImInClient(false)
-    }
-  }, [widthWindow])
+  const { widthWindow } = useWidthWindow()
 
   const suggestionDropdownTP = [
     "Speech Therapist",
@@ -65,7 +38,9 @@ const ORGSpeechTherapists = () => {
   useEffect(() => {
     if (userFetched !== undefined && mustShowFiltersMobile === false) {
       const element = document.getElementById("topOfSTL")
-      element.scrollIntoView()
+      if (element !== null) {
+        element.scrollIntoView()
+      }
     }
   }, [mustShowFiltersMobile])
 
