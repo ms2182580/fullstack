@@ -79,7 +79,7 @@ const ORGSpeechTherapists = () => {
             </span>{" "}
           </div>
         ) : widthWindow <= 768 && mustShowFiltersMobile === false ? (
-          <div>
+          <div id="topOfSTL">
             {" "}
             <span>
               <LinkNoStyle href="/ORG">
