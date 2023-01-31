@@ -5,7 +5,7 @@ import { HeaderSPListWrapper } from "./styles/HeaderSPListWrapper.js"
 export const HeaderSPList = ({widthWindow}) => {
   return (
     <HeaderSPListWrapper>
-      <HowMuchShowing />
+      <HowMuchShowing widthWindow={widthWindow}/>
       {widthWindow > 768 ? <SortBy />: null}
       
     </HeaderSPListWrapper>
