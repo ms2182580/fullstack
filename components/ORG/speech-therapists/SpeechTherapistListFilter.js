@@ -1,7 +1,4 @@
 import { useReducer, useState } from "react"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
-import FilterCheckboxComponent from "./FilterCheckboxComponent.js"
 import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
@@ -90,7 +87,7 @@ const SpeechTherapistListFilter = ({ widthWindow }) => {
           />
         </SpeechTherapistListFilterWrapper>
       ) : (
-        <STFilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile} >
+        <STFilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
           <FiltersMobile
             dispatch={dispatch}
             setFilterData={setFilterData}

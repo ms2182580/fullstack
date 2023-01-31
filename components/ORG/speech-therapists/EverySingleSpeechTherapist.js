@@ -6,6 +6,7 @@ import { SpeechTherapistsCardNoFilter } from "./SpeechTherapistsCardNoFilters.js
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider"
 import { SpeechTherapistsCardNoFilterMobile } from "./second-page/SpeechTherapistCardMobile/SpeechTherapistsCardNoFilterMobile"
+import { SpeechTherapistsCardWithFilterMobile } from "./second-page/SpeechTherapistCardMobile/SpeechTherapistsCardWithFilterMobile"
 
 export const SpeechtherapistList = ({ widthWindow }) => {
   const [filterHaveAtLeastOneValueState, setFilterHaveAtLeastOneValueState] = useState(false)
@@ -34,11 +35,11 @@ export const SpeechtherapistList = ({ widthWindow }) => {
         </>
       ) : filterHaveAtLeastOneValueState && widthWindow <= 768 ? (
         <>
-          <p>The card with filters</p>
+          <SpeechTherapistsCardWithFilterMobile />
         </>
       ) : filterHaveAtLeastOneValueState === false && widthWindow <= 768 ? (
         <>
-          <SpeechTherapistsCardNoFilterMobile/>
+          <SpeechTherapistsCardNoFilterMobile />
         </>
       ) : null}
     </EverySingleSpeechTherapistWrapper>

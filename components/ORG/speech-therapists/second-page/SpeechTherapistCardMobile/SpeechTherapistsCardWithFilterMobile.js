@@ -1,13 +1,15 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import {useORG_Ctx_FetchWithFiltersMobile} from '../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js'
+
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { SpeechTherapistsCardMobileWrapper } from "./styles/SpeechTherapistsCardMobileWrapper"
 import { ThreeCardsComponents } from "./ThreeCardsComponents"
 
-export const SpeechTherapistsCardNoFilterMobile = () => {
+
+export const SpeechTherapistsCardWithFilterMobile = () => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = (e, everySingleValue, filters) => {
@@ -16,20 +18,8 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
     router.push(toWhere)
   }
 
-  const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFiltersMobile()
-
-  // console.log('pagination, userFetched, setData, filtersST, setFilters, actualSort:', pagination, userFetched, setData, filtersST, setFilters, actualSort)
+  const { dataF: userFetched, filtersF:filtersST} = useORG_Ctx_FetchWithFiltersMobile()
   
-  
-  useEffect(() => {
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistListNoFilterMobile")
-    // console.log('newOrderData, newOrderFilters:', newOrderData, newOrderFilters)
-    setData((prevState) => ({
-      ...prevState,
-      allData: newOrderData
-    }))
-    setFilters(newOrderFilters)
-  }, [actualSort, pagination])
 
   return (
     <>

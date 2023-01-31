@@ -1,4 +1,6 @@
 export const ORG_Sortyby = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
+  console.log('whoTrigger:', whoTrigger)
+  // console.log('whichSort:', whichSort)
   let newOrder
   if (whichSort.toLowerCase() === "highest rating") {
     newOrder = sourceArr
