@@ -13,7 +13,6 @@ export const SpeechtherapistDetail = () => {
   const route = useRouter()
   
   const { widthWindow } = useWidthWindow()
-  console.log('widthWindow:', widthWindow)
 
   if (speechtherapist === "") {
     route.push("/ORG/SpeechTherapists")
