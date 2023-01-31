@@ -36,7 +36,8 @@ export const SpeechTherapistsCardWithFilterMobile = () => {
           let serviceSetting = filtersST[i].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
           return (
             <SpeechTherapistsCardMobileWrapper
-              key={`${everySingleValue.name.first}${everySingleValue.name.last}${everySingleValue.email}${i}`}>
+              key={`${everySingleValue.name.first}${everySingleValue.name.last}${everySingleValue.email}${i}`}
+              isMobile={true}>
               <ThreeCardsComponents
                 image={everySingleValue.picture.large}
                 alt={`Portrait of ${everySingleValue.name.first} ${everySingleValue.name.last} `}

@@ -19,7 +19,12 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFiltersMobile()
 
   useEffect(() => {
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistListNoFilterMobile")
+    const { newOrderData, newOrderFilters } = ORG_Sortyby(
+      actualSort,
+      filtersST,
+      userFetched,
+      "SpeechtherapistListNoFilterMobile"
+    )
     setData((prevState) => ({
       ...prevState,
       allData: newOrderData
@@ -44,7 +49,8 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
           let serviceSetting = filtersST[i].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
           return (
             <SpeechTherapistsCardMobileWrapper
-              key={`${everySingleValue.name.first}${everySingleValue.name.last}${everySingleValue.email}${i}`}>
+              key={`${everySingleValue.name.first}${everySingleValue.name.last}${everySingleValue.email}${i}`}
+              isMobile={true}>
               <ThreeCardsComponents
                 image={everySingleValue.picture.large}
                 alt={`Portrait of ${everySingleValue.name.first} ${everySingleValue.name.last} `}

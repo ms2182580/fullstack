@@ -4,11 +4,11 @@ import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 export const EverySingleSpeechTherapistWrapper = styled.div`
   margin-left: 72px;
-  
+
   @media (${device.tablet}) {
     margin-inline: 16px;
+    margin-bottom: 64px;
   }
-  
 `
 
 export const EverySingleSpeechTherapistWrapper_Card = styled.div`
@@ -26,7 +26,7 @@ export const EverySingleSpeechTherapistWrapper_Left = styled.div`
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 2rem 1.5rem;
-  min-width: ${x => x.STDetail ? "432px": "398px"};
+  min-width: ${(x) => (x.STDetail ? "432px" : "398px")};
 `
 
 export const EverySPT_LeftImage = styled.div`

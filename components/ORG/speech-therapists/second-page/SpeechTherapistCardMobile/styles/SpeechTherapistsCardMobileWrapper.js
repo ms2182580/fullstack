@@ -19,5 +19,6 @@ export const SpeechTherapistsCardMobileWrapper = styled.div`
     border-bottom-right-radius: 8px;
     padding: 16px;
   }
+  
 
 `

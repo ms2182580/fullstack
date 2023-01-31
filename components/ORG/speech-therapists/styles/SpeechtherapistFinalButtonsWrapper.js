@@ -4,12 +4,16 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 export const SpeechtherapistFinalButtonsWrapper = styled.div`
   align-self: end;
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: ${(x) => (x.isMobile ? `center` : `end`)};
-  
-  & > *:not(:last-child),
-  & > :nth-child(2) > *:not(:last-child) {
-    margin-right: 16px;
+  box-shadow: ${(x) =>
+    x.isMobile ? `0px -2px 9px rgba(0, 0, 0, 0.2), inset 0px -4px 6px rgba(0, 0, 0, 0.15);` : `none`};
+  padding: 16px 24px 24px 24px;
+
+  & > :nth-child(2) {
+    display: flex;
+    gap: 8px;
   }
 `
 
@@ -33,16 +37,15 @@ const NavigationButton = styled.button`
 `
 
 export const PrevButton = styled(NavigationButton)`
-  
-  padding:${(x) => x.isMobile ? `14px 17px` : `8px 24px`};
-  
+  padding: ${(x) => (x.isMobile ? `14px 17px` : `8px 24px`)};
+
   & > svg {
-    margin-right: ${(x) => x.isMobile ? `0px` : `16px`};
+    margin-right: ${(x) => (x.isMobile ? `0px` : `16px`)};
   }
 `
 
 export const NextButton = styled(NavigationButton)`
-  padding:${(x) => x.isMobile ? `14px 17px` : `8px 24px`};
+  padding: ${(x) => (x.isMobile ? `14px 17px` : `8px 24px`)};
 
   & > p {
     margin-right: 16px;
@@ -51,12 +54,11 @@ export const NextButton = styled(NavigationButton)`
 
 export const NumberPage = styled.button`
   height: 48px;
-  width:48px;
+  width: 48px;
   cursor: pointer;
   background-color: ${(x) => (x.isActive ? `${PRIMARY.PRIMARY_CTA}` : "transparent")};
   border: 1px solid ${NEUTRALS.BLACK};
   border-radius: 8px;
-  
 
   &:hover,
   &:hover > p {
