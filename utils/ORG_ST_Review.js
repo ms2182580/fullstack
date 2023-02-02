@@ -90,12 +90,16 @@ export const ORG_ST_Review_Months = () => {
 }
 
 export const ORG_ST_LastUpdate = () => {
-  const nineDays = 777_600_000
-  const getDate = new Date(new Date().getTime() - nineDays)
+  const nineDaysMore = 777_600_000
+  const getDate = new Date(new Date().getTime() - nineDaysMore)
 
   const getYear = getDate.getFullYear()
   const getDay = getDate.getDate()
-  const getMonth = getDate.getMonth()
+  const getMonth = getDate.getMonth() + 1
   
-  return `${getMonth}/${getDay}/${getYear}`
+  const montFormatted = getMonth <= 9 ? `0${getMonth}` : `${getMonth}`
+  
+  
+  
+  return `${montFormatted}/${getDay}/${getYear}`
 }

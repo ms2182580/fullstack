@@ -3,7 +3,8 @@ import { NEUTRALS } from "../../../../assets/Colors"
 
 export const STDetail_MainWrapper = styled.div`
   & > * {
-    padding-inline: 96px;
+    padding-inline: ${(x) => x.isMobile ? `none` : `96px`};
+    
   }
   
   & > :nth-child(2){

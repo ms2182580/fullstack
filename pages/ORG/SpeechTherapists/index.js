@@ -13,7 +13,7 @@ import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapist
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
 import { useEffect } from "react"
-import { P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
+import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
 import { useWidthWindow } from "../../../utils/useWidthWindow"
 
@@ -67,7 +67,7 @@ const ORGSpeechTherapists = () => {
             <span>
               <LinkNoStyle href="/ORG">
                 <BackArrow />
-                <P semibold>Back to search</P>
+                <Caption bolder>Back to search</Caption>
               </LinkNoStyle>
             </span>{" "}
           </div>

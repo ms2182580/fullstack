@@ -3,7 +3,6 @@ import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 const SpeechTherapistWraper = styled.div`
   margin: ${(x) => (x.inDetail ? "2rem 0" : "2rem 6rem")};
-  /* margin:2rem 6rem; */
 
   & > div:nth-child(1) {
     margin-bottom: 2rem;
@@ -16,7 +15,7 @@ const SpeechTherapistWraper = styled.div`
       position: relative;
     }
 
-    & > span > a > p {
+    & > span > a > span {
       display: inline;
       margin-left: calc(20px + 0.625rem);
       
