@@ -15,12 +15,11 @@ const GlobalStyle = createGlobalStyle`
   border-radius: 8px;
 }
 
-html{
-  font-size: 16px;
-}
 
 html,body{
   overflow-x: hidden;
+  max-width: 100vw;
+  font-size: 16px;
 }
 
 
