@@ -19,6 +19,10 @@ html{
   font-size: 16px;
 }
 
+html,body{
+  overflow-x: hidden;
+}
+
 
 
 code {

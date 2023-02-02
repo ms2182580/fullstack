@@ -54,7 +54,13 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <p>Nav bar fixed</p>
+            <p>Nav bar sticky</p>
+            
+            {/* 
+            //!FH0
+            
+            
+            */}
           </>
         )}
 
