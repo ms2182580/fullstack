@@ -14,8 +14,54 @@ export const FirstPlace = ({
   howFar,
   rating,
   reviews,
-  diagnoses
+  diagnoses,
+  isMobile = false
 }) => {
+  if (isMobile) {
+    return (
+      <article className="activeCard">
+        <div className={`card FirstPlace`}>
+          <div>
+            <span className="thirdPage">
+              <Image
+                src={image}
+                alt={alt}
+                layout="fixed"
+                width="288px"
+                height="112px"
+              />
+            </span>
+            <Verified />
+          </div>
+
+          <div>
+            <H4>
+              {firstName} {lastName}
+            </H4>
+            <Caption
+              bolder
+              primary_cta>
+              ({howFar} miles away)
+            </Caption>
+          </div>
+
+          <Tooltip isMobile={true} />
+
+          <StarsRatingAndReview
+            rating={rating}
+            reviews={reviews}
+            isMobile={true}
+          />
+
+          <FriendlyDiagnoses
+            diagnoses={diagnoses}
+            isMobile={true}
+          />
+        </div>
+      </article>
+    )
+  }
+
   return (
     <article
       className={cardStyle}

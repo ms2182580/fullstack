@@ -7,29 +7,34 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
 
   & > .card-container {
     position: relative;
+
     & > :nth-child(1) {
-      position: absolute;
+      position: ${(x) => (x.isThirdPage ? `fixed` : `absolute`)};
       z-index: 1;
-      right: 8px;
-      top: -16px;
+      right: ${(x) => (x.isThirdPage ? `calc(50vw - 154px)` : `8px`)};
+      top: ${(x) => (x.isThirdPage ? `151px` : `-16px`)};
+
+      cursor: pointer;
     }
   }
 
   article {
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-    cursor: pointer;
+    cursor: ${(x) => (x.isThirdPage ? `default` : `pointer`)};
     transition: all 1s;
   }
 
   .card {
-    user-select: none;
+    user-select: ${(x) => (x.isThirdPage ? `auto` : `none`)};
+    margin-top: ${(x) => (x.isThirdPage ? `24px` : `0px`)};
   }
 
   .card > :nth-child(1) {
-    pointer-events: none;
+    pointer-events: ${(x) => (x.isThirdPage ? `auto` : `none`)};
   }
 
   & > :nth-child(1) > .activeCard > .card > :nth-child(1) > :nth-child(1) > :nth-child(1) {
+    border-radius: ${(x) => (x.isThirdPage ? `8px` : `none`)};
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
@@ -50,6 +55,15 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(1) {
     position: relative;
 
+
+    & > .thirdPage {
+      height: 115px;
+      display: inline-block;
+      border: 2px solid #D3D6D7;
+      filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.15));
+      border-radius: 8px;
+    }
+
     & > :nth-child(2) {
       position: absolute;
       right: 8px;
@@ -68,12 +82,16 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(3) {
     display: flex;
 
-
     & > :nth-child(1) {
       margin-right: 16px;
-      display:flex;
-      flex-direction: column;
+      display: flex;
+      flex-direction: ${(x) => (x.isThirdPage ? `row` : `column`)};
+
+      & > :nth-child(2) {
+        margin-left: ${(x) => (x.isThirdPage ? `2px` : `0px`)};
+      }
     }
+
     & > :nth-child(2) {
       position: relative;
       display: flex;
@@ -95,8 +113,7 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
       cursor: pointer;
       position: absolute;
       bottom: 3px;
-      left: -137px;
-      
+      left: ${(x) => (x.isThirdPage ? `-2px` : `-137px`)};
     }
     & > :nth-child(2) > :nth-child(2) {
       visibility: hidden;
@@ -127,6 +144,10 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     }
   }
 
+  & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(4) {
+    margin-bottom: ${(x) => (x.isThirdPage ? `16px` : `8px`)};
+  }
+
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(3) > :nth-child(1),
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(4) {
     white-space: nowrap;
@@ -144,21 +165,16 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
       margin-bottom: 8px;
     }
   }
-  
-  & > :nth-child(1) > .activeCard > .ThirdPlace{
+
+  & > :nth-child(1) > .activeCard > .ThirdPlace {
     background-color: ${NEUTRALS.OFF_WHITE};
-    width:100%;
+    width: 100%;
     padding: 28px 16px 18px 16px;
-    
-    & > :not(:last-child){
+
+    & > :not(:last-child) {
       margin-bottom: 34px;
-      
-      
     }
-    
   }
-  
-  
 
   .prevCard {
     left: 0;
