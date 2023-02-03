@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
 export const OptionsMobileWrapper = styled.div`
+
+
   display: flex;
   flex-direction: column;
   justify-content: center;

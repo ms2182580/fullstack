@@ -12,6 +12,7 @@ import { STDetail_STDetails } from "./STDetail_STDetails"
 import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 import { STDetail_HeaderMobileWrapper } from "./styles/STDetail_HeaderMobileWrapper.js"
 import { STDetailMobile } from "./third-page/SpeechTherapistCardMobile/STDetailMobile"
+import { STDetailMobile_StickyNavbar } from "./third-page/SpeechTherapistCardMobile/STDetailMobile_StickyNavbar"
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
@@ -54,13 +55,9 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <p>Nav bar sticky</p>
+            <STDetailMobile_StickyNavbar/>
+              
             
-            {/* 
-            //!FH0
-            
-            
-            */}
           </>
         )}
 

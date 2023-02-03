@@ -10,11 +10,13 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
 
     & > :nth-child(1) {
       position: ${(x) => (x.isThirdPage ? `fixed` : `absolute`)};
-      z-index: 1;
+      z-index: 2;
       right: ${(x) => (x.isThirdPage ? `calc(50vw - 154px)` : `8px`)};
       top: ${(x) => (x.isThirdPage ? `151px` : `-16px`)};
 
       cursor: pointer;
+      
+      
     }
   }
 

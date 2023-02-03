@@ -10,6 +10,7 @@ export const STDetail_About = ({name, lastName}) => {
   
   
   return (
+    
     <STDetail_AboutWrapper>
       <H4 cta>About</H4>
       <P>{aboutText}.</P>

@@ -17,3 +17,9 @@ export const OptionsMobile = ({ isFocus = true, setIsHover, children }) => {
     </>
   )
 }
+
+
+/* 
+!FH1
+Visual bug here!
+*/
