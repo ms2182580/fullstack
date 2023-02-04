@@ -8,7 +8,9 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  
 }
+
 
 *:focus-visible {
   outline: 4px solid #64AFFB;
@@ -17,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 html,body{
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   max-width: 100vw;
   font-size: 16px;
 }

@@ -9,6 +9,9 @@ export const FooterWrapper = styled.footer`
     "mainContent mainContent"
     ". buttons"
     "socialMedia finalSentence";
+  
+  overflow-x: hidden;
+    
     
   & > :nth-child(1) {
     margin-top: 12px;

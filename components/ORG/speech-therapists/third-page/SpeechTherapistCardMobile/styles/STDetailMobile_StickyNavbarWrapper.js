@@ -5,10 +5,16 @@ export const STDetailMobile_StickyNavbarWrapper = styled.nav`
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: ${(x) => x.sticky ? `${NEUTRALS.OFF_WHITE}` : ``};
 
-  position: ${(x) => (x.sticky ? `fixed` : `none`)};
+  position:sticky;
+  
+  /* position: ${(x) => (x.sticky ? `sticky` : `none`)}; */
   /* margin-bottom:48px; */
-  top: 0px;
-  width:100%;
+  top: 0;
+  z-index:1;
+  /* width:100%; */
+  margin-bottom:3rem; 
+  
+  /* height:50vh; */
 
   /* position: sticky;
   top: 20px;
