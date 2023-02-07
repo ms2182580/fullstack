@@ -6,6 +6,9 @@ export const STDetail_ReviewsWrapper = styled.div`
   border-radius: 8px;
   padding: 32px 32px 40px 32px;
   display: grid;
+  /* border: 2px solid crimson; */
+  overflow-x: hidden;
+  
   
   
   & > :last-child{

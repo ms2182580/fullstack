@@ -6,6 +6,9 @@ export const STDetail_AboutWrapper = styled.div`
   padding: 32px;
   margin-bottom: 32px;
   
+  margin-top: ${(x) => x.sticky ? `48px` : `none`};
+  ;
+  
   & > :nth-child(1){
     margin-bottom: 8px;
   }

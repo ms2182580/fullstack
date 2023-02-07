@@ -19,9 +19,9 @@ const GlobalStyle = createGlobalStyle`
 
 
 html,body{
-  /* overflow-x: hidden; */
   max-width: 100vw;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS} from "../../../../assets/Colors"
+import { NEUTRALS } from "../../../../assets/Colors"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 const STFiltersTherapistsButtonsWrapper = styled.div`
@@ -7,6 +7,8 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
   padding: 2rem 6rem;
   display: grid;
   grid-template-columns: 1fr 10fr;
+  /* overflow-x: clip; */
+  
   
   
   grid-template-areas:

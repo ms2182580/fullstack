@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 import { BackArrow } from "../../../assets/Icons"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { useWidthWindow } from "../../../utils/useWidthWindow"
@@ -9,8 +10,8 @@ import { STDetail_Header } from "./STDetail_Header"
 import { STDetail_PageLastUpdated } from "./STDetail_PageLastUpdated"
 import { STDetail_Reviews } from "./STDetail_Reviews"
 import { STDetail_STDetails } from "./STDetail_STDetails"
-import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 import { STDetail_HeaderMobileWrapper } from "./styles/STDetail_HeaderMobileWrapper.js"
+import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 import { STDetailMobile } from "./third-page/SpeechTherapistCardMobile/STDetailMobile"
 import { STDetailMobile_StickyNavbar } from "./third-page/SpeechTherapistCardMobile/STDetailMobile_StickyNavbar"
 
@@ -19,11 +20,31 @@ export const SpeechtherapistDetail = () => {
   const route = useRouter()
 
   const { isMobile } = useWidthWindow()
+  
+  const [sticky, setSticky] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 456) {
+        setSticky(true)
+      } else {
+        setSticky(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+  
 
   if (speechtherapist === "") {
     route.push("/ORG/SpeechTherapists")
     return
   }
+  
+  
 
   return (
     <STDetail_MainWrapper isMobile={isMobile}>
@@ -49,13 +70,13 @@ export const SpeechtherapistDetail = () => {
           </>
         ) : (
           <>
-            <STDetailMobile STData={speechtherapist} />
+            <STDetailMobile STData={speechtherapist}  />
           </>
         )}
 
         {isMobile === false ? null : (
           <>
-            <STDetailMobile_StickyNavbar/>
+            <STDetailMobile_StickyNavbar sticky={sticky}/>
               
             
           </>
@@ -65,6 +86,7 @@ export const SpeechtherapistDetail = () => {
           isMobile={isMobile}
           name={speechtherapist.data[0].name.first}
           lastName={speechtherapist.data[0].name.last}
+          sticky={sticky}
         />
 
         {isMobile === false ? null : (

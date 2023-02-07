@@ -1,57 +1,48 @@
-import { useEffect, useState } from "react"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 import { STDetailMobile_StickyNavbarWrapper } from "./styles/STDetailMobile_StickyNavbarWrapper"
 
-export const STDetailMobile_StickyNavbar = (parameters) => {
-  const [sticky, setSticky] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 450) {
-        setSticky(true)
-      } else {
-        setSticky(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+export const STDetailMobile_StickyNavbar = ({sticky}) => {
+  // console.log('sticky:', sticky)
+  
 
   // useEffect(() => {
   //   console.log("window.scrollY:", window.scrollY)
   // })
-  
-  
 
   return (
-    <STDetailMobile_StickyNavbarWrapper
-      sticky={sticky}
-
-      // className={`navbar ${sticky ? "sticky" : ""}`}
-    >
+    <STDetailMobile_StickyNavbarWrapper sticky={sticky}>
       <ul>
         <li>
-          <a href="#">About</a>
+          <Caption>
+            <LinkNoStyle href="#">About</LinkNoStyle>
+          </Caption>
         </li>
         <li>
-          <a href="#">Details</a>
+          <Caption>
+            <LinkNoStyle href="#">Details</LinkNoStyle>
+          </Caption>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <Caption>
+            <LinkNoStyle href="#">Contact</LinkNoStyle>
+          </Caption>
         </li>
         <li>
-          <a href="#">Reviews</a>
+          <Caption>
+            <LinkNoStyle href="#">Reviews</LinkNoStyle>
+          </Caption>
         </li>
       </ul>
     </STDetailMobile_StickyNavbarWrapper>
   )
 }
 
-
 /* 
 
 !FH0
-Make this keep it working
+Make this keep it working:
+°) Make the border bottom be weider than the width of the element
+°) Keep with next sections
+°) Make the navbar work as "activeSection", making it with some style when the user is in the section
 */

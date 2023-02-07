@@ -78,6 +78,14 @@ export const STDetail_STDetails = ({ STData }) => {
                   email={everySingleValue.email}
                 />
                 <EverySingleSpeechTherapist_Location
+                  /* 
+                  !FH3
+                  
+                  Change this
+                  
+                  */
+                
+                
                   location={everySingleValue.location}
                   howFar={STData.filters[0].distance}
                 />

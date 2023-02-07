@@ -3,6 +3,7 @@ import { useORG_Ctx_ShowFiltersMobile } from "../context/ORG_Ctx_ShowFiltersMobi
 import Footer from "./footer/index.js"
 import NavBar from "./navBar/index.js"
 
+
 const PageLayout = ({ children, title = "INCLUSIVE" }) => {
   const {mustShowFiltersMobile} = useORG_Ctx_ShowFiltersMobile()
   

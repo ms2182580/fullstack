@@ -41,7 +41,7 @@ Here are two visual bugs:
 
 °) Is weird, sometimes happen, other times not. 
 
-3) There is a bug, it can be only use with the mouse, not with touch of phones
+3) There is a bug, it can be only use with the mouse, not with touch of phonesOye una consulta compañero ¿algún tip o consejo que me dés con ALejandra?
 
 
 */
