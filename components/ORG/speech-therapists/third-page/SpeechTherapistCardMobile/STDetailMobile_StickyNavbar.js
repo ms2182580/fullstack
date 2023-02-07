@@ -3,12 +3,6 @@ import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 import { STDetailMobile_StickyNavbarWrapper } from "./styles/STDetailMobile_StickyNavbarWrapper"
 
 export const STDetailMobile_StickyNavbar = ({sticky}) => {
-  // console.log('sticky:', sticky)
-  
-
-  // useEffect(() => {
-  //   console.log("window.scrollY:", window.scrollY)
-  // })
 
   return (
     <STDetailMobile_StickyNavbarWrapper sticky={sticky}>
@@ -40,9 +34,9 @@ export const STDetailMobile_StickyNavbar = ({sticky}) => {
 
 /* 
 
-!FH0
+!FH4
 Make this keep it working:
-°) Make the border bottom be weider than the width of the element
-°) Keep with next sections
+✅°) Make the border bottom be weider than the width of the element
+👀°) Keep with next sections
 °) Make the navbar work as "activeSection", making it with some style when the user is in the section
 */

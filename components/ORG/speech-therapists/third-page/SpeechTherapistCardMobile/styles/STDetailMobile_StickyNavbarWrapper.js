@@ -1,50 +1,50 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const STDetailMobile_StickyNavbarWrapper = styled.nav`
-  /* box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25); */
-  box-shadow: ${(x) => x.sticky ? `none` : `inset 0px 2px 4px rgba(0, 0, 0, 0.25)`};
-  
-  /* overflow-x:hidden; */
-
+  box-shadow: ${(x) => (x.sticky ? `none` : `inset 0px 2px 4px rgba(0, 0, 0, 0.25)`)};
   background-color: ${NEUTRALS.OFF_WHITE};
-
-  /* position: sticky; */
-  position: ${(x) => x.sticky ? `fixed` : `none`};
+  position: ${(x) => (x.sticky ? `fixed` : `none`)};
+  width: 100%;
   top: 0;
-  
-  /* height: 48px; */
 
   & > :nth-child(1) {
-    /* border: 2px solid crimson; */
     margin-inline: 29px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 28px;
-    position: sticky;
-
-    /* top: 0; */
-    /* bottom: 0; */
     height: 48px;
 
     & > li {
       list-style: none;
-
       display: flex;
-
       text-align: center;
+      position: relative;
     }
 
     & > li > span {
       text-decoration: none;
+      /* border-bottom: 4px solid transparent; */
 
-      border-bottom: 4px solid transparent;
+      & > a::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+        height: 4px;
+        background-color: ${PRIMARY.PRIMARY_CTA};
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+      }
 
-      &:hover,
-      span {
-        border-bottom: 4px red solid;
+      & > a:hover::before {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 0.3s linear;
       }
     }
   }

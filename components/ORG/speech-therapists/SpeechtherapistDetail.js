@@ -25,7 +25,7 @@ export const SpeechtherapistDetail = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 456) {
+      if (window.scrollY > 454) {
         setSticky(true)
       } else {
         setSticky(false)
@@ -36,7 +36,7 @@ export const SpeechtherapistDetail = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  })
   
 
   if (speechtherapist === "") {
