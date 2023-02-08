@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
+import { size } from "../assets/screenSizes/ScreenSizes"
 
 export const useWidthWindow = () => {
+  const [tabletSize, setTabletSize] = useState(Number(size.tablet))
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === "object") {
       const widthWindowInsideState = window.innerWidth
-      if (widthWindowInsideState <= 768) {
+      if (widthWindowInsideState <= tabletSize) {
         return true
       } else {
         return false
@@ -41,7 +43,7 @@ export const useWidthWindow = () => {
       setImInClient(false)
     }
 
-    if (widthWindow <= 768) {
+    if (widthWindow <= tabletSize) {
       setIsMobile(true)
     } else {
       setIsMobile(false)

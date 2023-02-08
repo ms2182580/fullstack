@@ -9,13 +9,6 @@ export const NavBarStyled = styled.nav`
   position: relative;
   z-index: 999;
   
-  overflow-x: hidden;
-  
-  
-  & > :nth-child(1),
-  & > :nth-child(2) {
-    /* margin-right: 36px; */
-  }
 
   & > h2 > a,
   & > ul > li > a,
