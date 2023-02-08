@@ -1,8 +1,8 @@
 import { cloneElement, Fragment, useState } from "react"
+import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
+import { DataComponents } from "./cards-places/DataComponents"
 import { Paginator } from "./Paginator"
 import { SpeechTherapistsCardsMobileWrapper } from "./styles/SpeechTherapistsCardsMobileWrapper"
-import { DataComponents } from "./cards-places/DataComponents"
-import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
 
 export const ThreeCardsComponents = ({ ...props }) => {
   const [index, setIndex] = useState(0)

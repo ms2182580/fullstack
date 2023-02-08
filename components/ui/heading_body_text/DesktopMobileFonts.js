@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, SEMANTICS, PRIMARY } from "../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../assets/Colors"
 import { FontsDesktopAndMobile } from "../../../assets/Fonts/HeadingValues"
 import { FontsWeights } from "../../../assets/Fonts/Weights"
 
@@ -41,6 +41,8 @@ export const P = styled.p`
       ? SEMANTICS.ERROR_STATE
       : x.primary_cta
       ? PRIMARY.PRIMARY_CTA
+      : x.primary_hover
+      ? PRIMARY.PRIMARY_HOVER
       : NEUTRALS.BLACK};
 `
 export const Caption = styled.span`
@@ -71,5 +73,7 @@ export const Caption = styled.span`
       ? SEMANTICS.ERROR_STATE
       : x.primary_cta
       ? PRIMARY.PRIMARY_CTA
+      : x.primary_hover
+      ? PRIMARY.PRIMARY_HOVER
       : NEUTRALS.BLACK};
 `

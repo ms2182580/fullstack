@@ -37,7 +37,3 @@ export const STDetail_About = ({ name, lastName, sticky }) => {
   )
 }
 
-/* 
-!FH0
-Make this equal to figma file
-*/

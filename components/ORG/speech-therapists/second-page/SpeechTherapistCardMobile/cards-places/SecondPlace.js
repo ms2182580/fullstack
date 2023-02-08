@@ -9,12 +9,6 @@ export const SecondPlace = ({
   serviceSetting,
   insurance
 }) => {
-  // console.log('agesServed:', agesServed)
-  // console.log("languages,  yearsOfPractice,  serviceSetting,  insurance", languages,
-  // yearsOfPractice,
-  // serviceSetting,
-  // insurance)
-
   return (
     <article
       className={cardStyle}

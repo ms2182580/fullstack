@@ -2,12 +2,22 @@ import { Fragment } from "react"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { TherapistInfoSecondPageWrapper } from "./styles/TherapistInfoSecondPageWrapper.js"
 
-const TherapistInfoSecondPage = ({ title, dataToShow, isMobile = false }) => {
+const TherapistInfoSecondPage = ({ title, dataToShow, isMobile = false, isThirdPage = false, withoutComa = false }) => {
   return (
-    <TherapistInfoSecondPageWrapper isMobile={isMobile}>
+    <TherapistInfoSecondPageWrapper
+      isMobile={isMobile}
+      isThirdPage={isThirdPage}>
       {isMobile === false ? (
         <>
           <P bold>{title}:</P>
+        </>
+      ) : isMobile && isThirdPage ? (
+        <>
+          <Caption
+            primary_hover
+            bolder>
+            {title}
+          </Caption>
         </>
       ) : (
         <>
@@ -44,11 +54,31 @@ const TherapistInfoSecondPage = ({ title, dataToShow, isMobile = false }) => {
             <Fragment key={`${x}${i}`}>
               {dataToShow.length - 1 === i ? (
                 <>
-                  <Caption> {x}</Caption>
+                  {isThirdPage === false ? (
+                    <>
+                      <Caption> {x}</Caption>
+                    </>
+                  ) : (
+                    <>
+                      <P> {x}</P>
+                    </>
+                  )}
                 </>
               ) : (
                 <>
-                  <Caption> {x},</Caption>
+                  {isThirdPage === false ? (
+                    <>
+                      <Caption> {x},</Caption>
+                    </>
+                  ) : isThirdPage && withoutComa ? (
+                    <>
+                      <P> {x}</P>
+                    </>
+                  ) : (
+                    <>
+                      <P> {x},</P>
+                    </>
+                  )}
                 </>
               )}
             </Fragment>

@@ -9,6 +9,14 @@ export const TherapistInfoSecondPageWrapper = styled.div`
 
   & > :nth-child(1) {
     width: ${(x) => (x.isMobile ? "100%" : "auto")};
-
   }
+  
+  & > :nth-child(2){
+    & > *{
+      display: ${(x) => x.isThirdPage ? `inline` : ``};
+    }
+  }
+  
+  /* border: 2px solid crimson; */
+  
 `

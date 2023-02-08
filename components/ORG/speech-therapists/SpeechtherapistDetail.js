@@ -12,15 +12,27 @@ import { STDetail_Reviews } from "./STDetail_Reviews"
 import { STDetail_STDetails } from "./STDetail_STDetails"
 import { STDetail_HeaderMobileWrapper } from "./styles/STDetail_HeaderMobileWrapper.js"
 import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
+import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
 import { STDetailMobile } from "./third-page/SpeechTherapistCardMobile/STDetailMobile"
 import { STDetailMobile_StickyNavbar } from "./third-page/SpeechTherapistCardMobile/STDetailMobile_StickyNavbar"
+import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/SpeechTherapistCardMobile/styles/STDetail_STDetails_ThirdPageWrapper"
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+
+  const [languages, setLanguages] = useState()
+  const [serviceSettings, setServiceSettings] = useState()
+  const [meetingFormat, setMeetingFormat] = useState()
+  const [insurance, setInsurance] = useState()
+  const [agesServed, setAgesServed] = useState()
+
+  const [qualifications, setQualifications] = useState()
+  const [additionalCredentials, setAdditionalCredentials] = useState()
+
   const route = useRouter()
 
   const { isMobile } = useWidthWindow()
-  
+
   const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
@@ -37,14 +49,47 @@ export const SpeechtherapistDetail = () => {
       window.removeEventListener("scroll", handleScroll)
     }
   })
-  
+
+  useEffect(() => {
+    setLanguages(speechtherapist.filters[0].languages.map((x) => x[0].toUpperCase() + x.slice(1)))
+
+    setServiceSettings(speechtherapist.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
+
+    setMeetingFormat(speechtherapist.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
+
+    setInsurance(speechtherapist.filters[0].accepts.map((x) => x[0].toUpperCase() + x.slice(1)))
+
+    setAgesServed(
+      speechtherapist.filters[0].agesServed.map((x) => {
+        if (x.split(" ")[1] === "months") {
+          return x[0].toUpperCase() + x.slice(1)
+        } else {
+          return `${x[0].toUpperCase()} ${x.slice(1)} old`
+        }
+      })
+    )
+
+    setQualifications([
+      ["Education Level: Master's"],
+      ["Years in Practice: 5 years"],
+      ["License Number: 1239082"],
+      ["State of License: New York"]
+    ])
+    
+    setAdditionalCredentials([
+      ["Lee Silverman Voice Treatment"],
+      ["Certification"],
+      ["SLP, Board Certified Behavior "],
+      ["Analyst (BCBA)"]
+    ])
+    
+    
+  }, [isMobile])
 
   if (speechtherapist === "") {
     route.push("/ORG/SpeechTherapists")
     return
   }
-  
-  
 
   return (
     <STDetail_MainWrapper isMobile={isMobile}>
@@ -70,15 +115,13 @@ export const SpeechtherapistDetail = () => {
           </>
         ) : (
           <>
-            <STDetailMobile STData={speechtherapist}  />
+            <STDetailMobile STData={speechtherapist} />
           </>
         )}
 
         {isMobile === false ? null : (
           <>
-            <STDetailMobile_StickyNavbar sticky={sticky}/>
-              
-            
+            <STDetailMobile_StickyNavbar sticky={sticky} />
           </>
         )}
 
@@ -90,22 +133,77 @@ export const SpeechtherapistDetail = () => {
         />
 
         {isMobile === false ? null : (
-          <>
-            <p>Language card</p>
-            <p>Qualifications card</p>
-            <p>
-              <i>Tip: this cards have the same organization as the second card</i>
-            </p>
+          <STDetail_STDetails_ThirdPageWrapper>
+            <div>
+              <TherapistInfoSecondPage
+                title="Languages"
+                dataToShow={languages}
+                isMobile={true}
+                isThirdPage={true}
+              />
+              <TherapistInfoSecondPage
+                title="Practice Setting"
+                dataToShow={serviceSettings}
+                isMobile={true}
+                isThirdPage={true}
+              />
+              <TherapistInfoSecondPage
+                title="Meeting Format"
+                dataToShow={meetingFormat}
+                isMobile={true}
+                isThirdPage={true}
+              />
+              <TherapistInfoSecondPage
+                title="Insurance"
+                dataToShow={insurance}
+                isMobile={true}
+                isThirdPage={true}
+              />
+              <TherapistInfoSecondPage
+                title="Ages Served"
+                dataToShow={agesServed}
+                isMobile={true}
+                isThirdPage={true}
+              />
+            </div>
 
-            <br />
+            <div>
+              <TherapistInfoSecondPage
+                title="Qualifications"
+                dataToShow={qualifications}
+                isMobile={true}
+                isThirdPage={true}
+                withoutComa={true}
+                
+              />
+              <TherapistInfoSecondPage
+                title="Additional Credentials"
+                dataToShow={additionalCredentials}
+                isMobile={true}
+                isThirdPage={true}
+                withoutComa={true}
+              />
+            </div>
+            
+            {/* 
+            
+            //!FH0
+            Make contact card!
+            After that make reviews
+            Create the spaces between cards
+            After that, make the behavior of the sticky bar activate when the user view is on that height
+            
+            */}
 
-            <p>
-              Contact card with <strong>email</strong> and <strong>getDirection</strong> buttons
-            </p>
-            <p>
-              <i>Tip: The contact is very similar, not equal but very similar</i>
-            </p>
-          </>
+            <div>
+              <p>
+                Contact card with <strong>email</strong> and <strong>getDirection</strong> buttons
+              </p>
+              <p>
+                <i>Tip: The contact is very similar, not equal but very similar</i>
+              </p>
+            </div>
+          </STDetail_STDetails_ThirdPageWrapper>
         )}
 
         <STDetail_Reviews
