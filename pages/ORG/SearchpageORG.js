@@ -1,16 +1,16 @@
-import ORGWrapperLanding from "./styles/ORGWrapperLanding"
-import { H1, H3 } from "../../components/ui/heading_body_text/HeaderFonts"
 import Image from "next/image"
-import ORG_Landing_Page from "../../assets/images/ORG_Landing_Page.png"
-import CustomInput from "../../components/ORG/inputs/CustomInput"
-import Customdropdown from "../../components/ORG/dropdown/CustomDropdown"
-import { useORG_InputCtx } from "../../context/ORG_Input"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { OptionsWrapper } from "../../components/ORG/dropdown/styles/Customdropdown"
 import ORG_LANDING_CC from "../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../assets/Icons/ORG_Landing_TP.png"
+import ORG_Landing_Page from "../../assets/images/ORG_Landing_Page.png"
+import Customdropdown from "../../components/ORG/dropdown/CustomDropdown"
+import { OptionsWrapper } from "../../components/ORG/dropdown/styles/Customdropdown"
+import CustomInput from "../../components/ORG/inputs/CustomInput"
+import { H1, H3 } from "../../components/ui/heading_body_text/HeaderFonts"
+import { useORG_InputCtx } from "../../context/ORG_Input"
+import ORGWrapperLanding from "./styles/ORGWrapperLanding"
 
 const SearchpageORG = ({ windowSize }) => {
   const { setKeywordsContext, setCitiesContext, keywordsContext, citiesContext } = useORG_InputCtx()
@@ -40,13 +40,26 @@ const SearchpageORG = ({ windowSize }) => {
   //   }
   // }, [geolocationLocalStorage])
 
-  /* 
+  /*
   !FH
   
   Make this responsive:
     Make the suggestions of inputs like the design: https://www.figma.com/file/ZCckK3QpHGP3ES02EDRHXF/Design-Team?node-id=5597%3A1148609&t=NsUJEQ6gi9hBDGIg-4
   
   
+  */
+ 
+  /* 
+  !FH
+  There is a problem here, in the console, nextjs said: 
+  
+  «
+Ignoring unsupported entryTypes: largest-contentful-paint. ORG.js:331:23
+
+Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0 iItxVj" Client: "ORGWrapperLanding-sc-1h874ev-0 kDndTo"
+  »
+
+
   */
 
   return (

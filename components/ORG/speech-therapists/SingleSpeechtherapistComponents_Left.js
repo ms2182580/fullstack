@@ -6,13 +6,17 @@ import {
   EverySingleSpeechTherapist_PhoneWrapper
 } from "./styles/EverySingleSpeechTherapist_PhoneEmailWrapper.js"
 
-export const EverySingleSpeechTherapist_Phone = ({ phoneNumber, isMobile = false }) => {
+export const EverySingleSpeechTherapist_Phone = ({ phoneNumber, isMobile = false, isThirdPageMobile = false }) => {
   return (
     <EverySingleSpeechTherapist_PhoneWrapper>
       <PhoneSvg />
       {isMobile === false ? (
         <>
           <P bold>Phone:</P>
+          <P>{phoneNumber}</P>
+        </>
+      ) : isMobile && isThirdPageMobile ? (
+        <>
           <P>{phoneNumber}</P>
         </>
       ) : (
@@ -25,7 +29,7 @@ export const EverySingleSpeechTherapist_Phone = ({ phoneNumber, isMobile = false
   )
 }
 
-export const EverySingleSpeechTherapist_Email = ({ email, isMobile = false }) => {
+export const EverySingleSpeechTherapist_Email = ({ email, isMobile = false, isThirdPageMobile = false }) => {
   return (
     <EverySingleSpeechTherapist_EmailWrapper>
       <div>
@@ -35,7 +39,7 @@ export const EverySingleSpeechTherapist_Email = ({ email, isMobile = false }) =>
           <>
             <P bold>Email:</P>
           </>
-        ) : (
+        ) : isMobile && isThirdPageMobile ? null : (
           <>
             <Caption bold>Email:</Caption>
           </>
@@ -46,12 +50,15 @@ export const EverySingleSpeechTherapist_Email = ({ email, isMobile = false }) =>
         <>
           <P>{email}</P>
         </>
+      ) : isMobile && isThirdPageMobile ? (
+        <>
+          <P>{email}</P>
+        </>
       ) : (
         <>
           <Caption>{email}</Caption>
         </>
       )}
-      
     </EverySingleSpeechTherapist_EmailWrapper>
   )
 }
@@ -62,16 +69,33 @@ export const EverySingleSpeechTherapist_Location = ({
   locationStreetName,
   locationState,
   howFar,
-  isMobile = false
+  isMobile = false,
+  isThirdPageMobile = false
 }) => {
   return (
     <EverySingleSpeechTherapist_LocationWrapper isMobile={isMobile}>
       <div>
         <LocationSvg />
-        {isMobile === false ? <P bold>Location: </P> : <Caption bold>Location: </Caption>}
+        {isMobile === false ? (
+          <>
+            <P bold>Location: </P>{" "}
+          </>
+        ) : isMobile && isThirdPageMobile ? null : (
+          <>
+            <Caption bold>Location: </Caption>
+          </>
+        )}
       </div>
       <div>
         {isMobile === false ? (
+          <>
+            <P>{locationCity} Speech Therapy</P>
+            <P>
+              {locationStreetNumber} {locationStreetName}
+            </P>
+            <P>{locationState} </P>
+          </>
+        ) : isMobile && isThirdPageMobile ? (
           <>
             <P>{locationCity} Speech Therapy</P>
             <P>

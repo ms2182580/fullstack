@@ -81,7 +81,7 @@ export const STDetail_STDetails = ({ STData }) => {
                   /* 
                   !FH3
                   
-                  Change this
+                  Fix this, the location have a differente structure to reciebe the data
                   
                   */
                 

@@ -5,6 +5,12 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_I
 import { useWidthWindow } from "../../../utils/useWidthWindow"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import { EmailGetDirectionComponent } from "./EmailGetFirectionWrapper"
+import {
+  EverySingleSpeechTherapist_Email,
+  EverySingleSpeechTherapist_Location,
+  EverySingleSpeechTherapist_Phone
+} from "./SingleSpeechtherapistComponents_Left"
 import { STDetail_About } from "./STDetail_About"
 import { STDetail_Header } from "./STDetail_Header"
 import { STDetail_PageLastUpdated } from "./STDetail_PageLastUpdated"
@@ -19,6 +25,8 @@ import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/SpeechTherapis
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+
+  console.log("speechtherapist:", speechtherapist)
 
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
@@ -75,15 +83,13 @@ export const SpeechtherapistDetail = () => {
       ["License Number: 1239082"],
       ["State of License: New York"]
     ])
-    
+
     setAdditionalCredentials([
       ["Lee Silverman Voice Treatment"],
       ["Certification"],
       ["SLP, Board Certified Behavior "],
       ["Analyst (BCBA)"]
     ])
-    
-    
   }, [isMobile])
 
   if (speechtherapist === "") {
@@ -174,7 +180,6 @@ export const SpeechtherapistDetail = () => {
                 isMobile={true}
                 isThirdPage={true}
                 withoutComa={true}
-                
               />
               <TherapistInfoSecondPage
                 title="Additional Credentials"
@@ -184,24 +189,38 @@ export const SpeechtherapistDetail = () => {
                 withoutComa={true}
               />
             </div>
-            
+
             {/* 
             
             //!FH0
-            Make contact card!
-            After that make reviews
-            Create the spaces between cards
-            After that, make the behavior of the sticky bar activate when the user view is on that height
+            ✅°) Make contact card!
+            👀°) Make reviews
+            °) Create the spaces between cards
+            °) After that, make the behavior of the sticky bar activate when the user view is on that height: maybe use useIntersection Hook (https://www.freecodecamp.org/news/react-hooks-every-project-should-use/)
             
             */}
 
             <div>
-              <p>
-                Contact card with <strong>email</strong> and <strong>getDirection</strong> buttons
-              </p>
-              <p>
-                <i>Tip: The contact is very similar, not equal but very similar</i>
-              </p>
+              <EverySingleSpeechTherapist_Location
+                locationCity={speechtherapist.data[0].location.city}
+                locationStreetNumber={speechtherapist.data[0].location.street.number}
+                locationStreetName={speechtherapist.data[0].location.street.name}
+                locationState={speechtherapist.data[0].location.state}
+                isMobile={true}
+                isThirdPageMobile={true}
+              />
+
+              <EverySingleSpeechTherapist_Phone
+                phoneNumber={speechtherapist.data[0].cell}
+                isMobile={true}
+                isThirdPageMobile={true}
+              />
+              <EverySingleSpeechTherapist_Email
+                email={speechtherapist.data[0].email}
+                isMobile={true}
+                isThirdPageMobile={true}
+              />
+              <EmailGetDirectionComponent />
             </div>
           </STDetail_STDetails_ThirdPageWrapper>
         )}
