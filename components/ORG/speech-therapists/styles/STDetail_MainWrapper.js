@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const STDetail_MainWrapper = styled.div`
   & > * {
     padding-inline: ${(x) => x.isMobile ? `none` : `96px`};
+    
   }
   
   & > :nth-child(2){

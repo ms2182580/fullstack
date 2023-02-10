@@ -7,10 +7,7 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
   padding: 2rem 6rem;
   display: grid;
   grid-template-columns: 1fr 10fr;
-  /* overflow-x: clip; */
-  
-  
-  
+
   grid-template-areas:
     "filter list"
     "filter buttons";
@@ -21,31 +18,21 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
   }
   & > :nth-child(2) {
     grid-area: list;
-    height:100%;
+    height: 100%;
   }
 
   & > :nth-child(3) {
     grid-area: buttons;
   }
-  
-  
+
   @media ${device.tablet} {
-    /* border: 2px solid crimson; */
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "filter sortBy"
-    "list list"
-    "buttons buttons"
-    ;
+      "filter sortBy"
+      "list list"
+      "buttons buttons";
     padding: 0;
-    
-    & > :nth-child(1){
-      /* border: 2px solid cornflowerblue; */
-      
-    }
-    
   }
-  
 `
 
 export default STFiltersTherapistsButtonsWrapper

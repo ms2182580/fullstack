@@ -27,8 +27,6 @@ import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/SpeechTherapis
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
 
-  // console.log("speechtherapist:", speechtherapist)
-
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
   const [meetingFormat, setMeetingFormat] = useState()
@@ -41,23 +39,6 @@ export const SpeechtherapistDetail = () => {
   const route = useRouter()
 
   const { isMobile } = useWidthWindow()
-
-  const [sticky, setSticky] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 456) {
-        setSticky(true)
-      } else {
-        setSticky(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  })
 
   useEffect(() => {
     setLanguages(speechtherapist.filters[0].languages.map((x) => x[0].toUpperCase() + x.slice(1)))
@@ -128,16 +109,13 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <STDetailMobile_StickyNavbar sticky={sticky} />
+            <STDetailMobile_StickyNavbar />
           </>
         )}
 
         {isMobile === false ? null : (
           <>
-            <Separator
-              sticky={sticky}
-              isFirst={true}
-            />
+            <Separator />
           </>
         )}
 
@@ -148,7 +126,7 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <Separator sticky={sticky} />
+            <Separator />
           </>
         )}
 
@@ -189,7 +167,7 @@ export const SpeechtherapistDetail = () => {
 
             {isMobile === false ? null : (
               <>
-                <Separator sticky={sticky} />
+                <Separator />
               </>
             )}
 
@@ -212,19 +190,9 @@ export const SpeechtherapistDetail = () => {
 
             {isMobile === false ? null : (
               <>
-                <Separator sticky={sticky} />
+                <Separator />
               </>
             )}
-
-            {/* 
-            
-            //!FH0
-            ✅°) Make contact card!
-            ✅°) Make reviews
-            ✅°) Create the spaces between cards
-            °) After that, make the behavior of the sticky bar activate when the user view is on that height: maybe use useIntersection Hook (https://www.freecodecamp.org/news/react-hooks-every-project-should-use/)
-            
-            */}
 
             <div id="Contact">
               <EverySingleSpeechTherapist_Location
@@ -251,7 +219,7 @@ export const SpeechtherapistDetail = () => {
 
             {isMobile === false ? null : (
               <>
-                <Separator sticky={sticky} />
+                <Separator />
               </>
             )}
           </STDetail_STDetails_ThirdPageWrapper>
@@ -265,8 +233,7 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <Separator sticky={sticky} isLastOne={true}
-             />
+            <Separator isLastOne={true} />
           </>
         )}
 

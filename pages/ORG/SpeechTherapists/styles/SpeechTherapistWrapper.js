@@ -9,12 +9,13 @@ const SpeechTherapistWraper = styled.div`
     margin-bottom: 2rem;
     
     & > span {
-      cursor: pointer;
+      
       display: flex;
     }
     
     & > span > a{
       position: relative;
+      cursor: pointer;
     }
 
     & > span > a > :nth-child(2) {

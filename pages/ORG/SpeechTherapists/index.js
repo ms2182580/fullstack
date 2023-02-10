@@ -1,21 +1,22 @@
-import Customdropdown from "../../../components/ORG/dropdown/CustomDropdown"
-import { OptionsWrapper } from "../../../components/ORG/dropdown/styles/Customdropdown"
-import CustomInput from "../../../components/ORG/inputs/CustomInput"
-import { useORG_InputCtx } from "../../../context/ORG_Input"
-import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
+import { useEffect } from "react"
+import { BackArrow } from "../../../assets/Icons"
 import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
-import { BackArrow } from "../../../assets/Icons"
-import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
-import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
-import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/STFiltersTherapistsButtons"
-import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
+import Customdropdown from "../../../components/ORG/dropdown/CustomDropdown"
+import { OptionsWrapper } from "../../../components/ORG/dropdown/styles/Customdropdown"
+import CustomInput from "../../../components/ORG/inputs/CustomInput"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
-import { useEffect } from "react"
+import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/STFiltersTherapistsButtons"
+import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
+import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { useWidthWindow } from "../../../utils/useWidthWindow"
+import ORGSpeechTherapistsSecondPageWrapper from "./styles/ORGSpeechTherapistsSecondPageWrapper"
+import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
 
 const ORGSpeechTherapists = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
@@ -49,7 +50,7 @@ const ORGSpeechTherapists = () => {
   }
 
   return (
-    <>
+    <ORGSpeechTherapistsSecondPageWrapper>
       <SpeechTherapistWraper>
         {widthWindow > 768 ? (
           <div>
@@ -110,7 +111,7 @@ const ORGSpeechTherapists = () => {
       </SpeechTherapistWraper>
 
       <STFiltersTherapistsButtons widthWindow={widthWindow} />
-    </>
+    </ORGSpeechTherapistsSecondPageWrapper>
   )
 }
 

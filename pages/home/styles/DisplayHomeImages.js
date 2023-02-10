@@ -35,8 +35,9 @@ const DisplayHomeImages = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  /* border: 5px black solid; */
   position: relative;
+  
+  overflow-x: hidden;
 
   img {
     margin-top: auto;

@@ -5,7 +5,7 @@ import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { ReviewIndividualComponentWrapper } from "./styles/STDetail_ReviewsWrapper"
 
 
-export const ReviewIndividualComponent = ({ rating = 5, review, userName, isMobile }) => {
+export const ReviewIndividualComponent = ({ rating = 5, review, userName }) => {
   
   const [month, setMonth] = useState(ORG_ST_Review_Months())
   

@@ -9,6 +9,8 @@ export const NavBarStyled = styled.nav`
   position: relative;
   z-index: 999;
   
+  overflow-x: hidden;
+  
 
   & > h2 > a,
   & > ul > li > a,
