@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export const STDetail_STDetails_ThirdPageWrapper = styled.div`
+  scroll-margin-top: 66px;
+
   & > *:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(6)) {
     margin: 16px;
   }

@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const STDetail_MainWrapper = styled.div`
   & > * {
     padding-inline: ${(x) => x.isMobile ? `none` : `96px`};
-    
   }
   
   & > :nth-child(2){
@@ -15,10 +14,9 @@ export const STDetail_MainWrapper = styled.div`
     padding-bottom: 32px;
   }
   
-  & > :nth-child(2) > :nth-child(3){
-    /* border: 2px solid crimson; */
-    /* padding-top:24px; */
-    
+  
+  & > :nth-child(2)> :nth-child(6) > :nth-child(5){
+    scroll-margin-top:74px;
   }
   
   

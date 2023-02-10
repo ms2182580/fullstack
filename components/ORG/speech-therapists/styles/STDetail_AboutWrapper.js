@@ -6,7 +6,9 @@ export const STDetail_AboutWrapper = styled.div`
   padding: ${(x) => (x.isMobile ? `16px` : `32px`)};
   /* margin-bottom: 32px; */
   margin-bottom: ${(x) => x.isMobile ? `0px` : `32px`};
-  ;
+  
+  scroll-margin-top:50px;
+  
   
   & > :nth-child(1) {
     margin-bottom: 8px;

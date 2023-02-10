@@ -7,6 +7,7 @@ export const STDetail_ReviewsWrapper = styled.div`
   border-radius: 8px;
   padding: 32px 32px 40px 32px;
   display: grid;
+  scroll-margin-top: 50px;
 
   & > :last-child {
     margin-left: auto;
@@ -22,11 +23,10 @@ export const STDetail_ReviewsWrapper = styled.div`
       display: flex;
       flex-direction: column;
     }
-    
-    & > :last-child{
+
+    & > :last-child {
       margin-top: 16px;
     }
-    
   }
 `
 
@@ -74,7 +74,7 @@ export const ReviewIndividualComponentWrapper = styled.div`
 
   @media (${device.tablet}) {
     grid-template-columns: 264px;
-    
+
     /* margin-right: 16px; */
   }
 `

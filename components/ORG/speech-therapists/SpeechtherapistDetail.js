@@ -153,7 +153,7 @@ export const SpeechtherapistDetail = () => {
         )}
 
         {isMobile === false ? null : (
-          <STDetail_STDetails_ThirdPageWrapper>
+          <STDetail_STDetails_ThirdPageWrapper id="Details">
             <div>
               <TherapistInfoSecondPage
                 title="Languages"
@@ -226,7 +226,7 @@ export const SpeechtherapistDetail = () => {
             
             */}
 
-            <div>
+            <div id="Contact">
               <EverySingleSpeechTherapist_Location
                 locationCity={speechtherapist.data[0].location.city}
                 locationStreetNumber={speechtherapist.data[0].location.street.number}

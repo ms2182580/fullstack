@@ -12,7 +12,7 @@ export const STDetail_Reviews = ({ name, lastName, isMobile }) => {
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
 
   return (
-    <STDetail_ReviewsWrapper>
+    <STDetail_ReviewsWrapper id="Reviews">
       {isMobile === false ? (
         <>
           <H4 cta>Reviews</H4>

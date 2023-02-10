@@ -12,11 +12,10 @@ export const STDetail_About = ({ name, lastName }) => {
     setAboutTextState(aboutText)
   }, [])
 
-  const { isMobile } = useWidthWindow()  
-  
+  const { isMobile } = useWidthWindow()
 
   return (
-    <STDetail_AboutWrapper isMobile={isMobile}>
+    <STDetail_AboutWrapper isMobile={isMobile} id="About">
       {isMobile === false ? (
         <>
           <H4 cta>About</H4>

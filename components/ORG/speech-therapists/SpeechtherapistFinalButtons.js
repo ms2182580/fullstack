@@ -1,20 +1,23 @@
+import { useRouter } from "next/router.js"
+import { useEffect, useState } from "react"
 import { LeftArrowSvg, RightArrowSvg } from "../../../assets/Icons/index.js"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider.js"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
+import { NavigationButtonsNumbers } from "./NavigationButtonsNumbers.js"
 import {
   NextButton,
   PrevButton,
   SpeechtherapistFinalButtonsWrapper
 } from "./styles/SpeechtherapistFinalButtonsWrapper.js"
-import { NavigationButtonsNumbers } from "./NavigationButtonsNumbers.js"
-import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
-import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider.js"
-import { useEffect, useState } from "react"
-import { useORG_Ctx_FetchNoFiltersMobile } from "../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 
 export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
   const [isMobile, setIsMobile] = useState(false)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
   const { pagination: paginationMobile, setPagination: setPaginationMobile } = useORG_Ctx_FetchNoFiltersMobile()
+  const router = useRouter()
+  const { pathname } = router
 
   const toPrevious = () => {
     setPagination((prevState) => {
@@ -52,7 +55,9 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
               </>
             </PrevButton>
           ) : (
-            <LinkNoStyle href="#topOfSTL">
+            <LinkNoStyle
+              href="#topOfSTL"
+              as={pathname}>
               <PrevButton
                 onClick={() => toPrevious()}
                 isMobile={isMobile}>
@@ -76,7 +81,9 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
               </>
             </PrevButton>
           ) : (
-            <LinkNoStyle href="#topOfSTL">
+            <LinkNoStyle
+              href="#topOfSTL"
+              as={pathname}>
               <PrevButton
                 onClick={() => toPreviousMobile()}
                 isMobile={isMobile}>
@@ -89,12 +96,13 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
         </>
       )}
 
-
       <NavigationButtonsNumbers isMobile={isMobile} />
 
       {isMobile === false ? (
         <>
-          <LinkNoStyle href="#topOfSTL">
+          <LinkNoStyle
+            href="#topOfSTL"
+            as={pathname}>
             <NextButton
               onClick={() => setPagination(pagination + 1)}
               isMobile={isMobile}>
@@ -107,7 +115,9 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
         </>
       ) : (
         <>
-          <LinkNoStyle href="#topOfSTL">
+          <LinkNoStyle
+            href="#topOfSTL"
+            as={pathname}>
             <NextButton
               onClick={() => setPaginationMobile(paginationMobile + 1)}
               isMobile={isMobile}>
@@ -118,8 +128,6 @@ export const SpeechtherapistFinalButtons = ({ widthWindow }) => {
           </LinkNoStyle>
         </>
       )}
-
-      
     </SpeechtherapistFinalButtonsWrapper>
   )
 }
