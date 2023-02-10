@@ -23,10 +23,10 @@ export const STDetail_STDetails_ThirdPageWrapper = styled.div`
       
       & > :nth-child(2) > *  {
         margin-bottom: 0px;
-        
       }
-      
     }
+    
+    
     
   }
   

@@ -2,5 +2,25 @@
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "colorize.languages": [
     "javascript"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#d7ecfb",
+    "activityBar.background": "#d7ecfb",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#f16eba",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#d7ecfb",
+    "statusBar.background": "#a8d5f7",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#79bef3",
+    "statusBarItem.remoteBackground": "#a8d5f7",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#a8d5f7",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#a8d5f799",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#a8d5f7"
 }
