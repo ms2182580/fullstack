@@ -1,11 +1,14 @@
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 import { StartEmptySvg, StartFullSvg } from "../../../assets/Icons"
 import { ORG_ST_Review_Months } from "../../../utils/ORG_ST_Review"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { ReviewIndividualComponentWrapper } from "./styles/STDetail_ReviewsWrapper"
 
 
-export const ReviewIndividualComponent = ({ rating = 5, review, userName }) => {
+export const ReviewIndividualComponent = ({ rating = 5, review, userName, isMobile }) => {
+  
+  const [month, setMonth] = useState(ORG_ST_Review_Months())
+  
   let howMuchStars
   if (typeof review === "string") {
     howMuchStars = Array(5).fill("fully")
@@ -21,7 +24,6 @@ export const ReviewIndividualComponent = ({ rating = 5, review, userName }) => {
       })
   }
   
-  const month = ORG_ST_Review_Months()
 
   return (
     <ReviewIndividualComponentWrapper>
