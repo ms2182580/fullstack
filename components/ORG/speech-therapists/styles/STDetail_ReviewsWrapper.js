@@ -16,6 +16,7 @@ export const STDetail_ReviewsWrapper = styled.div`
 
   @media (${device.tablet}) {
     padding: 16px;
+    border-radius: 0px;
 
     & > :nth-child(1) {
       display: flex;

@@ -8,22 +8,8 @@ import { ReviewIndividualComponent } from "./ReviewIndividualComponent"
 import { ReviewAllIndividualComponentWrapper, STDetail_ReviewsWrapper } from "./styles/STDetail_ReviewsWrapper"
 
 export const STDetail_Reviews = ({ name, lastName, isMobile }) => {
-  
   const [getReviews, setGetReviews] = useState(ORG_ST_Review(name, lastName))
-  console.log('getReviews:', getReviews)
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
-  console.log('allUserNames:', allUserNames)
-  
-  // useEffect(() => {
-  //   // const getReviews = ORG_ST_Review(name, lastName)
-  //   const updateReviews = ORG_ST_Review(name, lastName)
-  //   const updateAllUsersNames = ORG_ReviewsUsersName()
-  //   setGetReviews(updateReviews)
-  //   setAllUserNames(updateAllUsersNames)
-  // },[isMobile])
-  
-  // const getReviews = ORG_ST_Review(name, lastName)
-  // const allUserNames = ORG_ReviewsUsersName()
 
   return (
     <STDetail_ReviewsWrapper>
@@ -46,25 +32,21 @@ export const STDetail_Reviews = ({ name, lastName, isMobile }) => {
       <ReviewAllIndividualComponentWrapper>
         <ReviewIndividualComponent
           isMobile={isMobile}
-          
           review={getReviews[0]}
           userName={allUserNames[0]}
         />
         <ReviewIndividualComponent
           isMobile={isMobile}
-          
           review={getReviews[1]}
           userName={allUserNames[1]}
         />
         <ReviewIndividualComponent
           isMobile={isMobile}
-          
           review={getReviews[3]}
           userName={allUserNames[3]}
         />
         <ReviewIndividualComponent
           isMobile={isMobile}
-          
           review={getReviews[2]}
           userName={allUserNames[2]}
         />

@@ -26,8 +26,6 @@ export const STDetailMobile_StickyNavbarWrapper = styled.nav`
 
     & > li > span {
       text-decoration: none;
-      /* border-bottom: 4px solid transparent; */
-
       & > a::before {
         content: "";
         position: absolute;

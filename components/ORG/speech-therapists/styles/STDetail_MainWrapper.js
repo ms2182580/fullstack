@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
 
 export const STDetail_MainWrapper = styled.div`
   & > * {
@@ -15,4 +14,12 @@ export const STDetail_MainWrapper = styled.div`
   & > :nth-child(3) {
     padding-bottom: 32px;
   }
+  
+  & > :nth-child(2) > :nth-child(3){
+    /* border: 2px solid crimson; */
+    /* padding-top:24px; */
+    
+  }
+  
+  
 `
