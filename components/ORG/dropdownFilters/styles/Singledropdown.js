@@ -34,7 +34,6 @@ export const SingleDropdownWrapper = styled.div`
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    /* background-color: crimson; */
 
     & > div:nth-child(1) {
       height: 1.67px;

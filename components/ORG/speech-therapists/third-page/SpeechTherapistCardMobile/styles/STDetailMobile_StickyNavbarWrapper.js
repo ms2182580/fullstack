@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const STDetailMobile_StickyNavbarWrapper = styled.nav`
-  /* box-shadow: ${(x) => (x.sticky ? `none` : `inset 0px 2px 4px rgba(0, 0, 0, 0.25)`)}; */
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: ${NEUTRALS.OFF_WHITE};
   position: sticky;

@@ -23,13 +23,13 @@ export const STDetailMobile = ({ STData }) => {
             reviews={reviews}
             diagnoses={diagnoses}
             isMobile={true}
+            isThirdPage={true}
           />
         </div>
       </SpeechTherapistsCardsMobileWrapper>
     </STDetailMobileWrapper>
   )
 }
-
 
 /* 
 

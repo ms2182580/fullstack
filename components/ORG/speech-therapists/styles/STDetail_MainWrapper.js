@@ -9,6 +9,12 @@ export const STDetail_MainWrapper = styled.div`
   & > :nth-child(2){
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   }
+  
+  & > :nth-child(2) {
+    position:relative;
+  }
+
+  
 
   & > :nth-child(2),
   & > :nth-child(3) {

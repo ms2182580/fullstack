@@ -15,8 +15,6 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
       top: ${(x) => (x.isThirdPage ? `151px` : `-16px`)};
 
       cursor: pointer;
-      
-      
     }
   }
 
@@ -57,11 +55,10 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(1) {
     position: relative;
 
-
     & > .thirdPage {
       height: 115px;
       display: inline-block;
-      border: 2px solid #D3D6D7;
+      border: 2px solid #d3d6d7;
       filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.15));
       border-radius: 8px;
     }
@@ -104,11 +101,15 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
       visibility: hidden;
       position: absolute;
       filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.3));
-      top: -3px;
-      right: 114px;
+      top: ${(x) => (x.isThirdPage ? `20px` : `-3px`)};
+      right: ${(x) => (x.isThirdPage ? `-22px` : `114px`)};
       border-style: solid;
-      border-width: 28px 16.5px 0px 16.5px;
-      border-color: ${NEUTRALS.OFF_WHITE} transparent transparent transparent;
+      border-width: ${(x) => (x.isThirdPage ? `0px 16.5px 28px 16.5px` : `28px 16.5px 0px 16.5px`)};
+
+      border-color: ${(x) =>
+        x.isThirdPage
+          ? `transparent transparent ${NEUTRALS.OFF_WHITE} transparent`
+          : `${NEUTRALS.OFF_WHITE} transparent transparent transparent`};
     }
 
     & > :nth-child(2) > :nth-child(1) {
@@ -117,19 +118,23 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
       bottom: 3px;
       left: ${(x) => (x.isThirdPage ? `-2px` : `-137px`)};
     }
+
     & > :nth-child(2) > :nth-child(2) {
       visibility: hidden;
       outline: 4px solid ${NEUTRALS.LIGHT_GREY};
       position: absolute;
+
       background-color: ${NEUTRALS.OFF_WHITE};
       filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.3));
-      top: -261px;
-      right: -77px;
+      top: ${(x) => (x.isThirdPage ? `41px` : `-261px`)};
+      right: ${(x) => (x.isThirdPage ? `-24px` : `-77px`)};
       width: 300px;
-      z-index: 99;
+
+      z-index: 2;
       border-radius: 8px;
-      padding: 4px;
-      text-align: center;
+      padding: ${(x) => (x.isThirdPage ? `16px 32px` : `4px`)};
+
+      text-align: ${(x) => (x.isThirdPage ? `left` : `center`)};
     }
 
     & > :nth-child(2) > :nth-child(2) > :nth-child(1) {

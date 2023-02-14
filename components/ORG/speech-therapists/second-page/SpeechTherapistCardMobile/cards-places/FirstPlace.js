@@ -15,7 +15,8 @@ export const FirstPlace = ({
   rating,
   reviews,
   diagnoses,
-  isMobile = false
+  isMobile = false,
+  isThirdPage = false
 }) => {
   if (isMobile) {
     return (
@@ -45,7 +46,10 @@ export const FirstPlace = ({
             </Caption>
           </div>
 
-          <Tooltip isMobile={true} />
+          <Tooltip
+            isMobile={true}
+            isThirdPage={isThirdPage}
+          />
 
           <StarsRatingAndReview
             rating={rating}

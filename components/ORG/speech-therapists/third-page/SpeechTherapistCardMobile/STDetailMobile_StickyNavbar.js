@@ -3,27 +3,8 @@ import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 import { STDetailMobile_StickyNavbarWrapper } from "./styles/STDetailMobile_StickyNavbarWrapper"
 
 export const STDetailMobile_StickyNavbar = ({ sticky }) => {
-  // const divRef = useRef(null)
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     // console.log(divRef.current.scrollTop)
-  //     const viewportHeight = window.innerHeight
-  //     // console.log("viewportHeight:", viewportHeight)
-  //     // console.log("window.scrollY:", window.scrollY)
-  //   }
-
-  //   window.addEventListener("scroll", handleScroll)
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll)
-  //   }
-  // }, [])
-
   return (
-    <STDetailMobile_StickyNavbarWrapper
-      sticky={sticky}
-      >
+    <STDetailMobile_StickyNavbarWrapper sticky={sticky}>
       <ul>
         <li>
           <Caption>
