@@ -80,11 +80,16 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
 
   & > :nth-child(1) > .activeCard > .FirstPlace > :nth-child(3) {
     display: flex;
-
+    
+    /* border: 2px solid crimson; */
+    
     & > :nth-child(1) {
       margin-right: 16px;
       display: flex;
       flex-direction: ${(x) => (x.isThirdPage ? `row` : `column`)};
+      /* border: 2px solid crimson; */
+      touch-action: none;
+      
 
       & > :nth-child(2) {
         margin-left: ${(x) => (x.isThirdPage ? `2px` : `0px`)};
@@ -94,6 +99,7 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     & > :nth-child(2) {
       position: relative;
       display: flex;
+      touch-action: none;
     }
 
     & > :nth-child(2):before {
@@ -146,7 +152,9 @@ export const SpeechTherapistsCardsMobileWrapper = styled.div`
     }
 
     & > :nth-child(2):hover > :nth-child(2),
-    & > :nth-child(2):hover:before {
+    & > :nth-child(2):hover:before, 
+    & > :nth-child(2):active > :nth-child(2),
+    & > :nth-child(2):active:before {
       visibility: visible;
     }
   }

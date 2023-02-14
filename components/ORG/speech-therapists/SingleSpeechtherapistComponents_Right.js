@@ -40,15 +40,15 @@ export const Tooltip = ({ isMobile, isThirdPage = false }) => {
               <P>Language-Hearing Association (ASHA).</P>
             </>
           ) : (
-              <>
-                <P>Certificate of Clinical</P>
-                <P>Competence in Speech</P>
-                <P>Language pathology -</P>
-                <P>Nationally recognized</P>
-                <P>professional from the</P>
-                <P>American Speech-Language-</P>
-                <P>Hearing Association (ASHA).</P>
-              </>
+            <>
+              <P>Certificate of Clinical</P>
+              <P>Competence in Speech</P>
+              <P>Language pathology -</P>
+              <P>Nationally recognized</P>
+              <P>professional from the</P>
+              <P>American Speech-Language-</P>
+              <P>Hearing Association (ASHA).</P>
+            </>
           )}
         </span>
       </span>
