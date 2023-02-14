@@ -5,7 +5,8 @@ import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { STDetail_AboutWrapper } from "./styles/STDetail_AboutWrapper"
 
-export const STDetail_About = ({ name, lastName }) => {
+export const STDetail_About = ({ name, lastName, aboutRef }) => {
+  console.log('aboutRef:', aboutRef)
   const [aboutTextState, setAboutTextState] = useState()
   useEffect(() => {
     const aboutText = ORG_ST_About(name, lastName)
@@ -15,7 +16,10 @@ export const STDetail_About = ({ name, lastName }) => {
   const { isMobile } = useWidthWindow()
 
   return (
-    <STDetail_AboutWrapper isMobile={isMobile} id="About">
+    <STDetail_AboutWrapper
+      isMobile={isMobile}
+      id="About"
+      ref={aboutRef}>
       {isMobile === false ? (
         <>
           <H4 cta>About</H4>

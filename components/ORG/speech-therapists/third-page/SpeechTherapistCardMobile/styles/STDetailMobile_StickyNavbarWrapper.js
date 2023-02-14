@@ -24,9 +24,16 @@ export const STDetailMobile_StickyNavbarWrapper = styled.nav`
       position: relative;
     }
 
-    & > li > span {
+    & > .highlight {
+      /* border: 2px solid crimson; */
+    }
+
+    & > li > span,
+    & > .highlight {
       text-decoration: none;
-      & > a::before {
+
+      & > a::before,
+      &.highlight::before {
         content: "";
         position: absolute;
         bottom: -10px;
@@ -36,13 +43,14 @@ export const STDetailMobile_StickyNavbarWrapper = styled.nav`
         background-color: ${PRIMARY.PRIMARY_CTA};
         visibility: hidden;
         opacity: 0;
-        transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+        transition: all 0s linear 0.3s, opacity 0.3s linear;
       }
-
-      & > a:hover::before {
+      
+      & > a:hover::before,
+      &.highlight::before {
         visibility: visible;
         opacity: 1;
-        transition: visibility 0s linear 0s, opacity 0.3s linear;
+        transition: all 0s linear 0s, opacity 0.3s linear;
       }
     }
   }

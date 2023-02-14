@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../../assets/Icons"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { useWidthWindow } from "../../../utils/useWidthWindow"
@@ -74,6 +74,43 @@ export const SpeechtherapistDetail = () => {
     ])
   }, [isMobile])
 
+  const [highlight, setHighlight] = useState("about")
+  console.log('highlight:', highlight)
+  const aboutRef = useRef(null)
+  console.log('aboutRef:', aboutRef)
+  const detailsRef = useRef(null)
+  console.log('detailsRef:', detailsRef)
+  const contactRef = useRef(null)
+  console.log('contactRef:', contactRef)
+  const reviewsRef = useRef(null)
+  console.log('reviewsRef:', reviewsRef)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (aboutRef.current) {
+        const aboutPosition = aboutRef.current.offsetTop
+        const detailsPosition = detailsRef.current.offsetTop
+        const contactPosition = contactRef.current.offsetTop
+        const reviewsPosition = reviewsRef.current.offsetTop
+
+        if (window.scrollY >= aboutPosition && window.scrollY < detailsPosition) {
+          setHighlight("about")
+        } else if (window.scrollY >= detailsPosition && window.scrollY < contactPosition) {
+          setHighlight("details")
+        } else if (window.scrollY >= contactPosition && window.scrollY < reviewsPosition) {
+          setHighlight("contact")
+        } else if (window.scrollY >= reviewsPosition) {
+          setHighlight("reviews")
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   if (speechtherapist === "") {
     route.push("/ORG/SpeechTherapists")
     return
@@ -109,7 +146,7 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <STDetailMobile_StickyNavbar />
+            <STDetailMobile_StickyNavbar highlight={highlight} />
           </>
         )}
 
@@ -122,6 +159,7 @@ export const SpeechtherapistDetail = () => {
         <STDetail_About
           name={speechtherapist.data[0].name.first}
           lastName={speechtherapist.data[0].name.last}
+          aboutRef={aboutRef}
         />
 
         {isMobile === false ? null : (
@@ -131,7 +169,9 @@ export const SpeechtherapistDetail = () => {
         )}
 
         {isMobile === false ? null : (
-          <STDetail_STDetails_ThirdPageWrapper id="Details">
+          <STDetail_STDetails_ThirdPageWrapper
+            id="Details"
+            ref={detailsRef}>
             <div>
               <TherapistInfoSecondPage
                 title="Languages"
@@ -194,7 +234,9 @@ export const SpeechtherapistDetail = () => {
               </>
             )}
 
-            <div id="Contact">
+            <div
+              id="Contact"
+              ref={contactRef}>
               <EverySingleSpeechTherapist_Location
                 locationCity={speechtherapist.data[0].location.city}
                 locationStreetNumber={speechtherapist.data[0].location.street.number}
@@ -229,6 +271,7 @@ export const SpeechtherapistDetail = () => {
           isMobile={isMobile}
           name={speechtherapist.data[0].name.first}
           lastName={speechtherapist.data[0].name.last}
+          reviewsRef={reviewsRef}
         />
 
         {isMobile === false ? null : (

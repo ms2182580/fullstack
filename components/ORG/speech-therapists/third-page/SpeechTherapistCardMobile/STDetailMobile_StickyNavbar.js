@@ -2,43 +2,29 @@ import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 import { STDetailMobile_StickyNavbarWrapper } from "./styles/STDetailMobile_StickyNavbarWrapper"
 
-export const STDetailMobile_StickyNavbar = ({ sticky }) => {
+export const STDetailMobile_StickyNavbar = ({ highlight }) => {
   return (
-    <STDetailMobile_StickyNavbarWrapper sticky={sticky}>
+    <STDetailMobile_StickyNavbarWrapper highlight={highlight}
+    >
       <ul>
-        <li>
+        <li className={highlight === "about" ? "highlight" : ""}>
           <Caption>
             <LinkNoStyle href="#About">About</LinkNoStyle>
           </Caption>
         </li>
-        <li>
+        <li className={highlight === "details" ? "highlight" : ""}>
           <Caption>
-            <LinkNoStyle
-              href="#Details"
-              // as={pathname}
-            >
-              Details
-            </LinkNoStyle>
+            <LinkNoStyle href="#Details">Details</LinkNoStyle>
           </Caption>
         </li>
-        <li>
+        <li className={highlight === "contact" ? "highlight" : ""}>
           <Caption>
-            <LinkNoStyle
-              href="#Contact"
-              // as={pathname}
-            >
-              Contact
-            </LinkNoStyle>
+            <LinkNoStyle href="#Contact">Contact</LinkNoStyle>
           </Caption>
         </li>
-        <li>
+        <li className={highlight === "reviews" ? "highlight" : ""}>
           <Caption>
-            <LinkNoStyle
-              href="#Reviews"
-              // as={pathname}
-            >
-              Reviews
-            </LinkNoStyle>
+            <LinkNoStyle href="#Reviews">Reviews</LinkNoStyle>
           </Caption>
         </li>
       </ul>

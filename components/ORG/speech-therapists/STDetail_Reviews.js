@@ -7,12 +7,12 @@ import { HyperlinkS } from "../../ui/hyperlink/HyperlinkFonts"
 import { ReviewIndividualComponent } from "./ReviewIndividualComponent"
 import { ReviewAllIndividualComponentWrapper, STDetail_ReviewsWrapper } from "./styles/STDetail_ReviewsWrapper"
 
-export const STDetail_Reviews = ({ name, lastName, isMobile }) => {
+export const STDetail_Reviews = ({ name, lastName, isMobile, reviewsRef }) => {
   const [getReviews, setGetReviews] = useState(ORG_ST_Review(name, lastName))
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
 
   return (
-    <STDetail_ReviewsWrapper id="Reviews">
+    <STDetail_ReviewsWrapper id="Reviews" ref={reviewsRef}>
       {isMobile === false ? (
         <>
           <H4 cta>Reviews</H4>

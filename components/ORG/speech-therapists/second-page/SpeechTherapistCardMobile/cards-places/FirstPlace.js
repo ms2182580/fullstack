@@ -18,12 +18,6 @@ export const FirstPlace = ({
   isMobile = false,
   isThirdPage = false
 }) => {
-
-  /* 
-  !FH0
-  Make <Tooltip/> useful with touch event of mobile
-  */
-
   if (isMobile) {
     return (
       <article className="activeCard">
