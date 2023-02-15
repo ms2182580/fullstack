@@ -1,18 +1,18 @@
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
-import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import SearchIcon from "../../../assets/Icons/SearchIcon.png"
-import { CurrentLocationSvg } from "../../../assets/Icons"
-import SearchComponentWrapper, { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
-import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
-import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
-import { ButtonSmall } from "../../ui/buttons/general"
 import { useRouter } from "next/router"
-import { OptionsMobile } from "../dropdown/OptionsMobile.js"
-import Customdropdown from "../dropdown/CustomDropdown"
+import { useEffect, useRef, useState } from "react"
+import { CurrentLocationSvg } from "../../../assets/Icons"
 import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
+import SearchIcon from "../../../assets/Icons/SearchIcon.png"
+import { ButtonSmall } from "../../ui/buttons/general"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import Customdropdown from "../dropdown/CustomDropdown"
+import { OptionsMobile } from "../dropdown/OptionsMobile.js"
+import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
+import SearchComponentWrapper, { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
 
 const CustomInput = ({
   setKeywordsContext,
@@ -111,7 +111,8 @@ const CustomInput = ({
           ) : windowSize <= 768 ? (
             <OptionsMobile
               isFocus={isFocusKeyword}
-              setIsHover={setIsHoveredKeyword}>
+              setIsHover={setIsHoveredKeyword}
+              >
               <Caption bolder>QUICK LINKS</Caption>
               <div></div>
               <Customdropdown
@@ -204,9 +205,7 @@ const CustomInput = ({
         </div>
 
         {toWhere === "SpeechTherapists" ? (
-          <LinkNoStyle
-            href={`${router.pathname}/${toWhere}`}
-            >
+          <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
             <ButtonSmall>Search</ButtonSmall>
           </LinkNoStyle>
         ) : toWhere === "no where" ? (

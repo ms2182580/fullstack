@@ -32,15 +32,3 @@ export const STDetailMobile_StickyNavbar = ({ highlight }) => {
   )
 }
 
-/* 
-
-!FH0
-Make this keep it working:
-✅°) Make the border bottom be weider than the width of the element
-✅°) Keep with next sections
-👀°) Make the navbar work as "activeSection", making it with some style when the user is in the section
-
-°) After that, make the behavior of the sticky bar activate when the user view is on that height: maybe use useIntersection Hook (https://www.freecodecamp.org/news/react-hooks-every-project-should-use/)
-
-
-*/

@@ -1,15 +1,15 @@
-import { SignupWrapper, Img, RightSignup, LeftSignup } from "./styles/Signup.js"
+import Image from "next/image.js"
 import LoginImage from "../../assets/images/LoginImage.png"
 import Breadcrumbs from "../../components/ui/breadcrumbs/Breadcrumbs.js"
-import { H1, H4 } from "../../components/ui/heading_body_text/HeaderFonts.js"
-import { Caption, P } from "../../components/ui/heading_body_text/DesktopMobileFonts.js"
-import { HyperlinkM } from "../../components/ui/hyperlink/HyperlinkFonts.js"
 import {
   FacebookLoginBtn,
   GoogleLoginBtn
 } from "../../components/ui/buttons/login/LoginBtns.js"
+import { Caption, P } from "../../components/ui/heading_body_text/DesktopMobileFonts.js"
+import { H1, H4 } from "../../components/ui/heading_body_text/HeaderFonts.js"
+import { HyperlinkM } from "../../components/ui/hyperlink/HyperlinkFonts.js"
 import SignupForm from "./SignupForm.js"
-import Image from "next/image.js"
+import { LeftSignup, RightSignup, SignupWrapper } from "./styles/Signup.js"
 
 const Signup = () => {
   return (
@@ -46,3 +46,9 @@ const Signup = () => {
 }
 
 export default Signup
+
+
+/* 
+!FHZ
+Make this responsive!
+*/

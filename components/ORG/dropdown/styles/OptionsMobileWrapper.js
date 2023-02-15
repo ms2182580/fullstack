@@ -3,7 +3,6 @@ import { NEUTRALS } from "../../../../assets/Colors"
 
 export const OptionsMobileWrapper = styled.div`
 
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,8 +14,6 @@ export const OptionsMobileWrapper = styled.div`
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-top: -12px;
-  
-  /* background-color: crimson; */
 
   & > :nth-child(1) {
     padding-top: 12px;
@@ -31,7 +28,7 @@ export const OptionsMobileWrapper = styled.div`
 
   & > * {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: ${(x) => x.isMobile ? `` : `auto 1fr`};
     grid-template-areas: "icon namePlusArrow";
 
     & > :nth-child(1) {

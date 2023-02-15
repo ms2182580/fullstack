@@ -1,6 +1,7 @@
 import { OptionsMobileWrapper } from "./styles/OptionsMobileWrapper"
 
 export const OptionsMobile = ({ isFocus = true, setIsHover, children }) => {
+
   return (
     <>
       {isFocus && (
@@ -10,14 +11,15 @@ export const OptionsMobile = ({ isFocus = true, setIsHover, children }) => {
           }}
           onMouseLeave={() => {
             setIsHover(false)
-          }}>
+          }}
+          
+          isMobile={true}>
           {children}
         </OptionsMobileWrapper>
       )}
     </>
   )
 }
-
 
 /* 
 !FH1
