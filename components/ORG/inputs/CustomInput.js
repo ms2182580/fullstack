@@ -36,7 +36,7 @@ const CustomInput = ({
 
   const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
   const [isFocusCity, setIsFocusCity] = useState(false)
-  const [isHoveredCity, setIsHoveredCIty] = useState(false)
+  const [isHoveredCity, setIsHoveredCity] = useState(false)
   const inputRefCity = useRef()
   const [cityInput, setCityInput] = useState("")
 
@@ -55,18 +55,38 @@ const CustomInput = ({
   const suggestionDropdownCC = []
 
   const { isTouchScreen } = useCheckMobile()
-  const firstLevelRef = useRef(null)
-  const secondLevelRef = useRef(null)
+  const keywordFirstLevelRef = useRef(null)
+  const keywordSecondLevelRef = useRef(null)
 
   useEffect(() => {
     function handleClickOutside(event) {
       if (
-        firstLevelRef.current &&
-        !firstLevelRef.current.contains(event.target) &&
-        secondLevelRef.current &&
-        !secondLevelRef.current.contains(event.target)
+        keywordFirstLevelRef.current &&
+        !keywordFirstLevelRef.current.contains(event.target) &&
+        keywordSecondLevelRef.current &&
+        !keywordSecondLevelRef.current.contains(event.target)
       ) {
         setIsFocusKeyword(false)
+      }
+    }
+
+    document.addEventListener("touchstart", handleClickOutside)
+    return () => {
+      document.removeEventListener("touchstart", handleClickOutside)
+    }
+  }, [])
+
+  const cityFirstLevelRef = useRef(null)
+  const citySecondLevelRef = useRef(null)
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        cityFirstLevelRef.current &&
+        !cityFirstLevelRef.current.contains(event.target) &&
+        citySecondLevelRef.current &&
+        !citySecondLevelRef.current.contains(event.target)
+      ) {
+        setIsFocusCity(false)
       }
     }
 
@@ -159,7 +179,7 @@ const CustomInput = ({
               isFocus={isFocusKeyword}
               setIsHover={setIsHoveredKeyword}
               setIsFocusKeyword={setIsFocusKeyword}
-              theRef={firstLevelRef}>
+              theRef={keywordFirstLevelRef}>
               <Caption bolder>QUICK LINKS</Caption>
               <div></div>
               <Customdropdown
@@ -172,7 +192,7 @@ const CustomInput = ({
                 isMobile={true}
                 setIsFocusKeyword={setIsFocusKeyword}
                 isHover={isHoveredKeyword}
-                theRef={secondLevelRef}
+                theRef={keywordSecondLevelRef}
               />
               <Customdropdown
                 icon={ORG_LANDING_SSA}
@@ -183,7 +203,7 @@ const CustomInput = ({
                 isMobile={true}
                 isHover={isHoveredKeyword}
                 setIsFocusKeyword={setIsFocusKeyword}
-                theRef={secondLevelRef}
+                theRef={keywordSecondLevelRef}
               />
               <Customdropdown
                 icon={ORG_LANDING_CC}
@@ -194,7 +214,7 @@ const CustomInput = ({
                 isMobile={true}
                 isHover={isHoveredKeyword}
                 setIsFocusKeyword={setIsFocusKeyword}
-                theRef={secondLevelRef}
+                theRef={keywordSecondLevelRef}
               />
             </OptionsMobile>
           ) : null}
@@ -224,12 +244,24 @@ const CustomInput = ({
             </span>
             <input
               placeholder="Example: 12345"
-              onFocus={() => setIsFocusCity(true)}
-              onBlur={() => {
-                if (!isHoveredCity) {
-                  setIsFocusCity(false)
-                }
-              }}
+              onFocus={!isTouchScreen ? () => setIsFocusCity(true) : undefined}
+              onBlur={
+                !isTouchScreen
+                  ? () => {
+                      if (!isHoveredCity) {
+                        setIsFocusCity(false)
+                      }
+                    }
+                  : undefined
+              }
+              onTouchStart={
+                isTouchScreen
+                  ? (e) => {
+                      e.stopPropagation()
+                      setIsFocusCity(true)
+                    }
+                  : undefined
+              }
               value={cityInput}
               onChange={(e) => {
                 setCityInput(e.target.value)
@@ -239,10 +271,11 @@ const CustomInput = ({
             />
           </span>
 
-          <SuggestionsKeywordWrapper>
+          <SuggestionsKeywordWrapper ref={cityFirstLevelRef}>
             <DropdownSuggestionsInput
               isFocus={isFocusCity}
-              setIsFocus={setIsHoveredCIty}
+              setIsHover={setIsHoveredCity}
+              setIsFocus={setIsFocusCity}
               suggestions={suggestionsCity}
               keywordClickByUser={cityInput}
               setKeywordClickByUser={setCityInput}
@@ -250,6 +283,7 @@ const CustomInput = ({
               inputRefFocus={inputRefCity}
               haveIcon={true}
               whichIcon={CurrentLocationSvg}
+              theRef={citySecondLevelRef}
             />
           </SuggestionsKeywordWrapper>
         </div>

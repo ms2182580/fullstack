@@ -1,7 +1,9 @@
-import {  DropdownSuggestionsWrapper,  KeywordCities} from "./styles/DropdownSuggestions"
+import { useCheckMobile } from "../../../utils/useCheckMobile"
+import { DropdownSuggestionsWrapper, KeywordCities } from "./styles/DropdownSuggestions"
 
 const DropdownSuggestionsInput = ({
   isFocus,
+  setIsHover,
   setIsFocus,
   suggestions,
   keywordClickByUser,
@@ -9,25 +11,41 @@ const DropdownSuggestionsInput = ({
   setKeywordClickByUserContext,
   inputRefFocus,
   haveIcon = false,
-  whichIcon
+  whichIcon,
+  theRef
 }) => {
   let IconSvg = whichIcon
+
+  const { isTouchScreen } = useCheckMobile()
+
   return (
-    <DropdownSuggestionsWrapper>
+    <DropdownSuggestionsWrapper ref={theRef}>
       {isFocus && (
         <div
-          onMouseEnter={() => {
-            setIsFocus(true)
-          }}
-          onMouseLeave={() => {
-            setIsFocus(false)
-          }}
-        >
+          onMouseEnter={
+            !isTouchScreen
+              ? () => {
+                  setIsHover(true)
+                }
+              : undefined
+          }
+          onMouseLeave={
+            !isTouchScreen
+              ? () => {
+                  setIsHover(false)
+                }
+              : undefined
+          }
+          onTouchStart={
+            isTouchScreen
+              ? (e) => {
+                  e.stopPropagation()
+                  setIsFocus(true)
+                }
+              : undefined
+          }>
           {suggestions.map((suggestion, index) => {
-            const isMatch =
-              suggestion
-                .toLowerCase()
-                .indexOf(keywordClickByUser.toLowerCase()) > -1
+            const isMatch = suggestion.toLowerCase().indexOf(keywordClickByUser.toLowerCase()) > -1
             return (
               <div key={index}>
                 {isMatch && haveIcon && index === 0 ? (
@@ -38,8 +56,7 @@ const DropdownSuggestionsInput = ({
                         setKeywordClickByUser(suggestion)
                         setKeywordClickByUserContext(suggestion)
                         inputRefFocus.current.focus()
-                      }}
-                    >
+                      }}>
                       <span>{suggestion}</span>
                     </div>
                   </KeywordCities>
@@ -50,8 +67,7 @@ const DropdownSuggestionsInput = ({
                         setKeywordClickByUser(suggestion)
                         setKeywordClickByUserContext(suggestion)
                         inputRefFocus.current.focus()
-                      }}
-                    >
+                      }}>
                       <span>{suggestion}</span>
                     </div>
                   </>
@@ -63,8 +79,7 @@ const DropdownSuggestionsInput = ({
                           setKeywordClickByUser(suggestion)
                           setKeywordClickByUserContext(suggestion)
                           inputRefFocus.current.focus()
-                        }}
-                      >
+                        }}>
                         <span>{suggestion}</span>
                       </div>
                     </>
