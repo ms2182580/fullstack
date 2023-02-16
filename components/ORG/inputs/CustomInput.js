@@ -6,6 +6,7 @@ import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import SearchIcon from "../../../assets/Icons/SearchIcon.png"
+import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
@@ -53,6 +54,28 @@ const CustomInput = ({
   const suggestionDropdownSSA = []
   const suggestionDropdownCC = []
 
+  const { isTouchScreen } = useCheckMobile()
+  const firstLevelRef = useRef(null)
+  const secondLevelRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        firstLevelRef.current &&
+        !firstLevelRef.current.contains(event.target) &&
+        secondLevelRef.current &&
+        !secondLevelRef.current.contains(event.target)
+      ) {
+        setIsFocusKeyword(false)
+      }
+    }
+
+    document.addEventListener("touchstart", handleClickOutside)
+    return () => {
+      document.removeEventListener("touchstart", handleClickOutside)
+    }
+  }, [])
+
   return (
     <>
       <SearchComponentWrapper landingHere={landingHere}>
@@ -81,12 +104,35 @@ const CustomInput = ({
             </span>
             <input
               placeholder="Example: Therapist, Accessible Dance Class, etc"
-              onFocus={() => setIsFocusKeyword(true)}
-              onBlur={() => {
-                if (!isHoveredKeyword) {
-                  setIsFocusKeyword(false)
-                }
-              }}
+              onFocus={!isTouchScreen ? () => setIsFocusKeyword(true) : undefined}
+              onBlur={
+                !isTouchScreen
+                  ? () => {
+                      if (!isHoveredKeyword) {
+                        setIsFocusKeyword(false)
+                      }
+                    }
+                  : undefined
+              }
+              onTouchStart={
+                isTouchScreen
+                  ? (e) => {
+                      e.stopPropagation()
+                      setIsFocusKeyword(true)
+                    }
+                  : undefined
+              }
+              /* 
+              !FH0
+              This works. Use useRef plus event.stopPropagation() mainly
+              
+              https://codesandbox.io/s/twilight-shadow-4qcd2p?file=/src/App.js
+              
+              */
+              // onTouchEnd={() => {
+              //   setIsFocusKeyword(false)
+              // }}
+
               value={keywordInput}
               onChange={(e) => {
                 setKeywordInput(e.target.value)
@@ -112,7 +158,8 @@ const CustomInput = ({
             <OptionsMobile
               isFocus={isFocusKeyword}
               setIsHover={setIsHoveredKeyword}
-              >
+              setIsFocusKeyword={setIsFocusKeyword}
+              theRef={firstLevelRef}>
               <Caption bolder>QUICK LINKS</Caption>
               <div></div>
               <Customdropdown
@@ -125,6 +172,7 @@ const CustomInput = ({
                 isMobile={true}
                 setIsFocusKeyword={setIsFocusKeyword}
                 isHover={isHoveredKeyword}
+                theRef={secondLevelRef}
               />
               <Customdropdown
                 icon={ORG_LANDING_SSA}
@@ -135,6 +183,7 @@ const CustomInput = ({
                 isMobile={true}
                 isHover={isHoveredKeyword}
                 setIsFocusKeyword={setIsFocusKeyword}
+                theRef={secondLevelRef}
               />
               <Customdropdown
                 icon={ORG_LANDING_CC}
@@ -145,6 +194,7 @@ const CustomInput = ({
                 isMobile={true}
                 isHover={isHoveredKeyword}
                 setIsFocusKeyword={setIsFocusKeyword}
+                theRef={secondLevelRef}
               />
             </OptionsMobile>
           ) : null}

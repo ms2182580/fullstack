@@ -1,11 +1,12 @@
 import Image from "next/image.js"
 import { Fragment, useState } from "react"
+import ArrowDown from "../../../assets/Icons/ArrowDown.png"
+import ArrowUp from "../../../assets/Icons/ArrowUp.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
+import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { SingleDropdownWrapper } from "./styles/Singledropdown"
-import ArrowUp from "../../../assets/Icons/ArrowUp.png"
-import ArrowDown from "../../../assets/Icons/ArrowDown.png"
 
 const Customdropdown = ({
   icon = "no icon found",
@@ -17,9 +18,11 @@ const Customdropdown = ({
   noIcon = false,
   isMobile = false,
   isHover = undefined,
-  setIsFocusKeyword = undefined
+  setIsFocusKeyword = undefined,
+  theRef
 }) => {
   const { setKeywordsContext } = useORG_InputCtx()
+  const { isTouchScreen } = useCheckMobile()
 
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -34,12 +37,14 @@ const Customdropdown = ({
   }
 
   const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
-  
+
   /* 
   !FH
   
   Add tabIndex to sub items, maybe it can be used with tab key or arrow key. When the user leave the current focus, should hide the dropdown options
   */
+
+  // console.log("isHover:", isHover)
 
   return (
     <>
@@ -47,12 +52,21 @@ const Customdropdown = ({
         noIcon={noIcon}
         landingHere={landingHere}
         isMobile={isMobile}
-        onBlur={() => {
-          if (isHover === false) {
-            setIsFocusKeyword(false)
-          }
-        }}
+        ref={theRef}
 
+        onBlur={
+          !isTouchScreen
+            ? () => {
+                if (isHover === false) {
+                  setIsFocusKeyword(false)
+                }
+              }
+            : undefined
+        }
+
+        // onTouchEnd={() => {
+        //   setIsFocusKeyword(false)
+        // }}
       >
         {icon !== "no icon found" ? (
           <div>
@@ -95,7 +109,11 @@ const Customdropdown = ({
                   <Fragment key={x}>
                     {isSpeechTherapist && landingHere ? (
                       <LinkNoStyle href={`${actualRoute}/${toWhere}`}>
-                        <p onClick={() => setKeywordsContext("Speech Therapist")}>{x}</p>
+                        <p
+                          // onClick={() => setKeywordsContext("Speech Therapist")}
+                          onTouchStart={() => setKeywordsContext("Speech Therapist")}>
+                          {x}
+                        </p>
                       </LinkNoStyle>
                     ) : (
                       landingHere && (
@@ -108,7 +126,10 @@ const Customdropdown = ({
                     {landingHere === false && (
                       <Fragment>
                         <p
-                          onClick={(e) => {
+                          // onClick={(e) => {
+                          //   setKeywordsContext(e.target.textContent)
+                          // }}
+                          onTouchStart={(e) => {
                             setKeywordsContext(e.target.textContent)
                           }}>
                           {x}
@@ -126,7 +147,8 @@ const Customdropdown = ({
         {showDropdown && typeof suggestionsValidated === "string" && (
           <div
             className="ORGDropdownComingSoon"
-            onClick={handleDropdownClick}>
+            // onClick={handleDropdownClick}
+            onTouchStart={handleDropdownClick}>
             <div>
               <div></div>
               <p>Coming Soon!</p>
