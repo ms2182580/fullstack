@@ -75,39 +75,41 @@ export const SpeechtherapistDetail = () => {
   }, [isMobile])
 
   const [highlight, setHighlight] = useState("about")
-  console.log('highlight:', highlight)
   const aboutRef = useRef(null)
-  console.log('aboutRef:', aboutRef)
   const detailsRef = useRef(null)
-  console.log('detailsRef:', detailsRef)
   const contactRef = useRef(null)
-  console.log('contactRef:', contactRef)
   const reviewsRef = useRef(null)
-  console.log('reviewsRef:', reviewsRef)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (aboutRef.current) {
-        const aboutPosition = aboutRef.current.offsetTop
-        const detailsPosition = detailsRef.current.offsetTop
-        const contactPosition = contactRef.current.offsetTop
-        const reviewsPosition = reviewsRef.current.offsetTop
+    if (
+      aboutRef.current !== null &&
+      detailsRef.current !== null &&
+      contactRef.current !== null &&
+      reviewsRef.current !== null
+    ) {
+      const handleScroll = () => {
+        if (aboutRef.current) {
+          const aboutPosition = aboutRef.current.offsetTop
+          const detailsPosition = detailsRef.current.offsetTop
+          const contactPosition = contactRef.current.offsetTop
+          const reviewsPosition = reviewsRef.current.offsetTop
 
-        if (window.scrollY >= aboutPosition && window.scrollY < detailsPosition) {
-          setHighlight("about")
-        } else if (window.scrollY >= detailsPosition && window.scrollY < contactPosition) {
-          setHighlight("details")
-        } else if (window.scrollY >= contactPosition && window.scrollY < reviewsPosition) {
-          setHighlight("contact")
-        } else if (window.scrollY >= reviewsPosition) {
-          setHighlight("reviews")
+          if (window.scrollY >= aboutPosition && window.scrollY < detailsPosition) {
+            setHighlight("about")
+          } else if (window.scrollY >= detailsPosition && window.scrollY < contactPosition) {
+            setHighlight("details")
+          } else if (window.scrollY >= contactPosition && window.scrollY < reviewsPosition) {
+            setHighlight("contact")
+          } else if (window.scrollY >= reviewsPosition) {
+            setHighlight("reviews")
+          }
         }
       }
-    }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
+      window.addEventListener("scroll", handleScroll)
+      return () => {
+        window.removeEventListener("scroll", handleScroll)
+      }
     }
   }, [])
 

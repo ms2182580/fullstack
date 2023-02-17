@@ -9,11 +9,7 @@ import {
   EverySingleSpeechTherapist_Location,
   EverySingleSpeechTherapist_Phone
 } from "./SingleSpeechtherapistComponents_Left"
-import {
-  FriendlyDiagnoses,
-  StarsRatingAndReview,
-  Tooltip
-} from "./SingleSpeechtherapistComponents_Right"
+import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "./SingleSpeechtherapistComponents_Right"
 import {
   EverySingleSpeechTherapistWrapper_Left,
   EverySPT_LeftImage,
@@ -35,26 +31,20 @@ export const STDetail_STDetails = ({ STData }) => {
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
-        let accepts = STData.filters[0].accepts.map(
-          (x) => x[0].toUpperCase() + x.slice(1)
-        )
+        let accepts = STData.filters[0].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
+
+        console.log("everySingleValue:", everySingleValue)
 
         let agesServed = STData.filters[0].agesServed
         let diagnoses = STData.filters[0].diagnoses.map((x) => {
           if (x !== "Other") return `${x} Friendly`
           return x
         })
-        let languages = STData.filters[0].languages.map(
-          (x) => x[0].toUpperCase() + x.slice(1)
-        )
+        let languages = STData.filters[0].languages.map((x) => x[0].toUpperCase() + x.slice(1))
         let meetingFormat = new Intl.ListFormat("en").format(
-          STData.filters[0].meetingFormat.map(
-            (x) => x[0].toUpperCase() + x.slice(1)
-          )
+          STData.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1))
         )
-        let serviceSetting = STData.filters[0].serviceSetting.map(
-          (x) => x[0].toUpperCase() + x.slice(1)
-        )
+        let serviceSetting = STData.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
         return (
           <EverySingleSpeechTherapistWrapper_Card_Detail
             key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
@@ -71,22 +61,13 @@ export const STDetail_STDetails = ({ STData }) => {
               </EverySPT_LeftImage>
 
               <EverySPT_LeftInfo>
-                <EverySingleSpeechTherapist_Phone
-                  phoneNumber={everySingleValue.phone}
-                />
-                <EverySingleSpeechTherapist_Email
-                  email={everySingleValue.email}
-                />
+                <EverySingleSpeechTherapist_Phone phoneNumber={everySingleValue.phone} />
+                <EverySingleSpeechTherapist_Email email={everySingleValue.email} />
                 <EverySingleSpeechTherapist_Location
-                  /* 
-                  !FH3
-                  
-                  Fix this, the location have a differente structure to reciebe the data
-                  
-                  */
-                
-                
-                  location={everySingleValue.location}
+                  locationCity={everySingleValue.location.city}
+                  locationStreetNumber={everySingleValue.location.street.number}
+                  locationStreetName={everySingleValue.location.street.name}
+                  locationState={everySingleValue.location.state}
                   howFar={STData.filters[0].distance}
                 />
               </EverySPT_LeftInfo>
@@ -149,7 +130,10 @@ export const STDetail_STDetails = ({ STData }) => {
                   <TherapistInfoThirdPage
                     title="Additional Credentials"
                     rightRowCredentials
-                    dataToShow={["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)"]}
+                    dataToShow={[
+                      "Lee Silverman Voice Treatment Certification",
+                      "SLP, Board Certified Behavior Analyst (BCBA)"
+                    ]}
                   />
                 </RightPart>
               </SecondRow>

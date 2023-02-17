@@ -142,17 +142,6 @@ const CustomInput = ({
                     }
                   : undefined
               }
-              /* 
-              !FH0
-              This works. Use useRef plus event.stopPropagation() mainly
-              
-              https://codesandbox.io/s/twilight-shadow-4qcd2p?file=/src/App.js
-              
-              */
-              // onTouchEnd={() => {
-              //   setIsFocusKeyword(false)
-              // }}
-
               value={keywordInput}
               onChange={(e) => {
                 setKeywordInput(e.target.value)

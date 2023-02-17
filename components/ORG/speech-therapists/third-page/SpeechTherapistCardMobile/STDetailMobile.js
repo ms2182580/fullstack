@@ -30,21 +30,3 @@ export const STDetailMobile = ({ STData }) => {
     </STDetailMobileWrapper>
   )
 }
-
-/* 
-
-
-Here are two visual bugs:
-
-✅1) The question mark icon is not showing when the user click on it
-✅2) The information of that question mark is displayed wrong
-
-°) Is weird, sometimes happen, other times not. 
-
-✅ 3) There is a bug, it can be only use with the mouse, not with touch of phones
-
-
-!FH2
-Check if this bug is fixed
-
-*/

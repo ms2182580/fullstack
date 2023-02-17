@@ -2,8 +2,6 @@ import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { OptionsMobileWrapper } from "./styles/OptionsMobileWrapper"
 
 export const OptionsMobile = ({ isFocus = true, setIsHover, children, setIsFocusKeyword, theRef }) => {
-  // console.log("isFocus:", isFocus)
-
   const { isTouchScreen } = useCheckMobile()
 
   return (
@@ -40,8 +38,3 @@ export const OptionsMobile = ({ isFocus = true, setIsHover, children, setIsFocus
     </>
   )
 }
-
-/* 
-!FH1
-Visual bug here!
-*/
