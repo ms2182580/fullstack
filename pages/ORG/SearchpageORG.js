@@ -40,15 +40,6 @@ const SearchpageORG = ({ windowSize }) => {
   //   }
   // }, [geolocationLocalStorage])
 
-  /*
-  !FH
-  
-  Make this responsive:
-    Make the suggestions of inputs like the design: https://www.figma.com/file/ZCckK3QpHGP3ES02EDRHXF/Design-Team?node-id=5597%3A1148609&t=NsUJEQ6gi9hBDGIg-4
-  
-  
-  */
- 
   /* 
   !FH
   There is a problem here, in the console, nextjs said: 

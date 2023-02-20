@@ -4,8 +4,7 @@ import { STDetailMobile_StickyNavbarWrapper } from "./styles/STDetailMobile_Stic
 
 export const STDetailMobile_StickyNavbar = ({ highlight }) => {
   return (
-    <STDetailMobile_StickyNavbarWrapper highlight={highlight}
-    >
+    <STDetailMobile_StickyNavbarWrapper highlight={highlight}>
       <ul>
         <li className={highlight === "about" ? "highlight" : ""}>
           <Caption>
@@ -31,4 +30,3 @@ export const STDetailMobile_StickyNavbar = ({ highlight }) => {
     </STDetailMobile_StickyNavbarWrapper>
   )
 }
-

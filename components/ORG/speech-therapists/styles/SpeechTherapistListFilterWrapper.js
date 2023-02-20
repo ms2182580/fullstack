@@ -2,14 +2,6 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
-/* 
-
-!FH
-
-Finish the styles of the advances filters on the mobile version
-
-*/
-
 const SpeechTherapistListFilterWrapper = styled.div`
   display: ${(x) => (x.mustShowFiltersMobile || x.isMobile === undefined ? "block" : "none")};
   background-color: ${NEUTRALS.OFF_WHITE};

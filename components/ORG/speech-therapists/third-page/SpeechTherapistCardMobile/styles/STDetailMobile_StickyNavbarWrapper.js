@@ -25,14 +25,11 @@ export const STDetailMobile_StickyNavbarWrapper = styled.nav`
     }
 
     & > .highlight {
-      /* border: 2px solid crimson; */
     }
 
-    & > li > span,
     & > .highlight {
       text-decoration: none;
 
-      & > a::before,
       &.highlight::before {
         content: "";
         position: absolute;
@@ -45,8 +42,7 @@ export const STDetailMobile_StickyNavbarWrapper = styled.nav`
         opacity: 0;
         transition: all 0s linear 0.3s, opacity 0.3s linear;
       }
-      
-      & > a:hover::before,
+
       &.highlight::before {
         visibility: visible;
         opacity: 1;
