@@ -1,12 +1,41 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
+import { device } from "../../../assets/screenSizes/ScreenSizes"
 
 const SignupWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   background-color: hsl(0, 0%, 100%);
-  background-color: #fafcfe;;
-
+  background-color: #fafcfe;
+  
+  /* border: 2px solid crimson; */
+  
+  position: relative;
+  
+  
+  @media (${device.laptop}) {
+    
+    flex-direction: column; 
+    align-items: center;
+    
+    & > :nth-child(1){
+      margin-right: auto;
+      margin-left: 18px;
+      margin-top: 24px;
+      
+      & > :nth-child(1) > :nth-child(1) {
+        margin-right: 10px;
+      }
+      & > :nth-child(1) > :nth-child(2) {
+        font-size: 14px;
+      }
+      
+      
+    }
+    
+  }
+  
+  
 `
 export default SignupWrapper
 

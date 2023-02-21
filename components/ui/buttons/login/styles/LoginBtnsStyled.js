@@ -55,7 +55,6 @@ export const LoginBtnsStyled = styled.button`
 
   & img {
     margin-right: ${SharedVariables.ImgMargin};
-    /* outline: 5px red solid; */
   }
 `
 
