@@ -1,5 +1,5 @@
 import Image from "next/image.js"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../assets/Icons"
 import LoginImage from "../../assets/images/LoginImage.png"
 import LoginImageMobile from "../../assets/images/LoginImageMobile.jpg"
@@ -25,13 +25,24 @@ const Signup = () => {
     setShowLoginButtons(true)
     setFadeOut(false)
   }
-  const handleHideLoginButtons = () => {
-    setFadeOut(true)
 
-    setTimeout(() => {
-      setShowLoginButtons(false)
-    }, 400)
-  }
+  const buttonsShowingRef = useRef(null)
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (buttonsShowingRef.current && !buttonsShowingRef.current.contains(event.target)) {
+        setFadeOut(true)
+
+        setTimeout(() => {
+          setShowLoginButtons(false)
+        }, 400)
+      }
+    }
+
+    document.addEventListener("touchstart", handleClickOutside)
+    return () => {
+      document.removeEventListener("touchstart", handleClickOutside)
+    }
+  }, [])
 
   return (
     <SignupWrapper
@@ -106,8 +117,10 @@ const Signup = () => {
       ) : (
         <LastComponentsMobileWrapper>
           <span
-            onClick={handleShowLoginButtons}
-            onBlur={handleHideLoginButtons}>
+            onTouchStart={(e) => {
+              e.stopPropagation()
+              handleShowLoginButtons()
+            }}>
             <ButtonSmall>Join Inclusive</ButtonSmall>
           </span>
 
@@ -123,6 +136,7 @@ const Signup = () => {
             <LoginButtonsMobile
               showLoginButtons={showLoginButtons}
               fadeOut={fadeOut}
+              theRef={buttonsShowingRef}
             />
           )}
         </LastComponentsMobileWrapper>

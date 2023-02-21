@@ -15,7 +15,8 @@ const DropdownSuggestionsInput = ({
   theRef
 }) => {
   let IconSvg = whichIcon
-
+  
+  
   const { isTouchScreen } = useCheckMobile()
 
   return (
@@ -23,14 +24,15 @@ const DropdownSuggestionsInput = ({
       {isFocus && (
         <div
           onMouseEnter={
-            !isTouchScreen
+            !isTouchScreen  && setIsHover !== undefined
+
               ? () => {
                   setIsHover(true)
                 }
               : undefined
           }
           onMouseLeave={
-            !isTouchScreen
+            !isTouchScreen  && setIsHover !== undefined
               ? () => {
                   setIsHover(false)
                 }
