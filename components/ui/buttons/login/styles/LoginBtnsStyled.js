@@ -17,9 +17,11 @@ const SharedVariables = {
 export const LoginBtnsStyled = styled.button`
   height: ${SharedVariables.Height};
   border: none;
-  outline: 2px solid ${SharedVariables.Color};
+  outline: ${(x) => (x.bolder ? `3px solid ${SharedVariables.Color}` : `2px solid ${SharedVariables.Color}`)};
   border-radius: ${SharedVariables.BorderRadius};
-  padding: ${SharedVariables.Padding};
+  /* padding: ${SharedVariables.Padding}; */
+  padding: ${(x) => (x.bolder ? `5.5px 31px` : `${SharedVariables.Padding}`)};
+
   display: ${SharedVariables.Flex};
   align-items: ${SharedVariables.AlignItems};
   justify-content: ${SharedVariables.JustifyContent};
@@ -30,9 +32,8 @@ export const LoginBtnsStyled = styled.button`
 
   p {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: ${(x) => (x.bolder ? `700` : `600`)};
     margin-left: ${SharedVariables.ImgMargin};
-    
   }
 
   &:hover {

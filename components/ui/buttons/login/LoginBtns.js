@@ -1,12 +1,14 @@
+import Image from "next/image"
+import EmailIcon from "../../../../assets/Icons/EmailIcon.png"
 import FacebookIcon from "../../../../assets/Icons/FacebookIcon.jpg"
 import GoogleIcon from "../../../../assets/Icons/GoogleIcon.png"
-import EmailIcon from "../../../../assets/Icons/EmailIcon.png"
-import { LoginBtnsStyled} from "./styles/LoginBtnsStyled.js"
-import Image from "next/image"
+import { LoginBtnsStyled } from "./styles/LoginBtnsStyled.js"
 
-export const FacebookLoginBtn = () => {
+export const FacebookLoginBtn = ({ bolder }) => {
   return (
-    <LoginBtnsStyled facebook>
+    <LoginBtnsStyled
+      facebook
+      bolder={bolder}>
       <Image
         src={FacebookIcon.src}
         alt="Facebook logo icon"
@@ -19,9 +21,11 @@ export const FacebookLoginBtn = () => {
   )
 }
 
-export const GoogleLoginBtn = () => {
+export const GoogleLoginBtn = ({ bolder }) => {
   return (
-    <LoginBtnsStyled google>
+    <LoginBtnsStyled
+      google
+      bolder={bolder}>
       <Image
         src={GoogleIcon.src}
         alt="Google logo icon"
@@ -33,10 +37,15 @@ export const GoogleLoginBtn = () => {
   )
 }
 
-export const EmailLoginBtn = () => {
+export const EmailLoginBtn = ({ bolder }) => {
   return (
-    <LoginBtnsStyled>
-      <Image src={EmailIcon.src} alt="Email logo icon" width={14} height={14} />
+    <LoginBtnsStyled bolder={bolder}>
+      <Image
+        src={EmailIcon.src}
+        alt="Email logo icon"
+        width={14}
+        height={14}
+      />
       <p>Sign up with Email</p>
     </LoginBtnsStyled>
   )
