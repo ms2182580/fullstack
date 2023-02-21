@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react"
 import { EmailLoginBtn, FacebookLoginBtn, GoogleLoginBtn } from "../ui/buttons/login/LoginBtns"
+import { delayMilliseconds } from "./delay"
 import { LoginButtonsMobileWrapper } from "./styles/LoginButtonsMobileWrapper"
 
-export const LoginButtonsMobile = ({ showLoginButtons, fadeOut, theRef }) => {
+export const LoginButtonsMobile = ({ showLoginButtons, handleHiddeLoginButtons, fadeOut, theRef }) => {
   const [shouldInteract, setShouldInteract] = useState(false)
+
+  const handleFadeOut = () => {
+    handleHiddeLoginButtons(false)
+  }
+
   useEffect(() => {
     if (showLoginButtons) {
       setTimeout(() => {
         setShouldInteract(true)
-      }, 400)
-    } else {
+      }, `${delayMilliseconds}`)
+    }
+
+    if (!showLoginButtons) {
       setShouldInteract(false)
     }
   }, [showLoginButtons])
@@ -19,7 +27,12 @@ export const LoginButtonsMobile = ({ showLoginButtons, fadeOut, theRef }) => {
       showLoginButtons={showLoginButtons}
       className={showLoginButtons && fadeOut === false ? "fadeIn" : fadeOut ? "fadeOut" : ""}
       ref={theRef}
-      shouldInteract={shouldInteract}>
+      shouldInteract={shouldInteract}
+      onMouseLeave={handleFadeOut}
+      // onMouseEnter={(e) => console.log("Mouse enter this", e)}
+      // onMouseLeave={() => theBlur(false)}
+      // onBlur={theBlur(false)}
+    >
       <div></div>
       <GoogleLoginBtn bolder={true} />
       <FacebookLoginBtn bolder={true} />

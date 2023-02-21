@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { NEUTRALS } from "../../../assets/Colors"
+import { delayMilliseconds } from "../delay"
 
 const fadeIn = keyframes`
 0%
@@ -28,7 +29,7 @@ const fadeOut = keyframes`
 
 export const LoginButtonsMobileWrapper = styled.div`
   pointer-events: ${(x) => x.shouldInteract  ? `auto` : `none`};
-  ;
+  
   position: absolute;
   width: 100vw;
   display: flex;
@@ -42,10 +43,10 @@ export const LoginButtonsMobileWrapper = styled.div`
   
   
   &.fadeIn{
-    animation: 0.4s ${fadeIn} ease-out forwards;  
+    animation: ${delayMilliseconds}ms ${fadeIn} ease-out forwards;  
   }
   &.fadeOut{
-    animation: 0.4s ${fadeOut} ease-out forwards;  
+    animation: ${delayMilliseconds}ms ${fadeOut} ease-out forwards;  
   }
 
   & > div {

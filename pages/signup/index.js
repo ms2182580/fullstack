@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../assets/Icons"
 import LoginImage from "../../assets/images/LoginImage.png"
 import LoginImageMobile from "../../assets/images/LoginImageMobile.jpg"
+import { delayMilliseconds } from "../../components/signup/delay"
 import { LoginButtonsMobile } from "../../components/signup/LoginButtonsMobile"
 import { LastComponentsMobileWrapper } from "../../components/signup/styles/LastComponentsMobileWrapper"
 import { ButtonSmall } from "../../components/ui/buttons/general"
@@ -11,12 +12,14 @@ import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFont
 import { H1, H2, H4 } from "../../components/ui/heading_body_text/HeaderFonts.js"
 import { HyperlinkM, HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts.js"
 import { LinkNoStyle } from "../../components/ui/hyperlink/HyperlinkNoStyles"
+import { useCheckMobile } from "../../utils/useCheckMobile"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import SignupForm from "./SignupForm.js"
 import SignupWrapper, { LeftSignup, RightSignup } from "./styles/Signup.js"
 
 const Signup = () => {
   const { isMobile } = useWidthWindow1024()
+  const { isTouchScreen } = useCheckMobile()
 
   const [showLoginButtons, setShowLoginButtons] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
@@ -24,6 +27,14 @@ const Signup = () => {
   const handleShowLoginButtons = () => {
     setShowLoginButtons(true)
     setFadeOut(false)
+  }
+  const handleHiddeLoginButtons = () => {
+    setFadeOut(true)
+    
+    
+    setTimeout(() => {
+      setShowLoginButtons(false)
+    }, `${delayMilliseconds}`)
   }
 
   const buttonsShowingRef = useRef(null)
@@ -34,7 +45,7 @@ const Signup = () => {
 
         setTimeout(() => {
           setShowLoginButtons(false)
-        }, 400)
+        }, `${delayMilliseconds}`)
       }
     }
 
@@ -117,10 +128,15 @@ const Signup = () => {
       ) : (
         <LastComponentsMobileWrapper>
           <span
-            onTouchStart={(e) => {
-              e.stopPropagation()
-              handleShowLoginButtons()
-            }}>
+            onTouchStart={
+              isTouchScreen
+                ? (e) => {
+                    e.stopPropagation()
+                    handleShowLoginButtons()
+                  }
+                : undefined
+            }
+            onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}>
             <ButtonSmall>Join Inclusive</ButtonSmall>
           </span>
 
@@ -134,9 +150,11 @@ const Signup = () => {
 
           {showLoginButtons && (
             <LoginButtonsMobile
-              showLoginButtons={showLoginButtons}
-              fadeOut={fadeOut}
-              theRef={buttonsShowingRef}
+                showLoginButtons={showLoginButtons}
+                handleHiddeLoginButtons={handleHiddeLoginButtons}
+                fadeOut={fadeOut}
+                theRef={buttonsShowingRef}
+                theBlur={ setShowLoginButtons}
             />
           )}
         </LastComponentsMobileWrapper>
