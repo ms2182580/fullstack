@@ -27,6 +27,8 @@ const fadeOut = keyframes`
 `
 
 export const LoginButtonsMobileWrapper = styled.div`
+  pointer-events: ${(x) => x.shouldInteract  ? `auto` : `none`};
+  ;
   position: absolute;
   width: 100vw;
   display: flex;
