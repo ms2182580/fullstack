@@ -17,52 +17,49 @@ const SharedVariables = {
 export const LoginBtnsStyled = styled.button`
   height: ${SharedVariables.Height};
   border: none;
-  outline: 2px solid ${SharedVariables.Color};;
+  outline: 2px solid ${SharedVariables.Color};
   border-radius: ${SharedVariables.BorderRadius};
   padding: ${SharedVariables.Padding};
   display: ${SharedVariables.Flex};
   align-items: ${SharedVariables.AlignItems};
   justify-content: ${SharedVariables.JustifyContent};
   background-color: transparent;
-  color:${SharedVariables.Color};
+  color: ${SharedVariables.Color};
   cursor: pointer;
   position: relative;
-  
-  p{
+
+  p {
     font-size: 16px;
     font-weight: 600;
-    /* outline:5px red solid; */
     margin-left: ${SharedVariables.ImgMargin};
+    
   }
-  
 
   &:hover {
     outline: 4px solid ${SharedVariables.HoverBorderColor};
-    border:none;
+    border: none;
   }
 
   &:active {
     border: none;
     outline: 6px solid ${SharedVariables.HoverBorderColor};
   }
-  
-  &:focus-visible{
+
+  &:focus-visible {
     outline: 4px solid ${COLORS.FocusOutline};
   }
-  
-  .facebookIcon{
-    outline:5px red solid;
+
+  .facebookIcon {
+    outline: 5px red solid;
   }
 
   & img {
-    /* margin-right: ${SharedVariables.ImgMargin}; */
-    outline:5px red solid;
-    
+    margin-right: ${SharedVariables.ImgMargin};
+    /* outline: 5px red solid; */
   }
 `
 
 export const Img = styled(Image)`
- width:24px;
- height:24px;
-
+  width: 24px;
+  height: 24px;
 `

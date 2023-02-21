@@ -1,4 +1,3 @@
-import Image from "next/image"
 import styled from "styled-components"
 import { NEUTRALS, SEMANTICS } from "../../../assets/Colors"
 import { Caption } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
@@ -13,6 +12,9 @@ export const H4_EMAIL_SIGNUP = styled(H4)`
       : `${NEUTRALS.BLACK}`};
 `
 
+
+
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -24,11 +26,6 @@ export const Form = styled.form`
   .CaptionInRedSF {
     color: ${SEMANTICS.ERROR_STATE};
   }
-`
-
-export const Img = styled(Image)`
-  /* width: 16px;
-  height:16px; */
 `
 
 export const StyleInputFirst = styled.div`
@@ -94,8 +91,6 @@ export const DisplayErrorComponent = styled.div`
   }
 `
 
-const H4_PASSWORD_SIGNUP = styled(H4)``
-
 export const StyleInputSecond = styled.div`
   display: flex;
   flex-direction: column;
@@ -156,8 +151,7 @@ export const CaptionSignUp = styled(Caption)`
   color: ${NEUTRALS.DARK_GREY};
 `
 
-export const TermsAndServices = styled.div`
+const TermsAndServices = styled.div`
   margin-bottom: 24px;
 `
-
-export default H4_PASSWORD_SIGNUP
+export default TermsAndServices

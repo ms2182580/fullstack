@@ -1,6 +1,11 @@
+import { useRouter } from "next/router"
 import { useState } from "react"
+import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/Icons"
 import { ButtonMedium } from "../../components/ui/buttons/general"
-import H4_PASSWORD_SIGNUP, {
+import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts"
+import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
+import { useLoginCtx } from "../../context/LoginCtx"
+import TermsAndServices, {
   CaptionSignUp,
   DisplayErrorComponent,
   Form,
@@ -8,15 +13,8 @@ import H4_PASSWORD_SIGNUP, {
   InputEmail,
   InputPassword,
   StyleInputFirst,
-  StyleInputSecond,
-  TermsAndServices
+  StyleInputSecond
 } from "./styles/SignupForm"
-import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts"
-import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
-import { useLoginCtx } from "../../context/LoginCtx"
-import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/Icons"
-import { useRouter } from "next/router"
-import Image from "next/image"
 // import { supabase } from "../../utils/supabaseClient"
 // console.log('supabase:', supabase)
 
@@ -185,14 +183,13 @@ const SignupForm = () => {
     <>
       <section>
         {/* <Form onSubmit={handleSubmit}> */}
-        <Form >
+        <Form>
           <H4_EMAIL_SIGNUP
             displayRedEmail={{
               emailAlreadyRegistered,
               hasError: email.hasError,
               hasTouched: email.touched
-            }}
-          >
+            }}>
             Email
           </H4_EMAIL_SIGNUP>
 
@@ -211,8 +208,7 @@ const SignupForm = () => {
               emailAlreadyRegistered,
               hasError: email.hasError,
               hasTouched: email.touched
-            }}
-          >
+            }}>
             <EmailSvg className="EmailIconSF" />
 
             <InputEmail
@@ -231,9 +227,7 @@ const SignupForm = () => {
               }}
             />
             {email.touched && email.hasError && (
-              <Caption className={`CaptionInRedSF DisplayErrorFirst`}>
-                It should be a valid email address!
-              </Caption>
+              <Caption className={`CaptionInRedSF DisplayErrorFirst`}>It should be a valid email address!</Caption>
             )}
             {emailAlreadyRegistered !== "" && (
               <DisplayErrorComponent className="CaptionInRedSF DisplayErrorFirst">
@@ -241,26 +235,28 @@ const SignupForm = () => {
 
                 <Caption>
                   {emailAlreadyRegistered}{" "}
-                  <HyperlinkXS href="/login" name="log in?" />
+                  <HyperlinkXS
+                    href="/login"
+                    name="log in?"
+                  />
                 </Caption>
               </DisplayErrorComponent>
             )}
           </StyleInputFirst>
 
           {password.touched && password.hasError ? (
-            <H4_PASSWORD_SIGNUP>Password</H4_PASSWORD_SIGNUP>
+            <h4>Password</h4>
           ) : (
-            <H4_PASSWORD_SIGNUP
-              className={`${password.touched ? "CaptionInRedSF" : ""}`}
-            >
-              Password
-            </H4_PASSWORD_SIGNUP>
+            <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</h4>
           )}
 
           <StyleInputSecond>
             <LockSvg className="lockIconSF" />
 
-            <EyeSvg className="eyeIconSF" onClick={showPassword} />
+            <EyeSvg
+              className="eyeIconSF"
+              onClick={showPassword}
+            />
 
             <InputPassword
               value={password.value}
@@ -276,13 +272,9 @@ const SignupForm = () => {
               }}
             />
             {password.touched && password.hasError ? (
-              <CaptionSignUp className="DisplayErrorSecond">
-                Password must include at least 8 characters
-              </CaptionSignUp>
+              <CaptionSignUp className="DisplayErrorSecond">Password must include at least 8 characters</CaptionSignUp>
             ) : (
-              <CaptionSignUp
-                className={`${password.touched ? "CaptionInRedSF" : ""}`}
-              >
+              <CaptionSignUp className={`${password.touched ? "CaptionInRedSF" : ""}`}>
                 Password must include at least 8 characters
               </CaptionSignUp>
             )}
@@ -291,9 +283,15 @@ const SignupForm = () => {
           <TermsAndServices>
             <Caption>
               By signing up, you agree to our{" "}
-              <HyperlinkXS href="/work-in-progress" name="Terms of Service" />
+              <HyperlinkXS
+                href="/work-in-progress"
+                name="Terms of Service"
+              />
               and
-              <HyperlinkXS href="/work-in-progress" name="Privacy Policy" />
+              <HyperlinkXS
+                href="/work-in-progress"
+                name="Privacy Policy"
+              />
             </Caption>
           </TermsAndServices>
 

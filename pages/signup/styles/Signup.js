@@ -1,14 +1,22 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
-export const SignupWrapper = styled.div`
+const SignupWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   background-color: hsl(0, 0%, 100%);
+  background-color: #fafcfe;;
+
 `
+export default SignupWrapper
 
 export const LeftSignup = styled.div`
   position: relative;
+  max-width: clamp(390px, -37.903rem + 88.434vw, 667px);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 
   p {
     position: absolute;
@@ -20,22 +28,22 @@ export const LeftSignup = styled.div`
   }
 `
 
-const Img = styled.img``
-
 export const RightSignup = styled.div`
   display: flex;
   flex-direction: column;
   width: 601px;
-  padding: 48px 0px;
+
+  padding: 48px 8px 48px 8px;
 
   & > :nth-child(1) {
-    margin-bottom: 32px;
-  }
-  & > :nth-child(2) {
     margin-bottom: 28px;
+
+    & > :nth-child(1) {
+      color: ${PRIMARY.PRIMARY_LOGO};
+    }
   }
 
-  & > :nth-child(3) {
+  & > :nth-child(2) {
     color: ${NEUTRALS.DARK_GREY};
     display: flex;
     align-items: center;
@@ -48,13 +56,13 @@ export const RightSignup = styled.div`
     }
   }
 
-  & > :nth-child(4) {
+  & > :nth-child(3) {
     display: flex;
     justify-content: space-between;
     margin-bottom: 36px;
   }
 
-  & > :nth-child(5) {
+  & > :nth-child(4) {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -73,5 +81,3 @@ export const RightSignup = styled.div`
     }
   }
 `
-
-export default Img
