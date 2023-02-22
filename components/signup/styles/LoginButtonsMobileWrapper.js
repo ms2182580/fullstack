@@ -28,8 +28,8 @@ const fadeOut = keyframes`
 `
 
 export const LoginButtonsMobileWrapper = styled.div`
-  pointer-events: ${(x) => x.shouldInteract  ? `auto` : `none`};
-  
+  pointer-events: ${(x) => (x.shouldInteract ? `auto` : `none`)};
+
   position: absolute;
   width: 100vw;
   display: flex;
@@ -38,15 +38,13 @@ export const LoginButtonsMobileWrapper = styled.div`
   flex-direction: column;
   background-color: ${NEUTRALS.OFF_WHITE};
   margin-bottom: 176px;
-  z-index:2;
+  z-index: 2;
 
-  
-  
-  &.fadeIn{
-    animation: ${delayMilliseconds}ms ${fadeIn} ease-out forwards;  
+  &.fadeIn {
+    animation: ${delayMilliseconds}ms ${fadeIn} ease-out forwards;
   }
-  &.fadeOut{
-    animation: ${delayMilliseconds}ms ${fadeOut} ease-out forwards;  
+  &.fadeOut {
+    animation: ${delayMilliseconds}ms ${fadeOut} ease-out forwards;
   }
 
   & > div {
@@ -55,11 +53,15 @@ export const LoginButtonsMobileWrapper = styled.div`
     margin-bottom: 40.5px;
     margin-top: 12.5px;
     border-radius: 3px;
+    
+    
   }
 
-  & > button {
+  & > button,
+  & > a > button {
     width: 270px;
   }
+
   & > button:not(:last-child) {
     margin-bottom: 28px;
   }

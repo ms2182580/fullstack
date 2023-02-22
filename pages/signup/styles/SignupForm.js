@@ -15,9 +15,18 @@ export const H4_EMAIL_SIGNUP = styled(H4)`
 
 
 
+/* 
+!FH0
+
+Make this responsive!
+*/
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  
+  color:${x=> console.log(x)};
+
 
   & > h4 {
     margin-bottom: 8px;

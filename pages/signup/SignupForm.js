@@ -1,10 +1,12 @@
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/Icons"
+import { HeaderSignUpMobile } from "../../components/signup/mobile/HeaderSignUpMobile"
 import { ButtonMedium } from "../../components/ui/buttons/general"
 import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
 import { useLoginCtx } from "../../context/LoginCtx"
+import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import TermsAndServices, {
   CaptionSignUp,
   DisplayErrorComponent,
@@ -23,6 +25,12 @@ const LOGIN_URL = "https://jsonplaceholder.typicode.com/posts"
 const SignupForm = () => {
   const { setIsLogin, setWhoIsLogin } = useLoginCtx()
   const router = useRouter()
+
+  const { isMobile } = useWidthWindow1024()
+
+  if (!isMobile && router.pathname === "/signup/SignupForm") {
+    router.push("/")
+  }
 
   const [email, setEmail] = useState({
     value: "",
@@ -115,7 +123,6 @@ const SignupForm = () => {
 
   const onChangeEmail = (e) => {
     const inputValue = e.target.value.trim().toLowerCase()
-    // console.log("inputValue:", inputValue)
     let emailHasError = false
 
     if (
@@ -125,8 +132,6 @@ const SignupForm = () => {
     ) {
       emailHasError = true
     }
-
-    // console.log("emailHasError:", emailHasError)
 
     setEmail((prevState) => ({
       ...prevState,
@@ -183,7 +188,13 @@ const SignupForm = () => {
     <>
       <section>
         {/* <Form onSubmit={handleSubmit}> */}
-        <Form>
+        {isMobile === false ? null : (
+          <>
+            <HeaderSignUpMobile />
+          </>
+        )}
+
+        <Form isMobile={isMobile}>
           <H4_EMAIL_SIGNUP
             displayRedEmail={{
               emailAlreadyRegistered,
@@ -192,16 +203,6 @@ const SignupForm = () => {
             }}>
             Email
           </H4_EMAIL_SIGNUP>
-
-          {/* <H4_EMAIL_SIGNUP
-            displayRedEmail={{
-              emailAlreadyRegistered,
-              hasError: email.hasError,
-              hasTouched: email.touched,
-            }}
-          >
-            Email
-          </H4_EMAIL_SIGNUP> */}
 
           <StyleInputFirst
             customMargin={{

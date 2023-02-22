@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { EmailLoginBtn, FacebookLoginBtn, GoogleLoginBtn } from "../ui/buttons/login/LoginBtns"
-import { delayMilliseconds } from "./delay"
-import { LoginButtonsMobileWrapper } from "./styles/LoginButtonsMobileWrapper"
+import { EmailLoginBtn, FacebookLoginBtn, GoogleLoginBtn } from "../../ui/buttons/login/LoginBtns"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import { delayMilliseconds } from "../delay"
+import { LoginButtonsMobileWrapper } from "../styles/LoginButtonsMobileWrapper"
 
 export const LoginButtonsMobile = ({ showLoginButtons, handleHiddeLoginButtons, fadeOut, theRef }) => {
   const [shouldInteract, setShouldInteract] = useState(false)
@@ -22,21 +23,22 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHiddeLoginButtons, 
     }
   }, [showLoginButtons])
 
+
+
   return (
     <LoginButtonsMobileWrapper
       showLoginButtons={showLoginButtons}
       className={showLoginButtons && fadeOut === false ? "fadeIn" : fadeOut ? "fadeOut" : ""}
       ref={theRef}
       shouldInteract={shouldInteract}
-      onMouseLeave={handleFadeOut}
-      // onMouseEnter={(e) => console.log("Mouse enter this", e)}
-      // onMouseLeave={() => theBlur(false)}
-      // onBlur={theBlur(false)}
-    >
+      onMouseLeave={handleFadeOut}>
       <div></div>
       <GoogleLoginBtn bolder={true} />
       <FacebookLoginBtn bolder={true} />
-      <EmailLoginBtn bolder={true} />
+      <LinkNoStyle href="/signup/SignupForm">
+        <EmailLoginBtn bolder={true} />
+      </LinkNoStyle>
+
     </LoginButtonsMobileWrapper>
   )
 }

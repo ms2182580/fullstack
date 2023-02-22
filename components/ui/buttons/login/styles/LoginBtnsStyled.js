@@ -19,7 +19,6 @@ export const LoginBtnsStyled = styled.button`
   border: none;
   outline: ${(x) => (x.bolder ? `3px solid ${SharedVariables.Color}` : `2px solid ${SharedVariables.Color}`)};
   border-radius: ${SharedVariables.BorderRadius};
-  /* padding: ${SharedVariables.Padding}; */
   padding: ${(x) => (x.bolder ? `5.5px 31px` : `${SharedVariables.Padding}`)};
 
   display: ${SharedVariables.Flex};

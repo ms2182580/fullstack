@@ -4,7 +4,7 @@ import { BackArrow } from "../../assets/Icons"
 import LoginImage from "../../assets/images/LoginImage.png"
 import LoginImageMobile from "../../assets/images/LoginImageMobile.jpg"
 import { delayMilliseconds } from "../../components/signup/delay"
-import { LoginButtonsMobile } from "../../components/signup/LoginButtonsMobile"
+import { LoginButtonsMobile } from "../../components/signup/mobile/LoginButtonsMobile"
 import { LastComponentsMobileWrapper } from "../../components/signup/styles/LastComponentsMobileWrapper"
 import { ButtonSmall } from "../../components/ui/buttons/general"
 import { FacebookLoginBtn, GoogleLoginBtn } from "../../components/ui/buttons/login/LoginBtns.js"
@@ -22,6 +22,7 @@ const Signup = () => {
   const { isTouchScreen } = useCheckMobile()
 
   const [showLoginButtons, setShowLoginButtons] = useState(false)
+  // console.log('showLoginButtons:', showLoginButtons)
   const [fadeOut, setFadeOut] = useState(false)
 
   const handleShowLoginButtons = () => {
@@ -30,8 +31,7 @@ const Signup = () => {
   }
   const handleHiddeLoginButtons = () => {
     setFadeOut(true)
-    
-    
+
     setTimeout(() => {
       setShowLoginButtons(false)
     }, `${delayMilliseconds}`)
@@ -54,6 +54,19 @@ const Signup = () => {
       document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [])
+
+  // const { widthWindow } = useWidthWindow()
+  // useEffect(() => {
+  //   console.log("Render when window width changes", widthWindow)
+  //   // console.log("isMobile:", isMobile)
+  //   // console.log("isTouchScreen:", isTouchScreen)
+
+  //   if (widthWindow <= 1025) {
+  //     setIsMobile(true)
+  //   } else {
+  //     setIsMobile(false)
+  //   }
+  // }, [widthWindow])
 
   return (
     <SignupWrapper
@@ -150,11 +163,11 @@ const Signup = () => {
 
           {showLoginButtons && (
             <LoginButtonsMobile
-                showLoginButtons={showLoginButtons}
-                handleHiddeLoginButtons={handleHiddeLoginButtons}
-                fadeOut={fadeOut}
-                theRef={buttonsShowingRef}
-                theBlur={ setShowLoginButtons}
+              showLoginButtons={showLoginButtons}
+              handleHiddeLoginButtons={handleHiddeLoginButtons}
+              fadeOut={fadeOut}
+              theRef={buttonsShowingRef}
+              theBlur={setShowLoginButtons}
             />
           )}
         </LastComponentsMobileWrapper>
