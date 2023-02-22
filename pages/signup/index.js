@@ -83,7 +83,7 @@ const Signup = () => {
             <H2>Connect to community based and recreational services</H2>
           </>
         ) : (
-          <>
+          <div>
             <H4>
               Connect to <span>community based</span> <br />
               and <span>recreational services</span>
@@ -95,7 +95,7 @@ const Signup = () => {
                 alt="People with one flag in their hand: one of them have one prosthetic leg, the other is in wheelchair and the third one it looks like is blind and have a dog in their other hand."
               />
             </span>
-          </>
+          </div>
         )}
       </LeftSignup>
 

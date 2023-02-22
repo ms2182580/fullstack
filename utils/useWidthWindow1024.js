@@ -3,16 +3,14 @@ import { size } from "../assets/screenSizes/ScreenSizes"
 
 export const useWidthWindow1024 = () => {
   const [laptopSize, setTabletSize] = useState(Number(size.laptop))
-  const [isMobile, setIsMobile] = useState(() => {
+  const [isMobileSSR, setIsMobileSSR] = useState(true)
+  const [isMobile, setIsMobile] = useState(isMobileSSR || window.innerWidth <= laptopSize)
+
+  useEffect(() => {
     if (typeof window === "object") {
-      const widthWindowInsideState = window.innerWidth
-      if (widthWindowInsideState <= laptopSize) {
-        return true
-      } else {
-        return false
-      }
+      setIsMobileSSR(false)
     }
-  })
+  }, [])
 
   const [widthWindow, setWidthWindow] = useState(() => {
     if (typeof window === "object") {

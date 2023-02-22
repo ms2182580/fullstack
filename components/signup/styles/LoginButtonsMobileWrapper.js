@@ -5,7 +5,7 @@ import { delayMilliseconds } from "../delay"
 const fadeIn = keyframes`
 0%
   {
-    transform:translateY(10%);
+    transform:translateY(2%);
     opacity:0;
   }
 100%
@@ -22,7 +22,7 @@ const fadeOut = keyframes`
   }
 100%
 {
-  transform:translateY(10%);
+  transform:translateY(2%);
   opacity:0;
 }
 `

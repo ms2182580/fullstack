@@ -15,8 +15,6 @@ const SignupWrapper = styled.div`
 
     background-color: #fff;
 
-  
-
     & > :nth-child(1) {
       visibility: ${(x) => (x.showLoginButtons ? `hidden` : `visible`)};
 
@@ -27,11 +25,9 @@ const SignupWrapper = styled.div`
       & > :nth-child(1) > :nth-child(2) {
         font-size: 14px;
       }
-      
     }
 
     & > :nth-child(2) {
-
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -41,12 +37,12 @@ const SignupWrapper = styled.div`
 
       &::before {
         content: "";
-        position: ${(x) => (x.showLoginButtons ? `absolute` : ``)};
+        position: ${(x) => (x.showLoginButtons ? `absolute` : `relative`)};
         top: -100px;
         width: 100vw;
         height: calc(157%);
 
-        background-color: ${(x) => (x.showLoginButtons ? `#e5e5e5` : ``)};
+        background-color: ${(x) => (x.showLoginButtons ? `#e5e5e5` : `unset`)};
         opacity: 0.5;
         z-index: 1;
       }
@@ -74,14 +70,15 @@ export const LeftSignup = styled.div`
 
   @media (${device.laptop}) {
     max-width: 100%;
-    /* border: 2px solid crimson; */
 
-    & > h4 {
-      text-align: center;
-      margin-bottom: 10px;
+    & :nth-child(1) {
+      & > h4 {
+        text-align: center;
+        margin-bottom: 10px;
 
-      & > span {
-        color: ${PRIMARY.PRIMARY_CTA};
+        & > span {
+          color: ${PRIMARY.PRIMARY_CTA};
+        }
       }
     }
   }
