@@ -11,10 +11,6 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, f
   const thisRef = useRef(null)
   useOutsideHide(thisRef, handleHideLoginButtons, delayMilliseconds)
   
-  setTimeout(() => {
-    
-  }, `${delayMilliseconds}`)
-;
   
   useEffect(() => {
     if (showLoginButtons) {

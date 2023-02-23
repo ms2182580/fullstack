@@ -1,19 +1,28 @@
 import styled from "styled-components"
 import { NEUTRALS, SEMANTICS } from "../../../assets/Colors"
+import { device } from "../../../assets/screenSizes/ScreenSizes"
 import { Caption } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../../components/ui/heading_body_text/HeaderFonts"
 
 export const H4_EMAIL_SIGNUP = styled(H4)`
   color: ${(x) =>
     x.displayRedEmail.emailAlreadyRegistered !== "" ||
-    (x.displayRedEmail.hasError === true &&
-      x.displayRedEmail.hasTouched === true)
+    (x.displayRedEmail.hasError === true && x.displayRedEmail.hasTouched === true)
       ? `${SEMANTICS.ERROR_STATE}`
       : `${NEUTRALS.BLACK}`};
 `
 
+export const CAPTION_EMAIL_SIGNUP = styled(Caption)`
+  color: ${(x) =>
+    x.displayRedEmail.emailAlreadyRegistered !== "" ||
+    (x.displayRedEmail.hasError === true && x.displayRedEmail.hasTouched === true)
+      ? `${SEMANTICS.ERROR_STATE}`
+      : `${NEUTRALS.BLACK}`};
 
+  font-weight: 700;
 
+  margin-bottom: 8px;
+`
 
 /* 
 !FH0
@@ -24,9 +33,6 @@ Make this responsive!
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  
-  /* color:${x=> console.log(x)}; */
-
 
   & > h4 {
     margin-bottom: 8px;
@@ -34,6 +40,24 @@ export const Form = styled.form`
 
   .CaptionInRedSF {
     color: ${SEMANTICS.ERROR_STATE};
+  }
+
+  @media (${device.laptop}) {
+    margin-inline: 16px;
+
+    & > :nth-child(3) {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    & > :last-child {
+      display: flex;
+
+      & > :first-child {
+        flex-grow: 1;
+      }
+    }
   }
 `
 
@@ -50,8 +74,8 @@ export const StyleInputFirst = styled.div`
 
   .EmailIconSF {
     position: absolute;
-    width:18px;
-    height:18px;
+    width: 18px;
+    height: 18px;
   }
   .EmailIconSF {
     left: 24px;
@@ -65,7 +89,6 @@ export const StyleInputFirst = styled.div`
     margin-left: 14px;
     margin-bottom: 24px;
   }
-  
 `
 
 export const InputEmail = styled.input`
@@ -108,19 +131,18 @@ export const StyleInputSecond = styled.div`
   .lockIconSF,
   .eyeIconSF {
     position: absolute;
-    
   }
 
   .lockIconSF {
     left: 24px;
     top: 12px;
     width: 24px;
-    height:24px;
+    height: 24px;
   }
-  
+
   .eyeIconSF {
     width: 22px;
-    height:15px;
+    height: 15px;
     top: 17px;
     right: 22px;
     cursor: pointer;

@@ -9,6 +9,7 @@ import { useLoginCtx } from "../../context/LoginCtx"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import TermsAndServices, {
   CaptionSignUp,
+  CAPTION_EMAIL_SIGNUP,
   DisplayErrorComponent,
   Form,
   H4_EMAIL_SIGNUP,
@@ -193,20 +194,35 @@ const SignupForm = () => {
             <HeaderSignUpMobile />
           </>
         )}
-        
+
         {/* 
         //!FH-0 Make this responsive
         */}
 
         <Form isMobile={isMobile}>
-          <H4_EMAIL_SIGNUP
-            displayRedEmail={{
-              emailAlreadyRegistered,
-              hasError: email.hasError,
-              hasTouched: email.touched
-            }}>
-            Email
-          </H4_EMAIL_SIGNUP>
+          {isMobile === false ? (
+            <>
+              <H4_EMAIL_SIGNUP
+                displayRedEmail={{
+                  emailAlreadyRegistered,
+                  hasError: email.hasError,
+                  hasTouched: email.touched
+                }}>
+                Email
+              </H4_EMAIL_SIGNUP>
+            </>
+          ) : (
+            <>
+              <CAPTION_EMAIL_SIGNUP
+                displayRedEmail={{
+                  emailAlreadyRegistered,
+                  hasError: email.hasError,
+                  hasTouched: email.touched
+                }}>
+                Email
+              </CAPTION_EMAIL_SIGNUP>
+            </>
+          )}
 
           <StyleInputFirst
             customMargin={{
@@ -249,19 +265,35 @@ const SignupForm = () => {
             )}
           </StyleInputFirst>
 
-          {password.touched && password.hasError ? (
-            <h4>Password</h4>
+          {isMobile === false ? (
+            <>
+              {password.touched && password.hasError ? (
+                <h4>Password</h4>
+              ) : (
+                <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</h4>
+              )}
+            </>
           ) : (
-            <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</h4>
+            <>
+              {password.touched && password.hasError ? (
+                <span>Password</span>
+              ) : (
+                <span className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</span>
+              )}
+            </>
           )}
 
           <StyleInputSecond>
             <LockSvg className="lockIconSF" />
 
-            <EyeSvg
-              className="eyeIconSF"
-              onClick={showPassword}
-            />
+            {isMobile === false ? (
+              <>
+                <EyeSvg
+                  className="eyeIconSF"
+                  onClick={showPassword}
+                />
+              </>
+            ) : null}
 
             <InputPassword
               value={password.value}
@@ -285,20 +317,24 @@ const SignupForm = () => {
             )}
           </StyleInputSecond>
 
-          <TermsAndServices>
-            <Caption>
-              By signing up, you agree to our{" "}
-              <HyperlinkXS
-                href="/work-in-progress"
-                name="Terms of Service"
-              />
-              and
-              <HyperlinkXS
-                href="/work-in-progress"
-                name="Privacy Policy"
-              />
-            </Caption>
-          </TermsAndServices>
+          {isMobile === false ? (
+            <>
+              <TermsAndServices>
+                <Caption>
+                  By signing up, you agree to our{" "}
+                  <HyperlinkXS
+                    href="/work-in-progress"
+                    name="Terms of Service"
+                  />
+                  and
+                  <HyperlinkXS
+                    href="/work-in-progress"
+                    name="Privacy Policy"
+                  />
+                </Caption>
+              </TermsAndServices>
+            </>
+          ) : null}
 
           <div>
             <ButtonMedium>Sign up</ButtonMedium>
