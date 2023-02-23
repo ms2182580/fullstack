@@ -9,28 +9,38 @@ export const useWidthWindow1024 = () => {
 
   useEffect(() => {
     if (typeof window === "object") {
-      setIsMobileSSR(false);
+      setIsMobileSSR(false)
 
       const handleResize = () => {
-        const widthWindowInsideResize = window.innerWidth;
+        const widthWindowInsideResize = window.innerWidth
         if (widthWindowInsideResize <= laptopSize) {
-          setIsMobile(true);
+          setIsMobile(true)
         } else {
-          setIsMobile(false);
+          setIsMobile(false)
         }
-      };
+      }
 
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize)
 
       return () => {
-        window.removeEventListener("resize", handleResize);
-      };
+        window.removeEventListener("resize", handleResize)
+      }
     }
-  }, []);
+  }, [])
 
-  const [widthWindowSSR, setWidthWindowSSR] = useState("in server")
-  const [widthWindow, setWidthWindow] = useState(widthWindowSSR || window.innerWidth)
-  
+  const [widthWindowSSR, setWidthWindowSSR] = useState("is server")
+  // const [widthWindow, setWidthWindow] = useState(widthWindowSSR || window.innerWidth)
+  const [widthWindow, setWidthWindow] = useState(() => {
+    if (widthWindowSSR === "is server") {
+      return "is server"
+    } else {
+      if (typeof window === "object") {
+        const widthWindowInsideState = window.innerWidth
+        return widthWindowInsideState
+      }
+    }
+  })
+
   useEffect(() => {
     if (typeof window === "object") {
       setWidthWindowSSR(false)
@@ -67,5 +77,5 @@ export const useWidthWindow1024 = () => {
     }
   }, [widthWindow])
 
-  return {isMobile, setIsMobile }
+  return { widthWindow, setWidthWindow, isMobile, setIsMobile }
 }

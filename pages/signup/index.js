@@ -22,6 +22,7 @@ const Signup = () => {
   const { isMobile } = useWidthWindow1024()
   
   const { isTouchScreen } = useCheckMobile()
+  // console.log('isTouchScreen:', isTouchScreen)
 
   const [showLoginButtons, setShowLoginButtons] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)

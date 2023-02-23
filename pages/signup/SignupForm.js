@@ -27,10 +27,10 @@ const SignupForm = () => {
   const { setIsLogin, setWhoIsLogin } = useLoginCtx()
   const router = useRouter()
 
-  const { isMobile } = useWidthWindow1024()
+  const { isMobile,  widthWindow } = useWidthWindow1024()
 
-  if (!isMobile && router.pathname === "/signup/SignupForm") {
-    router.push("/")
+  if (widthWindow > 1024 && router.pathname === "/signup/SignupForm") {
+    router.push("/signup")
   }
 
   const [email, setEmail] = useState({
