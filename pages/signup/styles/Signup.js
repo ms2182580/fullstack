@@ -18,6 +18,11 @@ const SignupWrapper = styled.div`
     & > :nth-child(1) {
       visibility: ${(x) => (x.showLoginButtons ? `hidden` : `visible`)};
 
+      & > :nth-child(1) {
+        display: flex;
+        align-items: center;
+      }
+
       margin: 24px auto 53px 18px;
       & > :nth-child(1) > :nth-child(1) {
         margin-right: 10px;

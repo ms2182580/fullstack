@@ -11,7 +11,6 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, f
   const thisRef = useRef(null)
   useOutsideHide(thisRef, handleHideLoginButtons, delayMilliseconds)
   
-  
   useEffect(() => {
     if (showLoginButtons) {
       setTimeout(() => {
@@ -23,6 +22,13 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, f
       setShouldInteract(false)
     }
   }, [showLoginButtons])
+  
+
+  // const hideWithEsc = (e) => {
+  //   KeepWriteHere
+  //   useOutsideHide(thisRef, handleHideLoginButtons, delayMilliseconds)
+    
+  // }
 
   return (
     <LoginButtonsMobileWrapper
@@ -30,6 +36,10 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, f
       className={showLoginButtons && fadeOut === false ? "fadeIn" : fadeOut ? "fadeOut" : ""}
       ref={thisRef}
       shouldInteract={shouldInteract}
+      
+    
+
+      
     >
       <div></div>
       <GoogleLoginBtn bolder={true} />

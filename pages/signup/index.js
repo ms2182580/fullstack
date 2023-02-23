@@ -1,4 +1,5 @@
 import Image from "next/image.js"
+import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../assets/Icons"
 import LoginImage from "../../assets/images/LoginImage.png"
@@ -22,7 +23,6 @@ const Signup = () => {
   const { isTouchScreen } = useCheckMobile()
 
   const [showLoginButtons, setShowLoginButtons] = useState(false)
-  // console.log('showLoginButtons:', showLoginButtons)
   const [fadeOut, setFadeOut] = useState(false)
 
   const handleShowLoginButtons = () => {
@@ -55,13 +55,22 @@ const Signup = () => {
     }
   }, [])
 
+  const router = useRouter()
+  const handleMoveView = (e) => {
+    if (e.key === "Enter") {
+      router.push("/")
+    }
+  }
+
   return (
     <SignupWrapper
       isMobile={isMobile}
       showLoginButtons={showLoginButtons}>
       {isMobile === false ? null : (
         <>
-          <span>
+          <span
+            tabIndex={showLoginButtons ? -1 : 0}
+            onKeyDown={handleMoveView}>
             <LinkNoStyle href="/">
               <BackArrow />
               <span>Return to Home</span>
@@ -136,7 +145,14 @@ const Signup = () => {
                   }
                 : undefined
             }
-            onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}>
+              onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  handleHideLoginButtons()
+                }
+                
+              }}
+            >
             <ButtonSmall>Join Inclusive</ButtonSmall>
           </span>
 
@@ -145,6 +161,7 @@ const Signup = () => {
             <HyperlinkXS
               href="/login"
               name="Log in"
+              tabIndex={showLoginButtons ? -1 : 0}
             />
           </div>
 

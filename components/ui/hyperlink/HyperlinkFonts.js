@@ -1,6 +1,6 @@
+import Link from "next/link"
 import styled from "styled-components"
 import { HyperLinkColor, SharedValues } from "../../../assets/Fonts/FontsValues"
-import Link from "next/link"
 import { FontsWeights } from "../../../assets/Fonts/Weights"
 
 const SharedVariables = {
@@ -38,9 +38,9 @@ const SizeXS = styled(theLink)`
   font-size: ${SharedValues.FONT_SIZE.XSMALL};
   line-height: ${SharedValues.LINE_HEIGHT.XSMALL};
 `
-export const HyperlinkXS = ({ href, name="HyperlinkXS WITH NO NAME!" }) => (
-  <Link href={href} passHref>
-    <SizeXS>{name}</SizeXS>
+export const HyperlinkXS = ({ href, name="HyperlinkXS WITH NO NAME!", tabIndex = 0 }) => (
+  <Link href={href} passHref >
+    <SizeXS tabIndex={tabIndex}>{name}</SizeXS>
   </Link>
 )
 
