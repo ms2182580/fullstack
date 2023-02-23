@@ -33,7 +33,7 @@ export const STDetail_STDetails = ({ STData }) => {
       {STData.data.map((everySingleValue, i) => {
         let accepts = STData.filters[0].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
 
-        console.log("everySingleValue:", everySingleValue)
+        // console.log("everySingleValue:", everySingleValue)
 
         let agesServed = STData.filters[0].agesServed
         let diagnoses = STData.filters[0].diagnoses.map((x) => {

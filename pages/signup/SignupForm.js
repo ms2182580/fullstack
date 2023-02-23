@@ -193,6 +193,10 @@ const SignupForm = () => {
             <HeaderSignUpMobile />
           </>
         )}
+        
+        {/* 
+        //!FH-0 Make this responsive
+        */}
 
         <Form isMobile={isMobile}>
           <H4_EMAIL_SIGNUP

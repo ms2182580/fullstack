@@ -25,7 +25,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   
-  color:${x=> console.log(x)};
+  /* color:${x=> console.log(x)}; */
 
 
   & > h4 {

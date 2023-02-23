@@ -29,7 +29,7 @@ const Signup = () => {
     setShowLoginButtons(true)
     setFadeOut(false)
   }
-  const handleHiddeLoginButtons = () => {
+  const handleHideLoginButtons = () => {
     setFadeOut(true)
 
     setTimeout(() => {
@@ -54,19 +54,6 @@ const Signup = () => {
       document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [])
-
-  // const { widthWindow } = useWidthWindow()
-  // useEffect(() => {
-  //   console.log("Render when window width changes", widthWindow)
-  //   // console.log("isMobile:", isMobile)
-  //   // console.log("isTouchScreen:", isTouchScreen)
-
-  //   if (widthWindow <= 1025) {
-  //     setIsMobile(true)
-  //   } else {
-  //     setIsMobile(false)
-  //   }
-  // }, [widthWindow])
 
   return (
     <SignupWrapper
@@ -164,10 +151,8 @@ const Signup = () => {
           {showLoginButtons && (
             <LoginButtonsMobile
               showLoginButtons={showLoginButtons}
-              handleHiddeLoginButtons={handleHiddeLoginButtons}
+              handleHideLoginButtons={handleHideLoginButtons}
               fadeOut={fadeOut}
-              theRef={buttonsShowingRef}
-              theBlur={setShowLoginButtons}
             />
           )}
         </LastComponentsMobileWrapper>

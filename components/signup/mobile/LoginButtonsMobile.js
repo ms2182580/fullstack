@@ -1,16 +1,21 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { EmailLoginBtn, FacebookLoginBtn, GoogleLoginBtn } from "../../ui/buttons/login/LoginBtns"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { delayMilliseconds } from "../delay"
 import { LoginButtonsMobileWrapper } from "../styles/LoginButtonsMobileWrapper"
 
-export const LoginButtonsMobile = ({ showLoginButtons, handleHiddeLoginButtons, fadeOut, theRef }) => {
+export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, fadeOut }) => {
   const [shouldInteract, setShouldInteract] = useState(false)
-
-  const handleFadeOut = () => {
-    handleHiddeLoginButtons(false)
-  }
-
+  
+  const thisRef = useRef(null)
+  useOutsideHide(thisRef, handleHideLoginButtons, delayMilliseconds)
+  
+  setTimeout(() => {
+    
+  }, `${delayMilliseconds}`)
+;
+  
   useEffect(() => {
     if (showLoginButtons) {
       setTimeout(() => {
@@ -23,15 +28,13 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHiddeLoginButtons, 
     }
   }, [showLoginButtons])
 
-
-
   return (
     <LoginButtonsMobileWrapper
       showLoginButtons={showLoginButtons}
       className={showLoginButtons && fadeOut === false ? "fadeIn" : fadeOut ? "fadeOut" : ""}
-      ref={theRef}
+      ref={thisRef}
       shouldInteract={shouldInteract}
-      onMouseLeave={handleFadeOut}>
+    >
       <div></div>
       <GoogleLoginBtn bolder={true} />
       <FacebookLoginBtn bolder={true} />
@@ -42,3 +45,5 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHiddeLoginButtons, 
     </LoginButtonsMobileWrapper>
   )
 }
+
+
