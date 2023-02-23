@@ -195,10 +195,6 @@ const SignupForm = () => {
           </>
         )}
 
-        {/* 
-        //!FH-0 Make this responsive
-        */}
-
         <Form isMobile={isMobile}>
           {isMobile === false ? (
             <>

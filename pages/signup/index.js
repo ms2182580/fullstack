@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { useRouter } from "next/router"
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { BackArrow } from "../../assets/Icons"
 import LoginImage from "../../assets/images/LoginImage.png"
 import LoginImageMobile from "../../assets/images/LoginImageMobile.jpg"
@@ -20,6 +20,7 @@ import SignupWrapper, { LeftSignup, RightSignup } from "./styles/Signup.js"
 
 const Signup = () => {
   const { isMobile } = useWidthWindow1024()
+  
   const { isTouchScreen } = useCheckMobile()
 
   const [showLoginButtons, setShowLoginButtons] = useState(false)
@@ -37,23 +38,23 @@ const Signup = () => {
     }, `${delayMilliseconds}`)
   }
 
-  const buttonsShowingRef = useRef(null)
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (buttonsShowingRef.current && !buttonsShowingRef.current.contains(event.target)) {
-        setFadeOut(true)
+  // const buttonsShowingRef = useRef(null)
+  // useEffect(() => {
+  //   function handleClickOutside(event) {
+  //     if (buttonsShowingRef.current && !buttonsShowingRef.current.contains(event.target)) {
+  //       setFadeOut(true)
 
-        setTimeout(() => {
-          setShowLoginButtons(false)
-        }, `${delayMilliseconds}`)
-      }
-    }
+  //       setTimeout(() => {
+  //         setShowLoginButtons(false)
+  //       }, `${delayMilliseconds}`)
+  //     }
+  //   }
 
-    document.addEventListener("touchstart", handleClickOutside)
-    return () => {
-      document.removeEventListener("touchstart", handleClickOutside)
-    }
-  }, [])
+  //   document.addEventListener("touchstart", handleClickOutside)
+  //   return () => {
+  //     document.removeEventListener("touchstart", handleClickOutside)
+  //   }
+  // }, [])
 
   const router = useRouter()
   const handleMoveView = (e) => {
@@ -132,6 +133,7 @@ const Signup = () => {
             <div>
               <SignupForm />
             </div>
+            
           </RightSignup>
         </>
       ) : (

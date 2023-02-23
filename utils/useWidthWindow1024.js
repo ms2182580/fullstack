@@ -4,20 +4,39 @@ import { size } from "../assets/screenSizes/ScreenSizes"
 export const useWidthWindow1024 = () => {
   const [laptopSize, setTabletSize] = useState(Number(size.laptop))
   const [isMobileSSR, setIsMobileSSR] = useState(true)
+
   const [isMobile, setIsMobile] = useState(isMobileSSR || window.innerWidth <= laptopSize)
 
   useEffect(() => {
     if (typeof window === "object") {
-      setIsMobileSSR(false)
+      setIsMobileSSR(false);
+
+      const handleResize = () => {
+        const widthWindowInsideResize = window.innerWidth;
+        if (widthWindowInsideResize <= laptopSize) {
+          setIsMobile(true);
+        } else {
+          setIsMobile(false);
+        }
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
+  const [widthWindowSSR, setWidthWindowSSR] = useState("in server")
+  const [widthWindow, setWidthWindow] = useState(widthWindowSSR || window.innerWidth)
+  
+  useEffect(() => {
+    if (typeof window === "object") {
+      setWidthWindowSSR(false)
     }
   }, [])
 
-  const [widthWindow, setWidthWindow] = useState(() => {
-    if (typeof window === "object") {
-      const widthWindowInsideState = window.innerWidth
-      return widthWindowInsideState
-    }
-  })
   const [imInClient, setImInClient] = useState(() => {
     if (typeof window === "object") {
       return true
@@ -32,7 +51,7 @@ export const useWidthWindow1024 = () => {
     if (imInClient) {
       setWidthWindow(window.innerWidth)
     }
-  }, [])
+  }, [imInClient])
 
   useEffect(() => {
     if (typeof window === "object") {
@@ -48,5 +67,5 @@ export const useWidthWindow1024 = () => {
     }
   }, [widthWindow])
 
-  return { widthWindow, setWidthWindow, isMobile, setIsMobile }
+  return {isMobile, setIsMobile }
 }
