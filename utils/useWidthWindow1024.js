@@ -29,7 +29,6 @@ export const useWidthWindow1024 = () => {
   }, [])
 
   const [widthWindowSSR, setWidthWindowSSR] = useState("is server")
-  // const [widthWindow, setWidthWindow] = useState(widthWindowSSR || window.innerWidth)
   const [widthWindow, setWidthWindow] = useState(() => {
     if (widthWindowSSR === "is server") {
       return "is server"

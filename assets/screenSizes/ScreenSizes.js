@@ -1,10 +1,10 @@
 export const size = {
-  mobileS:"320",
-  mobileM:"375",
-  mobileL:"425",
-  tablet:"768",
-  laptop:"1024",
-  laptopL:"1440",
+  mobileS: "320",
+  mobileM: "375",
+  mobileL: "425",
+  tablet: "768",
+  laptop: "1024",
+  laptopL: "1440",
 }
 
 export const device = {
@@ -17,8 +17,3 @@ export const device = {
   desktop: `(max-width: ${size.desktop}px)`,
   desktopL: `(max-width: ${size.desktop}px)`
 };
-
-
-/* 
-This have to be accepted by the Dessign Team, right now is a proposal
-*/

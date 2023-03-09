@@ -24,12 +24,6 @@ export const CAPTION_EMAIL_SIGNUP = styled(Caption)`
   margin-bottom: 8px;
 `
 
-/* 
-!FH0
-
-Make this responsive!
-*/
-
 export const Form = styled.form`
   display: flex;
   flex-direction: column;

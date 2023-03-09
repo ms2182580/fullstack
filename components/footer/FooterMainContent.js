@@ -1,9 +1,9 @@
-import { Fragment, useState } from "react"
-import { H4 } from "../ui/heading_body_text/HeaderFonts"
-import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
-import {  HyperlinkS } from "../ui/hyperlink/HyperlinkFonts"
-import { FooterMainContentWrapper, Link_Footer_NFNYC } from "./styles/FooterMainContentWrapper.js"
 import { useRouter } from "next/router"
+import { Fragment } from "react"
+import { H4 } from "../ui/heading_body_text/HeaderFonts"
+import { HyperlinkS } from "../ui/hyperlink/HyperlinkFonts"
+import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
+import { FooterMainContentWrapper, Link_Footer_NFNYC } from "./styles/FooterMainContentWrapper.js"
 
 export let FooterMainContent = ({ title, dataToShow = [], dataLink }) => {
   

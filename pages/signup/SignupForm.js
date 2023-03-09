@@ -29,9 +29,8 @@ const SignupForm = () => {
 
   const { isMobile,  widthWindow } = useWidthWindow1024()
 
-  if (widthWindow > 1024 && router.pathname === "/signup/SignupForm") {
-    router.push("/signup")
-  }
+  // console.log('size.laptop:', size.laptop)
+  
 
   const [email, setEmail] = useState({
     value: "",
@@ -183,6 +182,10 @@ const SignupForm = () => {
 
   const showPassword = () => {
     setPasswordReveal(!passwordReveal)
+  }
+  
+  if (widthWindow > 1024 && router.pathname === "/signup/SignupForm") {
+    router.push("/signup")
   }
 
   return (
