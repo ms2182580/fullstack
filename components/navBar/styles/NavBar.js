@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { PRIMARY } from "../../../assets/Colors"
 
 export const NavBarStyled = styled.nav`
   height: 72px;
@@ -10,13 +11,6 @@ export const NavBarStyled = styled.nav`
   z-index: 999;
   
   overflow: hidden;
-  
-
-  & > h2 > a,
-  & > ul > li > a,
-  & > button > a {
-    all: unset;
-  }
   
   & > button > a{
     /* padding: 11px 16px; */ /* Maybe not */
@@ -36,11 +30,10 @@ export const Logo = styled.h2`
   cursor: pointer;
 `
 
-export const NavigationLinks = styled.ul`
+export const NavigationLinksWrapper = styled.ul`
   padding: 0;
   display: flex;
   height: 32px;
-  /* border:1px black solid; */
 
   li {
     list-style: none;
@@ -50,8 +43,20 @@ export const NavigationLinks = styled.ul`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
+    border-bottom: 4px solid transparent;
+    
   }
+  
+  & > li > a {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  
+  & > li.active{
+    border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
+    }
+  
 `
 
 export const LoginComponent = styled.div`
