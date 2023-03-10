@@ -7,12 +7,15 @@ export const NavBarStyled = styled.nav`
   align-items: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: #ffffff;
+  background-color: ${(x) =>
+    x.isORG  ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`};
+
   position: relative;
   z-index: 999;
-  
+
   overflow: hidden;
-  
-  & > button > a{
+
+  & > button > a {
     /* padding: 11px 16px; */ /* Maybe not */
   }
 `
@@ -25,7 +28,7 @@ export const Logo = styled.h2`
   align-items: center;
   justify-content: center;
   /* Bug N° 1 here */
-  margin-left: 96px; 
+  margin-left: 96px;
   margin-right: 44px;
   cursor: pointer;
 `
@@ -38,25 +41,22 @@ export const NavigationLinksWrapper = styled.ul`
   li {
     list-style: none;
     margin-right: 36px; /* Bug N° 1 here */
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     border-bottom: 4px solid transparent;
-    
   }
-  
+
   & > li > a {
     font-weight: 600;
     font-size: 20px;
   }
-  
-  
-  & > li.active{
+
+  & > li.active {
     border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
-    }
-  
+  }
 `
 
 export const LoginComponent = styled.div`
@@ -65,20 +65,20 @@ export const LoginComponent = styled.div`
   align-items: center;
   margin-left: auto;
   margin-right: 6rem;
-  
-  & > :nth-child(2){
+
+  & > :nth-child(2) {
     margin-left: 34px;
   }
-  
+
   & > a {
     all: unset;
   }
-  
+
   & > a > p {
     text-decoration: underline;
     cursor: pointer;
   }
-  
+
   & > span {
     cursor: pointer;
     text-decoration: underline;
@@ -99,8 +99,4 @@ export const LoginComponent = styled.div`
   margin-left: auto;
   margin-right: 63px;
   cursor: pointer; */
-  
-  
-  
-
 `
