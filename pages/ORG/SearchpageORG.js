@@ -57,23 +57,25 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
     <>
       <ORGWrapperLanding windowSize={windowSize}>
         <div>
-          <Image
-            src={ORG_Landing_Page}
-            alt=""
-            layout="fill"
-            objectFit="contain"
-          />
+          <div>
+            <Image
+              src={ORG_Landing_Page}
+              alt=""
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+          {windowSize > 768 ? (
+            <H1>
+              Find your I/DD <br /> community
+              <br /> and resources
+            </H1>
+          ) : (
+            <H3>
+              Find Healthcare Providers <br /> and Activities for your Child
+            </H3>
+          )}
         </div>
-
-        {windowSize > 768 ? (
-          <H1>
-            Find Healthcare Providers and <br /> Activities for your Child in NYC
-          </H1>
-        ) : (
-          <H3>
-            Find Healthcare Providers <br /> and Activities for your Child
-          </H3>
-        )}
 
         <CustomInput
           setKeywordsContext={setKeywordsContext}

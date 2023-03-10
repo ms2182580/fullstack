@@ -1,12 +1,14 @@
 import styled from "styled-components"
-import { PRIMARY } from "../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
 export const NavBarStyled = styled.nav`
   height: 72px;
   display: flex;
   align-items: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  background-color: #ffffff;
+  box-shadow: ${(x) => x.isORG ? `0px 4px 4px rgba(0, 0, 0, 0.25)` : `0px 2px 4px rgba(0, 0, 0, 0.25)`};
+  border-bottom: ${(x) => x.isORG ? `1px solid ${NEUTRALS.LIGHT_GREY}` : ``};
+  
+  
   background-color: ${(x) =>
     x.isORG  ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`};
 

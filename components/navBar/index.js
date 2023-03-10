@@ -8,10 +8,10 @@ import { Logo, NavBarStyled, NavigationLinksWrapper } from "./styles/NavBar"
 const NavBar = () => {
   const route = useRouter()
   const [isORGState, setIsORGState] = useState(false)
-  
+
   useEffect(() => {
     setIsORGState(/[ORG]\/\w|[ORG]/.test(route.pathname))
-  },[route.pathname])
+  }, [route.pathname])
 
   const navigateHome = (e) => {
     if (e.key === "Enter") {
@@ -40,7 +40,7 @@ const NavBar = () => {
   }
 
   return (
-    <NavBarStyled isORG={isORGState }>
+    <NavBarStyled isORG={isORGState}>
       <Logo
         tabIndex={0}
         onKeyDown={navigateHome}>
