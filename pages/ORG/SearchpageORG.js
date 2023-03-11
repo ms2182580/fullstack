@@ -1,34 +1,22 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import ORG_LANDING_CC from "../../assets/Icons/ORG_Landing_CC.png"
-import ORG_LANDING_SSA from "../../assets/Icons/ORG_Landing_SSA.png"
-import ORG_LANDING_TP from "../../assets/Icons/ORG_Landing_TP.png"
 import ORG_Landing_Page from "../../assets/images/ORG_Landing_Page.png"
-import Customdropdown from "../../components/ORG/dropdown/CustomDropdown"
-import { OptionsWrapper } from "../../components/ORG/dropdown/styles/Customdropdown"
 import CustomInput from "../../components/ORG/inputs/CustomInput"
 import { H1, H3 } from "../../components/ui/heading_body_text/HeaderFonts"
 import { useORG_InputCtx } from "../../context/ORG_Input"
+import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import ORGWrapperLanding from "./styles/ORGWrapperLanding"
 
-const SearchpageORG = ({ windowSize }) => {
+const SearchpageORG = () => {
+  const { isMobile } = useWidthWindow1024()
+
   const { setKeywordsContext, setCitiesContext, keywordsContext, citiesContext } = useORG_InputCtx()
   const router = useRouter()
-  const formatRouter = router.pathname
   useEffect(() => {
     setKeywordsContext("")
     setCitiesContext("")
   }, [])
-
-  const suggestionDropdownTP = [
-    "Speech Therapist",
-    "Behavioral Therapist",
-    "Physical Therapist",
-    "Occupational Therapist"
-  ]
-  const suggestionDropdownSSA = []
-  const suggestionDropdownCC = []
 
   // const [geolocationLocalStorage, setGeolocationLocalStorage] = useState(null)
 
@@ -55,7 +43,7 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
 
   return (
     <>
-      <ORGWrapperLanding windowSize={windowSize}>
+      <ORGWrapperLanding windowSize={isMobile}>
         <div>
           <div>
             <Image
@@ -65,14 +53,15 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
               objectFit="contain"
             />
           </div>
-          {windowSize > 768 ? (
+          {isMobile === false ? (
             <H1>
               Find your I/DD <br /> community
               <br /> and resources
             </H1>
           ) : (
             <H3>
-              Find Healthcare Providers <br /> and Activities for your Child
+              Find your I/DD <br /> community
+              <br /> and resources
             </H3>
           )}
         </div>
@@ -83,36 +72,14 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
           keywordValueContext={keywordsContext}
           citiesValueContext={citiesContext}
           toWhere="SpeechTherapists"
-          windowSize={windowSize}
+          windowSize={isMobile}
           landingHere="true"
         />
-
-        {windowSize > 768 ? (
-          <OptionsWrapper landingHere="true">
-            <Customdropdown
-              icon={ORG_LANDING_TP}
-              title="Therapeutic Providers"
-              suggestions={suggestionDropdownTP}
-              landingHere={true}
-              actualRoute={formatRouter}
-              toWhere="SpeechTherapists"
-            />
-            <Customdropdown
-              icon={ORG_LANDING_SSA}
-              title="Social Service Agencies"
-              suggestions={suggestionDropdownSSA}
-              landingHere={true}
-              toWhere="SpeechTherapists"
-            />
-            <Customdropdown
-              icon={ORG_LANDING_CC}
-              title="Community Classes"
-              suggestions={suggestionDropdownCC}
-              landingHere={true}
-              toWhere="SpeechTherapists"
-            />
-          </OptionsWrapper>
-        ) : null}
+        {/* 
+        //!FH
+        Create the cards
+        */}
+        {isMobile === false ? <></> : null}
 
         {/* 
         //? Achieve conditional rendering for geolocation with, i think, bad practices

@@ -25,7 +25,7 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
     grid-area: buttons;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "filter sortBy"

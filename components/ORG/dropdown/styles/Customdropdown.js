@@ -11,7 +11,7 @@ export const OptionsWrapper = styled.div`
     margin-right: 3.625rem;
   }
   
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     flex-direction: column;
     margin: auto;
   }

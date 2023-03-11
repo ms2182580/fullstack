@@ -9,7 +9,7 @@ export const STDetail_EmailGetDirectionWrapper = styled.div`
     margin-right: 24px;
   }
   
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     flex-direction: column;
     
     

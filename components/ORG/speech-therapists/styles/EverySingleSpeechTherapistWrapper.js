@@ -5,7 +5,7 @@ import { device } from "../../../../assets/screenSizes/ScreenSizes"
 export const EverySingleSpeechTherapistWrapper = styled.div`
   margin-left: 72px;
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     margin-inline: 16px;
     margin-bottom: 64px;
   }

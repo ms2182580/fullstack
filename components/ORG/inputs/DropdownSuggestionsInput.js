@@ -12,27 +12,29 @@ const DropdownSuggestionsInput = ({
   inputRefFocus,
   haveIcon = false,
   whichIcon,
-  theRef
+  theRef,
+  isFirstOrSecondDropdown = false
 }) => {
   let IconSvg = whichIcon
-  
-  
+  // console.log('keywordClickByUser:', keywordClickByUser)
+
   const { isTouchScreen } = useCheckMobile()
 
   return (
-    <DropdownSuggestionsWrapper ref={theRef}>
+    <DropdownSuggestionsWrapper
+      ref={theRef}
+      isFirstOrSecondDropdown={isFirstOrSecondDropdown}>
       {isFocus && (
         <div
           onMouseEnter={
-            !isTouchScreen  && setIsHover !== undefined
-
+            !isTouchScreen && setIsHover !== undefined
               ? () => {
                   setIsHover(true)
                 }
               : undefined
           }
           onMouseLeave={
-            !isTouchScreen  && setIsHover !== undefined
+            !isTouchScreen && setIsHover !== undefined
               ? () => {
                   setIsHover(false)
                 }
@@ -45,7 +47,10 @@ const DropdownSuggestionsInput = ({
                   setIsFocus(true)
                 }
               : undefined
-          }>
+          }
+          onClick={() => inputRefFocus.current.focus()}>
+          {haveIcon === false && <span>Popular Searches</span>}
+
           {suggestions.map((suggestion, index) => {
             const isMatch = suggestion.toLowerCase().indexOf(keywordClickByUser.toLowerCase()) > -1
             return (

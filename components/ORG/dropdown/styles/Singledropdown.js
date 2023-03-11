@@ -53,7 +53,7 @@ export const SingleDropdownWrapper = styled.div`
       height: 0.5rem;
     }
 
-    @media (${device.tablet}) {
+    @media (${device.laptop}) {
       width: calc(100vw - 33px);
       box-shadow: none;
       & > :nth-child(1) {
@@ -81,7 +81,7 @@ export const SingleDropdownWrapper = styled.div`
       margin: 1rem;
     }
 
-    @media (${device.tablet}) {
+    @media (${device.laptop}) {
       box-shadow: none;
       width: calc(100vw - 32px);
       margin-left: -48px;

@@ -43,7 +43,7 @@ const SpeechTherapistListFilterWrapper = styled.div`
     }
   }
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     /* background-color: darkcyan; */
     /* outline: 2px solid green; */
     /* border: 2px solid green; */

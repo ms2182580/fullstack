@@ -1,15 +1,13 @@
 import styled from "styled-components"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 import {
   FontsHeadDesktop,
-  FontsHeadMobile,
-  LineHeightHeadDesktop,
-  LineHeightHeadMobile,
-  LetterSpacingHeadDesktop,
-  LetterSpacingHeadMobile
+  FontsHeadMobile, LetterSpacingHeadDesktop,
+  LetterSpacingHeadMobile, LineHeightHeadDesktop,
+  LineHeightHeadMobile
 } from "../../../assets/Fonts/HeadingValues"
-import { PRIMARY, NEUTRALS } from "../../../assets/Colors"
-import { device } from "../../../assets/screenSizes/ScreenSizes.js"
 import { FontsWeights } from "../../../assets/Fonts/Weights"
+import { device } from "../../../assets/screenSizes/ScreenSizes.js"
 
 export const D1 = styled.p`
   font-size: ${FontsHeadDesktop.DISPLAY_1};
@@ -26,7 +24,7 @@ export const D1 = styled.p`
       ? NEUTRALS.DARK_GREY
       : NEUTRALS.BLACK};
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     font-size: ${FontsHeadMobile.DISPLAY_1};
     line-height: ${LineHeightHeadMobile.DISPLAY_1};
     font-weight: ${(x) =>
@@ -60,7 +58,7 @@ export const H1 = styled.h1`
       : NEUTRALS.BLACK};
   /* white-space: nowrap; */
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     font-size:${FontsHeadMobile.HEADING_1}; 
     line-height: ${LineHeightHeadMobile.HEADING_1};
     font-weight: ${(x) =>
@@ -92,7 +90,7 @@ export const H2 = styled.h2`
       ? NEUTRALS.DARK_GREY
       : NEUTRALS.BLACK};
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     font-size: ${FontsHeadMobile.HEADING_2};
     line-height: ${LineHeightHeadMobile.HEADING_2};
     font-weight: ${(x) =>
@@ -124,7 +122,7 @@ export const H3 = styled.h3`
       ? NEUTRALS.DARK_GREY
       : NEUTRALS.BLACK};
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     font-size: ${FontsHeadMobile.HEADING_3};
     line-height: ${LineHeightHeadMobile.HEADING_3};
     font-weight: ${(x) =>
@@ -156,7 +154,7 @@ export const H4 = styled.h4`
       ? NEUTRALS.DARK_GREY
       : NEUTRALS.BLACK};
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     font-size: ${FontsHeadMobile.HEADING_4};
     line-height: ${LineHeightHeadMobile.HEADING_4};
     font-weight: ${(x) =>

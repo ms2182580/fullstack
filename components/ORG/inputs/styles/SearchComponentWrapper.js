@@ -6,9 +6,9 @@ import { COLORS } from "../../../ui/buttons/variables"
 const SearchComponentWrapper = styled.div`
   margin-bottom: 2.5rem;
   display: grid;
-  grid-template-columns: 8fr 8fr 1fr;
+  grid-template-columns: 8fr 8fr 8fr 1fr;
 
-  & > :nth-child(2) {
+  & > :nth-child(3) {
     margin-right: 2rem;
   }
 
@@ -28,21 +28,30 @@ const SearchComponentWrapper = styled.div`
   & > div > span > span {
     position: absolute;
     z-index: 2;
+    top: 29px;
+    left: 24px;
   }
 
   & > div > span > input {
     width: 100%;
-    height: 48px;
-    padding: 0.5rem 4rem;
+    height: 76px;
+    padding: 0.5rem 3.9rem;
+
+    &::placeholder {
+      color: ${NEUTRALS.DARK_GREY};
+      font-size: 16px;
+    }
 
     @media (max-width: 888px) {
       padding: 0.5rem 2rem 0.5rem 4rem;
     }
   }
 
+
   & > div > span > input:focus,
   & > div:nth-child(1) > span > input:focus,
-  & > div:nth-child(2) > span > input:focus {
+  & > div:nth-child(2) > span > input:focus,
+  & > div:nth-child(3) > span > input:focus {
     border-radius: 5px;
     outline: 4px solid ${COLORS.FocusOutline};
     border: 1px transparent solid;
@@ -53,24 +62,44 @@ const SearchComponentWrapper = styled.div`
   & > div:nth-child(1) > span > input {
     border-radius: 5px 0px 0px 5px;
     border: 1px ${NEUTRALS.DARK_GREY} solid;
+    border-right-style: none;
   }
+  
+  & > div:nth-child(1) > span:nth-child(2),
+  & > div:nth-child(2) > span:nth-child(2){
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 58px;
+      right:0px;
+      top:9px;
+      background: #000000;
+    }
+  }
+  
+  
+  
   & > div:nth-child(2) > span > input {
+    border: 1px ${NEUTRALS.DARK_GREY} solid;
+    border-left-style: none;
+    border-right-style: none;
+  }
+  & > div:nth-child(3) > span > input {
     border-radius: 0px 5px 5px 0px;
     border: 1px ${NEUTRALS.DARK_GREY} solid;
+    border-left-style: none;
   }
 
   & > a:nth-last-child(1) {
     align-self: end;
   }
 
-  @media (${device.tablet}) {
-    /* border: 2px solid crimson; */
-    /* display: flex; */
-    /* flex-direction: column; */
+  @media (${device.laptop}) {
     grid-template-columns: 1fr;
     width: 100%;
-    /* width: ${(x) => (x.landingHere === "true" ? "100%" : "100%")}; */
-    /* border: 2px solid ${(x) => (x.landingHere === "true" ? "green" : "blue")}; */
 
     & > :nth-child(2) {
       margin-right: 0;
@@ -119,7 +148,7 @@ export default SearchComponentWrapper
 export const SuggestionsKeywordWrapper = styled.div`
   position: absolute;
   width: 100%;
-  top: 84px;
+  top: 112px;
   z-index: 99;
   background-color: ${NEUTRALS.OFF_WHITE};
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
@@ -127,8 +156,9 @@ export const SuggestionsKeywordWrapper = styled.div`
   border-bottom-left-radius: 8px;
   cursor: pointer;
   
-  @media (${device.tablet}){
-    top:72px;
-  }
   
+
+  @media (${device.laptop}) {
+    top: 72px;
+  }
 `

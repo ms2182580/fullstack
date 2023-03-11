@@ -38,7 +38,7 @@ const SpeechTherapistWraper = styled.div`
     margin-bottom: 2.25rem;
   }
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     margin: 0;
 
     & > div:nth-child(1) {

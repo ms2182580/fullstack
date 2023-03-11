@@ -15,7 +15,7 @@ export const STDetail_ReviewsWrapper = styled.div`
     margin-right: 16px;
   }
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     padding: 16px;
     border-radius: 0px;
 
@@ -36,7 +36,7 @@ export const ReviewAllIndividualComponentWrapper = styled.div`
   gap: 40px;
   margin-top: 32px;
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     margin-top: 24px;
     width: 100%;
     overflow-x: scroll;
@@ -72,7 +72,7 @@ export const ReviewIndividualComponentWrapper = styled.div`
     align-items: end;
   }
 
-  @media (${device.tablet}) {
+  @media (${device.laptop}) {
     grid-template-columns: 264px;
 
     /* margin-right: 16px; */
