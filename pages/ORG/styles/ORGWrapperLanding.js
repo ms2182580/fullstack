@@ -40,6 +40,7 @@ const ORGWrapperLanding = styled.div`
   & > * {
     padding-inline: 3rem;
   }
+  
 
   @media (${device.laptop}) {
     display: flex;

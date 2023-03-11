@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+import { SearchSVG } from "../../../assets/Icons"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { InputInsurance } from "./InputInsurance"
@@ -6,7 +7,7 @@ import { InputKeyword } from "./InputKeyword"
 import { InputLocation } from "./InputLocation"
 import SearchComponentWrapper from "./styles/SearchComponentWrapper"
 
-const CustomInput = ({ toWhere = "undefined", landingHere }) => {
+const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
   const router = useRouter()
 
   return (
@@ -19,20 +20,23 @@ const CustomInput = ({ toWhere = "undefined", landingHere }) => {
         {/* Final Button */}
         {toWhere === "SpeechTherapists" ? (
           <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
-            <ButtonSmall>Search</ButtonSmall>
+            <ButtonSmall><SearchSVG/></ButtonSmall>
           </LinkNoStyle>
         ) : toWhere === "no where" ? (
           <LinkNoStyle href="#">
-            <ButtonSmall>Search</ButtonSmall>
+            <ButtonSmall><SearchSVG/></ButtonSmall>
           </LinkNoStyle>
         ) : (
           <LinkNoStyle href={`${router.pathname}`}>
-            <ButtonSmall>Search</ButtonSmall>
+            <ButtonSmall><SearchSVG/></ButtonSmall>
           </LinkNoStyle>
         )}
+        
+        
+        
       </SearchComponentWrapper>
     </>
   )
 }
 
-export default CustomInput
+export default SearchComponent

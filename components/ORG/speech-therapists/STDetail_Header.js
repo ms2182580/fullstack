@@ -1,15 +1,15 @@
 import { BackArrow } from "../../../assets/Icons"
-import SpeechTherapistWraper from "../../../pages/ORG/SpeechTherapists/styles/SpeechTherapistWrapper"
-import Breadcrumbs from "../../ui/breadcrumbs/Breadcrumbs"
-import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
-import Customdropdown from "../dropdown/CustomDropdown"
-import { OptionsWrapper } from "../dropdown/styles/Customdropdown"
-import CustomInput from "../inputs/CustomInput"
 import ORG_Icon_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_Icon_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_Icon_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
+import SpeechTherapistWraper from "../../../pages/ORG/SpeechTherapists/styles/SpeechTherapistWrapper"
+import Breadcrumbs from "../../ui/breadcrumbs/Breadcrumbs"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import Customdropdown from "../dropdown/CustomDropdown"
+import { OptionsWrapper } from "../dropdown/styles/Customdropdown"
+import SearchComponent from "../inputs/SearchComponent"
 
 export const STDetail_Header = ({ STData }) => {
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
@@ -43,7 +43,7 @@ export const STDetail_Header = ({ STData }) => {
           ]}
         />
 
-        <CustomInput
+        <SearchComponent
           setKeywordsContext={setKeywordsContext}
           setCitiesContext={setCitiesContext}
           keywordValueContext={keywordsContext}

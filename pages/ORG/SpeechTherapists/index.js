@@ -5,7 +5,7 @@ import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import Customdropdown from "../../../components/ORG/dropdown/CustomDropdown"
 import { OptionsWrapper } from "../../../components/ORG/dropdown/styles/Customdropdown"
-import CustomInput from "../../../components/ORG/inputs/CustomInput"
+import SearchComponent from "../../../components/ORG/inputs/SearchComponent"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
 import STFiltersTherapistsButtons from "../../../components/ORG/speech-therapists/STFiltersTherapistsButtons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
@@ -82,7 +82,7 @@ const ORGSpeechTherapists = () => {
                 ["Speech Therapist", ""]
               ]}
             />
-            <CustomInput
+            <SearchComponent
               setKeywordsContext={setKeywordsContext}
               setCitiesContext={setCitiesContext}
               keywordValueContext={keywordsContext}

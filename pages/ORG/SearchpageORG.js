@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import ORG_Landing_Page from "../../assets/images/ORG_Landing_Page.png"
-import CustomInput from "../../components/ORG/inputs/CustomInput"
+import SearchComponent from "../../components/ORG/inputs/SearchComponent"
 import { H1, H3 } from "../../components/ui/heading_body_text/HeaderFonts"
 import { useORG_InputCtx } from "../../context/ORG_Input"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
@@ -66,7 +66,7 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
           )}
         </div>
 
-        <CustomInput
+        <SearchComponent
           setKeywordsContext={setKeywordsContext}
           setCitiesContext={setCitiesContext}
           keywordValueContext={keywordsContext}
@@ -79,7 +79,7 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
         //!FH
         Create the cards
         */}
-        {isMobile === false ? <></> : null}
+        {isMobile === false ? <p>New thing</p> : null}
 
         {/* 
         //? Achieve conditional rendering for geolocation with, i think, bad practices

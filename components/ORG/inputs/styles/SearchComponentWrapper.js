@@ -7,7 +7,6 @@ const SearchComponentWrapper = styled.div`
   margin-bottom: 2.5rem;
   display: grid;
   grid-template-columns: 8fr 8fr 8fr 1fr;
-
   & > :nth-child(3) {
     margin-right: 2rem;
   }
@@ -46,6 +45,8 @@ const SearchComponentWrapper = styled.div`
       padding: 0.5rem 2rem 0.5rem 4rem;
     }
   }
+  
+  
 
 
   & > div > span > input:focus,
@@ -78,6 +79,16 @@ const SearchComponentWrapper = styled.div`
       top:9px;
       background: #000000;
     }
+  }
+  
+  & > :last-child{
+    height: 76px;
+    
+    & > button{
+      height:100%;
+      width:91px;
+    }
+    
   }
   
   
