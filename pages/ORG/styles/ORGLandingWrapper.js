@@ -2,10 +2,12 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 import { device } from "../../../assets/screenSizes/ScreenSizes"
 
-const ORGWrapperLanding = styled.div`
+const ORGLandingWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
   place-items: center;
+  
+  
 
   margin-bottom: ${(x) => (x.windowSize <= 768 ? "96px" : null)};
 
@@ -41,6 +43,8 @@ const ORGWrapperLanding = styled.div`
     padding-inline: 3rem;
   }
   
+  
+  
 
   @media (${device.laptop}) {
     display: flex;
@@ -56,4 +60,4 @@ const ORGWrapperLanding = styled.div`
   }
 `
 
-export default ORGWrapperLanding
+export default ORGLandingWrapper
