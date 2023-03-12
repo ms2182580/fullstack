@@ -27,11 +27,6 @@ export const SpecificCardWrapper = styled.div`
   & > :nth-child(2) {
     white-space: nowrap;
   }
-
-  &:hover {
-    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.75);
-  }
-
   
   
 `

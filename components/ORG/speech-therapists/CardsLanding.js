@@ -1,7 +1,6 @@
 import { useReducer, useState } from "react"
 import { H1, H2 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstruction } from "../../under-construction/UnderConstruction.js"
-import { LandingThreeSpeechTherapists } from "./LandingThreeSpeechTherapists.js"
 import { CardsLandingWrapper } from "./styles/CardsLandingWrapper.js"
 import { MustShowResultsWrapper } from './styles/MustShowResultsWrapper.js'
 import { ThreeCardsLanding } from "./ThreeCardsLanding.js"
@@ -52,7 +51,7 @@ export const CardsLanding = () => {
           <MustShowResultsWrapper>
             <H2 hover>Top Therapeutic Services</H2>
 
-            <LandingThreeSpeechTherapists dataToUse={state.SpeechTherapists[0]} />
+            {/* <LandingThreeSpeechTherapists dataToUse={state.SpeechTherapists[0]} /> */}
           </MustShowResultsWrapper>
         )
       )}
