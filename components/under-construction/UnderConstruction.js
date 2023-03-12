@@ -3,7 +3,9 @@ import UnderConstructionImage from "../../assets/images/UnderConstructionImage.p
 import { H1, H3 } from "../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstructionWrapper } from "./styles/UnderConstructionWrapper.js"
 
-export const UnderConstruction = (parameters) => {
+export const UnderConstruction = () => {
+  
+  
   return (
     <UnderConstructionWrapper>
       <div>

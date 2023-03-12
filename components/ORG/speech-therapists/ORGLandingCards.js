@@ -4,7 +4,7 @@ import { ORGLandingCardsWrapper } from './styles/ORGLandingCardsWrapper.js'
 
 
 export const ORGLandingCards = ({dataToUse, reviews}) => {
-  console.log('dataToUse, reviews:', dataToUse, reviews)
+  // console.log('dataToUse, reviews:', dataToUse, reviews)
   return (
     <ORGLandingCardsWrapper>
       <div>

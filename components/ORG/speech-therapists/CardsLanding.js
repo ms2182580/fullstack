@@ -7,8 +7,6 @@ import { ThreeCardsLanding } from "./ThreeCardsLanding.js"
 
 
 const reducer = (state, action) => {
-  // console.log("action:", action)
-  // console.log("state:", state)
   switch (action.type) {
     case "get_data": {
       return {
@@ -28,7 +26,7 @@ export const CardsLanding = () => {
   const [mustShowResults, setMustShowResults] = useState(false)
 
   const [state, dispatch] = useReducer(reducer, initialState)
-  console.log("💘state:", state)
+  // console.log("💘state:", state)
 
   return (
     <CardsLandingWrapper>
