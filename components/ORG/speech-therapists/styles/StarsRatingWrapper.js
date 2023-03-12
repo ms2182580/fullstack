@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StarsRatingWrapper = styled.div`
  display: flex;
  align-items: center;
+ flex-wrap: wrap;
  
  
  & > :nth-child(1) > *:not(:last-child){

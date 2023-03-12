@@ -2,7 +2,6 @@ import { ORGLandingCards } from "./ORGLandingCards.js"
 import { LandingThreeSpeechTherapistsWrapper } from "./styles/LandingThreeSpeechTherapistsWrapper.js"
 
 export const LandingThreeSpeechTherapists = ({ dataToUse }) => {
-  // console.log("dataToUse:", dataToUse)
   return (
     <LandingThreeSpeechTherapistsWrapper>
       <div>

@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 export const LandingThreeSpeechTherapistsWrapper = styled.div`
-  border: 2px solid green;
-  
   & > div{
+    
+    
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(300px, 400px));
+    justify-content: center;
     gap:23px;
   }
   

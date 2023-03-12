@@ -11,9 +11,6 @@ export const SpecificCard = ({
   setWhichWasClick,
   numberCard
 }) => {
-  // console.log('mustShowResults:', mustShowResults)
-  // console.log("dataToDispatch:", dataToDispatch)
-
   const handleShowResultsAndDispatch = () => {
     setMustShowResults((prevState) => !prevState)
     dispatch({ type: "get_data", payload: dataToDispatch })
