@@ -30,9 +30,9 @@ const AboutCollection = {
   ]
 }
 
-export const getAllReviews = () => {
+export const getAllReviews = (amountOfReviews = 3) => {
   const shuffled = [...AboutCollection.FiveStars].sort(() => 0.5 - Math.random())
-  const shuffledArr = shuffled.slice(0, 3)
+  const shuffledArr = shuffled.slice(0, amountOfReviews)
 
   const starOfFourReview = pickJustOne(["FiveStars", "ThreeStars"])
   if (starOfFourReview === "ThreeStars") {
@@ -63,8 +63,8 @@ const formatNamesFunction = (arr, name, lastName) => {
   return namesChanged
 }
 
-export const ORG_ST_Review = (name, lastName) => {
-  const retrieveReviews = getAllReviews()
+export const ORG_ST_Review = (name, lastName, amountOfReviews) => {
+  const retrieveReviews = getAllReviews(amountOfReviews)
   const formatedNames = formatNamesFunction(retrieveReviews, name, lastName)
   return formatedNames
 }
