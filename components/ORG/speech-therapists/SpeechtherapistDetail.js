@@ -26,7 +26,6 @@ import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/SpeechTherapis
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
-
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
   const [meetingFormat, setMeetingFormat] = useState()

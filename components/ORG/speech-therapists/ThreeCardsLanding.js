@@ -7,7 +7,7 @@ import { ThreeCardsLandingWrapper } from "./styles/ThreeCardsLandingWrapper.js"
 
 export const ThreeCardsLanding = ({ setMustShowResults, dispatch, mustShowResults }) => {
   const { data: userFetched, filters: filtersST } = useFetch(`https://randomuser.me/api/?results=3&nat=us&page=1`)
-  
+
   const [reviews, setReviews] = useState({})
   const [dataToShare, setDataToShare] = useState({})
 
@@ -20,28 +20,84 @@ export const ThreeCardsLanding = ({ setMustShowResults, dispatch, mustShowResult
       setReviews(() => ({ first: theReview_one, second: theReview_two, third: theReview_three }))
 
       const data_one = {
-        name: userFetched.allData[0].name.first,
-        lastName: userFetched.allData[0].name.last,
-        location: { city: userFetched.allData[0].location.city },
-        picture: userFetched.allData[0].picture.large,
+        name: {
+          first: userFetched.allData[0].name.first,
+          last: userFetched.allData[0].name.last
+        },
+
+        location: {
+          city: userFetched.allData[0].location.city,
+          state: userFetched.allData[0].location.state,
+          street: {
+            number: userFetched.allData[0].location.street.number,
+            name: userFetched.allData[0].location.street.name
+          }
+        },
+        picture: {
+          large: userFetched.allData[0].picture.large
+        },
+        phone: userFetched.allData[0].cell,
+        email: userFetched.allData[0].email,
+        id: {
+          name: userFetched.allData[0].id.name,
+          value: userFetched.allData[0].id.value
+        },
         stars: filtersST[0].rating,
-        reviewsCount: filtersST[0].reviews
+        reviewsCount: filtersST[0].reviews,
+        filters: filtersST[0]
       }
+
       const data_two = {
-        name: userFetched.allData[1].name.first,
-        lastName: userFetched.allData[1].name.last,
-        location: { city: userFetched.allData[1].location.city },
-        picture: userFetched.allData[1].picture.large,
+        name: {
+          first: userFetched.allData[1].name.first,
+          last: userFetched.allData[1].name.last
+        },
+        location: {
+          city: userFetched.allData[1].location.city,
+          state: userFetched.allData[1].location.state,
+          street: {
+            number: userFetched.allData[1].location.street.number,
+            name: userFetched.allData[1].location.street.name
+          }
+        },
+        picture: {
+          large: userFetched.allData[1].picture.large
+        },
+        phone: userFetched.allData[1].cell,
+        email: userFetched.allData[1].email,
+        id: {
+          name: userFetched.allData[1].id.name,
+          value: userFetched.allData[1].id.value
+        },
         stars: filtersST[1].rating,
-        reviewsCount: filtersST[1].reviews
+        reviewsCount: filtersST[1].reviews,
+        filters: filtersST[1]
       }
       const data_three = {
-        name: userFetched.allData[2].name.first,
-        lastName: userFetched.allData[2].name.last,
-        location: { city: userFetched.allData[2].location.city },
-        picture: userFetched.allData[2].picture.large,
+        name: {
+          first: userFetched.allData[2].name.first,
+          last: userFetched.allData[2].name.last
+        },
+        location: {
+          city: userFetched.allData[2].location.city,
+          state: userFetched.allData[2].location.state,
+          street: {
+            number: userFetched.allData[2].location.street.number,
+            name: userFetched.allData[2].location.street.name
+          }
+        },
+        picture: {
+          large: userFetched.allData[2].picture.large
+        },
+        phone: userFetched.allData[2].cell,
+        email: userFetched.allData[2].email,
+        id: {
+          name: userFetched.allData[2].id.name,
+          value: userFetched.allData[2].id.value
+        },
         stars: filtersST[2].rating,
-        reviewsCount: filtersST[2].reviews
+        reviewsCount: filtersST[2].reviews,
+        filters: filtersST[2]
       }
 
       setDataToShare(() => ({ first: data_one, second: data_two, third: data_three }))

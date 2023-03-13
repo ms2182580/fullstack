@@ -5,14 +5,11 @@ import { ORGLandingCards } from "./ORGLandingCards.js"
 import { LandingThreeSpeechTherapistsWrapper } from "./styles/LandingThreeSpeechTherapistsWrapper.js"
 
 export const LandingThreeSpeechTherapists = ({ dataToUse }) => {
-  
   const route = useRouter()
   
   const handleMoveToAllList = () => {
     route.push("/ORG/SpeechTherapists")
-    
   }
-  
   
   return (
     <LandingThreeSpeechTherapistsWrapper>
@@ -20,14 +17,18 @@ export const LandingThreeSpeechTherapists = ({ dataToUse }) => {
         <ORGLandingCards
           dataToUse={dataToUse.data.first}
           reviews={dataToUse.reviews.first}
+          filters={dataToUse.data.first.filters}
+          
         />
         <ORGLandingCards
           dataToUse={dataToUse.data.second}
           reviews={dataToUse.reviews.second}
+          filters={dataToUse.data.second.filters}
         />
         <ORGLandingCards
           dataToUse={dataToUse.data.third}
           reviews={dataToUse.reviews.third}
+          filters={dataToUse.data.third.filters}
         />
       </div>
       <BtnSmall secondary onClick={() => handleMoveToAllList() }>

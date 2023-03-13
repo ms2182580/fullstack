@@ -1,4 +1,6 @@
 import Image from "next/image.js"
+import { useRouter } from "next/router.js"
+import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist.js"
 import { BtnSmall } from "../../ui/buttons/general/styles/ButtonStyled.js"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts.js"
@@ -6,12 +8,22 @@ import { StarsRatingAndReview } from "./SingleSpeechtherapistComponents_Right.js
 import { ORGLandingCardsWrapper } from "./styles/ORGLandingCardsWrapper.js"
 import { Verified } from "./Verified.js"
 
-export const ORGLandingCards = ({ dataToUse, reviews }) => {
+export const ORGLandingCards = ({ dataToUse, reviews, filters }) => {
+  // console.log('⌛ filters:', filters)
+  // console.log('⌛ dataToUse:', dataToUse)
+  const router = useRouter()
+  const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  const goToDynamic = () => {
+    setSpeechtherapist({ data: [dataToUse], filters: [filters] })
+    router.push("/ORG/SpeechTherapists/IndividualProvider")
+  }
+  
+  
   return (
     <ORGLandingCardsWrapper>
       <div>
         <Image
-          src={dataToUse.picture}
+          src={dataToUse.picture.large}
           alt=""
           width="400px"
           height="193px"
@@ -19,7 +31,7 @@ export const ORGLandingCards = ({ dataToUse, reviews }) => {
         <Verified />
       </div>
       <H3>
-        {dataToUse.name} {dataToUse.lastName}, CCC-SLP
+        {dataToUse.name.first} {dataToUse.name.last}, CCC-SLP
       </H3>
       <H4>Speech Language Pathologist</H4>
       <P dark_gray>{dataToUse.location.city}</P>
@@ -28,7 +40,7 @@ export const ORGLandingCards = ({ dataToUse, reviews }) => {
         reviews={dataToUse.reviewsCount}
       />
       <P>{reviews[0]}.</P>
-      <span>
+      <span onClick={() => goToDynamic()}>
         <BtnSmall>View Profile</BtnSmall>
       </span>
     </ORGLandingCardsWrapper>

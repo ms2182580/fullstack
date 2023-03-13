@@ -35,7 +35,6 @@ export const SpeechTherapistsCardWithFilter = () => {
   }
 
   const { dataF, filtersF } = useORG_Ctx_FetchWithFilters()
-  console.dir('dataF, filtersF:', dataF, filtersF)
 
   return (
     <>
