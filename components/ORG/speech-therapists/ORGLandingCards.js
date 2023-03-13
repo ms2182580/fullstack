@@ -4,26 +4,19 @@ import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingAndReview } from "./SingleSpeechtherapistComponents_Right.js"
 import { ORGLandingCardsWrapper } from "./styles/ORGLandingCardsWrapper.js"
+import { Verified } from "./Verified.js"
 
 export const ORGLandingCards = ({ dataToUse, reviews }) => {
-  console.log("dataToUse, reviews:", dataToUse, reviews)
   return (
     <ORGLandingCardsWrapper>
       <div>
         <Image
           src={dataToUse.picture}
           alt=""
-          layout="responsive"
-          // layout="fill"
-          // objectFit="contain"
-          objectFit="fill"
-          // layout="fill"
-          // layout="fixed"
-          // width={400}
-          // height={150}
           width="400px"
-          height="150px"
+          height="193px"
         />
+        <Verified />
       </div>
       <H3>
         {dataToUse.name} {dataToUse.lastName}, CCC-SLP

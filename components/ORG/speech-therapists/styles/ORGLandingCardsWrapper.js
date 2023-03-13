@@ -7,20 +7,21 @@ export const ORGLandingCardsWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  
-  /* width:clamp(300px, calc(100vw - 300px), 400px); */
-  /* width:300px; */
-  
-  /* border: 2px solid crimson; */
-  
-  
-  
 
   & > div:nth-child(1) {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     overflow: hidden;
-    height: 119px;
+    height: 193px;
+
+    position: relative;
+    display: grid;
+
+    & > :nth-child(2) {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+    }
   }
 
   & > :nth-child(2) {

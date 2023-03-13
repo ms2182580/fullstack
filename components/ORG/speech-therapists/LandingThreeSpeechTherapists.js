@@ -1,9 +1,19 @@
+import { useRouter } from "next/router.js"
 import { BtnSmall } from "../../ui/buttons/general/styles/ButtonStyled.js"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORGLandingCards } from "./ORGLandingCards.js"
 import { LandingThreeSpeechTherapistsWrapper } from "./styles/LandingThreeSpeechTherapistsWrapper.js"
 
 export const LandingThreeSpeechTherapists = ({ dataToUse }) => {
+  
+  const route = useRouter()
+  
+  const handleMoveToAllList = () => {
+    route.push("/ORG/SpeechTherapists")
+    
+  }
+  
+  
   return (
     <LandingThreeSpeechTherapistsWrapper>
       <div>
@@ -20,7 +30,7 @@ export const LandingThreeSpeechTherapists = ({ dataToUse }) => {
           reviews={dataToUse.reviews.third}
         />
       </div>
-      <BtnSmall secondary>
+      <BtnSmall secondary onClick={() => handleMoveToAllList() }>
         <Caption bold>See all </Caption>{" "}
         <Caption
           bold

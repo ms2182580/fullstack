@@ -1,27 +1,29 @@
-import styled from 'styled-components'
+import styled from "styled-components"
+import { NEUTRALS } from "../../../../assets/Colors"
 
 export const LandingThreeSpeechTherapistsWrapper = styled.div`
-  & > div{
+  & > div {
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 400px));
-    justify-content: center;
-    gap:23px;
+    justify-content: space-between;
+    gap: 23px;
     margin-bottom: 64px;
   }
-  
-  & > :last-child{
-    padding: 19px 42px;
+
+  & > :last-child {
     margin-left: auto;
-    
-    & > span{
-      font-size:16px;
-      white-space:pre;
+
+    & > span {
+      font-size: 16px;
+      white-space: pre;
+    }
+
+    &:hover > span:nth-child(1) {
+      color: ${NEUTRALS.OFF_WHITE};
     }
     
-    &:hover{
-      /* all: unset; */
-      background-color: transparent;
+    &:hover > span:nth-child(2) {
+      color: ${NEUTRALS.LIGHT_GREY};
     }
   }
-  
 `
