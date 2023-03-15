@@ -1,11 +1,13 @@
 import styled from "styled-components"
+import { SEMANTICS } from "../../../assets/Colors"
 
 export const BreadcrumbsWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  & > p {
-    cursor: pointer;
+  & > :nth-child(2) > p,
+  & > a > * {
+    margin-right: 12px;
   }
 
   a {
@@ -15,11 +17,11 @@ export const BreadcrumbsWrapper = styled.div`
   }
 
   svg {
-    width: 2rem;
+    margin-right: 22px;
   }
 
-  svg,
-  p {
-    margin-right: 22px;
+  & > a > p.underline {
+    text-decoration-line: underline;
+    color: ${SEMANTICS.HYPERLINK_NORMAL};
   }
 `

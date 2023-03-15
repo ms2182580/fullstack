@@ -7,6 +7,7 @@ const SharedVariables = {
   FontWeight_400: `${FontsWeights.REGULAR_400}`,
   FontWeight_600: `${FontsWeights.SEMIBOLD_600}`,
   FontWeight_700: `${FontsWeights.BOLD_700}`,
+  FontWeight_800:`${FontsWeights.BOLDER_800}`,
   FontSizeBody: `${FontsDesktopAndMobile.BODY_16}`,
   FontSizeCaption: `${FontsDesktopAndMobile.CAPTION_12}`,
   Underline: "underline",
@@ -17,7 +18,9 @@ export const P = styled.p`
   line-height: 32px;
   font-size: ${SharedVariables.FontSizeBody};
   font-weight: ${(x) =>
-    x.bold
+    x.bolder
+      ? SharedVariables.FontWeight_800
+      : x.bold
       ? SharedVariables.FontWeight_700
       : x.semibold
       ? SharedVariables.FontWeight_600

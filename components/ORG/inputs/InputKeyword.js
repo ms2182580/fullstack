@@ -18,7 +18,9 @@ export const InputKeyword = () => {
   const router = useRouter()
   const formatRouter = router.pathname
 
-  const { isMobile } = useWidthWindow1024()
+  
+  const { isMobile, widthWindow } = useWidthWindow1024()
+  
 
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)

@@ -1,15 +1,8 @@
 import React from "react"
-import { HomeSvg, ArrowRightSvg } from "../../../assets/Icons/index.js"
+import { HomeSvg } from "../../../assets/Icons/index.js"
 import { P } from "../heading_body_text/DesktopMobileFonts.js"
 import { LinkNoStyle } from "../hyperlink/HyperlinkNoStyles.js"
 import { BreadcrumbsWrapper } from "./BreadcrumbsStyled.js"
-
-/* 
-!FH
-
-Make the Breadcrumbs responsive
-*/
-
 
 const Breadcrumbs = ({ whichDisplay }) => {
   return (
@@ -26,17 +19,17 @@ const Breadcrumbs = ({ whichDisplay }) => {
           return (
             <React.Fragment key={x[0]}>
               <LinkNoStyle href="#">
-                <ArrowRightSvg />
-                <P>{x[0]}</P>
+                <P bolder>/</P>
+                <P bold>{x[0]}</P>
               </LinkNoStyle>
             </React.Fragment>
           )
         } else {
           return (
             <React.Fragment key={x[0]}>
-              <LinkNoStyle href={defaultRoute}>
-                <ArrowRightSvg />
-                <P>{x[0]}</P>
+              <LinkNoStyle href={defaultRoute} className="isNavigable">
+                <P bolder>/</P>
+                <P bold className="underline">{x[0]}</P>
               </LinkNoStyle>
             </React.Fragment>
           )
