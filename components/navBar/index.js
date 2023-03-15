@@ -10,7 +10,12 @@ const NavBar = () => {
   const [isORGState, setIsORGState] = useState(false)
 
   useEffect(() => {
-    setIsORGState(/[ORG]\/\w|[ORG]/.test(route.pathname))
+    if (route.pathname === "/ORG") {
+      setIsORGState(true) 
+    } else {
+      setIsORGState(false) 
+      
+    }
   }, [route.pathname])
 
   const navigateHome = (e) => {
