@@ -17,7 +17,6 @@ const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
         <InputLocation />
         <InputInsurance />
 
-        {/* Final Button */}
         {toWhere === "SpeechTherapists" ? (
           <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
             <ButtonSmall><SearchSVG/></ButtonSmall>

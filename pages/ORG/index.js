@@ -1,23 +1,13 @@
 import Image from "next/image"
-import { useRouter } from "next/router"
-import { useEffect } from "react"
 import ORG_Landing_Page from "../../assets/images/ORG_Landing_Page.png"
 import SearchComponent from "../../components/ORG/inputs/SearchComponent"
 import { CardsLanding } from "../../components/ORG/speech-therapists/CardsLanding.js"
 import { H1, H3 } from "../../components/ui/heading_body_text/HeaderFonts"
-import { useORG_InputCtx } from "../../context/ORG_Input"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import ORGLandingWrapper from "./styles/ORGLandingWrapper"
 
 const ORGIndex = () => {
   const { isMobile } = useWidthWindow1024()
-
-  const { setKeywordsContext, setCitiesContext, keywordsContext, citiesContext } = useORG_InputCtx()
-  const router = useRouter()
-  useEffect(() => {
-    setKeywordsContext("")
-    setCitiesContext("")
-  }, [])
 
   // const [geolocationLocalStorage, setGeolocationLocalStorage] = useState(null)
 
@@ -68,12 +58,7 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
         </div>
 
         <SearchComponent
-          setKeywordsContext={setKeywordsContext}
-          setCitiesContext={setCitiesContext}
-          keywordValueContext={keywordsContext}
-          citiesValueContext={citiesContext}
           toWhere="SpeechTherapists"
-          windowSize={isMobile}
           landingHere="true"
         />
         {isMobile === false ? <CardsLanding/> : null}

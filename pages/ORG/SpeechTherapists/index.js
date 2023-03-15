@@ -8,27 +8,16 @@ import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobi
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile"
-import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { useWidthWindow } from "../../../utils/useWidthWindow"
+import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import ORGSpeechTherapistsSecondPageWrapper from "./styles/ORGSpeechTherapistsSecondPageWrapper"
 import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
 
 const ORGSpeechTherapists = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
-  const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
-
   const { widthWindow } = useWidthWindow()
-  // const {isMobile} = useWidthWindow1024()
-
-  const suggestionDropdownTP = [
-    "Speech Therapist",
-    "Behavioral Therapist",
-    "Physical Therapist",
-    "Occupational Therapist"
-  ]
-  const suggestionDropdownSSA = []
-  const suggestionDropdownCC = []
+  const { isMobile } = useWidthWindow1024()
 
   const { userFetched } = useORG_Ctx_FetchNoFilters()
 
@@ -48,17 +37,15 @@ const ORGSpeechTherapists = () => {
   return (
     <ORGSpeechTherapistsSecondPageWrapper>
       <SpeechTherapistWraper>
-        {widthWindow > 768 ? (
-          <div>
-            {" "}
-            <span>
-              <LinkNoStyle href="/ORG">
-                <BackArrow />
-                <P semibold>Back</P>
-              </LinkNoStyle>
-            </span>{" "}
-          </div>
-        ) : widthWindow <= 768 && mustShowFiltersMobile === false ? (
+        {isMobile === false ? (
+          <>
+            <P
+              bold
+              dark_gray>
+              Search for Providers
+            </P>
+          </>
+        ) : isMobile && mustShowFiltersMobile === false ? (
           <div id="topOfSTL">
             {" "}
             <span>
@@ -70,7 +57,7 @@ const ORGSpeechTherapists = () => {
           </div>
         ) : null}
 
-        {widthWindow > 768 ? (
+        {isMobile === false ? (
           <>
             <Breadcrumbs
               whichDisplay={[
@@ -78,12 +65,7 @@ const ORGSpeechTherapists = () => {
                 ["Speech Therapist", ""]
               ]}
             />
-            <SearchComponent
-              setKeywordsContext={setKeywordsContext}
-              setCitiesContext={setCitiesContext}
-              keywordValueContext={keywordsContext}
-              citiesValueContext={citiesContext}
-            />
+            <SearchComponent />
           </>
         ) : null}
       </SpeechTherapistWraper>
