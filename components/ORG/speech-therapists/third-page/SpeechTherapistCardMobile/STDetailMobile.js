@@ -1,6 +1,6 @@
 import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons/index.js"
-import { FirstPlace } from "../../second-page/SpeechTherapistCardMobile/cards-places/FirstPlace.js"
-import { SpeechTherapistsCardsMobileWrapper } from "../../second-page/SpeechTherapistCardMobile/styles/SpeechTherapistsCardsMobileWrapper.js"
+import { FirstPlace } from "../../second-page/mobile/cards-places/FirstPlace.js"
+import { SpeechTherapistsCardsMobileWrapper } from "../../second-page/mobile/styles/SpeechTherapistsCardsMobileWrapper.js"
 import { STDetailMobileWrapper } from "./styles/STDetailMobileWrapper.js"
 
 export const STDetailMobile = ({ STData }) => {

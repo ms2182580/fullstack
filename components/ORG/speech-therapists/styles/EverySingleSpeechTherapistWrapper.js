@@ -3,7 +3,6 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 export const EverySingleSpeechTherapistWrapper = styled.div`
-  margin-left: 72px;
 
   @media (${device.laptop}) {
     margin-inline: 16px;

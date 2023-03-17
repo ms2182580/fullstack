@@ -7,5 +7,5 @@ export const HeaderSPListWrapper = styled.div`
   
 `
 export const HeaderSPList_SortByWrapper = styled.div`
-  margin-right: 88px;
+
 `

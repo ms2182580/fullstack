@@ -19,7 +19,7 @@ export const useFetch = (url, pagination) => {
 
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
-  const [actualSort, setActualSort] = useState("Nearest")
+  const [actualSort, setActualSort] = useState("Distance")
 
   useEffect(() => {
     let getData = { actualPage: "", allData: "" }

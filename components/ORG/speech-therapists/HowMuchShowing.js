@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
+import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 
-const HowMuchShowing = ({ widthWindow }) => {
+const HowMuchShowing = () => {
   const { pagination, howMuchShow } = useORG_Ctx_FetchNoFilters()
   const [actualShow, setActualShow] = useState(howMuchShow)
   const [theTotal, setTheTotal] = useState(howMuchShow * 5)
+  
+  const { isMobile } = useWidthWindow1024()
 
   useEffect(() => {
     setActualShow(pagination * howMuchShow)
@@ -34,7 +37,7 @@ const HowMuchShowing = ({ widthWindow }) => {
 
   return (
     <>
-      {widthWindow > 768 ? (
+      {isMobile === false ? (
         <>
           <P semibold>
             {actualShow} of {theTotal} results shown

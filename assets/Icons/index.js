@@ -720,3 +720,33 @@ export const ORGLanding_CC = (props) => (
     />
   </svg>
 )
+
+export const ArrowDownSvg = (props) => (
+  <svg
+    width={17}
+    height={10}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m16.5 1.934-8 8-8-8L2.367.067 8.5 6.2 14.633.067 16.5 1.934Z"
+      fill="#6E3A82"
+    />
+  </svg>
+)
+
+export const ArrowUpSvg = (props) => (
+  <svg
+    width={17}
+    height={10}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m.5 8.066 8-8 8 8-1.867 1.867L8.5 3.8 2.367 9.933.5 8.066Z"
+      fill="#6E3A82"
+    />
+  </svg>
+)

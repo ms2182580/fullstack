@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const SingleDropdownWrapper = styled.div`
   display: grid;
@@ -8,16 +8,22 @@ export const SingleDropdownWrapper = styled.div`
   position: relative;
 
   & > :nth-child(1) {
+    width: 191px;
+    height: 48px;
+    border: 2px solid ${PRIMARY.PRIMARY_CTA};
+    border-radius: 8px;
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 12px;
+    align-items: center;
     cursor: pointer;
-    & > span:nth-child(1) {
-      margin-right: 1.25rem;
+
+    & > p:nth-child(1) {
+      margin-left: auto;
       user-select: none;
     }
-    & > span:nth-child(2) {
-      width: 2.5rem;
+
+    & > :nth-child(2) {
+      margin-right: 12px;
+      margin-left: auto;
     }
   }
 

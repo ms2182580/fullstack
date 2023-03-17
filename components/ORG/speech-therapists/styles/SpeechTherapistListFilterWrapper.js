@@ -9,7 +9,13 @@ const SpeechTherapistListFilterWrapper = styled.div`
   border-radius: 8px;
   box-shadow: ${(x) => (x.isMobile ? "none" : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
   padding: ${(x) => (x.isMobile ? "50px 0px 0px 0px" : `1.5rem 2rem 48px 2rem`)};
-  width: ${(x) => (x.isMobile ? "100%" : "21.5rem")};
+  width: ${(x) => (x.isMobile ? "100%" : "895px")};
+  
+  position:absolute;
+  z-index:99;
+  top:60%;
+  left:270px;
+  height:100%;
 
   & > div:nth-child(1) {
     display: flex;

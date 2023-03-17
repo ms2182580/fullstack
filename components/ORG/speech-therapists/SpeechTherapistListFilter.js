@@ -1,13 +1,14 @@
-import { useReducer, useState } from "react"
-import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
-import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
+import { useEffect, useReducer, useState } from "react"
 import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
-import { useEffect } from "react"
-import { SortByMobile } from "./SortByMobile.js"
-import { STFilterSortbyMobileWrapper } from "./styles/STFilterSortbyMobileWrapper.js"
-import { FiltersMobile } from "./FiltersMobile.js"
-import { ActualFilters } from "./ActualFilters.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile.js"
+import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
+import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024.js"
+import { BtnSmall } from "../../ui/buttons/general/styles/ButtonStyled.js"
+import { ActualFilters } from "./ActualFilters.js"
+import { FiltersMobile } from "./FiltersMobile.js"
+import { SortByMobile } from "./SortByMobile.js"
+import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
+import { STFilterSortbyMobileWrapper } from "./styles/STFilterSortbyMobileWrapper.js"
 
 const reducer = (state, action) => {
   const setFilterData = action.payload[0]
@@ -37,14 +38,20 @@ const reducer = (state, action) => {
   }
 }
 
-const SpeechTherapistListFilter = ({ widthWindow }) => {
+const SpeechTherapistListFilter = () => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
 
+  const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
+  const handleShowFiltersDesktop = () => {
+    setMustShowFiltersDesktop((prevState) => !prevState)
+  }
+
   const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
+  const { isMobile } = useWidthWindow1024()
 
   const handleClearAll = (e) => {
     if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
@@ -65,27 +72,37 @@ const SpeechTherapistListFilter = ({ widthWindow }) => {
   }, [])
 
   useEffect(() => {
-    if (widthWindow >= 768) {
+    if (isMobile === false) {
       setMustShowFiltersMobile(false)
     }
-  }, [widthWindow])
+  }, [isMobile])
 
   return (
     <>
-      {widthWindow > 768 ? (
-        <SpeechTherapistListFilterWrapper id="topOfSTL">
-          <ActualFilters
-            dispatch={dispatch}
-            setFilterData={setFilterData}
-            clearAll={clearAll}
-            setClearAll={setClearAll}
-            showStateChildren={setShow}
-            shouldClear={shouldClear}
-            setShouldClear={setShouldClear}
-            handleClearAll={handleClearAll}
-            title="Filter by"
-          />
-        </SpeechTherapistListFilterWrapper>
+      {isMobile === false ? (
+        <>
+          {" "}
+          <span onClick={handleShowFiltersDesktop}>
+            <BtnSmall secondary>Filter</BtnSmall>
+          </span>
+          {mustShowFiltersDesktop && (
+            <>
+              <SpeechTherapistListFilterWrapper id="topOfSTL">
+                <ActualFilters
+                  dispatch={dispatch}
+                  setFilterData={setFilterData}
+                  clearAll={clearAll}
+                  setClearAll={setClearAll}
+                  showStateChildren={setShow}
+                  shouldClear={shouldClear}
+                  setShouldClear={setShouldClear}
+                  handleClearAll={handleClearAll}
+                  title="Filter by"
+                />
+              </SpeechTherapistListFilterWrapper>
+            </>
+          )}
+        </>
       ) : (
         <STFilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
           <FiltersMobile

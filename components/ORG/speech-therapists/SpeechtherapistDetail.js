@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../../assets/Icons"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { useWidthWindow } from "../../../utils/useWidthWindow"
+import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { EmailGetDirectionComponent } from "./EmailGetFirectionWrapper"
@@ -37,7 +37,7 @@ export const SpeechtherapistDetail = () => {
 
   const route = useRouter()
 
-  const { isMobile } = useWidthWindow()
+  const { isMobile } = useWidthWindow1024()
 
   useEffect(() => {
     setLanguages(speechtherapist.filters[0].languages.map((x) => x[0].toUpperCase() + x.slice(1)))

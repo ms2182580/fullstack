@@ -1,36 +1,18 @@
-import Image from "next/image.js"
 import { Fragment, useState } from "react"
-import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
-import ArrowUp from "../../../assets/Icons/ArrowUp.png"
-import ArrowDown from "../../../assets/Icons/ArrowDown.png"
-import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
+import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
+import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
-export const CustomDropdownFilters = ({
-  icon = "no icon found",
-  title = "no title",
-  suggestions = [],
-  noIcon = false
-}) => {
-  const {
-    userFetched,
-    setData,
-    filtersST,
-    setFilters,
-    actualSort,
-    setActualSort,
-  } = useORG_Ctx_FetchNoFilters()
+export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaultWord }) => {
+  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFilters()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  
-  const {
-    dataF,
-    setDataF,
-    filtersF,
-    setFiltersF,
-  } = useORG_Ctx_FetchWithFilters()
+  const [whichTitle, setWhichTitle] = useState(defaultWord)
+
+  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFilters()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)
@@ -42,11 +24,11 @@ export const CustomDropdownFilters = ({
     //   setShowDropdown((prevstate) => !prevstate)
     // }
   }
-  const suggestionsValidated =
-    suggestions.length === 0 ? "Coming soon" : suggestions
+  const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
   const getSelection = (e) => {
     let elementSelected = e.target.textContent
+    setWhichTitle(elementSelected)
     setActualSort(elementSelected)
 
     const { newOrderData, newOrderFilters } = ORG_Sortyby(
@@ -62,13 +44,12 @@ export const CustomDropdownFilters = ({
     }))
     setFilters(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } =
-      ORG_Sortyby(
-        elementSelected,
-        filtersF,
-        dataF,
-        "CustomDropdownFilters. Fetch with filters"
-      )
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_Sortyby(
+      elementSelected,
+      filtersF,
+      dataF,
+      "CustomDropdownFilters. Fetch with filters"
+    )
 
     setDataF((prevState) => ({
       ...prevState,
@@ -78,27 +59,29 @@ export const CustomDropdownFilters = ({
 
     handleDropdownClick()
   }
-  
+
   /* 
   !FH
-  Make it work with onBlur to close when the user clock outside. 
+  Make it work with onBlur to close when the user click outside. 
   */
 
   return (
     <>
-      <SingleDropdownWrapper noIcon={noIcon} className="SingleDropdownWrapper">
+      <SingleDropdownWrapper
+        noIcon={noIcon}
+        className="SingleDropdownWrapper">
         <span
           onClick={handleDropdownClick}
           onKeyDown={(e) => {
             handleDropdownKey(e)
           }}
           tabIndex={0}>
-          <Caption bold>{title}</Caption>
+          <P primary_cta bold>{whichTitle}</P>
           <span>
             {showDropdown ? (
-              <Image src={ArrowUp} alt="" />
+              <ArrowDownSvg/>
             ) : (
-              <Image src={ArrowDown} alt="" />
+              <ArrowUpSvg/>
             )}
           </span>
         </span>

@@ -4,25 +4,32 @@ import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 const STFiltersTherapistsButtonsWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
-  padding: 2rem 6rem;
+  padding-left: 96px;
   display: grid;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: 1fr;
 
   grid-template-areas:
-    "filter list"
-    "filter buttons";
+    "header header"
+    "filterAndMap filterAndMap"
+    "btns btns";
 
   & > :nth-child(1) {
-    grid-area: filter;
+    grid-area: header;
     align-self: start;
   }
   & > :nth-child(2) {
-    grid-area: list;
+    grid-area: filterAndMap;
     height: 100%;
+    
+    
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    
+    
   }
 
   & > :nth-child(3) {
-    grid-area: buttons;
+    grid-area: btns;
   }
 
   @media ${device.laptop} {
@@ -30,7 +37,7 @@ const STFiltersTherapistsButtonsWrapper = styled.div`
     grid-template-areas:
       "filter sortBy"
       "list list"
-      "buttons buttons";
+      "btns btns";
     padding: 0;
   }
 `

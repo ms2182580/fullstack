@@ -19,7 +19,7 @@ import {
 export const FetchFiltered = (url, pagination) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
-  const [actualSortF, setActualSortF] = useState("Nearest")
+  const [actualSortF, setActualSortF] = useState("Distance")
 
   const { filtersLeftContext: filtersSelected } = useORG_Ctx_filtersLeft()
 
