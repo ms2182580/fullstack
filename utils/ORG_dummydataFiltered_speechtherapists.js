@@ -16,7 +16,7 @@ import {
   ORG_Filterdata_YoP
 } from "./ORG_Filterdata"
 
-export const FetchFiltered = (url, pagination) => {
+export const FetchFiltered = (pagination = 1, howmuch = 10) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
   const [actualSortF, setActualSortF] = useState("Distance")
@@ -28,7 +28,7 @@ export const FetchFiltered = (url, pagination) => {
 
     let getFilters = { filters: [] }
 
-    fetch(`${url}${pagination}`)
+    fetch(`/api/randomUser?results=${howmuch}&pagination=${pagination}`)
       .then((x) => x.json())
       .then((x) => {
         getData.allData = x.results

@@ -2,6 +2,7 @@ import Image from "next/image"
 import React from "react"
 import { BookmarkSaveSTSvg } from "../../../assets/Icons"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts"
+import { Verified } from "../verified/Verified"
 import { EmailGetDirectionComponent } from "./EmailGetFirectionWrapper"
 import { MapComponent } from "./MapWrapper"
 import {
@@ -25,7 +26,6 @@ import {
   STDetail_CardWrapper
 } from "./styles/STDetail_CardWrapper"
 import { TherapistInfoThirdPage } from "./TherapistInfoThirdPage"
-import { Verified } from "./Verified"
 
 export const STDetail_STDetails = ({ STData }) => {
   return (

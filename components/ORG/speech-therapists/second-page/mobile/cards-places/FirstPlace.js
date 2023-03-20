@@ -1,8 +1,8 @@
 import Image from "next/image.js"
 import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
+import { Verified } from "../../../../verified/Verified.js"
 import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../../SingleSpeechtherapistComponents_Right.js"
-import { Verified } from "../../../Verified.js"
 
 export const FirstPlace = ({
   handlePointerEvent,

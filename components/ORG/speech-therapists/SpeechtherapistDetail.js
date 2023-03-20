@@ -19,10 +19,10 @@ import { STDetail_STDetails } from "./STDetail_STDetails"
 import { STDetail_HeaderMobileWrapper } from "./styles/STDetail_HeaderMobileWrapper.js"
 import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
-import { Separator } from "./third-page/SpeechTherapistCardMobile/Separator"
-import { STDetailMobile } from "./third-page/SpeechTherapistCardMobile/STDetailMobile"
-import { STDetailMobile_StickyNavbar } from "./third-page/SpeechTherapistCardMobile/STDetailMobile_StickyNavbar"
-import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/SpeechTherapistCardMobile/styles/STDetail_STDetails_ThirdPageWrapper"
+import { Separator } from "./third-page/mobile/Separator"
+import { STDetailMobile } from "./third-page/mobile/STDetailMobile"
+import { STDetailMobile_StickyNavbar } from "./third-page/mobile/STDetailMobile_StickyNavbar"
+import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/mobile/styles/STDetail_STDetails_ThirdPageWrapper"
 
 export const SpeechtherapistDetail = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()

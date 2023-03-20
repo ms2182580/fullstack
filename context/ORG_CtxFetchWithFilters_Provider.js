@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react"
+import { createContext, useContext, useState } from "react"
 import { FetchFiltered } from "../utils/ORG_dummydataFiltered_speechtherapists"
 import { useORG_Ctx_FetchNoFilters } from "./ORG_CtxFetchNoFilters_Provider"
 const ORG_Ctx_fetchWithFilters = createContext(null)
@@ -14,8 +14,7 @@ export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
     actualSortF,
     setActualSortF
   } = FetchFiltered(
-    `https://randomuser.me/api/?results=${howMuchShow}&nat=us&page=${pagination}`,
-    pagination
+    pagination, howMuchShow
   )
 
   return (

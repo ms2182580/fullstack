@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-export const TherapistInfoSecondPageWrapper = styled.div`
+export const STResults_CardInfoWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -16,5 +16,4 @@ export const TherapistInfoSecondPageWrapper = styled.div`
       display: ${(x) => x.isThirdPage ? `inline` : ``};
     }
   }
-  
 `

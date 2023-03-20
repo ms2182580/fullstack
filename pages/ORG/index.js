@@ -1,7 +1,7 @@
 import Image from "next/image"
 import ORG_Landing_Page from "../../assets/images/ORG_Landing_Page.png"
 import SearchComponent from "../../components/ORG/inputs/SearchComponent"
-import { CardsLanding } from "../../components/ORG/speech-therapists/CardsLanding.js"
+import { CardsLanding } from "../../components/ORG/speech-therapists/first-page/dekstop/CardsLanding.js"
 import { H1, H3 } from "../../components/ui/heading_body_text/HeaderFonts"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import ORGLandingWrapper from "./styles/ORGLandingWrapper"

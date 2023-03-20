@@ -5,10 +5,7 @@ import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024.js"
 import { BtnSmall } from "../../ui/buttons/general/styles/ButtonStyled.js"
 import { ActualFilters } from "./ActualFilters.js"
-import { FiltersMobile } from "./FiltersMobile.js"
-import { SortByMobile } from "./SortByMobile.js"
 import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
-import { STFilterSortbyMobileWrapper } from "./styles/STFilterSortbyMobileWrapper.js"
 
 const reducer = (state, action) => {
   const setFilterData = action.payload[0]
@@ -104,19 +101,7 @@ const SpeechTherapistListFilter = () => {
           )}
         </>
       ) : (
-        <STFilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
-          <FiltersMobile
-            dispatch={dispatch}
-            setFilterData={setFilterData}
-            clearAll={clearAll}
-            setClearAll={setClearAll}
-            showStateChildren={setShow}
-            shouldClear={shouldClear}
-            setShouldClear={setShouldClear}
-            handleClearAll={handleClearAll}
-          />
-          <SortByMobile />
-        </STFilterSortbyMobileWrapper>
+        <></>
       )}
     </>
   )
