@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
-import { device } from "../../../../assets/screenSizes/ScreenSizes"
+import { NEUTRALS } from "../../../../../assets/Colors"
+import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
-const SpeechTherapistListFilterWrapper = styled.div`
+export const STResults_FiltersContainerWrapper = styled.div`
   display: ${(x) => (x.mustShowFiltersMobile || x.isMobile === undefined ? "block" : "none")};
   background-color: ${NEUTRALS.OFF_WHITE};
   border: ${(x) => (x.isMobile ? "none" : `1px solid ${NEUTRALS.DARK_GREY}`)};
@@ -10,12 +10,12 @@ const SpeechTherapistListFilterWrapper = styled.div`
   box-shadow: ${(x) => (x.isMobile ? "none" : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
   padding: ${(x) => (x.isMobile ? "50px 0px 0px 0px" : `1.5rem 2rem 48px 2rem`)};
   width: ${(x) => (x.isMobile ? "100%" : "895px")};
-  
-  position:absolute;
-  z-index:99;
-  top:60%;
-  left:270px;
-  height:100%;
+
+  position: absolute;
+  z-index: 99;
+  top: 60%;
+  left: 270px;
+  height: 100%;
 
   & > div:nth-child(1) {
     display: flex;
@@ -50,35 +50,18 @@ const SpeechTherapistListFilterWrapper = styled.div`
   }
 
   @media (${device.laptop}) {
-    /* background-color: darkcyan; */
-    /* outline: 2px solid green; */
-    /* border: 2px solid green; */
-    
-    
-    
-    & > :nth-last-child(3){
-      margin-bottom:40px;
+    & > :nth-last-child(3) {
+      margin-bottom: 40px;
     }
 
     & > :nth-last-child(2) > button,
     & > :nth-last-child(1) > button {
-      margin-inline:16px;
-      width:calc(100vw - 32px);
-    }
-    
-    & > :nth-last-child(2) > button{
-      margin-bottom:16px;
-    }
-    & > :nth-last-child(1) > button{
-      /* margin-bottom:32px; */
+      margin-inline: 16px;
+      width: calc(100vw - 32px);
     }
 
-    & > button:nth-child(1) {
-      /* border: 2px solid crimson; */
-
-      /* background-color: darkcyan; */
+    & > :nth-last-child(2) > button {
+      margin-bottom: 16px;
     }
   }
 `
-
-export default SpeechTherapistListFilterWrapper

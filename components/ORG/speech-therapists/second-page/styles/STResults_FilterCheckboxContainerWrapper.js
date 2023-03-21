@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../assets/Colors"
 
-const FilterCheckboxComponentWrapper = styled.div`
+export const STResults_FilterCheckboxContainerWrapper = styled.div`
   & > div:nth-child(1),
   & > div:nth-child(2) {
     margin-top: 20px;
@@ -15,9 +15,8 @@ const FilterCheckboxComponentWrapper = styled.div`
     cursor: pointer;
   }
 `
-export default FilterCheckboxComponentWrapper
 
-export const FilterCheckboxComponent_UL = styled.ul`
+export const STResults_FilterCheckboxContainerUL = styled.ul`
   list-style: none;
   margin-left: 58px;
   display: ${(x) => (x.show ? "block" : "none")};

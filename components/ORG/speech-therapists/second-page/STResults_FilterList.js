@@ -1,11 +1,11 @@
 import { useEffect, useReducer, useState } from "react"
-import { useORG_Ctx_filtersLeft } from "../../../context/ORG_CtxFiltersLeft_Provider.js"
-import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile.js"
-import { ORG_INITIAL_LEFT_FILTERS } from "../../../utils/ORG_initialLeftFilters.js"
-import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024.js"
-import { BtnSmall } from "../../ui/buttons/general/styles/ButtonStyled.js"
-import { ActualFilters } from "./ActualFilters.js"
-import SpeechTherapistListFilterWrapper from "./styles/SpeechTherapistListFilterWrapper.js"
+import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_Provider"
+import { BtnSmall } from "../../../ui/buttons/general/styles/ButtonStyled"
+import { STResults_FiltersMobile } from "./mobile/STResults_FiltersMobile"
+import { STResults_SortByMobile } from "./mobile/STResults_SortByMobile"
+import { STResults_FilterSortbyMobileWrapper } from "./mobile/styles/STResults_FilterSortbyMobileWrapper"
+import { STResults_FilterCheckboxContainer } from "./STResults_FilterCheckboxContainer"
+import { STResults_FiltersContainerWrapper } from "./styles/STResults_FiltersContainerWrapper"
 
 const reducer = (state, action) => {
   const setFilterData = action.payload[0]
@@ -35,7 +35,7 @@ const reducer = (state, action) => {
   }
 }
 
-const SpeechTherapistListFilter = () => {
+export const STResults_FilterList = () => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
@@ -84,8 +84,8 @@ const SpeechTherapistListFilter = () => {
           </span>
           {mustShowFiltersDesktop && (
             <>
-              <SpeechTherapistListFilterWrapper id="topOfSTL">
-                <ActualFilters
+              <STResults_FiltersContainerWrapper id="topOfSTL">
+                <STResults_FilterCheckboxContainer
                   dispatch={dispatch}
                   setFilterData={setFilterData}
                   clearAll={clearAll}
@@ -96,15 +96,29 @@ const SpeechTherapistListFilter = () => {
                   handleClearAll={handleClearAll}
                   title="Filter by"
                 />
-              </SpeechTherapistListFilterWrapper>
+              </STResults_FiltersContainerWrapper>
             </>
           )}
         </>
       ) : (
-        <></>
+        <>
+          {" "}
+          <STResults_FilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
+            <STResults_FiltersMobile
+              dispatch={dispatch}
+              setFilterData={setFilterData}
+              clearAll={clearAll}
+              setClearAll={setClearAll}
+              showStateChildren={setShow}
+              shouldClear={shouldClear}
+              setShouldClear={setShouldClear}
+              handleClearAll={handleClearAll}
+            />
+            <STResults_SortByMobile />
+          </STResults_FilterSortbyMobileWrapper>
+        </>
       )}
     </>
   )
 }
 
-export default SpeechTherapistListFilter

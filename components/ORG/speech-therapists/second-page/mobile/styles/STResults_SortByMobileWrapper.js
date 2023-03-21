@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const SortByMobileWrapper = styled.div`
+export const STResults_SortByMobileWrapper = styled.div`
   border: 1px solid ${NEUTRALS.DARK_GREY};
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
   border-radius: ${x => x.showDropdown ? "8px 8px 0px 0px" : "8px" };

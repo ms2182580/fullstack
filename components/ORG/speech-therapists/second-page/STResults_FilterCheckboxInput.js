@@ -1,7 +1,6 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export const CustomCheckboxInput = ({
+export const STResults_FilterCheckboxInput = ({
   type,
   name,
   dispatch,
@@ -29,10 +28,6 @@ export const CustomCheckboxInput = ({
       onChange={() => {
         setChecked((prevState) => !prevState)
       }}
-      
-      // tabIndex={0}
-      
-      
     />
   )
 }

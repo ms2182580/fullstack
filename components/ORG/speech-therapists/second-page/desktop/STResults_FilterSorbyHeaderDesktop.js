@@ -1,5 +1,5 @@
 import { useWidthWindow1024 } from "../../../../../utils/useWidthWindow1024"
-import SpeechTherapistListFilter from "../../SpeechTherapistListFilter"
+import SpeechTherapistListFilter from "../STResults_FilterList"
 import { STResults_HowMuchShowing } from "../STResults_HowMuchShowing"
 import SortBy from "./STResults_SortbyDekstop"
 import { STResults_HeaderWrapper } from "./styles/STResults_HeaderWrapper.js"

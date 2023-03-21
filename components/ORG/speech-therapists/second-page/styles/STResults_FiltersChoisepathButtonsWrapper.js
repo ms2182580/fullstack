@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
-import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
+import { NEUTRALS } from "../../../../../assets/Colors"
+import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
-export const STFiltersTherapistsButtonsWrapper = styled.div`
+export const STResults_FiltersChoisepathButtonsWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   padding-left: 96px;
   display: grid;

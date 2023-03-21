@@ -1,10 +1,10 @@
 import Image from "next/image"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts"
-import FilterCheckboxComponent from "./FilterCheckboxComponent"
-import X_Svg from "../../../assets/Icons/X_Svg.svg"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../ui/heading_body_text/HeaderFonts"
+import { STResults_FilterCheckboxContainer } from "./STResults_FilterCheckboxContainer"
+import { STResults_FiltersContainerWrapper } from "./styles/STResults_FiltersContainerWrapper"
 
-export const ActualFilters = ({
+export const STResults_FiltersContainer = ({
   dispatch,
   setFilterData,
   clearAll,
@@ -14,7 +14,9 @@ export const ActualFilters = ({
   setShouldClear,
   handleClearAll,
   title = "Advanced Filters",
-  handleShowFilters
+  handleShowFilters,
+  isMobile = false,
+  mustShowFiltersMobile = false
 }) => {
   const handleCloseFilters = (e) => {
     if (e.key === "Enter") {
@@ -23,7 +25,9 @@ export const ActualFilters = ({
   }
 
   return (
-    <>
+    <STResults_FiltersContainerWrapper
+      isMobile={isMobile}
+      mustShowFiltersMobile={mustShowFiltersMobile}>
       {title === "Advanced Filters" ? (
         <div>
           <H4>{title}</H4>
@@ -49,7 +53,7 @@ export const ActualFilters = ({
         </div>
       )}
 
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -61,7 +65,7 @@ export const ActualFilters = ({
         title="Distance"
       />
 
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -72,7 +76,7 @@ export const ActualFilters = ({
         categoriesToDisplay={["1", "2", "3", "4", "5"]}
         title="Rating"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -83,7 +87,7 @@ export const ActualFilters = ({
         categoriesToDisplay={["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Fragile X", "Other"]}
         title="Diagnoses"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -104,7 +108,7 @@ export const ActualFilters = ({
         title="Ages Served"
         toUpdate="agesServed"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -115,7 +119,7 @@ export const ActualFilters = ({
         categoriesToDisplay={["English", "Spanish", "Chinese", "Tagalog", "French"]}
         title="Languages"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -128,7 +132,7 @@ export const ActualFilters = ({
         toUpdate="yearsOfPractice"
       />
 
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -140,7 +144,7 @@ export const ActualFilters = ({
         title="Service Setting"
         toUpdate="serviceSetting"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -151,7 +155,7 @@ export const ActualFilters = ({
         categoriesToDisplay={["Medicaid", "Insurance", "Private Pay", "DOE approved"]}
         title="Accepts"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -163,7 +167,7 @@ export const ActualFilters = ({
         title="Meeting Format"
         toUpdate="meetingFormat"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -175,7 +179,7 @@ export const ActualFilters = ({
         title="Session Type"
         toUpdate="sessionType"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -186,7 +190,7 @@ export const ActualFilters = ({
         categoriesToDisplay={["Near Metro", "Near Bus", "Meter Parking", "Street Parking", "Parking Lot"]}
         title="Transportation"
       />
-      <FilterCheckboxComponent
+      <STResults_FilterCheckboxContainer
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}
@@ -198,6 +202,6 @@ export const ActualFilters = ({
         title="Provider Type"
         toUpdate="providerType"
       />
-    </>
+    </STResults_FiltersContainerWrapper>
   )
 }

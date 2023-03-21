@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { BackArrow } from "../../../assets/Icons"
 import SearchComponent from "../../../components/ORG/inputs/SearchComponent"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
-import { STResults_FiltersTherapistsButtons } from "../../../components/ORG/speech-therapists/second-page/desktop/STResults_FiltersTherapistsButtons"
+import { STResults_FiltersChoisepathButtons } from "../../../components/ORG/speech-therapists/second-page/STResults_FiltersChoisepathButtons"
 import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
@@ -70,7 +70,7 @@ const ORGSpeechTherapists = () => {
         ) : null}
       </SpeechTherapistWraper>
 
-      <STResults_FiltersTherapistsButtons widthWindow={widthWindow} />
+      <STResults_FiltersChoisepathButtons widthWindow={widthWindow} />
     </ORGSpeechTherapistsSecondPageWrapper>
   )
 }
