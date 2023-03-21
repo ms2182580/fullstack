@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const STResults_HeaderWrapper = styled.div`
+export const STResults_FilterSortbyHeaderDesktopWrapper = styled.div`
   border: 2px solid crimson;
   margin-right: 93px;
   

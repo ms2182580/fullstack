@@ -1,7 +1,8 @@
 import { ORG_Mobile_FilterIcon } from "../../../../../assets/Icons"
+import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { STResults_FiltersContainer } from "../STResults_FiltersContainer"
+import { STResults_FiltersContainerWrapper } from "../styles/STResults_FiltersContainerWrapper"
 import { STResults_SortByMobileWrapper } from "./styles/STResults_SortByMobileWrapper"
 
 export const STResults_FiltersMobile = ({
@@ -50,7 +51,7 @@ export const STResults_FiltersMobile = ({
         </STResults_SortByMobileWrapper>
       ) : null}
 
-      <STResults_FiltersContainer
+      <STResults_FiltersContainerWrapper
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}

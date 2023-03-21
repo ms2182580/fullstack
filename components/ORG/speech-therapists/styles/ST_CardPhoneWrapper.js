@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const STResults_CardPhoneWrapper = styled.div`
+export const ST_CardPhoneWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;

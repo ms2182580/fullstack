@@ -1,9 +1,9 @@
-import { LocationSvg } from '../../../../assets/Icons/index.js'
-import { Caption, P } from '../../../ui/heading_body_text/DesktopMobileFonts.js'
-import { STResults_CardLocationWrapper } from './styles/STResults_CardLocationWrapper.js'
+import { LocationSvg } from '../../../assets/Icons/index.js'
+import { Caption, P } from '../../ui/heading_body_text/DesktopMobileFonts.js'
+import { ST_CardLocationWrapper } from './styles/ST_CardLocationWrapper.js'
 
 
-export const STResults_CardLocation = ({
+export const ST_CardLocation = ({
   locationCity,
   locationStreetNumber,
   locationStreetName,
@@ -13,7 +13,7 @@ export const STResults_CardLocation = ({
   isThirdPageMobile = false
 }) => {
   return (
-    <STResults_CardLocationWrapper isMobile={isMobile}>
+    <ST_CardLocationWrapper isMobile={isMobile}>
       <div>
         <LocationSvg />
         {isMobile === false ? (
@@ -64,6 +64,6 @@ export const STResults_CardLocation = ({
           </>
         ) : null}
       </div>
-    </STResults_CardLocationWrapper>
+    </ST_CardLocationWrapper>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_FetchNoFilters } from "../../../../context/ORG_CtxFetchNoFilters_Provider.js"
+import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024.js"
 import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { STResults_HowMuchShowingWrapper } from './styles/STResults_HowMuchShowingWrapper.js'
 

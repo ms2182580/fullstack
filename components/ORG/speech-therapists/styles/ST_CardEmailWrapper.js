@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const STResults_CardEmailWrapper = styled.div`
+export const ST_CardEmailWrapper = styled.div`
   margin-bottom: 21px;
   display:flex;
 

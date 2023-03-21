@@ -1,10 +1,10 @@
-import { PhoneSvg } from "../../../../assets/Icons"
-import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { STResults_CardPhoneWrapper } from "./styles/STResults_CardPhoneWrapper.js"
+import { PhoneSvg } from "../../../assets/Icons"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { ST_CardPhoneWrapper } from "./styles/ST_CardPhoneWrapper.js"
 
-export const STResults_CardPhone = ({ phoneNumber, isMobile = false, isThirdPageMobile = false }) => {
+export const ST_CardPhone = ({ phoneNumber, isMobile = false, isThirdPageMobile = false }) => {
   return (
-    <STResults_CardPhoneWrapper>
+    <ST_CardPhoneWrapper>
       <PhoneSvg />
       {isMobile === false ? (
         <>
@@ -21,7 +21,7 @@ export const STResults_CardPhone = ({ phoneNumber, isMobile = false, isThirdPage
           <Caption>{phoneNumber}</Caption>
         </>
       )}
-    </STResults_CardPhoneWrapper>
+    </ST_CardPhoneWrapper>
   )
 }
 

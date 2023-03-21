@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const EverySingleSpeechTherapist_LocationWrapper = styled.div`
+export const ST_CardLocationWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
 

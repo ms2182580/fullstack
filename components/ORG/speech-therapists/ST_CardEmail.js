@@ -1,11 +1,11 @@
-import { EmailORGSvg } from '../../../../assets/Icons/index.js'
-import { Caption, P } from '../../../ui/heading_body_text/DesktopMobileFonts.js'
-import { STResults_CardEmailWrapper } from './styles/STResults_CardEmailWrapper.js'
+import { EmailORGSvg } from '../../../assets/Icons/index.js'
+import { Caption, P } from '../../ui/heading_body_text/DesktopMobileFonts.js'
+import { ST_CardEmailWrapper } from './styles/ST_CardEmailWrapper.js'
 
 
-export const STResults_CardEmail = ({ email, isMobile = false, isThirdPageMobile = false }) => {
+export const ST_CardEmail = ({ email, isMobile = false, isThirdPageMobile = false }) => {
   return (
-    <STResults_CardEmailWrapper>
+    <ST_CardEmailWrapper>
       <div>
         <EmailORGSvg />
 
@@ -33,6 +33,6 @@ export const STResults_CardEmail = ({ email, isMobile = false, isThirdPageMobile
           <Caption>{email}</Caption>
         </>
       )}
-    </STResults_CardEmailWrapper>
+    </ST_CardEmailWrapper>
   )
 }

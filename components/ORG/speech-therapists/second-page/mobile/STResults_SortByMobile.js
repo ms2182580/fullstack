@@ -1,12 +1,11 @@
 import { Fragment, useState } from "react"
 import { DownArrowSvg, UpArrowSvg } from "../../../../../assets/Icons/index.js"
-import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
-import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider"
-import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile"
-import { ORG_SortByOrder } from "../../../../../utils/ORG_SortByOrder"
-import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { CustomC } from "../../../dropdownFilters/styles/Singledropdown"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
+import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
+import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile.js"
+import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby.js"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { CustomC } from "../../../dropdownFilters/styles/Singledropdown.js"
 import { STResults_SortByMobileWrapper } from "./styles/STResults_SortByMobileWrapper.js"
 
 export const STResults_SortByMobile = ({ title = "Sort By"}) => {

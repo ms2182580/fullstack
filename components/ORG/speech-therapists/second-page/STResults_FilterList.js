@@ -1,5 +1,8 @@
 import { useEffect, useReducer, useState } from "react"
 import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_Provider"
+import { useORG_Ctx_ShowFiltersMobile } from "../../../../context/ORG_Ctx_ShowFiltersMobile"
+import { ORG_INITIAL_LEFT_FILTERS } from "../../../../utils/ORG_initialLeftFilters"
+import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { BtnSmall } from "../../../ui/buttons/general/styles/ButtonStyled"
 import { STResults_FiltersMobile } from "./mobile/STResults_FiltersMobile"
 import { STResults_SortByMobile } from "./mobile/STResults_SortByMobile"
@@ -95,6 +98,8 @@ export const STResults_FilterList = () => {
                   setShouldClear={setShouldClear}
                   handleClearAll={handleClearAll}
                   title="Filter by"
+                  isMobile={isMobile}
+                  
                 />
               </STResults_FiltersContainerWrapper>
             </>
@@ -113,6 +118,7 @@ export const STResults_FilterList = () => {
               shouldClear={shouldClear}
               setShouldClear={setShouldClear}
               handleClearAll={handleClearAll}
+              isMobile={isMobile}
             />
             <STResults_SortByMobile />
           </STResults_FilterSortbyMobileWrapper>

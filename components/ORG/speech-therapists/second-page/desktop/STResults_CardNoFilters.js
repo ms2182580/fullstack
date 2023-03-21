@@ -8,20 +8,12 @@ import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Verified } from "../../../verified/Verified"
-import {
-  EverySingleSpeechTherapist_Email,
-  EverySingleSpeechTherapist_Location,
-  EverySingleSpeechTherapist_Phone
-} from "../../SingleSpeechtherapistComponents_Left"
 import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../SingleSpeechtherapistComponents_Right"
-import TherapistInfoSecondPage from "../../TherapistInfoSecondPage"
-import {
-  EverySingleSpeechTherapistWrapper_Card,
-  EverySingleSpeechTherapistWrapper_Left,
-  EverySingleSpeechTherapistWrapper_Right,
-  EverySPT_LeftImage,
-  EverySPT_LeftInfo
-} from "./styles/EverySingleSpeechTherapistWrapper"
+import { ST_CardEmail } from "../../ST_CardEmail"
+import { ST_CardLocation } from "../../ST_CardLocation"
+import { ST_CardPhone } from "../../ST_CardPhone"
+import { STResults_CardInfo } from "../STResults_CardInfo"
+import { STResults_CardWithFiltersWrapper, STResults_CardWithFiltersWrapper_Left, STResults_CardWithFiltersWrapper_Left_LeftImage, STResults_CardWithFiltersWrapper_Left_LeftInfo, STResults_CardWithFiltersWrapper_Right } from "./styles/STResults_CardWithFiltersWrapper"
 
 export const STResults_CardNoFilters = () => {
   const router = useRouter()
@@ -59,9 +51,9 @@ export const STResults_CardNoFilters = () => {
 
           let serviceSetting = filtersST[i].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
           return (
-            <EverySingleSpeechTherapistWrapper_Card key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
-              <EverySingleSpeechTherapistWrapper_Left>
-                <EverySPT_LeftImage>
+            <STResults_CardWithFiltersWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
+              <STResults_CardWithFiltersWrapper_Left>
+                <STResults_CardWithFiltersWrapper_Left_LeftImage>
                   <Image
                     src={everySingleValue.picture.large}
                     layout="responsive"
@@ -70,22 +62,22 @@ export const STResults_CardNoFilters = () => {
                     alt={`Portrait of ${everySingleValue.name.first} ${everySingleValue.name.last} `}
                   />
                   <Verified />
-                </EverySPT_LeftImage>
+                </STResults_CardWithFiltersWrapper_Left_LeftImage>
 
-                <EverySPT_LeftInfo>
-                  <EverySingleSpeechTherapist_Phone phoneNumber={everySingleValue.phone} />
-                  <EverySingleSpeechTherapist_Email email={everySingleValue.email} />
-                  <EverySingleSpeechTherapist_Location
+                <STResults_CardWithFiltersWrapper_Left_LeftInfo>
+                  <ST_CardPhone phoneNumber={everySingleValue.phone} />
+                  <ST_CardEmail email={everySingleValue.email} />
+                  <ST_CardLocation
                     locationCity={everySingleValue.location.city}
                     locationStreetNumber={everySingleValue.location.street.number}
                     locationStreetName={everySingleValue.location.street.name}
                     locationState={everySingleValue.location.state}
                     howFar={filtersST[i].distance}
                   />
-                </EverySPT_LeftInfo>
-              </EverySingleSpeechTherapistWrapper_Left>
+                </STResults_CardWithFiltersWrapper_Left_LeftInfo>
+              </STResults_CardWithFiltersWrapper_Left>
 
-              <EverySingleSpeechTherapistWrapper_Right>
+              <STResults_CardWithFiltersWrapper_Right>
                 <BookmarkSaveSTSvg tabIndex={0} />
 
                 <H3>
@@ -101,27 +93,27 @@ export const STResults_CardNoFilters = () => {
 
                 <FriendlyDiagnoses diagnoses={diagnoses} />
 
-                <TherapistInfoSecondPage
+                <STResults_CardInfo
                   title="Ages served"
                   dataToShow={agesServed}
                 />
 
-                <TherapistInfoSecondPage
+                <STResults_CardInfo
                   title="Languages"
                   dataToShow={languages}
                 />
 
-                <TherapistInfoSecondPage
+                <STResults_CardInfo
                   title="Years of Practice"
                   dataToShow={filtersST[i].yearsOfPractice}
                 />
 
-                <TherapistInfoSecondPage
+                <STResults_CardInfo
                   title="Service Setting"
                   dataToShow={serviceSetting}
                 />
 
-                <TherapistInfoSecondPage
+                <STResults_CardInfo
                   title="Accepts"
                   dataToShow={accepts}
                 />
@@ -129,8 +121,8 @@ export const STResults_CardNoFilters = () => {
                 <span onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}>
                   <ButtonSmall secondary>More details</ButtonSmall>
                 </span>
-              </EverySingleSpeechTherapistWrapper_Right>
-            </EverySingleSpeechTherapistWrapper_Card>
+              </STResults_CardWithFiltersWrapper_Right>
+            </STResults_CardWithFiltersWrapper>
           )
         })}
     </>

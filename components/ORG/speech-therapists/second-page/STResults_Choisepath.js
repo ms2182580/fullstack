@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useORG_Ctx_FetchNoFilters } from "../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_Provider"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
+import { STResults_CardNoFilters } from "./desktop/STResults_CardNoFilters"
 import { STResults_CardWithFilters } from "./desktop/STResults_CardWithFilters"
 import { STResults_ChoisepathWrapper } from "./styles/STResults_ChoiseWrapper"
 
@@ -29,7 +30,7 @@ export const STResults_Choisepath = () => {
         </>
       ) : filterHaveAtLeastOneValueState === false && isMobile === false ? (
         <>
-          {/* <SpeechTherapistsCardNoFilter /> */}
+          <STResults_CardNoFilters />
         </>
       ) : filterHaveAtLeastOneValueState && isMobile ? (
         <>

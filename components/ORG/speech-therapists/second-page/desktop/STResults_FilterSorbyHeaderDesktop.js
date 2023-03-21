@@ -1,28 +1,18 @@
-import { useWidthWindow1024 } from "../../../../../utils/useWidthWindow1024"
-import SpeechTherapistListFilter from "../STResults_FilterList"
+import { STResults_FilterList } from "../STResults_FilterList"
 import { STResults_HowMuchShowing } from "../STResults_HowMuchShowing"
-import SortBy from "./STResults_SortbyDekstop"
-import { STResults_HeaderWrapper } from "./styles/STResults_HeaderWrapper.js"
+import { STResults_SortbyDekstop } from "./STResults_SortbyDekstop"
+import { STResults_FilterSortbyHeaderDesktopWrapper } from "./styles/STResults_FilterSortbyHeaderDesktopWrapper"
 
-export const STResults_FilterSorbyHeaderDesktop = () => {
-  const { isMobile } = useWidthWindow1024()
+export const STResults_FilterSortbyHeaderDesktop = () => {
 
   return (
-    <STResults_HeaderWrapper>
-      {isMobile === false ? (
-        <>
-          <STResults_HowMuchShowing />
+    <STResults_FilterSortbyHeaderDesktopWrapper>
+      <STResults_HowMuchShowing />
 
-          <div>
-            <SpeechTherapistListFilter />
-            <SortBy />
-          </div>
-        </>
-      ) : (
-        <>
-         <p>Nothing in mobile here...</p>
-        </>
-      )}
-    </STResults_HeaderWrapper>
+      <div>
+        <STResults_FilterList />
+        <STResults_SortbyDekstop />
+      </div>
+    </STResults_FilterSortbyHeaderDesktopWrapper>
   )
 }

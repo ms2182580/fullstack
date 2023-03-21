@@ -8,10 +8,10 @@ import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Verified } from "../../../verified/Verified"
 import { FriendlyDiagnoses, Tooltip } from "../../SingleSpeechtherapistComponents_Right"
-import { STResults_CardEmail } from "../STResults_CardEmail"
+import { ST_CardEmail } from "../../ST_CardEmail"
+import { ST_CardLocation } from "../../ST_CardLocation"
+import { ST_CardPhone } from "../../ST_CardPhone"
 import { STResults_CardInfo } from "../STResults_CardInfo"
-import { STResults_CardLocation } from "../STResults_CardLocation"
-import { STResults_CardPhone } from "../STResults_CardPhone"
 import {
   STResults_CardWithFiltersWrapper_Left,
   STResults_CardWithFiltersWrapper_Left_LeftImage,
@@ -61,9 +61,10 @@ export const STResults_CardWithFilters = () => {
                 </STResults_CardWithFiltersWrapper_Left_LeftImage>
 
                 <STResults_CardWithFiltersWrapper_Left_LeftInfo>
-                  <STResults_CardPhone phoneNumber={everySingleValue.phone} />
-                  <STResults_CardEmail email={everySingleValue.email} />
-                  <STResults_CardLocation
+                  <ST_CardPhone phoneNumber={everySingleValue.phone} />
+                  <ST_CardEmail email={everySingleValue.email} />
+                  <ST_CardLocation
+                  
                     locationCity={everySingleValue.location.city}
                     locationStreetNumber={everySingleValue.location.street.number}
                     locationStreetName={everySingleValue.location.street.name}
