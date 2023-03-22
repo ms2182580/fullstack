@@ -1,12 +1,12 @@
 import { Fragment } from "react"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import {
-  TherapistInfoThirdPageWrapper_Left,
-  TherapistInfoThirdPageWrapper_Right
-} from "./styles/TherapistInfoThirdPageWrapper.js"
+  STDetail_CardWrapper_SecondRow_InfoLeftWrapper,
+  STDetail_CardWrapper_SecondRow_InfoRightWrapper
+} from "../../styles/TherapistInfoThirdPageWrapper.js"
 
-export const TherapistInfoThirdPage = ({
+export const STDetail_CardWrapper_SecondRow_Info = ({
   title,
   dataToShow,
   rightRowQualification = false,
@@ -18,28 +18,28 @@ export const TherapistInfoThirdPage = ({
   
   if (rightRowQualification) {
     return (
-      <TherapistInfoThirdPageWrapper_Right isFirst>
+      <STDetail_CardWrapper_SecondRow_InfoRightWrapper isFirst>
         <H4 cta>{title}:</H4>
         <P>Education level: Master&apos;s</P>
         <P>Years in practice: {rightRowQualification_Data}</P>
         <P>License Number: 1239082</P>
         <P>State of licence: {state}</P>
-      </TherapistInfoThirdPageWrapper_Right>
+      </STDetail_CardWrapper_SecondRow_InfoRightWrapper>
     )
   }
 
   if (rightRowCredentials) {
     return (
-      <TherapistInfoThirdPageWrapper_Right>
+      <STDetail_CardWrapper_SecondRow_InfoRightWrapper>
         <H4 cta>{title}:</H4>
         <P>{dataToShow[0]} <br/>{dataToShow[1]}
         </P>
-      </TherapistInfoThirdPageWrapper_Right>
+      </STDetail_CardWrapper_SecondRow_InfoRightWrapper>
     )
   }
 
   return (
-    <TherapistInfoThirdPageWrapper_Left>
+    <STDetail_CardWrapper_SecondRow_InfoLeftWrapper>
       <P bold primary_cta>
         {title}:
       </P>
@@ -61,6 +61,6 @@ export const TherapistInfoThirdPage = ({
         })}
 
       {typeof dataToShow === "string" && <P> {dataToShow}</P>}
-    </TherapistInfoThirdPageWrapper_Left>
+    </STDetail_CardWrapper_SecondRow_InfoLeftWrapper>
   )
 }

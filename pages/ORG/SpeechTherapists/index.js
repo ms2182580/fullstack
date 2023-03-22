@@ -11,7 +11,7 @@ import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFilte
 import { useWidthWindow } from "../../../utils/useWidthWindow"
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import ORGSpeechTherapistsSecondPageWrapper from "./styles/ORGSpeechTherapistsSecondPageWrapper"
-import SpeechTherapistWraper from "./styles/SpeechTherapistWrapper"
+import SpeechTherapistWrapper from "./styles/SpeechTherapistWrapper"
 
 const ORGSpeechTherapists = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
@@ -36,7 +36,7 @@ const ORGSpeechTherapists = () => {
 
   return (
     <ORGSpeechTherapistsSecondPageWrapper>
-      <SpeechTherapistWraper>
+      <SpeechTherapistWrapper>
         {isMobile === false ? (
           <>
             <P
@@ -68,7 +68,7 @@ const ORGSpeechTherapists = () => {
             <SearchComponent />
           </>
         ) : null}
-      </SpeechTherapistWraper>
+      </SpeechTherapistWrapper>
 
       <STResults_FiltersChoisepathButtons widthWindow={widthWindow} />
     </ORGSpeechTherapistsSecondPageWrapper>

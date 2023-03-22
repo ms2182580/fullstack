@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { NEUTRALS, PRIMARY } from '../../../../../../assets/Colors'
+import { NEUTRALS, PRIMARY } from '../../../../assets/Colors'
 
-export const STResults_CardWithFiltersWrapper = styled.div`
+export const ST_CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
@@ -10,7 +10,7 @@ export const STResults_CardWithFiltersWrapper = styled.div`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 `
 
-export const STResults_CardWithFiltersWrapper_Left = styled.div`
+export const ST_CardWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
   border-top-left-radius: 8px;
@@ -19,7 +19,7 @@ export const STResults_CardWithFiltersWrapper_Left = styled.div`
   min-width: ${(x) => (x.STDetail ? "432px" : "398px")};
 `
 
-export const STResults_CardWithFiltersWrapper_Left_LeftImage = styled.div`
+export const ST_CardWrapper_Left_LeftImage = styled.div`
   border: 2px ${NEUTRALS.LIGHT_GREY} solid;
   overflow: hidden;
   border-radius: 8px;
@@ -33,13 +33,13 @@ export const STResults_CardWithFiltersWrapper_Left_LeftImage = styled.div`
   }
 `
 
-export const STResults_CardWithFiltersWrapper_Left_LeftInfo = styled.div`
+export const ST_CardWrapper_Left_LeftInfo = styled.div`
   margin-left: 14px;
   margin-right: 14px;
 `
 
 
-export const STResults_CardWithFiltersWrapper_Right = styled.div`
+export const ST_CardWrapper_Right = styled.div`
   grid-area: rightPart;
   display: grid;
   justify-self: stretch;

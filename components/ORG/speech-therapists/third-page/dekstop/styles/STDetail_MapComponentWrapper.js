@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const MapWrapper = styled.div`
+export const STDetail_MapComponentWrapper = styled.div`
   margin-top: 32px;
   width: 384px;
   height: 200px;

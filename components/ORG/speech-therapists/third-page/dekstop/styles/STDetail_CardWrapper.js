@@ -1,6 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
-import { EverySingleSpeechTherapistWrapper_Card } from "./EverySingleSpeechTherapistWrapper"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { ST_CardWrapper } from '../../../styles/ST_CardWrapper'
+
 
 export const STDetail_CardWrapper = styled.div`
   padding-top: 40px;
@@ -11,7 +12,7 @@ export const STDetail_CardWrapper = styled.div`
   }
 `
 
-export const EverySingleSpeechTherapistWrapper_Card_Detail = styled(EverySingleSpeechTherapistWrapper_Card)`
+export const STDetail_CardWrapper_Card_Detail = styled(ST_CardWrapper)`
   box-shadow: none;
   
   & > :nth-child(1) {
@@ -25,7 +26,7 @@ export const EverySingleSpeechTherapistWrapper_Card_Detail = styled(EverySingleS
   }
 `
 
-export const EverySingleSpeechTherapistWrapper_Right_Detail = styled.div`
+export const STDetail_CardWrapper_Right_Detail = styled.div`
   display: grid;
   justify-self: stretch;
   grid-template-rows: auto 1fr;
@@ -39,7 +40,7 @@ export const EverySingleSpeechTherapistWrapper_Right_Detail = styled.div`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 `
 
-export const FirstRow = styled.div`
+export const STDetail_CardWrapper_FirstRow = styled.div`
   & > :nth-child(1) {
     position: absolute;
     right: 33px;
@@ -113,7 +114,7 @@ export const FirstRow = styled.div`
   }
 `
 
-export const SecondRow = styled.div`
+export const STDetail_CardWrapper_SecondRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "leftPart rightPart";
@@ -121,9 +122,9 @@ export const SecondRow = styled.div`
   margin-bottom: 93px;
 `
 
-export const LeftPart = styled.div`
+export const STDetail_CardWrapper_SecondRow_LeftPart = styled.div`
   grid-area: leftPart;
 `
-export const RightPart = styled.div`
+export const STDetail_CardWrapper_SecondRow_RightPart = styled.div`
   grid-area: rightPart;
 `

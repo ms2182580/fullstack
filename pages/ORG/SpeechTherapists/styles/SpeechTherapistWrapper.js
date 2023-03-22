@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
-const SpeechTherapistWraper = styled.div`
+const SpeechTherapistWrapper = styled.div`
   margin: ${(x) => (x.inDetail ? "2rem 0px" : "2rem 6rem")};
 
   & > p:nth-child(1){
@@ -26,4 +26,4 @@ const SpeechTherapistWraper = styled.div`
   }
 `
 
-export default SpeechTherapistWraper
+export default SpeechTherapistWrapper

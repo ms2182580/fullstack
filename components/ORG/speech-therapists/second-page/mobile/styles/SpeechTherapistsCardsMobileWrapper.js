@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const SpeechTherapistsCardsMobileWrapper = styled.div`
+export const STDetail_MobileCardWrapper = styled.div`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 

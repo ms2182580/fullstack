@@ -1,38 +1,31 @@
 import Image from "next/image"
 import React from "react"
-import { BookmarkSaveSTSvg } from "../../../assets/Icons"
-import { H2 } from "../../ui/heading_body_text/HeaderFonts"
-import { Verified } from "../verified/Verified"
-import { EmailGetDirectionComponent } from "./EmailGetFirectionWrapper"
-import { MapComponent } from "./MapWrapper"
+import { BookmarkSaveSTSvg } from "../../../../../assets/Icons"
+import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { Verified } from "../../../verified/Verified"
+import { EmailGetDirectionComponent } from "../../EmailGetDirectionWrapper"
+import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../SingleSpeechtherapistComponents_Right"
+import { ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage, ST_CardWrapper_Left_LeftInfo } from "../../styles/ST_CardWrapper"
+import { ST_CardEmail } from "../../ST_CardEmail"
+import { ST_CardLocation } from "../../ST_CardLocation"
+import { ST_CardPhone } from "../../ST_CardPhone"
+import { STDetail_CardWrapper_SecondRow_Info } from "./STDetail_CardWrapper_SecondRow_Info"
+import { STDetail_MapComponent } from "./STDetail_MapComponent"
 import {
-  EverySingleSpeechTherapist_Email,
-  EverySingleSpeechTherapist_Location,
-  EverySingleSpeechTherapist_Phone
-} from "./SingleSpeechtherapistComponents_Left"
-import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "./SingleSpeechtherapistComponents_Right"
-import {
-  EverySingleSpeechTherapistWrapper_Left,
-  EverySPT_LeftImage,
-  EverySPT_LeftInfo
-} from "./styles/EverySingleSpeechTherapistWrapper"
-import {
-  EverySingleSpeechTherapistWrapper_Card_Detail,
-  EverySingleSpeechTherapistWrapper_Right_Detail,
-  FirstRow,
-  LeftPart,
-  RightPart,
-  SecondRow,
-  STDetail_CardWrapper
+  STDetail_CardWrapper,
+  STDetail_CardWrapper_Card_Detail,
+  STDetail_CardWrapper_FirstRow,
+  STDetail_CardWrapper_Right_Detail,
+  STDetail_CardWrapper_SecondRow,
+  STDetail_CardWrapper_SecondRow_LeftPart,
+  STDetail_CardWrapper_SecondRow_RightPart
 } from "./styles/STDetail_CardWrapper"
-import { TherapistInfoThirdPage } from "./TherapistInfoThirdPage"
 
 export const STDetail_STDetails = ({ STData }) => {
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
         let accepts = STData.filters[0].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
-
 
         let agesServed = STData.filters[0].agesServed
         let diagnoses = STData.filters[0].diagnoses.map((x) => {
@@ -45,10 +38,9 @@ export const STDetail_STDetails = ({ STData }) => {
         )
         let serviceSetting = STData.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
         return (
-          <EverySingleSpeechTherapistWrapper_Card_Detail
-            key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
-            <EverySingleSpeechTherapistWrapper_Left STDetail>
-              <EverySPT_LeftImage>
+          <STDetail_CardWrapper_Card_Detail key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
+            <ST_CardWrapper_Left STDetail={true}>
+              <ST_CardWrapper_Left_LeftImage>
                 <Image
                   src={everySingleValue.picture.large}
                   layout="responsive"
@@ -57,27 +49,27 @@ export const STDetail_STDetails = ({ STData }) => {
                   alt={`Portrait of ${everySingleValue.name.first} ${everySingleValue.name.last} `}
                 />
                 <Verified />
-              </EverySPT_LeftImage>
+              </ST_CardWrapper_Left_LeftImage>
 
-              <EverySPT_LeftInfo>
-                <EverySingleSpeechTherapist_Phone phoneNumber={everySingleValue.phone} />
-                <EverySingleSpeechTherapist_Email email={everySingleValue.email} />
-                <EverySingleSpeechTherapist_Location
+              <ST_CardWrapper_Left_LeftInfo>
+                <ST_CardPhone phoneNumber={everySingleValue.phone} />
+                <ST_CardEmail email={everySingleValue.email} />
+                <ST_CardLocation
                   locationCity={everySingleValue.location.city}
                   locationStreetNumber={everySingleValue.location.street.number}
                   locationStreetName={everySingleValue.location.street.name}
                   locationState={everySingleValue.location.state}
                   howFar={STData.filters[0].distance}
                 />
-              </EverySPT_LeftInfo>
+              </ST_CardWrapper_Left_LeftInfo>
 
               <EmailGetDirectionComponent />
 
-              <MapComponent />
-            </EverySingleSpeechTherapistWrapper_Left>
+              <STDetail_MapComponent />
+            </ST_CardWrapper_Left>
 
-            <EverySingleSpeechTherapistWrapper_Right_Detail>
-              <FirstRow>
+            <STDetail_CardWrapper_Right_Detail>
+              <STDetail_CardWrapper_FirstRow>
                 <BookmarkSaveSTSvg tabIndex={0} />
                 <H2>
                   {everySingleValue.name.first} {everySingleValue.name.last}
@@ -88,45 +80,45 @@ export const STDetail_STDetails = ({ STData }) => {
                   reviews={STData.filters[0].reviews}
                 />
                 <FriendlyDiagnoses diagnoses={diagnoses} />
-              </FirstRow>
+              </STDetail_CardWrapper_FirstRow>
 
-              <SecondRow>
-                <LeftPart>
-                  <TherapistInfoThirdPage
+              <STDetail_CardWrapper_SecondRow>
+                <STDetail_CardWrapper_SecondRow_LeftPart>
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Ages served"
                     dataToShow={agesServed}
                   />
-                  <TherapistInfoThirdPage
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Languages"
                     dataToShow={languages}
                   />
-                  <TherapistInfoThirdPage
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Years of Practice"
                     dataToShow={STData.filters[0].yearsOfPractice}
                   />
-                  <TherapistInfoThirdPage
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Practice Setting"
                     dataToShow={serviceSetting}
                   />
-                  <TherapistInfoThirdPage
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Insurance"
                     dataToShow={accepts}
                   />
-                  <TherapistInfoThirdPage
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Meeting Format"
                     dataToShow={meetingFormat}
                   />
-                </LeftPart>
+                </STDetail_CardWrapper_SecondRow_LeftPart>
 
-                <RightPart>
-                  <TherapistInfoThirdPage
+                <STDetail_CardWrapper_SecondRow_RightPart>
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Qualifications"
                     dataToShow={serviceSetting}
                     rightRowQualification
                     rightRowQualification_Data={STData.filters[0].yearsOfPractice}
                     state={everySingleValue.location.state}
                   />
-                  <TherapistInfoThirdPage
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Additional Credentials"
                     rightRowCredentials
                     dataToShow={[
@@ -134,10 +126,10 @@ export const STDetail_STDetails = ({ STData }) => {
                       "SLP, Board Certified Behavior Analyst (BCBA)"
                     ]}
                   />
-                </RightPart>
-              </SecondRow>
-            </EverySingleSpeechTherapistWrapper_Right_Detail>
-          </EverySingleSpeechTherapistWrapper_Card_Detail>
+                </STDetail_CardWrapper_SecondRow_RightPart>
+              </STDetail_CardWrapper_SecondRow>
+            </STDetail_CardWrapper_Right_Detail>
+          </STDetail_CardWrapper_Card_Detail>
         )
       })}
     </STDetail_CardWrapper>

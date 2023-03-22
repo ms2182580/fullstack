@@ -1,10 +1,10 @@
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
-import { STDetailMobile_StickyNavbarWrapper } from "./styles/STDetailMobile_StickyNavbarWrapper"
+import { STDetail_Mobile_StickyNavbarWrapper } from "./styles/STDetail_Mobile_StickyNavbarWrapper"
 
-export const STDetailMobile_StickyNavbar = ({ highlight }) => {
+export const STDetail_Mobile_StickyNavbar = ({ highlight }) => {
   return (
-    <STDetailMobile_StickyNavbarWrapper highlight={highlight}>
+    <STDetail_Mobile_StickyNavbarWrapper highlight={highlight}>
       <ul>
         <li className={highlight === "about" ? "highlight" : ""}>
           <Caption>
@@ -27,6 +27,6 @@ export const STDetailMobile_StickyNavbar = ({ highlight }) => {
           </Caption>
         </li>
       </ul>
-    </STDetailMobile_StickyNavbarWrapper>
+    </STDetail_Mobile_StickyNavbarWrapper>
   )
 }

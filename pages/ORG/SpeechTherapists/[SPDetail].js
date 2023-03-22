@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
-import { useState } from "react"
-import { useEffect } from "react"
-import { SpeechtherapistDetail } from "../../../components/ORG/speech-therapists/SpeechtherapistDetail"
+import { useEffect, useState } from "react"
+import { STDetail_Main } from "../../../components/ORG/speech-therapists/third-page/STDetail_Main"
 const SPDetail = () => {
   const [loaded, setLoaded] = useState(false)
   const router = useRouter()
@@ -22,7 +21,7 @@ const SPDetail = () => {
 
   return (
     <>
-      <SpeechtherapistDetail />
+      <STDetail_Main />
     </>
   )
 }

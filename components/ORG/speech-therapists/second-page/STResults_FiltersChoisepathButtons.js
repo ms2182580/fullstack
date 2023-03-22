@@ -12,18 +12,17 @@ export const STResults_FiltersChoisepathButtons = ({ widthWindow }) => {
   const { isMobile } = useWidthWindow1024()
   return (
     <STResults_FiltersChoisepathButtonsWrapper>
-      <STResults_FilterSortbyHeaderDesktop />
-      
-      {/* {isMobile === false ? (
+      {isMobile === false ? (
         <>
           <STResults_FilterSortbyHeaderDesktop />
-          
         </>
       ) : (
         <>
-          <STResults_FilterSorbyHeaderMobile/>
+          Header mobile
         </>
-      )} */}
+      )}
+      
+      
       
       
       

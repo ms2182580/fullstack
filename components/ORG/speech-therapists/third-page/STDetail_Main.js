@@ -1,30 +1,31 @@
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
-import { BackArrow } from "../../../assets/Icons"
-import { useORG_Ctx_IndividualSpeechtherapist } from "../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
-import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
-import { EmailGetDirectionComponent } from "./EmailGetFirectionWrapper"
+import { BackArrow } from "../../../../assets/Icons"
+import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
+import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
+import { EmailGetDirectionComponent } from "../EmailGetDirectionWrapper"
 import {
   EverySingleSpeechTherapist_Email,
   EverySingleSpeechTherapist_Location,
   EverySingleSpeechTherapist_Phone
-} from "./SingleSpeechtherapistComponents_Left"
-import { STDetail_About } from "./STDetail_About"
-import { STDetail_Header } from "./STDetail_Header"
-import { STDetail_PageLastUpdated } from "./STDetail_PageLastUpdated"
-import { STDetail_Reviews } from "./STDetail_Reviews"
-import { STDetail_STDetails } from "./STDetail_STDetails"
-import { STDetail_HeaderMobileWrapper } from "./styles/STDetail_HeaderMobileWrapper.js"
+} from "../SingleSpeechtherapistComponents_Left"
+import { STDetail_About } from "../STDetail_About"
+import { STDetail_PageLastUpdated } from "../STDetail_PageLastUpdated"
+import { STDetail_Reviews } from "../STDetail_Reviews"
+import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
+import TherapistInfoSecondPage from "../TherapistInfoSecondPage"
+import { STDetail_Header } from "./dekstop/STDetail_Header"
+import { STDetail_STDetails } from "./dekstop/STDetail_STDetails"
+import { STDetail_Mobile } from "./mobile/STDetail_Mobile"
+import { STDetail_Mobile_StickyNavbar } from "./mobile/STDetail_Mobile_StickyNavbar"
+import { STDetail_Separator } from "./mobile/STDetail_Separator"
+import { STDetail_STDetails_ThirdPageWrapper } from "./mobile/styles/STDetail_STDetails_ThirdPageWrapper"
 import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
-import TherapistInfoSecondPage from "./TherapistInfoSecondPage"
-import { Separator } from "./third-page/mobile/Separator"
-import { STDetailMobile } from "./third-page/mobile/STDetailMobile"
-import { STDetailMobile_StickyNavbar } from "./third-page/mobile/STDetailMobile_StickyNavbar"
-import { STDetail_STDetails_ThirdPageWrapper } from "./third-page/mobile/styles/STDetail_STDetails_ThirdPageWrapper"
 
-export const SpeechtherapistDetail = () => {
+
+export const STDetail_Main = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
@@ -125,12 +126,12 @@ export const SpeechtherapistDetail = () => {
         </>
       ) : (
         <>
-          <STDetail_HeaderMobileWrapper>
+          <ST_HeaderMobileWrapper>
             <LinkNoStyle href="/ORG/SpeechTherapists">
               <BackArrow />
               <Caption bolder>Back to Results</Caption>
             </LinkNoStyle>
-          </STDetail_HeaderMobileWrapper>
+          </ST_HeaderMobileWrapper>
         </>
       )}
 
@@ -141,19 +142,19 @@ export const SpeechtherapistDetail = () => {
           </>
         ) : (
           <>
-            <STDetailMobile STData={speechtherapist} />
+            <STDetail_Mobile STData={speechtherapist} />
           </>
         )}
 
         {isMobile === false ? null : (
           <>
-            <STDetailMobile_StickyNavbar highlight={highlight} />
+            <STDetail_Mobile_StickyNavbar highlight={highlight} />
           </>
         )}
 
         {isMobile === false ? null : (
           <>
-            <Separator />
+            <STDetail_Separator />
           </>
         )}
 
@@ -165,7 +166,7 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <Separator />
+            <STDetail_Separator />
           </>
         )}
 
@@ -208,7 +209,7 @@ export const SpeechtherapistDetail = () => {
 
             {isMobile === false ? null : (
               <>
-                <Separator />
+                <STDetail_Separator />
               </>
             )}
 
@@ -231,7 +232,7 @@ export const SpeechtherapistDetail = () => {
 
             {isMobile === false ? null : (
               <>
-                <Separator />
+                <STDetail_Separator />
               </>
             )}
 
@@ -257,12 +258,12 @@ export const SpeechtherapistDetail = () => {
                 isMobile={true}
                 isThirdPageMobile={true}
               />
-              <EmailGetDirectionComponent />
+              <EmailGetDirectionComponent  />
             </div>
 
             {isMobile === false ? null : (
               <>
-                <Separator />
+                <STDetail_Separator />
               </>
             )}
           </STDetail_STDetails_ThirdPageWrapper>
@@ -277,7 +278,7 @@ export const SpeechtherapistDetail = () => {
 
         {isMobile === false ? null : (
           <>
-            <Separator isLastOne={true} />
+            <STDetail_Separator isLastOne={true} />
           </>
         )}
 

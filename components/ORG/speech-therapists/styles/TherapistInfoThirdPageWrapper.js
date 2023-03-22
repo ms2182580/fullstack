@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const TherapistInfoThirdPageWrapper_Left = styled.div`
+export const STDetail_CardWrapper_SecondRow_InfoLeftWrapper = styled.div`
   margin-right: 47px;
   margin-bottom: 24px;
 
@@ -13,7 +13,7 @@ export const TherapistInfoThirdPageWrapper_Left = styled.div`
   }
 `
 
-export const TherapistInfoThirdPageWrapper_Right = styled.div`
+export const STDetail_CardWrapper_SecondRow_InfoRightWrapper = styled.div`
   margin-bottom: ${(x) => (x.isFirst ? "40px" : null)};
 
   & > :first-child {

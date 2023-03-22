@@ -4,7 +4,7 @@ import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { Verified } from "../../../../verified/Verified.js"
 import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../../SingleSpeechtherapistComponents_Right.js"
 
-export const FirstPlace = ({
+export const STDetail_MobileCard_FirstPlace = ({
   handlePointerEvent,
   cardStyle,
   image,

@@ -1,10 +1,10 @@
 import { Fragment } from "react"
 import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { STResults_CardInfoWrapper } from "./styles/STResults_CardInfoWrapper"
+import { ST_CardInfoWrapper } from "../styles/ST_CardInfoWrapper"
 
-export const STResults_CardInfo = ({ title, dataToShow, isMobile = false, isThirdPage = false, withoutComa = false }) => {
+export const ST_CardInfo = ({ title, dataToShow, isMobile = false, isThirdPage = false, withoutComa = false }) => {
   return (
-    <STResults_CardInfoWrapper
+    <ST_CardInfoWrapper
       isMobile={isMobile}
       isThirdPage={isThirdPage}>
       {isMobile === false ? (
@@ -94,7 +94,7 @@ export const STResults_CardInfo = ({ title, dataToShow, isMobile = false, isThir
           <Caption>{dataToShow}</Caption>
         </>
       ) : null}
-    </STResults_CardInfoWrapper>
+    </ST_CardInfoWrapper>
   )
 }
 
