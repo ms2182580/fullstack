@@ -1,7 +1,7 @@
 import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons/index.js"
 import { STDetail_MobileCard_FirstPlace } from "../../second-page/mobile/cards-places/STDetail_MobileCard_FirstPlace.js"
 import { STDetail_MobileCardWrapper } from "../../second-page/mobile/styles/SpeechTherapistsCardsMobileWrapper.js"
-import { STDetail_MobileWrapper } from "./styles/STDetailMobileWrapper.js"
+import { STDetail_MobileWrapper } from "./styles/STDetail_MobileWrapper.js"
 
 export const STDetail_Mobile = ({ STData }) => {
   const { medium: image } = STData.data[0].picture

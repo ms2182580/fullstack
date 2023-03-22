@@ -2,13 +2,15 @@ import Image from "next/image"
 import React from "react"
 import { BookmarkSaveSTSvg } from "../../../../../assets/Icons"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
+import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
+import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
-import { EmailGetDirectionComponent } from "../../EmailGetDirectionWrapper"
-import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../SingleSpeechtherapistComponents_Right"
 import { ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage, ST_CardWrapper_Left_LeftInfo } from "../../styles/ST_CardWrapper"
 import { ST_CardEmail } from "../../ST_CardEmail"
 import { ST_CardLocation } from "../../ST_CardLocation"
 import { ST_CardPhone } from "../../ST_CardPhone"
+import { ST_TwoButtons } from "../../ST_TwoButtons"
 import { STDetail_CardWrapper_SecondRow_Info } from "./STDetail_CardWrapper_SecondRow_Info"
 import { STDetail_MapComponent } from "./STDetail_MapComponent"
 import {
@@ -63,7 +65,7 @@ export const STDetail_STDetails = ({ STData }) => {
                 />
               </ST_CardWrapper_Left_LeftInfo>
 
-              <EmailGetDirectionComponent />
+              <ST_TwoButtons />
 
               <STDetail_MapComponent />
             </ST_CardWrapper_Left>
@@ -75,7 +77,7 @@ export const STDetail_STDetails = ({ STData }) => {
                   {everySingleValue.name.first} {everySingleValue.name.last}
                 </H2>
                 <Tooltip />
-                <StarsRatingAndReview
+                <StarsRatingReview
                   rating={STData.filters[0].rating}
                   reviews={STData.filters[0].reviews}
                 />

@@ -5,25 +5,22 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../context/ORG_Ct
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
-import { EmailGetDirectionComponent } from "../EmailGetDirectionWrapper"
-import {
-  EverySingleSpeechTherapist_Email,
-  EverySingleSpeechTherapist_Location,
-  EverySingleSpeechTherapist_Phone
-} from "../SingleSpeechtherapistComponents_Left"
-import { STDetail_About } from "../STDetail_About"
-import { STDetail_PageLastUpdated } from "../STDetail_PageLastUpdated"
-import { STDetail_Reviews } from "../STDetail_Reviews"
+import { ST_CardInfo } from "../second-page/ST_CardInfo"
 import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
-import TherapistInfoSecondPage from "../TherapistInfoSecondPage"
+import { ST_CardEmail } from "../ST_CardEmail.js"
+import { ST_CardLocation } from "../ST_CardLocation.js"
+import { ST_CardPhone } from "../ST_CardPhone"
+import { ST_TwoButtons } from "../ST_TwoButtons"
 import { STDetail_Header } from "./dekstop/STDetail_Header"
 import { STDetail_STDetails } from "./dekstop/STDetail_STDetails"
 import { STDetail_Mobile } from "./mobile/STDetail_Mobile"
 import { STDetail_Mobile_StickyNavbar } from "./mobile/STDetail_Mobile_StickyNavbar"
+import { STDetail_PageLastUpdated } from "./mobile/STDetail_PageLastUpdated"
 import { STDetail_Separator } from "./mobile/STDetail_Separator"
 import { STDetail_STDetails_ThirdPageWrapper } from "./mobile/styles/STDetail_STDetails_ThirdPageWrapper"
+import { STDetail_About } from "./STDetail_About"
+import { STDetail_Reviews } from "./STDetail_Reviews"
 import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
-
 
 export const STDetail_Main = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
@@ -175,31 +172,31 @@ export const STDetail_Main = () => {
             id="Details"
             ref={detailsRef}>
             <div>
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Languages"
                 dataToShow={languages}
                 isMobile={true}
                 isThirdPage={true}
               />
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Practice Setting"
                 dataToShow={serviceSettings}
                 isMobile={true}
                 isThirdPage={true}
               />
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Meeting Format"
                 dataToShow={meetingFormat}
                 isMobile={true}
                 isThirdPage={true}
               />
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Insurance"
                 dataToShow={insurance}
                 isMobile={true}
                 isThirdPage={true}
               />
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Ages Served"
                 dataToShow={agesServed}
                 isMobile={true}
@@ -214,14 +211,14 @@ export const STDetail_Main = () => {
             )}
 
             <div>
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Qualifications"
                 dataToShow={qualifications}
                 isMobile={true}
                 isThirdPage={true}
                 withoutComa={true}
               />
-              <TherapistInfoSecondPage
+              <ST_CardInfo
                 title="Additional Credentials"
                 dataToShow={additionalCredentials}
                 isMobile={true}
@@ -239,7 +236,7 @@ export const STDetail_Main = () => {
             <div
               id="Contact"
               ref={contactRef}>
-              <EverySingleSpeechTherapist_Location
+              <ST_CardLocation
                 locationCity={speechtherapist.data[0].location.city}
                 locationStreetNumber={speechtherapist.data[0].location.street.number}
                 locationStreetName={speechtherapist.data[0].location.street.name}
@@ -248,17 +245,17 @@ export const STDetail_Main = () => {
                 isThirdPageMobile={true}
               />
 
-              <EverySingleSpeechTherapist_Phone
+              <ST_CardPhone
                 phoneNumber={speechtherapist.data[0].cell}
                 isMobile={true}
                 isThirdPageMobile={true}
               />
-              <EverySingleSpeechTherapist_Email
+              <ST_CardEmail
                 email={speechtherapist.data[0].email}
                 isMobile={true}
                 isThirdPageMobile={true}
               />
-              <EmailGetDirectionComponent  />
+              <ST_TwoButtons />
             </div>
 
             {isMobile === false ? null : (
@@ -270,7 +267,6 @@ export const STDetail_Main = () => {
         )}
 
         <STDetail_Reviews
-          isMobile={isMobile}
           name={speechtherapist.data[0].name.first}
           lastName={speechtherapist.data[0].name.last}
           reviewsRef={reviewsRef}

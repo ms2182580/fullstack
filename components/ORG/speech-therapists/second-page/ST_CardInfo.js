@@ -97,4 +97,3 @@ export const ST_CardInfo = ({ title, dataToShow, isMobile = false, isThirdPage =
     </ST_CardInfoWrapper>
   )
 }
-

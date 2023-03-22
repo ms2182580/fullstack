@@ -1,14 +1,12 @@
 import { Fragment, useState } from "react"
-import { StartEmptySvg, StartFullSvg } from "../../../assets/Icons"
-import { ORG_ST_Review_Months } from "../../../utils/ORG_ST_Review"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { ReviewIndividualComponentWrapper } from "./styles/STDetail_ReviewsWrapper"
+import { StartEmptySvg, StartFullSvg } from "../../../../assets/Icons"
+import { ORG_ST_Review_Months } from "../../../../utils/ORG_ST_Review"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
+import { STDetail_Reviews_IndividualComponentWrapper } from "./styles/STDetail_Reviews_IndividualComponentWrapper"
 
-
-export const ReviewIndividualComponent = ({ rating = 5, review, userName }) => {
-  
+export const STDetail_Reviews_IndividualComponent = ({ rating = 5, review, userName }) => {
   const [month, setMonth] = useState(ORG_ST_Review_Months())
-  
+
   let howMuchStars
   if (typeof review === "string") {
     howMuchStars = Array(5).fill("fully")
@@ -23,10 +21,9 @@ export const ReviewIndividualComponent = ({ rating = 5, review, userName }) => {
         return "fully"
       })
   }
-  
 
   return (
-    <ReviewIndividualComponentWrapper>
+    <STDetail_Reviews_IndividualComponentWrapper>
       <div>
         {howMuchStars.map((x, i) => {
           if (x === "fully") {
@@ -47,14 +44,10 @@ export const ReviewIndividualComponent = ({ rating = 5, review, userName }) => {
 
       {typeof review === "string" ? <P>{review}.</P> : <P>{review.review}.</P>}
 
-      
       <div>
         <P bold>-{userName}</P>
         <P>{month} 2022</P>
       </div>
-      
-      
-      
-    </ReviewIndividualComponentWrapper>
+    </STDetail_Reviews_IndividualComponentWrapper>
   )
 }

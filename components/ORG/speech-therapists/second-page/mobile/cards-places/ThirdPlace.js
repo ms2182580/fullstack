@@ -1,4 +1,6 @@
-import { EverySingleSpeechTherapist_Email, EverySingleSpeechTherapist_Location, EverySingleSpeechTherapist_Phone } from "../../../SingleSpeechtherapistComponents_Left"
+import { ST_CardEmail } from "../../../ST_CardEmail"
+import { ST_CardLocation } from "../../../ST_CardLocation"
+import { ST_CardPhone } from "../../../ST_CardPhone"
 
 export const ThirdPlace = ({
   handlePointerEvent,
@@ -17,11 +19,11 @@ export const ThirdPlace = ({
       onTouchStart={handlePointerEvent}>
       <div className={`card ThirdPlace`}>
         
-        <EverySingleSpeechTherapist_Phone phoneNumber={phone} isMobile={true}/>
+        <ST_CardPhone phoneNumber={phone} isMobile={true}/>
         
-        <EverySingleSpeechTherapist_Email email={email} isMobile={true}/>
+        <ST_CardEmail email={email} isMobile={true}/>
         
-        <EverySingleSpeechTherapist_Location 
+        <ST_CardLocation 
           locationCity={locationCity}
           locationStreetNumber={locationStreetNumber}
           locationStreetName={locationStreetName}

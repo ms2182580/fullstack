@@ -76,7 +76,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
             handleDropdownKey(e)
           }}
           tabIndex={0}>
-          <P primary_cta bold>{whichTitle}</P>
+          <P primary_cta semibold>{whichTitle}</P>
           <span>
             {showDropdown ? (
               <ArrowDownSvg/>

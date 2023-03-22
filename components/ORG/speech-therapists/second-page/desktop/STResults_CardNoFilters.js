@@ -7,8 +7,10 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
+import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
+import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
-import { FriendlyDiagnoses, StarsRatingAndReview, Tooltip } from "../../SingleSpeechtherapistComponents_Right"
 import { ST_CardWrapper, ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage, ST_CardWrapper_Left_LeftInfo, ST_CardWrapper_Right } from "../../styles/ST_CardWrapper"
 import { ST_CardEmail } from "../../ST_CardEmail"
 import { ST_CardLocation } from "../../ST_CardLocation"
@@ -86,7 +88,7 @@ export const STResults_CardNoFilters = () => {
 
                 <Tooltip />
 
-                <StarsRatingAndReview
+                <StarsRatingReview
                   rating={filtersST[i].rating}
                   reviews={filtersST[i].reviews}
                 />

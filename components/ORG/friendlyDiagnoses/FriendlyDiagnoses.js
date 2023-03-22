@@ -1,4 +1,4 @@
-import { Caption, P } from '../../../ui/heading_body_text/DesktopMobileFonts.js'
+import { Caption, P } from '../../ui/heading_body_text/DesktopMobileFonts.js'
 import { FriendlyDiagnosesWrapper } from './styles/FriendlyDiagnosesWrapper.js'
 
 

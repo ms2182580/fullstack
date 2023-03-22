@@ -5,9 +5,10 @@ import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetch
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
+import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
-import { FriendlyDiagnoses, Tooltip } from "../../SingleSpeechtherapistComponents_Right"
 import {
   ST_CardWrapper,
   ST_CardWrapper_Left,

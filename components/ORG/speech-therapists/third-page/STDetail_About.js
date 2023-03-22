@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { ORG_ST_About } from "../../../utils/ORG_ST_About.js"
-import { useWidthWindow } from "../../../utils/useWidthWindow.js"
-import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { ORG_ST_About } from "../../../../utils/ORG_ST_About.js"
+import { useWidthWindow } from "../../../../utils/useWidthWindow.js"
+import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../ui/heading_body_text/HeaderFonts"
 import { STDetail_AboutWrapper } from "./styles/STDetail_AboutWrapper"
 
 export const STDetail_About = ({ name, lastName, aboutRef }) => {

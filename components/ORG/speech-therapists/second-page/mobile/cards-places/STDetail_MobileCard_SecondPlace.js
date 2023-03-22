@@ -1,6 +1,6 @@
-import TherapistInfoSecondPage from "../../../TherapistInfoSecondPage"
+import { ST_CardInfo } from "../../ST_CardInfo"
 
-export const SecondPlace = ({
+export const STDetail_MobileCard_SecondPlace = ({
   handlePointerEvent,
   cardStyle,
   agesServed,
@@ -15,27 +15,27 @@ export const SecondPlace = ({
       onMouseDown={handlePointerEvent}
       onTouchStart={handlePointerEvent}>
       <div className={`card SecondPlace`}>
-        <TherapistInfoSecondPage
+        <ST_CardInfo
           title="Ages Served"
           dataToShow={agesServed}
           isMobile={true}
         />
-        <TherapistInfoSecondPage
+        <ST_CardInfo
           title="Languages"
           dataToShow={languages}
           isMobile={true}
         />
-        <TherapistInfoSecondPage
+        <ST_CardInfo
           title="Years of Practice"
           dataToShow={yearsOfPractice}
           isMobile={true}
         />
-        <TherapistInfoSecondPage
+        <ST_CardInfo
           title="Practice Setting"
           dataToShow={serviceSetting}
           isMobile={true}
         />
-        <TherapistInfoSecondPage
+        <ST_CardInfo
           title="Insurance"
           dataToShow={insurance}
           isMobile={true}

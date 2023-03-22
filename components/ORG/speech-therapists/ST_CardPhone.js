@@ -24,21 +24,3 @@ export const ST_CardPhone = ({ phoneNumber, isMobile = false, isThirdPageMobile 
     </ST_CardPhoneWrapper>
   )
 }
-
-/* 
-import styled from "styled-components"
-
-export const EverySingleSpeechTherapist_PhoneWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-
-  & > :nth-child(1) {
-    margin-right: 14px;
-  }
-  & > :nth-child(2) {
-    margin-right: 4px;
-  }
-`
-
-*/

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
-export const STDetail_EmailGetDirectionWrapper = styled.div`
+export const ST_TwoButtonsWrapper = styled.div`
   display: flex;
   margin-top: 24px;
   
