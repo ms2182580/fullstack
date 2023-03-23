@@ -1,13 +1,13 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { BookmarkSaveSTSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
+import { Share } from "../../../share/Share"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
@@ -94,7 +94,7 @@ export const STResults_CardNoFilters = () => {
               </ST_CardWrapper_Left>
 
               <ST_CardWrapper_Right>
-                <BookmarkSaveSTSvg tabIndex={0} />
+                <Share/>
 
                 <H3>
                   {everySingleValue.name.first} {everySingleValue.name.last}
