@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { NEUTRALS, PRIMARY } from '../../../../assets/Colors'
+import styled from "styled-components"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const ST_CardWrapper = styled.div`
   display: grid;
@@ -7,24 +7,21 @@ export const ST_CardWrapper = styled.div`
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
   margin-bottom: 2rem;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  border: 1px solid ${NEUTRALS.LIGHT_GREY};
 `
 
 export const ST_CardWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  padding: 2rem 1.5rem;
   min-width: ${(x) => (x.STDetail ? "432px" : "398px")};
 `
 
 export const ST_CardWrapper_Left_LeftImage = styled.div`
-  border: 2px ${NEUTRALS.LIGHT_GREY} solid;
-  overflow: hidden;
-  border-radius: 8px;
   position: relative;
-  margin-bottom: 2rem;
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  margin-bottom: 24px;
 
   & > div {
     position: absolute;
@@ -34,10 +31,10 @@ export const ST_CardWrapper_Left_LeftImage = styled.div`
 `
 
 export const ST_CardWrapper_Left_LeftInfo = styled.div`
-  margin-left: 14px;
-  margin-right: 14px;
+  margin-left: 22px;
+  margin-bottom: 16px;
+  margin-right: 9px;
 `
-
 
 export const ST_CardWrapper_Right = styled.div`
   grid-area: rightPart;

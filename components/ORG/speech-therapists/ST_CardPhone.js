@@ -4,7 +4,9 @@ import { ST_CardPhoneWrapper } from "./styles/ST_CardPhoneWrapper.js"
 
 export const ST_CardPhone = ({ phoneNumber, isMobile = false, isThirdPageMobile = false }) => {
   return (
-    <ST_CardPhoneWrapper>
+    <ST_CardPhoneWrapper
+      isThirdPageMobile={isThirdPageMobile}
+      isMobile={isMobile}>
       <PhoneSvg />
       {isMobile === false ? (
         <>

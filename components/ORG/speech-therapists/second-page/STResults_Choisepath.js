@@ -33,13 +33,9 @@ export const STResults_Choisepath = () => {
           <STResults_CardNoFilters />
         </>
       ) : filterHaveAtLeastOneValueState && isMobile ? (
-        <>
-          {/* <SpeechTherapistsCardWithFilterMobile /> */}
-        </>
+        <>{/* <SpeechTherapistsCardWithFilterMobile /> */}</>
       ) : filterHaveAtLeastOneValueState === false && isMobile ? (
-        <>
-          {/* <SpeechTherapistsCardNoFilterMobile /> */}
-        </>
+        <>{/* <SpeechTherapistsCardNoFilterMobile /> */}</>
       ) : null}
     </STResults_ChoisepathWrapper>
   )

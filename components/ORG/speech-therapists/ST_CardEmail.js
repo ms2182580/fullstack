@@ -1,11 +1,12 @@
-import { EmailORGSvg } from '../../../assets/Icons/index.js'
-import { Caption, P } from '../../ui/heading_body_text/DesktopMobileFonts.js'
-import { ST_CardEmailWrapper } from './styles/ST_CardEmailWrapper.js'
-
+import { EmailORGSvg } from "../../../assets/Icons/index.js"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ST_CardEmailWrapper } from "./styles/ST_CardEmailWrapper.js"
 
 export const ST_CardEmail = ({ email, isMobile = false, isThirdPageMobile = false }) => {
   return (
-    <ST_CardEmailWrapper>
+    <ST_CardEmailWrapper
+      isThirdPageMobile={isThirdPageMobile}
+      isMobile={isMobile}>
       <div>
         <EmailORGSvg />
 

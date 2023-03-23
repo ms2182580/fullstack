@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ST_CardEmailWrapper = styled.div`
   margin-bottom: 21px;
-  display:flex;
+  display: flex;
 
   & > div:nth-child(1) {
     display: flex;
@@ -16,7 +16,10 @@ export const ST_CardEmailWrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    color: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `#3f6ece` : ``)};
+    text-decoration-line: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `underline` : ``)};
+    
+    cursor: pointer;
   }
-  
-  
 `

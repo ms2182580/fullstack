@@ -11,10 +11,17 @@ import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
-import { ST_CardWrapper, ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage, ST_CardWrapper_Left_LeftInfo, ST_CardWrapper_Right } from "../../styles/ST_CardWrapper"
+import {
+  ST_CardWrapper,
+  ST_CardWrapper_Left,
+  ST_CardWrapper_Left_LeftImage,
+  ST_CardWrapper_Left_LeftInfo,
+  ST_CardWrapper_Right
+} from "../../styles/ST_CardWrapper"
 import { ST_CardEmail } from "../../ST_CardEmail"
 import { ST_CardLocation } from "../../ST_CardLocation"
 import { ST_CardPhone } from "../../ST_CardPhone"
+import { ST_CardWebsite } from "../../ST_CardWebsite"
 import { ST_CardInfo } from "../ST_CardInfo"
 
 export const STResults_CardNoFilters = () => {
@@ -27,6 +34,8 @@ export const STResults_CardNoFilters = () => {
   }
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFilters()
+
+  console.log("userFetched:", userFetched)
 
   useEffect(() => {
     const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistList")
@@ -69,6 +78,11 @@ export const STResults_CardNoFilters = () => {
                 <ST_CardWrapper_Left_LeftInfo>
                   <ST_CardPhone phoneNumber={everySingleValue.phone} />
                   <ST_CardEmail email={everySingleValue.email} />
+                  <ST_CardWebsite
+                    firstName={everySingleValue.name.first}
+                    lastName={everySingleValue.name.last}
+                  />
+
                   <ST_CardLocation
                     locationCity={everySingleValue.location.city}
                     locationStreetNumber={everySingleValue.location.street.number}
