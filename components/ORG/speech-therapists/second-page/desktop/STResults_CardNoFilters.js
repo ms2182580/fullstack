@@ -5,8 +5,7 @@ import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNo
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
-import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
+import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Share } from "../../../share/Share"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
@@ -18,11 +17,13 @@ import {
   ST_CardWrapper_Left_LeftInfo,
   ST_CardWrapper_Right
 } from "../../styles/ST_CardWrapper"
+import { ST_CardCity } from "../../ST_CardCity"
 import { ST_CardEmail } from "../../ST_CardEmail"
 import { ST_CardLocation } from "../../ST_CardLocation"
 import { ST_CardPhone } from "../../ST_CardPhone"
 import { ST_CardWebsite } from "../../ST_CardWebsite"
 import { ST_CardInfo } from "../ST_CardInfo"
+import { ST_CardInfoPayment } from "../ST_CardInfoPayment"
 
 export const STResults_CardNoFilters = () => {
   const router = useRouter()
@@ -46,16 +47,19 @@ export const STResults_CardNoFilters = () => {
     setFilters(newOrderFilters)
   }, [actualSort, pagination])
 
+  console.log("filtersST:", filtersST)
+
   return (
     <>
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
           let accepts = filtersST[i].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
+          let acceptsFormatted = accepts.length > 1 ? accepts : accepts[0]
 
           let agesServed = filtersST[i].agesServed
           let diagnoses = filtersST[i].diagnoses.map((x) => {
-            if (x !== "Other") return `${x} Friendly`
+            if (x !== "Other") return `${x}`
             return x
           })
           let languages = filtersST[i].languages.map((x) => x[0].toUpperCase() + x.slice(1))
@@ -94,20 +98,25 @@ export const STResults_CardNoFilters = () => {
               </ST_CardWrapper_Left>
 
               <ST_CardWrapper_Right>
-                <Share/>
+                <Share />
 
-                <H3>
-                  {everySingleValue.name.first} {everySingleValue.name.last}
-                </H3>
+                <H2 bold>
+                  {everySingleValue.name.first} {everySingleValue.name.last}, <span>CCC-SLP</span>
+                </H2>
 
                 <Tooltip />
+
+                <ST_CardCity city={everySingleValue.location.city} />
 
                 <StarsRatingReview
                   rating={filtersST[i].rating}
                   reviews={filtersST[i].reviews}
                 />
 
-                <FriendlyDiagnoses diagnoses={diagnoses} />
+                <ST_CardInfo
+                  title="Practice areas"
+                  dataToShow={diagnoses}
+                />
 
                 <ST_CardInfo
                   title="Ages served"
@@ -120,23 +129,27 @@ export const STResults_CardNoFilters = () => {
                 />
 
                 <ST_CardInfo
-                  title="Years of Practice"
+                  title="Practicing since"
                   dataToShow={filtersST[i].yearsOfPractice}
                 />
 
                 <ST_CardInfo
-                  title="Service Setting"
+                  title="Setting"
                   dataToShow={serviceSetting}
                 />
 
-                <ST_CardInfo
-                  title="Accepts"
-                  dataToShow={accepts}
+                <ST_CardInfoPayment
+                  title="Payment options"
+                  dataToShow={acceptsFormatted}
                 />
 
-                <span onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}>
-                  <ButtonSmall secondary>More details</ButtonSmall>
-                </span>
+                <div>
+                  <ButtonSmall secondary>Save to list</ButtonSmall>
+
+                  <span onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}>
+                    <ButtonSmall>See Availability</ButtonSmall>
+                  </span>
+                </div>
               </ST_CardWrapper_Right>
             </ST_CardWrapper>
           )

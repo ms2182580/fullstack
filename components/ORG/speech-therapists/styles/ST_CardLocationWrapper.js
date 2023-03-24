@@ -24,4 +24,11 @@ export const ST_CardLocationWrapper = styled.div`
     white-space: nowrap;
     margin-bottom: 8px;
   }
+  
+  & > :last-child > :last-child{
+    font-weight: ${(x) => x.isMobile === false ? `500` : `400`};
+    
+    
+  }
+  
 `

@@ -2,12 +2,6 @@ import { WebsiteSvg } from "../../../assets/Icons/index.js"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_CardWebsiteWrapper } from "./styles/ST_CardWebsiteWrapper.js"
 
-/* 
-!FH0
-
-Prevent the svg icon get deleted when the text is to much longer
-*/
-
 export const ST_CardWebsite = ({ firstName, lastName, isMobile = false, isThirdPageMobile = false }) => {
   const website = `https://www.${firstName.toLowerCase()}${lastName.toLowerCase()}SLP.com`
 

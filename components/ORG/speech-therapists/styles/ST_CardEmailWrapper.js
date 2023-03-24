@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const ST_CardEmailWrapper = styled.div`
-  margin-bottom: 21px;
   display: flex;
 
   & > div:nth-child(1) {

@@ -113,7 +113,7 @@ export const ORG_Filterdata_Accepts = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
-  const accepts = ["medicaid", "insurance", "private pay", "DOE approved"]
+  const accepts = ["Private Pay", "Medicaid", "DOE", "Contract"]
 
   return pickMoreThanOne(accepts)
 }

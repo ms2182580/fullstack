@@ -50,7 +50,9 @@ const BtnDefault = styled.button`
 
 export const BtnSmall = styled(BtnDefault)`
   height: 48px;
-  padding: 12px 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-inline:32px;
   font-size: 16px;
   
   

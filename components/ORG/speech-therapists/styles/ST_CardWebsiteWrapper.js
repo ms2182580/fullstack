@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const ST_CardWebsiteWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
 
   & > :nth-child(1) {
     margin-right: 14px;

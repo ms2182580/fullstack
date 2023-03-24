@@ -1,7 +1,7 @@
-import { LocationSvg } from '../../../assets/Icons/index.js'
-import { Caption, P } from '../../ui/heading_body_text/DesktopMobileFonts.js'
-import { ST_CardLocationWrapper } from './styles/ST_CardLocationWrapper.js'
-
+import { LocationSvg } from "../../../assets/Icons/index.js"
+import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024.js"
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ST_CardLocationWrapper } from "./styles/ST_CardLocationWrapper.js"
 
 export const ST_CardLocation = ({
   locationCity,
@@ -9,9 +9,10 @@ export const ST_CardLocation = ({
   locationStreetName,
   locationState,
   howFar,
-  isMobile = false,
   isThirdPageMobile = false
 }) => {
+  const { isMobile } = useWidthWindow1024()
+
   return (
     <ST_CardLocationWrapper isMobile={isMobile}>
       <div>
@@ -55,12 +56,7 @@ export const ST_CardLocation = ({
 
         {isMobile === false ? (
           <>
-            <Caption
-              bolder
-              primary_cta>
-              {" "}
-              ({howFar} miles away)
-            </Caption>
+            <Caption> ({howFar} miles away)</Caption>
           </>
         ) : null}
       </div>

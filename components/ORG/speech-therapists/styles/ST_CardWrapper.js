@@ -14,7 +14,7 @@ export const ST_CardWrapper = styled.div`
 export const ST_CardWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
-  min-width: ${(x) => (x.STDetail ? "432px" : "398px")};
+  min-width: ${(x) => (x.STDetail ? "432px" : "407px")};
 `
 
 export const ST_CardWrapper_Left_LeftImage = styled.div`
@@ -34,6 +34,13 @@ export const ST_CardWrapper_Left_LeftInfo = styled.div`
   margin-left: 22px;
   margin-bottom: 16px;
   margin-right: 9px;
+  
+  & > *:not(:last-child) {
+    margin-bottom: 24px;
+    
+  }
+  
+  
 `
 
 export const ST_CardWrapper_Right = styled.div`
@@ -43,36 +50,54 @@ export const ST_CardWrapper_Right = styled.div`
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: ${NEUTRALS.OFF_WHITE};
-  padding-top: 42px;
-  padding-left: 24px;
+  padding-top: 16px;
+  padding-left: 16px;
   position: relative;
-  min-width: 440px;
+  min-width: 417px;
+
+  & > :nth-child(2),
+  & > :nth-child(3),
+  & > :nth-child(4),
+  & > :nth-child(5) {
+    align-self: center;
+  }
+
+  & > :nth-child(4) {
+    margin-bottom: 8px;
+    
+  }
+
+
+  & > :nth-child(5),
+  & > :nth-child(6),
+  & > :nth-child(7),
+  & > :nth-child(8),
+  & > :nth-child(9),
+  & > :nth-child(10) {
+    margin-bottom: 24px;
+  }
+  
+  & > :nth-child(11){
+    margin-bottom: 56px;
+    
+  }
 
   & > :nth-child(1) {
     position: absolute;
-    right: 33px;
+    right: 18px;
     top: 27px;
     cursor: pointer;
   }
 
-  & > :nth-child(2),
-  & > :nth-child(3),
-  & > :nth-child(4) {
-    margin-bottom: 12px;
-  }
-
-  & > :nth-child(5) {
-    margin-bottom: 40px;
-  }
-
-  & > :nth-child(6),
-  & > :nth-child(7),
-  & > :nth-child(8),
-  & > :nth-child(9) {
-    margin-bottom: 24px;
+  & > :nth-child(2) {
+    margin-right: 75px;
+    & > span {
+      white-space: pre;
+    }
   }
 
   & > :nth-child(3) {
+    
     display: flex;
     align-items: center;
 
@@ -141,14 +166,19 @@ export const ST_CardWrapper_Right = styled.div`
   & > :last-child {
     display: flex;
     align-items: center;
-    width: 201px;
-    margin-left: auto;
     margin-right: 24px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
+    justify-content: space-between;
+    /* border: 2px solid crimson; */
+    
+    & > * {
+      
+    }
+    
+    
   }
 
   & > :last-child > button {
-    height: 100%;
+    /* height: 100%; */
   }
 `
