@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 const ORGSpeechTherapistsSecondPageWrapper = styled.div`
-  overflow: hidden clip;
+  overflow: ${(x) => x.isMobile ? `hidden clip` : ``};
+  
+  margin-left: 40px;
+  
   
 `
 

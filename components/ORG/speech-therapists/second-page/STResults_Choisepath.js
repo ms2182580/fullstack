@@ -4,9 +4,9 @@ import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_P
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { STResults_CardNoFilters } from "./desktop/STResults_CardNoFilters"
 import { STResults_CardWithFilters } from "./desktop/STResults_CardWithFilters"
-import { STResults_ChoisepathWrapper } from "./styles/STResults_ChoiseWrapper"
+import { STResults_ChoisepathWrapper } from "./styles/STResults_ChoisepathWrapper"
 
-export const STResults_Choisepath = () => {
+export const STResults_Choisepath = ({ showFullMap }) => {
   const [filterHaveAtLeastOneValueState, setFilterHaveAtLeastOneValueState] = useState(false)
   const { pagination } = useORG_Ctx_FetchNoFilters()
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
@@ -23,7 +23,7 @@ export const STResults_Choisepath = () => {
   }, [filterData, setFilterData, pagination])
 
   return (
-    <STResults_ChoisepathWrapper>
+    <STResults_ChoisepathWrapper showFullMap={showFullMap}>
       {filterHaveAtLeastOneValueState && isMobile === false ? (
         <>
           <STResults_CardWithFilters />

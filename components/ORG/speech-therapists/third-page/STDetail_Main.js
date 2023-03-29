@@ -10,12 +10,12 @@ import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
 import { ST_CardEmail } from "../ST_CardEmail.js"
 import { ST_CardLocation } from "../ST_CardLocation.js"
 import { ST_CardPhone } from "../ST_CardPhone"
+import { ST_PageLastUpdated } from "../ST_PageLastUpdated"
 import { ST_TwoButtons } from "../ST_TwoButtons"
 import { STDetail_Header } from "./dekstop/STDetail_Header"
 import { STDetail_STDetails } from "./dekstop/STDetail_STDetails"
 import { STDetail_Mobile } from "./mobile/STDetail_Mobile"
 import { STDetail_Mobile_StickyNavbar } from "./mobile/STDetail_Mobile_StickyNavbar"
-import { STDetail_PageLastUpdated } from "./mobile/STDetail_PageLastUpdated"
 import { STDetail_Separator } from "./mobile/STDetail_Separator"
 import { STDetail_STDetails_ThirdPageWrapper } from "./mobile/styles/STDetail_STDetails_ThirdPageWrapper"
 import { STDetail_About } from "./STDetail_About"
@@ -280,7 +280,7 @@ export const STDetail_Main = () => {
 
         {isMobile === false ? (
           <>
-            <STDetail_PageLastUpdated />
+            <ST_PageLastUpdated />
           </>
         ) : null}
       </div>

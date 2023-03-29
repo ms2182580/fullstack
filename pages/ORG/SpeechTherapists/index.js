@@ -3,7 +3,7 @@ import { BackArrow } from "../../../assets/Icons"
 import SearchComponent from "../../../components/ORG/inputs/SearchComponent"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
 import { STResults_FiltersChoisepathButtons } from "../../../components/ORG/speech-therapists/second-page/STResults_FiltersChoisepathButtons"
-import Breadcrumbs from "../../../components/ui/breadcrumbs/Breadcrumbs"
+import { Breadcrumbs } from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
@@ -35,7 +35,7 @@ const ORGSpeechTherapists = () => {
   }
 
   return (
-    <ORGSpeechTherapistsSecondPageWrapper>
+    <ORGSpeechTherapistsSecondPageWrapper isMobile={isMobile}>
       <SpeechTherapistWrapper>
         {isMobile === false ? (
           <>

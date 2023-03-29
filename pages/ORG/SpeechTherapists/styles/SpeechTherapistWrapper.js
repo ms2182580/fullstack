@@ -2,13 +2,15 @@ import styled from "styled-components"
 import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 const SpeechTherapistWrapper = styled.div`
-  margin: ${(x) => (x.inDetail ? "2rem 0px" : "2rem 6rem")};
+  margin-right: 40px;
 
-  & > p:nth-child(1){
+  margin-top: 34px;
+  margin-bottom: 64px;
+
+  & > p:nth-child(1) {
     margin-bottom: 14px;
   }
-  
-  
+
   & > div:nth-child(2) {
     margin-bottom: 2.25rem;
   }
@@ -21,8 +23,6 @@ const SpeechTherapistWrapper = styled.div`
       margin-left: 14px;
       margin-bottom: 12px;
     }
-    
-    
   }
 `
 

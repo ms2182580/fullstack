@@ -3,12 +3,25 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const ST_CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 407px 1fr;
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
-  margin-bottom: 2rem;
+  align-items: stretch;
+  
+  
+  
+  
+  
+  /* margin-bottom: 52px; */
+  
   border-radius: 8px;
   border: 1px solid ${NEUTRALS.LIGHT_GREY};
+  
+  
+  
+  
+  
+  
 `
 
 export const ST_CardWrapper_Left = styled.div`
@@ -54,6 +67,7 @@ export const ST_CardWrapper_Right = styled.div`
   padding-left: 16px;
   position: relative;
   min-width: 417px;
+  
 
   & > :nth-child(2),
   & > :nth-child(3),

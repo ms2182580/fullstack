@@ -4,7 +4,7 @@ import { P } from "../heading_body_text/DesktopMobileFonts.js"
 import { LinkNoStyle } from "../hyperlink/HyperlinkNoStyles.js"
 import { BreadcrumbsWrapper } from "./BreadcrumbsStyled.js"
 
-const Breadcrumbs = ({ whichDisplay }) => {
+export const Breadcrumbs = ({ whichDisplay }) => {
   return (
     <BreadcrumbsWrapper>
       <HomeSvg />
@@ -39,4 +39,3 @@ const Breadcrumbs = ({ whichDisplay }) => {
   )
 }
 
-export default Breadcrumbs

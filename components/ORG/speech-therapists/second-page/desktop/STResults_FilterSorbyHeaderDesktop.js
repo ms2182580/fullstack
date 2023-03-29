@@ -3,10 +3,10 @@ import { STResults_HowMuchShowing } from "../STResults_HowMuchShowing"
 import { STResults_SortbyDekstop } from "./STResults_SortbyDekstop"
 import { STResults_FilterSortbyHeaderDesktopWrapper } from "./styles/STResults_FilterSortbyHeaderDesktopWrapper"
 
-export const STResults_FilterSortbyHeaderDesktop = () => {
+export const STResults_FilterSortbyHeaderDesktop = ({theRef}) => {
 
   return (
-    <STResults_FilterSortbyHeaderDesktopWrapper>
+    <STResults_FilterSortbyHeaderDesktopWrapper ref={theRef}>
       <STResults_HowMuchShowing />
 
       <div>

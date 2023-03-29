@@ -35,8 +35,7 @@ export const STResults_CardNoFilters = () => {
   }
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFilters()
-
-  console.log("userFetched:", userFetched)
+  
 
   useEffect(() => {
     const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistList")
@@ -46,8 +45,6 @@ export const STResults_CardNoFilters = () => {
     }))
     setFilters(newOrderFilters)
   }, [actualSort, pagination])
-
-  console.log("filtersST:", filtersST)
 
   return (
     <>

@@ -22,7 +22,6 @@ export const ST_CardInfoPayment = ({
       <div>
         {Array.isArray(dataToShow)
           ? dataToShow.map((x, i) => {
-          console.log('💫x:', x)
 
               if (dataToShow.length - 1 === i) {
                 return (

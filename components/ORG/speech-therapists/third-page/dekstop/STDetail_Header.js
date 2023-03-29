@@ -4,7 +4,7 @@ import ORG_Icon_SSA from '../../../../../assets/Icons/ORG_Landing_SSA.png'
 import ORG_Icon_TP from '../../../../../assets/Icons/ORG_Landing_TP.png'
 import { useORG_InputCtx } from "../../../../../context/ORG_Input"
 import SpeechTherapistWrapper from "../../../../../pages/ORG/SpeechTherapists/styles/SpeechTherapistWrapper"
-import Breadcrumbs from "../../../../ui/breadcrumbs/Breadcrumbs"
+import { Breadcrumbs } from "../../../../ui/breadcrumbs/Breadcrumbs"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 

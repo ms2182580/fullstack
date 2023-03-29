@@ -2,18 +2,19 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
 
 export const STResults_FinalButtonsWrapper = styled.div`
-  align-self: end;
+  justify-self: start;
   display: flex;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
   justify-content: ${(x) => (x.isMobile ? `center` : `end`)};
   box-shadow: ${(x) =>
     x.isMobile ? `0px -2px 9px rgba(0, 0, 0, 0.2), inset 0px -4px 6px rgba(0, 0, 0, 0.15);` : `none`};
-  padding: 16px 24px 24px 24px;
+
+  margin-bottom: 46px;
 
   & > :nth-child(2) {
     display: flex;
-    gap: 8px;
+    gap: 16px;
   }
 `
 
@@ -25,6 +26,7 @@ const NavigationButton = styled.button`
   border-radius: 8px;
   border: 1px solid ${NEUTRALS.BLACK};
   cursor: pointer;
+
   &:hover {
     background-color: ${PRIMARY.PRIMARY_HOVER};
     & > p {

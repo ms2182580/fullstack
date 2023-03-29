@@ -13,15 +13,12 @@ const BtnDefault = styled.button`
   cursor: pointer;
   border-radius: ${SharedVariables.BorderRadius};
   white-space: nowrap;
-  
-  background-color: ${(x) =>
-    x.secondary ? "transparent" : COLORS.Primary.BgColor};
 
-  color: ${(x) =>
-    x.secondary ? COLORS.Secondary.TextColor : COLORS.Primary.TextColor};
+  background-color: ${(x) => (x.secondary ? "transparent" : COLORS.Primary.BgColor)};
 
-  border: ${(x) =>
-    x.secondary ? `2px ${COLORS.HoverBgColor} solid` : "none"};
+  color: ${(x) => (x.secondary ? COLORS.Secondary.TextColor : COLORS.Primary.TextColor)};
+
+  border: ${(x) => (x.secondary ? `2px ${COLORS.HoverBgColor} solid` : "none")};
 
   font-weight: ${FontsWeights.SEMIBOLD_600};
   cursor: pointer;
@@ -52,11 +49,8 @@ export const BtnSmall = styled(BtnDefault)`
   height: 48px;
   padding-top: 12px;
   padding-bottom: 12px;
-  padding-inline:32px;
+  padding-inline: 32px;
   font-size: 16px;
-  
-  
-  
 `
 export const BtnMedium = styled(BtnDefault)`
   font-size: 20px;
