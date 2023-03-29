@@ -4,17 +4,22 @@ import STResults_MapImage from "../../../../../assets/images/STResults_MapImage.
 import { STResults_MapWrapper } from "./styles/STResults_MapWrapper.js"
 
 export const STResults_Map = ({ showFullMap, setShowFullMap, theRef }) => {
+  // console.log("💫showFullMap:", showFullMap)
   // const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFilters()
 
   // console.log('⌛ IN MAP ⌛ userFetched, filtersST:', userFetched, filtersST)
 
   const handleShowMap = () => {
+    
     setShowFullMap((prevState) => !prevState)
-    
-    const targetY = theRef.current.getBoundingClientRect().top + window.pageYOffset + 140;
-    window.scrollTo({ top: targetY });
-    
-    
+
+    if (showFullMap === false) {
+      const targetY = theRef.current.getBoundingClientRect().top + window.pageYOffset + 140
+
+      window.scrollTo({ top: targetY })
+    }
+
+
   }
 
   return (

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../context/ORG_Ctx_ShowFiltersMobile"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { ST_BreadcrumbsAndLastUpdated } from "../ST_BreadcrumbsAndLastUpdated"
@@ -12,8 +12,30 @@ export const STResults_FiltersChoisepathButtons = ({ widthWindow }) => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { isMobile } = useWidthWindow1024()
   const [showFullMap, setShowFullMap] = useState(false)
-  
+
   const refToMoveTheViewOfUser = useRef(null)
+
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect(() => {
+    if (showFullMap === false) {
+      const handleScroll = () => {
+        setScrollPosition(window.pageYOffset)
+      }
+
+      window.addEventListener("scroll", handleScroll)
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll)
+      }
+    }
+  }, [showFullMap])
+
+  useEffect(() => {
+    if (showFullMap === false) {
+      window.scrollTo({ top: scrollPosition })
+    }
+  }, [showFullMap])
 
   return (
     <STResults_FiltersChoisepathButtonsWrapper showFullMap={showFullMap}>
@@ -38,11 +60,8 @@ export const STResults_FiltersChoisepathButtons = ({ widthWindow }) => {
           </div>
 
           <STResults_FinalButtons widthWindow={widthWindow} />
-          
-          <ST_BreadcrumbsAndLastUpdated/>
-          
-          
-          
+
+          <ST_BreadcrumbsAndLastUpdated />
         </>
       ) : null}
     </STResults_FiltersChoisepathButtonsWrapper>
