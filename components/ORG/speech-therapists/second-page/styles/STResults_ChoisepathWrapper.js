@@ -9,6 +9,8 @@ export const STResults_ChoisepathWrapper = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 52px;
   }
+  
+  
 
   @media (${device.laptop}) {
     margin-inline: 16px;

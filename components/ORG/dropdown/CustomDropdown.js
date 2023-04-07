@@ -39,6 +39,7 @@ const Customdropdown = ({
   const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
   /* 
+  
   !FH
   
   Add tabIndex to sub items, maybe it can be used with tab key or arrow key. When the user leave the current focus, should hide the dropdown options

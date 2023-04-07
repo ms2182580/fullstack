@@ -656,6 +656,21 @@ export const XSvg = (props) => (
   </svg>
 )
 
+export const XDesktopSvg = (props) => (
+  <svg
+    width={28}
+    height={28}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="m2.45 27.65-2.1-2.1L11.9 14 .35 2.45l2.1-2.1L14 11.9 25.55.35l2.1 2.1L16.1 14l11.55 11.55-2.1 2.1L14 16.1 2.45 27.65Z"
+      fill="#00080B"
+    />
+  </svg>
+)
+
 export const SearchSVG = (props) => (
   <svg
     width="22px"

@@ -1,14 +1,33 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../assets/Colors"
+import { NEUTRALS, SEMANTICS } from "../../../../../assets/Colors"
 
 export const STResults_FilterCheckboxContainerWrapper = styled.div`
+  /* border: 2px solid crimson; */
+  /* width: 175px; */
+
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+
+  & > :nth-child(1) {
+    margin-bottom: 18px;
+  }
+
+  & > :nth-child(2) {
+    /* border: 2px solid black; */
+    /* width: 175px; */
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; */
+  }
+
   & > div:nth-child(1),
   & > div:nth-child(2) {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 26px;
-    padding-inline: 22px 12px;
+    /* margin-top: 20px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* padding-bottom: 26px; */
+    /* padding-inline: 22px 12px; */
   }
 
   & > div:nth-child(1) > span {
@@ -16,13 +35,24 @@ export const STResults_FilterCheckboxContainerWrapper = styled.div`
   }
 `
 
-export const STResults_FilterCheckboxContainerUL = styled.ul`
+export const STResults_FilterCheckboxContainerULWrapper = styled.ul`
   list-style: none;
-  margin-left: 58px;
-  display: ${(x) => (x.show ? "block" : "none")};
+  /* margin-left: 58px; */
+
+  margin-left: 6px;
+  /* border: 2px solid crimson; */
+
+  & > *:not(:last-child) {
+    margin-bottom: 24px;
+  }
 
   & > li {
-    margin-bottom: 31px;
+    &.showRemaining {
+      display: block;
+    }
+    &.notShowYet {
+      display: none;
+    }
 
     & > label {
       display: flex;
@@ -33,8 +63,17 @@ export const STResults_FilterCheckboxContainerUL = styled.ul`
       cursor: pointer;
       user-select: none;
 
+      &.viewOnly {
+        height: 55px;
+
+        & > span {
+          top: 7px;
+        }
+      }
+
       & > p {
-        white-space: nowrap;
+        /* white-space: nowrap; */
+        /* border: 2px solid crimson; */
       }
 
       & > input {
@@ -47,12 +86,13 @@ export const STResults_FilterCheckboxContainerUL = styled.ul`
 
       & > span {
         position: absolute;
-        top: 0;
+        top: 2px;
         left: 0;
-        height: 36px;
-        width: 36px;
+        height: 28px;
+        width: 28px;
         border: 4px solid ${NEUTRALS.BLACK};
         border-radius: 4px;
+        /* border: 2px solid crimson; */
 
         &:after {
           content: "";
@@ -65,31 +105,36 @@ export const STResults_FilterCheckboxContainerUL = styled.ul`
         background-color: ${NEUTRALS.LIGHT_GREY};
       }
       /* This apply styles when the checkbox is chequed */
-      /* & input:checked ~ span {
-        background-color: #2196f3;
-      } */
+      & input:checked ~ span {
+        background-color: ${NEUTRALS.BLACK};
+      }
 
       & input:checked ~ span:after {
         display: block;
       }
 
       & span:after {
-        left: 9px;
-        top: 2px;
+        left: 4px;
+        top: -2px;
         width: 11px;
         height: 19px;
-        border: solid ${NEUTRALS.BLACK};
+        border: solid ${NEUTRALS.OFF_WHITE};
         border-width: 0 3px 3px 0;
         transform: rotate(45deg);
       }
     }
   }
+
+  & > span:last-child {
+    cursor: pointer;
+
+    &:hover > p {
+      color: ${SEMANTICS.FOCUS_RING};
+    }
+  }
 `
 
-export const CustomCheckboxInputWrapper = styled.label`
-
-
-`
+export const CustomCheckboxInputWrapper = styled.label``
 
 export const StarsWrapper = styled.div`
   display: flex;

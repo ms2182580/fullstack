@@ -41,7 +41,10 @@ export const STResults_FiltersChoisepathButtons = ({ widthWindow }) => {
     <STResults_FiltersChoisepathButtonsWrapper showFullMap={showFullMap}>
       {isMobile === false ? (
         <>
-          <STResults_FilterSortbyHeaderDesktop theRef={refToMoveTheViewOfUser} />
+          <STResults_FilterSortbyHeaderDesktop
+            theRef={refToMoveTheViewOfUser}
+            setShowFullMap={setShowFullMap}
+          />
         </>
       ) : (
         <>Header mobile</>

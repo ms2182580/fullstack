@@ -114,11 +114,21 @@ export const STResults_CardNoFilters = () => {
                   title="Practice areas"
                   dataToShow={diagnoses}
                 />
+                
+                {/* <ST_CardInfoPayment
+                  title="Practice areas"
+                  dataToShow={diagnoses}
+                /> */}
 
                 <ST_CardInfo
                   title="Ages served"
                   dataToShow={agesServed}
                 />
+                
+                {/* <ST_CardInfoPayment
+                  title="Ages served"
+                  dataToShow={agesServed}
+                /> */}
 
                 <ST_CardInfo
                   title="Languages"

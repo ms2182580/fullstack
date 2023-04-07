@@ -7,10 +7,12 @@ import { BtnSmall } from "../../../ui/buttons/general/styles/ButtonStyled"
 import { STResults_FiltersMobile } from "./mobile/STResults_FiltersMobile"
 import { STResults_SortByMobile } from "./mobile/STResults_SortByMobile"
 import { STResults_FilterSortbyMobileWrapper } from "./mobile/styles/STResults_FilterSortbyMobileWrapper"
-import { STResults_FilterCheckboxContainer } from "./STResults_FilterCheckboxContainer"
-import { STResults_FiltersContainerWrapper } from "./styles/STResults_FiltersContainerWrapper"
+import { STResults_FiltersContainerDesktop } from "./STResults_FiltersContainerDesktop"
+import { STResults_FilterListDesktopWrapper } from "./styles/STResults_FilterListDesktopWrapper.js"
+import { STResults_FilterListWrapper } from "./styles/STResults_FilterListWrapper.js"
 
 const reducer = (state, action) => {
+  // console.log("💖action:", action)
   const setFilterData = action.payload[0]
   const toUpdateFilters = action.payload[2]
 
@@ -38,8 +40,17 @@ const reducer = (state, action) => {
   }
 }
 
-export const STResults_FilterList = () => {
+/* 
+!FH1
+Finish the styles of the filters
+Make the final buttons work
+
+*/
+
+export const STResults_FilterList = ({ setShowFullMap }) => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
+
+  // console.log("filterData:", filterData)
   const [state, dispatch] = useReducer(reducer, filterData)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
@@ -48,8 +59,8 @@ export const STResults_FilterList = () => {
   const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
   const handleShowFiltersDesktop = () => {
     setMustShowFiltersDesktop((prevState) => !prevState)
+    setShowFullMap((prevState) => !prevState)
   }
-
   const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { isMobile } = useWidthWindow1024()
 
@@ -80,31 +91,29 @@ export const STResults_FilterList = () => {
   return (
     <>
       {isMobile === false ? (
-        <>
+        <STResults_FilterListDesktopWrapper mustShowFiltersDesktop={mustShowFiltersDesktop}>
           {" "}
           <span onClick={handleShowFiltersDesktop}>
             <BtnSmall secondary>Filter</BtnSmall>
           </span>
-          {mustShowFiltersDesktop && (
-            <>
-              <STResults_FiltersContainerWrapper id="topOfSTL">
-                <STResults_FilterCheckboxContainer
-                  dispatch={dispatch}
-                  setFilterData={setFilterData}
-                  clearAll={clearAll}
-                  setClearAll={setClearAll}
-                  showStateChildren={setShow}
-                  shouldClear={shouldClear}
-                  setShouldClear={setShouldClear}
-                  handleClearAll={handleClearAll}
-                  title="Filter by"
-                  isMobile={isMobile}
-                  
-                />
-              </STResults_FiltersContainerWrapper>
-            </>
-          )}
-        </>
+          <STResults_FilterListWrapper
+            id="topOfSTL"
+            mustShowFiltersDesktop={mustShowFiltersDesktop}>
+            <STResults_FiltersContainerDesktop
+              dispatch={dispatch}
+              setFilterData={setFilterData}
+              clearAll={clearAll}
+              setClearAll={setClearAll}
+              showStateChildren={setShow}
+              shouldClear={shouldClear}
+              setShouldClear={setShouldClear}
+              handleClearAll={handleClearAll}
+              handleShowFilters={handleShowFiltersDesktop}
+              title="Filter by"
+              mustShowFiltersDesktop={mustShowFiltersDesktop}
+            />
+          </STResults_FilterListWrapper>
+        </STResults_FilterListDesktopWrapper>
       ) : (
         <>
           {" "}
@@ -127,4 +136,3 @@ export const STResults_FilterList = () => {
     </>
   )
 }
-

@@ -7,7 +7,7 @@ const SharedVariables = {
   FontWeight_400: `${FontsWeights.REGULAR_400}`,
   FontWeight_600: `${FontsWeights.SEMIBOLD_600}`,
   FontWeight_700: `${FontsWeights.BOLD_700}`,
-  FontWeight_800:`${FontsWeights.BOLDER_800}`,
+  FontWeight_800: `${FontsWeights.BOLDER_800}`,
   FontSizeBody: `${FontsDesktopAndMobile.BODY_16}`,
   FontSizeCaption: `${FontsDesktopAndMobile.CAPTION_12}`,
   Underline: "underline",
@@ -46,6 +46,8 @@ export const P = styled.p`
       ? PRIMARY.PRIMARY_CTA
       : x.primary_hover
       ? PRIMARY.PRIMARY_HOVER
+      : x.hyperlink_normal
+      ? SEMANTICS.HYPERLINK_NORMAL
       : NEUTRALS.BLACK};
 `
 export const Caption = styled.span`

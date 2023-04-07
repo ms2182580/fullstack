@@ -6,7 +6,7 @@ export const STResults_FilterCheckboxInput = ({
   dispatch,
   setFilterData,
   toUpdateFilters,
-  clearAll
+  clearAll,
 }) => {
   const [checked, setChecked] = useState(false)
 

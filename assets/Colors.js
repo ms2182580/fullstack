@@ -5,6 +5,8 @@ export const PRIMARY = {
   PRIMARY_BACKGROUND:"#F1E7F5"
 }
 
+
+
 export const SECONDARY_SNT = {
   MINT: "#A9F0BD",
   YELLOW: "#FFE662",

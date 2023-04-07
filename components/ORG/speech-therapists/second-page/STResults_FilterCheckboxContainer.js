@@ -1,10 +1,8 @@
-import { Fragment, useEffect, useState } from "react"
-import { DownArrowSvg, StartEmptySvg, StartFullSvg, UpArrowSvg } from "../../../../assets/Icons/index.js"
+import { useEffect, useState } from "react"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { STResults_FilterCheckboxInput } from "./STResults_FilterCheckboxInput.js"
 import {
-  StarsWrapper,
-  STResults_FilterCheckboxContainerUL,
+  STResults_FilterCheckboxContainerULWrapper,
   STResults_FilterCheckboxContainerWrapper
 } from "./styles/STResults_FilterCheckboxContainerWrapper.js"
 
@@ -21,6 +19,13 @@ export const STResults_FilterCheckboxContainer = ({
   setShouldClear,
   isMobile = false
 }) => {
+  // console.log("categoriesToDisplay:", categoriesToDisplay)
+  const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
+  // console.log('showRemaining:', categoriesToDisplay, showRemaining)
+  const handleShowRemaining = () => {
+    setShowRemaining(true)
+  }
+
   let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
   const [show, setShow] = useState(false)
 
@@ -50,44 +55,18 @@ export const STResults_FilterCheckboxContainer = ({
       <div
         tabIndex={0}
         onKeyDown={(e) => handleShow(e)}>
-        <P>{title}</P>
-        <span onClick={handleShow}>{show ? <UpArrowSvg /> : <DownArrowSvg />}</span>
+        <P semibold>{title}</P>
       </div>
 
-      <STResults_FilterCheckboxContainerUL show={show}>
-        {title.toLowerCase() === "rating"
+      <STResults_FilterCheckboxContainerULWrapper
+        show={show}
+        showRemaining={showRemaining}>
+        {title.toLowerCase() === "agesServed"
           ? categoriesToDisplay?.map((x) => {
-              let ratingPattern = Array(5)
-                .fill(0)
-                .map((xMap, i) => {
-                  if (x - 1 < i) {
-                    return "empty"
-                  }
-                  return "fully"
-                })
               return (
-                <li
-                  key={x}
-                  tabIndex={0}>
+                <li key={x}>
                   <label>
-                    <StarsWrapper>
-                      {ratingPattern.map((x, i) => {
-                        if (x === "fully") {
-                          return (
-                            <Fragment key={`${x}${i}`}>
-                              <StartFullSvg />
-                            </Fragment>
-                          )
-                        } else {
-                          return (
-                            <Fragment key={`${x}${i}`}>
-                              <StartEmptySvg />
-                            </Fragment>
-                          )
-                        }
-                      })}
-                    </StarsWrapper>
-
+                    <P>{x}</P>
                     <STResults_FilterCheckboxInput
                       type="checkbox"
                       name={x}
@@ -96,6 +75,7 @@ export const STResults_FilterCheckboxContainer = ({
                       toUpdateFilters={toUpdateFilters}
                       clearAll={clearAll}
                     />
+
                     <span></span>
                   </label>
                 </li>
@@ -121,10 +101,11 @@ export const STResults_FilterCheckboxContainer = ({
                 </li>
               )
             })
-          : categoriesToDisplay?.map((x) => {
+          : title.toLowerCase() === "view only"
+          ? categoriesToDisplay?.map((x) => {
               return (
                 <li key={x}>
-                  <label>
+                  <label className="viewOnly">
                     <P>{x}</P>
                     <STResults_FilterCheckboxInput
                       type="checkbox"
@@ -138,8 +119,78 @@ export const STResults_FilterCheckboxContainer = ({
                   </label>
                 </li>
               )
+            })
+          : categoriesToDisplay?.map((x, i) => {
+              if (categoriesToDisplay.length > 4 && i < 3) {
+                return (
+                  <li key={x}>
+                    <label>
+                      <P>{x}</P>
+                      <STResults_FilterCheckboxInput
+                        type="checkbox"
+                        name={x}
+                        dispatch={dispatch}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              }
+
+              if (categoriesToDisplay.length > 4 && i >= 3) {
+                return (
+                  <li
+                    key={x}
+                    className={showRemaining ? "showRemaining" : "notShowYet"}>
+                    <label>
+                      <P>{x}</P>
+                      <STResults_FilterCheckboxInput
+                        type="checkbox"
+                        name={x}
+                        dispatch={dispatch}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              }
+
+              if (categoriesToDisplay.length <= 4) {
+                return (
+                  <li key={x}>
+                    <label>
+                      <P>{x}</P>
+                      <STResults_FilterCheckboxInput
+                        type="checkbox"
+                        name={x}
+                        dispatch={dispatch}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              }
             })}
-      </STResults_FilterCheckboxContainerUL>
+            
+        {categoriesToDisplay.length > 4 && showRemaining === false && (
+          <span onClick={handleShowRemaining}>
+            <P
+              semibold
+              hyperlink_normal>
+              See All
+            </P>
+          </span>
+        )}
+      </STResults_FilterCheckboxContainerULWrapper>
     </STResults_FilterCheckboxContainerWrapper>
   )
 }

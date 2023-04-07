@@ -1,14 +1,13 @@
 export const ORG_INITIAL_LEFT_FILTERS = {
-  distance: [],
-  rating: [],
-  diagnoses: [],
   agesServed: [],
+  diagnosis: [],
+  distance: [],
+  insurance: [],
   languages: [],
-  yearsOfPractice: [],
-  serviceSetting: [],
-  accepts: [],
   meetingFormat: [],
+  providerType: [],
+  serviceSetting: [],
   sessionType: [],
-  transportation: [],
-  providerType: []
+  viewOnly:[],
+  yearsOfPractice: [],
 }
