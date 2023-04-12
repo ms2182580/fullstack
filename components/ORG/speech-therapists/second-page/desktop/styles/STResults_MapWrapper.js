@@ -2,22 +2,24 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const STResults_MapWrapper = styled.div`
-  max-width: 496px;
-  max-width: ${(x) => (x.showFullMap ? `calc(100% - 40px)` : `496px`)};
+  width: ${(x) => (x.ORGShowFullMapFilter ? `100vw` : ``)};
+  margin-left: ${(x) => (x.ORGShowFullMapFilter ? `-42px` : ``)};
+  max-width: ${(x) => (x.showFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `496px`)};
 
-  height: 100vh;
+  height: ${(x) => (x.showFullMapButton === false && x.ORGShowFullMapFilter === false ? `100vh` : ``)};
+
   position: sticky;
   top: 0;
 
   & > :nth-child(1) {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-right-radius: ${(x) => (x.showFullMap ? `8px` : ``)};
-    border-bottom-right-radius: ${(x) => (x.showFullMap ? `8px` : ``)};
+    border-top-left-radius: ${(x) => (x.ORGShowFullMapFilter ? `0px` : `8px`)};
+    border-bottom-left-radius: ${(x) => (x.ORGShowFullMapFilter ? `0px` : `8px`)};
+    border-top-right-radius: ${(x) => (x.showFullMapButton ? `8px` : ``)};
+    border-bottom-right-radius: ${(x) => (x.showFullMapButton ? `8px` : ``)};
+
+    /* width:100vw; */
 
     overflow: hidden;
-
-    border: 2px solid crimson;
   }
 
   & > :nth-child(2) {

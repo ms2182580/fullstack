@@ -13,6 +13,10 @@ export const STResults_FilterRangeInputWrapper = styled.div`
     & > label {
       display: none;
     }
+    
+    & > p {
+      margin-bottom: 21px;
+    }
   }
 
   .thumb,
@@ -34,10 +38,12 @@ export const STResults_FilterRangeInputWrapper = styled.div`
 
   .thumb--left {
     z-index: 3;
+    
   }
 
   .thumb--right {
-    z-index: 4;
+    z-index: ${(x) => x.minVal === 0 && x.maxVal === 0 ? `99` : `4`};
+    
   }
 
   /* For Chrome browsers */
@@ -74,6 +80,7 @@ export const STResults_FilterRangeInputWrapper = styled.div`
     position: relative;
     width: calc(${SLICE_WIDTH} - 5px);
     margin-left: 2px;
+    
   }
 
   .slider__track,
@@ -100,17 +107,18 @@ export const STResults_FilterRangeInputWrapper = styled.div`
     background-color: hsl(205, 25%, 75%);
     width: 100%;
     z-index: 1;
+    /* border: 2px solid darkcyan; */
   }
 
   .slider__range {
     background-color: #65a6d6;
     z-index: 2;
+    /* border: 2px solid crimson; */
+    
   }
 
   .valuesToShow {
-    /* border: 2px solid crimson; */
-    padding-top: 21px;
-
+    padding-top: 26px;
     width: ${SLICE_WIDTH};
 
     display: flex;

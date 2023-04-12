@@ -9,10 +9,13 @@ export const FooterWrapper = styled.footer`
     "mainContent mainContent"
     ". buttons"
     "socialMedia finalSentence";
-  
+
+  pointer-events: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
+  user-select: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
+
   overflow-x: hidden;
-    
-    
+  position: relative;
+
   & > :nth-child(1) {
     margin-top: 12px;
     margin-left: 60px;
@@ -23,7 +26,6 @@ export const FooterWrapper = styled.footer`
     margin-top: 17px;
     margin-inline: auto;
     grid-area: mainContent;
-    
   }
 
   & > div:nth-child(2) > div > :not(:last-child) {
@@ -46,12 +48,20 @@ export const FooterWrapper = styled.footer`
     margin-bottom: 18px;
   }
 
-  & > :last-child {
+  & > :nth-last-child(2) {
     justify-self: end;
     align-self: flex-end;
     margin-bottom: 8px;
     margin-right: 10%;
     margin-left: 16px;
     grid-area: finalSentence;
+  }
+
+  .InFront {
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    position: absolute;
+    background: rgba(44, 42, 42, 0.61);
   }
 `

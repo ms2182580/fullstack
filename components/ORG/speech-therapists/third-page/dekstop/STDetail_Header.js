@@ -11,7 +11,7 @@ import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 
 import Customdropdown from "../../../dropdown/CustomDropdown"
 import { OptionsWrapper } from "../../../dropdown/styles/Customdropdown"
-import SearchComponent from "../../../inputs/SearchComponent"
+import { SearchComponent } from "../../../inputs/SearchComponent"
 
 export const STDetail_Header = ({ STData }) => {
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()

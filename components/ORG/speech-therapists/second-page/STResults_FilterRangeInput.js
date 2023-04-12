@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { STResults_FilterRangeInputWrapper } from "./styles/STResults_FilterRangeInputWrapper"
 
 export const STResults_FilterRangeInput = ({
@@ -14,14 +15,15 @@ export const STResults_FilterRangeInput = ({
   setShouldClear,
   isMobile = false,
   min = 0,
-  max
+  max,
+  showMiles = false
 }) => {
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
   const minValRef = useRef(min)
   const maxValRef = useRef(max)
   const range = useRef(null)
-  console.log("range:", range)
+  // console.log("range:", range)
 
   // Convert to percentage
   const getPercent = useCallback((value) => Math.round(((value - min) / (max - min)) * 100), [min, max])
@@ -68,9 +70,12 @@ export const STResults_FilterRangeInput = ({
         <p>Total: {max}</p>
       </STResults_FilterRangeInputWrapper> */}
 
-      <STResults_FilterRangeInputWrapper>
+      <STResults_FilterRangeInputWrapper
+        minVal={minVal}
+        maxVal={maxVal}>
         <div className="container">
           <label htmlFor="min">Minimum price</label>
+          <P semibold>{title}</P>
           <input
             type="range"
             min={min}
@@ -106,31 +111,16 @@ export const STResults_FilterRangeInput = ({
           </div>
 
           <div className="valuesToShow">
-            <div>{categoriesToDisplay[minVal]}</div>
+            <div>
+              {categoriesToDisplay[minVal]} {showMiles ? "miles" : ""}
+            </div>
             <span></span>
-            <div>{categoriesToDisplay[maxVal]}</div>
+            <div>
+              {categoriesToDisplay[maxVal]} {showMiles ? "miles" : ""}
+            </div>
           </div>
         </div>
       </STResults_FilterRangeInputWrapper>
     </>
   )
 }
-
-/* 
-
-
-https://dev.to/sandra_lewis/building-a-multi-range-slider-in-react-from-scratch-4dl1 -->
-https://codesandbox.io/s/multi-range-slider-react-js-ecwcr?from-embed=&file=/src/multiRangeSlider/MultiRangeSlider.js
-
-https://stackoverflow.com/a/65173312/13316519->
-https://codesandbox.io/s/react-double-slider-with-colors-and-labels-forked-g3ifgn?file=/src/styles.css
-
-
-https://codesandbox.io/s/bold-wildflower-qwdeij?file=/src/App.js
-
-
-https://codesandbox.io/s/react-double-slider-with-colors-and-labels-forked-g3ifgn?file=/src/styles.css
-
-
-https://refreshless.com/nouislider/
-*/

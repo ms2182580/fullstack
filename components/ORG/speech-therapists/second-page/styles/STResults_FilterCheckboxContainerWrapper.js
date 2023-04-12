@@ -127,6 +127,8 @@ export const STResults_FilterCheckboxContainerULWrapper = styled.ul`
 
   & > span:last-child {
     cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-color: ${SEMANTICS.HYPERLINK_NORMAL};
 
     &:hover > p {
       color: ${SEMANTICS.FOCUS_RING};

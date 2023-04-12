@@ -92,6 +92,7 @@ export const STResults_FiltersContainerDesktop = ({
           categoriesToDisplay={ORG_FiltersCategoriesToDisplay.distance}
           max={ORG_FiltersCategoriesToDisplay.distance.length - 1}
           title="Distance"
+          showMiles={true}
         />
         <STResults_FilterCheckboxContainer
           dispatch={dispatch}

@@ -3,8 +3,7 @@ import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 const SpeechTherapistWrapper = styled.div`
   margin-right: 40px;
-
-  margin-top: 34px;
+  padding-top: 34px;
   margin-bottom: 64px;
 
   & > p:nth-child(1) {

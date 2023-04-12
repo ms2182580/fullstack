@@ -6,8 +6,6 @@ const ORGLandingWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
   place-items: center;
-  
-  
 
   margin-bottom: ${(x) => (x.windowSize <= 768 ? "96px" : null)};
 
@@ -42,9 +40,6 @@ const ORGLandingWrapper = styled.div`
   & > * {
     padding-inline: 3rem;
   }
-  
-  
-  
 
   @media (${device.laptop}) {
     display: flex;

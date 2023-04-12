@@ -1,13 +1,18 @@
-import { FooterWrapper } from "./styles/FooterWrapper"
+import { useRouter } from "next/router"
+import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { Caption } from "../ui/heading_body_text/DesktopMobileFonts"
+import { H2 } from "../ui/heading_body_text/HeaderFonts"
 import { FooterMainContent } from "./FooterMainContent.js"
 import { FooterSignupLoginButtons } from "./FooterSignupLoginButtons.js"
 import { FooterSocialmedia } from "./FooterSocialmedia.js"
-import { Caption } from "../ui/heading_body_text/DesktopMobileFonts"
-import { H2 } from "../ui/heading_body_text/HeaderFonts"
+import { FooterWrapper } from "./styles/FooterWrapper"
 
 const Footer = () => {
+  const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
+  const { pathname } = useRouter()
+
   const FooterMainContent_SandP_dataToShow = [{ title: "Resource Directory", route: "/ORG" }]
-  
+
   const FooterMainContent_LandG_dataToShow = [
     { title: "I/DD Community Classes", route: "/404" },
     { title: "Family Learning Center", route: "/404" }
@@ -24,7 +29,7 @@ const Footer = () => {
   const FooterMainContent_SAFETY_dataToShow = [{ title: "Safety In The Community", route: "/404" }]
 
   return (
-    <FooterWrapper>
+    <FooterWrapper ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}>
       <H2
         bold
         logo>
@@ -61,6 +66,7 @@ const Footer = () => {
       <FooterSignupLoginButtons />
       <FooterSocialmedia />
       <Caption>A public benefit company helping parents find the best services for their children.</Caption>
+      {ORGShowFullMapFilter && <div className="InFront"></div>}
     </FooterWrapper>
   )
 }
