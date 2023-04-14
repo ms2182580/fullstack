@@ -43,7 +43,7 @@ const ORGSpeechTherapists = () => {
     <ORGSpeechTherapistsSecondPageWrapper
       isMobile={isMobile}
       ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}>
-      {ORGShowFullMapFilter && <div className="InFront"></div>}
+      {ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && <div className="InFront"></div>}
       <SpeechTherapistWrapper>
         {isMobile === false ? (
           <>

@@ -6,7 +6,6 @@ const ORGSpeechTherapistsSecondPageWrapper = styled.div`
   padding-left: 40px;
 
   pointer-events: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
-
   user-select: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
 
   .InFront {

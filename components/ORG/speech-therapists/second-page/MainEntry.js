@@ -47,11 +47,6 @@ export const MainEntry = ({ widthWindow }) => {
       setORGShowFullMapFilter(false)
     }
   }, [])
-  /* 
-  !FH0
-  - Prevent user can be select text
-  -Make the correct behavior of show filter if the user enter there if the showFullMapButton is true
-  */
   
   return (
     <MainEntryWrapper showFullMapButton={showFullMapButton}>

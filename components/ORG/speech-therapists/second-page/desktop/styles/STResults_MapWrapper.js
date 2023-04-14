@@ -4,9 +4,15 @@ import { NEUTRALS } from "../../../../../../assets/Colors"
 export const STResults_MapWrapper = styled.div`
   width: ${(x) => (x.ORGShowFullMapFilter ? `100vw` : ``)};
   margin-left: ${(x) => (x.ORGShowFullMapFilter ? `-42px` : ``)};
-  max-width: ${(x) => (x.showFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `496px`)};
+  min-width: ${(x) => (x.showFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `496px`)};
+  margin-right:${(x) => x.showFullMapButton ? `42px` : ``};
+  
 
   height: ${(x) => (x.showFullMapButton === false && x.ORGShowFullMapFilter === false ? `100vh` : ``)};
+  
+  /* border: 2px solid black; */
+  
+  
 
   position: sticky;
   top: 0;

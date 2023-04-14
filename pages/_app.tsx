@@ -1,4 +1,4 @@
-import PageLayout from "../components/PageLayout.js"
+import { PageLayout } from "../components/PageLayout.js"
 import { LoginCtxProvider } from "../context/LoginCtx"
 import { ORG_CtxFetchNoFiltersMobile_Provider } from "../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { ORG_CtxFetchNoFilters_Provider } from "../context/ORG_CtxFetchNoFilters_Provider.js"

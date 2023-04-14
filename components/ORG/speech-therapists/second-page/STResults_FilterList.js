@@ -13,7 +13,8 @@ import { STResults_FilterListDesktopWrapper } from "./styles/STResults_FilterLis
 import { STResults_FilterListWrapper } from "./styles/STResults_FilterListWrapper.js"
 
 const reducer = (state, action) => {
-  // console.log("💖action:", action)
+  console.log("🔰state:", state)
+  console.log("⌛action:", action)
   const setFilterData = action.payload[0]
   const toUpdateFilters = action.payload[2]
 
@@ -41,13 +42,6 @@ const reducer = (state, action) => {
   }
 }
 
-/* 
-!FH1
-Finish the styles of the filters
-Make the final buttons work
-
-*/
-
 export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
 
@@ -57,11 +51,13 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const [shouldClear, setShouldClear] = useState(false)
 
   const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
-  const { ORGShowFullMapFilter, setORGShowFullMapFilter, showFullMapButton, setShowFullMapButton } = useORG_CtxShowFiltersDesktop()
+  const { ORGShowFullMapFilter, setORGShowFullMapFilter, showFullMapButton, setShowFullMapButton } =
+    useORG_CtxShowFiltersDesktop()
+    
   const handleShowFiltersDesktop = () => {
     setMustShowFiltersDesktop((prevState) => !prevState)
     setORGShowFullMapFilter((prevState) => !prevState)
-    
+
     if (showFullMapButton) {
       setShowFullMapButton(false)
     }
@@ -113,6 +109,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
             ref={refUserViewShowFullMapFilter}
             ORGShowFullMapFilter={ORGShowFullMapFilter}>
             <STResults_FiltersContainerDesktop
+              state={state}
               dispatch={dispatch}
               setFilterData={setFilterData}
               clearAll={clearAll}

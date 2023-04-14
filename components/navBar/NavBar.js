@@ -1,47 +1,14 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { H2 } from "../../components/ui/heading_body_text/HeaderFonts"
-import { LinkNoStyle } from "../../components/ui/hyperlink/HyperlinkNoStyles"
-import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { H2 } from "../ui/heading_body_text/HeaderFonts"
+import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
 import SignComponent from "./SignComponent.js"
 import { Logo, NavBarStyled, NavigationLinksWrapper } from "./styles/NavBar"
 
-const NavBar = () => {
+export const NavBar = () => {
   const route = useRouter()
-  // console.log('route:', route)
-
-  const { ORGShowFullMapFilter, setORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
-  
-//   useEffect(() => {
-//     const handleRouteChange = (url) => {
-//       // console.log(`🔰Path changing to ${url}`);
-//       console.log('ORGShowFullMapFilter:', ORGShowFullMapFilter)
-//       console.log('url:', url)
-      
-//       if (url === "/ORG/SpeechTherapists") {
-//         // console.log("in Second Page!")
-//         // setORGShowFullMapFilter(false)
-//       }
-//     };
-
-//     route.events.on('routeChangeStart', handleRouteChange)
-
-//     // If the component is unmounted, unsubscribe
-//     // from the event with the `off` method:
-//     return () => {
-//       route.events.off('routeChangeStart', handleRouteChange)
-//     }
-// }, [route.events]);
-
-
-  
-  // useEffect(() => {
-  //   // codeHere
-    
-  //   // console.log('ORGShowFullMapFilter:', ORGShowFullMapFilter)
-  // }, [ORGShowFullMapFilter])
-    
   const [isORGState, setIsORGState] = useState(false)
+  
   useEffect(() => {
     if (route.pathname === "/ORG") {
       setIsORGState(true)
@@ -124,4 +91,3 @@ const NavBar = () => {
   )
 }
 
-export default NavBar

@@ -11,11 +11,6 @@ import SearchComponentWrapper from "./styles/SearchComponentWrapper"
 export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
   const router = useRouter()
   
-  /* 
-  !FH0
-  Style this
-  
-  */
   
   const { showFullMapButton, ORGShowFullMapFilter, setShowFullMapButton, setORGShowFullMapFilter } =
     useORG_CtxShowFiltersDesktop()

@@ -1,16 +1,15 @@
-import { createContext, useState, useContext } from "react"
+import { createContext, useContext, useState } from "react"
 
 const ORG_Ctx_IndividualSP = createContext(null)
 
 export const ORG_CtxIndividualSpeechtherapist_Provider = ({ children }) => {
-const [speechtherapist, setSpeechtherapist] = useState("")
+  const [speechtherapist, setSpeechtherapist] = useState("")
   return (
     <ORG_Ctx_IndividualSP.Provider
       value={{
         speechtherapist,
         setSpeechtherapist
-      }}
-    >
+      }}>
       {children}
     </ORG_Ctx_IndividualSP.Provider>
   )

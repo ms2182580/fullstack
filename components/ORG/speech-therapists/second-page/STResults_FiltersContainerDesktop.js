@@ -8,6 +8,7 @@ import { STResults_FilterRangeInput } from "./STResults_FilterRangeInput.js"
 import { STResults_FiltersContainerDesktopWrapper } from "./styles/STResults_FiltersContainerDesktopWrapper.js"
 
 export const STResults_FiltersContainerDesktop = ({
+  state,
   dispatch,
   setFilterData,
   clearAll,
@@ -20,6 +21,8 @@ export const STResults_FiltersContainerDesktop = ({
   handleShowFilters,
   mustShowFiltersDesktop
 }) => {
+  console.log('💖state:', state)
+  
   const { isMobile } = useWidthWindow1024()
   // console.log('isMobile:', isMobile)
 
@@ -79,7 +82,6 @@ export const STResults_FiltersContainerDesktop = ({
           max={ORG_FiltersCategoriesToDisplay.agesServed.length - 1}
           title="Ages Served"
           toUpdate="agesServed"
-          
         />
         <STResults_FilterRangeInput
           dispatch={dispatch}
@@ -170,6 +172,8 @@ export const STResults_FiltersContainerDesktop = ({
           toUpdate="sessionType"
         />
         <STResults_FilterCheckboxContainer
+        
+          state={state}
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
@@ -196,7 +200,10 @@ export const STResults_FiltersContainerDesktop = ({
       </div>
 
       <div>
-        <span>
+        <span
+          onClick={(e) => handleClearAll(e)}
+          onKeyDown={(e) => handleClearAll(e)}
+          tabIndex={0}>
           <BtnSmall secondary>Clear all</BtnSmall>
         </span>
         <span>

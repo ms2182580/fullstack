@@ -7,12 +7,13 @@ export const STResults_FilterCheckboxInput = ({
   setFilterData,
   toUpdateFilters,
   clearAll,
+  shouldClear
 }) => {
   const [checked, setChecked] = useState(false)
 
   useEffect(() => {
     setChecked(false)
-  }, [clearAll])
+  }, [clearAll, shouldClear])
 
   return (
     <input
@@ -22,7 +23,7 @@ export const STResults_FilterCheckboxInput = ({
       onClick={(e) => {
         dispatch({
           type: { x: name },
-          payload: [setFilterData, e, toUpdateFilters]
+          payload: [setFilterData, e, toUpdateFilters, ]
         })
       }}
       onChange={() => {

@@ -7,7 +7,7 @@ import { FooterSignupLoginButtons } from "./FooterSignupLoginButtons.js"
 import { FooterSocialmedia } from "./FooterSocialmedia.js"
 import { FooterWrapper } from "./styles/FooterWrapper"
 
-const Footer = () => {
+export const Footer = () => {
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
 
@@ -66,9 +66,7 @@ const Footer = () => {
       <FooterSignupLoginButtons />
       <FooterSocialmedia />
       <Caption>A public benefit company helping parents find the best services for their children.</Caption>
-      {ORGShowFullMapFilter && <div className="InFront"></div>}
+      {ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && <div className="InFront"></div>}
     </FooterWrapper>
   )
 }
-
-export default Footer

@@ -9,6 +9,9 @@ import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
+import { ST_CardEmail } from "../../ST_CardEmail"
+import { ST_CardLocation } from "../../ST_CardLocation"
+import { ST_CardPhone } from "../../ST_CardPhone"
 import {
   ST_CardWrapper,
   ST_CardWrapper_Left,
@@ -16,14 +19,12 @@ import {
   ST_CardWrapper_Left_LeftInfo,
   ST_CardWrapper_Right
 } from "../../styles/ST_CardWrapper"
-import { ST_CardEmail } from "../../ST_CardEmail"
-import { ST_CardLocation } from "../../ST_CardLocation"
-import { ST_CardPhone } from "../../ST_CardPhone"
 import { ST_CardInfo } from "../ST_CardInfo"
 
 export const STResults_CardWithFilters = () => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  
   const goToDynamic = (e, everySingleValue, filters) => {
     setSpeechtherapist({ data: [everySingleValue], filters: [filters] })
     const toWhere = `${router.pathname}/IndividualProvider`

@@ -23,7 +23,6 @@ export const STResults_FilterRangeInput = ({
   const minValRef = useRef(min)
   const maxValRef = useRef(max)
   const range = useRef(null)
-  // console.log("range:", range)
 
   // Convert to percentage
   const getPercent = useCallback((value) => Math.round(((value - min) / (max - min)) * 100), [min, max])
