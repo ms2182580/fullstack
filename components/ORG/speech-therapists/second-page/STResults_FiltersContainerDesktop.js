@@ -10,6 +10,8 @@ import { STResults_FiltersContainerDesktopWrapper } from "./styles/STResults_Fil
 export const STResults_FiltersContainerDesktop = ({
   state,
   dispatch,
+  tempState,
+  setTempState,
   setFilterData,
   clearAll,
   setClearAll,
@@ -19,10 +21,12 @@ export const STResults_FiltersContainerDesktop = ({
   handleClearAll,
   title = "Advanced Filters",
   handleShowFilters,
-  mustShowFiltersDesktop
+  mustShowFiltersDesktop,
+  handleAddFilters
 }) => {
-  console.log('💖state:', state)
-  
+  // console.log('💖state:', state)
+  // console.log('🧘‍♀️tempState:', tempState)
+
   const { isMobile } = useWidthWindow1024()
   // console.log('isMobile:', isMobile)
 
@@ -99,6 +103,8 @@ export const STResults_FiltersContainerDesktop = ({
         <STResults_FilterCheckboxContainer
           dispatch={dispatch}
           setFilterData={setFilterData}
+          tempState={tempState}
+          setTempState={setTempState}
           clearAll={clearAll}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
@@ -111,6 +117,8 @@ export const STResults_FiltersContainerDesktop = ({
         <STResults_FilterCheckboxContainer
           dispatch={dispatch}
           setFilterData={setFilterData}
+          tempState={tempState}
+          setTempState={setTempState}
           clearAll={clearAll}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
@@ -125,6 +133,8 @@ export const STResults_FiltersContainerDesktop = ({
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
@@ -137,6 +147,8 @@ export const STResults_FiltersContainerDesktop = ({
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
@@ -150,6 +162,8 @@ export const STResults_FiltersContainerDesktop = ({
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
@@ -163,6 +177,8 @@ export const STResults_FiltersContainerDesktop = ({
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
@@ -172,11 +188,12 @@ export const STResults_FiltersContainerDesktop = ({
           toUpdate="sessionType"
         />
         <STResults_FilterCheckboxContainer
-        
           state={state}
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
@@ -189,6 +206,8 @@ export const STResults_FiltersContainerDesktop = ({
           dispatch={dispatch}
           setFilterData={setFilterData}
           clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
@@ -206,7 +225,10 @@ export const STResults_FiltersContainerDesktop = ({
           tabIndex={0}>
           <BtnSmall secondary>Clear all</BtnSmall>
         </span>
-        <span>
+        <span
+          onClick={(e) => handleAddFilters(e)}
+          onKeyDown={(e) => handleAddFilters(e)}
+          tabIndex={0}>
           <BtnSmall>Apply</BtnSmall>
         </span>
       </div>

@@ -13,39 +13,53 @@ import { STResults_FilterListDesktopWrapper } from "./styles/STResults_FilterLis
 import { STResults_FilterListWrapper } from "./styles/STResults_FilterListWrapper.js"
 
 const reducer = (state, action) => {
-  console.log("🔰state:", state)
-  console.log("⌛action:", action)
   const setFilterData = action.payload[0]
-  const toUpdateFilters = action.payload[2]
+  const setTempState = action.payload[1]
 
-  if (action.payload[1] === "clearAll") {
+  if (action.type === "clearAll") {
     setFilterData(ORG_INITIAL_LEFT_FILTERS)
-    return state
+    setTempState(ORG_INITIAL_LEFT_FILTERS)
+    return ORG_INITIAL_LEFT_FILTERS
   }
 
-  if (action.payload[1].target.checked) {
-    setFilterData((prevStatus) => {
-      return {
-        ...prevStatus,
-        [toUpdateFilters]: [...prevStatus[toUpdateFilters], action.type.x]
-      }
-    })
-  } else {
-    setFilterData((prevStatus) => {
-      let shouldStay = prevStatus[toUpdateFilters].filter((x) => x !== action.type.x)
+  if (action.type === "addFilters") {
+    const tempState = action.payload[2]
+    const setMustShowFiltersDesktop = action.payload[3]
+    const setORGShowFullMapFilter = action.payload[4]
+    setFilterData(tempState)
+    setTimeout(() => {
+      setMustShowFiltersDesktop(false)
+      setORGShowFullMapFilter(false)
+    }, 500)
 
-      return {
-        ...prevStatus,
-        [toUpdateFilters]: [...shouldStay]
-      }
-    })
+    return {...state}
   }
+
+  // if (action.payload[1].target.checked) {
+  //   setFilterData((prevStatus) => {
+  //     return {
+  //       ...prevStatus,
+  //       [toUpdateFilters]: [...prevStatus[toUpdateFilters], action.type.x]
+  //     }
+  //   })
+  // } else {
+  //   setFilterData((prevStatus) => {
+  //     let shouldStay = prevStatus[toUpdateFilters].filter((x) => x !== action.type.x)
+
+  //     return {
+  //       ...prevStatus,
+  //       [toUpdateFilters]: [...shouldStay]
+  //     }
+  //   })
+  // }
 }
 
 export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
 
   const [state, dispatch] = useReducer(reducer, filterData)
+  // console.log("💕state:", state)
+  const [tempState, setTempState] = useState(filterData)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
@@ -53,7 +67,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
   const { ORGShowFullMapFilter, setORGShowFullMapFilter, showFullMapButton, setShowFullMapButton } =
     useORG_CtxShowFiltersDesktop()
-    
+
   const handleShowFiltersDesktop = () => {
     setMustShowFiltersDesktop((prevState) => !prevState)
     setORGShowFullMapFilter((prevState) => !prevState)
@@ -68,6 +82,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
       window.scrollTo({ top: targetY })
     }
   }
+
   const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { isMobile } = useWidthWindow1024()
 
@@ -79,8 +94,8 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
       }
 
       dispatch({
-        type: { x: "clearAll" },
-        payload: [setFilterData, "clearAll"]
+        type: "clearAll",
+        payload: [setFilterData, setTempState]
       })
     }
   }
@@ -94,6 +109,18 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
       setMustShowFiltersMobile(false)
     }
   }, [isMobile])
+
+  const handleAddFilters = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      dispatch({
+        type: "addFilters",
+        payload: [setFilterData, setTempState, tempState, setMustShowFiltersDesktop, setORGShowFullMapFilter]
+      })  
+    }
+    
+    
+    
+  }
 
   return (
     <>
@@ -111,6 +138,8 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
             <STResults_FiltersContainerDesktop
               state={state}
               dispatch={dispatch}
+              tempState={tempState}
+              setTempState={setTempState}
               setFilterData={setFilterData}
               clearAll={clearAll}
               setClearAll={setClearAll}
@@ -121,6 +150,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
               handleShowFilters={handleShowFiltersDesktop}
               title="Filter by"
               mustShowFiltersDesktop={mustShowFiltersDesktop}
+              handleAddFilters={handleAddFilters}
             />
           </STResults_FilterListWrapper>
         </STResults_FilterListDesktopWrapper>

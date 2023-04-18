@@ -5,7 +5,7 @@ import { STResults_SortbyDesktopWrapper } from "./styles/STResults_SortbyDesktop
 
 
 
-export const STResults_SortbyDekstop = () => {
+export const STResults_SortbyDesktop = () => {
   return (
     <STResults_SortbyDesktopWrapper>
       <CustomDropdownFilters

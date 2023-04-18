@@ -3,13 +3,16 @@ import { useEffect, useState } from "react"
 export const STResults_FilterCheckboxInput = ({
   type,
   name,
-  dispatch,
-  setFilterData,
+  // dispatch,
+  // tempState,
+  setTempState,
+  // setFilterData,
   toUpdateFilters,
   clearAll,
   shouldClear
 }) => {
   const [checked, setChecked] = useState(false)
+  // console.log('💦tempState:', tempState)
 
   useEffect(() => {
     setChecked(false)
@@ -20,11 +23,23 @@ export const STResults_FilterCheckboxInput = ({
       type={type}
       name={name}
       checked={checked}
-      onClick={(e) => {
-        dispatch({
-          type: { x: name },
-          payload: [setFilterData, e, toUpdateFilters, ]
-        })
+      onClick={() => {
+
+        if (checked === false) {
+          setTempState((prevState) => {
+            return {
+              ...prevState,
+              [toUpdateFilters]: [...prevState[toUpdateFilters], name]
+            }
+          })
+        } else {
+          setTempState((prevState) => {
+            return {
+              ...prevState,
+              [toUpdateFilters]: [...prevState[toUpdateFilters].filter((x) => x !== name)]
+            }
+          })
+        }
       }}
       onChange={() => {
         setChecked((prevState) => !prevState)

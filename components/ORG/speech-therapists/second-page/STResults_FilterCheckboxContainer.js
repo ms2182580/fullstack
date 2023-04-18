@@ -9,6 +9,8 @@ import {
 export const STResults_FilterCheckboxContainer = ({
   state,
   dispatch,
+  tempState,
+  setTempState,
   setFilterData,
   categoriesToDisplay = ["nothing here"],
   title,
@@ -106,14 +108,38 @@ export const STResults_FilterCheckboxContainer = ({
           // :
           title.toLowerCase() === "view only"
             ? categoriesToDisplay?.map((x) => {
+              return (
+                <li key={x}>
+                  <label className="viewOnly">
+                    <P>{x}</P>
+                    <STResults_FilterCheckboxInput
+                      type="checkbox"
+                      name={x}
+                      dispatch={dispatch}
+                      tempState={tempState}
+                      setTempState={setTempState}
+                      setFilterData={setFilterData}
+                      toUpdateFilters={toUpdateFilters}
+                      clearAll={clearAll}
+                      shouldClear={shouldClear}
+                    />
+                    <span></span>
+                  </label>
+                </li>
+              )
+            })
+            : categoriesToDisplay?.map((x, i) => {
+              if (categoriesToDisplay.length > 4 && i < 3) {
                 return (
                   <li key={x}>
-                    <label className="viewOnly">
+                    <label>
                       <P>{x}</P>
                       <STResults_FilterCheckboxInput
                         type="checkbox"
                         name={x}
                         dispatch={dispatch}
+                        tempState={tempState}
+                        setTempState={setTempState}
                         setFilterData={setFilterData}
                         toUpdateFilters={toUpdateFilters}
                         clearAll={clearAll}
@@ -123,71 +149,55 @@ export const STResults_FilterCheckboxContainer = ({
                     </label>
                   </li>
                 )
-              })
-            : categoriesToDisplay?.map((x, i) => {
-                if (categoriesToDisplay.length > 4 && i < 3) {
-                  return (
-                    <li key={x}>
-                      <label>
-                        <P>{x}</P>
-                        <STResults_FilterCheckboxInput
-                          type="checkbox"
-                          name={x}
-                          dispatch={dispatch}
-                          setFilterData={setFilterData}
-                          toUpdateFilters={toUpdateFilters}
-                          clearAll={clearAll}
-                          shouldClear={shouldClear}
-                        />
-                        <span></span>
-                      </label>
-                    </li>
-                  )
-                }
+              }
 
-                if (categoriesToDisplay.length > 4 && i >= 3) {
-                  return (
-                    <li
-                      key={x}
-                      className={showRemaining ? "showRemaining" : "notShowYet"}>
-                      <label>
-                        <P>{x}</P>
-                        <STResults_FilterCheckboxInput
-                          type="checkbox"
-                          name={x}
-                          dispatch={dispatch}
-                          setFilterData={setFilterData}
-                          toUpdateFilters={toUpdateFilters}
-                          clearAll={clearAll}
-                          shouldClear={shouldClear}
-                        />
-                        <span></span>
-                      </label>
-                    </li>
-                  )
-                }
+              if (categoriesToDisplay.length > 4 && i >= 3) {
+                return (
+                  <li
+                    key={x}
+                    className={showRemaining ? "showRemaining" : "notShowYet"}>
+                    <label>
+                      <P>{x}</P>
+                      <STResults_FilterCheckboxInput
+                        type="checkbox"
+                        name={x}
+                        dispatch={dispatch}
+                        tempState={tempState}
+                        setTempState={setTempState}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
+                        shouldClear={shouldClear}
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              }
 
-                if (categoriesToDisplay.length <= 4) {
-                  return (
-                    <li key={x}>
-                      <label>
-                        <P>{x}</P>
-                        <STResults_FilterCheckboxInput
-                          type="checkbox"
-                          name={x}
-                          dispatch={dispatch}
-                          setFilterData={setFilterData}
-                          toUpdateFilters={toUpdateFilters}
-                          clearAll={clearAll}
-                          shouldClear={shouldClear}
-                          
-                        />
-                        <span></span>
-                      </label>
-                    </li>
-                  )
-                }
-              })
+              if (categoriesToDisplay.length <= 4) {
+                return (
+                  <li key={x}>
+                    <label>
+                      <P>{x}</P>
+                      <STResults_FilterCheckboxInput
+                        type="checkbox"
+                        name={x}
+                        dispatch={dispatch}
+                        tempState={tempState}
+                        setTempState={setTempState}
+                        setFilterData={setFilterData}
+                        toUpdateFilters={toUpdateFilters}
+                        clearAll={clearAll}
+                        shouldClear={shouldClear}
+
+                      />
+                      <span></span>
+                    </label>
+                  </li>
+                )
+              }
+            })
         }
 
         {categoriesToDisplay.length > 4 && showRemaining === false && (

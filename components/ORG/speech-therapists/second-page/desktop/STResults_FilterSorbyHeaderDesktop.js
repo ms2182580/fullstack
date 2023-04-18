@@ -1,7 +1,7 @@
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { STResults_FilterList } from "../STResults_FilterList"
 import { STResults_HowMuchShowing } from "../STResults_HowMuchShowing"
-import { STResults_SortbyDekstop } from "./STResults_SortbyDekstop"
+import { STResults_SortbyDesktop } from "./STResults_SortbyDesktop"
 import { STResults_FilterSortbyHeaderDesktopWrapper } from "./styles/STResults_FilterSortbyHeaderDesktopWrapper"
 
 export const STResults_FilterSortbyHeaderDesktop = ({ refUserViewShowFullMapButton, refUserViewShowFullMapFilter }) => {
@@ -16,7 +16,7 @@ export const STResults_FilterSortbyHeaderDesktop = ({ refUserViewShowFullMapButt
 
       <div>
         <STResults_FilterList refUserViewShowFullMapFilter={refUserViewShowFullMapFilter} />
-        <STResults_SortbyDekstop />
+        <STResults_SortbyDesktop />
       </div>
     </STResults_FilterSortbyHeaderDesktopWrapper>
   )
