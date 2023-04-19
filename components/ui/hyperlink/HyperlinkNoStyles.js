@@ -15,9 +15,8 @@ export const LinkNoStyle = ({ href, children, replace, query = undefined, as, ta
           pathname: href,
           query: { data: query }
         }}
-        replace={replace}
-        >
-        <DefaultLink>{children}</DefaultLink>
+        replace={replace}>
+        <DefaultLink tabIndex={tabIndex}>{children}</DefaultLink>
       </Link>
     )
   }
@@ -26,8 +25,8 @@ export const LinkNoStyle = ({ href, children, replace, query = undefined, as, ta
       href={href}
       replace={replace}
       as={as}
-      >
-      <DefaultLink>{children}</DefaultLink>
+      tabIndex={tabIndex}>
+      <DefaultLink tabIndex={tabIndex}>{children}</DefaultLink>
     </Link>
   )
 }

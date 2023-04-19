@@ -10,11 +10,7 @@ const SharedVariables = {
 
 const theLink = styled.a`
   font-weight: ${(x) =>
-    x.bold
-      ? FontsWeights.BOLD_700
-      : x.bolder
-      ? FontsWeights.BOLDER_800
-      : FontsWeights.SEMIBOLD_600};
+    x.bold ? FontsWeights.BOLD_700 : x.bolder ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
   color: ${HyperLinkColor.TEXT_COLOR};
   text-decoration: ${SharedVariables.Underline};
   border-radius: 8px;
@@ -38,8 +34,10 @@ const SizeXS = styled(theLink)`
   font-size: ${SharedValues.FONT_SIZE.XSMALL};
   line-height: ${SharedValues.LINE_HEIGHT.XSMALL};
 `
-export const HyperlinkXS = ({ href, name="HyperlinkXS WITH NO NAME!", tabIndex = 0 }) => (
-  <Link href={href} passHref >
+export const HyperlinkXS = ({ href, name = "HyperlinkXS WITH NO NAME!", tabIndex = 0 }) => (
+  <Link
+    href={href}
+    passHref>
     <SizeXS tabIndex={tabIndex}>{name}</SizeXS>
   </Link>
 )
@@ -49,33 +47,36 @@ const SizeS = styled(theLink)`
   line-height: ${SharedValues.LINE_HEIGHT.SMALL};
 `
 
-export const HyperlinkS = ({ href, name="HyperlinkS WITH NO NAME!" }) => (
-  <Link href={href} passHref>
-    <SizeS>{name}</SizeS>
+export const HyperlinkS = ({ href, name = "HyperlinkS WITH NO NAME!", tabIndex = 0 }) => (
+  <Link
+    href={href}
+    passHref
+    tabIndex={tabIndex}>
+    <SizeS tabIndex={tabIndex}>{name}</SizeS>
   </Link>
 )
-
 
 const SizeM = styled(theLink)`
   font-size: ${SharedValues.FONT_SIZE.MEDIUM};
   line-height: ${SharedValues.LINE_HEIGHT.MEDIUM};
 `
-export const HyperlinkM = ({ href, name="HyperlinkM WITH NO NAME!" }) => (
-  <Link href={href} passHref>
-    <SizeM>{name}</SizeM>
+export const HyperlinkM = ({ href, name = "HyperlinkM WITH NO NAME!", tabIndex = 0 }) => (
+  <Link
+    href={href}
+    passHref>
+    <SizeM tabIndex={tabIndex}>{name}</SizeM>
   </Link>
 )
-
 
 const SizeL = styled(theLink)`
   font-size: ${SharedValues.FONT_SIZE.LARGE};
   line-height: ${SharedValues.LINE_HEIGHT.LARGE};
 `
 
-export const HyperlinkL = ({ href, name="HyperlinkL WITH NO NAME!" }) => (
-  <Link href={href} passHref>
-    <SizeL>{name}</SizeL>
+export const HyperlinkL = ({ href, name = "HyperlinkL WITH NO NAME!", tabIndex = 0 }) => (
+  <Link
+    href={href}
+    passHref>
+    <SizeL tabIndex={tabIndex}>{name}</SizeL>
   </Link>
 )
-
-
