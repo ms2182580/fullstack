@@ -3,13 +3,11 @@ import { useEffect, useState } from "react"
 import { LeftArrowSvg, RightArrowSvg } from "../../../../assets/Icons/index.js"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_FetchNoFilters } from "../../../../context/ORG_CtxFetchNoFilters_Provider.js"
+import { useShouldTab } from "../../../../utils/ORG_shouldTab.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles.js"
 import { STResults_NavigationButtonsNumbers } from "./STResults_NavigationButtonsNumbers.js"
-import {
-  NextButton,
-  PrevButton, STResults_FinalButtonsWrapper
-} from "./styles/SpeechtherapistFinalButtonsWrapper.js"
+import { NextButton, PrevButton, STResults_FinalButtonsWrapper } from "./styles/SpeechtherapistFinalButtonsWrapper.js"
 
 export const STResults_FinalButtons = ({ widthWindow }) => {
   const [isMobile, setIsMobile] = useState(false)
@@ -40,6 +38,8 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
     }
   }, [widthWindow])
 
+  const shouldTab = useShouldTab()
+
   return (
     <STResults_FinalButtonsWrapper isMobile={isMobile}>
       {isMobile === false ? (
@@ -47,7 +47,8 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
           {pagination === 1 ? (
             <PrevButton
               onClick={() => toPrevious()}
-              isMobile={isMobile}>
+              isMobile={isMobile}
+              tabIndex={shouldTab}>
               <>
                 <LeftArrowSvg />
                 <P bold>Previous</P>
@@ -59,7 +60,8 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
               as={pathname}>
               <PrevButton
                 onClick={() => toPrevious()}
-                isMobile={isMobile}>
+                isMobile={isMobile}
+                tabIndex={shouldTab}>
                 <>
                   <LeftArrowSvg />
                   <P bold>Previous</P>
@@ -74,7 +76,8 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
           {pagination === 1 ? (
             <PrevButton
               onClick={() => toPreviousMobile()}
-              isMobile={isMobile}>
+              isMobile={isMobile}
+              tabIndex={shouldTab}>
               <>
                 <LeftArrowSvg />
               </>
@@ -82,10 +85,12 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
           ) : (
             <LinkNoStyle
               href="#topOfSTL"
-              as={pathname}>
+              as={pathname}
+              tabIndex={shouldTab}>
               <PrevButton
                 onClick={() => toPreviousMobile()}
-                isMobile={isMobile}>
+                isMobile={isMobile}
+                tabIndex={shouldTab}>
                 <>
                   <LeftArrowSvg />
                 </>
@@ -101,10 +106,12 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
         <>
           <LinkNoStyle
             href="#topOfSTL"
-            as={pathname}>
+            as={pathname}
+            tabIndex={shouldTab}>
             <NextButton
               onClick={() => setPagination(pagination + 1)}
-              isMobile={isMobile}>
+              isMobile={isMobile}
+              tabIndex={shouldTab}>
               <>
                 <P bold>Next</P>
                 <RightArrowSvg />
@@ -116,10 +123,12 @@ export const STResults_FinalButtons = ({ widthWindow }) => {
         <>
           <LinkNoStyle
             href="#topOfSTL"
-            as={pathname}>
+            as={pathname}
+            tabIndex={shouldTab}>
             <NextButton
               onClick={() => setPaginationMobile(paginationMobile + 1)}
-              isMobile={isMobile}>
+              isMobile={isMobile}
+              tabIndex={shouldTab}>
               <>
                 <RightArrowSvg />
               </>

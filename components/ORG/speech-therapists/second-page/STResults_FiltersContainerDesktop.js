@@ -22,7 +22,8 @@ export const STResults_FiltersContainerDesktop = ({
   title = "Advanced Filters",
   handleShowFilters,
   mustShowFiltersDesktop,
-  handleAddFilters
+  handleAddFilters,
+  ORGShowFullMapFilter
 }) => {
   // console.log('💖state:', state)
   // console.log('🧘‍♀️tempState:', tempState)
@@ -39,6 +40,7 @@ export const STResults_FiltersContainerDesktop = ({
       handleShowFilters()
     }
   }
+  
 
   return (
     <STResults_FiltersContainerDesktopWrapper

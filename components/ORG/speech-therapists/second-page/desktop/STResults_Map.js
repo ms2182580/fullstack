@@ -2,6 +2,7 @@ import Image from "next/image.js"
 import { LeftArrowTinySvg, RightArrowTinySvg } from "../../../../../assets/Icons"
 import STResults_MapImage from "../../../../../assets/images/STResults_MapImage.png"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
 import { STResults_MapWrapper } from "./styles/STResults_MapWrapper.js"
 
 export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
@@ -23,6 +24,8 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
       window.scrollTo({ top: targetY })
     }
   }
+  
+  const shouldTab = useShouldTab()
 
   return (
     <STResults_MapWrapper
@@ -35,10 +38,10 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
         alt="map"
       />
 
-      <button onClick={handleShowMap}>
+      <button onClick={handleShowMap} tabIndex={shouldTab}>
         {showFullMapButton || ORGShowFullMapFilter ? (
           <>
-            <span>Collpase map</span>
+            <span >Collpase map</span>
             <RightArrowTinySvg />
           </>
         ) : (

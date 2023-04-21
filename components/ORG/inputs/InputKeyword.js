@@ -6,6 +6,7 @@ import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
 import SearchIcon from "../../../assets/Icons/SearchIcon.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
+import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
@@ -69,6 +70,8 @@ export const InputKeyword = () => {
     "Physical Therapist",
     "Occupational Therapist"
   ]
+  
+  const shouldTab = useShouldTab()
 
   return (
     <div>
@@ -120,6 +123,7 @@ export const InputKeyword = () => {
             setKeywordsContext(e.target.value)
           }}
           ref={inputRefKeyword}
+          tabIndex={shouldTab}
         />
       </span>
 

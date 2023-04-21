@@ -19,11 +19,15 @@ const DropdownSuggestionsInput = ({
   // console.log('keywordClickByUser:', keywordClickByUser)
 
   const { isTouchScreen } = useCheckMobile()
-
+  
+  
   return (
     <DropdownSuggestionsWrapper
       ref={theRef}
-      isFirstOrSecondDropdown={isFirstOrSecondDropdown}>
+      isFirstOrSecondDropdown={isFirstOrSecondDropdown}
+      
+      
+    >
       {isFocus && (
         <div
           onMouseEnter={

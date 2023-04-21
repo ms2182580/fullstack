@@ -38,6 +38,12 @@ const ORGSpeechTherapists = () => {
 
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
+  
+  /* 
+  !FH0
+  Make all this component be impossible to the user use the tab key except for the filters
+  
+  */
 
   return (
     <ORGSpeechTherapistsSecondPageWrapper

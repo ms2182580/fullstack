@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import { Fragment } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useORG_Ctx_FetchNoFilters } from "../../../../context/ORG_CtxFetchNoFilters_Provider"
+import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
 import { NumberPage } from "./styles/SpeechtherapistFinalButtonsWrapper"
@@ -14,6 +15,8 @@ export const STResults_NavigationButtonsNumbers = ({ isMobile = false }) => {
   const router = useRouter()
   const { pathname } = router
 
+  const shouldTab = useShouldTab()
+
   if (isMobile === false) {
     if (pagination < 3) {
       return (
@@ -23,7 +26,9 @@ export const STResults_NavigationButtonsNumbers = ({ isMobile = false }) => {
             if (pagination === i + 1) {
               return (
                 <Fragment key={i}>
-                  <NumberPage isActive>
+                  <NumberPage
+                    isActive
+                    tabIndex={shouldTab}>
                     <P bold> {i + 1}</P>
                   </NumberPage>
                 </Fragment>
@@ -34,8 +39,11 @@ export const STResults_NavigationButtonsNumbers = ({ isMobile = false }) => {
               <Fragment key={i}>
                 <LinkNoStyle
                   href="#topOfSTL"
-                  as={pathname}>
-                  <NumberPage onClick={() => setPagination(toMoveToThatPage)}>
+                  as={pathname}
+                  tabIndex={shouldTab}>
+                  <NumberPage
+                    onClick={() => setPagination(toMoveToThatPage)}
+                    tabIndex={shouldTab}>
                     <P bold> {i + 1}</P>
                   </NumberPage>
                 </LinkNoStyle>
@@ -60,8 +68,11 @@ export const STResults_NavigationButtonsNumbers = ({ isMobile = false }) => {
                 <Fragment key={i}>
                   <LinkNoStyle
                     href="#topOfSTL"
-                    as={pathname}>
-                    <NumberPage onClick={() => setPagination(theNewOrder[0])}>
+                    as={pathname}
+                    tabIndex={shouldTab}>
+                    <NumberPage
+                      onClick={() => setPagination(theNewOrder[0])}
+                      tabIndex={shouldTab}>
                       <P bold> {theNewOrder[i]}</P>
                     </NumberPage>
                   </LinkNoStyle>
@@ -72,7 +83,9 @@ export const STResults_NavigationButtonsNumbers = ({ isMobile = false }) => {
             if (i === 1) {
               return (
                 <Fragment key={i}>
-                  <NumberPage isActive>
+                  <NumberPage
+                    isActive
+                    tabIndex={shouldTab}>
                     <P bold> {theNewOrder[i]}</P>
                   </NumberPage>
                 </Fragment>
@@ -84,8 +97,11 @@ export const STResults_NavigationButtonsNumbers = ({ isMobile = false }) => {
                 <Fragment key={i}>
                   <LinkNoStyle
                     href="#topOfSTL"
-                    as={pathname}>
-                    <NumberPage onClick={() => setPagination(theNewOrder[2])}>
+                    as={pathname}
+                    tabIndex={shouldTab}>
+                    <NumberPage
+                      onClick={() => setPagination(theNewOrder[2])}
+                      tabIndex={shouldTab}>
                       <P bold> {theNewOrder[i]}</P>
                     </NumberPage>
                   </LinkNoStyle>

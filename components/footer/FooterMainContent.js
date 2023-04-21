@@ -1,3 +1,5 @@
+import { useShouldTab } from "../../utils/ORG_shouldTab"
+
 import { useRouter } from "next/router"
 import { Fragment } from "react"
 import { H4 } from "../ui/heading_body_text/HeaderFonts"
@@ -5,15 +7,29 @@ import { HyperlinkS } from "../ui/hyperlink/HyperlinkFonts"
 import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
 import { FooterMainContentWrapper, Link_Footer_NFNYC } from "./styles/FooterMainContentWrapper.js"
 
-export let FooterMainContent = ({ title, dataToShow = [], dataLink, shouldTab }) => {
-  console.log('shouldTab:', shouldTab)
+export let FooterMainContent = ({ title, dataToShow = [], dataLink }) => {
   const router = useRouter()
-
   const navigate = (key, theRoute) => {
     if (key.key === "Enter") {
       router.push(theRoute)
     }
   }
+
+  // const { pathname } = useRouter()
+
+  // const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
+
+  // const [shouldTab, setShouldTab] = useState(0)
+
+  // useEffect(() => {
+  //   if (ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists") {
+  //     setShouldTab(-1)
+  //   } else {
+  //     setShouldTab(0)
+  //   }
+  // }, [ORGShowFullMapFilter])
+
+  const shouldTab = useShouldTab()
 
   return (
     <FooterMainContentWrapper>
@@ -38,7 +54,11 @@ export let FooterMainContent = ({ title, dataToShow = [], dataLink, shouldTab })
             <span
               tabIndex={shouldTab}
               onKeyDown={(e) => navigate(e, x.route)}>
-              <LinkNoStyle href={x.route} tabIndex={shouldTab}>{x.title}</LinkNoStyle>
+              <LinkNoStyle
+                href={x.route}
+                tabIndex={shouldTab}>
+                {x.title}
+              </LinkNoStyle>
             </span>
           </Fragment>
         )

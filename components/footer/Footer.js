@@ -28,80 +28,77 @@ export const Footer = () => {
   ]
   const FooterMainContent_SAFETY_dataToShow = [{ title: "Safety In The Community", route: "/404" }]
 
+  // const toDisableTab = useRef(null)
+
   // useEffect(() => {
-  //   if (ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists") {
-  //     function handleKeyDown(event) {
-  //       console.log("event.key:", event.key)
-  //       if (event.key === "Tab") {
-  //         event.preventDefault()
-  //         // event.stopPropagation()
-  //         console.log("Tab key was pressed")
-  //       }
+  //   const handleKeyDown = (event) => {
+  //     console.log('event:', event)
+  //     // console.log('ORGShowFullMapFilter:', ORGShowFullMapFilter)
+  //     if (event.key === "Tab" && ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists") {
+  //       toDisableTab.current.blur()
+  //       event.preventDefault()
+
   //     }
-
-  //     // Add the event listener
-  //     window.addEventListener("keydown", handleKeyDown)
-
-  //     // Remove the event listener when the component unmounts
-  //     return () => {
-  //       window.removeEventListener("keydown", handleKeyDown)
-  //     }
-
   //   }
 
+  //   const rootElement = toDisableTab.current
+
+  //   rootElement.addEventListener("keydown", handleKeyDown)
+
+  //   return () => {
+  //     rootElement.removeEventListener("keydown", handleKeyDown)
+  //   }
   // }, [ORGShowFullMapFilter])
 
   return (
-    <FooterWrapper ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}>
+    <FooterWrapper
+      ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}
+      // ref={toDisableTab}
+      // tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
+      // onKeyDown={handleNoTab}
+    >
       <H2
         bold
         logo>
         Inclusive
       </H2>
-      <div tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && "-1"}>
+      <div
+      // tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && "-1"}
+      >
         <div>
           <FooterMainContent
             title="Services & providers"
             dataToShow={FooterMainContent_SandP_dataToShow}
-            shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
           />
           <FooterMainContent
             title="Learn & Grow"
             dataToShow={FooterMainContent_LandG_dataToShow}
-            shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
           />
           <FooterMainContent
             title="Getting Help"
             dataToShow={FooterMainContent_GH_dataToShow}
             dataLink={true}
-            shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
           />
         </div>
         <div>
           <FooterMainContent
             title="Inclusive HCBS"
             dataToShow={FooterMainContent_IHCBS_dataToShow}
-            shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
           />
           <FooterMainContent
             title="Safety"
             dataToShow={FooterMainContent_SAFETY_dataToShow}
-            shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
           />
-          <FooterMainContent
-            title="BLOG"
-            shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
-          />
+          <FooterMainContent title="BLOG" />
         </div>
       </div>
-      <FooterSignupLoginButtons shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0} />
-      <FooterSocialmedia shouldTab={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0} />
+      <FooterSignupLoginButtons />
+      <FooterSocialmedia />
       <Caption>A public benefit company helping parents find the best services for their children.</Caption>
       {ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && <div className="InFront"></div>}
     </FooterWrapper>
   )
 }
-
 
 /* 
 !FH

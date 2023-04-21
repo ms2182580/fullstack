@@ -3,6 +3,7 @@ import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_P
 import { useORG_CtxShowFiltersDesktop } from "../../../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../context/ORG_Ctx_ShowFiltersMobile"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../../utils/ORG_initialLeftFilters"
+import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { BtnSmall } from "../../../ui/buttons/general/styles/ButtonStyled"
 import { STResults_FiltersContainerDesktop } from "./STResults_FiltersContainerDesktop"
@@ -32,7 +33,7 @@ const reducer = (state, action) => {
       setORGShowFullMapFilter(false)
     }, 500)
 
-    return {...state}
+    return { ...state }
   }
 
   // if (action.payload[1].target.checked) {
@@ -115,20 +116,44 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
       dispatch({
         type: "addFilters",
         payload: [setFilterData, setTempState, tempState, setMustShowFiltersDesktop, setORGShowFullMapFilter]
-      })  
+      })
     }
-    
-    
-    
   }
+
+  // const { pathname } = useRouter()
+  // useEffect(() => {
+  //   if (ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists") {
+  //     function handleKeyDown(event) {
+  //       console.log("event.key:", event.key)
+  //       if (event.key === "Tab") {
+  //         event.preventDefault()
+  //         event.stopPropagation()
+  //         console.log("👌Tab key was pressed")
+  //       }
+  //     }
+
+  //     // Add the event listener
+  //     window.addEventListener("keydown", handleKeyDown)
+
+  //     // Remove the event listener when the component unmounts
+  //     return () => {
+  //       window.removeEventListener("keydown", handleKeyDown)
+  //     }
+
+  //   }
+
+  // }, [ORGShowFullMapFilter])
+  
+  const shouldTab = useShouldTab()
+  
 
   return (
     <>
       {isMobile === false ? (
         <STResults_FilterListDesktopWrapper>
           {" "}
-          <span onClick={handleShowFiltersDesktop}>
-            <BtnSmall secondary>Filter</BtnSmall>
+          <span onClick={handleShowFiltersDesktop} tabIndex={-1}>
+            <BtnSmall secondary tabIndex={shouldTab}>Filter</BtnSmall>
           </span>
           <STResults_FilterListWrapper
             id="topOfSTL"
@@ -151,6 +176,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
               title="Filter by"
               mustShowFiltersDesktop={mustShowFiltersDesktop}
               handleAddFilters={handleAddFilters}
+              ORGShowFullMapFilter={ORGShowFullMapFilter}
             />
           </STResults_FilterListWrapper>
         </STResults_FilterListDesktopWrapper>

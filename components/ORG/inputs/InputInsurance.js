@@ -2,6 +2,7 @@ import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import InsuranceIcon from "../../../assets/Icons/InsuranceIcon.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
+import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
@@ -45,6 +46,8 @@ export const InputInsurance = () => {
       document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [])
+  
+  const shouldTab = useShouldTab()
 
   return (
     <div>
@@ -96,6 +99,8 @@ export const InputInsurance = () => {
             setEnsuranceContext(e.target.value)
           }}
           ref={inputRefEnsurance}
+          tabIndex={shouldTab}
+          
         />
       </span>
 

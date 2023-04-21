@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { SearchSVG } from "../../../assets/Icons"
 import { useORG_CtxShowFiltersDesktop } from "../../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { ButtonSmall } from "../../ui/buttons/general"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { InputInsurance } from "./InputInsurance"
@@ -14,6 +15,8 @@ export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
   
   const { showFullMapButton, ORGShowFullMapFilter, setShowFullMapButton, setORGShowFullMapFilter } =
     useORG_CtxShowFiltersDesktop()
+    
+    const shouldTab = useShouldTab()
 
   return (
     <>
@@ -23,7 +26,7 @@ export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
         <InputInsurance />
 
         {toWhere === "SpeechTherapists" ? (
-          <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
+          <LinkNoStyle href={`${router.pathname}/${toWhere}`} >
             <ButtonSmall>
               <SearchSVG />
             </ButtonSmall>
@@ -35,8 +38,8 @@ export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
             </ButtonSmall>
           </LinkNoStyle>
         ) : (
-          <LinkNoStyle href={`${router.pathname}`}>
-            <ButtonSmall>
+          <LinkNoStyle href={`${router.pathname}`} tabIndex={shouldTab}>
+            <ButtonSmall preventFocus={shouldTab}>
               <SearchSVG />
             </ButtonSmall>
           </LinkNoStyle>

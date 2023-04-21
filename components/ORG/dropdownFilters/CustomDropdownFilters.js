@@ -3,6 +3,7 @@ import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
+import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
@@ -64,6 +65,9 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
   !FH
   Make it work with onBlur to close when the user click outside. 
   */
+ 
+  const shouldTab = useShouldTab()
+  
 
   return (
     <>
@@ -75,7 +79,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
           onKeyDown={(e) => {
             handleDropdownKey(e)
           }}
-          tabIndex={0}>
+          tabIndex={shouldTab}>
           <P primary_cta semibold>{whichTitle}</P>
           <span>
             {showDropdown ? (

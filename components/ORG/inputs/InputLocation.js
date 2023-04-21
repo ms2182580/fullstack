@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { CurrentLocationSvg } from "../../../assets/Icons"
 import LocationIcon from "../../../assets/Icons/LocationIcon.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
+import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
@@ -48,6 +49,8 @@ export const InputLocation = () => {
       document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [])
+  
+  const shouldTab = useShouldTab()
 
   return (
     <div>
@@ -99,6 +102,7 @@ export const InputLocation = () => {
             setCitiesContext(e.target.value)
           }}
           ref={inputRefCity}
+          tabIndex={shouldTab}
         />
       </span>
 
