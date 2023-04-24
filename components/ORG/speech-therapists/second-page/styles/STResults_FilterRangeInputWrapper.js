@@ -107,14 +107,11 @@ export const STResults_FilterRangeInputWrapper = styled.div`
     background-color: hsl(205, 25%, 75%);
     width: 100%;
     z-index: 1;
-    /* border: 2px solid darkcyan; */
   }
 
   .slider__range {
     background-color: #65a6d6;
     z-index: 2;
-    /* border: 2px solid crimson; */
-    
   }
 
   .valuesToShow {

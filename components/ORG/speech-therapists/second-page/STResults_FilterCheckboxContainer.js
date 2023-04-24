@@ -7,7 +7,6 @@ import {
 } from "./styles/STResults_FilterCheckboxContainerWrapper.js"
 
 export const STResults_FilterCheckboxContainer = ({
-  state,
   dispatch,
   tempState,
   setTempState,
@@ -19,7 +18,6 @@ export const STResults_FilterCheckboxContainer = ({
   setClearAll,
   showStateChildren,
   shouldClear,
-  setShouldClear,
   isMobile = false
 }) => {
   const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
@@ -62,52 +60,8 @@ export const STResults_FilterCheckboxContainer = ({
       <STResults_FilterCheckboxContainerULWrapper
         show={show}
         showRemaining={showRemaining}>
-        {
-          // title.toLowerCase() === "agesServed"
-          // ? categoriesToDisplay?.map((x) => {
-          //     return (
-          //       <li key={x}>
-          //         <label>
-          //           <P>{x}</P>
-          //           <STResults_FilterCheckboxInput
-          //             type="checkbox"
-          //             name={x}
-          //             dispatch={dispatch}
-          //             setFilterData={setFilterData}
-          //             toUpdateFilters={toUpdateFilters}
-          //             clearAll={clearAll}
-          //             shouldClear={shouldClear}
-          //           />
-
-          //           <span></span>
-          //         </label>
-          //       </li>
-          //     )
-          //   })
-          // : title.toLowerCase() === "distance"
-          // ? categoriesToDisplay?.map((x) => {
-          //     return (
-          //       <li key={x}>
-          //         <label>
-          //           <P>{x} miles</P>
-          //           <STResults_FilterCheckboxInput
-          //             type="checkbox"
-          //             name={x}
-          //             dispatch={dispatch}
-          //             setFilterData={setFilterData}
-          //             toUpdateFilters={toUpdateFilters}
-          //             clearAll={clearAll}
-          //             shouldClear={shouldClear}
-          //           />
-
-          //           <span></span>
-          //         </label>
-          //       </li>
-          //     )
-          //   })
-          // :
-          title.toLowerCase() === "view only"
-            ? categoriesToDisplay?.map((x) => {
+        {title.toLowerCase() === "view only"
+          ? categoriesToDisplay?.map((x) => {
               return (
                 <li key={x}>
                   <label className="viewOnly">
@@ -128,7 +82,7 @@ export const STResults_FilterCheckboxContainer = ({
                 </li>
               )
             })
-            : categoriesToDisplay?.map((x, i) => {
+          : categoriesToDisplay?.map((x, i) => {
               if (categoriesToDisplay.length > 4 && i < 3) {
                 return (
                   <li key={x}>
@@ -190,15 +144,13 @@ export const STResults_FilterCheckboxContainer = ({
                         toUpdateFilters={toUpdateFilters}
                         clearAll={clearAll}
                         shouldClear={shouldClear}
-
                       />
                       <span></span>
                     </label>
                   </li>
                 )
               }
-            })
-        }
+            })}
 
         {categoriesToDisplay.length > 4 && showRemaining === false && (
           <span onClick={handleShowRemaining}>

@@ -4,6 +4,8 @@ import { STResults_FilterRangeInputWrapper } from "./styles/STResults_FilterRang
 
 export const STResults_FilterRangeInput = ({
   dispatch,
+  tempState,
+  setTempState,
   setFilterData,
   categoriesToDisplay = ["nothing here"],
   title,
@@ -13,7 +15,6 @@ export const STResults_FilterRangeInput = ({
   showStateChildren,
   shouldClear,
   setShouldClear,
-  isMobile = false,
   min = 0,
   max,
   showMiles = false
@@ -47,79 +48,69 @@ export const STResults_FilterRangeInput = ({
     }
   }, [maxVal, getPercent])
 
+  const handleMinValue = (event) => {
+    const value = Math.min(Number(event.target.value), maxVal)
+    setMinVal(value)
+    minValRef.current = value
+  }
+
+  const handleMaxValue = (event) => {
+    const value = Math.max(Number(event.target.value), minVal)
+    setMaxVal(value)
+    maxValRef.current = value
+  }
+
   useEffect(() => {
-    // onChange({ min: minVal, max: maxVal });
-    // console.log('minVal, maxVal:', minVal, maxVal)
-    // console.log("min:", minVal, "max:", maxVal)
-  }, [minVal, maxVal])
+    setMinVal(min)
+    minValRef.current = min
+
+    setMaxVal(max)
+    maxValRef.current = max
+  }, [clearAll, shouldClear])
 
   return (
-    <>
-      {/* <STResults_FilterRangeInputWrapper>
-        <div
-          tabIndex={0}
-          onKeyDown={(e) => handleShow(e)}>
-          <P semibold>{title}</P>
+    <STResults_FilterRangeInputWrapper
+      minVal={minVal}
+      maxVal={maxVal}>
+      <div className="container">
+        <label htmlFor="min">Minimum price</label>
+        <P semibold>{title}</P>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={minVal}
+          onChange={handleMinValue}
+          className="thumb thumb--left"
+          style={{ zIndex: minVal > max - 100 && "5" }}
+        />
+        <label htmlFor="max">Maximum price</label>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={maxVal}
+          onChange={handleMaxValue}
+          className="thumb thumb--right"
+        />
+        <div className="slider">
+          <div className="slider__track" />
+          <div
+            ref={range}
+            className="slider__range"
+          />
         </div>
 
-        {categoriesToDisplay.map((x) => (
-          <p key={x}>{x}</p>
-        ))}
-
-        <p>Total: {max}</p>
-      </STResults_FilterRangeInputWrapper> */}
-
-      <STResults_FilterRangeInputWrapper
-        minVal={minVal}
-        maxVal={maxVal}>
-        <div className="container">
-          <label htmlFor="min">Minimum price</label>
-          <P semibold>{title}</P>
-          <input
-            type="range"
-            min={min}
-            max={max}
-            value={minVal}
-            onChange={(event) => {
-              const value = Math.min(Number(event.target.value), maxVal)
-              setMinVal(value)
-              minValRef.current = value
-            }}
-            className="thumb thumb--left"
-            style={{ zIndex: minVal > max - 100 && "5" }}
-          />
-          <label htmlFor="max">Maximum price</label>
-          <input
-            type="range"
-            min={min}
-            max={max}
-            value={maxVal}
-            onChange={(event) => {
-              const value = Math.max(Number(event.target.value), minVal)
-              setMaxVal(value)
-              maxValRef.current = value
-            }}
-            className="thumb thumb--right"
-          />
-          <div className="slider">
-            <div className="slider__track" />
-            <div
-              ref={range}
-              className="slider__range"
-            />
+        <div className="valuesToShow">
+          <div>
+            {categoriesToDisplay[minVal]} {showMiles ? "miles" : ""}
           </div>
-
-          <div className="valuesToShow">
-            <div>
-              {categoriesToDisplay[minVal]} {showMiles ? "miles" : ""}
-            </div>
-            <span></span>
-            <div>
-              {categoriesToDisplay[maxVal]} {showMiles ? "miles" : ""}
-            </div>
+          <span></span>
+          <div>
+            {categoriesToDisplay[maxVal]} {showMiles ? "miles" : ""}
           </div>
         </div>
-      </STResults_FilterRangeInputWrapper>
-    </>
+      </div>
+    </STResults_FilterRangeInputWrapper>
   )
 }

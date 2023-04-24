@@ -61,6 +61,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const [state, dispatch] = useReducer(reducer, filterData)
   // console.log("💕state:", state)
   const [tempState, setTempState] = useState(filterData)
+  // console.log("👌tempState:", tempState)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
@@ -120,40 +121,21 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
     }
   }
 
-  // const { pathname } = useRouter()
-  // useEffect(() => {
-  //   if (ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists") {
-  //     function handleKeyDown(event) {
-  //       console.log("event.key:", event.key)
-  //       if (event.key === "Tab") {
-  //         event.preventDefault()
-  //         event.stopPropagation()
-  //         console.log("👌Tab key was pressed")
-  //       }
-  //     }
-
-  //     // Add the event listener
-  //     window.addEventListener("keydown", handleKeyDown)
-
-  //     // Remove the event listener when the component unmounts
-  //     return () => {
-  //       window.removeEventListener("keydown", handleKeyDown)
-  //     }
-
-  //   }
-
-  // }, [ORGShowFullMapFilter])
-  
   const shouldTab = useShouldTab()
-  
 
   return (
     <>
       {isMobile === false ? (
         <STResults_FilterListDesktopWrapper>
           {" "}
-          <span onClick={handleShowFiltersDesktop} tabIndex={-1}>
-            <BtnSmall secondary tabIndex={shouldTab}>Filter</BtnSmall>
+          <span
+            onClick={handleShowFiltersDesktop}
+            tabIndex={-1}>
+            <BtnSmall
+              secondary
+              tabIndex={shouldTab}>
+              Filter
+            </BtnSmall>
           </span>
           <STResults_FilterListWrapper
             id="topOfSTL"

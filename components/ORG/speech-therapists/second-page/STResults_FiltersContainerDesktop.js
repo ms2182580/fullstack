@@ -79,6 +79,8 @@ export const STResults_FiltersContainerDesktop = ({
         <STResults_FilterRangeInput
           dispatch={dispatch}
           setFilterData={setFilterData}
+          tempState={tempState}
+          setTempState={setTempState}
           clearAll={clearAll}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
@@ -92,6 +94,8 @@ export const STResults_FiltersContainerDesktop = ({
         <STResults_FilterRangeInput
           dispatch={dispatch}
           setFilterData={setFilterData}
+          tempState={tempState}
+          setTempState={setTempState}
           clearAll={clearAll}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
