@@ -13,7 +13,7 @@ export const STResults_FilterCheckboxContainer = ({
   setFilterData,
   categoriesToDisplay = ["nothing here"],
   title,
-  toUpdate = undefined,
+  toUpdateFilters,
   clearAll,
   setClearAll,
   showStateChildren,
@@ -25,7 +25,6 @@ export const STResults_FilterCheckboxContainer = ({
     setShowRemaining(true)
   }
 
-  let toUpdateFilters = toUpdate === undefined ? title.toLowerCase() : toUpdate
   const [show, setShow] = useState(false)
 
   const handleShow = (e) => {

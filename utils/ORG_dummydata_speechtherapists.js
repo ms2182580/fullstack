@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react"
 import {
-  ORG_Filterdata_Accepts,
   ORG_Filterdata_AgesServed,
-  ORG_Filterdata_Diagnoses,
+  ORG_Filterdata_Diagnosis,
   ORG_Filterdata_Distance,
+  ORG_Filterdata_Insurance,
   ORG_Filterdata_Languages,
   ORG_Filterdata_MeetingFormat,
   ORG_Filterdata_ProviderType,
   ORG_Filterdata_Rating,
   ORG_Filterdata_Reviews,
   ORG_Filterdata_ServiceSetting,
-  ORG_Filterdata_SessionType,
-  ORG_Filterdata_Transportation,
-  ORG_Filterdata_YoP
-} from "./ORG_Filterdata"
+  ORG_Filterdata_SessionType
+} from "./ORG_FilterdataFunctions"
 
 export const useFetch = (pagination = 1, howmuch = 10) => {
 
@@ -36,15 +34,13 @@ export const useFetch = (pagination = 1, howmuch = 10) => {
           const distance = ORG_Filterdata_Distance()
           const rating = ORG_Filterdata_Rating()
           const reviews = ORG_Filterdata_Reviews()
-          const diagnoses = ORG_Filterdata_Diagnoses()
+          const diagnoses = ORG_Filterdata_Diagnosis()
           const agesServed = ORG_Filterdata_AgesServed()
           const languages = ORG_Filterdata_Languages()
-          const yearsOfPractice = ORG_Filterdata_YoP()
           const serviceSetting = ORG_Filterdata_ServiceSetting()
-          const accepts = ORG_Filterdata_Accepts()
+          const accepts = ORG_Filterdata_Insurance()
           const meetingFormat = ORG_Filterdata_MeetingFormat()
           const sessionType = ORG_Filterdata_SessionType()
-          const transportation = ORG_Filterdata_Transportation()
           const providerType = ORG_Filterdata_ProviderType()
 
           getFilters.filters = [
@@ -56,12 +52,10 @@ export const useFetch = (pagination = 1, howmuch = 10) => {
               diagnoses: diagnoses,
               agesServed: agesServed,
               languages: languages,
-              yearsOfPractice: yearsOfPractice,
               serviceSetting: serviceSetting,
               accepts: accepts,
               meetingFormat: meetingFormat,
               sessionType: sessionType,
-              transportation: transportation,
               providerType: providerType,
               CCC_SLP:
                 "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA)."

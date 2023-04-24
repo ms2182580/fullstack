@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
+import { ORG_FILTERS_DATA } from "../../../../utils/ORG_FiltersCategories"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { STResults_FilterRangeInputWrapper } from "./styles/STResults_FilterRangeInputWrapper"
 
@@ -9,7 +10,7 @@ export const STResults_FilterRangeInput = ({
   setFilterData,
   categoriesToDisplay = ["nothing here"],
   title,
-  toUpdate = undefined,
+  toUpdateFilters,
   clearAll,
   setClearAll,
   showStateChildren,
@@ -17,10 +18,15 @@ export const STResults_FilterRangeInput = ({
   setShouldClear,
   min = 0,
   max,
-  showMiles = false
+  showMiles = false,
+  mustShowFiltersDesktop
 }) => {
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
+  const [updateFilterData, setUpdateFilterData] = useState(
+    ORG_FILTERS_DATA[toUpdateFilters].slice(minVal, maxVal + 1)
+  )
+  // console.log('💚updateFilterData:', updateFilterData)
   const minValRef = useRef(min)
   const maxValRef = useRef(max)
   const range = useRef(null)
@@ -37,6 +43,17 @@ export const STResults_FilterRangeInput = ({
       range.current.style.left = `${minPercent}%`
       range.current.style.width = `${maxPercent - minPercent}%`
     }
+
+    // const updateFilterData = ORG_FILTERS_DATA[toUpdateFilters].slice(minVal, maxVal + 1)
+
+    // setTempState((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     [toUpdateFilters]: [...prevState[toUpdateFilters], ...updateFilterData]
+    //   }
+    // })
+
+    setUpdateFilterData(ORG_FILTERS_DATA[toUpdateFilters].slice(minVal, maxVal + 1))
   }, [minVal, getPercent])
 
   useEffect(() => {
@@ -46,6 +63,25 @@ export const STResults_FilterRangeInput = ({
     if (range.current) {
       range.current.style.width = `${maxPercent - minPercent}%`
     }
+
+    // const updateFilterData = ORG_FILTERS_DATA[toUpdateFilters].slice(minVal, maxVal + 1)
+    // console.log('updateFilterData:', updateFilterData)
+
+    // setTempState((prevState) => {
+    //   // const isEqual = prevState[toUpdateFilters]
+    //   // console.log('✨isEqual:', isEqual, updateFilterData)
+
+    //   // return {
+    //   //   ...prevState
+    //   // }
+
+    //   return {
+    //     ...prevState,
+    //     [toUpdateFilters]: [...updateFilterData]
+    //   }
+    // })
+
+    setUpdateFilterData(ORG_FILTERS_DATA[toUpdateFilters].slice(minVal, maxVal + 1))
   }, [maxVal, getPercent])
 
   const handleMinValue = (event) => {
@@ -59,6 +95,15 @@ export const STResults_FilterRangeInput = ({
     setMaxVal(value)
     maxValRef.current = value
   }
+
+  useEffect(() => {
+    setTempState((prevState) => {
+      return {
+        ...prevState,
+        [toUpdateFilters]: updateFilterData
+      }
+    })
+  }, [updateFilterData, mustShowFiltersDesktop])
 
   useEffect(() => {
     setMinVal(min)

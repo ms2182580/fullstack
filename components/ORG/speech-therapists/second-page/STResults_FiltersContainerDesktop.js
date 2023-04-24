@@ -1,6 +1,6 @@
 import { XDesktopSvg } from "../../../../assets/Icons/index.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../context/ORG_Ctx_ShowFiltersMobile"
-import { ORG_FiltersCategoriesToDisplay } from "../../../../utils/ORG_FiltersCategoriesToDisplay.js"
+import { ORG_FILTERS_DATA, ORG_FILTERS_KEYS } from "../../../../utils/ORG_FiltersCategories.js"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { BtnSmall } from "../../../ui/buttons/general/styles/ButtonStyled.js"
 import { STResults_FilterCheckboxContainer } from "./STResults_FilterCheckboxContainer"
@@ -23,7 +23,6 @@ export const STResults_FiltersContainerDesktop = ({
   handleShowFilters,
   mustShowFiltersDesktop,
   handleAddFilters,
-  ORGShowFullMapFilter
 }) => {
   // console.log('💖state:', state)
   // console.log('🧘‍♀️tempState:', tempState)
@@ -86,10 +85,12 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.agesServed}
-          max={ORG_FiltersCategoriesToDisplay.agesServed.length - 1}
-          title="Ages Served"
-          toUpdate="agesServed"
+          categoriesToDisplay={ORG_FILTERS_DATA.agesServed}
+          max={ORG_FILTERS_DATA.agesServed.length - 1}
+          title={ORG_FILTERS_KEYS.agesServed.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.agesServed.updateState}
+          mustShowFiltersDesktop={mustShowFiltersDesktop}
+          
         />
         <STResults_FilterRangeInput
           dispatch={dispatch}
@@ -101,10 +102,12 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.distance}
-          max={ORG_FiltersCategoriesToDisplay.distance.length - 1}
-          title="Distance"
+          categoriesToDisplay={ORG_FILTERS_DATA.distance}
+          max={ORG_FILTERS_DATA.distance.length - 1}
+          title={ORG_FILTERS_KEYS.distance.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.distance.updateState}
           showMiles={true}
+          mustShowFiltersDesktop={mustShowFiltersDesktop}
         />
         <STResults_FilterCheckboxContainer
           dispatch={dispatch}
@@ -116,37 +119,24 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.diagnosis}
-          title="Diagnosis"
-        />
-
-        <STResults_FilterCheckboxContainer
-          dispatch={dispatch}
-          setFilterData={setFilterData}
-          tempState={tempState}
-          setTempState={setTempState}
-          clearAll={clearAll}
-          setClearAll={setClearAll}
-          showStateChildren={showStateChildren}
-          shouldClear={shouldClear}
-          setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.viewOnly}
-          title="View Only"
-          toUpdate="viewOnly"
+          categoriesToDisplay={ORG_FILTERS_DATA.diagnosis}
+          title={ORG_FILTERS_KEYS.diagnosis.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.diagnosis.updateState}
         />
 
         <STResults_FilterCheckboxContainer
           dispatch={dispatch}
           setFilterData={setFilterData}
-          clearAll={clearAll}
           tempState={tempState}
           setTempState={setTempState}
+          clearAll={clearAll}
           setClearAll={setClearAll}
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.insurance}
-          title="Insurance"
+          categoriesToDisplay={ORG_FILTERS_DATA.viewOnly}
+          title={ORG_FILTERS_KEYS.viewOnly.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.viewOnly.updateState}
         />
 
         <STResults_FilterCheckboxContainer
@@ -159,9 +149,9 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.meetingFormat}
-          title="Meeting Format"
-          toUpdate="meetingFormat"
+          categoriesToDisplay={ORG_FILTERS_DATA.insurance}
+          title={ORG_FILTERS_KEYS.insurance.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.insurance.updateState}
         />
 
         <STResults_FilterCheckboxContainer
@@ -174,9 +164,9 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.serviceSetting}
-          title="Service Setting"
-          toUpdate="serviceSetting"
+          categoriesToDisplay={ORG_FILTERS_DATA.meetingFormat}
+          title={ORG_FILTERS_KEYS.meetingFormat.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.meetingFormat.updateState}
         />
 
         <STResults_FilterCheckboxContainer
@@ -189,9 +179,24 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.sessionType}
-          title="Session Type"
-          toUpdate="sessionType"
+          categoriesToDisplay={ORG_FILTERS_DATA.serviceSetting}
+          title={ORG_FILTERS_KEYS.serviceSetting.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.serviceSetting.updateState}
+        />
+
+        <STResults_FilterCheckboxContainer
+          dispatch={dispatch}
+          setFilterData={setFilterData}
+          clearAll={clearAll}
+          tempState={tempState}
+          setTempState={setTempState}
+          setClearAll={setClearAll}
+          showStateChildren={showStateChildren}
+          shouldClear={shouldClear}
+          setShouldClear={setShouldClear}
+          categoriesToDisplay={ORG_FILTERS_DATA.sessionType}
+          title={ORG_FILTERS_KEYS.sessionType.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.sessionType.updateState}
         />
         <STResults_FilterCheckboxContainer
           state={state}
@@ -204,8 +209,10 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.languages}
-          title="Languages"
+          categoriesToDisplay={ORG_FILTERS_DATA.languages}
+          title={ORG_FILTERS_KEYS.language.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.language.updateState}
+          
         />
 
         <STResults_FilterCheckboxContainer
@@ -218,9 +225,9 @@ export const STResults_FiltersContainerDesktop = ({
           showStateChildren={showStateChildren}
           shouldClear={shouldClear}
           setShouldClear={setShouldClear}
-          categoriesToDisplay={ORG_FiltersCategoriesToDisplay.providerType}
-          title="Provider Type"
-          toUpdate="providerType"
+          categoriesToDisplay={ORG_FILTERS_DATA.providerType}
+          title={ORG_FILTERS_KEYS.providerType.titleToShow}
+          toUpdateFilters={ORG_FILTERS_KEYS.providerType.updateState}
         />
       </div>
 

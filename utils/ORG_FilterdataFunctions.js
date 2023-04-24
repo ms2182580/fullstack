@@ -1,3 +1,5 @@
+import { ORG_FILTERS_DATA } from "./ORG_FiltersCategories"
+
 export const pickJustOne = (arr) => {
   const random = Math.floor(Math.random() * arr.length)
   return arr[random]
@@ -16,7 +18,7 @@ const getCorrectOrder = (arrToOrder, arrCorrectOrder) => {
   return finalCorrectOrder
 }
 
-const pickMoreThanOne = (arr, pickEnglish = false, diagnoses = false) => {
+const pickMoreThanOne = (arr, pickEnglish = false) => {
   const howMuch = Math.floor(Math.random() * arr.length + 1)
   const shuffled = [...arr].sort(() => 0.5 - Math.random())
   const shuffledArr = shuffled.slice(0, howMuch)
@@ -47,21 +49,13 @@ export const ORG_Filterdata_Reviews = () => {
   const reviews = ["1", "2", "3", "4", "5", "+5"]
   return pickJustOne(reviews)
 }
-export const ORG_Filterdata_Diagnoses = (whichSelect = []) => {
+
+export const ORG_Filterdata_Diagnosis = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
 
-  const diagnoses = [
-    "Autism (ASD)",
-    "ADHD",
-    "Down Syndrome",
-    "Cerebral Palsy",
-    "Fragile X",
-    "Other"
-  ]
-
-  return pickMoreThanOne(diagnoses)
+  return pickMoreThanOne(ORG_FILTERS_DATA.diagnosis)
 }
 
 export const ORG_Filterdata_AgesServed = (whichSelect = []) => {
@@ -69,53 +63,47 @@ export const ORG_Filterdata_AgesServed = (whichSelect = []) => {
     return whichSelect
   }
 
-  const agesServed = [
-    "0-18 months",
-    "2-3 years",
-    "4-5 years",
-    "6-11 years",
-    "12-21 years",
-    "22-40 years",
-    "41-64 years",
-    "65+ years"
-  ]
-
-  return pickMoreThanOne(agesServed)
+  return pickMoreThanOne(ORG_FILTERS_DATA.agesServed)
 }
 
 export const ORG_Filterdata_Languages = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
-  const languages = ["english", "spanish", "chinese", "tagalog", "french"]
-  return pickMoreThanOne(languages, true)
+  
+  return pickMoreThanOne(ORG_FILTERS_DATA.languages, true)
 }
 
-export const ORG_Filterdata_YoP = (whichSelect = []) => {
-  const yearsOfPractice =
-    whichSelect.length === 0
-      ? ["1+ years", "3+ years", "5+ years", "7+ years", "10+ years"]
-      : whichSelect
+// export const ORG_Filterdata_YoP = (whichSelect = []) => {
+//   if (whichSelect.length !== 0) {
+//     return whichSelect
+//   }
+  
+//   const yearsOfPractice =
+//     whichSelect.length === 0
+//       ? ["1+ years", "3+ years", "5+ years", "7+ years", "10+ years"]
+//       : whichSelect
 
-  return pickJustOne(yearsOfPractice)
-}
+//   return pickJustOne(ORG_FILTERS_DATA.yearsOfPractice)
+// }
+
 export const ORG_Filterdata_ServiceSetting = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
 
-  const serviceSetting = ["clinic", "home", "school", "community"]
+  // const serviceSetting = ["clinic", "home", "school", "community"]
 
-  return pickMoreThanOne(serviceSetting)
+  return pickMoreThanOne(ORG_FILTERS_DATA.serviceSetting)
 }
 
-export const ORG_Filterdata_Accepts = (whichSelect = []) => {
+export const ORG_Filterdata_Insurance = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
-  const accepts = ["Private Pay", "Medicaid", "DOE", "Contract"]
+  // const accepts = ["Private Pay", "Medicaid", "DOE", "Contract"]
 
-  return pickMoreThanOne(accepts)
+  return pickMoreThanOne(ORG_FILTERS_DATA.insurance)
 }
 
 export const ORG_Filterdata_MeetingFormat = (whichSelect = []) => {
@@ -123,40 +111,39 @@ export const ORG_Filterdata_MeetingFormat = (whichSelect = []) => {
     return whichSelect
   }
 
-  const meetingFormat = ["virtual", "in-person"]
+  // const meetingFormat = ["virtual", "in-person"]
 
-  return pickMoreThanOne(meetingFormat)
+  return pickMoreThanOne(ORG_FILTERS_DATA.meetingFormat)
 }
 
 export const ORG_Filterdata_SessionType = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
-  const sessionType = ["individual", "group"]
-  return pickMoreThanOne(sessionType)
+  // const sessionType = ["individual", "group"]
+  return pickMoreThanOne(ORG_FILTERS_DATA.sessionType)
 }
 
-export const ORG_Filterdata_Transportation = (whichSelect = []) => {
+// export const ORG_Filterdata_Transportation = (whichSelect = []) => {
+//   if (whichSelect.length !== 0) {
+//     return whichSelect
+//   }
+
+//   const transportation = [
+//     "near metro",
+//     "near bus",
+//     "meter parking",
+//     "street parking",
+//     "parking lot"
+//   ]
+
+//   return pickMoreThanOne(transportation)
+// }
+
+export const ORG_Filterdata_ProviderType = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
 
-  const transportation = [
-    "near metro",
-    "near bus",
-    "meter parking",
-    "street parking",
-    "parking lot"
-  ]
-
-  return pickMoreThanOne(transportation)
-}
-
-export const ORG_Filterdata_ProviderType = (whichSelect = []) => {
-  const providerType =
-    whichSelect.length === 0
-      ? ["independent", "agency-based", "traveling"]
-      : whichSelect
-
-  return pickJustOne(providerType)
+  return pickJustOne(ORG_FILTERS_DATA.providerType)
 }

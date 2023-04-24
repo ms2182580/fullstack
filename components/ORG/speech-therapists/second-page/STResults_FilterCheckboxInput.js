@@ -11,6 +11,7 @@ export const STResults_FilterCheckboxInput = ({
   clearAll,
   shouldClear
 }) => {
+  // console.log('name:', name)
   const [checked, setChecked] = useState(false)
   // console.log('💦tempState:', tempState)
 

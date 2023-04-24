@@ -1,4 +1,4 @@
-import { pickJustOne } from "./ORG_Filterdata"
+import { pickJustOne } from "./ORG_FilterdataFunctions"
 
 const AboutCollection = {
   FiveStars: [

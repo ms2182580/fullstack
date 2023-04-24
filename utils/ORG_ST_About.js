@@ -1,4 +1,4 @@
-import { pickJustOne } from "./ORG_Filterdata"
+import { pickJustOne } from "./ORG_FilterdataFunctions"
 
 const AboutCollection = [
   "__FULLNAMEHERE__ is deeply committed to providing the highest quality care to their patients. With years of experience and a dedication to ongoing learning, __NAMEHERE__ have developed a wide range of skills and expertise to help their patients achieve optimal health and wellness. In addition to their professional qualifications, __NAMEHERE__ is also known for their compassion and understanding, taking the time to listen to their patients, always striving to provide personalized care that meets their unique needs and goals. __NAMEHERE__ is dedicated to helping their patients live their best lives",

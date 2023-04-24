@@ -114,7 +114,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
 
   const handleAddFilters = (e) => {
     if (e.type === "click" || e.key === "Enter") {
-      dispatch({
+      return dispatch({
         type: "addFilters",
         payload: [setFilterData, setTempState, tempState, setMustShowFiltersDesktop, setORGShowFullMapFilter]
       })

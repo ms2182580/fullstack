@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { BookmarkSaveSTSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
@@ -38,16 +39,16 @@ export const STResults_CardWithFilters = () => {
       {dataF &&
         Array.isArray(filtersF) &&
         dataF.allData.map((everySingleValue, i) => {
-          let accepts = filtersF[i].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
+          let insurance = filtersF[i][ORG_FILTERS_KEYS.insurance.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
           let agesServed = filtersF[i].agesServed
-          let diagnoses = filtersF[i].diagnoses.map((x) => {
+          let diagnosis = filtersF[i][ORG_FILTERS_KEYS.diagnosis.updateState].map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
-          let languages = filtersF[i].languages.map((x) => x[0].toUpperCase() + x.slice(1))
+          let language = filtersF[i][ORG_FILTERS_KEYS.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
-          let serviceSetting = filtersF[i].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
+          let serviceSetting = filtersF[i][ORG_FILTERS_KEYS.serviceSetting.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
           return (
             <ST_CardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <ST_CardWrapper_Left>
@@ -90,31 +91,26 @@ export const STResults_CardWithFilters = () => {
                   reviews={filtersF[i].reviews}
                 />
 
-                <FriendlyDiagnoses diagnoses={diagnoses} />
+                <FriendlyDiagnoses diagnosis={diagnosis} />
 
                 <ST_CardInfo
-                  title="Ages served"
+                  title={ORG_FILTERS_KEYS.agesServed.titleToShow}
                   dataToShow={agesServed}
                 />
 
                 <ST_CardInfo
-                  title="Languages"
-                  dataToShow={languages}
+                  title={ORG_FILTERS_KEYS.language.titleToShow}
+                  dataToShow={language}
                 />
 
                 <ST_CardInfo
-                  title="Years of Practice"
-                  dataToShow={filtersF[i].yearsOfPractice}
-                />
-
-                <ST_CardInfo
-                  title="Service Setting"
+                  title={ORG_FILTERS_KEYS.serviceSetting.titleToShow}
                   dataToShow={serviceSetting}
                 />
 
                 <ST_CardInfo
-                  title="Accepts"
-                  dataToShow={accepts}
+                  title={ORG_FILTERS_KEYS.insurance.titleToShow}
+                  dataToShow={insurance}
                 />
 
                 <span onClick={(e) => goToDynamic(e, everySingleValue, filtersF[i])}>

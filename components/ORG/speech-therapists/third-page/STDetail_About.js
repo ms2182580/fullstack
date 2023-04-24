@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { ORG_ST_About } from "../../../../utils/ORG_ST_About.js"
 import { useWidthWindow } from "../../../../utils/useWidthWindow.js"
 import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"

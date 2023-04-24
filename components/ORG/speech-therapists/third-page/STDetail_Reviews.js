@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { ORG_ReviewsUsersName } from "../../../../utils/ORG_ReviewsUsersName"
 import { ORG_ST_Review } from "../../../../utils/ORG_ST_Review"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
