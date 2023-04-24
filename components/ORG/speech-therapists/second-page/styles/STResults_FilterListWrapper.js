@@ -4,7 +4,6 @@ import { NEUTRALS } from "../../../../../assets/Colors"
 export const STResults_FilterListWrapper = styled.div`
   visibility: ${(x) => (x.mustShowFiltersDesktop ? `visible` : `hidden`)};
   pointer-events: ${(x) => (x.ORGShowFullMapFilter ? `all` : ``)};
-
   user-select: ${(x) => (x.ORGShowFullMapFilter ? `all` : ``)};
 
   background-color: ${NEUTRALS.OFF_WHITE};

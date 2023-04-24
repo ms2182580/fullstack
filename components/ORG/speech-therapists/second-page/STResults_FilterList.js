@@ -59,9 +59,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
 
   const [state, dispatch] = useReducer(reducer, filterData)
-  // console.log("💕state:", state)
   const [tempState, setTempState] = useState(filterData)
-  // console.log("👌tempState:", tempState)
   const [clearAll, setClearAll] = useState(false)
   const [show, setShow] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
@@ -123,6 +121,21 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
 
   const shouldTab = useShouldTab()
 
+  const nameToCloseTheFilters = "ShowFiltersDesktop"
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (mustShowFiltersDesktop && !event.target.closest(`.${nameToCloseTheFilters}`)) {
+        setMustShowFiltersDesktop(false)
+        setORGShowFullMapFilter(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [mustShowFiltersDesktop])
+
   return (
     <>
       {isMobile === false ? (
@@ -140,8 +153,9 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
           <STResults_FilterListWrapper
             id="topOfSTL"
             mustShowFiltersDesktop={mustShowFiltersDesktop}
+            ORGShowFullMapFilter={ORGShowFullMapFilter}
             ref={refUserViewShowFullMapFilter}
-            ORGShowFullMapFilter={ORGShowFullMapFilter}>
+            className={nameToCloseTheFilters}>
             <STResults_FiltersContainerDesktop
               state={state}
               dispatch={dispatch}

@@ -5,7 +5,7 @@ const ORGSpeechTherapistsSecondPageWrapper = styled.div`
   position: relative;
   padding-left: 40px;
 
-  pointer-events: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
+  /* pointer-events: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)}; */
   user-select: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
 
   .InFront {
@@ -15,6 +15,8 @@ const ORGSpeechTherapistsSecondPageWrapper = styled.div`
     z-index: 4;
     position: absolute;
     background: rgba(44, 42, 42, 0.61);
+    border: 2px solid green;
+    
   }
 `
 

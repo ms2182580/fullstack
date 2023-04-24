@@ -3,13 +3,9 @@ import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
 export const STResults_FiltersContainerDesktopWrapper = styled.div`
   position: relative;
-  
+
   & > *:not(:first-child) {
     margin-inline: ${(x) => (x.isMobile ? "44px 44px" : "")};
-
-    & > ul > li:last-child {
-      /* margin-bottom: 21px; */
-    }
   }
 
   & > :nth-child(1) {
@@ -37,7 +33,6 @@ export const STResults_FiltersContainerDesktopWrapper = styled.div`
   & > :nth-child(2) > :nth-child(1) {
     grid-area: agesServed;
     margin-bottom: calc(80px - 33px);
-    
   }
 
   & > :nth-child(2) > :nth-child(2) {

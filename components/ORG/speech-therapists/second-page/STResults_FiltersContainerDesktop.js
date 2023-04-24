@@ -22,7 +22,7 @@ export const STResults_FiltersContainerDesktop = ({
   title = "Advanced Filters",
   handleShowFilters,
   mustShowFiltersDesktop,
-  handleAddFilters,
+  handleAddFilters
 }) => {
   // console.log('💖state:', state)
   // console.log('🧘‍♀️tempState:', tempState)
@@ -39,13 +39,9 @@ export const STResults_FiltersContainerDesktop = ({
       handleShowFilters()
     }
   }
-  
 
   return (
-    <STResults_FiltersContainerDesktopWrapper
-      // isMobile={isMobile}
-      // mustShowFiltersMobile={mustShowFiltersMobile}
-      mustShowFiltersDesktop={mustShowFiltersDesktop}>
+    <STResults_FiltersContainerDesktopWrapper>
       {/* {title === "Advanced Filters" ? (
         <div>
           <H4>{title}</H4>
@@ -90,7 +86,6 @@ export const STResults_FiltersContainerDesktop = ({
           title={ORG_FILTERS_KEYS.agesServed.titleToShow}
           toUpdateFilters={ORG_FILTERS_KEYS.agesServed.updateState}
           mustShowFiltersDesktop={mustShowFiltersDesktop}
-          
         />
         <STResults_FilterRangeInput
           dispatch={dispatch}
@@ -212,7 +207,6 @@ export const STResults_FiltersContainerDesktop = ({
           categoriesToDisplay={ORG_FILTERS_DATA.languages}
           title={ORG_FILTERS_KEYS.language.titleToShow}
           toUpdateFilters={ORG_FILTERS_KEYS.language.updateState}
-          
         />
 
         <STResults_FilterCheckboxContainer

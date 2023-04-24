@@ -38,7 +38,13 @@ const ORGSpeechTherapists = () => {
 
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
-  
+
+  // function handleClick(event) {
+  //   if (event.target.classList.contains("InFront")) {
+  //     console.log("Element with class 'InFront' was clicked")
+  //   }
+  // }
+
   return (
     <ORGSpeechTherapistsSecondPageWrapper
       isMobile={isMobile}
