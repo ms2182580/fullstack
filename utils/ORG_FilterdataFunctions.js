@@ -70,22 +70,16 @@ export const ORG_Filterdata_Languages = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
-  
+
   return pickMoreThanOne(ORG_FILTERS_DATA.languages, true)
 }
 
-// export const ORG_Filterdata_YoP = (whichSelect = []) => {
-//   if (whichSelect.length !== 0) {
-//     return whichSelect
-//   }
-  
-//   const yearsOfPractice =
-//     whichSelect.length === 0
-//       ? ["1+ years", "3+ years", "5+ years", "7+ years", "10+ years"]
-//       : whichSelect
-
-//   return pickJustOne(ORG_FILTERS_DATA.yearsOfPractice)
-// }
+export const ORG_Filterdata_YoP = (whichSelect = []) => {
+  if (whichSelect.length !== 0) {
+    return whichSelect
+  }
+  return pickJustOne(ORG_FILTERS_DATA.yearsOfPractice)
+}
 
 export const ORG_Filterdata_ServiceSetting = (whichSelect = []) => {
   if (whichSelect.length !== 0) {

@@ -16,7 +16,7 @@ export const ST_CardInfo = ({
     <ST_CardInfoWrapper
       isMobile={isMobile}
       isThirdPage={isThirdPage}
-      >
+    >
       {isMobile === false ? (
         <>
           <P
@@ -42,7 +42,6 @@ export const ST_CardInfo = ({
       {Array.isArray(dataToShow) &&
         isMobile === false &&
         dataToShow.map((x, i) => {
-          // console.log('dataToShow:', dataToShow)
           if (dataToShow.length - 1 === i && endWithAnd === false) {
             return (
               <Fragment key={`${x}${i}`}>

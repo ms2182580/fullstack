@@ -1,16 +1,17 @@
 import Image from "next/image"
 import React from "react"
 import { BookmarkSaveSTSvg } from "../../../../../assets/Icons"
+import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
-import { ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage, ST_CardWrapper_Left_LeftInfo } from "../../styles/ST_CardWrapper"
 import { ST_CardEmail } from "../../ST_CardEmail"
 import { ST_CardLocation } from "../../ST_CardLocation"
 import { ST_CardPhone } from "../../ST_CardPhone"
 import { ST_TwoButtons } from "../../ST_TwoButtons"
+import { ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage, ST_CardWrapper_Left_LeftInfo } from "../../styles/ST_CardWrapper"
 import { STDetail_CardWrapper_SecondRow_Info } from "./STDetail_CardWrapper_SecondRow_Info"
 import { STDetail_MapComponent } from "./STDetail_MapComponent"
 import {
@@ -24,17 +25,20 @@ import {
 } from "./styles/STDetail_CardWrapper"
 
 export const STDetail_STDetails = ({ STData }) => {
+  // console.log('STData:', STData)
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
-        let accepts = STData.filters[0].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
+        let accepts = STData.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1))
 
-        let agesServed = STData.filters[0].agesServed
-        let diagnoses = STData.filters[0].diagnoses.map((x) => {
+        // let agesServed = STData.filters[0].agesServed
+        let diagnosis = STData.filters[0][ORG_FILTERS_KEYS.diagnosis.updateState].map((x) => {
           if (x !== "Other") return `${x} Friendly`
           return x
         })
-        let languages = STData.filters[0].languages.map((x) => x[0].toUpperCase() + x.slice(1))
+
+        // console.log('diagnosis:', diagnosis)
+        let languages = STData.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1))
         let meetingFormat = new Intl.ListFormat("en").format(
           STData.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1))
         )
@@ -81,14 +85,14 @@ export const STDetail_STDetails = ({ STData }) => {
                   rating={STData.filters[0].rating}
                   reviews={STData.filters[0].reviews}
                 />
-                <FriendlyDiagnoses diagnoses={diagnoses} />
+                <FriendlyDiagnoses diagnosis={diagnosis} />
               </STDetail_CardWrapper_FirstRow>
 
               <STDetail_CardWrapper_SecondRow>
                 <STDetail_CardWrapper_SecondRow_LeftPart>
                   <STDetail_CardWrapper_SecondRow_Info
                     title="Ages served"
-                    dataToShow={agesServed}
+                    dataToShow={STData.filters[0][ORG_FILTERS_KEYS.agesServed.updateState]}
                   />
                   <STDetail_CardWrapper_SecondRow_Info
                     title="Languages"

@@ -7,21 +7,11 @@ export const ST_CardWrapper = styled.div`
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
   align-items: stretch;
-  
-  
-  
-  
-  
+
   /* margin-bottom: 52px; */
-  
+
   border-radius: 8px;
   border: 1px solid ${NEUTRALS.LIGHT_GREY};
-  
-  
-  
-  
-  
-  
 `
 
 export const ST_CardWrapper_Left = styled.div`
@@ -47,13 +37,10 @@ export const ST_CardWrapper_Left_LeftInfo = styled.div`
   margin-left: 22px;
   margin-bottom: 16px;
   margin-right: 9px;
-  
+
   & > *:not(:last-child) {
     margin-bottom: 24px;
-    
   }
-  
-  
 `
 
 export const ST_CardWrapper_Right = styled.div`
@@ -67,7 +54,6 @@ export const ST_CardWrapper_Right = styled.div`
   padding-left: 16px;
   position: relative;
   min-width: 417px;
-  
 
   & > :nth-child(2),
   & > :nth-child(3),
@@ -78,9 +64,7 @@ export const ST_CardWrapper_Right = styled.div`
 
   & > :nth-child(4) {
     margin-bottom: 8px;
-    
   }
-
 
   & > :nth-child(5),
   & > :nth-child(6),
@@ -88,12 +72,11 @@ export const ST_CardWrapper_Right = styled.div`
   & > :nth-child(8),
   & > :nth-child(9),
   & > :nth-child(10) {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
-  
-  & > :nth-child(11){
+
+  & > :nth-child(11) {
     margin-bottom: 56px;
-    
   }
 
   & > :nth-child(1) {
@@ -111,7 +94,6 @@ export const ST_CardWrapper_Right = styled.div`
   }
 
   & > :nth-child(3) {
-    
     display: flex;
     align-items: center;
 
@@ -172,9 +154,6 @@ export const ST_CardWrapper_Right = styled.div`
   & > div:nth-child(9),
   & > div:nth-child(10) {
     margin-right: 24px;
-    & > * {
-      display: inline;
-    }
   }
 
   & > :last-child {
@@ -183,16 +162,5 @@ export const ST_CardWrapper_Right = styled.div`
     margin-right: 24px;
     margin-bottom: 16px;
     justify-content: space-between;
-    /* border: 2px solid crimson; */
-    
-    & > * {
-      
-    }
-    
-    
-  }
-
-  & > :last-child > button {
-    /* height: 100%; */
   }
 `

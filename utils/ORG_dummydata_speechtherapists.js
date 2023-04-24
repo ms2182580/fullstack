@@ -10,7 +10,8 @@ import {
   ORG_Filterdata_Rating,
   ORG_Filterdata_Reviews,
   ORG_Filterdata_ServiceSetting,
-  ORG_Filterdata_SessionType
+  ORG_Filterdata_SessionType,
+  ORG_Filterdata_YoP
 } from "./ORG_FilterdataFunctions"
 
 export const useFetch = (pagination = 1, howmuch = 10) => {
@@ -31,32 +32,34 @@ export const useFetch = (pagination = 1, howmuch = 10) => {
         getData.allData = x.results
         let howMuchGet = getData.allData.length
         for (let index = 0; index < howMuchGet; index++) {
+          const agesServed = ORG_Filterdata_AgesServed()
+          const diagnosis = ORG_Filterdata_Diagnosis()
           const distance = ORG_Filterdata_Distance()
+          const insurance = ORG_Filterdata_Insurance()
+          const language = ORG_Filterdata_Languages()
+          const meetingFormat = ORG_Filterdata_MeetingFormat()
+          const providerType = ORG_Filterdata_ProviderType()
           const rating = ORG_Filterdata_Rating()
           const reviews = ORG_Filterdata_Reviews()
-          const diagnoses = ORG_Filterdata_Diagnosis()
-          const agesServed = ORG_Filterdata_AgesServed()
-          const languages = ORG_Filterdata_Languages()
           const serviceSetting = ORG_Filterdata_ServiceSetting()
-          const accepts = ORG_Filterdata_Insurance()
-          const meetingFormat = ORG_Filterdata_MeetingFormat()
           const sessionType = ORG_Filterdata_SessionType()
-          const providerType = ORG_Filterdata_ProviderType()
+          const yearsOfPractice = ORG_Filterdata_YoP()
 
           getFilters.filters = [
             ...getFilters.filters,
             {
+              agesServed: agesServed,
+              diagnosis: diagnosis,
               distance: distance,
+              insurance, insurance,
+              language: language,
+              meetingFormat: meetingFormat,
+              providerType: providerType,
               rating: rating,
               reviews: reviews,
-              diagnoses: diagnoses,
-              agesServed: agesServed,
-              languages: languages,
               serviceSetting: serviceSetting,
-              accepts: accepts,
-              meetingFormat: meetingFormat,
               sessionType: sessionType,
-              providerType: providerType,
+              yearsOfPractice: yearsOfPractice,
               CCC_SLP:
                 "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA)."
             }

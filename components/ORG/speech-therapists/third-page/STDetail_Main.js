@@ -24,6 +24,7 @@ import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 
 export const STDetail_Main = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  // console.log('speechtherapist:', speechtherapist)
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
   const [meetingFormat, setMeetingFormat] = useState()
@@ -38,13 +39,13 @@ export const STDetail_Main = () => {
   const { isMobile } = useWidthWindow1024()
 
   useEffect(() => {
-    setLanguages(speechtherapist.filters[0].languages.map((x) => x[0].toUpperCase() + x.slice(1)))
+    setLanguages(speechtherapist.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
 
     setServiceSettings(speechtherapist.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
 
     setMeetingFormat(speechtherapist.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-    setInsurance(speechtherapist.filters[0].accepts.map((x) => x[0].toUpperCase() + x.slice(1)))
+    setInsurance(speechtherapist.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
 
     setAgesServed(
       speechtherapist.filters[0].agesServed.map((x) => {
@@ -131,6 +132,15 @@ export const STDetail_Main = () => {
           </ST_HeaderMobileWrapper>
         </>
       )}
+
+      {/* 
+      //? Here I think here should be this part of the designs with this type of styles
+      
+      Design: https://www.figma.com/file/I7oVy5wUDMzI2L65ySeutA/Winternship-2023?node-id=3321-178507&t=TK2z2U9sOpQ7MTyL-0
+      
+      Component: FriendlyDiagnoses.js
+      
+      */}
 
       <div>
         {isMobile === false ? (

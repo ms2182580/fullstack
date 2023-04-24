@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
 import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
@@ -10,6 +11,11 @@ import { Share } from "../../../share/Share"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
+import { ST_CardCity } from "../../ST_CardCity"
+import { ST_CardEmail } from "../../ST_CardEmail"
+import { ST_CardLocation } from "../../ST_CardLocation"
+import { ST_CardPhone } from "../../ST_CardPhone"
+import { ST_CardWebsite } from "../../ST_CardWebsite"
 import {
   ST_CardWrapper,
   ST_CardWrapper_Left,
@@ -17,11 +23,6 @@ import {
   ST_CardWrapper_Left_LeftInfo,
   ST_CardWrapper_Right
 } from "../../styles/ST_CardWrapper"
-import { ST_CardCity } from "../../ST_CardCity"
-import { ST_CardEmail } from "../../ST_CardEmail"
-import { ST_CardLocation } from "../../ST_CardLocation"
-import { ST_CardPhone } from "../../ST_CardPhone"
-import { ST_CardWebsite } from "../../ST_CardWebsite"
 import { ST_CardInfo } from "../ST_CardInfo"
 import { ST_CardInfoPayment } from "../ST_CardInfoPayment"
 
@@ -35,7 +36,6 @@ export const STResults_CardNoFilters = () => {
   }
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFilters()
-  
 
   useEffect(() => {
     const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistList")
@@ -51,17 +51,21 @@ export const STResults_CardNoFilters = () => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          let accepts = filtersST[i].accepts.map((x) => x[0].toUpperCase() + x.slice(1))
-          let acceptsFormatted = accepts.length > 1 ? accepts : accepts[0]
+          let insurance = filtersST[i][ORG_FILTERS_KEYS.insurance.updateState].map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+          let insuranceFormatted = insurance.length > 1 ? insurance : insurance[0]
 
-          let agesServed = filtersST[i].agesServed
-          let diagnoses = filtersST[i].diagnoses.map((x) => {
+          let diagnosis = filtersST[i][ORG_FILTERS_KEYS.diagnosis.updateState].map((x) => {
             if (x !== "Other") return `${x}`
             return x
           })
-          let languages = filtersST[i].languages.map((x) => x[0].toUpperCase() + x.slice(1))
+          let language = filtersST[i][ORG_FILTERS_KEYS.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
-          let serviceSetting = filtersST[i].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
+          let serviceSetting = filtersST[i][ORG_FILTERS_KEYS.serviceSetting.updateState].map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+
           return (
             <ST_CardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <ST_CardWrapper_Left>
@@ -111,43 +115,33 @@ export const STResults_CardNoFilters = () => {
                 />
 
                 <ST_CardInfo
-                  title="Practice areas"
-                  dataToShow={diagnoses}
-                />
-                
-                {/* <ST_CardInfoPayment
-                  title="Practice areas"
-                  dataToShow={diagnoses}
-                /> */}
-
-                <ST_CardInfo
-                  title="Ages served"
-                  dataToShow={agesServed}
-                />
-                
-                {/* <ST_CardInfoPayment
-                  title="Ages served"
-                  dataToShow={agesServed}
-                /> */}
-
-                <ST_CardInfo
-                  title="Languages"
-                  dataToShow={languages}
+                  title={ORG_FILTERS_KEYS.diagnosis.titleToShowCard}
+                  dataToShow={diagnosis}
                 />
 
                 <ST_CardInfo
-                  title="Practicing since"
-                  dataToShow={filtersST[i].yearsOfPractice}
+                  title={ORG_FILTERS_KEYS.agesServed.titleToShow}
+                  dataToShow={filtersST[i][ORG_FILTERS_KEYS.agesServed.updateState]}
                 />
 
                 <ST_CardInfo
-                  title="Setting"
+                  title={ORG_FILTERS_KEYS.language.titleToShow}
+                  dataToShow={language}
+                />
+
+                <ST_CardInfo
+                  title={ORG_FILTERS_KEYS.yearsOfPractice.titleToShowCard}
+                  dataToShow={filtersST[i][ORG_FILTERS_KEYS.yearsOfPractice.updateState]}
+                />
+
+                <ST_CardInfo
+                  title={ORG_FILTERS_KEYS.serviceSetting.titleToShow}
                   dataToShow={serviceSetting}
                 />
 
                 <ST_CardInfoPayment
-                  title="Payment options"
-                  dataToShow={acceptsFormatted}
+                  title={ORG_FILTERS_KEYS.insurance.titleToShowCard}
+                  dataToShow={insuranceFormatted}
                 />
 
                 <div>

@@ -6,7 +6,6 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG
 import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
@@ -21,11 +20,12 @@ import {
   ST_CardWrapper_Right
 } from "../../styles/ST_CardWrapper"
 import { ST_CardInfo } from "../ST_CardInfo"
+import { ST_CardInfoPayment } from "../ST_CardInfoPayment"
 
 export const STResults_CardWithFilters = () => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
-  
+
   const goToDynamic = (e, everySingleValue, filters) => {
     setSpeechtherapist({ data: [everySingleValue], filters: [filters] })
     const toWhere = `${router.pathname}/IndividualProvider`
@@ -39,16 +39,23 @@ export const STResults_CardWithFilters = () => {
       {dataF &&
         Array.isArray(filtersF) &&
         dataF.allData.map((everySingleValue, i) => {
-          let insurance = filtersF[i][ORG_FILTERS_KEYS.insurance.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
+          let insurance = filtersF[i][ORG_FILTERS_KEYS.insurance.updateState].map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
 
-          let agesServed = filtersF[i].agesServed
           let diagnosis = filtersF[i][ORG_FILTERS_KEYS.diagnosis.updateState].map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
+
+          // console.log('diagnosis:', diagnosis)
+
           let language = filtersF[i][ORG_FILTERS_KEYS.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
-          let serviceSetting = filtersF[i][ORG_FILTERS_KEYS.serviceSetting.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
+          let serviceSetting = filtersF[i][ORG_FILTERS_KEYS.serviceSetting.updateState].map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
+
           return (
             <ST_CardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <ST_CardWrapper_Left>
@@ -67,7 +74,6 @@ export const STResults_CardWithFilters = () => {
                   <ST_CardPhone phoneNumber={everySingleValue.phone} />
                   <ST_CardEmail email={everySingleValue.email} />
                   <ST_CardLocation
-                  
                     locationCity={everySingleValue.location.city}
                     locationStreetNumber={everySingleValue.location.street.number}
                     locationStreetName={everySingleValue.location.street.name}
@@ -91,11 +97,14 @@ export const STResults_CardWithFilters = () => {
                   reviews={filtersF[i].reviews}
                 />
 
-                <FriendlyDiagnoses diagnosis={diagnosis} />
+                <ST_CardInfo
+                  title={ORG_FILTERS_KEYS.diagnosis.titleToShowCard}
+                  dataToShow={diagnosis}
+                />
 
                 <ST_CardInfo
                   title={ORG_FILTERS_KEYS.agesServed.titleToShow}
-                  dataToShow={agesServed}
+                  dataToShow={filtersF[i][ORG_FILTERS_KEYS.agesServed.updateState]}
                 />
 
                 <ST_CardInfo
@@ -104,18 +113,27 @@ export const STResults_CardWithFilters = () => {
                 />
 
                 <ST_CardInfo
+                  title={ORG_FILTERS_KEYS.yearsOfPractice.titleToShowCard}
+                  dataToShow={filtersF[i][ORG_FILTERS_KEYS.yearsOfPractice.updateState]}
+                />
+
+                <ST_CardInfo
                   title={ORG_FILTERS_KEYS.serviceSetting.titleToShow}
                   dataToShow={serviceSetting}
                 />
 
-                <ST_CardInfo
-                  title={ORG_FILTERS_KEYS.insurance.titleToShow}
+                <ST_CardInfoPayment
+                  title={ORG_FILTERS_KEYS.insurance.titleToShowCard}
                   dataToShow={insurance}
                 />
 
-                <span onClick={(e) => goToDynamic(e, everySingleValue, filtersF[i])}>
-                  <ButtonSmall secondary>More details</ButtonSmall>
-                </span>
+                <div>
+                  <ButtonSmall secondary>Save to list</ButtonSmall>
+
+                  <span onClick={(e) => goToDynamic(e, everySingleValue, filtersF[i])}>
+                    <ButtonSmall>See Availability</ButtonSmall>
+                  </span>
+                </div>
               </ST_CardWrapper_Right>
             </ST_CardWrapper>
           )

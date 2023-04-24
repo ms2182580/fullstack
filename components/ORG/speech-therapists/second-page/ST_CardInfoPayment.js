@@ -6,9 +6,6 @@ export const ST_CardInfoPayment = ({
   title,
   dataToShow,
 }) => {
-  
-  // console.log('dataToShow:', dataToShow)
-
   return (
     <ST_CardInfoPaymentWrapper>
       <div>
@@ -23,32 +20,32 @@ export const ST_CardInfoPayment = ({
         {Array.isArray(dataToShow)
           ? dataToShow.map((x, i) => {
 
-              if (dataToShow.length - 1 === i) {
-                return (
-                  <Fragment key={`${x}${i}`}>
-                    <>
-                      <P> and {x}</P>
-                    </>
-                  </Fragment>
-                )
-              }
-
+            if (dataToShow.length - 1 === i) {
               return (
                 <Fragment key={`${x}${i}`}>
                   <>
-                    <P> {x},</P>
+                    <P> and {x}</P>
                   </>
                 </Fragment>
               )
-            })
+            }
+
+            return (
+              <Fragment key={`${x}${i}`}>
+                <>
+                  <P> {x},</P>
+                </>
+              </Fragment>
+            )
+          })
           : typeof dataToShow === "string" ? (
-              <>
-                <P> {dataToShow}</P>
-              </>
-            ) : null}
+            <>
+              <P> {dataToShow}</P>
+            </>
+          ) : null}
       </div>
 
-      
+
     </ST_CardInfoPaymentWrapper>
   )
 }
