@@ -16,7 +16,7 @@ import {
 } from "./ORG_FilterdataFunctions"
 import { ORG_FILTERS_KEYS } from "./ORG_FiltersCategories"
 
-export const FetchFiltered = (pagination = 1, howmuch = 10) => {
+export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
   const [actualSortF, setActualSortF] = useState("Distance")
@@ -28,9 +28,11 @@ export const FetchFiltered = (pagination = 1, howmuch = 10) => {
 
     let getFilters = { filters: [] }
 
-    fetch(`/api/randomUser?results=${howmuch}&pagination=${pagination}`)
+    fetch(`/api/randomUser?results=${howMuch}&pagination=${pagination}&whichOne=${whichOne}`)
       .then((x) => x.json())
       .then((x) => {
+        // console.log("✨✨x:", x)
+
         getData.allData = x.results
         let howMuchGet = getData.allData.length
         for (let index = 0; index < howMuchGet; index++) {
@@ -74,6 +76,7 @@ export const FetchFiltered = (pagination = 1, howmuch = 10) => {
         setDataF(getData)
         setFiltersF(getFilters.filters)
       })
+      .catch((error) => console.log(error))
   }, [filtersSelected, pagination])
 
   return { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF }

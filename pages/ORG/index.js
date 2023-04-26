@@ -61,7 +61,7 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
           toWhere="SpeechTherapists"
           landingHere="true"
         />
-        {isMobile === false ? <CardsLanding/> : null}
+        {isMobile === false ? <CardsLanding /> : null}
 
         {/* 
         //? Achieve conditional rendering for geolocation with, i think, bad practices
@@ -84,3 +84,4 @@ Warning: Prop `className` did not match. Server: "ORGWrapperLanding-sc-1h874ev-0
 }
 
 export default ORGIndex
+

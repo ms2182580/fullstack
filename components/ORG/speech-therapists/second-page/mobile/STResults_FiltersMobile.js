@@ -22,7 +22,7 @@ export const STResults_FiltersMobile = ({
   }
 
   const handleCloseFilters = (e) => {
-    console.log("e:", e)
+    // console.log("e:", e)
     if (e.key === "Enter") {
       handleShowFilters()
     }

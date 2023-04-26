@@ -27,43 +27,64 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   const shouldTab = useShouldTab()
 
   const { filterAreApply } = useORG_Ctx_FiltersApply()
-  console.log("filterAreApply:", filterAreApply)
+
+  const updateAllReviews = (dataFetched, setReviews) => {
+    const allReviews = getAllReviews(dataFetched.length - 1).map((x) => (typeof x === "string" ? x : x.review))
+
+    const newAllReviewsWithFetch = dataFetched.map((data, index) => {
+      const name = data.name.first
+      const lastName = data.name.last
+
+      return formatNamesFunction(allReviews[index], name, lastName)
+    })
+
+    setReviews(newAllReviewsWithFetch)
+  }
+
   const { userFetched, filtersST, pagination: paginationNoFilter } = useORG_Ctx_FetchNoFilters()
-  console.log("paginationNoFilter:", paginationNoFilter)
+  console.log("userFetched:", userFetched)
 
   const [allReviewsNoFetch, setAllReviewsNoFetch] = useState([])
   useEffect(() => {
     if (allReviewsNoFetch.length === 0) {
-      const allReviews = getAllReviews(userFetched.allData.length - 1).map(x => typeof x === "string" ? x : x.review)
-      console.log('💛allReviews:', allReviews)
+      // console.log('userFetched.allData:', userFetched.allData)
+      updateAllReviews(userFetched.allData, setAllReviewsNoFetch)
 
-      const newAllReviewsNoFetch = userFetched.allData.map((data, index) => {
-        const name = data.name.first
-        const lastName = data.name.last
+      // const allReviews = getAllReviews(userFetched.allData.length - 1).map((x) =>
+      //   typeof x === "string" ? x : x.review
+      // )
+      // console.log("💛allReviews:", allReviews)
 
-        return formatNamesFunction(allReviews[index], name, lastName)
-      })
+      // const newAllReviewsNoFetch = userFetched.allData.map((data, index) => {
+      //   const name = data.name.first
+      //   const lastName = data.name.last
 
-      console.log("💛newAllReviewsNoFetch:", newAllReviewsNoFetch)
+      //   return formatNamesFunction(allReviews[index], name, lastName)
+      // })
 
-      setAllReviewsNoFetch(newAllReviewsNoFetch)
+      // console.log("💛newAllReviewsNoFetch:", newAllReviewsNoFetch)
+
+      // setAllReviewsNoFetch(newAllReviewsNoFetch)
     } else if (paginationNoFilter !== 1) {
       setAllReviewsNoFetch([])
 
-      const allReviews = getAllReviews(userFetched.allData.length - 1).map(x => typeof x === "string" ? x : x.review)
-      console.log('💖allReviews:', allReviews)
+      updateAllReviews(userFetched.allData, setAllReviewsNoFetch)
 
+      // const allReviews = getAllReviews(userFetched.allData.length - 1).map((x) =>
+      //   typeof x === "string" ? x : x.review
+      // )
+      // console.log("💖allReviews:", allReviews)
 
-      const newAllReviewsNoFetch = userFetched.allData.map((data, index) => {
-        const name = data.name.first
-        const lastName = data.name.last
+      // const newAllReviewsNoFetch = userFetched.allData.map((data, index) => {
+      //   const name = data.name.first
+      //   const lastName = data.name.last
 
-        return formatNamesFunction(allReviews[index], name, lastName)
-      })
+      //   return formatNamesFunction(allReviews[index], name, lastName)
+      // })
 
-      console.log("💖newAllReviewsNoFetch:", newAllReviewsNoFetch)
+      // console.log("💖newAllReviewsNoFetch:", newAllReviewsNoFetch)
 
-      setAllReviewsNoFetch(newAllReviewsNoFetch)
+      // setAllReviewsNoFetch(newAllReviewsNoFetch)
     }
   }, [userFetched])
 
@@ -72,31 +93,19 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   const [allReviewsWithFetch, setAllReviewsWithFetch] = useState([])
   const { dataF, filtersF, pagination: paginationFilter } = useORG_Ctx_FetchWithFilters()
 
-  const updateAllReviewsWithFetch = () => {
-    const allReviews = getAllReviews(userFetched.allData.length - 1).map(x => typeof x === "string" ? x : x.review)
-
-
-    const newAllReviewsWithFetch = dataF.allData.map((data, index) => {
-      const name = data.name.first
-      const lastName = data.name.last
-
-      return formatNamesFunction(allReviews[index], name, lastName)
-    })
-
-    setAllReviewsWithFetch(newAllReviewsWithFetch)
-  }
-
   useEffect(() => {
     if (allReviewsWithFetch.length === 0 && filterAreApply) {
-      updateAllReviewsWithFetch()
+      updateAllReviews(dataF.allData, setAllReviewsWithFetch)
+      // updateAllReviewsWithFetch()
     } else if (paginationFilter !== 1) {
       setAllReviewsWithFetch([])
+      updateAllReviews(dataF.allData, setAllReviewsWithFetch)
 
-      updateAllReviewsWithFetch()
+      // updateAllReviewsWithFetch()
     }
   }, [dataF, filterAreApply, paginationFilter])
 
-  console.log("allReviewsWithFetch:", allReviewsWithFetch)
+  // console.log("allReviewsWithFetch:", allReviewsWithFetch)
 
   return (
     <STResults_MapWrapper

@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react"
 import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../../assets/Icons/index"
-import { useFetch } from "../../../../../utils/ORG_dummydata_speechtherapists"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
+import { useFetch } from "../../../../../utils/ORG_dummydata_speechtherapists"
 import { SpecificCard } from "./SpecificCard.js"
 import { ThreeCardsLandingWrapper } from "./styles/ThreeCardsLandingWrapper"
 
-export const ThreeCardsLanding = ({ setMustShowResults, dispatch, mustShowResults }) => {
-  const { data: userFetched, filters: filtersST } = useFetch(`https://randomuser.me/api/?results=3&nat=us&page=1`)
+export const ThreeCardsLanding = ({
+  setMustShowResults,
+  dispatch,
+  mustShowResults,
+  // userFetched,
+  // filtersST,
+  // props,
+}) => {
+  // console.log("props:", props)
+  const { data: userFetched, filters: filtersST } = useFetch(1, 3, "landingThreeCardsHere → 3")
+  console.log("👾userFetched:", userFetched)
 
   const [reviews, setReviews] = useState({})
   const [dataToShare, setDataToShare] = useState({})
@@ -145,3 +154,21 @@ export const ThreeCardsLanding = ({ setMustShowResults, dispatch, mustShowResult
     </ThreeCardsLandingWrapper>
   )
 }
+
+// export async function getServerSideProps() {
+//   try {
+//     const jsonData = await ORG_fetchSpeechTherapists(`https://randomuser.me/api/?results=3&nat=us&page=1`)
+
+//     return {
+//       props: { jsonData }
+//     }
+//   } catch (error) {
+//     console.error("Some error", error)
+//     return {
+//       props: {
+//         error: true,
+//         message: error
+//       }
+//     }
+//   }
+// }

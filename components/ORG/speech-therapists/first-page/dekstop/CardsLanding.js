@@ -2,9 +2,9 @@ import { useReducer, useState } from "react"
 import { H1, H2 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstruction } from "../../../../under-construction/UnderConstruction.js"
 import { LandingThreeSpeechTherapists } from "./LandingThreeSpeechTherapists.js"
+import { ThreeCardsLanding } from "./ThreeCardsLanding.js"
 import { CardsLandingWrapper } from "./styles/CardsLandingWrapper.js"
 import { MustShowResultsWrapper } from './styles/MustShowResultsWrapper.js'
-import { ThreeCardsLanding } from "./ThreeCardsLanding.js"
 
 
 const reducer = (state, action) => {
@@ -27,6 +27,7 @@ export const CardsLanding = () => {
   const [mustShowResults, setMustShowResults] = useState(false)
 
   const [state, dispatch] = useReducer(reducer, initialState)
+  // console.log('❌state:', state)
 
   return (
     <CardsLandingWrapper>
@@ -43,7 +44,7 @@ export const CardsLanding = () => {
       ) : mustShowResults && state.SpeechTherapists.length === 0 ? (
         <>
           <UnderConstruction />
-          
+
         </>
       ) : (
         mustShowResults &&

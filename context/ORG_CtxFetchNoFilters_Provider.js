@@ -1,11 +1,11 @@
-import { createContext, useState, useContext } from "react"
+import { createContext, useContext, useState } from "react"
 import { useFetch } from "../utils/ORG_dummydata_speechtherapists"
 
 const ORG_Ctx_fetchNoFilters = createContext(null)
 
 export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
   const [pagination, setPagination] = useState(1)
-  const [howMuchShow, setHowMuchShow] = useState(10)
+  const [howMuchShow, setHowMuchShow] = useState(5)
 
   const {
     data: userFetched,
@@ -14,9 +14,7 @@ export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
     setFilters,
     actualSort,
     setActualSort
-  } = useFetch(
-    `https://randomuser.me/api/?results=${howMuchShow}&nat=us&page=${pagination}`
-  )
+  } = useFetch(pagination, howMuchShow, "noFilteredHere → 5")
 
   return (
     <ORG_Ctx_fetchNoFilters.Provider
