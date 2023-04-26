@@ -3,7 +3,7 @@ import { SECONDARY_ORG_PLUS } from "../../../../assets/Colors"
 
 export const VerifiedWrapper = styled.div`
   background-color: ${SECONDARY_ORG_PLUS.YELLOW};
-  border-radius: 8px;
+  border-radius: 24px;
 
   display: flex;
   align-items: center;

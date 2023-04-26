@@ -1,17 +1,19 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { BookmarkSaveSTSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
-import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { Share } from "../../../share/Share"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
 import { Tooltip } from "../../../tooltip/Tooltip"
 import { Verified } from "../../../verified/Verified"
+import { ST_CardCity } from "../../ST_CardCity"
 import { ST_CardEmail } from "../../ST_CardEmail"
 import { ST_CardLocation } from "../../ST_CardLocation"
 import { ST_CardPhone } from "../../ST_CardPhone"
+import { ST_CardWebsite } from "../../ST_CardWebsite"
 import {
   ST_CardWrapper,
   ST_CardWrapper_Left,
@@ -48,7 +50,6 @@ export const STResults_CardWithFilters = () => {
             return x
           })
 
-          // console.log('diagnosis:', diagnosis)
 
           let language = filtersF[i][ORG_FILTERS_KEYS.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
@@ -73,6 +74,10 @@ export const STResults_CardWithFilters = () => {
                 <ST_CardWrapper_Left_LeftInfo>
                   <ST_CardPhone phoneNumber={everySingleValue.phone} />
                   <ST_CardEmail email={everySingleValue.email} />
+                  <ST_CardWebsite
+                    firstName={everySingleValue.name.first}
+                    lastName={everySingleValue.name.last}
+                  />
                   <ST_CardLocation
                     locationCity={everySingleValue.location.city}
                     locationStreetNumber={everySingleValue.location.street.number}
@@ -84,13 +89,16 @@ export const STResults_CardWithFilters = () => {
               </ST_CardWrapper_Left>
 
               <ST_CardWrapper_Right>
-                <BookmarkSaveSTSvg tabIndex={0} />
+                <Share />
 
-                <H3>
-                  {everySingleValue.name.first} {everySingleValue.name.last}
-                </H3>
+                <H2 bold>
+                  {everySingleValue.name.first} {everySingleValue.name.last}, <span>CCC-SLP</span>
+                </H2>
 
                 <Tooltip />
+
+
+                <ST_CardCity city={everySingleValue.location.city} />
 
                 <StarsRatingReview
                   rating={filtersF[i].rating}
