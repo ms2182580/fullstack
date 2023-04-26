@@ -5,7 +5,8 @@ import { ORG_CtxFetchNoFilters_Provider } from "../context/ORG_CtxFetchNoFilters
 import { ORG_CtxFetchWithFiltersMobile_Provider } from "../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { ORG_CtxFetchWithFilters_Provider } from "../context/ORG_CtxFetchWithFilters_Provider.js"
 import { ORG_CtxFiltersLeft_Provider } from "../context/ORG_CtxFiltersLeft_Provider.js"
-import { ORG_CtxShowFiltersDesktop_Provider } from '../context/ORG_CtxShowFiltersDesktop_Provider.js'
+import { ORG_CtxShowFiltersDesktop_Provider } from "../context/ORG_CtxShowFiltersDesktop_Provider.js"
+import { ORG_CtxFiltersApply_Provider } from "../context/ORG_Ctx_FiltersApply.js"
 import { ORG_CtxIndividualSpeechtherapist_Provider } from "../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile.js"
 import { ORG_InputCtxProvider } from "../context/ORG_Input"
@@ -24,15 +25,17 @@ function MyApp({ Component, pageProps }) {
                   <ORG_CtxFetchNoFiltersMobile_Provider>
                     <ORG_CtxFetchWithFiltersMobile_Provider>
                       <ORG_CtxShowFiltersDesktop_Provider>
-                      <PageLayout>
-                        <GlobalStyle />
-                        <link
-                          rel="icon"
-                          href="/favicon.ico"
-                        />
-                        <Component {...pageProps} />
-                        </PageLayout>
-                        </ORG_CtxShowFiltersDesktop_Provider>
+                        <ORG_CtxFiltersApply_Provider>
+                          <PageLayout>
+                            <GlobalStyle />
+                            <link
+                              rel="icon"
+                              href="/favicon.ico"
+                            />
+                            <Component {...pageProps} />
+                          </PageLayout>
+                        </ORG_CtxFiltersApply_Provider>
+                      </ORG_CtxShowFiltersDesktop_Provider>
                     </ORG_CtxFetchWithFiltersMobile_Provider>
                   </ORG_CtxFetchNoFiltersMobile_Provider>
                 </ORG_CtxShowFiltersMobile_Provider>

@@ -16,7 +16,31 @@ const AboutCollection = {
 
     "I had a great experience with __NAMEHERE__. Knowledgeable, kind, and attentive",
 
-    "I am very happy with __FULLNAMEHERE__"
+    "I am very happy with __FULLNAMEHERE__",
+
+    "Excellent Service: Highly Recommend!",
+
+    "Outstanding Service: Will Use Again!",
+
+    "Quick Response, Quality Work. Thank You!",
+
+    "Top-Notch Service: Friendly, Efficient, Skilled!",
+
+    "Amazing Experience: Exceeded Expectations!",
+
+    "Highly Recommended: Couldn't Be Happier!",
+
+    "Absolutely blown away by the exceptional service provided. Professional, efficient and exceeded my expectations. Highly recommend!",
+
+    "I couldn't be happier with the results. The service was top-notch, and __NAME__ went above and beyond to make sure I was satisfied.",
+
+    "The level of professionalism and expertise shown by __NAMEHERE__ is unmatched. I highly recommend them to anyone in need of their services.",
+
+    "I was impressed by the quality of service provided. __FULLNAMEHERE_ was knowledgeable, responsive and a pleasure to work with.",
+
+    "I highly recommend this service for their exceptional work and attention to detail. __FULLNAMEHERE_ went above and beyond to ensure my satisfaction.",
+
+    "The service provided was outstanding. The __NAMEHERE__ was professional, courteous and delivered beyond my expectations. Highly recommend!"
   ],
 
   ThreeStars: [
@@ -45,28 +69,40 @@ export const getAllReviews = (amountOfReviews = 3) => {
   return shuffledArr
 }
 
-const formatNamesFunction = (arr, name, lastName) => {
+export const formatNamesFunction = (arr, name, lastName) => {
   const fullName = `${name} ${lastName}`
 
-  const namesChanged = arr.map((x) => {
-    if (typeof x === "string") {
-      let firstChange = x.replace("__FULLNAMEHERE__", fullName)
-      let secondChange = firstChange.replaceAll("__NAMEHERE__", name)
-      return secondChange
-    } else {
-      let firstChange = x.review.replace("__FULLNAMEHERE__", fullName)
-      let secondChange = firstChange.replaceAll("__NAMEHERE__", name)
-      return { review: secondChange, stars: 3 }
-    }
-  })
+  if (Array.isArray(arr)) {
+    const namesChanged = arr.map((x) => {
+      if (typeof x === "string") {
+        let firstChange = x.replace("__FULLNAMEHERE__", fullName)
+        let secondChange = firstChange.replaceAll("__NAMEHERE__", name)
+        return secondChange
+      } else {
+        let firstChange = x.review.replace("__FULLNAMEHERE__", fullName)
+        let secondChange = firstChange.replaceAll("__NAMEHERE__", name)
+        return { review: secondChange, stars: 3 }
+      }
+    })
 
-  return namesChanged
+    return namesChanged
+  }
+
+  if (typeof arr === "string") {
+    let firstChange = arr.replace("__FULLNAMEHERE__", fullName)
+    let secondChange = firstChange.replaceAll("__NAMEHERE__", name)
+    return secondChange
+  }
 }
 
 export const ORG_ST_Review = (name, lastName, amountOfReviews) => {
   const retrieveReviews = getAllReviews(amountOfReviews)
   const formatedNames = formatNamesFunction(retrieveReviews, name, lastName)
   return formatedNames
+}
+
+export const ORG_ST_Review_Map = (name, lastName, review) => {
+  return <div>ORG_ST_Review_Map</div>
 }
 
 const months = [
@@ -96,10 +132,8 @@ export const ORG_ST_LastUpdate = () => {
   const getYear = getDate.getFullYear()
   const getDay = getDate.getDate()
   const getMonth = getDate.getMonth() + 1
-  
+
   const montFormatted = getMonth <= 9 ? `0${getMonth}` : `${getMonth}`
-  
-  
-  
+
   return `${montFormatted}/${getDay}/${getYear}`
 }

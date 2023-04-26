@@ -24,15 +24,9 @@ export const STResults_FiltersContainerDesktop = ({
   mustShowFiltersDesktop,
   handleAddFilters
 }) => {
-  // console.log('💖state:', state)
-  // console.log('🧘‍♀️tempState:', tempState)
-
   const { isMobile } = useWidthWindow1024()
-  // console.log('isMobile:', isMobile)
 
   const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-
-  // console.log('mustShowFiltersMobile:', mustShowFiltersMobile)
 
   const handleCloseFilters = (e) => {
     if (e.key === "Enter" || e.type === "click") {

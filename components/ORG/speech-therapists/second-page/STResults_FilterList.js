@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useState } from "react"
 import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_Provider"
 import { useORG_CtxShowFiltersDesktop } from "../../../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { useORG_Ctx_FiltersApply } from "../../../../context/ORG_Ctx_FiltersApply"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../context/ORG_Ctx_ShowFiltersMobile"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../../utils/ORG_initialLeftFilters"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
@@ -18,8 +19,11 @@ const reducer = (state, action) => {
   const setTempState = action.payload[1]
 
   if (action.type === "clearAll") {
+    const setFilterAreApply = action.payload[2]
+
     setFilterData(ORG_INITIAL_LEFT_FILTERS)
     setTempState(ORG_INITIAL_LEFT_FILTERS)
+    setFilterAreApply(false)
     return ORG_INITIAL_LEFT_FILTERS
   }
 
@@ -27,32 +31,17 @@ const reducer = (state, action) => {
     const tempState = action.payload[2]
     const setMustShowFiltersDesktop = action.payload[3]
     const setORGShowFullMapFilter = action.payload[4]
+    const setFilterAreApply = action.payload[5]
+
     setFilterData(tempState)
     setTimeout(() => {
       setMustShowFiltersDesktop(false)
       setORGShowFullMapFilter(false)
+      setFilterAreApply(true)
     }, 500)
 
     return { ...state }
   }
-
-  // if (action.payload[1].target.checked) {
-  //   setFilterData((prevStatus) => {
-  //     return {
-  //       ...prevStatus,
-  //       [toUpdateFilters]: [...prevStatus[toUpdateFilters], action.type.x]
-  //     }
-  //   })
-  // } else {
-  //   setFilterData((prevStatus) => {
-  //     let shouldStay = prevStatus[toUpdateFilters].filter((x) => x !== action.type.x)
-
-  //     return {
-  //       ...prevStatus,
-  //       [toUpdateFilters]: [...shouldStay]
-  //     }
-  //   })
-  // }
 }
 
 export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
@@ -67,6 +56,8 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
   const { ORGShowFullMapFilter, setORGShowFullMapFilter, showFullMapButton, setShowFullMapButton } =
     useORG_CtxShowFiltersDesktop()
+
+  const { setFilterAreApply } = useORG_Ctx_FiltersApply()
 
   const handleShowFiltersDesktop = () => {
     setMustShowFiltersDesktop((prevState) => !prevState)
@@ -95,7 +86,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
 
       dispatch({
         type: "clearAll",
-        payload: [setFilterData, setTempState]
+        payload: [setFilterData, setTempState, setFilterAreApply]
       })
     }
   }
@@ -114,7 +105,14 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
     if (e.type === "click" || e.key === "Enter") {
       return dispatch({
         type: "addFilters",
-        payload: [setFilterData, setTempState, tempState, setMustShowFiltersDesktop, setORGShowFullMapFilter]
+        payload: [
+          setFilterData,
+          setTempState,
+          tempState,
+          setMustShowFiltersDesktop,
+          setORGShowFullMapFilter,
+          setFilterAreApply
+        ]
       })
     }
   }

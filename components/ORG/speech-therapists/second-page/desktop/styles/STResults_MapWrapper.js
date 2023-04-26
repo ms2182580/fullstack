@@ -7,13 +7,8 @@ export const STResults_MapWrapper = styled.div`
   min-width: ${(x) => (x.showFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `496px`)};
   margin-right:${(x) => x.showFullMapButton ? `42px` : ``};
   
-
   height: ${(x) => (x.showFullMapButton === false && x.ORGShowFullMapFilter === false ? `100vh` : ``)};
   
-  /* border: 2px solid black; */
-  
-  
-
   position: sticky;
   top: 0;
 
