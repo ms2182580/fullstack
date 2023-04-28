@@ -14,22 +14,39 @@ import {
   ORG_Filterdata_YoP
 } from "./ORG_FilterdataFunctions"
 
-export const useFetch = (pagination = 1, howMuch = 10, whichOne) => {
+export const useFetch = (pagination = 1, howMuch = 10, whichOne, shouldFetch) => {
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
   const [actualSort, setActualSort] = useState("Distance")
+  // const { pathname } = useRouter()
+  // const isORG = ORG_isORG(pathname)
+
+  /* 
+  !FH1
+  Check if everything is okay with the speech therapist not filtered and with ST filetered. Check:
+  ✅- Render
+  ✅- Change of page
+  ✅- Sort by → distance
+  👀- Be equal to the filter fetch
+  
+  */
+
+  // console.log("shouldFetch:", shouldFetch)
+  // console.log("pagination:", pagination)
+  // console.log("data:", data)
 
   useEffect(() => {
-    if (data === undefined && filters.length === 0) {
+    if (shouldFetch) {
       let getData = { actualPage: "", allData: "" }
 
       let getFilters = { filters: [] }
 
       const fetchData = async () => {
         try {
-          const theFetch = await fetch(`/api/randomUser?results=${howMuch}&pagination=${pagination}&whichOne=${whichOne}`)
+          const theFetch = await fetch(
+            `/api/randomUser?results=${howMuch}&pagination=${pagination}&whichOne=${whichOne}`
+          )
           const toJson = await theFetch.json()
-          // console.log("🧘‍♀️toJson:", toJson)
           getData.actualPage = toJson.info.page
           getData.allData = toJson.results
           let howMuchGet = getData.allData.length
@@ -70,7 +87,6 @@ export const useFetch = (pagination = 1, howMuch = 10, whichOne) => {
             ]
           }
 
-          console.log("getData, getFilters.filters, whichOne:", getData, getFilters.filters, whichOne)
           setData(getData)
           setFilters(getFilters.filters)
         } catch (error) {
@@ -127,9 +143,7 @@ export const useFetch = (pagination = 1, howMuch = 10, whichOne) => {
       //   })
       //   .catch((error) => console.error("error:", error, whichOne))
     }
-  }, [pagination, howMuch])
-
-  // console.log("⌛data:", data)
+  }, [pagination, howMuch, shouldFetch])
 
   return { data, setData, filters, setFilters, actualSort, setActualSort }
 }

@@ -16,7 +16,7 @@ import {
 } from "./ORG_FilterdataFunctions"
 import { ORG_FILTERS_KEYS } from "./ORG_FiltersCategories"
 
-export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne) => {
+export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne, shouldFetch) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
   const [actualSortF, setActualSortF] = useState("Distance")
@@ -77,7 +77,7 @@ export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne) => {
         setFiltersF(getFilters.filters)
       })
       .catch((error) => console.log(error))
-  }, [filtersSelected, pagination])
+  }, [filtersSelected, pagination, shouldFetch])
 
   return { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF }
 }

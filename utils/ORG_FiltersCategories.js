@@ -10,7 +10,7 @@ export const ORG_FILTERS_DATA = Object.freeze({
     "65+ years"
   ],
   diagnosis: ["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Fragile X", "Other"],
-  distance: ["0-5", "5-10", "10-20", "20+"],
+  distance: ["0-5", "5-10", "10-20", "+20"],
   insurance: ["Medicaid", "Insurance", "Private Pay", "DOE approved", "BCBS", "Aetna", "Contract"],
   languages: ["English", "Spanish", "Chinese", "Tagalog", "French"],
   meetingFormat: ["Virtual", "In-Person"],

@@ -1,19 +1,34 @@
-import LoadingSpeechTherapistsWrapper from "./styles/LoadingSpeechTherapistsWrapper"
-import { H1 } from "../../ui/heading_body_text/HeaderFonts"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Player } from "@lottiefiles/react-lottie-player"
-import LottieLoading from "../../../assets/Icons/LottieLoading.json"
+import { useEffect } from "react"
 import { RobotSvg } from "../../../assets/Icons"
+import LottieLoading from "../../../assets/Icons/LottieLoading.json"
+import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { H1 } from "../../ui/heading_body_text/HeaderFonts"
+import LoadingSpeechTherapistsWrapper from "./styles/LoadingSpeechTherapistsWrapper"
 
 const LoadingSpeechTherapists = () => {
+
+  const { userFetched, shouldFetch, setShouldFetch } = useORG_Ctx_FetchNoFilters()
+
+  useEffect(() => {
+    setShouldFetch(true)
+  }, [])
+
   return (
     <LoadingSpeechTherapistsWrapper>
       <H1 cta>Loading ...</H1>
-      <P semibold dark_gray>
+      <P
+        semibold
+        dark_gray>
         Please wait, our machines are working hard to provide your results!
       </P>
-      <Player src={LottieLoading} loop autoplay  />
-      <RobotSvg/>
+      <Player
+        src={LottieLoading}
+        loop
+        autoplay
+      />
+      <RobotSvg />
     </LoadingSpeechTherapistsWrapper>
   )
 }

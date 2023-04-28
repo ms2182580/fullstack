@@ -34,6 +34,10 @@ const reducer = (state, action) => {
     const setFilterAreApply = action.payload[5]
 
     setFilterData(tempState)
+    /* 
+    !FH
+    Know how to stop the double render. Right now is patched with this setTimeout for user experience purpose
+     */
     setTimeout(() => {
       setMustShowFiltersDesktop(false)
       setORGShowFullMapFilter(false)

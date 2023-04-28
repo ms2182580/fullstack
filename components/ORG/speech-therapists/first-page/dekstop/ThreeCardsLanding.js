@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../../assets/Icons/index"
+import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
 import { useFetch } from "../../../../../utils/ORG_dummydata_speechtherapists"
 import { SpecificCard } from "./SpecificCard.js"
@@ -8,14 +9,20 @@ import { ThreeCardsLandingWrapper } from "./styles/ThreeCardsLandingWrapper"
 export const ThreeCardsLanding = ({
   setMustShowResults,
   dispatch,
-  mustShowResults,
+  mustShowResults
   // userFetched,
   // filtersST,
   // props,
 }) => {
   // console.log("props:", props)
-  const { data: userFetched, filters: filtersST } = useFetch(1, 3, "landingThreeCardsHere → 3")
-  console.log("👾userFetched:", userFetched)
+  const { setShouldFetch, shouldFetch } = useORG_Ctx_FetchNoFilters()
+
+  useEffect(() => {
+    setShouldFetch(true)
+  }, [])
+
+  const { data: userFetched, filters: filtersST } = useFetch(1, 3, "landingThreeCardsHere → 3", shouldFetch)
+  // console.log("👾userFetched:", userFetched)
 
   const [reviews, setReviews] = useState({})
   const [dataToShare, setDataToShare] = useState({})

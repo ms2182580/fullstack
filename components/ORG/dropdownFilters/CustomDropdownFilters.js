@@ -27,6 +27,12 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
   }
   const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
+  /* 
+  !FH0
+  → Check the SortBy function, should be "Most Relevant" every time the user apply filters and when clean it.
+  → Follow with other !FH's
+  
+  */
   const getSelection = (e) => {
     let elementSelected = e.target.textContent
     setWhichTitle(elementSelected)
@@ -65,9 +71,9 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
   !FH
   Make it work with onBlur to close when the user click outside. 
   */
- 
+
   const shouldTab = useShouldTab()
-  
+
 
   return (
     <>
@@ -83,9 +89,9 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
           <P primary_cta semibold>{whichTitle}</P>
           <span>
             {showDropdown ? (
-              <ArrowDownSvg/>
+              <ArrowDownSvg />
             ) : (
-              <ArrowUpSvg/>
+              <ArrowUpSvg />
             )}
           </span>
         </span>

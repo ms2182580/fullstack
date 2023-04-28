@@ -1,10 +1,8 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
-import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Share } from "../../../share/Share"
@@ -37,16 +35,14 @@ export const STResults_CardNoFilters = () => {
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFilters()
 
-  // console.log('userFetched:', userFetched)
-
-  useEffect(() => {
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistList")
-    setData((prevState) => ({
-      ...prevState,
-      allData: newOrderData
-    }))
-    setFilters(newOrderFilters)
-  }, [actualSort, pagination])
+  // useEffect(() => {
+  //   const { newOrderData, newOrderFilters } = ORG_Sortyby(actualSort, filtersST, userFetched, "SpeechtherapistList")
+  //   setData((prevState) => ({
+  //     ...prevState,
+  //     allData: newOrderData
+  //   }))
+  //   setFilters(newOrderFilters)
+  // }, [actualSort, pagination])
 
   return (
     <>

@@ -42,7 +42,7 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   }
 
   const { userFetched, filtersST, pagination: paginationNoFilter } = useORG_Ctx_FetchNoFilters()
-  console.log("userFetched:", userFetched)
+  // console.log("👾👾👾👾userFetched:", userFetched)
 
   const [allReviewsNoFetch, setAllReviewsNoFetch] = useState([])
   useEffect(() => {
@@ -92,6 +92,10 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
 
   const [allReviewsWithFetch, setAllReviewsWithFetch] = useState([])
   const { dataF, filtersF, pagination: paginationFilter } = useORG_Ctx_FetchWithFilters()
+  /* 
+  !FH2
+  Check if there is any way to import this "useORG_Ctx_FetchWithFilters()" only if the "filterAreApply" is true, otherwise keep not importing. One is imported, keep imported
+  */
 
   useEffect(() => {
     if (allReviewsWithFetch.length === 0 && filterAreApply) {

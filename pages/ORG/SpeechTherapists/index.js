@@ -21,7 +21,14 @@ const ORGSpeechTherapists = () => {
   const { widthWindow } = useWidthWindow()
   const { isMobile } = useWidthWindow1024()
 
-  const { userFetched } = useORG_Ctx_FetchNoFilters()
+  const { userFetched, shouldFetch, setShouldFetch } = useORG_Ctx_FetchNoFilters()
+  // console.log('userFetched:', userFetched)
+  // console.log("🚅shouldFetch:", shouldFetch)
+
+
+  useEffect(() => {
+    setShouldFetch(true)
+  }, [])
 
   useEffect(() => {
     if (userFetched !== undefined && mustShowFiltersMobile === false) {
@@ -32,13 +39,12 @@ const ORGSpeechTherapists = () => {
     }
   }, [mustShowFiltersMobile])
 
-  if (userFetched === undefined) {
+  if (userFetched === undefined || shouldFetch === false) {
     return <LoadingSpeechTherapists />
   }
 
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
-
 
   return (
     <ORGSpeechTherapistsSecondPageWrapper

@@ -1,11 +1,14 @@
 import { createContext, useContext, useState } from "react"
 import { useFetch } from "../utils/ORG_dummydata_speechtherapists"
+import { useORGShouldFetch } from '../utils/ORG_shouldFetch'
+
 
 const ORG_Ctx_fetchNoFilters = createContext(null)
 
 export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
   const [pagination, setPagination] = useState(1)
-  const [howMuchShow, setHowMuchShow] = useState(5)
+  const [howMuchShow, setHowMuchShow] = useState(10)
+  const { shouldFetch, setShouldFetch } = useORGShouldFetch()
 
   const {
     data: userFetched,
@@ -14,7 +17,7 @@ export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
     setFilters,
     actualSort,
     setActualSort
-  } = useFetch(pagination, howMuchShow, "noFilteredHere → 5")
+  } = useFetch(pagination, howMuchShow, "noFilteredHere → 5", shouldFetch)
 
   return (
     <ORG_Ctx_fetchNoFilters.Provider
@@ -28,7 +31,9 @@ export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
         filtersST,
         setFilters,
         actualSort,
-        setActualSort
+        setActualSort,
+        shouldFetch,
+        setShouldFetch
       }}>
       {children}
     </ORG_Ctx_fetchNoFilters.Provider>

@@ -4,17 +4,20 @@ import { useORG_Ctx_FetchNoFilters } from "./ORG_CtxFetchNoFilters_Provider"
 const ORG_Ctx_fetchWithFilters = createContext(null)
 
 export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
-  const [howMuchShow, setHowMuchShow] = useState(6)
+  const [howMuchShow, setHowMuchShow] = useState(10)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
+  const [shouldFetch, setShouldFetch] = useState(false)
+
   const {
     dataF,
     setDataF,
     filtersF,
     setFiltersF,
     actualSortF,
-    setActualSortF
+    setActualSortF,
+
   } = FetchFiltered(
-    pagination, howMuchShow, "FetchWithFilters → 6"
+    pagination, howMuchShow, "FetchWithFilters → 6", shouldFetch
   )
 
   return (
