@@ -21,19 +21,6 @@ export const useFetch = (pagination = 1, howMuch = 10, whichOne, shouldFetch) =>
   // const { pathname } = useRouter()
   // const isORG = ORG_isORG(pathname)
 
-  /* 
-  !FH1
-  Check if everything is okay with the speech therapist not filtered and with ST filetered. Check:
-  ✅- Render
-  ✅- Change of page
-  ✅- Sort by → distance
-  👀- Be equal to the filter fetch
-  
-  */
-
-  // console.log("shouldFetch:", shouldFetch)
-  // console.log("pagination:", pagination)
-  // console.log("data:", data)
 
   useEffect(() => {
     if (shouldFetch) {

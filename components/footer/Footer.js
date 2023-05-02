@@ -53,9 +53,9 @@ export const Footer = () => {
   return (
     <FooterWrapper
       ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}
-      // ref={toDisableTab}
-      // tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
-      // onKeyDown={handleNoTab}
+    // ref={toDisableTab}
+    // tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
+    // onKeyDown={handleNoTab}
     >
       <H2
         bold
@@ -102,5 +102,5 @@ export const Footer = () => {
 
 /* 
 !FH
-Fix double focus with tab key
+Fix double focus with tab key. This is in nav bar too and other components
 */

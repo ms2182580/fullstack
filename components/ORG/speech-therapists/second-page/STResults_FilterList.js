@@ -45,7 +45,6 @@ const reducer = (state, action) => {
     const setFiltersAppliedNewFilters = action.payload[7]
 
     const newFilterDataIsEqual = checkTwoObjects(filterData, tempState)
-    console.log("💚newFilterDataIsEqual:", newFilterDataIsEqual)
 
     const setDefaultWord = action.payload[8]
     const defaultWord = action.payload[9]
