@@ -1,7 +1,4 @@
 export const ORG_Sortyby = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
-  // console.log('💕whoTrigger:', whoTrigger)
-  // console.log('sourceArr:', sourceArr)
-  // console.log('whichSort:', whichSort)
   let newOrder
   if (whichSort.toLowerCase() === "rating") {
     newOrder = sourceArr
@@ -16,12 +13,8 @@ export const ORG_Sortyby = (whichSort, sourceArr = [], userFetched, whoTrigger =
     newOrder = sourceArr
       .map((x, i) => [x.distance, i])
       .sort((a, b) => {
-        // console.log('💨a, b:', a, b)
         const firstNumber = a[0].match(/[0,5,10]+(?=\-)|(?<=\+)[20]+/g)
-        // console.log('firstNumber:', firstNumber)
         const secondNumber = b[0].match(/[0,5,10]+(?=\-)|(?<=\+)[20]+/g)
-        // console.log('secondNumber:', secondNumber)
-        // console.dir()
         return firstNumber[0] - secondNumber[0]
       })
       .map((x) => x[1])

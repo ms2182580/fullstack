@@ -22,8 +22,6 @@ const ORGSpeechTherapists = () => {
   const { isMobile } = useWidthWindow1024()
 
   const { userFetched, shouldFetch, setShouldFetch } = useORG_Ctx_FetchNoFilters()
-  // console.log('userFetched:', userFetched)
-  // console.log("🚅shouldFetch:", shouldFetch)
 
 
   useEffect(() => {

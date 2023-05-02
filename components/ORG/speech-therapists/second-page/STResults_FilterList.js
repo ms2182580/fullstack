@@ -5,6 +5,7 @@ import { useORG_Ctx_FiltersApply } from "../../../../context/ORG_Ctx_FiltersAppl
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../context/ORG_Ctx_ShowFiltersMobile"
 import { ORG_INITIAL_LEFT_FILTERS } from "../../../../utils/ORG_initialLeftFilters"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
+import { checkTwoObjects } from "../../../../utils/checkTwoObjects"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { BtnSmall } from "../../../ui/buttons/general/styles/ButtonStyled"
 import { STResults_FiltersContainerDesktop } from "./STResults_FiltersContainerDesktop"
@@ -20,10 +21,15 @@ const reducer = (state, action) => {
 
   if (action.type === "clearAll") {
     const setFilterAreApply = action.payload[2]
+    const setFiltersAppliedNewFilters = action.payload[3]
+    const setDefaultWord = action.payload[4]
+    const defaultWord = action.payload[5]
 
     setFilterData(ORG_INITIAL_LEFT_FILTERS)
     setTempState(ORG_INITIAL_LEFT_FILTERS)
     setFilterAreApply(false)
+    setFiltersAppliedNewFilters(false)
+    setDefaultWord(defaultWord)
     return ORG_INITIAL_LEFT_FILTERS
   }
 
@@ -34,6 +40,23 @@ const reducer = (state, action) => {
     const setFilterAreApply = action.payload[5]
 
     setFilterData(tempState)
+
+    const filterData = action.payload[6]
+    const setFiltersAppliedNewFilters = action.payload[7]
+
+    const newFilterDataIsEqual = checkTwoObjects(filterData, tempState)
+    console.log("💚newFilterDataIsEqual:", newFilterDataIsEqual)
+
+    const setDefaultWord = action.payload[8]
+    const defaultWord = action.payload[9]
+
+    if (newFilterDataIsEqual) {
+      setFiltersAppliedNewFilters(false)
+      setDefaultWord(defaultWord)
+    } else {
+      setFiltersAppliedNewFilters(true)
+    }
+
     /* 
     !FH
     Know how to stop the double render. Right now is patched with this setTimeout for user experience purpose
@@ -61,7 +84,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const { ORGShowFullMapFilter, setORGShowFullMapFilter, showFullMapButton, setShowFullMapButton } =
     useORG_CtxShowFiltersDesktop()
 
-  const { setFilterAreApply } = useORG_Ctx_FiltersApply()
+  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } = useORG_Ctx_FiltersApply()
 
   const handleShowFiltersDesktop = () => {
     setMustShowFiltersDesktop((prevState) => !prevState)
@@ -90,7 +113,14 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
 
       dispatch({
         type: "clearAll",
-        payload: [setFilterData, setTempState, setFilterAreApply]
+        payload: [
+          setFilterData,
+          setTempState,
+          setFilterAreApply,
+          setFiltersAppliedNewFilters,
+          setDefaultWord,
+          defaultWord
+        ]
       })
     }
   }
@@ -115,7 +145,11 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
           tempState,
           setMustShowFiltersDesktop,
           setORGShowFullMapFilter,
-          setFilterAreApply
+          setFilterAreApply,
+          filterData,
+          setFiltersAppliedNewFilters,
+          setDefaultWord,
+          defaultWord
         ]
       })
     }

@@ -1,15 +1,23 @@
-import { Fragment, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
+import { useORG_Ctx_FiltersApply } from "../../../context/ORG_Ctx_FiltersApply"
 import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
-export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaultWord }) => {
-  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFilters()
+export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
+  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFilters()
   const [showDropdown, setShowDropdown] = useState(false)
+
+  const {
+    filterAreApply,
+    filtersAppliedNewFilters,
+    setFiltersAppliedNewFilters,
+    defaultWord
+  } = useORG_Ctx_FiltersApply()
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 
@@ -27,12 +35,6 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
   }
   const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
-  /* 
-  !FH0
-  → Check the SortBy function, should be "Most Relevant" every time the user apply filters and when clean it.
-  → Follow with other !FH's
-  
-  */
   const getSelection = (e) => {
     let elementSelected = e.target.textContent
     setWhichTitle(elementSelected)
@@ -74,6 +76,18 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
 
   const shouldTab = useShouldTab()
 
+  useEffect(() => {
+    setWhichTitle(defaultWord)
+
+    if (filterAreApply === false) {
+      setWhichTitle(defaultWord)
+    }
+
+  }, [filtersAppliedNewFilters, filterAreApply, pagination])
+
+  useEffect(() => {
+    setFiltersAppliedNewFilters(false)
+  }, [whichTitle])
 
   return (
     <>
@@ -86,21 +100,19 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false, defaul
             handleDropdownKey(e)
           }}
           tabIndex={shouldTab}>
-          <P primary_cta semibold>{whichTitle}</P>
-          <span>
-            {showDropdown ? (
-              <ArrowDownSvg />
-            ) : (
-              <ArrowUpSvg />
-            )}
-          </span>
+          <P
+            primary_cta
+            semibold>
+            {whichTitle}
+          </P>
+          <span>{showDropdown ? <ArrowDownSvg /> : <ArrowUpSvg />}</span>
         </span>
         <div className="dropdownSuggestions">
           {showDropdown && suggestions.length !== 0 && (
             <>
               <div></div>
               {suggestionsValidated.map((x) => {
-                let highlight = x === actualSort
+                let highlight = whichTitle === defaultWord ? false : x === actualSort
 
                 return (
                   <Fragment key={x}>

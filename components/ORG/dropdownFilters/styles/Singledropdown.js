@@ -42,13 +42,10 @@ export const SingleDropdownWrapper = styled.div`
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    
-    
-    & > *:not(:last-child):not(:first-child){
+
+    & > *:not(:last-child):not(:first-child) {
       /* margin-bottom: 8px; */
-      
     }
-    
 
     & > div:nth-child(1) {
       height: 1.67px;
@@ -77,6 +74,5 @@ export const SingleDropdownWrapper = styled.div`
 export const CustomC = styled.span`
   background-color: ${(x) => (x.highlight ? PRIMARY.PRIMARY_CTA : "")};
   color: ${(x) => (x.highlight ? NEUTRALS.OFF_WHITE : "")};
-  font-weight: ${(x) => x.highlight ? `600` : ``};
-  
+  font-weight: ${(x) => (x.highlight ? `600` : ``)};
 `

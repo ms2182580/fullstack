@@ -10,11 +10,7 @@ export const ThreeCardsLanding = ({
   setMustShowResults,
   dispatch,
   mustShowResults
-  // userFetched,
-  // filtersST,
-  // props,
 }) => {
-  // console.log("props:", props)
   const { setShouldFetch, shouldFetch } = useORG_Ctx_FetchNoFilters()
 
   useEffect(() => {
@@ -22,7 +18,6 @@ export const ThreeCardsLanding = ({
   }, [])
 
   const { data: userFetched, filters: filtersST } = useFetch(1, 3, "landingThreeCardsHere → 3", shouldFetch)
-  // console.log("👾userFetched:", userFetched)
 
   const [reviews, setReviews] = useState({})
   const [dataToShare, setDataToShare] = useState({})
