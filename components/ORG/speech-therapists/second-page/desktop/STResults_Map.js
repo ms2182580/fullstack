@@ -9,7 +9,6 @@ import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNo
 import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
 import { formatNamesFunction, getAllReviews } from "../../../../../utils/ORG_ST_Review"
 import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
-import { STResults_CardsOnMap } from "./STResults_CardsOnMap"
 import { STResults_MapWrapper } from "./styles/STResults_MapWrapper.js"
 
 export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
@@ -100,7 +99,7 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
         )}
       </button>
 
-      <STResults_CardsOnMap />
+      {/* <STResults_CardsOnMap /> */}
     </STResults_MapWrapper>
   )
 }
