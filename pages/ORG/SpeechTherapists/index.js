@@ -21,11 +21,11 @@ const ORGSpeechTherapists = () => {
   const { widthWindow } = useWidthWindow()
   const { isMobile } = useWidthWindow1024()
 
-  const { userFetched, shouldFetch, setShouldFetch } = useORG_Ctx_FetchNoFilters()
+  const { userFetched, shouldFetchDesktopNoFilters, setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFilters()
 
 
   useEffect(() => {
-    setShouldFetch(true)
+    setShouldFetchDesktopNoFilters(true)
   }, [])
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const ORGSpeechTherapists = () => {
     }
   }, [mustShowFiltersMobile])
 
-  if (userFetched === undefined || shouldFetch === false) {
+  if (userFetched === undefined || shouldFetchDesktopNoFilters === false) {
     return <LoadingSpeechTherapists />
   }
 

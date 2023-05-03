@@ -16,7 +16,7 @@ import {
 } from "./ORG_FilterdataFunctions"
 import { ORG_FILTERS_KEYS } from "./ORG_FiltersCategories"
 
-export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne, shouldFetch) => {
+export const useFetchWithFilters = (pagination = 1, howMuch = 10, whichOne, shouldFetch = true) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
   const [actualSortF, setActualSortF] = useState("Distance")
@@ -34,11 +34,11 @@ export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne, shouldFetc
           const theFetch = await fetch(
             `/api/randomUser?results=${howMuch}&pagination=${pagination}&whichOne=${whichOne}`
           )
-
           const toJson = await theFetch.json()
 
           getData.allData = toJson.results
           let howMuchGet = getData.allData.length
+
           for (let index = 0; index < howMuchGet; index++) {
             const distance = ORG_Filterdata_Distance(filtersSelected.distance)
             const rating = ORG_Filterdata_Rating(filtersSelected.rating)
@@ -83,10 +83,21 @@ export const FetchFiltered = (pagination = 1, howMuch = 10, whichOne, shouldFetc
           setFiltersF(getFilters.filters)
         } catch (error) {
           console.warn("error:", error, whichOne)
+        } finally {
+          // console.dir("Finally With Filters")
+          // console.log('getData:', getData.allData)
+          // console.log('getFilters:', getFilters.filters)
+          /* 
+          !FH
+          Add a loading initia value to false, when start the fetch is set to true and finally is return to false
+          With that loading should close the when it's false filters
+           */
         }
       }
+      fetchData()
     }
   }, [filtersSelected, pagination, shouldFetch])
 
+  // console.log("💨dataF:", dataF)
   return { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF }
 }

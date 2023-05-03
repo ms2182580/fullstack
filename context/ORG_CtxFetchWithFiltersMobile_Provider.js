@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react"
-import { FetchFiltered } from "../utils/ORG_dummydataFiltered_speechtherapists"
+import { useFetchWithFilters } from "../utils/ORG_useFetchWithFilters"
 import { useORG_Ctx_FetchNoFiltersMobile } from "./ORG_CtxFetchNoFiltersMobile_Provider"
 
 const ORG_Ctx_fetchWithFiltersMobile = createContext(null)
@@ -7,16 +7,13 @@ const ORG_Ctx_fetchWithFiltersMobile = createContext(null)
 export const ORG_CtxFetchWithFiltersMobile_Provider = ({ children }) => {
   const [howMuchShow, setHowMuchShow] = useState(4)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersMobile()
+  const [shouldFetchMobileWitFilters, setShouldFetchMobileWitFilters] = useState(false)
 
-  const {
-    dataF,
-    setDataF,
-    filtersF,
-    setFiltersF,
-    actualSortF,
-    setActualSortF
-  } = FetchFiltered(
-    pagination, howMuchShow, "MobileHere → 4"
+  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFilters(
+    pagination,
+    howMuchShow,
+    "FetchWithFiltersMobile",
+    shouldFetchMobileWitFilters
   )
 
   return (
@@ -31,7 +28,9 @@ export const ORG_CtxFetchWithFiltersMobile_Provider = ({ children }) => {
         filtersF,
         setFiltersF,
         actualSortF,
-        setActualSortF
+        setActualSortF,
+        shouldFetchMobileWitFilters,
+        setShouldFetchMobileWitFilters
       }}>
       {children}
     </ORG_Ctx_fetchWithFiltersMobile.Provider>

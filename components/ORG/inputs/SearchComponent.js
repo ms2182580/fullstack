@@ -18,11 +18,11 @@ export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
 
   const shouldTab = useShouldTab()
 
-  const { setShouldFetch } = useORG_Ctx_FetchNoFilters()
+  const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFilters()
 
-  const handleFetch = () => {
-    setShouldFetch(true)
-  }
+  // const handleFetch = () => {
+  //   setShouldFetchDesktopNoFilters(true)
+  // }
 
   return (
     <>
@@ -47,7 +47,8 @@ export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
           <LinkNoStyle
             href={`${router.pathname}`}
             tabIndex={shouldTab}
-            onClick={handleFetch}>
+          // onClick={handleFetch}
+          >
             <ButtonSmall preventFocus={shouldTab}>
               <SearchSVG />
             </ButtonSmall>

@@ -1,23 +1,19 @@
 import { createContext, useContext, useState } from "react"
-import { FetchFiltered } from "../utils/ORG_dummydataFiltered_speechtherapists"
+import { useFetchWithFilters } from "../utils/ORG_useFetchWithFilters"
 import { useORG_Ctx_FetchNoFilters } from "./ORG_CtxFetchNoFilters_Provider"
+
 const ORG_Ctx_fetchWithFilters = createContext(null)
 
 export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
   const [howMuchShow, setHowMuchShow] = useState(10)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
-  const [shouldFetch, setShouldFetch] = useState(false)
+  const [shouldFetchDesktopFilters, setShouldFetchDesktopFilters] = useState(false)
 
-  const {
-    dataF,
-    setDataF,
-    filtersF,
-    setFiltersF,
-    actualSortF,
-    setActualSortF,
-
-  } = FetchFiltered(
-    pagination, howMuchShow, "FetchWithFilters → 6", shouldFetch
+  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFilters(
+    pagination,
+    howMuchShow,
+    "FetchWithFiltersDesktop",
+    shouldFetchDesktopFilters
   )
 
   return (
@@ -32,7 +28,9 @@ export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
         filtersF,
         setFiltersF,
         actualSortF,
-        setActualSortF
+        setActualSortF,
+        shouldFetchDesktopFilters,
+        setShouldFetchDesktopFilters
       }}>
       {children}
     </ORG_Ctx_fetchWithFilters.Provider>

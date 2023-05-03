@@ -11,6 +11,7 @@ import { formatNamesFunction, getAllReviews } from "../../../../../utils/ORG_ST_
 import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
 import { STResults_MapWrapper } from "./styles/STResults_MapWrapper.js"
 
+
 export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   const { showFullMapButton, setShowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
 
@@ -92,6 +93,9 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
 
   const [allReviewsWithFetch, setAllReviewsWithFetch] = useState([])
   const { dataF, filtersF, pagination: paginationFilter } = useORG_Ctx_FetchWithFilters()
+
+  // console.log('❌dataF:', dataF)
+
   /* 
   !FH2
   Check if there is any way to import this "useORG_Ctx_FetchWithFilters()" only if the "filterAreApply" is true, otherwise keep not importing. One is imported, keep imported

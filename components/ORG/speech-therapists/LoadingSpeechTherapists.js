@@ -9,10 +9,10 @@ import LoadingSpeechTherapistsWrapper from "./styles/LoadingSpeechTherapistsWrap
 
 const LoadingSpeechTherapists = () => {
 
-  const { userFetched, shouldFetch, setShouldFetch } = useORG_Ctx_FetchNoFilters()
+  const { userFetched, shouldFetchDesktopNoFilters, setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFilters()
 
   useEffect(() => {
-    setShouldFetch(true)
+    setShouldFetchDesktopNoFilters(true)
   }, [])
 
   return (

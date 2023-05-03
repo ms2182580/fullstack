@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useState } from "react"
+import { useORG_Ctx_FetchWithFilters } from "../../../../context/ORG_CtxFetchWithFilters_Provider"
 import { useORG_Ctx_filtersLeft } from "../../../../context/ORG_CtxFiltersLeft_Provider"
 import { useORG_CtxShowFiltersDesktop } from "../../../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_FiltersApply } from "../../../../context/ORG_Ctx_FiltersApply"
@@ -133,6 +134,22 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
       setMustShowFiltersMobile(false)
     }
   }, [isMobile])
+
+
+  const { shouldFetchDesktopFilters, setShouldFetchDesktopFilters } = useORG_Ctx_FetchWithFilters()
+
+
+
+
+  useEffect(() => {
+    /* 
+    !FH
+    The idea is fetch only if the user click on "addFilters"
+    */
+    setShouldFetchDesktopFilters(true)
+  }, [])
+
+
 
   const handleAddFilters = (e) => {
     if (e.type === "click" || e.key === "Enter") {

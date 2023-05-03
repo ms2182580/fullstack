@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../../assets/Icons/index"
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
-import { useFetch } from "../../../../../utils/ORG_dummydata_speechtherapists"
+import { useFetchNoFilters } from "../../../../../utils/ORG_useFetchNoFilters"
 import { SpecificCard } from "./SpecificCard.js"
 import { ThreeCardsLandingWrapper } from "./styles/ThreeCardsLandingWrapper"
 
@@ -11,13 +11,13 @@ export const ThreeCardsLanding = ({
   dispatch,
   mustShowResults
 }) => {
-  const { setShouldFetch, shouldFetch } = useORG_Ctx_FetchNoFilters()
+  const { shouldFetchDesktopNoFilters, setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFilters()
 
   useEffect(() => {
-    setShouldFetch(true)
+    setShouldFetchDesktopNoFilters(true)
   }, [])
 
-  const { data: userFetched, filters: filtersST } = useFetch(1, 3, "landingThreeCardsHere → 3", shouldFetch)
+  const { data: userFetched, filters: filtersST } = useFetchNoFilters(1, 3, "landingThreeCardsHere → 3", shouldFetchDesktopNoFilters)
 
   const [reviews, setReviews] = useState({})
   const [dataToShare, setDataToShare] = useState({})
