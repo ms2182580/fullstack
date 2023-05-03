@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ST_CardLocationWrapper = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 110px minmax(150px, 2fr);
 
   & > :nth-child(1) {
     display: flex;
@@ -14,8 +14,6 @@ export const ST_CardLocationWrapper = styled.div`
 
   & > :nth-child(2) {
     margin-left: 4px;
-    display: flex;
-    flex-direction: column;
   }
 
   & > :nth-child(2) > :not(:last-child) {

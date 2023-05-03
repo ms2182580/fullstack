@@ -429,53 +429,53 @@ export const BookmarkSaveSTSvg = (props) => (
 
 export const BookmarkSaveSTMobileSvg = (props) => (
   <svg
-  width="54px"
-  height="54px"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  {...props}
->
-  <g filter="url(#a)">
-    <circle cx={28} cy={28} r={24} fill="#FCFDFE" />
-    <circle cx={28} cy={28} r={23.5} stroke="#D3D6D7" />
-  </g>
-  <path
-    d="M34 28v8.064l-5.322-2.693L28 33.03l-.675.342L22 36.06V19h7.5v-1.5H22a1.5 1.5 0 0 0-1.5 1.5v19.5l7.5-3.79 7.5 3.79V28H34Z"
-    fill="#4B348B"
-  />
-  <path d="M35.5 20.5v-3H34v3h-3V22h3v3h1.5v-3h3v-1.5h-3Z" fill="#4B348B" />
-  <defs>
-    <filter
-      id="a"
-      x={0}
-      y={0}
-      width={56}
-      height={56}
-      filterUnits="userSpaceOnUse"
-      colorInterpolationFilters="sRGB"
-    >
-      <feFlood floodOpacity={0} result="BackgroundImageFix" />
-      <feColorMatrix
-        in="SourceAlpha"
-        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-        result="hardAlpha"
-      />
-      <feOffset />
-      <feGaussianBlur stdDeviation={2} />
-      <feComposite in2="hardAlpha" operator="out" />
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-      <feBlend
-        in2="BackgroundImageFix"
-        result="effect1_dropShadow_7749_5980"
-      />
-      <feBlend
-        in="SourceGraphic"
-        in2="effect1_dropShadow_7749_5980"
-        result="shape"
-      />
-    </filter>
-  </defs>
-</svg>
+    width="54px"
+    height="54px"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <circle cx={28} cy={28} r={24} fill="#FCFDFE" />
+      <circle cx={28} cy={28} r={23.5} stroke="#D3D6D7" />
+    </g>
+    <path
+      d="M34 28v8.064l-5.322-2.693L28 33.03l-.675.342L22 36.06V19h7.5v-1.5H22a1.5 1.5 0 0 0-1.5 1.5v19.5l7.5-3.79 7.5 3.79V28H34Z"
+      fill="#4B348B"
+    />
+    <path d="M35.5 20.5v-3H34v3h-3V22h3v3h1.5v-3h3v-1.5h-3Z" fill="#4B348B" />
+    <defs>
+      <filter
+        id="a"
+        x={0}
+        y={0}
+        width={56}
+        height={56}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset />
+        <feGaussianBlur stdDeviation={2} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_7749_5980"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_7749_5980"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
 )
 
 export const QuestionTooltip_STSvg = (props) => (

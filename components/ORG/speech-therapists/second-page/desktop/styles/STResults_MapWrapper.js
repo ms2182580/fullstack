@@ -5,10 +5,10 @@ export const STResults_MapWrapper = styled.div`
   width: ${(x) => (x.ORGShowFullMapFilter ? `100vw` : ``)};
   margin-left: ${(x) => (x.ORGShowFullMapFilter ? `-42px` : ``)};
   min-width: ${(x) => (x.showFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `496px`)};
-  margin-right:${(x) => x.showFullMapButton ? `42px` : ``};
-  
+  margin-right: ${(x) => (x.showFullMapButton ? `42px` : ``)};
+
   height: ${(x) => (x.showFullMapButton === false && x.ORGShowFullMapFilter === false ? `100vh` : ``)};
-  
+
   position: sticky;
   top: 0;
 
@@ -17,9 +17,6 @@ export const STResults_MapWrapper = styled.div`
     border-bottom-left-radius: ${(x) => (x.ORGShowFullMapFilter ? `0px` : `8px`)};
     border-top-right-radius: ${(x) => (x.showFullMapButton ? `8px` : ``)};
     border-bottom-right-radius: ${(x) => (x.showFullMapButton ? `8px` : ``)};
-
-    /* width:100vw; */
-
     overflow: hidden;
   }
 
@@ -33,7 +30,6 @@ export const STResults_MapWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 16px 24px 16px 36px;
     padding: ${(x) => (x.showFullMap ? `16px 36px 16px 24px  ` : `16px 24px 16px 36px`)};
 
     gap: 31px;
@@ -45,5 +41,13 @@ export const STResults_MapWrapper = styled.div`
     & > span {
       font-size: 20px;
     }
+  }
+
+  & > :nth-child(3) {
+    position: absolute;
+    top: 110px;
+    border: 2px solid crimson;
+    min-width: 496px;
+    height: calc(100% - 110px);
   }
 `

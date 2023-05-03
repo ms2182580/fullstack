@@ -3,7 +3,7 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const ST_CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: 407px 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
   align-items: stretch;
@@ -17,7 +17,7 @@ export const ST_CardWrapper = styled.div`
 export const ST_CardWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
-  min-width: ${(x) => (x.STDetail ? "432px" : "407px")};
+  min-width: ${(x) => (x.STDetail ? "432px" : "320px")};
 `
 
 export const ST_CardWrapper_Left_LeftImage = styled.div`
@@ -53,7 +53,7 @@ export const ST_CardWrapper_Right = styled.div`
   padding-top: 16px;
   padding-left: 16px;
   position: relative;
-  min-width: 417px;
+  min-width: 394px;
 
   & > :nth-child(2),
   & > :nth-child(3),
@@ -159,7 +159,7 @@ export const ST_CardWrapper_Right = styled.div`
   & > :last-child {
     display: flex;
     align-items: center;
-    margin-right: 24px;
+    margin-right: 17px;
     margin-bottom: 16px;
     justify-content: space-between;
   }

@@ -9,8 +9,8 @@ import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNo
 import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
 import { formatNamesFunction, getAllReviews } from "../../../../../utils/ORG_ST_Review"
 import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
+import { STResults_CardsOnMap } from "./STResults_CardsOnMap"
 import { STResults_MapWrapper } from "./styles/STResults_MapWrapper.js"
-
 
 export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   const { showFullMapButton, setShowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
@@ -48,48 +48,12 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   const [allReviewsNoFetch, setAllReviewsNoFetch] = useState([])
   useEffect(() => {
     if (allReviewsNoFetch.length === 0) {
-      // console.log('userFetched.allData:', userFetched.allData)
       updateAllReviews(userFetched.allData, setAllReviewsNoFetch)
-
-      // const allReviews = getAllReviews(userFetched.allData.length - 1).map((x) =>
-      //   typeof x === "string" ? x : x.review
-      // )
-      // console.log("💛allReviews:", allReviews)
-
-      // const newAllReviewsNoFetch = userFetched.allData.map((data, index) => {
-      //   const name = data.name.first
-      //   const lastName = data.name.last
-
-      //   return formatNamesFunction(allReviews[index], name, lastName)
-      // })
-
-      // console.log("💛newAllReviewsNoFetch:", newAllReviewsNoFetch)
-
-      // setAllReviewsNoFetch(newAllReviewsNoFetch)
     } else if (paginationNoFilter !== 1) {
       setAllReviewsNoFetch([])
-
       updateAllReviews(userFetched.allData, setAllReviewsNoFetch)
-
-      // const allReviews = getAllReviews(userFetched.allData.length - 1).map((x) =>
-      //   typeof x === "string" ? x : x.review
-      // )
-      // console.log("💖allReviews:", allReviews)
-
-      // const newAllReviewsNoFetch = userFetched.allData.map((data, index) => {
-      //   const name = data.name.first
-      //   const lastName = data.name.last
-
-      //   return formatNamesFunction(allReviews[index], name, lastName)
-      // })
-
-      // console.log("💖newAllReviewsNoFetch:", newAllReviewsNoFetch)
-
-      // setAllReviewsNoFetch(newAllReviewsNoFetch)
     }
   }, [userFetched])
-
-  // console.log("allReviewsNoFetch:", allReviewsNoFetch)
 
   const [allReviewsWithFetch, setAllReviewsWithFetch] = useState([])
   const { dataF, filtersF, pagination: paginationFilter } = useORG_Ctx_FetchWithFilters()
@@ -104,16 +68,11 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
   useEffect(() => {
     if (allReviewsWithFetch.length === 0 && filterAreApply) {
       updateAllReviews(dataF.allData, setAllReviewsWithFetch)
-      // updateAllReviewsWithFetch()
     } else if (paginationFilter !== 1) {
       setAllReviewsWithFetch([])
       updateAllReviews(dataF.allData, setAllReviewsWithFetch)
-
-      // updateAllReviewsWithFetch()
     }
   }, [dataF, filterAreApply, paginationFilter])
-
-  // console.log("allReviewsWithFetch:", allReviewsWithFetch)
 
   return (
     <STResults_MapWrapper
@@ -140,6 +99,8 @@ export const STResults_Map = ({ refUserViewShowFullMapButton }) => {
           </>
         )}
       </button>
+
+      <STResults_CardsOnMap />
     </STResults_MapWrapper>
   )
 }

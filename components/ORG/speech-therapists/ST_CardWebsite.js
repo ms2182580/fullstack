@@ -9,10 +9,22 @@ export const ST_CardWebsite = ({ firstName, lastName, isMobile = false, isThirdP
     <ST_CardWebsiteWrapper
       isThirdPageMobile={isThirdPageMobile}
       isMobile={isMobile}>
-      <WebsiteSvg />
+      <div>
+        <WebsiteSvg />
+
+        {isMobile === false ? (
+          <>
+            <P bold>Website:</P>
+          </>
+        ) : isMobile && isThirdPageMobile ? null : (
+          <>
+            <Caption bold>Website:</Caption>
+          </>
+        )}
+      </div>
+
       {isMobile === false ? (
         <>
-          <P bold>Website:</P>
           <P>{website}</P>
         </>
       ) : isMobile && isThirdPageMobile ? (
@@ -21,7 +33,6 @@ export const ST_CardWebsite = ({ firstName, lastName, isMobile = false, isThirdP
         </>
       ) : (
         <>
-          <Caption bold>Website:</Caption>
           <Caption>{website}</Caption>
         </>
       )}
