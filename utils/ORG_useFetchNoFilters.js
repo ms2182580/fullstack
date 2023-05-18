@@ -34,6 +34,7 @@ export const useFetchNoFilters = (pagination = 1, howMuch = 10, whichOne, should
             `/api/randomUser?results=${howMuch}&pagination=${pagination}&whichOne=${whichOne}`
           )
           const toJson = await theFetch.json()
+          // console.log('toJson:', toJson)
           getData.actualPage = toJson.info.page
           getData.allData = toJson.results
           let howMuchGet = getData.allData.length

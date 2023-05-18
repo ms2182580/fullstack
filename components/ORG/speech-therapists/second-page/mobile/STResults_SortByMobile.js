@@ -3,14 +3,14 @@ import { DownArrowSvg, UpArrowSvg } from "../../../../../assets/Icons/index.js"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile.js"
-import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby.js"
+import { ORG_SortybyFunction } from "../../../../../utils/ORG_SortybyFunction.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { CustomC } from "../../../dropdownFilters/styles/Singledropdown.js"
 import { STResults_SortByMobileWrapper } from "./styles/STResults_SortByMobileWrapper.js"
 
-export const STResults_SortByMobile = ({ title = "Sort By"}) => {
-  
-  const {mustShowFiltersMobile} = useORG_Ctx_ShowFiltersMobile()
+export const STResults_SortByMobile = ({ title = "Sort By" }) => {
+
+  const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -24,7 +24,7 @@ export const STResults_SortByMobile = ({ title = "Sort By"}) => {
     let elementSelected = e.target.textContent
     setActualSort(elementSelected)
 
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction(
       elementSelected,
       filtersST,
       userFetched,
@@ -37,7 +37,7 @@ export const STResults_SortByMobile = ({ title = "Sort By"}) => {
     }))
     setFilters(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_Sortyby(
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction(
       elementSelected,
       filtersF,
       dataF,
@@ -82,10 +82,10 @@ export const STResults_SortByMobile = ({ title = "Sort By"}) => {
             <span>{showDropdown ? <UpArrowSvg /> : <DownArrowSvg />}</span>
           </span>
           <div className="dropdownSuggestions">
-            {showDropdown && ORG_SortByOrder.length !== 0 && (
+            {showDropdown && ORG_SortByData.length !== 0 && (
               <>
                 <div></div>
-                {ORG_SortByOrder.map((x) => {
+                {ORG_SortByData.map((x) => {
                   let highlight = x === actualSort
 
                   return (

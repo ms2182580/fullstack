@@ -4,10 +4,10 @@ import { NEUTRALS } from "../../../../../../assets/Colors"
 export const STResults_MapWrapper = styled.div`
   width: ${(x) => (x.ORGShowFullMapFilter ? `100vw` : ``)};
   margin-left: ${(x) => (x.ORGShowFullMapFilter ? `-42px` : ``)};
-  min-width: ${(x) => (x.showFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `496px`)};
-  margin-right: ${(x) => (x.showFullMapButton ? `42px` : ``)};
+  min-width: ${(x) => (x.ORGshowFullMapButton ? `calc(100% - 40px)` : x.ORGShowFullMapFilter ? `100vw` : `100%`)};
+  margin-right: ${(x) => (x.ORGshowFullMapButton ? `42px` : ``)};
 
-  height: ${(x) => (x.showFullMapButton === false && x.ORGShowFullMapFilter === false ? `100vh` : ``)};
+  height: ${(x) => (x.ORGshowFullMapButton === false && x.ORGShowFullMapFilter === false ? `100vh` : ``)};
 
   position: sticky;
   top: 0;
@@ -15,8 +15,8 @@ export const STResults_MapWrapper = styled.div`
   & > :nth-child(1) {
     border-top-left-radius: ${(x) => (x.ORGShowFullMapFilter ? `0px` : `8px`)};
     border-bottom-left-radius: ${(x) => (x.ORGShowFullMapFilter ? `0px` : `8px`)};
-    border-top-right-radius: ${(x) => (x.showFullMapButton ? `8px` : ``)};
-    border-bottom-right-radius: ${(x) => (x.showFullMapButton ? `8px` : ``)};
+    border-top-right-radius: ${(x) => (x.ORGshowFullMapButton ? `8px` : ``)};
+    border-bottom-right-radius: ${(x) => (x.ORGshowFullMapButton ? `8px` : ``)};
     overflow: hidden;
   }
 
@@ -30,7 +30,7 @@ export const STResults_MapWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: ${(x) => (x.showFullMap ? `16px 36px 16px 24px  ` : `16px 24px 16px 36px`)};
+    padding: ${(x) => (x.ORGshowFullMapButton ? `16px 36px 16px 24px` : `16px 24px 16px 36px`)};
 
     gap: 31px;
 
@@ -41,13 +41,26 @@ export const STResults_MapWrapper = styled.div`
     & > span {
       font-size: 20px;
     }
+
+    @media (width < 1033px) {
+      gap: 23px;
+    }
   }
 
   & > :nth-child(3) {
     position: absolute;
-    top: 110px;
+
+    inset: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `619px 182px 0` : `auto 0 0`)};
+    
+
+    overflow-x: ${({ ORGshowFullMapButton }) => (!ORGshowFullMapButton ? `hidden` : ``)};
+
     border: 2px solid crimson;
-    min-width: 496px;
-    height: calc(100% - 110px);
+
+    width: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `` : `100%`)};
+    height: ${({ ORGShowFullMapFilter, ORGshowFullMapButton }) =>
+    ORGShowFullMapFilter || !ORGshowFullMapButton ? `calc(100% - 110px)` : ``};
+
+    margin-left: ${({ ORGShowFullMapFilter }) => (ORGShowFullMapFilter ? `2px` : ``)};
   }
 `

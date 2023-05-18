@@ -3,7 +3,7 @@ import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
 import { useORG_Ctx_FiltersApply } from "../../../context/ORG_Ctx_FiltersApply"
-import { ORG_Sortyby } from "../../../utils/ORG_Sortyby"
+import { ORG_SortybyFunction } from "../../../utils/ORG_SortybyFunction"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
@@ -40,7 +40,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     setWhichTitle(elementSelected)
     setActualSort(elementSelected)
 
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction(
       elementSelected,
       filtersST,
       userFetched,
@@ -53,7 +53,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     }))
     setFilters(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_Sortyby(
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction(
       elementSelected,
       filtersF,
       dataF,

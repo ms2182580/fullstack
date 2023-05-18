@@ -13,7 +13,7 @@ export const MainEntry = ({ widthWindow }) => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { isMobile } = useWidthWindow1024()
 
-  const { showFullMapButton, ORGShowFullMapFilter, setShowFullMapButton, setORGShowFullMapFilter } =
+  const { ORGshowFullMapButton, ORGShowFullMapFilter, setORGShowFullMapButton, setORGShowFullMapFilter } =
     useORG_CtxShowFiltersDesktop()
 
   const refUserViewShowFullMapButton = useRef(null)
@@ -22,7 +22,7 @@ export const MainEntry = ({ widthWindow }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
-    if (showFullMapButton === false && ORGShowFullMapFilter === false) {
+    if (ORGshowFullMapButton === false && ORGShowFullMapFilter === false) {
       const handleScroll = () => {
         setScrollPosition(window.pageYOffset)
       }
@@ -33,23 +33,23 @@ export const MainEntry = ({ widthWindow }) => {
         window.removeEventListener("scroll", handleScroll)
       }
     }
-  }, [showFullMapButton, ORGShowFullMapFilter])
+  }, [ORGshowFullMapButton, ORGShowFullMapFilter])
 
   useEffect(() => {
-    if (showFullMapButton === false && ORGShowFullMapFilter === false) {
+    if (ORGshowFullMapButton === false && ORGShowFullMapFilter === false) {
       window.scrollTo({ top: scrollPosition })
     }
-  }, [showFullMapButton, ORGShowFullMapFilter])
+  }, [ORGshowFullMapButton, ORGShowFullMapFilter])
 
   useEffect(() => {
-    if (showFullMapButton === true || ORGShowFullMapFilter === true) {
-      setShowFullMapButton(false)
+    if (ORGshowFullMapButton === true || ORGShowFullMapFilter === true) {
+      setORGShowFullMapButton(false)
       setORGShowFullMapFilter(false)
     }
   }, [])
-  
+
   return (
-    <MainEntryWrapper showFullMapButton={showFullMapButton}>
+    <MainEntryWrapper ORGshowFullMapButton={ORGshowFullMapButton}>
       {isMobile === false ? (
         <>
           <STResults_FilterSortbyHeaderDesktop
@@ -74,8 +74,8 @@ export const MainEntry = ({ widthWindow }) => {
           <ST_BreadcrumbsAndLastUpdated />
         </>
       ) : null}
-      
-      
+
+
     </MainEntryWrapper>
   )
 }

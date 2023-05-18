@@ -21,13 +21,13 @@ export const MainEntryWrapper = styled.div`
   & > :nth-child(2) {
     grid-area: filterAndMap;
     display: grid;
-    grid-template-columns: ${(x) => (x.showFullMapButton ? `1fr` : `2fr 1fr`)};
-    margin-bottom: ${(x) => (x.showFullMapButton ? `318px` : `222px`)};
+    grid-template-columns: ${(x) => (x.ORGshowFullMapButton ? `1fr` : `2fr 1fr`)};
+    margin-bottom: ${(x) => (x.ORGshowFullMapButton ? `318px` : `222px`)};
   }
 
   & > :nth-child(3) {
     grid-area: btns;
-    display: ${(x) => (x.showFullMapButton ? `none` : ``)};
+    display: ${(x) => (x.ORGshowFullMapButton ? `none` : ``)};
   }
 
   & > :nth-child(4) {
@@ -35,14 +35,6 @@ export const MainEntryWrapper = styled.div`
     margin-right: 40px;
   }
 
-  /* .Infront {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgba(44, 42, 42, 0.61);
-    border: 2px solid crimson !important;
-    
-  } */
 
   @media ${device.laptop} {
     grid-template-columns: 1fr 1fr;

@@ -5,7 +5,7 @@ import { STResults_SortbyDesktop } from "./STResults_SortbyDesktop"
 import { STResults_FilterSortbyHeaderDesktopWrapper } from "./styles/STResults_FilterSortbyHeaderDesktopWrapper"
 
 export const STResults_FilterSortbyHeaderDesktop = ({ refUserViewShowFullMapButton, refUserViewShowFullMapFilter }) => {
-  const { showFullMapButton, ORGShowFullMapFilter, setShowFullMapButton, setORGShowFullMapFilter } =
+  const { ORGshowFullMapButton, ORGShowFullMapFilter, setORGShowFullMapButton, setORGShowFullMapFilter } =
     useORG_CtxShowFiltersDesktop()
 
   return (

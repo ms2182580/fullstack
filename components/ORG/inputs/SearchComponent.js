@@ -13,7 +13,7 @@ import SearchComponentWrapper from "./styles/SearchComponentWrapper"
 export const SearchComponent = ({ toWhere = "undefined", landingHere }) => {
   const router = useRouter()
 
-  const { showFullMapButton, ORGShowFullMapFilter, setShowFullMapButton, setORGShowFullMapFilter } =
+  const { ORGshowFullMapButton, ORGShowFullMapFilter, setORGShowFullMapButton, setORGShowFullMapFilter } =
     useORG_CtxShowFiltersDesktop()
 
   const shouldTab = useShouldTab()

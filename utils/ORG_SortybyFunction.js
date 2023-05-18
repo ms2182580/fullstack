@@ -1,4 +1,4 @@
-export const ORG_Sortyby = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
+export const ORG_SortybyFunction = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
   let newOrder
   if (whichSort.toLowerCase() === "rating") {
     newOrder = sourceArr

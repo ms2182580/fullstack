@@ -4,7 +4,9 @@ export default async function handler(req, res) {
   try {
     const url = `https://randomuser.me/api/?results=${results}&nat=us&page=${pagination}`
     const response = await fetch(url)
+    // console.log('🟩response:', response)
     const data = await response.json()
+    // console.log('🟩data:', data)
 
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Methods", "GET")

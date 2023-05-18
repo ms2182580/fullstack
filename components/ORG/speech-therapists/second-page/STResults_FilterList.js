@@ -59,20 +59,33 @@ const reducer = (state, action) => {
 
     /* 
     !FH
-    Know how to stop the double render. Right now is patched with this setTimeout for user experience purpose
+    Know how to stop the double render. Right now is patched with this setTimeout for user experience purpose.
+    
+    Try to use useCallback hook to fic this
      */
+
     setTimeout(() => {
       setMustShowFiltersDesktop(false)
       setORGShowFullMapFilter(false)
       setFilterAreApply(true)
     }, 500)
 
+
     return { ...state }
   }
 }
 
+const nameToCloseTheFilters = "ShowFiltersDesktop"
+
 export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeft()
+
+  /* 
+  !FH
+  The problem is the "setFiltersLeftContext" that is making re renders to the context provider "ORG_CtxFiltersLeft_Provider"
+  
+  */
+
 
   const [state, dispatch] = useReducer(reducer, filterData)
   const [tempState, setTempState] = useState(filterData)
@@ -81,7 +94,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const [shouldClear, setShouldClear] = useState(false)
 
   const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
-  const { ORGShowFullMapFilter, setORGShowFullMapFilter, showFullMapButton, setShowFullMapButton } =
+  const { ORGShowFullMapFilter, setORGShowFullMapFilter, ORGshowFullMapButton, setORGShowFullMapButton } =
     useORG_CtxShowFiltersDesktop()
 
   const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } = useORG_Ctx_FiltersApply()
@@ -90,8 +103,8 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
     setMustShowFiltersDesktop((prevState) => !prevState)
     setORGShowFullMapFilter((prevState) => !prevState)
 
-    if (showFullMapButton) {
-      setShowFullMapButton(false)
+    if (ORGshowFullMapButton) {
+      setORGShowFullMapButton(false)
     }
 
     if (ORGShowFullMapFilter === false) {
@@ -135,11 +148,7 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
     }
   }, [isMobile])
 
-
   const { shouldFetchDesktopFilters, setShouldFetchDesktopFilters } = useORG_Ctx_FetchWithFilters()
-
-
-
 
   useEffect(() => {
     /* 
@@ -148,8 +157,6 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
     */
     setShouldFetchDesktopFilters(true)
   }, [])
-
-
 
   const handleAddFilters = (e) => {
     if (e.type === "click" || e.key === "Enter") {
@@ -165,15 +172,13 @@ export const STResults_FilterList = ({ refUserViewShowFullMapFilter }) => {
           filterData,
           setFiltersAppliedNewFilters,
           setDefaultWord,
-          defaultWord
+          defaultWord,
         ]
       })
     }
   }
 
   const shouldTab = useShouldTab()
-
-  const nameToCloseTheFilters = "ShowFiltersDesktop"
 
   useEffect(() => {
     const handleClickOutside = (event) => {

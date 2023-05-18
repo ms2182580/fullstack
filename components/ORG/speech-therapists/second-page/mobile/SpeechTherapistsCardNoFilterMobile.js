@@ -2,10 +2,10 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { ORG_Sortyby } from "../../../../../utils/ORG_Sortyby"
+import { ORG_SortybyFunction } from "../../../../../utils/ORG_SortybyFunction"
 import { ButtonSmall } from "../../../../ui/buttons/general"
-import { SpeechTherapistsCardMobileWrapper } from "./styles/SpeechTherapistsCardMobileWrapper"
 import { ThreeCardsComponents } from "./ThreeCardsComponents"
+import { SpeechTherapistsCardMobileWrapper } from "./styles/SpeechTherapistsCardMobileWrapper"
 
 export const SpeechTherapistsCardNoFilterMobile = () => {
   const router = useRouter()
@@ -19,7 +19,7 @@ export const SpeechTherapistsCardNoFilterMobile = () => {
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFiltersMobile()
 
   useEffect(() => {
-    const { newOrderData, newOrderFilters } = ORG_Sortyby(
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction(
       actualSort,
       filtersST,
       userFetched,

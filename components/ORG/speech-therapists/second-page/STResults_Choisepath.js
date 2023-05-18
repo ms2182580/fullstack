@@ -14,7 +14,7 @@ export const STResults_Choisepath = () => {
 
   const { isMobile } = useWidthWindow1024()
 
-  const { showFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
+  const { ORGshowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
 
   useEffect(() => {
     let filterHaveAtLeastOneValue = Object.values(filterData).some((x) => x.length > 0)
@@ -27,7 +27,7 @@ export const STResults_Choisepath = () => {
 
   return (
     <STResults_ChoisepathWrapper
-      showFullMapButton={showFullMapButton}
+      ORGshowFullMapButton={ORGshowFullMapButton}
       ORGShowFullMapFilter={ORGShowFullMapFilter}>
       {filterHaveAtLeastOneValueState && isMobile === false ? (
         <>
