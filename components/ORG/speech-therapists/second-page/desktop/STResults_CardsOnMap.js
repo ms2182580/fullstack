@@ -144,8 +144,8 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
     if (heightAndWidthFull !== undefined) {
       setWindowSizeFull((prevState) => ({ ...prevState, currHeight: myRef.current.clientHeight }))
     }
-    console.log('heightAndWidthFull:', heightAndWidthFull)
-  }, [heightAndWidthFull])
+    // console.log('heightAndWidthFull:', heightAndWidthFull)
+  }, [heightAndWidthFull, ORGshowFullMapButton])
 
   const [heightAndWidthToResizeShrink, setHeightAndWidthToResizeShrink] = useState()
   const [heightAndWidthToResizeFull, setHeightAndWidthToResizeFull] = useState()
@@ -205,6 +205,7 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
 
   useEffect(() => {
     // console.log("heightAndWidthToResizeFull:", heightAndWidthToResizeFull)
+    // console.log('windowSizeFull:', windowSizeFull)
   }, [heightAndWidthToResizeFull])
 
   // const [shouldMove, setShouldMove] = useState({ x: 0, y: 0 })
@@ -247,38 +248,12 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
       })
     }
 
-    // if (ORGshowFullMapButton && windowSizeFull.prevHeight !== null) {
-    //   setPositionsFull((prevState) => {
-    //     let newArr = prevState.map((x) => {
-    //       const shouldMoveXConditions =
-    //         (x.left > 0 && x.left < myRef.current.clientWidth - PinSvgDefault().props.width) ||
-    //         (x.top <= 0 && shouldMove.x > 0) ||
-    //         (x.left >= myRef.current.clientWidth - PinSvgDefault().props.width && shouldMove.x < 0)
-
-    //       const shouldMoveYConditions =
-    //         (x.top > 0 && x.top < myRef.current.clientHeight - PinSvgDefault().props.height) ||
-    //         (x.top <= 0 && shouldMove.y > 0) ||
-    //         (x.top >= myRef.current.clientHeight - PinSvgDefault().props.height && shouldMove.y < 0)
-
-    //       if (shouldMoveXConditions && shouldMoveYConditions) {
-    //         return { top: x.top + shouldMove.y, left: x.left + shouldMove.x }
-    //       } else if (shouldMoveXConditions && !shouldMoveYConditions) {
-    //         return { top: x.top, left: x.left + shouldMove.x }
-    //       } else if (!shouldMoveXConditions && shouldMoveYConditions) {
-    //         return { top: x.top + shouldMove.y, left: x.left }
-    //       } else {
-    //         return { top: x.top, left: x.left }
-    //       }
-    //     })
-    //     return [...newArr]
-    //   })
-    // }
   }, [shouldMoveShrink])
 
   useEffect(() => {
     if (ORGshowFullMapButton && heightAndWidthToResizeFull !== undefined) {
-      const maxRight = heightAndWidthToResizeFull.width - PinSvgDefault().props.width
-      const maxTop = heightAndWidthToResizeFull.height - PinSvgDefault().props.height
+      const maxRight = heightAndWidthToResizeFull.width - PinSvgHover().props.width
+      const maxTop = heightAndWidthToResizeFull.height - PinSvgHover().props.height
 
       setPositionsFull((prevState) => {
         let newArr = prevState.map((x) => {

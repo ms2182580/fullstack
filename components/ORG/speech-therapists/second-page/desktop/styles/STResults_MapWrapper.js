@@ -55,8 +55,6 @@ export const STResults_MapWrapper = styled.div`
 
     overflow-x: ${({ ORGshowFullMapButton }) => (!ORGshowFullMapButton ? `hidden` : ``)};
 
-    border: 2px solid crimson;
-
     width: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `` : `100%`)};
     height: ${({ ORGShowFullMapFilter, ORGshowFullMapButton }) =>
     ORGShowFullMapFilter || !ORGshowFullMapButton ? `calc(100% - 110px)` : ``};
