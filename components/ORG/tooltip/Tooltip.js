@@ -2,14 +2,16 @@ import { QuestionTooltip_STSvg } from "../../../assets/Icons"
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { TooltipWrapper } from './styles/TooltipWrapper.js'
+
 
 export const Tooltip = ({ isThirdPage = false }) => {
   const { isMobile } = useWidthWindow1024()
 
   return (
-    <div>
+    <TooltipWrapper>
       {isMobile === false ? (
-        <H4>Speech Language Pathologist</H4>
+        <H3>Speech Language Pathologist</H3>
       ) : (
         <span>
           <Caption>Speech Language Pathologist,</Caption>
@@ -56,6 +58,6 @@ export const Tooltip = ({ isThirdPage = false }) => {
           </span>
         </>
       )}
-    </div>
+    </TooltipWrapper>
   )
 }

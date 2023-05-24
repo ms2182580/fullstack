@@ -8,16 +8,20 @@ export const ST_CardWrapper = styled.div`
   grid-template-areas: "leftPart rightPart";
   align-items: stretch;
 
-  /* margin-bottom: 52px; */
-
   border-radius: 8px;
   border: 1px solid ${NEUTRALS.LIGHT_GREY};
+  
 `
 
 export const ST_CardWrapper_Left = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
-  min-width: ${(x) => (x.STDetail ? "432px" : "320px")};
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  
+  
+  
 `
 
 export const ST_CardWrapper_Left_LeftImage = styled.div`
@@ -26,7 +30,7 @@ export const ST_CardWrapper_Left_LeftImage = styled.div`
   border-top-left-radius: 8px;
   margin-bottom: 24px;
 
-  & > div {
+  & > :nth-child(2) {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -34,6 +38,7 @@ export const ST_CardWrapper_Left_LeftImage = styled.div`
 `
 
 export const ST_CardWrapper_Left_LeftInfo = styled.div`
+
   margin-left: 22px;
   margin-bottom: 16px;
   margin-right: 9px;
@@ -96,7 +101,7 @@ export const ST_CardWrapper_Right = styled.div`
   & > :nth-child(3) {
     display: flex;
     align-items: center;
-
+    
     & > :nth-child(1) {
       margin-right: 16px;
     }

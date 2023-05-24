@@ -50,7 +50,8 @@ export const STResults_MapWrapper = styled.div`
   & > :nth-child(3) {
     position: absolute;
 
-    inset: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `619px 182px 0` : `auto 0 0`)};
+    /* inset: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `619px 182px 0` : `auto 0 0`)}; */
+    inset: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `650px 182px 0` : `auto 0 0`)};
     
 
     overflow-x: ${({ ORGshowFullMapButton }) => (!ORGshowFullMapButton ? `hidden` : ``)};
@@ -60,5 +61,6 @@ export const STResults_MapWrapper = styled.div`
     ORGShowFullMapFilter || !ORGshowFullMapButton ? `calc(100% - 110px)` : ``};
 
     margin-left: ${({ ORGShowFullMapFilter }) => (ORGShowFullMapFilter ? `2px` : ``)};
+    
   }
 `

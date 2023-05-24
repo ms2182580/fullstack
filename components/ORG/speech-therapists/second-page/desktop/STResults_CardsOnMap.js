@@ -86,8 +86,22 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
     }
   }, [myRef.current])
 
-  const [positionsShrinked, setPositionsShrinked] = useState([])
-  const [positionsFull, setPositionsFull] = useState([])
+  /* 
+  ?CHANGE HERE
+   */
+  const [positionsShrinked, setPositionsShrinked] = useState([
+    {
+      top: 0,
+      left: 0
+    }
+  ])
+  const [positionsFull, setPositionsFull] = useState([
+    {
+      top: 0,
+      left: 0
+    }
+  ])
+
   useEffect(() => {
     if (heightAndWidthShrinked !== undefined) {
       const newPositions = []
@@ -103,7 +117,30 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
       }
       setPositionsShrinked(newPositions)
     }
-  }, [userFetched, dataF, heightAndWidthShrinked])
+  }, [userFetched, dataF])
+  /* 
+  ?CHANGE HERE
+   */
+
+  useEffect(() => {
+    if (heightAndWidthShrinked !== undefined) {
+      const newPositions = []
+      for (let i = 0; i < ORG_MapDefaultValue(); i++) {
+        const calcLeft = (positionsShrinked[i]?.left / windowSizeShrink.prevWidth) * windowSizeShrink.currWidth
+        const left = calcLeft < 0 ? 0 : calcLeft
+
+        const calcTop = (positionsShrinked[i]?.top / windowSizeShrink.prevHeight) * windowSizeShrink.currHeight
+
+        const top = calcTop < 0 ? 0 : calcTop
+        // console.log(top, left)
+        newPositions.push({ top, left })
+      }
+      setPositionsShrinked(newPositions)
+    }
+  }, [heightAndWidthShrinked])
+  /* 
+  ?CHANGE HERE
+   */
 
   useEffect(() => {
     if (heightAndWidthFull !== undefined) {
@@ -119,7 +156,39 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
       }
       setPositionsFull(newPositions)
     }
-  }, [userFetched, dataF, heightAndWidthFull])
+  }, [userFetched, dataF])
+  /* 
+  ?CHANGE HERE
+  */
+
+  useEffect(() => {
+    /*_codeHere_*/
+    console.log("windowSizeFull:", windowSizeFull)
+  }, [windowSizeFull])
+
+  useEffect(() => {
+    if (heightAndWidthFull !== undefined) {
+      const newPositions = []
+      const maxLeft = windowSizeFull.currWidth - PinSvgHover().props.width
+      const maxTop = windowSizeFull.currHeight - PinSvgHover().props.height
+
+      for (let i = 0; i < ORG_MapFullValue(); i++) {
+        const calcLeft = (positionsFull[i]?.left / windowSizeFull.prevWidth) * windowSizeFull.currWidth
+
+        const left = calcLeft < 0 ? 0 : calcLeft > maxLeft ? maxLeft : calcLeft
+
+        const calcTop = (positionsFull[i]?.top / windowSizeFull.prevHeight) * windowSizeFull.currHeight
+
+        const top = calcTop < 0 ? 0 : calcTop > maxTop ? maxTop : calcTop
+
+        newPositions.push({ top, left })
+      }
+      setPositionsFull(newPositions)
+    }
+  }, [heightAndWidthFull])
+  /* 
+  ?CHANGE HERE
+  */
 
   useEffect(() => {
     // console.dir("positionsFull:", positionsFull)
@@ -139,76 +208,48 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
     prevHeight: null
   })
 
-  useEffect(() => {
-    // console.log("heightAndWidthFull:", heightAndWidthFull)
-    if (heightAndWidthFull !== undefined) {
-      setWindowSizeFull((prevState) => ({ ...prevState, currHeight: myRef.current.clientHeight }))
-    }
-    // console.log('heightAndWidthFull:', heightAndWidthFull)
-  }, [heightAndWidthFull, ORGshowFullMapButton])
-
   const [heightAndWidthToResizeShrink, setHeightAndWidthToResizeShrink] = useState()
   const [heightAndWidthToResizeFull, setHeightAndWidthToResizeFull] = useState()
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowSizeShrink((prevState) => ({
-        // prevHeight: prevState.currHeight,
-        prevWidth: prevState.currWidth,
-        currWidth: window.innerWidth
-        // currHeight: window.innerHeight
-      }))
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        setWindowSizeShrink((prevState) => ({
+          prevHeight: prevState.currHeight,
+          prevWidth: prevState.currWidth,
+          currWidth: entry.contentRect.width,
+          currHeight: entry.contentRect.height
+        }))
 
-      setWindowSizeFull((prevState) => ({
-        prevHeight: prevState.currHeight,
-        currHeight: myRef.current.clientHeight,
-        prevWidth: prevState.currWidth,
-        currWidth: window.innerWidth
-      }))
+        setWindowSizeFull((prevState) => ({
+          prevHeight: prevState.currHeight,
+          currHeight: entry.contentRect.height,
+          prevWidth: prevState.currWidth,
+          currWidth: entry.contentRect.width
+        }))
 
-      if (!ORGshowFullMapButton && heightAndWidthShrinked !== undefined) {
-        setHeightAndWidthToResizeShrink({ width: myRef.current.clientWidth, height: myRef.current.clientHeight })
+        setHeightAndWidthShrinked({
+          width: entry.contentRect.width,
+          height: entry.contentRect.height
+        })
+        setHeightAndWidthFull({
+          width: entry.contentRect.width,
+          height: entry.contentRect.height
+        })
       }
+    })
 
-      // console.log('ORGshowFullMapButton:', ORGshowFullMapButton)
-      // console.log('heightAndWidthFull !== undefined:', heightAndWidthFull !== undefined)
-      // console.log('ORGshowFullMapButton && heightAndWidthFull !== undefined:', ORGshowFullMapButton && heightAndWidthFull !== undefined)
-      // console.log('windowSizeFull:', windowSizeFull)
-      // console.log('myRef.current.clientWidth:', myRef.current.clientWidth)
-      // console.log()
-      if (ORGshowFullMapButton && heightAndWidthFull !== undefined) {
-        setHeightAndWidthToResizeFull({ width: myRef.current.clientWidth, height: myRef.current.clientHeight })
-      }
-
-      // console.log("screen.availHeight:", screen.availHeight)
-      // console.log("window.innerHeight:", window.innerHeight)
-      // console.log("window.outerWidth:", window.outerWidth)
-      // console.log("screen.availWidth:", window.screen.availWidth)
-      // console.log("window.innerWidth:", window.innerWidth)
-      // console.dir()
-      // console.log("screen:", screen)
-      // console.log('document.fullscreenElement:', document.fullscreenElement)
-      // console.log('window:', window)
-      // console.log('window.fullScreen:', window.fullScreen)
-      // console.log('window.screen:', window.screen)}
+    if (myRef.current) {
+      resizeObserver.observe(myRef.current)
     }
 
-
-    // Add the event listener when the component mounts
-    window.addEventListener("resize", handleResize)
-
-    // Cleanup function to remove the event listener when the component unmounts
     return () => {
-      window.removeEventListener("resize", handleResize)
+      if (myRef.current) {
+        resizeObserver.unobserve(myRef.current)
+      }
     }
-  }, [heightAndWidthShrinked, heightAndWidthFull, ORGshowFullMapButton, windowSizeFull])
+  }, [])
 
-  useEffect(() => {
-    // console.log("heightAndWidthToResizeFull:", heightAndWidthToResizeFull)
-    // console.log('windowSizeFull:', windowSizeFull)
-  }, [heightAndWidthToResizeFull])
-
-  // const [shouldMove, setShouldMove] = useState({ x: 0, y: 0 })
   const [shouldMoveShrink, setshouldMoveShrink] = useState({ x: 0 })
   const [shouldMoveFull, setShouldMoveFull] = useState({ x: 0, y: 0 })
 
@@ -247,13 +288,14 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
         return [...newArr]
       })
     }
-
   }, [shouldMoveShrink])
 
   useEffect(() => {
     if (ORGshowFullMapButton && heightAndWidthToResizeFull !== undefined) {
       const maxRight = heightAndWidthToResizeFull.width - PinSvgHover().props.width
+      console.log("maxRight:", maxRight)
       const maxTop = heightAndWidthToResizeFull.height - PinSvgHover().props.height
+      console.log("maxTop:", maxTop)
 
       setPositionsFull((prevState) => {
         let newArr = prevState.map((x) => {

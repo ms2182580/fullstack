@@ -16,7 +16,7 @@ export const STDetail_MobileCard_FirstPlace = ({
   howFar,
   rating,
   reviews,
-  diagnoses,
+  diagnosis,
   isMobile = false,
   isThirdPage = false
 }) => {
@@ -60,7 +60,7 @@ export const STDetail_MobileCard_FirstPlace = ({
           />
 
           <FriendlyDiagnoses
-            diagnoses={diagnoses}
+            diagnosis={diagnosis}
             isMobile={true}
           />
         </div>
@@ -107,7 +107,7 @@ export const STDetail_MobileCard_FirstPlace = ({
         />
 
         <FriendlyDiagnoses
-          diagnoses={diagnoses}
+          diagnosis={diagnosis}
           isMobile={true}
         />
       </div>

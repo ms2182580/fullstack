@@ -6,7 +6,7 @@ import { STDetail_MobileWrapper } from "./styles/STDetail_MobileWrapper.js"
 export const STDetail_Mobile = ({ STData }) => {
   const { medium: image } = STData.data[0].picture
   const { first: firstName, last: lastName } = STData.data[0].name
-  const { rating, reviews, diagnoses, distance: howFar } = STData.filters[0]
+  const { rating, reviews, diagnosis, distance: howFar } = STData.filters[0]
 
   return (
     <STDetail_MobileWrapper>
@@ -21,7 +21,7 @@ export const STDetail_Mobile = ({ STData }) => {
             howFar={howFar}
             rating={rating}
             reviews={reviews}
-            diagnoses={diagnoses}
+            diagnosis={diagnosis}
             isMobile={true}
             isThirdPage={true}
           />

@@ -5,4 +5,6 @@ export const STResults_CardsOnMapWrapper = styled.div`
   
   
   
+  
+  
 `

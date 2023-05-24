@@ -74,8 +74,6 @@ export const MainEntry = ({ widthWindow }) => {
           <ST_BreadcrumbsAndLastUpdated />
         </>
       ) : null}
-
-
     </MainEntryWrapper>
   )
 }

@@ -9,7 +9,7 @@ import { ST_CardEmail } from "../ST_CardEmail.js"
 import { ST_CardLocation } from "../ST_CardLocation.js"
 import { ST_CardPhone } from "../ST_CardPhone"
 import { ST_PageLastUpdated } from "../ST_PageLastUpdated"
-import { ST_TwoButtons } from "../ST_TwoButtons"
+import { STDetail_TwoButtons } from "../ST_TwoButtons"
 import { ST_CardInfo } from "../second-page/ST_CardInfo"
 import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
 import { STDetail_About } from "./STDetail_About"
@@ -24,6 +24,14 @@ import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 
 export const STDetail_Main = () => {
   const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+
+  const route = useRouter()
+
+  if (speechtherapist === "") {
+    route.push("/ORG/SpeechTherapists")
+    return
+  }
+
   // console.log('speechtherapist:', speechtherapist)
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
@@ -34,42 +42,47 @@ export const STDetail_Main = () => {
   const [qualifications, setQualifications] = useState()
   const [additionalCredentials, setAdditionalCredentials] = useState()
 
-  const route = useRouter()
-
   const { isMobile } = useWidthWindow1024()
 
   useEffect(() => {
-    setLanguages(speechtherapist.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
+    if (isMobile) {
+      setLanguages(speechtherapist.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-    setServiceSettings(speechtherapist.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setServiceSettings(speechtherapist.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-    setMeetingFormat(speechtherapist.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setMeetingFormat(speechtherapist.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-    setInsurance(speechtherapist.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setInsurance(speechtherapist.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-    setAgesServed(
-      speechtherapist.filters[0].agesServed.map((x) => {
-        if (x.split(" ")[1] === "months") {
-          return x[0].toUpperCase() + x.slice(1)
-        } else {
-          return `${x[0].toUpperCase()} ${x.slice(1)} old`
-        }
-      })
-    )
+      setAgesServed(
+        speechtherapist.filters[0].agesServed.map((x) => {
+          if (x.split(" ")[1] === "months") {
+            return x[0].toUpperCase() + x.slice(1)
+          } else {
+            return `${x[0].toUpperCase()} ${x.slice(1)} old`
+          }
+        })
+      )
 
-    setQualifications([
-      ["Education Level: Master's"],
-      ["Years in Practice: 5 years"],
-      ["License Number: 1239082"],
-      ["State of License: New York"]
-    ])
+      setQualifications([
+        ["Education Level: Master's"],
+        ["Years in Practice: 5 years"],
+        ["License Number: 1239082"],
+        ["State of License: New York"]
+      ])
 
-    setAdditionalCredentials([
-      ["Lee Silverman Voice Treatment"],
-      ["Certification"],
-      ["SLP, Board Certified Behavior "],
-      ["Analyst (BCBA)"]
-    ])
+      setAdditionalCredentials([
+        ["Lee Silverman Voice Treatment"],
+        ["Certification"],
+        ["SLP, Board Certified Behavior "],
+        ["Analyst (BCBA)"]
+      ])
+    }
+  }, [isMobile])
+
+  useEffect(() => {
+    /*_codeHere_*/
+    console.log("isMobile:", isMobile)
   }, [isMobile])
 
   const [highlight, setHighlight] = useState("about")
@@ -78,15 +91,21 @@ export const STDetail_Main = () => {
   const contactRef = useRef(null)
   const reviewsRef = useRef(null)
 
+  const refHandler = (el) => {
+    detailsRef.current = el
+    contactRef.current = el
+  }
+
   useEffect(() => {
     if (
       aboutRef.current !== null &&
       detailsRef.current !== null &&
       contactRef.current !== null &&
-      reviewsRef.current !== null
+      reviewsRef.current !== null &&
+      isMobile
     ) {
       const handleScroll = () => {
-        if (aboutRef.current) {
+        if (aboutRef.current && isMobile) {
           const aboutPosition = aboutRef.current.offsetTop
           const detailsPosition = detailsRef.current.offsetTop
           const contactPosition = contactRef.current.offsetTop
@@ -110,11 +129,6 @@ export const STDetail_Main = () => {
       }
     }
   }, [])
-
-  if (speechtherapist === "") {
-    route.push("/ORG/SpeechTherapists")
-    return
-  }
 
   return (
     <STDetail_MainWrapper isMobile={isMobile}>
@@ -145,6 +159,7 @@ export const STDetail_Main = () => {
       <div>
         {isMobile === false ? (
           <>
+
             <STDetail_STDetails STData={speechtherapist} />
           </>
         ) : (
@@ -165,11 +180,26 @@ export const STDetail_Main = () => {
           </>
         )}
 
-        <STDetail_About
-          name={speechtherapist.data[0].name.first}
-          lastName={speechtherapist.data[0].name.last}
-          aboutRef={aboutRef}
-        />
+        {isMobile === false ? (
+          <>
+            <div id="Appointments">Apointments here</div>
+          </>
+        ) : null}
+
+
+
+
+        {isMobile === false ? (
+          <div ref={aboutRef}></div>
+        ) : (
+          <>
+            <STDetail_About
+              name={speechtherapist.data[0].name.first}
+              lastName={speechtherapist.data[0].name.last}
+              aboutRef={aboutRef}
+            />
+          </>
+        )}
 
         {isMobile === false ? null : (
           <>
@@ -177,7 +207,9 @@ export const STDetail_Main = () => {
           </>
         )}
 
-        {isMobile === false ? null : (
+        {isMobile === false ? (
+          <div ref={refHandler}></div>
+        ) : (
           <STDetail_STDetails_ThirdPageWrapper
             id="Details"
             ref={detailsRef}>
@@ -265,7 +297,7 @@ export const STDetail_Main = () => {
                 isMobile={true}
                 isThirdPageMobile={true}
               />
-              <ST_TwoButtons />
+              <STDetail_TwoButtons />
             </div>
 
             {isMobile === false ? null : (
@@ -288,9 +320,20 @@ export const STDetail_Main = () => {
           </>
         )}
 
+
+        {isMobile === false ? (
+          <>
+            <div id="FAQs">FAQ's</div>
+          </>
+        ) : null}
+
+
+
+
         {isMobile === false ? (
           <>
             <ST_PageLastUpdated />
+            <div>❌ And breadcrumbs</div>
           </>
         ) : null}
       </div>

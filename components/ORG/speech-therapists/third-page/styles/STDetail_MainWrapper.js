@@ -8,7 +8,9 @@ export const STDetail_MainWrapper = styled.div`
   }
 
   & > :nth-child(2) {
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25); */
+    border-radius:8px;
+    
   }
 
   & > :nth-child(2) {

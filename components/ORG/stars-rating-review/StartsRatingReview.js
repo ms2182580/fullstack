@@ -36,7 +36,7 @@ export const StarsRatingReview = ({ rating, reviews, isMobile = false }) => {
       {isMobile === false ? (
         <>
           <P>{rating}.0</P>
-          <P dark_gray>({reviews} reviews)</P>
+          <P hyperlink_normal underline>({reviews} reviews)</P>
         </>
       ) : (
         <>
