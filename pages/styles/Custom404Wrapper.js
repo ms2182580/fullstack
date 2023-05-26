@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Custom404Wrapper = styled.div`
+const Custom404Wrapper = styled.div`
   margin: 27px 82px 123px 82px;
 
   & > span:nth-child(1) > :nth-child(1) {
@@ -17,3 +17,6 @@ export const Custom404Wrapper = styled.div`
     }
   }
 `
+
+
+export default Custom404Wrapper

@@ -1,9 +1,8 @@
-import { BackArrow } from "../assets/Icons";
-import { P } from "../components/ui/heading_body_text/DesktopMobileFonts";
-import { LinkNoStyle } from "../components/ui/hyperlink/HyperlinkNoStyles";
-import { UnderConstruction } from "../components/under-construction/UnderConstruction";
-import { Custom404Wrapper } from './styles/Custom404Wrapper.js';
-
+import { BackArrow } from "../assets/Icons"
+import { P } from "../components/ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../components/ui/hyperlink/HyperlinkNoStyles"
+import { UnderConstruction } from "../components/under-construction/UnderConstruction"
+import Custom404Wrapper from "./styles/Custom404Wrapper.js"
 
 const Custom404 = () => {
   return (
@@ -15,9 +14,8 @@ const Custom404 = () => {
       </span>
 
       <UnderConstruction />
-
     </Custom404Wrapper>
-  );
+  )
 }
 
-export default Custom404;
+export default Custom404
