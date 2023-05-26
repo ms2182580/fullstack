@@ -64,9 +64,27 @@ export const STDetail_CardWrapper_Right_Detail = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   padding: 24px;
   position: relative;
+  
+  & > :last-child{
+    display: flex;
+    justify-content: end;
+    gap:44px;
+    
+    & > :nth-child(2):hover{
+      cursor: pointer;
+      filter:brightness(90%)
+    }
+    
+    
+  }
+  
+  
 `
 
 export const STDetail_CardWrapper_FirstRow = styled.div`
+  margin-bottom: 40px;
+  
+
   & > :nth-child(1) {
     position: absolute;
     right: 24px;
@@ -82,77 +100,62 @@ export const STDetail_CardWrapper_FirstRow = styled.div`
       text-align: center;
     }
 
-    & > :nth-child(1):hover,
-    & > :nth-child(2):hover {
-      opacity: 0.9;
-    }
-    
-    @media (max-width:1300px) {
+    @media (max-width: 1300px) {
       grid-template-columns: 1fr;
     }
-    
   }
 
   & > :nth-child(2) {
     display: flex;
-    gap:31px;
-    
-    & > :nth-child(2){
+    gap: 31px;
+    align-items: center;
+    margin-right: 183px;
+
+    & > :nth-child(1) > span {
+      white-space: pre;
+    }
+
+    & > :nth-child(2) {
       cursor: pointer;
     }
-    
+
     @media (max-width: 1300px) {
       flex-direction: column;
-      gap:0;
-      
+      gap: 0;
+      align-items: baseline;
+
       & > :nth-child(1) > span {
-        display:block;
+        display: block;
       }
-      
-      & > :nth-child(2){
-        width:30px;
+
+      & > :nth-child(2) {
+        width: 30px;
       }
-      
-      
-      & > :nth-child(2) > :nth-child(2) > :nth-child(2){
-        left:-120px;
-        
+
+      & > :nth-child(2) > :nth-child(2) > :nth-child(2) {
+        left: -120px;
       }
-      
-      
     }
-    
-    
-    
   }
 
   & > :nth-child(4) {
     margin-bottom: 8px;
   }
-  
-  & > :nth-child(5){
+
+  & > :nth-child(5) {
     margin-bottom: 16px;
   }
-  
-  & > :nth-child(6){
+
+  & > :nth-child(6) {
     margin-bottom: 24px;
   }
-  & > :nth-child(7){
-    margin-bottom: 45px;
-  }
-  
-  
-  
-  
-
 `
 
 export const STDetail_CardWrapper_SecondRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "leftPart rightPart";
-  margin-inline-end: 24px;
-  margin-bottom: 93px;
+  margin-bottom: 32px;
 `
 
 export const STDetail_CardWrapper_SecondRow_LeftPart = styled.div`

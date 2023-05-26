@@ -100,7 +100,8 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   font-size: ${FontsHeadDesktop.HEADING_3};
   line-height: ${LineHeightHeadDesktop.HEADING_3};
-  font-weight: ${(x) => (x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600)};
+  font-weight: ${(x) =>
+    x.bold ? FontsWeights.BOLDER_800 : x.medium ? FontsWeights.MEDIUM_500 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_3};
   color: ${(x) =>
     x.logo
@@ -126,10 +127,19 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
   font-size: ${FontsHeadDesktop.HEADING_4};
   line-height: ${LineHeightHeadDesktop.HEADING_4};
-  font-weight: ${(x) => (x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600)};
+  font-weight: ${(x) =>
+    x.bold ? FontsWeights.BOLDER_800 : x.medium ? FontsWeights.MEDIUM_500 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_4};
   color: ${(x) =>
-    x.logo ? PRIMARY.PRIMARY_LOGO : x.cta ? PRIMARY.PRIMARY_CTA : x.darkGrey ? NEUTRALS.DARK_GREY : NEUTRALS.BLACK};
+    x.logo
+      ? PRIMARY.PRIMARY_LOGO
+      : x.cta
+        ? PRIMARY.PRIMARY_CTA
+        : x.hover
+          ? PRIMARY.PRIMARY_HOVER
+          : x.darkGrey
+            ? NEUTRALS.DARK_GREY
+            : NEUTRALS.BLACK};
 
   @media (${device.laptop}) {
     font-size: ${FontsHeadMobile.HEADING_4};

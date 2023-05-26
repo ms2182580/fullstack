@@ -12,7 +12,7 @@ import { STDetail_MapComponentWrapper } from "./styles/STDetail_MapComponentWrap
 export const STDetail_MapComponent = () => {
   return (
     <STDetail_MapComponentWrapper tabIndex={0}>
-      <Image src={ORG_Map_SpeechTherapistDetail} alt={"Map image"}/>
+      <Image src={ORG_Map_SpeechTherapistDetail} alt={"Map image"} />
     </STDetail_MapComponentWrapper>
   )
 }

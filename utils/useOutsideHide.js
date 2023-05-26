@@ -8,17 +8,17 @@ export const useOutsideHide = (ref, handleStateOutside, howMuchDelay = 0) => {
           handleStateOutside(false)
         }
       }
-      
+
       document.addEventListener("mousedown", handleClickOutside)
-      
+
       return () => {
         document.removeEventListener("mousedown", handleClickOutside)
       }
-      
-      
+
+
     }, howMuchDelay)
 
-    
-    
+
+
   }, [ref])
 }

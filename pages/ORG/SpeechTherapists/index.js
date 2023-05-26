@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { BackArrow } from "../../../assets/Icons"
 import { SearchComponent } from "../../../components/ORG/inputs/SearchComponent"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
-import { MainEntry } from "../../../components/ORG/speech-therapists/second-page/MainEntry"
+import { STRestuls_MainEntry } from "../../../components/ORG/speech-therapists/second-page/STRestuls_MainEntry"
 import { Breadcrumbs } from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
@@ -83,7 +83,7 @@ const ORGSpeechTherapists = () => {
         ) : null}
       </SpeechTherapistWrapper>
 
-      <MainEntry widthWindow={widthWindow} />
+      <STRestuls_MainEntry widthWindow={widthWindow} />
     </ORGSpeechTherapistsSecondPageWrapper>
   )
 }

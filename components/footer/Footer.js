@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { Caption } from "../ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "../ui/heading_body_text/HeaderFonts"
@@ -50,9 +51,12 @@ export const Footer = () => {
   //   }
   // }, [ORGShowFullMapFilter])
 
+  const { modalShowedCtx } = useCtx_ShowModal()
+
   return (
     <FooterWrapper
       ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}
+
     // ref={toDisableTab}
     // tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}
     // onKeyDown={handleNoTab}
@@ -95,7 +99,8 @@ export const Footer = () => {
       <FooterSignupLoginButtons />
       <FooterSocialmedia />
       <Caption>A public benefit company helping parents find the best services for their children.</Caption>
-      {ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && <div className="InFront"></div>}
+      {modalShowedCtx ||
+        (ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && <div className="InFront"></div>)}
     </FooterWrapper>
   )
 }

@@ -1,7 +1,9 @@
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React from "react"
-import { CarePlanSvg, ShareSvg } from "../../../../../assets/Icons"
+import ORG_STDetail_Share_Modal_QRCodeIcon from "../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRCodeIcon.png"
 import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
+import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
@@ -16,8 +18,10 @@ import { ST_CardWrapper_Left_LeftInfo } from "../../styles/ST_CardWrapper"
 import { STDetail_About } from "../STDetail_About"
 import { STDetail_AcceptingNewClients } from "./STDetail_AcceptingNewClients.js"
 import { STDetail_CardWrapper_SecondRow_Info } from "./STDetail_CardWrapper_SecondRow_Info"
+import { STDetail_CarePlan } from "./STDetail_CarePlan"
 import { STDetail_MapComponent } from "./STDetail_MapComponent"
 import { STDetail_ProviderDetailBox } from "./STDetail_ProviderDetailBox"
+import { STDetail_Share } from "./STDetail_Share"
 import {
   STDetail_CardWrapper,
   STDetail_CardWrapper_Card_Detail,
@@ -31,6 +35,11 @@ import {
 } from "./styles/STDetail_CardWrapper"
 
 export const STDetail_STDetails = ({ STData }) => {
+  const { push } = useRouter()
+  const handlePush404 = () => {
+    push("/404")
+  }
+
   return (
     <STDetail_CardWrapper>
       {STData.data.map((everySingleValue, i) => {
@@ -47,8 +56,8 @@ export const STDetail_STDetails = ({ STData }) => {
         )
         let serviceSetting = STData.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
 
-        console.log("everySingleValue:", everySingleValue)
-        console.log("STData:", STData)
+        // console.log("everySingleValue:", everySingleValue)
+        // console.log("STData:", STData)
         return (
           <STDetail_CardWrapper_Card_Detail key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
             <STDetail_CardWrapper_Left>
@@ -89,28 +98,12 @@ export const STDetail_STDetails = ({ STData }) => {
             <STDetail_CardWrapper_Right_Detail>
               <STDetail_CardWrapper_FirstRow>
                 <div>
-                  <div>
-                    {/* 
-                    This is a "In construction" page
-                    
-                    */}
-                    <CarePlanSvg />
-                    <P primary_hover>
-                      Add to <br />
-                      Care Plan
-                    </P>
-                  </div>
-                  <div>
-                    {/* 
-                  //!FH0
-                  Finish this
-                  
-                  
-                  */}
-
-                    <ShareSvg tabIndex={0} />
-                    <P primary_hover>Share</P>
-                  </div>
+                  <STDetail_CarePlan />
+                  <STDetail_Share
+                    picture={everySingleValue.picture.large}
+                    name={everySingleValue.name.first}
+                    lastName={everySingleValue.name.last}
+                  />
                 </div>
                 <div>
                   <H2 bold>
@@ -134,6 +127,10 @@ export const STDetail_STDetails = ({ STData }) => {
               <STDetail_CardWrapper_SecondRow>
                 <STDetail_CardWrapper_SecondRow_LeftPart>
                   <STDetail_CardWrapper_SecondRow_Info
+                    title="Practice areas"
+                    dataToShow={STData.filters[0][ORG_FILTERS_KEYS.diagnosis.updateState]}
+                  />
+                  <STDetail_CardWrapper_SecondRow_Info
                     title="Ages served"
                     dataToShow={STData.filters[0][ORG_FILTERS_KEYS.agesServed.updateState]}
                   />
@@ -142,24 +139,16 @@ export const STDetail_STDetails = ({ STData }) => {
                     dataToShow={languages}
                   />
                   <STDetail_CardWrapper_SecondRow_Info
-                    title="Years of Practice"
-                    dataToShow={STData.filters[0].yearsOfPractice}
-                  />
-                  <STDetail_CardWrapper_SecondRow_Info
-                    title="Practice Setting"
+                    title="Setting"
                     dataToShow={serviceSetting}
-                  />
-                  <STDetail_CardWrapper_SecondRow_Info
-                    title="Insurance"
-                    dataToShow={accepts}
-                  />
-                  <STDetail_CardWrapper_SecondRow_Info
-                    title="Meeting Format"
-                    dataToShow={meetingFormat}
                   />
                 </STDetail_CardWrapper_SecondRow_LeftPart>
 
                 <STDetail_CardWrapper_SecondRow_RightPart>
+                  <STDetail_CardWrapper_SecondRow_Info
+                    title="Payment options"
+                    dataToShow={accepts}
+                  />
                   <STDetail_CardWrapper_SecondRow_Info
                     title="Qualifications"
                     dataToShow={serviceSetting}
@@ -183,6 +172,19 @@ export const STDetail_STDetails = ({ STData }) => {
                 lastName={STData.data[0].name.last}
                 aboutRef={null}
               />
+
+              <div>
+                <span onClick={handlePush404}>
+                  <ButtonSmall>Learn how to get these services</ButtonSmall>
+                </span>
+
+                <Image
+                  src={ORG_STDetail_Share_Modal_QRCodeIcon}
+                  layout="fixed"
+                  width={48}
+                  height={48}
+                />
+              </div>
             </STDetail_CardWrapper_Right_Detail>
           </STDetail_CardWrapper_Card_Detail>
         )

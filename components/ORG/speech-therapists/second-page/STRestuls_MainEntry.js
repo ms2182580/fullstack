@@ -9,7 +9,7 @@ import { STResults_FilterSortbyHeaderDesktop } from "./desktop/STResults_FilterS
 import { STResults_Map } from "./desktop/STResults_Map"
 import { MainEntryWrapper } from "./styles/MainEntryWrapper"
 
-export const MainEntry = ({ widthWindow }) => {
+export const STRestuls_MainEntry = ({ widthWindow }) => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { isMobile } = useWidthWindow1024()
 
@@ -47,6 +47,9 @@ export const MainEntry = ({ widthWindow }) => {
       setORGShowFullMapFilter(false)
     }
   }, [])
+
+
+
 
   return (
     <MainEntryWrapper ORGshowFullMapButton={ORGshowFullMapButton}>

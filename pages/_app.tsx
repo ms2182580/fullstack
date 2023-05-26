@@ -1,4 +1,5 @@
 import { PageLayout } from "../components/PageLayout.js"
+import { Ctx_ShowModal_Provider } from '../context/Ctx_ShowModal.js'
 import { LoginCtxProvider } from "../context/LoginCtx"
 import { ORG_CtxFetchNoFiltersMobile_Provider } from "../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { ORG_CtxFetchNoFilters_Provider } from "../context/ORG_CtxFetchNoFilters_Provider.js"
@@ -26,14 +27,16 @@ function MyApp({ Component, pageProps }) {
                     <ORG_CtxFetchWithFiltersMobile_Provider>
                       <ORG_CtxShowFiltersDesktop_Provider>
                         <ORG_CtxFiltersApply_Provider>
-                          <PageLayout>
-                            <GlobalStyle />
-                            <link
-                              rel="icon"
-                              href="/favicon.ico"
-                            />
-                            <Component {...pageProps} />
-                          </PageLayout>
+                          <Ctx_ShowModal_Provider>
+                            <PageLayout>
+                              <GlobalStyle />
+                              <link
+                                rel="icon"
+                                href="/favicon.ico"
+                              />
+                              <Component {...pageProps} />
+                            </PageLayout>
+                          </Ctx_ShowModal_Provider>
                         </ORG_CtxFiltersApply_Provider>
                       </ORG_CtxShowFiltersDesktop_Provider>
                     </ORG_CtxFetchWithFiltersMobile_Provider>

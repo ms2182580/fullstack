@@ -1,14 +1,15 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { H2 } from "../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
 import SignComponent from "./SignComponent.js"
-import { Logo, NavBarStyled, NavigationLinksWrapper } from "./styles/NavBar"
+import { Logo, NavBarWrapped, NavigationLinksWrapper } from "./styles/NavBarWrapped"
 
 export const NavBar = () => {
   const route = useRouter()
   const [isORGState, setIsORGState] = useState(false)
-  
+
   useEffect(() => {
     if (route.pathname === "/ORG") {
       setIsORGState(true)
@@ -43,8 +44,12 @@ export const NavBar = () => {
     }
   }
 
+  const { modalShowedCtx } = useCtx_ShowModal()
+
   return (
-    <NavBarStyled isORG={isORGState}>
+    <NavBarWrapped
+      isORG={isORGState}
+      modalShowedCtx={modalShowedCtx}>
       <Logo
         tabIndex={0}
         onKeyDown={navigateHome}>
@@ -87,7 +92,8 @@ export const NavBar = () => {
       </NavigationLinksWrapper>
 
       <SignComponent />
-    </NavBarStyled>
+
+      {modalShowedCtx && <div className="InFront"></div>}
+    </NavBarWrapped>
   )
 }
-

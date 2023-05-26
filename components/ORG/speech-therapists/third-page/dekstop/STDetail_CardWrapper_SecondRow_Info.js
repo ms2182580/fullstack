@@ -14,12 +14,12 @@ export const STDetail_CardWrapper_SecondRow_Info = ({
   state = "",
   rightRowCredentials = false
 }) => {
-  
-  
+
+
   if (rightRowQualification) {
     return (
       <STDetail_CardWrapper_SecondRow_InfoRightWrapper isFirst>
-        <H4 cta>{title}:</H4>
+        <H4 hover>{title}:</H4>
         <P>Education level: Master&apos;s</P>
         <P>Years in practice: {rightRowQualification_Data}</P>
         <P>License Number: 1239082</P>
@@ -31,8 +31,8 @@ export const STDetail_CardWrapper_SecondRow_Info = ({
   if (rightRowCredentials) {
     return (
       <STDetail_CardWrapper_SecondRow_InfoRightWrapper>
-        <H4 cta>{title}:</H4>
-        <P>{dataToShow[0]} <br/>{dataToShow[1]}
+        <H4 hover>{title}:</H4>
+        <P>{dataToShow[0]} <br />{dataToShow[1]}
         </P>
       </STDetail_CardWrapper_SecondRow_InfoRightWrapper>
     )
@@ -40,9 +40,9 @@ export const STDetail_CardWrapper_SecondRow_Info = ({
 
   return (
     <STDetail_CardWrapper_SecondRow_InfoLeftWrapper>
-      <P bold primary_cta>
+      <H4 hover>
         {title}:
-      </P>
+      </H4>
       {Array.isArray(dataToShow) &&
         dataToShow.map((x, i) => {
           if (dataToShow.length - 1 === i) {

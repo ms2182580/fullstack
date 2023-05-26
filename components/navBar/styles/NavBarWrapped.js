@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
-export const NavBarStyled = styled.nav`
+export const NavBarWrapped = styled.nav`
   height: 72px;
   display: flex;
   align-items: center;
@@ -10,7 +10,8 @@ export const NavBarStyled = styled.nav`
   
   
   background-color: ${(x) =>
-    x.isORG  ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`};
+    x.isORG ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`};
+    
 
   position: relative;
   z-index: 999;
@@ -20,6 +21,16 @@ export const NavBarStyled = styled.nav`
   & > button > a {
     /* padding: 11px 16px; */ /* Maybe not */
   }
+  
+  
+  .InFront {
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    position: absolute;
+    background: rgba(44, 42, 42, 0.61);
+  }
+  
 `
 
 /* Spotted bug: when the size of the screen are at 989 and below, the nav bar break the page. This happend for absolute units used in «Bug N° 1 here» in Logo, NavigationLinks and Login  */

@@ -4,8 +4,6 @@ import { H1, H3 } from "../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstructionWrapper } from "./styles/UnderConstructionWrapper.js"
 
 export const UnderConstruction = () => {
-  
-  
   return (
     <UnderConstructionWrapper>
       <div>

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../../../assets/Icons"
+import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
@@ -80,10 +81,10 @@ export const STDetail_Main = () => {
     }
   }, [isMobile])
 
-  useEffect(() => {
-    /*_codeHere_*/
-    console.log("isMobile:", isMobile)
-  }, [isMobile])
+  // useEffect(() => {
+  //   /*_codeHere_*/
+  //   console.log("isMobile:", isMobile)
+  // }, [isMobile])
 
   const [highlight, setHighlight] = useState("about")
   const aboutRef = useRef(null)
@@ -130,8 +131,15 @@ export const STDetail_Main = () => {
     }
   }, [])
 
+  const { modalShowedCtx } = useCtx_ShowModal()
+  console.log("modalShowedCtx:", modalShowedCtx)
+
   return (
-    <STDetail_MainWrapper isMobile={isMobile}>
+    <STDetail_MainWrapper
+      isMobile={isMobile}
+      modalShowedCtx={modalShowedCtx}>
+      {modalShowedCtx && <div className="InFront" />}
+
       {isMobile === false ? (
         <>
           <STDetail_Header STData={speechtherapist} />
@@ -159,7 +167,6 @@ export const STDetail_Main = () => {
       <div>
         {isMobile === false ? (
           <>
-
             <STDetail_STDetails STData={speechtherapist} />
           </>
         ) : (
@@ -185,9 +192,6 @@ export const STDetail_Main = () => {
             <div id="Appointments">Apointments here</div>
           </>
         ) : null}
-
-
-
 
         {isMobile === false ? (
           <div ref={aboutRef}></div>
@@ -320,15 +324,11 @@ export const STDetail_Main = () => {
           </>
         )}
 
-
         {isMobile === false ? (
           <>
             <div id="FAQs">FAQ's</div>
           </>
         ) : null}
-
-
-
 
         {isMobile === false ? (
           <>
