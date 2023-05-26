@@ -14,6 +14,7 @@ import { STDetail_TwoButtons } from "../ST_TwoButtons"
 import { ST_CardInfo } from "../second-page/ST_CardInfo"
 import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
 import { STDetail_About } from "./STDetail_About"
+import { STDetail_Appointments } from "./STDetail_Appointments"
 import { STDetail_Reviews } from "./STDetail_Reviews"
 import { STDetail_Header } from "./dekstop/STDetail_Header"
 import { STDetail_STDetails } from "./dekstop/STDetail_STDetails"
@@ -155,15 +156,6 @@ export const STDetail_Main = () => {
         </>
       )}
 
-      {/* 
-      //? Here I think here should be this part of the designs with this type of styles
-      
-      Design: https://www.figma.com/file/I7oVy5wUDMzI2L65ySeutA/Winternship-2023?node-id=3321-178507&t=TK2z2U9sOpQ7MTyL-0
-      
-      Component: FriendlyDiagnoses.js
-      
-      */}
-
       <div>
         {isMobile === false ? (
           <>
@@ -189,7 +181,8 @@ export const STDetail_Main = () => {
 
         {isMobile === false ? (
           <>
-            <div id="Appointments">Apointments here</div>
+            <STDetail_Appointments />
+
           </>
         ) : null}
 
@@ -326,14 +319,23 @@ export const STDetail_Main = () => {
 
         {isMobile === false ? (
           <>
-            <div id="FAQs">FAQ's</div>
+            <div id="FAQs">
+              ...
+              <p>FAQ's</p>
+              ...
+            </div>
           </>
         ) : null}
 
         {isMobile === false ? (
           <>
             <ST_PageLastUpdated />
-            <div>❌ And breadcrumbs</div>
+            <div>
+              ...
+              <p>breadcrumbs</p>
+              ...
+
+            </div>
           </>
         ) : null}
       </div>
