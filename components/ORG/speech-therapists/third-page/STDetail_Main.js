@@ -133,7 +133,6 @@ export const STDetail_Main = () => {
   }, [])
 
   const { modalShowedCtx } = useCtx_ShowModal()
-  console.log("modalShowedCtx:", modalShowedCtx)
 
   return (
     <STDetail_MainWrapper
@@ -187,7 +186,7 @@ export const STDetail_Main = () => {
         ) : null}
 
         {isMobile === false ? (
-          <div ref={aboutRef}></div>
+          <span className="toDisappear" ref={aboutRef}></span>
         ) : (
           <>
             <STDetail_About
@@ -205,7 +204,7 @@ export const STDetail_Main = () => {
         )}
 
         {isMobile === false ? (
-          <div ref={refHandler}></div>
+          <span className="toDisappear" ref={refHandler}></span>
         ) : (
           <STDetail_STDetails_ThirdPageWrapper
             id="Details"
@@ -330,12 +329,7 @@ export const STDetail_Main = () => {
         {isMobile === false ? (
           <>
             <ST_PageLastUpdated />
-            <div>
-              ...
-              <p>breadcrumbs</p>
-              ...
 
-            </div>
           </>
         ) : null}
       </div>

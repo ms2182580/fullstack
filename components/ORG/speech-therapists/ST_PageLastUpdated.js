@@ -8,6 +8,11 @@ export const ST_PageLastUpdated = () => {
 
   return (
     <ST_PageLastUpdatedWrapper>
+      <div>
+        ...
+        <p>breadcrumbs</p>
+        ...
+      </div>
       <P>Page last updated on {lastUpdateData}</P>
     </ST_PageLastUpdatedWrapper>
   )

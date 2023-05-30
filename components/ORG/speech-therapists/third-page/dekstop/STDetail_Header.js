@@ -13,7 +13,7 @@ export const STDetail_Header = ({ STData }) => {
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
 
   return (
-    <SpeechTherapistWrapper inDetail={true}>
+    <SpeechTherapistWrapper isDetail={true}>
       <span>
         <LinkNoStyle href="/ORG/SpeechTherapists">
           <BackArrow /> <P semibold>Back</P>

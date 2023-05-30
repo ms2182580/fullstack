@@ -4,9 +4,10 @@ import { device } from "../../../../assets/screenSizes/ScreenSizes"
 
 const SpeechTherapistWrapper = styled.div`
   margin-right: 40px;
-  padding-top: 34px;
-  margin-bottom: ${({ inDetail }) => inDetail ? `24px` : `64px`};
+  margin-right: ${({ isDetail }) => isDetail ? `0` : `40px`};
   
+  padding-top: 34px;
+  margin-bottom: ${({ isDetail }) => isDetail ? `8px` : `64px`};
 
   & > span:nth-child(1) > :nth-child(1) {
     display: flex;
