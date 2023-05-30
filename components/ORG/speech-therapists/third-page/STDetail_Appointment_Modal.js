@@ -6,8 +6,6 @@ import { STDetail_Appointment_ModalWrapper } from "./styles/STDetail_Appointment
 import { useRouter } from "next/router.js"
 import { useEffect, useRef } from "react"
 import ORG_STDetail_Appointment_Modal_Icon from "../../../../assets/Icons/ORG_STDetail_Appointment_Modal_Icon.png"
-import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal.js"
-import { useScrollLock } from "../../../../utils/useScrollLock.js"
 import { ButtonMedium } from "../../../ui/buttons/general/index.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 
@@ -24,12 +22,19 @@ export const STDetail_Appointment_Modal = ({
   yearNumber,
   unlockScroll
 }) => {
+  const { push } = useRouter()
   const componentRef = useRef(null)
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (componentRef.current && !componentRef.current.contains(event.target)) {
+      if ((componentRef.current && !componentRef.current.contains(event.target)) || event.target.tagName === "svg") {
         handleHideModal()
+      } else if (event.target.textContent === "Sign up") {
+        handleHideModal()
+        push("/signup")
+      } else if (event.target.textContent === "Log In") {
+        handleHideModal()
+        push("/login")
       }
     }
     document.addEventListener("mousedown", handleClickOutside)
@@ -37,17 +42,6 @@ export const STDetail_Appointment_Modal = ({
       document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [componentRef])
-
-  const { setModalShowedCtx } = useCtx_ShowModal()
-  const { unlockScroll: unlockScrollHere } = useScrollLock()
-  const { push } = useRouter()
-
-  const handleMoveToSignUp = () => {
-    // console.dir("Here")
-    handleHideModal()
-    // return
-    // push("/signup")
-  }
 
   return (
     <STDetail_Appointment_ModalWrapper
@@ -90,20 +84,12 @@ export const STDetail_Appointment_Modal = ({
         </div>
       </div>
 
-      {/* <span onClick={handleMoveToSignUp}>
-        <button><p>Sign Up</p></button>
-      </span> */}
       <span>
         <ButtonMedium>Sign up</ButtonMedium>
       </span>
 
       <P>
-        Already have account?{" "}
-        {/* <HyperlinkM
-          href=""
-          name="Log In"
-        />{" "} */}
-        <span>Log In</span>
+        Already have account? <span>Log In</span>
       </P>
     </STDetail_Appointment_ModalWrapper>
   )

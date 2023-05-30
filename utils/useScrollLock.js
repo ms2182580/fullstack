@@ -17,7 +17,7 @@ export const useScrollLock = () => {
   useLayoutEffect(() => {
     const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
     document.body.style.setProperty('--scrollbar-compensation', `${scrollBarCompensation}px`);
-  }, [window.innerWidth])
+  }, [])
 
   return {
     lockScroll,

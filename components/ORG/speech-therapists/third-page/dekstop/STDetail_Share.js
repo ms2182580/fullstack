@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ShareSvg } from "../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
@@ -26,11 +26,6 @@ export const STDetail_Share = ({ picture, name, lastName }) => {
     setModalShowedCtx(false)
     setShowQRCode(false)
   }
-
-  useEffect(() => {
-    /*_codeHere_*/
-    // console.log("showModal:", showModal)
-  }, [showModal])
 
   return (
     <>

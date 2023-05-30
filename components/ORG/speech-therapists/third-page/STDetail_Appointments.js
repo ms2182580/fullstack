@@ -24,11 +24,6 @@ export const STDetail_Appointments = ({ picture, name, lastName }) => {
     setWasSelected(true)
   }
 
-  // useEffect(() => {
-  //   /*_codeHere_*/
-  //   console.log("selectTime:", selectTime)
-  // }, [selectTime])
-
   const [showModal, setShowModal] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
