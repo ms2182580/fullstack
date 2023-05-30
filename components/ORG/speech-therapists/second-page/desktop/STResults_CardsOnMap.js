@@ -163,7 +163,7 @@ export const STResults_CardsOnMap = ({ handleShowMap }) => {
 
   useEffect(() => {
     /*_codeHere_*/
-    console.log("windowSizeFull:", windowSizeFull)
+    // console.log("windowSizeFull:", windowSizeFull)
   }, [windowSizeFull])
 
   useEffect(() => {

@@ -7,8 +7,15 @@ export const STDetail_CarePlan = () => {
 
   const { push } = useRouter()
 
+  /* 
+  !FH
+  Is possible to recover the data!!!
+  */
   const handleUnderConstruction = () => {
-    push("/404")
+    push({
+      pathname: "/404",
+      query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
+    })
   }
 
   return (

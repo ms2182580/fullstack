@@ -48,17 +48,6 @@ export const STDetail_Share = ({ picture, name, lastName }) => {
         />
       )}
 
-      {/* <STDetail_Share_Modal
-        setShowModal={setShowModal}
-        showModal={showModal}
-        handleShowModal={handleShowModal}
-        handleHideModal={handleHideModal}
-        picture={picture}
-        name={name}
-        lastName={lastName}
-        showQRCode={showQRCode}
-        setShowQRCode={setShowQRCode}
-      /> */}
     </>
   )
 }
