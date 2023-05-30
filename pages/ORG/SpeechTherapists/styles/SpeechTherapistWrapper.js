@@ -7,7 +7,8 @@ const SpeechTherapistWrapper = styled.div`
   margin-right: ${({ isDetail }) => isDetail ? `0` : `40px`};
   
   padding-top: 34px;
-  margin-bottom: ${({ isDetail }) => isDetail ? `8px` : `64px`};
+  margin-bottom: ${({ isDetail }) => isDetail ? `8px` : ``};
+  
 
   & > span:nth-child(1) > :nth-child(1) {
     display: flex;
@@ -31,7 +32,7 @@ const SpeechTherapistWrapper = styled.div`
     display: flex;
     gap: 88px;
     margin-top: 64px;
-    /* margin-bottom: 24px; */
+    margin-bottom: 24px;
 
     & > li {
       list-style: none;

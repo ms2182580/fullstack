@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ShareSvg } from "../../../../../assets/Icons/index.js"
-import { useCtx_ShowModal } from '../../../../../context/Ctx_ShowModal.js'
+import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -27,6 +27,11 @@ export const STDetail_Share = ({ picture, name, lastName }) => {
     setShowQRCode(false)
   }
 
+  useEffect(() => {
+    /*_codeHere_*/
+    // console.log("showModal:", showModal)
+  }, [showModal])
+
   return (
     <>
       <STDetail_ShareWrapper onClick={handleShowModal}>
@@ -34,7 +39,21 @@ export const STDetail_Share = ({ picture, name, lastName }) => {
         <P primary_hover>Share</P>
       </STDetail_ShareWrapper>
 
-      <STDetail_Share_Modal
+      {showModal && (
+        <STDetail_Share_Modal
+          setShowModal={setShowModal}
+          showModal={showModal}
+          handleShowModal={handleShowModal}
+          handleHideModal={handleHideModal}
+          picture={picture}
+          name={name}
+          lastName={lastName}
+          showQRCode={showQRCode}
+          setShowQRCode={setShowQRCode}
+        />
+      )}
+
+      {/* <STDetail_Share_Modal
         setShowModal={setShowModal}
         showModal={showModal}
         handleShowModal={handleShowModal}
@@ -44,8 +63,7 @@ export const STDetail_Share = ({ picture, name, lastName }) => {
         lastName={lastName}
         showQRCode={showQRCode}
         setShowQRCode={setShowQRCode}
-
-      />
+      /> */}
     </>
   )
 }

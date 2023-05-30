@@ -25,7 +25,7 @@ export const STDetail_Share_Modal_Button = ({
 
   const handleOnClick = (e) => {
     if (e.target.textContent === "Copy Link") {
-      setShouldShowCopyLink(true)
+      setShouldShowCopyLink("shouldShowCopyLinkTrue")
     }
     if (e.target.textContent === "QR Code") {
       setShowQRCode(true)

@@ -6,6 +6,7 @@ export const STDetail_CardWrapper = styled.div`
   margin-bottom: 32px;
   border: 1px solid ${NEUTRALS.LIGHT_GREY};
   border-radius: 8px;
+  
 
   & > :nth-child(1) {
     margin-bottom: 0px;

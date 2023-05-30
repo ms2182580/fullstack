@@ -180,13 +180,19 @@ export const STDetail_Main = () => {
 
         {isMobile === false ? (
           <>
-            <STDetail_Appointments />
+            <STDetail_Appointments
+              picture={speechtherapist.data[0].picture.large}
+              name={speechtherapist.data[0].name.first}
+              lastName={speechtherapist.data[0].name.last}
 
+            />
           </>
         ) : null}
 
         {isMobile === false ? (
-          <span className="toDisappear" ref={aboutRef}></span>
+          <span
+            className="toDisappear"
+            ref={aboutRef}></span>
         ) : (
           <>
             <STDetail_About
@@ -204,7 +210,9 @@ export const STDetail_Main = () => {
         )}
 
         {isMobile === false ? (
-          <span className="toDisappear" ref={refHandler}></span>
+          <span
+            className="toDisappear"
+            ref={refHandler}></span>
         ) : (
           <STDetail_STDetails_ThirdPageWrapper
             id="Details"
@@ -329,7 +337,6 @@ export const STDetail_Main = () => {
         {isMobile === false ? (
           <>
             <ST_PageLastUpdated />
-
           </>
         ) : null}
       </div>

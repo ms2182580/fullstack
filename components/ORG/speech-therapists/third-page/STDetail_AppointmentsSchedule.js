@@ -50,7 +50,7 @@ export const STDetail_AppointmentsSchedule = ({
                 key={`${x}${i}`}
                 semibold
                 onClick={(e) => {
-                  handleSelectTime(e, dayName, yearNumber)
+                  handleSelectTime(e, dayName, dayNumber, monthName, yearNumber)
                 }}
                 className={x === selectTime.time && dayName === selectTime.dayName && "isClicked"}>
                 {x}

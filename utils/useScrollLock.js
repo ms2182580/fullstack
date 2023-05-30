@@ -5,6 +5,7 @@ export const useScrollLock = () => {
     document.body.style.overflow = "hidden"
     document.body.style.paddingRight = "var(--scrollbar-compensation)"
     document.body.dataset.scrollLock = "true"
+
   }, [])
 
   const unlockScroll = useCallback(() => {
@@ -16,7 +17,7 @@ export const useScrollLock = () => {
   useLayoutEffect(() => {
     const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
     document.body.style.setProperty('--scrollbar-compensation', `${scrollBarCompensation}px`);
-  }, [])
+  }, [window.innerWidth])
 
   return {
     lockScroll,

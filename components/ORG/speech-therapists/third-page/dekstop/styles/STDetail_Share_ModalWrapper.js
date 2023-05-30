@@ -27,6 +27,8 @@ const hideElement = keyframes`
 
 export const STDetail_Share_ModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
+  /* display: ${({ showModal }) => (showModal ? `block` : `none`)}; */
+  
   position: fixed;
   top: 50%;
   left: 50%;
@@ -85,14 +87,14 @@ export const STDetail_Share_ModalWrapper = styled.div`
     
   }
 
-  .showCopyLink {
+  .shouldShowCopyLinkTrue {
     animation: 700ms ${showElement} linear forwards;
   }
-  .hideCopyLink {
+  .shouldShowCopyLinkFalse {
     animation: 700ms ${hideElement} linear;
   }
 
-  .linkCopied {
+  .shouldShowCopyLinkDefault {
     display: flex;
     align-items: center;
     justify-content: center;

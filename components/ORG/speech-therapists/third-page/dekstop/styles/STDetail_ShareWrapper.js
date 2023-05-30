@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const STDetail_ShareWrapper = styled.div`
 
   & > :nth-child(3){
-    visibility: ${({ showModal }) => showModal ? `visible` : `hidden`};
+    /* visibility: ${({ showModal }) => showModal ? `visible` : `hidden`}; */
     
     
-    &:hover{
+    /* &:hover{
       opacity:${({ showModal }) => showModal ? `1` : `0`};  
-    }
+    } */
     
   }
 

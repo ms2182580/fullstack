@@ -38,20 +38,18 @@ export const STDetail_Share_Modal = ({
         handleHideModal()
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside)
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [componentRef])
 
-  const [shouldShowCopyLink, setShouldShowCopyLink] = useState(false)
+  const [shouldShowCopyLink, setShouldShowCopyLink] = useState("shouldShowCopyLinkDefault")
 
   useEffect(() => {
-    if (shouldShowCopyLink) {
+    if (shouldShowCopyLink === "shouldShowCopyLinkTrue") {
       const timeoutId = setTimeout(() => {
-        setShouldShowCopyLink(false)
+        setShouldShowCopyLink("shouldShowCopyLinkFalse")
       }, 2200)
       return () => clearTimeout(timeoutId)
     }
@@ -140,7 +138,14 @@ export const STDetail_Share_Modal = ({
         </div>
       )}
 
-      <div className={shouldShowCopyLink ? "showCopyLink linkCopied" : "hideCopyLink linkCopied"}>
+      <div
+        className={
+          shouldShowCopyLink === "shouldShowCopyLinkTrue"
+            ? "shouldShowCopyLinkTrue shouldShowCopyLinkDefault"
+            : shouldShowCopyLink === "shouldShowCopyLinkFalse"
+              ? "shouldShowCopyLinkFalse shouldShowCopyLinkDefault"
+              : "shouldShowCopyLinkDefault"
+        }>
         <Image
           src={ORG_STDetail_Share_Modal_LinkCopiedIcon}
           layout="fixed"
