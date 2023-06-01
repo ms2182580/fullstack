@@ -7,6 +7,7 @@ import { STResults_CardNoFilters } from "./desktop/STResults_CardNoFilters"
 import { STResults_CardWithFilters } from "./desktop/STResults_CardWithFilters"
 import { STResults_ChoisepathWrapper } from "./styles/STResults_ChoisepathWrapper"
 
+
 export const STResults_Choisepath = () => {
   const [filterHaveAtLeastOneValueState, setFilterHaveAtLeastOneValueState] = useState(false)
   const { pagination } = useORG_Ctx_FetchNoFilters()

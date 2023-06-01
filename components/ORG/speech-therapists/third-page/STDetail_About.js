@@ -13,9 +13,6 @@ export const STDetail_About = ({ name, lastName, aboutRef }) => {
   const [isTruncated, setIsTruncated] = useState(true)
   const [formattedText, setFormattedText] = useState(aboutTextState.substring(0, 220) + "...")
 
-  // const formatText = isMobile === false && isTruncated ? aboutTextState.substring(0, 220) : null
-  // console.log("formatText:", formatText)
-
   return (
     <STDetail_AboutWrapper
       isMobile={isMobile}
@@ -40,6 +37,10 @@ export const STDetail_About = ({ name, lastName, aboutRef }) => {
           <P>
             {isTruncated ? formattedText : aboutTextState}
             {isTruncated && <span onClick={() => setIsTruncated(false)}>show more</span>}
+            {/* 
+            //!FH1
+            This show more should show a modal!
+            */}
           </P>
         </div>
       ) : (

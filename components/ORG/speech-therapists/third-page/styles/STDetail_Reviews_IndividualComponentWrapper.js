@@ -1,14 +1,15 @@
 import styled from 'styled-components'
-import { SECONDARY_BG_BIGBLOCKS_TEXT, SECONDARY_ORG_PLUS } from '../../../../../assets/Colors'
+import { PRIMARY } from '../../../../../assets/Colors'
 import { device } from '../../../../../assets/screenSizes/ScreenSizes'
 
 export const STDetail_Reviews_IndividualComponentWrapper = styled.div`
-  
-  border-radius: 16px;
-  border: 1px solid ${SECONDARY_ORG_PLUS.ASH_BLUE};
-  background-color: ${SECONDARY_BG_BIGBLOCKS_TEXT.ASH_BLUE};
-  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid ${PRIMARY.PRIMARY_BACKGROUND};
+  background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+  padding: 12px 16px 16px 16px;
   display: grid;
+  gap:8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 
   & > div > *:not(:last-child) {
     margin-right: 8px;
@@ -18,7 +19,7 @@ export const STDetail_Reviews_IndividualComponentWrapper = styled.div`
     display: flex;
     align-items: center;
     height: 24px;
-    margin-bottom: 8px;
+    
   }
 
   & > :nth-child(2) {

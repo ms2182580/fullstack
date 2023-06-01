@@ -24,6 +24,7 @@ export const STDetail_Reviews_IndividualComponent = ({ rating = 5, review, userN
 
   return (
     <STDetail_Reviews_IndividualComponentWrapper>
+
       <div>
         {howMuchStars.map((x, i) => {
           if (x === "fully") {

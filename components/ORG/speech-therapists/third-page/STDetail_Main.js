@@ -4,6 +4,7 @@ import { BackArrow } from "../../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
+import { InFrontModalWrapper } from "../../../inFront/styles/InFrontModalWrapper"
 import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
 import { ST_CardEmail } from "../ST_CardEmail.js"
@@ -135,211 +136,201 @@ export const STDetail_Main = () => {
   const { modalShowedCtx } = useCtx_ShowModal()
 
   return (
-    <STDetail_MainWrapper
-      isMobile={isMobile}
-      modalShowedCtx={modalShowedCtx}>
-      {modalShowedCtx && <div className="InFront" />}
+    <>
+      <InFrontModalWrapper modalShowedCtx={modalShowedCtx} />
 
-      {isMobile === false ? (
-        <>
-          <STDetail_Header STData={speechtherapist} />
-        </>
-      ) : (
-        <>
-          <ST_HeaderMobileWrapper>
-            <LinkNoStyle href="/ORG/SpeechTherapists">
-              <BackArrow />
-              <Caption bolder>Back to Results</Caption>
-            </LinkNoStyle>
-          </ST_HeaderMobileWrapper>
-        </>
-      )}
-
-      <div>
+      <STDetail_MainWrapper
+        isMobile={isMobile}
+        modalShowedCtx={modalShowedCtx}>
+        {/* {modalShowedCtx && <div className="InFront" />} */}
         {isMobile === false ? (
           <>
-            <STDetail_STDetails STData={speechtherapist} />
+            <STDetail_Header STData={speechtherapist} />
           </>
         ) : (
           <>
-            <STDetail_Mobile STData={speechtherapist} />
+            <ST_HeaderMobileWrapper>
+              <LinkNoStyle href="/ORG/SpeechTherapists">
+                <BackArrow />
+                <Caption bolder>Back to Results</Caption>
+              </LinkNoStyle>
+            </ST_HeaderMobileWrapper>
           </>
         )}
-
-        {isMobile === false ? null : (
-          <>
-            <STDetail_Mobile_StickyNavbar highlight={highlight} />
-          </>
-        )}
-
-        {isMobile === false ? null : (
-          <>
-            <STDetail_Separator />
-          </>
-        )}
-
-        {isMobile === false ? (
-          <>
-            <STDetail_Appointments
-              picture={speechtherapist.data[0].picture.large}
-              name={speechtherapist.data[0].name.first}
-              lastName={speechtherapist.data[0].name.last}
-
-            />
-          </>
-        ) : null}
-
-        {isMobile === false ? (
-          <span
-            className="toDisappear"
-            ref={aboutRef}></span>
-        ) : (
-          <>
-            <STDetail_About
-              name={speechtherapist.data[0].name.first}
-              lastName={speechtherapist.data[0].name.last}
-              aboutRef={aboutRef}
-            />
-          </>
-        )}
-
-        {isMobile === false ? null : (
-          <>
-            <STDetail_Separator />
-          </>
-        )}
-
-        {isMobile === false ? (
-          <span
-            className="toDisappear"
-            ref={refHandler}></span>
-        ) : (
-          <STDetail_STDetails_ThirdPageWrapper
-            id="Details"
-            ref={detailsRef}>
-            <div>
-              <ST_CardInfo
-                title="Languages"
-                dataToShow={languages}
-                isMobile={true}
-                isThirdPage={true}
+        <div>
+          {isMobile === false ? (
+            <>
+              <STDetail_STDetails STData={speechtherapist} />
+            </>
+          ) : (
+            <>
+              <STDetail_Mobile STData={speechtherapist} />
+            </>
+          )}
+          {isMobile === false ? null : (
+            <>
+              <STDetail_Mobile_StickyNavbar highlight={highlight} />
+            </>
+          )}
+          {isMobile === false ? null : (
+            <>
+              <STDetail_Separator />
+            </>
+          )}
+          {isMobile === false ? (
+            <>
+              <STDetail_Appointments
+                picture={speechtherapist.data[0].picture.large}
+                name={speechtherapist.data[0].name.first}
+                lastName={speechtherapist.data[0].name.last}
               />
-              <ST_CardInfo
-                title="Practice Setting"
-                dataToShow={serviceSettings}
-                isMobile={true}
-                isThirdPage={true}
+            </>
+          ) : null}
+          {isMobile === false ? (
+            <span
+              className="toDisappear"
+              ref={aboutRef}></span>
+          ) : (
+            <>
+              <STDetail_About
+                name={speechtherapist.data[0].name.first}
+                lastName={speechtherapist.data[0].name.last}
+                aboutRef={aboutRef}
               />
-              <ST_CardInfo
-                title="Meeting Format"
-                dataToShow={meetingFormat}
-                isMobile={true}
-                isThirdPage={true}
-              />
-              <ST_CardInfo
-                title="Insurance"
-                dataToShow={insurance}
-                isMobile={true}
-                isThirdPage={true}
-              />
-              <ST_CardInfo
-                title="Ages Served"
-                dataToShow={agesServed}
-                isMobile={true}
-                isThirdPage={true}
-              />
-            </div>
+            </>
+          )}
+          {isMobile === false ? null : (
+            <>
+              <STDetail_Separator />
+            </>
+          )}
+          {isMobile === false ? (
+            <span
+              className="toDisappear"
+              ref={refHandler}></span>
+          ) : (
+            <STDetail_STDetails_ThirdPageWrapper
+              id="Details"
+              ref={detailsRef}>
+              <div>
+                <ST_CardInfo
+                  title="Languages"
+                  dataToShow={languages}
+                  isMobile={true}
+                  isThirdPage={true}
+                />
+                <ST_CardInfo
+                  title="Practice Setting"
+                  dataToShow={serviceSettings}
+                  isMobile={true}
+                  isThirdPage={true}
+                />
+                <ST_CardInfo
+                  title="Meeting Format"
+                  dataToShow={meetingFormat}
+                  isMobile={true}
+                  isThirdPage={true}
+                />
+                <ST_CardInfo
+                  title="Insurance"
+                  dataToShow={insurance}
+                  isMobile={true}
+                  isThirdPage={true}
+                />
+                <ST_CardInfo
+                  title="Ages Served"
+                  dataToShow={agesServed}
+                  isMobile={true}
+                  isThirdPage={true}
+                />
+              </div>
+              {isMobile === false ? null : (
+                <>
+                  <STDetail_Separator />
+                </>
+              )}
+              <div>
+                <ST_CardInfo
+                  title="Qualifications"
+                  dataToShow={qualifications}
+                  isMobile={true}
+                  isThirdPage={true}
+                  withoutComa={true}
+                />
+                <ST_CardInfo
+                  title="Additional Credentials"
+                  dataToShow={additionalCredentials}
+                  isMobile={true}
+                  isThirdPage={true}
+                  withoutComa={true}
+                />
+              </div>
+              {isMobile === false ? null : (
+                <>
+                  <STDetail_Separator />
+                </>
+              )}
+              <div
+                id="Contact"
+                ref={contactRef}>
+                <ST_CardLocation
+                  locationCity={speechtherapist.data[0].location.city}
+                  locationStreetNumber={speechtherapist.data[0].location.street.number}
+                  locationStreetName={speechtherapist.data[0].location.street.name}
+                  locationState={speechtherapist.data[0].location.state}
+                  isMobile={true}
+                  isThirdPageMobile={true}
+                />
+                <ST_CardPhone
+                  phoneNumber={speechtherapist.data[0].cell}
+                  isMobile={true}
+                  isThirdPageMobile={true}
+                />
+                <ST_CardEmail
+                  email={speechtherapist.data[0].email}
+                  isMobile={true}
+                  isThirdPageMobile={true}
+                />
+                <STDetail_TwoButtons />
+              </div>
+              {isMobile === false ? null : (
+                <>
+                  <STDetail_Separator />
+                </>
+              )}
+            </STDetail_STDetails_ThirdPageWrapper>
+          )}
+          <STDetail_Reviews
+            name={speechtherapist.data[0].name.first}
+            lastName={speechtherapist.data[0].name.last}
+            reviewsRef={reviewsRef}
+            rating={speechtherapist.filters[0].rating}
+            reviews={speechtherapist.filters[0].reviews}
+          />
+          {isMobile === false ? null : (
+            <>
+              <STDetail_Separator isLastOne={true} />
+            </>
+          )}
+          {isMobile === false ? (
+            <>
+              <div id="FAQs">
+                ...
+                <p>FAQ's</p>
+                ...
+              </div>
+            </>
+          ) : null}
+          {isMobile === false ? (
+            <>
+              <ST_PageLastUpdated />
+            </>
+          ) : null}
+        </div>
+      </STDetail_MainWrapper>
+      {/* {modalShowedCtx && <InFrontModalWrapper modalShowedCtx={modalShowedCtx} />} */}
 
-            {isMobile === false ? null : (
-              <>
-                <STDetail_Separator />
-              </>
-            )}
-
-            <div>
-              <ST_CardInfo
-                title="Qualifications"
-                dataToShow={qualifications}
-                isMobile={true}
-                isThirdPage={true}
-                withoutComa={true}
-              />
-              <ST_CardInfo
-                title="Additional Credentials"
-                dataToShow={additionalCredentials}
-                isMobile={true}
-                isThirdPage={true}
-                withoutComa={true}
-              />
-            </div>
-
-            {isMobile === false ? null : (
-              <>
-                <STDetail_Separator />
-              </>
-            )}
-
-            <div
-              id="Contact"
-              ref={contactRef}>
-              <ST_CardLocation
-                locationCity={speechtherapist.data[0].location.city}
-                locationStreetNumber={speechtherapist.data[0].location.street.number}
-                locationStreetName={speechtherapist.data[0].location.street.name}
-                locationState={speechtherapist.data[0].location.state}
-                isMobile={true}
-                isThirdPageMobile={true}
-              />
-
-              <ST_CardPhone
-                phoneNumber={speechtherapist.data[0].cell}
-                isMobile={true}
-                isThirdPageMobile={true}
-              />
-              <ST_CardEmail
-                email={speechtherapist.data[0].email}
-                isMobile={true}
-                isThirdPageMobile={true}
-              />
-              <STDetail_TwoButtons />
-            </div>
-
-            {isMobile === false ? null : (
-              <>
-                <STDetail_Separator />
-              </>
-            )}
-          </STDetail_STDetails_ThirdPageWrapper>
-        )}
-
-        <STDetail_Reviews
-          name={speechtherapist.data[0].name.first}
-          lastName={speechtherapist.data[0].name.last}
-          reviewsRef={reviewsRef}
-        />
-
-        {isMobile === false ? null : (
-          <>
-            <STDetail_Separator isLastOne={true} />
-          </>
-        )}
-
-        {isMobile === false ? (
-          <>
-            <div id="FAQs">
-              ...
-              <p>FAQ's</p>
-              ...
-            </div>
-          </>
-        ) : null}
-
-        {isMobile === false ? (
-          <>
-            <ST_PageLastUpdated />
-          </>
-        ) : null}
-      </div>
-    </STDetail_MainWrapper>
+      {/* <InFrontModalWrapper modalShowedCtx={modalShowedCtx} /> */}
+    </>
   )
 }

@@ -28,7 +28,7 @@ export const FooterWrapper = styled.footer`
     grid-area: mainContent;
   }
 
-  & > div:nth-child(2) > div > :not(:last-child) {
+  & > div:nth-child(2) > div > :not(:last-child):not(.InFront) {
     margin-right: 20px;
   }
 
@@ -43,12 +43,12 @@ export const FooterWrapper = styled.footer`
     grid-template-columns: repeat(3, 1fr);
     margin-inline: 27px;
   }
-  & > div:nth-child(2) > :nth-child(1) > * > *:not(:last-child),
-  & > div:nth-child(2) > :nth-child(2) > * > *:not(:last-child) {
+  & > div:nth-child(2) > :nth-child(1) > * > *:not(:last-child):not(.InFront),
+  & > div:nth-child(2) > :nth-child(2) > * > *:not(:last-child):not(.InFront) {
     margin-bottom: 18px;
   }
 
-  & > :nth-last-child(2) {
+  & > :nth-last-child(2):not(.InFront) {
     justify-self: end;
     align-self: flex-end;
     margin-bottom: 8px;
@@ -57,7 +57,7 @@ export const FooterWrapper = styled.footer`
     grid-area: finalSentence;
   }
 
-  .InFront {
+  & > :last-child.InFront {
     width: 100%;
     height: 100%;
     z-index: 4;

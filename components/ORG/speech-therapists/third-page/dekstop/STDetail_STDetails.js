@@ -37,7 +37,10 @@ import {
 export const STDetail_STDetails = ({ STData }) => {
   const { push } = useRouter()
   const handlePush404 = () => {
-    push("/404")
+    push({
+      pathname: "/404",
+      query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
+    }, "/404")
   }
 
   return (
@@ -55,9 +58,6 @@ export const STDetail_STDetails = ({ STData }) => {
           STData.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1))
         )
         let serviceSetting = STData.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
-
-        // console.log("everySingleValue:", everySingleValue)
-        // console.log("STData:", STData)
         return (
           <STDetail_CardWrapper_Card_Detail key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
             <STDetail_CardWrapper_Left>
@@ -72,6 +72,11 @@ export const STDetail_STDetails = ({ STData }) => {
                 <Verified />
               </STDetail_CardWrapper_Left_LeftImage>
 
+              {/*
+                //!FH
+                This should be a modal to show at least 6 photos
+                
+                  */}
               <span>6 photos</span>
 
               <ST_CardWrapper_Left_LeftInfo>
