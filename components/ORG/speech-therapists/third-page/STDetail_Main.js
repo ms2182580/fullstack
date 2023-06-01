@@ -35,7 +35,6 @@ export const STDetail_Main = () => {
     return
   }
 
-  // console.log('speechtherapist:', speechtherapist)
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
   const [meetingFormat, setMeetingFormat] = useState()

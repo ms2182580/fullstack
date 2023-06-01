@@ -99,6 +99,11 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
       </STDetail_Reviews_IndividualWrapper>
 
 
+      {/* 
+//!FH0
+Make the modal!
+*/}
+
       <span>
         <P hyperlink_normal semibold>View All</P>
       </span>

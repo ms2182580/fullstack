@@ -18,7 +18,6 @@ export const STDetail_MainWrapper = styled.div`
 
   & > :nth-child(2),
   & > :nth-child(3) {
-    /* padding-bottom: 32px; */
     padding-bottom: ${({ modalShowedCtx }) => (modalShowedCtx ? `0` : `32px`)};
   }
 

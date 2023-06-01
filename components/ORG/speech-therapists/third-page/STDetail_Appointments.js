@@ -67,7 +67,6 @@ export const STDetail_Appointments = ({ picture, name, lastName }) => {
           <STDetail_Appointment_Modal
             setShowModal={setShowModal}
             showModal={showModal}
-            handleShowModal={handleShowModal}
             handleHideModal={handleHideModal}
             picture={picture}
             name={name}
@@ -81,21 +80,6 @@ export const STDetail_Appointments = ({ picture, name, lastName }) => {
 
           />
         )}
-
-        {/* <STDetail_Appointment_Modal
-          setShowModal={setShowModal}
-          showModal={showModal}
-          handleShowModal={handleShowModal}
-          handleHideModal={handleHideModal}
-          picture={picture}
-          name={name}
-          lastName={lastName}
-          time={selectTime.time}
-          dayName={selectTime.dayName}
-          dayNumber={selectTime.dayNumber}
-          monthName={selectTime.monthName}
-          yearNumber={selectTime.yearNumber}
-        /> */}
       </span>
     </STDetail_AppointmentsWrapper>
   )
