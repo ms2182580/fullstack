@@ -517,10 +517,29 @@ export const StartFullSvg = (props) => (
     height="16px"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    // width="25px"
+    // height="25px"
     {...props}>
     <path
       d="M8 12.859 12.944 16l-1.312-5.92L16 6.097l-5.752-.514L8 0 5.752 5.583 0 6.097l4.368 3.983L3.056 16 8 12.859Z"
       fill="#00080B"
+    />
+  </svg>
+)
+
+export const StartFullBigSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={26}
+    height={25}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#000"
+      fillRule="evenodd"
+      d="m13 19.587 7.725 4.663-2.05-8.787L25.5 9.55l-8.988-.763L13 .5 9.488 8.787.5 9.55l6.825 5.912-2.05 8.788L13 19.587Z"
+      clipRule="evenodd"
     />
   </svg>
 )
@@ -538,6 +557,25 @@ export const StartEmptySvg = (props) => (
     />
   </svg>
 )
+
+export const StartEmptyBigSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={26}
+    height={25}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#FCFDFE"
+      stroke="#00080B"
+      strokeWidth={1.5}
+      d="M13.388 18.945 13 18.712l-.388.233L6.41 22.69l1.646-7.056.103-.441-.342-.296-5.481-4.749 7.216-.612.45-.038.177-.417L13 2.422l2.822 6.658.177.417.45.038 7.216.612-5.481 4.749-.342.296.103.44 1.646 7.057-6.203-3.744Z"
+    />
+  </svg>
+)
+
+
 
 export const LeftArrowSvg = (props) => (
   <svg

@@ -32,11 +32,11 @@ const AboutCollection = {
 
     "Absolutely blown away by the exceptional service provided. Professional, efficient and exceeded my expectations. Highly recommend!",
 
-    "I couldn't be happier with the results. The service was top-notch, and __NAME__ went above and beyond to make sure I was satisfied.",
+    "I couldn't be happier with the results. The service was top-notch, and __NAMEHERE__ went above and beyond to make sure I was satisfied.",
 
     "The level of professionalism and expertise shown by __NAMEHERE__ is unmatched. I highly recommend them to anyone in need of their services.",
 
-    "I was impressed by the quality of service provided. __FULLNAMEHERE_ was knowledgeable, responsive and a pleasure to work with.",
+    "I was impressed by the quality of service provided. __FULLNAMEHERE__ was knowledgeable, responsive and a pleasure to work with.",
 
     "I highly recommend this service for their exceptional work and attention to detail. __FULLNAMEHERE_ went above and beyond to ensure my satisfaction.",
 
@@ -55,16 +55,32 @@ const AboutCollection = {
 }
 
 export const getAllReviews = (amountOfReviews = 3) => {
-  const shuffled = [...AboutCollection.FiveStars].sort(() => 0.5 - Math.random())
-  const shuffledArr = shuffled.slice(0, amountOfReviews)
+  let needMore = amountOfReviews > AboutCollection.FiveStars.length
+  let shuffledArr
+
+  if (needMore) {
+    let arrayWithAllElements = [...AboutCollection.FiveStars]
+
+    for (let i = 0; arrayWithAllElements.length < amountOfReviews; i++) {
+      let indexToPush = i % AboutCollection.FiveStars.length
+      arrayWithAllElements.push(AboutCollection.FiveStars[indexToPush])
+    }
+
+    shuffledArr = arrayWithAllElements
+  } else {
+    shuffledArr = [...AboutCollection.FiveStars].sort(() => 0.5 - Math.random()).slice(0, amountOfReviews)
+  }
+
+  console.log('💫shuffledArr:', shuffledArr, amountOfReviews)
 
   const starOfFourReview = pickJustOne(["FiveStars", "ThreeStars"])
   if (starOfFourReview === "ThreeStars") {
     const getLastReview = pickJustOne(AboutCollection[starOfFourReview])
     shuffledArr.push({ review: getLastReview, stars: 3 })
   } else {
-    const finalFiveStarReview = AboutCollection.FiveStars.filter((x) => !shuffledArr.includes(x))
-    shuffledArr.push(finalFiveStarReview[0])
+    let randomIndex = Math.floor(Math.random() * AboutCollection.FiveStars.length)
+    const finalFiveStarRandom = [...AboutCollection.FiveStars][randomIndex]
+    shuffledArr.push(finalFiveStarRandom)
   }
   return shuffledArr
 }

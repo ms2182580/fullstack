@@ -12,10 +12,33 @@ export const StarsRatingReview_STDetailWrapper = styled.div`
     margin-right: 11px;
   }
   
-  
-  
   & > span{
     color: #939090;
+  }
+  
+  &.isDetailModalDesktop{
+    margin-bottom: 20px;
+    
+    & > :nth-child(1){
+      font-size:40px;
+    }
+    
+    & > :nth-child(2){
+      margin-right: 14px;
+    }
+    
+    
+    & > :nth-child(3){
+      font-size:20px;
+      
+      
+      
+      
+      
+    }
+    
+    
+    
   }
   
   

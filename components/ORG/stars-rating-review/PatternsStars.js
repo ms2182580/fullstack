@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { StartEmptySvg, StartFullSvg } from "../../../assets/Icons"
+import { StartEmptyBigSvg, StartEmptySvg, StartFullBigSvg, StartFullSvg } from "../../../assets/Icons"
 import { PatternStarsWrapper } from "./styles/PatternStarsWrapper"
 
 let ratingPatternFunc = (rating) => {
@@ -13,22 +13,23 @@ let ratingPatternFunc = (rating) => {
     })
 }
 
-export const PatternStars = ({ rating }) => {
+export const PatternStars = ({ rating, modal = false }) => {
   let thePattern = ratingPatternFunc(rating)
   return (
-    <PatternStarsWrapper>
+    <PatternStarsWrapper modal={modal}
+    >
       <div>
         {thePattern.map((x, i) => {
           if (x === "fully") {
             return (
               <Fragment key={`${x}${i}`}>
-                <StartFullSvg />
+                {modal ? <StartFullBigSvg /> : <StartFullSvg />}
               </Fragment>
             )
           } else {
             return (
               <Fragment key={`${x}${i}`}>
-                <StartEmptySvg />
+                {modal ? <StartEmptyBigSvg /> : <StartEmptySvg />}
               </Fragment>
             )
           }

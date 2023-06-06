@@ -9,7 +9,7 @@ export const STDetail_ReviewsWrapper = styled.div`
   display: grid;
   scroll-margin-top: 50px;
 
-  .STDetail_ReviewsHeaderDesktop {
+  /* .STDetail_ReviewsHeaderDesktop {
     & > :nth-child(2) {
       & > :nth-child(1) {
         font-weight: 600;
@@ -22,9 +22,9 @@ export const STDetail_ReviewsWrapper = styled.div`
     & > :nth-child(3) {
       margin-top: 8px;
     }
-  }
+  } */
 
-  .STDetail_ReviewsHeaderDesktop_PeopleOftenMention {
+  /* .STDetail_ReviewsHeaderDesktop_PeopleOftenMention {
     & > :nth-child(1) {
       margin-bottom: 11px;
     }
@@ -67,9 +67,15 @@ export const STDetail_ReviewsWrapper = styled.div`
       margin-top: 32px;
       border: 1px solid hsl(0, 0%, 88.8%);
     }
-  }
+  } */
 
-  & > :last-child {
+  & > :nth-child(2){
+    margin-top: 32px;
+    border: 1px solid hsl(0, 0%, 88.6%);
+    
+  }
+  
+  & > :nth-child(4) {
     margin-left: auto;
     margin-top: 24px;
     margin-right: 16px;

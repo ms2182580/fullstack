@@ -65,7 +65,6 @@ export const STDetail_Appointments = ({ picture, name, lastName }) => {
         <ButtonSmall disabled={wasSelected ? false : true}>Next</ButtonSmall>
         {showModal && (
           <STDetail_Appointment_Modal
-            setShowModal={setShowModal}
             showModal={showModal}
             handleHideModal={handleHideModal}
             picture={picture}
@@ -76,7 +75,6 @@ export const STDetail_Appointments = ({ picture, name, lastName }) => {
             dayNumber={selectTime.dayNumber}
             monthName={selectTime.monthName}
             yearNumber={selectTime.yearNumber}
-            unlockScroll={unlockScroll}
 
           />
         )}

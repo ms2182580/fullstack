@@ -20,7 +20,6 @@ export const STDetail_Appointment_Modal = ({
   dayNumber,
   monthName,
   yearNumber,
-  unlockScroll
 }) => {
   const { push } = useRouter()
   const componentRef = useRef(null)
