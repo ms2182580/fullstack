@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal"
 import { ORG_ReviewsUsersName } from "../../../../utils/ORG_ReviewsUsersName"
 import { ORG_ST_Review } from "../../../../utils/ORG_ST_Review"
@@ -56,7 +56,6 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
             reviews={reviews}
             handlePush={handlePush}
           />
-
         </>
       ) : (
         <div>
@@ -75,25 +74,15 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
         </>
       ) : null}
 
-
-
       <STDetail_Reviews_IndividualWrapper>
-        <STDetail_Reviews_IndividualComponent
-          review={getReviews[0]}
-          userName={allUserNames[0]}
-        />
-        <STDetail_Reviews_IndividualComponent
-          review={getReviews[1]}
-          userName={allUserNames[1]}
-        />
-        <STDetail_Reviews_IndividualComponent
-          review={getReviews[3]}
-          userName={allUserNames[3]}
-        />
-        <STDetail_Reviews_IndividualComponent
-          review={getReviews[2]}
-          userName={allUserNames[2]}
-        />
+        {getReviews.map((x, i) => (
+          <Fragment key={`${x}_${allUserNames[i]}`}>
+            <STDetail_Reviews_IndividualComponent
+              review={x}
+              userName={allUserNames[i]}
+            />
+          </Fragment>
+        ))}
       </STDetail_Reviews_IndividualWrapper>
 
       {isMobile === false ? (
@@ -115,11 +104,6 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
               getReviews={getReviews}
               name={name}
               lastName={lastName}
-
-
-
-
-
             />
           )}
         </>

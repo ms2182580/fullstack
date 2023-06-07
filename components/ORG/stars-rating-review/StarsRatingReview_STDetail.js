@@ -3,7 +3,6 @@ import { PatternStars } from "./PatternsStars.js"
 import { StarsRatingReview_STDetailWrapper } from "./styles/StarsRatingReview_STDetailWrapper.js"
 
 export const StarsRatingReview_STDetail = ({ rating, reviews, isDetailModalDesktop = false, modal = false }) => {
-  // console.log("isDetailModalDesktop:", isDetailModalDesktop)
   return (
     <StarsRatingReview_STDetailWrapper className={isDetailModalDesktop ? "isDetailModalDesktop" : ""}>
       <P semibold>{rating}.0</P>

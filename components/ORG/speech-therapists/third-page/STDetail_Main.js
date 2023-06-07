@@ -17,6 +17,7 @@ import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
 import { STDetail_About } from "./STDetail_About"
 import { STDetail_Appointments } from "./STDetail_Appointments"
 import { STDetail_Reviews } from "./STDetail_Reviews"
+import { STDetail_FAQS } from "./dekstop/STDetail_FAQS"
 import { STDetail_Header } from "./dekstop/STDetail_Header"
 import { STDetail_STDetails } from "./dekstop/STDetail_STDetails"
 import { STDetail_Mobile } from "./mobile/STDetail_Mobile"
@@ -313,13 +314,17 @@ export const STDetail_Main = () => {
           )}
           {isMobile === false ? (
             <>
-              <div id="FAQs">
-                ...
-                <p>FAQ's</p>
-                ...
-              </div>
+              <STDetail_FAQS
+                name={speechtherapist.data[0].name.first}
+                lastName={speechtherapist.data[0].name.last}
+                locationCity={speechtherapist.data[0].location.city}
+                locationStreetNumber={speechtherapist.data[0].location.street.number}
+                locationStreetName={speechtherapist.data[0].location.street.name}
+                locationState={speechtherapist.data[0].location.state}
+              />
             </>
           ) : null}
+
           {isMobile === false ? (
             <>
               <ST_PageLastUpdated />

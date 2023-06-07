@@ -71,8 +71,6 @@ export const getAllReviews = (amountOfReviews = 3) => {
     shuffledArr = [...AboutCollection.FiveStars].sort(() => 0.5 - Math.random()).slice(0, amountOfReviews)
   }
 
-  console.log('💫shuffledArr:', shuffledArr, amountOfReviews)
-
   const starOfFourReview = pickJustOne(["FiveStars", "ThreeStars"])
   if (starOfFourReview === "ThreeStars") {
     const getLastReview = pickJustOne(AboutCollection[starOfFourReview])
@@ -136,9 +134,27 @@ const months = [
   "December"
 ]
 
-export const ORG_ST_Review_Months = () => {
-  const pickedOneMonth = pickJustOne(months)
-  return pickedOneMonth
+export const ORG_ST_Review_Months = (howMuch = 1) => {
+  if (howMuch === 1) {
+    const pickedOneMonth = pickJustOne(months)
+    return pickedOneMonth
+  }
+
+  if (howMuch > 1 && howMuch <= months.length) {
+    const shuffled = [...months].sort(() => 0.5 - Math.random())
+    const shuffledArr = shuffled.slice(0, howMuch)
+    return shuffledArr
+  }
+
+  if (howMuch > months.length) {
+    let newRandomMonths = [...months].sort(() => 0.5 - Math.random())
+    for (let i = 0; newRandomMonths.length < howMuch; i++) {
+      let indexToPush = i % months.length
+      newRandomMonths.push(months[indexToPush])
+    }
+
+    return newRandomMonths
+  }
 }
 
 export const ORG_ST_LastUpdate = () => {
