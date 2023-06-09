@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react"
+import { Fragment, useRef, useState } from "react"
 import { Search_STDetail_FAQSSVG } from "../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
@@ -36,6 +36,13 @@ export const STDetail_FAQS = ({
     setShowAll((prevState) => !prevState)
   }
 
+  const toMoveTheView = useRef()
+
+  const handleToMoveTo = () => {
+    const position = toMoveTheView.current.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({ top: position })
+  }
+
   const [showModal, setShowModal] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
@@ -52,16 +59,11 @@ export const STDetail_FAQS = ({
     setModalShowedCtx(false)
   }
 
-  // console.log("allUserNames:", allUserNames)
-  /* 
-  !FH0
-  Create the modal!
-  
-  */
-
   return (
     <>
-      <STDetail_FAQSWrapper id="FAQs">
+      <STDetail_FAQSWrapper
+        id="FAQs"
+        ref={toMoveTheView}>
         <div>
           <Search_STDetail_FAQSSVG />
           <input
@@ -120,7 +122,7 @@ export const STDetail_FAQS = ({
               hyperlink_normal
               semibold
               underline
-              onClick={handleShowAll}>
+              onClick={() => { handleShowAll(); handleToMoveTo() }}>
               See Less
             </P>
           </>
@@ -133,7 +135,6 @@ export const STDetail_FAQS = ({
           name={name}
           lastName={lastName}
           setFaqsData={setFaqsData}
-
         />
       )}
     </>
