@@ -4,7 +4,6 @@ import { NEUTRALS } from "../../../../../../assets/Colors"
 export const STDetail_Review_ModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   position: fixed;
-  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

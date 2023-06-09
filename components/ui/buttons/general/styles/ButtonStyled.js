@@ -51,6 +51,8 @@ export const BtnSmall = styled(BtnDefault)`
   padding-bottom: 12px;
   padding-inline: 32px;
   font-size: 16px;
+  border:${({ disabled }) => disabled ? `2px solid transparent` : ``};
+  
 `
 export const BtnMedium = styled(BtnDefault)`
   font-size: 20px;
