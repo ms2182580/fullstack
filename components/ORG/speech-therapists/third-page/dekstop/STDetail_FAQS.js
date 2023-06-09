@@ -22,10 +22,6 @@ export const STDetail_FAQS = ({
 }) => {
   const [showAll, setShowAll] = useState(false)
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName(5))
-  /* 
-  !FH0
-  Make this return more then one month
-  */
   const [month, setMonth] = useState(ORG_ST_Review_Months(5))
 
   const [faqsData, setFaqsData] = useState(

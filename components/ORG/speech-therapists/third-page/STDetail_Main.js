@@ -10,7 +10,6 @@ import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
 import { ST_CardEmail } from "../ST_CardEmail.js"
 import { ST_CardLocation } from "../ST_CardLocation.js"
 import { ST_CardPhone } from "../ST_CardPhone"
-import { ST_PageLastUpdated } from "../ST_PageLastUpdated"
 import { STDetail_TwoButtons } from "../ST_TwoButtons"
 import { ST_CardInfo } from "../second-page/ST_CardInfo"
 import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
@@ -19,6 +18,7 @@ import { STDetail_Appointments } from "./STDetail_Appointments"
 import { STDetail_Reviews } from "./STDetail_Reviews"
 import { STDetail_FAQS } from "./dekstop/STDetail_FAQS"
 import { STDetail_Header } from "./dekstop/STDetail_Header"
+import { STDetail_PageLastUpdated } from "./dekstop/STDetail_PageLastUpdated"
 import { STDetail_STDetails } from "./dekstop/STDetail_STDetails"
 import { STDetail_Mobile } from "./mobile/STDetail_Mobile"
 import { STDetail_Mobile_StickyNavbar } from "./mobile/STDetail_Mobile_StickyNavbar"
@@ -142,7 +142,6 @@ export const STDetail_Main = () => {
       <STDetail_MainWrapper
         isMobile={isMobile}
         modalShowedCtx={modalShowedCtx}>
-        {/* {modalShowedCtx && <div className="InFront" />} */}
         {isMobile === false ? (
           <>
             <STDetail_Header STData={speechtherapist} />
@@ -327,14 +326,14 @@ export const STDetail_Main = () => {
 
           {isMobile === false ? (
             <>
-              <ST_PageLastUpdated />
+              <STDetail_PageLastUpdated
+                name={speechtherapist.data[0].name.first}
+                lastName={speechtherapist.data[0].name.last}
+              />
             </>
           ) : null}
         </div>
       </STDetail_MainWrapper>
-      {/* {modalShowedCtx && <InFrontModalWrapper modalShowedCtx={modalShowedCtx} />} */}
-
-      {/* <InFrontModalWrapper modalShowedCtx={modalShowedCtx} /> */}
     </>
   )
 }

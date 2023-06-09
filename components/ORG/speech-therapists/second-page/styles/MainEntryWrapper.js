@@ -12,6 +12,8 @@ export const MainEntryWrapper = styled.div`
     "filterAndMap filterAndMap"
     "btns btns"
     "breadcrumbsAndUpdate breadcrumbsAndUpdate";
+    
+    margin-bottom: 76px;
 
   & > :nth-child(1) {
     grid-area: header;

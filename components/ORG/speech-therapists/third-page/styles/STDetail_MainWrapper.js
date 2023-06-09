@@ -2,9 +2,11 @@ import styled from "styled-components"
 
 export const STDetail_MainWrapper = styled.div`
   margin-inline: 40px;
+  margin-bottom: 84px;
+  
   
   & > :not(:first-child) > :not(:first-child):not(:last-child):not(.InFront) {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
   & > :not(:first-child) > span.toDisappear {
