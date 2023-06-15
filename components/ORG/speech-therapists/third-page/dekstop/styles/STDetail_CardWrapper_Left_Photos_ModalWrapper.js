@@ -7,7 +7,7 @@ export const STDetail_CardWrapper_Left_Photos_ModalWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(932px, 91%, 1310px);
+  width: clamp(932px, 91%, 1196px);
   background-color: ${NEUTRALS.OFF_WHITE};
   z-index: 2;
   cursor: default;
@@ -56,7 +56,6 @@ export const STDetail_CardWrapper_Left_Photos_ModalWrapper = styled.div`
       animation-duration: 1.5s;
       
       & > :nth-child(2){
-        /* border: 14px solid crimson; */
         position:absolute;
         right:16px;
         bottom:16px;
