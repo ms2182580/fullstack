@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, SEMANTICS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../assets/Colors"
 import { ST_CardWrapper, ST_CardWrapper_Left, ST_CardWrapper_Left_LeftImage } from "../../../styles/ST_CardWrapper"
 
 export const STDetail_CardWrapper = styled.div`
@@ -16,34 +16,10 @@ export const STDetail_CardWrapper = styled.div`
 export const STDetail_CardWrapper_Card_Detail = styled(ST_CardWrapper)`
   border: none;
   grid-template-columns: 450px 1fr;
-
-  & > :nth-child(1) {
-    /* margin-right: 24px; */
-    /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); */
-    /* border-radius: 8px; */
-  }
-
-  & > :nth-child(2) {
-    /* border-radius: 8px; */
-  }
 `
 
 export const STDetail_CardWrapper_Left = styled(ST_CardWrapper_Left)`
-  /* min-width: 450px; */
-  /* width: clamp(439px, 100%, 450px); */
-  /* width: 450px; */
-
-  /* border: 2px solid crimson; */
   padding-bottom: 24px;
-
-  & > :nth-child(2) {
-    margin-inline: auto;
-    font-size: 14px;
-    color: ${SEMANTICS.HYPERLINK_NORMAL};
-    text-decoration: underline;
-    cursor: pointer;
-    margin-bottom: 24px;
-  }
 
   & > :nth-last-child(1),
   & > :nth-last-child(2) {

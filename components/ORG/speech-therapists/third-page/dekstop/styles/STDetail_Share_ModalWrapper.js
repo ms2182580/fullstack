@@ -27,7 +27,6 @@ const hideElement = keyframes`
 
 export const STDetail_Share_ModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
-  /* display: ${({ showModal }) => (showModal ? `block` : `none`)}; */
   
   position: fixed;
   top: 50%;

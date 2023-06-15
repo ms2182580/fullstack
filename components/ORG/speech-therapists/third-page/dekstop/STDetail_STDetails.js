@@ -17,6 +17,7 @@ import { STDetail_TwoButtons } from "../../ST_TwoButtons"
 import { ST_CardWrapper_Left_LeftInfo } from "../../styles/ST_CardWrapper"
 import { STDetail_About } from "../STDetail_About"
 import { STDetail_AcceptingNewClients } from "./STDetail_AcceptingNewClients.js"
+import { STDetail_CardWrapper_Left_Photos } from "./STDetail_CardWrapper_Left_Photos"
 import { STDetail_CardWrapper_SecondRow_Info } from "./STDetail_CardWrapper_SecondRow_Info"
 import { STDetail_CarePlan } from "./STDetail_CarePlan"
 import { STDetail_MapComponent } from "./STDetail_MapComponent"
@@ -37,10 +38,13 @@ import {
 export const STDetail_STDetails = ({ STData }) => {
   const { push } = useRouter()
   const handlePush404 = () => {
-    push({
-      pathname: "/404",
-      query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
-    }, "/404")
+    push(
+      {
+        pathname: "/404",
+        query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
+      },
+      "/404"
+    )
   }
 
   return (
@@ -72,12 +76,11 @@ export const STDetail_STDetails = ({ STData }) => {
                 <Verified />
               </STDetail_CardWrapper_Left_LeftImage>
 
-              {/*
-                //!FH
-                This should be a modal to show at least 6 photos
-                
-                  */}
-              <span>6 photos</span>
+              <STDetail_CardWrapper_Left_Photos
+                photo={everySingleValue.picture.large}
+                name={everySingleValue.name.first}
+                lastName={everySingleValue.name.last}
+              />
 
               <ST_CardWrapper_Left_LeftInfo>
                 <ST_CardPhone phoneNumber={everySingleValue.phone} />

@@ -21,34 +21,34 @@ export const P = styled.p`
     x.bolder
       ? SharedVariables.FontWeight_800
       : x.bold
-      ? SharedVariables.FontWeight_700
-      : x.semibold
-      ? SharedVariables.FontWeight_600
-      : SharedVariables.FontWeight_400};
+        ? SharedVariables.FontWeight_700
+        : x.semibold
+          ? SharedVariables.FontWeight_600
+          : SharedVariables.FontWeight_400};
   text-decoration: ${(x) =>
     x.underline
       ? SharedVariables.Underline
       : x.linethrough
-      ? SharedVariables.LineThrough
-      : x.linethrough && x.underline
-      ? SharedVariables.Underline && SharedVariables.LineThrough
-      : null};
+        ? SharedVariables.LineThrough
+        : x.linethrough && x.underline
+          ? SharedVariables.Underline && SharedVariables.LineThrough
+          : null};
   color: ${(x) =>
     x.dark_gray
       ? NEUTRALS.DARK_GREY
       : x.light_gray
-      ? NEUTRALS.LIGHT_GREY
-      : x.success
-      ? SEMANTICS.SUCCESS_STATE
-      : x.error
-      ? SEMANTICS.ERROR_STATE
-      : x.primary_cta
-      ? PRIMARY.PRIMARY_CTA
-      : x.primary_hover
-      ? PRIMARY.PRIMARY_HOVER
-      : x.hyperlink_normal
-      ? SEMANTICS.HYPERLINK_NORMAL
-      : NEUTRALS.BLACK};
+        ? NEUTRALS.LIGHT_GREY
+        : x.success
+          ? SEMANTICS.SUCCESS_STATE
+          : x.error
+            ? SEMANTICS.ERROR_STATE
+            : x.primary_cta
+              ? PRIMARY.PRIMARY_CTA
+              : x.primary_hover
+                ? PRIMARY.PRIMARY_HOVER
+                : x.hyperlink_normal
+                  ? SEMANTICS.HYPERLINK_NORMAL
+                  : NEUTRALS.BLACK};
 `
 export const Caption = styled.span`
   line-height: 24px;
@@ -57,28 +57,30 @@ export const Caption = styled.span`
     x.bolder
       ? SharedVariables.FontWeight_700
       : x.bold
-      ? SharedVariables.FontWeight_600
-      : SharedVariables.FontWeight_400};
+        ? SharedVariables.FontWeight_600
+        : SharedVariables.FontWeight_400};
   text-decoration: ${(x) =>
     x.underline
       ? SharedVariables.Underline
       : x.linethrough
-      ? SharedVariables.LineThrough
-      : x.linethrough && x.underline
-      ? SharedVariables.Underline && SharedVariables.LineThrough
-      : null};
+        ? SharedVariables.LineThrough
+        : x.linethrough && x.underline
+          ? SharedVariables.Underline && SharedVariables.LineThrough
+          : null};
   color: ${(x) =>
     x.dark_gray
       ? NEUTRALS.DARK_GREY
       : x.light_gray
-      ? NEUTRALS.LIGHT_GREY
-      : x.success
-      ? SEMANTICS.SUCCESS_STATE
-      : x.error
-      ? SEMANTICS.ERROR_STATE
-      : x.primary_cta
-      ? PRIMARY.PRIMARY_CTA
-      : x.primary_hover
-      ? PRIMARY.PRIMARY_HOVER
-      : NEUTRALS.BLACK};
+        ? NEUTRALS.LIGHT_GREY
+        : x.success
+          ? SEMANTICS.SUCCESS_STATE
+          : x.error
+            ? SEMANTICS.ERROR_STATE
+            : x.primary_cta
+              ? PRIMARY.PRIMARY_CTA
+              : x.primary_hover
+                ? PRIMARY.PRIMARY_HOVER
+                : x.hyperlink_normal
+                  ? SEMANTICS.HYPERLINK_NORMAL
+                  : NEUTRALS.BLACK};
 `

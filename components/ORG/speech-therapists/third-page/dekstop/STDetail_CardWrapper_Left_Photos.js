@@ -1,16 +1,12 @@
 import { useState } from "react"
-import { ShareSvg } from "../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { STDetail_CardWrapper_Left_Photos_Modal } from "./STDetail_CardWrapper_Left_Photos_Modal.js"
+import { STDetail_CardWrapper_Left_PhotosWrapper } from "./styles/STDetail_CardWrapper_Left_PhotosWrapper.js"
 
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { STDetail_Share_Modal } from "./STDetail_Share_Modal.js"
-import { STDetail_ShareWrapper } from "./styles/STDetail_ShareWrapper.js"
-
-export const STDetail_Share = ({ picture, name, lastName }) => {
+export const STDetail_CardWrapper_Left_Photos = ({ photo, name, lastName }) => {
   const [showModal, setShowModal] = useState(false)
-  const [showQRCode, setShowQRCode] = useState(false)
-
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
@@ -24,28 +20,22 @@ export const STDetail_Share = ({ picture, name, lastName }) => {
     unlockScroll()
     setShowModal(false)
     setModalShowedCtx(false)
-    setShowQRCode(false)
   }
 
   return (
     <>
-      <STDetail_ShareWrapper onClick={handleShowModal}>
-        <ShareSvg tabIndex={0} />
-        <P primary_hover>Share</P>
-      </STDetail_ShareWrapper>
-
+      <STDetail_CardWrapper_Left_PhotosWrapper onClick={handleShowModal}>
+        <Caption hyperlink_normal>6 photos</Caption>
+      </STDetail_CardWrapper_Left_PhotosWrapper>
       {showModal && (
-        <STDetail_Share_Modal
+        <STDetail_CardWrapper_Left_Photos_Modal
           showModal={showModal}
           handleHideModal={handleHideModal}
-          picture={picture}
+          photo={photo}
           name={name}
           lastName={lastName}
-          showQRCode={showQRCode}
-          setShowQRCode={setShowQRCode}
         />
       )}
-
     </>
   )
 }

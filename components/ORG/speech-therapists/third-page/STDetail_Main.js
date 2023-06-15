@@ -243,6 +243,11 @@ export const STDetail_Main = () => {
                   isThirdPage={true}
                 />
               </div>
+              {/* 
+              !FH
+              Check this things: is already inside a isMobile === true, so what's the point of check it again?
+              
+              */}
               {isMobile === false ? null : (
                 <>
                   <STDetail_Separator />
@@ -292,6 +297,7 @@ export const STDetail_Main = () => {
                 />
                 <STDetail_TwoButtons />
               </div>
+
               {isMobile === false ? null : (
                 <>
                   <STDetail_Separator />
@@ -299,6 +305,8 @@ export const STDetail_Main = () => {
               )}
             </STDetail_STDetails_ThirdPageWrapper>
           )}
+
+
           <STDetail_Reviews
             name={speechtherapist.data[0].name.first}
             lastName={speechtherapist.data[0].name.last}
