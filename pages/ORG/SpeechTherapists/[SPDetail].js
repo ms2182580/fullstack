@@ -4,7 +4,9 @@ import { STDetail_Main } from "../../../components/ORG/speech-therapists/third-p
 const SPDetail = () => {
   const [loaded, setLoaded] = useState(false)
   const router = useRouter()
-  
+
+
+
   useEffect(() => {
     if (router.isReady) {
       setLoaded(true)
@@ -27,3 +29,10 @@ const SPDetail = () => {
 }
 
 export default SPDetail
+
+/* 
+!FH
+Make here the checking if the user is mobile or desktop. The idea is: check this in a page level, not in a component level
+
+  const { isMobile } = useWidthWindow1024()
+*/

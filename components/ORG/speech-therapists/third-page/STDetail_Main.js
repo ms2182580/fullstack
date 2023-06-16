@@ -83,11 +83,6 @@ export const STDetail_Main = () => {
     }
   }, [isMobile])
 
-  // useEffect(() => {
-  //   /*_codeHere_*/
-  //   console.log("isMobile:", isMobile)
-  // }, [isMobile])
-
   const [highlight, setHighlight] = useState("about")
   const aboutRef = useRef(null)
   const detailsRef = useRef(null)
