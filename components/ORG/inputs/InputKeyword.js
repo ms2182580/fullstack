@@ -1,10 +1,10 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
+import ORGDesktop_Search_LoupeIcon from "../../../assets/Icons/ORGDesktop_Search_LoupeIcon.png"
 import ORG_LANDING_CC from "../../../assets/Icons/ORG_Landing_CC.png"
 import ORG_LANDING_SSA from "../../../assets/Icons/ORG_Landing_SSA.png"
 import ORG_LANDING_TP from "../../../assets/Icons/ORG_Landing_TP.png"
-import SearchIcon from "../../../assets/Icons/SearchIcon.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useCheckMobile } from "../../../utils/useCheckMobile"
@@ -15,13 +15,14 @@ import { OptionsMobile } from "../dropdown/OptionsMobile"
 import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
 import { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
 
+
 export const InputKeyword = () => {
   const router = useRouter()
   const formatRouter = router.pathname
 
-  
+
   const { isMobile, widthWindow } = useWidthWindow1024()
-  
+
 
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
@@ -70,7 +71,7 @@ export const InputKeyword = () => {
     "Physical Therapist",
     "Occupational Therapist"
   ]
-  
+
   const shouldTab = useShouldTab()
 
   return (
@@ -93,7 +94,7 @@ export const InputKeyword = () => {
       <span>
         <span>
           <Image
-            src={SearchIcon}
+            src={ORGDesktop_Search_LoupeIcon}
             alt=""
           />
         </span>
@@ -103,18 +104,18 @@ export const InputKeyword = () => {
           onBlur={
             !isTouchScreen
               ? () => {
-                  if (!isHoveredKeyword) {
-                    setIsFocusKeyword(false)
-                  }
+                if (!isHoveredKeyword) {
+                  setIsFocusKeyword(false)
                 }
+              }
               : undefined
           }
           onTouchStart={
             isTouchScreen
               ? (e) => {
-                  e.stopPropagation()
-                  setIsFocusKeyword(true)
-                }
+                e.stopPropagation()
+                setIsFocusKeyword(true)
+              }
               : undefined
           }
           value={keywordInput}

@@ -1,16 +1,16 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import InsuranceIcon from "../../../assets/Icons/InsuranceIcon.png"
+import { useCheckUserWidth } from "../../../context/CheckUserWidth"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useCheckMobile } from "../../../utils/useCheckMobile"
-import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
-import { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
+import { SuggestionsKeywordWrapper } from "./desktop/styles/STDesktop_SearchComponentWrapper"
 
 export const InputInsurance = () => {
-  const { isMobile } = useWidthWindow1024()
+  const { isMobile } = useCheckUserWidth()
 
   const [isFocusEnsurance, setIsFocusEnsurance] = useState(false)
   const [isHoveredEnsurance, setIsHoveredEnsurance] = useState(false)
@@ -46,7 +46,7 @@ export const InputInsurance = () => {
       document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [])
-  
+
   const shouldTab = useShouldTab()
 
   return (
@@ -79,18 +79,18 @@ export const InputInsurance = () => {
           onBlur={
             !isTouchScreen
               ? () => {
-                  if (!isHoveredEnsurance) {
-                    setIsFocusEnsurance(false)
-                  }
+                if (!isHoveredEnsurance) {
+                  setIsFocusEnsurance(false)
                 }
+              }
               : undefined
           }
           onTouchStart={
             isTouchScreen
               ? (e) => {
-                  e.stopPropagation()
-                  setIsFocusEnsurance(true)
-                }
+                e.stopPropagation()
+                setIsFocusEnsurance(true)
+              }
               : undefined
           }
           value={keywordInput}
@@ -100,7 +100,7 @@ export const InputInsurance = () => {
           }}
           ref={inputRefEnsurance}
           tabIndex={shouldTab}
-          
+
         />
       </span>
 
@@ -115,7 +115,7 @@ export const InputInsurance = () => {
           setKeywordClickByUserContext={setEnsuranceContext}
           inputRefFocus={inputRefEnsurance}
           isFirstOrSecondDropdown={true}
-          theRef={ keywordSecondLevelRef}
+          theRef={keywordSecondLevelRef}
         />
       </SuggestionsKeywordWrapper>
     </div>

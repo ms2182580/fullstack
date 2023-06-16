@@ -8,8 +8,8 @@ import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useCheckMobile } from "../../../utils/useCheckMobile"
 import { useWidthWindow1024 } from "../../../utils/useWidthWindow1024"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import DropdownSuggestionsInput from "./DropdownSuggestionsInput"
-import { SuggestionsKeywordWrapper } from "./styles/SearchComponentWrapper"
+import { STSearchDesktop_DropdownSuggestionComponent } from "./desktop/STDesktop_DropdownSuggestionComponent"
+import { STSearchDesktop_DropdownSuggestionWrapper } from "./desktop/styles/STDesktop_DropdownSuggestionWrapper"
 
 export const InputLocation = () => {
   const router = useRouter()
@@ -23,10 +23,10 @@ export const InputLocation = () => {
   const [cityInput, setCityInput] = useState("")
 
   const { setCitiesContext, citiesContext } = useORG_InputCtx()
-  
+
   useEffect(() => {
     setCityInput(citiesContext)
-  }, [ citiesContext])
+  }, [citiesContext])
 
 
   const { isTouchScreen } = useCheckMobile()
@@ -49,7 +49,7 @@ export const InputLocation = () => {
       document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [])
-  
+
   const shouldTab = useShouldTab()
 
   return (
@@ -82,18 +82,18 @@ export const InputLocation = () => {
           onBlur={
             !isTouchScreen
               ? () => {
-                  if (!isHoveredCity) {
-                    setIsFocusCity(false)
-                  }
+                if (!isHoveredCity) {
+                  setIsFocusCity(false)
                 }
+              }
               : undefined
           }
           onTouchStart={
             isTouchScreen
               ? (e) => {
-                  e.stopPropagation()
-                  setIsFocusCity(true)
-                }
+                e.stopPropagation()
+                setIsFocusCity(true)
+              }
               : undefined
           }
           value={cityInput}
@@ -106,8 +106,8 @@ export const InputLocation = () => {
         />
       </span>
 
-      <SuggestionsKeywordWrapper ref={cityFirstLevelRef}>
-        <DropdownSuggestionsInput
+      <STSearchDesktop_DropdownSuggestionWrapper ref={cityFirstLevelRef}>
+        <STSearchDesktop_DropdownSuggestionComponent
           isFocus={isFocusCity}
           setIsHover={setIsHoveredCity}
           setIsFocus={setIsFocusCity}
@@ -120,7 +120,7 @@ export const InputLocation = () => {
           whichIcon={CurrentLocationSvg}
           theRef={citySecondLevelRef}
         />
-      </SuggestionsKeywordWrapper>
+      </STSearchDesktop_DropdownSuggestionWrapper>
     </div>
   )
 }

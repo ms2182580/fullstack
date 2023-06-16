@@ -7,7 +7,6 @@ import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 
 
-import { SearchComponent } from "../../../inputs/SearchComponent"
 
 export const STDetail_Header = ({ STData }) => {
   const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
@@ -28,7 +27,7 @@ export const STDetail_Header = ({ STData }) => {
         ]}
       />
 
-      <SearchComponent
+      <STSearchDesktop_SearchComponentSTSearchDesktop_SearchComponent STSearchDesktop_SearchComponent
         setKeywordsContext={setKeywordsContext}
         setCitiesContext={setCitiesContext}
         keywordValueContext={keywordsContext}

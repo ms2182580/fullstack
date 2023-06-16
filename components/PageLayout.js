@@ -6,6 +6,8 @@ import { NavBar } from "./navBar/NavBar.js"
 export const PageLayout = ({ children, title = "INCLUSIVE" }) => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
+
+
   return (
     <>
       <Head>

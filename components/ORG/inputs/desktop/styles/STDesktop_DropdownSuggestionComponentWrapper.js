@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
 
-export const DropdownSuggestionsWrapper = styled.div`
+export const STDesktop_DropdownSuggestionComponentWrapper = styled.div`
   & > div {
     padding-top: 1.5rem;
 
@@ -33,7 +33,7 @@ export const DropdownSuggestionsWrapper = styled.div`
   }
 `
 
-export const KeywordCities = styled.div`
+export const KeywordCitiesWrapper = styled.div`
   margin-top: -1.5rem;
 
   & > div > span {

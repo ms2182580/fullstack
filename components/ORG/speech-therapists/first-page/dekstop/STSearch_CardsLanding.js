@@ -3,8 +3,8 @@ import { H1, H2 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstruction } from "../../../../under-construction/UnderConstruction.js"
 import { LandingThreeSpeechTherapists } from "./LandingThreeSpeechTherapists.js"
 import { ThreeCardsLanding } from "./ThreeCardsLanding.js"
-import { CardsLandingWrapper } from "./styles/CardsLandingWrapper.js"
 import { MustShowResultsWrapper } from './styles/MustShowResultsWrapper.js'
+import { STSearch_CardsLandingWrapper } from "./styles/STSearch_CardsLandingWrapper.js"
 
 
 const reducer = (state, action) => {
@@ -23,14 +23,15 @@ const initialState = {
   SpeechTherapists: []
 }
 
-export const CardsLanding = () => {
+
+
+export const STSearch_CardsLanding = () => {
   const [mustShowResults, setMustShowResults] = useState(false)
 
   const [state, dispatch] = useReducer(reducer, initialState)
-  // console.log('❌state:', state)
 
   return (
-    <CardsLandingWrapper>
+    <STSearch_CardsLandingWrapper>
       <H1 hover>Resources</H1>
 
       <ThreeCardsLanding
@@ -56,6 +57,6 @@ export const CardsLanding = () => {
           </MustShowResultsWrapper>
         )
       )}
-    </CardsLandingWrapper>
+    </STSearch_CardsLandingWrapper>
   )
 }

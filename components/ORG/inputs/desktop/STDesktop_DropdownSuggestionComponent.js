@@ -1,10 +1,10 @@
-import { useCheckMobile } from "../../../utils/useCheckMobile"
-import { DropdownSuggestionsWrapper, KeywordCities } from "./styles/DropdownSuggestions"
+import { KeywordCitiesWrapper, STDesktop_DropdownSuggestionComponentWrapper } from "./styles/STDesktop_DropdownSuggestionComponentWrapper.js"
 
-const DropdownSuggestionsInput = ({
+
+export const STDesktop_DropdownSuggestionComponent = ({
   isFocus,
   setIsHover,
-  setIsFocus,
+  // setIsFocus,
   suggestions,
   keywordClickByUser,
   setKeywordClickByUser,
@@ -18,40 +18,20 @@ const DropdownSuggestionsInput = ({
   let IconSvg = whichIcon
   // console.log('keywordClickByUser:', keywordClickByUser)
 
-  const { isTouchScreen } = useCheckMobile()
-
+  // const { isTouchScreen } = useCheckMobile()
 
   return (
-    <DropdownSuggestionsWrapper
+    <STDesktop_DropdownSuggestionComponentWrapper
       ref={theRef}
-      isFirstOrSecondDropdown={isFirstOrSecondDropdown}
-
-
-    >
+      isFirstOrSecondDropdown={isFirstOrSecondDropdown}>
       {isFocus && (
         <div
-          onMouseEnter={
-            !isTouchScreen && setIsHover !== undefined
-              ? () => {
-                setIsHover(true)
-              }
-              : undefined
-          }
-          onMouseLeave={
-            !isTouchScreen && setIsHover !== undefined
-              ? () => {
-                setIsHover(false)
-              }
-              : undefined
-          }
-          onTouchStart={
-            isTouchScreen
-              ? (e) => {
-                e.stopPropagation()
-                setIsFocus(true)
-              }
-              : undefined
-          }
+          onMouseEnter={() => {
+            setIsHover(true)
+          }}
+          onMouseLeave={() => {
+            setIsHover(false)
+          }}
           onClick={() => inputRefFocus.current.focus()}>
           {haveIcon === false && <span>Popular Searches</span>}
 
@@ -60,7 +40,7 @@ const DropdownSuggestionsInput = ({
             return (
               <div key={index}>
                 {isMatch && haveIcon && index === 0 ? (
-                  <KeywordCities>
+                  <KeywordCitiesWrapper>
                     <IconSvg />
                     <div
                       onClick={() => {
@@ -70,7 +50,7 @@ const DropdownSuggestionsInput = ({
                       }}>
                       <span>{suggestion}</span>
                     </div>
-                  </KeywordCities>
+                  </KeywordCitiesWrapper>
                 ) : isMatch && index === 0 ? (
                   <>
                     <div
@@ -102,8 +82,6 @@ const DropdownSuggestionsInput = ({
           <div></div>
         </div>
       )}
-    </DropdownSuggestionsWrapper>
+    </STDesktop_DropdownSuggestionComponentWrapper>
   )
 }
-
-export default DropdownSuggestionsInput

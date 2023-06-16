@@ -1,4 +1,5 @@
 import { PageLayout } from "../components/PageLayout.js"
+import { CheckUserWidth_Provider } from '../context/CheckUserWidth.js'
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx"
 import { ORG_CtxFetchNoFiltersMobile_Provider } from "../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
@@ -12,6 +13,7 @@ import { ORG_CtxFiltersApply_Provider } from "../context/ORG_Ctx_FiltersApply.js
 import { ORG_CtxIndividualSpeechtherapist_Provider } from "../context/ORG_Ctx_IndividualSpeechtherapist"
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile.js"
 import { ORG_InputCtxProvider } from "../context/ORG_Input"
+
 
 import GlobalStyle from "./styles/index.js"
 
@@ -30,14 +32,16 @@ function MyApp({ Component, pageProps }) {
                         <ORG_CtxFiltersApply_Provider>
                           <Ctx_ShowModal_Provider>
                             <ORG_Ctx_2Page_Provider>
-                              <PageLayout>
-                                <GlobalStyle />
-                                <link
-                                  rel="icon"
-                                  href="/favicon.ico"
-                                />
-                                <Component {...pageProps} />
-                              </PageLayout>
+                              <CheckUserWidth_Provider>
+                                <PageLayout>
+                                  <GlobalStyle />
+                                  <link
+                                    rel="icon"
+                                    href="/favicon.ico"
+                                  />
+                                  <Component {...pageProps} />
+                                </PageLayout>
+                              </CheckUserWidth_Provider>
                             </ORG_Ctx_2Page_Provider>
                           </Ctx_ShowModal_Provider>
                         </ORG_CtxFiltersApply_Provider>

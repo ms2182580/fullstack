@@ -1,9 +1,9 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { BackArrow } from "../../../assets/Icons"
-import { SearchComponent } from "../../../components/ORG/inputs/SearchComponent"
+import { STSearchDesktop_SearchComponent } from "../../../components/ORG/inputs/desktop/STSearchDesktop_SearchComponent"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
-import { STRestuls_MainEntry } from "../../../components/ORG/speech-therapists/second-page/STRestuls_MainEntry"
+import { STRestults_MainEntry } from "../../../components/ORG/speech-therapists/second-page/STRestults_MainEntry"
 import { Breadcrumbs } from "../../../components/ui/breadcrumbs/Breadcrumbs"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles"
@@ -78,12 +78,12 @@ const ORGSpeechTherapists = () => {
                 ["Speech Therapist", ""]
               ]}
             />
-            <SearchComponent />
+            <STSearchDesktop_SearchComponent />
           </>
         ) : null}
       </SpeechTherapistWrapper>
 
-      <STRestuls_MainEntry widthWindow={widthWindow} />
+      <STRestults_MainEntry widthWindow={widthWindow} />
     </ORGSpeechTherapistsSecondPageWrapper>
   )
 }
