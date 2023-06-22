@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ThreeCardsLandingWrapper = styled.div`
+export const ST_Desktop_Search_ThreeCardsLandingWrapper = styled.div`
   margin-bottom: 84px;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ export const ThreeCardsLandingWrapper = styled.div`
     &::before {
       visibility: ${(x) => (x.mustShowResults && x.whichWasClick === 0 ? `visible` : "")};
       background-color: ${(x) =>
-        x.mustShowResults && x.whichWasClick === 0 ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.LIGHT_GREY};`};
+    x.mustShowResults && x.whichWasClick === 0 ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.LIGHT_GREY};`};
     }
   }
 
@@ -54,7 +54,7 @@ export const ThreeCardsLandingWrapper = styled.div`
     &::before {
       visibility: ${(x) => (x.mustShowResults && x.whichWasClick === 1 ? `visible` : "")};
       background-color: ${(x) =>
-        x.mustShowResults && x.whichWasClick === 1 ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.LIGHT_GREY};`};
+    x.mustShowResults && x.whichWasClick === 1 ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.LIGHT_GREY};`};
     }
   }
   & > :nth-child(3) {
@@ -64,7 +64,7 @@ export const ThreeCardsLandingWrapper = styled.div`
       visibility: ${(x) => (x.mustShowResults && x.whichWasClick === 2 ? `visible` : "")};
 
       background-color: ${(x) =>
-        x.mustShowResults && x.whichWasClick === 2 ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.LIGHT_GREY};`};
+    x.mustShowResults && x.whichWasClick === 2 ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.LIGHT_GREY};`};
     }
   }
 `

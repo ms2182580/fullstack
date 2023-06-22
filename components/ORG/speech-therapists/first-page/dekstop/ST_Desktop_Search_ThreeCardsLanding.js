@@ -3,10 +3,10 @@ import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../..
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
 import { useFetchNoFilters } from "../../../../../utils/ORG_useFetchNoFilters"
-import { SpecificCard } from "./SpecificCard.js"
-import { ThreeCardsLandingWrapper } from "./styles/ThreeCardsLandingWrapper"
+import { ST_Desktop_Search_Card } from "./ST_Desktop_Search_Card.js"
+import { ST_Desktop_Search_ThreeCardsLandingWrapper } from "./styles/ST_Desktop_Search_ThreeCardsLandingWrapper"
 
-export const ThreeCardsLanding = ({
+export const ST_Desktop_Search_ThreeCardsLanding = ({
   setMustShowResults,
   dispatch,
   mustShowResults
@@ -118,10 +118,10 @@ export const ThreeCardsLanding = ({
   const [whichWasClick, setWhichWasClick] = useState()
 
   return (
-    <ThreeCardsLandingWrapper
+    <ST_Desktop_Search_ThreeCardsLandingWrapper
       mustShowResults={mustShowResults}
       whichWasClick={whichWasClick}>
-      <SpecificCard
+      <ST_Desktop_Search_Card
         title="Therapeutic Services"
         icon={ORGLanding_ST}
         setMustShowResults={setMustShowResults}
@@ -131,7 +131,7 @@ export const ThreeCardsLanding = ({
         numberCard={0}
         setWhichWasClick={setWhichWasClick}
       />
-      <SpecificCard
+      <ST_Desktop_Search_Card
         inProgress={true}
         title="Doctors"
         icon={ORGLanding_Doctors}
@@ -142,7 +142,7 @@ export const ThreeCardsLanding = ({
         numberCard={1}
         setWhichWasClick={setWhichWasClick}
       />
-      <SpecificCard
+      <ST_Desktop_Search_Card
         inProgress={true}
         title="Community Classes"
         icon={ORGLanding_CC}
@@ -153,7 +153,7 @@ export const ThreeCardsLanding = ({
         numberCard={2}
         setWhichWasClick={setWhichWasClick}
       />
-    </ThreeCardsLandingWrapper>
+    </ST_Desktop_Search_ThreeCardsLandingWrapper>
   )
 }
 

@@ -1,5 +1,5 @@
-import { IndexDesktop_ST_Search } from "../../components/ORG/speech-therapists/first-page/dekstop/IndexDesktop_ST_Search"
-import { IndexMobile_ST_Search } from "../../components/ORG/speech-therapists/first-page/mobile/IndexMobile_ST_Search"
+import { INDEX_Desktop_STSearch } from "../../components/ORG/speech-therapists/first-page/dekstop/INDEX_Desktop_STSearch"
+import { INDEX_Mobile_STSearch } from "../../components/ORG/speech-therapists/first-page/mobile/INDEX_Mobile_STSearch"
 import { useCheckUserWidth } from "../../context/CheckUserWidth"
 
 const ORGIndex = () => {
@@ -9,11 +9,12 @@ const ORGIndex = () => {
     <>
       {isMobile === false ? (
         <>
-          <IndexDesktop_ST_Search />
+          <INDEX_Desktop_STSearch />
         </>
       ) : (
+
         <>
-          <IndexMobile_ST_Search />
+          <INDEX_Mobile_STSearch />
         </>
       )}
     </>

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { BackArrow } from "../../../assets/Icons"
-import { STSearchDesktop_SearchComponent } from "../../../components/ORG/inputs/desktop/STSearchDesktop_SearchComponent"
+import { STDesktop_SearchComponent } from "../../../components/ORG/inputs/desktop/STDesktop_SearchComponent"
 import LoadingSpeechTherapists from "../../../components/ORG/speech-therapists/LoadingSpeechTherapists"
 import { STRestults_MainEntry } from "../../../components/ORG/speech-therapists/second-page/STRestults_MainEntry"
 import { Breadcrumbs } from "../../../components/ui/breadcrumbs/Breadcrumbs"
@@ -78,7 +78,7 @@ const ORGSpeechTherapists = () => {
                 ["Speech Therapist", ""]
               ]}
             />
-            <STSearchDesktop_SearchComponent />
+            <STDesktop_SearchComponent />
           </>
         ) : null}
       </SpeechTherapistWrapper>

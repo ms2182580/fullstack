@@ -19,9 +19,6 @@ export const STDesktop_SearchComponent = ({ toWhere = "undefined" }) => {
         <STDesktop_InputKeyword />
         <STDesktop_InputLocation />
         <STDesktop_InputInsurance />
-        {/* <InputKeyword /> */}
-        {/* <InputLocation /> */}
-        {/* <InputInsurance /> */}
 
         {toWhere === "SpeechTherapists" ? (
           <LinkNoStyle href={`${router.pathname}/${toWhere}`}>

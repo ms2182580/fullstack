@@ -1,10 +1,10 @@
 import { useReducer, useState } from "react"
 import { H1, H2 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstruction } from "../../../../under-construction/UnderConstruction.js"
-import { LandingThreeSpeechTherapists } from "./LandingThreeSpeechTherapists.js"
-import { ThreeCardsLanding } from "./ThreeCardsLanding.js"
-import { MustShowResultsWrapper } from './styles/MustShowResultsWrapper.js'
-import { STSearch_CardsLandingWrapper } from "./styles/STSearch_CardsLandingWrapper.js"
+import { ST_Desktop_Search_LandingThree } from "./ST_Desktop_Search_LandingThree.js"
+import { ST_Desktop_Search_ThreeCardsLanding } from "./ST_Desktop_Search_ThreeCardsLanding.js"
+import { ST_Desktop_SearchCardsLandingWrapper } from "./styles/ST_Desktop_SearchCardsLandingWrapper.js"
+import { ST_Desktop_Search_MustShowResultsWrapper } from './styles/ST_Desktop_Search_MustShowResultsWrapper.js'
 
 
 const reducer = (state, action) => {
@@ -25,16 +25,16 @@ const initialState = {
 
 
 
-export const STSearch_CardsLanding = () => {
+export const ST_Desktop_SearchCardsLanding = () => {
   const [mustShowResults, setMustShowResults] = useState(false)
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <STSearch_CardsLandingWrapper>
+    <ST_Desktop_SearchCardsLandingWrapper>
       <H1 hover>Resources</H1>
 
-      <ThreeCardsLanding
+      <ST_Desktop_Search_ThreeCardsLanding
         setMustShowResults={setMustShowResults}
         dispatch={dispatch}
         mustShowResults={mustShowResults}
@@ -50,13 +50,13 @@ export const STSearch_CardsLanding = () => {
       ) : (
         mustShowResults &&
         state.SpeechTherapists.length !== 0 && (
-          <MustShowResultsWrapper>
+          <ST_Desktop_Search_MustShowResultsWrapper>
             <H2 hover>Top Therapeutic Services</H2>
 
-            <LandingThreeSpeechTherapists dataToUse={state.SpeechTherapists[0]} />
-          </MustShowResultsWrapper>
+            <ST_Desktop_Search_LandingThree dataToUse={state.SpeechTherapists[0]} />
+          </ST_Desktop_Search_MustShowResultsWrapper>
         )
       )}
-    </STSearch_CardsLandingWrapper>
+    </ST_Desktop_SearchCardsLandingWrapper>
   )
 }

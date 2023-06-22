@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
 
-export const DropdownSuggestionsWrapper = styled.div`
+export const STSearchMobile_DropdownSuggestionsComponentWrapper = styled.div`
   & > div {
     padding-top: 1.5rem;
 

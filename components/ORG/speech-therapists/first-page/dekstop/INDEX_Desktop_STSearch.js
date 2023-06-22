@@ -2,12 +2,12 @@ import Image from "next/image.js"
 import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Search_Hero.png"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { STDesktop_SearchComponent } from "../../../inputs/desktop/STDesktop_SearchComponent"
-import { STSearch_CardsLanding } from "./STSearch_CardsLanding"
-import { IndexDesktop_ST_SearchWrapper } from "./styles/IndexDesktop_ST_SearchWrapper.js"
+import { ST_Desktop_SearchCardsLanding } from "./ST_Desktop_SearchCardsLanding"
+import { INDEX_Desktop_STSearchWrapper } from "./styles/INDEX_Desktop_STSearchWrapper"
 
-export const IndexDesktop_ST_Search = () => {
+export const INDEX_Desktop_STSearch = () => {
   return (
-    <IndexDesktop_ST_SearchWrapper>
+    <INDEX_Desktop_STSearchWrapper>
       <div>
         <div>
           <Image
@@ -23,17 +23,12 @@ export const IndexDesktop_ST_Search = () => {
         </H1>
       </div>
 
-      {/* 
-!FH0
-Make the component <STDesktop_SearchComponent/> be entirely Desktop and separate them from the mobile part!
-*/}
-
       <STDesktop_SearchComponent
         toWhere="SpeechTherapists"
         landingHere="true"
       />
 
-      <STSearch_CardsLanding />
-    </IndexDesktop_ST_SearchWrapper>
+      <ST_Desktop_SearchCardsLanding />
+    </INDEX_Desktop_STSearchWrapper>
   )
 }

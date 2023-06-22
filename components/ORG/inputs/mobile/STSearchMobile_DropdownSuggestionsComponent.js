@@ -1,7 +1,7 @@
-import { useCheckMobile } from "../../../utils/useCheckMobile"
-import { DropdownSuggestionsWrapper, KeywordCities } from "./styles/DropdownSuggestions"
+import { useCheckMobile } from "../../../../utils/useCheckMobile"
+import { KeywordCities, STSearchMobile_DropdownSuggestionsComponentWrapper } from "./styles/STSearchMobile_DropdownSuggestionsComponentWrapper"
 
-const DropdownSuggestionsInput = ({
+export const STSearchMobile_DropdownSuggestionsComponent = ({
   isFocus,
   setIsHover,
   setIsFocus,
@@ -16,18 +16,13 @@ const DropdownSuggestionsInput = ({
   isFirstOrSecondDropdown = false
 }) => {
   let IconSvg = whichIcon
-  // console.log('keywordClickByUser:', keywordClickByUser)
 
   const { isTouchScreen } = useCheckMobile()
 
-
   return (
-    <DropdownSuggestionsWrapper
+    <STSearchMobile_DropdownSuggestionsComponentWrapper
       ref={theRef}
-      isFirstOrSecondDropdown={isFirstOrSecondDropdown}
-
-
-    >
+      isFirstOrSecondDropdown={isFirstOrSecondDropdown}>
       {isFocus && (
         <div
           onMouseEnter={
@@ -102,8 +97,7 @@ const DropdownSuggestionsInput = ({
           <div></div>
         </div>
       )}
-    </DropdownSuggestionsWrapper>
+    </STSearchMobile_DropdownSuggestionsComponentWrapper>
   )
 }
 
-export default DropdownSuggestionsInput

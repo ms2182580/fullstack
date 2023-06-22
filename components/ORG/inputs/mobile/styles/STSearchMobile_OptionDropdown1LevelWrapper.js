@@ -1,19 +1,18 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../assets/Colors"
 
-export const OptionsMobileWrapper = styled.div`
-
+export const STSearchMobile_OptionDropdown1LevelWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: ${NEUTRALS.OFF_WHITE};
   width: 100%;
   position: absolute;
-  z-index: 99;
+  top:100%;
+  z-index: 2;
   filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.25));
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  margin-top: -12px;
 
   & > :nth-child(1) {
     padding-top: 12px;

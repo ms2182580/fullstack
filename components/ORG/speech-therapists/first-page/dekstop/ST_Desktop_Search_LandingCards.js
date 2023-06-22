@@ -6,20 +6,20 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview } from '../../../stars-rating-review/StartsRatingReview.js'
 import { Verified } from "../../../verified/Verified.js"
-import { ORGLandingCardsWrapper } from "./styles/ORGLandingCardsWrapper.js"
+import { ST_Desktop_Search_LandingCardsWrapper } from "./styles/ST_Desktop_Search_LandingCardsWrapper.js"
 
 
-export const ORGLandingCards = ({ dataToUse, reviews, filters }) => {
+export const ST_Desktop_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = () => {
     setSpeechtherapist({ data: [dataToUse], filters: [filters] })
     router.push("/ORG/SpeechTherapists/IndividualProvider")
   }
-  
-  
+
+
   return (
-    <ORGLandingCardsWrapper>
+    <ST_Desktop_Search_LandingCardsWrapper>
       <div>
         <Image
           src={dataToUse.picture.large}
@@ -42,6 +42,6 @@ export const ORGLandingCards = ({ dataToUse, reviews, filters }) => {
       <span onClick={() => goToDynamic()}>
         <BtnSmall>View Profile</BtnSmall>
       </span>
-    </ORGLandingCardsWrapper>
+    </ST_Desktop_Search_LandingCardsWrapper>
   )
 }

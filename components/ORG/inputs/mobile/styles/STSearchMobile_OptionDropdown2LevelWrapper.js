@@ -1,12 +1,19 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
-import { device } from "../../../../assets/screenSizes/ScreenSizes"
+import { NEUTRALS } from "../../../../../assets/Colors"
+import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
-export const SingleDropdownWrapper = styled.div`
+export const STSearchMobile_OptionDropdown2LevelWrapper = styled.div`
   display: grid;
   grid-template-columns: ${(x) => (x.noIcon ? "1fr" : "48px 1fr")};
   grid-template-rows: 1fr;
   position: relative;
+  
+  & > :nth-child(1){
+    /* border: 2px solid crimson; */
+    /* background-color: red; */
+    z-index: 33;
+    
+  }
 
   & > :nth-child(2) {
     display: flex;
@@ -93,11 +100,9 @@ export const SingleDropdownWrapper = styled.div`
         color: ${NEUTRALS.OFF_WHITE};
       }
 
-
       & > :nth-child(1) > :nth-child(1) {
         display: none;
       }
-
     }
   }
 `

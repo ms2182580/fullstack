@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const STSearch_CardsLandingWrapper = styled.div`
+export const ST_Desktop_SearchCardsLandingWrapper = styled.div`
   width:100%;
   
   

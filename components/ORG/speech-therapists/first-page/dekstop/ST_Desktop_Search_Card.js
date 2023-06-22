@@ -1,7 +1,7 @@
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { SpecificCardWrapper } from "./styles/SpecificCardWrapper.js"
+import { ST_Desktop_Search_CardWrapper } from "./styles/ST_Desktop_Search_CardWrapper.js"
 
-export const SpecificCard = ({
+export const ST_Desktop_Search_Card = ({
   title,
   icon,
   setMustShowResults,
@@ -18,11 +18,11 @@ export const SpecificCard = ({
   }
 
   return (
-    <SpecificCardWrapper
+    <ST_Desktop_Search_CardWrapper
       onClick={handleShowResultsAndDispatch}
       mustShowResults={mustShowResults}>
       {icon()}
       <H3>{title}</H3>
-    </SpecificCardWrapper>
+    </ST_Desktop_Search_CardWrapper>
   )
 }

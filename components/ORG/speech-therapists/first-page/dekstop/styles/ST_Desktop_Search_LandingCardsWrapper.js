@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const ORGLandingCardsWrapper = styled.div`
+export const ST_Desktop_Search_LandingCardsWrapper = styled.div`
   border-radius: 8px;
   border: 1px solid ${NEUTRALS.LIGHT_GREY};
   position: relative;
