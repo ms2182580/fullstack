@@ -92,7 +92,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
   return (
     <>
       <SingleDropdownWrapper
-        noIcon={noIcon}
+
         className="SingleDropdownWrapper">
         <span
           onClick={handleDropdownClick}

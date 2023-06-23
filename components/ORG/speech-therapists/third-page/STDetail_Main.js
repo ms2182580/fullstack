@@ -7,11 +7,12 @@ import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { InFrontModalWrapper } from "../../../inFront/styles/InFrontModalWrapper"
 import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
-import { ST_CardEmail } from "../ST_CardEmail.js"
-import { ST_CardLocation } from "../ST_CardLocation.js"
-import { ST_CardPhone } from "../ST_CardPhone"
+import { ST_D_CardEmail } from "../ST_CardEmail.js"
+import { ST_D_CardLocation } from "../ST_D_CardLocation"
+import { ST_D_CardPhone } from "../ST_D_CardPhone"
 import { STDetail_TwoButtons } from "../ST_TwoButtons"
 import { ST_CardInfo } from "../second-page/ST_CardInfo"
+import { ST_D_CardInfo } from "../second-page/ST_D_CardInfo"
 import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
 import { STDetail_About } from "./STDetail_About"
 import { STDetail_Appointments } from "./STDetail_Appointments"
@@ -207,31 +208,31 @@ export const STDetail_Main = () => {
               id="Details"
               ref={detailsRef}>
               <div>
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Languages"
                   dataToShow={languages}
                   isMobile={true}
                   isThirdPage={true}
                 />
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Practice Setting"
                   dataToShow={serviceSettings}
                   isMobile={true}
                   isThirdPage={true}
                 />
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Meeting Format"
                   dataToShow={meetingFormat}
                   isMobile={true}
                   isThirdPage={true}
                 />
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Insurance"
                   dataToShow={insurance}
                   isMobile={true}
                   isThirdPage={true}
                 />
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Ages Served"
                   dataToShow={agesServed}
                   isMobile={true}
@@ -272,7 +273,7 @@ export const STDetail_Main = () => {
               <div
                 id="Contact"
                 ref={contactRef}>
-                <ST_CardLocation
+                <ST_D_CardLocation
                   locationCity={speechtherapist.data[0].location.city}
                   locationStreetNumber={speechtherapist.data[0].location.street.number}
                   locationStreetName={speechtherapist.data[0].location.street.name}
@@ -280,12 +281,12 @@ export const STDetail_Main = () => {
                   isMobile={true}
                   isThirdPageMobile={true}
                 />
-                <ST_CardPhone
+                <ST_D_CardPhone
                   phoneNumber={speechtherapist.data[0].cell}
                   isMobile={true}
                   isThirdPageMobile={true}
                 />
-                <ST_CardEmail
+                <ST_D_CardEmail
                   email={speechtherapist.data[0].email}
                   isMobile={true}
                   isThirdPageMobile={true}

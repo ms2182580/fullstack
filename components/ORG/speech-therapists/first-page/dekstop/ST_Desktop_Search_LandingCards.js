@@ -4,7 +4,7 @@ import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG
 import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { StarsRatingReview } from '../../../stars-rating-review/StartsRatingReview.js'
+import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D.js"
 import { Verified } from "../../../verified/Verified.js"
 import { ST_Desktop_Search_LandingCardsWrapper } from "./styles/ST_Desktop_Search_LandingCardsWrapper.js"
 
@@ -34,7 +34,7 @@ export const ST_Desktop_Search_LandingCards = ({ dataToUse, reviews, filters }) 
       </H3>
       <H4>Speech Language Pathologist</H4>
       <P dark_gray>{dataToUse.location.city}</P>
-      <StarsRatingReview
+      <StarsRatingReview_D
         rating={dataToUse.stars}
         reviews={dataToUse.reviewsCount}
       />

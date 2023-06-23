@@ -1,7 +1,7 @@
 import { BackArrow } from "../../../../../assets/Icons"
 import { useORG_InputCtx } from "../../../../../context/ORG_Input"
 import SpeechTherapistWrapper from "../../../../../pages/ORG/SpeechTherapists/styles/SpeechTherapistWrapper"
-import { Breadcrumbs } from "../../../../ui/breadcrumbs/Breadcrumbs"
+import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
@@ -19,7 +19,7 @@ export const STDetail_Header = ({ STData }) => {
         </LinkNoStyle>
       </span>{" "}
 
-      <Breadcrumbs
+      <Breadcrumbs_D
         whichDisplay={[
           ["Resource Directory", "ORG"],
           ["Speech Therapist", "ORG/SpeechTherapists"],

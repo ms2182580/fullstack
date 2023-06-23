@@ -2,7 +2,7 @@ import Image from "next/image.js"
 import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { FriendlyDiagnoses } from "../../../../friendlyDiagnoses/FriendlyDiagnoses.js"
-import { StarsRatingReview } from "../../../../stars-rating-review/StartsRatingReview.js"
+import { StartsRatingReview_Mobile } from "../../../../stars-rating-review/mobile/StartsRatingReview_Mobile.js"
 import { Tooltip } from "../../../../tooltip/Tooltip.js"
 import { Verified } from "../../../../verified/Verified.js"
 
@@ -53,10 +53,9 @@ export const STDetail_MobileCard_FirstPlace = ({
             isThirdPage={isThirdPage}
           />
 
-          <StarsRatingReview
+          <StartsRatingReview_Mobile
             rating={rating}
             reviews={reviews}
-            isMobile={true}
           />
 
           <FriendlyDiagnoses
@@ -100,10 +99,9 @@ export const STDetail_MobileCard_FirstPlace = ({
 
         <Tooltip isMobile={true} />
 
-        <StarsRatingReview
+        <StartsRatingReview_Mobile
           rating={rating}
           reviews={reviews}
-          isMobile={true}
         />
 
         <FriendlyDiagnoses

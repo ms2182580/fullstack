@@ -1,7 +1,7 @@
 import Image from "next/image.js"
 import ORGMobile_Search_Hero from "../../../../../assets/images/ORGMobile_Search_Hero.png"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { STSearchMobile_SearchComponent } from "../../../inputs/mobile/STSearchMobile_SearchComponent"
+import { ST_Mobile_Search_SearchComponent } from "./ST_Mobile_Search_SearchComponent"
 import { INDEX_Mobile_STSearchWrapper } from "./styles/INDEX_Mobile_STSearchWrapper.js"
 
 export const INDEX_Mobile_STSearch = () => {
@@ -19,7 +19,7 @@ export const INDEX_Mobile_STSearch = () => {
         and Activities for your Child
       </H3>
 
-      <STSearchMobile_SearchComponent />
+      <ST_Mobile_Search_SearchComponent />
     </INDEX_Mobile_STSearchWrapper>
   )
 }

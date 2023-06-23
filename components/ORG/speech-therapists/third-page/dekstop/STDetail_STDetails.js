@@ -6,7 +6,7 @@ import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { StarsRatingReview } from "../../../stars-rating-review/StartsRatingReview"
+import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
 import { ST_CardEmail } from "../../ST_CardEmail"
@@ -122,7 +122,7 @@ export const STDetail_STDetails = ({ STData }) => {
                 <H3>Speech Language Pathologist</H3>
                 <P dark_gray>{everySingleValue.location.city}</P>
 
-                <StarsRatingReview
+                <StarsRatingReview_D
                   rating={STData.filters[0].rating}
                   reviews={STData.filters[0].reviews}
                 />
