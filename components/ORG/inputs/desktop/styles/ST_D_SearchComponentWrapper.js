@@ -3,7 +3,7 @@ import { NEUTRALS } from "../../../../../assets/Colors"
 import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 import { COLORS } from "../../../../ui/buttons/variables"
 
-export const STDesktop_SearchComponentWrapper = styled.div`
+export const ST_D_SearchComponentWrapper = styled.div`
   margin-bottom: 2.5rem;
   display: grid;
   grid-template-columns: 8fr 8fr 8fr 1fr;

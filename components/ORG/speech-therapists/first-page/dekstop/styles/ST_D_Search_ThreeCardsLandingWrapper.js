@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ST_Desktop_Search_ThreeCardsLandingWrapper = styled.div`
+export const ST_D_Search_ThreeCardsLandingWrapper = styled.div`
   margin-bottom: 84px;
   display: flex;
   align-items: center;

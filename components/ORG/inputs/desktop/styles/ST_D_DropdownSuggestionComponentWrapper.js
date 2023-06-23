@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
 
-export const STDesktop_DropdownSuggestionComponentWrapper = styled.div`
+export const ST_D_DropdownSuggestionComponentWrapper = styled.div`
   & > div {
     padding-top: 1.5rem;
 

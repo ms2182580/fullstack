@@ -1,10 +1,10 @@
 import { useRouter } from "next/router.js"
 import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ST_Desktop_Search_LandingCards } from "./ST_Desktop_Search_LandingCards.js"
-import { ST_Desktop_Search_LandingThreeWrapper } from "./styles/ST_Desktop_Search_LandingThreeWrapper.js"
+import { ST_D_Search_LandingCards } from "./ST_D_Search_LandingCards.js"
+import { ST_D_Search_LandingThreeWrapper } from "./styles/ST_D_Search_LandingThreeWrapper.js"
 
-export const ST_Desktop_Search_LandingThree = ({ dataToUse }) => {
+export const ST_D_Search_LandingThree = ({ dataToUse }) => {
   const route = useRouter()
 
   const handleMoveToAllList = () => {
@@ -12,20 +12,20 @@ export const ST_Desktop_Search_LandingThree = ({ dataToUse }) => {
   }
 
   return (
-    <ST_Desktop_Search_LandingThreeWrapper>
+    <ST_D_Search_LandingThreeWrapper>
       <div>
-        <ST_Desktop_Search_LandingCards
+        <ST_D_Search_LandingCards
           dataToUse={dataToUse.data.first}
           reviews={dataToUse.reviews.first}
           filters={dataToUse.data.first.filters}
 
         />
-        <ST_Desktop_Search_LandingCards
+        <ST_D_Search_LandingCards
           dataToUse={dataToUse.data.second}
           reviews={dataToUse.reviews.second}
           filters={dataToUse.data.second.filters}
         />
-        <ST_Desktop_Search_LandingCards
+        <ST_D_Search_LandingCards
           dataToUse={dataToUse.data.third}
           reviews={dataToUse.reviews.third}
           filters={dataToUse.data.third.filters}
@@ -39,6 +39,6 @@ export const ST_Desktop_Search_LandingThree = ({ dataToUse }) => {
           (25)
         </Caption>
       </BtnSmall>
-    </ST_Desktop_Search_LandingThreeWrapper>
+    </ST_D_Search_LandingThreeWrapper>
   )
 }

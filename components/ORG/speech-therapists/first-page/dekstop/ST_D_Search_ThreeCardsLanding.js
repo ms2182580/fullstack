@@ -3,10 +3,10 @@ import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../..
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
 import { useFetchNoFilters } from "../../../../../utils/ORG_useFetchNoFilters"
-import { ST_Desktop_Search_Card } from "./ST_Desktop_Search_Card.js"
-import { ST_Desktop_Search_ThreeCardsLandingWrapper } from "./styles/ST_Desktop_Search_ThreeCardsLandingWrapper"
+import { ST_D_Search_Card } from "./ST_D_Search_Card.js"
+import { ST_D_Search_ThreeCardsLandingWrapper } from "./styles/ST_D_Search_ThreeCardsLandingWrapper"
 
-export const ST_Desktop_Search_ThreeCardsLanding = ({
+export const ST_D_Search_ThreeCardsLanding = ({
   setMustShowResults,
   dispatch,
   mustShowResults
@@ -118,10 +118,10 @@ export const ST_Desktop_Search_ThreeCardsLanding = ({
   const [whichWasClick, setWhichWasClick] = useState()
 
   return (
-    <ST_Desktop_Search_ThreeCardsLandingWrapper
+    <ST_D_Search_ThreeCardsLandingWrapper
       mustShowResults={mustShowResults}
       whichWasClick={whichWasClick}>
-      <ST_Desktop_Search_Card
+      <ST_D_Search_Card
         title="Therapeutic Services"
         icon={ORGLanding_ST}
         setMustShowResults={setMustShowResults}
@@ -131,7 +131,7 @@ export const ST_Desktop_Search_ThreeCardsLanding = ({
         numberCard={0}
         setWhichWasClick={setWhichWasClick}
       />
-      <ST_Desktop_Search_Card
+      <ST_D_Search_Card
         inProgress={true}
         title="Doctors"
         icon={ORGLanding_Doctors}
@@ -142,7 +142,7 @@ export const ST_Desktop_Search_ThreeCardsLanding = ({
         numberCard={1}
         setWhichWasClick={setWhichWasClick}
       />
-      <ST_Desktop_Search_Card
+      <ST_D_Search_Card
         inProgress={true}
         title="Community Classes"
         icon={ORGLanding_CC}
@@ -153,7 +153,7 @@ export const ST_Desktop_Search_ThreeCardsLanding = ({
         numberCard={2}
         setWhichWasClick={setWhichWasClick}
       />
-    </ST_Desktop_Search_ThreeCardsLandingWrapper>
+    </ST_D_Search_ThreeCardsLandingWrapper>
   )
 }
 

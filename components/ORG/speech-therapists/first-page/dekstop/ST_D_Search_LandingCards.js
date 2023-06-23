@@ -6,10 +6,10 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D.js"
 import { Verified } from "../../../verified/Verified.js"
-import { ST_Desktop_Search_LandingCardsWrapper } from "./styles/ST_Desktop_Search_LandingCardsWrapper.js"
+import { ST_D_Search_LandingCardsWrapper } from "./styles/ST_D_Search_LandingCardsWrapper.js"
 
 
-export const ST_Desktop_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
+export const ST_D_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
   const router = useRouter()
   const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
   const goToDynamic = () => {
@@ -19,7 +19,7 @@ export const ST_Desktop_Search_LandingCards = ({ dataToUse, reviews, filters }) 
 
 
   return (
-    <ST_Desktop_Search_LandingCardsWrapper>
+    <ST_D_Search_LandingCardsWrapper>
       <div>
         <Image
           src={dataToUse.picture.large}
@@ -42,6 +42,6 @@ export const ST_Desktop_Search_LandingCards = ({ dataToUse, reviews, filters }) 
       <span onClick={() => goToDynamic()}>
         <BtnSmall>View Profile</BtnSmall>
       </span>
-    </ST_Desktop_Search_LandingCardsWrapper>
+    </ST_D_Search_LandingCardsWrapper>
   )
 }

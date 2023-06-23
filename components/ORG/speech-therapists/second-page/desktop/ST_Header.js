@@ -1,9 +1,9 @@
 import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { STDesktop_SearchComponent } from "../../../inputs/desktop/STDesktop_SearchComponent.js"
+import { ST_D_SearchComponent } from "../../../inputs/desktop/ST_D_SearchComponent.js"
 import { ST_HeaderWrapper } from "./styles/ST_HeaderWrapper.js"
 
-export const ST_Header = () => {
+export const ST_Header = ({ isSecondPage = false, isThirdPage = false }) => {
   return (
     <ST_HeaderWrapper>
       <P
@@ -17,7 +17,7 @@ export const ST_Header = () => {
           ["Speech Therapist", ""]
         ]}
       />
-      <STDesktop_SearchComponent />
+      <ST_D_SearchComponent />
     </ST_HeaderWrapper>
   )
 }

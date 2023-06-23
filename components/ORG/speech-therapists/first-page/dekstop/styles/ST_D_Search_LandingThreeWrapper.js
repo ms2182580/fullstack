@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const ST_Desktop_Search_LandingThreeWrapper = styled.div`
+export const ST_D_Search_LandingThreeWrapper = styled.div`
 
 
   & > div {

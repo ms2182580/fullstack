@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { SECONDARY_ORG_PLUS, SECONDARY_SNT } from "../../../../../../assets/Colors"
 
-export const ST_Desktop_Search_CardWrapper = styled.div`
+export const ST_D_Search_CardWrapper = styled.div`
   background-color: ${SECONDARY_ORG_PLUS.PINK};
   border-radius: 6px;
   border: 2px solid ${SECONDARY_SNT.PINK};

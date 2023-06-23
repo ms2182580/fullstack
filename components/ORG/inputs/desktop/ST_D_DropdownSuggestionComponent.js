@@ -1,7 +1,7 @@
-import { KeywordCitiesWrapper, STDesktop_DropdownSuggestionComponentWrapper } from "./styles/STDesktop_DropdownSuggestionComponentWrapper.js"
+import { KeywordCitiesWrapper, ST_D_DropdownSuggestionComponentWrapper } from "./styles/ST_D_DropdownSuggestionComponentWrapper.js"
 
 
-export const STDesktop_DropdownSuggestionComponent = ({
+export const ST_D_DropdownSuggestionComponent = ({
   isFocus,
   setIsHover,
   suggestions,
@@ -17,7 +17,7 @@ export const STDesktop_DropdownSuggestionComponent = ({
   let IconSvg = whichIcon
 
   return (
-    <STDesktop_DropdownSuggestionComponentWrapper
+    <ST_D_DropdownSuggestionComponentWrapper
       ref={theRef}
       isFirstOrSecondDropdown={isFirstOrSecondDropdown}>
       {isFocus && (
@@ -78,6 +78,6 @@ export const STDesktop_DropdownSuggestionComponent = ({
           <div></div>
         </div>
       )}
-    </STDesktop_DropdownSuggestionComponentWrapper>
+    </ST_D_DropdownSuggestionComponentWrapper>
   )
 }

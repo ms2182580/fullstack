@@ -1,28 +1,31 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import ORGDesktop_InsuranceIcon from "../../../../assets/Icons/ORGDesktop_InsuranceIcon.png"
+import ORGDesktop_LoupeIcon from "../../../../assets/Icons/ORGDesktop_LoupeIcon.png"
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { STDesktop_DropdownSuggestionComponent } from "./STDesktop_DropdownSuggestionComponent"
-import { STDesktop_DropdownSuggestionWrapper } from "./styles/STDesktop_DropdownSuggestionWrapper"
+import { ST_D_DropdownSuggestionComponent } from "./ST_D_DropdownSuggestionComponent"
+import { ST_D_DropdownSuggestionWrapper } from "./styles/ST_D_DropdownSuggestionWrapper"
 
-const suggestionsKeywords = ["Aetna", "Blue Cross Blue Shield", "Cigna", "Tricare", "VSP"]
+const suggestionsKeywords = [
+  "Physical Therapist",
+  "Speech Therapist",
+  "Occupational Therapist",
+  "Dance Class",
+  "Art Camp"
+]
 
-export const STDesktop_InputInsurance = () => {
-  const [isFocusEnsurance, setIsFocusEnsurance] = useState(false)
-  const [isHoveredEnsurance, setIsHoveredEnsurance] = useState(false)
-  const inputRefEnsurance = useRef()
+export const ST_D_InputKeyword = () => {
+  const [isFocusKeyword, setIsFocusKeyword] = useState(false)
+  const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
+  const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")
 
-
-
-
-  const { ensuranceContext, setEnsuranceContext } = useORG_InputCtx()
+  const { setKeywordsContext, keywordsContext } = useORG_InputCtx()
 
   useEffect(() => {
-    setKeywordInput(ensuranceContext)
-  }, [ensuranceContext])
+    setKeywordInput(keywordsContext)
+  }, [keywordsContext])
 
   // const { isTouchScreen } = useCheckMobile()
   // const keywordFirstLevelRef = useRef(null)
@@ -60,47 +63,47 @@ export const STDesktop_InputInsurance = () => {
       <P
         dark_gray
         bold>
-        Insurance
+        Keyword
       </P>
 
       <span>
         <span>
           <Image
-            src={ORGDesktop_InsuranceIcon}
+            src={ORGDesktop_LoupeIcon}
             alt=""
           />
         </span>
         <input
-          placeholder="VSP, Tricare, Cigna..."
-          onFocus={() => setIsFocusEnsurance(true)}
+          placeholder="ADHD, speech therapy, music classes, etc."
+          onFocus={() => setIsFocusKeyword(true)}
           onBlur={() => {
-            if (!isHoveredEnsurance) {
-              setIsFocusEnsurance(false)
+            if (!isHoveredKeyword) {
+              setIsFocusKeyword(false)
             }
           }}
           value={keywordInput}
           onChange={(e) => {
             setKeywordInput(e.target.value)
-            setEnsuranceContext(e.target.value)
+            setKeywordsContext(e.target.value)
           }}
-          ref={inputRefEnsurance}
+          ref={inputRefKeyword}
           tabIndex={shouldTab}
         />
       </span>
 
-      <STDesktop_DropdownSuggestionWrapper>
-        <STDesktop_DropdownSuggestionComponent
-          isFocus={isFocusEnsurance}
-          setIsHover={setIsHoveredEnsurance}
-          setIsFocus={setIsFocusEnsurance}
+      <ST_D_DropdownSuggestionWrapper>
+        <ST_D_DropdownSuggestionComponent
+          isFocus={isFocusKeyword}
+          setIsHover={setIsHoveredKeyword}
+          setIsFocus={setIsFocusKeyword}
           suggestions={suggestionsKeywords}
           keywordClickByUser={keywordInput}
           setKeywordClickByUser={setKeywordInput}
-          setKeywordClickByUserContext={setEnsuranceContext}
-          inputRefFocus={inputRefEnsurance}
+          setKeywordClickByUserContext={setKeywordsContext}
+          inputRefFocus={inputRefKeyword}
           isFirstOrSecondDropdown={true}
         />
-      </STDesktop_DropdownSuggestionWrapper>
+      </ST_D_DropdownSuggestionWrapper>
     </div>
   )
 }

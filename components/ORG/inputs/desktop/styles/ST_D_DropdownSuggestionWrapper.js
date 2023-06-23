@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../../assets/Colors"
 import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
-export const STDesktop_DropdownSuggestionWrapper = styled.div`
+export const ST_D_DropdownSuggestionWrapper = styled.div`
   position: absolute;
   width: 100%;
   top: 112px;
