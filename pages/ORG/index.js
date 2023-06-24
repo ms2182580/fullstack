@@ -1,5 +1,5 @@
 import { INDEX_D_STSearch } from "../../components/ORG/speech-therapists/first-page/dekstop/INDEX_D_STSearch"
-import { INDEX_Mobile_STSearch } from "../../components/ORG/speech-therapists/first-page/mobile/INDEX_Mobile_STSearch"
+import { INDEX_M_STSearch } from "../../components/ORG/speech-therapists/first-page/mobile/INDEX_M_STSearch"
 import { useCheckUserWidth } from "../../context/CheckUserWidth"
 
 const ORG_INDEX = () => {
@@ -14,7 +14,7 @@ const ORG_INDEX = () => {
       ) : (
 
         <>
-          <INDEX_Mobile_STSearch />
+          <INDEX_M_STSearch />
         </>
       )}
     </>

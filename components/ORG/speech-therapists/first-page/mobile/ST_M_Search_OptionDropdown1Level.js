@@ -1,6 +1,6 @@
-import { ST_Mobile_Search_OptionDropdown1LevelWrapper } from "./styles/ST_Mobile_Search_OptionDropdown1LevelWrapper"
+import { ST_M_Search_OptionDropdown1LevelWrapper } from "./styles/ST_M_Search_OptionDropdown1LevelWrapper"
 
-export const ST_Mobile_Search_OptionDropdown1Level = ({
+export const ST_M_Search_OptionDropdown1Level = ({
   isFocus = true,
   setIsHover,
   children,
@@ -10,7 +10,7 @@ export const ST_Mobile_Search_OptionDropdown1Level = ({
   return (
     <>
       {isFocus && (
-        <ST_Mobile_Search_OptionDropdown1LevelWrapper
+        <ST_M_Search_OptionDropdown1LevelWrapper
           onMouseEnter={() => {
             setIsHover(true)
           }}
@@ -24,7 +24,7 @@ export const ST_Mobile_Search_OptionDropdown1Level = ({
           ref={theRef}
           isMobile={true}>
           {children}
-        </ST_Mobile_Search_OptionDropdown1LevelWrapper>
+        </ST_M_Search_OptionDropdown1LevelWrapper>
       )}
     </>
   )

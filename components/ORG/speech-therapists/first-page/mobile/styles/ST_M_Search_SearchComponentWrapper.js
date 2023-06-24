@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ST_Mobile_Search_SearchComponentWrapper = styled.div`
+export const ST_M_Search_SearchComponentWrapper = styled.div`
   margin-bottom: 96px;
   
   display: flex;

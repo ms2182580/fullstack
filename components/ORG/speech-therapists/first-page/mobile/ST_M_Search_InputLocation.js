@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react"
 import { useORG_InputCtx } from "../../../../../context/ORG_Input"
 import { useCheckMobile } from "../../../../../utils/useCheckMobile"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { ST_Mobile_Search_OptionDropdown1Level } from "./ST_Mobile_Search_OptionDropdown1Level"
-import { ST_Mobile_Search_OptionDropdown2Level } from "./ST_Mobile_Search_OptionDropdown2Level"
-import { ST_Mobile_Search_InputWrapper } from "./styles/ST_Mobile_Search_InputWrapper"
+import { ST_M_Search_OptionDropdown1Level } from "./ST_M_Search_OptionDropdown1Level"
+import { ST_M_Search_OptionDropdown2Level } from "./ST_M_Search_OptionDropdown2Level"
+import { ST_M_Search_InputWrapper } from "./styles/ST_M_Search_InputWrapper"
 
 
-export const ST_Mobile_Search_InputLocation = () => {
+export const ST_M_Search_InputLocation = () => {
   const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
   const [isFocusCity, setIsFocusCity] = useState(false)
   const [isHoveredCity, setIsHoveredCity] = useState(false)
@@ -42,7 +42,7 @@ export const ST_Mobile_Search_InputLocation = () => {
   }, [])
 
   return (
-    <ST_Mobile_Search_InputWrapper>
+    <ST_M_Search_InputWrapper>
       <Caption
         dark_gray
         bolder>
@@ -76,14 +76,14 @@ export const ST_Mobile_Search_InputLocation = () => {
         />
       </span>
 
-      <ST_Mobile_Search_OptionDropdown1Level
+      <ST_M_Search_OptionDropdown1Level
         isFocus={isFocusCity}
         setIsFocusKeyword={setIsFocusCity}
         setIsHover={setIsHoveredCity}
         theRef={cityFirstLevelRef}>
         <Caption bolder>QUICK LINKS</Caption>
         <div></div>
-        <ST_Mobile_Search_OptionDropdown2Level
+        <ST_M_Search_OptionDropdown2Level
           title="Locations"
           suggestions={suggestionsCity}
           landingHere={true}
@@ -94,8 +94,8 @@ export const ST_Mobile_Search_InputLocation = () => {
           theRef={citySecondLevelRef}
           shouldShowImmediately={true}
         />
-      </ST_Mobile_Search_OptionDropdown1Level>
+      </ST_M_Search_OptionDropdown1Level>
 
-    </ST_Mobile_Search_InputWrapper>
+    </ST_M_Search_InputWrapper>
   )
 }

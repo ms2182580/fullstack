@@ -1,12 +1,17 @@
 import Image from "next/image.js"
 import ORGMobile_Search_Hero from "../../../../../assets/images/ORGMobile_Search_Hero.png"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_Mobile_Search_SearchComponent } from "./ST_Mobile_Search_SearchComponent"
-import { INDEX_Mobile_STSearchWrapper } from "./styles/INDEX_Mobile_STSearchWrapper.js"
+import { ST_M_Search_SearchComponent } from "./ST_M_Search_SearchComponent"
+import { INDEX_M_STSearchWrapper } from "./styles/INDEX_M_STSearchWrapper.js"
 
-export const INDEX_Mobile_STSearch = () => {
+/* 
+!FH0
+Rename all the _Mobile_ to _M_
+*/
+
+export const INDEX_M_STSearch = () => {
   return (
-    <INDEX_Mobile_STSearchWrapper>
+    <INDEX_M_STSearchWrapper>
       <div>
         <Image
           src={ORGMobile_Search_Hero}
@@ -19,7 +24,7 @@ export const INDEX_Mobile_STSearch = () => {
         and Activities for your Child
       </H3>
 
-      <ST_Mobile_Search_SearchComponent />
-    </INDEX_Mobile_STSearchWrapper>
+      <ST_M_Search_SearchComponent />
+    </INDEX_M_STSearchWrapper>
   )
 }

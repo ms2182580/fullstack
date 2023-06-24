@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
 
-export const ST_Mobile_Search_OptionDropdown2LevelWrapper = styled.div`
+export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
   display: grid;
   grid-template-columns: ${(x) => (x.noIcon ? "1fr" : "48px 1fr")};
   grid-template-rows: 1fr;

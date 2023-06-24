@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const ST_Mobile_Search_OptionDropdown1LevelWrapper = styled.div`
+export const ST_M_Search_OptionDropdown1LevelWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

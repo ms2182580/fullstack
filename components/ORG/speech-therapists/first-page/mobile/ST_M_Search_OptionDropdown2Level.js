@@ -6,9 +6,9 @@ import { useORG_InputCtx } from "../../../../../context/ORG_Input"
 import { useCheckMobile } from "../../../../../utils/useCheckMobile"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
-import { ST_Mobile_Search_OptionDropdown2LevelWrapper } from "./styles/ST_Mobile_Search_OptionDropdown2LevelWrapper"
+import { ST_M_Search_OptionDropdown2LevelWrapper } from "./styles/ST_M_Search_OptionDropdown2LevelWrapper"
 
-export const ST_Mobile_Search_OptionDropdown2Level = ({
+export const ST_M_Search_OptionDropdown2Level = ({
   icon = "no icon found",
   title = "no title",
   suggestions = [],
@@ -40,7 +40,7 @@ export const ST_Mobile_Search_OptionDropdown2Level = ({
   const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
 
   return (
-    <ST_Mobile_Search_OptionDropdown2LevelWrapper
+    <ST_M_Search_OptionDropdown2LevelWrapper
       noIcon={noIcon}
       landingHere={landingHere}
       isMobile={isMobile}
@@ -133,6 +133,6 @@ export const ST_Mobile_Search_OptionDropdown2Level = ({
           </div>
         </div>
       )}
-    </ST_Mobile_Search_OptionDropdown2LevelWrapper>
+    </ST_M_Search_OptionDropdown2LevelWrapper>
   )
 }

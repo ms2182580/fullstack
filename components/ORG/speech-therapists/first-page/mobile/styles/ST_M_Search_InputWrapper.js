@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
 
-export const ST_Mobile_Search_InputWrapper = styled.div`
+export const ST_M_Search_InputWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

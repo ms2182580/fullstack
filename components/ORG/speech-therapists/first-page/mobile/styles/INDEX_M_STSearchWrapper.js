@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const INDEX_Mobile_STSearchWrapper = styled.div`
+export const INDEX_M_STSearchWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   display: flex;
   align-items: center;
