@@ -7,7 +7,7 @@ const ORG_Ctx_fetchWithFiltersMobile = createContext(null)
 export const ORG_CtxFetchWithFiltersMobile_Provider = ({ children }) => {
   const [howMuchShow, setHowMuchShow] = useState(4)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersMobile()
-  const [shouldFetchMobileWitFilters, setShouldFetchMobileWitFilters] = useState(false)
+  const [shouldFetchMobileWitFilters, setShouldFetchMobileWithFilters] = useState(false)
 
   const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFilters(
     pagination,
@@ -30,7 +30,7 @@ export const ORG_CtxFetchWithFiltersMobile_Provider = ({ children }) => {
         actualSortF,
         setActualSortF,
         shouldFetchMobileWitFilters,
-        setShouldFetchMobileWitFilters
+        setShouldFetchMobileWithFilters
       }}>
       {children}
     </ORG_Ctx_fetchWithFiltersMobile.Provider>

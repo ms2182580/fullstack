@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react"
-import { useFetchNoFilters } from "../utils/ORG_useFetchNoFilters"
+import { useFetchNoFiltersDesktop } from "../utils/useFetchNoFiltersDesktop"
 
 const ORG_Ctx_fetchNoFilters = createContext(null)
 
@@ -15,7 +15,7 @@ export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
     setFilters,
     actualSort,
     setActualSort
-  } = useFetchNoFilters(pagination, howMuchShow, "FetchNoFiltersDesktop", shouldFetchDesktopNoFilters)
+  } = useFetchNoFiltersDesktop(pagination, howMuchShow, "FetchNoFiltersDesktop", shouldFetchDesktopNoFilters)
 
   return (
     <ORG_Ctx_fetchNoFilters.Provider

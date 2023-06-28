@@ -52,6 +52,7 @@ export const STResults_FiltersMobile = ({
       ) : null}
 
       <STResults_FiltersContainerDesktopWrapper
+
         dispatch={dispatch}
         setFilterData={setFilterData}
         clearAll={clearAll}

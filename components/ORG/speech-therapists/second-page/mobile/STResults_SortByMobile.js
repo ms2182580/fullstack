@@ -3,6 +3,7 @@ import { DownArrowSvg, UpArrowSvg } from "../../../../../assets/Icons/index.js"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile.js"
+import { ORG_Sortby_Mobile } from "../../../../../utils/ORG_SortByData.js"
 import { ORG_SortybyFunction } from "../../../../../utils/ORG_SortybyFunction.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { CustomC } from "../../../dropdownFilters/styles/Singledropdown.js"
@@ -82,10 +83,10 @@ export const STResults_SortByMobile = ({ title = "Sort By" }) => {
             <span>{showDropdown ? <UpArrowSvg /> : <DownArrowSvg />}</span>
           </span>
           <div className="dropdownSuggestions">
-            {showDropdown && ORG_SortByData.length !== 0 && (
+            {showDropdown && ORG_Sortby_Mobile.data.length !== 0 && (
               <>
                 <div></div>
-                {ORG_SortByData.map((x) => {
+                {ORG_Sortby_Mobile.map((x) => {
                   let highlight = x === actualSort
 
                   return (

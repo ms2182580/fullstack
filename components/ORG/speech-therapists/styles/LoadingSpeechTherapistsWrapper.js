@@ -23,6 +23,13 @@ const LoadingSpeechTherapistsWrapper = styled.div`
     width: 10rem;
     margin-bottom: 3rem;
   }
+  
+  & > :nth-child(4){
+    margin-inline: 24px;
+    
+    
+  }
+  
 `
 
 export default LoadingSpeechTherapistsWrapper

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../../assets/Icons/index"
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
-import { useFetchNoFilters } from "../../../../../utils/ORG_useFetchNoFilters"
+import { useFetchNoFiltersDesktop } from "../../../../../utils/useFetchNoFiltersDesktop"
 import { ST_D_Search_Card } from "./ST_D_Search_Card.js"
 import { ST_D_Search_ThreeCardsLandingWrapper } from "./styles/ST_D_Search_ThreeCardsLandingWrapper"
 
@@ -17,7 +17,7 @@ export const ST_D_Search_ThreeCardsLanding = ({
     setShouldFetchDesktopNoFilters(true)
   }, [])
 
-  const { data: userFetched, filters: filtersST } = useFetchNoFilters(1, 3, "landingThreeCardsHere → 3", shouldFetchDesktopNoFilters)
+  const { data: userFetched, filters: filtersST } = useFetchNoFiltersDesktop(1, 3, "landingThreeCardsHere → 3", shouldFetchDesktopNoFilters)
 
   const [reviews, setReviews] = useState({})
   const [dataToShare, setDataToShare] = useState({})

@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
-import { ORG_FILTERS_KEYS } from "../../../../../utils/ORG_FiltersCategories"
+import { ORG_FILTERS_KEYS_D } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Share } from "../../../share/Share"
@@ -21,8 +21,8 @@ import {
   ST_D_CardWrapper_Left_LeftInfo,
   ST_D_CardWrapper_Right
 } from "../../styles/ST_D_CardWrapper"
-import { ST_D_CardInfo } from "../ST_D_CardInfo"
-import { ST_D_CardInfoPayment } from "../ST_D_CardInfoPayment"
+import { ST_D_CardInfo } from "./ST_D_CardInfo"
+import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
 
 export const ST_D_Results_CardNoFilters = () => {
   const router = useRouter()
@@ -49,18 +49,18 @@ export const ST_D_Results_CardNoFilters = () => {
       {userFetched &&
         Array.isArray(filtersST) &&
         userFetched.allData.map((everySingleValue, i) => {
-          let insurance = filtersST[i][ORG_FILTERS_KEYS.insurance.updateState].map(
+          let insurance = filtersST[i][ORG_FILTERS_KEYS_D.insurance.updateState].map(
             (x) => x[0].toUpperCase() + x.slice(1)
           )
           let insuranceFormatted = insurance.length > 1 ? insurance : insurance[0]
 
-          let diagnosis = filtersST[i][ORG_FILTERS_KEYS.diagnosis.updateState].map((x) => {
+          let diagnosis = filtersST[i][ORG_FILTERS_KEYS_D.diagnosis.updateState].map((x) => {
             if (x !== "Other") return `${x}`
             return x
           })
-          let language = filtersST[i][ORG_FILTERS_KEYS.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
+          let language = filtersST[i][ORG_FILTERS_KEYS_D.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
-          let serviceSetting = filtersST[i][ORG_FILTERS_KEYS.serviceSetting.updateState].map(
+          let serviceSetting = filtersST[i][ORG_FILTERS_KEYS_D.serviceSetting.updateState].map(
             (x) => x[0].toUpperCase() + x.slice(1)
           )
 
@@ -114,32 +114,32 @@ export const ST_D_Results_CardNoFilters = () => {
 
 
                 <ST_D_CardInfo
-                  title={ORG_FILTERS_KEYS.diagnosis.titleToShowCard}
+                  title={ORG_FILTERS_KEYS_D.diagnosis.titleToShowCard}
                   dataToShow={diagnosis}
                 />
 
                 <ST_D_CardInfo
-                  title={ORG_FILTERS_KEYS.agesServed.titleToShow}
-                  dataToShow={filtersST[i][ORG_FILTERS_KEYS.agesServed.updateState]}
+                  title={ORG_FILTERS_KEYS_D.agesServed.titleToShow}
+                  dataToShow={filtersST[i][ORG_FILTERS_KEYS_D.agesServed.updateState]}
                 />
 
                 <ST_D_CardInfo
-                  title={ORG_FILTERS_KEYS.language.titleToShow}
+                  title={ORG_FILTERS_KEYS_D.language.titleToShow}
                   dataToShow={language}
                 />
 
                 <ST_D_CardInfo
-                  title={ORG_FILTERS_KEYS.yearsOfPractice.titleToShowCard}
-                  dataToShow={filtersST[i][ORG_FILTERS_KEYS.yearsOfPractice.updateState]}
+                  title={ORG_FILTERS_KEYS_D.yearsOfPractice.titleToShowCard}
+                  dataToShow={filtersST[i][ORG_FILTERS_KEYS_D.yearsOfPractice.updateState]}
                 />
 
                 <ST_D_CardInfo
-                  title={ORG_FILTERS_KEYS.serviceSetting.titleToShow}
+                  title={ORG_FILTERS_KEYS_D.serviceSetting.titleToShow}
                   dataToShow={serviceSetting}
                 />
 
                 <ST_D_CardInfoPayment
-                  title={ORG_FILTERS_KEYS.insurance.titleToShowCard}
+                  title={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
                   dataToShow={insuranceFormatted}
                 />
 

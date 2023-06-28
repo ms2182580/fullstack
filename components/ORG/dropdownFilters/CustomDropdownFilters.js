@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react"
 import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
 import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
-import { useORG_Ctx_FiltersApply } from "../../../context/ORG_Ctx_FiltersApply"
+import { useORG_Ctx_FiltersApplyDesktop } from "../../../context/ORG_Ctx_FiltersApplyDesktop"
 import { ORG_SortybyFunction } from "../../../utils/ORG_SortybyFunction"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
@@ -17,7 +17,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     filtersAppliedNewFilters,
     setFiltersAppliedNewFilters,
     defaultWord
-  } = useORG_Ctx_FiltersApply()
+  } = useORG_Ctx_FiltersApplyDesktop()
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 

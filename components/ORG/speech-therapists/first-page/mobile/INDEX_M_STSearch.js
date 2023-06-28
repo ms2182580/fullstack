@@ -4,10 +4,6 @@ import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_M_Search_SearchComponent } from "./ST_M_Search_SearchComponent"
 import { INDEX_M_STSearchWrapper } from "./styles/INDEX_M_STSearchWrapper.js"
 
-/* 
-!FH0
-Rename all the _Mobile_ to _M_
-*/
 
 export const INDEX_M_STSearch = () => {
   return (

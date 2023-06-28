@@ -17,9 +17,6 @@ export const VerifiedWrapper = styled.div`
   }
   
   & > :nth-child(2){
-    /* border: 2px solid crimson; */
-    
-    
     font-size:14px;
   }
   

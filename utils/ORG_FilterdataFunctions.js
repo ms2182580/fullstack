@@ -1,4 +1,4 @@
-import { ORG_FILTERS_DATA } from "./ORG_FiltersCategories"
+import { ORG_FILTERS_DATA_D } from "./ORG_FiltersCategories"
 
 export const pickJustOne = (arr) => {
   const random = Math.floor(Math.random() * arr.length)
@@ -55,7 +55,7 @@ export const ORG_Filterdata_Diagnosis = (whichSelect = []) => {
     return whichSelect
   }
 
-  return pickMoreThanOne(ORG_FILTERS_DATA.diagnosis)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.diagnosis)
 }
 
 export const ORG_Filterdata_AgesServed = (whichSelect = []) => {
@@ -63,7 +63,7 @@ export const ORG_Filterdata_AgesServed = (whichSelect = []) => {
     return whichSelect
   }
 
-  return pickMoreThanOne(ORG_FILTERS_DATA.agesServed)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.agesServed)
 }
 
 export const ORG_Filterdata_Languages = (whichSelect = []) => {
@@ -71,14 +71,14 @@ export const ORG_Filterdata_Languages = (whichSelect = []) => {
     return whichSelect
   }
 
-  return pickMoreThanOne(ORG_FILTERS_DATA.languages, true)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.languages, true)
 }
 
 export const ORG_Filterdata_YoP = (whichSelect = []) => {
   if (whichSelect.length !== 0) {
     return whichSelect
   }
-  return pickJustOne(ORG_FILTERS_DATA.yearsOfPractice)
+  return pickJustOne(ORG_FILTERS_DATA_D.yearsOfPractice)
 }
 
 export const ORG_Filterdata_ServiceSetting = (whichSelect = []) => {
@@ -88,7 +88,7 @@ export const ORG_Filterdata_ServiceSetting = (whichSelect = []) => {
 
   // const serviceSetting = ["clinic", "home", "school", "community"]
 
-  return pickMoreThanOne(ORG_FILTERS_DATA.serviceSetting)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.serviceSetting)
 }
 
 export const ORG_Filterdata_Insurance = (whichSelect = []) => {
@@ -97,7 +97,7 @@ export const ORG_Filterdata_Insurance = (whichSelect = []) => {
   }
   // const accepts = ["Private Pay", "Medicaid", "DOE", "Contract"]
 
-  return pickMoreThanOne(ORG_FILTERS_DATA.insurance)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.insurance)
 }
 
 export const ORG_Filterdata_MeetingFormat = (whichSelect = []) => {
@@ -107,7 +107,7 @@ export const ORG_Filterdata_MeetingFormat = (whichSelect = []) => {
 
   // const meetingFormat = ["virtual", "in-person"]
 
-  return pickMoreThanOne(ORG_FILTERS_DATA.meetingFormat)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.meetingFormat)
 }
 
 export const ORG_Filterdata_SessionType = (whichSelect = []) => {
@@ -115,7 +115,7 @@ export const ORG_Filterdata_SessionType = (whichSelect = []) => {
     return whichSelect
   }
   // const sessionType = ["individual", "group"]
-  return pickMoreThanOne(ORG_FILTERS_DATA.sessionType)
+  return pickMoreThanOne(ORG_FILTERS_DATA_D.sessionType)
 }
 
 // export const ORG_Filterdata_Transportation = (whichSelect = []) => {
@@ -139,5 +139,5 @@ export const ORG_Filterdata_ProviderType = (whichSelect = []) => {
     return whichSelect
   }
 
-  return pickJustOne(ORG_FILTERS_DATA.providerType)
+  return pickJustOne(ORG_FILTERS_DATA_D.providerType)
 }

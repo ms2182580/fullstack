@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react"
-import { useFetchNoFilters } from '../utils/ORG_useFetchNoFilters'
+import { useFetchNoFiltersMobile } from '../utils/useFetchNoFiltersMobile.js'
 
 const ORG_Ctx_fetchNoFiltersMobile = createContext(null)
 
@@ -15,7 +15,7 @@ export const ORG_CtxFetchNoFiltersMobile_Provider = ({ children }) => {
     setFilters,
     actualSort,
     setActualSort
-  } = useFetchNoFilters(pagination, howMuchShow, "FetchNoFiltersMobile", shouldFetchMobileNoFilters)
+  } = useFetchNoFiltersMobile(pagination, howMuchShow, "FetchNoFiltersMobile", shouldFetchMobileNoFilters)
 
   return (
     <ORG_Ctx_fetchNoFiltersMobile.Provider
