@@ -17,8 +17,8 @@ export const ST_D_Results_FinalButtons = ({ widthWindow }) => {
   const [isMobile, setIsMobile] = useState(false)
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
   // const { pagination: paginationMobile, setPagination: setPaginationMobile } = useORG_Ctx_FetchNoFiltersMobile()
-  const router = useRouter()
-  const { pathname } = router
+  // const router = useRouter()
+  const { pathname } = useRouter()
 
   const toPrevious = () => {
     setPagination((prevState) => {

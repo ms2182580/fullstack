@@ -54,7 +54,7 @@ export const ST_D_Results_FinalButtonsNextButton = styled(NavigationButton)`
   }
 `
 
-export const ST_D_Results_FinalButtonsNumberPage = styled.button`
+export const ST_D_Results_FinalButtonsNumberPageWrapper = styled.button`
   height: 48px;
   width: 48px;
   cursor: pointer;

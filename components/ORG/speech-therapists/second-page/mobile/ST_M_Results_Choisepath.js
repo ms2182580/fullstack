@@ -28,7 +28,7 @@ export const ST_M_Results_Choisepath = () => {
     <ST_M_Results_ChoisepathWrapper
 
       mustShowFiltersMobile={mustShowFiltersMobile}
-
+      id="topOfSTL"
     >
 
       {filterHaveAtLeastOneValueState ?

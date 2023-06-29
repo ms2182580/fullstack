@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react"
 import { StartEmptySvg, StartFullSvg } from "../../../../assets/Icons"
-import { ORG_ST_Review_Months } from "../../../../utils/ORG_ST_Review"
+import { ORG_ST_Review_Months } from "../../../../utils/ORG_ST_Review_D"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { STDetail_Reviews_IndividualComponentWrapper } from "./styles/STDetail_Reviews_IndividualComponentWrapper"
 

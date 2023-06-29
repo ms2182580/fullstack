@@ -1,22 +1,22 @@
 import { useRouter } from "next/router"
-import { Fragment } from "react"
-import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
+import { Fragment, useState } from "react"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
 import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
-import { ST_D_Results_FinalButtonsNumberPageWrapper } from "./styles/ST_D_Results_FinalButtonsWrapper"
+import { ST_M_Results_FinalButtonsNumberPageWrapper } from "./styles/ST_M_Results_FinalButtonsWrapper.js"
 
-export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
-  const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
+export const ST_M_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
+  const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersMobile()
   // const { pagination: paginationMobile, setPagination: setPaginationMobile } = useORG_Ctx_FetchNoFiltersMobile()
-  // let amountOfPagesToClick = Array(3).fill(0)
-
   const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(Array(3).fill(0))
 
-
-  const { pathname } = useRouter()
-
+  // const router = useRouter()
+  const { pathname, push } = useRouter()
   const shouldTab = useShouldTab()
+
+  const toTop = () => {
+    push(`${pathname}#topOfSTL`)
+  }
 
   if (pagination < 3) {
     return (
@@ -26,27 +26,25 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
           if (pagination === i + 1) {
             return (
               <Fragment key={i}>
-                <ST_D_Results_FinalButtonsNumberPageWrapper
+                <ST_M_Results_FinalButtonsNumberPageWrapper
                   isActive
                   tabIndex={shouldTab}>
                   <P bold> {i + 1}</P>
-                </ST_D_Results_FinalButtonsNumberPageWrapper>
+                </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
             )
           }
 
           return (
             <Fragment key={i}>
-              <LinkNoStyle
-                href="#topOfSTL"
-                as={pathname}
+              <ST_M_Results_FinalButtonsNumberPageWrapper
+                onClick={() => {
+                  setPagination(toMoveToThatPage)
+                  toTop()
+                }}
                 tabIndex={shouldTab}>
-                <ST_D_Results_FinalButtonsNumberPageWrapper
-                  onClick={() => setPagination(toMoveToThatPage)}
-                  tabIndex={shouldTab}>
-                  <P bold> {i + 1}</P>
-                </ST_D_Results_FinalButtonsNumberPageWrapper>
-              </LinkNoStyle>
+                <P bold> {i + 1}</P>
+              </ST_M_Results_FinalButtonsNumberPageWrapper>
             </Fragment>
           )
         })}
@@ -66,16 +64,14 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
           if (i === 0) {
             return (
               <Fragment key={i}>
-                <LinkNoStyle
-                  href="#topOfSTL"
-                  as={pathname}
+                <ST_M_Results_FinalButtonsNumberPageWrapper
+                  onClick={() => {
+                    setPagination(theNewOrder[0])
+                    toTop()
+                  }}
                   tabIndex={shouldTab}>
-                  <ST_D_Results_FinalButtonsNumberPageWrapper
-                    onClick={() => setPagination(theNewOrder[0])}
-                    tabIndex={shouldTab}>
-                    <P bold> {theNewOrder[i]}</P>
-                  </ST_D_Results_FinalButtonsNumberPageWrapper>
-                </LinkNoStyle>
+                  <P bold> {theNewOrder[i]}</P>
+                </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
             )
           }
@@ -83,11 +79,11 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
           if (i === 1) {
             return (
               <Fragment key={i}>
-                <ST_D_Results_FinalButtonsNumberPageWrapper
+                <ST_M_Results_FinalButtonsNumberPageWrapper
                   isActive
                   tabIndex={shouldTab}>
                   <P bold> {theNewOrder[i]}</P>
-                </ST_D_Results_FinalButtonsNumberPageWrapper>
+                </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
             )
           }
@@ -95,16 +91,14 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
           if (i === 2) {
             return (
               <Fragment key={i}>
-                <LinkNoStyle
-                  href="#topOfSTL"
-                  as={pathname}
+                <ST_M_Results_FinalButtonsNumberPageWrapper
+                  onClick={() => {
+                    setPagination(theNewOrder[2])
+                    toTop()
+                  }}
                   tabIndex={shouldTab}>
-                  <ST_D_Results_FinalButtonsNumberPageWrapper
-                    onClick={() => setPagination(theNewOrder[2])}
-                    tabIndex={shouldTab}>
-                    <P bold> {theNewOrder[i]}</P>
-                  </ST_D_Results_FinalButtonsNumberPageWrapper>
-                </LinkNoStyle>
+                  <P bold> {theNewOrder[i]}</P>
+                </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
             )
           }
@@ -122,11 +116,11 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //           if (pagination === i + 1) {
   //             return (
   //               <Fragment key={i}>
-  //                 <ST_D_Results_FinalButtonsNumberPageWrapper
+  //                 <ST_M_Results_FinalButtonsNumberPageWrapper
   //                   isActive
   //                   tabIndex={shouldTab}>
   //                   <P bold> {i + 1}</P>
-  //                 </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                 </ST_M_Results_FinalButtonsNumberPageWrapper>
   //               </Fragment>
   //             )
   //           }
@@ -137,11 +131,11 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //                 href="#topOfSTL"
   //                 as={pathname}
   //                 tabIndex={shouldTab}>
-  //                 <ST_D_Results_FinalButtonsNumberPageWrapper
+  //                 <ST_M_Results_FinalButtonsNumberPageWrapper
   //                   onClick={() => setPagination(toMoveToThatPage)}
   //                   tabIndex={shouldTab}>
   //                   <P bold> {i + 1}</P>
-  //                 </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                 </ST_M_Results_FinalButtonsNumberPageWrapper>
   //               </LinkNoStyle>
   //             </Fragment>
   //           )
@@ -166,11 +160,11 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //                   href="#topOfSTL"
   //                   as={pathname}
   //                   tabIndex={shouldTab}>
-  //                   <ST_D_Results_FinalButtonsNumberPageWrapper
+  //                   <ST_M_Results_FinalButtonsNumberPageWrapper
   //                     onClick={() => setPagination(theNewOrder[0])}
   //                     tabIndex={shouldTab}>
   //                     <P bold> {theNewOrder[i]}</P>
-  //                   </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                   </ST_M_Results_FinalButtonsNumberPageWrapper>
   //                 </LinkNoStyle>
   //               </Fragment>
   //             )
@@ -179,11 +173,11 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //           if (i === 1) {
   //             return (
   //               <Fragment key={i}>
-  //                 <ST_D_Results_FinalButtonsNumberPageWrapper
+  //                 <ST_M_Results_FinalButtonsNumberPageWrapper
   //                   isActive
   //                   tabIndex={shouldTab}>
   //                   <P bold> {theNewOrder[i]}</P>
-  //                 </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                 </ST_M_Results_FinalButtonsNumberPageWrapper>
   //               </Fragment>
   //             )
   //           }
@@ -195,11 +189,11 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //                   href="#topOfSTL"
   //                   as={pathname}
   //                   tabIndex={shouldTab}>
-  //                   <ST_D_Results_FinalButtonsNumberPageWrapper
+  //                   <ST_M_Results_FinalButtonsNumberPageWrapper
   //                     onClick={() => setPagination(theNewOrder[2])}
   //                     tabIndex={shouldTab}>
   //                     <P bold> {theNewOrder[i]}</P>
-  //                   </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                   </ST_M_Results_FinalButtonsNumberPageWrapper>
   //                 </LinkNoStyle>
   //               </Fragment>
   //             )
@@ -219,9 +213,9 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //           if (paginationMobile === i + 1) {
   //             return (
   //               <Fragment key={i}>
-  //                 <ST_D_Results_FinalButtonsNumberPageWrapper isActive>
+  //                 <ST_M_Results_FinalButtonsNumberPageWrapper isActive>
   //                   <P bold> {i + 1}</P>
-  //                 </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                 </ST_M_Results_FinalButtonsNumberPageWrapper>
   //               </Fragment>
   //             )
   //           }
@@ -231,9 +225,9 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //               <LinkNoStyle
   //                 href="#topOfSTL"
   //                 as={pathname}>
-  //                 <ST_D_Results_FinalButtonsNumberPageWrapper onClick={() => setPaginationMobile(toMoveToThatPage)}>
+  //                 <ST_M_Results_FinalButtonsNumberPageWrapper onClick={() => setPaginationMobile(toMoveToThatPage)}>
   //                   <P bold> {i + 1}</P>
-  //                 </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                 </ST_M_Results_FinalButtonsNumberPageWrapper>
   //               </LinkNoStyle>
   //             </Fragment>
   //           )
@@ -257,9 +251,9 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //                 <LinkNoStyle
   //                   href="#topOfSTL"
   //                   as={pathname}>
-  //                   <ST_D_Results_FinalButtonsNumberPageWrapper onClick={() => setPaginationMobile(theNewOrder[0])}>
+  //                   <ST_M_Results_FinalButtonsNumberPageWrapper onClick={() => setPaginationMobile(theNewOrder[0])}>
   //                     <P bold> {theNewOrder[i]}</P>
-  //                   </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                   </ST_M_Results_FinalButtonsNumberPageWrapper>
   //                 </LinkNoStyle>
   //               </Fragment>
   //             )
@@ -268,9 +262,9 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //           if (i === 1) {
   //             return (
   //               <Fragment key={i}>
-  //                 <ST_D_Results_FinalButtonsNumberPageWrapper isActive>
+  //                 <ST_M_Results_FinalButtonsNumberPageWrapper isActive>
   //                   <P bold> {theNewOrder[i]}</P>
-  //                 </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                 </ST_M_Results_FinalButtonsNumberPageWrapper>
   //               </Fragment>
   //             )
   //           }
@@ -281,9 +275,9 @@ export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
   //                 <LinkNoStyle
   //                   href="#topOfSTL"
   //                   as={pathname}>
-  //                   <ST_D_Results_FinalButtonsNumberPageWrapper onClick={() => setPaginationMobile(theNewOrder[2])}>
+  //                   <ST_M_Results_FinalButtonsNumberPageWrapper onClick={() => setPaginationMobile(theNewOrder[2])}>
   //                     <P bold> {theNewOrder[i]}</P>
-  //                   </ST_D_Results_FinalButtonsNumberPageWrapper>
+  //                   </ST_M_Results_FinalButtonsNumberPageWrapper>
   //                 </LinkNoStyle>
   //               </Fragment>
   //             )

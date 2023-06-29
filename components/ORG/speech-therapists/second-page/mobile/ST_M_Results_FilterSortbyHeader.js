@@ -26,7 +26,7 @@ export const ST_M_Results_FilterSortbyHeader = () => {
       ✅Style the cards with no filters
       ✅Crete the "How much show", only the visual thing
       ✅Create the "sortby", only the visual thing ~ Is working too, at least for card with no filters
-      Create the "Buttons"
+      ✅Create the "Buttons"
       Make the filters work
       Make the "sort by" work
       Make the buttons at the bottom work
