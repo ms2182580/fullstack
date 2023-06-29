@@ -1,10 +1,10 @@
 import { cloneElement, Fragment, useState } from "react"
 import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
-import { DataComponents } from "./cards-places/DataArray"
-import { Paginator } from "./ST_M_Results_CardNoFilters_Paginator"
-import { SpeechTherapistsCardsMobileWrapper } from "./styles/SpeechTherapistsCardsMobileWrapper"
+import { DataArray } from "./cards-places/DataArray"
+import { ST_M_Results_CardNoFilters_Paginator } from "./ST_M_Results_CardNoFilters_Paginator"
+import { ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper } from './styles/ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper.js'
 
-export const ThreeCardsComponents = ({ ...props }) => {
+export const ST_M_Results_CardNoFilters_ThreeCardsComponents = ({ ...props }) => {
   const [index, setIndex] = useState(0)
 
   const slideLeft = () => {
@@ -14,7 +14,7 @@ export const ThreeCardsComponents = ({ ...props }) => {
   }
 
   const slideRight = () => {
-    if (index + 1 <= DataComponents.length - 1) {
+    if (index + 1 <= DataArray.length - 1) {
       setIndex(index + 1)
     }
   }
@@ -52,11 +52,11 @@ export const ThreeCardsComponents = ({ ...props }) => {
     function onPointerMove(e) {
       /* set offset to the current position of the cursor,
       minus the initial starting position  */
-      offset = (isTouchEvent ? e.touches[0].clientX : e.clientX) - initialX
+      offset = (isTouchEvent ? e?.touches[0].clientX : e?.clientX) - initialX
       if (offset <= -100) {
         slideRight()
         /* if we're at the last card, snap back to center */
-        if (index === DataComponents.length - 1) {
+        if (index === DataArray.length - 1) {
           card.style.left = 0
         } else {
           /* hide the shift back to center 
@@ -105,16 +105,16 @@ export const ThreeCardsComponents = ({ ...props }) => {
   }
 
   return (
-    <SpeechTherapistsCardsMobileWrapper>
+    <ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper>
       <div className="card-container">
         <BookmarkSaveSTMobileSvg tabIndex={0} />
-        <Paginator
-          dataLength={DataComponents.length}
+        <ST_M_Results_CardNoFilters_Paginator
+          dataLength={DataArray.length}
           activeIndex={index}
           handlePageChange={handlePageChange}
         />
 
-        {DataComponents.map((person, n) => {
+        {DataArray.map((person, n) => {
           let position = n > index ? "nextCard" : n === index ? "activeCard" : "prevCard"
 
 
@@ -130,12 +130,12 @@ export const ThreeCardsComponents = ({ ...props }) => {
                 howFar: props.howFar,
                 rating: props.rating,
                 reviews: props.reviews,
-                diagnoses: props.diagnoses,
+                diagnosis: props.diagnosis,
                 agesServed: props.agesServed,
                 languages: props.language,
                 yearsOfPractice: props.yearsOfPractice,
                 serviceSetting: props.serviceSetting,
-                insurance: props.accepts,
+                insurance: props.insurance,
                 phone: props.phoneNumber,
                 email: props.email,
                 locationCity: props.location.city,
@@ -147,6 +147,6 @@ export const ThreeCardsComponents = ({ ...props }) => {
           )
         })}
       </div>
-    </SpeechTherapistsCardsMobileWrapper>
+    </ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper>
   )
 }

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 
 import { ButtonSmall } from "../../../../ui/buttons/general"
@@ -8,9 +8,9 @@ import { ThreeCardsComponents } from "./ThreeCardsComponents"
 
 export const SpeechTherapistsCardWithFilterMobile = () => {
   const router = useRouter()
-  const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
   const goToDynamic = (e, everySingleValue, filters) => {
-    setSpeechtherapist({ data: [everySingleValue], filters: [filters] })
+    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
   }

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
+import { useORG_Ctx_ShowFiltersMobile } from "../../context/ORG_Ctx_ShowFiltersMobile_Provider"
 import { H2 } from "../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
 import SignComponent from "./SignComponent.js"
@@ -45,11 +46,13 @@ export const NavBar = () => {
   }
 
   const { modalShowedCtx } = useCtx_ShowModal()
+  const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
   return (
     <NavBarWrapped
       isORG={isORGState}
-      modalShowedCtx={modalShowedCtx}>
+      modalShowedCtx={modalShowedCtx}
+      mustShowFiltersMobile={mustShowFiltersMobile}>
       <Logo
         tabIndex={0}
         onKeyDown={navigateHome}>

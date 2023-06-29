@@ -4,7 +4,7 @@ import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxF
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile.js"
 import { ORG_Sortby_Mobile } from "../../../../../utils/ORG_SortByData.js"
-import { ORG_SortybyFunction } from "../../../../../utils/ORG_SortybyFunction.js"
+import { ORG_SortybyFunction_D } from "../../../../../utils/ORG_SortybyFunction_D.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { CustomC } from "../../../dropdownFilters/styles/Singledropdown.js"
 import { STResults_SortByMobileWrapper } from "./styles/STResults_SortByMobileWrapper.js"
@@ -25,7 +25,7 @@ export const STResults_SortByMobile = ({ title = "Sort By" }) => {
     let elementSelected = e.target.textContent
     setActualSort(elementSelected)
 
-    const { newOrderData, newOrderFilters } = ORG_SortybyFunction(
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction_D(
       elementSelected,
       filtersST,
       userFetched,
@@ -38,7 +38,7 @@ export const STResults_SortByMobile = ({ title = "Sort By" }) => {
     }))
     setFilters(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction(
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_D(
       elementSelected,
       filtersF,
       dataF,

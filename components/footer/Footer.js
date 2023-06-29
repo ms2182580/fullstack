@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { useORG_Ctx_ShowFiltersMobile } from "../../context/ORG_Ctx_ShowFiltersMobile_Provider"
 import { Caption } from "../ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "../ui/heading_body_text/HeaderFonts"
 import { FooterMainContent } from "./FooterMainContent.js"
@@ -52,10 +53,13 @@ export const Footer = () => {
   // }, [ORGShowFullMapFilter])
 
   const { modalShowedCtx } = useCtx_ShowModal()
+  const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
   return (
     <FooterWrapper
       ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}
+      mustShowFiltersMobile={mustShowFiltersMobile}
+
 
     // ref={toDisableTab}
     // tabIndex={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" ? -1 : 0}

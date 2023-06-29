@@ -131,7 +131,7 @@ export const ORG_Filterdata_SessionType = (whichSelect = []) => {
 //     "parking lot"
 //   ]
 
-//   return pickMoreThanOne(transportation)
+//   return pickMoreThanOne(ORG_FILTERS_DATA_M.)
 // }
 
 export const ORG_Filterdata_ProviderType = (whichSelect = []) => {

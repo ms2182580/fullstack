@@ -1,13 +1,13 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
-import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
 import { ORG_FILTERS_KEYS_D } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Share } from "../../../share/Share"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
-import { Tooltip } from "../../../tooltip/Tooltip"
+import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
 import { ST_D_CardCity } from "../../ST_D_CardCity"
 import { ST_D_CardEmail } from "../../ST_D_CardEmail"
@@ -26,15 +26,15 @@ import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
 
 export const ST_D_Results_CardWithFilters = () => {
   const router = useRouter()
-  const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
 
   const goToDynamic = (e, everySingleValue, filters) => {
-    setSpeechtherapist({ data: [everySingleValue], filters: [filters] })
+    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
   }
 
-  const { dataF, filtersF } = useORG_Ctx_FetchWithFilters()
+  const { dataF, filtersF } = useORG_Ctx_FetchWithFiltersDesktop()
 
   return (
     <>
@@ -95,7 +95,7 @@ export const ST_D_Results_CardWithFilters = () => {
                   {everySingleValue.name.first} {everySingleValue.name.last}, <span>CCC-SLP</span>
                 </H2>
 
-                <Tooltip />
+                <TooltipDesktop />
 
 
                 <ST_D_CardCity city={everySingleValue.location.city} />

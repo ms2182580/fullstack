@@ -1,8 +1,8 @@
 import { Fragment } from "react"
-import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { ST_Mobile_CardInfoWrapper } from "./styles/ST_Mobile_CardInfo.js"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ST_M_CardInfoWrapper } from "./styles/ST_M_CardInfoWrapper.js"
 
-export const ST_Mobile_CardInfo = ({
+export const ST_M_CardInfo = ({
   title,
   dataToShow,
   isThirdPage = false,
@@ -12,7 +12,7 @@ export const ST_Mobile_CardInfo = ({
   // const { isMobile } = useWidthWindow1024()
 
   return (
-    <ST_Mobile_CardInfoWrapper isThirdPage={isThirdPage}>
+    <ST_M_CardInfoWrapper isThirdPage={isThirdPage}>
       {/* <P
         primary_hover
         bold>
@@ -77,6 +77,6 @@ export const ST_Mobile_CardInfo = ({
         </>
       )}
 
-    </ST_Mobile_CardInfoWrapper>
+    </ST_M_CardInfoWrapper>
   )
 }

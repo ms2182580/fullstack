@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal.js"
-import { ORG_ST_About } from "../../../../utils/ORG_ST_About.js"
+import { ORG_ST_About } from "../../../../utils/ORG_ST_About_D.js"
 import { useScrollLock } from "../../../../utils/useScrollLock.js"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024.js"
 import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"

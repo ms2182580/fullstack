@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { ORGLanding_CC, ORGLanding_Doctors, ORGLanding_ST } from "../../../../../assets/Icons/index"
-import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
-import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
+import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
 import { useFetchNoFiltersDesktop } from "../../../../../utils/useFetchNoFiltersDesktop"
 import { ST_D_Search_Card } from "./ST_D_Search_Card.js"
 import { ST_D_Search_ThreeCardsLandingWrapper } from "./styles/ST_D_Search_ThreeCardsLandingWrapper"
@@ -11,7 +11,7 @@ export const ST_D_Search_ThreeCardsLanding = ({
   dispatch,
   mustShowResults
 }) => {
-  const { shouldFetchDesktopNoFilters, setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFilters()
+  const { shouldFetchDesktopNoFilters, setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
 
   useEffect(() => {
     setShouldFetchDesktopNoFilters(true)

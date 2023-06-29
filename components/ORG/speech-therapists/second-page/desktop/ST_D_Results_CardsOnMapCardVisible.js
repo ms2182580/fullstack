@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
@@ -12,10 +12,10 @@ export const ST_D_Results_CardsOnMapCardVisible = ({ personalData, technicalData
   // console.log("personalData, technicalData:", personalData, technicalData)
 
   const router = useRouter()
-  const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
 
   const goToDynamic = (e, everySingleValue, filters) => {
-    setSpeechtherapist({ data: [everySingleValue], filters: [filters] })
+    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
     const toWhere = `${router.pathname}/IndividualProvider`
     router.push(toWhere)
   }

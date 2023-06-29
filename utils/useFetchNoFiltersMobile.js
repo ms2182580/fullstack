@@ -11,14 +11,14 @@ import {
   ORG_Filterdata_Reviews,
   ORG_Filterdata_ServiceSetting,
   ORG_Filterdata_SessionType,
+  ORG_Filterdata_Transportation,
   ORG_Filterdata_YoP
-} from "./ORG_FilterdataFunctions"
+} from "./ORG_FilterdataFunctions_M"
 
 export const useFetchNoFiltersMobile = (pagination = 1, howMuch = 4, whichOne, shouldFetch = true) => {
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
   const [actualSort, setActualSort] = useState("Distance")
-
 
   useEffect(() => {
     if (shouldFetch) {
@@ -48,6 +48,7 @@ export const useFetchNoFiltersMobile = (pagination = 1, howMuch = 4, whichOne, s
             const reviews = ORG_Filterdata_Reviews()
             const serviceSetting = ORG_Filterdata_ServiceSetting()
             const sessionType = ORG_Filterdata_SessionType()
+            const transportation = ORG_Filterdata_Transportation()
             const yearsOfPractice = ORG_Filterdata_YoP()
 
             getFilters.filters = [
@@ -56,8 +57,7 @@ export const useFetchNoFiltersMobile = (pagination = 1, howMuch = 4, whichOne, s
                 agesServed: agesServed,
                 diagnosis: diagnosis,
                 distance: distance,
-                insurance,
-                insurance,
+                insurance: insurance,
                 language: language,
                 meetingFormat: meetingFormat,
                 providerType: providerType,
@@ -65,6 +65,7 @@ export const useFetchNoFiltersMobile = (pagination = 1, howMuch = 4, whichOne, s
                 reviews: reviews,
                 serviceSetting: serviceSetting,
                 sessionType: sessionType,
+                transportation: transportation,
                 yearsOfPractice: yearsOfPractice,
                 CCC_SLP:
                   "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA)."
@@ -88,8 +89,6 @@ export const useFetchNoFiltersMobile = (pagination = 1, howMuch = 4, whichOne, s
         }
       }
       fetchData()
-
-
     }
   }, [pagination, howMuch, shouldFetch])
 

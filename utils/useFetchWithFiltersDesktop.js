@@ -13,10 +13,10 @@ import {
   ORG_Filterdata_ServiceSetting,
   ORG_Filterdata_SessionType,
   ORG_Filterdata_YoP
-} from "./ORG_FilterdataFunctions"
+} from "./ORG_FilterdataFunctions_D"
 import { ORG_FILTERS_KEYS_D } from "./ORG_FiltersCategories"
 
-export const useFetchWithFilters = (pagination = 1, howMuch = 10, whichOne, shouldFetch = true) => {
+export const useFetchWithFiltersDesktop = (pagination = 1, howMuch = 10, whichOne, shouldFetch = true) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
   const [actualSortF, setActualSortF] = useState("Distance")

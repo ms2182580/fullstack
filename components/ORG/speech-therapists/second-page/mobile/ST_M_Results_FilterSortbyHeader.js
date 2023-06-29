@@ -19,11 +19,17 @@ export const ST_M_Results_FilterSortbyHeader = () => {
 
       {/* 
       //!FH0
-      Create the "filter", only the visual thing
-      Crete the "sortby", only the visual thing
+      ✅Create the "filter", only the visual thing
+      ✅Create the "render cards"
+      Style the cards with no filters
       Crete the "How much show", only the visual thing
-      Create the "render cards"
+      Crete the "sortby", only the visual thing
       Create the "Buttons"
+      Make the filters work
+      Make the "sort by" work
+      Make the buttons at the bottom work
+      
+      
       */}
 
       {/* <ST_M_Results_FilterList  /> */}

@@ -14,7 +14,8 @@ export const FooterWrapper = styled.footer`
   user-select: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
 
   overflow-x: hidden;
-  position: relative;
+  position:${({ mustShowFiltersMobile }) => mustShowFiltersMobile ? `fixed` : `relative`};
+  visibility:${({ mustShowFiltersMobile }) => mustShowFiltersMobile ? `hidden` : `visible`};
 
   & > :nth-child(1) {
     margin-top: 12px;

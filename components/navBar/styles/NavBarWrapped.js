@@ -7,13 +7,14 @@ export const NavBarWrapped = styled.nav`
   align-items: center;
   box-shadow: ${(x) => x.isORG ? `0px 4px 4px rgba(0, 0, 0, 0.25)` : `0px 2px 4px rgba(0, 0, 0, 0.25)`};
   border-bottom: ${(x) => x.isORG ? `1px solid ${NEUTRALS.LIGHT_GREY}` : ``};
-  
-  
   background-color: ${(x) =>
     x.isORG ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`};
-    
-
-  position: relative;
+  /* position: relative; */
+  position:${({ mustShowFiltersMobile }) => mustShowFiltersMobile ? `fixed` : `relative`};
+  visibility:${({ mustShowFiltersMobile }) => mustShowFiltersMobile ? `hidden` : `visible`};
+  
+  
+  
   z-index: 999;
 
   overflow: hidden;

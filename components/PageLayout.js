@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { useORG_Ctx_ShowFiltersMobile } from "../context/ORG_Ctx_ShowFiltersMobile.js"
+import { useORG_Ctx_ShowFiltersMobile } from "../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { Footer } from "./footer/Footer.js"
 import { NavBar } from "./navBar/NavBar.js"
 
@@ -18,11 +18,12 @@ export const PageLayout = ({ children, title = "INCLUSIVE" }) => {
         />
       </Head>
 
-      {mustShowFiltersMobile === false ? <NavBar /> : null}
+
+      <NavBar />
 
       <main>{children}</main>
 
-      {mustShowFiltersMobile === false ? <Footer /> : null}
+      <Footer />
     </>
   )
 }

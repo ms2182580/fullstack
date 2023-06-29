@@ -1,6 +1,6 @@
 
 import { useEffect, useReducer, useState } from "react"
-import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
+import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
 import { useORG_Ctx_filtersLeftDesktop } from "../../../../../context/ORG_CtxFiltersLeftDesktop_Provider"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../../../context/ORG_Ctx_FiltersApplyDesktop"
@@ -141,7 +141,7 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
   //   }
   // }, [isMobile])
 
-  const { shouldFetchDesktopFilters, setShouldFetchDesktopFilters } = useORG_Ctx_FetchWithFilters()
+  const { shouldFetchDesktopFilters, setShouldFetchDesktopFilters } = useORG_Ctx_FetchWithFiltersDesktop()
 
   useEffect(() => {
     /* 

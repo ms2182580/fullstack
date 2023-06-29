@@ -3,13 +3,13 @@ import Image from "next/image"
 import { useEffect } from "react"
 import LottieLoading from "../../../assets/Icons/LottieLoading.json"
 import RobotLoading from "../../../assets/Icons/RobotLoading.png"
-import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "../../ui/heading_body_text/HeaderFonts"
 import LoadingSpeechTherapistsWrapper from "./styles/LoadingSpeechTherapistsWrapper"
 
 const LoadingSpeechTherapists = () => {
-  const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFilters()
+  const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
 
   useEffect(() => {
     setShouldFetchDesktopNoFilters(true)

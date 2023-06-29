@@ -1,6 +1,6 @@
-export const ORG_SortybyFunction = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
+export const ORG_SortybyFunction_M = (whichSort, sourceArr = [], userFetched, whoTrigger = "dont typed") => {
   let newOrder
-  if (whichSort.toLowerCase() === "rating") {
+  if (whichSort.toLowerCase() === "highest rating") {
     newOrder = sourceArr
       .map((x, i) => [Number(x.rating), i])
       .sort((a, b) => {
@@ -9,7 +9,7 @@ export const ORG_SortybyFunction = (whichSort, sourceArr = [], userFetched, whoT
       .map((x) => x[1])
   }
 
-  if (whichSort.toLowerCase() === "distance") {
+  if (whichSort.toLowerCase() === "nearest") {
     newOrder = sourceArr
       .map((x, i) => [x.distance, i])
       .sort((a, b) => {

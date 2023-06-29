@@ -12,7 +12,7 @@ import {
   ORG_Filterdata_ServiceSetting,
   ORG_Filterdata_SessionType,
   ORG_Filterdata_YoP
-} from "./ORG_FilterdataFunctions"
+} from "./ORG_FilterdataFunctions_D"
 
 export const useFetchNoFiltersDesktop = (pagination = 1, howMuch = 10, whichOne, shouldFetch = true) => {
   const [data, setData] = useState()
@@ -56,8 +56,7 @@ export const useFetchNoFiltersDesktop = (pagination = 1, howMuch = 10, whichOne,
                 agesServed: agesServed,
                 diagnosis: diagnosis,
                 distance: distance,
-                insurance,
-                insurance,
+                insurance: insurance,
                 language: language,
                 meetingFormat: meetingFormat,
                 providerType: providerType,

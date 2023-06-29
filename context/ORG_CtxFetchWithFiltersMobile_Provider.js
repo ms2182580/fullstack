@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react"
-import { useFetchWithFilters } from "../utils/ORG_useFetchWithFilters"
+import { useFetchWithFiltersDesktop } from "../utils/useFetchWithFiltersDesktop"
 import { useORG_Ctx_FetchNoFiltersMobile } from "./ORG_CtxFetchNoFiltersMobile_Provider"
 
 const ORG_Ctx_fetchWithFiltersMobile = createContext(null)
@@ -9,7 +9,7 @@ export const ORG_CtxFetchWithFiltersMobile_Provider = ({ children }) => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersMobile()
   const [shouldFetchMobileWitFilters, setShouldFetchMobileWithFilters] = useState(false)
 
-  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFilters(
+  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFiltersDesktop(
     pagination,
     howMuchShow,
     "FetchWithFiltersMobile",

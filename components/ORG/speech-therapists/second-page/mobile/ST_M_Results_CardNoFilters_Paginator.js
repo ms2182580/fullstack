@@ -1,6 +1,6 @@
-import { PaginatorWrapper } from "./styles/PaginatorWapper"
+import { ST_M_Results_CardNoFilters_PaginatorWrapper } from "./styles/ST_M_Results_CardNoFilters_PaginatorWrapper"
 
-export const Paginator = ({ dataLength, activeIndex, handlePageChange }) => {
+export const ST_M_Results_CardNoFilters_Paginator = ({ dataLength, activeIndex, handlePageChange }) => {
   let dots = []
   let classes = ""
   for (let index = 0; index < dataLength; index++) {
@@ -12,25 +12,25 @@ export const Paginator = ({ dataLength, activeIndex, handlePageChange }) => {
         onClick={() => handlePageChange(index)}></div>
     )
   }
-  
+
   const handleChangeCard = (e, index) => {
-    if(e.key === "Enter"){
+    if (e.key === "Enter") {
       handlePageChange(index)
     }
   }
-  
-  
+
+
   return (
-    <PaginatorWrapper>
+    <ST_M_Results_CardNoFilters_PaginatorWrapper>
       {dots.map((dot, i) => (
         <span
           key={`${dot}${i}`}
           tabIndex={0}
           onKeyDown={(e) => handleChangeCard(e, i)}
-          >
+        >
           {dot}
         </span>
       ))}
-    </PaginatorWrapper>
+    </ST_M_Results_CardNoFilters_PaginatorWrapper>
   )
 }

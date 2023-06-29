@@ -3,10 +3,6 @@ import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const ST_M_Results_FiltersContainerWrapper = styled.div`
   padding: 50px 16px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
 
   visibility: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `visible` : `hidden`)};
   position: absolute;

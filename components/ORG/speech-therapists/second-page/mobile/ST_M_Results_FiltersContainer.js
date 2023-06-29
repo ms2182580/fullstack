@@ -41,12 +41,6 @@ export const ST_M_Results_FiltersContainer = ({
     }
   }
 
-  /* 
-  
-  !FH0
-  Make the filters have, each one, a dropdown button
-  
-  */
 
   return (
     <ST_M_Results_FiltersContainerWrapper mustShowFiltersMobile={mustShowFiltersMobile}>

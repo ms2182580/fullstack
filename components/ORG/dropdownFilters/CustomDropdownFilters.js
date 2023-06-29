@@ -1,15 +1,15 @@
 import { Fragment, useEffect, useState } from "react"
 import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
-import { useORG_Ctx_FetchNoFilters } from "../../../context/ORG_CtxFetchNoFilters_Provider"
-import { useORG_Ctx_FetchWithFilters } from "../../../context/ORG_CtxFetchWithFilters_Provider"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
+import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../context/ORG_Ctx_FiltersApplyDesktop"
-import { ORG_SortybyFunction } from "../../../utils/ORG_SortybyFunction"
+import { ORG_SortybyFunction_D } from "../../../utils/ORG_SortybyFunction_D"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
 export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
-  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFilters()
+  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [showDropdown, setShowDropdown] = useState(false)
 
   const {
@@ -21,7 +21,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 
-  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFilters()
+  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFiltersDesktop()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)
@@ -40,7 +40,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     setWhichTitle(elementSelected)
     setActualSort(elementSelected)
 
-    const { newOrderData, newOrderFilters } = ORG_SortybyFunction(
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction_D(
       elementSelected,
       filtersST,
       userFetched,
@@ -53,7 +53,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     }))
     setFilters(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction(
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_D(
       elementSelected,
       filtersF,
       dataF,

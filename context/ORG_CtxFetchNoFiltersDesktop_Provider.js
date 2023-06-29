@@ -3,7 +3,7 @@ import { useFetchNoFiltersDesktop } from "../utils/useFetchNoFiltersDesktop"
 
 const ORG_Ctx_fetchNoFilters = createContext(null)
 
-export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
+export const ORG_CtxFetchNoFiltersDesktop_Provider = ({ children }) => {
   const [pagination, setPagination] = useState(1)
   const [howMuchShow, setHowMuchShow] = useState(10)
   const [shouldFetchDesktopNoFilters, setShouldFetchDesktopNoFilters] = useState(false)
@@ -38,6 +38,6 @@ export const ORG_CtxFetchNoFilters_Provider = ({ children }) => {
   )
 }
 
-export const useORG_Ctx_FetchNoFilters = () => {
+export const useORG_Ctx_FetchNoFiltersDesktop = () => {
   return useContext(ORG_Ctx_fetchNoFilters)
 }

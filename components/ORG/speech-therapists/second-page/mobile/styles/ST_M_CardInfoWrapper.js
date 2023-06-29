@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ST_Mobile_CardInfoWrapper = styled.div`
+export const ST_M_CardInfoWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;

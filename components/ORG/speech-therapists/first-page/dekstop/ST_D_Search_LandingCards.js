@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
-import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../../context/ORG_Ctx_IndividualSpeechtherapist.js"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider.js"
 import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
@@ -11,9 +11,9 @@ import { ST_D_Search_LandingCardsWrapper } from "./styles/ST_D_Search_LandingCar
 
 export const ST_D_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
   const router = useRouter()
-  const { setSpeechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
   const goToDynamic = () => {
-    setSpeechtherapist({ data: [dataToUse], filters: [filters] })
+    setSTDataThirdpage_D({ data: [dataToUse], filters: [filters] })
     router.push("/ORG/SpeechTherapists/IndividualProvider")
   }
 

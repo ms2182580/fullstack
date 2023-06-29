@@ -1,17 +1,10 @@
+
 import { useEffect, useReducer, useState } from "react"
-// import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
-// import { useORG_Ctx_filtersLeftDesktop } from "../../../../../context/ORG_CtxFiltersLeftDesktop_Provider"
-// import { useORG_Ctx_FiltersApply } from "../../../../../context/ORG_Ctx_FiltersApplyDesktop"
-// import { ORG_INITIAL_VALUES_FILTERS_D } from "../../../../../utils/ORG_initialValuesFilters"
-// import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
-// import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled"
-// import { ST_D_Results_FiltersContainer } from "./ST_D_Results_FiltersContainer"
-// import { ST_D_Results_FilterListChildWrapper } from "./styles/ST_D_Results_FilterListChildWrapper.js"
-// import { ST_D_Results_FilterListMainWrapper } from "./styles/ST_D_Results_FilterListMainWrapper"
 import { ORG_STSearch_M_FilterIcon } from "../../../../../assets/Icons/index.js"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { useORG_Ctx_filtersLeftMobile } from "../../../../../context/ORG_CtxFiltersLeftMobile_Provider.js"
 import { useORG_Ctx_FiltersApplyMobile } from "../../../../../context/ORG_Ctx_FiltersApplyMobile.js"
+import { useORG_Ctx_ShowFiltersMobile } from '../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js'
 import { ORG_INITIAL_VALUES_FILTERS_M } from "../../../../../utils/ORG_initialValuesFilters.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_FiltersContainer } from "./ST_M_Results_FiltersContainer.js"
@@ -80,6 +73,7 @@ const reducer = (state, action) => {
 export const ST_M_Results_FilterList = () => {
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftMobile()
 
+
   /* 
   !FH
   The problem is the "setFiltersLeftContext" that is making re renders to the context provider "ORG_CtxFiltersLeft_Provider"
@@ -92,9 +86,10 @@ export const ST_M_Results_FilterList = () => {
   const [show, setShow] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
 
-  const [mustShowFiltersMobile, setMustShowFiltersMobile] = useState(false)
+  // const [mustShowFiltersMobile, setMustShowFiltersMobile] = useState(false)
   // const { ORGShowFullMapFilter, setORGShowFullMapFilter, ORGshowFullMapButton, setORGShowFullMapButton } =
   // useORG_CtxShowFiltersDesktop()
+  const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
   const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } =
     useORG_Ctx_FiltersApplyMobile()

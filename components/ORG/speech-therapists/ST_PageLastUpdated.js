@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import React from "react"
-import { ORG_ST_LastUpdate } from "../../../utils/ORG_ST_Review"
+import { ORG_ST_LastUpdate } from "../../../utils/ORG_ST_Review_D"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_PageLastUpdatedWrapper } from "./styles/ST_PageLastUpdatedWrapper"
 

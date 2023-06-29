@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 import { BackArrow } from "../../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal"
-import { useORG_Ctx_IndividualSpeechtherapist } from "../../../../context/ORG_Ctx_IndividualSpeechtherapist"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
 import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
 import { InFrontModalWrapper } from "../../../inFront/styles/InFrontModalWrapper"
 import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
@@ -11,7 +11,6 @@ import { ST_D_CardEmail } from "../ST_D_CardEmail"
 import { ST_D_CardLocation } from "../ST_D_CardLocation"
 import { ST_D_CardPhone } from "../ST_D_CardPhone"
 import { STDetail_TwoButtons } from "../ST_TwoButtons"
-import { ST_CardInfo } from "../second-page/ST_CardInfo"
 import { ST_D_CardInfo } from "../second-page/ST_D_CardInfo"
 import { ST_HeaderMobileWrapper } from "../styles/ST_HeaderMobileWrapper.js"
 import { STDetail_About } from "./STDetail_About"
@@ -28,11 +27,11 @@ import { STDetail_STDetails_ThirdPageWrapper } from "./mobile/styles/STDetail_ST
 import { STDetail_MainWrapper } from "./styles/STDetail_MainWrapper"
 
 export const STDetail_Main = () => {
-  const { speechtherapist } = useORG_Ctx_IndividualSpeechtherapist()
+  const { STDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
 
   const route = useRouter()
 
-  if (speechtherapist === "") {
+  if (STDataThirdpage_D === "") {
     route.push("/ORG/SpeechTherapists")
     return
   }
@@ -50,16 +49,16 @@ export const STDetail_Main = () => {
 
   useEffect(() => {
     if (isMobile) {
-      setLanguages(speechtherapist.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setLanguages(STDataThirdpage_D.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-      setServiceSettings(speechtherapist.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setServiceSettings(STDataThirdpage_D.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-      setMeetingFormat(speechtherapist.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setMeetingFormat(STDataThirdpage_D.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-      setInsurance(speechtherapist.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
+      setInsurance(STDataThirdpage_D.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
 
       setAgesServed(
-        speechtherapist.filters[0].agesServed.map((x) => {
+        STDataThirdpage_D.filters[0].agesServed.map((x) => {
           if (x.split(" ")[1] === "months") {
             return x[0].toUpperCase() + x.slice(1)
           } else {
@@ -140,7 +139,7 @@ export const STDetail_Main = () => {
         modalShowedCtx={modalShowedCtx}>
         {isMobile === false ? (
           <>
-            <STDetail_Header STData={speechtherapist} />
+            <STDetail_Header STData={STDataThirdpage_D} />
           </>
         ) : (
           <>
@@ -155,11 +154,11 @@ export const STDetail_Main = () => {
         <div>
           {isMobile === false ? (
             <>
-              <STDetail_STDetails STData={speechtherapist} />
+              <STDetail_STDetails STData={STDataThirdpage_D} />
             </>
           ) : (
             <>
-              <STDetail_Mobile STData={speechtherapist} />
+              <STDetail_Mobile STData={STDataThirdpage_D} />
             </>
           )}
           {isMobile === false ? null : (
@@ -175,9 +174,9 @@ export const STDetail_Main = () => {
           {isMobile === false ? (
             <>
               <STDetail_Appointments
-                picture={speechtherapist.data[0].picture.large}
-                name={speechtherapist.data[0].name.first}
-                lastName={speechtherapist.data[0].name.last}
+                picture={STDataThirdpage_D.data[0].picture.large}
+                name={STDataThirdpage_D.data[0].name.first}
+                lastName={STDataThirdpage_D.data[0].name.last}
               />
             </>
           ) : null}
@@ -188,8 +187,8 @@ export const STDetail_Main = () => {
           ) : (
             <>
               <STDetail_About
-                name={speechtherapist.data[0].name.first}
-                lastName={speechtherapist.data[0].name.last}
+                name={STDataThirdpage_D.data[0].name.first}
+                lastName={STDataThirdpage_D.data[0].name.last}
                 aboutRef={aboutRef}
               />
             </>
@@ -250,14 +249,14 @@ export const STDetail_Main = () => {
                 </>
               )}
               <div>
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Qualifications"
                   dataToShow={qualifications}
                   isMobile={true}
                   isThirdPage={true}
                   withoutComa={true}
                 />
-                <ST_CardInfo
+                <ST_D_CardInfo
                   title="Additional Credentials"
                   dataToShow={additionalCredentials}
                   isMobile={true}
@@ -274,20 +273,20 @@ export const STDetail_Main = () => {
                 id="Contact"
                 ref={contactRef}>
                 <ST_D_CardLocation
-                  locationCity={speechtherapist.data[0].location.city}
-                  locationStreetNumber={speechtherapist.data[0].location.street.number}
-                  locationStreetName={speechtherapist.data[0].location.street.name}
-                  locationState={speechtherapist.data[0].location.state}
+                  locationCity={STDataThirdpage_D.data[0].location.city}
+                  locationStreetNumber={STDataThirdpage_D.data[0].location.street.number}
+                  locationStreetName={STDataThirdpage_D.data[0].location.street.name}
+                  locationState={STDataThirdpage_D.data[0].location.state}
                   isMobile={true}
                   isThirdPageMobile={true}
                 />
                 <ST_D_CardPhone
-                  phoneNumber={speechtherapist.data[0].cell}
+                  phoneNumber={STDataThirdpage_D.data[0].cell}
                   isMobile={true}
                   isThirdPageMobile={true}
                 />
                 <ST_D_CardEmail
-                  email={speechtherapist.data[0].email}
+                  email={STDataThirdpage_D.data[0].email}
                   isMobile={true}
                   isThirdPageMobile={true}
                 />
@@ -304,11 +303,11 @@ export const STDetail_Main = () => {
 
 
           <STDetail_Reviews
-            name={speechtherapist.data[0].name.first}
-            lastName={speechtherapist.data[0].name.last}
+            name={STDataThirdpage_D.data[0].name.first}
+            lastName={STDataThirdpage_D.data[0].name.last}
             reviewsRef={reviewsRef}
-            rating={speechtherapist.filters[0].rating}
-            reviews={speechtherapist.filters[0].reviews}
+            rating={STDataThirdpage_D.filters[0].rating}
+            reviews={STDataThirdpage_D.filters[0].reviews}
           />
           {isMobile === false ? null : (
             <>
@@ -318,12 +317,12 @@ export const STDetail_Main = () => {
           {isMobile === false ? (
             <>
               <STDetail_FAQS
-                name={speechtherapist.data[0].name.first}
-                lastName={speechtherapist.data[0].name.last}
-                locationCity={speechtherapist.data[0].location.city}
-                locationStreetNumber={speechtherapist.data[0].location.street.number}
-                locationStreetName={speechtherapist.data[0].location.street.name}
-                locationState={speechtherapist.data[0].location.state}
+                name={STDataThirdpage_D.data[0].name.first}
+                lastName={STDataThirdpage_D.data[0].name.last}
+                locationCity={STDataThirdpage_D.data[0].location.city}
+                locationStreetNumber={STDataThirdpage_D.data[0].location.street.number}
+                locationStreetName={STDataThirdpage_D.data[0].location.street.name}
+                locationState={STDataThirdpage_D.data[0].location.state}
               />
             </>
           ) : null}
@@ -331,8 +330,8 @@ export const STDetail_Main = () => {
           {isMobile === false ? (
             <>
               <STDetail_PageLastUpdated
-                name={speechtherapist.data[0].name.first}
-                lastName={speechtherapist.data[0].name.last}
+                name={STDataThirdpage_D.data[0].name.first}
+                lastName={STDataThirdpage_D.data[0].name.last}
               />
             </>
           ) : null}

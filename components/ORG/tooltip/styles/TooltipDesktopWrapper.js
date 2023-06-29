@@ -5,7 +5,6 @@ export const TooltipDesktopWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  /* border: 2px solid green; */
 
   & > :nth-child(1) {
     cursor: pointer;

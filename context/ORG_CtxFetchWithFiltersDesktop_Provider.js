@@ -1,15 +1,15 @@
 import { createContext, useContext, useState } from "react"
-import { useFetchWithFilters } from "../utils/ORG_useFetchWithFilters"
-import { useORG_Ctx_FetchNoFilters } from "./ORG_CtxFetchNoFilters_Provider"
+import { useFetchWithFiltersDesktop } from "../utils/useFetchWithFiltersDesktop"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "./ORG_CtxFetchNoFiltersDesktop_Provider"
 
 const ORG_Ctx_fetchWithFilters = createContext(null)
 
-export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
+export const ORG_CtxFetchWithFiltersDesktop_Provider = ({ children }) => {
   const [howMuchShow, setHowMuchShow] = useState(10)
-  const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
+  const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [shouldFetchDesktopFilters, setShouldFetchDesktopFilters] = useState(false)
 
-  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFilters(
+  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFiltersDesktop(
     pagination,
     howMuchShow,
     "FetchWithFiltersDesktop",
@@ -37,6 +37,6 @@ export const ORG_CtxFetchWithFilters_Provider = ({ children }) => {
   )
 }
 
-export const useORG_Ctx_FetchWithFilters = () => {
+export const useORG_Ctx_FetchWithFiltersDesktop = () => {
   return useContext(ORG_Ctx_fetchWithFilters)
 }

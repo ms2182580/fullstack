@@ -1,13 +1,13 @@
 import { useRouter } from "next/router"
 import { Fragment } from "react"
-import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 import { ST_D_Results_FinalButtonsNumberPage } from "./styles/ST_D_Results_FinalButtonsWrapper"
 
 export const ST_D_Results_NavigationButtonsNumbers = ({ isMobile = false }) => {
-  const { pagination, setPagination } = useORG_Ctx_FetchNoFilters()
+  const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
   // const { pagination: paginationMobile, setPagination: setPaginationMobile } = useORG_Ctx_FetchNoFiltersMobile()
   let amountOfPagesToClick = Array(3).fill(0)
 

@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { PinSvgDefault, PinSvgHover } from "../../../../../assets/Icons"
-import { useORG_Ctx_FetchNoFilters } from "../../../../../context/ORG_CtxFetchNoFilters_Provider"
-import { useORG_Ctx_FetchWithFilters } from "../../../../../context/ORG_CtxFetchWithFilters_Provider"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
+import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../../../context/ORG_Ctx_FiltersApplyDesktop"
 import { ORG_MapDefaultValue, ORG_MapFullValue } from "../../../../../utils/ORG_MapValuesToShow"
-import { formatNamesFunction, getAllReviews } from "../../../../../utils/ORG_ST_Review"
+import { formatNamesFunction, getAllReviews } from "../../../../../utils/ORG_ST_Review_D"
 import { ST_D_Results_CardsOnMapCard } from "./ST_D_Results_CardsOnMapCard"
 import { ST_D_Results_CardsOnMapWrapper } from "./styles/ST_D_Results_CardsOnMapWrapper"
 ST_D_Results_CardsOnMapCard
@@ -13,14 +13,14 @@ export const ST_D_Results_CardsOnMap = ({ handleShowMap }) => {
   const { filterAreApply } = useORG_Ctx_FiltersApplyDesktop()
 
   const { ORGshowFullMapButton, setORGShowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
-  const { userFetched, filtersST, pagination: paginationNoFilter } = useORG_Ctx_FetchNoFilters()
+  const { userFetched, filtersST, pagination: paginationNoFilter } = useORG_Ctx_FetchNoFiltersDesktop()
   const {
     dataF,
     filtersF,
     pagination: paginationFilter,
     shouldFetchDesktopFilters,
     setShouldFetchDesktopFilters
-  } = useORG_Ctx_FetchWithFilters()
+  } = useORG_Ctx_FetchWithFiltersDesktop()
 
   const updateAllReviews = useCallback((dataFetched, setReviews) => {
     const allReviews = getAllReviews(dataFetched.length - 1).map((x) => (typeof x === "string" ? x : x.review))
