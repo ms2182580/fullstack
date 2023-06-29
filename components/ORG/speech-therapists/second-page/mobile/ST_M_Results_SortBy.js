@@ -12,7 +12,7 @@ import { ST_M_Results_SortByWrapper } from "./styles/ST_M_Results_SortByWrapper.
 export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
   // const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
   const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
-  const [showDropdown, setShowDropdown] = useState(true)
+  const [showDropdown, setShowDropdown] = useState(false)
 
   const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFiltersMobile()
 

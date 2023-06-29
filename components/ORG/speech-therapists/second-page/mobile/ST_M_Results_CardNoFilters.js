@@ -74,7 +74,9 @@ export const ST_M_Results_CardNoFilters = () => {
                 email={everySingleValue.email}
                 location={everySingleValue.location}
               />
-              <span onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}>
+              <span
+              // onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}
+              >
                 <ButtonSmall secondary>See details</ButtonSmall>
               </span>
             </ST_M_Results_CardNoFiltersWrapper>
