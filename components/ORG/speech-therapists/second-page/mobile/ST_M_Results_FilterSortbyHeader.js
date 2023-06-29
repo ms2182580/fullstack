@@ -1,4 +1,5 @@
 import { ST_M_Results_FilterList } from './ST_M_Results_FilterList.js'
+import { ST_M_Results_HowMuchShowing } from './ST_M_Results_HowMuchShowing.js'
 
 
 import { ST_M_Results_FilterSortbyHeaderWrapper } from "./styles/ST_M_Results_FilterSortbyHeaderWrapper.js"
@@ -13,7 +14,7 @@ export const ST_M_Results_FilterSortbyHeader = () => {
       <ST_M_Results_FilterList />
 
       <p>Sortby</p>
-      <p>How Much show</p>
+      <ST_M_Results_HowMuchShowing />
 
 
 
@@ -22,7 +23,7 @@ export const ST_M_Results_FilterSortbyHeader = () => {
       ✅Create the "filter", only the visual thing
       ✅Create the "render cards"
       ✅Style the cards with no filters
-      Crete the "How much show", only the visual thing
+      ✅Crete the "How much show", only the visual thing
       Crete the "sortby", only the visual thing
       Create the "Buttons"
       Make the filters work
