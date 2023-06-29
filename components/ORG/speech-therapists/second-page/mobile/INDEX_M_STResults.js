@@ -22,6 +22,7 @@ export const INDEX_M_STResults = () => {
       <ST_M_Results_Header />
 
       <ST_M_Results_MainEntry />
+
     </INDEX_M_STResultsWrapper>
   )
 }

@@ -11,7 +11,7 @@ import { ST_M_Results_SortByWrapper } from "./styles/ST_M_Results_SortByWrapper.
 
 export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
   // const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
+  const { userFetched, setUserFetched, filtersST, setFiltersST, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
   const [showDropdown, setShowDropdown] = useState(false)
 
   const { userFetched: dataF, setUserFetched: setDataF, filtersST: filtersF, setFiltersST: setFiltersF } = useORG_Ctx_FetchWithFiltersMobile()
@@ -26,6 +26,7 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
 
   const getSelection = (e) => {
     let elementSelected = e.target.textContent
+
     setActualSort(elementSelected)
 
     const { newOrderData, newOrderFilters } = ORG_SortybyFunction_M(
@@ -35,11 +36,11 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
       "CustomDropdownFilters. Fetch no filters"
     )
 
-    setData((prevState) => ({
+    setUserFetched((prevState) => ({
       ...prevState,
       allData: newOrderData
     }))
-    setFilters(newOrderFilters)
+    setFiltersST(newOrderFilters)
 
     const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_M(
       elementSelected,
