@@ -4,9 +4,6 @@ export const ORG_Sortby_Desktop = {
 }
 
 export const ORG_Sortby_Mobile = {
-  data: ["Distance", "Rating", "Review count"],
+  data: ["Nearest", "Highest Rating", "Review count"],
   default: "Nearest"
 }
-
-export const ORG_SortByData = ["Distance", "Rating", "Review count"]
-export const ORG_SortByDefault = "Most Relevant"

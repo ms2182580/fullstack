@@ -1,12 +1,12 @@
 import { createContext, useContext, useState } from "react"
-import { ORG_SortByDefault } from "../utils/ORG_SortByData"
+import { ORG_Sortby_Desktop } from "../utils/ORG_SortByData"
 
 const ORG_Ctx_FiltersApplyDesktop = createContext(null)
 
 export const ORG_CtxFiltersApplyDesktop_Provider = ({ children }) => {
   const [filterAreApply, setFilterAreApply] = useState(false)
   const [filtersAppliedNewFilters, setFiltersAppliedNewFilters] = useState(false)
-  const [defaultWord, setDefaultWord] = useState(ORG_SortByDefault)
+  const [defaultWord, setDefaultWord] = useState(ORG_Sortby_Desktop.default)
 
   return (
     <ORG_Ctx_FiltersApplyDesktop.Provider

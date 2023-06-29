@@ -14,11 +14,12 @@ import {
   ORG_Filterdata_Transportation,
   ORG_Filterdata_YoP
 } from "./ORG_FilterdataFunctions_M"
+import { ORG_Sortby_Mobile } from "./ORG_SortByData"
 
 export const useFetchNoFiltersMobile = (pagination = 1, howMuch = 4, whichOne, shouldFetch = true) => {
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
-  const [actualSort, setActualSort] = useState("Distance")
+  const [actualSort, setActualSort] = useState(ORG_Sortby_Mobile.default)
 
   useEffect(() => {
     if (shouldFetch) {

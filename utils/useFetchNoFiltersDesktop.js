@@ -13,11 +13,12 @@ import {
   ORG_Filterdata_SessionType,
   ORG_Filterdata_YoP
 } from "./ORG_FilterdataFunctions_D"
+import { ORG_Sortby_Desktop } from "./ORG_SortByData"
 
 export const useFetchNoFiltersDesktop = (pagination = 1, howMuch = 10, whichOne, shouldFetch = true) => {
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
-  const [actualSort, setActualSort] = useState("Distance")
+  const [actualSort, setActualSort] = useState(ORG_Sortby_Desktop.default)
 
 
   useEffect(() => {

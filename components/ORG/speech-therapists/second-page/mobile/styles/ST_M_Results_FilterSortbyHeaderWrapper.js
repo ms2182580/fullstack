@@ -11,8 +11,15 @@ export const ST_M_Results_FilterSortbyHeaderWrapper = styled.div`
   & > * {
     /* border: 2px solid black; */
   }
+  
+  & > :nth-child(1){
+    margin-left: calc(29px - 16px);
+  }
+  & > :nth-child(2){
+    margin-right: calc(29px - 16px);
+  }
 
   & > :not(:last-child) {
-    margin-inline: calc(29px - 16px);
+    /* margin-inline: calc(29px - 16px); */
   }
 `

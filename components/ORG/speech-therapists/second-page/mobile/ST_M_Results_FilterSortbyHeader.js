@@ -1,5 +1,6 @@
 import { ST_M_Results_FilterList } from './ST_M_Results_FilterList.js'
 import { ST_M_Results_HowMuchShowing } from './ST_M_Results_HowMuchShowing.js'
+import { ST_M_Results_SortBy } from './ST_M_Results_SortBy.js'
 
 
 import { ST_M_Results_FilterSortbyHeaderWrapper } from "./styles/ST_M_Results_FilterSortbyHeaderWrapper.js"
@@ -12,8 +13,8 @@ export const ST_M_Results_FilterSortbyHeader = () => {
   return (
     <ST_M_Results_FilterSortbyHeaderWrapper>
       <ST_M_Results_FilterList />
+      <ST_M_Results_SortBy />
 
-      <p>Sortby</p>
       <ST_M_Results_HowMuchShowing />
 
 
@@ -24,7 +25,7 @@ export const ST_M_Results_FilterSortbyHeader = () => {
       ✅Create the "render cards"
       ✅Style the cards with no filters
       ✅Crete the "How much show", only the visual thing
-      Crete the "sortby", only the visual thing
+      ✅Create the "sortby", only the visual thing ~ Is working too, at least for card with no filters
       Create the "Buttons"
       Make the filters work
       Make the "sort by" work
