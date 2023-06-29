@@ -8,7 +8,7 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
   article {
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     cursor: ${(x) => (x.isThirdPage ? `default` : `pointer`)};
-    transition: all 0.7s;
+    transition: all 1s;
   }
 
   /* .card > :nth-child(1) {
@@ -134,8 +134,7 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
   }
 
   .prevCard {
-    right: 50px;
-    left: -50px;
+    inset: 0;
     opacity: 0;
     z-index: -1;
     position: absolute;
@@ -149,11 +148,11 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
 
   .nextCard {
     inset: 0;
-    right: -50px;
-    left: 50px;
     opacity: 0;
     z-index: -1;
     position: absolute;
-    /* width:100%; */
+
+    
   }
 `
+
