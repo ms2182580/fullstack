@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div`
+export const ST_M_Results_CardWithFilters_ThreeCardsComponentsWrapper = styled.div`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
@@ -51,6 +51,11 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
 
     .FirstPlace {
       width: 100%;
+      & > :not(:first-child) {
+        padding-inline: 16px;
+        margin-bottom: 8px;
+      }
+
       & > :nth-child(1) {
         position: relative;
 
@@ -75,12 +80,6 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
         & > :nth-child(1) {
           margin-right: 8px;
         }
-
-        & > :nth-child(2) {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
       }
 
       & > :nth-child(3) {
@@ -96,11 +95,6 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
 
       & > :nth-child(5) {
         padding-right: 0px;
-      }
-
-      & > :not(:first-child) {
-        padding-inline: 16px;
-        margin-bottom: 8px;
       }
     }
 

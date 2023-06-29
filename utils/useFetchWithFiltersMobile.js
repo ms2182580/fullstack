@@ -16,11 +16,12 @@ import {
   ORG_Filterdata_YoP
 } from "./ORG_FilterdataFunctions_M"
 import { ORG_FILTERS_KEYS_M } from "./ORG_FiltersCategories"
+import { ORG_Sortby_Mobile } from "./ORG_SortByData"
 
 export const useFetchWithFiltersMobile = (pagination = 1, howMuch = 4, whichOne, shouldFetch = true) => {
   const [dataF, setDataF] = useState()
   const [filtersF, setFiltersF] = useState([])
-  const [actualSortF, setActualSortF] = useState("Distance")
+  const [actualSortF, setActualSortF] = useState(ORG_Sortby_Mobile.default)
 
   const { filtersLeftContext: filtersSelected } = useORG_Ctx_filtersLeftMobile()
 
@@ -108,5 +109,6 @@ export const useFetchWithFiltersMobile = (pagination = 1, howMuch = 4, whichOne,
   }, [filtersSelected, pagination, shouldFetch])
 
   // console.log("💨dataF:", dataF)
+  // console.log('filtersF:', filtersF)
   return { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF }
 }

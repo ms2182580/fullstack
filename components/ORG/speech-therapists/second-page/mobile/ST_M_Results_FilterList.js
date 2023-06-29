@@ -1,4 +1,3 @@
-
 import { useEffect, useReducer, useState } from "react"
 import { ORG_STSearch_M_FilterIcon } from "../../../../../assets/Icons/index.js"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
@@ -6,6 +5,7 @@ import { useORG_Ctx_filtersLeftMobile } from "../../../../../context/ORG_CtxFilt
 import { useORG_Ctx_FiltersApplyMobile } from "../../../../../context/ORG_Ctx_FiltersApplyMobile.js"
 import { useORG_Ctx_ShowFiltersMobile } from '../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js'
 import { ORG_INITIAL_VALUES_FILTERS_M } from "../../../../../utils/ORG_initialValuesFilters.js"
+import { checkTwoObjects } from "../../../../../utils/checkTwoObjects.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_FiltersContainer } from "./ST_M_Results_FiltersContainer.js"
 import { ST_M_Results_FilterListMainWrapper } from "./styles/ST_M_Results_FilterListMainWrapper.js"
@@ -19,33 +19,36 @@ const reducer = (state, action) => {
     const setFiltersAppliedNewFilters = action.payload[3]
     const setDefaultWord = action.payload[4]
     const defaultWord = action.payload[5]
+    const setMustShowFiltersMobile = action.payload[6]
 
     setFilterData(ORG_INITIAL_VALUES_FILTERS_M)
     setTempState(ORG_INITIAL_VALUES_FILTERS_M)
     setFilterAreApply(false)
     setFiltersAppliedNewFilters(false)
     setDefaultWord(defaultWord)
+    setMustShowFiltersMobile(false)
     return ORG_INITIAL_VALUES_FILTERS_M
   }
 
   if (action.type === "addFilters") {
     const tempState = action.payload[2]
-    const setMustShowFiltersDesktop = action.payload[3]
-    const setORGShowFullMapFilter = action.payload[4]
-    const setFilterAreApply = action.payload[5]
+    const setMustShowFiltersMobile = action.payload[3]
+    const setFilterAreApply = action.payload[4]
 
     setFilterData(tempState)
 
-    const filterData = action.payload[6]
-    const setFiltersAppliedNewFilters = action.payload[7]
+    const filterData = action.payload[5]
+    const setFiltersAppliedNewFilters = action.payload[6]
 
     const newFilterDataIsEqual = checkTwoObjects(filterData, tempState)
 
-    const setDefaultWord = action.payload[8]
-    const defaultWord = action.payload[9]
+    const setDefaultWord = action.payload[7]
+    const defaultWord = action.payload[8]
+
+
 
     if (newFilterDataIsEqual) {
-      setFiltersAppliedNewFilters(false)
+      setMustShowFiltersMobile(false)
       setDefaultWord(defaultWord)
     } else {
       setFiltersAppliedNewFilters(true)
@@ -59,8 +62,7 @@ const reducer = (state, action) => {
      */
 
     setTimeout(() => {
-      setMustShowFiltersDesktop(false)
-      setORGShowFullMapFilter(false)
+      setMustShowFiltersMobile(false)
       setFilterAreApply(true)
     }, 500)
 
@@ -94,24 +96,6 @@ export const ST_M_Results_FilterList = () => {
   const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } =
     useORG_Ctx_FiltersApplyMobile()
 
-  // const handleShowFiltersDesktop = () => {
-  //   // setMustShowFiltersDesktop((prevState) => !prevState)
-  //   // setORGShowFullMapFilter((prevState) => !prevState)
-
-  //   // if (ORGshowFullMapButton) {
-  //   //   setORGShowFullMapButton(false)
-  //   // }
-
-  //   // if (ORGShowFullMapFilter === false) {
-  //   //   const targetY = refUserViewShowFullMapFilter.current.getBoundingClientRect().top + window.pageYOffset - 10
-
-  //   //   window.scrollTo({ top: targetY })
-  //   // }
-  // }
-
-  // const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-  // const { isMobile } = useWidthWindow1024()
-
   const handleClearAll = (e) => {
     if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
       setShouldClear((prevState) => !prevState)
@@ -127,7 +111,8 @@ export const ST_M_Results_FilterList = () => {
           setFilterAreApply,
           setFiltersAppliedNewFilters,
           setDefaultWord,
-          defaultWord
+          defaultWord,
+          setMustShowFiltersMobile
         ]
       })
     }
@@ -144,11 +129,14 @@ export const ST_M_Results_FilterList = () => {
   // }, [isMobile])
 
   const {
-    shouldFetchDesktopFilters,
-    setShouldFetchDesktopFilters,
     shouldFetchMobileWitFilters,
     setShouldFetchMobileWithFilters
   } = useORG_Ctx_FetchWithFiltersMobile()
+
+  useEffect(() => {
+
+    setShouldFetchMobileWithFilters(true)
+  }, [/*dependencies*/])
 
   // useEffect(() => {
   //   /*
@@ -160,19 +148,20 @@ export const ST_M_Results_FilterList = () => {
 
   const handleAddFilters = (e) => {
     if (e.type === "click" || e.key === "Enter") {
-      return dispatch({
+
+      dispatch({
         type: "addFilters",
         payload: [
           setFilterData,
           setTempState,
           tempState,
-          setMustShowFiltersDesktop,
-          setORGShowFullMapFilter,
+          setMustShowFiltersMobile,
           setFilterAreApply,
           filterData,
           setFiltersAppliedNewFilters,
           setDefaultWord,
-          defaultWord
+          defaultWord,
+          setShouldFetchMobileWithFilters,
         ]
       })
     }

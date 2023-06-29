@@ -14,7 +14,7 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
   const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFiltersMobile()
+  const { userFetched: dataF, setUserFetched: setDataF, filtersST: filtersF, setFiltersST: setFiltersF } = useORG_Ctx_FetchWithFiltersMobile()
 
   const refElement = useRef(null)
 

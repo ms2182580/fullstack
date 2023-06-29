@@ -1,10 +1,9 @@
-import { ST_M_Results_Header } from "./ST_M_Results_Header.js"
-import { ST_M_Results_MainEntry } from "./ST_M_Results_MainEntry.js"
-import { INDEX_M_STResultsWrapper } from "./styles/INDEX_M_STResultsWrapper.js"
-
 import { useEffect } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import LoadingSpeechTherapists from "../../LoadingSpeechTherapists.js"
+import { ST_M_Results_Header } from "./ST_M_Results_Header.js"
+import { ST_M_Results_MainEntry } from "./ST_M_Results_MainEntry.js"
+import { INDEX_M_STResultsWrapper } from "./styles/INDEX_M_STResultsWrapper.js"
 
 
 export const INDEX_M_STResults = () => {

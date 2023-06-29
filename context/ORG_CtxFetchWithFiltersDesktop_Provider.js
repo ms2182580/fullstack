@@ -9,28 +9,30 @@ export const ORG_CtxFetchWithFiltersDesktop_Provider = ({ children }) => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [shouldFetchDesktopFilters, setShouldFetchDesktopFilters] = useState(false)
 
-  const { dataF, setDataF, filtersF, setFiltersF, actualSortF, setActualSortF } = useFetchWithFiltersDesktop(
-    pagination,
-    howMuchShow,
-    "FetchWithFiltersDesktop",
-    shouldFetchDesktopFilters
-  )
+  const {
+    actualSortF: actualSort,
+    dataF: userFetched,
+    filtersF: filtersST,
+    setActualSortF: setActualSort,
+    setDataF: setUserFetched,
+    setFiltersF: setFiltersST,
+  } = useFetchWithFiltersDesktop(pagination, howMuchShow, "FetchWithFiltersDesktop", shouldFetchDesktopFilters)
 
   return (
     <ORG_Ctx_fetchWithFilters.Provider
       value={{
-        pagination,
-        setPagination,
+        actualSort,
+        filtersST,
         howMuchShow,
+        pagination,
+        setActualSort,
+        setFiltersST,
         setHowMuchShow,
-        dataF,
-        setDataF,
-        filtersF,
-        setFiltersF,
-        actualSortF,
-        setActualSortF,
+        setPagination,
+        setShouldFetchDesktopFilters,
+        setUserFetched,
         shouldFetchDesktopFilters,
-        setShouldFetchDesktopFilters
+        userFetched,
       }}>
       {children}
     </ORG_Ctx_fetchWithFilters.Provider>

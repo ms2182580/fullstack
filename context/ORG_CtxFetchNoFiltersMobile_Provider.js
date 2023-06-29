@@ -9,29 +9,29 @@ export const ORG_CtxFetchNoFiltersMobile_Provider = ({ children }) => {
   const [shouldFetchMobileNoFilters, setShouldFetchMobileNoFilters] = useState(false)
 
   const {
+    actualSort: actualSort,
     data: userFetched,
     filters: filtersST,
-    setData,
-    setFilters,
-    actualSort,
-    setActualSort
+    setActualSort,
+    setData: setUserFetched,
+    setFilters: setFiltersST,
   } = useFetchNoFiltersMobile(pagination, howMuchShow, "FetchNoFiltersMobile", shouldFetchMobileNoFilters)
 
   return (
     <ORG_Ctx_fetchNoFiltersMobile.Provider
       value={{
-        pagination,
-        setPagination,
-        howMuchShow,
-        setHowMuchShow,
-        userFetched,
-        setData,
-        filtersST,
-        setFilters,
         actualSort,
+        filtersST,
+        howMuchShow,
+        pagination,
         setActualSort,
+        setUserFetched,
+        setFiltersST,
+        setHowMuchShow,
+        setPagination,
+        setShouldFetchMobileNoFilters,
         shouldFetchMobileNoFilters,
-        setShouldFetchMobileNoFilters
+        userFetched,
       }}>
       {children}
     </ORG_Ctx_fetchNoFiltersMobile.Provider>

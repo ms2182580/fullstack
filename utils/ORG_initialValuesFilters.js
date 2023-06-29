@@ -22,6 +22,7 @@ export const ORG_INITIAL_VALUES_FILTERS_M = Object.freeze({
   [ORG_FILTERS_KEYS_M.language.updateState]: [],
   [ORG_FILTERS_KEYS_M.meetingFormat.updateState]: [],
   [ORG_FILTERS_KEYS_M.providerType.updateState]: [],
+  [ORG_FILTERS_KEYS_M.rating.updateState]: [],
   [ORG_FILTERS_KEYS_M.serviceSetting.updateState]: [],
   [ORG_FILTERS_KEYS_M.sessionType.updateState]: [],
   [ORG_FILTERS_KEYS_M.transportation.updateState]: [],

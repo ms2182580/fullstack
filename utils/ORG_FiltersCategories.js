@@ -60,7 +60,7 @@ export const ORG_FILTERS_DATA_M = Object.freeze({
   languages: ["English", "Spanish", "Chinese", "Tagalog", "French"],
   meetingFormat: ["Virtual", "In-Person"],
   providerType: ["Independent", "Agency-based", "Traveling"],
-  rating: [1, 2, 3, 4, 5],
+  rating: ["1", "2", "3", "4", "5"],
   serviceSetting: ["Clinic", "Home", "School", "Community"],
   sessionType: ["Individual", "Group"],
   transportation: ["Near Metro", "Near Bus", "Meter Parking", "Street Parking", "Parking lot"],

@@ -8,12 +8,6 @@ import {
   ST_M_Results_FilterCheckboxContainerULWrapper,
   ST_M_Results_FilterCheckboxContainerWrapper
 } from "./styles/ST_M_Results_FilterCheckboxContainerWrapper.js"
-// import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-// import { ST_M_Results_FilterCheckboxInput } from "./ST_M_Results_FilterCheckboxInput.js"
-// import {
-//   ST_D_Results_FilterCheckboxContainerULWrapper,
-//   ST_D_Results_FilterCheckboxContainerWrapper
-// } from "./styles/ST_D_Results_FilterCheckboxContainerWrapper.js"
 
 export const ST_M_Results_FilterCheckboxContainer = ({
   categoriesToDisplay = ["nothing here"],
@@ -112,6 +106,7 @@ export const ST_M_Results_FilterCheckboxContainer = ({
           }
 
           if (title === ORG_FILTERS_KEYS_M.rating.titleToShow) {
+
             return (
               <li key={x}>
                 <label>

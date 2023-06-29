@@ -11,9 +11,7 @@ export const ST_M_Results_FilterCheckboxInput = ({
   clearAll,
   shouldClear
 }) => {
-  // console.log('name:', name)
   const [checked, setChecked] = useState(false)
-  // console.log('💦tempState:', tempState)
 
   useEffect(() => {
     setChecked(false)
