@@ -1,5 +1,5 @@
 import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons/index.js"
-import { STDetail_MobileCard_FirstPlace } from "../../second-page/mobile/cards-places/STDetail_MobileCard_FirstPlace.js"
+import { ST_M_Results_Card_Firstplace } from "../../second-page/mobile/cards-places/ST_M_Results_Card_Firstplace.js"
 import { STDetail_MobileCardWrapper } from "../../second-page/mobile/styles/SpeechTherapistsCardsMobileWrapper.js"
 import { STDetail_MobileWrapper } from "./styles/STDetail_MobileWrapper.js"
 
@@ -13,7 +13,7 @@ export const STDetail_Mobile = ({ STData }) => {
       <STDetail_MobileCardWrapper isThirdPage={true}>
         <div className="card-container">
           <BookmarkSaveSTMobileSvg tabIndex={0} />
-          <STDetail_MobileCard_FirstPlace
+          <ST_M_Results_Card_Firstplace
             image={image}
             alt={`${firstName} ${firstName}`}
             firstName={firstName}

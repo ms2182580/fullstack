@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
-import { ST_D_BreadcrumbsAndLastUpdated } from "../../ST_D_BreadcrumbsAndLastUpdated"
+import { ST_D_Results_BreadcrumbsAndLastUpdated } from "./ST_D_Results_BreadcrumbsAndLastUpdated"
 import { ST_D_Results_Choisepath } from "./ST_D_Results_Choisepath"
 import { ST_D_Results_FilterSortbyHeader } from "./ST_D_Results_FilterSortbyHeader"
 import { ST_D_Results_FinalButtons } from "./ST_D_Results_FinalButtons"
@@ -63,7 +63,7 @@ export const ST_D_Results_MainEntry = () => {
 
       <ST_D_Results_FinalButtons widthWindow={1500} />
 
-      <ST_D_BreadcrumbsAndLastUpdated />
+      <ST_D_Results_BreadcrumbsAndLastUpdated />
 
       {/* {mustShowFiltersMobile === false ? (
         <>

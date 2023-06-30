@@ -1,5 +1,5 @@
 import React from "react"
-import { ORG_ST_LastUpdate } from "../../../../../utils/ORG_ST_Review"
+import { ORG_ST_LastUpdate } from "../../../../../utils/ORG_ST_Review_D"
 import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { STDetail_PageLastUpdatedWrapper } from './styles/STDetail_PageLastUpdatedWrapper.js'

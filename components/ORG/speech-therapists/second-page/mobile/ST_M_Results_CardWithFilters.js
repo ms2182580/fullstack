@@ -78,7 +78,7 @@ export const ST_M_Results_CardWithFilters = () => {
                 location={everySingleValue.location}
               />
               <span
-              // onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}
+                onClick={(e) => goToDynamic(e, everySingleValue, filtersST[i])}
               >
                 <ButtonSmall secondary>See details</ButtonSmall>
               </span>

@@ -10,19 +10,19 @@ import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsR
 import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
 import { ST_D_CardCity } from "../../ST_D_CardCity"
-import { ST_D_CardEmail } from "../../ST_D_CardEmail"
-import { ST_D_CardLocation } from "../../ST_D_CardLocation"
-import { ST_D_CardPhone } from "../../ST_D_CardPhone"
-import { ST_D_CardWebsite } from "../../ST_D_CardWebsite"
+import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
+import { ST_D_Results_CardEmail } from "./ST_D_Results_CardEmail"
+import { ST_D_Results_CardInfo } from "./ST_D_Results_CardInfo"
+import { ST_D_Results_CardLocation } from "./ST_D_Results_CardLocation"
+import { ST_D_Results_CardPhone } from "./ST_D_Results_CardPhone"
+import { ST_D_Results_CardWebsite } from "./ST_D_Results_CardWebsite"
 import {
-  ST_D_CardWrapper,
   ST_D_CardWrapper_Left,
   ST_D_CardWrapper_Left_LeftImage,
   ST_D_CardWrapper_Left_LeftInfo,
-  ST_D_CardWrapper_Right
-} from "../../styles/ST_D_CardWrapper"
-import { ST_D_CardInfo } from "./ST_D_CardInfo"
-import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
+  ST_D_CardWrapper_Right,
+  ST_D_Results_CardWrapper
+} from "./styles/ST_D_Results_CardWrapper"
 
 export const ST_D_Results_CardNoFilters = () => {
   const router = useRouter()
@@ -68,7 +68,7 @@ export const ST_D_Results_CardNoFilters = () => {
           )
 
           return (
-            <ST_D_CardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
+            <ST_D_Results_CardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <ST_D_CardWrapper_Left>
                 <ST_D_CardWrapper_Left_LeftImage>
                   <Image
@@ -82,14 +82,14 @@ export const ST_D_Results_CardNoFilters = () => {
                 </ST_D_CardWrapper_Left_LeftImage>
 
                 <ST_D_CardWrapper_Left_LeftInfo>
-                  <ST_D_CardPhone phoneNumber={everySingleValue.phone} />
-                  <ST_D_CardEmail email={everySingleValue.email} />
-                  <ST_D_CardWebsite
+                  <ST_D_Results_CardPhone phoneNumber={everySingleValue.phone} />
+                  <ST_D_Results_CardEmail email={everySingleValue.email} />
+                  <ST_D_Results_CardWebsite
                     firstName={everySingleValue.name.first}
                     lastName={everySingleValue.name.last}
                   />
 
-                  <ST_D_CardLocation
+                  <ST_D_Results_CardLocation
                     locationCity={everySingleValue.location.city}
                     locationStreetNumber={everySingleValue.location.street.number}
                     locationStreetName={everySingleValue.location.street.name}
@@ -116,27 +116,27 @@ export const ST_D_Results_CardNoFilters = () => {
                 />
 
 
-                <ST_D_CardInfo
+                <ST_D_Results_CardInfo
                   title={ORG_FILTERS_KEYS_D.diagnosis.titleToShowCard}
                   dataToShow={diagnosis}
                 />
 
-                <ST_D_CardInfo
+                <ST_D_Results_CardInfo
                   title={ORG_FILTERS_KEYS_D.agesServed.titleToShow}
                   dataToShow={filtersST[i][ORG_FILTERS_KEYS_D.agesServed.updateState]}
                 />
 
-                <ST_D_CardInfo
+                <ST_D_Results_CardInfo
                   title={ORG_FILTERS_KEYS_D.language.titleToShow}
                   dataToShow={language}
                 />
 
-                <ST_D_CardInfo
+                <ST_D_Results_CardInfo
                   title={ORG_FILTERS_KEYS_D.yearsOfPractice.titleToShowCard}
                   dataToShow={filtersST[i][ORG_FILTERS_KEYS_D.yearsOfPractice.updateState]}
                 />
 
-                <ST_D_CardInfo
+                <ST_D_Results_CardInfo
                   title={ORG_FILTERS_KEYS_D.serviceSetting.titleToShow}
                   dataToShow={serviceSetting}
                 />
@@ -154,7 +154,7 @@ export const ST_D_Results_CardNoFilters = () => {
                   </span>
                 </div>
               </ST_D_CardWrapper_Right>
-            </ST_D_CardWrapper>
+            </ST_D_Results_CardWrapper>
           )
         })}
     </>

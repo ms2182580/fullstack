@@ -15,11 +15,11 @@ export const ST_D_Results_CardsOnMap = ({ handleShowMap }) => {
   const { ORGshowFullMapButton, setORGShowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { userFetched, filtersST, pagination: paginationNoFilter } = useORG_Ctx_FetchNoFiltersDesktop()
   const {
-    dataF,
-    filtersF,
+    userFetched: dataF,
+    filtersST: filtersF,
     pagination: paginationFilter,
+    setShouldFetchDesktopFilters,
     shouldFetchDesktopFilters,
-    setShouldFetchDesktopFilters
   } = useORG_Ctx_FetchWithFiltersDesktop()
 
   const updateAllReviews = useCallback((dataFetched, setReviews) => {

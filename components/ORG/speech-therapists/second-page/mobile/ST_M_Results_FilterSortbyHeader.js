@@ -17,23 +17,6 @@ export const ST_M_Results_FilterSortbyHeader = () => {
 
       <ST_M_Results_HowMuchShowing />
 
-
-
-      {/* 
-      //!FH0
-      ✅Create the "filter", only the visual thing
-      ✅Create the "render cards"
-      ✅Style the cards with no filters
-      ✅Crete the "How much show", only the visual thing
-      ✅Create the "sortby", only the visual thing ~ Is working too, at least for card with no filters
-      ✅Create the "Buttons"
-      Make the filters work
-      Make the "sort by" work
-      Make the buttons at the bottom work
-      
-      
-      */}
-
       {/* <ST_M_Results_FilterList  /> */}
       {/* <ST_D_Results_Sortby /> */}
 

@@ -25,7 +25,7 @@ const hideElement = keyframes`
 
 `
 
-export const STDetail_Share_ModalWrapper = styled.div`
+export const ST_D_Detail_ShareModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   
   position: fixed;

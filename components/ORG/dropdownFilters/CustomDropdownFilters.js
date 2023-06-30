@@ -9,7 +9,7 @@ import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
 export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
-  const { userFetched, setData, filtersST, setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
+  const { userFetched, setUserFetched: setData, filtersST, setFiltersST: setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [showDropdown, setShowDropdown] = useState(false)
 
   const {
@@ -21,7 +21,7 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 
-  const { dataF, setDataF, filtersF, setFiltersF } = useORG_Ctx_FetchWithFiltersDesktop()
+  const { userFetched: dataF, setUserFetched: setDataF, filtersST: filtersF, setFiltersST: setFiltersF } = useORG_Ctx_FetchWithFiltersDesktop()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)

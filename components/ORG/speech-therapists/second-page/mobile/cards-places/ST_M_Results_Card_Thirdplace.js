@@ -1,6 +1,6 @@
-import { ST_M_CardEmail } from "../ST_M_CardEmail"
-import { ST_M_CardLocation } from "../ST_M_CardLocation"
-import { ST_M_CardPhone } from "../ST_M_CardPhone"
+import { ST_M_Results_CardEmail } from "../ST_M_Results_CardEmail"
+import { ST_M_Results_CardLocation } from "../ST_M_Results_CardLocation"
+import { ST_M_Results_CardPhone } from "../ST_M_Results_CardPhone"
 
 export const ST_M_Results_Card_Thirdplace = ({
   handlePointerEvent,
@@ -19,11 +19,11 @@ export const ST_M_Results_Card_Thirdplace = ({
       onTouchStart={handlePointerEvent}>
       <div className={`card ThirdPlace`}>
 
-        <ST_M_CardPhone phoneNumber={phone} isMobile={true} />
+        <ST_M_Results_CardPhone phoneNumber={phone} isMobile={true} />
 
-        <ST_M_CardEmail email={email} isMobile={true} />
+        <ST_M_Results_CardEmail email={email} isMobile={true} />
 
-        <ST_M_CardLocation
+        <ST_M_Results_CardLocation
           locationCity={locationCity}
           locationStreetNumber={locationStreetNumber}
           locationStreetName={locationStreetName}

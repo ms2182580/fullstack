@@ -18,11 +18,11 @@ export const ST_D_InputInsurance = () => {
 
 
 
-  const { ensuranceContext, setEnsuranceContext } = useORG_InputCtx()
+  const { insuranceContext, setInsuranceContext } = useORG_InputCtx()
 
   useEffect(() => {
-    setKeywordInput(ensuranceContext)
-  }, [ensuranceContext])
+    setKeywordInput(insuranceContext)
+  }, [insuranceContext])
 
   // const { isTouchScreen } = useCheckMobile()
   // const keywordFirstLevelRef = useRef(null)
@@ -81,7 +81,7 @@ export const ST_D_InputInsurance = () => {
           value={keywordInput}
           onChange={(e) => {
             setKeywordInput(e.target.value)
-            setEnsuranceContext(e.target.value)
+            setInsuranceContext(e.target.value)
           }}
           ref={inputRefEnsurance}
           tabIndex={shouldTab}
@@ -96,7 +96,7 @@ export const ST_D_InputInsurance = () => {
           suggestions={suggestionsKeywords}
           keywordClickByUser={keywordInput}
           setKeywordClickByUser={setKeywordInput}
-          setKeywordClickByUserContext={setEnsuranceContext}
+          setKeywordClickByUserContext={setInsuranceContext}
           inputRefFocus={inputRefEnsurance}
           isFirstOrSecondDropdown={true}
         />

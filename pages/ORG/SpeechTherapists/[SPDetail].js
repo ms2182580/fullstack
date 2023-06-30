@@ -1,38 +1,53 @@
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
-import { STDetail_Main } from "../../../components/ORG/speech-therapists/third-page/STDetail_Main"
+import { INDEX_D_STDetail } from "../../../components/ORG/speech-therapists/third-page/dekstop/INDEX_D_STDetail"
+import { useCheckUserWidth } from "../../../context/CheckUserWidth"
 const SPDetail = () => {
-  const [loaded, setLoaded] = useState(false)
-  const router = useRouter()
+  // const [loaded, setLoaded] = useState(false)
+  // const router = useRouter()
 
+  // useEffect(() => {
+  //   if (router.isReady) {
+  //     setLoaded(true)
+  //   }
+  // }, [router.isReady])
 
-
-  useEffect(() => {
-    if (router.isReady) {
-      setLoaded(true)
-    }
-  }, [router.isReady])
-
-  if (!loaded) {
-    return null
-  }
+  // if (!loaded) {
+  //   return null
+  // }
 
   // const goBack = () => {
   //   router.back()
   // }
 
+  // const { STDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
+  // const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()
+
+  // const route = useRouter()
+
+  const { isMobile } = useCheckUserWidth()
+
+  // useEffect(() => {
+  //   if ((STDataThirdpage_D === "" && isMobile === false) || (STDataThirdpage_M === "" && isMobile)) {
+  //     route.push("/ORG/SpeechTherapists")
+  //     return
+  //   }
+  // }, [STDataThirdpage_D, STDataThirdpage_M, isMobile])
+
   return (
     <>
-      <STDetail_Main />
+      {isMobile === false ? (
+        <>
+
+          <INDEX_D_STDetail />
+        </>
+      ) : (
+        <>
+          <p>...</p>
+          <p>INDEX_M_STDetail</p>
+          <p>...</p>
+        </>
+      )}
     </>
   )
 }
 
 export default SPDetail
-
-/* 
-!FH
-Make here the checking if the user is mobile or desktop. The idea is: check this in a page level, not in a component level
-
-  const { isMobile } = useWidthWindow1024()
-*/

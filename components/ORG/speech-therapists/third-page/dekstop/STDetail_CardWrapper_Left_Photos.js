@@ -2,10 +2,10 @@ import { useState } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { STDetail_CardWrapper_Left_Photos_Modal } from "./STDetail_CardWrapper_Left_Photos_Modal.js"
-import { STDetail_CardWrapper_Left_PhotosWrapper } from "./styles/STDetail_CardWrapper_Left_PhotosWrapper.js"
+import { ST_D_Detail_MainCardLeftPhotosModal } from "./ST_D_Detail_MainCardLeftPhotosModal.js"
+import { ST_D_Detail_MainCardLeftPhotosWrapper } from "./styles/ST_D_Detail_MainCardLeftPhotosWrapper.js"
 
-export const STDetail_CardWrapper_Left_Photos = ({ photo, name, lastName }) => {
+export const ST_D_Detail_MainCardLeftPhotos = ({ photo, name, lastName }) => {
   const [showModal, setShowModal] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
@@ -24,11 +24,11 @@ export const STDetail_CardWrapper_Left_Photos = ({ photo, name, lastName }) => {
 
   return (
     <>
-      <STDetail_CardWrapper_Left_PhotosWrapper onClick={handleShowModal}>
+      <ST_D_Detail_MainCardLeftPhotosWrapper onClick={handleShowModal}>
         <Caption hyperlink_normal>6 photos</Caption>
-      </STDetail_CardWrapper_Left_PhotosWrapper>
+      </ST_D_Detail_MainCardLeftPhotosWrapper>
       {showModal && (
-        <STDetail_CardWrapper_Left_Photos_Modal
+        <ST_D_Detail_MainCardLeftPhotosModal
           showModal={showModal}
           handleHideModal={handleHideModal}
           photo={photo}
