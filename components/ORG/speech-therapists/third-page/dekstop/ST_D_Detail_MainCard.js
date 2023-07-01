@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
-import { ORG_STDetail_Share_Modal_QRCodeIcon } from '../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRCodeIcon.png'
+import ORG_STDetail_Share_Modal_QRAltIcon from '../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRCodeIcon.png'
 import { ORG_FILTERS_KEYS_D } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
@@ -178,7 +178,7 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
                 </span>
 
                 <Image
-                  src={ORG_STDetail_Share_Modal_QRCodeIcon}
+                  src={ORG_STDetail_Share_Modal_QRAltIcon}
                   layout="fixed"
                   width={48}
                   height={48}

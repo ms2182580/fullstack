@@ -1,7 +1,7 @@
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useEffect, useRef } from "react"
-import { ORG_STDetail_Appointment_Modal_Icon } from '../../../../../assets/Icons/ORG_STDetail_Appointment_Modal_Icon.png'
+import ORG_STDetail_Appointment_Modal_Icon from '../../../../../assets/Icons/ORG_STDetail_Appointment_Modal_Icon.png'
 import { XSvg } from "../../../../../assets/Icons/index.js"
 import { ButtonMedium } from "../../../../ui/buttons/general/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
