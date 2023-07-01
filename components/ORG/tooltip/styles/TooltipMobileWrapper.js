@@ -28,8 +28,8 @@ export const TooltipMobileWrapper = styled.div`
       filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.3));
       z-index: 2;
       top: 50px;
-      /* right: 99px; */
-      left:-99px;
+      left:${({ isThirdPage }) => isThirdPage ? `-210px` : `-99px`};
+      
       border-radius: 8px;
       padding: 16px 32px;
     }

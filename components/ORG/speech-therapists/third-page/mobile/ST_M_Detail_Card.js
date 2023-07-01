@@ -1,0 +1,65 @@
+import Image from "next/image.js"
+import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons/index.js"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses.js"
+import { StartsRatingReview_Mobile } from "../../../stars-rating-review/mobile/StartsRatingReview_Mobile.js"
+import { TooltipMobile } from "../../../tooltip/TooltipMobile.js"
+import { Verified } from "../../../verified/Verified.js"
+import { ST_M_Detail_CardWrapper } from "./styles/ST_M_Detail_CardWrapper.js"
+
+export const ST_M_Detail_Card = ({ STData }) => {
+  const { medium: image } = STData.data[0].picture
+  const { first: firstName, last: lastName } = STData.data[0].name
+  const { rating, reviews, diagnosis, distance: howFar } = STData.filters[0]
+
+  return (
+    <ST_M_Detail_CardWrapper>
+      <BookmarkSaveSTMobileSvg tabIndex={0} />
+
+      <div>
+        <div>
+          <span>
+            <Image
+              src={image}
+              alt={`Portrait of ${firstName}_${lastName}`}
+              layout="responsive"
+              objectFit="fill"
+              width="288px"
+              height="133px"
+            />
+          </span>
+          <Verified />
+        </div>
+
+        <div>
+          <H3>
+            {firstName} {lastName}
+          </H3>
+          <Caption
+            bolder
+            primary_cta>
+            ({howFar} miles away)
+          </Caption>
+        </div>
+
+        <div>
+          <Caption>Speech Language Pathologist, CCC-SLP</Caption>
+          <TooltipMobile isThirdPage={true} />
+
+        </div>
+
+        <StartsRatingReview_Mobile
+          rating={rating}
+          reviews={reviews}
+        />
+
+        <FriendlyDiagnoses
+          diagnosis={diagnosis}
+          isMobile={true}
+        />
+      </div>
+
+    </ST_M_Detail_CardWrapper>
+  )
+}

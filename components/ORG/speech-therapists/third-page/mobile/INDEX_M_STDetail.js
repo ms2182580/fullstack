@@ -14,6 +14,7 @@ import { STDetail_Separator } from "./STDetail_Separator"
 // import { ST_D_Detail_TwoButtons } from "./ST_D_Detail_TwoButtons"
 import { ST_D_Results_CardInfo } from "../../second-page/desktop/ST_D_Results_CardInfo"
 import { ST_D_Detail_TwoButtons } from "../dekstop/ST_D_Detail_TwoButtons"
+import { ST_M_Detail_Card } from "./ST_M_Detail_Card"
 import { INDEX_M_STDetailWrapper } from "./styles/INDEX_M_STDetailWrapper.js"
 import { STDetail_STDetails_ThirdPageWrapper } from "./styles/STDetail_STDetails_ThirdPageWrapper"
 import { ST_M_HeaderWrapper } from "./styles/ST_M_HeaderWrapper.js"
@@ -21,30 +22,10 @@ import { ST_M_HeaderWrapper } from "./styles/ST_M_HeaderWrapper.js"
 export const INDEX_M_STDetail = () => {
   const route = useRouter()
   const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()
-  console.log('STDataThirdpage_M:', STDataThirdpage_M)
 
-  // useEffect(() => {
-  //   /*_codeHere_*/
-
-  //   if (STDataThirdpage_M === "") {
-  //     route.push("/ORG/SpeechTherapists")
-  //     return
-  //   }
-  // }, [])
-
-  // if (STDataThirdpage_M === "") {
-  //   route.push("/ORG/SpeechTherapists")
-  //   return
-  // }
-
-  // const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()
-
-  // const route = useRouter()
 
   if (STDataThirdpage_M === "") {
-    // route.push("/ORG/SpeechTherapists")
     if (route.isReady) route.push("/ORG/SpeechTherapists")
-
     return
   }
 
@@ -98,10 +79,10 @@ export const INDEX_M_STDetail = () => {
   const contactRef = useRef(null)
   const reviewsRef = useRef(null)
 
-  const refHandler = (el) => {
-    detailsRef.current = el
-    contactRef.current = el
-  }
+  // const refHandler = (el) => {
+  //   detailsRef.current = el
+  //   contactRef.current = el
+  // }
 
   useEffect(() => {
     if (
@@ -180,7 +161,7 @@ export const INDEX_M_STDetail = () => {
             </>
           )} */}
 
-          {/* <STDetail_Mobile STData={STDataThirdpage_M} /> */}
+          <ST_M_Detail_Card STData={STDataThirdpage_M} />
 
           {/* {isMobile === false ? null : (
             <>
