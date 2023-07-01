@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ST_HeaderMobileWrapper = styled.div`
+export const ST_M_HeaderWrapper = styled.div`
   padding: 32px 14px 16px 14px;
 
   & > a {

@@ -1,17 +1,13 @@
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
-import { BackArrow } from "../../../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
 import { useWidthWindow1024 } from "../../../../../utils/useWidthWindow1024"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
 import { ST_D_Results_CardEmail } from "../../second-page/desktop/ST_D_Results_CardEmail"
 import { ST_D_Results_CardInfo } from "../../second-page/desktop/ST_D_Results_CardInfo"
 import { ST_D_Results_CardLocation } from "../../second-page/desktop/ST_D_Results_CardLocation"
 import { ST_D_Results_CardPhone } from "../../second-page/desktop/ST_D_Results_CardPhone"
-import { ST_HeaderMobileWrapper } from "../../styles/ST_HeaderMobileWrapper.js"
 import { STDetail_Reviews } from "../STDetail_Reviews"
 import { STDetail_Mobile } from "../mobile/STDetail_Mobile"
 import { STDetail_Mobile_StickyNavbar } from "../mobile/STDetail_Mobile_StickyNavbar"
@@ -145,20 +141,8 @@ export const INDEX_D_STDetail = () => {
       <INDEX_D_STDetailWrapper
         isMobile={isMobile}
         modalShowedCtx={modalShowedCtx}>
-        {isMobile === false ? (
-          <>
-            <ST_D_Detail_Header STData={STDataThirdpage_D} />
-          </>
-        ) : (
-          <>
-            <ST_HeaderMobileWrapper>
-              <LinkNoStyle href="/ORG/SpeechTherapists">
-                <BackArrow />
-                <Caption bolder>Back to Results</Caption>
-              </LinkNoStyle>
-            </ST_HeaderMobileWrapper>
-          </>
-        )}
+        <ST_D_Detail_Header STData={STDataThirdpage_D} />
+
 
         <div>
           {isMobile === false ? (
