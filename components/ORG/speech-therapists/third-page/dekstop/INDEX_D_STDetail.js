@@ -27,7 +27,8 @@ export const INDEX_D_STDetail = () => {
   const { STDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
 
   if (STDataThirdpage_D === "") {
-    route.push("/ORG/SpeechTherapists")
+    if (route.isReady) route.push("/ORG/SpeechTherapists")
+
     return
   }
 

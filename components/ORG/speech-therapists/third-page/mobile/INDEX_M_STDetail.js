@@ -41,10 +41,12 @@ export const INDEX_M_STDetail = () => {
 
   // const route = useRouter()
 
-  // if (STDataThirdpage_M === "") {
-  //   route.push("/ORG/SpeechTherapists")
-  //   return
-  // }
+  if (STDataThirdpage_M === "") {
+    // route.push("/ORG/SpeechTherapists")
+    if (route.isReady) route.push("/ORG/SpeechTherapists")
+
+    return
+  }
 
   const [languages, setLanguages] = useState()
   const [serviceSettings, setServiceSettings] = useState()
@@ -55,41 +57,40 @@ export const INDEX_M_STDetail = () => {
   const [qualifications, setQualifications] = useState()
   const [additionalCredentials, setAdditionalCredentials] = useState()
 
-  // const { isMobile } = useWidthWindow1024()
 
-  // useEffect(() => {
-  //   setLanguages(STDataThirdpage_M.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
+  useEffect(() => {
+    setLanguages(STDataThirdpage_M.filters[0].language.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-  //   setServiceSettings(STDataThirdpage_M.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
+    setServiceSettings(STDataThirdpage_M.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-  //   setMeetingFormat(STDataThirdpage_M.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
+    setMeetingFormat(STDataThirdpage_M.filters[0].meetingFormat.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-  //   setInsurance(STDataThirdpage_M.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
+    setInsurance(STDataThirdpage_M.filters[0].insurance.map((x) => x[0].toUpperCase() + x.slice(1)))
 
-  //   setAgesServed(
-  //     STDataThirdpage_M.filters[0].agesServed.map((x) => {
-  //       if (x.split(" ")[1] === "months") {
-  //         return x[0].toUpperCase() + x.slice(1)
-  //       } else {
-  //         return `${x[0].toUpperCase()} ${x.slice(1)} old`
-  //       }
-  //     })
-  //   )
+    setAgesServed(
+      STDataThirdpage_M.filters[0].agesServed.map((x) => {
+        if (x.split(" ")[1] === "months") {
+          return x[0].toUpperCase() + x.slice(1)
+        } else {
+          return `${x[0].toUpperCase()} ${x.slice(1)} old`
+        }
+      })
+    )
 
-  //   setQualifications([
-  //     ["Education Level: Master's"],
-  //     ["Years in Practice: 5 years"],
-  //     ["License Number: 1239082"],
-  //     ["State of License: New York"]
-  //   ])
+    setQualifications([
+      ["Education Level: Master's"],
+      ["Years in Practice: 5 years"],
+      ["License Number: 1239082"],
+      ["State of License: New York"]
+    ])
 
-  //   setAdditionalCredentials([
-  //     ["Lee Silverman Voice Treatment"],
-  //     ["Certification"],
-  //     ["SLP, Board Certified Behavior "],
-  //     ["Analyst (BCBA)"]
-  //   ])
-  // }, [])
+    setAdditionalCredentials([
+      ["Lee Silverman Voice Treatment"],
+      ["Certification"],
+      ["SLP, Board Certified Behavior "],
+      ["Analyst (BCBA)"]
+    ])
+  }, [])
 
   const [highlight, setHighlight] = useState("about")
   const aboutRef = useRef(null)
