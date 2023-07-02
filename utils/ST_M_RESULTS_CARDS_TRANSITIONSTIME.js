@@ -1,4 +1,4 @@
 
-export const ST_M_RESULTS_CARDS_TRANSITIONSTIME = {
-  TIME: "0.3s"
+export const ST_M_Results_Cards_TransitionsTime = {
+  time: "0.3s"
 }
