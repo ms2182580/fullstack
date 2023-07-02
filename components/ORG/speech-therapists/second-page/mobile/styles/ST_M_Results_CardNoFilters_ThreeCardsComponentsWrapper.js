@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { ST_M_RESULTS_CARDS_TRANSITIONSTIME } from "../../../../../../utils/ST_M_Results_Cards_TransitionsTime"
 
 export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div`
   border-top-left-radius: 8px;
@@ -8,7 +9,7 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
   article {
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     cursor: ${(x) => (x.isThirdPage ? `default` : `pointer`)};
-    transition: all 1s;
+    transition: all ${ST_M_RESULTS_CARDS_TRANSITIONSTIME.TIME};
   }
 
   /* .card > :nth-child(1) {

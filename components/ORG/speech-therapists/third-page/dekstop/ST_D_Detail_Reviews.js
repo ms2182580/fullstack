@@ -1,22 +1,21 @@
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
-import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal"
-import { ORG_ReviewsUsersName } from "../../../../utils/ORG_ReviewsUsersName"
-import { ORG_ST_Review } from "../../../../utils/ORG_ST_Review_D"
-import { useScrollLock } from "../../../../utils/useScrollLock"
-import { useWidthWindow1024 } from "../../../../utils/useWidthWindow1024"
-import { Caption, P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { STDetail_Reviews_IndividualComponent } from "./STDetail_Reviews_IndividualComponent"
-import { STDetail_Review_Modal } from "./dekstop/STDetail_Review_Modal.js"
-import { STDetail_Reviews_HeaderDesktop } from "./dekstop/STDetail_Reviews_HeaderDesktop"
-import { STDetail_ReviewsWrapper } from "./styles/STDetail_ReviewsWrapper"
-import { STDetail_Reviews_IndividualWrapper } from "./styles/STDetail_Reviews_IndividualWrapper"
+import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
+import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName"
+import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
+import { useScrollLock } from "../../../../../utils/useScrollLock"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { STDetail_Reviews_IndividualComponent } from "../STDetail_Reviews_IndividualComponent"
+import { STDetail_Reviews_IndividualWrapper } from "../styles/STDetail_Reviews_IndividualWrapper"
+import { STDetail_Review_Modal } from "./STDetail_Review_Modal"
+import { STDetail_Reviews_HeaderDesktop } from "./STDetail_Reviews_HeaderDesktop"
+import { ST_D_Detail_ReviewsWrapper } from "./styles/ST_D_Detail_ReviewsWrapper"
 
-export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }) => {
+export const ST_D_Detail_Reviews = ({ name, lastName, reviewsRef, rating, reviews, scrollMarginTopState }) => {
   const [getReviews, setGetReviews] = useState(ORG_ST_Review(name, lastName))
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
 
-  const { isMobile } = useWidthWindow1024()
+  // const { isMobile } = useWidthWindow1024()
 
   const { push } = useRouter()
   const handlePush = () => {
@@ -46,10 +45,18 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
   }
 
   return (
-    <STDetail_ReviewsWrapper
+    <ST_D_Detail_ReviewsWrapper
       id="Reviews"
-      ref={reviewsRef}>
-      {isMobile === false ? (
+    // ref={reviewsRef}
+    // scrollMarginTopState={scrollMarginTopState}
+    >
+      <STDetail_Reviews_HeaderDesktop
+        rating={rating}
+        reviews={reviews}
+        handlePush={handlePush}
+      />
+
+      {/* {isMobile === false ? (
         <>
           <STDetail_Reviews_HeaderDesktop
             rating={rating}
@@ -66,13 +73,15 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
           </Caption>
           <Caption>All reviews are submitted by verified patients or their responsible party.</Caption>
         </div>
-      )}
+      )} */}
+      <div></div>
 
+      {/* 
       {isMobile === false ? (
         <>
           <div></div>
         </>
-      ) : null}
+      ) : null} */}
 
       <STDetail_Reviews_IndividualWrapper>
         {getReviews.map((x, i) => (
@@ -85,7 +94,27 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
         ))}
       </STDetail_Reviews_IndividualWrapper>
 
-      {isMobile === false ? (
+      <span onClick={handleShowModal}>
+        <P
+          hyperlink_normal
+          semibold>
+          View All
+        </P>
+      </span>
+
+      {showModal && (
+        <STDetail_Review_Modal
+          showModal={showModal}
+          handleHideModal={handleHideModal}
+          rating={rating}
+          reviews={reviews}
+          getReviews={getReviews}
+          name={name}
+          lastName={lastName}
+        />
+      )}
+
+      {/* {isMobile === false ? (
         <>
           <span onClick={handleShowModal}>
             <P
@@ -115,7 +144,7 @@ export const STDetail_Reviews = ({ name, lastName, reviewsRef, rating, reviews }
             View All
           </P>
         </span>
-      )}
-    </STDetail_ReviewsWrapper>
+      )} */}
+    </ST_D_Detail_ReviewsWrapper>
   )
 }

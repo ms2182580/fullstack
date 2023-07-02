@@ -38,7 +38,6 @@ export const ST_M_Results_FinalButtons = () => {
   }
 
   const { isTouchScreen } = useCheckMobile()
-  console.log("isTouchScreen:", isTouchScreen)
 
   return (
     <ST_M_Results_FinalButtonsWrapper

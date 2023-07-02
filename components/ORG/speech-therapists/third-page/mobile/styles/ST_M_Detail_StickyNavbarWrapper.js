@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const STDetail_Mobile_StickyNavbarWrapper = styled.nav`
+export const ST_M_Detail_StickyNavbarWrapper = styled.nav`
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   background-color: ${NEUTRALS.OFF_WHITE};
   position: sticky;
@@ -22,9 +22,6 @@ export const STDetail_Mobile_StickyNavbarWrapper = styled.nav`
       display: flex;
       text-align: center;
       position: relative;
-    }
-
-    & > .highlight {
     }
 
     & > .highlight {

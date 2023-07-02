@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../assets/Colors"
 import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
-export const STDetail_ReviewsWrapper = styled.div`
+export const ST_M_Detail_ReviewsWrapper = styled.div`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 32px 32px 40px 32px;

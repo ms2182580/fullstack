@@ -27,6 +27,12 @@ const SPDetail = () => {
 
 
 
+  /* 
+  !FH0
+  Clean all the desktop and mobile from each other
+  Finish the name of all the components
+  */
+
 
   return (
     <>

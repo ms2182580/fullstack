@@ -1,0 +1,4 @@
+
+export const ST_M_RESULTS_CARDS_TRANSITIONSTIME = {
+  TIME: "0.3s"
+}

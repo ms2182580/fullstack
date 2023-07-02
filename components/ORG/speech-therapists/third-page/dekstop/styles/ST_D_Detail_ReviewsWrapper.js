@@ -1,13 +1,10 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../assets/Colors"
-import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
-export const STDetail_ReviewsWrapper = styled.div`
+export const ST_D_Detail_ReviewsWrapper = styled.div`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 32px 32px 40px 32px;
   display: grid;
-  scroll-margin-top: ${({ scrollMarginTopState }) => scrollMarginTopState && `${scrollMarginTopState}`};
 
   /* .STDetail_ReviewsHeaderDesktop {
     & > :nth-child(2) {
@@ -88,7 +85,7 @@ export const STDetail_ReviewsWrapper = styled.div`
     
   }
 
-  @media (${device.laptop}) {
+  /* @media (${device.laptop}) {
     padding: 16px;
     border-radius: 0px;
 
@@ -100,5 +97,5 @@ export const STDetail_ReviewsWrapper = styled.div`
     & > :last-child {
       margin-top: 16px;
     }
-  }
+  } */
 `
