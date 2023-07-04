@@ -26,9 +26,6 @@ import {
 
 export const ST_D_Results_CardNoFilters = () => {
   const router = useRouter()
-  /* 
-  This is used for move the view of the user to the next page
-  */
   const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
   const goToDynamic = (e, everySingleValue, filters) => {
     setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
@@ -37,15 +34,6 @@ export const ST_D_Results_CardNoFilters = () => {
   }
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort } = useORG_Ctx_FetchNoFiltersDesktop()
-
-  // useEffect(() => {
-  //   const { newOrderData, newOrderFilters } = ORG_SortybyFunction_D(actualSort, filtersST, userFetched, "SpeechtherapistList")
-  //   setData((prevState) => ({
-  //     ...prevState,
-  //     allData: newOrderData
-  //   }))
-  //   setFilters(newOrderFilters)
-  // }, [actualSort, pagination])
 
   return (
     <>
@@ -61,7 +49,9 @@ export const ST_D_Results_CardNoFilters = () => {
             if (x !== "Other") return `${x}`
             return x
           })
-          let language = filtersST[i][ORG_FILTERS_KEYS_D.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
+          let language = filtersST[i][ORG_FILTERS_KEYS_D.language.updateState].map(
+            (x) => x[0].toUpperCase() + x.slice(1)
+          )
 
           let serviceSetting = filtersST[i][ORG_FILTERS_KEYS_D.serviceSetting.updateState].map(
             (x) => x[0].toUpperCase() + x.slice(1)
@@ -114,7 +104,6 @@ export const ST_D_Results_CardNoFilters = () => {
                   rating={filtersST[i].rating}
                   reviews={filtersST[i].reviews}
                 />
-
 
                 <ST_D_Results_CardInfo
                   title={ORG_FILTERS_KEYS_D.diagnosis.titleToShowCard}

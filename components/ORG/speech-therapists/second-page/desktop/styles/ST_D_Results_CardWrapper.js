@@ -55,7 +55,7 @@ export const ST_D_CardWrapper_Right = styled.div`
   padding-left: 16px;
   position: relative;
   min-width: 394px;
-
+  
   & > :nth-child(2),
   & > :nth-child(3),
   & > :nth-child(4),
@@ -94,7 +94,10 @@ export const ST_D_CardWrapper_Right = styled.div`
     }
   }
 
-  & > :nth-child(3) {
+  /* & > :nth-child(3) {
+    
+    
+    
     display: flex;
     align-items: center;
 
@@ -147,7 +150,7 @@ export const ST_D_CardWrapper_Right = styled.div`
     & > :nth-child(2):hover:before {
       visibility: visible;
     }
-  }
+  } */
 
   & > div:nth-child(6),
   & > div:nth-child(7),

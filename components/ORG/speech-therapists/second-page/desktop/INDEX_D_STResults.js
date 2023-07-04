@@ -15,16 +15,6 @@ export const INDEX_D_STResults = () => {
     setShouldFetchDesktopNoFilters(true)
   }, [])
 
-  // const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-
-  // useEffect(() => {
-  //   if (userFetched !== undefined && mustShowFiltersMobile === false) {
-  //     const element = document.getElementById("topOfSTL")
-  //     if (element !== null) {
-  //       element.scrollIntoView()
-  //     }
-  //   }
-  // }, [mustShowFiltersMobile])
 
   if (userFetched === undefined || shouldFetchDesktopNoFilters === false) {
     return <LoadingSpeechTherapists />

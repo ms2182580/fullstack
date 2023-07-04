@@ -11,7 +11,6 @@ export const ST_D_Results_Choisepath = () => {
   const { pagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
 
-
   const { ORGshowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
 
   useEffect(() => {
@@ -36,24 +35,6 @@ export const ST_D_Results_Choisepath = () => {
           <ST_D_Results_CardNoFilters />
         </>
       )}
-
-      {/* {filterHaveAtLeastOneValueState && isMobile === false ? (
-        <>
-          <ST_Desktop_Results_CardWithFilters />
-        </>
-      ) : filterHaveAtLeastOneValueState === false && isMobile === false ? (
-        <>
-          <ST_Desktop_Results_CardNoFilters />
-        </>
-      ) : filterHaveAtLeastOneValueState && isMobile ? (
-            <>
-              <SpeechTherapistsCardWithFilterMobile />
-            </>
-      ) : filterHaveAtLeastOneValueState === false && isMobile ? (
-              <>
-                <SpeechTherapistsCardNoFilterMobile />
-              </>
-      ) : null} */}
     </ST_D_Results_ChoisepathWrapper>
   )
 }
