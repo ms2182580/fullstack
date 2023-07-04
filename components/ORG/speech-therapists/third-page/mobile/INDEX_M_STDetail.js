@@ -94,10 +94,10 @@ export const INDEX_M_STDetail = () => {
     ) {
       const handleScroll = () => {
 
-        const aboutPosition = aboutRef.current.offsetTop - Number(scrollMarginTopState.replace("px", ""))
-        const detailsPosition = detailsRef.current.offsetTop - Number(scrollMarginTopState.replace("px", ""))
-        const contactPosition = contactRef.current.offsetTop - Number(scrollMarginTopState.replace("px", ""))
-        const reviewsPosition = reviewsRef.current.offsetTop - Number(scrollMarginTopState.replace("px", ""))
+        const aboutPosition = aboutRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
+        const detailsPosition = detailsRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
+        const contactPosition = contactRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
+        const reviewsPosition = reviewsRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
 
         if (window.scrollY >= aboutPosition && window.scrollY < detailsPosition) {
           setHighlight("about")
