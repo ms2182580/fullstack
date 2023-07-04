@@ -9,8 +9,8 @@ import { Share } from "../../../share/Share"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
-import { ST_D_CardCity } from "../../ST_D_CardCity"
 import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
+import { ST_D_Results_CardCity } from "./ST_D_Results_CardCity"
 import { ST_D_Results_CardEmail } from "./ST_D_Results_CardEmail"
 import { ST_D_Results_CardInfo } from "./ST_D_Results_CardInfo"
 import { ST_D_Results_CardLocation } from "./ST_D_Results_CardLocation"
@@ -99,7 +99,7 @@ export const ST_D_Results_CardWithFilters = () => {
                 <TooltipDesktop />
 
 
-                <ST_D_CardCity city={everySingleValue.location.city} />
+                <ST_D_Results_CardCity city={everySingleValue.location.city} />
 
                 <StarsRatingReview_D
                   rating={filtersF[i].rating}

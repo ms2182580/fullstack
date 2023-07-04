@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { PRIMARY } from "../../../../../../assets/Colors"
 
-export const STDetail_FAQS_VoteQuestionsAnswersWrapper = styled.div`
+export const ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 80px;

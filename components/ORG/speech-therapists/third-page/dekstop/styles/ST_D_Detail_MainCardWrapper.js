@@ -3,19 +3,13 @@ import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const ST_D_Detail_MainCardWrapper = styled.div`
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
   grid-template-rows: auto;
   grid-template-areas: "leftPart rightPart";
   align-items: stretch;
 
-  /* border-radius: 8px; */
-  /* border: 1px solid ${NEUTRALS.LIGHT_GREY}; */
-
-  margin-bottom: 32px;
   border: 1px solid ${NEUTRALS.LIGHT_GREY};
   border-radius: 8px;
 
-  /* border: none; */
   grid-template-columns: 450px 1fr;
 
   /* border: 2px solid green; */
@@ -79,13 +73,11 @@ export const ST_D_Detail_MainCardLeftLeftInfo = styled.div`
   margin-left: 22px;
   margin-bottom: 16px;
   margin-right: 9px;
-  
 
   & > *:not(:last-child) {
     margin-bottom: 24px;
   }
 `
-
 
 export const ST_D_Detail_MainCardRight = styled.div`
   display: grid;
@@ -183,15 +175,55 @@ export const ST_D_Detail_MainCardRightSecondRow = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "leftPart rightPart";
   margin-bottom: 32px;
-  
-  & > :nth-child(1){
+  gap:16px;
+
+  & > :nth-child(1) {
     grid-area: leftPart;
+    & > * {
+      & > :not(:first-child) {
+        display: inline;
+      }
+    }
   }
-  
-  & > :nth-child(2){
-    grid-area: rightPart;  
+
+  & > :nth-child(2) {
+    grid-area: rightPart;
+
+    & > :nth-child(1){
+      & > :not(:first-child) {
+        display: inline;
+      }
+    }
+    
+    & > :nth-child(2){
+      & > :not(:first-child){
+        
+        display: flex;
+        flex-wrap: wrap;
+        /* gap:8px; */
+        
+        & > span{
+          font-weight: 600;
+          margin-right: 8px;
+        }
+        
+      }
+      
+    }
+    
+    & > *{
+    /* border: 2px solid green; */
+      
+    }
+    
   }
-  
+
+  & > :nth-child(1),
+  & > :nth-child(2) {
+    & > *:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 `
 
 // export const ST_D_Detail_MainCardRightSecondRowLeft = styled.div`

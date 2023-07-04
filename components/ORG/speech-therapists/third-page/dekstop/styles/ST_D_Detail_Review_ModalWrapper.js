@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const STDetail_Review_ModalWrapper = styled.div`
+export const ST_D_Detail_Review_ModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   position: fixed;
   top: 50%;

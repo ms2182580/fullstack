@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
-const LoadingSpeechTherapistsWrapper = styled.div`
+export const LoadingSpeechTherapistsWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
   align-self: start;
@@ -31,5 +31,3 @@ const LoadingSpeechTherapistsWrapper = styled.div`
   }
   
 `
-
-export default LoadingSpeechTherapistsWrapper

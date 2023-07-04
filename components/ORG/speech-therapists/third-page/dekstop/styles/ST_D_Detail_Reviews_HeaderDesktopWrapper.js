@@ -1,10 +1,19 @@
 import styled from "styled-components"
 import { PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
-export const STDetail_Reviews_HeaderDesktopWrapper = styled.div`
+export const ST_D_Detail_Reviews_HeaderDesktopWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ modal }) => (modal ? `` : `8px`)};
+
+  &.showLine {
+    &::after {
+      content: "";
+      width: 100%;
+      border: 1px solid hsl(0, 0%, 88.6%);
+      margin-top: 32px;
+    }
+  }
 
   & > :nth-child(1) {
     font-size: ${({ modal }) => (modal ? `36px` : ``)};
@@ -14,7 +23,6 @@ export const STDetail_Reviews_HeaderDesktopWrapper = styled.div`
   }
 
   & > :nth-child(2) {
-    
     & > :nth-child(1) {
       font-weight: 600;
       color: ${SEMANTICS.HYPERLINK_NORMAL};

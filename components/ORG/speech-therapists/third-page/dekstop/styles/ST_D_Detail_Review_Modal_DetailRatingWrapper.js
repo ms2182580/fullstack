@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const STDetail_Review_Modal_DetailRatingWrapper = styled.div`
+export const ST_D_Detail_Review_Modal_DetailRatingWrapper = styled.div`
   /* border: 2px solid crimson; */
 
   & > * {

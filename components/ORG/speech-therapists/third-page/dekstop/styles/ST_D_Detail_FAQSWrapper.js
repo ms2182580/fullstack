@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const STDetail_FAQSWrapper = styled.div`
+export const ST_D_Detail_FAQSWrapper = styled.div`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;

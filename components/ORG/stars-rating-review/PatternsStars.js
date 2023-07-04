@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 import { StartEmptyBigSvg, StartEmptySvg, StartFullBigSvg, StartFullSvg } from "../../../assets/Icons"
 import { PatternStarsWrapper } from "./styles/PatternStarsWrapper"
 
@@ -14,24 +14,15 @@ let ratingPatternFunc = (rating) => {
 }
 
 export const PatternStars = ({ rating, modal = false }) => {
-  let thePattern = ratingPatternFunc(rating)
+  const [thePattern, setThePattern] = useState(ratingPatternFunc(rating))
   return (
-    <PatternStarsWrapper modal={modal}
-    >
+    <PatternStarsWrapper modal={modal}>
       <div>
         {thePattern.map((x, i) => {
           if (x === "fully") {
-            return (
-              <Fragment key={`${x}${i}`}>
-                {modal ? <StartFullBigSvg /> : <StartFullSvg />}
-              </Fragment>
-            )
+            return <Fragment key={`${x}${i}`}>{modal ? <StartFullBigSvg /> : <StartFullSvg />}</Fragment>
           } else {
-            return (
-              <Fragment key={`${x}${i}`}>
-                {modal ? <StartEmptyBigSvg /> : <StartEmptySvg />}
-              </Fragment>
-            )
+            return <Fragment key={`${x}${i}`}>{modal ? <StartEmptyBigSvg /> : <StartEmptySvg />}</Fragment>
           }
         })}
       </div>

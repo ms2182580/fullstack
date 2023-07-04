@@ -726,7 +726,7 @@ export const SearchSVG = (props) => (
   </svg>
 )
 
-export const Search_STDetail_ReviewModalSVG = (props) => (
+export const ST_D_Detail_SearchReviewModalSVG = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={17}
@@ -741,7 +741,7 @@ export const Search_STDetail_ReviewModalSVG = (props) => (
   </svg>
 )
 
-export const Search_STDetail_FAQSSVG = (props) => (
+export const ST_Detail_SearchFAQSSVG = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={26}
@@ -1034,7 +1034,7 @@ export const AcceptingNewClientsSvg = (props) => (
   </svg>
 )
 
-export const STDetail_FAQS_VoteArroUpSvg = (props) => (
+export const ST_D_Detail_FAQS_VoteArroUpSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={21}
@@ -1046,7 +1046,7 @@ export const STDetail_FAQS_VoteArroUpSvg = (props) => (
   </svg>
 )
 
-export const STDetail_FAQS_VoteArroDownSvg = (props) => (
+export const ST_D_Detail_FAQS_VoteArroDownSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={21}

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const STDetail_ReviewsHeaderDesktop_PeopleOftenMentionWrapper = styled.div`
+export const ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper = styled.div`
   & > :nth-child(1) {
     margin-bottom: 15px;
   }

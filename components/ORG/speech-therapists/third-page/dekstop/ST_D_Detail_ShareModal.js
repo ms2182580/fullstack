@@ -19,7 +19,7 @@ import { XSvg } from "../../../../../assets/Icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_ShareModalButton } from "./ST_D_Detail_ShareModalButton.js"
-import { ST_D_Detail_ShareModalWrapper } from "./styles/STDetail_Share_ModalWrapper.js"
+import { ST_D_Detail_ShareModalWrapper } from "./styles/ST_D_Detail_ShareModalWrapper.js"
 
 export const ST_D_Detail_ShareModal = ({
   showModal,

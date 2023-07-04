@@ -2,11 +2,11 @@ import { XSvg } from "../../../../../assets/Icons/index.js"
 import { ButtonSmall } from "../../../../ui/buttons/general/index.js"
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { STDetail_FAQS_ModalWrapper } from "./styles/STDetail_FAQS_ModalWrapper.js"
+import { ST_D_Detail_FAQS_ModalWrapper } from "./styles/ST_D_Detail_FAQS_ModalWrapper.js"
 
 import { useEffect, useRef, useState } from "react"
 
-export const STDetail_FAQS_Modal = ({ showModal, handleHideModal, name, lastName, setFaqsData }) => {
+export const ST_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, lastName, setFaqsData }) => {
   const componentRef = useRef(null)
   useEffect(() => {
     function handleClickOutside(event) {
@@ -37,7 +37,7 @@ export const STDetail_FAQS_Modal = ({ showModal, handleHideModal, name, lastName
   }
 
   return (
-    <STDetail_FAQS_ModalWrapper
+    <ST_D_Detail_FAQS_ModalWrapper
       ref={componentRef}
       showModal={showModal}>
       <span onClick={() => handleHideModal()}>
@@ -66,6 +66,6 @@ export const STDetail_FAQS_Modal = ({ showModal, handleHideModal, name, lastName
           Post Question
         </ButtonSmall>
       </span>
-    </STDetail_FAQS_ModalWrapper>
+    </ST_D_Detail_FAQS_ModalWrapper>
   )
 }

@@ -1,10 +1,10 @@
 import { ArrowDownSvg } from "../../../../../assets/Icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { STDetail_ReviewsHeaderDesktop_PeopleOftenMentionWrapper } from "./styles/STDetail_ReviewsHeaderDesktop_PeopleOftenMentionWrapper.js"
+import { ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper } from "./styles/ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper.js"
 
-export const STDetail_ReviewsHeaderDesktop_PeopleOftenMention = ({ modal }) => {
+export const ST_D_Detail_ReviewsHeader_PeopleOftenMention = ({ modal }) => {
   return (
-    <STDetail_ReviewsHeaderDesktop_PeopleOftenMentionWrapper modal={modal}>
+    <ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper modal={modal}>
       <P semibold>People often mention</P>
       <div>
         <div>
@@ -23,6 +23,6 @@ export const STDetail_ReviewsHeaderDesktop_PeopleOftenMention = ({ modal }) => {
           <ArrowDownSvg />
         </div>
       </div>
-    </STDetail_ReviewsHeaderDesktop_PeopleOftenMentionWrapper>
+    </ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper>
   )
 }

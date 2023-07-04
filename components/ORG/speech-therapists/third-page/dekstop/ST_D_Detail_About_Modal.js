@@ -3,9 +3,9 @@ import ReactPlayer from "react-player"
 import { XSvg } from "../../../../../assets/Icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { STDetail_About_ModalWrapper } from "./styles/STDetail_About_ModalWrapper.js"
+import { ST_D_Detail_About_ModalWrapper } from "./styles/ST_D_Detail_About_ModalWrapper.js"
 
-export const STDetail_About_Modal = ({ showModal, handleHideModal, aboutTextState }) => {
+export const ST_D_Detail_About_Modal = ({ showModal, handleHideModal, aboutTextState }) => {
   const componentRef = useRef(null)
   useEffect(() => {
     function handleClickOutside(event) {
@@ -21,7 +21,7 @@ export const STDetail_About_Modal = ({ showModal, handleHideModal, aboutTextStat
 
 
   return (
-    <STDetail_About_ModalWrapper
+    <ST_D_Detail_About_ModalWrapper
       ref={componentRef}
       showModal={showModal}>
       <span onClick={() => handleHideModal()}>
@@ -44,6 +44,6 @@ export const STDetail_About_Modal = ({ showModal, handleHideModal, aboutTextStat
         />
 
       </div>
-    </STDetail_About_ModalWrapper>
+    </ST_D_Detail_About_ModalWrapper>
   )
 }

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import React from "react"
-import ORG_STDetail_Share_Modal_QRAltIcon from '../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRCodeIcon.png'
+import ORG_STDetail_Share_Modal_QRAltIcon from "../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRCodeIcon.png"
 import { ORG_FILTERS_KEYS_D } from "../../../../../utils/ORG_FiltersCategories"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
@@ -9,20 +9,28 @@ import { H2, H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
-import { ST_D_Detail_MainCardLeftPhotos } from "./STDetail_CardWrapper_Left_Photos"
-import { STDetail_CardWrapper_SecondRow_Info } from "./STDetail_CardWrapper_SecondRow_Info"
 import { ST_D_Detail_About } from "./ST_D_Detail_About"
 import { ST_D_Detail_AcceptingNewClients } from "./ST_D_Detail_AcceptingNewClients"
 import { ST_D_Detail_CardEmail } from "./ST_D_Detail_CardEmail"
 import { ST_D_Detail_CardLocation } from "./ST_D_Detail_CardLocation"
 import { ST_D_Detail_CardPhone } from "./ST_D_Detail_CardPhone"
 import { ST_D_Detail_CardWebsite } from "./ST_D_Detail_CardWebsite"
+import { ST_D_Detail_CardWrapper_SecondRow_Info } from "./ST_D_Detail_CardWrapper_SecondRow_Info"
 import { ST_D_Detail_CarePlan } from "./ST_D_Detail_CarePlan"
+import { ST_D_Detail_MainCardLeftPhotos } from "./ST_D_Detail_MainCardLeftPhotos"
 import { ST_D_Detail_MapComponent } from "./ST_D_Detail_MapComponent"
 import { ST_D_Detail_ProviderDetailBox } from "./ST_D_Detail_ProviderDetailBox"
 import { ST_D_Detail_Share } from "./ST_D_Detail_Share"
 import { ST_D_Detail_TwoButtons } from "./ST_D_Detail_TwoButtons"
-import { ST_D_Detail_MainCardLeft, ST_D_Detail_MainCardLeftLeftImage, ST_D_Detail_MainCardLeftLeftInfo, ST_D_Detail_MainCardRight, ST_D_Detail_MainCardRightFirstRow, ST_D_Detail_MainCardRightSecondRow, ST_D_Detail_MainCardWrapper } from "./styles/ST_D_Detail_MainCardWrapper"
+import {
+  ST_D_Detail_MainCardLeft,
+  ST_D_Detail_MainCardLeftLeftImage,
+  ST_D_Detail_MainCardLeftLeftInfo,
+  ST_D_Detail_MainCardRight,
+  ST_D_Detail_MainCardRightFirstRow,
+  ST_D_Detail_MainCardRightSecondRow,
+  ST_D_Detail_MainCardWrapper
+} from "./styles/ST_D_Detail_MainCardWrapper"
 
 export const ST_D_Detail_MainCard = ({ STData }) => {
   const { push } = useRouter()
@@ -52,8 +60,6 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
         // )
         let serviceSetting = STData.filters[0].serviceSetting.map((x) => x[0].toUpperCase() + x.slice(1))
         return (
-
-
           <ST_D_Detail_MainCardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
             <ST_D_Detail_MainCardLeft>
               <ST_D_Detail_MainCardLeftLeftImage>
@@ -125,37 +131,37 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
 
               <ST_D_Detail_MainCardRightSecondRow>
                 <div>
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Practice areas"
                     dataToShow={STData.filters[0][ORG_FILTERS_KEYS_D.diagnosis.updateState]}
                   />
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Ages served"
                     dataToShow={STData.filters[0][ORG_FILTERS_KEYS_D.agesServed.updateState]}
                   />
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Languages"
                     dataToShow={languages}
                   />
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Setting"
                     dataToShow={serviceSetting}
                   />
                 </div>
 
                 <div>
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Payment options"
                     dataToShow={accepts}
                   />
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Qualifications"
                     dataToShow={serviceSetting}
                     rightRowQualification
                     rightRowQualification_Data={STData.filters[0].yearsOfPractice}
                     state={everySingleValue.location.state}
                   />
-                  <STDetail_CardWrapper_SecondRow_Info
+                  <ST_D_Detail_CardWrapper_SecondRow_Info
                     title="Additional Credentials"
                     rightRowCredentials
                     dataToShow={[

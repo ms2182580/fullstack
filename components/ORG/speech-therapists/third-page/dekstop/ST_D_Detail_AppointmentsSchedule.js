@@ -3,7 +3,7 @@ import { DownArrowSvg } from "../../../../../assets/Icons/index.js"
 import { ORG_Detail_getAppointments } from "../../../../../utils/ORG_Detail_getAppointments.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_D_Detail_AppointmentsScheduleWrapper } from "./styles/STDetail_AppointmentsScheduleWrapper.js"
+import { ST_D_Detail_AppointmentsScheduleWrapper } from "./styles/ST_D_Detail_AppointmentsScheduleWrapper.js"
 
 export const ST_D_Detail_AppointmentsSchedule = ({
   dayName,

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const STDetail_PageLastUpdatedWrapper = styled.div`
+export const ST_D_Detail_PageLastUpdatedWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

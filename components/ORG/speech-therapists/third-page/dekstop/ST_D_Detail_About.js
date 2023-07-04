@@ -5,7 +5,7 @@ import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { useWidthWindow1024 } from "../../../../../utils/useWidthWindow1024.js"
 import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { STDetail_About_Modal } from "./STDetail_About_Modal.js"
+import { ST_D_Detail_About_Modal } from "./ST_D_Detail_About_Modal.js"
 import { ST_D_Detail_AboutWrapper } from "./styles/ST_D_Detail_AboutWrapper.js"
 
 export const ST_D_Detail_About = ({ name, lastName, aboutRef }) => {
@@ -62,7 +62,7 @@ export const ST_D_Detail_About = ({ name, lastName, aboutRef }) => {
             {isTruncated && <span onClick={handleShowModal}>show more</span>}
           </P>
           {showModal && (
-            <STDetail_About_Modal
+            <ST_D_Detail_About_Modal
               showModal={showModal}
               handleHideModal={handleHideModal}
               aboutTextState={aboutTextState}

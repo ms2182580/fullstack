@@ -6,7 +6,7 @@ import { ButtonSmall } from "../../../../ui/buttons/general/index.js"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_AppointmentModal } from "./ST_D_Detail_AppointmentModal.js"
 import { ST_D_Detail_AppointmentsSchedule } from "./ST_D_Detail_AppointmentsSchedule.js"
-import { ST_D_Detail_AppointmentsWrapper } from "./styles/STDetail_AppointmentsWrapper.js"
+import { ST_D_Detail_AppointmentsWrapper } from "./styles/ST_D_Detail_AppointmentsWrapper.js"
 
 export const ST_D_Detail_Appointments = ({ picture, name, lastName }) => {
   const [allDataDate, setAllDataDate] = useState(ORG_Detail_getDate())

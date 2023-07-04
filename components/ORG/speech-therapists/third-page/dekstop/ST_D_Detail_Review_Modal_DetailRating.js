@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { STDetail_Review_Modal_DetailRatingWrapper } from "./styles/STDetail_Review_Modal_DetailRatingWrapper.js"
+import { ST_D_Detail_Review_Modal_DetailRatingWrapper } from "./styles/ST_D_Detail_Review_Modal_DetailRatingWrapper.js"
 
 let fullFillRatingFunc = (arr) => {
   let finalArr = []
@@ -27,12 +27,12 @@ const formatRatingFunc = (rating) => {
   return fullFillRatingFunc(finalArr)
 }
 
-export const STDetail_Review_Modal_DetailRating = ({ rating }) => {
+export const ST_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
   // let formatRating = formatRatingFunc(Number(rating))
   const [formatRating, setFormatRating] = useState(formatRatingFunc(Number(rating)))
 
   return (
-    <STDetail_Review_Modal_DetailRatingWrapper>
+    <ST_D_Detail_Review_Modal_DetailRatingWrapper>
       <div>
         <H4>Appointment Scheduling</H4>
         <div>
@@ -85,6 +85,6 @@ export const STDetail_Review_Modal_DetailRating = ({ rating }) => {
         </div>
         <H3>{formatRating.ammount[3]}.0</H3>
       </div>
-    </STDetail_Review_Modal_DetailRatingWrapper>
+    </ST_D_Detail_Review_Modal_DetailRatingWrapper>
   )
 }

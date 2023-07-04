@@ -6,9 +6,9 @@ import RobotLoading from "../../../assets/Icons/RobotLoading.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "../../ui/heading_body_text/HeaderFonts"
-import LoadingSpeechTherapistsWrapper from "./styles/LoadingSpeechTherapistsWrapper"
+import { LoadingSpeechTherapistsWrapper } from "./styles/LoadingSpeechTherapistsWrapper"
 
-const LoadingSpeechTherapists = () => {
+export const LoadingSpeechTherapists = () => {
   const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
 
   useEffect(() => {
@@ -38,5 +38,3 @@ const LoadingSpeechTherapists = () => {
     </LoadingSpeechTherapistsWrapper>
   )
 }
-
-export default LoadingSpeechTherapists

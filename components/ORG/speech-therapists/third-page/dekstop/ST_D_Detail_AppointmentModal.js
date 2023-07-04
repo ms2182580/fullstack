@@ -6,7 +6,7 @@ import { XSvg } from "../../../../../assets/Icons/index.js"
 import { ButtonMedium } from "../../../../ui/buttons/general/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_D_Detail_AppointmentModalWrapper } from "./styles/STDetail_Appointment_ModalWrapper.js"
+import { ST_D_Detail_AppointmentModalWrapper } from "./styles/ST_D_Detail_AppointmentModalWrapper.js"
 
 export const ST_D_Detail_AppointmentModal = ({
   showModal,

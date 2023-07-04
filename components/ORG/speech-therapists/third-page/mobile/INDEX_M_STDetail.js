@@ -14,9 +14,9 @@ import { ST_M_Detail_Separator } from "./ST_M_Detail_Separator"
 import { ST_M_Detail_StickyNavbar } from "./ST_M_Detail_StickyNavbar"
 // import { ST_D_Detail_About } from "./ST_D_Detail_About"
 // import { ST_D_Detail_TwoButtons } from "./ST_D_Detail_TwoButtons"
-import { ST_M_Detail_Reviews } from "../ST_M_Detail_Reviews"
 import { ST_M_Detail_About } from "./ST_M_Detail_About"
 import { ST_M_Detail_Card } from "./ST_M_Detail_Card"
+import { ST_M_Detail_Reviews } from "./ST_M_Detail_Reviews"
 import { INDEX_M_STDetailWrapper } from "./styles/INDEX_M_STDetailWrapper.js"
 import { ST_M_HeaderWrapper } from "./styles/ST_M_HeaderWrapper.js"
 
@@ -181,8 +181,6 @@ export const INDEX_M_STDetail = () => {
           name={STDataThirdpage_M.data[0].name.first}
           lastName={STDataThirdpage_M.data[0].name.last}
           theRef={reviewsRef}
-          rating={STDataThirdpage_M.filters[0].rating}
-          reviews={STDataThirdpage_M.filters[0].reviews}
           scrollMarginTopState={scrollMarginTopState}
         />
 

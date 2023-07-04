@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { STDetail_FAQS_VoteArroDownSvg, STDetail_FAQS_VoteArroUpSvg } from "../../../../../assets/Icons/index.js"
+import { ST_D_Detail_FAQS_VoteArroDownSvg, ST_D_Detail_FAQS_VoteArroUpSvg } from "../../../../../assets/Icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { STDetail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/STDetail_FAQS_VoteQuestionsAnswersWrapper.js"
+import { ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper.js"
 
-export const STDetail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, allUserNames, month }) => {
+export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, allUserNames, month }) => {
   const [votesState, setVotesState] = useState(Number(votes))
   const [alreadyVoteUp, setAlreadyVoteUp] = useState(false)
   const [alreadyVoteDown, setAlreadyVoteDown] = useState(false)
@@ -43,19 +43,19 @@ export const STDetail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, 
   }
 
   return (
-    <STDetail_FAQS_VoteQuestionsAnswersWrapper
+    <ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper
       alreadyVoteUp={alreadyVoteUp}
       alreadyVoteDown={alreadyVoteDown}>
       <div>
         <span onClick={handleUpVote}>
-          <STDetail_FAQS_VoteArroUpSvg />
+          <ST_D_Detail_FAQS_VoteArroUpSvg />
         </span>
 
         <P semibold>{votesState}</P>
         <P semibold>votes</P>
 
         <span onClick={handleDownVote}>
-          <STDetail_FAQS_VoteArroDownSvg />
+          <ST_D_Detail_FAQS_VoteArroDownSvg />
         </span>
       </div>
 
@@ -90,6 +90,6 @@ export const STDetail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, 
           )}
         </div>
       </div>
-    </STDetail_FAQS_VoteQuestionsAnswersWrapper>
+    </ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper>
   )
 }

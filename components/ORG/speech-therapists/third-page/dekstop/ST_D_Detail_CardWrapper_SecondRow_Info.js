@@ -1,12 +1,8 @@
 import { Fragment } from "react"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
-import {
-  STDetail_CardWrapper_SecondRow_InfoLeftWrapper,
-  STDetail_CardWrapper_SecondRow_InfoRightWrapper
-} from "../../styles/TherapistInfoThirdPageWrapper.js"
 
-export const STDetail_CardWrapper_SecondRow_Info = ({
+export const ST_D_Detail_CardWrapper_SecondRow_Info = ({
   title,
   dataToShow,
   rightRowQualification = false,
@@ -14,35 +10,38 @@ export const STDetail_CardWrapper_SecondRow_Info = ({
   state = "",
   rightRowCredentials = false
 }) => {
-
-
   if (rightRowQualification) {
     return (
-      <STDetail_CardWrapper_SecondRow_InfoRightWrapper isFirst>
+      <div isFirst>
         <H4 hover>{title}:</H4>
-        <P>Education level: Master&apos;s</P>
-        <P>Years in practice: {rightRowQualification_Data}</P>
-        <P>License Number: 1239082</P>
-        <P>State of licence: {state}</P>
-      </STDetail_CardWrapper_SecondRow_InfoRightWrapper>
+        <P>
+          <span>Years in practice:</span> {rightRowQualification_Data}
+        </P>
+        <P>
+          <span>License Number:</span> 1239082
+        </P>
+        <P>
+          <span>State of licence:</span> {state}
+        </P>
+      </div>
     )
   }
 
   if (rightRowCredentials) {
     return (
-      <STDetail_CardWrapper_SecondRow_InfoRightWrapper>
+      <div>
         <H4 hover>{title}:</H4>
-        <P>{dataToShow[0]} <br />{dataToShow[1]}
+        <P>
+          {dataToShow[0]} <br />
+          {dataToShow[1]}
         </P>
-      </STDetail_CardWrapper_SecondRow_InfoRightWrapper>
+      </div>
     )
   }
 
   return (
-    <STDetail_CardWrapper_SecondRow_InfoLeftWrapper>
-      <H4 hover>
-        {title}:
-      </H4>
+    <div>
+      <H4 hover>{title}:</H4>
       {Array.isArray(dataToShow) &&
         dataToShow.map((x, i) => {
           if (dataToShow.length - 1 === i) {
@@ -61,6 +60,6 @@ export const STDetail_CardWrapper_SecondRow_Info = ({
         })}
 
       {typeof dataToShow === "string" && <P> {dataToShow}</P>}
-    </STDetail_CardWrapper_SecondRow_InfoLeftWrapper>
+    </div>
   )
 }

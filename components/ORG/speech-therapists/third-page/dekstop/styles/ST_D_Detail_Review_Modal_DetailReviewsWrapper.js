@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const STDetail_Review_Modal_DetailReviewsWrapper = styled.div`
+export const ST_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -11,9 +11,7 @@ export const STDetail_Review_Modal_DetailReviewsWrapper = styled.div`
 
   scrollbar-color: #b7b7b7 transparent;
   scrollbar-width: thin;
-
-
-
+  
   & > :nth-child(1) {
     position: relative;
     margin-bottom: 25px;
