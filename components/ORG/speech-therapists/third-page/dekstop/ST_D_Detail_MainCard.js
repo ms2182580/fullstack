@@ -7,7 +7,6 @@ import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
-import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
 import { ST_D_Detail_About } from "./ST_D_Detail_About"
 import { ST_D_Detail_AcceptingNewClients } from "./ST_D_Detail_AcceptingNewClients"
@@ -21,6 +20,7 @@ import { ST_D_Detail_MainCardLeftPhotos } from "./ST_D_Detail_MainCardLeftPhotos
 import { ST_D_Detail_MapComponent } from "./ST_D_Detail_MapComponent"
 import { ST_D_Detail_ProviderDetailBox } from "./ST_D_Detail_ProviderDetailBox"
 import { ST_D_Detail_Share } from "./ST_D_Detail_Share"
+import { ST_D_Detail_Tooltip } from "./ST_D_Detail_Tooltip"
 import { ST_D_Detail_TwoButtons } from "./ST_D_Detail_TwoButtons"
 import {
   ST_D_Detail_MainCardLeft,
@@ -114,7 +114,7 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
                   <H2 bold>
                     {everySingleValue.name.first} {everySingleValue.name.last} <span>CCC-SLP</span>
                   </H2>
-                  <TooltipDesktop />
+                  <ST_D_Detail_Tooltip />
                 </div>
                 <H3>Speech Language Pathologist</H3>
                 <P dark_gray>{everySingleValue.location.city}</P>

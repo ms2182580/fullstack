@@ -7,7 +7,6 @@ import { ButtonSmall } from "../../../../ui/buttons/general"
 import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Share } from "../../../share/Share"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
-import { TooltipDesktop } from "../../../tooltip/TooltipDesktop"
 import { Verified } from "../../../verified/Verified"
 import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
 import { ST_D_Results_CardCity } from "./ST_D_Results_CardCity"
@@ -95,8 +94,6 @@ export const ST_D_Results_CardNoFilters = () => {
                 <H2 bold>
                   {everySingleValue.name.first} {everySingleValue.name.last}, <span>CCC-SLP</span>
                 </H2>
-
-                <TooltipDesktop />
 
                 <ST_D_Results_CardCity city={everySingleValue.location.city} />
 

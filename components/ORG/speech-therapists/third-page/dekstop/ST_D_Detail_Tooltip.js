@@ -1,11 +1,11 @@
 import { useRef, useState } from "react"
-import { QuestionTooltip_STSvg } from "../../../assets/Icons/index.js"
-import { useOutsideHide } from "../../../utils/useOutsideHide.js"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3 } from "../../ui/heading_body_text/HeaderFonts.js"
-import { TooltipDesktopWrapper } from "./styles/TooltipDesktopWrapper.js"
+import { QuestionTooltip_STSvg } from "../../../../../assets/Icons/index.js"
+import { useOutsideHide } from "../../../../../utils/useOutsideHide.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { ST_D_Detail_TooltipWrapper } from "./styles/ST_D_Detail_TooltipWrapper.js"
 
-export const TooltipDesktop = () => {
+export const ST_D_Detail_Tooltip = () => {
   const [show, setShow] = useState(false)
   const componentRef = useRef(null)
 
@@ -17,7 +17,7 @@ export const TooltipDesktop = () => {
   }
 
   return (
-    <TooltipDesktopWrapper
+    <ST_D_Detail_TooltipWrapper
       ref={componentRef}
       onClick={handleShow}>
       <span>
@@ -35,6 +35,6 @@ export const TooltipDesktop = () => {
           </span>
         </div>
       ) : null}
-    </TooltipDesktopWrapper>
+    </ST_D_Detail_TooltipWrapper>
   )
 }

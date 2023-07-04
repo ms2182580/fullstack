@@ -4,8 +4,8 @@ import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { FriendlyDiagnoses } from "../../../friendlyDiagnoses/FriendlyDiagnoses.js"
 import { StartsRatingReview_Mobile } from "../../../stars-rating-review/mobile/StartsRatingReview_Mobile.js"
-import { TooltipMobile } from "../../../tooltip/TooltipMobile.js"
 import { Verified } from "../../../verified/Verified.js"
+import { ST_M_Detail_Tooltip } from "./ST_M_Detail_Tooltip.js"
 import { ST_M_Detail_CardWrapper } from "./styles/ST_M_Detail_CardWrapper.js"
 
 export const ST_M_Detail_Card = ({ STData }) => {
@@ -45,7 +45,7 @@ export const ST_M_Detail_Card = ({ STData }) => {
 
         <div>
           <Caption>Speech Language Pathologist, CCC-SLP</Caption>
-          <TooltipMobile isThirdPage={true} />
+          <ST_M_Detail_Tooltip isThirdPage={true} />
 
         </div>
 
