@@ -10,7 +10,7 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
   cursor: pointer;
 
   & > :nth-child(1) {
-    padding: 16px;
+    padding: 16px 16px 16px 16px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -23,13 +23,11 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
   }
 
   & > .ORGDropdownSuggestion {
-    top: 100%;
     background-color: ${NEUTRALS.OFF_WHITE};
     width: 100%;
-
     & > p,
     & > a > p {
-      padding: 0.5rem 1.5rem;
+      padding: 16px 16px 16px 24px;
       cursor: pointer;
     }
 
@@ -37,10 +35,6 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
     & > a > p:hover {
       background-color: ${NEUTRALS.DARK_GREY};
       color: ${NEUTRALS.OFF_WHITE};
-    }
-
-    & > :nth-last-child(1) {
-      height: 0.5rem;
     }
   }
 
@@ -51,11 +45,6 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
     width: 100%;
 
     & > div {
-      & > :nth-child(1) {
-        height: 0.375rem;
-        background-color: ${NEUTRALS.BLACK};
-      }
-
       & > p {
         margin: 1rem;
       }
