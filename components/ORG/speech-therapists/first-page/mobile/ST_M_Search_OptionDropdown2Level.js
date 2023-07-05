@@ -52,22 +52,24 @@ export const ST_M_Search_OptionDropdown2Level = ({
           }
           : undefined
       }>
-      {icon !== "no icon found" ? (
-        <div>
-          <Image
-            src={icon}
-            alt=""
-          />
-        </div>
-      ) : (
-        <div></div>
-      )}
-
-      <span
+      <div
         onClick={handleDropdownClick}
         onKeyDown={handleDropdownKey}
         tabIndex={0}>
-        <P bold>{title}</P>
+        {icon !== "no icon found" ? (
+          <div>
+            <Image
+              src={icon}
+              alt=""
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
+        <span>
+          <P bold>{title}</P>
+        </span>
+
         <span>
           {showDropdown ? (
             <Image
@@ -81,7 +83,8 @@ export const ST_M_Search_OptionDropdown2Level = ({
             />
           )}
         </span>
-      </span>
+      </div>
+
       <div className="ORGDropdownSuggestion">
         {showDropdown && suggestions.length !== 0 && (
           <>

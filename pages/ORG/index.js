@@ -12,7 +12,6 @@ const ORG_INDEX = () => {
           <INDEX_D_STSearch />
         </>
       ) : (
-
         <>
           <INDEX_M_STSearch />
         </>
@@ -22,4 +21,3 @@ const ORG_INDEX = () => {
 }
 
 export default ORG_INDEX
-

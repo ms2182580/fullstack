@@ -2,42 +2,30 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
-  display: grid;
-  grid-template-columns: ${(x) => (x.noIcon ? "1fr" : "48px 1fr")};
-  grid-template-rows: 1fr;
-  position: relative;
-  
-  & > :nth-child(1){
-    z-index: 33;
-  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 
-  & > :nth-child(2) {
+  cursor: pointer;
+
+  & > :nth-child(1) {
+    padding: 16px;
     display: flex;
-    align-items: flex-start;
-    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
 
-    & > p {
-      margin-right: 1.25rem;
-      user-select: none;
-    }
-    & > span {
-      width: 2.5rem;
+    & > :nth-child(2) {
+      text-align: left;
+      width: 100%;
     }
   }
 
   & > .ORGDropdownSuggestion {
     top: 100%;
-    width: 100%;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
     background-color: ${NEUTRALS.OFF_WHITE};
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    z-index: 99;
-
-    & > div:nth-child(1) {
-      height: 0.375rem;
-      background-color: ${NEUTRALS.BLACK};
-    }
+    width: 100%;
 
     & > p,
     & > a > p {
@@ -51,27 +39,26 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
       color: ${NEUTRALS.OFF_WHITE};
     }
 
-    & > div:nth-last-child(1) {
+    & > :nth-last-child(1) {
       height: 0.5rem;
     }
   }
 
   & > .ORGDropdownComingSoon {
     top: 100%;
-    width: 100%;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
     background-color: ${NEUTRALS.OFF_WHITE};
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
     cursor: pointer;
-    z-index: 99;
+    width: 100%;
 
-    & > div > div:nth-child(1) {
-      height: 0.375rem;
-      background-color: ${NEUTRALS.BLACK};
-    }
-    & > div > p {
-      margin: 1rem;
+    & > div {
+      & > :nth-child(1) {
+        height: 0.375rem;
+        background-color: ${NEUTRALS.BLACK};
+      }
+
+      & > p {
+        margin: 1rem;
+      }
     }
   }
 `

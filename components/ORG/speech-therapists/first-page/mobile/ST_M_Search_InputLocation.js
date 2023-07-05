@@ -92,6 +92,7 @@ export const ST_M_Search_InputLocation = () => {
           isHover={isHoveredCity}
           theRef={citySecondLevelRef}
           shouldShowImmediately={true}
+          noIcon={true}
         />
       </ST_M_Search_OptionDropdown1Level>
 
