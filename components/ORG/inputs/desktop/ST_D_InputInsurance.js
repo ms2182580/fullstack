@@ -15,43 +15,11 @@ export const ST_D_InputInsurance = () => {
   const inputRefEnsurance = useRef()
   const [keywordInput, setKeywordInput] = useState("")
 
-
-
-
   const { insuranceContext, setInsuranceContext } = useORG_InputCtx()
 
   useEffect(() => {
     setKeywordInput(insuranceContext)
   }, [insuranceContext])
-
-  // const { isTouchScreen } = useCheckMobile()
-  // const keywordFirstLevelRef = useRef(null)
-  // const keywordSecondLevelRef = useRef(null)
-
-  // useEffect(() => {
-  //   function handleClickOutside(event) {
-  //     if (
-  //       keywordFirstLevelRef.current &&
-  //       !keywordFirstLevelRef.current.contains(event.target) &&
-  //       keywordSecondLevelRef.current &&
-  //       !keywordSecondLevelRef.current.contains(event.target)
-  //     ) {
-  //       setIsFocusKeyword(false)
-  //     }
-  //   }
-
-  //   document.addEventListener("touchstart", handleClickOutside)
-  //   return () => {
-  //     document.removeEventListener("touchstart", handleClickOutside)
-  //   }
-  // }, [])
-
-  // const suggestionDropdownTP = [
-  //   "Speech Therapist",
-  //   "Behavioral Therapist",
-  //   "Physical Therapist",
-  //   "Occupational Therapist"
-  // ]
 
   const shouldTab = useShouldTab()
 

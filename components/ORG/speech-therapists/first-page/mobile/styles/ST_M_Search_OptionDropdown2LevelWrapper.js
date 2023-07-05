@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
-import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
 
 export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
   display: grid;
@@ -27,7 +26,6 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
   }
 
   & > .ORGDropdownSuggestion {
-    position: ${(x) => (x.isMobile ? "null" : "absolute")};
     top: 100%;
     width: 100%;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
@@ -56,18 +54,9 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
     & > div:nth-last-child(1) {
       height: 0.5rem;
     }
-
-    @media (${device.laptop}) {
-      width: calc(100vw - 33px);
-      box-shadow: none;
-      & > :nth-child(1) {
-        display: none;
-      }
-    }
   }
 
   & > .ORGDropdownComingSoon {
-    position: ${(x) => (x.isMobile ? "null" : "absolute")};
     top: 100%;
     width: 100%;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
@@ -83,23 +72,6 @@ export const ST_M_Search_OptionDropdown2LevelWrapper = styled.div`
     }
     & > div > p {
       margin: 1rem;
-    }
-
-    @media (${device.laptop}) {
-      box-shadow: none;
-      width: calc(100vw - 32px);
-      margin-left: -48px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-
-      &:hover {
-        background-color: ${NEUTRALS.DARK_GREY};
-        color: ${NEUTRALS.OFF_WHITE};
-      }
-
-      & > :nth-child(1) > :nth-child(1) {
-        display: none;
-      }
     }
   }
 `

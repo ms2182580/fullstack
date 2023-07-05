@@ -17,8 +17,7 @@ export const ST_D_Results_FilterCheckboxContainer = ({
   clearAll,
   setClearAll,
   showStateChildren,
-  shouldClear,
-  isMobile = false
+  shouldClear
 }) => {
   const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
   const handleShowRemaining = () => {
@@ -49,7 +48,7 @@ export const ST_D_Results_FilterCheckboxContainer = ({
   */
 
   return (
-    <ST_D_Results_FilterCheckboxContainerWrapper isMobile={isMobile}>
+    <ST_D_Results_FilterCheckboxContainerWrapper>
       <div
         tabIndex={0}
         onKeyDown={(e) => handleShow(e)}>

@@ -11,6 +11,7 @@ export const ST_D_Search_Card = ({
   setWhichWasClick,
   numberCard
 }) => {
+
   const handleShowResultsAndDispatch = () => {
     setMustShowResults((prevState) => !prevState)
     dispatch({ type: "get_data", payload: dataToDispatch })

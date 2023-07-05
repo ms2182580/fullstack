@@ -20,7 +20,7 @@ import SignupWrapper, { LeftSignup, RightSignup } from "./styles/Signup.js"
 
 const Signup = () => {
   const { isMobile } = useWidthWindow1024()
-  
+
   const { isTouchScreen } = useCheckMobile()
   // console.log('isTouchScreen:', isTouchScreen)
 
@@ -76,6 +76,7 @@ const Signup = () => {
             <LinkNoStyle href="/">
               <BackArrow />
               <span>Return to Home</span>
+
             </LinkNoStyle>
           </span>
         </>
@@ -134,7 +135,7 @@ const Signup = () => {
             <div>
               <SignupForm />
             </div>
-            
+
           </RightSignup>
         </>
       ) : (
@@ -143,19 +144,19 @@ const Signup = () => {
             onTouchStart={
               isTouchScreen
                 ? (e) => {
-                    e.stopPropagation()
-                    handleShowLoginButtons()
-                  }
+                  e.stopPropagation()
+                  handleShowLoginButtons()
+                }
                 : undefined
             }
-              onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}
-              onKeyDown={(e) => {
-                if (e.key === "Escape") {
-                  handleHideLoginButtons()
-                }
-                
-              }}
-            >
+            onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") {
+                handleHideLoginButtons()
+              }
+
+            }}
+          >
             <ButtonSmall>Join Inclusive</ButtonSmall>
           </span>
 

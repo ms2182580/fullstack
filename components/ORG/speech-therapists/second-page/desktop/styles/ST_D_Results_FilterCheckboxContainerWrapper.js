@@ -2,32 +2,8 @@ import styled from "styled-components"
 import { NEUTRALS, SEMANTICS } from "../../../../../../assets/Colors"
 
 export const ST_D_Results_FilterCheckboxContainerWrapper = styled.div`
-  /* border: 2px solid crimson; */
-  /* width: 175px; */
-
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; */
-
   & > :nth-child(1) {
     margin-bottom: 18px;
-  }
-
-  & > :nth-child(2) {
-    /* border: 2px solid black; */
-    /* width: 175px; */
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; */
-  }
-
-  & > div:nth-child(1),
-  & > div:nth-child(2) {
-    /* margin-top: 20px; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* padding-bottom: 26px; */
-    /* padding-inline: 22px 12px; */
   }
 
   & > div:nth-child(1) > span {
@@ -37,10 +13,7 @@ export const ST_D_Results_FilterCheckboxContainerWrapper = styled.div`
 
 export const ST_D_Results_FilterCheckboxContainerULWrapper = styled.ul`
   list-style: none;
-  /* margin-left: 58px; */
-
   margin-left: 6px;
-  /* border: 2px solid crimson; */
 
   & > *:not(:last-child) {
     margin-bottom: 24px;
@@ -69,11 +42,6 @@ export const ST_D_Results_FilterCheckboxContainerULWrapper = styled.ul`
         & > span {
           top: 7px;
         }
-      }
-
-      & > p {
-        /* white-space: nowrap; */
-        /* border: 2px solid crimson; */
       }
 
       & > input {

@@ -3,8 +3,8 @@ import { XSvg } from "../../../../../assets/Icons/index.js"
 import { ST_D_Detail_Review_Modal_DetailRating } from "./ST_D_Detail_Review_Modal_DetailRating.js"
 import { ST_D_Detail_Review_Modal_DetailReviews } from "./ST_D_Detail_Review_Modal_DetailReviews.js"
 import {
-  ST_D_Detail_Reviews_HeaderDesktop
-} from "./ST_D_Detail_Reviews_HeaderDesktop.js"
+  ST_D_Detail_Reviews_Header
+} from "./ST_D_Detail_Reviews_Header.js"
 import {
   ST_D_Detail_Review_ModalWrapper
 } from "./styles/ST_D_Detail_Review_ModalWrapper.js"
@@ -39,7 +39,7 @@ export const ST_D_Detail_Review_Modal = ({
         <XSvg />
       </span>
 
-      <ST_D_Detail_Reviews_HeaderDesktop
+      <ST_D_Detail_Reviews_Header
         rating={rating}
         reviews={reviews}
         isDetailModalDesktop={true}

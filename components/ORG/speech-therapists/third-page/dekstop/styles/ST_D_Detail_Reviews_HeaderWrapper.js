@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
-export const ST_D_Detail_Reviews_HeaderDesktopWrapper = styled.div`
+export const ST_D_Detail_Reviews_HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ modal }) => (modal ? `` : `8px`)};

@@ -17,7 +17,6 @@ export const ST_D_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
     router.push("/ORG/SpeechTherapists/IndividualProvider")
   }
 
-
   return (
     <ST_D_Search_LandingCardsWrapper>
       <div>

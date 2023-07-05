@@ -1,29 +1,13 @@
 import { PhoneSvg } from "../../../../../assets/Icons"
-import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_D_Detail_CardPhoneWrapper } from "./styles/ST_D_Detail_CardPhoneWrapper.js"
 
-
-export const ST_D_Detail_CardPhone = ({ phoneNumber, isMobile = false, isThirdPageMobile = false }) => {
+export const ST_D_Detail_CardPhone = ({ phoneNumber }) => {
   return (
-    <ST_D_Detail_CardPhoneWrapper
-      isThirdPageMobile={isThirdPageMobile}
-      isMobile={isMobile}>
+    <ST_D_Detail_CardPhoneWrapper>
       <PhoneSvg />
-      {isMobile === false ? (
-        <>
-          <P bold>Phone:</P>
-          <P>{phoneNumber}</P>
-        </>
-      ) : isMobile && isThirdPageMobile ? (
-        <>
-          <P>{phoneNumber}</P>
-        </>
-      ) : (
-        <>
-          <Caption bold>Phone:</Caption>
-          <Caption>{phoneNumber}</Caption>
-        </>
-      )}
+      <P bold>Phone:</P>
+      <P>{phoneNumber}</P>
     </ST_D_Detail_CardPhoneWrapper>
   )
 }

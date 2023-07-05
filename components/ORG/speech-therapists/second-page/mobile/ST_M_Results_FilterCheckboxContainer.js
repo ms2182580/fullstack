@@ -21,14 +21,8 @@ export const ST_M_Results_FilterCheckboxContainer = ({
   showStateChildren,
   tempState,
   title,
-  toUpdateFilters,
-  // isMobile = false
+  toUpdateFilters
 }) => {
-  // const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
-  // const handleShowRemaining = () => {
-  //   setShowRemaining(true)
-  // }
-
   const [show, setShow] = useState(false)
   const [showIndividual, setShowIndividual] = useState(false)
 
@@ -53,7 +47,6 @@ export const ST_M_Results_FilterCheckboxContainer = ({
     showStateChildren(show)
   }, [show])
 
-
   useEffect(() => {
     if (!mustShowFiltersMobile) {
       setShowIndividual(false)
@@ -62,8 +55,7 @@ export const ST_M_Results_FilterCheckboxContainer = ({
 
   /* 
   !FH
-  
-  Add tabIndex and make it work
+  Add tabIndex and make it work with enter key
   */
 
   return (
@@ -74,11 +66,7 @@ export const ST_M_Results_FilterCheckboxContainer = ({
         onClick={(e) => handleShowIndividual(e)}>
         <P semibold>{title}</P>
 
-        {showIndividual ? (
-          <UpArrowSvg />
-        ) : (
-          <DownArrowSvg />
-        )}
+        {showIndividual ? <UpArrowSvg /> : <DownArrowSvg />}
       </div>
 
       <ST_M_Results_FilterCheckboxContainerULWrapper showIndividual={showIndividual}>
@@ -106,7 +94,6 @@ export const ST_M_Results_FilterCheckboxContainer = ({
           }
 
           if (title === ORG_FILTERS_KEYS_M.rating.titleToShow) {
-
             return (
               <li key={x}>
                 <label>
@@ -148,108 +135,6 @@ export const ST_M_Results_FilterCheckboxContainer = ({
             </li>
           )
         })}
-
-        {/* {title.toLowerCase() === "view only"
-          ? categoriesToDisplay?.map((x) => {
-            return (
-              <li key={x}>
-                <label className="viewOnly">
-                  <P>{x}</P>
-                  <ST_M_Results_FilterCheckboxInput
-                    type="checkbox"
-                    name={x}
-                    dispatch={dispatch}
-                    tempState={tempState}
-                    setTempState={setTempState}
-                    setFilterData={setFilterData}
-                    toUpdateFilters={toUpdateFilters}
-                    clearAll={clearAll}
-                    shouldClear={shouldClear}
-                  />
-                  <span></span>
-                </label>
-              </li>
-            )
-          })
-          : categoriesToDisplay?.map((x, i) => {
-            if (categoriesToDisplay.length > 4 && i < 3) {
-              return (
-                <li key={x}>
-                  <label>
-                    <P>{x}</P>
-                    <ST_M_Results_FilterCheckboxInput
-                      type="checkbox"
-                      name={x}
-                      dispatch={dispatch}
-                      tempState={tempState}
-                      setTempState={setTempState}
-                      setFilterData={setFilterData}
-                      toUpdateFilters={toUpdateFilters}
-                      clearAll={clearAll}
-                      shouldClear={shouldClear}
-                    />
-                    <span></span>
-                  </label>
-                </li>
-              )
-            }
-
-            // if (categoriesToDisplay.length > 4 && i >= 3) {
-            //   return (
-            //     <li
-            //       key={x}
-            //       className={showRemaining ? "showRemaining" : "notShowYet"}>
-            //       <label>
-            //         <P>{x}</P>
-            //         <ST_M_Results_FilterCheckboxInput
-            //           type="checkbox"
-            //           name={x}
-            //           dispatch={dispatch}
-            //           tempState={tempState}
-            //           setTempState={setTempState}
-            //           setFilterData={setFilterData}
-            //           toUpdateFilters={toUpdateFilters}
-            //           clearAll={clearAll}
-            //           shouldClear={shouldClear}
-            //         />
-            //         <span></span>
-            //       </label>
-            //     </li>
-            //   )
-            // }
-
-            // if (categoriesToDisplay.length <= 4) {
-            //   return (
-            //     <li key={x}>
-            //       <label>
-            //         <P>{x}</P>
-            //         <ST_M_Results_FilterCheckboxInput
-            //           type="checkbox"
-            //           name={x}
-            //           dispatch={dispatch}
-            //           tempState={tempState}
-            //           setTempState={setTempState}
-            //           setFilterData={setFilterData}
-            //           toUpdateFilters={toUpdateFilters}
-            //           clearAll={clearAll}
-            //           shouldClear={shouldClear}
-            //         />
-            //         <span></span>
-            //       </label>
-            //     </li>
-            //   )
-            // }
-          })} */}
-
-        {/* {categoriesToDisplay.length > 4 && showRemaining === false && (
-          <span onClick={handleShowRemaining}>
-            <P
-              semibold
-              hyperlink_normal>
-              See All
-            </P>
-          </span>
-        )} */}
       </ST_M_Results_FilterCheckboxContainerULWrapper>
     </ST_M_Results_FilterCheckboxContainerWrapper>
   )

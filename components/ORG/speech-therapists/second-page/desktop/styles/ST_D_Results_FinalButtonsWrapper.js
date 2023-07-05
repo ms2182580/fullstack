@@ -6,12 +6,9 @@ export const ST_D_Results_FinalButtonsWrapper = styled.div`
   display: flex;
   gap: 16px;
   align-items: center;
-  justify-content: ${(x) => (x.isMobile ? `center` : `end`)};
-  box-shadow: ${(x) =>
-    x.isMobile ? `0px -2px 9px rgba(0, 0, 0, 0.2), inset 0px -4px 6px rgba(0, 0, 0, 0.15);` : `none`};
-
+  justify-content: end;
+  box-shadow: none;
   margin-bottom: 46px;
-
   & > :nth-child(2) {
     display: flex;
     gap: 16px;
@@ -39,15 +36,15 @@ const NavigationButton = styled.button`
 `
 
 export const ST_D_Results_FinalButtonsPrevButton = styled(NavigationButton)`
-  padding: ${(x) => (x.isMobile ? `14px 17px` : `8px 24px`)};
+  padding:8px 24px;
 
   & > svg {
-    margin-right: ${(x) => (x.isMobile ? `0px` : `16px`)};
+    margin-right: 16px;
   }
 `
 
 export const ST_D_Results_FinalButtonsNextButton = styled(NavigationButton)`
-  padding: ${(x) => (x.isMobile ? `14px 17px` : `8px 24px`)};
+  padding:8px 24px;
 
   & > p {
     margin-right: 16px;

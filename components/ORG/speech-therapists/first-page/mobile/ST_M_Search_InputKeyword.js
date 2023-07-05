@@ -19,21 +19,12 @@ export const ST_M_Search_InputKeyword = () => {
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")
 
-  const suggestionsKeywords = [
-    "Physical Therapist",
-    "Speech Therapist",
-    "Occupational Therapist",
-    "Dance Class",
-    "Art Camp"
-  ]
-
   const { setKeywordsContext, keywordsContext } = useORG_InputCtx()
 
   useEffect(() => {
     setKeywordInput(keywordsContext)
   }, [keywordsContext])
 
-  // const { isTouchScreen } = useCheckMobile()
   const keywordFirstLevelRef = useRef(null)
   const keywordSecondLevelRef = useRef(null)
   const { isTouchScreen } = useCheckMobile()
@@ -112,7 +103,6 @@ export const ST_M_Search_InputKeyword = () => {
           landingHere={true}
           actualRoute={formatRouter}
           toWhere="SpeechTherapists"
-          isMobile={true}
           setIsFocusKeyword={setIsFocusKeyword}
           isHover={isHoveredKeyword}
           theRef={keywordSecondLevelRef}
@@ -122,7 +112,6 @@ export const ST_M_Search_InputKeyword = () => {
           title="Social Service Agencies"
           landingHere={true}
           toWhere="SpeechTherapists"
-          isMobile={true}
           isHover={isHoveredKeyword}
           setIsFocusKeyword={setIsFocusKeyword}
           theRef={keywordSecondLevelRef}
@@ -132,7 +121,6 @@ export const ST_M_Search_InputKeyword = () => {
           title="Community Classes"
           landingHere={true}
           toWhere="SpeechTherapists"
-          isMobile={true}
           isHover={isHoveredKeyword}
           setIsFocusKeyword={setIsFocusKeyword}
           theRef={keywordSecondLevelRef}

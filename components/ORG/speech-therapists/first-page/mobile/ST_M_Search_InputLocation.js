@@ -88,7 +88,6 @@ export const ST_M_Search_InputLocation = () => {
           suggestions={suggestionsCity}
           landingHere={true}
           toWhere="SpeechTherapists"
-          isMobile={true}
           setIsFocusKeyword={setIsFocusCity}
           isHover={isHoveredCity}
           theRef={citySecondLevelRef}

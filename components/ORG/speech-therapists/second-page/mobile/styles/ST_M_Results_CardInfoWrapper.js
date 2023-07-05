@@ -11,9 +11,4 @@ export const ST_M_Results_CardInfoWrapper = styled.div`
     width: 100%;
   }
 
-  & > :nth-child(2) {
-    & > * {
-      display: ${(x) => (x.isThirdPage ? `inline` : ``)};
-    }
-  }
 `

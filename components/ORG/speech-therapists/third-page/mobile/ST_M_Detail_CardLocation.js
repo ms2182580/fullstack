@@ -2,15 +2,7 @@ import { LocationSvg } from "../../../../../assets/Icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Detail_CardLocationWrapper } from "./styles/ST_M_Detail_CardLocationWrapper.js"
 
-export const ST_M_Detail_CardLocation = ({
-  locationCity,
-  locationStreetNumber,
-  locationStreetName,
-  locationState,
-  isThirdPageMobile = false
-}) => {
-  // const { isMobile } = useWidthWindow1024()
-
+export const ST_M_Detail_CardLocation = ({ locationCity, locationStreetNumber, locationStreetName, locationState }) => {
   return (
     <ST_M_Detail_CardLocationWrapper>
       <LocationSvg />

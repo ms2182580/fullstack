@@ -24,6 +24,6 @@ export const ST_D_Detail_CardLocationWrapper = styled.div`
   }
 
   & > :last-child > :last-child {
-    font-weight: ${(x) => (x.isMobile === false ? `500` : `400`)};
+    font-weight:500;
   }
 `

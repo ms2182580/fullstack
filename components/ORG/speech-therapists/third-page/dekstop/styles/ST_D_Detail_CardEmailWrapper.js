@@ -16,10 +16,8 @@ export const ST_D_Detail_CardEmailWrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    color: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `#3f6ece` : ``)};
-    text-decoration-line: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `underline` : ``)};
-
+    color: #3f6ece;
+    text-decoration-line:underline;
     cursor: pointer;
   }
 `

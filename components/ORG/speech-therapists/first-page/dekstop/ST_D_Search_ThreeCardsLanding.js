@@ -57,7 +57,6 @@ export const ST_D_Search_ThreeCardsLanding = ({
         reviewsCount: filtersST[0].reviews,
         filters: filtersST[0]
       }
-
       const data_two = {
         name: {
           first: userFetched.allData[1].name.first,
@@ -156,21 +155,3 @@ export const ST_D_Search_ThreeCardsLanding = ({
     </ST_D_Search_ThreeCardsLandingWrapper>
   )
 }
-
-// export async function getServerSideProps() {
-//   try {
-//     const jsonData = await ORG_fetchSpeechTherapists(`https://randomuser.me/api/?results=3&nat=us&page=1`)
-
-//     return {
-//       props: { jsonData }
-//     }
-//   } catch (error) {
-//     console.error("Some error", error)
-//     return {
-//       props: {
-//         error: true,
-//         message: error
-//       }
-//     }
-//   }
-// }

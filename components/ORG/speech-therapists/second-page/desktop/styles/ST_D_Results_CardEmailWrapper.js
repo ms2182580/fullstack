@@ -6,20 +6,18 @@ export const ST_D_Results_CardEmailWrapper = styled.div`
   & > div:nth-child(1) {
     display: flex;
     align-items: center;
-    & > :nth-child(1){
+    & > :nth-child(1) {
       margin-right: 14px;
     }
   }
-  
+
   & > :nth-child(2) {
     margin-left: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    color: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `#3f6ece` : ``)};
-    text-decoration-line: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `underline` : ``)};
-    
+    color: #3f6ece;
+    text-decoration-line: underline;
     cursor: pointer;
   }
 `

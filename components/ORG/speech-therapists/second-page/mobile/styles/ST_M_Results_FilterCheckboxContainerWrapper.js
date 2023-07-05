@@ -2,25 +2,15 @@ import styled from "styled-components"
 import { NEUTRALS, SEMANTICS } from "../../../../../../assets/Colors"
 
 export const ST_M_Results_FilterCheckboxContainerWrapper = styled.div`
-
   & > :nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /* margin-top: 16px; */
-    /* margin-bottom: 16px; */
-    
     padding:24px 22px;
-    
-
-    /* border: 2px solid green; */
     cursor: pointer;
   }
 
   & > :nth-child(2) {
-    /* border: 2px solid green; */
-
     margin-bottom: 32px;
   }
 `
@@ -28,31 +18,14 @@ export const ST_M_Results_FilterCheckboxContainerWrapper = styled.div`
 export const ST_M_Results_FilterCheckboxContainerULWrapper = styled.ul`
   list-style: none;
   margin-left: 32px;
-  /* border: 2px solid crimson; */
-  
-
-  /* display:${({ showIndividual }) => (showIndividual ? `block` : `none`)}; */
   visibility: ${({ showIndividual }) => (showIndividual ? `visible` : `hidden`)};
-
-  /* opacity:${({ showIndividual }) => (showIndividual ? `1` : `0`)}; */
   position: ${({ showIndividual }) => (showIndividual ? `` : `absolute`)};
 
   & > *:not(:last-child) {
-    /* border: 2px solid crimson; */
-
     margin-bottom: 24px;
-  }
-  & > :last-child {
-    /* margin-bottom: 32px; */
   }
 
   & > li {
-    /* &.showRemaining {
-      display: block;
-    }
-    &.notShowYet {
-      display: none;
-    } */
 
     & > label {
       display: flex;
@@ -62,21 +35,6 @@ export const ST_M_Results_FilterCheckboxContainerULWrapper = styled.ul`
       padding-left: 49px;
       cursor: pointer;
       user-select: none;
-
-      /* border: 2px solid crimson; */
-
-      /* &.viewOnly {
-        height: 55px;
-
-        & > span {
-          top: 7px;
-        }
-      } */
-
-      & > p {
-        /* white-space: nowrap; */
-        /* border: 2px solid crimson; */
-      }
 
       & > input {
         position: absolute;

@@ -2,9 +2,9 @@ import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_Review_StarsRating } from "./ST_D_Detail_Review_StarsRating.js"
 import { ST_D_Detail_ReviewsHeader_PeopleOftenMention } from "./ST_D_Detail_ReviewsHeader_PeopleOftenMention.js"
-import { ST_D_Detail_Reviews_HeaderDesktopWrapper } from "./styles/ST_D_Detail_Reviews_HeaderDesktopWrapper.js"
+import { ST_D_Detail_Reviews_HeaderWrapper } from "./styles/ST_D_Detail_Reviews_HeaderWrapper.js"
 
-export const ST_D_Detail_Reviews_HeaderDesktop = ({
+export const ST_D_Detail_Reviews_Header = ({
   rating,
   reviews,
   isDetailModalDesktop = false,
@@ -13,7 +13,7 @@ export const ST_D_Detail_Reviews_HeaderDesktop = ({
 }) => {
   console.log("modal:", modal)
   return (
-    <ST_D_Detail_Reviews_HeaderDesktopWrapper
+    <ST_D_Detail_Reviews_HeaderWrapper
       className={modal ? "" : "showLine"}
       modal={modal}>
       {modal === false ? (
@@ -48,6 +48,6 @@ export const ST_D_Detail_Reviews_HeaderDesktop = ({
       />
 
       <ST_D_Detail_ReviewsHeader_PeopleOftenMention modal={modal} />
-    </ST_D_Detail_Reviews_HeaderDesktopWrapper>
+    </ST_D_Detail_Reviews_HeaderWrapper>
   )
 }

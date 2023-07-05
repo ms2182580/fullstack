@@ -6,7 +6,7 @@ import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
 import { useScrollLock } from "../../../../../utils/useScrollLock"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_D_Detail_Review_Modal } from "./ST_D_Detail_Review_Modal"
-import { ST_D_Detail_Reviews_HeaderDesktop } from "./ST_D_Detail_Reviews_HeaderDesktop"
+import { ST_D_Detail_Reviews_Header } from "./ST_D_Detail_Reviews_Header"
 import { ST_D_Detail_Reviews_IndividualComponent } from "./ST_D_Detail_Reviews_IndividualComponent"
 import { ST_D_Detail_ReviewsWrapper } from "./styles/ST_D_Detail_ReviewsWrapper"
 
@@ -43,7 +43,7 @@ export const ST_D_Detail_Reviews = ({ name, lastName, reviewsRef, rating, review
 
   return (
     <ST_D_Detail_ReviewsWrapper id="Reviews">
-      <ST_D_Detail_Reviews_HeaderDesktop
+      <ST_D_Detail_Reviews_Header
         rating={rating}
         reviews={reviews}
         handlePush={handlePush}

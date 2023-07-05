@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../assets/Colors"
-import { device } from "../../../../../assets/screenSizes/ScreenSizes"
 
 export const ST_D_DropdownSuggestionWrapper = styled.div`
   position: absolute;
@@ -12,8 +11,4 @@ export const ST_D_DropdownSuggestionWrapper = styled.div`
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   cursor: pointer;
-
-  @media (${device.laptop}) {
-    top: 72px;
-  }
 `

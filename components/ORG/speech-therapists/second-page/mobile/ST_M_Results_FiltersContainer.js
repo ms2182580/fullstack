@@ -5,21 +5,12 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_FilterCheckboxContainer } from "./ST_M_Results_FilterCheckboxContainer.js"
 import { ST_M_Results_FiltersContainerWrapper } from "./styles/ST_M_Results_FiltersContainerWrapper.js"
 
-// import { XDesktopSvg } from "../../../../../assets/Icons/index.js"
-// import { ORG_FILTERS_DATA_M, ORG_FILTERS_KEYS_M } from "../../../../../utils/ORG_FiltersCategories.js"
-// import { useWidthWindow1024 } from "../../../../../utils/useWidthWindow1024.js"
-// import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled.js"
-// import { ST_M_Results_FilterCheckboxContainer } from "./ST_M_Results_FilterCheckboxContainer.js"
-// import { ST_D_Results_FilterRangeInput } from "./ST_D_Results_FilterRangeInput.js"
-// import { ST_D_Results_FiltersContainerWrapper } from "./styles/ST_D_Results_FiltersContainerWrapper.js"
-
 export const ST_M_Results_FiltersContainer = ({
   clearAll,
   dispatch,
   handleAddFilters,
   handleClearAll,
   handleShowFilters,
-  // mustShowFiltersDesktop,
   mustShowFiltersMobile,
   setClearAll,
   setFilterData,
@@ -29,12 +20,7 @@ export const ST_M_Results_FiltersContainer = ({
   showStateChildren,
   state,
   tempState
-  // title = "Advanced Filters",
 }) => {
-  // const { isMobile } = useWidthWindow1024()
-
-  // const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-
   const handleCloseFilters = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       handleShowFilters()
@@ -44,28 +30,6 @@ export const ST_M_Results_FiltersContainer = ({
 
   return (
     <ST_M_Results_FiltersContainerWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
-      {/* {title === "Advanced Filters" ? (
-        <div>
-          <H4>{title}</H4>
-          <div
-            onClick={handleShowFilters}
-            tabIndex={0}
-            onKeyDown={handleCloseFilters}>
-            <Image
-              src={X_Svg}
-              alt="Close X to close the filters"
-            />
-          </div>
-        </div>
-      ) : (
-        <div
-          onClick={(e) => handleCloseFilters(e)}
-          onKeyDown={(e) => handleCloseFilters(e)}
-          tabIndex={0}>
-          <XDesktopSvg />
-        </div>
-      )} */}
-
       <div
         onClick={(e) => handleCloseFilters(e)}
         onKeyDown={(e) => handleCloseFilters(e)}>

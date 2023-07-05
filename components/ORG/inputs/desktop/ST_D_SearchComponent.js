@@ -9,20 +9,8 @@ import { ST_D_InputLocation } from "./ST_D_InputLocation"
 import { ST_D_SearchComponentWrapper } from "./styles/ST_D_SearchComponentWrapper"
 
 export const ST_D_SearchComponent = ({ toWhere = "undefined" }) => {
-  // const {pathname, push} = useRouter()
   const router = useRouter()
-
   const shouldTab = useShouldTab()
-
-  // const [toWhereState, setToWhereState] = useState(toWhere)
-
-  // const handleMoveUser = () => {
-  //   if (toWhereState === "SpeechTherapists") {
-  //     push(`${pathname}/${toWhereState}`)
-  //   } else if (toWhereState === "no where") {
-
-  //   }
-  // }
 
   return (
     <ST_D_SearchComponentWrapper>

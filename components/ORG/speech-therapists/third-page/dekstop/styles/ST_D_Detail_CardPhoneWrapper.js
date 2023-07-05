@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const ST_D_Detail_CardPhoneWrapper = styled.div`
   display: flex;
@@ -11,11 +11,8 @@ export const ST_D_Detail_CardPhoneWrapper = styled.div`
     margin-right: 4px;
   }
   & > :nth-child(3) {
-    color: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `#3f6ece` : ``)};
-    text-decoration-line: ${(x) => (x.isThirdPageMobile === false && x.isMobile === false ? `underline` : ``)};
-    
+    color: #3f6ece;
+    text-decoration-line: underline;
     cursor: pointer;
-    
-    
   }
 `

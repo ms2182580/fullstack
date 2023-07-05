@@ -16,7 +16,6 @@ export const ST_M_Search_OptionDropdown2Level = ({
   actualRoute,
   toWhere = "undefined",
   noIcon = false,
-  isMobile = false,
   isHover = undefined,
   setIsFocusKeyword = undefined,
   theRef,
@@ -43,7 +42,6 @@ export const ST_M_Search_OptionDropdown2Level = ({
     <ST_M_Search_OptionDropdown2LevelWrapper
       noIcon={noIcon}
       landingHere={landingHere}
-      isMobile={isMobile}
       ref={theRef}
       onBlur={
         !isTouchScreen

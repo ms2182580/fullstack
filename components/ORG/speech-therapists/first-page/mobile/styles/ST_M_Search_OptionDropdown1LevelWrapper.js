@@ -27,7 +27,6 @@ export const ST_M_Search_OptionDropdown1LevelWrapper = styled.div`
 
   & > * {
     display: grid;
-    grid-template-columns: ${(x) => x.isMobile ? `` : `auto 1fr`};
     grid-template-areas: "icon namePlusArrow";
 
     & > :nth-child(1) {

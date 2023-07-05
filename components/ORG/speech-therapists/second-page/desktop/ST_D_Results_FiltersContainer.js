@@ -18,12 +18,7 @@ export const ST_D_Results_FiltersContainer = ({
   shouldClear,
   showStateChildren,
   tempState,
-  // title = "Advanced Filters",
 }) => {
-  // const { isMobile } = useWidthWindow1024()
-
-  // const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-
   const handleCloseFilters = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       handleShowFilters()

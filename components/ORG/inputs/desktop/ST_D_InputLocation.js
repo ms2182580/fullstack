@@ -22,27 +22,6 @@ export const ST_D_InputLocation = () => {
     setCityInput(citiesContext)
   }, [citiesContext])
 
-  // const { isTouchScreen } = useCheckMobile()
-  // const cityFirstLevelRef = useRef(null)
-  // const citySecondLevelRef = useRef(null)
-  // useEffect(() => {
-  //   function handleClickOutside(event) {
-  //     if (
-  //       cityFirstLevelRef.current &&
-  //       !cityFirstLevelRef.current.contains(event.target) &&
-  //       citySecondLevelRef.current &&
-  //       !citySecondLevelRef.current.contains(event.target)
-  //     ) {
-  //       setIsFocusCity(false)
-  //     }
-  //   }
-
-  //   document.addEventListener("touchstart", handleClickOutside)
-  //   return () => {
-  //     document.removeEventListener("touchstart", handleClickOutside)
-  //   }
-  // }, [])
-
   const shouldTab = useShouldTab()
 
   return (

@@ -18,10 +18,9 @@ export const ST_M_Results_Card_Thirdplace = ({
       onMouseDown={handlePointerEvent}
       onTouchStart={handlePointerEvent}>
       <div className={`card ThirdPlace`}>
+        <ST_M_Results_CardPhone phoneNumber={phone} />
 
-        <ST_M_Results_CardPhone phoneNumber={phone} isMobile={true} />
-
-        <ST_M_Results_CardEmail email={email} isMobile={true} />
+        <ST_M_Results_CardEmail email={email} />
 
         <ST_M_Results_CardLocation
           locationCity={locationCity}
@@ -29,9 +28,7 @@ export const ST_M_Results_Card_Thirdplace = ({
           locationStreetName={locationStreetName}
           locationState={locationState}
         />
-
       </div>
     </article>
   )
 }
-

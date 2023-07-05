@@ -21,8 +21,7 @@ export const ST_M_Search_OptionDropdown1Level = ({
             e.stopPropagation()
             setIsFocusKeyword(true)
           }}
-          ref={theRef}
-          isMobile={true}>
+          ref={theRef}>
           {children}
         </ST_M_Search_OptionDropdown1LevelWrapper>
       )}

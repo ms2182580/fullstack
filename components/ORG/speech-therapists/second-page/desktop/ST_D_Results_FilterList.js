@@ -108,8 +108,6 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
     }
   }
 
-  // const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
-  // const { isMobile } = useWidthWindow1024()
 
   const handleClearAll = (e) => {
     if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
@@ -136,11 +134,6 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
     handleClearAll("from useEffect")
   }, [])
 
-  // useEffect(() => {
-  //   if (isMobile === false) {
-  //     setMustShowFiltersMobile(false)
-  //   }
-  // }, [isMobile])
 
   const { shouldFetchDesktopFilters, setShouldFetchDesktopFilters } = useORG_Ctx_FetchWithFiltersDesktop()
 
@@ -212,8 +205,6 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
             handleAddFilters={handleAddFilters}
             handleClearAll={handleClearAll}
             handleShowFilters={handleShowFiltersDesktop}
-            // mustShowFiltersDesktop={mustShowFiltersDesktop}
-            // ORGShowFullMapFilter={ORGShowFullMapFilter}
             setClearAll={setClearAll}
             setFilterData={setFilterData}
             setShouldClear={setShouldClear}
@@ -226,63 +217,7 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
         </ST_D_Results_FilterListChildWrapper>
       </ST_D_Results_FilterListMainWrapper>
 
-      {/* {isMobile === false ? (
-        <STResults_FilterListDesktopWrapper>
-          {" "}
-          <span
-            onClick={handleShowFiltersDesktop}
-            tabIndex={-1}>
-            <BtnSmall
-              secondary
-              tabIndex={shouldTab}>
-              Filter
-            </BtnSmall>
-          </span>
-          <STResults_FilterListWrapper
-            id="topOfSTL"
-            mustShowFiltersDesktop={mustShowFiltersDesktop}
-            ORGShowFullMapFilter={ORGShowFullMapFilter}
-            ref={refUserViewShowFullMapFilter}
-            className={nameToCloseTheFilters}>
-            <STResults_FiltersContainerDesktop
-              state={state}
-              dispatch={dispatch}
-              tempState={tempState}
-              setTempState={setTempState}
-              setFilterData={setFilterData}
-              clearAll={clearAll}
-              setClearAll={setClearAll}
-              showStateChildren={setShow}
-              shouldClear={shouldClear}
-              setShouldClear={setShouldClear}
-              handleClearAll={handleClearAll}
-              handleShowFilters={handleShowFiltersDesktop}
-              title="Filter by"
-              mustShowFiltersDesktop={mustShowFiltersDesktop}
-              handleAddFilters={handleAddFilters}
-              ORGShowFullMapFilter={ORGShowFullMapFilter}
-            />
-          </STResults_FilterListWrapper>
-        </STResults_FilterListDesktopWrapper>
-      ) : (
-        <>
-          {" "}
-          <STResults_FilterSortbyMobileWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
-            <STResults_FiltersMobile
-              dispatch={dispatch}
-              setFilterData={setFilterData}
-              clearAll={clearAll}
-              setClearAll={setClearAll}
-              showStateChildren={setShow}
-              shouldClear={shouldClear}
-              setShouldClear={setShouldClear}
-              handleClearAll={handleClearAll}
-              isMobile={isMobile}
-            />
-            <STResults_SortByMobile />
-          </STResults_FilterSortbyMobileWrapper>
-        </>
-      )} */}
+
     </>
   )
 }

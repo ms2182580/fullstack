@@ -4,10 +4,6 @@ import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
 export const ST_D_Results_FiltersContainerWrapper = styled.div`
   position: relative;
 
-  & > *:not(:first-child) {
-    margin-inline: ${(x) => (x.isMobile ? "44px 44px" : "")};
-  }
-
   & > :nth-child(1) {
     position: absolute;
     top: 16px;

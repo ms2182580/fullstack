@@ -3,9 +3,8 @@ import { H1, H2 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { UnderConstruction } from "../../../../under-construction/UnderConstruction.js"
 import { ST_D_Search_LandingThree } from "./ST_D_Search_LandingThree.js"
 import { ST_D_Search_ThreeCardsLanding } from "./ST_D_Search_ThreeCardsLanding.js"
-import { ST_D_SearchCardsLandingWrapper } from "./styles/ST_D_SearchCardsLandingWrapper.js"
-import { ST_D_Search_MustShowResultsWrapper } from './styles/ST_D_Search_MustShowResultsWrapper.js'
-
+import { ST_D_Search_CardsLandingWrapper } from "./styles/ST_D_Search_CardsLandingWrapper.js"
+import { ST_D_Search_MustShowResultsWrapper } from "./styles/ST_D_Search_MustShowResultsWrapper.js"
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -23,16 +22,13 @@ const initialState = {
   SpeechTherapists: []
 }
 
-
-
-export const ST_D_SearchCardsLanding = () => {
+export const ST_D_Search_CardsLanding = () => {
   const [mustShowResults, setMustShowResults] = useState(false)
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <ST_D_SearchCardsLandingWrapper>
-
+    <ST_D_Search_CardsLandingWrapper>
       <H1 hover>Resources</H1>
 
       <ST_D_Search_ThreeCardsLanding
@@ -46,7 +42,6 @@ export const ST_D_SearchCardsLanding = () => {
       ) : mustShowResults && state.SpeechTherapists.length === 0 ? (
         <>
           <UnderConstruction />
-
         </>
       ) : (
         mustShowResults &&
@@ -58,6 +53,6 @@ export const ST_D_SearchCardsLanding = () => {
           </ST_D_Search_MustShowResultsWrapper>
         )
       )}
-    </ST_D_SearchCardsLandingWrapper>
+    </ST_D_Search_CardsLandingWrapper>
   )
 }
