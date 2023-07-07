@@ -23,7 +23,6 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         border-radius: 5px 0px 0px 5px;
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-right-style: none;
-        /* width:100%; */
       }
     }
   }
@@ -34,14 +33,11 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-left-style: none;
         border-right-style: none;
-        /* width:70%; */
       }
     }
   }
 
   & > :nth-child(3) {
-    /* flex-shrink: 2; */
-    /* width:250px; */
     & > span {
       & > input {
         border: 1px ${NEUTRALS.DARK_GREY} solid;
@@ -63,7 +59,7 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         width: fit-content;
       }
       & > input {
-        padding: 23px;
+        padding: 16px;
         padding-left: 55px;
         width: 100%;
       }
@@ -83,13 +79,14 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
   & > :nth-child(1) > :nth-child(1),
   & > :nth-child(2) > :nth-child(1) {
     position: relative;
+
     &::before {
       content: "";
       position: absolute;
       z-index: 2;
       width: 1px;
-      height: 58px;
-      bottom: -19px;
+      height: 175%;
+      bottom: -10px;
       right: 0px;
       background: #000000;
     }
@@ -98,11 +95,13 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
   & > :last-child {
     position: absolute;
     z-index: 2;
-    right: 0;
+    right: 8px;
     height: 100%;
+    width:55px;
 
     & > :nth-child(1) {
       height: 100%;
+      width:55px;
     }
   }
 `
