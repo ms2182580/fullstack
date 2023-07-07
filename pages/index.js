@@ -1,4 +1,4 @@
-import HomeIndex from "./home"
+import HomeIndex from "./home";
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@ import { useLoginCtx } from "../../context/LoginCtx"
 import { BtnSmall } from "../ui/buttons/general/styles/ButtonStyled"
 import { Caption, P } from "../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../ui/hyperlink/HyperlinkNoStyles"
-import { LoginComponent } from "./styles/NavBarWrapped"
+import { LoginComponent } from "./desktop/styles/NavBar_D_Wrapped"
 // import { supabase } from "../../utils/supabaseClient"
 
 // const getLocalStorage = !window ? window.localStorage.getItem("INCLUSIVE_ACCOUNT") : ""

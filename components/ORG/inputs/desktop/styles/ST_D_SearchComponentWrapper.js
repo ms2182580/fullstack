@@ -16,7 +16,6 @@ export const ST_D_SearchComponentWrapper = styled.div`
       }
     }
   }
-  
 
   & > :nth-child(2) {
     & > span {

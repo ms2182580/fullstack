@@ -1,0 +1,73 @@
+import Image from "next/image"
+import { useRef, useState } from "react"
+import ORGDesktop_AgeIcon from "../../../assets/Icons/ORGDesktop_AgeIcon.png"
+import { useShouldTab } from "../../../utils/ORG_shouldTab"
+import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
+import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
+
+const suggestionsKeywords = [
+  // "Physical Therapist",
+  // "Speech Therapist",
+  // "Occupational Therapist",
+  // "Dance Class",
+  // "Art Camp"
+]
+
+export const NavBar_D_InputAge = () => {
+  const [isFocusKeyword, setIsFocusKeyword] = useState(false)
+  const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
+  const inputRefKeyword = useRef()
+  const [keywordInput, setKeywordInput] = useState("")
+
+  // const { setKeywordsContext, keywordsContext } = useORG_InputCtx()
+
+  // useEffect(() => {
+  //   setKeywordInput(keywordsContext)
+  // }, [keywordsContext])
+
+
+  const shouldTab = useShouldTab()
+
+  return (
+    <div>
+      <span>
+        <span >
+          <Image
+            src={ORGDesktop_AgeIcon}
+            alt=""
+          />
+        </span>
+        <input
+          placeholder="Age"
+          onFocus={() => setIsFocusKeyword(true)}
+          onBlur={() => {
+            if (!isHoveredKeyword) {
+              setIsFocusKeyword(false)
+            }
+          }}
+          value={keywordInput}
+          onChange={(e) => {
+            setKeywordInput(e.target.value)
+            // setKeywordsContext(e.target.value)
+          }}
+          ref={inputRefKeyword}
+          tabIndex={shouldTab}
+        />
+      </span>
+
+      <NavBar_D_DropdownSuggestionWrapper>
+        <NavBar_D_DropdownSuggestionComponent
+          isFocus={isFocusKeyword}
+          setIsHover={setIsHoveredKeyword}
+          setIsFocus={setIsFocusKeyword}
+          suggestions={suggestionsKeywords}
+          keywordClickByUser={keywordInput}
+          setKeywordClickByUser={setKeywordInput}
+          // setKeywordClickByUserContext={setKeywordsContext}
+          inputRefFocus={inputRefKeyword}
+          isFirstOrSecondDropdown={true}
+        />
+      </NavBar_D_DropdownSuggestionWrapper>
+    </div>
+  )
+}

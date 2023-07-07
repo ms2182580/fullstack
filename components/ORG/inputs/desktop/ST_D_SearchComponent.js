@@ -33,8 +33,7 @@ export const ST_D_SearchComponent = ({ toWhere = "undefined" }) => {
       ) : (
         <LinkNoStyle
           href={`${router.pathname}`}
-          tabIndex={shouldTab}
-        >
+          tabIndex={shouldTab}>
           <ButtonSmall preventFocus={shouldTab}>
             <SearchSVG />
           </ButtonSmall>
