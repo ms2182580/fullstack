@@ -21,9 +21,11 @@ export const NavBar_D = () => {
   }, [route.pathname])
 
   const navigateHome = (e) => {
+    // console.log('e:', e)
     if (e.key === "Enter") {
       route.push("/")
     }
+    route.push("/")
   }
   const navigateORG = (e) => {
     if (e.key === "Enter") {
@@ -40,22 +42,23 @@ export const NavBar_D = () => {
       modalShowedCtx={modalShowedCtx}
       mustShowFiltersMobile={mustShowFiltersMobile}>
       <div>
-        <div
+        <span
           tabIndex={0}
-          onKeyDown={navigateHome}>
-          <LinkNoStyle href="/">
+          onKeyDown={navigateHome}
+          onClick={navigateHome}>
+          {" "}
+          <H2
+            bold
+            logo>
             {" "}
-            <H2
-              bold
-              logo>
-              {" "}
-              INCLUSIVE
-            </H2>
-          </LinkNoStyle>
-        </div>
+            INCLUSIVE
+          </H2>
+        </span>
         <NavBar_D_SearchComponent />
         <SignComponent />
       </div>
+
+      <div />
 
       <div>
         <div>Hamburger icon</div>

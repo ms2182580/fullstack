@@ -5,10 +5,7 @@ export const SignComponentWrapper = styled.div`
   border: 2px solid #151a26;
   display: flex;
   cursor: pointer;
-
-  & > * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  position: relative;
+  z-index: 0;
+  
 `

@@ -14,7 +14,7 @@ export const ST_M_Search_InputKeyword = () => {
   const router = useRouter()
   const formatRouter = router.pathname
 
-  const [isFocusKeyword, setIsFocusKeyword] = useState(true)
+  const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")

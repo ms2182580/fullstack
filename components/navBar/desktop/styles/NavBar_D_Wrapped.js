@@ -5,14 +5,15 @@ export const NavBar_D_Wrapped = styled.nav`
   box-shadow: ${(x) => (x.isORG ? `0px 4px 4px rgba(0, 0, 0, 0.25)` : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
   border-bottom: ${(x) => (x.isORG ? `1px solid ${NEUTRALS.LIGHT_GREY}` : ``)};
   background-color: ${(x) => (x.isORG ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`)};
-  position: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `fixed` : `relative`)};
-  visibility: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `hidden` : `visible`)};
+  /* position: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `fixed` : `relative`)}; */
+  /* visibility: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `hidden` : `visible`)}; */
 
-  overflow: hidden;
+  /* overflow-y: hidden; */
 
   padding-top: 28px;
 
-  position: relative;
+  /* position: relative; */
+  /* z-index:99; */
 
   & > :nth-child(1) {
     display: flex;
@@ -21,31 +22,27 @@ export const NavBar_D_Wrapped = styled.nav`
     margin-inline: clamp(16px, calc(10vw - 80px), 96px);
     position: relative;
     margin-bottom: 28px;
-    
-    
-    
-    & > :nth-child(1){
-      margin-right:50px;
-    }
-    
-    & > :nth-child(2){
-      margin-right:80px;
-    }
-    
-    
 
-    &::before {
-      content: "";
-      height: 4px;
-      background-color: ${(x) => (x.isORG ? `${NEUTRALS.OFF_WHITE} ` : `${PRIMARY.PRIMARY_BACKGROUND}`)};
-      width: 130vw;
-      position: absolute;
-      bottom: -28px;
-      left:-6%;
+    & > :nth-child(1) {
+      margin-right: 50px;
+      cursor: pointer;
     }
+
+    & > :nth-child(2) {
+      margin-right: 80px;
+    }
+
   }
 
   & > :nth-child(2) {
+    content: "";
+    height: 4px;
+    background-color: ${(x) => (x.isORG ? `${NEUTRALS.OFF_WHITE} ` : `${PRIMARY.PRIMARY_BACKGROUND}`)};
+    width:100%;
+    position: absolute;
+  }
+
+  & > :nth-child(3) {
     display: flex;
     gap: 24px;
 
