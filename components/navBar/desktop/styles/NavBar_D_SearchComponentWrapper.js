@@ -2,10 +2,20 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
 export const NavBar_D_SearchComponentWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 9fr 1fr 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 3;
+
+  & > :nth-child(1) {
+    flex-grow: 1;
+  }
+
+  & > :nth-child(2),
+  & > :nth-child(3) {
+    flex-basis: 250px;
+  }
 
   & > :nth-child(1) {
     & > span {
@@ -13,6 +23,7 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         border-radius: 5px 0px 0px 5px;
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-right-style: none;
+        /* width:100%; */
       }
     }
   }
@@ -23,12 +34,14 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-left-style: none;
         border-right-style: none;
+        /* width:70%; */
       }
     }
   }
 
   & > :nth-child(3) {
-    margin-right: 2rem;
+    /* flex-shrink: 2; */
+    /* width:250px; */
     & > span {
       & > input {
         border: 1px ${NEUTRALS.DARK_GREY} solid;
@@ -47,12 +60,12 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         position: absolute;
         inset: 0 0 0 16px;
         z-index: 3;
-        display: block;
         width: fit-content;
       }
       & > input {
         padding: 23px;
         padding-left: 55px;
+        width: 100%;
       }
     }
   }
@@ -67,7 +80,6 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
     }
   }
 
-
   & > :nth-child(1) > :nth-child(1),
   & > :nth-child(2) > :nth-child(1) {
     position: relative;
@@ -80,6 +92,17 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
       bottom: -19px;
       right: 0px;
       background: #000000;
+    }
+  }
+
+  & > :last-child {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    height: 100%;
+
+    & > :nth-child(1) {
+      height: 100%;
     }
   }
 `

@@ -15,8 +15,10 @@ export const NavBar_D_SearchComponent = () => {
     push("/ORG")
   }
 
-
-
+  /* 
+  !FH0
+  Make the button at the rigth stay like 
+  */
 
   return (
     <NavBar_D_SearchComponentWrapper>

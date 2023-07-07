@@ -39,26 +39,25 @@ export const NavBar_D = () => {
       isORG={isORGState}
       modalShowedCtx={modalShowedCtx}
       mustShowFiltersMobile={mustShowFiltersMobile}>
-      <div
-        tabIndex={0}
-        onKeyDown={navigateHome}>
-        <LinkNoStyle href="/">
-          {" "}
-          <H2
-            bold
-            logo>
+      <div>
+        <div
+          tabIndex={0}
+          onKeyDown={navigateHome}>
+          <LinkNoStyle href="/">
             {" "}
-            INCLUSIVE
-          </H2>
-        </LinkNoStyle>
+            <H2
+              bold
+              logo>
+              {" "}
+              INCLUSIVE
+            </H2>
+          </LinkNoStyle>
+        </div>
+        <NavBar_D_SearchComponent />
+        <SignComponent />
       </div>
 
-      <NavBar_D_SearchComponent />
-
-      <SignComponent />
-
       <div>
-
         <div>Hamburger icon</div>
 
         <ul>
