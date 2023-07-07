@@ -15,7 +15,7 @@ const suggestionsKeywords = [
 ]
 
 export const NavBar_D_InputKeyword = () => {
-  const [isFocusKeyword, setIsFocusKeyword] = useState(true)
+  const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
   const [keywordInput, setKeywordInput] = useState("")

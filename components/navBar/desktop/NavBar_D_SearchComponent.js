@@ -7,18 +7,11 @@ import { NavBar_D_InputLocation } from "./NavBar_D_InputLocation"
 import { NavBar_D_SearchComponentWrapper } from "./styles/NavBar_D_SearchComponentWrapper.js"
 
 export const NavBar_D_SearchComponent = () => {
-  // const router = useRouter()
-  // const shouldTab = useShouldTab()
 
   const { push } = useRouter()
   const handleMoveUser = () => {
-    push("/ORG")
+    push("/ORG/SpeechTherapists")
   }
-
-  /* 
-  !FH0
-  Make the button at the rigth stay like 
-  */
 
   return (
     <NavBar_D_SearchComponentWrapper>
