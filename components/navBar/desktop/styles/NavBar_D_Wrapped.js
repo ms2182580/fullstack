@@ -18,17 +18,25 @@ export const NavBar_D_Wrapped = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    margin-inline: calc(96px / 12vw);
-    gap: 24px;
+    margin-inline: clamp(16px, calc(10vw - 80px), 96px);
     position: relative;
     margin-bottom: 28px;
+    
+    & > :nth-child(1){
+      margin-right:50px;
+    }
+    
+    & > :nth-child(2){
+      margin-right:80px;
+    }
+    
+    
 
     &::before {
       content: "";
       height: 4px;
       background-color: ${(x) => (x.isORG ? `${NEUTRALS.OFF_WHITE} ` : `${PRIMARY.PRIMARY_BACKGROUND}`)};
-      width: 100%;
+      width: 100vw;
       position: absolute;
       bottom: -28px;
     }
