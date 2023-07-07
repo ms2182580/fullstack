@@ -13,7 +13,9 @@ export const NavBar_D_Wrapped = styled.nav`
 
   padding-top: 28px;
 
-  border: 2px solid crimson;
+  /* border: 2px solid crimson; */
+  position: relative;
+  
 
   & > :nth-child(1) {
     display: flex;

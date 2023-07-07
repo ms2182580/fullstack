@@ -2,6 +2,9 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const NavBar_D_DropdownSuggestionComponentWrapper = styled.div`
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
   & > div {
     padding-top: 1.5rem;
 
@@ -29,6 +32,11 @@ export const NavBar_D_DropdownSuggestionComponentWrapper = styled.div`
           font-weight: 600;
         }
       }
+    }
+
+    & > :last-child {
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
     }
   }
 `
