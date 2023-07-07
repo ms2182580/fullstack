@@ -3,8 +3,6 @@ import { NEUTRALS, PRIMARY } from '../../../../../../assets/Colors'
 
 export const INDEX_D_STSearchWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
-  display: grid;
-  place-items: center;
   margin-bottom: 120px;
   
   

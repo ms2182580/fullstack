@@ -3,7 +3,7 @@ import { NEUTRALS } from "../../../assets/Colors"
 
 export const SignComponentDropdownWrapper = styled.div`
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   right:0;
   top:100%;
 

@@ -4,15 +4,12 @@ import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
 
 export const ST_D_Detail_HeaderWrapper = styled.div`
   margin-right: 0px;
-  /* margin-right: ${({ isDetail }) => isDetail ? `0` : `40px`}; */
-  
-  padding-top: 34px;
-  /* margin-bottom: ${({ isDetail }) => isDetail ? `8px` : ``}; */
-  
 
   & > span:nth-child(1) > :nth-child(1) {
     display: flex;
     align-items: center;
+    width: fit-content;
+
     & > :nth-child(1) {
       margin-right: 10px;
     }
@@ -58,4 +55,3 @@ export const ST_D_Detail_HeaderWrapper = styled.div`
     }
   }
 `
-
