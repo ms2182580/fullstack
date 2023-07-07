@@ -4,8 +4,8 @@ import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
-import { SignComponent } from "../SignComponent.js"
 import { NavBar_D_SearchComponent } from "./NavBar_D_SearchComponent.js"
+import { NavBar_D_SignComponent } from './NavBar_D_SignComponent.js'
 import { NavBar_D_Wrapped } from "./styles/NavBar_D_Wrapped"
 
 export const NavBar_D = () => {
@@ -21,7 +21,6 @@ export const NavBar_D = () => {
   }, [route.pathname])
 
   const navigateHome = (e) => {
-    // console.log('e:', e)
     if (e.key === "Enter") {
       route.push("/")
     }
@@ -55,7 +54,7 @@ export const NavBar_D = () => {
           </H2>
         </span>
         <NavBar_D_SearchComponent />
-        <SignComponent />
+        <NavBar_D_SignComponent />
       </div>
 
       <div />

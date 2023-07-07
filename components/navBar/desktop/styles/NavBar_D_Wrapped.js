@@ -8,12 +8,8 @@ export const NavBar_D_Wrapped = styled.nav`
   /* position: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `fixed` : `relative`)}; */
   /* visibility: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `hidden` : `visible`)}; */
 
-  /* overflow-y: hidden; */
-
   padding-top: 28px;
 
-  /* position: relative; */
-  /* z-index:99; */
 
   & > :nth-child(1) {
     display: flex;
