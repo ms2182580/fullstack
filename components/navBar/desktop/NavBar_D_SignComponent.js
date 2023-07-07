@@ -6,7 +6,7 @@ import { NavBar_D_SignComponentDropdown } from '../desktop/NavBar_D_SignComponen
 import { NavBar_D_SignComponentWrapper } from "./styles/NavBar_D_SignComponentWrapper.js"
 
 export const NavBar_D_SignComponent = () => {
-  const [showDropdown, setShowDropdown] = useState(true)
+  const [showDropdown, setShowDropdown] = useState(false)
   const refDropdown = useRef()
 
   useOutsideHide(refDropdown, setShowDropdown)
