@@ -38,7 +38,6 @@ export const NavBar_D_Wrapped = styled.nav`
 
   & > :nth-child(3) {
     display: flex;
-    /* gap: 24px; */
     justify-content: space-between;
     padding-top: 33px;
     padding-bottom: 33px;
@@ -46,27 +45,18 @@ export const NavBar_D_Wrapped = styled.nav`
     margin-right: clamp(16px, calc(10vw - 80px), 66px);
 
     & > :nth-child(1) {
-      /* padding: 0; */
       display: flex;
       align-items: center;
       justify-content: center;
-
-      gap: 21px;
-
-      /* height: 32px; */
-
-      & > :nth-child(1) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      gap: 49px;
+      
 
       & > :nth-child(2) {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        gap: 21px;
+        gap:51px;
 
         li {
           list-style: none;

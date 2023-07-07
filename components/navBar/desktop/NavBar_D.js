@@ -1,6 +1,7 @@
+import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
+
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { NavBar_D_HamburgerSvg } from "../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
 import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts"
@@ -60,23 +61,12 @@ export const NavBar_D = () => {
 
       <div />
 
-      {/* 
-
-//!FH0
-
-Create the dropdown menu of Hamburger menu and Info
-
-
-*/}
-
       <div>
         <div>
           <span>
-            <NavBar_D_HamburgerSvg />
-
+            <NavBar_D_HamburgerComponent />
           </span>
           <ul>
-
             <li
               tabIndex={0}
               onKeyDown={navigateORG}
@@ -86,9 +76,13 @@ Create the dropdown menu of Hamburger menu and Info
               </H4>
             </li>
 
-            <li><H4 medium>Ask a question</H4></li>
+            <li>
+              <H4 medium>Ask a question</H4>
+            </li>
 
-            <li><H4 medium>Info</H4></li>
+            <li>
+              <H4 medium>Info</H4>
+            </li>
           </ul>
         </div>
 
