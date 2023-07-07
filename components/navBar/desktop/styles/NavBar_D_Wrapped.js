@@ -40,8 +40,8 @@ export const NavBar_D_Wrapped = styled.nav`
     display: flex;
     /* gap: 24px; */
     justify-content: space-between;
-    padding-top:33px;
-    padding-bottom:33px;
+    padding-top: 33px;
+    padding-bottom: 33px;
     margin-left: clamp(16px, calc(10vw - 80px), 90px);
     margin-right: clamp(16px, calc(10vw - 80px), 66px);
 
@@ -54,15 +54,12 @@ export const NavBar_D_Wrapped = styled.nav`
       gap: 21px;
 
       /* height: 32px; */
-      
-      & > :nth-child(1){
+
+      & > :nth-child(1) {
         display: flex;
         align-items: center;
         justify-content: center;
-        
-        
       }
-      
 
       & > :nth-child(2) {
         display: flex;
@@ -78,27 +75,19 @@ export const NavBar_D_Wrapped = styled.nav`
           justify-content: center;
           cursor: pointer;
           border-bottom: 4px solid transparent;
-        }
 
-        & > li > a {
-          font-weight: 600;
-          font-size: 20px;
-        }
-
-        & > li.active {
-          border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
+          &.active {
+            border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
+          }
         }
       }
     }
-    
+
     & > :nth-child(2) {
       display: flex;
       align-items: center;
       justify-content: center;
-      
     }
-
-    
   }
 
   .InFront {

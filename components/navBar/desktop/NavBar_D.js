@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { NavBar_D_HamburgerSvg } from "../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
-import { H2 } from "../../ui/heading_body_text/HeaderFonts"
+import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { NavBar_D_SearchComponent } from "./NavBar_D_SearchComponent.js"
 import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
@@ -60,6 +60,15 @@ export const NavBar_D = () => {
 
       <div />
 
+      {/* 
+
+//!FH0
+
+Create the dropdown menu of Hamburger menu and Info
+
+
+*/}
+
       <div>
         <div>
           <span>
@@ -72,12 +81,14 @@ export const NavBar_D = () => {
               tabIndex={0}
               onKeyDown={navigateORG}
               className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
-              <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
+              <H4 medium>
+                <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
+              </H4>
             </li>
 
-            <li>Ask a question</li>
+            <li><H4 medium>Ask a question</H4></li>
 
-            <li>Info</li>
+            <li><H4 medium>Info</H4></li>
           </ul>
         </div>
 
