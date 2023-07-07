@@ -10,7 +10,6 @@ export const NavBar_D_Wrapped = styled.nav`
 
   padding-top: 28px;
 
-
   & > :nth-child(1) {
     display: flex;
     align-items: center;
@@ -27,46 +26,79 @@ export const NavBar_D_Wrapped = styled.nav`
     & > :nth-child(2) {
       margin-right: 80px;
     }
-
   }
 
   & > :nth-child(2) {
     content: "";
     height: 4px;
     background-color: ${(x) => (x.isORG ? `${NEUTRALS.OFF_WHITE} ` : `${PRIMARY.PRIMARY_BACKGROUND}`)};
-    width:100%;
+    width: 100%;
     position: absolute;
   }
 
   & > :nth-child(3) {
     display: flex;
-    gap: 24px;
+    /* gap: 24px; */
+    justify-content: space-between;
+    padding-top:33px;
+    padding-bottom:33px;
+    margin-left: clamp(16px, calc(10vw - 80px), 90px);
+    margin-right: clamp(16px, calc(10vw - 80px), 66px);
 
-    & > :nth-child(2) {
+    & > :nth-child(1) {
       /* padding: 0; */
       display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 21px;
+
       /* height: 32px; */
-
-      li {
-        list-style: none;
-        /* margin-right: 36px; Bug N° 1 here */
-
+      
+      & > :nth-child(1){
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-        border-bottom: 4px solid transparent;
+        
+        
       }
+      
 
-      & > li > a {
-        font-weight: 600;
-        font-size: 20px;
-      }
+      & > :nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      & > li.active {
-        border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
+        gap: 21px;
+
+        li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          border-bottom: 4px solid transparent;
+        }
+
+        & > li > a {
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        & > li.active {
+          border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
+        }
       }
     }
+    
+    & > :nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    
   }
 
   .InFront {

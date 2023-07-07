@@ -1,11 +1,12 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { NavBar_D_HamburgerSvg } from "../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { NavBar_D_SearchComponent } from "./NavBar_D_SearchComponent.js"
-import { NavBar_D_SignComponent } from './NavBar_D_SignComponent.js'
+import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
 import { NavBar_D_Wrapped } from "./styles/NavBar_D_Wrapped"
 
 export const NavBar_D = () => {
@@ -60,20 +61,27 @@ export const NavBar_D = () => {
       <div />
 
       <div>
-        <div>Hamburger icon</div>
+        <div>
+          <span>
+            <NavBar_D_HamburgerSvg />
 
-        <ul>
-          <li
-            tabIndex={0}
-            onKeyDown={navigateORG}
-            className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
-            <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
-          </li>
-        </ul>
+          </span>
+          <ul>
 
-        <div>Ask a question</div>
+            <li
+              tabIndex={0}
+              onKeyDown={navigateORG}
+              className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
+              <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
+            </li>
 
-        <div>Info</div>
+            <li>Ask a question</li>
+
+            <li>Info</li>
+          </ul>
+        </div>
+
+        <div>+ Quick care plan</div>
       </div>
 
       {modalShowedCtx && <div className="InFront"></div>}
