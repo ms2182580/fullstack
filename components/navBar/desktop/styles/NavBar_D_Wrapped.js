@@ -17,10 +17,12 @@ export const NavBar_D_Wrapped = styled.nav`
   & > :nth-child(1) {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-inline: clamp(16px, calc(10vw - 80px), 96px);
     position: relative;
     margin-bottom: 28px;
+    
+    
     
     & > :nth-child(1){
       margin-right:50px;
@@ -36,9 +38,10 @@ export const NavBar_D_Wrapped = styled.nav`
       content: "";
       height: 4px;
       background-color: ${(x) => (x.isORG ? `${NEUTRALS.OFF_WHITE} ` : `${PRIMARY.PRIMARY_BACKGROUND}`)};
-      width: 100vw;
+      width: 130vw;
       position: absolute;
       bottom: -28px;
+      left:-6%;
     }
   }
 
