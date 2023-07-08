@@ -13,7 +13,7 @@ const suggestionsKeywords = [
   // "Art Camp"
 ]
 
-export const NavBar_D_InputAge = () => {
+export const NavBar_D_InputDiagnosis = () => {
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
@@ -38,7 +38,7 @@ export const NavBar_D_InputAge = () => {
           />
         </span>
         <input
-          placeholder="Age"
+          placeholder="Diagnosis"
           onFocus={() => setIsFocusKeyword(true)}
           onBlur={() => {
             if (!isHoveredKeyword) {

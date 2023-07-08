@@ -1,6 +1,11 @@
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { NavBar_D_HamburgerComponentDropdownWrapper } from "./styles/NavBar_D_HamburgerComponentDropdownWrapper.js"
 
+/* 
+!FH0
+Finish this styles
+*/
+
 export const NavBar_D_HamburgerComponentDropdown = ({ theRef }) => {
   return (
     <NavBar_D_HamburgerComponentDropdownWrapper ref={theRef}>
