@@ -11,7 +11,6 @@ export const ST_D_Detail_Reviews_Header = ({
   modal = false,
   handlePush
 }) => {
-  console.log("modal:", modal)
   return (
     <ST_D_Detail_Reviews_HeaderWrapper
       className={modal ? "" : "showLine"}

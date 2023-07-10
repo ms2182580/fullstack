@@ -1,11 +1,5 @@
 import styled from "styled-components"
 
-/* 
-!FH
-
-Create a component that check if the user is still in desktop or change to mobile
-*/
-
 export const InFrontModal_D_Wrapper = styled.div`
   display: ${({ modalShowedCtx }) => (modalShowedCtx ? `block` : `none`)};
   width: ${({ isInDetail }) => isInDetail ? `calc(100% + 100px)` : `calc(100% + 40px)`};
