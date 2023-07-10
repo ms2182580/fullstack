@@ -11,13 +11,16 @@ export const NavBar_D_SignComponent = () => {
 
   useOutsideHide(refDropdown, setShowDropdown)
 
-  const handleShowDropdown = () => {
-    setShowDropdown((prevState) => !prevState)
+  const handleShowDropdown = (e) => {
+    setShowDropdown(prevState => !prevState)
   }
 
   return (
     <>
-      <NavBar_D_SignComponentWrapper onClick={handleShowDropdown}>
+      <NavBar_D_SignComponentWrapper
+        onClick={handleShowDropdown}
+
+      >
         <span>
           <LanguageIconSvg />
         </span>

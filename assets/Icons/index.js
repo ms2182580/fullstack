@@ -1234,3 +1234,47 @@ export const NavBar_D_HamburgerSvg = (props) => (
     <path d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z" />
   </svg>
 )
+
+export const NavBar_D_WriteAReviewSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <path
+      stroke="#6E3A82"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M2.663 21.744h4.242L22.461 6.188 18.22 1.945 2.662 17.502v4.242Z"
+    />
+    <path
+      stroke="#6E3A82"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="m13.976 6.188 4.242 4.242"
+    />
+  </svg>
+)
+
+export const Navbar_D_AccessibilityModeSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <g fill="#00080B" clipPath="url(#a)">
+      <path d="M12 5.25A2.625 2.625 0 1 0 12 0a2.625 2.625 0 0 0 0 5.25ZM20.484 6H3.516a1.266 1.266 0 1 0 0 2.531H8.29c.324 0 .703.145.918.703.25.649.128 1.9-.027 2.87l-.202 1.147a.02.02 0 0 1-.006.016l-1.622 9.225a1.286 1.286 0 0 0 1.039 1.488 1.27 1.27 0 0 0 1.472-1.045l1.121-6.412S11.344 15 12 15c.667 0 1.02 1.523 1.02 1.523l1.12 6.418a1.28 1.28 0 0 0 1.485 1.053 1.276 1.276 0 0 0 1.028-1.503l-1.622-9.225a.02.02 0 0 0 0-.01.022.022 0 0 0-.005-.007l-.203-1.146c-.155-.97-.278-2.222-.027-2.87.214-.557.605-.703.904-.703h4.784a1.266 1.266 0 0 0 0-2.531Z" />
+    </g>
+    <defs>
+      <clipPath id="a">
+        <path fill="#fff" d="M0 0h24v24H0z" />
+      </clipPath>
+    </defs>
+  </svg>
+)
+
