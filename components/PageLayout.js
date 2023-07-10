@@ -3,7 +3,6 @@ import Head from "next/head"
 import { useCheckUserWidth } from "../context/CheckUserWidth.js"
 import { Footer } from "./footer/Footer.js"
 
-
 const NavBar_Mobile = dynamic(() => import("./navBar/mobile/NavBar_M.js").then((mod) => mod.NavBar_M), { ssr: false })
 const NavBar_Desktop = dynamic(() => import("./navBar/desktop/NavBar_D.js").then((mod) => mod.NavBar_D), { ssr: false })
 

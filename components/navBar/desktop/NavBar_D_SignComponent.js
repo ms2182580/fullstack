@@ -26,7 +26,8 @@ export const NavBar_D_SignComponent = () => {
         </span>
       </NavBar_D_SignComponentWrapper>
 
-      {showDropdown && <NavBar_D_SignComponentDropdown theRef={refDropdown} />}
+      {showDropdown && <NavBar_D_SignComponentDropdown theRef={refDropdown} setShowDropdown={setShowDropdown}
+      />}
     </>
   )
 }

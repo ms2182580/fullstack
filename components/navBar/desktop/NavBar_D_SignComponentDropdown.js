@@ -1,13 +1,21 @@
+import { useRouter } from "next/router.js"
 import { NavBar_D_AAQSvg, NavBar_D_AccessibilityModeSvg, NavBar_D_ContrastSvg, NavBar_D_DictionarySvg, NavBar_D_HelpSvg, NavBar_D_SettingsSvg, NavBar_D_TooltipSvg, NavBar_D_UpgradeSvg, NavBar_D_UserDashboardSvg } from "../../../assets/Icons/index.js"
 import { ButtonSmall } from "../../ui/buttons/general/index.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { NavBar_D_SignComponentDropdownWrapper } from "./styles/NavBar_D_SignComponentDropdownWrapper.js"
 
-export const NavBar_D_SignComponentDropdown = ({ theRef }) => {
+export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown }) => {
+
+  const { push } = useRouter()
+  const handlePushToSignup = (parameters) => {
+    push("/signup")
+    setShowDropdown(false)
+  }
+
   return (
     <NavBar_D_SignComponentDropdownWrapper ref={theRef}>
       <div>
-        <span>
+        <span onClick={handlePushToSignup}>
           <ButtonSmall secondary>Sign Up</ButtonSmall>
         </span>
         <span>
