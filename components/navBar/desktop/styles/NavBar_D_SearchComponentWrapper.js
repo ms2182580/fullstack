@@ -43,6 +43,7 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-left-style: none;
         border-radius: 0px 5px 5px 0px;
+
       }
     }
   }
@@ -97,11 +98,11 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
     z-index: 2;
     right: 8px;
     height: 100%;
-    width:55px;
+    width: 55px;
 
     & > :nth-child(1) {
       height: 100%;
-      width:55px;
+      width: 55px;
     }
   }
 `

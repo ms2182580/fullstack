@@ -6,7 +6,7 @@ export const SingleDropdownWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: relative;
-  z-index: 3;
+  z-index: 2;
 
   & > :nth-child(1) {
     width: 191px;

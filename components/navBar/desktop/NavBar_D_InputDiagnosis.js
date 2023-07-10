@@ -6,11 +6,12 @@ import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggest
 import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
 
 const suggestionsKeywords = [
-  // "Physical Therapist",
-  // "Speech Therapist",
-  // "Occupational Therapist",
-  // "Dance Class",
-  // "Art Camp"
+  "Autism (ASD)",
+  "ADHD",
+  "Down Syndrome",
+  "Cerebral Palsy",
+  "Frafile X",
+  "Other"
 ]
 
 export const NavBar_D_InputDiagnosis = () => {
@@ -25,13 +26,12 @@ export const NavBar_D_InputDiagnosis = () => {
   //   setKeywordInput(keywordsContext)
   // }, [keywordsContext])
 
-
   const shouldTab = useShouldTab()
 
   return (
     <div>
       <span>
-        <span >
+        <span>
           <Image
             src={ORGDesktop_AgeIcon}
             alt=""
