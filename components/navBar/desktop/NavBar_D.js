@@ -1,11 +1,11 @@
-import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
-
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
+import { InFrontModal_D_Wrapper } from "../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
+import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
 import { NavBar_D_SearchComponent } from "./NavBar_D_SearchComponent.js"
 import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
 import { NavBar_D_Wrapped } from "./styles/NavBar_D_Wrapped"
@@ -38,58 +38,54 @@ export const NavBar_D = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
   return (
-    <NavBar_D_Wrapped
-      isORG={isORGState}
-      modalShowedCtx={modalShowedCtx}
-      mustShowFiltersMobile={mustShowFiltersMobile}>
-      <div>
-        <span
-          tabIndex={0}
-          onKeyDown={navigateHome}
-          onClick={navigateHome}>
-          {" "}
-          <H2
-            bold
-            logo>
-            {" "}
-            INCLUSIVE
-          </H2>
-        </span>
-        <NavBar_D_SearchComponent />
-        <NavBar_D_SignComponent />
-      </div>
-
-      <div />
-
-      <div>
+    <>
+      <NavBar_D_Wrapped
+        isORG={isORGState}
+        mustShowFiltersMobile={mustShowFiltersMobile}>
         <div>
-          <span>
-            <NavBar_D_HamburgerComponent />
+          <span
+            tabIndex={0}
+            onKeyDown={navigateHome}
+            onClick={navigateHome}>
+            {" "}
+            <H2
+              bold
+              logo>
+              {" "}
+              INCLUSIVE
+            </H2>
           </span>
-          <ul>
-            <li
-              tabIndex={0}
-              onKeyDown={navigateORG}
-              className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
-              <H4 medium>
-                <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
-              </H4>
-            </li>
-
-            <li>
-              <H4 medium>Ask a question</H4>
-            </li>
-
-            <li>
-              <H4 medium>Info</H4>
-            </li>
-          </ul>
+          <NavBar_D_SearchComponent />
+          <NavBar_D_SignComponent />
+        </div>
+        <div />
+        <div>
+          <div>
+            <span>
+              <NavBar_D_HamburgerComponent />
+            </span>
+            <ul>
+              <li
+                tabIndex={0}
+                onKeyDown={navigateORG}
+                className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
+                <H4 medium>
+                  <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
+                </H4>
+              </li>
+              <li>
+                <H4 medium>Ask a question</H4>
+              </li>
+              <li>
+                <H4 medium>Info</H4>
+              </li>
+            </ul>
+          </div>
+          <div>+ Quick care plan</div>
         </div>
 
-        <div>+ Quick care plan</div>
-      </div>
-
-      {modalShowedCtx && <div className="InFront"></div>}
-    </NavBar_D_Wrapped>
+        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+      </NavBar_D_Wrapped>
+    </>
   )
 }

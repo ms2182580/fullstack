@@ -1,5 +1,7 @@
 import { useRouter } from "next/router.js"
 import { useEffect } from "react"
+import { InFrontModal_D_Wrapper } from '../../../../../components/inFront_D/styles/InFrontModal_D_Wrapper'
+import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
 import { LoadingSpeechTherapists } from "../../LoadingSpeechTherapists.js"
@@ -20,7 +22,7 @@ export const INDEX_D_STResults = () => {
     return <LoadingSpeechTherapists />
   }
 
-
+  const { modalShowedCtx } = useCtx_ShowModal()
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
 
@@ -28,11 +30,13 @@ export const INDEX_D_STResults = () => {
     <>
       <INDEX_D_STResultsWrapper
         ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}>
-        {ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists" && <div className="InFront"></div>}
 
         <ST_D_Results_Header />
 
         <ST_D_Results_MainEntry />
+
+        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+
       </INDEX_D_STResultsWrapper >
     </>
   )

@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
-import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ST_D_Detail_Appointments } from "./ST_D_Detail_Appointments"
 import { ST_D_Detail_FAQS } from "./ST_D_Detail_FAQS"
 import { ST_D_Detail_Header } from "./ST_D_Detail_Header"
@@ -24,7 +23,7 @@ export const INDEX_D_STDetail = () => {
 
   return (
     <>
-      <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+      {/* <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} /> */}
 
       <INDEX_D_STDetailWrapper modalShowedCtx={modalShowedCtx}>
         <ST_D_Detail_Header STData={STDataThirdpage_D} />

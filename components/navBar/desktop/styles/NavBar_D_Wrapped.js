@@ -7,6 +7,7 @@ export const NavBar_D_Wrapped = styled.nav`
   background-color: ${(x) => (x.isORG ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`)};
   /* position: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `fixed` : `relative`)}; */
   /* visibility: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `hidden` : `visible`)}; */
+  position:relative;
 
   padding-top: 28px;
 
@@ -84,7 +85,8 @@ export const NavBar_D_Wrapped = styled.nav`
     width: 100%;
     height: 100%;
     z-index: 4;
-    position: absolute;
+    top:0;
+    position: fixed;
     background: rgba(44, 42, 42, 0.61);
   }
 `

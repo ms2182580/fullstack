@@ -5,8 +5,7 @@ import { ST_D_Results_HeaderWrapper } from "./styles/ST_D_Results_HeaderWrapper.
 
 export const ST_D_Results_Header = () => {
   return (
-    <ST_D_Results_HeaderWrapper
-    >
+    <ST_D_Results_HeaderWrapper>
       <P
         bold
         dark_gray>

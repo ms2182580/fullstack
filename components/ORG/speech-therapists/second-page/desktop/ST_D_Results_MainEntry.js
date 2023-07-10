@@ -48,8 +48,7 @@ export const ST_D_Results_MainEntry = () => {
   return (
     <ST_D_Results_MainEntryWrapper
       ORGshowFullMapButton={ORGshowFullMapButton}
-      id="topOfSTL"
-    >
+      id="topOfSTL">
       <ST_D_Results_FilterSortbyHeader
         refUserViewShowFullMapButton={refUserViewShowFullMapButton}
         refUserViewShowFullMapFilter={refUserViewShowFullMapFilter}
@@ -61,23 +60,9 @@ export const ST_D_Results_MainEntry = () => {
         <ST_D_Results_Map refUserViewShowFullMapButton={refUserViewShowFullMapButton} />
       </div>
 
-      <ST_D_Results_FinalButtons widthWindow={1500} />
+      <ST_D_Results_FinalButtons />
 
       <ST_D_Results_BreadcrumbsAndLastUpdated />
-
-      {/* {mustShowFiltersMobile === false ? (
-        <>
-          <div>
-            <ST_D_Results_Choisepath />
-
-            <ST_D_Results_Map refUserViewShowFullMapButton={refUserViewShowFullMapButton} />
-          </div>
-
-          <ST_D_Results_FinalButtons widthWindow={1500} />
-
-          <ST_D_BreadcrumbsAndLastUpdated />
-        </>
-      ) : null} */}
     </ST_D_Results_MainEntryWrapper>
   )
 }

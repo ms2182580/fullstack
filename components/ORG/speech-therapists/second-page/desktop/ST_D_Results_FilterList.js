@@ -1,5 +1,5 @@
-
 import { useEffect, useReducer, useState } from "react"
+import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
 import { useORG_Ctx_filtersLeftDesktop } from "../../../../../context/ORG_CtxFiltersLeftDesktop_Provider"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
@@ -69,7 +69,6 @@ const reducer = (state, action) => {
     return { ...state }
   }
 }
-
 const nameToCloseTheFilters = "ShowFiltersDesktop"
 
 export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
@@ -78,8 +77,8 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
   /* 
   !FH
   The problem is the "setFiltersLeftContext" that is making re renders to the context provider "ORG_CtxFiltersLeft_Provider"
-  
   */
+
 
   const [state, dispatch] = useReducer(reducer, filterData)
   const [tempState, setTempState] = useState(filterData)
@@ -91,11 +90,15 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
   const { ORGShowFullMapFilter, setORGShowFullMapFilter, ORGshowFullMapButton, setORGShowFullMapButton } =
     useORG_CtxShowFiltersDesktop()
 
-  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } = useORG_Ctx_FiltersApplyDesktop()
+  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } =
+    useORG_Ctx_FiltersApplyDesktop()
+
+  const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
 
   const handleShowFiltersDesktop = () => {
     setMustShowFiltersDesktop((prevState) => !prevState)
     setORGShowFullMapFilter((prevState) => !prevState)
+    setModalShowedCtx((prevState) => !prevState)
 
     if (ORGshowFullMapButton) {
       setORGShowFullMapButton(false)
@@ -107,7 +110,6 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
       window.scrollTo({ top: targetY })
     }
   }
-
 
   const handleClearAll = (e) => {
     if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
@@ -133,7 +135,6 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
   useEffect(() => {
     handleClearAll("from useEffect")
   }, [])
-
 
   const { shouldFetchDesktopFilters, setShouldFetchDesktopFilters } = useORG_Ctx_FetchWithFiltersDesktop()
 
@@ -172,6 +173,8 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
       if (mustShowFiltersDesktop && !event.target.closest(`.${nameToCloseTheFilters}`)) {
         setMustShowFiltersDesktop(false)
         setORGShowFullMapFilter(false)
+        setModalShowedCtx(false)
+
       }
     }
     document.addEventListener("mousedown", handleClickOutside)
@@ -216,8 +219,6 @@ export const ST_D_Results_FilterList = ({ refUserViewShowFullMapFilter }) => {
           />
         </ST_D_Results_FilterListChildWrapper>
       </ST_D_Results_FilterListMainWrapper>
-
-
     </>
   )
 }

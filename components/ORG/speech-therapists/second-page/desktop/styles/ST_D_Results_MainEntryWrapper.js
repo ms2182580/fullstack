@@ -3,8 +3,6 @@ import { NEUTRALS } from "../../../../../../assets/Colors"
 import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
 
 export const ST_D_Results_MainEntryWrapper = styled.div`
-  /* border: 2px solid green; */
-
   position: relative;
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
@@ -15,7 +13,7 @@ export const ST_D_Results_MainEntryWrapper = styled.div`
     "btns btns"
     "breadcrumbsAndUpdate breadcrumbsAndUpdate";
 
-  margin-bottom: 76px;
+  padding-bottom: 76px;
 
   & > :nth-child(1) {
     grid-area: header;

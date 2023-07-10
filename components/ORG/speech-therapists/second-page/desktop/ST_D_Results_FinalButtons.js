@@ -11,7 +11,7 @@ import {
   ST_D_Results_FinalButtonsWrapper
 } from "./styles/ST_D_Results_FinalButtonsWrapper.js"
 
-export const ST_D_Results_FinalButtons = ({ widthWindow }) => {
+export const ST_D_Results_FinalButtons = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const { pathname } = useRouter()
   const toPrevious = () => {
