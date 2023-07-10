@@ -4,7 +4,6 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
   position: absolute;
   z-index: 1;
-  /* left: clamp(16px, calc(10vw - 80px), 90px); */
   left:0;
   background-color: ${NEUTRALS.OFF_WHITE};
   border-radius: 8px;
@@ -23,6 +22,15 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
         color: ${NEUTRALS.OFF_WHITE};
       }
     }
+    
+    & > :nth-child(1){
+      position: relative;
+    }
+    
+    
+    
+    
+    
     
     & > :last-child{
       &:hover{

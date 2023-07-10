@@ -16,10 +16,8 @@ export const InFrontModal_D_Wrapper = styled.div`
   inset:0;
   left: ${({ isInDetail }) => isInDetail?.isInDetail ? `0px` : `-40px`};
   
-  color:${({ isInDetail }) => console.log({ isInDetail })};
   z-index: 4;
   position: absolute;
   background: rgba(44, 42, 42, 0.61);
   
-  /* background: crimson; */
 `
