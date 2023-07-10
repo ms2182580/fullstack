@@ -5,7 +5,7 @@ export const NavBar_D_Wrapped = styled.nav`
   box-shadow: ${(x) => (x.isORG ? `0px 4px 4px rgba(0, 0, 0, 0.25)` : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
   border-bottom: ${(x) => (x.isORG ? `1px solid ${NEUTRALS.LIGHT_GREY}` : ``)};
   background-color: ${(x) => (x.isORG ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`)};
-  position:relative;
+  position: relative;
 
   padding-top: 28px;
 
@@ -42,20 +42,20 @@ export const NavBar_D_Wrapped = styled.nav`
     padding-bottom: 33px;
     margin-left: clamp(16px, calc(10vw - 80px), 90px);
     margin-right: clamp(16px, calc(10vw - 80px), 66px);
-    
+
     & > :nth-child(1) {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 49px;
-      
+
       & > :nth-child(2) {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        gap:51px;
-        
+        gap: 51px;
+
         li {
           list-style: none;
           display: flex;
@@ -68,35 +68,42 @@ export const NavBar_D_Wrapped = styled.nav`
             border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
           }
         }
-        
-        & > :nth-child(3){
-          position:relative;
-          
+
+        & > :nth-child(3) {
+          position: relative;
         }
-        
       }
-      
-      
-      
     }
 
     & > :nth-child(2) {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    
+    
+    & > :last-child{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:8px;
       
+      padding:6px 16px;
+      
+      border: 2px solid ${PRIMARY.PRIMARY_CTA};
+      border-radius:16px;
+      
+      cursor: pointer;
+      
+      & > :nth-child(2){
+        font-size:18px;
+        font-weight: 600; 
+        color:${PRIMARY.PRIMARY_CTA}
+      }
       
       
     }
     
     
-    
-    
-    
-    
-    
   }
-
 `
-
-

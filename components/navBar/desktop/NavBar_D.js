@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
+import { NavBar_D_QuickCarePlanSvg } from "../../../assets/Icons"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
@@ -52,9 +53,7 @@ export const NavBar_D = () => {
     <>
       <NavBar_D_Wrapped
         isORG={isORGState}
-        mustShowFiltersMobile={mustShowFiltersMobile}
-
-      >
+        mustShowFiltersMobile={mustShowFiltersMobile}>
         <div>
           <span
             tabIndex={0}
@@ -96,7 +95,9 @@ export const NavBar_D = () => {
               </li>
             </ul>
           </div>
-          <div>+ Quick care plan</div>
+          <div>
+            <NavBar_D_QuickCarePlanSvg /> <p>Quick Care Plan</p>
+          </div>
         </div>
 
         <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />

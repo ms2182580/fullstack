@@ -1278,3 +1278,22 @@ export const Navbar_D_AccessibilityModeSvg = (props) => (
   </svg>
 )
 
+
+export const NavBar_D_QuickCarePlanSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={18}
+    height={18}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#6E3A82"
+      d="M1.5 9.375c0-.621.458-1.125 1.023-1.125h12.954c.565 0 1.023.504 1.023 1.125s-.458 1.125-1.023 1.125H2.523c-.565 0-1.023-.504-1.023-1.125Z"
+    />
+    <path
+      fill="#6E3A82"
+      d="M9.375 17.25c-.621 0-1.125-.458-1.125-1.023V3.273c0-.565.504-1.023 1.125-1.023s1.125.458 1.125 1.023v12.954c0 .565-.504 1.023-1.125 1.023Z"
+    />
+  </svg>
+)
