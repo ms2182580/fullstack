@@ -9,7 +9,7 @@ export const ST_D_Detail_FAQS_ModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: clamp(932px, 91%, 1310px);
   background-color: ${NEUTRALS.OFF_WHITE};
-  z-index: 2;
+  z-index: 5;
   cursor: default;
   padding-top: 43px;
   padding-inline: 76px;

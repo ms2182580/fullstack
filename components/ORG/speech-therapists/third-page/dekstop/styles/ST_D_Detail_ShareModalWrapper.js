@@ -35,7 +35,7 @@ export const ST_D_Detail_ShareModalWrapper = styled.div`
   width: 612px;
   height: 600px;
   background-color: ${NEUTRALS.OFF_WHITE};
-  z-index: 2;
+  z-index: 5;
   cursor: default;
   padding: 48px 40px;
   border-radius: 8px;

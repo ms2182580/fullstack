@@ -13,10 +13,6 @@ export const ST_D_Detail_About = ({ name, lastName, aboutRef }) => {
   const [isTruncated, setIsTruncated] = useState(true)
   const [formattedText, setFormattedText] = useState(aboutTextState.substring(0, 220) + "...")
 
-  /* 
-  !FH1
-  The modal should close if the screen width is less than 1025px
-  */
   const [showModal, setShowModal] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()

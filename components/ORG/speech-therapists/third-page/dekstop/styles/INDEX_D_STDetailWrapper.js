@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
 export const INDEX_D_STDetailWrapper = styled.div`
-  margin-top:27px;
+  padding-top:27px;
   margin-inline: 40px;
-  margin-bottom: 84px;
+  padding-bottom: 84px;
+  position: relative;
   
   & > :nth-child(1){
     margin-bottom: 8px;

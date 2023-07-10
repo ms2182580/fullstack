@@ -9,7 +9,7 @@ export const ST_D_Detail_AppointmentModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 612px;
   background-color: ${NEUTRALS.OFF_WHITE};
-  z-index: 2;
+  z-index: 5;
   cursor: default;
   padding-top: 48px;
   padding-bottom: 48px;
