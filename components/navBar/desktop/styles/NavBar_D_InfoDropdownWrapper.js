@@ -6,7 +6,7 @@ export const NavBar_D_InfoDropdownWrapper = styled.div`
   position: absolute;
   top:100%;
   left:0;
-  z-index:1;
+  z-index:3;
   
   padding: 33px;
   display: flex;
