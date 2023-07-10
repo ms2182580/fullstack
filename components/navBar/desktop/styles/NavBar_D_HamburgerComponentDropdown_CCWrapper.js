@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const NavBar_D_HamburgerComponentDropdown_CCWrapper = styled.div`
-  /* border: 2px solid crimson; */
   position: absolute;
   z-index: 2;
   top: 0;
@@ -17,7 +16,6 @@ export const NavBar_D_HamburgerComponentDropdown_CCWrapper = styled.div`
 
   background-color: ${NEUTRALS.OFF_WHITE};
   border-radius: 8px;
-  
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   

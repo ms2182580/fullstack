@@ -1,11 +1,13 @@
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider"
+import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { InFrontModal_D_Wrapper } from "../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
+import { NavBar_D_InfoDropdown } from "./NavBar_D_InfoDropdown.js"
 import { NavBar_D_SearchComponent } from "./NavBar_D_SearchComponent.js"
 import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
 import { NavBar_D_Wrapped } from "./styles/NavBar_D_Wrapped"
@@ -13,6 +15,15 @@ import { NavBar_D_Wrapped } from "./styles/NavBar_D_Wrapped"
 export const NavBar_D = () => {
   const route = useRouter()
   const [isORGState, setIsORGState] = useState(false)
+  const [infoDropdownState, setInfoDropdownState] = useState(false)
+
+  const infoRef = useRef()
+
+  useOutsideHide(infoRef, setInfoDropdownState)
+
+  const handleToggleInfoDropdown = () => {
+    setInfoDropdownState((prevState) => !prevState)
+  }
 
   useEffect(() => {
     if (route.pathname === "/ORG") {
@@ -22,13 +33,13 @@ export const NavBar_D = () => {
     }
   }, [route.pathname])
 
-  const navigateHome = (e) => {
+  const handleNavigateHome = (e) => {
     if (e.key === "Enter") {
       route.push("/")
     }
     route.push("/")
   }
-  const navigateORG = (e) => {
+  const handleNavigateORG = (e) => {
     if (e.key === "Enter") {
       route.push("/ORG")
     }
@@ -41,12 +52,14 @@ export const NavBar_D = () => {
     <>
       <NavBar_D_Wrapped
         isORG={isORGState}
-        mustShowFiltersMobile={mustShowFiltersMobile}>
+        mustShowFiltersMobile={mustShowFiltersMobile}
+
+      >
         <div>
           <span
             tabIndex={0}
-            onKeyDown={navigateHome}
-            onClick={navigateHome}>
+            onKeyDown={handleNavigateHome}
+            onClick={handleNavigateHome}>
             {" "}
             <H2
               bold
@@ -67,7 +80,7 @@ export const NavBar_D = () => {
             <ul>
               <li
                 tabIndex={0}
-                onKeyDown={navigateORG}
+                onKeyDown={handleNavigateORG}
                 className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
                 <H4 medium>
                   <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
@@ -76,8 +89,10 @@ export const NavBar_D = () => {
               <li>
                 <H4 medium>Ask a question</H4>
               </li>
-              <li>
+              <li onClick={handleToggleInfoDropdown}>
                 <H4 medium>Info</H4>
+
+                {infoDropdownState && <NavBar_D_InfoDropdown theRef={infoRef} />}
               </li>
             </ul>
           </div>
