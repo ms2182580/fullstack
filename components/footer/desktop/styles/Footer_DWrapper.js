@@ -62,11 +62,14 @@ export const Footer_DWrapper = styled.div`
     justify-content: space-between;
 
     padding-bottom: 24px;
-
+    
     & > :nth-child(1) {
       border-radius: 8px;
       border: none;
       background-color: ${PRIMARY.PRIMARY_CTA};
+      
+      /* background-color: darkgreen; */
+      /* background-color: black; */
 
       display: flex;
       align-items: center;
@@ -76,11 +79,6 @@ export const Footer_DWrapper = styled.div`
 
       cursor: pointer;
 
-      & > :nth-child(1) {
-        & > * {
-          fill: white;
-        }
-      }
 
       & > :nth-child(2) {
         color: ${NEUTRALS.OFF_WHITE};

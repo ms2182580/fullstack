@@ -1,9 +1,9 @@
 import {
   Facebook3Svg,
+  Footer_D_AccessibilityModeSvg,
   Instagram2Svg,
   LanguageIconSvg,
   LinkedinSvg,
-  Navbar_D_AccessibilityModeSvg,
   Twitter2Svg
 } from "../../../assets/Icons/index.js"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts.js"
@@ -50,7 +50,7 @@ export const Footer_D = () => {
 
       <div>
         <button>
-          <Navbar_D_AccessibilityModeSvg /> <P semibold>Accessibility Mode</P>
+          <Footer_D_AccessibilityModeSvg /> <P semibold>Accessibility Mode</P>
         </button>
         <button>
           <P semibold>Try Premium</P>
