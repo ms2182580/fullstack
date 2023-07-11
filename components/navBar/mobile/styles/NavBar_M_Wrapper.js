@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const NavBar_M_Wrapper = styled.div`
-  /* border: 20px solid crimson; */
+overflow: hidden;
   
   position: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `fixed` : `relative`)};
   visibility: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `hidden` : `visible`)};
