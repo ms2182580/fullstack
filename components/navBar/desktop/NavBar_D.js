@@ -82,11 +82,11 @@ export const NavBar_D = () => {
                 onKeyDown={handleNavigateORG}
                 className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
                 <H4 medium>
-                  <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
+                  <LinkNoStyle href="/ORG">Resource Directory</LinkNoStyle>
                 </H4>
               </li>
               <li>
-                <H4 medium>Ask a question</H4>
+                <H4 medium>Ask a Question</H4>
               </li>
               <li onClick={handleToggleInfoDropdown}>
                 <H4 medium>Info</H4>

@@ -1359,3 +1359,24 @@ export const Twitter2Svg = (props) => (
     />
   </svg>
 )
+
+export const ORG_D_Search_CarePlanSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={22}
+    height={30}
+    fill="none"
+    {...props}
+  >
+    <g stroke="#fff">
+      <g strokeWidth={2.719}>
+        <path d="M11 11.828v9.969M15.984 16.813H6.016" />
+      </g>
+      <path strokeWidth={1.813} d="M1.031 5.031H20.97v23.563H1.03V5.03Z" />
+      <g strokeWidth={1.813}>
+        <circle cx={11} cy={4.125} r={2.719} fill="#6E3A82" />
+        <path d="M4.656 6.844h12.688" />
+      </g>
+    </g>
+  </svg>
+)

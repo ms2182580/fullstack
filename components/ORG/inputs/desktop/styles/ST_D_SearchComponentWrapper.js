@@ -12,7 +12,7 @@ export const ST_D_SearchComponentWrapper = styled.div`
       & > input{
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-right-style: none;
-        border-radius: 5px 0px 0px 5px;
+        border-radius: 7px 0px 0px 7px;
       }
     }
   }
@@ -31,7 +31,7 @@ export const ST_D_SearchComponentWrapper = styled.div`
     margin-right: 2rem;
     & > span {
       & > input {
-        border-radius: 0px 5px 5px 0px;
+        border-radius: 0px 7px 7px 0px;
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-left-style: none;
       }
@@ -98,7 +98,6 @@ export const ST_D_SearchComponentWrapper = styled.div`
     height: 76px;
     
     align-self: end;
-    /* height:100%; */
 
     & > button {
       height: 100%;
