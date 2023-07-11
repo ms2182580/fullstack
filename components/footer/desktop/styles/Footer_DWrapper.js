@@ -192,7 +192,7 @@ export const Footer_DWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;
+        gap: 24px;
 
         & > * {
           cursor: pointer;
