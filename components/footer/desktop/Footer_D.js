@@ -13,9 +13,7 @@ import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper.js"
 
 export const Footer_D = () => {
-
   const { modalShowedCtx } = useCtx_ShowModal()
-
 
   return (
     <Footer_DWrapper>
@@ -84,7 +82,6 @@ export const Footer_D = () => {
       </div>
 
       <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
-
     </Footer_DWrapper>
   )
 }
