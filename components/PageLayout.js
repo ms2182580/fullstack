@@ -49,7 +49,6 @@ export const PageLayout = ({ children, title = "INCLUSIVE" }) => {
       )}
 
 
-      {/* <Footer /> */}
     </>
   )
 }

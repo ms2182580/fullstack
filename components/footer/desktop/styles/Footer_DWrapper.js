@@ -46,6 +46,13 @@ export const Footer_DWrapper = styled.div`
         color: ${PRIMARY.PRIMARY_CTA};
 
         border: 2px solid ${PRIMARY.PRIMARY_CTA};
+        
+        &:hover{
+          color: ${NEUTRALS.OFF_WHITE};
+          background-color: ${PRIMARY.PRIMARY_CTA};
+        }
+        
+        
       }
     }
   }
