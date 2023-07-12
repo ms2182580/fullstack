@@ -90,29 +90,6 @@ export const INDEX_D_ORGWrapper = styled.div`
     padding-top: 40px;
     padding-bottom: 40px;
 
-    position: relative;
-
-    /* background-image: linear-gradient(90deg, hsl(0deg 0% 0%) 0%, hsl(0deg 0% 100%) 100%,); */
-
-    /* background-image: linear-gradient(
-  90deg,
-  hsl(0deg 0% 100%) 75%,
-  
-  hsl(0deg 0% 0%) 100%
-); */
-
-    /* background: linear-gradient(-90deg, green, green 50%, rgba(0, 128, 0, 0) 50%); */
-
-    &::after {
-      content:"";
-      /* border: 2px solid green; */
-      position: sticky;
-      right: -24px;
-      z-index: 1;
-      min-width: 115px;
-      background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 27%);
-    }
-
     & > :nth-child(1) {
       background-color: ${({ singleCardIsSelected }) => !singleCardIsSelected && `${PRIMARY.PRIMARY_CTA}`};
 
@@ -142,29 +119,40 @@ export const INDEX_D_ORGWrapper = styled.div`
       }
     }
 
-    /* & > :nth-last-child(2){
-      border: 2px solid green;
-      position:sticky;
-      right:-24px;
-      z-index:1;
-      min-width:115px;
-      background: linear-gradient(90deg, hsla(0, 0%, 100%, 50%) 0%, hsl(0, 0%, 100%) 23%);
-    } */
-
     & > :last-child {
       position: sticky;
-      margin: auto;
       right: 0;
-      z-index: 2;
-      padding: 12px 16px;
 
-      border: 2px solid ${PRIMARY.PRIMARY_CTA};
-      background-color: ${NEUTRALS.OFF_WHITE};
+      & > :nth-child(1) {
+        border: 2px solid ${PRIMARY.PRIMARY_CTA};
+        border-radius: 8px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
+        background-color: ${NEUTRALS.OFF_WHITE};
+
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        z-index: 2;
+
+        & > * {
+          & > * {
+            fill: ${PRIMARY.PRIMARY_CTA};
+          }
+        }
+      }
+
+      & > :nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: -6vw;
+        z-index: 1;
+        height: 100%;
+        width: calc(100px + 6vw);
+        background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 27%);
+      }
     }
   }
 `

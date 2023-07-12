@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { useEffect, useState } from "react"
-import { ORG_D_Search_CarePlanSvg } from "../../../../assets/Icons/index.js"
+import { ArrowRightSvg, ORG_D_Search_CarePlanSvg } from "../../../../assets/Icons/index.js"
 import ORGDesktop_Search_Hero from "../../../../assets/images/ORGDesktop_Search_Hero.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -73,7 +73,20 @@ export const INDEX_D_ORG = () => {
 
   useEffect(() => {
     if (listRef) {
+
+
+      /* 
+      !FH0
+      Check the max width of the scrollWidth
+      When the user will be close to the end, start subatracting the width of the &::after element in the index_D_ORGWrapper
+      */
       const handleScroll = (event) => {
+        // console.log('listRef:', listRef.scrollLeft, listRef.scrollLeftMax)
+        // console.log('listRef:', listRef)
+        // console.log('event:', event)
+        console.log('event.deltaY:', event.deltaY)
+
+
         event.preventDefault()
         listRef.scrollLeft += event.deltaY
       }
@@ -127,11 +140,13 @@ export const INDEX_D_ORG = () => {
           </li>
         ))}
 
-        <div />
+
 
         <div>
-          {/* <p>→</p> */}
-          →
+          <div>
+            <ArrowRightSvg />
+          </div>
+          <div />
         </div>
 
       </ul>
