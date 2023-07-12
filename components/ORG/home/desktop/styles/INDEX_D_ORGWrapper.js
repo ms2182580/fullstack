@@ -109,7 +109,7 @@ export const INDEX_D_ORGWrapper = styled.div`
       justify-content: center;
 
       cursor: pointer;
-
+      
       &:hover {
         background-color: ${PRIMARY.PRIMARY_CTA};
 
@@ -121,7 +121,7 @@ export const INDEX_D_ORGWrapper = styled.div`
 
     & > :last-child {
       position: sticky;
-      right: 0;
+      right: 0px;
 
       & > :nth-child(1) {
         border: 2px solid ${PRIMARY.PRIMARY_CTA};
@@ -156,13 +156,15 @@ export const INDEX_D_ORGWrapper = styled.div`
       }
 
       & > :nth-child(2) {
+        /* border: 2px solid green; */
+        
         position: absolute;
         top: 0;
         right: -6vw;
         z-index: 1;
         height: 100%;
-        width: calc(100px + 6vw);
-        background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 27%);
+        width: calc(90px + 6vw);
+        background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 8%);
       }
     }
   }

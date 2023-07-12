@@ -12,7 +12,7 @@ import { INDEX_D_CCSearch } from "../../community-classes/desktop/INDEX_D_CCSear
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_MHSSSearch } from "../../mental-health/desktop/INDEX_D_MHSSSearch.js"
 import { INDEX_D_PPASSearch } from "../../private-public-agencies/desktop/INDEX_D_PPASSearch.js"
-import { INDEX_D_PSYTSearch } from "../../psychiatrists/desktop/INDEX_D_PSYTSeatch.js"
+import { INDEX_D_DCTRSearch } from "../../psychiatrists/desktop/INDEX_D_DCTRSearch.js"
 import { INDEX_D_RPSearch } from "../../residential-programs/desktop/INDEX_D_RPSearch.js"
 import { INDEX_D_SESSearch } from "../../special-education-schools/desktop/INDEX_D_SESSearch.js"
 import { INDEX_D_STSearch } from "../../speech-therapists/first-page/dekstop/INDEX_D_STSearch.js"
@@ -22,11 +22,7 @@ const DATA = [
   { nameJSX: "Assistive Technology", component: INDEX_D_ATSearch, componentName: INDEX_D_ATSearch.name },
   { nameJSX: "Attorney and Advocates", component: INDEX_D_AASearch, componentName: INDEX_D_AASearch.name },
   { nameJSX: "Camps", component: INDEX_D_CMPSSearch, componentName: INDEX_D_CMPSSearch.name },
-  /* 
-  This is a Doctor I think
-  */
-
-  { nameJSX: "Psychiatrists", component: INDEX_D_PSYTSearch, componentName: INDEX_D_PSYTSearch.name },
+  { nameJSX: "Doctors", component: INDEX_D_DCTRSearch, componentName: INDEX_D_DCTRSearch.name },
   { nameJSX: "Community Classes", component: INDEX_D_CCSearch, componentName: INDEX_D_CCSearch.name },
   {
     nameJSX: "Mental Health Support/Services",
@@ -165,40 +161,6 @@ export const INDEX_D_ORG = () => {
         return null
       })}
 
-      {/* {singleCardIsSelected === false ? (
-        <>
-          <INDEX_D_ATSearch />
-          <INDEX_D_AASearch />
-          <INDEX_D_CMPSSearch />
-          <INDEX_D_PSYTSearch />
-          <INDEX_D_CCSearch />
-          <INDEX_D_MHSSSearch />
-          <INDEX_D_PPASSearch />
-          <INDEX_D_SESSearch />
-          <INDEX_D_STSearch />
-          <INDEX_D_RPSearch />
-        </>
-      ) : matchNameState === INDEX_D_ATSearch.name ? (
-        <INDEX_D_ATSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_AASearch.name ? (
-        <INDEX_D_AASearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_CMPSSearch.name ? (
-        <INDEX_D_CMPSSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_PSYTSearch.name ? (
-        <INDEX_D_PSYTSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_CCSearch.name ? (
-        <INDEX_D_CCSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_MHSSSearch.name ? (
-        <INDEX_D_MHSSSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_PPASSearch.name ? (
-        <INDEX_D_PPASSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_SESSearch.name ? (
-        <INDEX_D_SESSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_STSearch.name ? (
-        <INDEX_D_STSearch isSelected={singleCardIsSelected} />
-      ) : matchNameState === INDEX_D_RPSearch.name ? (
-        <INDEX_D_RPSearch isSelected={singleCardIsSelected} />
-      ) : null} */}
     </INDEX_D_ORGWrapper>
   )
 }

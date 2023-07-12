@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const INDEX_D_PSYTSearchWrapper = styled.div`
+export const INDEX_D_DCTRSearchWrapper = styled.div`
   border: 2px solid crimson;
   
 `
