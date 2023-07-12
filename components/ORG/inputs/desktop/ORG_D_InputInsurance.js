@@ -4,12 +4,12 @@ import ORGDesktop_InsuranceIcon from "../../../../assets/Icons/ORGDesktop_Insura
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { ST_D_DropdownSuggestionComponent } from "./ST_D_DropdownSuggestionComponent"
-import { ST_D_DropdownSuggestionWrapper } from "./styles/ST_D_DropdownSuggestionWrapper"
+import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
+import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 
 const suggestionsKeywords = ["Aetna", "Blue Cross Blue Shield", "Cigna", "Tricare", "VSP"]
 
-export const ST_D_InputInsurance = () => {
+export const ORG_D_InputInsurance = () => {
   const [isFocusEnsurance, setIsFocusEnsurance] = useState(false)
   const [isHoveredEnsurance, setIsHoveredEnsurance] = useState(false)
   const inputRefEnsurance = useRef()
@@ -56,8 +56,8 @@ export const ST_D_InputInsurance = () => {
         />
       </span>
 
-      <ST_D_DropdownSuggestionWrapper>
-        <ST_D_DropdownSuggestionComponent
+      <ORG_D_DropdownSuggestionWrapper>
+        <ORG_D_DropdownSuggestionComponent
           isFocus={isFocusEnsurance}
           setIsHover={setIsHoveredEnsurance}
           setIsFocus={setIsFocusEnsurance}
@@ -68,7 +68,7 @@ export const ST_D_InputInsurance = () => {
           inputRefFocus={inputRefEnsurance}
           isFirstOrSecondDropdown={true}
         />
-      </ST_D_DropdownSuggestionWrapper>
+      </ORG_D_DropdownSuggestionWrapper>
     </div>
   )
 }

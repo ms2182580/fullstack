@@ -1,7 +1,7 @@
-import { KeywordCitiesWrapper, ST_D_DropdownSuggestionComponentWrapper } from "./styles/ST_D_DropdownSuggestionComponentWrapper.js"
+import { KeywordCitiesWrapper, ORG_D_DropdownSuggestionComponentWrapper } from "./styles/ORG_D_DropdownSuggestionComponentWrapper.js"
 
 
-export const ST_D_DropdownSuggestionComponent = ({
+export const ORG_D_DropdownSuggestionComponent = ({
   isFocus,
   setIsHover,
   suggestions,
@@ -17,7 +17,7 @@ export const ST_D_DropdownSuggestionComponent = ({
   let IconSvg = whichIcon
 
   return (
-    <ST_D_DropdownSuggestionComponentWrapper
+    <ORG_D_DropdownSuggestionComponentWrapper
       ref={theRef}
       isFirstOrSecondDropdown={isFirstOrSecondDropdown}>
       {isFocus && (
@@ -78,6 +78,6 @@ export const ST_D_DropdownSuggestionComponent = ({
           <div></div>
         </div>
       )}
-    </ST_D_DropdownSuggestionComponentWrapper>
+    </ORG_D_DropdownSuggestionComponentWrapper>
   )
 }

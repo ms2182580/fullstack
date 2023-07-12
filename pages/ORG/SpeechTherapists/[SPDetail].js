@@ -4,13 +4,6 @@ import { useCheckUserWidth } from "../../../context/CheckUserWidth"
 const SPDetail = () => {
   const { isMobile } = useCheckUserWidth()
 
-  /* 
-  !FH0
-  Clean all the desktop and mobile from each other
-  Finish the name of all the components
-  */
-
-
   return (
     <>
       {isMobile === false ? (

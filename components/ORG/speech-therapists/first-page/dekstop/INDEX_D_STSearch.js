@@ -1,44 +1,38 @@
-import Image from "next/image.js"
-import { ORG_D_Search_CarePlanSvg } from "../../../../../assets/Icons"
-import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Search_Hero.png"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_D_SearchComponent } from "../../../inputs/desktop/ST_D_SearchComponent"
-import { ST_D_Search_CardsLanding } from "./ST_D_Search_CardsLanding"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
+import { useFetchNoFiltersDesktop } from "../../../../../utils/useFetchNoFiltersDesktop"
+import { ButtonSmall } from "../../../../ui/buttons/general"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { ORG_D_Cards } from "../../../home/desktop/ORG_D_Cards"
 import { INDEX_D_STSearchWrapper } from "./styles/INDEX_D_STSearchWrapper"
 
-export const INDEX_D_STSearch = () => {
+export const INDEX_D_STSearch = ({ isSelected = false }) => {
+
+  const { shouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
+
+
+  const { data: userFetched, filters: filtersST } = useFetchNoFiltersDesktop(1, 6, "landingThreeCardsHere → 3", shouldFetchDesktopNoFilters)
+
   return (
     <INDEX_D_STSearchWrapper>
-      <div>
-        <H1 semi_bold>
-          Find your I/DD <br /> community
-          <br /> and resources
-        </H1>
+      <H2 semi_bold>Popular Speech Language Pathologists</H2>
+      <div>Some cards here </div>
+      <div>Some cards here </div>
+      <div>Some cards here </div>
 
-        <div>
-          <div>
-            <ORG_D_Search_CarePlanSvg />
-            <P semibold>Care Plan</P>
-          </div>
-        </div>
+      <ButtonSmall secondary >
+        <Caption bold>See all </Caption>{" "}
+        <Caption
+          bold
+          dark_gray>
+          (25)
+        </Caption>
+      </ButtonSmall>
 
-        <div>
-          <Image
-            src={ORGDesktop_Search_Hero}
-            alt=""
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
 
-        <ST_D_SearchComponent
-          toWhere="SpeechTherapists"
-          landingHere="true"
-        />
-      </div>
+      {/* <ST_D_Search_CardsLanding /> */}
 
-      <ST_D_Search_CardsLanding />
+      {isSelected && <ORG_D_Cards />}
     </INDEX_D_STSearchWrapper>
   )
 }

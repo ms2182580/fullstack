@@ -4,8 +4,8 @@ import ORGDesktop_LoupeIcon from "../../../../assets/Icons/ORGDesktop_LoupeIcon.
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { ST_D_DropdownSuggestionComponent } from "./ST_D_DropdownSuggestionComponent"
-import { ST_D_DropdownSuggestionWrapper } from "./styles/ST_D_DropdownSuggestionWrapper"
+import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
+import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 
 const suggestionsKeywords = [
   "Physical Therapist",
@@ -15,7 +15,7 @@ const suggestionsKeywords = [
   "Art Camp"
 ]
 
-export const ST_D_InputKeyword = () => {
+export const ORG_D_InputKeyword = () => {
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
@@ -62,8 +62,8 @@ export const ST_D_InputKeyword = () => {
         />
       </span>
 
-      <ST_D_DropdownSuggestionWrapper>
-        <ST_D_DropdownSuggestionComponent
+      <ORG_D_DropdownSuggestionWrapper>
+        <ORG_D_DropdownSuggestionComponent
           isFocus={isFocusKeyword}
           setIsHover={setIsHoveredKeyword}
           setIsFocus={setIsFocusKeyword}
@@ -74,7 +74,7 @@ export const ST_D_InputKeyword = () => {
           inputRefFocus={inputRefKeyword}
           isFirstOrSecondDropdown={true}
         />
-      </ST_D_DropdownSuggestionWrapper>
+      </ORG_D_DropdownSuggestionWrapper>
     </div>
   )
 }

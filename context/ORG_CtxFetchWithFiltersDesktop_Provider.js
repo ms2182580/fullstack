@@ -19,7 +19,7 @@ export const ORG_CtxFetchWithFiltersDesktop_Provider = ({ children }) => {
   } = useFetchWithFiltersDesktop(pagination, howMuchShow, "FetchWithFiltersDesktop", shouldFetchDesktopFilters)
 
   /* 
-  !FH0
+  !FH
   The data inside the filters should have a different name from the fetch with no filters, maybe something like this:
   
   No filters → userFetched

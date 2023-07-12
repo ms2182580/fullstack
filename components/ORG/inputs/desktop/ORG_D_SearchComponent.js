@@ -3,20 +3,20 @@ import { SearchSVG } from "../../../../assets/Icons"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { ButtonSmall } from "../../../ui/buttons/general"
 import { LinkNoStyle } from "../../../ui/hyperlink/HyperlinkNoStyles"
-import { ST_D_InputInsurance } from "./ST_D_InputInsurance"
-import { ST_D_InputKeyword } from "./ST_D_InputKeyword"
-import { ST_D_InputLocation } from "./ST_D_InputLocation"
-import { ST_D_SearchComponentWrapper } from "./styles/ST_D_SearchComponentWrapper"
+import { ORG_D_InputInsurance } from "./ORG_D_InputInsurance"
+import { ORG_D_InputKeyword } from "./ORG_D_InputKeyword"
+import { ORG_D_InputLocation } from "./ORG_D_InputLocation"
+import { ORG_D_SearchComponentWrapper } from "./styles/ORG_D_SearchComponentWrapper"
 
-export const ST_D_SearchComponent = ({ toWhere = "undefined" }) => {
+export const ORG_D_SearchComponent = ({ toWhere = "undefined" }) => {
   const router = useRouter()
   const shouldTab = useShouldTab()
 
   return (
-    <ST_D_SearchComponentWrapper>
-      <ST_D_InputKeyword />
-      <ST_D_InputLocation />
-      <ST_D_InputInsurance />
+    <ORG_D_SearchComponentWrapper>
+      <ORG_D_InputKeyword />
+      <ORG_D_InputLocation />
+      <ORG_D_InputInsurance />
 
       {toWhere === "SpeechTherapists" ? (
         <LinkNoStyle href={`${router.pathname}/${toWhere}`}>
@@ -39,6 +39,6 @@ export const ST_D_SearchComponent = ({ toWhere = "undefined" }) => {
           </ButtonSmall>
         </LinkNoStyle>
       )}
-    </ST_D_SearchComponentWrapper>
+    </ORG_D_SearchComponentWrapper>
   )
 }

@@ -14,11 +14,6 @@ import { ST_M_Detail_StickyNavbar } from "./ST_M_Detail_StickyNavbar"
 import { INDEX_M_STDetailWrapper } from "./styles/INDEX_M_STDetailWrapper.js"
 import { ST_M_HeaderWrapper } from "./styles/ST_M_HeaderWrapper.js"
 
-/* 
-!FH0
-Check every part where the hover can be used
-*/
-
 export const INDEX_M_STDetail = () => {
   const route = useRouter()
   const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()

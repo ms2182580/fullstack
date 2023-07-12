@@ -32,7 +32,8 @@ export const D1 = styled.p`
 export const H1 = styled.h1`
   font-size: ${FontsHeadDesktop.HEADING_1};
   line-height: ${LineHeightHeadDesktop.HEADING_1};
-  font-weight: ${(x) => (x.bold ? FontsWeights.BOLDER_800 : x.semi_bold ? FontsWeights.BOLD_700 : FontsWeights.SEMIBOLD_600)};
+  font-weight: ${(x) =>
+    x.bold ? FontsWeights.BOLDER_800 : x.semi_bold ? FontsWeights.BOLD_700 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_1};
   color: ${(x) =>
     x.logo
@@ -66,7 +67,8 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: ${FontsHeadDesktop.HEADING_2};
   line-height: ${LineHeightHeadDesktop.HEADING_2};
-  font-weight: ${(x) => (x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600)};
+  font-weight: ${(x) =>
+    x.bold ? FontsWeights.BOLDER_800 : x.semi_bold ? FontsWeights.SEMIBOLD_600 : FontsWeights.SEMIBOLD_600};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_2};
   color: ${(x) =>
     x.logo

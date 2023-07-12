@@ -1,0 +1,170 @@
+import styled from "styled-components"
+import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
+
+export const INDEX_D_ORGWrapper = styled.div`
+  background-color: ${NEUTRALS.OFF_WHITE};
+  margin-bottom: 56px;
+
+  position: relative;
+
+  & > * {
+    padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+  }
+
+  & > :nth-child(1) {
+    background: linear-gradient(
+      169deg,
+      rgba(75, 52, 139, 0.35) 0%,
+      rgba(255, 154, 108, 0.46) 45.31%,
+      rgba(228, 204, 255, 0.56) 100%
+    );
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "text image"
+      "search search";
+    grid-auto-flow: dense;
+
+    & > :nth-child(1) {
+      grid-area: text;
+      padding-top: 56px;
+    }
+
+    & > :nth-child(2) {
+      position: absolute;
+      z-index: 1;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      & > :nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        cursor: pointer;
+
+        width: fit-content;
+        padding: 8px 48px;
+        margin: auto;
+
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+
+        border-radius: 0 0 8px 8px;
+
+        background-color: ${PRIMARY.PRIMARY_CTA};
+
+        & > p {
+          color: ${NEUTRALS.OFF_WHITE};
+        }
+      }
+    }
+
+    & > :nth-child(3) {
+      grid-area: image;
+
+      position: relative;
+      width: clamp(225px, calc(100vw - 3rem), 500px);
+      height: clamp(64px, calc(40vw - 3rem), 320px);
+      justify-self: end;
+    }
+
+    & > :nth-child(4) {
+      padding-top: 73px;
+      grid-area: search;
+    }
+  }
+
+  & > :nth-child(2) {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100vw;
+    white-space: nowrap;
+    overflow-x: hidden;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    position: relative;
+
+    /* background-image: linear-gradient(90deg, hsl(0deg 0% 0%) 0%, hsl(0deg 0% 100%) 100%,); */
+
+    /* background-image: linear-gradient(
+  90deg,
+  hsl(0deg 0% 100%) 75%,
+  
+  hsl(0deg 0% 0%) 100%
+); */
+
+    /* background: linear-gradient(-90deg, green, green 50%, rgba(0, 128, 0, 0) 50%); */
+
+    &::after {
+      content:"";
+      /* border: 2px solid green; */
+      position: sticky;
+      right: -24px;
+      z-index: 1;
+      min-width: 115px;
+      background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 27%);
+    }
+
+    & > :nth-child(1) {
+      background-color: ${({ singleCardIsSelected }) => !singleCardIsSelected && `${PRIMARY.PRIMARY_CTA}`};
+
+      & > p {
+        color: ${({ singleCardIsSelected }) => !singleCardIsSelected && `${NEUTRALS.OFF_WHITE}`};
+      }
+    }
+
+    & > li {
+      list-style: none;
+      border: 2px solid ${PRIMARY.PRIMARY_CTA};
+      padding: 8px 16px;
+      border-radius: 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${PRIMARY.PRIMARY_CTA};
+
+        & > p {
+          color: ${NEUTRALS.OFF_WHITE};
+        }
+      }
+    }
+
+    /* & > :nth-last-child(2){
+      border: 2px solid green;
+      position:sticky;
+      right:-24px;
+      z-index:1;
+      min-width:115px;
+      background: linear-gradient(90deg, hsla(0, 0%, 100%, 50%) 0%, hsl(0, 0%, 100%) 23%);
+    } */
+
+    & > :last-child {
+      position: sticky;
+      margin: auto;
+      right: 0;
+      z-index: 2;
+      padding: 12px 16px;
+
+      border: 2px solid ${PRIMARY.PRIMARY_CTA};
+      background-color: ${NEUTRALS.OFF_WHITE};
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+  }
+`

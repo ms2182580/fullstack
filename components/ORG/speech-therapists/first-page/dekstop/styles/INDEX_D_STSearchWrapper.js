@@ -2,16 +2,20 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const INDEX_D_STSearchWrapper = styled.div`
-  background-color: ${NEUTRALS.OFF_WHITE};
-  margin-bottom: 120px;
 
-  position: relative;
+  border: 2px solid crimson;
+  
+
+  /* background-color: ${NEUTRALS.OFF_WHITE}; */
+  /* margin-bottom: 120px; */
+
+  /* position: relative; */
 
   & > * {
-    padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+    /* padding-inline: clamp(16px, calc(10vw - 80px), 96px); */
   }
 
-  & > :nth-child(1) {
+  /* & > :nth-child(1) {
     background: linear-gradient(
       169deg,
       rgba(75, 52, 139, 0.35) 0%,
@@ -77,5 +81,5 @@ export const INDEX_D_STSearchWrapper = styled.div`
       padding-top: 73px;
       grid-area: search;
     }
-  }
+  } */
 `

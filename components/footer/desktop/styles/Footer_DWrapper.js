@@ -96,8 +96,9 @@ export const Footer_DWrapper = styled.div`
       position: relative;
       z-index: 3;
 
+      
       overflow: hidden;
-
+      
       &::before {
         content: "";
         width: 0%;

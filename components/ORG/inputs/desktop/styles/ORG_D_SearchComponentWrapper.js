@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../../assets/Colors"
 import { COLORS } from "../../../../ui/buttons/variables"
 
-export const ST_D_SearchComponentWrapper = styled.div`
+export const ORG_D_SearchComponentWrapper = styled.div`
   margin-bottom: 2.5rem;
   display: grid;
   grid-template-columns: 8fr 8fr 8fr 1fr;

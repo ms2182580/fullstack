@@ -5,12 +5,12 @@ import ORGDesktop_LocationIcon from "../../../../assets/Icons/ORGDesktop_Locatio
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { ST_D_DropdownSuggestionComponent } from "./ST_D_DropdownSuggestionComponent"
-import { ST_D_DropdownSuggestionWrapper } from "./styles/ST_D_DropdownSuggestionWrapper"
+import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
+import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 
 const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
 
-export const ST_D_InputLocation = () => {
+export const ORG_D_InputLocation = () => {
   const [isFocusCity, setIsFocusCity] = useState(false)
   const [isHoveredCity, setIsHoveredCity] = useState(false)
   const inputRefCity = useRef()
@@ -57,8 +57,8 @@ export const ST_D_InputLocation = () => {
         />
       </span>
 
-      <ST_D_DropdownSuggestionWrapper>
-        <ST_D_DropdownSuggestionComponent
+      <ORG_D_DropdownSuggestionWrapper>
+        <ORG_D_DropdownSuggestionComponent
           isFocus={isFocusCity}
           setIsHover={setIsHoveredCity}
           setIsFocus={setIsFocusCity}
@@ -70,7 +70,7 @@ export const ST_D_InputLocation = () => {
           haveIcon={true}
           whichIcon={CurrentLocationSvg}
         />
-      </ST_D_DropdownSuggestionWrapper>
+      </ORG_D_DropdownSuggestionWrapper>
     </div>
   )
 }

@@ -50,6 +50,11 @@ export const Footer_D = () => {
 
       <div>
         <button>
+          {/* 
+          !FH!
+          Bug here: the avg only render in landing page and 2° page of ORG. Doesn't render on 1° page of ORG or 3° page
+          */}
+
           <Footer_D_AccessibilityModeSvg /> <P semibold>Accessibility Mode</P>
         </button>
         <button>

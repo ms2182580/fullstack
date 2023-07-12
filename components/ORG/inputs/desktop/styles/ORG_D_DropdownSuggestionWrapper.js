@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../assets/Colors"
 
-export const ST_D_DropdownSuggestionWrapper = styled.div`
+export const ORG_D_DropdownSuggestionWrapper = styled.div`
   position: absolute;
   width: 100%;
   top: 112px;
