@@ -68,25 +68,11 @@ export const INDEX_D_ORG = () => {
     setShouldFetchDesktopNoFilters(true)
   }, [])
 
-
   const [listRef, setListRef] = useState(null)
 
   useEffect(() => {
     if (listRef) {
-
-
-      /* 
-      !FH0
-      Check the max width of the scrollWidth
-      When the user will be close to the end, start subatracting the width of the &::after element in the index_D_ORGWrapper
-      */
       const handleScroll = (event) => {
-        // console.log('listRef:', listRef.scrollLeft, listRef.scrollLeftMax)
-        // console.log('listRef:', listRef)
-        // console.log('event:', event)
-        console.log('event.deltaY:', event.deltaY)
-
-
         event.preventDefault()
         listRef.scrollLeft += event.deltaY
       }
@@ -99,9 +85,14 @@ export const INDEX_D_ORG = () => {
     }
   }, [listRef])
 
+  const handleMoveNavBarToRightByClick = () => {
+    if (listRef) {
+      listRef.scrollLeft += 200
+    }
+  }
+
   return (
-    <INDEX_D_ORGWrapper singleCardIsSelected={singleCardIsSelected}
-    >
+    <INDEX_D_ORGWrapper singleCardIsSelected={singleCardIsSelected}>
       <div>
         <H1 semi_bold>
           Find your I/DD <br /> community
@@ -129,26 +120,32 @@ export const INDEX_D_ORG = () => {
 
       <ul ref={setListRef}>
         <li onClick={handleShowAll}>
-          <P primary_cta semibold>All</P>
+          <P
+            primary_cta
+            semibold>
+            All
+          </P>
         </li>
         {DATA.map((x, i) => (
           <li
             key={x.nameJSX}
             data-name={x.componentName}
             onClick={handleShowOneCard}>
-            <P primary_cta semibold data-name={x.componentName}>{x.nameJSX}</P>
+            <P
+              primary_cta
+              semibold
+              data-name={x.componentName}>
+              {x.nameJSX}
+            </P>
           </li>
         ))}
 
-
-
         <div>
-          <div>
+          <div onClick={handleMoveNavBarToRightByClick}>
             <ArrowRightSvg />
           </div>
           <div />
         </div>
-
       </ul>
 
       {DATA.map((x, i) => {

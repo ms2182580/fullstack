@@ -137,9 +137,20 @@ export const INDEX_D_ORGWrapper = styled.div`
         position: relative;
         z-index: 2;
 
+        cursor: pointer;
+
         & > * {
           & > * {
             fill: ${PRIMARY.PRIMARY_CTA};
+          }
+        }
+
+        &:hover {
+          background-color: ${PRIMARY.PRIMARY_CTA};
+          & > * {
+            & > * {
+              fill: ${NEUTRALS.OFF_WHITE};
+            }
           }
         }
       }
