@@ -7,8 +7,13 @@ export const INDEX_D_ORGWrapper = styled.div`
 
   position: relative;
 
-  & > * {
+  & > :nth-child(1),
+  & > :nth-child(2) {
     padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+  }
+
+  & > *:not(:nth-child(1)):not(:nth-child(2)) {
+    margin-inline: clamp(16px, calc(10vw - 80px), 96px);
   }
 
   & > :nth-child(1) {
@@ -89,17 +94,9 @@ export const INDEX_D_ORGWrapper = styled.div`
 
     padding-top: 40px;
     padding-bottom: 40px;
-    
+
     cursor: ew-resize;
-    
 
-    & > :nth-child(1) {
-      background-color: ${({ singleCardIsSelected }) => !singleCardIsSelected && `${PRIMARY.PRIMARY_CTA}`};
-
-      & > p {
-        color: ${({ singleCardIsSelected }) => !singleCardIsSelected && `${NEUTRALS.OFF_WHITE}`};
-      }
-    }
 
     & > li {
       list-style: none;
@@ -112,9 +109,17 @@ export const INDEX_D_ORGWrapper = styled.div`
       justify-content: center;
 
       cursor: pointer;
-      
-      &:hover {
+
+      &.isActive {
         background-color: ${PRIMARY.PRIMARY_CTA};
+
+        & > p {
+          color: ${NEUTRALS.OFF_WHITE};
+        }
+      }
+
+      &:hover:not(.isActive) {
+        background-color: ${PRIMARY.PRIMARY_HOVER};
 
         & > p {
           color: ${NEUTRALS.OFF_WHITE};

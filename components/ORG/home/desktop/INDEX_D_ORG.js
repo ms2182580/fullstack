@@ -19,13 +19,31 @@ import { INDEX_D_STSearch } from "../../speech-therapists/first-page/dekstop/IND
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
 const DATA = [
-  { nameJSX: "Assistive Technology", component: INDEX_D_ATSearch, componentName: INDEX_D_ATSearch.name },
-  { nameJSX: "Attorney and Advocates", component: INDEX_D_AASearch, componentName: INDEX_D_AASearch.name },
-  { nameJSX: "Camps", component: INDEX_D_CMPSSearch, componentName: INDEX_D_CMPSSearch.name },
-  { nameJSX: "Doctors", component: INDEX_D_DCTRSearch, componentName: INDEX_D_DCTRSearch.name },
-
-  { nameJSX: "Community Classes", component: INDEX_D_CCSearch, componentName: INDEX_D_CCSearch.name },
-
+  {
+    nameJSX: "Assistive Technology",
+    component: INDEX_D_ATSearch,
+    componentName: INDEX_D_ATSearch.name
+  },
+  {
+    nameJSX: "Attorney and Advocates",
+    component: INDEX_D_AASearch,
+    componentName: INDEX_D_AASearch.name
+  },
+  {
+    nameJSX: "Camps",
+    component: INDEX_D_CMPSSearch,
+    componentName: INDEX_D_CMPSSearch.name
+  },
+  {
+    nameJSX: "Doctors",
+    component: INDEX_D_DCTRSearch,
+    componentName: INDEX_D_DCTRSearch.name
+  },
+  {
+    nameJSX: "Community Classes",
+    component: INDEX_D_CCSearch,
+    componentName: INDEX_D_CCSearch.name
+  },
   {
     nameJSX: "Mental Health Support/Services",
     component: INDEX_D_MHSSSearch,
@@ -36,21 +54,26 @@ const DATA = [
     component: INDEX_D_PPASSearch,
     componentName: INDEX_D_PPASSearch.name
   },
-
-  { nameJSX: "Special Education Schools", component: INDEX_D_SESSearch, componentName: INDEX_D_SESSearch.name },
+  {
+    nameJSX: "Special Education Schools",
+    component: INDEX_D_SESSearch,
+    componentName: INDEX_D_SESSearch.name
+  },
 
   {
     nameJSX: "Therapeutic Providers & Services",
     component: INDEX_D_STSearch,
-
     componentName: INDEX_D_STSearch.name
   },
-  { nameJSX: "Residential Programs", component: INDEX_D_RPSearch, componentName: INDEX_D_RPSearch.name }
+  {
+    nameJSX: "Residential Programs",
+    component: INDEX_D_RPSearch,
+    componentName: INDEX_D_RPSearch.name
+  }
 ]
 
 export const INDEX_D_ORG = () => {
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
-
   const [matchNameState, setMatchNameState] = useState("All")
 
   const handleShowAll = () => {
@@ -93,7 +116,7 @@ export const INDEX_D_ORG = () => {
   }
 
   return (
-    <INDEX_D_ORGWrapper singleCardIsSelected={singleCardIsSelected}>
+    <INDEX_D_ORGWrapper>
       <div>
         <H1 semi_bold>
           Find your I/DD <br /> community
@@ -120,7 +143,9 @@ export const INDEX_D_ORG = () => {
       </div>
 
       <ul ref={setListRef}>
-        <li onClick={handleShowAll}>
+        <li
+          onClick={handleShowAll}
+          className={!singleCardIsSelected ? "isActive" : ""}>
           <P
             primary_cta
             semibold>
@@ -131,7 +156,8 @@ export const INDEX_D_ORG = () => {
           <li
             key={x.nameJSX}
             data-name={x.componentName}
-            onClick={handleShowOneCard}>
+            onClick={handleShowOneCard}
+            className={singleCardIsSelected && matchNameState === x.componentName ? "isActive" : ""}>
             <P
               primary_cta
               semibold
