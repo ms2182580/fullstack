@@ -89,6 +89,9 @@ export const INDEX_D_ORGWrapper = styled.div`
 
     padding-top: 40px;
     padding-bottom: 40px;
+    
+    cursor: ew-resize;
+    
 
     & > :nth-child(1) {
       background-color: ${({ singleCardIsSelected }) => !singleCardIsSelected && `${PRIMARY.PRIMARY_CTA}`};
@@ -156,8 +159,6 @@ export const INDEX_D_ORGWrapper = styled.div`
       }
 
       & > :nth-child(2) {
-        /* border: 2px solid green; */
-        
         position: absolute;
         top: 0;
         right: -6vw;
