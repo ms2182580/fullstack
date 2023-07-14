@@ -35,14 +35,15 @@ const DATA = [
     componentName: INDEX_D_CMPSSearch.name
   },
   {
-    nameJSX: "Doctors",
-    component: INDEX_D_DCTRSearch,
-    componentName: INDEX_D_DCTRSearch.name
-  },
-  {
     nameJSX: "Community Classes",
     component: INDEX_D_CCSearch,
     componentName: INDEX_D_CCSearch.name
+  },
+
+  {
+    nameJSX: "Doctors",
+    component: INDEX_D_DCTRSearch,
+    componentName: INDEX_D_DCTRSearch.name
   },
   {
     nameJSX: "Mental Health Support/Services",

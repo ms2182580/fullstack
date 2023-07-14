@@ -79,6 +79,7 @@ const DATA = [
       goToThirdPage: ""
     }
   ],
+
   [
     "Popular Smart Devices with Assistive Technology",
     {
@@ -111,22 +112,14 @@ const DATA = [
   ]
 ]
 
-const TITLE_DATA = [
-  "Popular Assistive Technology",
-  "Popular Software Assistive Technology",
-  "Popular Smart Devices with Assistive Technology"
-]
-
 export const INDEX_D_ATSearch = ({ isSelected = false }) => {
-  // console.log('isSelected:', isSelected)
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
-  // console.log('howMuchDisplay:', howMuchDisplay)
 
   useEffect(() => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(3)
+      setHowMuchDisplay(DATA.length)
     }
   }, [isSelected])
 
@@ -134,6 +127,7 @@ export const INDEX_D_ATSearch = ({ isSelected = false }) => {
     <INDEX_D_ATSearchWrapper>
       {DATA.map((x, i) => {
         const [title, ...objects] = x
+        console.log('objects:', objects)
         while (howMuchDisplay > i) {
           return (
             <>
@@ -172,144 +166,6 @@ export const INDEX_D_ATSearch = ({ isSelected = false }) => {
           )
         }
       })}
-
-      {/* <div>
-          <H2 semi_bold>Popular Assistive Technology</H2>
-
-          <div>
-            <div>
-              <Image src={ORG_AT1} />
-            </div>
-
-            <div>
-              <H3>Permobil F5 Corpus VS</H3>
-              <H4>Power Wheelchair</H4>
-              <StarsRatingReview_D
-                rating={rating1}
-                reviews={reviews1}
-              />
-              <P>Permobil combined all the performance features of the F5 Corpus with superior...</P>
-              <span>
-                <ButtonSmall>
-                  <ORG_D_Search_ViewProfileSvg /> View Profile
-                </ButtonSmall>
-              </span>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <Image src={ORG_AT2} />
-            </div>
-            <H3>Title here</H3>
-            <H4>Sub Title here</H4>
-            <p>Rating here</p>
-            <p>Review here</p>
-            <button>final button here</button>
-          </div>
-          <div>
-            <div>
-              <Image src={ORG_AT3} />
-            </div>
-            <H3>Title here</H3>
-            <H4>Sub Title here</H4>
-            <p>Rating here</p>
-            <p>Review here</p>
-            <button>final button here</button>
-          </div>
-
-          <span>
-            <ButtonSmall secondary>See all (25)</ButtonSmall>
-          </span>
-        </div> */}
-
-      {/* {isSelected && (
-        <>
-          <div>
-            <H2 semi_bold>Popular Assistive Technology</H2>
-            <div>
-              <div>
-                <Image src={ORG_AT1} />
-              </div>
-              <H3>Title here</H3>
-              <H4>Sub Title here</H4>
-              <p>Rating here</p>
-              <p>Review here</p>
-              <button>final button here</button>
-            </div>
-            <div>
-              <div>
-                <Image src={ORG_AT2} />
-              </div>
-              <H3>Title here</H3>
-              <H4>Sub Title here</H4>
-              <p>Rating here</p>
-              <p>Review here</p>
-              <button>final button here</button>
-            </div>
-            <div>
-              <div>
-                <Image src={ORG_AT3} />
-              </div>
-              <H3>Title here</H3>
-              <H4>Sub Title here</H4>
-              <p>Rating here</p>
-              <p>Review here</p>
-              <button>final button here</button>
-            </div>
-            <ButtonSmall secondary>
-              <Caption bold>See all </Caption>{" "}
-              <Caption
-                bold
-                dark_gray>
-                (25)
-              </Caption>
-            </ButtonSmall>
-          </div>
-
-          <div>
-            <H2 semi_bold>Popular Assistive Technology</H2>
-            <div>
-              <div>
-                <Image src={ORG_AT1} />
-              </div>
-              <H3>Title here</H3>
-              <H4>Sub Title here</H4>
-              <p>Rating here</p>
-              <p>Review here</p>
-              <button>final button here</button>
-            </div>
-            <div>
-              <div>
-                <Image src={ORG_AT2} />
-              </div>
-              <H3>Title here</H3>
-              <H4>Sub Title here</H4>
-              <p>Rating here</p>
-              <p>Review here</p>
-              <button>final button here</button>
-            </div>
-            <div>
-              <div>
-                <Image src={ORG_AT3} />
-              </div>
-              <H3>Title here</H3>
-              <H4>Sub Title here</H4>
-              <p>Rating here</p>
-              <p>Review here</p>
-              <button>final button here</button>
-            </div>
-            <ButtonSmall secondary>
-              <Caption bold>See all </Caption>{" "}
-              <Caption
-                bold
-                dark_gray>
-                (25)
-              </Caption>
-            </ButtonSmall>
-          </div>
-        </>
-      )} */}
     </INDEX_D_ATSearchWrapper>
   )
 }

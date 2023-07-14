@@ -6,7 +6,8 @@ export const StarsRatingReview_DWrapper = styled.div`
   flex-wrap: wrap;
 
   & > :nth-child(1) {
-    margin-right: 20px;
+    margin-right: ${({ isDetail }) => isDetail ? `20px` : `8px`};
+    
   }
 
   & > :nth-child(2) {

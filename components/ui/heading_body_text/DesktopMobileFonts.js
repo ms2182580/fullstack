@@ -5,6 +5,7 @@ import { FontsWeights } from "../../../assets/Fonts/Weights"
 
 const SharedVariables = {
   FontWeight_400: `${FontsWeights.REGULAR_400}`,
+  FontWeight_500: `${FontsWeights.MEDIUM_500}`,
   FontWeight_600: `${FontsWeights.SEMIBOLD_600}`,
   FontWeight_700: `${FontsWeights.BOLD_700}`,
   FontWeight_800: `${FontsWeights.BOLDER_800}`,
@@ -24,7 +25,9 @@ export const P = styled.p`
         ? SharedVariables.FontWeight_700
         : x.semibold
           ? SharedVariables.FontWeight_600
-          : SharedVariables.FontWeight_400};
+          : x.medium
+            ? SharedVariables.FontWeight_500
+            : SharedVariables.FontWeight_400};
   text-decoration: ${(x) =>
     x.underline
       ? SharedVariables.Underline
