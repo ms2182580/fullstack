@@ -127,7 +127,6 @@ export const INDEX_D_ATSearch = ({ isSelected = false }) => {
     <INDEX_D_ATSearchWrapper>
       {DATA.map((x, i) => {
         const [title, ...objects] = x
-        console.log('objects:', objects)
         while (howMuchDisplay > i) {
           return (
             <>

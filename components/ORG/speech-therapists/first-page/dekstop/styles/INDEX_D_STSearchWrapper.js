@@ -1,85 +1,102 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const INDEX_D_STSearchWrapper = styled.div`
+display: flex;
+  flex-direction: column;
+  gap: 40px;
 
-  border: 2px solid crimson;
-  
-
-  /* background-color: ${NEUTRALS.OFF_WHITE}; */
-  /* margin-bottom: 120px; */
-
-  /* position: relative; */
+  margin-bottom: 40px;
 
   & > * {
-    /* padding-inline: clamp(16px, calc(10vw - 80px), 96px); */
-  }
-
-  /* & > :nth-child(1) {
-    background: linear-gradient(
-      169deg,
-      rgba(75, 52, 139, 0.35) 0%,
-      rgba(255, 154, 108, 0.46) 45.31%,
-      rgba(228, 204, 255, 0.56) 100%
-    );
-    width: 100%;
+    border-top: 4px solid ${NEUTRALS.LIGHT_GREY};
+    padding-top: 21px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "text image"
-      "search search";
-    grid-auto-flow: dense;
+      "title title title"
+      "card1 card2 card3"
+      ". . finalButton";
 
     & > :nth-child(1) {
-      grid-area: text;
-      padding-top: 56px;
+      grid-area: title;
     }
 
     & > :nth-child(2) {
-      position: absolute;
-      z-index: 1;
-
-      top: 0;
-      left: 0;
-      right: 0;
-
-      & > :nth-child(1) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-
-        cursor: pointer;
-
-        width: fit-content;
-        padding: 8px 48px;
-        margin: auto;
-
-        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
-
-        border-radius: 0 0 8px 8px;
-
-        background-color: ${PRIMARY.PRIMARY_CTA};
-
-        & > p {
-          color: ${NEUTRALS.OFF_WHITE};
-        }
-      }
+      grid-area: card1;
     }
-
     & > :nth-child(3) {
-      grid-area: image;
-
-      position: relative;
-      width: clamp(225px, calc(100vw - 3rem), 500px);
-      height: clamp(64px, calc(40vw - 3rem), 320px);
-      justify-self: end;
+      grid-area: card2;
     }
 
     & > :nth-child(4) {
-      padding-top: 73px;
-      grid-area: search;
+      grid-area: card3;
     }
-  } */
+
+    & > :nth-child(5) {
+      grid-area: finalButton;
+      width: 45%;
+
+      justify-self: end;
+      & > :nth-child(1) {
+        width: 100%;
+      }
+    }
+
+    & > :nth-child(2),
+    & > :nth-child(3),
+    & > :nth-child(4) {
+      box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+
+      display: grid;
+      /* grid-template-rows: min(209px) repeat(5, auto); */
+
+      & > :nth-child(1) {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        overflow: hidden;
+        width: 100%;
+
+        justify-self: center;
+        margin: auto;
+      }
+
+      & > *:not(:first-child) {
+        padding-inline: 24px;
+      }
+
+      & > :nth-child(2) {
+        padding-top: 24px;
+      }
+
+      & > :nth-child(2),
+      & > :nth-child(3) {
+        padding-bottom: 8px;
+      }
+
+      & > :nth-child(5),
+      & > :nth-child(6) {
+        padding-bottom: 32px;
+      }
+
+      & > :last-child {
+        padding-bottom: 24px;
+
+        & > :nth-child(1) {
+          width: 100%;
+          & > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+          }
+        }
+      }
+    }
+  }
+
 `

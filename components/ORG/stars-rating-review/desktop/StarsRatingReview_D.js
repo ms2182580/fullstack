@@ -4,8 +4,7 @@ import { StarsRatingReview_DWrapper } from "./styles/StarsRatingReview_DWrapper.
 
 export const StarsRatingReview_D = ({ rating, reviews, isDetail = false }) => {
   return (
-    <StarsRatingReview_DWrapper isDetail={isDetail}
-    >
+    <StarsRatingReview_DWrapper isDetail={isDetail}>
       <PatternStars rating={rating} />
 
       <P>{rating}.0</P>
