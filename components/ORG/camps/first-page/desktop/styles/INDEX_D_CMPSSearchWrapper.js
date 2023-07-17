@@ -8,6 +8,8 @@ export const INDEX_D_CMPSSearchWrapper = styled.div`
   gap: 40px;
 
   margin-bottom: 40px;
+  
+  overflow: hidden;
 
   & > * {
     border-top: 4px solid ${NEUTRALS.LIGHT_GREY};

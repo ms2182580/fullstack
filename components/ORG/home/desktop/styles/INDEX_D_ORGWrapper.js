@@ -6,6 +6,12 @@ export const INDEX_D_ORGWrapper = styled.div`
   margin-bottom: 56px;
 
   position: relative;
+  
+  & > *{
+    /* border: 2px solid green; */
+    
+  }
+  
 
   & > :nth-child(1),
   & > :nth-child(2) {
@@ -85,10 +91,11 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(2) {
+    
+    
     display: flex;
     flex-wrap: nowrap;
     gap: 12px;
-    width: 100vw;
     white-space: nowrap;
     overflow-x: hidden;
 
@@ -96,8 +103,9 @@ export const INDEX_D_ORGWrapper = styled.div`
     padding-bottom: 40px;
 
     cursor: ew-resize;
-
-
+    
+    
+    
     & > li {
       list-style: none;
       border: 2px solid ${PRIMARY.PRIMARY_CTA};
@@ -174,4 +182,6 @@ export const INDEX_D_ORGWrapper = styled.div`
       }
     }
   }
+  
+  
 `

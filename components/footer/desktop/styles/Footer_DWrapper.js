@@ -4,6 +4,7 @@ import { NEUTRALS, PRIMARY, SECONDARY_SNT } from "../../../../assets/Colors"
 export const Footer_DWrapper = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   position: relative;
+  
 
   & > *:not(:last-child) {
     padding-inline: clamp(16px, calc(10vw - 80px), 96px);
