@@ -97,15 +97,33 @@ export const INDEX_D_ORG = () => {
 
   useEffect(() => {
     if (listRef) {
+      let startTouch = 0
+
+      const handleTouchStart = (event) => {
+        startTouch = event.touches[0].clientX
+      }
+
       const handleScroll = (event) => {
         event.preventDefault()
-        listRef.scrollLeft += event.deltaY
+        if (event.type === "wheel") {
+          listRef.scrollLeft += event.deltaY
+        }
+
+        if (event.type === "touchmove") {
+          const change = startTouch - event.touches[0].clientX
+          startTouch = event.touches[0].clientX
+          listRef.scrollLeft += change
+        }
       }
 
       listRef.addEventListener("wheel", handleScroll)
+      listRef.addEventListener("touchstart", handleTouchStart)
+      listRef.addEventListener("touchmove", handleScroll)
 
       return () => {
         listRef.removeEventListener("wheel", handleScroll)
+        listRef.addEventListener("touchstart", handleTouchStart)
+        listRef.removeEventListener("touchmove", handleScroll)
       }
     }
   }, [listRef])
