@@ -33,6 +33,19 @@ export const INDEX_D_DCTRSearchWrapper = styled.div`
 
     & > :nth-child(4) {
       grid-area: card3;
+      
+      &.withVerifiedComponent {
+        & > :nth-child(1) {
+          position: relative;
+          & > :nth-child(2) {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            
+          }
+        }
+      }
+      
     }
 
     & > :nth-child(5) {

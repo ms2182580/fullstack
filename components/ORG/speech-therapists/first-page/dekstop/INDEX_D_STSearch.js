@@ -10,6 +10,7 @@ import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
+import { Verified } from "../../../verified/Verified"
 import { INDEX_D_STSearchWrapper } from "./styles/INDEX_D_STSearchWrapper"
 
 const DATA = [
@@ -117,6 +118,7 @@ export const INDEX_D_STSearch = ({ isSelected = false }) => {
                           alt={obj.title}
                           layout='responsive'
                         />
+                        <Verified />
                       </div>
                       <H3>{obj.title}</H3>
                       <H4>{obj.subtitle}</H4>

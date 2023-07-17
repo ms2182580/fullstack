@@ -15,6 +15,7 @@ import { ButtonSmall } from "../../../../ui/buttons/general/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { Verified } from "../../../verified/Verified.js"
 import { INDEX_D_DCTRSearchWrapper } from "./styles/INDEX_D_DCTRSearchWrapper.js"
 
 const DATA = [
@@ -140,6 +141,44 @@ export const INDEX_D_DCTRSearch = ({ isSelected = false }) => {
               <div key={`${x.title}_${i}`}>
                 <H2 semi_bold>{title}</H2>
                 {objects.map((obj, i) => {
+
+                  /* 
+                  !FH
+                  This is a patch because some images have inside it the "Verified" component */
+                  if (i === 2) {
+                    return (
+                      <div key={`${i}_${obj.titleImage}_${obj.reviews}`} className="withVerifiedComponent">
+                        <div>
+                          <Image
+                            src={obj.imageToUse}
+                            alt={obj.title}
+                            layout="responsive"
+                          />
+                          <Verified />
+                        </div>
+                        <H3>{obj.title}</H3>
+                        <H4>{obj.subtitle}</H4>
+                        <P
+                          medium
+                          dark_gray>
+                          {obj.city}
+                        </P>
+                        <StarsRatingReview_D
+                          rating={obj.rating}
+                          reviews={obj.reviews}
+                        />
+                        <P>{obj.textReview}</P>
+
+                        <span>
+                          <ButtonSmall>
+                            <ORG_D_Search_ViewProfileSvg /> View Profile
+                          </ButtonSmall>
+                        </span>
+                      </div>
+                    )
+                  }
+
+
                   return (
                     <div key={`${i}_${obj.titleImage}_${obj.reviews}`}>
                       <div>

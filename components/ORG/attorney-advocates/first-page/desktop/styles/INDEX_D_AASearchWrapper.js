@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const INDEX_D_AASearchWrapper = styled.div`
@@ -22,7 +22,6 @@ export const INDEX_D_AASearchWrapper = styled.div`
 
     & > :nth-child(1) {
       grid-area: title;
-      
     }
 
     & > :nth-child(2) {
@@ -34,6 +33,18 @@ export const INDEX_D_AASearchWrapper = styled.div`
 
     & > :nth-child(4) {
       grid-area: card3;
+
+      &.withVerifiedComponent {
+        & > :nth-child(1) {
+          position: relative;
+          & > :nth-child(2) {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            
+          }
+        }
+      }
     }
 
     & > :nth-child(5) {
@@ -58,11 +69,10 @@ export const INDEX_D_AASearchWrapper = styled.div`
       & > :nth-child(1) {
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
-        
-        overflow:hidden;
-        width:100%;
-        
-        
+
+        overflow: hidden;
+        width: 100%;
+
         justify-self: center;
         margin: auto;
       }
@@ -78,12 +88,10 @@ export const INDEX_D_AASearchWrapper = styled.div`
       & > :nth-child(2),
       & > :nth-child(3) {
         padding-bottom: 8px;
-        
       }
 
       & > :nth-child(5),
       & > :nth-child(6) {
-        
         padding-bottom: 32px;
       }
 
@@ -102,5 +110,4 @@ export const INDEX_D_AASearchWrapper = styled.div`
       }
     }
   }
-  
 `

@@ -15,6 +15,7 @@ import { ButtonSmall } from '../../../../ui/buttons/general/index.js'
 import { P } from '../../../../ui/heading_body_text/DesktopMobileFonts.js'
 import { H2, H3, H4 } from '../../../../ui/heading_body_text/HeaderFonts.js'
 import { StarsRatingReview_D } from '../../../stars-rating-review/desktop/StarsRatingReview_D.js'
+import { Verified } from '../../../verified/Verified.js'
 import { INDEX_D_CCSearchWrapper } from './styles/INDEX_D_CCSearchWrapper.js'
 
 const DATA = [
@@ -150,6 +151,7 @@ export const INDEX_D_CCSearch = ({ isSelected = false }) => {
                           alt={obj.title}
                           layout='responsive'
                         />
+                        <Verified />
                       </div>
                       <H3>{obj.title}</H3>
                       <H4>{obj.subtitle}</H4>

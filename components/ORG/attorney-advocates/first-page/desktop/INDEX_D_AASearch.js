@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { ORG_D_Search_ViewProfileSvg } from '../../../../../assets/Icons'
+import Image from "next/image"
+import { useEffect, useState } from "react"
+import { ORG_D_Search_ViewProfileSvg } from "../../../../../assets/Icons"
 import ORG_AA1 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA1.png"
 import ORG_AA10 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA10.png"
 import ORG_AA11 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA11.png"
@@ -16,12 +16,13 @@ import ORG_AA6 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA6
 import ORG_AA7 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA7.png"
 import ORG_AA8 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA8.png"
 import ORG_AA9 from "../../../../../assets/images/ORG/attorney-advocates/ORG_AA9.png"
-import { generateRandomNumber } from '../../../../../utils/generateRandomNumber'
-import { ButtonSmall } from '../../../../ui/buttons/general/index.js'
-import { P } from '../../../../ui/heading_body_text/DesktopMobileFonts'
-import { H2, H3, H4 } from '../../../../ui/heading_body_text/HeaderFonts.js'
-import { StarsRatingReview_D } from '../../../stars-rating-review/desktop/StarsRatingReview_D'
-import { INDEX_D_AASearchWrapper } from './styles/INDEX_D_AASearchWrapper.js'
+import { generateRandomNumber } from "../../../../../utils/generateRandomNumber"
+import { ButtonSmall } from "../../../../ui/buttons/general/index.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H2, H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
+import { Verified } from "../../../verified/Verified"
+import { INDEX_D_AASearchWrapper } from "./styles/INDEX_D_AASearchWrapper.js"
 
 const DATA = [
   [
@@ -190,9 +191,6 @@ const DATA = [
       goToThirdPage: ""
     }
   ]
-
-
-
 ]
 
 export const INDEX_D_AASearch = ({ isSelected = false }) => {
@@ -206,7 +204,6 @@ export const INDEX_D_AASearch = ({ isSelected = false }) => {
     }
   }, [isSelected])
 
-
   return (
     <INDEX_D_AASearchWrapper>
       {DATA.map((x, i) => {
@@ -217,31 +214,71 @@ export const INDEX_D_AASearch = ({ isSelected = false }) => {
               <div key={`${x.title}_${i}`}>
                 <H2 semi_bold>{title}</H2>
                 {objects.map((obj, i) => {
-                  return (
-                    <div key={`${i}_${obj.titleImage}_${obj.reviews}`}>
-                      <div>
-                        <Image
-                          src={obj.imageToUse}
-                          alt={obj.title}
-                          layout='responsive'
+                  /* 
+                  !FH
+                  This is a patch because some images have inside it the "Verified" component */
+                  if (i === 2) {
+                    return (
+                      <div key={`${i}_${obj.titleImage}_${obj.reviews}`} className="withVerifiedComponent">
+                        <div>
+                          <Image
+                            src={obj.imageToUse}
+                            alt={obj.title}
+                            layout="responsive"
+                          />
+                          <Verified />
+                        </div>
+                        <H3>{obj.title}</H3>
+                        <H4>{obj.subtitle}</H4>
+                        <P
+                          medium
+                          dark_gray>
+                          {obj.city}
+                        </P>
+                        <StarsRatingReview_D
+                          rating={obj.rating}
+                          reviews={obj.reviews}
                         />
-                      </div>
-                      <H3>{obj.title}</H3>
-                      <H4>{obj.subtitle}</H4>
-                      <P medium dark_gray>{obj.city}</P>
-                      <StarsRatingReview_D
-                        rating={obj.rating}
-                        reviews={obj.reviews}
-                      />
-                      <P>{obj.textReview}</P>
+                        <P>{obj.textReview}</P>
 
-                      <span>
-                        <ButtonSmall>
-                          <ORG_D_Search_ViewProfileSvg /> View Profile
-                        </ButtonSmall>
-                      </span>
-                    </div>
-                  )
+                        <span>
+                          <ButtonSmall>
+                            <ORG_D_Search_ViewProfileSvg /> View Profile
+                          </ButtonSmall>
+                        </span>
+                      </div>
+                    )
+                  } else {
+                    return (
+                      <div key={`${i}_${obj.titleImage}_${obj.reviews}`}>
+                        <div>
+                          <Image
+                            src={obj.imageToUse}
+                            alt={obj.title}
+                            layout="responsive"
+                          />
+                        </div>
+                        <H3>{obj.title}</H3>
+                        <H4>{obj.subtitle}</H4>
+                        <P
+                          medium
+                          dark_gray>
+                          {obj.city}
+                        </P>
+                        <StarsRatingReview_D
+                          rating={obj.rating}
+                          reviews={obj.reviews}
+                        />
+                        <P>{obj.textReview}</P>
+
+                        <span>
+                          <ButtonSmall>
+                            <ORG_D_Search_ViewProfileSvg /> View Profile
+                          </ButtonSmall>
+                        </span>
+                      </div>
+                    )
+                  }
                 })}
                 <span>
                   <ButtonSmall secondary>See all (25)</ButtonSmall>
@@ -251,7 +288,6 @@ export const INDEX_D_AASearch = ({ isSelected = false }) => {
           )
         }
       })}
-
     </INDEX_D_AASearchWrapper>
   )
 }

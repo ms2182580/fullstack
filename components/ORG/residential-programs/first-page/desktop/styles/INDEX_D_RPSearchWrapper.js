@@ -53,7 +53,6 @@ display: flex;
       border-radius: 8px;
 
       display: grid;
-      /* grid-template-rows: min(209px) repeat(5, auto); */
 
       & > :nth-child(1) {
         border-top-left-radius: 8px;
@@ -64,6 +63,15 @@ display: flex;
 
         justify-self: center;
         margin: auto;
+        
+        position: relative;
+
+        & > :nth-child(2) {
+          position: absolute;
+          right: 16px;
+          bottom: 16px;
+        }
+        
       }
 
       & > *:not(:first-child) {
