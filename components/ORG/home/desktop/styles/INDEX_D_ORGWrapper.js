@@ -6,13 +6,12 @@ export const INDEX_D_ORGWrapper = styled.div`
   margin-bottom: 56px;
 
   position: relative;
-  
-  & > :nth-child(1),
-  & > :nth-child(2) {
+
+  & > :nth-child(1) {
     padding-inline: clamp(16px, calc(10vw - 80px), 96px);
   }
 
-  & > *:not(:nth-child(1)):not(:nth-child(2)) {
+  & > *:not(:nth-child(1)) {
     margin-inline: clamp(16px, calc(10vw - 80px), 96px);
   }
 
@@ -85,49 +84,22 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(2) {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 12px;
-    white-space: nowrap;
-    overflow-x: hidden;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    & > :first-child {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0px;
+      margin: auto;
 
-    cursor: ew-resize;
+      visibility: hidden;
 
-    & > li {
-      list-style: none;
-      border: 2px solid ${PRIMARY.PRIMARY_CTA};
-      padding: 8px 16px;
-      border-radius: 8px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-
-      &.isActive {
-        background-color: ${PRIMARY.PRIMARY_CTA};
-
-        & > p {
-          color: ${NEUTRALS.OFF_WHITE};
-        }
+      &.navBarLeftArrowShouldDisplay {
+        visibility: visible;
       }
-
-      &:hover:not(.isActive) {
-        background-color: ${PRIMARY.PRIMARY_HOVER};
-
-        & > p {
-          color: ${NEUTRALS.OFF_WHITE};
-        }
-      }
-    }
-
-    & > :last-child {
-      position: sticky;
-      right: 0px;
 
       & > :nth-child(1) {
         border: 2px solid ${PRIMARY.PRIMARY_CTA};
@@ -135,6 +107,7 @@ export const INDEX_D_ORGWrapper = styled.div`
 
         background-color: ${NEUTRALS.OFF_WHITE};
 
+        height: 100%;
         padding: 12px 16px;
         display: flex;
         align-items: center;
@@ -164,11 +137,130 @@ export const INDEX_D_ORGWrapper = styled.div`
       & > :nth-child(2) {
         position: absolute;
         top: 0;
-        right: -6vw;
+        left: 0;
         z-index: 1;
         height: 100%;
-        width: calc(90px + 6vw);
+        width: 75px;
+        background: linear-gradient(-90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 8%);
+      }
+    }
+
+    & > :nth-child(2) {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 12px;
+      white-space: nowrap;
+      overflow-x: hidden;
+
+      cursor: ew-resize;
+
+      position: relative;
+
+      padding-right: 70px;
+
+      & > li {
+        list-style: none;
+        border: 2px solid ${PRIMARY.PRIMARY_CTA};
+        padding: 8px 16px;
+        border-radius: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        /* overflow-x: hidden; */
+
+        &.isActive {
+          background-color: ${PRIMARY.PRIMARY_CTA};
+
+          & > p {
+            color: ${NEUTRALS.OFF_WHITE};
+          }
+        }
+
+        &:hover:not(.isActive) {
+          background-color: ${PRIMARY.PRIMARY_HOVER};
+
+          & > p {
+            color: ${NEUTRALS.OFF_WHITE};
+          }
+        }
+      }
+    }
+
+    & > :last-child {
+      position: absolute;
+      right: 0px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      &.navBarRightArrowShouldDisable {
+        & > :nth-child(1) {
+          border: 2px solid ${NEUTRALS.LIGHT_GREY};
+          background-color: ${NEUTRALS.LIGHT_GREY};
+
+          cursor: not-allowed;
+
+          & > * {
+            & > * {
+              fill: ${NEUTRALS.BLACK};
+            }
+          }
+          
+          &:hover{
+            /* all:unset; */
+            /* background-color: unset; */
+          }
+        }
+      }
+
+      & > :nth-child(1) {
+        border: 2px solid ${PRIMARY.PRIMARY_CTA};
+        border-radius: 8px;
+        height: 100%;
+
+        background-color: ${NEUTRALS.OFF_WHITE};
+
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        z-index: 2;
+
+        cursor: pointer;
+
+        & > * {
+          & > * {
+            fill: ${PRIMARY.PRIMARY_CTA};
+          }
+        }
+
+        &:not(.navBarRightArrowShouldDisable):hover {
+          background-color: ${PRIMARY.PRIMARY_CTA};
+          & > * {
+            & > * {
+              fill: ${NEUTRALS.OFF_WHITE};
+            }
+          }
+        }
+      }
+
+      & > :nth-child(2) {
+        position: absolute;
+        top: 0;
+        /* right: -6vw; */
+        right: 0px;
+        z-index: 1;
+        height: 100%;
+        /* width: calc(90px + 6vw); */
+        width: 75px;
         background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 8%);
+        /* background: hsl(348, 83.3%, 47.1%, 0.4); */
       }
     }
   }

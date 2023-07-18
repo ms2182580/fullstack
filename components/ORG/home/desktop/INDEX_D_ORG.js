@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { useEffect, useState } from "react"
-import { ArrowRightSvg, ORG_D_Search_CarePlanSvg } from "../../../../assets/Icons/index.js"
+import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "../../../../assets/Icons/index.js"
 import ORGDesktop_Search_Hero from "../../../../assets/images/ORGDesktop_Search_Hero.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -95,6 +95,48 @@ export const INDEX_D_ORG = () => {
 
   const [listRef, setListRef] = useState(null)
 
+  const [currentScrollState, setCurrentScrollState] = useState(null)
+  const [isFinalScrollState, setIsFinalScrollState] = useState(null)
+
+  const [stateToCss, setstateToCss] = useState({
+    scrollRight: false,
+    reachFinal: false
+  })
+
+  useEffect(() => {
+    if (currentScrollState === 0 || currentScrollState === null) {
+      setstateToCss((prevState) => ({
+        ...prevState,
+        scrollRight: false,
+        reachFinal: false
+      }))
+    }
+
+    if (currentScrollState > 0) {
+      setstateToCss((prevState) => ({
+        ...prevState,
+        scrollRight: true,
+        reachFinal: false
+      }))
+    }
+
+    if (currentScrollState === isFinalScrollState) {
+      setstateToCss((prevState) => ({
+        ...prevState,
+        scrollRight: true,
+        reachFinal: true
+      }))
+    }
+  }, [currentScrollState, isFinalScrollState])
+
+  useEffect(() => {
+    setstateToCss((prevState) => ({
+      ...prevState,
+      scrollRight: false,
+      reachFinal: false
+    }))
+  }, [])
+
   useEffect(() => {
     if (listRef) {
       let startTouch = 0
@@ -114,6 +156,16 @@ export const INDEX_D_ORG = () => {
           startTouch = event.touches[0].clientX
           listRef.scrollLeft += change
         }
+
+        const currentScroll = listRef.scrollLeft
+        if (currentScrollState === null) {
+          setCurrentScrollState(currentScroll)
+        }
+
+        const finalScroll = listRef.scrollLeftMax
+        if (isFinalScrollState === null) {
+          setIsFinalScrollState(finalScroll)
+        }
       }
 
       listRef.addEventListener("wheel", handleScroll)
@@ -128,14 +180,36 @@ export const INDEX_D_ORG = () => {
     }
   }, [listRef])
 
+  const handleMoveNavBarToLeftByClick = () => {
+    if (listRef) {
+      let toRest = listRef.scrollLeft > 200 ? 200 : listRef.scrollLeft
+
+      setCurrentScrollState((prevState) => prevState - toRest)
+
+      listRef.scrollLeft -= 200
+    }
+  }
+
   const handleMoveNavBarToRightByClick = () => {
     if (listRef) {
       listRef.scrollLeft += 200
+
+      const currentScroll = listRef.scrollLeft
+      if (currentScrollState === null) {
+        setCurrentScrollState(currentScroll)
+      } else {
+        setCurrentScrollState(currentScroll)
+      }
+
+      const finalScroll = listRef.scrollLeftMax
+      if (isFinalScrollState === null) {
+        setIsFinalScrollState(finalScroll)
+      }
     }
   }
 
   return (
-    <INDEX_D_ORGWrapper>
+    <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
       <div>
         <H1 semi_bold>
           Find your I/DD <br /> community
@@ -161,38 +235,48 @@ export const INDEX_D_ORG = () => {
         <ORG_D_SearchComponent toWhere="SpeechTherapists" />
       </div>
 
-      <ul ref={setListRef}>
-        <li
-          onClick={handleShowAll}
-          className={!singleCardIsSelected ? "isActive" : ""}>
-          <P
-            primary_cta
-            semibold>
-            All
-          </P>
-        </li>
-        {DATA.map((x, i) => (
+      <div>
+        <div className={`${stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""}`}>
+          <div onClick={handleMoveNavBarToLeftByClick}>
+            <LeftArrowSvg />
+          </div>
+          <div />
+        </div>
+
+        <ul ref={setListRef}>
           <li
-            key={x.nameJSX}
-            data-name={x.componentName}
-            onClick={handleShowOneCard}
-            className={singleCardIsSelected && matchNameState === x.componentName ? "isActive" : ""}>
+            onClick={handleShowAll}
+            className={!singleCardIsSelected ? "isActive" : ""}>
             <P
               primary_cta
-              semibold
-              data-name={x.componentName}>
-              {x.nameJSX}
+              semibold>
+              All
             </P>
           </li>
-        ))}
-
-        <div>
-          <div onClick={handleMoveNavBarToRightByClick}>
+          {DATA.map((x, i) => (
+            <li
+              key={x.nameJSX}
+              data-name={x.componentName}
+              onClick={handleShowOneCard}
+              className={singleCardIsSelected && matchNameState === x.componentName ? "isActive" : ""}>
+              <P
+                primary_cta
+                semibold
+                data-name={x.componentName}>
+                {x.nameJSX}
+              </P>
+            </li>
+          ))}
+        </ul>
+        <div className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
+          <div
+            onClick={handleMoveNavBarToRightByClick}
+            className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
             <ArrowRightSvg />
           </div>
           <div />
         </div>
-      </ul>
+      </div>
 
       {DATA.map((x, i) => {
         if (singleCardIsSelected === false) {
