@@ -87,6 +87,9 @@ export const INDEX_D_ORGWrapper = styled.div`
     margin-top: 40px;
     margin-bottom: 40px;
     position: relative;
+    
+    
+    
 
     & > :first-child {
       position: absolute;
@@ -157,6 +160,9 @@ export const INDEX_D_ORGWrapper = styled.div`
       position: relative;
 
       padding-right: 70px;
+      
+      scroll-behavior: smooth;
+      
 
       & > li {
         list-style: none;
