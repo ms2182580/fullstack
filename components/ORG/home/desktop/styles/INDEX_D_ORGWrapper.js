@@ -1,5 +1,12 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
+
+const animatedScroll = keyframes`
+from {
+  
+}
+
+`
 
 export const INDEX_D_ORGWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
@@ -161,7 +168,7 @@ export const INDEX_D_ORGWrapper = styled.div`
 
       padding-right: 70px;
       
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; */
       
 
       & > li {

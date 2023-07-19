@@ -112,7 +112,7 @@ export const INDEX_D_ORG = () => {
       }))
     }
 
-    if (currentScrollState > 0) {
+    if (currentScrollState > 100) {
       setstateToCss((prevState) => ({
         ...prevState,
         scrollRight: true,
@@ -148,6 +148,7 @@ export const INDEX_D_ORG = () => {
       const handleScroll = (event) => {
         event.preventDefault()
         if (event.type === "wheel") {
+
           listRef.scrollLeft += event.deltaY
         }
 
@@ -240,6 +241,7 @@ export const INDEX_D_ORG = () => {
 
         <ORG_D_SearchComponent toWhere="SpeechTherapists" />
       </div>
+
 
       <div>
         <div className={`${stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""}`}>
