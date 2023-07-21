@@ -1,77 +1,14 @@
 import Image from "next/image.js"
+import { useRouter } from "next/router.js"
 import { Fragment, useEffect, useState } from "react"
 import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "../../../../assets/Icons/index.js"
 import ORGDesktop_Search_Hero from "../../../../assets/images/ORGDesktop_Search_Hero.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
+import { DATA_ORG_D as DATA } from "../../../../utils/DATA_ORG_D.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../ui/heading_body_text/HeaderFonts.js"
-import { INDEX_D_ATSearch } from "../../assistive-technology/first-page/desktop/INDEX_D_ATSearch.js"
-import { INDEX_D_AASearch } from "../../attorney-advocates/first-page/desktop/INDEX_D_AASearch.js"
-import { INDEX_D_CMPSSearch } from "../../camps/first-page/desktop/INDEX_D_CMPSSearch.js"
-import { INDEX_D_CCSearch } from "../../community-classes/first-page/desktop/INDEX_D_CCSearch.js"
-import { INDEX_D_DCTRSearch } from "../../doctors/first-page/desktop/INDEX_D_DCTRSearch.js"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
-import { INDEX_D_MHSSSearch } from "../../mental-health/first-page/desktop/INDEX_D_MHSSSearch.js"
-import { INDEX_D_PPASSearch } from "../../private-public-agencies/first-page/desktop/INDEX_D_PPASSearch.js"
-import { INDEX_D_RPSearch } from "../../residential-programs/first-page/desktop/INDEX_D_RPSearch.js"
-import { INDEX_D_SESSearch } from "../../special-education-schools/first-page/desktop/INDEX_D_SESSearch.js"
-import { INDEX_D_STSearch } from "../../speech-therapists/first-page/dekstop/INDEX_D_STSearch.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
-
-const DATA = [
-  {
-    nameJSX: "Assistive Technology",
-    component: INDEX_D_ATSearch,
-    componentName: INDEX_D_ATSearch.name
-  },
-  {
-    nameJSX: "Attorney and Advocates",
-    component: INDEX_D_AASearch,
-    componentName: INDEX_D_AASearch.name
-  },
-  {
-    nameJSX: "Camps",
-    component: INDEX_D_CMPSSearch,
-    componentName: INDEX_D_CMPSSearch.name
-  },
-  {
-    nameJSX: "Community Classes",
-    component: INDEX_D_CCSearch,
-    componentName: INDEX_D_CCSearch.name
-  },
-
-  {
-    nameJSX: "Doctors",
-    component: INDEX_D_DCTRSearch,
-    componentName: INDEX_D_DCTRSearch.name
-  },
-  {
-    nameJSX: "Mental Health Support/Services",
-    component: INDEX_D_MHSSSearch,
-    componentName: INDEX_D_MHSSSearch.name
-  },
-  {
-    nameJSX: "Private & Public Agencies/Services",
-    component: INDEX_D_PPASSearch,
-    componentName: INDEX_D_PPASSearch.name
-  },
-  {
-    nameJSX: "Special Education Schools",
-    component: INDEX_D_SESSearch,
-    componentName: INDEX_D_SESSearch.name
-  },
-
-  {
-    nameJSX: "Therapeutic Providers & Services",
-    component: INDEX_D_STSearch,
-    componentName: INDEX_D_STSearch.name
-  },
-  {
-    nameJSX: "Residential Programs",
-    component: INDEX_D_RPSearch,
-    componentName: INDEX_D_RPSearch.name
-  }
-]
 
 export const INDEX_D_ORG = () => {
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
@@ -148,7 +85,6 @@ export const INDEX_D_ORG = () => {
       const handleScroll = (event) => {
         event.preventDefault()
         if (event.type === "wheel") {
-
           listRef.scrollLeft += event.deltaY
         }
 
@@ -209,11 +145,19 @@ export const INDEX_D_ORG = () => {
     }
   }
 
+  const useRoute = useRouter()
+  console.log("💘useRoute:", useRoute)
 
-  /* 
-  !FH1
-  Create a onMouseDown for click right and left
-  */
+  useEffect(() => {
+    const navigationEntry = window.performance.getEntriesByType("navigation")[0]
+    console.log('🧡navigationEntry:', navigationEntry)
+
+    const pageLoadTime = navigationEntry.loadEventEnd - navigationEntry.loadEventStart
+
+    const typingStartTime = navigationEntry.loadEventEnd - navigationEntry.domContentLoadedEventEnd
+
+    console.log(`User started typing ${typingStartTime - pageLoadTime}ms after page load.`)
+  }, [])
 
   return (
     <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
@@ -242,12 +186,9 @@ export const INDEX_D_ORG = () => {
         <ORG_D_SearchComponent toWhere="SpeechTherapists" />
       </div>
 
-
       <div>
         <div className={`${stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""}`}>
-          <div
-            onClick={handleMoveNavBarToLeftByClick}
-          >
+          <div onClick={handleMoveNavBarToLeftByClick}>
             <LeftArrowSvg />
           </div>
           <div />
@@ -292,7 +233,7 @@ export const INDEX_D_ORG = () => {
         if (singleCardIsSelected === false) {
           return (
             <Fragment key={`${x.componentName}`}>
-              <x.component />
+              <x.component positionInArray={i} />
             </Fragment>
           )
         }
@@ -302,6 +243,7 @@ export const INDEX_D_ORG = () => {
             <x.component
               key={`${x.componentName}_${i}_${matchNameState}`}
               isSelected={singleCardIsSelected}
+              positionInArray={i}
             />
           )
         }
@@ -311,23 +253,3 @@ export const INDEX_D_ORG = () => {
     </INDEX_D_ORGWrapper>
   )
 }
-
-/* 
-
-
- Assistive Technology	→ AT
- Attorney and Advocates	→ AA
- Camps 	→ CMPS
- Psychiatrists → PSYT
- Community Classes	 → CC
- Mental Health Support/Services	→ MHSS
- Private & Public Agencies/Services	→ PPAS
- Special Education Schools	→ SES
- Therapeutic Providers & Services	→ ST
- Residential Programs	→ RP
-  
- 
- !FH0
- Ask for this Flow
- Autism Flow	→ AF
-*/
