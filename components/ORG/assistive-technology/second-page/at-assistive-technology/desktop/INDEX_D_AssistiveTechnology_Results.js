@@ -1,7 +1,9 @@
+import Image from "next/image"
 import { useRouter } from "next/router.js"
+import UnderConstructionImagePurple from "../../../../../../assets/images/UnderConstructionImagePurple.png"
 import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal.js"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
-import { UnderConstruction } from "../../../../../under-construction/UnderConstruction.js"
+import { INDEX_D_AssistiveTechnology_ResultsWrapper } from "./styles/INDEX_D_AssistiveTechnology_ResultsWrapper.js"
 
 /* 
 !FH0
@@ -13,11 +15,11 @@ export const INDEX_D_AssistiveTechnology_Results = () => {
   const { modalShowedCtx } = useCtx_ShowModal()
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname, query, route, ...props } = useRouter()
-  console.log('🟫props:', props)
+  console.log("🟫props:", props)
   // console.log('query:', query)
 
   return (
-    <>
+    <INDEX_D_AssistiveTechnology_ResultsWrapper>
       {/* <INDEX_D_AssistiveTechnology_ResultsWrapper
         ORGShowFullMapFilter={
           ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
@@ -38,7 +40,9 @@ export const INDEX_D_AssistiveTechnology_Results = () => {
         </div>
       </INDEX_D_AssistiveTechnology_ResultsWrapper> */}
 
-      <UnderConstruction />
-    </>
+      {/* <UnderConstruction /> */}
+
+      <Image src={UnderConstructionImagePurple} />
+    </INDEX_D_AssistiveTechnology_ResultsWrapper>
   )
 }
