@@ -145,19 +145,8 @@ export const INDEX_D_ORG = () => {
     }
   }
 
-  const useRoute = useRouter()
-  console.log("💘useRoute:", useRoute)
-
-  useEffect(() => {
-    const navigationEntry = window.performance.getEntriesByType("navigation")[0]
-    console.log('🧡navigationEntry:', navigationEntry)
-
-    const pageLoadTime = navigationEntry.loadEventEnd - navigationEntry.loadEventStart
-
-    const typingStartTime = navigationEntry.loadEventEnd - navigationEntry.domContentLoadedEventEnd
-
-    console.log(`User started typing ${typingStartTime - pageLoadTime}ms after page load.`)
-  }, [])
+  const { query } = useRouter()
+  // console.log('query:', query)/* Here we have the query from 404 page or index  */
 
   return (
     <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>

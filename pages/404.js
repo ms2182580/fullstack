@@ -19,7 +19,6 @@ const Custom404 = () => {
     if (checkSomePath.length !== 0) {
 
       let thisIndex = DATA_ORG_D.findIndex((x) => x.acronym === checkSomePath[0])
-      console.log("thisIndex:", thisIndex)
 
       router.push(
         {

@@ -1,27 +1,71 @@
 import styled from "styled-components"
-import { SEMANTICS } from "../../../../../assets/Colors"
+import { PRIMARY } from "../../../../../assets/Colors"
 
 export const Breadcrumbs_DWrapper = styled.div`
   display: flex;
   align-items: center;
-
-  & > :nth-child(2) > p,
-  & > a > * {
-    margin-right: 12px;
-  }
-
-  a {
+  
+  & > * {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+
+    :not(:last-child) {
+      margin-right: 32px;
+    }
+
+    & > a {
+      border-bottom: 2px solid transparent;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        left: 0;
+        height: 2px;
+        left: 50%;
+        bottom: 0;
+        background-color: ${PRIMARY.PRIMARY_HOVER};
+        transition: all linear 0.2s;
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+      }
+    }
   }
 
-  svg {
-    margin-right: 22px;
-  }
+  & > a {
+    border-bottom: 2px solid transparent;
 
-  & > a > p.underline {
-    text-decoration-line: underline;
-    color: ${SEMANTICS.HYPERLINK_NORMAL};
+    &:not(:last-of-type) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        left: 0;
+        height: 2px;
+        left: 50%;
+        bottom: 0;
+        background-color: ${PRIMARY.PRIMARY_HOVER};
+        transition: all linear 0.2s;
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    &:last-child {
+      & > p {
+        font-weight: 700;
+      }
+    }
   }
 `

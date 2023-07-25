@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const AT_D_Results_HeaderWrapper = styled.div`
-  border: 2px solid crimson;
+  padding-top:56px ;
+  padding-bottom:40px ;
+  padding-inline: clamp(16px, calc(10vw - 80px), 96px);
   
 `
