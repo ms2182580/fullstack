@@ -3,7 +3,7 @@ import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_C
 import { AT_D_Results_BreadcrumbsAndLastUpdated } from "./AT_D_Results_BreadcrumbsAndLastUpdated"
 import { AT_D_Results_Choisepath } from "./AT_D_Results_Choisepath"
 import { AT_D_Results_FilterSortbyHeader } from "./AT_D_Results_FilterSortbyHeader"
-import { AT_D_Results_FinalButtons } from './AT_D_Results_FinalButtons.js'
+import { AT_D_Results_FinalButton } from './AT_D_Results_FinalButton.js'
 import { AT_D_Results_Map } from "./AT_D_Results_Map"
 import { AT_D_Results_MainEntryWrapper } from './styles/AT_D_Results_MainEntryWrapper.js'
 
@@ -60,7 +60,7 @@ export const AT_D_Results_MainEntry = () => {
 
       </div>
 
-      <AT_D_Results_FinalButtons />
+      <AT_D_Results_FinalButton />
 
       <AT_D_Results_BreadcrumbsAndLastUpdated />
     </AT_D_Results_MainEntryWrapper>

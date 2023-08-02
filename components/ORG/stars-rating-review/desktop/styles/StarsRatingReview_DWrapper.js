@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { NEUTRALS } from "../../../../../assets/Colors"
 
 export const StarsRatingReview_DWrapper = styled.div`
   display: flex;
@@ -12,4 +13,11 @@ export const StarsRatingReview_DWrapper = styled.div`
   & > :nth-child(2) {
     margin-right: 4px;
   }
+  
+  & > :nth-child(3){
+    color:${({ isDetail }) => (isDetail ? `` : `${NEUTRALS.DARK_GREY}`)};
+    text-decoration: ${({ isDetail }) => (isDetail ? `` : `none`)};
+    
+  }
+  
 `

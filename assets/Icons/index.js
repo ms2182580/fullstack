@@ -1395,7 +1395,6 @@ export const ORG_D_Search_ViewProfileSvg = (props) => (
   </svg>
 )
 
-
 export const ORG_D_Results_HearthSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -1410,5 +1409,56 @@ export const ORG_D_Results_HearthSvg = (props) => (
       strokeWidth={2}
       d="m11.848 26.91.685-.728-.685.728L22.65 37.08a2 2 0 0 0 2.746-.004L36.172 26.88l1.146-1.085c3.583-3.39 3.575-8.905-.017-12.287-3.559-3.35-9.299-3.343-12.848.016l-.46.436-.462-.435c-3.56-3.35-9.3-3.343-12.85.016-3.582 3.39-3.574 8.906.018 12.287l1.149 1.082Z"
     />
+  </svg>
+)
+
+export const ORG_D_Results_MoreinformationSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={32}
+    height={32}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#fff"
+      d="M14.664 12.001h2.667V9.335h-2.667m1.333 17.333c-5.88 0-10.666-4.787-10.666-10.667S10.117 5.335 15.997 5.335c5.88 0 10.667 4.786 10.667 10.666 0 5.88-4.787 10.667-10.667 10.667Zm0-24a13.334 13.334 0 1 0 0 26.667 13.334 13.334 0 0 0 0-26.667Zm-1.333 20h2.667v-8h-2.667v8Z"
+    />
+  </svg>
+)
+
+export const ORG_D_Results_WheretobuySvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={33}
+    height={32}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#fff"
+      d="M5.833 7.999V5.332h21.334v2.667H5.833Zm0 18.666v-8H4.5V16l1.333-6.667h21.334l1.333 6.667v2.666h-1.333v8H24.5v-8h-5.333v8H5.833ZM8.5 24h8v-5.334h-8V24Zm-1.267-8h18.534l-.8-4H8.033l-.8 4Z"
+    />
+  </svg>
+)
+
+export const ORG_D_Results_AddtocareplanSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={23}
+    height={30}
+    fill="none"
+    {...props}
+  >
+    <g stroke="#fff">
+      <g strokeWidth={2.719}>
+        <path d="M11.5 11.828v9.969M16.484 16.813H6.516" />
+      </g>
+      <path strokeWidth={1.813} d="M1.531 5.031H21.47v23.563H1.53V5.03Z" />
+      <g strokeWidth={1.813}>
+        <circle cx={11.5} cy={4.125} r={2.719} fill="#6E3A82" />
+        <path d="M5.156 6.844h12.688" />
+      </g>
+    </g>
   </svg>
 )

@@ -24,6 +24,8 @@ export const AT_D_Results_MainEntryWrapper = styled.div`
     display: grid;
     grid-template-columns: ${(x) => (x.ORGshowFullMapButton ? `1fr` : `2fr 1fr`)};
     margin-bottom: ${(x) => (x.ORGshowFullMapButton ? `318px` : `222px`)};
+    
+    margin-left: clamp(16px, calc(10vw - 80px), 96px);
   }
 
   & > :nth-child(3) {

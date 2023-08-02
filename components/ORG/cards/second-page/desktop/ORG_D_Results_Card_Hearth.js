@@ -4,7 +4,6 @@ import { ORG_D_Results_Card_HearthWrapper } from "./styles/ORG_D_Results_Card_He
 
 export const ORG_D_Results_Card_Hearth = () => {
   const [clickOnHearth, setClickOnHearth] = useState(false)
-  console.log('clickOnHearth:', clickOnHearth)
 
   const handleClickOnHearth = () => {
     setClickOnHearth((prevState) => !prevState)

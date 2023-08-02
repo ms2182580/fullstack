@@ -51,7 +51,9 @@ export const P = styled.p`
                 ? PRIMARY.PRIMARY_HOVER
                 : x.hyperlink_normal
                   ? SEMANTICS.HYPERLINK_NORMAL
-                  : NEUTRALS.BLACK};
+                  : x.white
+                    ? NEUTRALS.OFF_WHITE
+                    : NEUTRALS.BLACK};
 `
 export const Caption = styled.span`
   line-height: 24px;
