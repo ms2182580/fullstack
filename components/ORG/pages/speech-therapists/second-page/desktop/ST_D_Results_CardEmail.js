@@ -1,0 +1,17 @@
+// import { EmailORGSvg } from "../../../../../assets/Icons/index.js"
+import { EmailORGSvg } from "../../../../../../assets/Icons/index.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+// import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ST_D_Results_CardEmailWrapper } from "./styles/ST_D_Results_CardEmailWrapper.js"
+
+export const ST_D_Results_CardEmail = ({ email }) => {
+  return (
+    <ST_D_Results_CardEmailWrapper>
+      <div>
+        <EmailORGSvg />
+      </div>
+
+      <P>{email}</P>
+    </ST_D_Results_CardEmailWrapper>
+  )
+}

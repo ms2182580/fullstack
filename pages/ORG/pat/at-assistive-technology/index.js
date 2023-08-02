@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { INDEX_D_AssistiveTechnology_Results } from "../../../../components/ORG/assistive-technology/second-page/at-assistive-technology/desktop/INDEX_D_AssistiveTechnology_Results"
+import { INDEX_D_AssistiveTechnology_Results } from "../../../../components/ORG/pages/assistive-technology/second-page/at-assistive-technology/desktop/INDEX_D_AssistiveTechnology_Results"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
 

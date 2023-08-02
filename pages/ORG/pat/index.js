@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { DATA_ORG_D } from "../../../utils/DATA_ORG_D"
+import { DATA_ORG_D } from "../../../utils/ORG/DATA_ORG_D"
 
 export default function INDEX_PAT() {
   const router = useRouter()

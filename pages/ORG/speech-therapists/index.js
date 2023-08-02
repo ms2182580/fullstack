@@ -1,5 +1,3 @@
-import { INDEX_D_STResults } from "../../../components/ORG/speech-therapists/second-page/desktop/INDEX_D_STResults"
-import { INDEX_M_STResults } from "../../../components/ORG/speech-therapists/second-page/mobile/INDEX_M_STResults"
 import { useCheckUserWidth } from "../../../context/CheckUserWidth"
 
 const ORG_SPEECHTHERAPISTS_INDEX = () => {
@@ -8,11 +6,11 @@ const ORG_SPEECHTHERAPISTS_INDEX = () => {
     <>
       {isMobile === false ? (
         <>
-          <INDEX_D_STResults />
+          {/* <INDEX_D_STResults /> */}
         </>
       ) : (
         <>
-          <INDEX_M_STResults />
+          {/* <INDEX_M_STResults /> */}
         </>
       )}
     </>

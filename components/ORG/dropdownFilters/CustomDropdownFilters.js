@@ -1,27 +1,37 @@
-import { Fragment, useEffect, useState } from "react"
+import { Fragment, useEffect, useRef, useState } from "react"
 import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/Icons"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../context/ORG_Ctx_FiltersApplyDesktop"
 import { ORG_SortybyFunction_D } from "../../../utils/ORG_SortybyFunction_D"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
+import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
 export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
-  const { userFetched, setUserFetched: setData, filtersST, setFiltersST: setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
+  const {
+    userFetched,
+    setUserFetched: setData,
+    filtersST,
+    setFiltersST: setFilters,
+    actualSort,
+    setActualSort,
+    pagination
+  } = useORG_Ctx_FetchNoFiltersDesktop()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  const {
-    filterAreApply,
-    filtersAppliedNewFilters,
-    setFiltersAppliedNewFilters,
-    defaultWord
-  } = useORG_Ctx_FiltersApplyDesktop()
+  const { filterAreApply, filtersAppliedNewFilters, setFiltersAppliedNewFilters, defaultWord } =
+    useORG_Ctx_FiltersApplyDesktop()
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 
-  const { userFetched: dataF, setUserFetched: setDataF, filtersST: filtersF, setFiltersST: setFiltersF } = useORG_Ctx_FetchWithFiltersDesktop()
+  const {
+    userFetched: dataF,
+    setUserFetched: setDataF,
+    filtersST: filtersF,
+    setFiltersST: setFiltersF
+  } = useORG_Ctx_FetchWithFiltersDesktop()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)
@@ -82,18 +92,19 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     if (filterAreApply === false) {
       setWhichTitle(defaultWord)
     }
-
   }, [filtersAppliedNewFilters, filterAreApply, pagination])
 
   useEffect(() => {
     setFiltersAppliedNewFilters(false)
   }, [whichTitle])
 
+
+  const refDropdown = useRef(null)
+  useOutsideHide(refDropdown, setShowDropdown)
+
   return (
     <>
-      <SingleDropdownWrapper
-
-        className="SingleDropdownWrapper">
+      <SingleDropdownWrapper className="SingleDropdownWrapper" ref={refDropdown}>
         <span
           onClick={handleDropdownClick}
           onKeyDown={(e) => {
