@@ -1,19 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from "react"
-import { PinSvgDefault, PinSvgHover } from "../../../../../assets/Icons"
+import { PinSvgDefault, PinSvgHover } from "../../../../../../assets/Icons"
+import { ORG_MapDefaultValue, ORG_MapFullValue } from "../../../../../../utils/ORG_MapValuesToShow"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../../../context/ORG_Ctx_FiltersApplyDesktop"
-import { ORG_MapDefaultValue, ORG_MapFullValue } from "../../../../../utils/ORG_MapValuesToShow"
 import { formatNamesFunction, getAllReviews } from "../../../../../utils/ORG_ST_Review_D"
 import { ST_D_Results_CardsOnMapCard } from "./ST_D_Results_CardsOnMapCard"
 import { ST_D_Results_CardsOnMapWrapper } from "./styles/ST_D_Results_CardsOnMapWrapper"
 ST_D_Results_CardsOnMapCard
+
 export const ST_D_Results_CardsOnMap = ({ handleShowMap }) => {
   const { filterAreApply } = useORG_Ctx_FiltersApplyDesktop()
 
-  const { ORGshowFullMapButton, setORGShowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
+  const { ORGshowFullMapButton } = useORG_CtxShowFiltersDesktop()
   const { userFetched, filtersST, pagination: paginationNoFilter } = useORG_Ctx_FetchNoFiltersDesktop()
+
   const {
     userFetched: dataF,
     filtersST: filtersF,
@@ -36,6 +38,7 @@ export const ST_D_Results_CardsOnMap = ({ handleShowMap }) => {
   }, [])
 
   const [allReviewsNoFetch, setAllReviewsNoFetch] = useState([])
+
   useEffect(() => {
     if (!filterAreApply) {
       if (allReviewsNoFetch.length === 0) {
@@ -48,6 +51,7 @@ export const ST_D_Results_CardsOnMap = ({ handleShowMap }) => {
   }, [userFetched, filterAreApply])
 
   const [allReviewsWithFetch, setAllReviewsWithFetch] = useState([])
+
   useEffect(() => {
     if (filterAreApply && shouldFetchDesktopFilters) {
       if (allReviewsWithFetch.length === 0) {
@@ -172,10 +176,8 @@ export const ST_D_Results_CardsOnMap = ({ handleShowMap }) => {
 
 
   const [windowSizeShrink, setWindowSizeShrink] = useState({
-    // currHeight: window.innerHeight,
     currWidth: window.innerWidth,
     prevWidth: null
-    // prevHeight: null
   })
 
   const [windowSizeFull, setWindowSizeFull] = useState({

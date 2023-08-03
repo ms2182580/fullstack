@@ -50,7 +50,6 @@ export const ST_D_Results_MapWrapper = styled.div`
   & > :nth-child(3) {
     position: absolute;
 
-    /* inset: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `619px 182px 0` : `auto 0 0`)}; */
     inset: ${({ ORGshowFullMapButton }) => (ORGshowFullMapButton ? `650px 182px 0` : `auto 0 0`)};
     
 

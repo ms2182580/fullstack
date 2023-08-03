@@ -42,11 +42,6 @@ export const ORG_Filters_D_Checkbox = ({
     }
   }
 
-  /* 
-  !FH0
-  Make "Clear all" work
-  */
-
   // const [show, setShow] = useState(false)
   // const handleShow = (e) => {
   //   if (e.type === "click" || e.key === "Enter") {

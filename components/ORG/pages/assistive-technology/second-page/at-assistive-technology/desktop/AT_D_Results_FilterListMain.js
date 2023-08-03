@@ -176,11 +176,11 @@ export const AT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
     <>
       <AT_D_Results_FilterListMainWrapper>
         {/* 
-//!FH0
+//!FH
 
 Make components for the filter:
-1. checkboxes
-2. Range
+1. ✅checkboxes
+2. ✅Range
 3. Range plus checkboxes
 
 */}

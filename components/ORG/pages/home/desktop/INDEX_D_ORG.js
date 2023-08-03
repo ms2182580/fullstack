@@ -10,8 +10,6 @@ import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_SearchComponent } from "../../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
-
-
 export const INDEX_D_ORG = () => {
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")

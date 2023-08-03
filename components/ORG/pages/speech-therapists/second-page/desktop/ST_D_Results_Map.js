@@ -1,8 +1,7 @@
 import Image from "next/image.js"
+import ORG_Results_MapImage from "../../../../../../assets/images/ORG_Results_MapImage.png"
 import { LeftArrowTinySvg, RightArrowTinySvg } from "../../../../../assets/Icons"
-import STResults_MapImage from "../../../../../assets/images/STResults_MapImage.png"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
-
 import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
 import { ST_D_Results_CardsOnMap } from "./ST_D_Results_CardsOnMap"
 import { ST_D_Results_MapWrapper } from "./styles/ST_D_Results_MapWrapper.js"
@@ -27,7 +26,7 @@ export const ST_D_Results_Map = ({ refUserViewShowFullMapButton }) => {
       ORGshowFullMapButton={ORGshowFullMapButton}
       ORGShowFullMapFilter={ORGShowFullMapFilter}>
       <Image
-        src={STResults_MapImage}
+        src={ORG_Results_MapImage}
         layout={ORGshowFullMapButton ? "responsive" : ORGShowFullMapFilter ? "responsive" : "fill"}
         objectFit={ORGshowFullMapButton ? "fill" : ORGShowFullMapFilter ? "contain" : "cover"}
         alt="map"
