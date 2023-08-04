@@ -985,6 +985,21 @@ export const PinSvgHover = (props) => (
   </svg>
 )
 
+export const PinResultsSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={27}
+    height={41}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#6E3A82"
+      d="M13.5.035C6.062.035 0 6.256 0 13.89c0 7.633 13.5 26.505 13.5 26.505S27 21.522 27 13.89C27 6.256 20.938.035 13.5.035Zm0 21.016c-3.872 0-6.98-3.189-6.98-7.162s3.108-7.162 6.98-7.162c3.872 0 6.98 3.189 6.98 7.162s-3.108 7.162-6.98 7.162Z"
+    />
+  </svg>
+)
+
 export const AcceptingNewClientsSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

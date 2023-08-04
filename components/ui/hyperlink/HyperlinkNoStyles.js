@@ -6,7 +6,7 @@ const DefaultLink = styled.a`
   cursor: pointer;
 `
 
-export const LinkNoStyle = ({ href, children, replace, query = undefined, as, tabIndex = 0 }) => {
+export const LinkNoStyle = ({ href, children, replace, query = undefined, as, tabIndex = 0, fromHere }) => {
   if (query !== undefined) {
     return (
       <Link

@@ -25,16 +25,9 @@ export const AT_D_Results_Map = ({ refUserViewShowFullMapButton }) => {
       />
 
       <button
-        // onClick={handleShowMap}
-        // tabIndex={shouldTab}
         ref={refOfButton}>
         <LeftArrowTinySvg /> <span>Show map</span>
       </button>
-
-      {/* 
-      //!FH0
-      Create this 
-      */}
 
       <AT_D_Results_CardsOnMap bottomOfButton={bottomOfButton} />
     </AT_D_Results_MapWrapper>

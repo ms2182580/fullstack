@@ -1,33 +1,30 @@
-import { useRouter } from "next/router"
+import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
-import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
-import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
-import { ST_D_Results_FinalButtonsNumberPageWrapper } from "./styles/ST_D_Results_FinalButtonsWrapper"
+import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { LinkNoStyle } from "../../../../../../ui/hyperlink/HyperlinkNoStyles.js"
+import { AT_D_Results_FinalButtonsNumberPage_W } from "./styles/AT_D_Results_FinalButtonWrapper.js"
 
-export const ST_D_Results_NavigationButtonsNumbers = () => {
+export const AT_D_Results_NavigationButtonsNumbers = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
 
   const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(Array(3).fill(0))
 
   const { pathname } = useRouter()
 
-  const shouldTab = useShouldTab()
-
   if (pagination < 3) {
     return (
       <div>
         {amountOfPagesToClick.map((x, i) => {
+
           const toMoveToThatPage = i + 1
+
           if (pagination === i + 1) {
             return (
               <Fragment key={i}>
-                <ST_D_Results_FinalButtonsNumberPageWrapper
-                  isActive
-                  tabIndex={shouldTab}>
+                <AT_D_Results_FinalButtonsNumberPage_W isActive>
                   <P bold> {i + 1}</P>
-                </ST_D_Results_FinalButtonsNumberPageWrapper>
+                </AT_D_Results_FinalButtonsNumberPage_W>
               </Fragment>
             )
           }
@@ -35,14 +32,15 @@ export const ST_D_Results_NavigationButtonsNumbers = () => {
           return (
             <Fragment key={i}>
               <LinkNoStyle
-                href="#topOfSTL"
-                as={pathname}
-                tabIndex={shouldTab}>
-                <ST_D_Results_FinalButtonsNumberPageWrapper
+                href="#topOfORG"
+              // as={pathname}
+              >
+                <AT_D_Results_FinalButtonsNumberPage_W
                   onClick={() => setPagination(toMoveToThatPage)}
-                  tabIndex={shouldTab}>
+                // tabIndex={shouldTab}
+                >
                   <P bold> {i + 1}</P>
-                </ST_D_Results_FinalButtonsNumberPageWrapper>
+                </AT_D_Results_FinalButtonsNumberPage_W>
               </LinkNoStyle>
             </Fragment>
           )
@@ -66,14 +64,16 @@ export const ST_D_Results_NavigationButtonsNumbers = () => {
             return (
               <Fragment key={i}>
                 <LinkNoStyle
-                  href="#topOfSTL"
-                  as={pathname}
-                  tabIndex={shouldTab}>
-                  <ST_D_Results_FinalButtonsNumberPageWrapper
+                  href="#topOfORG"
+                // as={pathname}
+                // tabIndex={shouldTab}
+                >
+                  <AT_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[0])}
-                    tabIndex={shouldTab}>
+                  // tabIndex={shouldTab}
+                  >
                     <P bold> {theNewOrder[i]}</P>
-                  </ST_D_Results_FinalButtonsNumberPageWrapper>
+                  </AT_D_Results_FinalButtonsNumberPage_W>
                 </LinkNoStyle>
               </Fragment>
             )
@@ -82,11 +82,12 @@ export const ST_D_Results_NavigationButtonsNumbers = () => {
           if (i === 1) {
             return (
               <Fragment key={i}>
-                <ST_D_Results_FinalButtonsNumberPageWrapper
+                <AT_D_Results_FinalButtonsNumberPage_W
                   isActive
-                  tabIndex={shouldTab}>
+                // tabIndex={shouldTab}
+                >
                   <P bold> {theNewOrder[i]}</P>
-                </ST_D_Results_FinalButtonsNumberPageWrapper>
+                </AT_D_Results_FinalButtonsNumberPage_W>
               </Fragment>
             )
           }
@@ -95,14 +96,16 @@ export const ST_D_Results_NavigationButtonsNumbers = () => {
             return (
               <Fragment key={i}>
                 <LinkNoStyle
-                  href="#topOfSTL"
-                  as={pathname}
-                  tabIndex={shouldTab}>
-                  <ST_D_Results_FinalButtonsNumberPageWrapper
+                  href="#topOfORG"
+                // as={pathname}
+                // tabIndex={shouldTab}
+                >
+                  <AT_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[2])}
-                    tabIndex={shouldTab}>
+                  // tabIndex={shouldTab}
+                  >
                     <P bold> {theNewOrder[i]}</P>
-                  </ST_D_Results_FinalButtonsNumberPageWrapper>
+                  </AT_D_Results_FinalButtonsNumberPage_W>
                 </LinkNoStyle>
               </Fragment>
             )

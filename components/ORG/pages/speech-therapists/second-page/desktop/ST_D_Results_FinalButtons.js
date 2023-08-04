@@ -14,6 +14,7 @@ import {
 export const ST_D_Results_FinalButtons = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const { pathname } = useRouter()
+
   const toPrevious = () => {
     setPagination((prevState) => {
       if (pagination > 1) return pagination - 1
@@ -54,7 +55,8 @@ export const ST_D_Results_FinalButtons = () => {
       <LinkNoStyle
         href="#topOfSTL"
         as={pathname}
-        tabIndex={shouldTab}>
+        tabIndex={shouldTab}
+      >
         <ST_D_Results_FinalButtonsNextButton
           onClick={() => setPagination(pagination + 1)}
           tabIndex={shouldTab}>

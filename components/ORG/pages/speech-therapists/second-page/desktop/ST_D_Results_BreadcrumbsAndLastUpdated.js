@@ -1,4 +1,4 @@
-import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
+import { Breadcrumbs_D } from "../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
 import { ST_D_Results_PageLastUpdated } from "./ST_D_Results_PageLastUpdated"
 import { ST_D_Results_BreadcrumbsAndLastUpdatedWrapper } from './styles/ST_D_Results_BreadcrumbsAndLastUpdatedWrapper.js'
 

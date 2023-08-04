@@ -36,20 +36,3 @@ export const generateRandomNumber = (min = 1, max = 999) => {
   return Math.round(random)
 }
 
-/* 
-this file is not used
-*/
-
-/* 
-let arrayToUse = Array(10).fill(0)
-console.log("arrayToUse:", arrayToUse)
-
-let arrayToGetFilters = Array(2).fill({price:"", type:""})
-console.log("🔰arrayToGetFilters:", arrayToGetFilters, arrayToGetFilters.length)
-
-let theLength = arrayToGetFilters.length
-console.log("💕theLength:", theLength + 1)
-
-let whichUse =  arrayToUse.map((x,i) => console.log("x:", x, i % (theLength + 1) === 0 ? 0 : 1))
-
-*/

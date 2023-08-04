@@ -42,18 +42,4 @@ export const AT_D_Results_MapWrapper = styled.div`
     }
   }
   
-  /* & > :nth-child(3) {
-    position: absolute;
-
-    inset: ${({ bottomOfButton }) => bottomOfButton ? `${bottomOfButton}px 0 0` : ""};
-
-    width: 100%;
-    
-    border: 2px solid crimson;
-    
-
-
-    
-  } */
-  
 `

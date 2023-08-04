@@ -9,10 +9,10 @@ export const AT_D_Results_MainEntryWrapper = styled.div`
   grid-template-areas:
     "header "
     "filterAndMap "
-    "btns "
+    "btns"
     "breadcrumbsAndUpdate ";
 
-  padding-bottom: 76px;
+  padding-bottom: 40px;
 
   & > :nth-child(1) {
     grid-area: header;
@@ -23,7 +23,7 @@ export const AT_D_Results_MainEntryWrapper = styled.div`
     grid-area: filterAndMap;
     display: grid;
     grid-template-columns: ${(x) => (x.ORGshowFullMapButton ? `1fr` : `2fr 1fr`)};
-    margin-bottom: ${(x) => (x.ORGshowFullMapButton ? `318px` : `222px`)};
+    margin-bottom: ${(x) => (x.ORGshowFullMapButton ? `318px` : `189px`)};
     
     margin-left: clamp(16px, calc(10vw - 80px), 96px);
   }
@@ -35,8 +35,14 @@ export const AT_D_Results_MainEntryWrapper = styled.div`
 
   & > :nth-child(4) {
     grid-area: breadcrumbsAndUpdate;
-    margin-right: 40px;
   }
+  
+  & > :nth-child(3),
+  & > :nth-child(4){
+    padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+  }
+  
+  
 
   /* @media ${device.laptop} {
     grid-template-columns: 1fr 1fr;
