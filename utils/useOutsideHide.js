@@ -1,12 +1,13 @@
 import { useEffect } from "react"
 
-export const useOutsideHide = (ref, handleStateOutside, howMuchDelay = 0) => {
+export const useOutsideHide = (ref, handleStateOutside) => {
   useEffect(() => {
     setTimeout(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
           handleStateOutside(false)
         }
+
       }
 
       document.addEventListener("mousedown", handleClickOutside)
@@ -14,6 +15,6 @@ export const useOutsideHide = (ref, handleStateOutside, howMuchDelay = 0) => {
       return () => {
         document.removeEventListener("mousedown", handleClickOutside)
       }
-    }, howMuchDelay)
+    }, 0)
   }, [ref])
 }

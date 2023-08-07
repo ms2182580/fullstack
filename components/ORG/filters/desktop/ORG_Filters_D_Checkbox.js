@@ -1,5 +1,6 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { XDesktopSvg } from "../../../../assets/Icons/index.js"
+import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal.js"
 import { useOutsideHide } from "../../../../utils/useOutsideHide.js"
 import { ButtonSmall } from "../../../ui/buttons/general/index.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -25,12 +26,18 @@ export const ORG_Filters_D_Checkbox = ({
     setShowRemaining(true)
   }
 
+  const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
   const [mustShowFilter, setMustShowFilter] = useState(false)
   const handleShowFilter = (e) => {
     if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
       setMustShowFilter((prevState) => !prevState)
+
     }
   }
+
+  useEffect(() => {
+    setModalShowedCtx(prevState => !prevState)
+  }, [mustShowFilter])
 
   const refContainer = useRef(null)
   useOutsideHide(refContainer, setMustShowFilter)

@@ -1,15 +1,16 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const NavBar_D_Wrapped = styled.nav`
+export const INDEX_NavBar_D_Wrapped = styled.nav`
   box-shadow: ${(x) => (x.isORG ? `0px 4px 15px 0px rgba(0, 0, 0, 0.15);` : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
-  border-bottom: ${(x) => (x.isORG ? `1px solid ${NEUTRALS.LIGHT_GREY}` : ``)};
-  /* background-color: ${(x) => (x.isORG ? `${PRIMARY.PRIMARY_BACKGROUND}` : `#fff`)}; */
+  
   background-color:${PRIMARY.OFF_WHITE};
   
   position: relative;
 
   padding-top: 28px;
+  
+  
   
   & > :nth-child(1) {
     display: flex;

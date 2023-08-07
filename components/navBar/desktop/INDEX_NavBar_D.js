@@ -11,9 +11,9 @@ import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
 import { NavBar_D_InfoDropdown } from "./NavBar_D_InfoDropdown.js"
 import { NavBar_D_SearchComponent } from "./NavBar_D_SearchComponent.js"
 import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
-import { NavBar_D_Wrapped } from "./styles/NavBar_D_Wrapped"
+import { INDEX_NavBar_D_Wrapped } from "./styles/INDEX_NavBar_D_Wrapped"
 
-export const NavBar_D = () => {
+export const INDEX_NavBar_D = () => {
   const route = useRouter()
   const [isORGState, setIsORGState] = useState(false)
   const [infoDropdownState, setInfoDropdownState] = useState(false)
@@ -27,7 +27,7 @@ export const NavBar_D = () => {
   }
 
   useEffect(() => {
-    if (route.pathname === "/ORG") {
+    if (route.pathname.includes("/ORG")) {
       setIsORGState(true)
     } else {
       setIsORGState(false)
@@ -50,58 +50,56 @@ export const NavBar_D = () => {
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
   return (
-    <>
-      <NavBar_D_Wrapped
-        isORG={isORGState}
-        mustShowFiltersMobile={mustShowFiltersMobile}>
-        <div>
-          <span
-            tabIndex={0}
-            onKeyDown={handleNavigateHome}
-            onClick={handleNavigateHome}>
+    <INDEX_NavBar_D_Wrapped
+      isORG={isORGState}
+      mustShowFiltersMobile={mustShowFiltersMobile}>
+      <div>
+        <span
+          tabIndex={0}
+          onKeyDown={handleNavigateHome}
+          onClick={handleNavigateHome}>
+          {" "}
+          <H2
+            bold
+            logo>
             {" "}
-            <H2
-              bold
-              logo>
-              {" "}
-              INCLUSIVE
-            </H2>
-          </span>
-          <NavBar_D_SearchComponent />
-          <NavBar_D_SignComponent />
-        </div>
-        <div />
+            INCLUSIVE
+          </H2>
+        </span>
+        <NavBar_D_SearchComponent />
+        <NavBar_D_SignComponent />
+      </div>
+      <div />
+      <div>
         <div>
-          <div>
-            <span>
-              <NavBar_D_HamburgerComponent />
-            </span>
-            <ul>
-              <li
-                tabIndex={0}
-                onKeyDown={handleNavigateORG}
-                className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
-                <H4 medium>
-                  <LinkNoStyle href="/ORG">Resource Directory</LinkNoStyle>
-                </H4>
-              </li>
-              <li>
-                <H4 medium>Ask a Question</H4>
-              </li>
-              <li onClick={handleToggleInfoDropdown}>
-                <H4 medium>Info</H4>
+          <span>
+            <NavBar_D_HamburgerComponent />
+          </span>
+          <ul>
+            <li
+              tabIndex={0}
+              onKeyDown={handleNavigateORG}
+              className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
+              <H4 medium>
+                <LinkNoStyle href="/ORG">Resource Directory</LinkNoStyle>
+              </H4>
+            </li>
+            <li>
+              <H4 medium>Ask a Question</H4>
+            </li>
+            <li onClick={handleToggleInfoDropdown}>
+              <H4 medium>Info</H4>
 
-                {infoDropdownState && <NavBar_D_InfoDropdown theRef={infoRef} />}
-              </li>
-            </ul>
-          </div>
-          <div>
-            <NavBar_D_QuickCarePlanSvg /> <p>Quick Care Plan</p>
-          </div>
+              {infoDropdownState && <NavBar_D_InfoDropdown theRef={infoRef} />}
+            </li>
+          </ul>
         </div>
+        <div>
+          <NavBar_D_QuickCarePlanSvg /> <p>Quick Care Plan</p>
+        </div>
+      </div>
 
-        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
-      </NavBar_D_Wrapped>
-    </>
+      <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+    </INDEX_NavBar_D_Wrapped>
   )
 }

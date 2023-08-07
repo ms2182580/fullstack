@@ -8,13 +8,14 @@ const BUTTON_COLOR = "#3B4250"
 
 export const ORG_Filters_D_RangeWrapper = styled.div`
   position: relative;
+  
 
   .container {
     position: absolute;
     top:150%;
     left: 0;
 
-    z-index: 2;
+    z-index:5;
     background-color: ${NEUTRALS.OFF_WHITE};
 
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);

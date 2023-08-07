@@ -9,7 +9,7 @@ export const ORG_Filters_D_CheckboxWrapper = styled.div`
     top: 150%;
     left: 0;
 
-    z-index: 4;
+    z-index: 5;
     background-color: white;
 
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);

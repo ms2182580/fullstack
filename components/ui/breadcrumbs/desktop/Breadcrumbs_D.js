@@ -10,14 +10,13 @@ export const Breadcrumbs_D = ({ whichDisplay = [] }) => {
 
   return (
     <Breadcrumbs_DWrapper>
-      <div>
+
+      <LinkNoStyle
+        href="/"
+        tabIndex={shouldTab}>
         <HomeSvg />
-        <LinkNoStyle
-          href="/"
-          tabIndex={shouldTab}>
-          <P>Home</P>
-        </LinkNoStyle>
-      </div>
+        <P>Home</P>
+      </LinkNoStyle>
 
       {whichDisplay.map((x) => {
         let defaultRoute = x[1] === "" ? "" : "/" + x[1]

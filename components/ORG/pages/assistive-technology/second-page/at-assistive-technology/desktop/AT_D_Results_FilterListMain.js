@@ -172,6 +172,8 @@ export const AT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
   //   }
   // }, [mustShowFiltersDesktop])
 
+
+
   return (
     <>
       <AT_D_Results_FilterListMainWrapper>
