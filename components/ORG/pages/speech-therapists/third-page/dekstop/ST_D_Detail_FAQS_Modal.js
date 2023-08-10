@@ -1,13 +1,13 @@
-import { XSvg } from "../../../../../assets/Icons/index.js"
-import { ButtonSmall } from "../../../../ui/buttons/general/index.js"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_D_Detail_FAQS_ModalWrapper } from "./styles/ST_D_Detail_FAQS_ModalWrapper.js"
-
 import { useEffect, useRef, useState } from "react"
+import { XSvg } from "../../../../../../assets/Icons/index.js"
+import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
+import { ST_D_Detail_FAQS_ModalWrapper } from "./styles/ST_D_Detail_FAQS_ModalWrapper.js"
 
 export const ST_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, lastName, setFaqsData }) => {
   const componentRef = useRef(null)
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (componentRef.current && !componentRef.current.contains(event.target)) {

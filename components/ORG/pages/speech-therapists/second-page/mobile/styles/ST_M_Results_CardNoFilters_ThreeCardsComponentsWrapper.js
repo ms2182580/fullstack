@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div`
   border-top-left-radius: 8px;
@@ -10,11 +10,7 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper = styled.div
     cursor: ${(x) => (x.isThirdPage ? `default` : `pointer`)};
     transition: all 0.3s
   }
-
-  /* .card > :nth-child(1) {
-    pointer-events: ${(x) => (x.isThirdPage ? `auto` : `none`)};
-  } */
-
+  
   & > :nth-child(1) {
     position: relative;
 

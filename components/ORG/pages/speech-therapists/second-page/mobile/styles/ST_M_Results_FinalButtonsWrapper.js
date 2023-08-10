@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_M_Results_FinalButtonsWrapper = styled.div`
   position: ${({ mustShowFiltersMobile }) => (mustShowFiltersMobile ? `fixed` : `relative`)};

@@ -1,8 +1,8 @@
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
-import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider"
-import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
+import { useShouldTab } from "../../../../../../utils/ORG_shouldTab.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_FinalButtonsNumberPageWrapper } from "./styles/ST_M_Results_FinalButtonsWrapper.js"
 
 export const ST_M_Results_NavigationButtonsNumbers = () => {

@@ -1,5 +1,5 @@
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_Review_StarsRating } from "./ST_D_Detail_Review_StarsRating.js"
 import { ST_D_Detail_ReviewsHeader_PeopleOftenMention } from "./ST_D_Detail_ReviewsHeader_PeopleOftenMention.js"
 import { ST_D_Detail_Reviews_HeaderWrapper } from "./styles/ST_D_Detail_Reviews_HeaderWrapper.js"

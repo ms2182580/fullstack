@@ -1,5 +1,5 @@
-import { ArrowDownSvg } from "../../../../../assets/Icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ArrowDownSvg } from "../../../../../../assets/Icons/index.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper } from "./styles/ST_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper.js"
 
 export const ST_D_Detail_ReviewsHeader_PeopleOftenMention = ({ modal }) => {

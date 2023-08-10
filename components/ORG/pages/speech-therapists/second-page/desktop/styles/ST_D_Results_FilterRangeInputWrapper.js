@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 const SLICE_WIDTH = "355px"
 const THUMB_COLOR = "#151A26"

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_D_Results_FinalButtonsWrapper = styled.div`
   justify-self: start;

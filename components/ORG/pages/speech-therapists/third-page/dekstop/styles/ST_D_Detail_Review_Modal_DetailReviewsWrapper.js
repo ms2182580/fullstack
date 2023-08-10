@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
   display: flex;
@@ -17,7 +17,6 @@ export const ST_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
     margin-bottom: 25px;
 
     display: flex;
-    /* flex-direction: column; */
 
     & > :nth-child(1) {
       position: absolute;
@@ -36,8 +35,6 @@ export const ST_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
       background: #fbfbfb;
       border: 1px solid ${NEUTRALS.BLACK};
       border-radius: 8px;
-
-      /* outline: none; */
 
       &[type="text"]:focus {
         border: 1px solid transparent;

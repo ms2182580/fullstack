@@ -1,6 +1,6 @@
 import { Fragment } from "react"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts"
 
 export const ST_D_Detail_CardWrapper_SecondRow_Info = ({
   title,

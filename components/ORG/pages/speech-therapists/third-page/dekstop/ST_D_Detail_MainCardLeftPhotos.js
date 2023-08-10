@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
-import { useScrollLock } from "../../../../../utils/useScrollLock.js"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal.js"
+import { useScrollLock } from "../../../../../../utils/useScrollLock.js"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_D_Detail_MainCardLeftPhotosModal } from "./ST_D_Detail_MainCardLeftPhotosModal.js"
 import { ST_D_Detail_MainCardLeftPhotosWrapper } from "./styles/ST_D_Detail_MainCardLeftPhotosWrapper.js"
 

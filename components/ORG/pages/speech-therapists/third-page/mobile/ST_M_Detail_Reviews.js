@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react"
-import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName"
-import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
-import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { ORG_ReviewsUsersName } from "../../../../../../utils/ORG_ReviewsUsersName"
+import { ORG_ST_Review } from "../../../../../../utils/ORG_ST_Review_D"
+import { Caption, P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Detail_Reviews_IndividualComponent } from "./ST_M_Detail_Reviews_IndividualComponent"
 import { ST_M_Detail_ReviewsWrapper } from "./styles/ST_M_Detail_ReviewsWrapper"
 

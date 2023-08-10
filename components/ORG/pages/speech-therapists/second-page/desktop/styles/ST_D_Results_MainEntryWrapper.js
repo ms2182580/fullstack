@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
-import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_D_Results_MainEntryWrapper = styled.div`
   position: relative;

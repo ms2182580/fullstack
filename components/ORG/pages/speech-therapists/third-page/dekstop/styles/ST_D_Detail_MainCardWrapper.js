@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_D_Detail_MainCardWrapper = styled.div`
   display: grid;
@@ -11,25 +11,8 @@ export const ST_D_Detail_MainCardWrapper = styled.div`
   border-radius: 8px;
 
   grid-template-columns: 450px 1fr;
-
-  /* border: 2px solid green; */
-
-  & > :nth-child(1) {
-    /* margin-bottom: 0px; */
-  }
 `
-
-// export const STDetail_CardWrapper_Card_Detail = styled(ST_D_Results_CardWrapper)`
-//   display:grid;
-//   border: none;
-//   grid-template-columns: 450px 1fr;
-
-//   border: 2px solid crimson;
-// `
-
 export const ST_D_Detail_MainCardLeft = styled.div`
-  /* border: 2px solid crimson; */
-  /* padding-inline: 24px; */
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
   min-width: 320px;
@@ -37,20 +20,9 @@ export const ST_D_Detail_MainCardLeft = styled.div`
   flex-direction: column;
 
   padding: 24px;
-
-  /* border: 2px solid crimson; */
-
-  /* padding-bottom: 24px; */
-
-  & > :nth-last-child(1),
-  & > :nth-last-child(2) {
-    /* margin-inline: 24px; */
-  }
 `
 
 export const ST_D_Detail_MainCardLeftLeftImage = styled.div`
-  /* margin: 24px 24px 8px 24px; */
-
   position: relative;
   overflow: hidden;
   border-top-left-radius: 8px;
@@ -65,8 +37,6 @@ export const ST_D_Detail_MainCardLeftLeftImage = styled.div`
   margin-bottom: 8px;
   border-radius: 8px;
   border: none;
-
-  /* border: 2px solid crimson; */
 `
 
 export const ST_D_Detail_MainCardLeftLeftInfo = styled.div`
@@ -175,7 +145,7 @@ export const ST_D_Detail_MainCardRightSecondRow = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "leftPart rightPart";
   margin-bottom: 32px;
-  gap:16px;
+  gap: 16px;
 
   & > :nth-child(1) {
     grid-area: leftPart;
@@ -189,33 +159,24 @@ export const ST_D_Detail_MainCardRightSecondRow = styled.div`
   & > :nth-child(2) {
     grid-area: rightPart;
 
-    & > :nth-child(1){
+    & > :nth-child(1) {
       & > :not(:first-child) {
         display: inline;
       }
     }
-    
-    & > :nth-child(2){
-      & > :not(:first-child){
-        
+
+    & > :nth-child(2) {
+      & > :not(:first-child) {
         display: flex;
         flex-wrap: wrap;
         /* gap:8px; */
-        
-        & > span{
+
+        & > span {
           font-weight: 600;
           margin-right: 8px;
         }
-        
       }
-      
     }
-    
-    & > *{
-    /* border: 2px solid green; */
-      
-    }
-    
   }
 
   & > :nth-child(1),
@@ -225,10 +186,3 @@ export const ST_D_Detail_MainCardRightSecondRow = styled.div`
     }
   }
 `
-
-// export const ST_D_Detail_MainCardRightSecondRowLeft = styled.div`
-//   grid-area: leftPart;
-// `
-// export const STDetail_CardWrapper_SecondRow_RightPart = styled.div`
-//   grid-area: rightPart;
-// `

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
-import { useORG_Ctx_filtersLeftMobile } from "../../../../../context/ORG_CtxFiltersLeftMobile_Provider.js"
-import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
+import { useORG_Ctx_filtersLeftMobile } from "../../../../../../context/ORG_CtxFiltersLeftMobile_Provider.js"
+import { useORG_Ctx_ShowFiltersMobile } from '../../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider'
 import { ST_M_Results_CardNoFilters } from "./ST_M_Results_CardNoFilters.js"
 import { ST_M_Results_CardWithFilters } from "./ST_M_Results_CardWithFilters.js"
 import { ST_M_Results_ChoisepathWrapper } from "./styles/ST_M_Results_ChoisepathWrapper.js"

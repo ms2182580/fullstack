@@ -1,13 +1,10 @@
-import { useRouter } from "next/router"
 import { INDEX_D_AssistiveTechnology_Results } from "../../../../components/ORG/pages/assistive-technology/second-page/at-assistive-technology/desktop/INDEX_D_AssistiveTechnology_Results"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
-
-
-const ORG_INDEX_AT_AssistiveTechnology_Results = (props) => {
+export default function ORG_INDEX_AT_AssistiveTechnology_Results() {
   const { isMobile } = useCheckUserWidth()
 
-  const { pathname, query, route, ...allProps } = useRouter()
+  // const { pathname, query, route, ...allProps } = useRouter()
 
   return (
     <>
@@ -24,6 +21,6 @@ const ORG_INDEX_AT_AssistiveTechnology_Results = (props) => {
   )
 }
 
-export default ORG_INDEX_AT_AssistiveTechnology_Results
+
 
 

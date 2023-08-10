@@ -1,13 +1,12 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import React from "react"
-import ORG_STDetail_Share_Modal_QRAltIcon from "../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRCodeIcon.png"
-import { ORG_FILTERS_KEYS_D } from "../../../../../utils/ORG_FiltersCategories"
-import { ButtonSmall } from "../../../../ui/buttons/general"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H2, H3 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
-import { Verified } from "../../../verified/Verified"
+import ORG_STDetail_Share_Modal_QRAltIcon from '../../../../../../assets/Icons/ORG_STDetail_Share_Modal_QRAltIcon.png'
+import { ORG_FILTERS_KEYS_D } from "../../../../../../utils/ORG_FiltersCategories"
+import { ButtonSmall } from "../../../../../ui/buttons/general"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H2, H3 } from "../../../../../ui/heading_body_text/HeaderFonts"
+import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
+import { Verified } from "../../../../verified/Verified"
 import { ST_D_Detail_About } from "./ST_D_Detail_About"
 import { ST_D_Detail_AcceptingNewClients } from "./ST_D_Detail_AcceptingNewClients"
 import { ST_D_Detail_CardEmail } from "./ST_D_Detail_CardEmail"
@@ -38,7 +37,7 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
     push(
       {
         pathname: "/404",
-        query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
+        query: { toWhere: "ORG/speech-therapists/IndividualProvider" }
       },
       "/404"
     )

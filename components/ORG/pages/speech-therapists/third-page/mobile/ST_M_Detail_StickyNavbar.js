@@ -1,5 +1,5 @@
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../../../../ui/hyperlink/HyperlinkNoStyles"
 import { ST_M_Detail_StickyNavbarWrapper } from "./styles/ST_M_Detail_StickyNavbarWrapper"
 
 export const ST_M_Detail_StickyNavbar = ({ highlight }) => {

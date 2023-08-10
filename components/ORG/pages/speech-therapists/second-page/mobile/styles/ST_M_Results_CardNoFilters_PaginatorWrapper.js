@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_M_Results_CardNoFilters_PaginatorWrapper = styled.div`
   gap: 8px;

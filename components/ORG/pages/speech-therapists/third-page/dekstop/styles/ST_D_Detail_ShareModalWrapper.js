@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 const showElement = keyframes`
 0% {
@@ -27,7 +27,6 @@ const hideElement = keyframes`
 
 export const ST_D_Detail_ShareModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
-  
   position: fixed;
   top: 50%;
   left: 50%;
@@ -39,8 +38,6 @@ export const ST_D_Detail_ShareModalWrapper = styled.div`
   cursor: default;
   padding: 48px 40px;
   border-radius: 8px;
-  /* border: 2px solid crimson; */
-
   display: flex;
   flex-direction: column;
 

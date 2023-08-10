@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../../assets/Colors"
 
 export const ST_D_Detail_AppointmentModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};

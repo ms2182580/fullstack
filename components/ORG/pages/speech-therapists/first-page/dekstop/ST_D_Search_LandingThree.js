@@ -8,7 +8,7 @@ export const ST_D_Search_LandingThree = ({ dataToUse }) => {
   const route = useRouter()
 
   const handleMoveToAllList = () => {
-    route.push("/ORG/SpeechTherapists")
+    route.push("/ORG/speech-therapists")
   }
 
   return (

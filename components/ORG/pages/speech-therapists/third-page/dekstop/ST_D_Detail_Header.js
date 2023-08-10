@@ -1,10 +1,10 @@
-import { BackArrow } from "../../../../../assets/Icons"
-import { useORG_InputCtx } from "../../../../../context/ORG_Input"
-import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
-import { ORG_D_SearchComponent } from "../../../inputs/desktop/ORG_D_SearchComponent"
+import { BackArrow } from '../../../../../../assets/Icons'
+import { LinkNoStyle } from '../../../../../../components/ui/hyperlink/HyperlinkNoStyles'
+import { useORG_InputCtx } from '../../../../../../context/ORG_Input'
+import { Breadcrumbs_D } from '../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D'
+import { P } from '../../../../../ui/heading_body_text/DesktopMobileFonts'
+import { H3 } from '../../../../../ui/heading_body_text/HeaderFonts'
+import { ORG_D_SearchComponent } from '../../../../inputs/desktop/ORG_D_SearchComponent'
 import { ST_D_Detail_HeaderWrapper } from "./styles/ST_D_Detail_HeaderWrapper"
 
 export const ST_D_Detail_Header = ({ STData }) => {
@@ -13,14 +13,14 @@ export const ST_D_Detail_Header = ({ STData }) => {
   return (
     <ST_D_Detail_HeaderWrapper isDetail={true}>
       <span>
-        <LinkNoStyle href="/ORG/SpeechTherapists">
+        <LinkNoStyle href="/ORG/speech-therapists">
           <BackArrow /> <P semibold>Back</P>
         </LinkNoStyle>
       </span>{" "}
       <Breadcrumbs_D
         whichDisplay={[
           ["Resource Directory", "ORG"],
-          ["Speech Therapist", "ORG/SpeechTherapists"],
+          ["Speech Therapist", "ORG/speech-therapists"],
           [`${STData.data[0].name.first} ${STData.data[0].name.last}`, ""]
         ]}
       />

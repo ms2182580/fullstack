@@ -54,7 +54,7 @@ const DATA = [
     }
   ],
   [
-    "Popular Special Education Schools",
+    "Popular Preschools",
     {
       imageToUse: ORG_SES4,
       title: "NYL William O'Connor Middle School",
@@ -87,7 +87,7 @@ const DATA = [
     }
   ],
   [
-    "Popular Special Education Schools",
+    "Popular Private Schools",
     {
       imageToUse: ORG_SES7,
       title: "NYL William O'Connor Middle School",

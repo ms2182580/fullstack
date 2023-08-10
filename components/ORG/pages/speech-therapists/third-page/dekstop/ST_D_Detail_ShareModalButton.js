@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { useState } from "react"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_ShareModalButtonWrapper } from "./styles/ST_D_Detail_ShareModalButtonWrapper.js"
 
 export const ST_D_Detail_ShareModalButton = ({

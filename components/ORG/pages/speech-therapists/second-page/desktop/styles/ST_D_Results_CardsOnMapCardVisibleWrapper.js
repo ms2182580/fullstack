@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { COLORS } from "../../../../../ui/buttons/variables"
+import { COLORS } from "../../../../../../ui/buttons/variables"
 
 export const ST_D_Results_CardsOnMapCardVisibleWrapper = styled.div`
   border: 2px solid ${COLORS.Primary.BgColor};

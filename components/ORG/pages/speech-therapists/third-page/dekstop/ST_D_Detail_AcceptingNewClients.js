@@ -1,4 +1,4 @@
-import { AcceptingNewClientsSvg } from '../../../../../assets/Icons/index.js'
+import { AcceptingNewClientsSvg } from '../../../../../../assets/Icons/index.js'
 import { ST_D_Detail_AcceptingNewClientsWrapper } from './styles/ST_D_Detail_AcceptingNewClientsWrapper.js'
 
 

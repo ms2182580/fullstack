@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { PRIMARY } from "../../../../../../assets/Colors"
+import { PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_D_Detail_Reviews_IndividualComponentWrapper = styled.div`
   border-radius: 8px;

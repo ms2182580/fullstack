@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_D_Results_FilterListChildWrapper = styled.div`
   visibility: ${(x) => (x.mustShowFiltersDesktop ? `visible` : `hidden`)};

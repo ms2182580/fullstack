@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_M_Results_SortByWrapper = styled.div`
   border: 1px solid ${NEUTRALS.DARK_GREY};
@@ -7,9 +7,6 @@ export const ST_M_Results_SortByWrapper = styled.div`
   border-radius: ${x => x.showDropdown ? "8px 8px 0px 0px" : "8px"};
   position: relative;
   cursor: pointer;
-  /* width: 116px; */
-  
-  
 
   & > :nth-child(1) {
     display: flex;

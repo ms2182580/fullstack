@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { SECONDARY_BG_BIGBLOCKS_TEXT, SECONDARY_ORG_PLUS } from "../../../../../../assets/Colors"
+import { SECONDARY_BG_BIGBLOCKS_TEXT, SECONDARY_ORG_PLUS } from "../../../../../../../assets/Colors"
 
 export const ST_M_Detail_Reviews_IndividualComponentWrapper = styled.div`
   border: 1px solid ${SECONDARY_ORG_PLUS.ASH_BLUE};

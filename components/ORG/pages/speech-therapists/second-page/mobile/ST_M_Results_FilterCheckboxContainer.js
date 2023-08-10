@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { DownArrowSvg, UpArrowSvg } from "../../../../../assets/Icons/index.js"
-import { ORG_FILTERS_KEYS_M } from "../../../../../utils/ORG_FiltersCategories.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { PatternStars } from "../../../stars-rating-review/PatternsStars.js"
+import { DownArrowSvg, UpArrowSvg } from "../../../../../../assets/Icons/index.js"
+import { ORG_FILTERS_KEYS_M } from "../../../../../../utils/ORG_FiltersCategories.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { PatternStars } from "../../../../stars-rating-review/PatternsStars.js"
 import { ST_M_Results_FilterCheckboxInput } from "./ST_M_Results_FilterCheckboxInput.js"
 import {
   ST_M_Results_FilterCheckboxContainerULWrapper,

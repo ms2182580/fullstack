@@ -1,5 +1,5 @@
-import { ORG_Sortby_Desktop } from "../../../../../utils/ORG_SortByData"
-import { CustomDropdownFilters } from "../../../dropdownFilters/CustomDropdownFilters"
+import { ORG_Sortby_Desktop } from "../../../../../../utils/ORG_SortByData"
+import { CustomDropdownFilters } from "../../../../dropdownFilters/CustomDropdownFilters"
 import { ST_D_Results_SortbyWrapper } from "./styles/ST_D_Results_SortbyWrapper"
 
 export const ST_D_Results_Sortby = () => {

@@ -1,11 +1,11 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
-import { ButtonSmall } from "../../../../ui/buttons/general"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
-import { Verified } from "../../../verified/Verified"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
+import { ButtonSmall } from "../../../../../ui/buttons/general"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts"
+import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
+import { Verified } from "../../../../verified/Verified"
 import { ST_D_Results_CardsOnMapCardVisibleWrapper } from "./styles/ST_D_Results_CardsOnMapCardVisibleWrapper"
 
 export const ST_D_Results_CardsOnMapCardVisible = ({ personalData, technicalData, review }) => {

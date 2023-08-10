@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_M_Results_FiltersContainerWrapper = styled.div`
   padding: 50px 16px;

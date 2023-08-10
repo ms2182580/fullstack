@@ -37,7 +37,7 @@ export const Footer = () => {
   return (
     <>
       <FooterWrapper
-        ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists"}
+        ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/speech-therapists"}
         mustShowFiltersMobile={mustShowFiltersMobile}>
         <H2
           bold

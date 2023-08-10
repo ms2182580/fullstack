@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_D_Results_MapWrapper = styled.div`
   width: ${(x) => (x.ORGShowFullMapFilter ? `100vw` : ``)};

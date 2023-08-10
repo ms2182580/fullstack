@@ -1,5 +1,5 @@
-import { LocationSvg } from "../../../../../assets/Icons/index.js"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { LocationSvg } from "../../../../../../assets/Icons/index.js"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_CardLocationWrapper } from "./styles/ST_M_Results_CardLocationWrapper.js"
 
 export const ST_M_Results_CardLocation = ({

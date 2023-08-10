@@ -1,8 +1,8 @@
 import Image from "next/image.js"
+import { LeftArrowTinySvg, RightArrowTinySvg } from "../../../../../../assets/Icons"
 import ORG_Results_MapImage from "../../../../../../assets/images/ORG_Results_MapImage.png"
-import { LeftArrowTinySvg, RightArrowTinySvg } from "../../../../../assets/Icons"
-import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
-import { useShouldTab } from "../../../../../utils/ORG_shouldTab"
+import { useORG_CtxShowFiltersDesktop } from "../../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
+import { useShouldTab } from "../../../../../../utils/ORG_shouldTab"
 import { ST_D_Results_CardsOnMap } from "./ST_D_Results_CardsOnMap"
 import { ST_D_Results_MapWrapper } from "./styles/ST_D_Results_MapWrapper.js"
 

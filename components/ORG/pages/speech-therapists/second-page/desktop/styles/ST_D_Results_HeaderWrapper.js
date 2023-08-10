@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { NEUTRALS, PRIMARY } from '../../../../../../assets/Colors'
-import { device } from '../../../../../../assets/screenSizes/ScreenSizes'
+import { NEUTRALS, PRIMARY } from '../../../../../../../assets/Colors'
+import { device } from '../../../../../../../assets/screenSizes/ScreenSizes'
 
 export const ST_D_Results_HeaderWrapper = styled.div`
   

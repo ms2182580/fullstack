@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { SECONDARY_SNT } from "../../../../../../assets/Colors"
+import { SECONDARY_SNT } from "../../../../../../../assets/Colors"
 
 export const ST_D_Detail_AcceptingNewClientsWrapper = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, SEMANTICS } from "../../../../../../assets/Colors"
+import { NEUTRALS, SEMANTICS } from "../../../../../../../assets/Colors"
 
 export const ST_D_Results_FilterCheckboxContainerWrapper = styled.div`
   & > :nth-child(1) {

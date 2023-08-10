@@ -1,11 +1,7 @@
 import { useRouter } from "next/router.js"
 import path from "path"
 import { useEffect } from "react"
-// import { InFrontModal_D_Wrapper } from "../../../../../components/inFront_D/styles/InFrontModal_D_Wrapper"
-// import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
-// import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
-// import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
-// import { LoadingSpeechTherapists } from "../../LoadingSpeechTherapists.js"
+import { InFrontModal_D_Wrapper } from '../../../../../../components/inFront_D/styles/InFrontModal_D_Wrapper'
 import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal.js"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"

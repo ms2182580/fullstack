@@ -10,7 +10,6 @@ export const Breadcrumbs_D = ({ whichDisplay = [] }) => {
 
   return (
     <Breadcrumbs_DWrapper>
-
       <LinkNoStyle
         href="/"
         tabIndex={shouldTab}>

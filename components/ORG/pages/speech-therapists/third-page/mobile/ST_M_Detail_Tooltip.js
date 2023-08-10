@@ -1,10 +1,9 @@
-import { ST_M_Detail_TooltipWrapper } from "./styles/ST_M_Detail_TooltipWrapper.js"
-
 import { useRef, useState } from "react"
-import { QuestionTooltip_STSvg } from "../../../../../assets/Icons/index.js"
-import { useOutsideHide } from "../../../../../utils/useOutsideHide.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { QuestionTooltip_STSvg } from "../../../../../../assets/Icons/index.js"
+import { useOutsideHide } from "../../../../../../utils/useOutsideHide.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H3 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
+import { ST_M_Detail_TooltipWrapper } from "./styles/ST_M_Detail_TooltipWrapper.js"
 
 export const ST_M_Detail_Tooltip = ({ isThirdPage = false }) => {
   const [show, setShow] = useState(false)
@@ -38,7 +37,6 @@ export const ST_M_Detail_Tooltip = ({ isThirdPage = false }) => {
         </div>
       ) : null}
 
-      {/* {show ? <>Showing something✅</> : <>❌</>} */}
     </ST_M_Detail_TooltipWrapper>
   )
 }

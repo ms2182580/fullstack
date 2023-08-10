@@ -14,7 +14,7 @@ export const ST_D_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
   const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
   const goToDynamic = () => {
     setSTDataThirdpage_D({ data: [dataToUse], filters: [filters] })
-    router.push("/ORG/SpeechTherapists/IndividualProvider")
+    router.push("/ORG/speech-therapists/IndividualProvider")
   }
 
   return (

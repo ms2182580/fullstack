@@ -1,5 +1,5 @@
-import { EmailORGSvg } from "../../../../../assets/Icons/index.js"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { EmailORGSvg } from "../../../../../../assets/Icons/index.js"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_CardEmailWrapper } from "./styles/ST_M_Results_CardEmailWrapper.js"
 
 export const ST_M_Results_CardEmail = ({ email }) => {

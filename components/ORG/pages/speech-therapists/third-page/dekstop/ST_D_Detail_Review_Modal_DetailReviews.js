@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react"
-import { ST_D_Detail_SearchReviewModalSVG } from "../../../../../assets/Icons/index.js"
-import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
-import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D.js"
+import { ST_D_Detail_SearchReviewModalSVG } from "../../../../../../assets/Icons/index.js"
+import { ORG_ReviewsUsersName } from "../../../../../../utils/ORG_ReviewsUsersName.js"
+import { ORG_ST_Review } from "../../../../../../utils/ORG_ST_Review_D.js"
 import { ST_D_Detail_Reviews_IndividualComponent } from "./ST_D_Detail_Reviews_IndividualComponent.js"
 import { ST_D_Detail_Review_Modal_DetailReviewsWrapper } from "./styles/ST_D_Detail_Review_Modal_DetailReviewsWrapper.js"
 

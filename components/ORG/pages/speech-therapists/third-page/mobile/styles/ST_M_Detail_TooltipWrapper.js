@@ -1,14 +1,10 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const ST_M_Detail_TooltipWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-
-  & > :nth-child(1) {
-    /* cursor: pointer; */
-  }
 
   & > :nth-child(2) {
     & > :nth-child(1) {

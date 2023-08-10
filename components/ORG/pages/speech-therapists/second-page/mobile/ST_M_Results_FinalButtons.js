@@ -1,9 +1,9 @@
 import { useRouter } from "next/router.js"
-import { LeftArrowSvg, RightArrowSvg } from "../../../../../assets/Icons/index.js"
-import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
-import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
-import { useShouldTab } from "../../../../../utils/ORG_shouldTab.js"
-import { useCheckMobile } from "../../../../../utils/useCheckMobile.js"
+import { LeftArrowSvg, RightArrowSvg } from "../../../../../../assets/Icons/index.js"
+import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
+import { useORG_Ctx_ShowFiltersMobile } from "../../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
+import { useShouldTab } from "../../../../../../utils/ORG_shouldTab.js"
+import { useCheckMobile } from "../../../../../../utils/useCheckMobile.js"
 import { ST_M_Results_NavigationButtonsNumbers } from "./ST_M_Results_NavigationButtonsNumbers.js"
 import {
   ST_M_Results_FinalButtonsNextButtonWrapper,

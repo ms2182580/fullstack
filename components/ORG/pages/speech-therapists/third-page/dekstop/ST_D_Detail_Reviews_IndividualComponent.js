@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { ORG_ST_Review_Months } from "../../../../../utils/ORG_ST_Review_D"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { PatternStars } from "../../../stars-rating-review/PatternsStars"
+import { ORG_ST_Review_Months } from "../../../../../../utils/ORG_ST_Review_D.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { PatternStars } from "../../../../stars-rating-review/PatternsStars.js"
 import { ST_D_Detail_Reviews_IndividualComponentWrapper } from './styles/ST_D_Detail_Reviews_IndividualComponentWrapper.js'
 
 export const ST_D_Detail_Reviews_IndividualComponent = ({ rating = 5, review, userName }) => {

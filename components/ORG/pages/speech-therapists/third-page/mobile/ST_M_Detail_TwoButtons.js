@@ -1,4 +1,4 @@
-import { ButtonSmall } from "../../../../ui/buttons/general"
+import { ButtonSmall } from "../../../../../ui/buttons/general"
 import { ST_M_Detail_TwoButtonsWrapper } from "./styles/ST_M_Detail_TwoButtonsWrapper"
 
 export const ST_M_Detail_TwoButtons = () => {

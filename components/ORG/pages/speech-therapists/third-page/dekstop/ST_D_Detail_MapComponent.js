@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ORG_Map_SpeechTherapistDetail from '../../../../../assets/Icons/ORG_Map_SpeechTherapistDetail.jpg'
+import ORG_Map_SpeechTherapistDetail from '../../../../../../assets/Icons/ORG_Map_SpeechTherapistDetail.jpg'
 import { ST_D_Detail_MapComponentWrapper } from "./styles/ST_D_Detail_MapComponentWrapper"
 
 /* 

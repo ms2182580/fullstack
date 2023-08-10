@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { ST_D_Detail_FAQS_VoteArroDownSvg, ST_D_Detail_FAQS_VoteArroUpSvg } from "../../../../../assets/Icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ST_D_Detail_FAQS_VoteArroDownSvg, ST_D_Detail_FAQS_VoteArroUpSvg } from "../../../../../../assets/Icons/index.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper.js"
 
 export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, allUserNames, month }) => {

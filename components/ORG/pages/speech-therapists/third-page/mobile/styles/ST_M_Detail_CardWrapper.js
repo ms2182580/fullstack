@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
 
 export const ST_M_Detail_CardWrapper = styled.div`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};

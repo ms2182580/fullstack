@@ -1,6 +1,6 @@
 import React from "react"
-import { ORG_ST_LastUpdate } from "../../../../../utils/ORG_ST_Review_D"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { ORG_ST_LastUpdate } from "../../../../../../utils/ORG_ST_Review_D"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_D_Results_PageLastUpdatedWrapper } from "./styles/ST_D_Results_PageLastUpdatedWrapper"
 
 export const ST_D_Results_PageLastUpdated = () => {

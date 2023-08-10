@@ -1,5 +1,5 @@
 import { cloneElement, Fragment, useState } from "react"
-import { BookmarkSaveSTMobileSvg } from "../../../../../assets/Icons"
+import { BookmarkSaveSTMobileSvg } from "../../../../../../assets/Icons"
 import { DataArray } from "./cards-places/DataArray"
 import { ST_M_Results_CardNoFilters_Paginator } from "./ST_M_Results_CardNoFilters_Paginator"
 import { ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper } from './styles/ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper.js'

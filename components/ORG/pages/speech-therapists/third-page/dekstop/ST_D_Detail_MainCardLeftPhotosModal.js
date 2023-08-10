@@ -1,8 +1,8 @@
 import Image from "next/image.js"
 import { useEffect, useRef, useState } from "react"
-import { LeftArrowSvg, RightArrowSvg, XSvg } from "../../../../../assets/Icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { LeftArrowSvg, RightArrowSvg, XSvg } from "../../../../../../assets/Icons/index.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_MainCardLeftPhotosModalWrapper } from "./styles/ST_D_Detail_MainCardLeftPhotosModalWrapper.js"
 
 const imagesToShow = [0, 1, 2, 3, 4, 5]

@@ -1,9 +1,9 @@
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
-import { BackArrow } from "../../../../../assets/Icons"
-import { useORG_Ctx_STDataThirdpage_M } from "../../../../../context/ORG_Ctx_STDataThirdpageMobile_Provider"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"
+import { BackArrow } from "../../../../../../assets/Icons"
+import { useORG_Ctx_STDataThirdpage_M } from "../../../../../../context/ORG_Ctx_STDataThirdpageMobile_Provider"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { LinkNoStyle } from "../../../../../ui/hyperlink/HyperlinkNoStyles"
 import { ST_M_Detail_About } from "./ST_M_Detail_About"
 import { ST_M_Detail_Card } from "./ST_M_Detail_Card"
 import { ST_M_Detail_Contact } from "./ST_M_Detail_Contact.js"
@@ -19,7 +19,7 @@ export const INDEX_M_STDetail = () => {
   const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()
 
   if (STDataThirdpage_M === "") {
-    if (route.isReady) route.push("/ORG/SpeechTherapists")
+    if (route.isReady) route.push("/ORG/speech-therapists")
     return
   }
 
@@ -110,7 +110,7 @@ export const INDEX_M_STDetail = () => {
     <>
       <INDEX_M_STDetailWrapper>
         <ST_M_HeaderWrapper>
-          <LinkNoStyle href="/ORG/SpeechTherapists">
+          <LinkNoStyle href="/ORG/speech-therapists">
             <BackArrow />
             <Caption bolder>Back to Results</Caption>
           </LinkNoStyle>
@@ -120,9 +120,9 @@ export const INDEX_M_STDetail = () => {
 
         <ST_M_Detail_StickyNavbar highlight={highlight} />
 
-        <>
+        <a>
           <ST_M_Detail_Separator />
-        </>
+        </a>
 
         <ST_M_Detail_About
           name={STDataThirdpage_M.data[0].name.first}

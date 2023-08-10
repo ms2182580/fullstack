@@ -1,13 +1,11 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
-import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
-import { ORG_FILTERS_KEYS_D } from "../../../../../utils/ORG_FiltersCategories"
-import { ButtonSmall } from "../../../../ui/buttons/general"
-import { H2 } from "../../../../ui/heading_body_text/HeaderFonts"
-import { Share } from "../../../share/Share"
-import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
-import { Verified } from "../../../verified/Verified"
+import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
+import { useORG_Ctx_STDataThirdpage_D } from "../../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider"
+import { ButtonSmall } from "../../../../../ui/buttons/general"
+import { H2 } from "../../../../../ui/heading_body_text/HeaderFonts"
+import { Share } from "../../../../share/Share"
+import { Verified } from "../../../../verified/Verified"
 import { ST_D_CardInfoPayment } from "./ST_D_CardInfoPayment"
 import { ST_D_Results_CardCity } from "./ST_D_Results_CardCity"
 import { ST_D_Results_CardEmail } from "./ST_D_Results_CardEmail"
@@ -20,7 +18,7 @@ import {
   ST_D_CardWrapper_Left_LeftImage,
   ST_D_CardWrapper_Left_LeftInfo,
   ST_D_CardWrapper_Right,
-  ST_D_Results_CardWrapper
+  ST_D_Results_CardWrapper,
 } from "./styles/ST_D_Results_CardWrapper"
 
 export const ST_D_Results_CardWithFilters = () => {
@@ -40,25 +38,19 @@ export const ST_D_Results_CardWithFilters = () => {
       {dataF &&
         Array.isArray(filtersF) &&
         dataF.allData.map((everySingleValue, i) => {
-          let insurance = filtersF[i][ORG_FILTERS_KEYS_D.insurance.updateState].map(
-            (x) => x[0].toUpperCase() + x.slice(1)
-          )
+          let insurance = filtersF[i][ORG_FILTERS_KEYS_D.insurance.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
           let diagnosis = filtersF[i][ORG_FILTERS_KEYS_D.diagnosis.updateState].map((x) => {
             if (x !== "Other") return `${x} Friendly`
             return x
           })
 
-
           let language = filtersF[i][ORG_FILTERS_KEYS_D.language.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
-          let serviceSetting = filtersF[i][ORG_FILTERS_KEYS_D.serviceSetting.updateState].map(
-            (x) => x[0].toUpperCase() + x.slice(1)
-          )
+          let serviceSetting = filtersF[i][ORG_FILTERS_KEYS_D.serviceSetting.updateState].map((x) => x[0].toUpperCase() + x.slice(1))
 
           return (
-            <ST_D_Results_CardWrapper
-              key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
+            <ST_D_Results_CardWrapper key={`${everySingleValue.id.name}${everySingleValue.id.value}`}>
               <ST_D_CardWrapper_Left>
                 <ST_D_CardWrapper_Left_LeftImage>
                   <Image
@@ -94,8 +86,6 @@ export const ST_D_Results_CardWithFilters = () => {
                 <H2 bold>
                   {everySingleValue.name.first} {everySingleValue.name.last}, <span>CCC-SLP</span>
                 </H2>
-
-
 
                 <ST_D_Results_CardCity city={everySingleValue.location.city} />
 

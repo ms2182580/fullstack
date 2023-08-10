@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
-import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
+import { NEUTRALS, PRIMARY } from "../../../../../../../assets/Colors"
+import { device } from "../../../../../../../assets/screenSizes/ScreenSizes"
 
 export const ST_D_Detail_HeaderWrapper = styled.div`
   margin-right: 0px;

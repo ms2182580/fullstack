@@ -1,10 +1,10 @@
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
-import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName"
-import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
-import { useScrollLock } from "../../../../../utils/useScrollLock"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal"
+import { ORG_ReviewsUsersName } from "../../../../../../utils/ORG_ReviewsUsersName"
+import { ORG_ST_Review } from "../../../../../../utils/ORG_ST_Review_D"
+import { useScrollLock } from "../../../../../../utils/useScrollLock"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_D_Detail_Review_Modal } from "./ST_D_Detail_Review_Modal"
 import { ST_D_Detail_Reviews_Header } from "./ST_D_Detail_Reviews_Header"
 import { ST_D_Detail_Reviews_IndividualComponent } from "./ST_D_Detail_Reviews_IndividualComponent"
@@ -19,7 +19,7 @@ export const ST_D_Detail_Reviews = ({ name, lastName, reviewsRef, rating, review
     push(
       {
         pathname: "/404",
-        query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
+        query: { toWhere: "ORG/speech-therapists/IndividualProvider" }
       },
       "/404"
     )

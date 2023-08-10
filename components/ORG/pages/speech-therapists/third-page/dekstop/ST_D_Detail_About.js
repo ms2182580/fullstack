@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
-import { ORG_ST_About } from "../../../../../utils/ORG_ST_About_D.js"
-import { useScrollLock } from "../../../../../utils/useScrollLock.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal.js"
+import { ORG_ST_About } from "../../../../../../utils/ORG_ST_About_D.js"
+import { useScrollLock } from "../../../../../../utils/useScrollLock.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_About_Modal } from "./ST_D_Detail_About_Modal.js"
 import { ST_D_Detail_AboutWrapper } from "./styles/ST_D_Detail_AboutWrapper.js"
 
@@ -33,7 +33,7 @@ export const ST_D_Detail_About = ({ name, lastName, aboutRef }) => {
     <ST_D_Detail_AboutWrapper
       id="About"
       ref={aboutRef}>
-      <H4 hover>About</H4>_
+      <H4 hover>About</H4>
       <div>
         <P>
           {isTruncated ? formattedText : aboutTextState}

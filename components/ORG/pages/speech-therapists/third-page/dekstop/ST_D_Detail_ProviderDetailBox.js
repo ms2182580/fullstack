@@ -1,4 +1,4 @@
-import { P } from '../../../../ui/heading_body_text/DesktopMobileFonts.js'
+import { P } from '../../../../../ui/heading_body_text/DesktopMobileFonts.js'
 import { ST_D_Detail_ProviderDetailBoxWrapper } from './styles/ST_D_Detail_ProviderDetailBoxWrapper.js'
 
 export const ST_D_Detail_ProviderDetailBox = ({ meetingFormat }) => {

@@ -10,7 +10,7 @@ export const NavBar_D_SearchComponent = () => {
 
   const { push } = useRouter()
   const handleMoveUser = () => {
-    push("/ORG/SpeechTherapists")
+    push("/ORG/speech-therapists")
   }
 
   return (

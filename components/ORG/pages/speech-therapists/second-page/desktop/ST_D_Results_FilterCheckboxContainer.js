@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_D_Results_FilterCheckboxInput } from "./ST_D_Results_FilterCheckboxInput.js"
 import {
   ST_D_Results_FilterCheckboxContainerULWrapper,

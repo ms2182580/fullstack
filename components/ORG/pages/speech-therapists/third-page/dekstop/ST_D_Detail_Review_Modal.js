@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import { XSvg } from "../../../../../assets/Icons/index.js"
+import { XSvg } from "../../../../../../assets/Icons/index.js"
 import { ST_D_Detail_Review_Modal_DetailRating } from "./ST_D_Detail_Review_Modal_DetailRating.js"
 import { ST_D_Detail_Review_Modal_DetailReviews } from "./ST_D_Detail_Review_Modal_DetailReviews.js"
 import {

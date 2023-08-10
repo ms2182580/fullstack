@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { device } from "../../../../../../assets/screenSizes/ScreenSizes"
+import { device } from "../../../../../../../assets/screenSizes/ScreenSizes"
 
 export const ST_D_Results_FiltersContainerWrapper = styled.div`
   position: relative;

@@ -1,9 +1,8 @@
 import { useState } from "react"
-import { ShareSvg } from "../../../../../assets/Icons/index.js"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
-import { useScrollLock } from "../../../../../utils/useScrollLock.js"
-
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ShareSvg } from "../../../../../../assets/Icons/index.js"
+import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal.js"
+import { useScrollLock } from "../../../../../../utils/useScrollLock.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_D_Detail_ShareModal } from "./ST_D_Detail_ShareModal.js"
 import { ST_D_Detail_ShareWrapper } from "./styles/ST_D_Detail_ShareWrapper.js"
 

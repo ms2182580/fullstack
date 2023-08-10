@@ -1,10 +1,10 @@
 import Image from "next/image.js"
-import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
-import { FriendlyDiagnoses } from "../../../../friendlyDiagnoses/FriendlyDiagnoses.js"
-import { StartsRatingReview_Mobile } from "../../../../stars-rating-review/mobile/StartsRatingReview_Mobile.js"
-import { Verified } from "../../../../verified/Verified.js"
-import { ST_M_Detail_Tooltip } from "../../../third-page/mobile/ST_M_Detail_Tooltip.js"
+import { Caption } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../../../ui/heading_body_text/HeaderFonts"
+import { FriendlyDiagnoses } from "../../../../../friendlyDiagnoses/FriendlyDiagnoses"
+import { StartsRatingReview_Mobile } from "../../../../../stars-rating-review/mobile/StartsRatingReview_Mobile"
+import { Verified } from "../../../../../verified/Verified"
+import { ST_M_Detail_Tooltip } from "../../../third-page/mobile/ST_M_Detail_Tooltip"
 
 export const ST_M_Results_Card_Firstplace = ({
   handlePointerEvent,

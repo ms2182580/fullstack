@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ST_D_Detail_Review_Modal_DetailRatingWrapper } from "./styles/ST_D_Detail_Review_Modal_DetailRatingWrapper.js"
 
 let fullFillRatingFunc = (arr) => {

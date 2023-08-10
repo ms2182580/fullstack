@@ -1,6 +1,6 @@
 import { useRouter } from "next/router.js"
-import { CarePlanSvg } from "../../../../../assets/Icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { CarePlanSvg } from "../../../../../../assets/Icons/index.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_D_Detail_CarePlanWrapper } from "./styles/ST_D_Detail_CarePlanWrapper.js"
 
 export const ST_D_Detail_CarePlan = () => {
@@ -10,7 +10,7 @@ export const ST_D_Detail_CarePlan = () => {
   const handleUnderConstruction = () => {
     push({
       pathname: "/404",
-      query: { toWhere: "ORG/SpeechTherapists/IndividualProvider" }
+      query: { toWhere: "ORG/speech-therapists/IndividualProvider" }
     }, "/404")
   }
 

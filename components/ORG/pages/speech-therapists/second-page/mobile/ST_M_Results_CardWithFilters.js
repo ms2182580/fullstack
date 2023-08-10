@@ -1,8 +1,8 @@
 import { useRouter } from "next/router.js"
-import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
-import { useORG_Ctx_STDataThirdpage_M } from "../../../../../context/ORG_Ctx_STDataThirdpageMobile_Provider.js"
-import { ORG_FILTERS_KEYS_M } from "../../../../../utils/ORG_FiltersCategories.js"
-import { ButtonSmall } from "../../../../ui/buttons/general/index.js"
+import { useORG_Ctx_FetchWithFiltersMobile } from '../../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider'
+import { useORG_Ctx_STDataThirdpage_M } from "../../../../../../context/ORG_Ctx_STDataThirdpageMobile_Provider.js"
+import { ORG_FILTERS_KEYS_M } from '../../../../../../utils/ORG_FiltersCategories'
+import { ButtonSmall } from '../../../../../ui/buttons/general'
 import { ST_M_Results_CardNoFilters_ThreeCardsComponents } from "./ST_M_Results_CardNoFilters_ThreeCardsComponents.js"
 import { ST_M_Results_CardNoFiltersWrapper } from "./styles/ST_M_Results_CardNoFiltersWrapper.js"
 
@@ -17,23 +17,6 @@ export const ST_M_Results_CardWithFilters = () => {
   }
 
   const { pagination, userFetched, setData, filtersST, setFilters, actualSort, } = useORG_Ctx_FetchWithFiltersMobile()
-
-  // console.log('userFetched:', userFetched)
-  // console.log('filtersST:', filtersST)
-
-  // useEffect(() => {
-  //   const { newOrderData, newOrderFilters } = ORG_SortybyFunction_M(
-  //     actualSort,
-  //     filtersST,
-  //     userFetched,
-  //     "SpeechtherapistListNoFilterMobile"
-  //   )
-  //   setData((prevState) => ({
-  //     ...prevState,
-  //     allData: newOrderData
-  //   }))
-  //   setFilters(newOrderFilters)
-  // }, [actualSort, pagination])
 
   return (
     <>

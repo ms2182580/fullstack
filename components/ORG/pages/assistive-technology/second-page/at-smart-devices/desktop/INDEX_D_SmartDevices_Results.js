@@ -14,30 +14,7 @@ export const INDEX_D_SmartDevices_Results = () => {
 
   return (
     <INDEX_D_SmartDevices_ResultsWrapper>
-      {/* <INDEX_D_SmartDevices_ResultsWrapper
-        ORGShowFullMapFilter={
-          ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
-        }>
-        <div>
-          Header here
-      </div>
-        <div>
-          <div>
-            <h2>Main entry</h2>
-            <h3>FilterSortbyHeader</h3>
-            <div>
-              <p>ChoisePath</p>
-              <p>Map</p>
-            </div>
-            <h3>Final buttons</h3>
-            <h3>BreadcrumbsAndLastUpdated</h3>
-          </div>
-          <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
-        </div>
-      </INDEX_D_SmartDevices_ResultsWrapper> */}
-
-
-      {/* <UnderConstruction /> */}
+      <h1>Smart Devices with Assistive Technology</h1>
       <Image src={UnderConstructionImagePurple} />
     </INDEX_D_SmartDevices_ResultsWrapper>
   )

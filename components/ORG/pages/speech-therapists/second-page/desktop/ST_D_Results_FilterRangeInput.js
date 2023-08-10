@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react"
-import { ORG_FILTERS_DATA_D } from '../../../../../../utils/ORG_FiltersCategories'
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { ORG_FILTERS_DATA_D } from "../../../../../../utils/ORG_FiltersCategories"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_D_Results_FilterRangeInputWrapper } from "./styles/ST_D_Results_FilterRangeInputWrapper"
 
 

@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_D_Results_CardInfoWrapper } from "./styles/ST_D_Results_CardInfoWrapper"
 
 export const ST_D_Results_CardInfo = ({ title, dataToShow }) => {
