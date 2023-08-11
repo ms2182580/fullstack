@@ -13,17 +13,15 @@ export const INDEX_D_AssistiveTechnology_Results = () => {
   const { pathname } = useRouter()
 
   return (
-    <>
-      <INDEX_D_AssistiveTechnology_ResultsWrapper
-        ORGShowFullMapFilter={
-          ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
-        }>
-        <AT_D_Results_Header />
+    <INDEX_D_AssistiveTechnology_ResultsWrapper
+      ORGShowFullMapFilter={
+        ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
+      }>
+      <AT_D_Results_Header />
 
-        <AT_D_Results_MainEntry />
+      <AT_D_Results_MainEntry />
 
-        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
-      </INDEX_D_AssistiveTechnology_ResultsWrapper>
-    </>
+      <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+    </INDEX_D_AssistiveTechnology_ResultsWrapper>
   )
 }

@@ -35,8 +35,6 @@ export const ORG_Filters_D_Range = ({
   const refContainer = useRef(null)
   useOutsideHide(refContainer, setMustShowFilter)
 
-
-
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
   const [minValUI, setMinValUI] = useState(min)

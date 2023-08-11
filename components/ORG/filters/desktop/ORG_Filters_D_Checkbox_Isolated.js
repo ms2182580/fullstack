@@ -1,78 +1,8 @@
-import { useEffect, useRef, useState } from "react"
-import { XDesktopSvg } from "../../../../assets/Icons/index.js"
-import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal.js"
-import { useOutsideHide } from "../../../../utils/useOutsideHide.js"
-import { ButtonSmall } from "../../../ui/buttons/general/index.js"
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
-import { ORG_Filters_D_CheckboxWrapper } from "./styles/ORG_Filters_D_CheckboxWrapper.js"
+import { ORG_Filters_D_Checkbox_IsolatedWrapper } from './styles/ORG_Filters_D_Checkbox_IsolatedWrapper.js'
 
-export const ORG_Filters_D_Checkbox = ({
-  // clearAll,
-  // dispatch,
-  // setClearAll,
-  // setFilterData,
-  // setTempState,
-  // shouldClearAllOptions,
-  // showStateChildren,
-  // tempState,
-  // toUpdateFilters,
-  buttonName = "noNameOnThisButton",
-  categoriesToDisplay = ["nothing here"],
-  titleOnModal
-}) => {
-  const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
-  const handleShowRemaining = () => {
-    setShowRemaining(true)
-  }
-
-  const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
-  const [mustShowFilter, setMustShowFilter] = useState(false)
-  const handleShowFilter = (e) => {
-    if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
-      setMustShowFilter((prevState) => !prevState)
-
-    }
-  }
-
-  useEffect(() => {
-    setModalShowedCtx(prevState => !prevState)
-  }, [mustShowFilter])
-
-  const refContainer = useRef(null)
-  useOutsideHide(refContainer, setMustShowFilter)
-
-  const [shouldClearAllOptions, setShouldClearAllOptions] = useState(false)
-  const handleShouldClearAllOptions = (e) => {
-    if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
-      setShouldClearAllOptions((prevState) => !prevState)
-    }
-  }
-
-  // const [show, setShow] = useState(false)
-  // const handleShow = (e) => {
-  //   if (e.type === "click" || e.key === "Enter") {
-  //     setShow(prevState => !prevState)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   setMustShowFilter(false)
-  // }, [clearAll])
-
-  // useEffect(() => {
-  //   setClearAll(false)
-  //   showStateChildren(show)
-  // }, [show])
-
+export const ORG_Filters_D_Checkbox_Isolated = ({ theRef, theOnClick, theOnKeyDown }) => {
   return (
-    <ORG_Filters_D_CheckboxWrapper
-      mustShowFilter={mustShowFilter}
-      showRemaining={showRemaining}>
-      <span onClick={handleShowFilter}>
-        {!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}
-      </span>
-
+    <ORG_Filters_D_Checkbox_IsolatedWrapper>
       <div ref={refContainer}>
         <span
           onClick={handleShowFilter}
@@ -165,17 +95,7 @@ export const ORG_Filters_D_Checkbox = ({
           )}
         </ul>
 
-        <div>
-          <span
-            onClick={handleShouldClearAllOptions}
-            onKeyDown={handleShouldClearAllOptions}>
-            <ButtonSmall secondary>Clear all</ButtonSmall>
-          </span>
-          <span>
-            <ButtonSmall>Apply</ButtonSmall>
-          </span>
-        </div>
       </div>
-    </ORG_Filters_D_CheckboxWrapper>
+    </ORG_Filters_D_Checkbox_IsolatedWrapper>
   )
 }

@@ -9,7 +9,6 @@ export default function ORG_INDEX_AA_DisabilityAttorney_Results() {
       {isMobile === false ? (
         <>
           <INDEX_D_DisabilityAttorney_Results />
-
         </>
       ) : (
         <>{/* // Nothing code yet */}</>

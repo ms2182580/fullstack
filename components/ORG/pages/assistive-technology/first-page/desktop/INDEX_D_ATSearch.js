@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
-import { DATA_AT_D as DATA } from "../../../../../../utils/ORG/pat/DATA_AT_D"
+import { DATA_AT_D } from "../../../../../../utils/ORG/pat/at/DATA_AT_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts"
@@ -18,29 +18,28 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA.length)
+      setHowMuchDisplay(DATA_AT_D.length)
     }
   }, [isSelected])
 
   const { pathname, push } = useRouter()
 
   const handleMoveToSecondPage = (e, title, possitionSubArr) => {
-
     let folder = DATA_ORG_D[positionInArray].acronym
     let subFolder = DATA_ORG_CheckPaths_Results_D[folder][possitionSubArr]
 
     push(
       {
         pathname: `${pathname}/${folder}/${subFolder}`,
-        query: { mainPosition: positionInArray, title, possitionSubArr }
+        query: { mainPosition: positionInArray, title, possitionSubArr },
       },
-      `${pathname}/${folder}/${subFolder}`
+      `${pathname}/${folder}/${subFolder}`,
     )
   }
 
   return (
     <INDEX_D_ATSearchWrapper>
-      {DATA.map((x, iData) => {
+      {DATA_AT_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (

@@ -1,42 +1,25 @@
 import { useEffect, useRef, useState } from "react"
-import { XDesktopSvg } from "../../../../assets/Icons/index.js"
-import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal.js"
-import { useOutsideHide } from "../../../../utils/useOutsideHide.js"
-import { ButtonSmall } from "../../../ui/buttons/general/index.js"
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
-import { ORG_Filters_D_CheckboxWrapper } from "./styles/ORG_Filters_D_CheckboxWrapper.js"
+import { XDesktopSvg } from "../../../../../../../assets/Icons/index.js"
+import { useCtx_ShowModal } from "../../../../../../../context/Ctx_ShowModal.js"
+import { useOutsideHide } from "../../../../../../../utils/useOutsideHide.js"
+import { ButtonSmall } from "../../../../../../ui/buttons/general/index.js"
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ORG_Filters_D_Checkbox_Input } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Input.js"
+import { CR_D_Results_FilterMoreWrapper } from "./styles/CR_D_Results_FilterMoreWrapper.js"
 
-export const ORG_Filters_D_Checkbox = ({
-  // clearAll,
-  // dispatch,
-  // setClearAll,
-  // setFilterData,
-  // setTempState,
-  // shouldClearAllOptions,
-  // showStateChildren,
-  // tempState,
-  // toUpdateFilters,
-  buttonName = "noNameOnThisButton",
-  categoriesToDisplay = ["nothing here"],
-  titleOnModal
-}) => {
-  const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
-  const handleShowRemaining = () => {
-    setShowRemaining(true)
-  }
+const categoriesToDisplay = ["first", "second"]
 
+export const CR_D_Results_FilterMore = () => {
   const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
   const [mustShowFilter, setMustShowFilter] = useState(false)
   const handleShowFilter = (e) => {
     if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
       setMustShowFilter((prevState) => !prevState)
-
     }
   }
 
   useEffect(() => {
-    setModalShowedCtx(prevState => !prevState)
+    setModalShowedCtx((prevState) => !prevState)
   }, [mustShowFilter])
 
   const refContainer = useRef(null)
@@ -49,29 +32,9 @@ export const ORG_Filters_D_Checkbox = ({
     }
   }
 
-  // const [show, setShow] = useState(false)
-  // const handleShow = (e) => {
-  //   if (e.type === "click" || e.key === "Enter") {
-  //     setShow(prevState => !prevState)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   setMustShowFilter(false)
-  // }, [clearAll])
-
-  // useEffect(() => {
-  //   setClearAll(false)
-  //   showStateChildren(show)
-  // }, [show])
-
   return (
-    <ORG_Filters_D_CheckboxWrapper
-      mustShowFilter={mustShowFilter}
-      showRemaining={showRemaining}>
-      <span onClick={handleShowFilter}>
-        {!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}
-      </span>
+    <CR_D_Results_FilterMoreWrapper mustShowFilter={mustShowFilter}>
+      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>More</ButtonSmall> : <ButtonSmall>More</ButtonSmall>}</span>
 
       <div ref={refContainer}>
         <span
@@ -81,7 +44,7 @@ export const ORG_Filters_D_Checkbox = ({
           <XDesktopSvg />
         </span>
 
-        <P semibold>{titleOnModal || buttonName}</P>
+        {/* <P semibold>{titleOnModal || buttonName}</P> */}
 
         <ul>
           {categoriesToDisplay?.map((x, i) => {
@@ -99,8 +62,8 @@ export const ORG_Filters_D_Checkbox = ({
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-          clearAll={clearAll}
-          shouldClearAllOptions={shouldClearAllOptions} */
+        clearAll={clearAll}
+        shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -123,8 +86,8 @@ export const ORG_Filters_D_Checkbox = ({
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-          clearAll={clearAll}
-          shouldClearAllOptions={shouldClearAllOptions} */
+        clearAll={clearAll}
+        shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -145,8 +108,8 @@ export const ORG_Filters_D_Checkbox = ({
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-          clearAll={clearAll}
-          shouldClearAllOptions={shouldClearAllOptions} */
+        clearAll={clearAll}
+        shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -164,7 +127,6 @@ export const ORG_Filters_D_Checkbox = ({
             </span>
           )}
         </ul>
-
         <div>
           <span
             onClick={handleShouldClearAllOptions}
@@ -176,6 +138,6 @@ export const ORG_Filters_D_Checkbox = ({
           </span>
         </div>
       </div>
-    </ORG_Filters_D_CheckboxWrapper>
+    </CR_D_Results_FilterMoreWrapper>
   )
 }
