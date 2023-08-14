@@ -57,14 +57,35 @@ export const ORG_Filters_D_Range_Isolated = ({
     const value = Math.min(Number(event.target.value), maxVal)
     setMinVal(value)
 
-    if (whichMeasure !== "weight") {
-      setMinValUI(new Intl.NumberFormat().format(value))
-    } else {
-      const inLbs = `${new Intl.NumberFormat().format(value)} lbs`
+    const formatedValue = new Intl.NumberFormat().format(value)
+
+    if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
+      setMinValUI(formatedValue)
+    }
+
+    if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
+      const addSpecialCharacter = value === Number(min)
+
+      setMinValUI(addSpecialCharacter ? minSpecialCharacter : formatedValue)
+    }
+
+    if (whichMeasure === "weight") {
+      const inLbs = `${formatedValue} lbs`
       const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
+
+
+
+    // if (whichMeasure !== "weight") {
+    //   setMinValUI(new Intl.NumberFormat().format(value))
+    // } else {
+    //   const inLbs = `${new Intl.NumberFormat().format(value)} lbs`
+    //   const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
+
+    //   setMinValUI(`${inLbs} · ${inKgs}`)
+    // }
 
     minValRef.current = value
   }
@@ -73,17 +94,37 @@ export const ORG_Filters_D_Range_Isolated = ({
     const value = Math.max(Number(event.target.value), minVal)
     setMaxVal(value)
 
-    if (whichMeasure !== "weight") {
-      setMaxValUI(new Intl.NumberFormat().format(value))
-    } else {
-      const addPlus = value === Number(max)
+    const formatedValue = new Intl.NumberFormat().format(value)
 
-      const inLbs = `${addPlus ? "+" : ""}${new Intl.NumberFormat().format(value)} lbs`
+    if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
+      setMaxValUI(formatedValue)
+    }
+
+    if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
+      const addSpecialCharacter = value === Number(max)
+
+      setMaxValUI(addSpecialCharacter ? maxSpecialCharacter : formatedValue)
+    }
+
+    if (whichMeasure === "weight") {
+      const inLbs = `+${formatedValue} lbs`
 
       const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
+
+    // if (whichMeasure !== "weight") {
+    //   setMaxValUI(new Intl.NumberFormat().format(value))
+    // } else {
+    //   const addPlus = value === Number(max)
+
+    //   const inLbs = `${addPlus ? "+" : ""}${new Intl.NumberFormat().format(value)} lbs`
+
+    //   const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
+
+    //   setMaxValUI(`${inLbs} · ${inKgs}`)
+    // }
 
     maxValRef.current = value
   }
@@ -98,9 +139,15 @@ export const ORG_Filters_D_Range_Isolated = ({
   const updateToInitialValues = () => {
     setMinVal(min)
     minValRef.current = min
-    if (whichMeasure !== "weight") {
+    if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
       setMinValUI(new Intl.NumberFormat().format(min))
-    } else {
+    }
+
+    if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
+      setMinValUI(minSpecialCharacter)
+    }
+
+    if (whichMeasure === "weight") {
       const inLbs = `${new Intl.NumberFormat().format(min)} lbs`
 
       const inKgs = `${Math.round(new Intl.NumberFormat().format(min * 0.45359237))} kg`
@@ -110,9 +157,16 @@ export const ORG_Filters_D_Range_Isolated = ({
 
     setMaxVal(max)
     maxValRef.current = max
-    if (whichMeasure !== "weight") {
+
+    if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
       setMaxValUI(new Intl.NumberFormat().format(max))
-    } else {
+    }
+
+    if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
+      setMaxValUI(maxSpecialCharacter)
+    }
+
+    if (whichMeasure === "weight") {
       const inLbs = `+${new Intl.NumberFormat().format(max)} lbs`
 
       const inKgs = `${Math.round(new Intl.NumberFormat().format(max * 0.45359237))} kg`
@@ -140,7 +194,7 @@ export const ORG_Filters_D_Range_Isolated = ({
       maxVal={maxVal}>
       {labelName !== "" && <label htmlFor="min">Minimum {labelName}</label>}
 
-      <P semibold>{labelName}</P>
+      <P semibold>{buttonName}</P>
       <input
         type="range"
         min={min}

@@ -18,7 +18,7 @@ export const DATA_CR_D_Filters = {
   },
 
   jurisdiction: {
-    buttonName: "Jurisdictions Admitted to Practice",
+    buttonName: "Jurisdiction",
     titleOnModal: "Jurisdictions Admitted to Practice",
     categoriesToDisplay: ["New York", "New Jersey", "Connecticut", "California", "Texas", "Florida", "Illinois", "Pennsylvania"],
   },
@@ -44,7 +44,7 @@ export const DATA_CR_D_Filters = {
   },
 
   price: {
-    buttonName: "price",
+    buttonName: "Price",
     minimumSpecialCharacter: "Pro Bono",
     minimum: "0",
     maximum: "100000.00",

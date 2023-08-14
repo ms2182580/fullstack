@@ -101,7 +101,7 @@ const allMoreFilters = {
       categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.jurisdiction.buttonName}
+      titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
       categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
     />,
 

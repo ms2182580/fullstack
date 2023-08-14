@@ -7,7 +7,7 @@ const THUMB_SIZE = "19px"
 const BUTTON_COLOR = "#3B4250"
 
 export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
-  & > :nth-child(1) {
+  /* & > :nth-child(1) {
     position: absolute;
     right: 16px;
     top: 16px;
@@ -17,7 +17,7 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
 
   & > label {
     display: none;
