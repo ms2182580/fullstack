@@ -4,13 +4,21 @@ const Ctx_ShowModal = createContext(null)
 
 export const Ctx_ShowModal_Provider = ({ children }) => {
   const [modalShowedCtx, setModalShowedCtx] = useState(false)
+
+  // useEffect(() => {
+  //   const checkOrientation = () => {
+  //     setModalShowedCtx(false)
+  //   }
+  //   window.addEventListener("resize", checkOrientation)
+  //   return () => { window.removeEventListener("resize", checkOrientation) }
+  // }, [])
+
   return (
     <Ctx_ShowModal.Provider
       value={{
         modalShowedCtx,
-        setModalShowedCtx
-      }}
-    >
+        setModalShowedCtx,
+      }}>
       {children}
     </Ctx_ShowModal.Provider>
   )

@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { XDesktopSvg } from "../../../../assets/Icons/index.js"
-import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal.js"
-import { useOutsideHide } from "../../../../utils/useOutsideHide.js"
+import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
 import { ButtonSmall } from "../../../ui/buttons/general/index.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
@@ -19,28 +18,27 @@ export const ORG_Filters_D_Checkbox = ({
   // toUpdateFilters,
   buttonName = "noNameOnThisButton",
   categoriesToDisplay = ["nothing here"],
-  titleOnModal
+  titleOnModal,
 }) => {
   const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
   const handleShowRemaining = () => {
     setShowRemaining(true)
   }
 
-  const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
-  const [mustShowFilter, setMustShowFilter] = useState(false)
-  const handleShowFilter = (e) => {
-    if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
-      setMustShowFilter((prevState) => !prevState)
+  // const { setModalShowedCtx } = useCtx_ShowModal()
+  // const [mustShowFilter, setMustShowFilter] = useState(false)
+  // const handleShowFilter = (e) => {
+  //   if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
+  //     setMustShowFilter((prevState) => !prevState)
+  //   }
+  // }
 
-    }
-  }
+  // useEffect(() => {
+  //   setModalShowedCtx(prevState => !prevState)
+  // }, [mustShowFilter])
 
-  useEffect(() => {
-    setModalShowedCtx(prevState => !prevState)
-  }, [mustShowFilter])
+  const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
 
-  const refContainer = useRef(null)
-  useOutsideHide(refContainer, setMustShowFilter)
 
   const [shouldClearAllOptions, setShouldClearAllOptions] = useState(false)
   const handleShouldClearAllOptions = (e) => {
@@ -69,15 +67,13 @@ export const ORG_Filters_D_Checkbox = ({
     <ORG_Filters_D_CheckboxWrapper
       mustShowFilter={mustShowFilter}
       showRemaining={showRemaining}>
-      <span onClick={handleShowFilter}>
-        {!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}
-      </span>
+      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}</span>
 
       <div ref={refContainer}>
         <span
           onClick={handleShowFilter}
-          tabIndex={0}
-          onKeyDown={handleShowFilter}>
+          onKeyDown={handleShowFilter}
+          tabIndex={0}>
           <XDesktopSvg />
         </span>
 
@@ -99,8 +95,8 @@ export const ORG_Filters_D_Checkbox = ({
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-          clearAll={clearAll}
-          shouldClearAllOptions={shouldClearAllOptions} */
+        clearAll={clearAll}
+        shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -123,8 +119,8 @@ export const ORG_Filters_D_Checkbox = ({
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-          clearAll={clearAll}
-          shouldClearAllOptions={shouldClearAllOptions} */
+        clearAll={clearAll}
+        shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -145,8 +141,8 @@ export const ORG_Filters_D_Checkbox = ({
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-          clearAll={clearAll}
-          shouldClearAllOptions={shouldClearAllOptions} */
+        clearAll={clearAll}
+        shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>

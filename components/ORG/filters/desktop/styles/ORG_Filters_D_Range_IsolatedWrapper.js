@@ -6,66 +6,25 @@ const THUMB_COLOR = "#151A26"
 const THUMB_SIZE = "19px"
 const BUTTON_COLOR = "#3B4250"
 
-export const ORG_Filters_D_RangeWrapper = styled.div`
-  position: relative;
-  & > :nth-child(1){
-    & > :nth-child(1){
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-inline: 16px;
-    }
+export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
+  & > :nth-child(1) {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .container {
-    position: absolute;
-    top:150%;
-    left: 0;
+  & > label {
+    display: none;
+  }
 
-    z-index:5;
-    background-color: ${NEUTRALS.OFF_WHITE};
-
-    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    
-    visibility: ${({ mustShowFilter }) => mustShowFilter ? `visible` : `hidden`};
-    padding:48px;
-    
-    
-    & > :nth-child(1){
-      position:absolute;
-      right:16px;
-      top:16px;
-      
-      cursor: pointer;
-      
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-      
-    }
-
-    & > label {
-      display: none;
-    }
-
-    & > p {
-      margin-bottom: 21px;
-    }
-    
-    & > :last-child{
-      display: flex;
-      align-items: center;
-      gap:40px;
-      & > * {
-        width:100%;
-        & > *{
-          
-          width:100%;
-        }
-      }
-    }
-    
+  & > p {
+    margin-bottom: 21px;
   }
 
   .thumb,
@@ -166,12 +125,11 @@ export const ORG_Filters_D_RangeWrapper = styled.div`
 
     display: flex;
     justify-content: space-between;
-    
-    padding-bottom:48px;
-    
+
+    padding-bottom: 48px;
+
     /* border: 2px solid crimson; */
-    padding-inline:18px;
-    
+    padding-inline: 18px;
 
     & > div {
       border: 1px solid ${BUTTON_COLOR};
@@ -195,4 +153,16 @@ export const ORG_Filters_D_RangeWrapper = styled.div`
       margin-bottom: auto;
     }
   }
+
+  /* & > :last-child {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    & > * {
+      width: 100%;
+      & > * {
+        width: 100%;
+      }
+    }
+  } */
 `

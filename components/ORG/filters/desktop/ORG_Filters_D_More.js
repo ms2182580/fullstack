@@ -1,19 +1,80 @@
-import { CR_D_Results_FilterMoreModalWrapper } from './styles/CR_D_Results_FilterMoreModalWrapper.js'
+import { Fragment, cloneElement, useState } from "react"
+import { XDesktopSvg } from "../../../../assets/Icons/index.js"
+import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
+import { ButtonSmall } from "../../../ui/buttons/general/index.js"
+import { ORG_Filters_D_MoreWrapper } from "./styles/ORG_Filters_D_MoreWrapper.js"
 
-export const ORG_Filters_D_More = ({ theRef, theOnClick, theOnKeyDown }) => {
+/* 
+
+!FH0
+
+https://codesandbox.io/s/ecstatic-babycat-v9738m?file=/src/App.js
+*/
+
+export const ORG_Filters_D_More = ({ allCheckboxes, allRanges }) => {
+  // console.log('allCheckboxes:', allCheckboxes)
+  // console.log("allRanges:", allRanges)
+  // const { setModalShowedCtx } = useCtx_ShowModal()
+  // const [mustShowFilter, setMustShowFilter] = useState(false)
+  // const handleShowFilter = (e) => {
+  //   if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
+  //     setMustShowFilter((prevState) => !prevState)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   setModalShowedCtx((prevState) => !prevState)
+  // }, [mustShowFilter])
+
+  // useEffect(() => {
+  //   setModalShowedCtx(false)
+  // }, [])
+
+  // const refContainer = useRef(null)
+  // useOutsideHide(refContainer, setMustShowFilter)
+
+  const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
+
+  const [shouldClearAllOptions, setShouldClearAllOptions] = useState(false)
+  const handleShouldClearAllOptions = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setShouldClearAllOptions((prevState) => !prevState)
+    }
+  }
+
   return (
-    <CR_D_Results_FilterMoreModalWrapper >
+    <ORG_Filters_D_MoreWrapper mustShowFilter={mustShowFilter}>
+      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>More Filters</ButtonSmall> : <ButtonSmall>More Filters</ButtonSmall>}</span>
+
+      <div ref={refContainer}>
+        <span
+          onClick={handleShowFilter}
+          onKeyDown={handleShowFilter}
+          tabIndex={0}>
+          <XDesktopSvg />
+        </span>
 
 
+        <div className="rangeMoreFilters">
+          {allRanges.map((x, i) => {
+            return (
+              <>
+                <Fragment key={i}>{cloneElement(x, { shouldClearAllOptions: shouldClearAllOptions })}</Fragment>
+              </>
+            )
+          })}
+        </div>
 
-      <span onClick={handleShowFilter}>
-        {!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}
-      </span>
+        <div className="checkboxesMoreFilters">
+          {allCheckboxes.map((x, i) => {
+            return (
+              <>
+                <Fragment key={i}>{cloneElement(x, { shouldClearAllOptions: shouldClearAllOptions })}</Fragment>
+              </>
+            )
+          })}
+        </div>
 
-
-      <div ref={theRef}>
-        <p>Here range input</p>
-        <p>Here checkbox input</p>
         <div>
           <span
             onClick={handleShouldClearAllOptions}
@@ -25,6 +86,6 @@ export const ORG_Filters_D_More = ({ theRef, theOnClick, theOnKeyDown }) => {
           </span>
         </div>
       </div>
-    </CR_D_Results_FilterMoreModalWrapper>
+    </ORG_Filters_D_MoreWrapper>
   )
 }

@@ -1,49 +1,70 @@
-export const DATA_CR_D_Filters = [
-  {
-    areasOfLaw: "Education, Divorce, & Personal Injury",
-    jurisdiction: "NY, NJ, CT, MD, & FL",
-    professionalExperience: "The Truong-MacGill Law Firm, since 2010",
-    languagesSpoken: "English, Cantonese, & Manda",
-    highlights: ["Free Consultation", "Disability Law"]
-  },
-  {
-    areasOfLaw: "Civil Rights, Education, & Personal Injury",
-    jurisdiction: "NY, NJ, & CT",
-    professionalExperience: "Abrahams Law since 2001",
-    languagesSpoken: "English & Spanish",
-    highlights: ["Free Consultation", "Video Conferencing"]
-  }
-]
+export const DATA_CR_D_Filters = {
+  areasOfLaw: {
+    buttonName: "Area(s) of Law",
 
-export const DATA_CR_D_Filters_Contact = [
-  {
-    phone: "(012) 345-6789, ext. 4001",
-    email: "denise@truong-macgill.com",
-    web: {
-      fistName: "truong",
-      lastName: "macgill",
-    },
-    location: {
-      city: "Brooklyn",
-      streetName: "Remsen Street, Suite #2",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
-    },
+    categoriesToDisplay: [
+      "Civil Rights",
+      "Disability Rights",
+      "Public Accomodations",
+      "Employment Discrimination",
+      "Housing Discrimination",
+      "Police Misconduct",
+      "Prisoners' Rights",
+      "Voting Rights",
+      "Education Discrimination",
+      "LGBTQ+",
+      "Immigration Rights",
+    ],
   },
-  {
-    phone: "(212) 312-6693",
-    email: "abrahams@abrahamslow.com",
-    web: {
-      fistName: "abraham",
-      lastName: "slaw",
-    },
-    location: {
-      city: "Brooklyn",
-      streetName: "56 Joralemon Street, Floor 11",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
-    },
+
+  jurisdiction: {
+    buttonName: "Jurisdictions Admitted to Practice",
+    titleOnModal: "Jurisdictions Admitted to Practice",
+    categoriesToDisplay: ["New York", "New Jersey", "Connecticut", "California", "Texas", "Florida", "Illinois", "Pennsylvania"],
+  },
+
+  professionalExperience: {
+    buttonName: "Professional Experience",
+    categoriesToDisplay: ["Private Practice", "Law Firm", "Clerkship", "Government Agencies", "In-House Counsel", "Public Interest Organizations"],
+  },
+
+  languajesSpoken: {
+    buttonName: "Language(s) Spoken",
+    categoriesToDisplay: ["English", "Spanish", "Cantonese", "Chinese", "Tagalog", "French"],
+  },
+
+  operationHours: {
+    buttonName: "Operation Hours",
+    categoriesToDisplay: ["Open Now", "Weekday", "Weekdays & Weekends", "After Hours"],
+  },
+
+  payment: {
+    buttonName: "Payment",
+    categoriesToDisplay: ["Free Consultation", "Retainer Minimum", "Payment Plan", "Flat Fee", "Hourly Rate", "Contingency Fee"],
+  },
+
+  price: {
+    buttonName: "price",
+    minimumSpecialCharacter: "Pro Bono",
+    minimum: "0",
+    maximum: "100000.00",
+    whichMeasure: "$",
+    addCharacter: "toLeft"
+  },
+  distance: {
+    buttonName: "Distance",
+    minimum: "0",
+    maximum: "20",
+    whichMeasure: "miles",
+    addCharacter: "toRight"
+  },
+  agesServed: {
+    buttonName: "Ages Served",
+    minimum: "0",
+    maximum: "100",
+    maximumSpecialCharacter: "100+",
+    whichMeasure: "years",
+    addCharacter: "toRight"
   }
-]
+
+}

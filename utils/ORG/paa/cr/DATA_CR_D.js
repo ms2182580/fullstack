@@ -183,7 +183,3 @@ export const DATA_CR_D = [
     },
   ],
 ]
-
-
-
-const DATA = []

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { XDesktopSvg } from "../../../../assets/Icons/index"
-import { useCtx_ShowModal } from "../../../../context/Ctx_ShowModal"
-import { useOutsideHide } from "../../../../utils/useOutsideHide"
+import { useShowFilters } from "../../../../utils/ORG/useShowFilters"
 import { ButtonSmall } from "../../../ui/buttons/general"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_RangeWrapper } from "./styles/ORG_Filters_D_RangeWrapper.js"
@@ -19,21 +18,7 @@ export const ORG_Filters_D_Range = ({
   // toUpdateFilters,
   whichMeasure = "" /* weight or any other character */
 }) => {
-  const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
-  const [mustShowFilter, setMustShowFilter] = useState(false)
-  const handleShowFilter = (e) => {
-    if ((e.type === "keydown" && e.code === "Enter") || e.type === "click") {
-      setMustShowFilter((prevState) => !prevState)
-
-    }
-  }
-
-  useEffect(() => {
-    setModalShowedCtx(prevState => !prevState)
-  }, [mustShowFilter])
-
-  const refContainer = useRef(null)
-  useOutsideHide(refContainer, setMustShowFilter)
+  const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
 
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
@@ -155,7 +140,8 @@ export const ORG_Filters_D_Range = ({
     <ORG_Filters_D_RangeWrapper
       minVal={minVal}
       maxVal={maxVal}
-      mustShowFilter={mustShowFilter}>
+      mustShowFilter={mustShowFilter}
+    >
       <span onClick={handleShowFilter}>
         {!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}
       </span>

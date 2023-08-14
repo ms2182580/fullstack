@@ -1,4 +1,9 @@
+import { DATA_CR_D_Filters } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Filters.js"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
+import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
+import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
+import { ORG_Filters_D_Range_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Range_Isolated.js"
 import { CR_D_Results_FilterListMainWrapper } from "./styles/CR_D_Results_FilterListMainWrapper.js"
 
 // const reducer = (state, action) => {
@@ -59,6 +64,78 @@ import { CR_D_Results_FilterListMainWrapper } from "./styles/CR_D_Results_Filter
 //   }
 // }
 // const nameToCloseTheFilters = "ShowFiltersDesktop"
+
+const allMoreFilters = {
+  range: [
+    <ORG_Filters_D_Range_Isolated
+      buttonName={DATA_CR_D_Filters.price.buttonName}
+      min={DATA_CR_D_Filters.price.minimum}
+      max={DATA_CR_D_Filters.price.maximum}
+      whichMeasure={DATA_CR_D_Filters.price.whichMeasure}
+      addCharacter={DATA_CR_D_Filters.price.addCharacter}
+      minSpecialCharacter={DATA_CR_D_Filters.price.minimumSpecialCharacter}
+    />,
+
+    <ORG_Filters_D_Range_Isolated
+      buttonName={DATA_CR_D_Filters.distance.buttonName}
+      min={DATA_CR_D_Filters.distance.minimum}
+      max={DATA_CR_D_Filters.distance.maximum}
+      addCharacter={DATA_CR_D_Filters.distance.addCharacter}
+      whichMeasure={DATA_CR_D_Filters.distance.whichMeasure}
+    />,
+
+    <ORG_Filters_D_Range_Isolated
+      buttonName={DATA_CR_D_Filters.agesServed.buttonName}
+      min={DATA_CR_D_Filters.agesServed.minimum}
+      max={DATA_CR_D_Filters.agesServed.maximum}
+      maxSpecialCharacter={DATA_CR_D_Filters.agesServed.maximumSpecialCharacter}
+      addCharacter={DATA_CR_D_Filters.agesServed.addCharacter}
+      whichMeasure={DATA_CR_D_Filters.agesServed.whichMeasure}
+    />,
+
+
+  ],
+  checkbox: [
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.areasOfLaw.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.jurisdiction.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.professionalExperience.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.languajesSpoken.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.operationHours.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.operationHours.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.payment.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.payment.categoriesToDisplay}
+    />,
+  ],
+}
 
 export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
   // const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
@@ -184,42 +261,30 @@ export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
         /> */}
 
         <ORG_Filters_D_Checkbox
-          buttonName="Area(s) of Law"
-          categoriesToDisplay={[
-            "Civil Rights",
-            "Disability Rights",
-            "Public Accomodations",
-            "Employment Discrimination",
-            "Housing Discrimination",
-            "Police Misconduct",
-            "Prisoners' Rights",
-            "Voting Rights",
-            "Education Discrimination",
-            "LGBTQ+",
-            "Immigration Rights",
-          ]}
+          buttonName={DATA_CR_D_Filters.areasOfLaw.buttonName}
+          categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
         />
 
         <ORG_Filters_D_Checkbox
-          buttonName="Jurisdiction"
-          titleOnModal="Jurisdictions Admitted to Practice"
-          categoriesToDisplay={["New York", "New Jersey", "Connecticut", "California", "Texas", "Florida", "Illinois", "Pennsylvania"]}
+          buttonName={DATA_CR_D_Filters.jurisdiction.buttonName}
+          titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
+          categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
         />
 
         <ORG_Filters_D_Checkbox
-          buttonName="Professional Experience"
-          categoriesToDisplay={["Private Practice", "Law Firm", "Clerkship", "Government Agencies", "In-House Counsel", "Public Interest Organizations"]}
+          buttonName={DATA_CR_D_Filters.professionalExperience.buttonName}
+          categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
         />
 
         <ORG_Filters_D_Checkbox
-          buttonName="Language(s) Spoken"
-          categoriesToDisplay={["English", "Spanish", "Cantonese", "Chinese", "Tagalog", "French"]}
+          buttonName={DATA_CR_D_Filters.languajesSpoken.buttonName}
+          categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
         />
 
-        {/* <CR_D_Results_FilterMore /> */}
-
-
-
+        <ORG_Filters_D_More
+          allCheckboxes={allMoreFilters.checkbox}
+          allRanges={allMoreFilters.range}
+        />
       </CR_D_Results_FilterListMainWrapper>
     </>
   )
