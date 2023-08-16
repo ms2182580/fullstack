@@ -1,24 +1,12 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
 
-const SLICE_WIDTH = "355px"
+const SLICE_WIDTH = "38vw"
 const THUMB_COLOR = "#151A26"
 const THUMB_SIZE = "19px"
 const BUTTON_COLOR = "#3B4250"
 
 export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
-  /* & > :nth-child(1) {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
-
   & > label {
     display: none;
   }
@@ -42,6 +30,7 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
     position: absolute;
     height: 0px;
     width: ${SLICE_WIDTH};
+    
   }
 
   .thumb--left {
@@ -85,6 +74,7 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
   .slider {
     position: relative;
     width: calc(${SLICE_WIDTH} - 5px);
+    
     margin-left: 2px;
   }
 
@@ -120,15 +110,13 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
   }
 
   .valuesToShow {
-    padding-top: 26px;
+    padding-top: 21px;
     width: ${SLICE_WIDTH};
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap:8px;
 
-    padding-bottom: 48px;
-
-    /* border: 2px solid crimson; */
     padding-inline: 18px;
 
     & > div {
@@ -151,6 +139,7 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
       background-color: ${THUMB_COLOR};
       margin-top: auto;
       margin-bottom: auto;
+      
     }
   }
 

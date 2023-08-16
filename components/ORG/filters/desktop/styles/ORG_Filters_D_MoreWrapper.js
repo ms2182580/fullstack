@@ -39,7 +39,9 @@ export const ORG_Filters_D_MoreWrapper = styled.div`
     .rangeMoreFilters{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
-      
+      row-gap:30px;
+      column-gap:128px;
+      padding-bottom:30px;
     }
     
     .checkboxesMoreFilters{

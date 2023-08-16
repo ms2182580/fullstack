@@ -3,7 +3,7 @@ import { Fragment, useState } from "react"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { LinkNoStyle } from "../../../../../../ui/hyperlink/HyperlinkNoStyles.js"
-import { AT_D_Results_FinalButtonsNumberPage_W, CR_D_Results_FinalButtonsNumberPage_W } from "./styles/CR_D_Results_FinalButtonWrapper.js"
+import { CR_D_Results_FinalButtonsNumberPage_W } from "./styles/CR_D_Results_FinalButtonWrapper.js"
 
 export const CR_D_Results_NavigationButtonsNumbers = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
@@ -68,12 +68,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
                 // as={pathname}
                 // tabIndex={shouldTab}
                 >
-                  <AT_D_Results_FinalButtonsNumberPage_W
+                  <CR_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[0])}
                   // tabIndex={shouldTab}
                   >
                     <P bold> {theNewOrder[i]}</P>
-                  </AT_D_Results_FinalButtonsNumberPage_W>
+                  </CR_D_Results_FinalButtonsNumberPage_W>
                 </LinkNoStyle>
               </Fragment>
             )
@@ -82,12 +82,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
           if (i === 1) {
             return (
               <Fragment key={i}>
-                <AT_D_Results_FinalButtonsNumberPage_W
+                <CR_D_Results_FinalButtonsNumberPage_W
                   isActive
                 // tabIndex={shouldTab}
                 >
                   <P bold> {theNewOrder[i]}</P>
-                </AT_D_Results_FinalButtonsNumberPage_W>
+                </CR_D_Results_FinalButtonsNumberPage_W>
               </Fragment>
             )
           }
@@ -100,12 +100,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
                 // as={pathname}
                 // tabIndex={shouldTab}
                 >
-                  <AT_D_Results_FinalButtonsNumberPage_W
+                  <CR_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[2])}
                   // tabIndex={shouldTab}
                   >
                     <P bold> {theNewOrder[i]}</P>
-                  </AT_D_Results_FinalButtonsNumberPage_W>
+                  </CR_D_Results_FinalButtonsNumberPage_W>
                 </LinkNoStyle>
               </Fragment>
             )

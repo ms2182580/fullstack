@@ -74,6 +74,7 @@ const allMoreFilters = {
       whichMeasure={DATA_CR_D_Filters.price.whichMeasure}
       addCharacter={DATA_CR_D_Filters.price.addCharacter}
       minSpecialCharacter={DATA_CR_D_Filters.price.minimumSpecialCharacter}
+      addCharacterMinSpecialCharacter={false}
     />,
 
     <ORG_Filters_D_Range_Isolated
