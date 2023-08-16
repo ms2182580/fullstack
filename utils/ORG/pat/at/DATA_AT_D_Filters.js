@@ -1,32 +1,62 @@
-export const DATA_AT_D_Filters = [
-  {
-    price: "$36,000 - $37,888",
-    speed: "7.5 mph (12 kmh)",
-    range: "24 miles (40 km)",
-    maxWeight: "300 lbs (136 kg)",
+export const DATA_AT_D_Filters = {
+  price: {
+    buttonName: "Price",
+    min: "100",
+    max: "50000",
+    labelName: "Budget",
+    addCharacter: "toLeft",
+    whichMeasure: "$"
   },
-  {
-    price: "From $1,495.00",
-    speed: "Manual",
-    range: "Self powered",
-    maxWeight: "264 lbs (120 kg)",
+  weight: {
+    buttonName: "Weight Capacity",
+    min: "250",
+    max: "500",
+    labelName: "Weight Capacity",
+    addCharacter: "toRight",
+    whichMeasure: "weight"
   },
-]
-
-export const DATA_AT_D_Filters_Contact = [
-  {
-    phone: "(012) 345-6789, ext. 4001",
-    email: "denise@truong-macgill.com",
-    web: {
-      fistName: "truong",
-      lastName: "macgill",
-    },
-    location: {
-      city: "Brooklyn",
-      streetName: "Remsen Street, Suite #2",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
-    },
+  type: {
+    buttonName: "Type",
+    titleOnModal: "Type of Wheelchair",
+    categoriesToDisplay: [
+      "Manual",
+      "Power",
+      "Transport",
+      "Sports",
+      "Standing",
+    ]
+  },
+  mobility: {
+    buttonName: "Mobility",
+    titleOnModal: "Mobility Features",
+    categoriesToDisplay: [
+      "Foldable",
+      "Reclinig Backrests",
+      "Adjustable Armrests",
+      "Adjustable Leg Rests",
+      "Power Elevating Seats",
+      "Lightweight Frames"
+    ]
+  },
+  seat: {
+    buttonName: "Seat",
+    titleOnModal: "Seat Dimensions",
+    categoriesToDisplay: [
+      "36-50 cm",
+      "50-70 cm",
+      "+75 cm",
+    ]
+  },
+  setting: {
+    buttonName: "Setting",
+    titleOnModal: "Setting",
+    categoriesToDisplay: [
+      "Indoor",
+      "Outdoor",
+    ]
   }
-]
+
+
+
+
+}

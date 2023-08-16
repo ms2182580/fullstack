@@ -1,3 +1,4 @@
+import { DATA_AT_D_Filters } from "../../../../../../../utils/ORG/pat/at/DATA_AT_D_Filters.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Range } from "../../../../../filters/desktop/ORG_Filters_D_Range.js"
 import { AT_D_Results_FilterListMainWrapper } from "./styles/AT_D_Results_FilterListMainWrapper.js"
@@ -172,128 +173,50 @@ export const AT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
   //   }
   // }, [mustShowFiltersDesktop])
 
-
-
   return (
     <>
       <AT_D_Results_FilterListMainWrapper>
-        {/* 
-//!FH
-
-Make components for the filter:
-1. ✅checkboxes
-2. ✅Range
-3. Range plus checkboxes
-
-*/}
-
         <ORG_Filters_D_Range
-          buttonName="Price"
-          min="100"
-          max="50000"
-          labelName="Budget"
-          addCharacter="toLeft"
-          whichMeasure="$"
+          buttonName={DATA_AT_D_Filters.price.buttonName}
+          min={DATA_AT_D_Filters.price.min}
+          max={DATA_AT_D_Filters.price.max}
+          labelName={DATA_AT_D_Filters.price.labelName}
+          addCharacter={DATA_AT_D_Filters.price.addCharacter}
+          whichMeasure={DATA_AT_D_Filters.price.whichMeasure}
         />
 
         <ORG_Filters_D_Range
-          buttonName="Weight Capacity"
-          min="250"
-          max="500"
-          labelName="Weight Capacity"
-          addCharacter="toRight"
-          whichMeasure="weight"
+          buttonName={DATA_AT_D_Filters.weight.buttonName}
+          min={DATA_AT_D_Filters.weight.min}
+          max={DATA_AT_D_Filters.weight.max}
+          labelName={DATA_AT_D_Filters.weight.labelName}
+          addCharacter={DATA_AT_D_Filters.weight.addCharacter}
+          whichMeasure={DATA_AT_D_Filters.weight.whichMeasure}
         />
 
         <ORG_Filters_D_Checkbox
-          buttonName="Type"
-          titleOnModal="Type of Wheelchair"
-          categoriesToDisplay={[
-            "Manual",
-            "Power",
-            "Transport",
-            "Sports",
-            "Standing",
-          ]}
+          buttonName={DATA_AT_D_Filters.type.buttonName}
+          titleOnModal={DATA_AT_D_Filters.type.titleOnModal}
+          categoriesToDisplay={DATA_AT_D_Filters.type.categoriesToDisplay}
         />
 
         <ORG_Filters_D_Checkbox
-          buttonName="Mobility"
-          titleOnModal="Mobility Features"
-          categoriesToDisplay={[
-            "Foldable",
-            "Reclinig Backrests",
-            "Adjustable Armrests",
-            "Adjustable Leg Rests",
-            "Power Elevating Seats",
-            "Lightweight Frames"
-          ]}
-        />
-
-
-        <ORG_Filters_D_Checkbox
-          buttonName="Seat"
-          titleOnModal="Seat Dimensions"
-          categoriesToDisplay={[
-            "36-50 cm",
-            "50-70 cm",
-            "+75 cm",
-          ]}
+          buttonName={DATA_AT_D_Filters.mobility.buttonName}
+          titleOnModal={DATA_AT_D_Filters.mobility.titleOnModal}
+          categoriesToDisplay={DATA_AT_D_Filters.mobility.categoriesToDisplay}
         />
 
         <ORG_Filters_D_Checkbox
-          buttonName="Setting"
-          titleOnModal="Setting"
-          categoriesToDisplay={[
-            "Indoor",
-            "Outdoor",
-          ]}
+          buttonName={DATA_AT_D_Filters.seat.buttonName}
+          titleOnModal={DATA_AT_D_Filters.seat.titleOnModal}
+          categoriesToDisplay={DATA_AT_D_Filters.seat.categoriesToDisplay}
         />
 
-
-        {/* <div>
-          Boxes here
-          
-          
-          Use the styles of button N° 7: https://codepen.io/JuanPastenCastillo/pen/JjeamPY
-          
-          or this styles (Victoria → Register): 
-          https://codepen.io/sazzad/pen/yNNNJG/
-         
-        </div> */}
-
-        {/* {" "}
-        <span
-          onClick={handleShowFiltersDesktop}
-          tabIndex={-1}>
-          <BtnSmall
-            secondary
-            tabIndex={shouldTab}>
-            Filter
-          </BtnSmall>
-        </span>
-        <ST_D_Results_FilterListChildWrapper
-          // id="topOfSTL"
-          mustShowFiltersDesktop={mustShowFiltersDesktop}
-          ORGShowFullMapFilter={ORGShowFullMapFilter}
-          ref={refUserViewShowFullMapFilter}
-          className={nameToCloseTheFilters}>
-          <ST_D_Results_FiltersContainer
-            clearAll={clearAll}
-            dispatch={dispatch}
-            handleAddFilters={handleAddFilters}
-            handleClearAll={handleClearAll}
-            handleShowFilters={handleShowFiltersDesktop}
-            setClearAll={setClearAll}
-            setFilterData={setFilterData}
-            setShouldClear={setShouldClear}
-            setTempState={setTempState}
-            shouldClear={shouldClear}
-            showStateChildren={setShow}
-            tempState={tempState}
-            title="Filter by"
-          />
-        </ST_D_Results_FilterListChildWrapper> */}
+        <ORG_Filters_D_Checkbox
+          buttonName={DATA_AT_D_Filters.setting.buttonName}
+          titleOnModal={DATA_AT_D_Filters.setting.titleOnModal}
+          categoriesToDisplay={DATA_AT_D_Filters.setting.categoriesToDisplay}
+        />
       </AT_D_Results_FilterListMainWrapper>
     </>
   )

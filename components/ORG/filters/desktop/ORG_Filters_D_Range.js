@@ -202,7 +202,7 @@ export const ORG_Filters_D_Range = ({
               <>{minValUI}</>
             )}
           </div>
-          <span></span>
+          <span />
           <div>
             {addCharacter === "toLeft" && whichMeasure !== "" ? (
               <>

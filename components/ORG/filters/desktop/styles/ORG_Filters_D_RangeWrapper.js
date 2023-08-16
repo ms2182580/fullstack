@@ -165,7 +165,8 @@ export const ORG_Filters_D_RangeWrapper = styled.div`
     width: ${SLICE_WIDTH};
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap:8px;
     
     padding-bottom:48px;
     
