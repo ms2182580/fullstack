@@ -1,17 +1,16 @@
-import Image from 'next/image.js'
-import { useRouter } from 'next/router.js'
-import { useEffect, useState } from 'react'
-import { ORG_D_Search_ViewProfileSvg } from '../../../../../../assets/Icons/index.js'
-import { DATA_ORG_CheckPaths_Results_D } from '../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js'
-import { DATA_ORG_D } from '../../../../../../utils/ORG/DATA_ORG_D.js'
-import { DATA_DAY_D } from '../../../../../../utils/ORG/pcmps/day/DATA_DAY_D.js'
-import { ButtonSmall } from '../../../../../ui/buttons/general/index.js'
-import { P } from '../../../../../ui/heading_body_text/DesktopMobileFonts.js'
-import { H2, H3, H4 } from '../../../../../ui/heading_body_text/HeaderFonts.js'
-import { StarsRatingReview_D } from '../../../../stars-rating-review/desktop/StarsRatingReview_D.js'
-import { Verified } from '../../../../verified/Verified.js'
-import { INDEX_D_CMPSSearchWrapper } from './styles/INDEX_D_CMPSSearchWrapper.js'
-
+import Image from "next/image.js"
+import { useRouter } from "next/router.js"
+import { useEffect, useState } from "react"
+import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/index.js"
+import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
+import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
+import { DATA_DAY_D } from "../../../../../../utils/ORG/pcmps/day/DATA_DAY_D.js"
+import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
+import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { Verified } from "../../../../verified/Verified.js"
+import { INDEX_D_CMPSSearchWrapper } from "./styles/INDEX_D_CMPSSearchWrapper.js"
 
 // const DATA = [
 //   [
@@ -157,13 +156,17 @@ export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
                         <Image
                           src={obj.imageToUse}
                           alt={obj.title}
-                          layout='responsive'
+                          layout="responsive"
                         />
                         <Verified />
                       </div>
                       <H3>{obj.title}</H3>
                       <H4>{obj.subtitle}</H4>
-                      <P medium dark_gray>{obj.city}</P>
+                      <P
+                        medium
+                        dark_gray>
+                        {obj.city}
+                      </P>
                       <StarsRatingReview_D
                         rating={obj.rating}
                         reviews={obj.reviews}
@@ -178,7 +181,10 @@ export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
                     </div>
                   )
                 })}
-                <span onClick={(e) => handleMoveToSecondPage(e, title, iData)}>
+                <span
+                  onClick={() => {
+                    handleMoveToSecondPage(undefined, title, iData)
+                  }}>
                   <ButtonSmall secondary>See all (25)</ButtonSmall>
                 </span>
               </div>
@@ -186,7 +192,6 @@ export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
           )
         }
       })}
-
     </INDEX_D_CMPSSearchWrapper>
   )
 }

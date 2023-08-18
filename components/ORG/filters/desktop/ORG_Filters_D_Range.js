@@ -16,7 +16,7 @@ export const ORG_Filters_D_Range = ({
   // setTempState,
   shouldClear,
   // toUpdateFilters,
-  whichMeasure = "" /* weight or any other character */
+  whichMeasure = "" /* weight or any other character */,
 }) => {
   const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
 
@@ -59,11 +59,16 @@ export const ORG_Filters_D_Range = ({
     const value = Math.min(Number(event.target.value), maxVal)
     setMinVal(value)
 
+    const formatValue = new Intl.NumberFormat("en-US").format(value)
+
     if (whichMeasure !== "weight") {
-      setMinValUI(new Intl.NumberFormat().format(value))
+      setMinValUI(formatValue)
     } else {
-      const inLbs = `${new Intl.NumberFormat().format(value)} lbs`
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
+      const inLbs = `${formatValue} lbs`
+
+      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(value * 0.45359237))
+
+      const inKgs = `${valueInKg} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
@@ -75,14 +80,18 @@ export const ORG_Filters_D_Range = ({
     const value = Math.max(Number(event.target.value), minVal)
     setMaxVal(value)
 
+    const formatValue = new Intl.NumberFormat("en-US").format(value)
+
     if (whichMeasure !== "weight") {
-      setMaxValUI(new Intl.NumberFormat().format(value))
+      setMaxValUI(formatValue)
     } else {
       const addPlus = value === Number(max)
 
-      const inLbs = `${addPlus ? "+" : ""}${new Intl.NumberFormat().format(value)} lbs`
+      const inLbs = `${addPlus ? "+" : ""}${formatValue} lbs`
 
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
+      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(value * 0.45359237))
+
+      const inKgs = `${valueInKg} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
@@ -100,24 +109,32 @@ export const ORG_Filters_D_Range = ({
   const updateToInitialValues = () => {
     setMinVal(min)
     minValRef.current = min
-    if (whichMeasure !== "weight") {
-      setMinValUI(new Intl.NumberFormat().format(min))
-    } else {
-      const inLbs = `${new Intl.NumberFormat().format(min)} lbs`
+    const formatValueMin = new Intl.NumberFormat("en-US").format(min)
 
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(min * 0.45359237))} kg`
+    if (whichMeasure !== "weight") {
+      setMinValUI(formatValueMin)
+    } else {
+      const inLbs = `${formatValueMin} lbs`
+
+      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(min * 0.45359237))
+
+      const inKgs = `${valueInKg} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
 
     setMaxVal(max)
     maxValRef.current = max
-    if (whichMeasure !== "weight") {
-      setMaxValUI(new Intl.NumberFormat().format(max))
-    } else {
-      const inLbs = `+${new Intl.NumberFormat().format(max)} lbs`
+    const formatValueMax = new Intl.NumberFormat("en-US").format(max)
 
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(max * 0.45359237))} kg`
+    if (whichMeasure !== "weight") {
+      setMaxValUI(formatValueMax)
+    } else {
+      const inLbs = `+${formatValueMax} lbs`
+
+      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(max * 0.45359237))
+
+      const inKgs = `${valueInKg} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
@@ -140,11 +157,8 @@ export const ORG_Filters_D_Range = ({
     <ORG_Filters_D_RangeWrapper
       minVal={minVal}
       maxVal={maxVal}
-      mustShowFilter={mustShowFilter}
-    >
-      <span onClick={handleShowFilter}>
-        {!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}
-      </span>
+      mustShowFilter={mustShowFilter}>
+      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}</span>
 
       <div
         className="container"

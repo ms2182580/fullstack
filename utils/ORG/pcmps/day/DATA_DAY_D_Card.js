@@ -56,8 +56,3 @@ export const DATA_DAY_D_CardLeft = [
     },
   },
 ]
-
-/*  
-!FH0
-Create rightCard data
-*/

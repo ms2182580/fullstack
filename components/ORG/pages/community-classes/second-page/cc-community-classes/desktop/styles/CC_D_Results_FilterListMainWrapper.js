@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const DAY_D_Results_FilterListMainWrapper = styled.div`
+export const CC_D_Results_FilterListMainWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -9,7 +9,7 @@ export const DAY_D_Results_FilterListMainWrapper = styled.div`
 
   & > :nth-last-child(2) {
     & > :nth-child(2) {
-      @media screen and (min-width: 1078px) and (max-width: 1140px) {
+      @media (max-width: 1085px) {
         left: -60%;
       }
     }
