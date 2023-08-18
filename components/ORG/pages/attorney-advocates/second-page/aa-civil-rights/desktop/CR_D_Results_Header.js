@@ -9,6 +9,15 @@ export const CR_D_Results_Header = () => {
   const [breadcrumbsState, setBreadcrumbsState] = useState(null)
   const route = useRouter()
 
+  // console.log('breadcrumbsState:', breadcrumbsState)
+  /* 
+  !FH0
+  Change this for the actual Attorney and Advocates: Civil Rights + Make this funtion a custom hook
+  */
+
+
+
+
   useEffect(() => {
     const theAcronym = route.asPath.split("/")[2]
     let findIndex = DATA_ORG_D.findIndex((x) => x.acronym === theAcronym)

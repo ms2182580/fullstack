@@ -76,6 +76,7 @@ export const CR_D_Results_CardNoFilters = () => {
               <div className="RIGHT-PART">
                 <H3 bold>{cardData[renderThisCard].title}</H3>
                 <H4>{cardData[renderThisCard].subtitle}</H4>
+                <P dark_gray>{cardData[renderThisCard].city}</P>
                 <StarsRatingReview_D
                   rating={cardData[renderThisCard].rating}
                   reviews={cardData[renderThisCard].reviews}

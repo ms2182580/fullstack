@@ -4,16 +4,7 @@ import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
 import { ButtonSmall } from "../../../ui/buttons/general/index.js"
 import { ORG_Filters_D_MoreWrapper } from "./styles/ORG_Filters_D_MoreWrapper.js"
 
-/* 
-
-!FH0
-
-https://codesandbox.io/s/ecstatic-babycat-v9738m?file=/src/App.js
-*/
-
 export const ORG_Filters_D_More = ({ allCheckboxes = [], allRanges = [], customButtonName = "More Filters", titleOnModal }) => {
-  // console.log('allCheckboxes:', allCheckboxes)
-  // console.log("allRanges:", allRanges)
   // const { setModalShowedCtx } = useCtx_ShowModal()
   // const [mustShowFilter, setMustShowFilter] = useState(false)
   // const handleShowFilter = (e) => {
