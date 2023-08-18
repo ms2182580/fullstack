@@ -4,6 +4,8 @@ import { NEUTRALS, SEMANTICS } from "../../../../../assets/Colors"
 export const ORG_Filters_D_Checkbox_IsolatedWrapper = styled.div`
   & > :nth-child(1) {
     margin-bottom: 12px;
+    user-select: ${({ allowSelection }) => (allowSelection ? `auto` : `none`)};
+    cursor: pointer;
   }
 
   & > :nth-child(2) {

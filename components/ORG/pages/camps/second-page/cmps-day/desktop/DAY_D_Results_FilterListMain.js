@@ -1,10 +1,10 @@
-import { DATA_CR_D_Filters } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Filters.js"
+import { DATA_DAY_D_Filters } from "../../../../../../../utils/ORG/pcmps/day/DATA_DAY_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
-import { ORG_Filters_D_Range_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Range_Isolated.js"
-import { CR_D_Results_FilterListMainWrapper } from "./styles/CR_D_Results_FilterListMainWrapper.js"
+import { ORG_Filters_D_Range } from "../../../../../filters/desktop/ORG_Filters_D_Range.js"
+import { DAY_D_Results_FilterListMainWrapper } from "./styles/DAY_D_Results_FilterListMainWrapper.js"
 
 // const reducer = (state, action) => {
 //   const setFilterData = action.payload[0]
@@ -66,77 +66,77 @@ import { CR_D_Results_FilterListMainWrapper } from "./styles/CR_D_Results_Filter
 // const nameToCloseTheFilters = "ShowFiltersDesktop"
 
 const allMoreFilters = {
-  range: [
-    <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CR_D_Filters.moreFilters.price.buttonName}
-      min={DATA_CR_D_Filters.moreFilters.price.minimum}
-      max={DATA_CR_D_Filters.moreFilters.price.maximum}
-      whichMeasure={DATA_CR_D_Filters.moreFilters.price.whichMeasure}
-      addCharacter={DATA_CR_D_Filters.moreFilters.price.addCharacter}
-      minSpecialCharacter={DATA_CR_D_Filters.moreFilters.price.minimumSpecialCharacter}
-      addCharacterMinSpecialCharacter={false}
-    />,
-
-    <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CR_D_Filters.moreFilters.distance.buttonName}
-      min={DATA_CR_D_Filters.moreFilters.distance.minimum}
-      max={DATA_CR_D_Filters.moreFilters.distance.maximum}
-      addCharacter={DATA_CR_D_Filters.moreFilters.distance.addCharacter}
-      whichMeasure={DATA_CR_D_Filters.moreFilters.distance.whichMeasure}
-    />,
-
-    <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CR_D_Filters.moreFilters.agesServed.buttonName}
-      min={DATA_CR_D_Filters.moreFilters.agesServed.minimum}
-      max={DATA_CR_D_Filters.moreFilters.agesServed.maximum}
-      maxSpecialCharacter={DATA_CR_D_Filters.moreFilters.agesServed.maximumSpecialCharacter}
-      addCharacter={DATA_CR_D_Filters.moreFilters.agesServed.addCharacter}
-      whichMeasure={DATA_CR_D_Filters.moreFilters.agesServed.whichMeasure}
-    />,
-  ],
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.areasOfLaw.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.setting.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.setting.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
-      categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
+      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.professionalExperience.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
+      titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.languajesSpoken.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.viewOnly.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.viewOnly.categoriesToDisplay}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.coEd.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.coEd.categoriesToDisplay}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.onSiteNurse.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.onSiteNurse.categoriesToDisplay}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.moreFilters.operationHours.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.moreFilters.operationHours.categoriesToDisplay}
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.religionAfiliation.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.religionAfiliation.categoriesToDisplay}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.moreFilters.payment.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.moreFilters.payment.categoriesToDisplay}
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.wheelchairAccessible.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.wheelchairAccessible.categoriesToDisplay}
     />,
   ],
 }
 
-export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
+const allActivities = [
+  <ORG_Filters_D_Checkbox_Isolated categoriesToDisplay={["All Activities"]} />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.fitness.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.fitness.categoriesToDisplay}
+  />,
+
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.art.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.art.categoriesToDisplay}
+  />,
+
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.music.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.music.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.ASLLanguages.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.ASLLanguages.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.stem.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.stem.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.dailyLivingSkills.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.dailyLivingSkills.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.academics.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.academics.categoriesToDisplay}
+  />,
+]
+
+export const DAY_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
   // const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
 
   /*
@@ -248,32 +248,42 @@ export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
   // }, [mustShowFiltersDesktop])
 
   return (
-    <CR_D_Results_FilterListMainWrapper>
+    <DAY_D_Results_FilterListMainWrapper>
+      <ORG_Filters_D_More titleOnModal="" allCheckboxes={allActivities} customButtonName={"Activities"} />
+
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.areasOfLaw.buttonName}
-        categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
+        buttonName={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+      />
+
+      <ORG_Filters_D_Range
+        min={DATA_DAY_D_Filters.age.minimum}
+        max={DATA_DAY_D_Filters.age.maximum}
+        buttonName={DATA_DAY_D_Filters.age.buttonName}
+        addCharacter={DATA_DAY_D_Filters.age.addCharacter}
+        whichMeasure={DATA_DAY_D_Filters.age.whichMeasure}
+      />
+
+      <ORG_Filters_D_Range
+        min={DATA_DAY_D_Filters.distance.minimum}
+        max={DATA_DAY_D_Filters.distance.maximum}
+        buttonName={DATA_DAY_D_Filters.distance.buttonName}
+        addCharacter={DATA_DAY_D_Filters.distance.addCharacter}
+        whichMeasure={DATA_DAY_D_Filters.distance.whichMeasure}
+      />
+
+
+      <ORG_Filters_D_Checkbox
+        buttonName={DATA_DAY_D_Filters.campType.buttonName}
+        categoriesToDisplay={DATA_DAY_D_Filters.campType.categoriesToDisplay}
       />
 
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.jurisdiction.buttonName}
-        titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
-        categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
+        buttonName={DATA_DAY_D_Filters.priceRange.buttonName}
+        categoriesToDisplay={DATA_DAY_D_Filters.priceRange.categoriesToDisplay}
       />
 
-      <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.professionalExperience.buttonName}
-        categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
-      />
-
-      <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.languajesSpoken.buttonName}
-        categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
-      />
-
-      <ORG_Filters_D_More
-        allCheckboxes={allMoreFilters.checkbox}
-        allRanges={allMoreFilters.range}
-      />
-    </CR_D_Results_FilterListMainWrapper>
+      <ORG_Filters_D_More allCheckboxes={allMoreFilters.checkbox} />
+    </DAY_D_Results_FilterListMainWrapper>
   )
 }

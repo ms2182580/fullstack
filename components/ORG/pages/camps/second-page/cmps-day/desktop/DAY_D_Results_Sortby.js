@@ -1,7 +1,7 @@
 import { ORG_Sortby_Desktop } from "../../../../../../../utils/ORG_SortByData"
 import { CustomDropdownFilters } from "../../../../../dropdownFilters/CustomDropdownFilters.js"
 
-export const AT_D_Results_Sortby = () => {
+export const DAY_D_Results_Sortby = () => {
   return (
     <>
       <CustomDropdownFilters

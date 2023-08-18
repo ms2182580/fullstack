@@ -39,7 +39,6 @@ export const ORG_Filters_D_Checkbox = ({
 
   const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
 
-
   const [shouldClearAllOptions, setShouldClearAllOptions] = useState(false)
   const handleShouldClearAllOptions = (e) => {
     if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
@@ -63,10 +62,27 @@ export const ORG_Filters_D_Checkbox = ({
   //   showStateChildren(show)
   // }, [show])
 
+  const [shouldToggleAllOptions, setShouldToggleAllOptions] = useState(false)
+  const handleToggleAll = (e) => {
+    setShouldToggleAllOptions((prevState) => !prevState)
+    handleShowRemaining()
+  }
+
+  const [allowSelection, setAllowSelection] = useState(true)
+
+  const handleMouseDown = () => {
+    setAllowSelection(false) // Allow selection on mouse down
+  }
+
+  const handleOnMouseLeave = () => {
+    setAllowSelection(true)
+  }
+
   return (
     <ORG_Filters_D_CheckboxWrapper
       mustShowFilter={mustShowFilter}
-      showRemaining={showRemaining}>
+      showRemaining={showRemaining}
+      allowSelection={allowSelection}>
       <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}</span>
 
       <div ref={refContainer}>
@@ -77,7 +93,14 @@ export const ORG_Filters_D_Checkbox = ({
           <XDesktopSvg />
         </span>
 
-        <P semibold>{titleOnModal || buttonName}</P>
+        <P
+          semibold
+          onDoubleClick={handleToggleAll}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleOnMouseLeave}
+        >
+          {titleOnModal || buttonName}
+        </P>
 
         <ul>
           {categoriesToDisplay?.map((x, i) => {
@@ -90,13 +113,15 @@ export const ORG_Filters_D_Checkbox = ({
                       type="checkbox"
                       name={x}
                       shouldClearAllOptions={shouldClearAllOptions}
+                      shouldToggleAllOptions={shouldToggleAllOptions}
+
                     // dispatch={dispatch}
                     // tempState={tempState}
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-        clearAll={clearAll}
-        shouldClearAllOptions={shouldClearAllOptions} */
+      clearAll={clearAll}
+      shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -114,13 +139,14 @@ export const ORG_Filters_D_Checkbox = ({
                       type="checkbox"
                       name={x}
                       shouldClearAllOptions={shouldClearAllOptions}
+                      shouldToggleAllOptions={shouldToggleAllOptions}
                     // dispatch={dispatch}
                     // tempState={tempState}
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-        clearAll={clearAll}
-        shouldClearAllOptions={shouldClearAllOptions} */
+      clearAll={clearAll}
+      shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>
@@ -136,13 +162,14 @@ export const ORG_Filters_D_Checkbox = ({
                       type="checkbox"
                       name={x}
                       shouldClearAllOptions={shouldClearAllOptions}
+                      shouldToggleAllOptions={shouldToggleAllOptions}
                     // dispatch={dispatch}
                     // tempState={tempState}
                     /* setTempState={setTempState} */
                     // setFilterData={setFilterData}
                     /* toUpdateFilters={toUpdateFilters}
-        clearAll={clearAll}
-        shouldClearAllOptions={shouldClearAllOptions} */
+      clearAll={clearAll}
+      shouldClearAllOptions={shouldClearAllOptions} */
                     />
                     <span></span>
                   </label>

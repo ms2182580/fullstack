@@ -3,9 +3,9 @@ import { NEUTRALS, SEMANTICS } from "../../../../../assets/Colors"
 
 export const ORG_Filters_D_CheckboxWrapper = styled.div`
   position: relative;
-  
-  & > :nth-child(1){
-    & > :nth-child(1){
+
+  & > :nth-child(1) {
+    & > :nth-child(1) {
       padding-top: 8px;
       padding-bottom: 8px;
       padding-inline: 16px;
@@ -14,7 +14,7 @@ export const ORG_Filters_D_CheckboxWrapper = styled.div`
 
   & > :nth-child(2) {
     position: absolute;
-    top:0;
+    top: 0;
     top: 150%;
     left: 0;
 
@@ -35,26 +35,29 @@ export const ORG_Filters_D_CheckboxWrapper = styled.div`
     gap: 16px;
 
     width: 449px;
-    
-    & > :nth-child(1){
-      position:absolute;
-      right:16px;
-      top:16px;
-      
+
+    & > :nth-child(1) {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+
       cursor: pointer;
-      
+
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      
+    }
+
+    & > :nth-child(2) {
+      cursor: pointer;
+      user-select: ${({ allowSelection }) => (allowSelection ? `auto` : `none`)};
     }
 
     & > :nth-child(3) {
       list-style: none;
       margin-left: 6px;
-      
-      padding-bottom:48px;
+
+      padding-bottom: 48px;
 
       & > *:not(:last-child) {
         margin-bottom: 24px;
@@ -159,4 +162,3 @@ export const ORG_Filters_D_CheckboxWrapper = styled.div`
     }
   }
 `
-

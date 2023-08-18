@@ -11,7 +11,7 @@ import { ORG_Filters_D_MoreWrapper } from "./styles/ORG_Filters_D_MoreWrapper.js
 https://codesandbox.io/s/ecstatic-babycat-v9738m?file=/src/App.js
 */
 
-export const ORG_Filters_D_More = ({ allCheckboxes, allRanges }) => {
+export const ORG_Filters_D_More = ({ allCheckboxes = [], allRanges = [], customButtonName = "More Filters", titleOnModal }) => {
   // console.log('allCheckboxes:', allCheckboxes)
   // console.log("allRanges:", allRanges)
   // const { setModalShowedCtx } = useCtx_ShowModal()
@@ -44,7 +44,7 @@ export const ORG_Filters_D_More = ({ allCheckboxes, allRanges }) => {
 
   return (
     <ORG_Filters_D_MoreWrapper mustShowFilter={mustShowFilter}>
-      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>More Filters</ButtonSmall> : <ButtonSmall>More Filters</ButtonSmall>}</span>
+      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{customButtonName}</ButtonSmall> : <ButtonSmall>{customButtonName}</ButtonSmall>}</span>
 
       <div ref={refContainer}>
         <span
@@ -53,7 +53,6 @@ export const ORG_Filters_D_More = ({ allCheckboxes, allRanges }) => {
           tabIndex={0}>
           <XDesktopSvg />
         </span>
-
 
         <div className="rangeMoreFilters">
           {allRanges.map((x, i) => {

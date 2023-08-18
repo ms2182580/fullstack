@@ -4,15 +4,15 @@ export const DATA_CR_D_CardRight = [
     jurisdiction: "NY, NJ, CT, MD, & FL",
     professionalExperience: "The Truong-MacGill Law Firm, since 2010",
     languagesSpoken: "English, Cantonese, & Manda",
-    highlights: ["Free Consultation", "Disability Law"]
+    highlights: ["Free Consultation", "Disability Law"],
   },
   {
     areasOfLaw: "Civil Rights, Education, & Personal Injury",
     jurisdiction: "NY, NJ, & CT",
     professionalExperience: "Abrahams Law since 2001",
     languagesSpoken: "English & Spanish",
-    highlights: ["Free Consultation", "Video Conferencing"]
-  }
+    highlights: ["Free Consultation", "Video Conferencing"],
+  },
 ]
 
 export const DATA_CR_D_CardLeft = [
@@ -45,5 +45,5 @@ export const DATA_CR_D_CardLeft = [
       state: "NY 11201",
       howFar: "3",
     },
-  }
+  },
 ]
