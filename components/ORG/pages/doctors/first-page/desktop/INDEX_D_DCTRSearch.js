@@ -1,16 +1,10 @@
 import Image from "next/image.js"
+import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/index.js"
-import ORG_DCTR1 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR1.png"
-import ORG_DCTR2 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR2.png"
-import ORG_DCTR3 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR3.png"
-import ORG_DCTR4 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR4.png"
-import ORG_DCTR5 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR5.png"
-import ORG_DCTR6 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR6.png"
-import ORG_DCTR7 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR7.png"
-import ORG_DCTR8 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR8.png"
-import ORG_DCTR9 from "../../../../../../assets/images/ORG/doctors/ORG_DCTR9.png"
-import { generateRandomNumber } from "../../../../../../utils/generateRandomNumber.js"
+import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
+import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
+import { DATA_PSYT_D } from "../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D.js"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -18,136 +12,50 @@ import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/Sta
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_DCTRSearchWrapper } from "./styles/INDEX_D_DCTRSearchWrapper.js"
 
-const DATA = [
-  [
-    "Popular Psychiatrists",
-    {
-      imageToUse: ORG_DCTR1,
-      title: "Clara Fernandez, PhD, MD",
-      subtitle: "Psychiatrist",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“Dr. Fernandez helped change me and my family’s life with her revolutionary appro...",
-      goToThirdPage: ""
-    },
-    {
-      imageToUse: ORG_DCTR2,
-      title: "Desiree Robinson, PhD, MD",
-      subtitle: "Psychiatrist",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“After years of visiting Dr. Robinson, my son’s overall mood and depression has s...",
-      goToThirdPage: ""
-    },
-    {
-      imageToUse: ORG_DCTR3,
-      title: "Maria Theresa Aguilar, PhD, MD",
-      subtitle: "Psychiatrist",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“Very pleased with Dr. Aguilar’s dedication to my twin daughter’s cognitive develop...",
-      goToThirdPage: ""
-    }
-  ],
-  [
-    "Popular Family Medicine Doctors",
-    {
-      imageToUse: ORG_DCTR4,
-      title: "Alice Henderson, MD",
-      subtitle: "Family Medicine",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“Dr. Henderson helped change me and my family’s life with her revolutionary appro...",
-      goToThirdPage: ""
-    },
-    {
-      imageToUse: ORG_DCTR5,
-      title: "Jose Mari Jimenez, MD",
-      subtitle: "Family Medicine",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“After years of visiting Dr. Jimenez, my son’s overall mood and depression has s...",
-      goToThirdPage: ""
-    },
-    {
-      imageToUse: ORG_DCTR6,
-      title: "Marisa Pascual, MD",
-      subtitle: "Family Medicine",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“Very pleased with Dr. Pascual's dedication to my twin daughter’s cognitive develop...",
-      goToThirdPage: ""
-    }
-  ],
-  [
-    "Popular Neuro-oncologists",
-    {
-      imageToUse: ORG_DCTR7,
-      title: "Adila Lim, PhD, MD",
-      subtitle: "Neuro-oncologist",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“Dr. Lim helped change me and my family’s life with her revolutionary appro...",
-      goToThirdPage: ""
-    },
-    {
-      imageToUse: ORG_DCTR8,
-      title: "Paul Norton, MD",
-      subtitle: "Neuro-oncologist",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“After years of visiting Dr. Norton, my son’s overall mood and depression has s...",
-      goToThirdPage: ""
-    },
-    {
-      imageToUse: ORG_DCTR9,
-      title: "Vince Tran, PhD, MD",
-      subtitle: "Neuro-oncologist",
-      city: "Brooklyn, NY",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      textReview: "“Very pleased with Dr. Tran's dedication to my twin daughter’s cognitive develop...",
-      goToThirdPage: ""
-    }
-  ]
-]
-
-export const INDEX_D_DCTRSearch = ({ isSelected = false }) => {
+export const INDEX_D_DCTRSearch = ({ positionInArray, isSelected = false }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA.length)
+      setHowMuchDisplay(DATA_PSYT_D.length)
     }
   }, [isSelected])
 
+  const { pathname, push } = useRouter()
+
+  const handleMoveToSecondPage = (e, title, possitionSubArr) => {
+    let folder = DATA_ORG_D[positionInArray].acronym
+    let subFolder = DATA_ORG_CheckPaths_Results_D[folder][possitionSubArr]
+
+    push(
+      {
+        pathname: `${pathname}/${folder}/${subFolder}`,
+        query: { mainPosition: positionInArray, title, possitionSubArr },
+      },
+      `${pathname}/${folder}/${subFolder}`,
+    )
+  }
+
   return (
     <INDEX_D_DCTRSearchWrapper>
-      {DATA.map((x, i) => {
+      {DATA_PSYT_D.map((x, iData) => {
         const [title, ...objects] = x
-        while (howMuchDisplay > i) {
+        while (howMuchDisplay > iData) {
           return (
             <>
-              <div key={`${x.title}_${i}`}>
+              <div key={`${x.title}_${iData}`}>
                 <H2 semi_bold>{title}</H2>
                 {objects.map((obj, i) => {
-
                   /* 
                   !FH
                   This is a patch because some images have inside it the "Verified" component */
                   if (i === 2) {
                     return (
-                      <div key={`${i}_${obj.titleImage}_${obj.reviews}`} className="withVerifiedComponent">
+                      <div
+                        key={`${i}_${obj.titleImage}_${obj.reviews}`}
+                        className="withVerifiedComponent">
                         <div>
                           <Image
                             src={obj.imageToUse}
@@ -177,7 +85,6 @@ export const INDEX_D_DCTRSearch = ({ isSelected = false }) => {
                       </div>
                     )
                   }
-
 
                   return (
                     <div key={`${i}_${obj.titleImage}_${obj.reviews}`}>
@@ -209,7 +116,7 @@ export const INDEX_D_DCTRSearch = ({ isSelected = false }) => {
                     </div>
                   )
                 })}
-                <span>
+                <span onClick={() => handleMoveToSecondPage(undefined, title, iData)}>
                   <ButtonSmall secondary>See all (25)</ButtonSmall>
                 </span>
               </div>

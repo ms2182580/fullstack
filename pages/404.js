@@ -17,7 +17,6 @@ const Custom404 = () => {
     const checkSomePath = DATA_ORG_CheckPaths_Search_D.filter((x) => x === routeToMatch)
 
     if (checkSomePath.length !== 0) {
-
       let thisIndex = DATA_ORG_D.findIndex((x) => x.acronym === checkSomePath[0])
 
       router.push(
