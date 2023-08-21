@@ -26,6 +26,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
   const { pathname, push } = useRouter()
 
   const handleMoveToSecondPage = (e, title, possitionSubArr) => {
+
     let folder = DATA_ORG_D[positionInArray].acronym
     let subFolder = DATA_ORG_CheckPaths_Results_D[folder][possitionSubArr]
 

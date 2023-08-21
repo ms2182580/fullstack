@@ -1,40 +1,27 @@
 import { useRouter } from "next/router.js"
-import { useEffect, useState } from "react"
-import { DATA_ORG_D } from "../../../../../../../utils/ORG/DATA_ORG_D.js"
+import { useCheckBreadcrumbs } from "../../../../../../../utils/ORG/useCheckBreadcrumbs.js"
 import { Breadcrumbs_D } from "../../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { CR_D_Results_HeaderWrapper } from "./styles/CR_D_Results_HeaderWrapper.js"
 
 export const CR_D_Results_Header = () => {
-  const [breadcrumbsState, setBreadcrumbsState] = useState(null)
-  const route = useRouter()
-
-  // console.log('breadcrumbsState:', breadcrumbsState)
-  /* 
-  !FH0
-  Change this for the actual Attorney and Advocates: Civil Rights + Make this funtion a custom hook
-  */
-
-
-
-
-  useEffect(() => {
-    const theAcronym = route.asPath.split("/")[2]
-    let findIndex = DATA_ORG_D.findIndex((x) => x.acronym === theAcronym)
-
-    const toBreadcrumbs = DATA_ORG_D[findIndex].nameJSX
-    setBreadcrumbsState(toBreadcrumbs)
-  }, [])
+  const { query } = useRouter()
+  const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
   return (
     <CR_D_Results_HeaderWrapper>
-      <P bold dark_gray>Search for {breadcrumbsState}</P>
+      <P
+        bold
+        dark_gray>
+        Search for {titleFormatted}
+      </P>
 
-      <Breadcrumbs_D whichDisplay={[
-        ["Resource Directory", "ORG"],
-        [`${breadcrumbsState}`, ""]
-      ]} />
+      <Breadcrumbs_D
+        whichDisplay={[
+          ["Resource Directory", "ORG"],
+          [`${titleFormatted}`, ""],
+        ]}
+      />
     </CR_D_Results_HeaderWrapper>
   )
 }
-
