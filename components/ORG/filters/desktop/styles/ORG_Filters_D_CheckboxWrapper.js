@@ -14,7 +14,6 @@ export const ORG_Filters_D_CheckboxWrapper = styled.div`
 
   & > :nth-child(2) {
     position: absolute;
-    top: 0;
     top: 150%;
     left: 0;
 

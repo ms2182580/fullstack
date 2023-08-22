@@ -1,4 +1,4 @@
-import { DATA_CR_D_Filters } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Filters.js"
+import { DATA_PSYT_D_Filters } from "../../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
@@ -68,50 +68,35 @@ import { PSYT_D_Results_FilterListMainWrapper } from "./styles/PSYT_D_Results_Fi
 const allMoreFilters = {
   range: [
     <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CR_D_Filters.moreFilters.price.buttonName}
-      min={DATA_CR_D_Filters.moreFilters.price.minimum}
-      max={DATA_CR_D_Filters.moreFilters.price.maximum}
-      whichMeasure={DATA_CR_D_Filters.moreFilters.price.whichMeasure}
-      addCharacter={DATA_CR_D_Filters.moreFilters.price.addCharacter}
-      minSpecialCharacter={DATA_CR_D_Filters.moreFilters.price.minimumSpecialCharacter}
-      addCharacterMinSpecialCharacter={false}
+      buttonName={ORG_FILTERS_KEYS_D.distanceRange.buttonName}
+      min={ORG_FILTERS_DATA_D.distanceRange.minimum}
+      max={ORG_FILTERS_DATA_D.distanceRange.maximum}
+      whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
+      addCharacter={ORG_FILTERS_DATA_D.distanceRange.addCharacter}
     />,
 
     <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CR_D_Filters.moreFilters.distance.buttonName}
-      min={DATA_CR_D_Filters.moreFilters.distance.minimum}
-      max={DATA_CR_D_Filters.moreFilters.distance.maximum}
-      addCharacter={DATA_CR_D_Filters.moreFilters.distance.addCharacter}
-      whichMeasure={DATA_CR_D_Filters.moreFilters.distance.whichMeasure}
-    />,
-
-    <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CR_D_Filters.moreFilters.agesServed.buttonName}
-      min={DATA_CR_D_Filters.moreFilters.agesServed.minimum}
-      max={DATA_CR_D_Filters.moreFilters.agesServed.maximum}
-      maxSpecialCharacter={DATA_CR_D_Filters.moreFilters.agesServed.maximumSpecialCharacter}
-      addCharacter={DATA_CR_D_Filters.moreFilters.agesServed.addCharacter}
-      whichMeasure={DATA_CR_D_Filters.moreFilters.agesServed.whichMeasure}
+      buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
+      min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
+      max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
+      maxSpecialCharacter={ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter}
+      whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
+      addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
     />,
   ],
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.areasOfLaw.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
+      titleOnModal={DATA_PSYT_D_Filters.practiceAreas.buttonName}
+      categoriesToDisplay={DATA_PSYT_D_Filters.practiceAreas.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
-      categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
-    />,
-
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.professionalExperience.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
+      titleOnModal={ORG_FILTERS_KEYS_D.language.alternativeTitle}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.languajesSpoken.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
+      titleOnModal={DATA_PSYT_D_Filters.operationHours.buttonName}
+      categoriesToDisplay={DATA_PSYT_D_Filters.operationHours.categoriesToDisplay}
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
@@ -120,18 +105,33 @@ const allMoreFilters = {
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_PSYT_D_Filters.viewOnly.buttonName}
+      categoriesToDisplay={DATA_PSYT_D_Filters.viewOnly.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.moreFilters.operationHours.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.moreFilters.operationHours.categoriesToDisplay}
+      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CR_D_Filters.moreFilters.payment.buttonName}
-      categoriesToDisplay={DATA_CR_D_Filters.moreFilters.payment.categoriesToDisplay}
+      titleOnModal={DATA_PSYT_D_Filters.moreFilters.payment.buttonName}
+      categoriesToDisplay={DATA_PSYT_D_Filters.moreFilters.payment.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_PSYT_D_Filters.moreFilters.providerType.buttonName}
+      categoriesToDisplay={DATA_PSYT_D_Filters.moreFilters.providerType.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_PSYT_D_Filters.moreFilters.wheelChair.buttonName}
+      categoriesToDisplay={DATA_PSYT_D_Filters.moreFilters.wheelChair.categoriesToDisplay}
     />,
   ],
 }
@@ -247,32 +247,39 @@ export const PSYT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) 
   //   }
   // }, [mustShowFiltersDesktop])
 
+
+
   return (
     <PSYT_D_Results_FilterListMainWrapper>
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.areasOfLaw.buttonName}
-        categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
+        buttonName={DATA_PSYT_D_Filters.practiceAreas.buttonName}
+        categoriesToDisplay={DATA_PSYT_D_Filters.practiceAreas.categoriesToDisplay}
       />
 
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.jurisdiction.buttonName}
-        titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
-        categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
+        buttonName={ORG_FILTERS_KEYS_D.language.alternativeTitle}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
       />
 
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.professionalExperience.buttonName}
-        categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
+        buttonName={DATA_PSYT_D_Filters.operationHours.buttonName}
+        categoriesToDisplay={DATA_PSYT_D_Filters.operationHours.categoriesToDisplay}
       />
 
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CR_D_Filters.languajesSpoken.buttonName}
-        categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
+        buttonName={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+
+      />
+
+      <ORG_Filters_D_Checkbox
+        buttonName={DATA_PSYT_D_Filters.viewOnly.buttonName}
+        categoriesToDisplay={DATA_PSYT_D_Filters.viewOnly.categoriesToDisplay}
       />
 
       <ORG_Filters_D_More
-        allCheckboxes={allMoreFilters.checkbox}
         allRanges={allMoreFilters.range}
+        allCheckboxes={allMoreFilters.checkbox}
       />
     </PSYT_D_Results_FilterListMainWrapper>
   )
