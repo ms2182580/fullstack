@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../../../assets/Colors"
 
-export const CR_D_Results_FinalButtonWrapper = styled.div`
+export const PSYT_D_Results_FinalButtonWrapper = styled.div`
   display: flex;
   align-items: center;
 
@@ -35,7 +35,7 @@ const NavigationButton = styled.button`
   }
 `
 
-export const CR_D_Results_FinalButtonsPrevButton_W = styled(NavigationButton)`
+export const PSYT_D_Results_FinalButtonsPrevButton_W = styled(NavigationButton)`
   padding: 8px 24px;
 
   & > svg {
@@ -43,7 +43,7 @@ export const CR_D_Results_FinalButtonsPrevButton_W = styled(NavigationButton)`
   }
 `
 
-export const CR_D_Results_FinalButtonsNextButton_W = styled(NavigationButton)`
+export const PSYT_D_Results_FinalButtonsNextButton_W = styled(NavigationButton)`
   padding: 8px 24px;
 
   & > p {
@@ -51,7 +51,7 @@ export const CR_D_Results_FinalButtonsNextButton_W = styled(NavigationButton)`
   }
 `
 
-export const CR_D_Results_FinalButtonsNumberPage_W = styled.button`
+export const PSYT_D_Results_FinalButtonsNumberPage_W = styled.button`
   height: 48px;
   width: 48px;
   cursor: pointer;

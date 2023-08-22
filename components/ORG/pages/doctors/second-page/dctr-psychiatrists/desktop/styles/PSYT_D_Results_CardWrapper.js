@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../../../assets/Colors"
 
-export const CR_D_Results_CardWrapper = styled.div`
+export const PSYT_D_Results_CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -86,15 +86,16 @@ export const CR_D_Results_CardWrapper = styled.div`
     & > :nth-child(1),
     & > :nth-child(2),
     & > :nth-child(3),
-    & > :nth-child(4) {
+    & > :nth-child(4),
+    & > :nth-child(5) {
       margin-bottom: 8px;
     }
 
-    & > :nth-child(5) {
+    & > :nth-child(6) {
       margin-bottom: 32px;
     }
 
-    & > *:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)):not(:last-child) {
+    & > *:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(6)):not(:last-child) {
       margin-bottom: 16px;
     }
 

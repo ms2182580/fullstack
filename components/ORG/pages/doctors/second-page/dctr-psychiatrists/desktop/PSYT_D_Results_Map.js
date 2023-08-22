@@ -2,10 +2,10 @@ import Image from "next/image.js"
 import { useEffect, useRef, useState } from "react"
 import { LeftArrowTinySvg } from "../../../../../../../assets/Icons/index.js"
 import ORG_Results_MapImage from "../../../../../../../assets/images/ORG_Results_MapImage.png"
-import { CR_D_Results_CardsOnMap } from "./CR_D_Results_CardsOnMap.js"
-import { CR_D_Results_MapWrapper } from "./styles/CR_D_Results_MapWrapper.js"
+import { PSYT_D_Results_CardsOnMap } from "./PSYT_D_Results_CardsOnMap.js"
+import { PSYT_D_Results_MapWrapper } from "./styles/PSYT_D_Results_MapWrapper.js"
 
-export const CR_D_Results_Map = ({ refUserViewShowFullMapButton }) => {
+export const PSYT_D_Results_Map = ({ refUserViewShowFullMapButton }) => {
   const refOfButton = useRef(null)
   const [bottomOfButton, setBottomOfButton] = useState()
 
@@ -16,7 +16,7 @@ export const CR_D_Results_Map = ({ refUserViewShowFullMapButton }) => {
   }, [refOfButton])
 
   return (
-    <CR_D_Results_MapWrapper>
+    <PSYT_D_Results_MapWrapper>
       <Image
         src={ORG_Results_MapImage}
         layout="fill"
@@ -29,7 +29,7 @@ export const CR_D_Results_Map = ({ refUserViewShowFullMapButton }) => {
         <LeftArrowTinySvg /> <span>Show map</span>
       </button>
 
-      <CR_D_Results_CardsOnMap bottomOfButton={bottomOfButton} />
-    </CR_D_Results_MapWrapper>
+      <PSYT_D_Results_CardsOnMap bottomOfButton={bottomOfButton} />
+    </PSYT_D_Results_MapWrapper>
   )
 }

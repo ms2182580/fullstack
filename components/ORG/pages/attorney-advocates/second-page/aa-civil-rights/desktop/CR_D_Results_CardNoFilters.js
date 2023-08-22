@@ -92,7 +92,7 @@ export const CR_D_Results_CardNoFilters = () => {
                 <P
                   primary_hover
                   bold>
-                  jurisdiction: <span>{DATA_CR_D_CardRight[renderThisFilter].jurisdiction}</span>
+                  Jurisdiction: <span>{DATA_CR_D_CardRight[renderThisFilter].jurisdiction}</span>
                 </P>
                 <P
                   primary_hover

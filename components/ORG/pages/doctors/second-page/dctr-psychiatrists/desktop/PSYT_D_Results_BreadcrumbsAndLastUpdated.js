@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { DATA_ORG_D } from '../../../../../../../utils/ORG/DATA_ORG_D.js'
 import { Breadcrumbs_D } from '../../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js'
 
-export const CR_D_Results_BreadcrumbsAndLastUpdated = () => {
+export const PSYT_D_Results_BreadcrumbsAndLastUpdated = () => {
   const [breadcrumbsState, setBreadcrumbsState] = useState(null)
   const route = useRouter()
 

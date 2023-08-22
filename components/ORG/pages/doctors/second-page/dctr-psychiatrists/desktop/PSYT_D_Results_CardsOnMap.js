@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import { PinResultsSvg } from "../../../../../../../assets/Icons/index.js"
 import { ORG_MapDefaultValue } from "../../../../../../../utils/ORG_MapValuesToShow.js"
-import { CR_D_Results_CardsOnMapCard } from "./CR_D_Results_CardsOnMapCard.js"
-import { CR_D_Results_CardsOnMapWrapper } from "./styles/CR_D_Results_CardsOnMapWrapper.js"
+import { PSYT_D_Results_CardsOnMapCard } from "./PSYT_D_Results_CardsOnMapCard.js"
+import { PSYT_D_Results_CardsOnMapWrapper } from "./styles/PSYT_D_Results_CardsOnMapWrapper.js"
 
-export const CR_D_Results_CardsOnMap = ({ bottomOfButton }) => {
+export const PSYT_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   const myRef = useRef(null)
 
   const [actualWidthAndHeight, setActualWidthAndHeight] = useState()
@@ -114,20 +114,20 @@ export const CR_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   }, [actualWidthAndHeight])
 
   return (
-    <CR_D_Results_CardsOnMapWrapper
+    <PSYT_D_Results_CardsOnMapWrapper
       ref={myRef}
       bottomOfButton={bottomOfButton}>
       {isRenderAt === "ready" &&
         positionsShrinked.length !== 1 &&
         positionsShrinked.map(({ top, left }, i) => {
           return (
-            <CR_D_Results_CardsOnMapCard
+            <PSYT_D_Results_CardsOnMapCard
               top={top}
               left={left}
               key={`${top}_${left}_${i}`}
             />
           )
         })}
-    </CR_D_Results_CardsOnMapWrapper>
+    </PSYT_D_Results_CardsOnMapWrapper>
   )
 }

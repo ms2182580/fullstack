@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { NEUTRALS, PRIMARY } from '../../../../../../../../assets/Colors'
 
-export const CR_D_Results_MapWrapper = styled.div`
+export const PSYT_D_Results_MapWrapper = styled.div`
   height:100vh;
   position: sticky;
   top: 0;

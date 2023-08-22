@@ -13,7 +13,6 @@ export const useCheckBreadcrumbs = (titleToFormat) => {
       let index = `p${theRoute.split("-")[0]}`
 
       let fullName = DATA_ORG_CheckPaths_Results_D[index].at(-1).fullName[theRoute]
-      console.log('fullName:', fullName)
 
       setTitleFormatted(fullName)
     } else {

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../../../assets/Colors"
 
-export const CR_D_Results_MainEntryWrapper = styled.div`
+export const PSYT_D_Results_MainEntryWrapper = styled.div`
   position: relative;
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;

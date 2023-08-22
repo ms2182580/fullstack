@@ -4,7 +4,7 @@ import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filte
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
 import { ORG_Filters_D_Range_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Range_Isolated.js"
-import { CR_D_Results_FilterListMainWrapper } from "./styles/CR_D_Results_FilterListMainWrapper.js"
+import { PSYT_D_Results_FilterListMainWrapper } from "./styles/PSYT_D_Results_FilterListMainWrapper.js"
 
 // const reducer = (state, action) => {
 //   const setFilterData = action.payload[0]
@@ -136,7 +136,7 @@ const allMoreFilters = {
   ],
 }
 
-export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
+export const PSYT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
   // const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
 
   /*
@@ -248,7 +248,7 @@ export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
   // }, [mustShowFiltersDesktop])
 
   return (
-    <CR_D_Results_FilterListMainWrapper>
+    <PSYT_D_Results_FilterListMainWrapper>
       <ORG_Filters_D_Checkbox
         buttonName={DATA_CR_D_Filters.areasOfLaw.buttonName}
         categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
@@ -274,6 +274,6 @@ export const CR_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
         allCheckboxes={allMoreFilters.checkbox}
         allRanges={allMoreFilters.range}
       />
-    </CR_D_Results_FilterListMainWrapper>
+    </PSYT_D_Results_FilterListMainWrapper>
   )
 }

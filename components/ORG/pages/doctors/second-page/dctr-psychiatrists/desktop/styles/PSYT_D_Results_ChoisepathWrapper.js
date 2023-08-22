@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const CR_D_Results_ChoisepathWrapper = styled.div`
+export const PSYT_D_Results_ChoisepathWrapper = styled.div`
   margin-right: 24px;
 
   display: ${(x) => (x.ORGshowFullMapButton || x.ORGShowFullMapFilter ? `none` : `block`)};

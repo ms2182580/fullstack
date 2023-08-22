@@ -3,9 +3,9 @@ import { Fragment, useState } from "react"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { LinkNoStyle } from "../../../../../../ui/hyperlink/HyperlinkNoStyles.js"
-import { CR_D_Results_FinalButtonsNumberPage_W } from "./styles/CR_D_Results_FinalButtonWrapper.js"
+import { PSYT_D_Results_FinalButtonsNumberPage_W } from "./styles/PSYT_D_Results_FinalButtonWrapper.js"
 
-export const CR_D_Results_NavigationButtonsNumbers = () => {
+export const PSYT_D_Results_NavigationButtonsNumbers = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
 
   const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(Array(3).fill(0))
@@ -22,9 +22,9 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
           if (pagination === i + 1) {
             return (
               <Fragment key={i}>
-                <CR_D_Results_FinalButtonsNumberPage_W isActive>
+                <PSYT_D_Results_FinalButtonsNumberPage_W isActive>
                   <P bold> {i + 1}</P>
-                </CR_D_Results_FinalButtonsNumberPage_W>
+                </PSYT_D_Results_FinalButtonsNumberPage_W>
               </Fragment>
             )
           }
@@ -35,12 +35,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
                 href="#topOfORG"
               // as={pathname}
               >
-                <CR_D_Results_FinalButtonsNumberPage_W
+                <PSYT_D_Results_FinalButtonsNumberPage_W
                   onClick={() => setPagination(toMoveToThatPage)}
                 // tabIndex={shouldTab}
                 >
                   <P bold> {i + 1}</P>
-                </CR_D_Results_FinalButtonsNumberPage_W>
+                </PSYT_D_Results_FinalButtonsNumberPage_W>
               </LinkNoStyle>
             </Fragment>
           )
@@ -68,12 +68,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
                 // as={pathname}
                 // tabIndex={shouldTab}
                 >
-                  <CR_D_Results_FinalButtonsNumberPage_W
+                  <PSYT_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[0])}
                   // tabIndex={shouldTab}
                   >
                     <P bold> {theNewOrder[i]}</P>
-                  </CR_D_Results_FinalButtonsNumberPage_W>
+                  </PSYT_D_Results_FinalButtonsNumberPage_W>
                 </LinkNoStyle>
               </Fragment>
             )
@@ -82,12 +82,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
           if (i === 1) {
             return (
               <Fragment key={i}>
-                <CR_D_Results_FinalButtonsNumberPage_W
+                <PSYT_D_Results_FinalButtonsNumberPage_W
                   isActive
                 // tabIndex={shouldTab}
                 >
                   <P bold> {theNewOrder[i]}</P>
-                </CR_D_Results_FinalButtonsNumberPage_W>
+                </PSYT_D_Results_FinalButtonsNumberPage_W>
               </Fragment>
             )
           }
@@ -100,12 +100,12 @@ export const CR_D_Results_NavigationButtonsNumbers = () => {
                 // as={pathname}
                 // tabIndex={shouldTab}
                 >
-                  <CR_D_Results_FinalButtonsNumberPage_W
+                  <PSYT_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[2])}
                   // tabIndex={shouldTab}
                   >
                     <P bold> {theNewOrder[i]}</P>
-                  </CR_D_Results_FinalButtonsNumberPage_W>
+                  </PSYT_D_Results_FinalButtonsNumberPage_W>
                 </LinkNoStyle>
               </Fragment>
             )

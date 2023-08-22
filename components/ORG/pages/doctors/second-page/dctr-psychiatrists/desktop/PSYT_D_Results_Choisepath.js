@@ -1,16 +1,16 @@
 import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
-import { CR_D_Results_CardNoFilters } from "./CR_D_Results_CardNoFilters.js"
-import { CR_D_Results_ChoisepathWrapper } from "./styles/CR_D_Results_ChoisepathWrapper.js"
+import { PSYT_D_Results_CardNoFilters } from "./PSYT_D_Results_CardNoFilters.js"
+import { PSYT_D_Results_ChoisepathWrapper } from "./styles/PSYT_D_Results_ChoisepathWrapper.js"
 
-export const CR_D_Results_Choisepath = () => {
+export const PSYT_D_Results_Choisepath = () => {
   const { ORGshowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
 
   return (
-    <CR_D_Results_ChoisepathWrapper
+    <PSYT_D_Results_ChoisepathWrapper
       ORGshowFullMapButton={ORGshowFullMapButton}
       ORGShowFullMapFilter={ORGShowFullMapFilter}>
 
-      <CR_D_Results_CardNoFilters />
+      <PSYT_D_Results_CardNoFilters />
 
       {/* {filterHaveAtLeastOneValueState ? (
         <>
@@ -21,6 +21,6 @@ export const CR_D_Results_Choisepath = () => {
           <p>Component without filters</p>
         </>
       )} */}
-    </CR_D_Results_ChoisepathWrapper>
+    </PSYT_D_Results_ChoisepathWrapper>
   )
 }

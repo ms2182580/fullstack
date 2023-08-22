@@ -3,8 +3,8 @@ import path from "path"
 import { useCtx_ShowModal } from "../../../../../../../context/Ctx_ShowModal.js"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
 import { InFrontModal_D_Wrapper } from "../../../../../../inFront_D/styles/InFrontModal_D_Wrapper.js"
-import { CR_D_Results_Header } from "./CR_D_Results_Header.js"
-import { CR_D_Results_MainEntry } from "./CR_D_Results_MainEntry.js"
+import { PSYT_D_Results_Header } from "./PSYT_D_Results_Header.js"
+import { PSYT_D_Results_MainEntry } from "./PSYT_D_Results_MainEntry.js"
 import { INDEX_D_Psychiatrists_ResultsWrapper } from "./styles/INDEX_D_Psychiatrists_ResultsWrapper.js"
 
 export const INDEX_D_Psychiatrists_Results = () => {
@@ -18,9 +18,9 @@ export const INDEX_D_Psychiatrists_Results = () => {
         ORGShowFullMapFilter={
           ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
         }>
-        <CR_D_Results_Header />
+        <PSYT_D_Results_Header />
 
-        <CR_D_Results_MainEntry />
+        <PSYT_D_Results_MainEntry />
 
         <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
       </INDEX_D_Psychiatrists_ResultsWrapper>
