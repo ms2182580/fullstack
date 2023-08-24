@@ -1,5 +1,4 @@
 import { DATA_CC_D_Filters } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Filters.js"
-import { DATA_DAY_D_Filters } from "../../../../../../../utils/ORG/pcmps/day/DATA_DAY_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
@@ -77,11 +76,11 @@ const allMoreFilters = {
       addCharacter={DATA_CC_D_Filters.distance.addCharacter}
     />,
     <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CC_D_Filters.age.buttonName}
-      min={DATA_CC_D_Filters.age.minimum}
-      max={DATA_CC_D_Filters.age.maximum}
-      whichMeasure={DATA_CC_D_Filters.age.whichMeasure}
-      addCharacter={DATA_CC_D_Filters.age.addCharacter}
+      buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonOnMoreFilter}
+      min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
+      max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
+      whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
+      addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
     />,
     <ORG_Filters_D_Range_Isolated
       buttonName={DATA_CC_D_Filters.price.buttonName}
@@ -128,40 +127,6 @@ const allMoreFilters = {
     />,
   ],
 }
-
-const allActivities = [
-  <ORG_Filters_D_Checkbox_Isolated categoriesToDisplay={["All Activities"]} />,
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.fitness.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.fitness.categoriesToDisplay}
-  />,
-
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.art.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.art.categoriesToDisplay}
-  />,
-
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.music.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.music.categoriesToDisplay}
-  />,
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.ASLLanguages.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.ASLLanguages.categoriesToDisplay}
-  />,
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.stem.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.stem.categoriesToDisplay}
-  />,
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.dailyLivingSkills.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.dailyLivingSkills.categoriesToDisplay}
-  />,
-  <ORG_Filters_D_Checkbox_Isolated
-    titleOnModal={DATA_DAY_D_Filters.allActivities.academics.buttonName}
-    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.academics.categoriesToDisplay}
-  />,
-]
 
 export const CC_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
   // const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
@@ -282,19 +247,19 @@ export const CC_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
       />
 
       <ORG_Filters_D_Range
-        min={DATA_CC_D_Filters.age.minimum}
-        max={DATA_CC_D_Filters.age.maximum}
-        buttonName={DATA_CC_D_Filters.age.buttonName}
-        addCharacter={DATA_CC_D_Filters.age.addCharacter}
-        whichMeasure={DATA_CC_D_Filters.age.whichMeasure}
+        buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
+        min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
+        max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
+        whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
+        addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
       />
 
       <ORG_Filters_D_Range
-        min={DATA_CC_D_Filters.distance.minimum}
-        max={DATA_CC_D_Filters.distance.maximum}
-        buttonName={DATA_CC_D_Filters.distance.buttonName}
-        addCharacter={DATA_CC_D_Filters.distance.addCharacter}
-        whichMeasure={DATA_CC_D_Filters.distance.whichMeasure}
+        min={ORG_FILTERS_DATA_D.distanceRange.minimum}
+        max={ORG_FILTERS_DATA_D.distanceRange.maximum}
+        buttonName={ORG_FILTERS_KEYS_D.distanceRange.buttonName}
+        addCharacter={ORG_FILTERS_DATA_D.distanceRange.addCharacter}
+        whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
       />
 
       <ORG_Filters_D_Range

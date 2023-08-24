@@ -172,7 +172,7 @@ export const ORG_Filters_D_Range = ({
 
         {labelName !== "" && <label htmlFor="min">Minimum {labelName}</label>}
 
-        <P semibold>{labelName}</P>
+        <P semibold>{labelName || buttonName}</P>
         <input
           type="range"
           min={min}
