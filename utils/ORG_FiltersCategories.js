@@ -12,12 +12,13 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
   insurance: ["Medicaid", "Insurance", "Private Pay", "DOE approved", "BCBS", "Aetna", "Contract"],
   languages: ["English", "Spanish", "Portuguese", "Chinese", "Tagalog", "French"],
   meetingFormat: ["Virtual", "In-Person", "Site determined by client"],
+  operationHours: ["Open Now", "Weekdays", "Weekdays & Weekends", "Morning", "Afternoon", "Evening", "Late Night"],
   providerType: ["Independent", "Agency-based", "Traveling"],
   serviceSetting: ["Clinic", "Home", "School", "Community"],
   sessionType: ["Individual", "Group"],
   viewOnly: ["Accepting new patients", "Conducts evaluations"],
   yearsOfPractice: ["1+ Years", "3+ Years", "5+ Years", "7+ Years", "10+ Years"],
-  wheelChair: ["Yes", "No"]
+  wheelChair: ["Yes", "No"],
 })
 
 export const ORG_FILTERS_KEYS_D = Object.freeze({
@@ -29,6 +30,7 @@ export const ORG_FILTERS_KEYS_D = Object.freeze({
   insurance: { titleToShow: "Insurance", updateState: "insurance", titleToShowCard: "Payment options" },
   language: { titleToShow: "Language", updateState: "language", alternativeTitle: "Languages(s) Spoken" },
   meetingFormat: { titleToShow: "Setting", updateState: "meetingFormat", inMoreFilters: "Meeting format" },
+  operationHours: { titleToShow: "Operation Hours", updateState: "operationHours" },
   providerType: { titleToShow: "Provider Type", updateState: "providerType" },
   rating: { titleToShow: "Rating", updateState: "rating" },
   reviews: { titleToShow: "Reviews", updateState: "reviews" },
@@ -42,7 +44,7 @@ export const ORG_FILTERS_KEYS_D = Object.freeze({
   },
   wheelChair: {
     titleToShow: "Wheelchair accessible",
-  }
+  },
 })
 
 export const ORG_FILTERS_DATA_M = Object.freeze({

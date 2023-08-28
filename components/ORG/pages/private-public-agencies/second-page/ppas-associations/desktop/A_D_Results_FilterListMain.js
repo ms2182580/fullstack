@@ -1,9 +1,9 @@
-import { DATA_MH_D_Filters } from "../../../../../../../utils/ORG/pmhss/mh/DATA_MH_D_Filters.js"
+import { DATA_A_D_Filters } from "../../../../../../../utils/ORG/pppas/a/DATA_A_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
-import { ORG_Filters_D_Range } from "../../../../../filters/desktop/ORG_Filters_D_Range.js"
+import { ORG_Filters_D_Range_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Range_Isolated.js"
 import { A_D_Results_FilterListMainWrapper } from "./styles/A_D_Results_FilterListMainWrapper.js"
 
 // const reducer = (state, action) => {
@@ -66,47 +66,49 @@ import { A_D_Results_FilterListMainWrapper } from "./styles/A_D_Results_FilterLi
 // const nameToCloseTheFilters = "ShowFiltersDesktop"
 
 const allMoreFilters = {
+  ranges: [
+    <ORG_Filters_D_Range_Isolated
+      buttonName={ORG_FILTERS_KEYS_D.distanceRange.buttonName}
+      min={ORG_FILTERS_DATA_D.distanceRange.minimum}
+      max={ORG_FILTERS_DATA_D.distanceRange.maximum}
+      whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
+      addCharacter={ORG_FILTERS_DATA_D.distanceRange.addCharacter}
+    />,
+
+    <ORG_Filters_D_Range_Isolated
+      buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
+      min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
+      max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
+      whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
+      addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
+    />,
+  ],
+
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
+      titleOnModal={DATA_A_D_Filters.areasOfFocus.buttonName}
+      categoriesToDisplay={DATA_A_D_Filters.areasOfFocus.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_MH_D_Filters.moreFilters.outOfPocketFees.buttonName}
-      categoriesToDisplay={DATA_MH_D_Filters.moreFilters.outOfPocketFees.categoriesToDisplay}
+      titleOnModal={DATA_A_D_Filters.servicesOffered.buttonName}
+      categoriesToDisplay={DATA_A_D_Filters.servicesOffered.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.inMoreFilters}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
+      titleOnModal={ORG_FILTERS_KEYS_D.language.alternativeTitle}
       categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.serviceSetting}
+      titleOnModal={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_MH_D_Filters.moreFilters.providerType.buttonName}
-      categoriesToDisplay={DATA_MH_D_Filters.moreFilters.providerType.categoriesToDisplay}
+      titleOnModal={ORG_FILTERS_KEYS_D.serviceSetting.titleToShow}
+      categoriesToDisplay={["Office", "Virtual", "Site determined by client"]}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.wheelChair.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.wheelChair}
+      titleOnModal={ORG_FILTERS_KEYS_D.operationHours.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.operationHours}
     />,
-
-
-
-
-
 
 
 
@@ -227,34 +229,27 @@ export const A_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => 
   return (
     <A_D_Results_FilterListMainWrapper>
       <ORG_Filters_D_Checkbox
-        buttonName={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
-        categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+        buttonName={DATA_A_D_Filters.areasOfFocus.buttonName}
+        categoriesToDisplay={DATA_A_D_Filters.areasOfFocus.categoriesToDisplay}
       />
-
-      <ORG_Filters_D_Range
-        min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
-        max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
-        buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
-        addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
-        whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
+      <ORG_Filters_D_Checkbox
+        buttonName={DATA_A_D_Filters.servicesOffered.buttonName}
+        categoriesToDisplay={DATA_A_D_Filters.servicesOffered.categoriesToDisplay}
       />
-
-      <ORG_Filters_D_Range
-        min={ORG_FILTERS_DATA_D.distanceRange.minimum}
-        max={ORG_FILTERS_DATA_D.distanceRange.maximum}
-        buttonName={ORG_FILTERS_KEYS_D.distanceRange.buttonName}
-        addCharacter={ORG_FILTERS_DATA_D.distanceRange.addCharacter}
-        whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
+      <ORG_Filters_D_Checkbox
+        buttonName={ORG_FILTERS_KEYS_D.language.alternativeTitle}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
       />
-
 
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_MH_D_Filters.viewOnly.buttonName}
-        categoriesToDisplay={DATA_MH_D_Filters.viewOnly.categoriesToDisplay}
+        buttonName={ORG_FILTERS_KEYS_D.operationHours.titleToShow}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.operationHours}
       />
 
-
-      <ORG_Filters_D_More allCheckboxes={allMoreFilters.checkbox} />
+      <ORG_Filters_D_More
+        allCheckboxes={allMoreFilters.checkbox}
+        allRanges={allMoreFilters.ranges}
+      />
     </A_D_Results_FilterListMainWrapper>
   )
 }
