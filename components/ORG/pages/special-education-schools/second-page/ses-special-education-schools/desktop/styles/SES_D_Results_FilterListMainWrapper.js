@@ -9,8 +9,8 @@ export const SES_D_Results_FilterListMainWrapper = styled.div`
 
   & > :nth-last-child(2) {
     & > :nth-child(2) {
-      @media (max-width: 1085px) {
-        left: -60%;
+      @media (max-width: 1105px) {
+        left: -80%;
       }
     }
   }

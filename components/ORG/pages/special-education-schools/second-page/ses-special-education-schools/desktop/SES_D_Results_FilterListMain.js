@@ -1,4 +1,5 @@
 import { DATA_CC_D_Filters } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Filters.js"
+import { DATA_SES_D_Filters } from "../../../../../../../utils/ORG/pses/ses/DATA_SES_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
@@ -87,43 +88,45 @@ const allMoreFilters = {
       min={DATA_CC_D_Filters.price.minimum}
       max={DATA_CC_D_Filters.price.maximum}
       whichMeasure={DATA_CC_D_Filters.price.whichMeasure}
-      addCharacter={DATA_CC_D_Filters.age.addCharacter}
+      addCharacter={DATA_CC_D_Filters.price.addCharacter}
     />,
   ],
 
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.skillLevel.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.skillLevel.categoriesToDisplay}
+      titleOnModal={DATA_SES_D_Filters.schoolType.buttonName}
+      categoriesToDisplay={DATA_SES_D_Filters.schoolType.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.term.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.term.categoriesToDisplay}
+      titleOnModal={DATA_SES_D_Filters.moreFilters.coed.buttonName}
+      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.coed.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.duration.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.duration.categoriesToDisplay}
+      titleOnModal={DATA_SES_D_Filters.moreFilters.specialties.buttonName}
+      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.specialties.categoriesToDisplay}
     />,
+
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
     />,
+
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.daysOfTheWeek.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.daysOfTheWeek.categoriesToDisplay}
+      titleOnModal={DATA_SES_D_Filters.moreFilters.religion.buttonName}
+      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.religion.categoriesToDisplay}
     />,
+
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.sessionType.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.sessionType}
     />,
-
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.cost.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.cost.categoriesToDisplay}
+      titleOnModal={DATA_SES_D_Filters.moreFilters.servicesOffered.buttonName}
+      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.servicesOffered.categoriesToDisplay}
     />,
   ],
 }
@@ -242,8 +245,8 @@ export const SES_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
   return (
     <SES_D_Results_FilterListMainWrapper>
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_CC_D_Filters.skillLevel.buttonName}
-        categoriesToDisplay={DATA_CC_D_Filters.skillLevel.categoriesToDisplay}
+        buttonName={DATA_SES_D_Filters.schoolType.buttonName}
+        categoriesToDisplay={DATA_SES_D_Filters.schoolType.categoriesToDisplay}
       />
 
       <ORG_Filters_D_Range
@@ -263,11 +266,11 @@ export const SES_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
       />
 
       <ORG_Filters_D_Range
-        min={DATA_CC_D_Filters.price.minimum}
-        max={DATA_CC_D_Filters.price.maximum}
-        buttonName={DATA_CC_D_Filters.price.buttonName}
-        addCharacter={DATA_CC_D_Filters.price.addCharacter}
-        whichMeasure={DATA_CC_D_Filters.price.whichMeasure}
+        min={DATA_SES_D_Filters.price.minimum}
+        max={DATA_SES_D_Filters.price.maximum}
+        buttonName={DATA_SES_D_Filters.price.buttonName}
+        addCharacter={DATA_SES_D_Filters.price.addCharacter}
+        whichMeasure={DATA_SES_D_Filters.price.whichMeasure}
       />
 
       <ORG_Filters_D_Checkbox
