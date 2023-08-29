@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../../assets/Colors"
+import styled from 'styled-components'
+import { NEUTRALS } from '../../../../../../../assets/Colors'
 
 export const INDEX_D_SESSearchWrapper = styled.div`
   display: flex;
@@ -22,6 +22,7 @@ export const INDEX_D_SESSearchWrapper = styled.div`
 
     & > :nth-child(1) {
       grid-area: title;
+      
     }
 
     & > :nth-child(2) {
@@ -56,13 +57,14 @@ export const INDEX_D_SESSearchWrapper = styled.div`
       & > :nth-child(1) {
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
-
-        overflow: hidden;
-        width: 100%;
-
+        
+        overflow:hidden;
+        width:100%;
+        
+        
         justify-self: center;
         margin: auto;
-
+        
         position: relative;
 
         & > :nth-child(2) {
@@ -70,6 +72,8 @@ export const INDEX_D_SESSearchWrapper = styled.div`
           right: 16px;
           bottom: 16px;
         }
+        
+        
       }
 
       & > *:not(:first-child) {
@@ -83,10 +87,12 @@ export const INDEX_D_SESSearchWrapper = styled.div`
       & > :nth-child(2),
       & > :nth-child(3) {
         padding-bottom: 8px;
+        
       }
 
       & > :nth-child(5),
       & > :nth-child(6) {
+        
         padding-bottom: 32px;
       }
 
@@ -105,4 +111,9 @@ export const INDEX_D_SESSearchWrapper = styled.div`
       }
     }
   }
+  
+
+  
+
+  
 `

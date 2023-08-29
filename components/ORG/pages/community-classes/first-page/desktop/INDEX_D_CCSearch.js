@@ -13,7 +13,7 @@ import { Verified } from '../../../../verified/Verified.js'
 import { INDEX_D_CCSearchWrapper } from './styles/INDEX_D_CCSearchWrapper.js'
 
 
-export const INDEX_D_CCSearch = ({ isSelected = false, positionInArray }) => {
+export const INDEX_D_CCSearch = ({ positionInArray, isSelected = false }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
-import { A_D_Results_HowMuchShowingWrapper } from './styles/MH_D_Results_HowMuchShowingWrapper.js'
+import { CC_D_Results_HowMuchShowingWrapper } from './styles/CC_D_Results_HowMuchShowingWrapper.js'
 
-export const A_D_Results_HowMuchShowing = () => {
+export const CC_D_Results_HowMuchShowing = () => {
   const { pagination, howMuchShow } = useORG_Ctx_FetchNoFiltersDesktop()
   const [actualShow, setActualShow] = useState(howMuchShow)
   const [theTotal, setTheTotal] = useState(howMuchShow * 5)
@@ -19,10 +19,10 @@ export const A_D_Results_HowMuchShowing = () => {
   }, [actualShow])
 
   return (
-    <A_D_Results_HowMuchShowingWrapper>
+    <CC_D_Results_HowMuchShowingWrapper>
       <P semibold>
         Showing {actualShow} of {theTotal} results
       </P>
-    </A_D_Results_HowMuchShowingWrapper>
+    </CC_D_Results_HowMuchShowingWrapper>
   )
 }

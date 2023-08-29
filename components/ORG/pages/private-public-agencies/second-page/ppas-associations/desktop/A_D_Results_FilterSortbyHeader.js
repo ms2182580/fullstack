@@ -2,7 +2,7 @@ import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_C
 import { A_D_Results_FilterListMain } from "./A_D_Results_FilterListMain.js"
 import { A_D_Results_HowMuchShowing } from "./A_D_Results_HowMuchShowing.js"
 import { A_D_Results_Sortby } from "./A_D_Results_Sortby.js"
-import { A_D_Results_FilterSortbyHeaderWrapper } from "./styles/A_D_Results_FilterSortbyHeaderWrapper.js"
+import { A_D_Results_FilterSortbyHeaderWrapper } from "./styles/MH_D_Results_FilterSortbyHeaderWrapper.js"
 
 export const A_D_Results_FilterSortbyHeader = ({ refUserViewShowFullMapButton, refUserViewShowFullMapFilter }) => {
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
