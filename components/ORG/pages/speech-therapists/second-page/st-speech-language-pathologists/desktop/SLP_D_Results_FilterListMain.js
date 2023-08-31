@@ -1,4 +1,4 @@
-import { DATA_MH_D_Filters } from "../../../../../../../utils/ORG/pmhss/mh/DATA_MH_D_Filters.js"
+import { DATA_SLP_D_Filters } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
@@ -68,48 +68,24 @@ import { SLP_D_Results_FilterListMainWrapper } from "./styles/SLP_D_Results_Filt
 const allMoreFilters = {
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
+      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.serviceSetting}
     />,
+
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_MH_D_Filters.moreFilters.outOfPocketFees.buttonName}
-      categoriesToDisplay={DATA_MH_D_Filters.moreFilters.outOfPocketFees.categoriesToDisplay}
+      titleOnModal={ORG_FILTERS_KEYS_D.sessionType.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.sessionType}
     />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.inMoreFilters}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
-    />,
+
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.serviceSetting}
+      titleOnModal={ORG_FILTERS_KEYS_D.providerType.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.providerType}
     />,
-
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_MH_D_Filters.moreFilters.providerType.buttonName}
-      categoriesToDisplay={DATA_MH_D_Filters.moreFilters.providerType.categoriesToDisplay}
-    />,
-
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.wheelChair.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.wheelChair}
-    />,
-
-
-
-
-
-
-
-
   ],
 }
 
@@ -226,11 +202,6 @@ export const SLP_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
 
   return (
     <SLP_D_Results_FilterListMainWrapper>
-      <ORG_Filters_D_Checkbox
-        buttonName={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
-        categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
-      />
-
       <ORG_Filters_D_Range
         min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
         max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
@@ -247,12 +218,25 @@ export const SLP_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
         whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
       />
 
-
       <ORG_Filters_D_Checkbox
-        buttonName={DATA_MH_D_Filters.viewOnly.buttonName}
-        categoriesToDisplay={DATA_MH_D_Filters.viewOnly.categoriesToDisplay}
+        buttonName={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
       />
 
+      <ORG_Filters_D_Checkbox
+        buttonName={DATA_SLP_D_Filters.viewOnly.buttonName}
+        categoriesToDisplay={DATA_SLP_D_Filters.viewOnly.categoriesToDisplay}
+      />
+
+      <ORG_Filters_D_Checkbox
+        buttonName={ORG_FILTERS_KEYS_D.insurance.titleToShow}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
+      />
+
+      <ORG_Filters_D_Checkbox
+        buttonName={ORG_FILTERS_KEYS_D.meetingFormat.inMoreFilters}
+        categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
+      />
 
       <ORG_Filters_D_More allCheckboxes={allMoreFilters.checkbox} />
     </SLP_D_Results_FilterListMainWrapper>
