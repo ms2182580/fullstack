@@ -19,7 +19,7 @@ export const INDEX_M_STDetail = () => {
   const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()
 
   if (STDataThirdpage_M === "") {
-    if (route.isReady) route.push("/ORG/speech-therapists")
+    if (route.isReady) route.push("/ORG/pst/st-speech-language-pathologists")
     return
   }
 

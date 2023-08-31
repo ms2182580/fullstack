@@ -148,12 +148,12 @@ const nextConfig = {
 
       {
         source: "/slp",
-        destination: "/ORG/speech-therapists/st-speech-language-pathologists",
+        destination: "/ORG/pst/st-speech-language-pathologists",
         permanent: true,
       },
       {
         source: "/ot",
-        destination: "/ORG/speech-therapists/st-ocuppational-therapists",
+        destination: "/ORG/pst/st-ocuppational-therapists",
         permanent: true,
       },
 

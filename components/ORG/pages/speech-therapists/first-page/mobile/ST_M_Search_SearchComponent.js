@@ -8,7 +8,7 @@ export const ST_M_Search_SearchComponent = () => {
   const router = useRouter()
 
   const handleRoute = () => {
-    router.push(`${router.pathname}/speech-therapists`)
+    router.push(`${router.pathname}/pst/st-speech-language-pathologists`)
   }
 
   return (
