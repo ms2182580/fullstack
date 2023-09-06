@@ -1,10 +1,9 @@
-import { DATA_CC_D_Filters } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Filters.js"
+import { DATA_LT_D_Filters } from "../../../../../../../utils/ORG/prp/lt/DATA_LT_D_Filters.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
 import { ORG_Filters_D_Range } from "../../../../../filters/desktop/ORG_Filters_D_Range.js"
-import { ORG_Filters_D_Range_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Range_Isolated.js"
 import { LT_D_Results_FilterListMainWrapper } from "./styles/LT_D_Results_FilterListMainWrapper.js"
 
 // const reducer = (state, action) => {
@@ -67,64 +66,16 @@ import { LT_D_Results_FilterListMainWrapper } from "./styles/LT_D_Results_Filter
 // const nameToCloseTheFilters = "ShowFiltersDesktop"
 
 const allMoreFilters = {
-  range: [
-    <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CC_D_Filters.distance.buttonName}
-      min={DATA_CC_D_Filters.distance.minimum}
-      max={DATA_CC_D_Filters.distance.maximum}
-      whichMeasure={DATA_CC_D_Filters.distance.whichMeasure}
-      addCharacter={DATA_CC_D_Filters.distance.addCharacter}
-    />,
-    <ORG_Filters_D_Range_Isolated
-      buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonOnMoreFilter}
-      min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
-      max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
-      whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
-      addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
-    />,
-    <ORG_Filters_D_Range_Isolated
-      buttonName={DATA_CC_D_Filters.price.buttonName}
-      min={DATA_CC_D_Filters.price.minimum}
-      max={DATA_CC_D_Filters.price.maximum}
-      whichMeasure={DATA_CC_D_Filters.price.whichMeasure}
-      addCharacter={DATA_CC_D_Filters.age.addCharacter}
-    />,
-  ],
-
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.skillLevel.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.skillLevel.categoriesToDisplay}
+      titleOnModal={DATA_LT_D_Filters.moreFilters.specialties.buttonName}
+      categoriesToDisplay={DATA_LT_D_Filters.moreFilters.specialties.categoriesToDisplay}
     />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.term.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.term.categoriesToDisplay}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.duration.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.duration.categoriesToDisplay}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.daysOfTheWeek.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.daysOfTheWeek.categoriesToDisplay}
-    />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.sessionType.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.sessionType}
-    />,
-
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
-    <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_CC_D_Filters.moreFilters.cost.buttonName}
-      categoriesToDisplay={DATA_CC_D_Filters.moreFilters.cost.categoriesToDisplay}
-    />,
+
   ],
 }
 
@@ -241,14 +192,21 @@ export const LT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
 
   return (
     <LT_D_Results_FilterListMainWrapper>
-      <ORG_Filters_D_Checkbox
-        buttonName={DATA_CC_D_Filters.skillLevel.buttonName}
-        categoriesToDisplay={DATA_CC_D_Filters.skillLevel.categoriesToDisplay}
+      <ORG_Filters_D_Range
+        buttonName={DATA_LT_D_Filters.priceRange.buttonName}
+        labelName={DATA_LT_D_Filters.priceRange.nameOnCard}
+        min={DATA_LT_D_Filters.priceRange.minimum}
+        max={DATA_LT_D_Filters.priceRange.maximum}
+        whichMeasure={DATA_LT_D_Filters.priceRange.whichMeasure}
+        addCharacter={DATA_LT_D_Filters.priceRange.addCharacter}
+        maxSpecialCharacter={DATA_LT_D_Filters.priceRange.maxSpecialCharacter}
+        addCharacterMaxSpecialCharacter={true}
       />
 
       <ORG_Filters_D_Range
         buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
-        min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
+        labelName={ORG_FILTERS_KEYS_D.agesServedRange.buttonOnMoreFilter}
+        min={ORG_FILTERS_DATA_D.agesServedRange.minimum + 3}
         max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
         whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
         addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
@@ -263,26 +221,33 @@ export const LT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
       />
 
       <ORG_Filters_D_Range
-        min={DATA_CC_D_Filters.price.minimum}
-        max={DATA_CC_D_Filters.price.maximum}
-        buttonName={DATA_CC_D_Filters.price.buttonName}
-        addCharacter={DATA_CC_D_Filters.price.addCharacter}
-        whichMeasure={DATA_CC_D_Filters.price.whichMeasure}
+        buttonName={DATA_LT_D_Filters.duration.buttonName}
+        min={DATA_LT_D_Filters.duration.minimum}
+        max={DATA_LT_D_Filters.duration.maximum}
+        addCharacter={DATA_LT_D_Filters.duration.addCharacter}
+        whichMeasure={DATA_LT_D_Filters.duration.whichMeasure}
+
+        minSpecialCharacter={DATA_LT_D_Filters.duration.minSpecialCharacter}
+        maxSpecialCharacter={DATA_LT_D_Filters.duration.maxSpecialCharacter}
+        addCharacterMaxSpecialCharacter={DATA_LT_D_Filters.duration.addCharacterMaxSpecialCharacter}
+        addCharacterMinSpecialCharacter={DATA_LT_D_Filters.duration.addCharacterMinSpecialCharacter}
+
+      />
+
+
+      <ORG_Filters_D_Checkbox
+        buttonName={DATA_LT_D_Filters.houseType.buttonName}
+        titleOnModal={DATA_LT_D_Filters.houseType.buttonOnCard}
+        categoriesToDisplay={DATA_LT_D_Filters.houseType.categoriesToDisplay}
       />
 
       <ORG_Filters_D_Checkbox
-        buttonName={ORG_FILTERS_KEYS_D.language.titleToShow}
-        categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
-      />
-
-      <ORG_Filters_D_Checkbox
-        buttonName={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
-        categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
+        buttonName={DATA_LT_D_Filters.accommodations.buttonName}
+        categoriesToDisplay={DATA_LT_D_Filters.accommodations.categoriesToDisplay}
       />
 
       <ORG_Filters_D_More
         allCheckboxes={allMoreFilters.checkbox}
-        allRanges={allMoreFilters.range}
       />
     </LT_D_Results_FilterListMainWrapper>
   )

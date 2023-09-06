@@ -83,6 +83,8 @@ export const ORG_Filters_D_Range_Isolated = ({
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
+
+
     minValRef.current = value
   }
 
@@ -102,13 +104,14 @@ export const ORG_Filters_D_Range_Isolated = ({
       setMaxValUI(addSpecialCharacter ? maxSpecialCharacter : formatedValue)
     }
 
-    if (whichMeasure === "weight") {
+    if (whichMeasure === "weight" && addCharacter === "toRight") {
       const inLbs = `+${formatedValue} lbs`
 
       const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
+
     maxValRef.current = value
   }
 
@@ -240,6 +243,7 @@ export const ORG_Filters_D_Range_Isolated = ({
           ) : (
             <>{maxValUI}</>
           )}
+
         </div>
       </div>
     </ORG_Filters_D_Range_IsolatedWrapper>

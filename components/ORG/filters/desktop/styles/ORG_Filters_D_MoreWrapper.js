@@ -46,7 +46,8 @@ export const ORG_Filters_D_MoreWrapper = styled.div`
     
     .checkboxesMoreFilters{
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
+      /* grid-template-columns: repeat(4, 1fr); */
+      grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
       column-gap:48px;
       row-gap:30px;
     }

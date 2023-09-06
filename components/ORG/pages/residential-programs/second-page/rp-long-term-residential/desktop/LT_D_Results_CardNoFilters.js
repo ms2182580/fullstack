@@ -102,7 +102,7 @@ export const LT_D_Results_CardNoFilters = () => {
                 <P
                   primary_hover
                   bold>
-                  Specialized programming:: <span>{DATA_LT_D_CardRight[renderThisFilter].specialization}</span>
+                  Specialized programming: <span>{DATA_LT_D_CardRight[renderThisFilter].specialization}</span>
                 </P>
               </div>
 

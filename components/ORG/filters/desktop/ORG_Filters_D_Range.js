@@ -12,11 +12,16 @@ export const ORG_Filters_D_Range = ({
   labelName = "" /* name to display on the card  */,
   max = 999,
   min = 0,
+  minSpecialCharacter,
+  maxSpecialCharacter,
+  addCharacterMinSpecialCharacter /* toLeft, toRight*/,
+  addCharacterMaxSpecialCharacter /* toLeft, toRight*/,
   // mustShowFiltersDesktop,
   // setTempState,
   shouldClear,
   // toUpdateFilters,
   whichMeasure = "" /* weight or any other character */,
+  debug = false,
 }) => {
   const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
 
@@ -59,19 +64,70 @@ export const ORG_Filters_D_Range = ({
     const value = Math.min(Number(event.target.value), maxVal)
     setMinVal(value)
 
-    const formatValue = new Intl.NumberFormat("en-US").format(value)
+    const formatedValue = new Intl.NumberFormat("en-US").format(value)
 
-    if (whichMeasure !== "weight") {
-      setMinValUI(formatValue)
-    } else {
-      const inLbs = `${formatValue} lbs`
+    if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
+      setMinValUI(formatedValue)
 
-      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(value * 0.45359237))
+      if (addCharacter === "toLeft") {
+        setMinValUI(`${whichMeasure} ${formatedValue}`)
+      }
 
-      const inKgs = `${valueInKg} kg`
+      if (addCharacter === "toRight") {
+        setMinValUI(`${formatedValue} ${whichMeasure}`)
+      }
+    }
+
+    if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
+      const shouldAddSpecialCharacter = value === Number(min)
+
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = shouldAddSpecialCharacter ? `${minSpecialCharacter} ${whichMeasure} ${formatedValue}` : `${whichMeasure} ${formatedValue}`
+
+        setMinValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMinSpecialCharacter === "toLeft") {
+          let toUpdateInState = shouldAddSpecialCharacter ? `${minSpecialCharacter} ${formatedValue} ${whichMeasure}` : `${formatedValue} ${whichMeasure} `
+
+          setMinValUI(toUpdateInState)
+        }
+
+        if (addCharacterMinSpecialCharacter === "toRight") {
+          let toUpdateInState = shouldAddSpecialCharacter ? `${whichMeasure} ${formatedValue} ${minSpecialCharacter}` : `${whichMeasure} ${formatedValue}`
+
+          setMinValUI(toUpdateInState)
+        }
+      }
+
+      // let finalSpecialCharacter = shouldAddSpecialCharacter && addCharacterMinSpecialCharacter ? `${whichMeasure} ${minSpecialCharacter}` : `${minSpecialCharacter}`
+
+      // setMinValUI(shouldAddSpecialCharacter ? finalSpecialCharacter : ` ${whichMeasure} ${formatedValue}`)
+    }
+
+    // if (whichMeasure !== "weight" && addCharacter === "toRight") {
+    //   setMinValUI(`${formatedValue} ${whichMeasure}`)
+    // }
+
+    if (whichMeasure === "weight") {
+      const inLbs = `${formatedValue} lbs`
+      const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
+
+    // if (whichMeasure !== "weight") {
+    //   setMinValUI(formatValue)
+    // } else {
+    //   const inLbs = `${formatValue} lbs`
+
+    //   const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(value * 0.45359237))
+
+    //   const inKgs = `${valueInKg} kg`
+
+    //   setMinValUI(`${inLbs} · ${inKgs}`)
+    // }
 
     minValRef.current = value
   }
@@ -80,21 +136,67 @@ export const ORG_Filters_D_Range = ({
     const value = Math.max(Number(event.target.value), minVal)
     setMaxVal(value)
 
-    const formatValue = new Intl.NumberFormat("en-US").format(value)
+    const formatedValue = new Intl.NumberFormat("en-US").format(value)
 
-    if (whichMeasure !== "weight") {
-      setMaxValUI(formatValue)
-    } else {
-      const addPlus = value === Number(max)
+    if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
+      if (addCharacter === "toLeft") {
+        setMaxValUI(`${whichMeasure} ${formatedValue}`)
+      }
 
-      const inLbs = `${addPlus ? "+" : ""}${formatValue} lbs`
+      if (addCharacter === "toRight") {
+        setMaxValUI(`${formatedValue} ${whichMeasure}`)
+      }
+    }
 
-      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(value * 0.45359237))
+    if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
+      const shouldAddSpecialCharacter = value === Number(max)
 
-      const inKgs = `${valueInKg} kg`
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = shouldAddSpecialCharacter ? `${maxSpecialCharacter} ${whichMeasure} ${formatedValue}` : `${whichMeasure} ${formatedValue}`
+
+        setMaxValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMaxSpecialCharacter === "toLeft") {
+          let toUpdateInState = shouldAddSpecialCharacter ? `${maxSpecialCharacter} ${formatedValue} ${whichMeasure}` : `${formatedValue} ${whichMeasure} `
+
+          setMaxValUI(toUpdateInState)
+        }
+
+        if (addCharacterMaxSpecialCharacter === "toRight") {
+          let toUpdateInState = shouldAddSpecialCharacter ? `${whichMeasure} ${formatedValue} ${maxSpecialCharacter}` : `${whichMeasure} ${formatedValue}`
+
+          setMaxValUI(toUpdateInState)
+        }
+
+        // let toUpdateInState = addSpecialCharacter ? `${whichMeasure} ${formatedValue} ${maxSpecialCharacter} ` : `${formatedValue} ${whichMeasure}`
+
+        // setMaxValUI(toUpdateInState)
+      }
+    }
+
+    if (whichMeasure === "weight") {
+      const inLbs = `+${formatedValue} lbs`
+
+      const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
+
+    // if (whichMeasure !== "weight") {
+    //   setMaxValUI(formatValue)
+    // } else {
+    //   const addPlus = value === Number(max)
+
+    //   const inLbs = `${addPlus ? "+" : ""}${formatValue} lbs`
+
+    //   const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(value * 0.45359237))
+
+    //   const inKgs = `${valueInKg} kg`
+
+    //   setMaxValUI(`${inLbs} · ${inKgs}`)
+    // }
 
     maxValRef.current = value
   }
@@ -109,35 +211,126 @@ export const ORG_Filters_D_Range = ({
   const updateToInitialValues = () => {
     setMinVal(min)
     minValRef.current = min
-    const formatValueMin = new Intl.NumberFormat("en-US").format(min)
+    const formatedValueMin = new Intl.NumberFormat("en-US").format(min)
 
-    if (whichMeasure !== "weight") {
-      setMinValUI(formatValueMin)
-    } else {
-      const inLbs = `${formatValueMin} lbs`
+    if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
+      if (addCharacter === "toLeft") {
+        setMinValUI(`${whichMeasure} ${formatedValueMin}`)
+      }
 
-      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(min * 0.45359237))
+      if (addCharacter === "toRight") {
+        setMinValUI(`${formatedValueMin} ${whichMeasure}`)
+      }
+    }
 
-      const inKgs = `${valueInKg} kg`
+    if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
+      // setMinValUI(minSpecialCharacter)
+
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = `${minSpecialCharacter} ${whichMeasure} ${formatedValueMin}`
+
+        setMinValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMinSpecialCharacter === "toLeft") {
+          let toUpdateInState = `${minSpecialCharacter} ${formatedValueMin} ${whichMeasure}`
+
+          setMinValUI(toUpdateInState)
+        }
+
+        if (addCharacterMinSpecialCharacter === "toRight") {
+          let toUpdateInState = `${whichMeasure} ${formatedValueMin} ${minSpecialCharacter}`
+
+          setMinValUI(toUpdateInState)
+        }
+      }
+    }
+
+    if (whichMeasure === "weight") {
+      const inLbs = `${formatedValueMin} lbs`
+
+      const inKgs = `${Math.round(new Intl.NumberFormat().format(min * 0.45359237))} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
 
+    // if (whichMeasure !== "weight") {
+    //   setMinValUI(formatValueMin)
+    // } else {
+    //   const inLbs = `${formatValueMin} lbs`
+
+    //   const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(min * 0.45359237))
+
+    //   const inKgs = `${valueInKg} kg`
+
+    //   setMinValUI(`${inLbs} · ${inKgs}`)
+    // }
+
     setMaxVal(max)
     maxValRef.current = max
-    const formatValueMax = new Intl.NumberFormat("en-US").format(max)
+    const formatedValueMax = new Intl.NumberFormat("en-US").format(max)
 
-    if (whichMeasure !== "weight") {
-      setMaxValUI(formatValueMax)
-    } else {
-      const inLbs = `+${formatValueMax} lbs`
+    if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
+      if (addCharacter === "toLeft") {
+        setMaxValUI(`${whichMeasure} ${formatedValueMax}`)
+      }
 
-      const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(max * 0.45359237))
+      if (addCharacter === "toRight") {
+        setMaxValUI(`${formatedValueMax} ${whichMeasure}`)
+      }
+    }
 
-      const inKgs = `${valueInKg} kg`
+    // if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
+    //   setMaxValUI(maxSpecialCharacter)
+    // }
+    if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
+      const value = Math.max(maxValRef.current, maxVal)
+      const shouldAddSpecialCharacter = value === Number(max)
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = shouldAddSpecialCharacter ? `${maxSpecialCharacter} ${whichMeasure} ${formatedValueMax}` : `${whichMeasure} ${formatedValueMax}`
+
+        setMaxValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMaxSpecialCharacter === "toLeft") {
+          let toUpdateInState = shouldAddSpecialCharacter ? `${maxSpecialCharacter} ${formatedValueMax} ${whichMeasure}` : `${formatedValueMax} ${whichMeasure} `
+
+          setMaxValUI(toUpdateInState)
+        }
+
+        if (addCharacterMaxSpecialCharacter === "toRight") {
+          let toUpdateInState = shouldAddSpecialCharacter ? `${whichMeasure} ${formatedValueMax} ${maxSpecialCharacter}` : `${whichMeasure} ${formatedValueMax}`
+
+          setMaxValUI(toUpdateInState)
+        }
+
+        // let toUpdateInState = shouldAddSpecialCharacter ? `${whichMeasure} ${formatedValueMax} ${maxSpecialCharacter} ` : `${formatedValueMax} ${whichMeasure}`
+
+        // setMaxValUI(toUpdateInState)
+      }
+    }
+
+    if (whichMeasure === "weight") {
+      const inLbs = `+${formatedValueMax} lbs`
+
+      const inKgs = `${Math.round(new Intl.NumberFormat().format(max * 0.45359237))} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
+
+    // if (whichMeasure !== "weight") {
+    //   setMaxValUI(formatValueMax)
+    // } else {
+    //   const inLbs = `+${formatValueMax} lbs`
+
+    //   const valueInKg = new Intl.NumberFormat("en-US").format(Math.round(max * 0.45359237))
+
+    //   const inKgs = `${valueInKg} kg`
+
+    //   setMaxValUI(`${inLbs} · ${inKgs}`)
+    // }
   }
 
   useEffect(() => {
@@ -202,7 +395,9 @@ export const ORG_Filters_D_Range = ({
 
         <div className="valuesToShow">
           <div>
-            {addCharacter === "toLeft" && whichMeasure !== "" ? (
+            {minValUI}
+
+            {/* {addCharacter === "toLeft" && whichMeasure !== "" ? (
               <>
                 {whichMeasure} {minValUI}
               </>
@@ -214,11 +409,13 @@ export const ORG_Filters_D_Range = ({
               <>{minValUI}</>
             ) : (
               <>{minValUI}</>
-            )}
+            )} */}
           </div>
           <span />
           <div>
-            {addCharacter === "toLeft" && whichMeasure !== "" ? (
+            {maxValUI}
+
+            {/* {addCharacter === "toLeft" && whichMeasure !== "" ? (
               <>
                 {whichMeasure} {maxValUI}
               </>
@@ -230,7 +427,7 @@ export const ORG_Filters_D_Range = ({
               <>{maxValUI}</>
             ) : (
               <>{maxValUI}</>
-            )}
+            )} */}
           </div>
         </div>
         <div>
