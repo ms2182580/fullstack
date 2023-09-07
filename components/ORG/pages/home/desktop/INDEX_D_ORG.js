@@ -172,7 +172,7 @@ export const INDEX_D_ORG = () => {
           />
         </div>
 
-        <ORG_D_SearchComponent toWhere="SpeechTherapists" />
+        <ORG_D_SearchComponent />
       </div>
 
       <div>

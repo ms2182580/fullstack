@@ -53,7 +53,13 @@ export const INDEX_D_CMPSSearchWrapper = styled.div`
       box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
 
-      display: grid;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      & > *:not(:first-child) {
+        padding-inline: 24px;
+      }
 
       & > :nth-child(1) {
         border-top-left-radius: 8px;
@@ -62,8 +68,7 @@ export const INDEX_D_CMPSSearchWrapper = styled.div`
         overflow: hidden;
         width: 100%;
 
-        justify-self: center;
-        margin: auto;
+        height: fit-content;
 
         position: relative;
 
@@ -74,16 +79,12 @@ export const INDEX_D_CMPSSearchWrapper = styled.div`
         }
       }
 
-      & > *:not(:first-child) {
-        padding-inline: 24px;
-      }
-
       & > :nth-child(2) {
         padding-top: 24px;
       }
 
-      & > :nth-child(2),
-      & > :nth-child(3) {
+      & > :nth-child(3),
+      & > :nth-child(4) {
         padding-bottom: 8px;
       }
 
@@ -93,10 +94,12 @@ export const INDEX_D_CMPSSearchWrapper = styled.div`
       }
 
       & > :last-child {
+        margin-top: auto;
         padding-bottom: 24px;
 
         & > :nth-child(1) {
           width: 100%;
+
           & > * {
             display: flex;
             align-items: center;

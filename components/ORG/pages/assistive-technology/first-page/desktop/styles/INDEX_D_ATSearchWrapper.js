@@ -57,6 +57,10 @@ export const INDEX_D_ATSearchWrapper = styled.div`
       & > :nth-child(1) {
         justify-self: center;
         margin: auto;
+        
+        height: fit-content;
+        
+        
       }
 
       & > *:not(:first-child) {
@@ -79,6 +83,7 @@ export const INDEX_D_ATSearchWrapper = styled.div`
 
       & > :last-child {
         padding-bottom: 24px;
+        align-self: end;
 
         & > :nth-child(1) {
           width: 100%;

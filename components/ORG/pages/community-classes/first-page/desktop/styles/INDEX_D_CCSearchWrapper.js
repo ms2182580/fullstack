@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { NEUTRALS } from '../../../../../../../assets/Colors'
+import styled from "styled-components"
+import { NEUTRALS } from "../../../../../../../assets/Colors"
 
 export const INDEX_D_CCSearchWrapper = styled.div`
   display: flex;
@@ -22,12 +22,12 @@ export const INDEX_D_CCSearchWrapper = styled.div`
 
     & > :nth-child(1) {
       grid-area: title;
-      
     }
 
     & > :nth-child(2) {
       grid-area: card1;
     }
+
     & > :nth-child(3) {
       grid-area: card2;
     }
@@ -52,19 +52,24 @@ export const INDEX_D_CCSearchWrapper = styled.div`
       box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
 
-      display: grid;
+      /* display: grid; */
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
       & > :nth-child(1) {
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
-        
-        overflow:hidden;
-        width:100%;
-        
-        
-        justify-self: center;
-        margin: auto;
-        
+
+        overflow: hidden;
+        width: 100%;
+
+        /* 
+        !FH
+        Change
+         */
+        height: fit-content;
+
         position: relative;
 
         & > :nth-child(2) {
@@ -72,8 +77,6 @@ export const INDEX_D_CCSearchWrapper = styled.div`
           right: 16px;
           bottom: 16px;
         }
-        
-        
       }
 
       & > *:not(:first-child) {
@@ -87,18 +90,16 @@ export const INDEX_D_CCSearchWrapper = styled.div`
       & > :nth-child(2),
       & > :nth-child(3) {
         padding-bottom: 8px;
-        
       }
 
       & > :nth-child(5),
       & > :nth-child(6) {
-        
         padding-bottom: 32px;
       }
 
       & > :last-child {
+        margin-top: auto;
         padding-bottom: 24px;
-
         & > :nth-child(1) {
           width: 100%;
           & > * {
@@ -111,9 +112,4 @@ export const INDEX_D_CCSearchWrapper = styled.div`
       }
     }
   }
-  
-
-  
-
-  
 `

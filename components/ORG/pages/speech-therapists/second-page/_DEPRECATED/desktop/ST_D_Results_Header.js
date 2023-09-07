@@ -1,6 +1,5 @@
 import { Breadcrumbs_D } from "../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ORG_D_SearchComponent } from "../../../../inputs/desktop/ORG_D_SearchComponent.js"
 import { ST_D_Results_HeaderWrapper } from "./styles/ST_D_Results_HeaderWrapper.js"
 
 export const ST_D_Results_Header = () => {
@@ -17,7 +16,7 @@ export const ST_D_Results_Header = () => {
           ["Speech Therapist", ""]
         ]}
       />
-      <ORG_D_SearchComponent />
+      {/* <ORG_D_SearchComponent /> */}
     </ST_D_Results_HeaderWrapper>
   )
 }

@@ -1,57 +1,56 @@
-import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
-import Link from "next/link"
+import { useEffect } from "react"
 
 const ORGUpdateGeolocation = (props) => {
-  
+
   const router = useRouter()
 
   useEffect(() => {
     // const getLocalStorage = localStorage.getItem("INCLUSIVE")
     // const {isLogged, matchRegex} = checkIfAnyLogged()
     // console.log('isLogged, matchRegex:', isLogged, matchRegex)
-    
+
     // *This work
     // const actualCity = props.actualLocation.city
     // const nearbyCities = props.nearbyCities.map(x => x.city)
-    
+
     // console.log('isLogged, matchRegex:', isLogged, matchRegex)
-    
+
     // if(isLogged){
     //   // const getLocalStorage = localStorage.getItem(matchRegex[0])
     //   // const addedLocations = JSON.parse(getLocalStorage)
-      
+
     //   // addedLocations.actualLocation = actualCity
-      
+
     //   // addedLocations.nearbyCities = nearbyCities
-      
+
     //   // localStorage.setItem(matchRegex, JSON.stringify(addedLocations))
     //   // router.push("/ORGSpeechTherapiests")
     // }
-    
+
     // const browserLocation = JSON.stringify([{actualLocation:actualCity, nearbyCities:nearbyCities}])
-    
+
     // localStorage.setItem("INCLUSIVE_BROWSER_LOCATION", browserLocation)
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     // console.log("props:", props)
     // const {city, country} = props.data
     // console.log('city, country:', city, country)
     // const newObj = {city, country}
     // console.log('newObj:', JSON.stringify(newObj))
     // localStorage.setItem("INCLUSIVE_GEOLOCATION", JSON.stringify(newObj))
-    
+
   }, [])
 
   return (
     <>
-      <h1>It looks like no one is logged. Visit <Link href="/signup">login (signup for now really)</Link></h1>
-      
+      {/* <h1>It looks like no one is logged. Visit <Link href="/signup">login (signup for now really)</Link></h1> */}
+
     </>
   )
 }

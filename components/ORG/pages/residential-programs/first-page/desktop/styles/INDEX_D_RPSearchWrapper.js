@@ -52,7 +52,10 @@ display: flex;
       box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
 
-      display: grid;
+      /* display: grid; */
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
       & > :nth-child(1) {
         border-top-left-radius: 8px;
@@ -61,8 +64,10 @@ display: flex;
         overflow: hidden;
         width: 100%;
 
-        justify-self: center;
-        margin: auto;
+        /* justify-self: center;
+        margin: auto; */
+        
+        height: fit-content;
         
         position: relative;
 
@@ -93,6 +98,7 @@ display: flex;
       }
 
       & > :last-child {
+        margin-top: auto;
         padding-bottom: 24px;
 
         & > :nth-child(1) {

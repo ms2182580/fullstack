@@ -2,6 +2,7 @@ import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import ORGDesktop_LoupeIcon from "../../../../assets/Icons/ORGDesktop_LoupeIcon.png"
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
+import { ORG_FILTERS_DATA_D } from "../../../../utils/ORG_FiltersCategories"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
@@ -15,7 +16,7 @@ const suggestionsKeywords = [
   "Art Camp"
 ]
 
-export const ORG_D_InputKeyword = () => {
+export const ORG_D_InputKeyword = ({ setTypedInputKeyword }) => {
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
   const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
   const inputRefKeyword = useRef()
@@ -26,6 +27,12 @@ export const ORG_D_InputKeyword = () => {
   useEffect(() => {
     setKeywordInput(keywordsContext)
   }, [keywordsContext])
+
+
+  useEffect(() => {
+    setTypedInputKeyword(keywordInput)
+  }, [keywordInput])
+
 
   const shouldTab = useShouldTab()
 
@@ -67,7 +74,7 @@ export const ORG_D_InputKeyword = () => {
           isFocus={isFocusKeyword}
           setIsHover={setIsHoveredKeyword}
           setIsFocus={setIsFocusKeyword}
-          suggestions={suggestionsKeywords}
+          suggestions={ORG_FILTERS_DATA_D.diagnosis}
           keywordClickByUser={keywordInput}
           setKeywordClickByUser={setKeywordInput}
           setKeywordClickByUserContext={setKeywordsContext}
