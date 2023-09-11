@@ -1,6 +1,9 @@
 import Image from "next/image.js"
-import { useState } from "react"
+import { useRouter } from "next/router.js"
+import { useEffect, useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
+import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { formatDataToThirdPage } from "../../../../../../../utils/ORG/formatDataToThirdPage.js"
 import { DATA_CC_D } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D.js"
 import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -16,6 +19,12 @@ import { Verified } from "../../../../../verified/Verified.js"
 import { CC_D_Results_CardWrapper } from "./styles/CC_D_Results_CardWrapper.js"
 
 export const CC_D_Results_CardNoFilters = () => {
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  useEffect(() => {
+    setThirdpageDataORG("")
+  }, [])
+
   /* 
   ? With this you move the user to the third page. Think how to make a context that can be used for every third page
   const router = useRouter()
@@ -26,7 +35,36 @@ export const CC_D_Results_CardNoFilters = () => {
     router.push(toWhere)
   } */
 
+  const router = useRouter()
+  // const handleMoveToThirdPage = (e, everySingleValue, filters) => {
+  //   setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
+  //   const toWhere = `${router.pathname}/IndividualProvider`
+  //   router.push(toWhere)
+  // }
+  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG) => {
+    // console.log('i:', i)
+
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right)
+
+    setThirdpageDataORG(allDataToThirdPage)
+
+    let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
+
+    const toWhere = `${router.pathname}/${thirdPageURL}`
+    // router.push(toWhere)
+    router.push(
+      {
+        pathname: toWhere,
+        query: { title: mainNameORG },
+      },
+      toWhere,
+    )
+  }
+
   const [cardData, setCardData] = useState(DATA_CC_D[0].slice(1))
+  const [mainNameORG, setMainNameORG] = useState(DATA_CC_D[0][0])
+  console.log('mainNameORG:', mainNameORG)
+
 
   return (
     <>
@@ -101,10 +139,34 @@ export const CC_D_Results_CardNoFilters = () => {
                   <ORG_D_Results_ViewProfileSvg />
                   <P white>View Profile</P>
                 </div>
-                <div>
-                  <ORG_D_Results_RequestConsultationSvg />
-                  <P white>See Availability</P>
-                </div>
+                {/* 
+                //? This was donde in this way to only render Karate Group Class
+                */}
+                {renderThisCard === 0 ? (
+                  <>
+                    <div
+                      onClick={(e) =>
+                        handleMoveToThirdPage(
+                          e,
+                          DATA_CC_D_CardRight[renderThisCard],
+                          DATA_CC_D_CardLeft[renderThisCard],
+                          cardData[renderThisCard],
+                          mainNameORG
+                        )
+                      }>
+                      <ORG_D_Results_RequestConsultationSvg />
+                      <P white>See Availability</P>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <ORG_D_Results_RequestConsultationSvg />
+                      <P white>See Availability</P>
+                    </div>
+                  </>
+                )}
+
                 <div>
                   <ORG_D_Results_AddtocareplanSvg />
 

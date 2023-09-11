@@ -1,34 +1,86 @@
 export const DATA_CC_D_CardRight = [
   {
+    mainName: "Karate Group Class",
     highlights: ["Free Trial", "Consistent Routine"],
     typeof: {
       title: "Type of Martial Arts",
-      content: ["Japanese Shotokan Karate"]
+      content: ["Japanese Shotokan Karate"],
     },
+    agesServed: "3-21+ Years Old",
 
-    agesServed: "3-21+ Years Old"
+    thirdPageData: {
+      folderName: "karate",
+      card: {
+        practiceAreas: "Sports/Fitness",
+        languages: "English",
+        operationHours: {
+          mondayFriday: "3PM - 7PM",
+          saturday: "9AM-1PM",
+          sunday: "10AM-1PM",
+        },
+        classDuration: "30 Minutes - 1 hour",
+        payment: "$50/class (package deals and private lessons)",
+        setting: "In Person",
+        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
+        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
+        AdditionalCredentials: [
+          "Masters of Business Administration",
+          "Martial Arts Teacher-Training Certification",
+          "Masters in Early Childhood Special Education",
+          "Board Certified Behavior Analyst (BCBA)",
+        ],
+        about:
+          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+      },
+
+      otherClassesFromTheBusiness: [
+        {
+          title: "Integrated Classes",
+          rating: {
+            number: "5",
+          },
+          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.”",
+        },
+        {
+          title: "Parent/Child & Sibling Class",
+          rating: {
+            number: "5",
+          },
+          review: "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.”",
+        },
+        {
+          title: "Afterschool Program at Churchill School and Center ",
+          rating: {
+            number: "5",
+          },
+          review: "“Karate class after school was fun with my friends. Our sensei taught us techniques, stances, and forms.”",
+        },
+      ],
+
+    },
   },
+
   {
     highlights: ["Free Class", "Occupational Therapist"],
     typeof: {
       title: "Type of Arts",
-      content: ["Media Lab and Fine Arts"]
+      content: ["Media Lab and Fine Arts"],
     },
-    agesServed: "All Ages Accepted"
+    agesServed: "All Ages Accepted",
   },
   {
     highlights: ["Free Class"],
     typeof: {
       title: "Sport Program",
-      content: ["Player and Team Cooperation"]
+      content: ["Player and Team Cooperation"],
     },
-    agesServed: "3-21+ Years Old"
+    agesServed: "3-21+ Years Old",
   },
 ]
 
-
 export const DATA_CC_D_CardLeft = [
   {
+    mainName: "Karate Group Class",
     phone: "(012) 345-6789",
     email: "info@kickingthespectrum.com",
     web: {

@@ -8,7 +8,6 @@ import {
 } from "../../../assets/Icons/index.js"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts.js"
 import { useCtx_ShowModal } from "../../../context/Ctx_ShowModal.js"
-import { InFrontModal_D_Wrapper } from "../../inFront_D/styles/InFrontModal_D_Wrapper.js"
 import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper.js"
 
@@ -86,7 +85,7 @@ export const Footer_D = () => {
         </span>
       </div>
 
-      <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+      {/* <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} /> */}
     </Footer_DWrapper>
   )
 }

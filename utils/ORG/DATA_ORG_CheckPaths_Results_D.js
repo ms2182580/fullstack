@@ -74,7 +74,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
       },
     },
     {
-      fullName: { "cc-community-classes": "Community Classes", "cc-fitness-classes": "Fitness Classes", "cc-art-classes": "Art Classes" },
+      fullName: {
+        "cc-community-classes": "Community Classes",
+        "cc-fitness-classes": "Fitness Classes",
+        "cc-art-classes": "Art Classes",
+      },
     },
   ],
   pdctr: [

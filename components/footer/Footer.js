@@ -1,5 +1,4 @@
 import { useRouter } from "next/router"
-import { InFrontModal_D_Wrapper } from "../../components/inFront_D/styles/InFrontModal_D_Wrapper"
 import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_ShowFiltersMobile } from "../../context/ORG_Ctx_ShowFiltersMobile_Provider"
@@ -76,7 +75,7 @@ export const Footer = () => {
         <FooterSocialmedia />
         <Caption>A public benefit company helping parents find the best services for their children.</Caption>
 
-        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
+        {/* <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} /> */}
       </FooterWrapper>
     </>
   )

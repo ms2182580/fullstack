@@ -1,0 +1,6 @@
+import styled from 'styled-components'
+
+export const CC_Karate_D_FAQSWrapper = styled.div`
+  border: 2px solid crimson;
+  
+`

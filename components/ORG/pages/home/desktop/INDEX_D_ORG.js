@@ -4,6 +4,7 @@ import { Fragment, useEffect, useState } from "react"
 import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "../../../../../assets/Icons/index.js"
 import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Search_Hero.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
+import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { DATA_ORG_D as DATA } from "../../../../../utils/ORG/DATA_ORG_D.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
@@ -148,6 +149,13 @@ export const INDEX_D_ORG = () => {
   const { query } = useRouter()
   // console.log('query:', query)/* Here we have the query from 404 page or index  */
 
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+
+  useEffect(() => {
+    setThirdpageDataORG("")
+  }, [])
+
   return (
     <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
       <div>
@@ -239,6 +247,7 @@ export const INDEX_D_ORG = () => {
 
         return null
       })}
+
     </INDEX_D_ORGWrapper>
   )
 }
