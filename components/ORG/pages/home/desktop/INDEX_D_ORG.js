@@ -151,7 +151,6 @@ export const INDEX_D_ORG = () => {
 
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-
   useEffect(() => {
     setThirdpageDataORG("")
   }, [])

@@ -8,7 +8,6 @@ import { H2, H3 } from "../../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../verified/Verified"
 import { ST_D_Detail_About } from "./ST_D_Detail_About"
-import { ST_D_Detail_AcceptingNewClients } from "./ST_D_Detail_AcceptingNewClients"
 import { ST_D_Detail_CardEmail } from "./ST_D_Detail_CardEmail"
 import { ST_D_Detail_CardLocation } from "./ST_D_Detail_CardLocation"
 import { ST_D_Detail_CardPhone } from "./ST_D_Detail_CardPhone"
@@ -122,8 +121,6 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
                   rating={STData.filters[0].rating}
                   reviews={STData.filters[0].reviews}
                 />
-
-                <ST_D_Detail_AcceptingNewClients />
 
                 <ST_D_Detail_ProviderDetailBox meetingFormat={STData.filters[0].meetingFormat} />
               </ST_D_Detail_MainCardRightFirstRow>

@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components"
-import { NEUTRALS } from "../../../../../../../assets/Colors"
+import { NEUTRALS } from "../../../../../../assets/Colors"
 
 const showElement = keyframes`
 0% {
@@ -25,7 +25,7 @@ const hideElement = keyframes`
 
 `
 
-export const ST_D_Detail_ShareModalWrapper = styled.div`
+export const ORG_D_Detail_ShareModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   position: fixed;
   top: 50%;

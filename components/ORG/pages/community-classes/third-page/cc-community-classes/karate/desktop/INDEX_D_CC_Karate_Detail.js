@@ -24,12 +24,18 @@ export const INDEX_D_CC_Karate_Detail = () => {
 
   const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
 
+  console.log('modalShowedCtx:', modalShowedCtx)
+
   return (
     <>
       <INDEX_D_CC_Karate_DetailWrapper>
-        <CC_Karate_D_Header thirdpageDataORG={thirdpageDataORG} />
+        <CC_Karate_D_Header
+          thirdpageDataORG={thirdpageDataORG}
+        />
 
-        <CC_Karate_D_MainCard thirdpageDataORG={thirdpageDataORG} />
+        <CC_Karate_D_MainCard
+          thirdpageDataORG={thirdpageDataORG}
+        />
 
         <CC_Karate_D_ContactUs />
 

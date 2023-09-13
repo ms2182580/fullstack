@@ -31,6 +31,14 @@ export const DATA_CC_D_CardRight = [
         ],
         about:
           "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+
+        highlights: [
+          "Free Trial",
+          "Consistent Routine",
+          "Stretching",
+          "Calisthenics",
+          "Punching/Kicking"
+        ]
       },
 
       otherClassesFromTheBusiness: [

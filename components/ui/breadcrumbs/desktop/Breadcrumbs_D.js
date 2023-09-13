@@ -32,14 +32,15 @@ export const Breadcrumbs_D = ({ whichDisplay = [] }) => {
               </LinkNoStyle>
             </Fragment>
           )
-        } else {
+        }
+
+        if (defaultRoute !== "") {
           return (
             <Fragment key={x[0]}>
               <ArrowRightSvg />
 
               <LinkNoStyle
                 href={defaultRoute}
-                className="isNavigable2"
                 tabIndex={shouldTab}>
                 <P>{x[0]}</P>
               </LinkNoStyle>

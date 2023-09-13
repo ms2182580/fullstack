@@ -169,8 +169,6 @@ export const ST_D_Detail_MainCardRightSecondRow = styled.div`
       & > :not(:first-child) {
         display: flex;
         flex-wrap: wrap;
-        /* gap:8px; */
-
         & > span {
           font-weight: 600;
           margin-right: 8px;

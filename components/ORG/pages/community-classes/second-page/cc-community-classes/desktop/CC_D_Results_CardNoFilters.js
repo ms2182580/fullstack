@@ -25,25 +25,9 @@ export const CC_D_Results_CardNoFilters = () => {
     setThirdpageDataORG("")
   }, [])
 
-  /* 
-  ? With this you move the user to the third page. Think how to make a context that can be used for every third page
-  const router = useRouter()
-  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
-  const goToDynamic = (e, everySingleValue, filters) => {
-    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
-    const toWhere = `${router.pathname}/IndividualProvider`
-    router.push(toWhere)
-  } */
 
   const router = useRouter()
-  // const handleMoveToThirdPage = (e, everySingleValue, filters) => {
-  //   setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
-  //   const toWhere = `${router.pathname}/IndividualProvider`
-  //   router.push(toWhere)
-  // }
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG) => {
-    // console.log('i:', i)
-
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right)
 
     setThirdpageDataORG(allDataToThirdPage)
@@ -51,7 +35,6 @@ export const CC_D_Results_CardNoFilters = () => {
     let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
 
     const toWhere = `${router.pathname}/${thirdPageURL}`
-    // router.push(toWhere)
     router.push(
       {
         pathname: toWhere,
@@ -63,8 +46,6 @@ export const CC_D_Results_CardNoFilters = () => {
 
   const [cardData, setCardData] = useState(DATA_CC_D[0].slice(1))
   const [mainNameORG, setMainNameORG] = useState(DATA_CC_D[0][0])
-  console.log('mainNameORG:', mainNameORG)
-
 
   return (
     <>

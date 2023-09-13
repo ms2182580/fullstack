@@ -10,7 +10,7 @@ import { H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { CC_Karate_D_HeaderWrapper } from "./styles/CC_Karate_D_HeaderWrapper.js"
 
 export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
-  console.dir("thirdpageDataORG:", thirdpageDataORG)
+
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
@@ -36,12 +36,12 @@ export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
         </li>
         <li>
           <H3>
-            <a href="#">Location</a>
+            <a href="#">Contact</a>
           </H3>
         </li>
         <li>
           <H3>
-            <a href="#Appointments">Appointments</a>
+            <a href="#">Information</a>
           </H3>
         </li>
         <li>
