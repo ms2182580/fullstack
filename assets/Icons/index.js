@@ -1552,3 +1552,21 @@ export const WriteAReviewDisableSvg = (props) => (
     </g>
   </svg>
 )
+
+export const SendMessageSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={25}
+    height={26}
+    fill="none"
+    {...props}
+  >
+    <path
+      stroke="#D3D6D7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2.263}
+      d="M20.11 3.79 7.538 15.688v5.95l3.43-3.57m-9.144-6.544L20.11 3.749l-3.2 17.294-15.086-9.519Z"
+    />
+  </svg>
+)
