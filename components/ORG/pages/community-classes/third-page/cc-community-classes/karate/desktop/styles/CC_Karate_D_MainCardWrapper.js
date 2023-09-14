@@ -27,15 +27,23 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
       border-top-left-radius: 8px;
       margin-bottom: 24px;
 
-      & > :nth-child(2) {
+      margin-bottom: 8px;
+      border-radius: 8px;
+      border: none;
+      
+      & > :nth-child(2){
+        cursor: pointer;
+        position: absolute;
+        left:16px;
+        top:16px;
+      }
+      
+
+      & > :nth-child(3) {
         position: absolute;
         bottom: 1rem;
         right: 1rem;
       }
-
-      margin-bottom: 8px;
-      border-radius: 8px;
-      border: none;
     }
 
     & > :nth-child(3) {
@@ -59,34 +67,53 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
     padding: 24px;
     position: relative;
 
-    & > :last-child {
-      display: flex;
-      justify-content: end;
-      gap: 44px;
-
-      & > :nth-child(2):hover {
-        cursor: pointer;
-        filter: brightness(90%);
-      }
-    }
-
     & > :nth-child(1) {
+      & > :nth-child(1) {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        cursor: pointer;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        & > :nth-child(1),
+        & > :nth-child(2) {
+          text-align: center;
+        }
+      }
+
+      & > :nth-child(2) {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      & > :nth-child(4) {
+        margin-bottom: 8px;
+      }
+
+      & > :nth-child(5) {
+        margin-bottom: 16px;
+      }
+
+      & > :last-child {
+        margin-bottom: 64px;
+      }
     }
 
     & > :nth-child(2) {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-areas: "leftPart rightPart";
-      margin-bottom: 32px;
-      gap: 16px;
+      grid-auto-flow: dense;
+      margin-bottom: 24px;
+      column-gap: clamp(20px, 1vw, 91px);
 
       & > :nth-child(1) {
         grid-area: leftPart;
-        & > * {
-          & > :not(:first-child) {
-            display: inline;
-          }
-        }
       }
 
       & > :nth-child(2) {
@@ -108,6 +135,29 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
             }
           }
         }
+      }
+
+      & > :nth-child(1),
+      & > :nth-child(2) {
+        & > * {
+          :not(:last-child) {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+
+    & > :nth-child(3) {
+    }
+
+    & > :last-child {
+      display: flex;
+      justify-content: end;
+      gap: 16px;
+
+      & > :nth-child(2):hover {
+        cursor: pointer;
+        filter: brightness(90%);
       }
     }
   }

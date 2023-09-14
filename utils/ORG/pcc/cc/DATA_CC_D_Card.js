@@ -14,9 +14,9 @@ export const DATA_CC_D_CardRight = [
         practiceAreas: "Sports/Fitness",
         languages: "English",
         operationHours: {
-          mondayFriday: "3PM - 7PM",
-          saturday: "9AM-1PM",
-          sunday: "10AM-1PM",
+          mondayFriday: "Mon-Fri: 3PM - 7PM",
+          saturday: "Saturday: 9AM-1PM",
+          sunday: "Sunday: 10AM-1PM",
         },
         classDuration: "30 Minutes - 1 hour",
         payment: "$50/class (package deals and private lessons)",

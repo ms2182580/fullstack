@@ -1,26 +1,26 @@
 import styled, { keyframes } from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-const showElement = keyframes`
+const hideElement = keyframes`
 0% {
-    transform: translateY(14px);
-    opacity:0;
+    transform: translateY(-20%);
+    opacity:1;
   }
   100% {
-    transform: translateY(0px);
-    opacity:1;
+    transform: translateY(20%);
+    opacity:0;
   }
   
 `
 
-const hideElement = keyframes`
+const showElement = keyframes`
 0% {
     transform: translateY(0px);
-    opacity:1;
+    opacity:0;
   }
   100% {
-    transform: translateY(14px);
-    opacity:0;
+    transform: translateY(-20%);
+    opacity:1;
   }
 
 `
@@ -35,11 +35,13 @@ export const ORG_D_Detail_ShareModalWrapper = styled.div`
   height: 600px;
   background-color: ${NEUTRALS.OFF_WHITE};
   z-index: 5;
+  
   cursor: default;
   padding: 48px 40px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  overflow:hidden;
 
   & > :nth-child(1) {
     position: absolute;
@@ -90,7 +92,7 @@ export const ORG_D_Detail_ShareModalWrapper = styled.div`
   }
 
   .shouldShowCopyLinkDefault {
-    display: flex;
+    display: ${({ shouldShowCopyLink }) => (shouldShowCopyLink === "shouldShowCopyLinkDefault" ? "none" : "flex")};
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -102,8 +104,10 @@ export const ORG_D_Detail_ShareModalWrapper = styled.div`
     border: 1px solid #151a26;
     opacity: 0;
     position: absolute;
-    bottom: 14px;
-
+    z-index:6;
+    
+    bottom: 0%;
+    
     & > p {
       color: #151a26;
     }

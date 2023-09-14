@@ -108,6 +108,7 @@ export const ST_D_Detail_MainCard = ({ STData }) => {
                     lastName={everySingleValue.name.last}
                   />
                 </div>
+
                 <div>
                   <H2 bold>
                     {everySingleValue.name.first} {everySingleValue.name.last} <span>CCC-SLP</span>

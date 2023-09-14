@@ -37,9 +37,10 @@ export const CC_Karate_D_HeaderWrapper = styled.div`
     }
 
     & > :nth-last-child(1) {
-      border: 2px solid ${PRIMARY.PRIMARY_CTA};
+      border: 2px solid ${NEUTRALS.LIGHT_GREY};
       border-radius: 8px;
-      cursor: pointer;
+      cursor: not-allowed;
+      
       & > div {
         display: flex;
         align-items: center;

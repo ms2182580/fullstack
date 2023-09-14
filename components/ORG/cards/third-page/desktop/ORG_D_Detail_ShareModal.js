@@ -20,15 +20,11 @@ import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_ShareModalButton } from "./ORG_D_Detail_ShareModalButton"
 import { ORG_D_Detail_ShareModalWrapper } from "./styles/ORG_D_Detail_ShareModalWrapper.js"
 
-export const ORG_D_Detail_ShareModal = ({
-  showModal,
-  handleHideModal,
-  picture,
-  name,
-  lastName,
-  showQRCode,
-  setShowQRCode
-}) => {
+const timeShowLinkCopied = 2200
+const howLongAnimation = 700
+
+
+export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, name, lastName, showQRCode, setShowQRCode }) => {
   const componentRef = useRef(null)
 
   useEffect(() => {
@@ -49,8 +45,23 @@ export const ORG_D_Detail_ShareModal = ({
     if (shouldShowCopyLink === "shouldShowCopyLinkTrue") {
       const timeoutId = setTimeout(() => {
         setShouldShowCopyLink("shouldShowCopyLinkFalse")
-      }, 2200)
-      return () => clearTimeout(timeoutId)
+      }, timeShowLinkCopied)
+
+      return () => {
+        clearTimeout(timeoutId)
+      }
+    }
+  }, [shouldShowCopyLink])
+
+  useEffect(() => {
+    if (shouldShowCopyLink === "shouldShowCopyLinkFalse") {
+      const timeoutId = setTimeout(() => {
+        setShouldShowCopyLink("shouldShowCopyLinkDefault")
+      }, howLongAnimation + 1)
+
+      return () => {
+        clearTimeout(timeoutId)
+      }
     }
   }, [shouldShowCopyLink])
 
@@ -58,7 +69,9 @@ export const ORG_D_Detail_ShareModal = ({
     <ORG_D_Detail_ShareModalWrapper
       ref={componentRef}
       showModal={showModal}
-      showQRCode={showQRCode}>
+      showQRCode={showQRCode}
+      shouldShowCopyLink={shouldShowCopyLink}
+    >
       <span onClick={handleHideModal}>
         <XSvg />
       </span>

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router.js"
 import { useState } from "react"
-import { NavBar_D_WriteAReviewSvg, SearchSVG } from "../../../../../../../../assets/Icons/index.js"
+import { SearchSVG, WriteAReviewDisableSvg } from "../../../../../../../../assets/Icons/index.js"
 import { checkRouteThirdPage } from "../../../../../../../../utils/ORG/checkRouteThirdPage.js"
 import { useCheckBreadcrumbs } from "../../../../../../../../utils/ORG/useCheckBreadcrumbs.js"
 import { capitalizeWords } from "../../../../../../../../utils/capitalizeWords.js"
@@ -64,10 +64,10 @@ export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
         <li>
           <div>
             {" "}
-            <NavBar_D_WriteAReviewSvg />
+            <WriteAReviewDisableSvg />
             <P
               semibold
-              primary_cta>
+              light_gray>
               Write a review
             </P>
           </div>

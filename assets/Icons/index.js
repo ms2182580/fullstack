@@ -1523,3 +1523,17 @@ export const ORG_HighlightPlusSvg = (props) => (
   </svg>
 )
 
+export const WriteAReviewDisableSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <g stroke="#D3D6D7" strokeLinejoin="round" strokeWidth={2}>
+      <path d="M2.664 21.744h4.243L22.463 6.188 18.22 1.945 2.664 17.502v4.242Z" />
+      <path strokeLinecap="round" d="m13.977 6.188 4.242 4.242" />
+    </g>
+  </svg>
+)
