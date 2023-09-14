@@ -20,8 +20,6 @@ import { Verified } from "../../../../../../verified/Verified.js"
 import { CC_Karate_D_MainCardWrapper } from "./styles/CC_Karate_D_MainCardWrapper.js"
 
 export const CC_Karate_D_MainCard = ({ thirdpageDataORG }) => {
-  console.dir("thirdpageDataORG:", thirdpageDataORG)
-
   return (
     <CC_Karate_D_MainCardWrapper>
       <div className="LEFT">

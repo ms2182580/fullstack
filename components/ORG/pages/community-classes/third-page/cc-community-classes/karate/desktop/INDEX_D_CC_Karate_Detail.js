@@ -11,6 +11,7 @@ import { CC_Karate_D_Header } from "./CC_Karate_D_Header.js"
 import { CC_Karate_D_MainCard } from "./CC_Karate_D_MainCard.js"
 import { CC_Karate_D_OtherClasses } from "./CC_Karate_D_OtherClasses.js"
 import { CC_Karate_D_Reviews } from "./CC_Karate_D_Reviews.js"
+import { CC_Karate_D_Schedule } from "./CC_Karate_D_Schedule.js"
 
 export const INDEX_D_CC_Karate_Detail = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
@@ -24,8 +25,6 @@ export const INDEX_D_CC_Karate_Detail = () => {
 
   const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
 
-  console.log('modalShowedCtx:', modalShowedCtx)
-
   return (
     <>
       <INDEX_D_CC_Karate_DetailWrapper>
@@ -36,6 +35,8 @@ export const INDEX_D_CC_Karate_Detail = () => {
         <CC_Karate_D_MainCard
           thirdpageDataORG={thirdpageDataORG}
         />
+
+        <CC_Karate_D_Schedule />
 
         <CC_Karate_D_ContactUs />
 

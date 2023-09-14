@@ -74,7 +74,7 @@ export const ST_D_Detail_MainCardRight = styled.div`
 export const ST_D_Detail_MainCardRightFirstRow = styled.div`
   margin-bottom: 40px;
 
-  & > :nth-child(1) {
+& > :nth-child(1) {
     position: absolute;
     right: 24px;
     top: 24px;

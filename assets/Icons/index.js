@@ -596,7 +596,22 @@ export const DownArrowSvg = (props) => (
     {...props}>
     <path
       d="M21.18 0 12 7.265 2.82 0 0 2.237l12 9.517 12-9.517L21.18 0Z"
-      fill="#00080B"
+
+    />
+  </svg>
+)
+
+export const DownArrowTinySvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={10}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#6C6C6C"
+      d="m16 1.933-8 8-8-8L1.867.066 8 6.2 14.133.066 16 1.933Z"
     />
   </svg>
 )
