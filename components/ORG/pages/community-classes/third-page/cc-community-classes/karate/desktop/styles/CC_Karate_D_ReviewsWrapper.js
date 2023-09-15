@@ -6,6 +6,8 @@ export const CC_Karate_D_ReviewsWrapper = styled.div`
   display: grid;
   
   
+  
+  
   & > :nth-child(2) {
     display: grid;
     grid-template-columns: 1fr 1fr;

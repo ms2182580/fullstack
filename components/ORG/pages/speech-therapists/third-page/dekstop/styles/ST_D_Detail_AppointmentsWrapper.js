@@ -7,7 +7,7 @@ export const ST_D_Detail_AppointmentsWrapper = styled.div`
   padding-top: 24px;
   padding-bottom: 83px;
   display: grid;
-
+  
   & > :nth-child(1) {
     margin-left: 41px;
     margin-bottom: 32px;

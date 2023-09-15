@@ -20,6 +20,9 @@ export const CC_Karate_D_ContactUsWrapper = styled.div`
     padding-top: 24px;
     padding-bottom: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   & > :nth-child(3),

@@ -16,6 +16,9 @@ export const CC_Karate_D_OtherClassesWrapper = styled.div`
     padding: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     margin-bottom: 66px;
+    
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   & > :nth-child(2) {
