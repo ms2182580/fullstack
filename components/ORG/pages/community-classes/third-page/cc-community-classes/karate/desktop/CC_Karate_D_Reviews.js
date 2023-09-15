@@ -23,27 +23,28 @@ export const CC_Karate_D_Reviews = ({ name = "no_Name", lastName = "no_Lastname"
     push(
       {
         pathname: "/404",
-        query: { toWhere: "ORG/speech-therapists/IndividualProvider" }
+        query: { toWhere: "ORG/speech-therapists/IndividualProvider" },
       },
-      "/404"
+      "/404",
     )
   }
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
-  const handleHideModal = () => {
+  const handleHideModal = (e) => {
     unlockScroll()
     setShowModal(false)
     setModalShowedCtx(false)
   }
 
   return (
-    <CC_Karate_D_ReviewsWrapper id="Reviews"
-    >
+    <CC_Karate_D_ReviewsWrapper id="Reviews">
       <CC_D_Detail_Reviews_Header
         rating={rating}
         reviews={reviews}
@@ -62,7 +63,10 @@ export const CC_Karate_D_Reviews = ({ name = "no_Name", lastName = "no_Lastname"
         ))}
       </div>
 
-      <span onClick={handleShowModal}>
+      <span
+        onClick={handleShowModal}
+        onKeyDown={handleShowModal}
+        tabIndex={0}>
         <P
           hyperlink_normal
           semibold>
@@ -81,8 +85,6 @@ export const CC_Karate_D_Reviews = ({ name = "no_Name", lastName = "no_Lastname"
           lastName={lastName}
         />
       )}
-
-
     </CC_Karate_D_ReviewsWrapper>
   )
 }

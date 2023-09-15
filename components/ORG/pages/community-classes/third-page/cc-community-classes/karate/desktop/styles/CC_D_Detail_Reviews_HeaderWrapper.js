@@ -22,7 +22,7 @@ export const CC_D_Detail_Reviews_HeaderWrapper = styled.div`
 
   & > :nth-child(1) {
     font-size: ${({ modal }) => (modal ? `36px` : `24px`)};
-    color: ${PRIMARY.PRIMARY_HOVER};
+    color: ${({ modal }) => (modal ? `${PRIMARY.PRIMARY_HOVER}` : ``)};
     font-weight: 600;
     margin-bottom: ${({ modal }) => (modal ? `36px` : `24px`)};
 

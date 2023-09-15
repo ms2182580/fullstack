@@ -23,9 +23,19 @@ export const CC_D_Detail_Review_Modal = ({
         handleHideModal()
       }
     }
+
+    function handleKeydown(e) {
+      if (e.code === "Escape") {
+        handleHideModal()
+      }
+    }
+
     document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleKeydown)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleKeydown)
+
     }
   }, [componentRef])
 

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 import {
+  FontsDesktopAndMobile,
   FontsHeadDesktop,
   FontsHeadMobile,
   LetterSpacingHeadDesktop,
@@ -10,6 +11,18 @@ import {
 } from "../../../assets/Fonts/HeadingValues"
 import { FontsWeights } from "../../../assets/Fonts/Weights"
 import { device } from "../../../assets/screenSizes/ScreenSizes.js"
+
+const SharedVariables = {
+  FontWeight_400: `${FontsWeights.REGULAR_400}`,
+  FontWeight_500: `${FontsWeights.MEDIUM_500}`,
+  FontWeight_600: `${FontsWeights.SEMIBOLD_600}`,
+  FontWeight_700: `${FontsWeights.BOLD_700}`,
+  FontWeight_800: `${FontsWeights.BOLDER_800}`,
+  FontSizeBody: `${FontsDesktopAndMobile.BODY_16}`,
+  FontSizeCaption: `${FontsDesktopAndMobile.CAPTION_12}`,
+  Underline: "underline",
+  LineThrough: "line-through"
+}
 
 export const D1 = styled.p`
   font-size: ${FontsHeadDesktop.DISPLAY_1};
@@ -84,7 +97,19 @@ export const H2 = styled.h2`
   @media (${device.laptop}) {
     font-size: ${FontsHeadMobile.HEADING_2};
     line-height: ${LineHeightHeadMobile.HEADING_2};
-    font-weight: ${(x) => (x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600)};
+    /* font-weight: ${(x) => (x.bold ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600)}; */
+    
+    font-weight: ${(x) =>
+    x.bolder
+      ? SharedVariables.FontWeight_800
+      : x.bold
+        ? SharedVariables.FontWeight_700
+        : x.semibold
+          ? SharedVariables.FontWeight_600
+          : x.medium
+            ? SharedVariables.FontWeight_500
+            : SharedVariables.FontWeight_400};
+            
     letter-spacing: ${LetterSpacingHeadMobile.HEADING_2};
     color: ${(x) =>
     x.logo
@@ -103,7 +128,15 @@ export const H3 = styled.h3`
   font-size: ${FontsHeadDesktop.HEADING_3};
   line-height: ${LineHeightHeadDesktop.HEADING_3};
   font-weight: ${(x) =>
-    x.bold ? FontsWeights.BOLDER_800 : x.medium ? FontsWeights.MEDIUM_500 : FontsWeights.SEMIBOLD_600};
+    x.bolder
+      ? SharedVariables.FontWeight_800
+      : x.bold
+        ? SharedVariables.FontWeight_700
+        : x.semibold
+          ? SharedVariables.FontWeight_600
+          : x.medium
+            ? SharedVariables.FontWeight_500
+            : SharedVariables.FontWeight_400};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_3};
   color: ${(x) =>
     x.logo
@@ -130,13 +163,15 @@ export const H4 = styled.h4`
   font-size: ${FontsHeadDesktop.HEADING_4};
   line-height: ${LineHeightHeadDesktop.HEADING_4};
   font-weight: ${(x) =>
-    x.bold
-      ? FontsWeights.BOLDER_800
-      : x.medium
-        ? FontsWeights.MEDIUM_500
-        : x.light
-          ? FontsWeights.REGULAR_400
-          : FontsWeights.SEMIBOLD_600};
+    x.bolder
+      ? SharedVariables.FontWeight_800
+      : x.bold
+        ? SharedVariables.FontWeight_700
+        : x.semibold
+          ? SharedVariables.FontWeight_600
+          : x.medium
+            ? SharedVariables.FontWeight_500
+            : SharedVariables.FontWeight_400};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_4};
   color: ${(x) =>
     x.logo

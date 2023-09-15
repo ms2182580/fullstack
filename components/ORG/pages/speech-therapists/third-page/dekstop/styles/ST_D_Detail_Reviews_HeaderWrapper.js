@@ -20,6 +20,7 @@ export const ST_D_Detail_Reviews_HeaderWrapper = styled.div`
     color: ${PRIMARY.PRIMARY_HOVER};
     font-weight: 600;
     margin-bottom: ${({ modal }) => (modal ? `36px` : ``)};
+    
   }
 
   & > :nth-child(2) {

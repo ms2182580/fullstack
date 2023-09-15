@@ -1,5 +1,5 @@
 import { Fragment, useRef, useState } from "react"
-import { ST_Detail_SearchFAQSSVG } from "../../../../../../assets/Icons/index.js"
+import { ORG_Detail_SearchFAQSSVG } from "../../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../../utils/ORG_ReviewsUsersName.js"
 import { ORG_ST_FAQS } from "../../../../../../utils/ORG_ST_FAQS_D.js"
@@ -61,7 +61,7 @@ export const ST_D_Detail_FAQS = ({
         id="FAQs"
         ref={toMoveTheView}>
         <div>
-          <ST_Detail_SearchFAQSSVG />
+          <ORG_Detail_SearchFAQSSVG />
           <input
             type="text"
             placeholder="Search in Q&A..."
@@ -102,6 +102,7 @@ export const ST_D_Detail_FAQS = ({
             }
           }
         })}
+
         {showAll === false ? (
           <>
             <P
@@ -124,6 +125,7 @@ export const ST_D_Detail_FAQS = ({
           </>
         )}
       </ST_D_Detail_FAQSWrapper>
+
       {showModal && (
         <ST_D_Detail_FAQS_Modal
           showModal={showModal}

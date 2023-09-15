@@ -25,7 +25,7 @@ export const INDEX_D_CC_Karate_Detail = () => {
 
   const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
 
-  console.dir('thirdpageDataORG:', thirdpageDataORG)
+  console.dir("thirdpageDataORG:", thirdpageDataORG)
 
   return (
     <>
@@ -48,15 +48,17 @@ export const INDEX_D_CC_Karate_Detail = () => {
         />
 
         <CC_Karate_D_FAQS
-          name={""}
+          name={thirdpageDataORG.card.leftPart.title}
           lastName={""}
-          locationCity={""}
-          locationStreetNumber={""}
-          locationStreetName={""}
-          locationState={""}
+          locationCity={thirdpageDataORG.card.leftPart.location.city}
+          locationStreetNumber={thirdpageDataORG.card.leftPart.location.streetNumber}
+          locationStreetName={thirdpageDataORG.card.leftPart.location.streetName}
+          locationState={thirdpageDataORG.card.leftPart.location.state}
         />
 
-        <CC_Karate_D_BreadcrumbsLastUpdated />
+        <CC_Karate_D_BreadcrumbsLastUpdated
+          thirdpageDataORG={thirdpageDataORG}
+        />
       </INDEX_D_CC_Karate_DetailWrapper>
 
       <InFrontModal_D_Wrapper

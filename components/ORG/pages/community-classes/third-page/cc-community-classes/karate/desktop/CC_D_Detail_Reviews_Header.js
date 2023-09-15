@@ -12,7 +12,7 @@ export const CC_D_Detail_Reviews_Header = ({ rating, reviews, isDetailModalDeskt
 
       {modal === false ? (
         <>
-          <H4 hover>Reviews</H4>
+          <H4>Reviews</H4>
         </>
       ) : (
         <>

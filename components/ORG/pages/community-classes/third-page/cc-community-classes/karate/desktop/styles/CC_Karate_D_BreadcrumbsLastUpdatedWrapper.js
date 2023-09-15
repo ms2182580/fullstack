@@ -1,6 +1,17 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const CC_Karate_D_BreadcrumbsLastUpdatedWrapper = styled.div`
-  border: 2px solid ;
-  
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+
+  & > * {
+    align-self: flex-start;
+  }
+
+  & > :last-child {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
 `

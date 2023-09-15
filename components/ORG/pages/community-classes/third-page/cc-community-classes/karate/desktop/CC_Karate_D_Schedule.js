@@ -9,7 +9,7 @@ export const CC_Karate_D_Schedule = () => {
     <CC_Karate_D_ScheduleWrapper>
       <div>
         <div>
-          <H3>Book a class below</H3>
+          <H3 semibold>Book a class below</H3>
           <P bold>Coming Soon!</P>
         </div>
         <ButtonSmall secondary>See Demo</ButtonSmall>

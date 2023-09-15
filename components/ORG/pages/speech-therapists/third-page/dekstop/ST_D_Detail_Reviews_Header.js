@@ -17,7 +17,7 @@ export const ST_D_Detail_Reviews_Header = ({
       modal={modal}>
       {modal === false ? (
         <>
-          <H4 hover>Reviews</H4>
+          <H4>Reviews</H4>
         </>
       ) : (
         <>

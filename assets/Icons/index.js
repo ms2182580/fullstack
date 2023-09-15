@@ -709,7 +709,7 @@ export const ORG_D_Detail_SearchReviewModalSVG = (props) => (
   </svg>
 )
 
-export const ST_Detail_SearchFAQSSVG = (props) => (
+export const ORG_Detail_SearchFAQSSVG = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={26}
@@ -1029,30 +1029,32 @@ export const AcceptingNewClientsSvg = (props) => (
   </svg>
 )
 
-export const ST_D_Detail_FAQS_VoteArroUpSvg = (props) => (
+export const ORG_D_Detail_FAQS_VoteArrowUpSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={21}
-    height={9}
+    width={25}
+    height={24}
     fill="none"
-    {...props}>
+    {...props}
+  >
     <path
       fill="#6E3A82"
-      d="m10.5 0 9.96 9H.54l9.96-9Z"
+      d="M22.697 19.857a2.283 2.283 0 0 1-2 1.143H4.302a2.283 2.283 0 0 1-2-1.143 2.204 2.204 0 0 1 0-2.223l8.197-14.238a2.32 2.32 0 0 1 4.003 0l8.198 14.238a2.204 2.204 0 0 1-.002 2.223Z"
     />
   </svg>
 )
 
-export const ST_D_Detail_FAQS_VoteArroDownSvg = (props) => (
+export const ORG_D_Detail_FAQS_VoteArrowDownSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={21}
-    height={9}
+    width={25}
+    height={24}
     fill="none"
-    {...props}>
+    {...props}
+  >
     <path
       fill="#6E3A82"
-      d="M10.5 9 .54 0h19.92L10.5 9Z"
+      d="M2.303 4.143a2.282 2.282 0 0 1 2-1.143h16.396a2.282 2.282 0 0 1 2 1.143 2.204 2.204 0 0 1 0 2.224l-8.197 14.237a2.32 2.32 0 0 1-4.003 0L2.301 6.367a2.204 2.204 0 0 1 .002-2.224Z"
     />
   </svg>
 )

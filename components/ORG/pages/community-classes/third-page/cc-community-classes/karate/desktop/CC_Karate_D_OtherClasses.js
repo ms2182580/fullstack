@@ -9,7 +9,7 @@ const tags = ["All", "Similar Price", "Same subject", "Similar class structure",
 export const CC_Karate_D_OtherClasses = ({ thirdpageDataORG }) => {
   return (
     <CC_Karate_D_OtherClassesWrapper>
-      <H4>User also viewed</H4>
+      <H4 semibold>User also viewed</H4>
       <div>
         {tags.map((xElement, index) => (
           <Fragment key={`${xElement}_${index}`}>

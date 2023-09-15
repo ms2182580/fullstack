@@ -5,9 +5,6 @@ export const CC_Karate_D_ReviewsWrapper = styled.div`
   border-radius: 8px;
   display: grid;
   
-  
-  
-  
   & > :nth-child(2) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -19,7 +16,7 @@ export const CC_Karate_D_ReviewsWrapper = styled.div`
   & > :nth-child(3) {
     margin-left: auto;
     margin-top: 24px;
-    margin-right: 16px;
+    margin-right: 32px;
     text-decoration: underline;
     cursor: pointer;
 
@@ -27,5 +24,7 @@ export const CC_Karate_D_ReviewsWrapper = styled.div`
       filter: brightness(120%);
     }
   }
+  
+  
   
 `

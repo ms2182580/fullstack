@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { ORG_D_Detail_FAQS_VoteArroUpSvg } from "../../../../../../assets/Icons/index.js"
-import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper.js"
+import { ORG_D_Detail_FAQS_VoteArrowDownSvg, ORG_D_Detail_FAQS_VoteArrowUpSvg } from "../../../../../../../../assets/Icons/index.js"
+import { P } from "../../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { CC_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/CC_D_Detail_FAQS_VoteQuestionsAnswersWrapper.js"
 
-export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, allUserNames, month }) => {
+export const CC_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, allUserNames, month }) => {
   const [votesState, setVotesState] = useState(Number(votes))
   const [alreadyVoteUp, setAlreadyVoteUp] = useState(false)
   const [alreadyVoteDown, setAlreadyVoteDown] = useState(false)
@@ -43,16 +43,18 @@ export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
   }
 
   return (
-    <ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper
+    <CC_D_Detail_FAQS_VoteQuestionsAnswersWrapper
       alreadyVoteUp={alreadyVoteUp}
       alreadyVoteDown={alreadyVoteDown}>
       <div>
         <span onClick={handleUpVote}>
-          <ORG_D_Detail_FAQS_VoteArroUpSvg />
+          <ORG_D_Detail_FAQS_VoteArrowUpSvg />
         </span>
 
-        <P semibold>{votesState}</P>
-        <P semibold>votes</P>
+        <div>
+          <P semibold>{votesState}</P>
+          <P semibold>votes</P>
+        </div>
 
         <span onClick={handleDownVote}>
           <ORG_D_Detail_FAQS_VoteArrowDownSvg />
@@ -61,8 +63,8 @@ export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
 
       <div>
         <div>
-          <P semibold>Q: </P>
-          <P semibold>{questions}</P>
+          <P bold>Q: </P>
+          <P bold>{questions}</P>
         </div>
         <div>
           {answers === "" ? (
@@ -75,14 +77,14 @@ export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
             </>
           ) : (
             <>
-              <P semibold>A:</P>
+              <P bold>A:</P>
               <div>
                 <P>{answers}</P>
                 <div>
                   <P
                     dark_gray
                     semibold>
-                    By {allUserNames} <span>{month} 2022</span>
+                    By {allUserNames} <span>{month} 2023</span>
                   </P>
                 </div>
               </div>
@@ -90,6 +92,6 @@ export const ST_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
           )}
         </div>
       </div>
-    </ST_D_Detail_FAQS_VoteQuestionsAnswersWrapper>
+    </CC_D_Detail_FAQS_VoteQuestionsAnswersWrapper>
   )
 }
