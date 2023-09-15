@@ -28,9 +28,9 @@ export const CC_Karate_D_MainCard = ({ thirdpageDataORG }) => {
             src={thirdpageDataORG.card.leftPart.photo.src}
             layout="responsive"
             objectFit="contain"
-
-            width="320"
-            height="167"
+            objectPosition={"0px 0px"}
+            width={1}
+            height={1}
             alt={`Image of ${thirdpageDataORG.card.leftPart.title}`}
           />
 

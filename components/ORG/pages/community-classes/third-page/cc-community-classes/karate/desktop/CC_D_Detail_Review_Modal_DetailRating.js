@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_D_Detail_Review_Modal_DetailRatingWrapper } from "./styles/ST_D_Detail_Review_Modal_DetailRatingWrapper.js"
+import { H3, H4 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
+import { CC_D_Detail_Review_Modal_DetailRatingWrapper } from "./styles/CC_D_Detail_Review_Modal_DetailRatingWrapper.js"
 
 let fullFillRatingFunc = (arr) => {
   let finalArr = []
@@ -27,11 +27,11 @@ const formatRatingFunc = (rating) => {
   return fullFillRatingFunc(finalArr)
 }
 
-export const ST_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
+export const CC_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
   const [formatRating, setFormatRating] = useState(formatRatingFunc(Number(rating)))
 
   return (
-    <ST_D_Detail_Review_Modal_DetailRatingWrapper>
+    <CC_D_Detail_Review_Modal_DetailRatingWrapper>
       <div>
         <H4>Appointment Scheduling</H4>
         <div>
@@ -84,6 +84,6 @@ export const ST_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
         </div>
         <H3>{formatRating.ammount[3]}.0</H3>
       </div>
-    </ST_D_Detail_Review_Modal_DetailRatingWrapper>
+    </CC_D_Detail_Review_Modal_DetailRatingWrapper>
   )
 }

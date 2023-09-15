@@ -145,7 +145,7 @@ export const CC_Karate_D_OtherClassesWrapper = styled.div`
   & > :nth-child(4) {
     margin-right: 84px;
     margin-left: auto;
-    width: fit-content;
+    width: fit-content;   
     
     color:${SEMANTICS.HYPERLINK_NORMAL};
     font-weight: 600;

@@ -10,7 +10,7 @@ import { ST_D_Detail_Reviews_Header } from "./ST_D_Detail_Reviews_Header"
 import { ST_D_Detail_Reviews_IndividualComponent } from "./ST_D_Detail_Reviews_IndividualComponent"
 import { ST_D_Detail_ReviewsWrapper } from "./styles/ST_D_Detail_ReviewsWrapper"
 
-export const ST_D_Detail_Reviews = ({ name, lastName, reviewsRef, rating, reviews, scrollMarginTopState }) => {
+export const ST_D_Detail_Reviews = ({ name, lastName, rating, reviews }) => {
   const [getReviews, setGetReviews] = useState(ORG_ST_Review(name, lastName))
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
 

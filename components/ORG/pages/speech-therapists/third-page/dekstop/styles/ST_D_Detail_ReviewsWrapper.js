@@ -6,11 +6,6 @@ export const ST_D_Detail_ReviewsWrapper = styled.div`
   padding: 32px 32px 40px 32px;
   display: grid;
 
-  /* & > :nth-child(2) {
-    margin-top: 32px;
-    border: 1px solid hsl(0, 0%, 88.6%);
-  } */
-
   & > :nth-child(2) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -29,18 +24,4 @@ export const ST_D_Detail_ReviewsWrapper = styled.div`
       filter: brightness(120%);
     }
   }
-
-  /* @media (${device.laptop}) {
-    padding: 16px;
-    border-radius: 0px;
-
-    & > :nth-child(1) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    & > :last-child {
-      margin-top: 16px;
-    }
-  } */
 `

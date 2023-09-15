@@ -695,7 +695,7 @@ export const SearchSVG = (props) => (
   </svg>
 )
 
-export const ST_D_Detail_SearchReviewModalSVG = (props) => (
+export const ORG_D_Detail_SearchReviewModalSVG = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={17}

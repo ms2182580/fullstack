@@ -31,6 +31,8 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
       border-radius: 8px;
       border: none;
       
+      height: 210px;
+      
       & > :nth-child(2){
         cursor: pointer;
         position: absolute;

@@ -25,6 +25,8 @@ export const INDEX_D_CC_Karate_Detail = () => {
 
   const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
 
+  console.dir('thirdpageDataORG:', thirdpageDataORG)
+
   return (
     <>
       <INDEX_D_CC_Karate_DetailWrapper>
@@ -39,10 +41,10 @@ export const INDEX_D_CC_Karate_Detail = () => {
         <CC_Karate_D_OtherClasses thirdpageDataORG={thirdpageDataORG} />
 
         <CC_Karate_D_Reviews
-          name={""}
+          name={thirdpageDataORG.card.leftPart.title}
           lastName={""}
-          rating={""}
-          reviews={""}
+          rating={thirdpageDataORG.card.leftPart.rating}
+          reviews={thirdpageDataORG.card.leftPart.reviews}
         />
 
         <CC_Karate_D_FAQS
