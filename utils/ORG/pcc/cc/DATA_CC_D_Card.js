@@ -1,3 +1,8 @@
+import ORG_Detail_CC_Karate_Photo_1 from '../../../../assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_1.png'
+import ORG_Detail_CC_Karate_Photo_2 from '../../../../assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_2.png'
+import ORG_Detail_CC_Karate_Photo_3 from '../../../../assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_3.png'
+
+
 export const DATA_CC_D_CardRight = [
   {
     mainName: "Karate Group Class",
@@ -48,6 +53,7 @@ export const DATA_CC_D_CardRight = [
             number: "5",
           },
           review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.”",
+          image: ORG_Detail_CC_Karate_Photo_1,
         },
         {
           title: "Parent/Child & Sibling Class",
@@ -55,6 +61,7 @@ export const DATA_CC_D_CardRight = [
             number: "5",
           },
           review: "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.”",
+          image: ORG_Detail_CC_Karate_Photo_2,
         },
         {
           title: "Afterschool Program at Churchill School and Center ",
@@ -62,6 +69,7 @@ export const DATA_CC_D_CardRight = [
             number: "5",
           },
           review: "“Karate class after school was fun with my friends. Our sensei taught us techniques, stances, and forms.”",
+          image: ORG_Detail_CC_Karate_Photo_3,
         },
       ],
 

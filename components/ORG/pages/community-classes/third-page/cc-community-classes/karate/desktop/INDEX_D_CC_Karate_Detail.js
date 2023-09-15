@@ -28,19 +28,15 @@ export const INDEX_D_CC_Karate_Detail = () => {
   return (
     <>
       <INDEX_D_CC_Karate_DetailWrapper>
-        <CC_Karate_D_Header
-          thirdpageDataORG={thirdpageDataORG}
-        />
+        <CC_Karate_D_Header thirdpageDataORG={thirdpageDataORG} />
 
-        <CC_Karate_D_MainCard
-          thirdpageDataORG={thirdpageDataORG}
-        />
+        <CC_Karate_D_MainCard thirdpageDataORG={thirdpageDataORG} />
 
         <CC_Karate_D_Schedule />
 
         <CC_Karate_D_ContactUs />
 
-        <CC_Karate_D_OtherClasses />
+        <CC_Karate_D_OtherClasses thirdpageDataORG={thirdpageDataORG} />
 
         <CC_Karate_D_Reviews
           name={""}
