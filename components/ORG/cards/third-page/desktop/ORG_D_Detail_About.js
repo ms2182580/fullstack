@@ -33,7 +33,7 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef }) => {
     <ORG_D_Detail_AboutWrapper
       id="About"
       ref={aboutRef}>
-      <H4 hover>About</H4>
+      <H4>About</H4>
       <div>
         <P>
           {isTruncated ? formattedText : aboutTextState}

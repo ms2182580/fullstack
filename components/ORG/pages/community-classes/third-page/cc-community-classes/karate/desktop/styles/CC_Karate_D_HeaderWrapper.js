@@ -18,6 +18,9 @@ export const CC_Karate_D_HeaderWrapper = styled.div`
           color: ${NEUTRALS.BLACK};
           cursor: pointer;
           border-bottom: 4px solid transparent;
+          
+          font-weight: 600;
+          
           &:hover {
             border-bottom: 4px solid ${PRIMARY.PRIMARY_HOVER};
           }

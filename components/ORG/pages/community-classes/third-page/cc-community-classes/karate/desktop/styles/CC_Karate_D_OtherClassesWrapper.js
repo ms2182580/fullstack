@@ -33,6 +33,7 @@ export const CC_Karate_D_OtherClassesWrapper = styled.div`
     gap: 24px;
 
     position: relative;
+    
 
     &:before {
       content: "";
@@ -73,6 +74,7 @@ export const CC_Karate_D_OtherClassesWrapper = styled.div`
   & > :nth-child(3) {
     margin-left: 24px;
     margin-right: 84px;
+    
 
     & > * {
       display: grid;
@@ -104,7 +106,9 @@ export const CC_Karate_D_OtherClassesWrapper = styled.div`
 
         & > :nth-child(3) {
           display: flex;
+          justify-content: space-between;
           gap: 56px;
+          
           & > :nth-child(1) {
             font-style: italic;
           }

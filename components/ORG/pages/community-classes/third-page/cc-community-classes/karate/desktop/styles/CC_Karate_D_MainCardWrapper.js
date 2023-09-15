@@ -68,7 +68,7 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
     background-color: ${NEUTRALS.OFF_WHITE};
     padding: 24px;
     position: relative;
-
+    
     & > :nth-child(1) {
       & > :nth-child(1) {
         position: absolute;
@@ -113,9 +113,15 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
       grid-auto-flow: dense;
       margin-bottom: 24px;
       column-gap: clamp(20px, 1vw, 91px);
-
+      
       & > :nth-child(1) {
         grid-area: leftPart;
+        
+        & > :nth-child(1){
+          & > :nth-child(2){
+            font-weight: 600;
+          }
+        }
       }
 
       & > :nth-child(2) {
@@ -142,8 +148,13 @@ export const CC_Karate_D_MainCardWrapper = styled.div`
       & > :nth-child(1),
       & > :nth-child(2) {
         & > * {
+          & > :nth-child(1){
+            font-weight: 700;
+          }
+          
           :not(:last-child) {
             margin-bottom: 24px;
+            
           }
         }
       }

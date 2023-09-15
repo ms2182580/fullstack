@@ -15,6 +15,7 @@ export const ST_D_Detail_Header = ({ STData }) => {
           <BackArrow /> <P semibold>Back</P>
         </LinkNoStyle>
       </span>{" "}
+
       <Breadcrumbs_D
         whichDisplay={[
           ["Resource Directory", "ORG"],
@@ -22,29 +23,30 @@ export const ST_D_Detail_Header = ({ STData }) => {
           [`${STData.data[0].name.first} ${STData.data[0].name.last}`, ""]
         ]}
       />
+
       <ul>
         <li>
-          <H3>
+          <H3 >
             <a href="#">About</a>
           </H3>
         </li>
         <li>
-          <H3>
+          <H3 >
             <a href="#">Location</a>
           </H3>
         </li>
         <li>
-          <H3>
+          <H3 >
             <a href="#Appointments">Appointments</a>
           </H3>
         </li>
         <li>
-          <H3>
+          <H3 >
             <a href="#Reviews">Reviews</a>
           </H3>
         </li>
         <li>
-          <H3>
+          <H3 >
             <a href="#FAQs">FAQs</a>
           </H3>
         </li>

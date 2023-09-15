@@ -10,7 +10,6 @@ import { H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { CC_Karate_D_HeaderWrapper } from "./styles/CC_Karate_D_HeaderWrapper.js"
 
 export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
-
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
