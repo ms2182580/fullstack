@@ -14,7 +14,7 @@ export const ORG_D_Detail_CardWebsite = ({ firstName, lastName }) => {
         <P bold>Website:</P>
       </div>
 
-      <P>{website}</P>
+      <P tabIndex={0}>{website}</P>
     </ORG_D_Detail_CardWebsiteWrapper>
   )
 }

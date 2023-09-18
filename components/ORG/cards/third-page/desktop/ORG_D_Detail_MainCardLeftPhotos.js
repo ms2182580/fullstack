@@ -10,10 +10,12 @@ export const ORG_D_Detail_MainCardLeftPhotos = ({ photo, name, lastName }) => {
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
   const handleHideModal = () => {
@@ -26,7 +28,8 @@ export const ORG_D_Detail_MainCardLeftPhotos = ({ photo, name, lastName }) => {
     <>
       <ORG_D_Detail_MainCardLeftPhotosWrapper
         onClick={handleShowModal}
-      >
+        onKeyDown={handleShowModal}
+        tabIndex={0}>
         <Caption hyperlink_normal>6 photos</Caption>
       </ORG_D_Detail_MainCardLeftPhotosWrapper>
       {showModal && (

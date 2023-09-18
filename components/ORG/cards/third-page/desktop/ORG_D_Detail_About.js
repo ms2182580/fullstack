@@ -17,10 +17,12 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef }) => {
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
   const handleHideModal = () => {
@@ -37,7 +39,14 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef }) => {
       <div>
         <P>
           {isTruncated ? formattedText : aboutTextState}
-          {isTruncated && <span onClick={handleShowModal}>show more</span>}
+          {isTruncated && (
+            <span
+              onClick={handleShowModal}
+              onKeyDown={handleShowModal}
+              tabIndex={0}>
+              show more
+            </span>
+          )}
         </P>
         {showModal && (
           <ORG_D_Detail_About_Modal

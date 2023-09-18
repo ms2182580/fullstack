@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../../../../../../../context/Ctx_ShowModal.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { InFrontModal_D_Wrapper } from "../../../../../../../inFront_D/styles/InFrontModal_D_Wrapper.js"
+import { ChatAI } from "../../../../../../ChatAI/index.js"
 import { CC_Karate_D_BreadcrumbsLastUpdated } from "./CC_Karate_D_BreadcrumbsLastUpdated.js"
 import { CC_Karate_D_ContactUs } from "./CC_Karate_D_ContactUs.js"
 import { CC_Karate_D_FAQS } from "./CC_Karate_D_FAQS.js"
@@ -23,12 +24,12 @@ export const INDEX_D_CC_Karate_Detail = () => {
     return
   }
 
-  const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
-
-  console.dir("thirdpageDataORG:", thirdpageDataORG)
+  const { modalShowedCtx } = useCtx_ShowModal()
 
   return (
     <>
+      <ChatAI />
+
       <INDEX_D_CC_Karate_DetailWrapper>
         <CC_Karate_D_Header thirdpageDataORG={thirdpageDataORG} />
 
@@ -56,9 +57,7 @@ export const INDEX_D_CC_Karate_Detail = () => {
           locationState={thirdpageDataORG.card.leftPart.location.state}
         />
 
-        <CC_Karate_D_BreadcrumbsLastUpdated
-          thirdpageDataORG={thirdpageDataORG}
-        />
+        <CC_Karate_D_BreadcrumbsLastUpdated thirdpageDataORG={thirdpageDataORG} />
       </INDEX_D_CC_Karate_DetailWrapper>
 
       <InFrontModal_D_Wrapper

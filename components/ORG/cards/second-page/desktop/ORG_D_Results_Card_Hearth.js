@@ -5,14 +5,18 @@ import { ORG_D_Results_Card_HearthWrapper } from "./styles/ORG_D_Results_Card_He
 export const ORG_D_Results_Card_Hearth = () => {
   const [clickOnHearth, setClickOnHearth] = useState(false)
 
-  const handleClickOnHearth = () => {
-    setClickOnHearth((prevState) => !prevState)
+  const handleClickOnHearth = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setClickOnHearth((prevState) => !prevState)
+    }
   }
 
   return (
     <ORG_D_Results_Card_HearthWrapper
       onClick={handleClickOnHearth}
-      clickOnHearth={clickOnHearth}>
+      onKeyDown={handleClickOnHearth}
+      clickOnHearth={clickOnHearth}
+      tabIndex={0}>
       <ORG_D_Results_HearthSvg />
     </ORG_D_Results_Card_HearthWrapper>
   )

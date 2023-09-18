@@ -10,7 +10,7 @@ export const ORG_D_Detail_CardEmail = ({ email }) => {
         <P bold>Email:</P>
       </div>
 
-      <P>{email}</P>
+      <P tabIndex={0}>{email}</P>
     </ORG_D_Detail_CardEmailWrapper>
   )
 }

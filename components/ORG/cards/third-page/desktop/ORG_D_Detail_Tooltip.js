@@ -1,8 +1,8 @@
 import { useRef, useState } from "react"
-import { QuestionTooltip_STSvg } from '../../../../../assets/Icons/index.js'
-import { useOutsideHide } from '../../../../../utils/useOutsideHide'
-import { P } from '../../../../ui/heading_body_text/DesktopMobileFonts'
-import { H3 } from '../../../../ui/heading_body_text/HeaderFonts'
+import { QuestionTooltip_STSvg } from "../../../../../assets/Icons/index.js"
+import { useOutsideHide } from "../../../../../utils/useOutsideHide"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_TooltipWrapper } from "./styles/ORG_D_Detail_TooltipWrapper.js"
 
 export const ORG_D_Detail_Tooltip = () => {
@@ -11,14 +11,25 @@ export const ORG_D_Detail_Tooltip = () => {
 
   useOutsideHide(componentRef, setShow)
 
-  const handleShow = () => {
-    setShow((prevState) => !prevState)
+  const handleShow = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setShow((prevState) => !prevState)
+    }
+  }
+
+  let checkIfLoseFocus = () => {
+    setShow(false)
+
   }
 
   return (
     <ORG_D_Detail_TooltipWrapper
       ref={componentRef}
-      onClick={handleShow}>
+      onClick={handleShow}
+      onKeyDown={handleShow}
+      tabIndex={0}
+      onBlur={checkIfLoseFocus}
+    >
       <span>
         <QuestionTooltip_STSvg />
       </span>

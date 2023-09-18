@@ -25,7 +25,7 @@ export const CC_D_Detail_Review_Modal = ({
     }
 
     function handleKeydown(e) {
-      if (e.code === "Escape") {
+      if (componentRef.current && e.code === "Escape") {
         handleHideModal()
       }
     }

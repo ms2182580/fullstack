@@ -4,10 +4,10 @@ import { ORG_D_Detail_CardPhoneWrapper } from "./styles/ORG_D_Detail_CardPhoneWr
 
 export const ORG_D_Detail_CardPhone = ({ phoneNumber }) => {
   return (
-    <ORG_D_Detail_CardPhoneWrapper>
+    <ORG_D_Detail_CardPhoneWrapper >
       <PhoneSvg />
       <P bold>Phone:</P>
-      <P>{phoneNumber}</P>
+      <P tabIndex={0}>{phoneNumber}</P>
     </ORG_D_Detail_CardPhoneWrapper>
   )
 }

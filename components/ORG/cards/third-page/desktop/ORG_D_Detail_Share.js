@@ -10,13 +10,18 @@ export const ORG_D_Detail_Share = ({ picture, name, lastName }) => {
   const [showModal, setShowModal] = useState(false)
   const [showQRCode, setShowQRCode] = useState(false)
 
+  // const componentRef = useRef(null)
+  // useOutsideHide(componentRef, setShowModal)
+
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
   const handleHideModal = () => {
@@ -28,8 +33,11 @@ export const ORG_D_Detail_Share = ({ picture, name, lastName }) => {
 
   return (
     <>
-      <ORG_D_Detail_ShareWrapper onClick={handleShowModal}>
-        <ShareSvg tabIndex={0} />
+      <ORG_D_Detail_ShareWrapper
+        onClick={handleShowModal}
+        onKeyDown={handleShowModal}
+        tabIndex={0}>
+        <ShareSvg />
         <P primary_hover>Share</P>
       </ORG_D_Detail_ShareWrapper>
 
@@ -44,7 +52,6 @@ export const ORG_D_Detail_Share = ({ picture, name, lastName }) => {
           setShowQRCode={setShowQRCode}
         />
       )}
-
     </>
   )
 }

@@ -23,9 +23,11 @@ import { ORG_D_Detail_ShareModalWrapper } from "./styles/ORG_D_Detail_ShareModal
 const timeShowLinkCopied = 2200
 const howLongAnimation = 700
 
-
 export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, name, lastName, showQRCode, setShowQRCode }) => {
   const componentRef = useRef(null)
+
+  // useOutsideHide(componentRef, setShow)
+
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -33,9 +35,18 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
         handleHideModal()
       }
     }
+
+    function handleKeydown(e) {
+      if (componentRef.current && e.code === "Escape") {
+        handleHideModal()
+      }
+    }
+
     document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleKeydown)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleKeydown)
     }
   }, [componentRef])
 
@@ -70,8 +81,7 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
       ref={componentRef}
       showModal={showModal}
       showQRCode={showQRCode}
-      shouldShowCopyLink={shouldShowCopyLink}
-    >
+      shouldShowCopyLink={shouldShowCopyLink}>
       <span onClick={handleHideModal}>
         <XSvg />
       </span>

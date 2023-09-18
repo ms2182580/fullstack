@@ -15,9 +15,17 @@ export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModa
         handleHideModal()
       }
     }
+    function handleKeydown(e) {
+      if (componentRef.current && e.code === "Escape") {
+        handleHideModal()
+      }
+    }
+
     document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleKeydown)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleKeydown)
     }
   }, [componentRef])
 
