@@ -9,7 +9,13 @@ export const ChatAI = () => {
 
   let handleShowChat = (e) => {
     if (e.type === "click" || e.code === "F1" || e.code === "Enter" || e.key === "Enter") {
-      setShowChat((prevState) => !prevState)
+      setShowChat(true)
+    }
+  }
+
+  let handleCloseChat = (e) => {
+    if (e.type === "dblclick") {
+      setShowChat(false)
     }
   }
 
@@ -42,7 +48,9 @@ export const ChatAI = () => {
   return (
     <ChatAIWrapper>
       <span
+
         onClick={handleShowChat}
+        onDoubleClick={handleCloseChat}
         onKeyDown={handleShowChat}
         tabIndex={0}
         ref={refToChat}>
