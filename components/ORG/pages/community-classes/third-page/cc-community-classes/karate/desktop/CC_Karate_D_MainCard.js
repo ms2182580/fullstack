@@ -1,4 +1,5 @@
 import Image from "next/image.js"
+import { useRouter } from "next/router"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "../../../../../../../../assets/Icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
 import { ORG_D_Detail_MainCardLeftPhotos } from "../../../../../../../../components/ORG/cards/third-page/desktop/ORG_D_Detail_MainCardLeftPhotos.js"
 import { ButtonSmall } from "../../../../../../../ui/buttons/general/index.js"
@@ -20,6 +21,13 @@ import { Verified } from "../../../../../../verified/Verified.js"
 import { CC_Karate_D_MainCardWrapper } from "./styles/CC_Karate_D_MainCardWrapper.js"
 
 export const CC_Karate_D_MainCard = ({ thirdpageDataORG }) => {
+  const { push } = useRouter()
+  let handlePushTo404 = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      push("/404")
+    }
+  }
+
   return (
     <CC_Karate_D_MainCardWrapper>
       <div className="LEFT">
@@ -157,7 +165,10 @@ export const CC_Karate_D_MainCard = ({ thirdpageDataORG }) => {
         />
 
         <div>
-          <span>
+          <span
+            onClick={handlePushTo404}
+            onKeyDown={handlePushTo404}
+            tabIndex={0}>
             <ButtonSmall>Add to Care Plan</ButtonSmall>
           </span>
 

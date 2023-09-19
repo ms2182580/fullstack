@@ -1,3 +1,4 @@
+import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../../../../assets/Icons/index.js"
 import { capitalizeWords } from "../../../../../../../../utils/capitalizeWords.js"
@@ -28,6 +29,13 @@ export const CC_Karate_D_ContactUs = () => {
   let handleTextareaValueState = (e) => {
     if (e.target.value.length <= maxCharacterTextarea) {
       setTextareaValueState(e.target.value)
+    }
+  }
+
+  const { push } = useRouter()
+  let handlePushTo404 = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      push("/404")
     }
   }
 
@@ -97,7 +105,11 @@ export const CC_Karate_D_ContactUs = () => {
         <button tabIndex={-1}>
           <p>Send Message</p> <SendMessageSvg />
         </button>
-        <ButtonSmall>Find out if we’re a good fit for you</ButtonSmall>
+        <span onClick={handlePushTo404}
+          onKeyDown={handlePushTo404}
+          tabIndex={0}>
+          <ButtonSmall>Find out if we’re a good fit for you</ButtonSmall>
+        </span>
       </div>
     </CC_Karate_D_ContactUsWrapper>
   )
