@@ -6,7 +6,7 @@ import { CC_Karate_D_ScheduleWrapper } from "./styles/CC_Karate_D_ScheduleWrappe
 
 export const CC_Karate_D_Schedule = () => {
   return (
-    <CC_Karate_D_ScheduleWrapper>
+    <CC_Karate_D_ScheduleWrapper >
       <div>
         <div>
           <H3 semibold>Book a class below</H3>

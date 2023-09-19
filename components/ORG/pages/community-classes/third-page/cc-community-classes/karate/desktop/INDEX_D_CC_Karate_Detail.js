@@ -27,8 +27,6 @@ export const INDEX_D_CC_Karate_Detail = () => {
 
   return (
     <>
-
-
       <INDEX_D_CC_Karate_DetailWrapper>
         <div>
           <CC_Karate_D_Header thirdpageDataORG={thirdpageDataORG} />

@@ -29,7 +29,7 @@ export const CC_Karate_D_MainCard = ({ thirdpageDataORG }) => {
   }
 
   return (
-    <CC_Karate_D_MainCardWrapper>
+    <CC_Karate_D_MainCardWrapper id="About">
       <div className="LEFT">
         <div>
           <Image

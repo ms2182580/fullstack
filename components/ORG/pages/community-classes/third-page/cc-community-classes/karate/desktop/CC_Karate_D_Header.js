@@ -30,17 +30,17 @@ export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
       <ul>
         <li>
           <H3>
-            <a href="#">About</a>
+            <a href="#About">About</a>
           </H3>
         </li>
         <li>
           <H3>
-            <a href="#">Contact</a>
+            <a href="#Contact">Contact</a>
           </H3>
         </li>
         <li>
           <H3>
-            <a href="#">Information</a>
+            <a href="#Information">Information</a>
           </H3>
         </li>
         <li>

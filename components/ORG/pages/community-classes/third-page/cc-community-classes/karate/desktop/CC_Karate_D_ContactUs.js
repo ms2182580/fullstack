@@ -40,7 +40,7 @@ export const CC_Karate_D_ContactUs = () => {
   }
 
   return (
-    <CC_Karate_D_ContactUsWrapper>
+    <CC_Karate_D_ContactUsWrapper id="Contact">
       <H3 semibold> Contact Us</H3>
       <p>Ready to work together? Let’s connect. </p>
       <div>
