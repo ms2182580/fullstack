@@ -12,7 +12,7 @@ const SharedVariables = {
   FontSizeBody: `${FontsDesktopAndMobile.BODY_16}`,
   FontSizeCaption: `${FontsDesktopAndMobile.CAPTION_12}`,
   Underline: "underline",
-  LineThrough: "line-through"
+  LineThrough: "line-through",
 }
 
 export const P = styled.p`
@@ -28,6 +28,7 @@ export const P = styled.p`
           : x.medium
             ? SharedVariables.FontWeight_500
             : SharedVariables.FontWeight_400};
+
   text-decoration: ${(x) =>
     x.underline
       ? SharedVariables.Underline
@@ -36,6 +37,7 @@ export const P = styled.p`
         : x.linethrough && x.underline
           ? SharedVariables.Underline && SharedVariables.LineThrough
           : null};
+      
   color: ${(x) =>
     x.dark_gray
       ? NEUTRALS.DARK_GREY
@@ -60,10 +62,16 @@ export const Caption = styled.span`
   font-size: ${SharedVariables.FontSizeCaption};
   font-weight: ${(x) =>
     x.bolder
-      ? SharedVariables.FontWeight_700
+      ? SharedVariables.FontWeight_800
       : x.bold
-        ? SharedVariables.FontWeight_600
-        : SharedVariables.FontWeight_400};
+        ? SharedVariables.FontWeight_700
+        : x.semibold
+          ? SharedVariables.FontWeight_600
+          : x.medium
+            ? SharedVariables.FontWeight_500
+            : SharedVariables.FontWeight_400};
+  
+  
   text-decoration: ${(x) =>
     x.underline
       ? SharedVariables.Underline

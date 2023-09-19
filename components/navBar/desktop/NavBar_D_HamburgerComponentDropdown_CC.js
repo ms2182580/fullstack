@@ -16,7 +16,7 @@ export const NavBar_D_HamburgerComponentDropdown_CC = () => {
     <NavBar_D_HamburgerComponentDropdown_CCWrapper>
       {COMMUNITY_CLASSES_NESTED.map((x, i) => (
         <>
-          <H4 key={`${x.name}_${i}`}>{x.name}</H4>
+          <H4 normal key={`${x.name}_${i}`}>{x.name}</H4>
         </>
       ))}
     </NavBar_D_HamburgerComponentDropdown_CCWrapper>

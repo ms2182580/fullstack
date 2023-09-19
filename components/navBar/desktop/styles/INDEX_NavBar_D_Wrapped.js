@@ -10,8 +10,6 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
 
   padding-top: 28px;
   
-  
-  
   & > :nth-child(1) {
     display: flex;
     align-items: center;
@@ -23,6 +21,11 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
     & > :nth-child(1) {
       margin-right: 50px;
       cursor: pointer;
+      
+      & > :nth-child(1){
+        color:${PRIMARY.PRIMARY_LOGO}
+      }
+      
     }
 
     & > :nth-child(2) {

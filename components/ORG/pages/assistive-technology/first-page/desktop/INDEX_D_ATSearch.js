@@ -55,8 +55,8 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false }) => {
                           alt={obj.title}
                         />
                       </div>
-                      <H3>{obj.title}</H3>
-                      <H4>{obj.subtitle}</H4>
+                      <H3 bolder>{obj.title}</H3>
+                      <H4 semibold>{obj.subtitle}</H4>
                       <StarsRatingReview_D
                         rating={obj.rating}
                         reviews={obj.reviews}

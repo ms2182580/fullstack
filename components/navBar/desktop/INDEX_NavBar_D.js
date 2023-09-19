@@ -58,12 +58,7 @@ export const INDEX_NavBar_D = () => {
           onKeyDown={handleNavigateHome}
           onClick={handleNavigateHome}>
           {" "}
-          <H2
-            bold
-            logo>
-            {" "}
-            INCLUSIVE
-          </H2>
+          <H2 bold> INCLUSIVE</H2>
         </span>
         <NavBar_D_SearchComponent />
         <NavBar_D_SignComponent />

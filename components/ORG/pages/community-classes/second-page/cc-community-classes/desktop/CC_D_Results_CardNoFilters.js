@@ -34,6 +34,8 @@ export const CC_D_Results_CardNoFilters = () => {
 
     let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
 
+    // console.log('thirdPageURL:', thirdPageURL)
+
     const toWhere = `${router.pathname}/${thirdPageURL}`
     router.push(
       {

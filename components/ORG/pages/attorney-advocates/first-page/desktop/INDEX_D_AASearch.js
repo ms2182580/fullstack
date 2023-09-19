@@ -65,7 +65,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
                           />
                           <Verified />
                         </div>
-                        <H3>{obj.title}</H3>
+                        <H3 bolder>{obj.title}</H3>
                         <H4>{obj.subtitle}</H4>
                         <P
                           medium
@@ -95,7 +95,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
                             layout="responsive"
                           />
                         </div>
-                        <H3>{obj.title}</H3>
+                        <H3 bolder>{obj.title}</H3>
                         <H4>{obj.subtitle}</H4>
                         <P
                           medium

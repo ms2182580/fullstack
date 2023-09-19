@@ -12,75 +12,6 @@ import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/Sta
 import { Verified } from "../../../../verified/Verified"
 import { INDEX_D_STSearchWrapper } from "./styles/INDEX_D_STSearchWrapper"
 
-// const DATA = [
-//   [
-//     "Popular Speech Language Pathologists",
-//     {
-//       imageToUse: ORG_ST1,
-//       title: "Mary Jane, CCC -SLP",
-//       subtitle: "Speech Language Pathologist",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Excellent manner. Mary Jane was very generous with her time and shared... ",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_ST2,
-//       title: "John Lowry, CCC -SLP",
-//       subtitle: "Speech Language Pathologist",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Excellent manner. Dr. Lowry was very generous with his time and shared... ",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_ST3,
-//       title: "Sarah Smith, CCC -SLP",
-//       subtitle: "Speech Language Pathologist",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Excellent manner. Dr. Smith was very generous with her time and shared... ",
-//       goToThirdPage: "",
-//     },
-//   ],
-//   [
-//     "Popular Occupational Therapists",
-//     {
-//       imageToUse: ORG_ST4,
-//       title: "Peter Abidi, CCC -SLP",
-//       subtitle: "Occupational Therapist",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Excellent manner. Dr. Abidi was very generous with his time and shared... ",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_ST2,
-//       title: "John Lowry, CCC -SLP",
-//       subtitle: "Occupational Therapist",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Excellent manner. Dr. Lowry was very generous with his time and shared... ",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_ST3,
-//       title: "Sarah Smith, CCC -SLP",
-//       subtitle: "Occupational Therapist",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Excellent manner. Dr. Smith was very generous with her time and shared... ",
-//       goToThirdPage: "",
-//     },
-//   ],
-// ]
-
 export const INDEX_D_STSearch = ({ positionInArray, isSelected = false }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
@@ -131,7 +62,7 @@ export const INDEX_D_STSearch = ({ positionInArray, isSelected = false }) => {
                         />
                         <Verified />
                       </div>
-                      <H3>{obj.title}</H3>
+                      <H3 bolder>{obj.title}</H3>
                       <H4>{obj.subtitle}</H4>
                       <P
                         medium

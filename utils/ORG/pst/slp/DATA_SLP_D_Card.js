@@ -6,6 +6,7 @@ export const DATA_SLP_D_CardRight = [
     yearsInPractice: "5",
     agesServed: "5-21 years old",
     languages: "English, Spanish, French",
+
   },
   {
     highlights: ["Free Consultation"],

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { InFrontModal_D_Wrapper } from '../../../../../../components/inFront_D/styles/InFrontModal_D_Wrapper'
 import { useCtx_ShowModal } from '../../../../../../context/Ctx_ShowModal'
-import { useORG_Ctx_STDataThirdpage_D } from '../../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider'
+import { useORG_Ctx_D_ThirdpageData } from "../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { ST_D_Detail_Appointments } from "./ST_D_Detail_Appointments"
 import { ST_D_Detail_FAQS } from "./ST_D_Detail_FAQS"
 import { ST_D_Detail_Header } from "./ST_D_Detail_Header"
@@ -12,9 +12,9 @@ import { INDEX_D_STDetailWrapper } from "./styles/INDEX_D_STDetailWrapper"
 
 export const INDEX_D_STDetail = () => {
   const route = useRouter()
-  const { STDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
+  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-  if (STDataThirdpage_D === "") {
+  if (thirdpageDataORG === "") {
     if (route.isReady) route.push("/ORG/pst/st-speech-language-pathologists")
 
     return

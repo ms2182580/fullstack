@@ -12,75 +12,6 @@ import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_MHSSSearchWrapper } from "./styles/INDEX_D_MHSSSearchWrapper.js"
 
-// const DATA = [
-//   [
-//     "Popular Mental Health Services",
-//     {
-//       imageToUse: ORG_MHSS1,
-//       title: "Kristie Leung, LMHC",
-//       subtitle: "Psychotherapist",
-//       city: "New York, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Kristie was super nice and helpful. I saw improvements in my child after 3 ...”",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_MHSS2,
-//       title: "Melissa Smith, LMHC, MA",
-//       subtitle: "Psychotherapist",
-//       city: "New York, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Dr. Smith was attentive, empathetic, and easy to talk to..She was very quick to ...”",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_MHSS3,
-//       title: "Sarah L. Hershman, MD",
-//       subtitle: "Psychotherapist",
-//       city: "New York, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Very helpful and insightful. We came up with a plan during the first session, and ...”",
-//       goToThirdPage: "",
-//     },
-//   ],
-//   [
-//     "Popular Family Support Services",
-//     {
-//       imageToUse: ORG_MHSS1,
-//       title: "Kristie Leung, LMHC",
-//       subtitle: "Psychotherapist",
-//       city: "New York, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Kristie was super nice and helpful. I saw improvements in my child after 3 ...”",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_MHSS2,
-//       title: "Melissa Smith, LMHC, MA",
-//       subtitle: "Psychotherapist",
-//       city: "New York, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Dr. Smith was attentive, empathetic, and easy to talk to..She was very quick to ...”",
-//       goToThirdPage: "",
-//     },
-//     {
-//       imageToUse: ORG_MHSS3,
-//       title: "Sarah L. Hershman, MD",
-//       subtitle: "Psychotherapist",
-//       city: "New York, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Very helpful and insightful. We came up with a plan during the first session, and ...”",
-//       goToThirdPage: "",
-//     },
-//   ],
-// ]
-
 export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
@@ -127,7 +58,7 @@ export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false }) => {
                         />
                         <Verified />
                       </div>
-                      <H3>{obj.title}</H3>
+                      <H3 bolder>{obj.title}</H3>
                       <H4>{obj.subtitle}</H4>
                       <P
                         medium

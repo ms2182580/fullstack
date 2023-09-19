@@ -13,7 +13,7 @@ export const NavBar_D_InfoDropdown = ({ theRef }) => {
     <NavBar_D_InfoDropdownWrapper ref={theRef}>
       {INFO_LIST.map((x, i) => (
         <>
-          <H4 key={`${x.name}_${i}`}>{x.name}</H4>
+          <H4 normal key={`${x.name}_${i}`}>{x.name}</H4>
         </>
       ))}
     </NavBar_D_InfoDropdownWrapper>

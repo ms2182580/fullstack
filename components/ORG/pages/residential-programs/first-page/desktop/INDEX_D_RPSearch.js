@@ -12,75 +12,6 @@ import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/Sta
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_RPSearchWrapper } from "./styles/INDEX_D_RPSearchWrapper.js"
 
-// const DATA = [
-//   [
-//     "Popular Long-Term Residential Programs",
-//     {
-//       imageToUse: ORG_RP1,
-//       title: "Health at Home Care Center",
-//       subtitle: "Family Services-Group Home",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Health at Home blgs are old but well taken care of. Small but comfortable.... ",
-//       goToThirdPage: ""
-//     },
-//     {
-//       imageToUse: ORG_RP2,
-//       title: "Pathways Residence",
-//       subtitle: "Family Services-Group Home",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Management has always been friendly and attentive. They take the time to.... ",
-//       goToThirdPage: ""
-//     },
-//     {
-//       imageToUse: ORG_RP3,
-//       title: "Community Connections",
-//       subtitle: "Family Services-Group Home",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“It’s been a great experience living here. The building is clean, safe, and comfort... ",
-//       goToThirdPage: ""
-//     }
-//   ],
-//   [
-//     "Popular Short-Term Residential Programs",
-//     {
-//       imageToUse: ORG_RP4,
-//       title: "Empower Living",
-//       subtitle: "Family Services-Group Home",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Health at Home blgs are old but well taken care of. Small but comfortable.... ",
-//       goToThirdPage: ""
-//     },
-//     {
-//       imageToUse: ORG_RP5,
-//       title: "Harmony House on the West Side",
-//       subtitle: "Family Services-Group Home",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“Management has always been friendly and attentive. They take the time to.... ",
-//       goToThirdPage: ""
-//     },
-//     {
-//       imageToUse: ORG_RP6,
-//       title: "Bright Beginnings",
-//       subtitle: "Family Services-Group Home",
-//       city: "Brooklyn, NY",
-//       rating: generateRandomNumber(4, 5),
-//       reviews: generateRandomNumber(47, 999),
-//       textReview: "“It’s been a great experience living here. The building is clean, safe, and comfort... ",
-//       goToThirdPage: ""
-//     }
-//   ]
-// ]
-
 export const INDEX_D_RPSearch = ({ positionInArray, isSelected = false }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
@@ -127,7 +58,7 @@ export const INDEX_D_RPSearch = ({ positionInArray, isSelected = false }) => {
                         />
                         <Verified />
                       </div>
-                      <H3>{obj.title}</H3>
+                      <H3 bolder>{obj.title}</H3>
                       <H4>{obj.subtitle}</H4>
                       <P
                         medium

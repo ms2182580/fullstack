@@ -8,7 +8,6 @@ export const CC_D_Results_Header = () => {
   const { query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
-
   return (
     <CC_D_Results_HeaderWrapper>
       <P bold dark_gray>Search for {titleFormatted}</P>
