@@ -8,37 +8,41 @@ export const CC_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
   const [alreadyVoteUp, setAlreadyVoteUp] = useState(false)
   const [alreadyVoteDown, setAlreadyVoteDown] = useState(false)
 
-  const handleUpVote = () => {
-    if (!alreadyVoteUp) {
-      setVotesState((prevState) => {
-        if (votesState === Number(votes)) {
-          return prevState + 1
-        } else {
-          return prevState + 2
-        }
-      })
-      setAlreadyVoteUp(true)
-      setAlreadyVoteDown(false)
-    } else {
-      setVotesState(Number(votes))
-      setAlreadyVoteUp(false)
+  const handleUpVote = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      if (!alreadyVoteUp) {
+        setVotesState((prevState) => {
+          if (votesState === Number(votes)) {
+            return prevState + 1
+          } else {
+            return prevState + 2
+          }
+        })
+        setAlreadyVoteUp(true)
+        setAlreadyVoteDown(false)
+      } else {
+        setVotesState(Number(votes))
+        setAlreadyVoteUp(false)
+      }
     }
   }
 
-  const handleDownVote = () => {
-    if (!alreadyVoteDown) {
-      setVotesState((prevState) => {
-        if (votesState === Number(votes)) {
-          return prevState - 1
-        } else {
-          return prevState - 2
-        }
-      })
-      setAlreadyVoteDown(true)
-      setAlreadyVoteUp(false)
-    } else {
-      setVotesState(Number(votes))
-      setAlreadyVoteDown(false)
+  const handleDownVote = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      if (!alreadyVoteDown) {
+        setVotesState((prevState) => {
+          if (votesState === Number(votes)) {
+            return prevState - 1
+          } else {
+            return prevState - 2
+          }
+        })
+        setAlreadyVoteDown(true)
+        setAlreadyVoteUp(false)
+      } else {
+        setVotesState(Number(votes))
+        setAlreadyVoteDown(false)
+      }
     }
   }
 
@@ -47,7 +51,10 @@ export const CC_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
       alreadyVoteUp={alreadyVoteUp}
       alreadyVoteDown={alreadyVoteDown}>
       <div>
-        <span onClick={handleUpVote}>
+        <span
+          onClick={handleUpVote}
+          onKeyDown={handleUpVote}
+          tabIndex={0}>
           <ORG_D_Detail_FAQS_VoteArrowUpSvg />
         </span>
 
@@ -56,7 +63,10 @@ export const CC_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answer
           <P semibold>votes</P>
         </div>
 
-        <span onClick={handleDownVote}>
+        <span
+          onClick={handleDownVote}
+          onKeyDown={handleDownVote}
+          tabIndex={0}>
           <ORG_D_Detail_FAQS_VoteArrowDownSvg />
         </span>
       </div>

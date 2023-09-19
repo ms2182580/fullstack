@@ -19,14 +19,17 @@ export const CC_Karate_D_Reviews = ({ name = "no_Name", lastName = "no_Lastname"
   const { setModalShowedCtx } = useCtx_ShowModal()
 
   const { push } = useRouter()
-  const handlePush = () => {
-    push(
-      {
-        pathname: "/404",
-        query: { toWhere: "ORG/speech-therapists/IndividualProvider" },
-      },
-      "/404",
-    )
+
+  const handlePushTo404 = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      push(
+        {
+          pathname: "/404",
+          query: { toWhere: "ORG/speech-therapists/IndividualProvider" },
+        },
+        "/404",
+      )
+    }
   }
 
   const handleShowModal = (e) => {
@@ -48,7 +51,7 @@ export const CC_Karate_D_Reviews = ({ name = "no_Name", lastName = "no_Lastname"
       <CC_D_Detail_Reviews_Header
         rating={rating}
         reviews={reviews}
-        handlePush={handlePush}
+        handlePushTo404={handlePushTo404}
         showModal={showModal}
       />
 

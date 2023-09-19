@@ -37,7 +37,7 @@ export const CC_Karate_D_OtherClasses = ({ thirdpageDataORG }) => {
 
               <div>
                 <p>{xElement.review}</p>
-                <button>Compare</button>
+                <button tabIndex={-1}>Compare</button>
               </div>
             </div>
           </div>

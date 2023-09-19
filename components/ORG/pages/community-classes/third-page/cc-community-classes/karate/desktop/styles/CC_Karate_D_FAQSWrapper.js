@@ -63,10 +63,11 @@ export const CC_Karate_D_FAQSWrapper = styled.div`
   }
 
   & > :last-child {
-    display: flex;
-    justify-content: flex-end;
     cursor: pointer;
 
+    width: fit-content;
+    margin-left: auto;
+    
     &:hover {
       filter: brightness(70%);
     }

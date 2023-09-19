@@ -8,13 +8,13 @@ export const CC_D_Detail_ReviewsHeader_PeopleOftenMention = ({ modal }) => {
       <P semibold>People often mention</P>
       <div>
         <div>
-          <P>All</P>
-          <P>Scheduling</P>
-          <P>Office Environment</P>
-          <P>Wait Times</P>
-          <P>Provider Feedback</P>
+          <P tabIndex={0}>All</P>
+          <P tabIndex={0}>Scheduling</P>
+          <P tabIndex={0}>Office Environment</P>
+          <P tabIndex={0}>Wait Times</P>
+          <P tabIndex={0}>Provider Feedback</P>
         </div>
-        <div>
+        <div tabIndex={0}>
           <P
             semibold
             primary_cta>

@@ -4,12 +4,11 @@ import { CC_D_Detail_Review_StarsRating } from "./CC_D_Detail_Review_StarsRating
 import { CC_D_Detail_ReviewsHeader_PeopleOftenMention } from "./CC_D_Detail_ReviewsHeader_PeopleOftenMention.js"
 import { CC_D_Detail_Reviews_HeaderWrapper } from "./styles/CC_D_Detail_Reviews_HeaderWrapper.js"
 
-export const CC_D_Detail_Reviews_Header = ({ rating, reviews, isDetailModalDesktop = false, modal = false, handlePush }) => {
+export const CC_D_Detail_Reviews_Header = ({ rating, reviews, isDetailModalDesktop = false, modal = false, handlePushTo404 }) => {
   return (
     <CC_D_Detail_Reviews_HeaderWrapper
       className={modal ? "" : "showLine"}
       modal={modal}>
-
       {modal === false ? (
         <>
           <H4>Reviews</H4>
@@ -24,7 +23,12 @@ export const CC_D_Detail_Reviews_Header = ({ rating, reviews, isDetailModalDeskt
         <>
           <Caption>
             Your trust is our top concern, so providers can’t pay to alter or remove reviews. We also don’t publish reviews that contain any private patient health information.{" "}
-            <span onClick={handlePush}>Learn more here.</span>
+            <span
+              onClick={handlePushTo404}
+              onKeyDown={handlePushTo404}
+              tabIndex={0}>
+              Learn more here.
+            </span>
           </Caption>
         </>
       ) : (

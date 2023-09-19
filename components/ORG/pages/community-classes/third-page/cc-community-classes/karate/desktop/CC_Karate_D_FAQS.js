@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from "react"
+import { Fragment, useEffect, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../../../../utils/ORG_ReviewsUsersName.js"
@@ -19,16 +19,18 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
 
   const [faqsData, setFaqsData] = useState(ORG_ST_FAQS(name, lastName, locationCity, locationStreetNumber, locationStreetName, locationState))
 
-  const handleShowAll = () => {
-    setShowAll((prevState) => !prevState)
+  const handleShowAll = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      setShowAll((prevState) => !prevState)
+    }
   }
 
   const toMoveTheView = useRef()
 
-  const handleToMoveTo = () => {
+  useEffect(() => {
     const position = toMoveTheView.current.getBoundingClientRect().top + window.scrollY
     window.scrollTo({ top: position })
-  }
+  }, [showAll])
 
   const [showModal, setShowModal] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
@@ -62,7 +64,11 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
         </div>
 
         <div>
-          <H4 bold hover>Common Questions and Answers</H4>
+          <H4
+            bold
+            hover>
+            Common Questions and Answers
+          </H4>
           <span onClick={handleShowModal}>
             <ButtonSmall secondary>Ask a Question</ButtonSmall>
           </span>
@@ -104,7 +110,9 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
               hyperlink_normal
               semibold
               underline
-              onClick={handleShowAll}>
+              onClick={handleShowAll}
+              onKeyDown={handleShowAll}
+              tabIndex={0}>
               See More
             </P>
           </>
@@ -114,10 +122,9 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
               hyperlink_normal
               semibold
               underline
-              onClick={() => {
-                handleShowAll()
-                handleToMoveTo()
-              }}>
+              onClick={handleShowAll}
+              onKeyDown={handleShowAll}
+              tabIndex={0}>
               See Less
             </P>
           </>

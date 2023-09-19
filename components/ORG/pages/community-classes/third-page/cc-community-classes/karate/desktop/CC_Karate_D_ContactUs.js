@@ -105,7 +105,8 @@ export const CC_Karate_D_ContactUs = () => {
         <button tabIndex={-1}>
           <p>Send Message</p> <SendMessageSvg />
         </button>
-        <span onClick={handlePushTo404}
+        <span
+          onClick={handlePushTo404}
           onKeyDown={handlePushTo404}
           tabIndex={0}>
           <ButtonSmall>Find out if we’re a good fit for you</ButtonSmall>
