@@ -12,20 +12,20 @@ export const CC_Karate_D_Schedule = () => {
           <H3 semibold>Book a class below</H3>
           <P bold>Coming Soon!</P>
         </div>
-        <ButtonSmall secondary>See Demo</ButtonSmall>
+        <ButtonSmall secondary preventFocus={-1} >See Demo</ButtonSmall>
       </div>
 
       <div>
         <div>
           <H4 medium>Session Type: </H4>
-          <ButtonSmall secondary>
+          <ButtonSmall secondary preventFocus={-1} >
             In-Person <DownArrowTinySvg />
           </ButtonSmall>
         </div>
 
         <div>
           <H4 medium>Times displayed in:</H4>
-          <ButtonSmall secondary>
+          <ButtonSmall secondary preventFocus={-1} >
             GMT-5:10 Eastern Time (EDT)
             <DownArrowTinySvg />
           </ButtonSmall>
@@ -39,14 +39,14 @@ export const CC_Karate_D_Schedule = () => {
           <H4>Sat</H4>
           <H4>Mar 11</H4>
 
-          <ButtonSmall disabled> 3:00 pm</ButtonSmall>
-          <ButtonSmall disabled> 6:00 pm</ButtonSmall>
+          <ButtonSmall disabled > 3:00 pm</ButtonSmall>
+          <ButtonSmall disabled > 6:00 pm</ButtonSmall>
         </div>
 
         <div>
           <H4>Sun</H4>
           <H4>Mar 12</H4>
-          <ButtonSmall disabled> No sessions on<br /> Mar 12</ButtonSmall>
+          <ButtonSmall disabled > No sessions on<br /> Mar 12</ButtonSmall>
         </div>
 
         <div>

@@ -5,7 +5,7 @@ export const ButtonSmall = ({ children, secondary, disabled, preventFocus = 0, g
     <BtnSmall
       secondary={secondary}
       disabled={disabled}
-      tabIndex={preventFocus}
+      tabIndex={disabled ? -1 : preventFocus}
       onClick={goToDynamic}>
       <p>{children}</p>
     </BtnSmall>
