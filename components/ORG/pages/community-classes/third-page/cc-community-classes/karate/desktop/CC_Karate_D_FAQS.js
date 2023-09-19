@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from "react"
+import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../../../../utils/ORG_ReviewsUsersName.js"
@@ -27,10 +27,13 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
 
   const toMoveTheView = useRef()
 
-  useEffect(() => {
-    const position = toMoveTheView.current.getBoundingClientRect().top + window.scrollY
-    window.scrollTo({ top: position })
-  }, [showAll])
+  let handleMoveUserView = (e) => {
+
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      const position = toMoveTheView.current.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({ top: position })
+    }
+  }
 
   const [showModal, setShowModal] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
@@ -122,8 +125,14 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
               hyperlink_normal
               semibold
               underline
-              onClick={handleShowAll}
-              onKeyDown={handleShowAll}
+              onClick={(e) => {
+                handleShowAll(e)
+                handleMoveUserView(e)
+              }}
+              onKeyDown={(e) => {
+                handleShowAll(e)
+                handleMoveUserView(e)
+              }}
               tabIndex={0}>
               See Less
             </P>
