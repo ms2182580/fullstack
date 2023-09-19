@@ -10,6 +10,7 @@ export const ORG_D_Detail_Card_SecondRow_InfoWrapper = styled.div`
     padding-bottom: 8px;
     padding-inline: 16px;
     max-width: 210px;
+    
   }
   
   

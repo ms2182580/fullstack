@@ -1,15 +1,15 @@
-import { useRouter } from "next/router.js"
+import { useRouter } from "next/router"
 import { useState } from "react"
-import { SearchSVG, WriteAReviewDisableSvg } from "../../../../../../../../assets/Icons/index.js"
-import { checkRouteThirdPage } from "../../../../../../../../utils/ORG/checkRouteThirdPage.js"
-import { useCheckBreadcrumbs } from "../../../../../../../../utils/ORG/useCheckBreadcrumbs.js"
-import { capitalizeWords } from "../../../../../../../../utils/capitalizeWords.js"
-import { Breadcrumbs_D } from "../../../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js"
-import { P } from "../../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
-import { CC_Karate_D_HeaderWrapper } from "./styles/CC_Karate_D_HeaderWrapper.js"
+import { SearchSVG, WriteAReviewDisableSvg } from "../../../../../../../assets/Icons"
+import { checkRouteThirdPage } from "../../../../../../../utils/ORG/checkRouteThirdPage"
+import { useCheckBreadcrumbs } from "../../../../../../../utils/ORG/useCheckBreadcrumbs"
+import { capitalizeWords } from "../../../../../../../utils/capitalizeWords"
+import { Breadcrumbs_D } from "../../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "../../../../../../ui/heading_body_text/HeaderFonts"
+import { ST_D_Detail_HeaderWrapper } from "./styles/ST_D_Detail_HeaderWrapper"
 
-export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
+export const ST_D_Detail_Header = ({ thirdpageDataORG }) => {
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
@@ -17,8 +17,10 @@ export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
 
   let { theURLFormatted } = checkRouteThirdPage(pathname)
 
+  // const { keywordsContext, citiesContext, setKeywordsContext, setCitiesContext } = useORG_InputCtx()
+
   return (
-    <CC_Karate_D_HeaderWrapper>
+    <ST_D_Detail_HeaderWrapper>
       <Breadcrumbs_D
         whichDisplay={[
           ["Resource Directory", "ORG"],
@@ -72,6 +74,6 @@ export const CC_Karate_D_Header = ({ thirdpageDataORG }) => {
           </div>
         </li>
       </ul>
-    </CC_Karate_D_HeaderWrapper>
+    </ST_D_Detail_HeaderWrapper>
   )
 }

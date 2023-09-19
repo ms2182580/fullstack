@@ -4,7 +4,7 @@ import { H4 } from "../../../../../../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnoses } from "../../../../../../friendlyDiagnoses/FriendlyDiagnoses"
 import { StartsRatingReview_Mobile } from "../../../../../../stars-rating-review/mobile/StartsRatingReview_Mobile"
 import { Verified } from "../../../../../../verified/Verified"
-import { ST_M_Detail_Tooltip } from "../../../../third-page/mobile/ST_M_Detail_Tooltip"
+import { ST_M_Detail_Tooltip } from "../../../../third-page/st-speech-language-pathologists/mobile/ST_M_Detail_Tooltip"
 
 export const ST_M_Results_Card_Firstplace = ({
   handlePointerEvent,

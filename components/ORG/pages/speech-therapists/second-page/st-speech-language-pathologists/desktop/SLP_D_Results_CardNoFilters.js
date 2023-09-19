@@ -3,6 +3,7 @@ import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { formatDataToThirdPage } from "../../../../../../../utils/ORG/formatDataToThirdPage.js"
 import { DATA_SLP_D } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D.js"
 import { DATA_SLP_D_CardLeft, DATA_SLP_D_CardRight } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -38,22 +39,21 @@ export const SLP_D_Results_CardNoFilters = () => {
 
   const router = useRouter()
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG) => {
-    // console.dir('thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG:', thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG)
 
-    // const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right)
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right)
 
-    // setThirdpageDataORG(allDataToThirdPage)
+    setThirdpageDataORG(allDataToThirdPage)
 
-    // let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
+    let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
 
-    // const toWhere = `${router.pathname}/${thirdPageURL}`
-    // router.push(
-    //   {
-    //     pathname: toWhere,
-    //     query: { title: mainNameORG },
-    //   },
-    //   toWhere,
-    // )
+    const toWhere = `${router.pathname}/${thirdPageURL}`
+    router.push(
+      {
+        pathname: toWhere,
+        query: { title: mainNameORG },
+      },
+      toWhere,
+    )
   }
 
   const [cardData, setCardData] = useState(DATA_SLP_D[0].slice(1))

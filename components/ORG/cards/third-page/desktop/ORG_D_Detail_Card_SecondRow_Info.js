@@ -9,7 +9,7 @@ export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackgr
 
   return (
     <ORG_D_Detail_Card_SecondRow_InfoWrapper className={withBackground && "withBackground"}>
-      <H4 hover>{title}:</H4>
+      <H4 primary_hover>{title}:</H4>
 
       {howToRender === "array" ? (
         <>
@@ -38,25 +38,6 @@ export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackgr
           <P>❌{howToRender}❌</P>
         </>
       )}
-
-      {/* {Array.isArray(dataToShow) &&
-        dataToShow.map((x, i) => {
-          if (dataToShow.length - 1 === i) {
-            return (
-              <Fragment key={x}>
-                <P> {x}</P>
-              </Fragment>
-            )
-          }
-
-          return (
-            <Fragment key={x}>
-              <P> {x}</P>
-            </Fragment>
-          )
-        })} */}
-
-      {/* {typeof dataToShow === "string" && <P> {dataToShow}</P>} */}
     </ORG_D_Detail_Card_SecondRow_InfoWrapper>
   )
 }
