@@ -3,7 +3,7 @@ import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../../../../assets/Icons/index.js"
 import { capitalizeWords } from "../../../../../../../../utils/capitalizeWords.js"
 import { ButtonSmall } from "../../../../../../../ui/buttons/general/index.js"
-import { H4 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
+import { H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { CC_Karate_D_ContactUsWrapper } from "./styles/CC_Karate_D_ContactUsWrapper.js"
 
 const arrTags = [
@@ -41,7 +41,7 @@ export const CC_Karate_D_ContactUs = () => {
 
   return (
     <CC_Karate_D_ContactUsWrapper>
-      <H4 semibold> Contact Us</H4>
+      <H3 semibold> Contact Us</H3>
       <p>Ready to work together? Let’s connect. </p>
       <div>
         <div>

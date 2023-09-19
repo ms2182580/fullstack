@@ -53,7 +53,7 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
       <CC_Karate_D_FAQSWrapper
         id="FAQs"
         ref={toMoveTheView}>
-        <H3 bold>Frequently Asked Questions</H3>
+        <H3 semibold>Frequently Asked Questions</H3>
 
         <div>
           <ORG_Detail_SearchFAQSSVG />

@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { Fragment } from "react"
-import { H4 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
+import { H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview_D } from "../../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
 import { CC_Karate_D_OtherClassesWrapper } from "./styles/CC_Karate_D_OtherClassesWrapper.js"
 
@@ -9,7 +9,7 @@ const tags = ["All", "Similar Price", "Same subject", "Similar class structure",
 export const CC_Karate_D_OtherClasses = ({ thirdpageDataORG }) => {
   return (
     <CC_Karate_D_OtherClassesWrapper>
-      <H4 semibold>User also viewed</H4>
+      <H3 semibold>User also viewed</H3>
       <div>
         {tags.map((xElement, index) => (
           <Fragment key={`${xElement}_${index}`}>
