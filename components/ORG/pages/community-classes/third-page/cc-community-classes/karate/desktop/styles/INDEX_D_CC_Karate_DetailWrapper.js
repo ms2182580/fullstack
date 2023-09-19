@@ -1,27 +1,34 @@
 import styled from "styled-components"
 
 export const INDEX_D_CC_Karate_DetailWrapper = styled.div`
-  margin-inline: clamp(16px, calc(10vw - 80px), 96px);
-  padding-top: 56px;
-  padding-bottom: 56px;
-
   position: relative;
-
+  padding-bottom: 8px;
+  
   & > :nth-child(1) {
-    margin-bottom: 16px;
-  }
+    margin-inline: clamp(16px, calc(10vw - 80px), 96px);
+    padding-top: 56px;
+    padding-bottom: 8px;
 
-  & > *:not(:nth-child(1)):not(:nth-last-child(1)):not(:nth-last-child(2)) {
-    margin-bottom: 24px;
-  }
+    position: relative;
 
-  & > :nth-last-child(2) {
-    margin-bottom: 44px;
-  }
+    & > :nth-child(1) {
+      margin-bottom: 16px;
+    }
 
-  & > :last-child {
-    position: sticky;
-    top: 0;
-    left:0;
+    & > *:not(:nth-child(1)):not(:nth-last-child(1)):not(:nth-last-child(2)) {
+      margin-bottom: 24px;
+    }
+
+    & > :nth-last-child(2) {
+      margin-bottom: 44px;
+    }
+
+    & > :last-child {
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
   }
+  
+  
 `

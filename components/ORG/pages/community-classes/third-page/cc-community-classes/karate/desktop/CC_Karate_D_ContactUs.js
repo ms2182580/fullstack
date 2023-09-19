@@ -91,11 +91,12 @@ export const CC_Karate_D_ContactUs = () => {
           placeholder="Ex: Additional class assistance etc. (2,000 character max)"
         />
         <p>{`(${textareaValueState.length} of ${maxCharacterTextarea} used)`}</p>
-
       </div>
 
       <div>
-        <button tabIndex={-1}><p>Send Message</p> <SendMessageSvg /></button>
+        <button tabIndex={-1}>
+          <p>Send Message</p> <SendMessageSvg />
+        </button>
         <ButtonSmall>Find out if we’re a good fit for you</ButtonSmall>
       </div>
     </CC_Karate_D_ContactUsWrapper>

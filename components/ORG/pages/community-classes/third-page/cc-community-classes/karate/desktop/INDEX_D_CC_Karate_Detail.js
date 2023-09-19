@@ -28,36 +28,32 @@ export const INDEX_D_CC_Karate_Detail = () => {
 
   return (
     <>
-      <ChatAI />
+
 
       <INDEX_D_CC_Karate_DetailWrapper>
-        <CC_Karate_D_Header thirdpageDataORG={thirdpageDataORG} />
-
-        <CC_Karate_D_MainCard thirdpageDataORG={thirdpageDataORG} />
-
-        <CC_Karate_D_Schedule />
-
-        <CC_Karate_D_ContactUs />
-
-        <CC_Karate_D_OtherClasses thirdpageDataORG={thirdpageDataORG} />
-
-        <CC_Karate_D_Reviews
-          name={thirdpageDataORG.card.leftPart.title}
-          lastName={""}
-          rating={thirdpageDataORG.card.leftPart.rating}
-          reviews={thirdpageDataORG.card.leftPart.reviews}
-        />
-
-        <CC_Karate_D_FAQS
-          name={thirdpageDataORG.card.leftPart.title}
-          lastName={""}
-          locationCity={thirdpageDataORG.card.leftPart.location.city}
-          locationStreetNumber={thirdpageDataORG.card.leftPart.location.streetNumber}
-          locationStreetName={thirdpageDataORG.card.leftPart.location.streetName}
-          locationState={thirdpageDataORG.card.leftPart.location.state}
-        />
-
-        <CC_Karate_D_BreadcrumbsLastUpdated thirdpageDataORG={thirdpageDataORG} />
+        <div>
+          <CC_Karate_D_Header thirdpageDataORG={thirdpageDataORG} />
+          <CC_Karate_D_MainCard thirdpageDataORG={thirdpageDataORG} />
+          <CC_Karate_D_Schedule />
+          <CC_Karate_D_ContactUs />
+          <CC_Karate_D_OtherClasses thirdpageDataORG={thirdpageDataORG} />
+          <CC_Karate_D_Reviews
+            name={thirdpageDataORG.card.leftPart.title}
+            lastName={""}
+            rating={thirdpageDataORG.card.leftPart.rating}
+            reviews={thirdpageDataORG.card.leftPart.reviews}
+          />
+          <CC_Karate_D_FAQS
+            name={thirdpageDataORG.card.leftPart.title}
+            lastName={""}
+            locationCity={thirdpageDataORG.card.leftPart.location.city}
+            locationStreetNumber={thirdpageDataORG.card.leftPart.location.streetNumber}
+            locationStreetName={thirdpageDataORG.card.leftPart.location.streetName}
+            locationState={thirdpageDataORG.card.leftPart.location.state}
+          />
+          <CC_Karate_D_BreadcrumbsLastUpdated thirdpageDataORG={thirdpageDataORG} />
+        </div>
+        <ChatAI />
       </INDEX_D_CC_Karate_DetailWrapper>
 
       <InFrontModal_D_Wrapper

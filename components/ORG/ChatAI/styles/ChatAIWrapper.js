@@ -2,15 +2,18 @@ import styled from 'styled-components'
 import { PRIMARY } from '../../../../assets/Colors'
 
 export const ChatAIWrapper = styled.div`
-  position: fixed;
+  position: sticky;
+  /* position: fixed; */
   bottom:0;
   right:-14px;
   
-  /* display: flex; */
+  display: flex;
   /* align-items: center; */
-  /* justify-content: flex-end; */
+  justify-content: flex-end;
   
-  margin-inline: clamp(16px, calc(10vw - 80px), 96px);
+  width: fit-content;
+  margin-right: clamp(16px, calc(10vw - 80px), 96px);
+  margin-left: auto;
   
   z-index:4;
   
