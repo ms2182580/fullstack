@@ -9,7 +9,7 @@ export const ST_D_Detail_Reviews_Header = ({
   reviews,
   isDetailModalDesktop = false,
   modal = false,
-  handlePush
+  handlePushTo404
 }) => {
   return (
     <ST_D_Detail_Reviews_HeaderWrapper
@@ -30,7 +30,7 @@ export const ST_D_Detail_Reviews_Header = ({
           <Caption>
             Your trust is our top concern, so providers can’t pay to alter or remove reviews. We also don’t publish
             reviews that contain any private patient health information.{" "}
-            <span onClick={handlePush}>Learn more here.</span>
+            <span onClick={handlePushTo404}>Learn more here.</span>
           </Caption>
         </>
       ) : (

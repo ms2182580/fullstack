@@ -15,14 +15,16 @@ export const ST_D_Detail_Reviews = ({ name, lastName, rating, reviews }) => {
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
 
   const { push } = useRouter()
-  const handlePush = () => {
-    push(
-      {
-        pathname: "/404",
-        query: { toWhere: "ORG/speech-therapists/IndividualProvider" }
-      },
-      "/404"
-    )
+  const handlePushTo404 = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      push(
+        {
+          pathname: "/404",
+          query: { toWhere: "ORG/speech-therapists/IndividualProvider" },
+        },
+        "/404",
+      )
+    }
   }
 
   const [showModal, setShowModal] = useState(false)
@@ -46,7 +48,7 @@ export const ST_D_Detail_Reviews = ({ name, lastName, rating, reviews }) => {
       <ST_D_Detail_Reviews_Header
         rating={rating}
         reviews={reviews}
-        handlePush={handlePush}
+        handlePushTo404={handlePushTo404}
       />
 
       <div>
