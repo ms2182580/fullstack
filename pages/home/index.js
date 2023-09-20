@@ -11,6 +11,15 @@ const MaincontentProvisional = styled.h2`
   place-items: center;
 `
 
+/* 
+
+!FH0
+Create the new landing, start by navbar
+
+*/
+
+
+
 export default function HomeIndex() {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -24,5 +33,7 @@ export default function HomeIndex() {
     </>
   )
 }
+
+
 
 
