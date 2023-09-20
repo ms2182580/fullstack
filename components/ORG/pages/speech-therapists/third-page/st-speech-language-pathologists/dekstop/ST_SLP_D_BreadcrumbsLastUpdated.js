@@ -14,7 +14,7 @@ export const ST_SLP_D_BreadcrumbsLastUpdated = ({ thirdpageDataORG }) => {
 
   const [formattedActualRoute, setFormattedActualRoute] = useState(capitalizeWords(thirdpageDataORG.card.rightPart.thirdPageData.folderName))
 
-  let URLFormatted = checkRouteThirdPage(pathname)
+  let { theURLFormatted } = checkRouteThirdPage(pathname)
 
   const lastUpdateData = ORG_ST_LastUpdate()
 
@@ -24,7 +24,7 @@ export const ST_SLP_D_BreadcrumbsLastUpdated = ({ thirdpageDataORG }) => {
         <Breadcrumbs_D
           whichDisplay={[
             ["Resource Directory", "ORG"],
-            [`${titleFormatted}`, `${URLFormatted}`],
+            [`${titleFormatted}`, `${theURLFormatted}`],
             [`${formattedActualRoute}`, ""],
           ]}
         />
