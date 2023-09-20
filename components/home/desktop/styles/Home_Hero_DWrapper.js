@@ -98,6 +98,7 @@ export const Home_Hero_DWrapper = styled.div`
       
     }
   }
+  
 
   & > :nth-child(2) {
     font-size:18px;

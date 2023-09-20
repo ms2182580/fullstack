@@ -36,13 +36,12 @@ export const INDEX_NavBar_D = () => {
   }, [route.pathname])
 
   const handleNavigateHome = (e) => {
-    if (e.key === "Enter") {
+    if (e.type === "click" || e.key === "Enter") {
       route.push("/")
     }
-    route.push("/")
   }
   const handleNavigateORG = (e) => {
-    if (e.key === "Enter") {
+    if (e.type === "click" || e.key === "Enter") {
       route.push("/ORG")
     }
   }
@@ -83,6 +82,7 @@ export const INDEX_NavBar_D = () => {
           <NavBar_D_SignComponent />
         </div>
         <div />
+
         <div>
           <div>
             <span>
