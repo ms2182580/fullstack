@@ -36,11 +36,9 @@ export const SLP_D_Results_CardNoFilters = () => {
     setThirdpageDataORG("")
   }, [])
 
-
   const router = useRouter()
-  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG) => {
-
-    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right)
+  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
     setThirdpageDataORG(allDataToThirdPage)
 
@@ -50,7 +48,7 @@ export const SLP_D_Results_CardNoFilters = () => {
     router.push(
       {
         pathname: toWhere,
-        query: { title: mainNameORG },
+        query: { title: mainNameORG, subTitle, state },
       },
       toWhere,
     )
@@ -155,10 +153,12 @@ export const SLP_D_Results_CardNoFilters = () => {
                       DATA_SLP_D_CardRight[renderThisContactRight],
                       DATA_SLP_D_CardLeft[renderThisContactLeft],
                       cardData[renderThisCard],
-                      mainNameORG
+                      mainNameORG,
+                      cardData[renderThisCard].subtitle,
+                      cardData[renderThisCard].name,
+                      cardData[renderThisCard].state,
                     )
-                  }
-                >
+                  }>
                   <ORG_D_Results_RequestConsultationSvg />
                   <P white>See Availability</P>
                 </div>

@@ -1,11 +1,36 @@
-import { ORG_D_Detail_Card_SecondRow_InfoWrapper } from './styles/ORG_D_Detail_Card_SecondRow_InfoWrapper.js'
+import { ORG_D_Detail_Card_SecondRow_InfoWrapper } from "./styles/ORG_D_Detail_Card_SecondRow_InfoWrapper.js"
 
-import { Fragment, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 
-export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackground = false }) => {
-  const [howToRender, setHowToRender] = useState(Array.isArray(dataToShow) ? "array" : typeof dataToShow === "string" ? "string" : "notArrayNotString")
+export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackground = false, debug = false }) => {
+  if (debug) {
+    console.log("dataToShow:", dataToShow)
+  }
+
+  const [dataObj, setDataObj] = useState(null)
+
+  const [howToRender, setHowToRender] = useState(() => {
+    if (typeof dataToShow === "object" && dataToShow !== null) {
+      if (Array.isArray(dataToShow)) return "array"
+      if (!Array.isArray(dataToShow)) return "object"
+    }
+
+    if (typeof dataToShow === "string") return "string"
+
+    return "not_array_object_string__"
+  })
+
+  useEffect(() => {
+    if (howToRender === "object") {
+      let formatted = []
+      for (const key in dataToShow) {
+        formatted.push(dataToShow[key])
+      }
+      setDataObj(formatted)
+    }
+  }, [howToRender])
 
   return (
     <ORG_D_Detail_Card_SecondRow_InfoWrapper className={withBackground && "withBackground"}>
@@ -32,6 +57,17 @@ export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackgr
       ) : howToRender === "string" ? (
         <>
           <P> {dataToShow}</P>
+        </>
+      ) : dataObj !== null && howToRender === "object" ? (
+        <>
+          {dataObj.map((xDataObj, index) => (
+            <Fragment key={`${xDataObj.title}_${xDataObj.value}`}>
+              <div className="dataObj">
+                <p>{xDataObj.title}</p>
+                <p>{xDataObj.value}</p>
+              </div>
+            </Fragment>
+          ))}
         </>
       ) : (
         <>

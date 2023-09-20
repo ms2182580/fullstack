@@ -16,7 +16,7 @@ export const ORG_D_Detail_CardLocation = ({
         <P bold>Location: </P>{" "}
       </div>
       <div>
-        <P>{locationCity} Speech Therapy</P>
+        <P>{locationCity}</P>
         <P>
           {locationStreetNumber} {locationStreetName}
         </P>

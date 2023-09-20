@@ -16,19 +16,21 @@ import { ORG_D_Detail_MainCardLeftPhotos } from "../../../../../cards/third-page
 import { ORG_D_Detail_MapComponent } from "../../../../../cards/third-page/desktop/ORG_D_Detail_MapComponent"
 import { ORG_D_Detail_Share } from "../../../../../cards/third-page/desktop/ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "../../../../../cards/third-page/desktop/ORG_D_Detail_Tooltip"
+import { Highlights_2_D } from "../../../../../highlights/Highlights_2_D"
 import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../verified/Verified"
-import {
-  ST_D_Detail_MainCardWrapper
-} from "./styles/ST_D_Detail_MainCardWrapper"
+import { ST_D_Detail_MainCardWrapper } from "./styles/ST_D_Detail_MainCardWrapper"
 
 export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
-  const { push } = useRouter()
+  const { push, query } = useRouter()
   let handlePushTo404 = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
       push("/404")
     }
   }
+
+  // console.dir("thirdpageDataORG:", thirdpageDataORG)
+  // console.dir("query:", query)
 
   return (
     <ST_D_Detail_MainCardWrapper id="About">
@@ -59,13 +61,13 @@ export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           <ORG_D_Detail_CardPhone phoneNumber={thirdpageDataORG.card.leftPart.phone} />
           <ORG_D_Detail_CardEmail email={thirdpageDataORG.card.leftPart.email} />
           <ORG_D_Detail_CardWebsite
-            firstName={thirdpageDataORG.card.leftPart.title}
-            lastName={""}
+            firstName={thirdpageDataORG.fullName.first}
+            lastName={thirdpageDataORG.fullName.last}
           />
           <ORG_D_Detail_CardLocation
             locationCity={thirdpageDataORG.card.leftPart.location.city}
-            locationStreetNumber={thirdpageDataORG.card.leftPart.location.locationStreetNumber}
-            locationStreetName={thirdpageDataORG.card.leftPart.location.locationStreetName}
+            locationStreetNumber={thirdpageDataORG.card.leftPart.location.streetNumber}
+            locationStreetName={thirdpageDataORG.card.leftPart.location.streetName}
             locationState={thirdpageDataORG.card.leftPart.location.state}
             howFar={thirdpageDataORG.card.leftPart.location.howFar}
           />
@@ -85,32 +87,35 @@ export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           </div>
 
           <div>
-            <H2 bold>{thirdpageDataORG.card.leftPart.title}</H2>
+            <H2 bold>
+              {thirdpageDataORG.fullName.first} {thirdpageDataORG.fullName.last} CCC-SLP
+            </H2>
+
             <ORG_D_Detail_Tooltip />
           </div>
 
-          <H3>{thirdpageDataORG.card.leftPart.subTitle}</H3>
-          <P dark_gray>{thirdpageDataORG.card.leftPart.location.city}</P>
+          <H3>{query.subTitle}</H3>
+          <P dark_gray>{thirdpageDataORG.card.leftPart.city}</P>
 
           <StarsRatingReview_D
             rating={thirdpageDataORG.card.leftPart.rating}
             reviews={thirdpageDataORG.card.leftPart.reviews}
           />
 
-          <ORG_D_Detail_HighlightBoxes meetingFormat={thirdpageDataORG.card.rightPart.thirdPageData.card.highlights} />
+          <div>
+            <Highlights_2_D highlights={thirdpageDataORG.card.rightPart.highlightsPlus} />
+            <ORG_D_Detail_HighlightBoxes meetingFormat={thirdpageDataORG.card.rightPart.highlights} />
+          </div>
         </div>
 
         <div>
           <div>
             <ORG_D_Detail_Card_SecondRow_Info
               title="Practice Areas"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.practiceAreas}
+              dataToShow={thirdpageDataORG.card.rightPart.practiceAreas}
               withBackground
             />
-            <ORG_D_Detail_Card_SecondRow_Info
-              title={thirdpageDataORG.card.rightPart.typeof.title}
-              dataToShow={thirdpageDataORG.card.rightPart.typeof.content}
-            />
+
             <ORG_D_Detail_Card_SecondRow_Info
               title="Ages Served"
               dataToShow={thirdpageDataORG.card.rightPart.agesServed}
@@ -122,39 +127,30 @@ export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             />
 
             <ORG_D_Detail_Card_SecondRow_Info
-              title="Operation Hours"
-              dataToShow={[
-                thirdpageDataORG.card.rightPart.thirdPageData.card.operationHours.mondayFriday,
-                thirdpageDataORG.card.rightPart.thirdPageData.card.operationHours.saturday,
-                thirdpageDataORG.card.rightPart.thirdPageData.card.operationHours.sunday,
-              ]}
+              title="Setting"
+              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.setting}
             />
+
             <ORG_D_Detail_Card_SecondRow_Info
-              title="Class Duration"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.classDuration}
+              title="Wheelchair Accessible"
+              dataToShow={"Yes"}
             />
           </div>
 
           <div>
             <ORG_D_Detail_Card_SecondRow_Info
-              title="Payment"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.payment}
+              title={thirdpageDataORG.card.rightPart.thirdPageData.card.paymentOptions.title}
+              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.paymentOptions.dataToShow}
             />
+
             <ORG_D_Detail_Card_SecondRow_Info
-              title="Setting"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.setting}
+              title={thirdpageDataORG.card.rightPart.thirdPageData.card.qualifications.title}
+              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.qualifications.dataToShow}
+              debug
             />
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Class Size"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.classSize}
-            />
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Class Schedule"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.classSchedule}
-            />
+
             <ORG_D_Detail_Card_SecondRow_Info
               title="Additional Credentials"
-              rightRowCredentials
               dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.AdditionalCredentials}
             />
           </div>

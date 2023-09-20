@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../../../assets/Colors"
 
 export const ST_D_Detail_MainCardWrapper = styled.div`
   display: grid;
@@ -93,15 +93,45 @@ export const ST_D_Detail_MainCardWrapper = styled.div`
       }
 
       & > :nth-child(4) {
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
 
       & > :nth-child(5) {
         margin-bottom: 16px;
+
+        & > :nth-child(1) {
+          margin-right: 16px;
+        }
+
+        & > :nth-child(2) {
+          margin-right: 8px;
+        }
+
+        & > :nth-child(3) {
+          text-decoration: underline;
+          color: ${SEMANTICS.HYPERLINK_NORMAL};
+          cursor: pointer;
+        }
       }
 
       & > :last-child {
         margin-bottom: 64px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+
+        & > * {
+          & > * {
+            & > * {
+              font-weight: 500;
+            }
+          }
+        }
+
+        & > :nth-child(2) {
+          gap: 24px;
+        }
+        
       }
     }
 

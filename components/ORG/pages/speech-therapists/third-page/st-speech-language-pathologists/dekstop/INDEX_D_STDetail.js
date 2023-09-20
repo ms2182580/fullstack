@@ -29,8 +29,11 @@ export const INDEX_D_STDetail = () => {
       <INDEX_D_STDetailWrapper>
         <div>
           <ST_D_Detail_Header thirdpageDataORG={thirdpageDataORG} />
+
           <ST_D_Detail_MainCard thirdpageDataORG={thirdpageDataORG} />
+
           <ST_SLP_D_Schedule />
+
           <ST_SLP_D_ContactUs />
 
           <ST_D_Detail_Reviews
@@ -49,10 +52,7 @@ export const INDEX_D_STDetail = () => {
             locationState={thirdpageDataORG.card.leftPart.location.state}
           />
 
-
-          <ST_SLP_D_BreadcrumbsLastUpdated
-            thirdpageDataORG={thirdpageDataORG}
-          />
+          <ST_SLP_D_BreadcrumbsLastUpdated thirdpageDataORG={thirdpageDataORG} />
         </div>
         <ChatAI />
       </INDEX_D_STDetailWrapper>
