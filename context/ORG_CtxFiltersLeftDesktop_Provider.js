@@ -3,7 +3,6 @@ import { ORG_INITIAL_VALUES_FILTERS_D } from "../utils/ORG_initialValuesFilters"
 
 const ORG_Ctx_filtersLeftDesktop = createContext(null)
 
-
 /* 
 !FH
 Change this name. This arre not at the left anymore

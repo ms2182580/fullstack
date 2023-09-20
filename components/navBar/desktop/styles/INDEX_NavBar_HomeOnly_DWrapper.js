@@ -8,8 +8,6 @@ export const INDEX_NavBar_HomeOnly_DWrapper = styled.div`
   padding-inline: clamp(16px, calc(15vw - 80px), 126px);
   padding-top: 50px;
   
-  background-color: hsl(0, 100%, 50%, 0.2);
-  
   position: absolute;
   top:0;
   left:0;

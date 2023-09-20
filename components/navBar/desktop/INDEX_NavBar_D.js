@@ -1,3 +1,4 @@
+import { useNavbarHomeHeight } from "@/context/NavbarHome_Ctx_Height"
 import Link from "next/link.js"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
@@ -47,6 +48,23 @@ export const INDEX_NavBar_D = () => {
   }
 
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
+
+  let { height, setHeight } = useNavbarHomeHeight()
+  const refHeight = useRef(null)
+
+  useEffect(() => {
+    if (refHeight.current) {
+      let theData = refHeight.current.getBoundingClientRect()
+      setHeight(theData)
+    }
+  }, [refHeight])
+
+  useEffect(() => {
+    if (refHeight.current) {
+      let theData = refHeight.current.getBoundingClientRect()
+      setHeight(theData)
+    }
+  }, [route.pathname])
 
   if (route.pathname !== "/") {
     return (
@@ -99,8 +117,8 @@ export const INDEX_NavBar_D = () => {
 
   if (route.pathname === "/") {
     return (
-      <INDEX_NavBar_HomeOnly_DWrapper>
-        <div>
+      <INDEX_NavBar_HomeOnly_DWrapper ref={refHeight}>
+        <div tabIndex={0}>
           <H1>Inclusive</H1>
           <ChatAILogo />
         </div>

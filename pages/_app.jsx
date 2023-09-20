@@ -2,6 +2,7 @@ import { PageLayout } from "../components/PageLayout.js"
 import { CheckUserWidth_Provider } from "../context/CheckUserWidth.js"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
+import { NavbarHomeHeight_Provider } from '../context/NavbarHome_Ctx_Height.js'
 import { ORG_CtxFetchNoFiltersDesktop_Provider } from "../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { ORG_CtxFetchNoFiltersMobile_Provider } from "../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { ORG_CtxFetchWithFiltersDesktop_Provider } from "../context/ORG_CtxFetchWithFiltersDesktop_Provider.js"
@@ -18,17 +19,10 @@ import { ORG_CtxSTDataThirdpageMobile_Provider } from "../context/ORG_Ctx_STData
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 
+
 import GlobalStyle from "./styles/index.js"
 
 function MyApp({ Component, pageProps }) {
-  // console.log("Component:", Component)
-  // console.log("props:", props)
-  // console.log("pageProps:", pageProps)
-  // const { isMobile } = useCheckUserWidth()
-  // const { isMobile } = useWidthSize()
-
-  // console.log("isMobile:", isMobile)
-
   return (
     <LoginCtxProvider>
       <ORG_InputCtxProvider>
@@ -48,14 +42,16 @@ function MyApp({ Component, pageProps }) {
                                   <ORG_Ctx_D_ThirdpageData_Provider>
                                     <ORG_Ctx_2Page_Provider>
                                       <CheckUserWidth_Provider>
-                                        <PageLayout>
-                                          <GlobalStyle />
-                                          <link
-                                            rel="icon"
-                                            href="/favicon.ico"
-                                          />
-                                          <Component {...pageProps} />
-                                        </PageLayout>
+                                        <NavbarHomeHeight_Provider>
+                                          <PageLayout>
+                                            <GlobalStyle />
+                                            <link
+                                              rel="icon"
+                                              href="/favicon.ico"
+                                            />
+                                            <Component {...pageProps} />
+                                          </PageLayout>
+                                        </NavbarHomeHeight_Provider>
                                       </CheckUserWidth_Provider>
                                     </ORG_Ctx_2Page_Provider>
                                   </ORG_Ctx_D_ThirdpageData_Provider>
