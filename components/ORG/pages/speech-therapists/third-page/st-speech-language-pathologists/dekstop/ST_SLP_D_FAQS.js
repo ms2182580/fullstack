@@ -8,8 +8,8 @@ import { useScrollLock } from "../../../../../../../utils/useScrollLock.js"
 import { ButtonSmall } from "../../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
-import { ST_D_Detail_FAQS_Modal } from "./ST_D_Detail_FAQS_Modal.js"
-import { ST_D_Detail_FAQS_VoteQuestionsAnswers } from "./ST_D_Detail_FAQS_VoteQuestionsAnswers.js"
+import { ST_SLP_D_FAQS_Modal } from "./ST_SLP_D_FAQS_Modal.js"
+import { ST_SLP_D_FAQS_VoteQuestionsAnswers } from "./ST_SLP_D_FAQS_VoteQuestionsAnswers.js"
 import { ST_SLP_D_FAQSWrapper } from "./styles/ST_SLP_D_FAQSWrapper.js"
 
 export const ST_SLP_D_FAQS = ({ name, lastName, locationCity, locationStreetNumber, locationStreetName, locationState }) => {
@@ -81,7 +81,7 @@ export const ST_SLP_D_FAQS = ({ name, lastName, locationCity, locationStreetNumb
           if (showAll) {
             return (
               <Fragment key={`${faqsData.answers[i]}_${i}`}>
-                <ST_D_Detail_FAQS_VoteQuestionsAnswers
+                <ST_SLP_D_FAQS_VoteQuestionsAnswers
                   votes={x}
                   questions={faqsData.questions[i]}
                   answers={faqsData.answers[i]}
@@ -94,7 +94,7 @@ export const ST_SLP_D_FAQS = ({ name, lastName, locationCity, locationStreetNumb
             while (i < 3) {
               return (
                 <Fragment key={`${faqsData.answers[i]}_${i}`}>
-                  <ST_D_Detail_FAQS_VoteQuestionsAnswers
+                  <ST_SLP_D_FAQS_VoteQuestionsAnswers
                     votes={x}
                     questions={faqsData.questions[i]}
                     answers={faqsData.answers[i]}
@@ -141,7 +141,7 @@ export const ST_SLP_D_FAQS = ({ name, lastName, locationCity, locationStreetNumb
       </ST_SLP_D_FAQSWrapper>
 
       {showModal && (
-        <ST_D_Detail_FAQS_Modal
+        <ST_SLP_D_FAQS_Modal
           showModal={showModal}
           handleHideModal={handleHideModal}
           name={name}
