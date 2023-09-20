@@ -37,8 +37,8 @@ export const INDEX_D_STDetail = () => {
           <ST_SLP_D_ContactUs />
 
           <ST_D_Detail_Reviews
-            name={thirdpageDataORG.card.leftPart.title}
-            lastName={""}
+            name={thirdpageDataORG.fullName.first}
+            lastName={thirdpageDataORG.fullName.last}
             rating={thirdpageDataORG.card.leftPart.rating}
             reviews={thirdpageDataORG.card.leftPart.reviews}
           />

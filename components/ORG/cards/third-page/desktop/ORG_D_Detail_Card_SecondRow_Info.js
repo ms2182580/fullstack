@@ -4,10 +4,7 @@ import { Fragment, useEffect, useState } from "react"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 
-export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackground = false, debug = false }) => {
-  if (debug) {
-    console.log("dataToShow:", dataToShow)
-  }
+export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackground = false }) => {
 
   const [dataObj, setDataObj] = useState(null)
 

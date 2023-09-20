@@ -29,9 +29,6 @@ export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
     }
   }
 
-  // console.dir("thirdpageDataORG:", thirdpageDataORG)
-  // console.dir("query:", query)
-
   return (
     <ST_D_Detail_MainCardWrapper id="About">
       <div className="LEFT">
@@ -146,7 +143,6 @@ export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             <ORG_D_Detail_Card_SecondRow_Info
               title={thirdpageDataORG.card.rightPart.thirdPageData.card.qualifications.title}
               dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.qualifications.dataToShow}
-              debug
             />
 
             <ORG_D_Detail_Card_SecondRow_Info
@@ -157,8 +153,8 @@ export const ST_D_Detail_MainCard = ({ thirdpageDataORG }) => {
         </div>
 
         <ORG_D_Detail_About
-          name={thirdpageDataORG.card.leftPart.title}
-          lastName={""}
+          name={thirdpageDataORG.fullName.first}
+          lastName={thirdpageDataORG.fullName.last}
           aboutRef={null}
         />
 
