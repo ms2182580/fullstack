@@ -5,7 +5,7 @@ export const Home_Hero_DWrapper = styled.div`
   /* padding-top: ${({ paddingTop }) => `calc(155px + ${paddingTop}px)`}; */
 
   
-  margin-bottom:41px;
+  margin-bottom:158px;
   
   & > :nth-child(1) {
     padding-top: ${({ paddingTop }) => `calc(155px + ${paddingTop}px)`};

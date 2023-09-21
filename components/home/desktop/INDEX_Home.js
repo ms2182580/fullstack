@@ -1,3 +1,4 @@
+import { Home_GetServicePlan_D } from './Home_GetServicePlan_D.js'
 import { useNavbarHomeHeight } from "../../../context/NavbarHome_Ctx_Height.js"
 import { Home_Hero_D } from "./Home_Hero_D.js"
 import { INDEX_HomeWrapper } from "./styles/INDEX_HomeWrapper.js"
@@ -11,6 +12,7 @@ export const INDEX_Home = () => {
         <>
           <INDEX_HomeWrapper paddingTop={height.height}>
             <Home_Hero_D />
+            <Home_GetServicePlan_D />
             {/* <Home_GetServicePlan_D />
             <Home_OurPlatformCarousal_D />
             <Home_IntroducingAI_D />
@@ -21,16 +23,6 @@ export const INDEX_Home = () => {
           </INDEX_HomeWrapper>
         </>
       )}
-      {/* <INDEX_HomeWrapper paddingTop={height !== null && height}>
-        <h2>HERO</h2>
-        <h2>Get Services Plan</h2>
-        <h2>Our Platform (carousal)</h2>
-        <h2>Introducing AI</h2>
-        <h2>Coming soon: AI</h2>
-        <h2>Coming soon: Plan with</h2>
-        <h2>Suscription for all</h2>
-        <h2>Survey</h2>
-      </INDEX_HomeWrapper> */}
     </>
   )
 }
