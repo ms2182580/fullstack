@@ -1,13 +1,7 @@
 import styled from "styled-components"
 
 export const Home_GetServicePlan_DWrapper = styled.div`
-  /* border: 2px solid crimson; */
-  /* display: grid; */
-  /* justify-content: center; */
-  /* text-align: center; */
-  
   margin-inline: clamp(16px, 20vw - 170px, 196px);
-
   & > :nth-child(1) {
     font-size: 64px;
     margin-bottom: 62px;

@@ -2,13 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const Home_GetServicePlan_Cards_DWrapper = styled.div`
-  /* display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column; */
-
-  /* gap: 28px; */
-
+  margin-bottom: calc(68px + 35px); /* With the first value (68px) the component achieve 33px, to get 68px total is needed 35px more*/
   & > :nth-child(1) {
     font-size: 107px;
     color: #dfdbd1;
@@ -21,20 +15,10 @@ export const Home_GetServicePlan_Cards_DWrapper = styled.div`
     padding-inline: 30px;
     padding-top: 30px;
     padding-bottom: 45px;
-    /* padding: 32px 40px 56px 40px; */
-    /* padding-bottom: 56px; */
-    /* border: 2px solid crimson; */
-
-    /* display: grid;
-    grid-auto-flow: row;
-    grid-template-rows: 80px 1fr auto auto; */
 
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
     flex-direction: column;
 
-    /* height: fit-content; */
     height: 80%;
 
     gap: 24px;
@@ -57,13 +41,9 @@ export const Home_GetServicePlan_Cards_DWrapper = styled.div`
 
     & > :nth-child(2) {
       font-size: 34px;
-      /* border: 2px solid crimson; */
-      /* height: max-content; */
     }
 
     & > :nth-child(3) {
-      /* align-self: end; */
-
       height: 147px;
 
       font-size: 24px;
@@ -73,7 +53,7 @@ export const Home_GetServicePlan_Cards_DWrapper = styled.div`
     & > :nth-child(4) {
       margin-top: auto;
       align-self: flex-start;
-      
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -86,14 +66,12 @@ export const Home_GetServicePlan_Cards_DWrapper = styled.div`
       font-weight: 600;
       text-decoration: none;
       color: ${PRIMARY.PRIMARY_CTA};
-      
-      width:171px;
-      
-      
+
+      width: 171px;
+
       &:hover,
-      &:focus
-      {
-        color:${NEUTRALS.OFF_WHITE};
+      &:focus {
+        color: ${NEUTRALS.OFF_WHITE};
         background-color: ${PRIMARY.PRIMARY_HOVER};
       }
     }

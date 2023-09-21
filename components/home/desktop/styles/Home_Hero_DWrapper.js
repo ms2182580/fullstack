@@ -2,20 +2,12 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const Home_Hero_DWrapper = styled.div`
-  /* padding-top: ${({ paddingTop }) => `calc(155px + ${paddingTop}px)`}; */
+  margin-bottom: 158px;
 
-  
-  margin-bottom:158px;
-  
   & > :nth-child(1) {
     padding-top: ${({ paddingTop }) => `calc(155px + ${paddingTop}px)`};
-    
-    background: linear-gradient(180deg, 
-      hsl(304.9, 45.7%, 58.1%, 0.9) 11%, 
-      hsl(18.8, 100%, 71.2%, 0.5) 69%, 
-      hsl(304.9, 45.7%, 64.1%, 0.3) 90%, 
-      hsl(0, 0%, 100%) 99%);
-    
+
+    background: linear-gradient(180deg, hsl(304.9, 45.7%, 58.1%, 0.9) 11%, hsl(18.8, 100%, 71.2%, 0.5) 69%, hsl(304.9, 45.7%, 64.1%, 0.3) 90%, hsl(0, 0%, 100%) 99%);
 
     & > :nth-child(1) {
       line-height: clamp(130px, 9.7vw, 140px);
@@ -26,7 +18,6 @@ export const Home_Hero_DWrapper = styled.div`
       color: ${NEUTRALS.BLACK};
 
       margin-bottom: 54px;
-      
 
       & > * {
         display: block;
@@ -75,34 +66,31 @@ export const Home_Hero_DWrapper = styled.div`
         }
       }
     }
-    
-    & > :nth-child(3){
+
+    & > :nth-child(3) {
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      & > :nth-child(1){
-        padding:16px 80px;
-        border-radius:8px;
-        background-color:${PRIMARY.PRIMARY_CTA};
-        
-        color:${NEUTRALS.OFF_WHITE};
-        text-decoration:none;
-        
-        font-size:24px;
-        font-weight:600;
-        
+
+      & > :nth-child(1) {
+        padding: 16px 80px;
+        border-radius: 8px;
+        background-color: ${PRIMARY.PRIMARY_CTA};
+
+        color: ${NEUTRALS.OFF_WHITE};
+        text-decoration: none;
+
+        font-size: 24px;
+        font-weight: 600;
       }
-      
-      margin-bottom:24px;
-      
+
+      margin-bottom: 24px;
     }
   }
-  
 
   & > :nth-child(2) {
-    font-size:18px;
+    font-size: 18px;
     text-align: center;
-    color:#3A3230;
+    color: #3a3230;
   }
 `

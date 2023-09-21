@@ -17,6 +17,11 @@ export const Home_Hero_D = () => {
   const [currentWord, setCurrentWord] = useState("Agencies")
   const [fadeOut, setFadeOut] = useState(false)
 
+
+  /* 
+  !FH
+  Make this active only if the user have his sight here. Maybe use IntersectionObserver
+  */
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOut(true) // Start fading out the previous word
