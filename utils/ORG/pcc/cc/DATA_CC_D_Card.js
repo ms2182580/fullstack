@@ -2,7 +2,6 @@ import ORG_Detail_CC_Karate_Photo_1 from '../../../../assets/images/ORG/communit
 import ORG_Detail_CC_Karate_Photo_2 from '../../../../assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_2.png'
 import ORG_Detail_CC_Karate_Photo_3 from '../../../../assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_3.png'
 
-
 export const DATA_CC_D_CardRight = [
   {
     mainName: "Karate Group Class",

@@ -1,13 +1,41 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
+/* 
+
+'
+"
+`
+
+Modelo de caja del DOM:
+1. Elemento
+2. Padding
+3. Borde
+4. Margen
+
+*/
+
 export const Home_Hero_DWrapper = styled.div`
   margin-bottom: 158px;
 
   & > :nth-child(1) {
     padding-top: ${({ paddingTop }) => `calc(155px + ${paddingTop}px)`};
 
-    background: linear-gradient(180deg, hsl(304.9, 45.7%, 58.1%, 0.9) 11%, hsl(18.8, 100%, 71.2%, 0.5) 69%, hsl(304.9, 45.7%, 64.1%, 0.3) 90%, hsl(0, 0%, 100%) 99%);
+    background: linear-gradient(45deg, hsl(304.9, 45.7%, 58.1%, 0.5) 11%, hsl(18.8, 100%, 71.2%, 0.5) 55%, hsl(304.9, 45.7%, 64.1%, 0.58) 72%);
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      left: 0;
+      right: 0;
+      width: 100%;
+
+      height: 4%;
+      background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 1) 78%);
+    }
 
     & > :nth-child(1) {
       line-height: clamp(130px, 9.7vw, 140px);
@@ -51,7 +79,7 @@ export const Home_Hero_DWrapper = styled.div`
       font-size: clamp(31px, 3vw, 34px);
       color: ${NEUTRALS.DARK_GREY};
       font-weight: 400;
-
+      
       & > * {
         display: block;
       }
@@ -71,7 +99,7 @@ export const Home_Hero_DWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-
+      
       & > :nth-child(1) {
         padding: 16px 80px;
         border-radius: 8px;
@@ -82,6 +110,8 @@ export const Home_Hero_DWrapper = styled.div`
 
         font-size: 24px;
         font-weight: 600;
+        position:relative;
+        z-index:1;
       }
 
       margin-bottom: 24px;

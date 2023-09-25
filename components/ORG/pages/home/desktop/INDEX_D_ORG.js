@@ -6,6 +6,7 @@ import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Sear
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { DATA_ORG_D as DATA } from "../../../../../utils/ORG/DATA_ORG_D.js"
+import { useScrollHorizontal } from "../../../../../utils/useScrollHorizontal.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_SearchComponent } from "../../../inputs/desktop/ORG_D_SearchComponent.js"
@@ -31,120 +32,7 @@ export const INDEX_D_ORG = () => {
     setShouldFetchDesktopNoFilters(true)
   }, [])
 
-  const [listRef, setListRef] = useState(null)
-
-  const [currentScrollState, setCurrentScrollState] = useState(null)
-  const [isFinalScrollState, setIsFinalScrollState] = useState(null)
-
-  const [stateToCss, setstateToCss] = useState({
-    scrollRight: false,
-    reachFinal: false
-  })
-
-  useEffect(() => {
-    if (currentScrollState === 0 || currentScrollState === null) {
-      setstateToCss((prevState) => ({
-        ...prevState,
-        scrollRight: false,
-        reachFinal: false
-      }))
-    }
-
-    if (currentScrollState > 100) {
-      setstateToCss((prevState) => ({
-        ...prevState,
-        scrollRight: true,
-        reachFinal: false
-      }))
-    }
-
-    if (currentScrollState === isFinalScrollState) {
-      setstateToCss((prevState) => ({
-        ...prevState,
-        scrollRight: true,
-        reachFinal: true
-      }))
-    }
-  }, [currentScrollState, isFinalScrollState])
-
-  useEffect(() => {
-    setstateToCss((prevState) => ({
-      ...prevState,
-      scrollRight: false,
-      reachFinal: false
-    }))
-  }, [])
-
-  useEffect(() => {
-    if (listRef) {
-      let startTouch = 0
-
-      const handleTouchStart = (event) => {
-        startTouch = event.touches[0].clientX
-      }
-
-      const handleScroll = (event) => {
-        event.preventDefault()
-        if (event.type === "wheel") {
-          listRef.scrollLeft += event.deltaY
-        }
-
-        if (event.type === "touchmove") {
-          const change = startTouch - event.touches[0].clientX
-          startTouch = event.touches[0].clientX
-          listRef.scrollLeft += change
-        }
-
-        const currentScroll = listRef.scrollLeft
-        if (currentScrollState === null) {
-          setCurrentScrollState(currentScroll)
-        }
-
-        const finalScroll = listRef.scrollLeftMax
-        if (isFinalScrollState === null) {
-          setIsFinalScrollState(finalScroll)
-        }
-      }
-
-      listRef.addEventListener("wheel", handleScroll)
-      listRef.addEventListener("touchstart", handleTouchStart)
-      listRef.addEventListener("touchmove", handleScroll)
-
-      return () => {
-        listRef.removeEventListener("wheel", handleScroll)
-        listRef.addEventListener("touchstart", handleTouchStart)
-        listRef.removeEventListener("touchmove", handleScroll)
-      }
-    }
-  }, [listRef])
-
-  const handleMoveNavBarToLeftByClick = () => {
-    if (listRef) {
-      let toRest = listRef.scrollLeft > 200 ? 200 : listRef.scrollLeft
-
-      setCurrentScrollState((prevState) => prevState - toRest)
-
-      listRef.scrollLeft -= 200
-    }
-  }
-
-  const handleMoveNavBarToRightByClick = () => {
-    if (listRef) {
-      listRef.scrollLeft += 200
-
-      const currentScroll = listRef.scrollLeft
-      if (currentScrollState === null) {
-        setCurrentScrollState(currentScroll)
-      } else {
-        setCurrentScrollState(currentScroll)
-      }
-
-      const finalScroll = listRef.scrollLeftMax
-      if (isFinalScrollState === null) {
-        setIsFinalScrollState(finalScroll)
-      }
-    }
-  }
+  const { moveToLeft, moveToRight, stateToCss, setListRef } = useScrollHorizontal()
 
   const { query } = useRouter()
   // console.log('query:', query)/* Here we have the query from 404 page or index  */
@@ -184,7 +72,7 @@ export const INDEX_D_ORG = () => {
 
       <div>
         <div className={`${stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""}`}>
-          <div onClick={handleMoveNavBarToLeftByClick}>
+          <div onClick={moveToLeft}>
             <LeftArrowSvg />
           </div>
           <div />
@@ -215,9 +103,10 @@ export const INDEX_D_ORG = () => {
             </li>
           ))}
         </ul>
+
         <div className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
           <div
-            onClick={handleMoveNavBarToRightByClick}
+            onClick={moveToRight}
             className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
             <ArrowRightSvg />
           </div>

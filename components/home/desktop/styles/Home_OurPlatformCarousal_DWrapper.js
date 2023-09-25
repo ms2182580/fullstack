@@ -9,7 +9,7 @@ export const Home_OurPlatformCarousal_DWrapper = styled.div`
   display: grid;
   grid-template-columns: 510px 1fr;
   grid-auto-flow: column;
-  gap: 40px;
+  gap: 60px;
 
   background: #f0f2f8;
 
@@ -53,6 +53,50 @@ export const Home_OurPlatformCarousal_DWrapper = styled.div`
       text-decoration: none;
       font-size: 24px;
       font-weight: 600;
+    }
+  }
+
+  .RIGHT {
+    overflow-x: auto;
+
+    & > :nth-child(1) {
+      display: grid;
+      grid-template-columns: repeat(4, 400px);
+      grid-auto-flow: column;
+
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: ew-resize;
+      gap: 24px;
+
+      padding-right: calc(24px * 3);
+
+      margin-bottom: 48px;
+    }
+
+    & > :nth-child(2) {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+
+      & > * {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: ${NEUTRALS.OFF_WHITE};
+
+        border: 2px solid ${PRIMARY.PRIMARY_CTA};
+
+        border-radius: 8px;
+        cursor: pointer;
+
+        & > * {
+          & > * {
+            fill: ${PRIMARY.PRIMARY_CTA};
+          }
+        }
+      }
     }
   }
 `
