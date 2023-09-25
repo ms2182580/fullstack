@@ -1904,3 +1904,24 @@ export const Home_OurPlatform_JetSvg = (props) => (
     </g>
   </svg>
 )
+
+
+export const Home_SecuritySvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={25}
+    fill="none"
+    {...props}
+  >
+    <g
+      stroke="#FBC300"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+    >
+      <path d="m4.649 6.257 7-2.625a1 1 0 0 1 .702 0l7 2.625a1 1 0 0 1 .649.936V10.5a10 10 0 0 1-4 8l-1 .75a5 5 0 0 1-6 0l-1-.75a10 10 0 0 1-4-8V7.193a1 1 0 0 1 .649-.936Z" />
+      <path d="M12 8.5c-1.105 0-2 .83-2 1.853 0 .806.667 1.447 1 1.747l-.333 2.4h2.666L13 12.1c.333-.3 1-.94 1-1.747 0-1.024-.895-1.853-2-1.853Z" />
+    </g>
+  </svg>
+)

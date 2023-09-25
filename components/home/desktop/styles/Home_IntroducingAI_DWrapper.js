@@ -8,8 +8,6 @@ export const Home_IntroducingAI_DWrapper = styled.div`
 
   background-color: #030b40;
 
-  /* display: flex; */
-
   display: grid;
   grid-template-columns: 400px 1fr;
   grid-template-rows: 1fr;
