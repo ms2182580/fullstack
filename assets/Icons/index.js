@@ -1925,3 +1925,23 @@ export const Home_SecuritySvg = (props) => (
     </g>
   </svg>
 )
+
+export const Home_PlanWithSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={25}
+    fill="none"
+    {...props}
+  >
+    <g stroke="#397ADB" strokeWidth={1.5}>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 12.5v-7a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h5M2 7.5h19"
+      />
+      <circle cx={16} cy={16.5} r={6} />
+      <path strokeLinecap="round" strokeLinejoin="round" d="m13 16.5 2 2 4-4" />
+    </g>
+  </svg>
+)
