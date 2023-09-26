@@ -15,7 +15,7 @@ export const Home_IntroducingAI_D = () => {
           width={1}
           height={1}
 
-          alt="Image of AI Inclusive dashboard"
+          alt="Dashboard of AI Inclusive"
         />
       </div>
 

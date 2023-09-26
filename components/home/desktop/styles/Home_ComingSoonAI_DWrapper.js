@@ -104,6 +104,7 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
         content: "";
         position: absolute;
         width: 100%;
+        /* height: 1px; */
         height: 1px;
         background-color: #eaeaea;
         top: 0px;
