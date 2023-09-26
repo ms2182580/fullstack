@@ -7,7 +7,7 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
   padding-bottom: 152px;
 
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 1fr;
 
   grid-auto-flow: column;
 
@@ -15,6 +15,7 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
 
   .LEFT {
     display: grid;
+    align-self: center;
     gap: 24px;
 
     & > :nth-child(1) {
@@ -68,8 +69,10 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
     & > :nth-child(5) {
       display: flex;
       align-items: center;
-
       gap: 16px;
+      position: relative;
+      
+      padding-top: 24px;
 
       & > :nth-child(1) {
         background-color: #fff4cb;
@@ -93,8 +96,25 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
           color: #397adb;
           font-weight: 600;
           text-decoration: underline;
+          cursor: pointer;
         }
       }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        /* height: 1px; */
+        height: 1px;
+        background-color: #eaeaea;
+        top: 0px;
+        left: 0;
+        right: 0;
+      }
     }
+  }
+
+  .RIGHT {
+    align-self: flex-end;
   }
 `
