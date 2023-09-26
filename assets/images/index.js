@@ -751,3 +751,22 @@ export const SNT_ForthSection = (props) => (
     />
   </svg>
 )
+
+export const Home_CheckSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={18}
+    height={19}
+    fill="none"
+    {...props}
+  >
+    <circle cx={9} cy={9.7} r={9} fill="#6E3A82" />
+    <path
+      stroke="#fff"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={0.787}
+      d="m5.625 10.262 2.7 1.688 4.05-4.5"
+    />
+  </svg>
+)
