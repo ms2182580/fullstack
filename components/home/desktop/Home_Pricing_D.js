@@ -70,7 +70,7 @@ export const Home_Pricing_D = () => {
           <div>
             <P>Contact us</P>
           </div>
-          <button>Contact</button>
+          <button tabIndex={-1}>Contact</button>
           <div>
             <P>
               {" "}

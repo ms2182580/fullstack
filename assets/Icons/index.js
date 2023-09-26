@@ -1367,6 +1367,23 @@ export const LinkedinSvg = (props) => (
   </svg>
 )
 
+export const Linkedin2Svg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#6E3A82"
+      fillRule="evenodd"
+      d="M2.727 5.455a2.727 2.727 0 1 0 0-5.455 2.727 2.727 0 0 0 0 5.455ZM5.455 24V7.636H0V24h5.455ZM7.636 7.636h4.91V9.76c.781-1.026 2.45-2.123 5.454-2.123 4.724 0 6 4.714 6 7.637V24h-5.454v-8.727C18.546 14.182 18 12 15.818 12c-1.55 0-2.64 1.1-3.272 2.129V24h-4.91V7.636Z"
+      clipRule="evenodd"
+    />
+  </svg>
+)
+
 export const Instagram2Svg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
