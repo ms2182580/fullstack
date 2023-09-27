@@ -57,6 +57,13 @@ export const Home_Hero_DWrapper = styled.div`
           & > :nth-child(1) {
             position: absolute;
             left: calc(100% + 28px);
+            vertical-align: middle;
+
+            display: flex;
+            align-items: center;
+
+            top: 0;
+            bottom: 0;
 
             color: ${PRIMARY.PRIMARY_CTA};
 
