@@ -1,20 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-/* 
-
-'
-"
-`
-
-Modelo de caja del DOM:
-1. Elemento
-2. Padding
-3. Borde
-4. Margen
-
-*/
-
 export const Home_Hero_DWrapper = styled.div`
   margin-bottom: 158px;
 
@@ -38,33 +24,53 @@ export const Home_Hero_DWrapper = styled.div`
     }
 
     & > :nth-child(1) {
-      line-height: clamp(130px, 9.7vw, 140px);
+      line-height: clamp(80px, 9vw, 130px);
       font-weight: 700;
-      font-size: clamp(100px, 9vw, 128px);
+      font-size: clamp(88px, 8vw, 120px);
       text-align: center;
+      letter-spacing: 1px;
 
       color: ${NEUTRALS.BLACK};
 
+      /* margin-bottom: calc(54px + 80px); */
       margin-bottom: 54px;
+      /* border: 2px solid crimson; */
 
       & > * {
         display: block;
       }
 
-      & > span {
-        & > span {
-          color: ${PRIMARY.PRIMARY_CTA};
+      .CHANGE_WORD {
+        padding-right: 32vw;
 
-          &.word-transition {
-            transition: opacity 0.5s;
-          }
+        @media (min-width: 1200px) {
+          padding-right: 25vw;
+        }
 
-          &.fade-out {
-            opacity: 0;
-          }
+        @media (min-width: 1430px) {
+          padding-right: 18vw;
+        }
 
-          &.fade-in {
-            opacity: 1;
+        & > :nth-child(1) {
+          position: relative;
+
+          & > :nth-child(1) {
+            position: absolute;
+            left: calc(100% + 28px);
+
+            color: ${PRIMARY.PRIMARY_CTA};
+
+            &.word-transition {
+              transition: opacity 0.5s;
+            }
+
+            &.fade-out {
+              opacity: 0;
+            }
+
+            &.fade-in {
+              opacity: 1;
+            }
           }
         }
       }
@@ -79,7 +85,7 @@ export const Home_Hero_DWrapper = styled.div`
       font-size: clamp(31px, 3vw, 34px);
       color: ${NEUTRALS.DARK_GREY};
       font-weight: 400;
-      
+
       & > * {
         display: block;
       }
@@ -99,7 +105,7 @@ export const Home_Hero_DWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       & > :nth-child(1) {
         padding: 16px 80px;
         border-radius: 8px;
@@ -110,8 +116,8 @@ export const Home_Hero_DWrapper = styled.div`
 
         font-size: 24px;
         font-weight: 600;
-        position:relative;
-        z-index:1;
+        position: relative;
+        z-index: 1;
       }
 
       margin-bottom: 24px;
