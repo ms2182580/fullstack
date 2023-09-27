@@ -1,7 +1,9 @@
 import styled from "styled-components"
-import { PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const Home_Survey_DWrapper = styled.form`
+  padding-top: 157px;
+  padding-bottom: 157px;
   padding-inline: clamp(8px, 20vw - 180px, 134px);
 
   display: grid;
@@ -41,7 +43,6 @@ export const Home_Survey_DWrapper = styled.form`
         gap: 32px;
 
         & > * {
-          
           cursor: pointer;
           transition: all 100ms linear;
 
@@ -49,7 +50,7 @@ export const Home_Survey_DWrapper = styled.form`
           &:focus {
             scale: 1.3;
           }
-          
+
           & > * {
             fill: ${PRIMARY.PRIMARY_CTA};
           }
@@ -79,9 +80,68 @@ export const Home_Survey_DWrapper = styled.form`
       }
     }
   }
-  
-  .RIGHT{
-    border: 2px solid crimson;
-    
+
+  .RIGHT {
+    padding-top: 82px;
+    padding-bottom: 160px;
+    padding-inline: 37px;
+
+    background: rgba(196, 196, 196, 0.29);
+    border-radius: 14px;
+
+    display: grid;
+    gap: 27px;
+
+    & > * {
+      display: grid;
+      border: none;
+      
+      & > :nth-child(1) {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: 0.2px;
+
+        color: ${NEUTRALS.BLACK};
+      }
+
+      & > :nth-child(2) {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid ${NEUTRALS.BLACK};
+        
+        
+
+        &::placeholder {
+          font-style: italic;
+        }
+      }
+    }
+
+    & > :nth-last-child(2) {
+      & > :nth-child(2) {
+        height: 100px;
+        resize: none;
+      }
+      
+      & > :nth-child(3){
+        margin-top: 8px;
+        margin-left: auto;
+        
+        color: ${NEUTRALS.DARK_GREY};
+        
+      }
+    }
+
+    & > :last-child {
+      justify-self: flex-start;
+      padding: 10px 24px;
+      border-radius: 8px;
+      border: 1px solid ${NEUTRALS.BLACK};
+      
+      font-size: 16px;
+      
+      cursor: pointer;
+    }
   }
 `
