@@ -5,6 +5,11 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_TooltipWrapper } from "./styles/ORG_D_Detail_TooltipWrapper.js"
 
+/* 
+!FH
+This can help to make a better tooltip
+https://css-tip.com/tooltip-mask/ */
+
 export const ORG_D_Detail_Tooltip = () => {
   const [show, setShow] = useState(false)
   const componentRef = useRef(null)
@@ -19,7 +24,6 @@ export const ORG_D_Detail_Tooltip = () => {
 
   let checkIfLoseFocus = () => {
     setShow(false)
-
   }
 
   return (

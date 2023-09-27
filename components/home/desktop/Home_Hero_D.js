@@ -4,8 +4,8 @@ import { H2 } from "../../../components/ui/heading_body_text/HeaderFonts"
 import { useNavbarHomeHeight } from "../../../context/NavbarHome_Ctx_Height.js"
 import { Home_Hero_DWrapper } from "./styles/Home_Hero_DWrapper.js"
 
-const WORDS = ["States", "Insurance", "Families", "Everyone"]
-const FADE_OUT_TIME = 2700
+const WORDS = ["states", "families", "life", "insurance"]
+const FADE_OUT_TIME = 2000
 const fadeOutVariables = {
   start: FADE_OUT_TIME,
   finish: FADE_OUT_TIME + 510,
@@ -14,10 +14,8 @@ const fadeOutVariables = {
 export const Home_Hero_D = () => {
   let { height } = useNavbarHomeHeight()
 
-  const [currentWord, setCurrentWord] = useState("Agencies")
+  const [currentWord, setCurrentWord] = useState("insurance")
   const [fadeOut, setFadeOut] = useState(false)
-
-
 
   /* 
   !FH
@@ -46,10 +44,13 @@ export const Home_Hero_D = () => {
       <div>
         <h1>
           <span>Our AI service plans</span>
-          <span>
-            save <span className={`word-transition ${fadeOut ? "fade-out" : "fade-in"}`}>{currentWord}</span>
+          <span>save time and money</span>
+          <span className="CHANGE_WORD">
+            <span>
+              for
+              <span className={`word-transition ${fadeOut ? "fade-out" : "fade-in"}`}>{currentWord}</span>
+            </span>
           </span>
-          <span>time and money.</span>
         </h1>
         <H2>
           <span>
