@@ -10,14 +10,18 @@ export const NavBar_D_HamburgerComponent = () => {
 
   useOutsideHide(refDropdown, setShowDropdown)
 
-  const handleShowDropdown = () => {
-    setShowDropdown((prevState) => !prevState)
+  const handleShowDropdown = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setShowDropdown((prevState) => !prevState)
+    }
   }
 
   return (
     <>
       <NavBar_D_HamburgerComponentWrapper
+        onKeyDown={handleShowDropdown}
         onClick={handleShowDropdown}
+        tabIndex={0}
         showDropdown={showDropdown}>
         <NavBar_D_HamburgerSvg />
       </NavBar_D_HamburgerComponentWrapper>

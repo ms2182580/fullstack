@@ -32,7 +32,8 @@ export const NavBar_D_HamburgerComponentDropdown_CCWrapper = styled.div`
     border-bottom: 2px solid transparent;
     cursor: pointer;
     
-    &:hover{
+    &:hover,
+    &:focus{
       border-bottom: 2px solid ${PRIMARY.PRIMARY_CTA};
     }
     

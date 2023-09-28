@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
-export const NavBar_D_InfoDropdownWrapper = styled.div`
+export const NavBar_D_GTSDropdownWrapper = styled.div`
   position: absolute;
   top: calc(100% + 10px);
   left: 0;
