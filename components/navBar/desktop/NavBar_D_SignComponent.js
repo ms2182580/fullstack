@@ -47,21 +47,21 @@ export const NavBar_D_SignComponent = () => {
         </span>
       </NavBar_D_SignComponentWrapper>
 
+      {showDropdownLanguage && (
+        <>
+          <NavBar_D_LanguageComponentDropdown
+            theRef={refDropdownLanguage}
+            showDropdownLanguage={showDropdownLanguage}
+          />
+        </>
+      )}
+
       {showDropdownProfile && (
         <>
           <NavBar_D_SignComponentDropdown
             theRef={refDropdownProfile}
             showDropdownProfile={showDropdownProfile}
             setShowDropdown={setShowDropdownProfile}
-          />
-        </>
-      )}
-
-      {showDropdownLanguage && (
-        <>
-          <NavBar_D_LanguageComponentDropdown
-            theRef={refDropdownLanguage}
-            showDropdownLanguage={showDropdownLanguage}
           />
         </>
       )}

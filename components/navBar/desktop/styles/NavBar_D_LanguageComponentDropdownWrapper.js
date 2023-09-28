@@ -8,7 +8,6 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
   top: 100%;
 
   background-color: ${NEUTRALS.OFF_WHITE};
-  /* padding: 24px; */
   padding-top: 24px;
   padding-bottom: 24px;
   border-radius: 0 0 8px 8px;
@@ -21,7 +20,6 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
   & > :nth-child(1) {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
     padding-inline: 24px;
 
