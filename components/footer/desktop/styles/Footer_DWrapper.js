@@ -52,11 +52,14 @@ export const Footer_DWrapper = styled.footer`
     & > :nth-child(3) {
       & > :last-child {
         font-weight: 600;
-        /* color: ${PRIMARY.PRIMARY_CTA}; */
       }
     }
 
     & > :nth-child(4) {
+      & > :nth-child(2) {
+        font-weight: 600;
+      }
+
       & > :last-child {
         padding: 6px 16px;
         width: 98px;
@@ -195,7 +198,6 @@ export const Footer_DWrapper = styled.footer`
       }
 
       & > :nth-child(2) {
-        
         & > * {
           fill: ${PRIMARY.PRIMARY_LOGO};
         }
