@@ -51,8 +51,7 @@ export const Footer_D = () => {
 
         <div>
           <H4>Create a plan</H4>
-          <p>Service Plan</p>
-          <p>Habilitation Plan</p>
+          <p>Learn to get Services</p>
           <span>Sign in</span>
         </div>
       </div>

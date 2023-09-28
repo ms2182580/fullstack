@@ -8,15 +8,20 @@ const COMMUNITY_CLASSES_NESTED = [
   { name: "Daily Living Skills" },
   { name: "ASL & Languages" },
   { name: "STEM" },
-  { name: "Academics" }
+  { name: "Academics" },
 ]
 
-export const NavBar_D_HamburgerComponentDropdown_CC = () => {
+export const NavBar_D_HamburgerComponentDropdown_CC = ({ handleHideHover }) => {
   return (
-    <NavBar_D_HamburgerComponentDropdown_CCWrapper>
+    <NavBar_D_HamburgerComponentDropdown_CCWrapper onBlur={handleHideHover}>
       {COMMUNITY_CLASSES_NESTED.map((x, i) => (
         <>
-          <H4 normal key={`${x.name}_${i}`}>{x.name}</H4>
+          <H4
+            tabIndex={0}
+            normal
+            key={`${x.name}_${i}`}>
+            {x.name}
+          </H4>
         </>
       ))}
     </NavBar_D_HamburgerComponentDropdown_CCWrapper>

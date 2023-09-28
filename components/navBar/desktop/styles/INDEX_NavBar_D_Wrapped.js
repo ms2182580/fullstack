@@ -3,13 +3,13 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const INDEX_NavBar_D_Wrapped = styled.nav`
   box-shadow: ${(x) => (x.isORG ? `0px 4px 15px 0px rgba(0, 0, 0, 0.15);` : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
-  
-  background-color:${PRIMARY.OFF_WHITE};
-  
+
+  background-color: ${PRIMARY.OFF_WHITE};
+
   position: relative;
 
   padding-top: 28px;
-  
+
   & > :nth-child(1) {
     display: flex;
     align-items: center;
@@ -21,11 +21,19 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
     & > :nth-child(1) {
       margin-right: 50px;
       cursor: pointer;
-      
-      & > :nth-child(1){
-        color:${PRIMARY.PRIMARY_LOGO}
+
+      display: flex;
+      gap: 8px;
+
+      & > :nth-child(1) {
+        color: ${PRIMARY.PRIMARY_LOGO};
       }
-      
+
+      & > :nth-child(2) {
+        & > * {
+          fill: ${PRIMARY.PRIMARY_LOGO};
+        }
+      }
     }
 
     & > :nth-child(2) {
@@ -36,8 +44,7 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
   & > :nth-child(2) {
     content: "";
     height: 4px;
-    /* background-color: ${(x) => (x.isORG ? `${NEUTRALS.OFF_WHITE} ` : `${PRIMARY.PRIMARY_BACKGROUND}`)}; */
-    background-color:${PRIMARY.PRIMARY_BACKGROUND};
+    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     width: 100%;
     position: absolute;
   }
@@ -60,8 +67,15 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        gap: 30px;
+        gap: clamp(20px, 7vw - 50px, 51px);
 
-        gap: 51px;
+        & > *:not(:first-child) {
+          & > h4 {
+            color: ${NEUTRALS.LIGHT_GREY};
+          }
+        }
 
         li {
           list-style: none;
@@ -71,46 +85,47 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
           cursor: pointer;
           border-bottom: 4px solid transparent;
 
+          & > h4 {
+            font-weight: 500;
+          }
           &.active {
             border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
           }
         }
 
-        & > :nth-child(3) {
+        & > :nth-child(2),
+        & > :nth-child(4) {
           position: relative;
         }
       }
     }
 
-    & > :nth-child(2) {
+    & > :last-child {
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    
-    
-    & > :last-child{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap:8px;
-      
-      padding:6px 16px;
-      
-      border: 2px solid ${PRIMARY.PRIMARY_CTA};
-      border-radius:16px;
-      
-      cursor: pointer;
-      
-      & > :nth-child(2){
-        font-size:18px;
-        font-weight: 600; 
-        color:${PRIMARY.PRIMARY_CTA}
+      gap: 8px;
+
+      padding: 6px 16px;
+
+      background-color: ${NEUTRALS.LIGHT_GREY};
+
+      border: 2px solid ${NEUTRALS.DARK_GREY};
+      border-radius: 16px;
+
+      cursor: not-allowed;
+
+      & > :nth-child(1) {
+        & > * {
+          fill: ${NEUTRALS.DARK_GREY};
+        }
       }
-      
-      
+
+      & > :nth-child(2) {
+        font-size: 18px;
+        font-weight: 600;
+        color: ${NEUTRALS.DARK_GREY};
+      }
     }
-    
-    
   }
 `

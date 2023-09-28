@@ -17,9 +17,14 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
       cursor: pointer;
 
       &:hover,
-      &:hover h4 {
+      &:hover h4,
+      &:focus {
         background-color: ${PRIMARY.PRIMARY_CTA};
         color: ${NEUTRALS.OFF_WHITE};
+
+        & > * {
+          color: ${NEUTRALS.OFF_WHITE};
+        }
       }
     }
 
@@ -39,41 +44,39 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
 
     & > * {
       padding: 26px;
-      /* display: flex;
-      align-items: center;
-      justify-content: flex-start; */
-      
+
       display: grid;
       grid-template-columns: 25px 1fr;
       grid-template-areas: 
-      "icon text"
-      ;
-      gap: 10px;
+      "icon text";
       
-      & > :nth-child(1){
+      gap: 10px;
+
+      & > :nth-child(1) {
         grid-area: icon;
       }
-      & > :nth-child(2){
+      & > :nth-child(2) {
         grid-area: text;
       }
       
-      
-      & > h4{
+      & > h4 {
         border-bottom: 2px solid transparent;
         cursor: pointer;
-        &:hover{
-          border-bottom: 2px solid ${PRIMARY.PRIMARY_CTA};  
+        &:hover,
+        &:focus {
+          border-bottom: 2px solid ${PRIMARY.PRIMARY_CTA};
+          & > *{
+            border-bottom: 2px solid ${PRIMARY.PRIMARY_CTA};
+          }
         }
-        
       }
-
     }
 
     & > :last-child {
-      & > h4{
+      & > h4 {
         grid-area: text;
       }
-      
+
       &:hover {
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
