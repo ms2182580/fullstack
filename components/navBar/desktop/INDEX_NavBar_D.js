@@ -76,7 +76,8 @@ export const INDEX_NavBar_D = () => {
             onKeyDown={handleNavigateHome}
             onClick={handleNavigateHome}>
             {" "}
-            <H2 bold> INCLUSIVE</H2>
+            <H2>Inclusive</H2>
+            <ChatAILogo />
           </span>
           <NavBar_D_SearchComponent />
           <NavBar_D_SignComponent />

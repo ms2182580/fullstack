@@ -1,4 +1,5 @@
 import { useRouter } from "next/router.js"
+import { useEffect } from 'react'
 import {
   NavBar_D_AAQSvg,
   NavBar_D_AccessibilityModeSvg,
@@ -19,8 +20,7 @@ import { NavBar_D_SignComponentDropdownWrapper } from "./styles/NavBar_D_SignCom
 Make if the user stop focus on the elements here, close it
 */
 
-
-export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown }) => {
+export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown, showDropdownProfile }) => {
   const { push } = useRouter()
   const handlePushToSignup = (e) => {
     if (e.type === "click" || e.key === "Enter") {
@@ -29,14 +29,20 @@ export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown }) => {
     }
   }
 
+  useEffect(() => {
+    if (showDropdownProfile) {
+      theRef.current.focus()
+    }
+  }, [showDropdownProfile])
+
   return (
-    <NavBar_D_SignComponentDropdownWrapper ref={theRef}>
+    <NavBar_D_SignComponentDropdownWrapper ref={theRef} tabIndex={0}>
       <div>
         <span
           onClick={handlePushToSignup}
           onKeyDown={handlePushToSignup}
           tabIndex={0}>
-          <ButtonSmall secondary>Sign Up</ButtonSmall>
+          <ButtonSmall preventFocus={-1} secondary>Sign Up</ButtonSmall>
         </span>
         <span>
           <ButtonSmall>Sign In</ButtonSmall>

@@ -22,8 +22,17 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
       margin-right: 50px;
       cursor: pointer;
       
+      display: flex;
+      gap:8px;
+      
       & > :nth-child(1){
         color:${PRIMARY.PRIMARY_LOGO}
+      }
+      
+      & > :nth-child(2){
+        & > *{
+          fill:${PRIMARY.PRIMARY_LOGO};
+        }
       }
       
     }

@@ -4,7 +4,6 @@ export const NavBar_D_SignComponentWrapper = styled.div`
   border-radius: 8px;
   border: 2px solid #151a26;
   padding: 0px 16px;
-  cursor: pointer;
   position: relative;
   z-index: 0;
   display: flex;
@@ -14,6 +13,7 @@ export const NavBar_D_SignComponentWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    cursor: pointer;
   }
   
 `
