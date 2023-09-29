@@ -52,7 +52,7 @@ export const Home_Survey_D = () => {
 
       <div className="RIGHT">
         <fieldset>
-          <label for="firstAndLastName">First & Last Name</label>
+          <label htmlFor="firstAndLastName">First & Last Name</label>
           <input
             type="text"
             name="firstAndLastName"
@@ -61,7 +61,7 @@ export const Home_Survey_D = () => {
           />
         </fieldset>
         <fieldset>
-          <label for="companyName">Company name (if applicable)</label>
+          <label htmlFor="companyName">Company name (if applicable)</label>
           <input
             type="text"
             name="companyName"
@@ -69,7 +69,7 @@ export const Home_Survey_D = () => {
           />
         </fieldset>
         <fieldset>
-          <label for="email">Email Address (for replies)</label>
+          <label htmlFor="email">Email Address (for replies)</label>
           <input
             type="email"
             name="email"
@@ -78,7 +78,7 @@ export const Home_Survey_D = () => {
           />
         </fieldset>
         <fieldset>
-          <label for="zipCode">Zip Code</label>
+          <label htmlFor="zipCode">Zip Code</label>
           <input
             inputMode="numeric"
             name="zipCode"
@@ -88,7 +88,7 @@ export const Home_Survey_D = () => {
           />
         </fieldset>
         <fieldset>
-          <label for="additionalNote">Additional Note</label>
+          <label htmlFor="additionalNote">Additional Note</label>
           <textarea
             type="text"
             name="additionalNote"

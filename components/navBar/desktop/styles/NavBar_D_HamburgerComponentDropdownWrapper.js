@@ -3,8 +3,7 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
   position: absolute;
-  z-index: 3;
-  left: 0;
+  z-index: 4;
   background-color: ${NEUTRALS.OFF_WHITE};
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

@@ -21,8 +21,9 @@ export const NavBar_D_HamburgerComponentDropdown = ({ theRef }) => {
   }
 
   return (
-    <NavBar_D_HamburgerComponentDropdownWrapper ref={theRef}>
-      <ul>
+    <NavBar_D_HamburgerComponentDropdownWrapper
+      ref={theRef}>
+      <ul >
         <li
           ref={theRefCC}
           tabIndex={0}

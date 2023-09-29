@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const INDEX_NavBar_D_Wrapped = styled.nav`
+export const NavBar_D_OnlyDefaultWrapper = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 
   background-color: ${PRIMARY.OFF_WHITE};
@@ -71,8 +71,16 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
         align-items: center;
         justify-content: center;
 
-        gap: 30px;
         gap: clamp(20px, 7vw - 50px, 51px);
+
+        & > :nth-child(1) {
+          & > * {
+            & > * {
+              text-decoration: none;
+              color: ${NEUTRALS.BLACK};
+            }
+          }
+        }
 
         & > *:not(:first-child) {
           & > h4 {
