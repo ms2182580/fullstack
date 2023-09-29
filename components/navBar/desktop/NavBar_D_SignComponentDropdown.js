@@ -15,11 +15,6 @@ import { ButtonSmall } from "../../ui/buttons/general/index.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { NavBar_D_SignComponentDropdownWrapper } from "./styles/NavBar_D_SignComponentDropdownWrapper.js"
 
-/* 
-!FH
-Make if the user stop focus on the elements here, close it
-*/
-
 export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown, showDropdownProfile }) => {
   const { push } = useRouter()
   const handlePushToSignup = (e) => {

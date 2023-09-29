@@ -4,8 +4,7 @@ import { NEUTRALS } from "../../../../assets/Colors"
 export const NavBar_D_GTSDropdownWrapper = styled.div`
   position: absolute;
   top: calc(100% + 10px);
-  left: 0;
-  z-index: 3;
+  z-index: 4;
 
   padding: 33px;
   display: flex;
@@ -13,6 +12,7 @@ export const NavBar_D_GTSDropdownWrapper = styled.div`
   gap: 25px;
   width: max-content;
 
+  
   background-color: ${NEUTRALS.OFF_WHITE};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
