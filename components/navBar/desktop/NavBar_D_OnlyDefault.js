@@ -1,4 +1,4 @@
-import { ChatAILogo, NavBar_D_QuickCarePlanSvg, Navbar_AccessibilitySvg } from "@/assets/Icons/index.js"
+import { ChatAILogo, NavBar_D_QuickCarePlanSvg } from "@/assets/Icons/index.js"
 import { NavBar_D_InfoDropdown } from "@/components/navBar/desktop/NavBar_D_InfoDropdown.js"
 import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent.js"
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
@@ -8,6 +8,7 @@ import { useOutsideHide } from "@/utils/useOutsideHide.js"
 import Link from "next/link.js"
 import { useRouter } from "next/router.js"
 import { useRef, useState } from "react"
+import { NavBar_D_Accessibility } from "./NavBar_D_Accessibility.js"
 import { NavBar_D_GTSDropdown } from "./NavBar_D_GTSDropdown.js"
 import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
 import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
@@ -63,7 +64,7 @@ export const NavBar_D_OnlyDefault = () => {
         <NavBar_D_SearchComponent />
 
         <div>
-          <Navbar_AccessibilitySvg tabIndex={0} />
+          <NavBar_D_Accessibility />
 
           <NavBar_D_SignComponent />
         </div>

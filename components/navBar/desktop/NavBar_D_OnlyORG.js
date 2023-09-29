@@ -1,11 +1,12 @@
 import Link from "next/link.js"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
-import { ChatAILogo, Navbar_AccessibilitySvg } from "../../../assets/Icons/index"
+import { ChatAILogo } from "../../../assets/Icons/index"
 import { useActiveElement } from "../../../utils/useActiveElement"
 import { useCloseNotActiveElementAnymore } from "../../../utils/useCloseNotActiveElementAnymore.js"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { NavBar_D_Accessibility } from "./NavBar_D_Accessibility.js"
 import { NavBar_D_GTSDropdown } from "./NavBar_D_GTSDropdown.js"
 import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
 import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
@@ -115,7 +116,7 @@ export const NavBar_D_OnlyORG = () => {
         </div>
 
         <div>
-          <Navbar_AccessibilitySvg tabIndex={0} />
+          <NavBar_D_Accessibility />
 
           <NavBar_D_SignComponent />
         </div>
