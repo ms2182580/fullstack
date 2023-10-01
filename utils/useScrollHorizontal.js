@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const useScrollHorizontal = () => {
+export const useScrollHorizontal = (query, refOfORGSelections) => {
   const [listRef, setListRef] = useState(null)
   const [currentScrollState, setCurrentScrollState] = useState(null)
   const [isFinalScrollState, setIsFinalScrollState] = useState(null)
@@ -20,6 +20,10 @@ export const useScrollHorizontal = () => {
     }
 
     if (currentScrollState > 100) {
+      /* 
+      !FH
+      Bug here: when the user reach, with scroll, the far left part of the ul element and after that click on some ORG of the nav bar to navigate to that place, it will not show the left arrow but after a use of the wheel or click on right arrow, it will appear
+      */
       setStateToCss((prevState) => ({
         ...prevState,
         scrollRight: true,
@@ -85,7 +89,7 @@ export const useScrollHorizontal = () => {
         listRef.removeEventListener("touchmove", handleScroll)
       }
     }
-  }, [listRef])
+  }, [listRef, query])
 
   const handleMoveNavBarToLeftByClick = (e) => {
     if (listRef) {
@@ -124,5 +128,6 @@ export const useScrollHorizontal = () => {
     moveToRight: handleMoveNavBarToRightByClick,
     stateToCss,
     setListRef,
+    listRef,
   }
 }

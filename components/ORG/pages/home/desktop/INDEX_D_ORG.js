@@ -1,16 +1,19 @@
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
-import { Fragment, useEffect, useState } from "react"
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "../../../../../assets/Icons/index.js"
 import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Search_Hero.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { ROUTER_PUSH_SEARCH } from "../../../../../utils/ORG/DATA_ORG_CheckPaths_Search_D.js"
 import { DATA_ORG_D as DATA } from "../../../../../utils/ORG/DATA_ORG_D.js"
 import { useScrollHorizontal } from "../../../../../utils/useScrollHorizontal.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_SearchComponent } from "../../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
+
+// console.log('DATA:', DATA)
 
 export const INDEX_D_ORG = () => {
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
@@ -32,10 +35,72 @@ export const INDEX_D_ORG = () => {
     setShouldFetchDesktopNoFilters(true)
   }, [])
 
-  const { moveToLeft, moveToRight, stateToCss, setListRef } = useScrollHorizontal()
-
   const { query } = useRouter()
-  // console.log('query:', query)/* Here we have the query from 404 page or index  */
+  const refOfORGSelections = useRef(null)
+
+  const { moveToLeft, moveToRight, stateToCss, setListRef } = useScrollHorizontal(refOfORGSelections)
+
+  useEffect(() => {
+    if (refOfORGSelections) {
+      let allChildren = Array.from(refOfORGSelections.current.children)
+      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
+
+      let liClientWidth_IsActive = getIsActive.clientWidth
+      // console.log('liClientWidth_IsActive:', liClientWidth_IsActive)
+      let liOffSetLeft_IsActive = getIsActive.offsetLeft
+      // console.log('liOffSetLeft_IsActive:', liOffSetLeft_IsActive)
+
+      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
+
+    }
+  }, [refOfORGSelections])
+
+  useLayoutEffect(() => {
+    if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
+      let allChildren = Array.from(refOfORGSelections.current.children)
+      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
+
+      let liClientWidth_IsActive = getIsActive.clientWidth
+      let liOffSetLeft_IsActive = getIsActive.offsetLeft
+
+      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
+
+      refOfORGSelections.current.scroll({ left: positionToMove })
+    }
+  }, [query, matchNameState])
+
+  // let handleUpdateAllChildren = useCallback(() => {
+
+  //   if (query[ROUTER_PUSH_SEARCH.nameJSX] && refOfORGSelections.current) {
+  //     console.log('refOfORGSelections:', refOfORGSelections.current)
+  //     let allChildren = Array.from(refOfORGSelections.current.children)
+  //     let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
+
+  //     let liClientWidth_IsActive = getIsActive.clientWidth
+  //     let liOffSetLeft_IsActive = getIsActive.offsetLeft
+
+  //     // refOfORGSelections.current.scrollTo({ left: liOffSetLeft_IsActive - liClientWidth_IsActive })
+  //     // refOfORGSelections.current.scrollBy({ left: liOffSetLeft_IsActive - liClientWidth_IsActive })
+  //     refOfORGSelections.current.scroll({ left: liOffSetLeft_IsActive - liClientWidth_IsActive })
+  //   }
+  // }, [query])
+  // useEffect(() => {
+  //   handleUpdateAllChildren()
+  // }, [handleUpdateAllChildren])
+
+  useEffect(() => {
+    if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
+      let componentName = query[ROUTER_PUSH_SEARCH.componentName]
+
+      setSingleCardIsSelected(true)
+      setMatchNameState(componentName)
+
+      const ulElement = refOfORGSelections.current.getBoundingClientRect()
+
+      const theElementTop = ulElement.top
+      window.scrollTo({ top: theElementTop })
+    }
+  }, [query])
 
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
@@ -78,7 +143,11 @@ export const INDEX_D_ORG = () => {
           <div />
         </div>
 
-        <ul ref={setListRef}>
+        <ul
+          ref={(el) => {
+            setListRef(el)
+            refOfORGSelections.current = el
+          }}>
           <li
             onClick={handleShowAll}
             className={!singleCardIsSelected ? "isActive" : ""}>
@@ -88,6 +157,7 @@ export const INDEX_D_ORG = () => {
               All
             </P>
           </li>
+
           {DATA.map((x, i) => (
             <li
               key={`${x.nameJSX}_${i}`}
@@ -135,7 +205,6 @@ export const INDEX_D_ORG = () => {
 
         return null
       })}
-
     </INDEX_D_ORGWrapper>
   )
 }

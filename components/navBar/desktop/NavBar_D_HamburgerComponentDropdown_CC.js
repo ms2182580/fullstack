@@ -20,7 +20,9 @@ export const NavBar_D_HamburgerComponentDropdown_CC = ({ handleHideHover, classN
             tabIndex={0}
             normal
             key={`${x.name}_${i}`}
-            className={classNameToFocusLogic}>
+            className={classNameToFocusLogic}
+
+          >
             {x.name}
           </H4>
         </>

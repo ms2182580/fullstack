@@ -21,41 +21,16 @@ export const NavBar_D_OnlyORG = () => {
     }
   }
 
-  const [infoDropdownStateInfo, setInfoDropdownStateInfo] = useState(false)
-  const refInfo = useRef()
-  useOutsideHide(refInfo, setInfoDropdownStateInfo)
-  const handleToggleInfoDropdown = (e) => {
-    if (e.type === "click" || e.key === "Enter") {
-      setInfoDropdownStateGTS(false)
-      setInfoDropdownStateInfo((prevState) => !prevState)
-    }
-  }
-
   const [infoDropdownStateGTS, setInfoDropdownStateGTS] = useState(false)
   const refGTS = useRef()
   useOutsideHide(refGTS, setInfoDropdownStateGTS)
   const handleToggleGTSDropdown = (e) => {
     if (e.type === "click" || e.key === "Enter") {
-      setInfoDropdownStateInfo(false)
       setInfoDropdownStateGTS((prevState) => !prevState)
     }
   }
 
   useEffect(() => {
-    if (infoDropdownStateInfo) {
-      let handleCloseDropdownInfo = (e) => {
-        if (e.key === "Escape") {
-          setInfoDropdownStateInfo(false)
-        }
-      }
-
-      window.addEventListener("keydown", handleCloseDropdownInfo)
-
-      return () => {
-        window.removeEventListener("keydown", handleCloseDropdownInfo)
-      }
-    }
-
     if (infoDropdownStateGTS) {
       let handleCloseDropdownGTS = (e) => {
         if (e.key === "Escape") {
