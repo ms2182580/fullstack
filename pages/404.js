@@ -4,7 +4,7 @@ import { BackArrow } from "../assets/Icons"
 import { P } from "../components/ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../components/ui/hyperlink/HyperlinkNoStyles"
 import { UnderConstruction } from "../components/under-construction/UnderConstruction"
-import { DATA_ORG_CheckPaths_Search_D } from "../utils/ORG/DATA_ORG_CheckPaths_Search_D"
+import { DATA_ORG_CheckPaths_Search_D, ROUTER_PUSH_SEARCH } from "../utils/ORG/DATA_ORG_CheckPaths_Search_D"
 import { DATA_ORG_D } from "../utils/ORG/DATA_ORG_D"
 import Custom404Wrapper from "./styles/Custom404Wrapper.js"
 
@@ -22,15 +22,14 @@ const Custom404 = () => {
       router.push(
         {
           pathname: `/ORG`,
-          query: { nameFromRoute: DATA_ORG_D[thisIndex].nameJSX }
+          query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].componentName },
         },
-        `/ORG`
+        `/ORG`,
       )
     } else {
       setCheckSomePath(true)
     }
   }, [])
-
 
   return (
     <>
