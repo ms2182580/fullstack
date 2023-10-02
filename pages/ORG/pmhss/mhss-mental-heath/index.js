@@ -1,7 +1,6 @@
 import { INDEX_D_MentalHealth_Results } from "../../../../components/ORG/pages/mental-health/second-page/mhss-mental-health/desktop/INDEX_D_MentalHealth_Results";
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth";
 
-
 export default function ORG_INDEX_MHSS_MentalHealth_Results() {
   const { isMobile } = useCheckUserWidth()
 
