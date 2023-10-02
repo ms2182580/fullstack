@@ -20,16 +20,6 @@ import { Verified } from "../../../../../verified/Verified.js"
 import { SLP_D_Results_CardWrapper } from "./styles/SLP_D_Results_CardWrapper.js"
 
 export const SLP_D_Results_CardNoFilters = () => {
-  /* 
-  ? With this you move the user to the third page. Think how to make a context that can be used for every third page
-  const router = useRouter()
-  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
-  const goToDynamic = (e, everySingleValue, filters) => {
-    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
-    const toWhere = `${router.pathname}/IndividualProvider`
-    router.push(toWhere)
-  } */
-
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   useEffect(() => {
@@ -37,6 +27,7 @@ export const SLP_D_Results_CardNoFilters = () => {
   }, [])
 
   const router = useRouter()
+
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 

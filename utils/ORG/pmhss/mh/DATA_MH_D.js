@@ -9,6 +9,10 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS1,
       title: "Kristie Leung, LMHC",
+      name: {
+        first: "Kristie",
+        last: "Leung"
+      },
       subtitle: "Psychotherapist",
       city: "New York, NY",
       rating: generateRandomNumber(4, 5),
@@ -19,6 +23,10 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS2,
       title: "Melissa Smith, LMHC, MA",
+      name: {
+        first: "Melissa",
+        last: "Smith"
+      },
       subtitle: "Psychotherapist",
       city: "New York, NY",
       rating: generateRandomNumber(4, 5),
@@ -29,6 +37,10 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS3,
       title: "Sarah L. Hershman, MD",
+      name: {
+        first: "Sarah L.",
+        last: "Hershman"
+      },
       subtitle: "Psychotherapist",
       city: "New York, NY",
       rating: generateRandomNumber(4, 5),

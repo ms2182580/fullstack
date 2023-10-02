@@ -1,6 +1,9 @@
 import Image from "next/image.js"
-import { useState } from "react"
+import { useRouter } from "next/router.js"
+import { useEffect, useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
+import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { formatDataToThirdPage } from "../../../../../../../utils/ORG/formatDataToThirdPage.js"
 import { DATA_MH_D } from "../../../../../../../utils/ORG/pmhss/mh/DATA_MH_D.js"
 import { DATA_MH_D_CardLeft, DATA_MH_D_CardRight } from "../../../../../../../utils/ORG/pmhss/mh/DATA_MH_D_Card.js"
 import { ORG_FILTERS_DATA_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
@@ -18,17 +21,33 @@ import { Verified } from "../../../../../verified/Verified.js"
 import { MH_D_Results_CardWrapper } from "./styles/MH_D_Results_CardWrapper.js"
 
 export const MH_D_Results_CardNoFilters = () => {
-  /* 
-  ? With this you move the user to the third page. Think how to make a context that can be used for every third page
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  useEffect(() => {
+    setThirdpageDataORG("")
+  }, [])
+
   const router = useRouter()
-  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
-  const goToDynamic = (e, everySingleValue, filters) => {
-    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
-    const toWhere = `${router.pathname}/IndividualProvider`
-    router.push(toWhere)
-  } */
+
+  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
+
+    setThirdpageDataORG(allDataToThirdPage)
+
+    let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
+
+    const toWhere = `${router.pathname}/${thirdPageURL}`
+    router.push(
+      {
+        pathname: toWhere,
+        query: { title: mainNameORG, subTitle, state },
+      },
+      toWhere,
+    )
+  }
 
   const [cardData, setCardData] = useState(DATA_MH_D[0].slice(1))
+  const [mainNameORG, setMainNameORG] = useState(DATA_MH_D[0][0])
 
   return (
     <>
@@ -116,7 +135,26 @@ export const MH_D_Results_CardNoFilters = () => {
                   <ORG_D_Results_ViewProfileSvg />
                   <P white>View Profile</P>
                 </div>
-                <div>
+                <div
+                  onClick={(e) =>
+                    handleMoveToThirdPage(
+                      e,
+
+                      DATA_MH_D_CardRight[renderThisContact],
+
+                      DATA_MH_D_CardLeft[renderThisContact],
+
+                      cardData[renderThisCard],
+
+                      mainNameORG,
+
+                      cardData[renderThisCard].subtitle,
+
+                      cardData[renderThisCard].name,
+
+                      cardData[renderThisCard].state,
+                    )
+                  }>
                   <ORG_D_Results_RequestConsultationSvg />
                   <P white>See Availability</P>
                 </div>

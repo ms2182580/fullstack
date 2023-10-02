@@ -46,9 +46,7 @@ export const INDEX_D_ORG = () => {
       let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
 
       let liClientWidth_IsActive = getIsActive.clientWidth
-      // console.log('liClientWidth_IsActive:', liClientWidth_IsActive)
       let liOffSetLeft_IsActive = getIsActive.offsetLeft
-      // console.log('liOffSetLeft_IsActive:', liOffSetLeft_IsActive)
 
       let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
 
@@ -68,25 +66,6 @@ export const INDEX_D_ORG = () => {
       refOfORGSelections.current.scroll({ left: positionToMove })
     }
   }, [query, matchNameState])
-
-  // let handleUpdateAllChildren = useCallback(() => {
-
-  //   if (query[ROUTER_PUSH_SEARCH.nameJSX] && refOfORGSelections.current) {
-  //     console.log('refOfORGSelections:', refOfORGSelections.current)
-  //     let allChildren = Array.from(refOfORGSelections.current.children)
-  //     let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
-
-  //     let liClientWidth_IsActive = getIsActive.clientWidth
-  //     let liOffSetLeft_IsActive = getIsActive.offsetLeft
-
-  //     // refOfORGSelections.current.scrollTo({ left: liOffSetLeft_IsActive - liClientWidth_IsActive })
-  //     // refOfORGSelections.current.scrollBy({ left: liOffSetLeft_IsActive - liClientWidth_IsActive })
-  //     refOfORGSelections.current.scroll({ left: liOffSetLeft_IsActive - liClientWidth_IsActive })
-  //   }
-  // }, [query])
-  // useEffect(() => {
-  //   handleUpdateAllChildren()
-  // }, [handleUpdateAllChildren])
 
   useEffect(() => {
     if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
@@ -126,7 +105,7 @@ export const INDEX_D_ORG = () => {
         <div>
           <Image
             src={ORGDesktop_Search_Hero}
-            alt=""
+            alt="" /* //!FH1 Add alt here  */
             layout="fill"
             objectFit="contain"
           />
