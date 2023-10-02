@@ -1,3 +1,5 @@
+import { useActiveElement } from "@/utils/useActiveElement"
+import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore"
 import { useRef, useState } from "react"
 import { LanguageIconSvg, ProfileIconSvg } from "../../../assets/Icons"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
@@ -30,19 +32,29 @@ export const NavBar_D_SignComponent = () => {
     }
   }
 
+  const classNameToFocusLogic_LANG = "Language"
+  const { focusedElement: focusedElement_LANG } = useActiveElement()
+  useCloseNotActiveElementAnymore(focusedElement_LANG, setShowDropdownLanguage, ["span", "div"], classNameToFocusLogic_LANG)
+
+  const classNameToFocusLogic_SIGN = "SIGN_IN"
+  const { focusedElement: focusedElement_SIGN } = useActiveElement()
+  useCloseNotActiveElementAnymore(focusedElement_SIGN, setShowDropdownProfile, ["span", "div", "button"], classNameToFocusLogic_SIGN)
+
   return (
     <>
       <NavBar_D_SignComponentWrapper>
         <span
           onClick={handleShowDropdownLanguage}
           onKeyDown={handleShowDropdownLanguage}
-          tabIndex={0}>
+          tabIndex={0}
+          className={classNameToFocusLogic_LANG}>
           <LanguageIconSvg />
         </span>
         <span
           onClick={handleShowDropdownProfile}
           onKeyDown={handleShowDropdownProfile}
-          tabIndex={0}>
+          tabIndex={0}
+          className={classNameToFocusLogic_SIGN}>
           <ProfileIconSvg />
         </span>
       </NavBar_D_SignComponentWrapper>

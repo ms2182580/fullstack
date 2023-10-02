@@ -11,7 +11,7 @@ const COMMUNITY_CLASSES_NESTED = [
   { name: "Academics" },
 ]
 
-export const NavBar_D_HamburgerComponentDropdown_CC = ({ handleHideHover }) => {
+export const NavBar_D_HamburgerComponentDropdown_CC = ({ handleHideHover, classNameToFocusLogic }) => {
   return (
     <NavBar_D_HamburgerComponentDropdown_CCWrapper onBlur={handleHideHover}>
       {COMMUNITY_CLASSES_NESTED.map((x, i) => (
@@ -19,7 +19,10 @@ export const NavBar_D_HamburgerComponentDropdown_CC = ({ handleHideHover }) => {
           <H4
             tabIndex={0}
             normal
-            key={`${x.name}_${i}`}>
+            key={`${x.name}_${i}`}
+            className={classNameToFocusLogic}
+
+          >
             {x.name}
           </H4>
         </>

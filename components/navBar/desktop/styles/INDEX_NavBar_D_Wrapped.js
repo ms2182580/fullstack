@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const INDEX_NavBar_D_Wrapped = styled.nav`
-  box-shadow: ${(x) => (x.isORG ? `0px 4px 15px 0px rgba(0, 0, 0, 0.15);` : `0px 2px 4px rgba(0, 0, 0, 0.25)`)};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 
   background-color: ${PRIMARY.OFF_WHITE};
 
@@ -13,13 +13,13 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
   & > :nth-child(1) {
     display: flex;
     align-items: center;
+    gap: 40px;
     justify-content: space-between;
     margin-inline: clamp(16px, calc(10vw - 80px), 96px);
     position: relative;
     margin-bottom: 28px;
 
     & > :nth-child(1) {
-      margin-right: 50px;
       cursor: pointer;
 
       display: flex;
@@ -36,8 +36,11 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
       }
     }
 
-    & > :nth-child(2) {
-      margin-right: 80px;
+    & > :nth-child(3) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
     }
   }
 
@@ -67,7 +70,7 @@ export const INDEX_NavBar_D_Wrapped = styled.nav`
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         gap: 30px;
         gap: clamp(20px, 7vw - 50px, 51px);
 

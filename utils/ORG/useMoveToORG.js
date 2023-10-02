@@ -7,9 +7,9 @@ export const useMoveToORG = () => {
 
   useEffect(() => {
     const getPath = router.asPath.split("/")
-    console.log('getPath:', getPath)
+    // console.log('getPath:', getPath)
     let finIndex = DATA_ORG_D.findIndex((x) => x.acronym === getPath[2])
-    console.log('finIndex:', finIndex)
+    // console.log('finIndex:', finIndex)
 
     router.push(
       {

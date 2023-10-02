@@ -3,8 +3,7 @@ import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
   position: absolute;
-  z-index: 3;
-  left: 0;
+  z-index: 4;
   background-color: ${NEUTRALS.OFF_WHITE};
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -16,11 +15,29 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
       padding: 26px;
       cursor: pointer;
 
+      & > h4 {
+        font-weight: 500;
+
+        &::after {
+          display: block;
+          content: attr(data-content);
+          font-weight: 700;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+          user-select: none;
+          pointer-events: none;
+        }
+      }
+
       &:hover,
-      &:hover h4,
       &:focus {
         background-color: ${PRIMARY.PRIMARY_CTA};
         color: ${NEUTRALS.OFF_WHITE};
+
+        & > :nth-child(1) {
+          font-weight: 700;
+        }
 
         & > * {
           color: ${NEUTRALS.OFF_WHITE};
@@ -47,9 +64,8 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
 
       display: grid;
       grid-template-columns: 25px 1fr;
-      grid-template-areas: 
-      "icon text";
-      
+      grid-template-areas: "icon text";
+
       gap: 10px;
 
       & > :nth-child(1) {
@@ -58,14 +74,14 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
       & > :nth-child(2) {
         grid-area: text;
       }
-      
+
       & > h4 {
         border-bottom: 2px solid transparent;
         cursor: pointer;
         &:hover,
         &:focus {
           border-bottom: 2px solid ${PRIMARY.PRIMARY_CTA};
-          & > *{
+          & > * {
             border-bottom: 2px solid ${PRIMARY.PRIMARY_CTA};
           }
         }

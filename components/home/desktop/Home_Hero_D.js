@@ -35,7 +35,7 @@ export const Home_Hero_D = () => {
       const nextIndex = (currentIndex + 1) % WORDS.length
       setCurrentWord(WORDS[nextIndex])
       setFadeOut(false) // Start fading in the new word
-    }, fadeOutVariables.finish) // Add a delay of 2.5 seconds (equal to the transition duration + some buffer time)
+    }, fadeOutVariables.finish) // Add a delay of ${fadeOutVariables.start} + 510ms (equal to the transition duration + some buffer time)
     return () => clearTimeout(timer)
   }, [currentWord])
 

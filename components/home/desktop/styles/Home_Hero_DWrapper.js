@@ -26,15 +26,18 @@ export const Home_Hero_DWrapper = styled.div`
     & > :nth-child(1) {
       line-height: clamp(80px, 9vw, 130px);
       font-weight: 700;
-      font-size: clamp(88px, 8vw, 120px);
+
+      /* font-size: clamp(88px, 8vw, 120px); */
+      /* font-size:127px; */
+
+      font-size: clamp(88px, 9.7vw - 15px, 140px);
+
       text-align: center;
       letter-spacing: 1px;
 
       color: ${NEUTRALS.BLACK};
 
-      /* margin-bottom: calc(54px + 80px); */
       margin-bottom: 54px;
-      /* border: 2px solid crimson; */
 
       & > * {
         display: block;
