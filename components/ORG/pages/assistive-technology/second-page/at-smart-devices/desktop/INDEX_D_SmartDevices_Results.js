@@ -1,16 +1,24 @@
 import Image from 'next/image.js'
-import { useRouter } from "next/router.js"
+import { useEffect } from 'react'
 import UnderConstructionImagePurple from "../../../../../../../assets/images/UnderConstructionImagePurple.png"
-import { useCtx_ShowModal } from '../../../../../../../context/Ctx_ShowModal.js'
-import { useORG_CtxShowFiltersDesktop } from '../../../../../../../context/ORG_CtxShowFiltersDesktop_Provider'
+import { useORG_Ctx_D_SecondpageData } from '../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider'
+import { useORG_Ctx_D_SecondpageFilters } from '../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider'
 import { INDEX_D_SmartDevices_ResultsWrapper } from './styles/INDEX_D_SmartDevices_ResultsWrapper.js'
 
 export const INDEX_D_SmartDevices_Results = () => {
-  const { modalShowedCtx } = useCtx_ShowModal()
-  const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
-  const { pathname, query, route, ...props } = useRouter()
-  // console.log('🟫props:', props)
-  // console.log('query:', query)
+
+  const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
+
+  useEffect(() => {
+    setSecondpageFiltersORG(renderFiltersInUI)
+    setSecondpageDataORG({
+      cardData: DATA_PCMPS_D[0].slice(1),
+      mainNameORG: DATA_PCMPS_D[0][0],
+      right: DATA_DAY_D_CardRight,
+      left: DATA_DAY_D_CardLeft,
+    })
+  }, [])
 
   return (
     <INDEX_D_SmartDevices_ResultsWrapper>

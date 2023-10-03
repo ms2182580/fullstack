@@ -1,10 +1,10 @@
+import { DATA_PCMPS_D } from "@/utils/ORG/pcmps/DATA_PCMPS_D.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/index.js"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
-import { DATA_DAY_D } from "../../../../../../utils/ORG/pcmps/day/DATA_DAY_D.js"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -19,7 +19,7 @@ export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_DAY_D.length)
+      setHowMuchDisplay(DATA_PCMPS_D.length)
     }
   }, [isSelected])
 
@@ -40,7 +40,7 @@ export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_CMPSSearchWrapper>
-      {DATA_DAY_D.map((x, iData) => {
+      {DATA_PCMPS_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (

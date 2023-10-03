@@ -36,7 +36,7 @@ export const ORG_D_Results_CardNoFilters = () => {
     router.push(toWhere)
   } */
 
-  // const [cardData, setCardData] = useState(DATA_DAY_D[0].slice(1))
+  // const [cardData, setCardData] = useState(DATA_PCMPS_D[0].slice(1))
 
 
   return (
