@@ -8,7 +8,15 @@ export const ORG_D_Detail_Card_SecondRow_InfoWrapper = styled.div`
     padding-top: 8px;
     padding-bottom: 8px;
     padding-inline: 16px;
-    max-width: 210px;
+
+    margin-bottom: 44px;
+
+    width: fit-content;
+    display: grid;
+
+    & > :nth-child(2) {
+      font-weight: 600;
+    }
   }
 
   .dataObj {

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
+import { Fragment } from "react"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "../../../../../assets/Icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
@@ -22,6 +23,7 @@ import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { ORG_D_Detail_MainCardWrapper } from "./styles/ORG_D_Detail_MainCardWrapper"
 
 export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
+  console.dir("thirdpageDataORG:", thirdpageDataORG)
   const { push, query } = useRouter()
   let handlePushTo404 = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
@@ -99,56 +101,51 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             reviews={thirdpageDataORG.card.leftPart.reviews}
           />
 
-          <div>
+          <div className={!thirdpageDataORG.card.rightPart.highlightsPlus && !thirdpageDataORG.card.rightPart.highlights && "NO_HIGHLIGHT"}>
             <Highlights_2_D highlights={thirdpageDataORG.card.rightPart.highlightsPlus} />
             <ORG_D_Detail_HighlightBoxes meetingFormat={thirdpageDataORG.card.rightPart.highlights} />
           </div>
         </div>
 
         <div>
+          {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card).map((x, index) => {
+            if (x[0] === "withBackground") {
+              return (
+                <div key={`${x[1].key}_${x[1].data.join(", ")}`}>
+                  <ORG_D_Detail_Card_SecondRow_Info
+                    title={x[1].key}
+                    dataToShow={x[1].data}
+                    withBackground
+                  />
+                </div>
+              )
+            }
+          })}
+
           <div>
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Practice Areas"
-              dataToShow={thirdpageDataORG.card.rightPart.practiceAreas}
-              withBackground
-            />
+            {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card.left).map((x, index) => {
+              console.log("x:", x)
 
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Ages Served"
-              dataToShow={thirdpageDataORG.card.rightPart.agesServed}
-            />
-
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Languages"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.languages}
-            />
-
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Setting"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.setting}
-            />
-
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Wheelchair Accessible"
-              dataToShow={"Yes"}
-            />
+              return (
+                <Fragment key={`${x[1].key}_${x[1].data.join(", ")}`}>
+                  <ORG_D_Detail_Card_SecondRow_Info
+                    title={x[1].key}
+                    dataToShow={x[1].data}
+                  />
+                </Fragment>
+              )
+            })}
           </div>
 
           <div>
-            <ORG_D_Detail_Card_SecondRow_Info
-              title={thirdpageDataORG.card.rightPart.thirdPageData.card.paymentOptions.title}
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.paymentOptions.dataToShow}
-            />
-
-            <ORG_D_Detail_Card_SecondRow_Info
-              title={thirdpageDataORG.card.rightPart.thirdPageData.card.qualifications.title}
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.qualifications.dataToShow}
-            />
-
-            <ORG_D_Detail_Card_SecondRow_Info
-              title="Additional Credentials"
-              dataToShow={thirdpageDataORG.card.rightPart.thirdPageData.card.AdditionalCredentials}
-            />
+            {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card.right).map((x, index) => (
+              <Fragment key={`${x[1].key}_${x[1].data.join(", ")}`}>
+                <ORG_D_Detail_Card_SecondRow_Info
+                  title={x[1].key}
+                  dataToShow={x[1].data}
+                />
+              </Fragment>
+            ))}
           </div>
         </div>
 

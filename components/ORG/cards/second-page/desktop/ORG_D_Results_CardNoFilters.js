@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { Fragment, useEffect } from "react"
+import { useEffect } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -25,20 +25,9 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
-  console.dir("secondpageDataORG:", secondpageDataORG)
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
-    console.log(
-      "thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state:",
-      thirdPageData_Card_Right,
-      thirdPageData_Card_Left,
-      thirdPageData_Card,
-      mainNameORG,
-      subTitle,
-      fullName,
-      state,
-    )
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
     setThirdpageDataORG(allDataToThirdPage)
@@ -109,35 +98,39 @@ export const ORG_D_Results_CardNoFilters = () => {
                   reviews={secondpageDataORG.cardData[renderThisCard].reviews}
                 />
 
-                {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x, index) => {
-                  if (x[0] === "highlightsPlus") {
-                    return (
-                      <Fragment key={`${x[0]}_${x[1].join(", ")}`}>
-                        <p>"highlightsPlus"</p>
-                      </Fragment>
-                    )
-                  }
-
-                  if (x[0] === "highlights") {
-                    return (
-                      <Fragment key={`${x[0]}_${x[1].join(", ")}`}>
-                        <Highlights_D highlights={x[1]} />
-                      </Fragment>
-                    )
-                  }
-
-                  if (x[0] !== "thirdPageData") {
-                    return (
-                      <Fragment key={`${x[0]}_${x[1].data.join(", ")}`}>
-                        <P
-                          primary_hover
-                          bold>
-                          {x[1].key}: <span>{new Intl.ListFormat("en").format(x[1].data)}</span>
-                        </P>
-                      </Fragment>
-                    )
-                  }
-                })}
+                <div>
+                  {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x, index) => {
+                    if (x[0] === "highlightsPlus") {
+                      return (
+                        <span
+                          className="HIGHLIGHTS_PLUS"
+                          key={`${x[0]}_${x[1].join(", ")}`}>
+                          <p>"highlightsPlus"</p>
+                        </span>
+                      )
+                    }
+                    if (x[0] === "highlights") {
+                      return (
+                        <span
+                          className="HIGHLIGHTS"
+                          key={`${x[0]}_${x[1].join(", ")}`}>
+                          <Highlights_D highlights={x[1]} />
+                        </span>
+                      )
+                    }
+                    if (x[0] !== "thirdPageData") {
+                      return (
+                        <span
+                          className="NO_THIRDPAGE_DATA"
+                          key={`${x[0]}_${x[1].data.join(", ")}`}>
+                          <P>
+                            {x[1].key}: <span>{new Intl.ListFormat("en").format(x[1].data)}</span>
+                          </P>
+                        </span>
+                      )
+                    }
+                  })}
+                </div>
               </div>
 
               <div className="BOTTOM-BUTTONS">

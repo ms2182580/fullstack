@@ -90,6 +90,7 @@ export const ORG_D_Detail_MainCardWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 16px;
+        
       }
 
       & > :nth-child(4) {
@@ -131,54 +132,45 @@ export const ORG_D_Detail_MainCardWrapper = styled.div`
         & > :nth-child(2) {
           gap: 24px;
         }
-        
       }
+      
+      .NO_HIGHLIGHT {
+        margin-bottom: 0px;
+      }
+      
     }
 
     & > :nth-child(2) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: "leftPart rightPart";
+      grid-template-areas: 
+      "diag diag"
+      "leftPart rightPart";
       grid-auto-flow: dense;
       margin-bottom: 24px;
       column-gap: clamp(20px, 1vw, 91px);
 
       & > :nth-child(1) {
-        grid-area: leftPart;
-
-        & > :nth-child(1) {
-          & > :nth-child(2) {
-            font-weight: 600;
-          }
-        }
+        grid-area: diag;
       }
 
       & > :nth-child(2) {
+        grid-area: leftPart;
+      }
+      
+      & > :nth-child(3){
         grid-area: rightPart;
-
-        & > :nth-child(1) {
-          & > :not(:first-child) {
-            display: inline;
-          }
-        }
-
-        & > :nth-child(2) {
-          & > :not(:first-child) {
-            display: flex;
-            flex-wrap: wrap;
-            & > span {
-              font-weight: 600;
-              margin-right: 8px;
-            }
-          }
-        }
+        
       }
 
       & > :nth-child(1),
-      & > :nth-child(2) {
+      & > :nth-child(2),
+      & > :nth-child(3) {
         & > * {
           & > :nth-child(1) {
             font-weight: 700;
+            
+            
           }
 
           :not(:last-child) {

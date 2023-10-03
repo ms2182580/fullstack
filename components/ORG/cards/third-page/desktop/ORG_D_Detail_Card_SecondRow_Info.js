@@ -5,7 +5,6 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 
 export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackground = false }) => {
-
   const [dataObj, setDataObj] = useState(null)
 
   const [howToRender, setHowToRender] = useState(() => {
@@ -35,21 +34,7 @@ export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackgr
 
       {howToRender === "array" ? (
         <>
-          {dataToShow.map((x, i) => {
-            if (dataToShow.length - 1 === i) {
-              return (
-                <Fragment key={x}>
-                  <P> {x}</P>
-                </Fragment>
-              )
-            }
-
-            return (
-              <Fragment key={x}>
-                <P> {x}</P>
-              </Fragment>
-            )
-          })}
+          <span>{new Intl.ListFormat("en").format(dataToShow)}</span>
         </>
       ) : howToRender === "string" ? (
         <>
