@@ -1,15 +1,15 @@
-import ORG_AT1 from "../../../../assets/images/ORG/assistive-technology/ORG_AT1.png";
-import ORG_AT2 from "../../../../assets/images/ORG/assistive-technology/ORG_AT2.png";
-import ORG_AT3 from "../../../../assets/images/ORG/assistive-technology/ORG_AT3.png";
-import ORG_AT4 from "../../../../assets/images/ORG/assistive-technology/ORG_AT4.png";
-import ORG_AT5 from "../../../../assets/images/ORG/assistive-technology/ORG_AT5.png";
-import ORG_AT6 from "../../../../assets/images/ORG/assistive-technology/ORG_AT6.png";
-import ORG_AT7 from "../../../../assets/images/ORG/assistive-technology/ORG_AT7.png";
-import ORG_AT8 from "../../../../assets/images/ORG/assistive-technology/ORG_AT8.png";
-import ORG_AT9 from "../../../../assets/images/ORG/assistive-technology/ORG_AT9.png";
-import { generateRandomNumber } from "../../../generateRandomNumber";
+import { generateRandomNumber } from "@/utils/generateRandomNumber";
+import ORG_AT1 from "../../../assets/images/ORG/assistive-technology/ORG_AT1.png";
+import ORG_AT2 from "../../../assets/images/ORG/assistive-technology/ORG_AT2.png";
+import ORG_AT3 from "../../../assets/images/ORG/assistive-technology/ORG_AT3.png";
+import ORG_AT4 from "../../../assets/images/ORG/assistive-technology/ORG_AT4.png";
+import ORG_AT5 from "../../../assets/images/ORG/assistive-technology/ORG_AT5.png";
+import ORG_AT6 from "../../../assets/images/ORG/assistive-technology/ORG_AT6.png";
+import ORG_AT7 from "../../../assets/images/ORG/assistive-technology/ORG_AT7.png";
+import ORG_AT8 from "../../../assets/images/ORG/assistive-technology/ORG_AT8.png";
+import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png";
 
-export const DATA_AT_D = [
+export const DATA_PAT_D = [
   [
     "Popular Assistive Technology",
     {

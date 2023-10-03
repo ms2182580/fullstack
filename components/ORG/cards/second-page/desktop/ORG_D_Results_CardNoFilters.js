@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
+import { Fragment, useEffect } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -38,14 +38,13 @@ export const ORG_D_Results_CardNoFilters = () => {
 
   // const [cardData, setCardData] = useState(DATA_PCMPS_D[0].slice(1))
 
-
   return (
     <>
       {Array(10)
         .fill(0)
         .map((x, i) => {
           let renderThisCard = i % 3
-          let renderThisFilter = i % 3 === 0 ? 0 : 1
+          let renderThisFilter = i % secondpageDataORG.right.length
           let renderThisContact = i % secondpageDataORG.left.length
 
           return (
@@ -93,29 +92,34 @@ export const ORG_D_Results_CardNoFilters = () => {
                   reviews={secondpageDataORG.cardData[renderThisCard].reviews}
                 />
 
-                <Highlights_D highlights={secondpageDataORG.right[renderThisFilter].highlights} />
+                {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x, index) => {
 
-                <P
-                  primary_hover
-                  bold>
-                  Program Emphasis: <span>{new Intl.ListFormat("en").format(secondpageDataORG.right[renderThisFilter].programEmphasis)}</span>
-                </P>
-                <P
-                  primary_hover
-                  bold>
-                  Price:{" "}
-                  <span>{`${secondpageDataORG.right[renderThisFilter].price.currency}${secondpageDataORG.right[renderThisFilter].price.ammount}/${secondpageDataORG.right[renderThisFilter].price.frequency}`}</span>
-                </P>
-                <P
-                  primary_hover
-                  bold>
-                  Activities: <span>{new Intl.ListFormat("en").format(secondpageDataORG.right[renderThisFilter].activities)}</span>
-                </P>
-                <P
-                  primary_hover
-                  bold>
-                  Languages: <span>{new Intl.ListFormat("en").format(secondpageDataORG.right[renderThisFilter].languages)}</span>
-                </P>
+                  if (x[0] === "highlightsPlus") {
+                    return (
+                      <Fragment key={`${x[0]}_${x[1].join(", ")}`}>
+                        <p>"highlightsPlus"</p>
+                      </Fragment>
+                    )
+                  }
+
+                  if (x[0] === "highlights") {
+                    return (
+                      <Fragment key={`${x[0]}_${x[1].join(", ")}`}>
+                        <Highlights_D highlights={x[1]} />
+                      </Fragment>
+                    )
+                  }
+
+                  return (
+                    <Fragment key={`${x[0]}_${x[1].data.join(", ")}`}>
+                      <P
+                        primary_hover
+                        bold>
+                        {x[1].key}: <span>{new Intl.ListFormat("en").format(x[1].data)}</span>
+                      </P>
+                    </Fragment>
+                  )
+                })}
               </div>
 
               <div className="BOTTOM-BUTTONS">
