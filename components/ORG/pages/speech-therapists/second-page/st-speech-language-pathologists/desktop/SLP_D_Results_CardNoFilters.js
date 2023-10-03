@@ -46,6 +46,7 @@ export const SLP_D_Results_CardNoFilters = () => {
   }
 
   const [cardData, setCardData] = useState(DATA_SLP_D[0].slice(1))
+  console.log('cardData:', cardData)
   const [mainNameORG, setMainNameORG] = useState(DATA_SLP_D[0][0])
 
   return (

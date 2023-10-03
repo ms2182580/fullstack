@@ -4,7 +4,7 @@ import { Highlights_2_DWrapper } from "./styles/Highlights_2_DWrapper.js"
 
 export const Highlights_2_D = ({ highlights }) => {
   if (highlights === undefined) {
-    return <p>❌Highlight prop is undefined</p>
+    return
   }
 
   return (

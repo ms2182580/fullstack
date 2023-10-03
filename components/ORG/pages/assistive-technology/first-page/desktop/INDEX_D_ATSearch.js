@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
-import { DATA_AT_D } from "../../../../../../utils/ORG/pat/at/DATA_AT_D"
+import { DATA_PAT_D } from "../../../../../../utils/ORG/pat/DATA_PAT_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts"
@@ -18,7 +18,7 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_AT_D.length)
+      setHowMuchDisplay(DATA_PAT_D.length)
     }
   }, [isSelected])
 
@@ -39,7 +39,7 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_ATSearchWrapper>
-      {DATA_AT_D.map((x, iData) => {
+      {DATA_PAT_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (

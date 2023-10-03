@@ -259,7 +259,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI = [
+export const renderFiltersInUI_CMPS_DAY = [
   {
     component: ORG_Filters_D_More2,
     parameters: {
