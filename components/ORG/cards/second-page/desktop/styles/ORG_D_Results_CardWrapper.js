@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const DAY_D_Results_CardWrapper = styled.div`
+export const ORG_D_Results_CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:

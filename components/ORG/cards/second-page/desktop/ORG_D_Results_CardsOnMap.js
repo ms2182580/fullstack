@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
-import { PinResultsSvg } from "../../../../../../../assets/Icons/index.js"
-import { ORG_MapDefaultValue } from "../../../../../../../utils/ORG_MapValuesToShow.js"
-import { DAY_D_Results_CardsOnMapCard } from "./DAY_D_Results_CardsOnMapCard.js"
-import { DAY_D_Results_CardsOnMapWrapper } from "./styles/DAY_D_Results_CardsOnMapWrapper.js"
+import { PinResultsSvg } from "../../../../../assets/Icons/index.js"
+import { ORG_MapDefaultValue } from "../../../../../utils/ORG_MapValuesToShow.js"
+import { ORG_D_Results_CardsOnMapCard } from "./ORG_D_Results_CardsOnMapCard.js"
+import { ORG_D_Results_CardsOnMapWrapper } from "./styles/ORG_D_Results_CardsOnMapWrapper.js"
 
-export const DAY_D_Results_CardsOnMap = ({ bottomOfButton }) => {
+export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   const myRef = useRef(null)
 
   const [actualWidthAndHeight, setActualWidthAndHeight] = useState()
@@ -114,20 +114,20 @@ export const DAY_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   }, [actualWidthAndHeight])
 
   return (
-    <DAY_D_Results_CardsOnMapWrapper
+    <ORG_D_Results_CardsOnMapWrapper
       ref={myRef}
       bottomOfButton={bottomOfButton}>
       {isRenderAt === "ready" &&
         positionsShrinked.length !== 1 &&
         positionsShrinked.map(({ top, left }, i) => {
           return (
-            <DAY_D_Results_CardsOnMapCard
+            <ORG_D_Results_CardsOnMapCard
               top={top}
               left={left}
               key={`${top}_${left}_${i}`}
             />
           )
         })}
-    </DAY_D_Results_CardsOnMapWrapper>
+    </ORG_D_Results_CardsOnMapWrapper>
   )
 }

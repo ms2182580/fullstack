@@ -1,5 +1,5 @@
 import styled from 'styled-components'
 
-export const DAY_D_Results_HowMuchShowingWrapper = styled.div`
+export const ORG_D_Results_HowMuchShowingWrapper = styled.div`
   padding-bottom: 16px;
 `

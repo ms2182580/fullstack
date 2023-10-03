@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react"
-import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_CtxShowFiltersDesktop_Provider"
-import { DAY_D_Results_BreadcrumbsAndLastUpdated } from "./DAY_D_Results_BreadcrumbsAndLastUpdated"
-import { DAY_D_Results_Choisepath } from "./DAY_D_Results_Choisepath"
-import { DAY_D_Results_FilterSortbyHeader } from "./DAY_D_Results_FilterSortbyHeader"
-import { DAY_D_Results_FinalButton } from "./DAY_D_Results_FinalButton.js"
-import { DAY_D_Results_Map } from "./DAY_D_Results_Map"
-import { DAY_D_Results_MainEntryWrapper } from "./styles/DAY_D_Results_MainEntryWrapper.js"
+import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
+import { ORG_D_Results_BreadcrumbsAndLastUpdated } from "./ORG_D_Results_BreadcrumbsAndLastUpdated.js"
+import { ORG_D_Results_Choisepath } from "./ORG_D_Results_Choisepath.js"
+import { ORG_D_Results_FilterSortbyHeader } from "./ORG_D_Results_FilterSortbyHeader.js"
+import { ORG_D_Results_FinalButton } from "./ORG_D_Results_FinalButton.js"
+import { ORG_D_Results_Map } from "./ORG_D_Results_Map.js"
+import { ORG_D_Results_MainEntryWrapper } from "./styles/ORG_D_Results_MainEntryWrapper.js"
 
-export const DAY_D_Results_MainEntry = () => {
+export const ORG_D_Results_MainEntry = () => {
   const { ORGshowFullMapButton, ORGShowFullMapFilter, setORGShowFullMapButton, setORGShowFullMapFilter } =
     useORG_CtxShowFiltersDesktop()
 
@@ -44,23 +44,23 @@ export const DAY_D_Results_MainEntry = () => {
   }, [])
 
   return (
-    <DAY_D_Results_MainEntryWrapper
+    <ORG_D_Results_MainEntryWrapper
       ORGshowFullMapButton={ORGshowFullMapButton}
       id="topOfORG">
-      <DAY_D_Results_FilterSortbyHeader
+      <ORG_D_Results_FilterSortbyHeader
         refUserViewShowFullMapButton={refUserViewShowFullMapButton}
         refUserViewShowFullMapFilter={refUserViewShowFullMapFilter}
       />
 
       <div>
-        <DAY_D_Results_Choisepath />
+        <ORG_D_Results_Choisepath />
 
-        <DAY_D_Results_Map refUserViewShowFullMapButton={refUserViewShowFullMapButton} />
+        <ORG_D_Results_Map refUserViewShowFullMapButton={refUserViewShowFullMapButton} />
       </div>
 
-      <DAY_D_Results_FinalButton />
+      <ORG_D_Results_FinalButton />
 
-      <DAY_D_Results_BreadcrumbsAndLastUpdated />
-    </DAY_D_Results_MainEntryWrapper>
+      <ORG_D_Results_BreadcrumbsAndLastUpdated />
+    </ORG_D_Results_MainEntryWrapper>
   )
 }
