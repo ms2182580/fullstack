@@ -167,4 +167,13 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
       }
     }
   }
+  
+  &.AA_AT_SETTING_CHECKBOX{
+    & > :nth-child(2) {
+      @media (max-width: 1100px) {
+        left:-70px
+      }
+    }
+    
+  }
 `

@@ -4,8 +4,6 @@ import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 export default function ORG_INDEX_AT_SmartDevices_Results() {
   const { isMobile } = useCheckUserWidth()
 
-  // const { pathname, query, route, ...allProps } = useRouter()
-
   return (
     <>
       {isMobile === false ? (
@@ -13,14 +11,8 @@ export default function ORG_INDEX_AT_SmartDevices_Results() {
           <INDEX_D_SmartDevices_Results />
         </>
       ) : (
-        <>
-          {/* Mobile component. We dont have design for this in this path */}
-        </>
+        <>{/* Mobile component. We dont have design for this in this path */}</>
       )}
     </>
   )
 }
-
-
-
-

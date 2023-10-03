@@ -3,8 +3,8 @@ import { useORG_Ctx_D_SecondpageData } from '../../../../../../../context/ORG_Ct
 import { useORG_Ctx_D_SecondpageFilters } from '../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider'
 import { DATA_PAT_D } from '../../../../../../../utils/ORG/pat/DATA_PAT_D'
 import { DATA_AT_D_CardLeft } from '../../../../../../../utils/ORG/pat/at/DATA_AT_D_Card'
+import { renderFiltersInUI_AA_AT } from '../../../../../../../utils/ORG/pat/at/DATA_AT_D_Filters'
 import { DATA_SAT_D_CardRight } from '../../../../../../../utils/ORG/pat/sat/DATA_SAT_D_Card'
-import { renderFiltersInUI_CMPS_DAY } from '../../../../../../../utils/ORG/pcmps/day/DATA_DAY_D_Filters'
 import { INDEX_ORG_Search_D } from '../../../../../cards/second-page/desktop/INDEX_ORG_Search_D'
 
 export const INDEX_D_SmartDevices_Results = () => {
@@ -12,7 +12,7 @@ export const INDEX_D_SmartDevices_Results = () => {
   const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
   useEffect(() => {
-    setSecondpageFiltersORG(renderFiltersInUI_CMPS_DAY)
+    setSecondpageFiltersORG(renderFiltersInUI_AA_AT)
     setSecondpageDataORG({
       cardData: DATA_PAT_D[1].slice(1),
       mainNameORG: DATA_PAT_D[1][0],
