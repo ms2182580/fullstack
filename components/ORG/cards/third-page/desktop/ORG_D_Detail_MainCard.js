@@ -2,6 +2,8 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { Fragment } from "react"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "../../../../../assets/Icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
+import { DATA_ORG_KeyNamesForCards_D } from "../../../../../utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import { capitalizeWords } from "../../../../../utils/capitalizeWords"
 import { ButtonSmall } from "../../../../ui/buttons/general"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "../../../../ui/heading_body_text/HeaderFonts"
@@ -23,7 +25,6 @@ import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { ORG_D_Detail_MainCardWrapper } from "./styles/ORG_D_Detail_MainCardWrapper"
 
 export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
-  console.dir("thirdpageDataORG:", thirdpageDataORG)
   const { push, query } = useRouter()
   let handlePushTo404 = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
@@ -111,10 +112,10 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card).map((x, index) => {
             if (x[0] === "withBackground") {
               return (
-                <div key={`${x[1].key}_${x[1].data.join(", ")}`}>
+                <div key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                   <ORG_D_Detail_Card_SecondRow_Info
-                    title={x[1].key}
-                    dataToShow={x[1].data}
+                    title={x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}
+                    dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
                     withBackground
                   />
                 </div>
@@ -124,13 +125,11 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
 
           <div>
             {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card.left).map((x, index) => {
-              console.log("x:", x)
-
               return (
-                <Fragment key={`${x[1].key}_${x[1].data.join(", ")}`}>
+                <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                   <ORG_D_Detail_Card_SecondRow_Info
-                    title={x[1].key}
-                    dataToShow={x[1].data}
+                    title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
+                    dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
                   />
                 </Fragment>
               )
@@ -139,10 +138,10 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
 
           <div>
             {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card.right).map((x, index) => (
-              <Fragment key={`${x[1].key}_${x[1].data.join(", ")}`}>
+              <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                 <ORG_D_Detail_Card_SecondRow_Info
-                  title={x[1].key}
-                  dataToShow={x[1].data}
+                  title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
+                  dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
                 />
               </Fragment>
             ))}
