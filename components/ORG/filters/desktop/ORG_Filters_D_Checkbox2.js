@@ -4,9 +4,9 @@ import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
 import { ButtonSmall } from "../../../ui/buttons/general/index.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
-import { ORG_Filters_D_CheckboxWrapper } from "./styles/ORG_Filters_D_CheckboxWrapper.js"
+import { ORG_Filters_D_CheckboxWrapper2 } from "./styles/ORG_Filters_D_CheckboxWrapper2.js"
 
-export const ORG_Filters_D_Checkbox = ({
+export const ORG_Filters_D_Checkbox2 = ({
   // clearAll,
   // dispatch,
   // setClearAll,
@@ -16,10 +16,15 @@ export const ORG_Filters_D_Checkbox = ({
   // showStateChildren,
   // tempState,
   // toUpdateFilters,
-  buttonName = "noNameOnThisButton",
-  categoriesToDisplay = ["nothing here"],
-  titleOnModal,
+  // buttonName = "noNameOnThisButton",
+  // categoriesToDisplay = ["nothing here"],
+  // titleOnModal,
+  ...props
 }) => {
+  const { buttonName = "noNameOnThisButton", categoriesToDisplay = ["nothing here"], titleOnModal } = props.props
+
+  const className = props.shouldAddClassName
+
   const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
   const handleShowRemaining = () => {
     setShowRemaining(true)
@@ -79,10 +84,11 @@ export const ORG_Filters_D_Checkbox = ({
   }
 
   return (
-    <ORG_Filters_D_CheckboxWrapper
+    <ORG_Filters_D_CheckboxWrapper2
       mustShowFilter={mustShowFilter}
       showRemaining={showRemaining}
-      allowSelection={allowSelection}>
+      allowSelection={allowSelection}
+      className={className && className}>
       <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}</span>
 
       <div ref={refContainer}>
@@ -198,6 +204,6 @@ shouldClearAllOptions={shouldClearAllOptions} */
           </span>
         </div>
       </div>
-    </ORG_Filters_D_CheckboxWrapper>
+    </ORG_Filters_D_CheckboxWrapper2>
   )
 }

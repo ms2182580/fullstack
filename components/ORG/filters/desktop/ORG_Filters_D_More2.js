@@ -2,10 +2,23 @@ import { Fragment, cloneElement, useState } from "react"
 import { XDesktopSvg } from "../../../../assets/Icons/index.js"
 import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
 import { ButtonSmall } from "../../../ui/buttons/general/index.js"
-import { ORG_Filters_D_MoreWrapper } from "./styles/ORG_Filters_D_MoreWrapper.js"
+import { ORG_Filters_D_MoreWrapper2 } from "./styles/ORG_Filters_D_MoreWrapper2.js"
 
-export const ORG_Filters_D_More = ({ allCheckboxes = [], allRanges = [], customButtonName = "More Filters", ...props }) => {
+export const ORG_Filters_D_More2 = ({
+  // allCheckboxes = [],
+  // allRanges = [],
+  // customButtonName = "More Filters",
+  ...props
+}) => {
+  const {
+    customButtonName = "More Filters",
+    allCheckboxes = [
+      /* weight or any other character */
+    ],
+    allRanges = [],
+  } = props.props
 
+  const className = props.shouldAddClassName
 
   // const { setModalShowedCtx } = useCtx_ShowModal()
   // const [mustShowFilter, setMustShowFilter] = useState(false)
@@ -36,7 +49,9 @@ export const ORG_Filters_D_More = ({ allCheckboxes = [], allRanges = [], customB
   }
 
   return (
-    <ORG_Filters_D_MoreWrapper mustShowFilter={mustShowFilter}>
+    <ORG_Filters_D_MoreWrapper2
+      mustShowFilter={mustShowFilter}
+      className={className && className}>
       <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{customButtonName}</ButtonSmall> : <ButtonSmall>{customButtonName}</ButtonSmall>}</span>
 
       <div ref={refContainer}>
@@ -78,6 +93,6 @@ export const ORG_Filters_D_More = ({ allCheckboxes = [], allRanges = [], customB
           </span>
         </div>
       </div>
-    </ORG_Filters_D_MoreWrapper>
+    </ORG_Filters_D_MoreWrapper2>
   )
 }

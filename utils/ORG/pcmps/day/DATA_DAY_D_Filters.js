@@ -1,4 +1,10 @@
-export const DATA_DAY_D_Filters = {
+import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox_Isolated"
+import { ORG_Filters_D_More2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_More2"
+import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+
+const DATA_DAY_D_Filters = {
   allActivities: {
     allActivities: {
       categoriesToDisplay: ["All Activities"],
@@ -180,3 +186,133 @@ export const DATA_DAY_D_Filters = {
     },
   },
 }
+
+const allActivities = [
+  <ORG_Filters_D_Checkbox_Isolated categoriesToDisplay={["All Activities"]} />,
+
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.fitness.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.fitness.categoriesToDisplay}
+  />,
+
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.art.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.art.categoriesToDisplay}
+  />,
+
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.music.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.music.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.ASLLanguages.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.ASLLanguages.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.stem.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.stem.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.dailyLivingSkills.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.dailyLivingSkills.categoriesToDisplay}
+  />,
+  <ORG_Filters_D_Checkbox_Isolated
+    titleOnModal={DATA_DAY_D_Filters.allActivities.academics.buttonName}
+    categoriesToDisplay={DATA_DAY_D_Filters.allActivities.academics.categoriesToDisplay}
+  />,
+]
+
+const allMoreFilters = {
+  checkbox: [
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.setting.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.setting.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.viewOnly.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.viewOnly.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.coEd.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.coEd.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.onSiteNurse.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.onSiteNurse.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.religionAfiliation.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.religionAfiliation.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_DAY_D_Filters.moreFilters.wheelchairAccessible.buttonName}
+      categoriesToDisplay={DATA_DAY_D_Filters.moreFilters.wheelchairAccessible.categoriesToDisplay}
+    />,
+  ],
+}
+
+export const renderFiltersInUI = [
+  {
+    component: ORG_Filters_D_More2,
+    parameters: {
+      titleOnModal: "",
+      allCheckboxes: allActivities,
+      customButtonName: "Activities",
+    },
+  },
+  {
+    component: ORG_Filters_D_Checkbox2,
+    parameters: {
+      buttonName: ORG_FILTERS_KEYS_D.diagnosis.titleToShow,
+      categoriesToDisplay: ORG_FILTERS_DATA_D.diagnosis,
+    },
+    shouldAddClassName: false,
+  },
+  {
+    component: ORG_Filters_D_Range2,
+    parameters: {
+      min: DATA_DAY_D_Filters.age.minimum,
+      max: DATA_DAY_D_Filters.age.maximum,
+      buttonName: DATA_DAY_D_Filters.age.buttonName,
+      addCharacter: DATA_DAY_D_Filters.age.addCharacter,
+      whichMeasure: DATA_DAY_D_Filters.age.whichMeasure,
+    },
+    shouldAddClassName: false,
+  },
+  {
+    component: ORG_Filters_D_Range2,
+    parameters: {
+      min: DATA_DAY_D_Filters.distance.minimum,
+      max: DATA_DAY_D_Filters.distance.maximum,
+      buttonName: DATA_DAY_D_Filters.distance.buttonName,
+      addCharacter: DATA_DAY_D_Filters.distance.addCharacter,
+      whichMeasure: DATA_DAY_D_Filters.distance.whichMeasure,
+    },
+    shouldAddClassName: false,
+  },
+
+  {
+    component: ORG_Filters_D_Checkbox2,
+    parameters: { buttonName: DATA_DAY_D_Filters.campType.buttonName, categoriesToDisplay: DATA_DAY_D_Filters.campType.categoriesToDisplay },
+    shouldAddClassName: false,
+  },
+
+  {
+    component: ORG_Filters_D_Checkbox2,
+    parameters: { buttonName: DATA_DAY_D_Filters.priceRange.buttonName, categoriesToDisplay: DATA_DAY_D_Filters.priceRange.categoriesToDisplay },
+    shouldAddClassName: "DAY_CAMPS_PRICE_RANGE",
+  },
+  {
+    component: ORG_Filters_D_More2,
+    parameters: { allCheckboxes: allMoreFilters.checkbox },
+    shouldAddClassName: false,
+  },
+]

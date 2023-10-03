@@ -11,6 +11,8 @@ import { ORG_CtxFiltersLeftDesktop_Provider } from "../context/ORG_CtxFiltersLef
 import { ORG_CtxFiltersLeftMobile_Provider } from "../context/ORG_CtxFiltersLeftMobile_Provider.js"
 import { ORG_CtxShowFiltersDesktop_Provider } from "../context/ORG_CtxShowFiltersDesktop_Provider.js"
 import { ORG_Ctx_2Page_Provider } from "../context/ORG_Ctx_2Page_Provider.js"
+import { ORG_Ctx_D_SecondpageData_Provider } from '../context/ORG_Ctx_D_SecondpageData_Provider.js'
+import { ORG_Ctx_D_SecondpageFilters_Provider } from '../context/ORG_Ctx_D_SecondpageFilters_Provider.js'
 import { ORG_Ctx_D_ThirdpageData_Provider } from "../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ORG_CtxFiltersApplyDesktop_Provider } from "../context/ORG_Ctx_FiltersApplyDesktop.js"
 import { ORG_CtxFiltersApplyMobile_Provider } from "../context/ORG_Ctx_FiltersApplyMobile.js"
@@ -18,8 +20,6 @@ import { ORG_CtxSTDataThirdpageDesktop_Provider } from "../context/ORG_Ctx_STDat
 import { ORG_CtxSTDataThirdpageMobile_Provider } from "../context/ORG_Ctx_STDataThirdpageMobile_Provider.js"
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
-
-
 import GlobalStyle from "./styles/index.js"
 
 function MyApp({ Component, pageProps }) {
@@ -39,22 +39,26 @@ function MyApp({ Component, pageProps }) {
                             <ORG_CtxFiltersApplyMobile_Provider>
                               <ORG_CtxFiltersApplyDesktop_Provider>
                                 <Ctx_ShowModal_Provider>
-                                  <ORG_Ctx_D_ThirdpageData_Provider>
-                                    <ORG_Ctx_2Page_Provider>
-                                      <CheckUserWidth_Provider>
-                                        <NavbarHomeHeight_Provider>
-                                          <PageLayout>
-                                            <GlobalStyle />
-                                            <link
-                                              rel="icon"
-                                              href="/favicon.ico"
-                                            />
-                                            <Component {...pageProps} />
-                                          </PageLayout>
-                                        </NavbarHomeHeight_Provider>
-                                      </CheckUserWidth_Provider>
-                                    </ORG_Ctx_2Page_Provider>
-                                  </ORG_Ctx_D_ThirdpageData_Provider>
+                                  <ORG_Ctx_D_SecondpageFilters_Provider>
+                                    <ORG_Ctx_D_SecondpageData_Provider>
+                                      <ORG_Ctx_D_ThirdpageData_Provider>
+                                        <ORG_Ctx_2Page_Provider>
+                                          <CheckUserWidth_Provider>
+                                            <NavbarHomeHeight_Provider>
+                                              <PageLayout>
+                                                <GlobalStyle />
+                                                <link
+                                                  rel="icon"
+                                                  href="/favicon.ico"
+                                                />
+                                                <Component {...pageProps} />
+                                              </PageLayout>
+                                            </NavbarHomeHeight_Provider>
+                                          </CheckUserWidth_Provider>
+                                        </ORG_Ctx_2Page_Provider>
+                                      </ORG_Ctx_D_ThirdpageData_Provider>
+                                    </ORG_Ctx_D_SecondpageData_Provider>
+                                  </ORG_Ctx_D_SecondpageFilters_Provider>
                                 </Ctx_ShowModal_Provider>
                               </ORG_CtxFiltersApplyDesktop_Provider>
                             </ORG_CtxFiltersApplyMobile_Provider>
