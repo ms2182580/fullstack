@@ -1,9 +1,9 @@
-import ORG_CMPS1 from "../../../../assets/images/ORG/camps/ORG_CMPS1.png"
-import ORG_CMPS2 from "../../../../assets/images/ORG/camps/ORG_CMPS2.png"
-import ORG_CMPS3 from "../../../../assets/images/ORG/camps/ORG_CMPS3.png"
-import { generateRandomNumber } from "../../../generateRandomNumber"
+import ORG_CMPS1 from "../../../assets/images/ORG/camps/ORG_CMPS1.png"
+import ORG_CMPS2 from "../../../assets/images/ORG/camps/ORG_CMPS2.png"
+import ORG_CMPS3 from "../../../assets/images/ORG/camps/ORG_CMPS3.png"
+import { generateRandomNumber } from "../../generateRandomNumber"
 
-export const DATA_DAY_D = [
+export const DATA_PCMPS_D = [
   [
     "Popular Day Camps",
     {
