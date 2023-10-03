@@ -1,112 +1,115 @@
+import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+
 export const DATA_SAT_D_CardRight = [
   {
     accessibilityFeatures: {
-      key: "Accessibility features",
-      data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "accessibility features",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
     platform: {
-      key: "Platform compatibility",
-      data: ["Windows", "Android", "Linux"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "platform compatibility",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Windows", "Android", "Linux"],
     },
     support: {
-      key: "Support",
-      data: ["Online documentation", "Community Forums"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
     },
     payMethod: {
-      key: "Pay Method",
-      data: ["One in life"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["One in life"],
     },
 
     thirdPageData: {
       folderName: "detail",
       card: {
         withBackground: {
-          key: "Diagnosis Served",
-          data: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
         left: {
           accessibilityFeatures: {
-            key: "Accessibility features",
-            data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
           platform: {
-            key: "Platform compatibility",
-            data: ["Windows", "Android", "Linux"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Windows", "Android", "Linux"],
           },
           support: {
-            key: "Support",
-            data: ["Online documentation", "Community Forums"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
           },
           payMethod: {
-            key: "Pay Method",
-            data: ["One in life"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["One in life"],
           },
         },
         right: {
           inputMethods: {
-            key: "Input Methods",
-            data: ["Keyboard input", "Mouse Input", "Gesture Input"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
           },
           platform: {
-            key: "User Customization",
-            data: ["Customizable settings", "Adaptive interfaces"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
           },
         },
       },
     },
   },
+
   {
     accessibilityFeatures: {
-      key: "Accessibility features",
-      data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
     platform: {
-      key: "Platform compatibility",
-      data: ["iOS", "macOS"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["iOS", "macOS"],
     },
     support: {
-      key: "Support",
-      data: ["Online documentation", "Community Forums"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
     },
     payMethod: {
-      key: "Pay Method",
-      data: ["Suscription"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Suscription"],
     },
 
     thirdPageData: {
       folderName: "detail",
       card: {
         withBackground: {
-          key: "Diagnosis Served",
-          data: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
 
         left: {
           accessibilityFeatures: {
-            key: "Accessibility features",
-            data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
           platform: {
-            key: "Platform compatibility",
-            data: ["iOS", "macOS"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["iOS", "macOS"],
           },
           support: {
-            key: "Support",
-            data: ["Online documentation", "Community Forums"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
           },
           payMethod: {
-            key: "Pay Method",
-            data: ["Suscription"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Suscription"],
           },
         },
         right: {
           inputMethods: {
-            key: "Input Methods",
-            data: ["Keyboard input", "Mouse Input", "Gesture Input"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
           },
           platform: {
-            key: "User Customization",
-            data: ["Customizable settings", "Adaptive interfaces"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
           },
         },
       },

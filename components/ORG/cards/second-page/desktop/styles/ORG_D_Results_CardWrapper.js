@@ -99,7 +99,7 @@ export const ORG_D_Results_CardWrapper = styled.div`
       }
 
       .HIGHLIGHTS {
-        border: 2px solid green;
+        /* border: 2px solid green; */
       }
 
       .NO_THIRDPAGE_DATA {

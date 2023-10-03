@@ -4,7 +4,9 @@ import { useEffect } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
+import { DATA_ORG_KeyNamesForCards_D } from "../../../../../utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "../../../../../utils/ORG/formatDataToThirdPage"
+import { capitalizeWords } from "../../../../../utils/capitalizeWords"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Highlights_D } from "../../../highlights/Highlights_D"
@@ -109,6 +111,7 @@ export const ORG_D_Results_CardNoFilters = () => {
                         </span>
                       )
                     }
+
                     if (x[0] === "highlights") {
                       return (
                         <span
@@ -118,13 +121,15 @@ export const ORG_D_Results_CardNoFilters = () => {
                         </span>
                       )
                     }
+
                     if (x[0] !== "thirdPageData") {
                       return (
                         <span
                           className="NO_THIRDPAGE_DATA"
                           key={`${x[0]}_${x[1].data.join(", ")}`}>
                           <P>
-                            {x[1].key}: <span>{new Intl.ListFormat("en").format(x[1].data)}</span>
+                            {capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}:{" "}
+                            <span>{new Intl.ListFormat("en").format(x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME])}</span>
                           </P>
                         </span>
                       )
