@@ -1,7 +1,7 @@
 import Image from "next/image.js"
 import { useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_MoreinformationSvg, ORG_D_Results_WheretobuySvg } from "../../../../../../../assets/Icons/index.js"
-import { DATA_AT_D } from "../../../../../../../utils/ORG/pat/at/DATA_AT_D.js"
+import { DATA_PAT_D } from "../../../../../../../utils/ORG/pat/DATA_PAT_D.js"
 import { DATA_AT_D_CardLeft, DATA_AT_D_CardRight } from "../../../../../../../utils/ORG/pat/at/DATA_AT_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -24,7 +24,7 @@ export const AT_D_Results_CardNoFilters = () => {
     router.push(toWhere)
   } */
 
-  const [cardData, setCardData] = useState(DATA_AT_D[0].slice(1))
+  const [cardData, setCardData] = useState(DATA_PAT_D[0].slice(1))
 
   return (
     <>

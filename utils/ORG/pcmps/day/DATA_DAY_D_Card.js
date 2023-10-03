@@ -1,27 +1,72 @@
 export const DATA_DAY_D_CardRight = [
   {
     highlights: ["Tour available"],
-    programEmphasis: ["Autism", "Asperger’s Syndrome"],
-    price: {
-      currency: "$",
-      ammount: "225",
-      frequency: "day",
+    programEmphasis: {
+      key: "Program Emphasis",
+      data: ["Autism", "Asperger’s Syndrome"],
     },
-    activities: ["Archery", "Arts & Crafts", "Swimming", "Tennis"],
-    languages: ["English", "Spanish"],
+    price: {
+      key: "Price",
+      data: ["$225/day"],
+    },
+    activities: {
+      key: "Activities",
+      data: ["Archery", "Arts & Crafts", "Swimming", "Tennis"],
+    },
+    languages: {
+      key: "Languages",
+      data: ["English", "Spanish"],
+    },
+  },
+  {
+    highlights: ["Tour available"],
+    programEmphasis: {
+      key: "Program Emphasis",
+      data: ["Autism", "Asperger’s Syndrome"],
+    },
+    price: {
+      key: "Price",
+      data: ["$225/day"],
+    },
+    activities: {
+      key: "Activities",
+      data: ["Archery", "Arts & Crafts", "Swimming", "Tennis"],
+    },
+    languages: {
+      key: "Languages",
+      data: ["English", "Spanish"],
+    },
   },
 
   {
     highlights: ["Tour available"],
-    programEmphasis: ["Autism", "ADHD", "Down Syndrome"],
-    price: {
-      currency: "$",
-      ammount: "300",
-      frequency: "day",
+    programEmphasis: {
+      key: "Program Emphasis",
+      data: ["Autism", "ADHD", "Down Syndrome"],
     },
-    activities: ["Basketball", "Floor Hockey", "Badminton", "Tennis"],
-    languages: ["English", "Spanish", "Mandarin", "Cantonese"],
+    price: {
+      key: "Price",
+      data: ["$300/day"],
+    },
+
+    activities: {
+      key: "Activities",
+      data: ["Basketball", "Floor Hockey", "Badminton", "Tennis"],
+    },
+
+    languages: {
+      key: "Languages",
+      data: ["English", "Spanish"],
+    },
   },
+
+  // {
+  //   highlights: ["Tour available"],
+  //   programEmphasis: ["Autism", "ADHD", "Down Syndrome"],
+  //   price: ["$225/day"],
+  //   activities: ["Basketball", "Floor Hockey", "Badminton", "Tennis"],
+  //   languages: ["English", "Spanish", "Mandarin", "Cantonese"],
+  // },
 ]
 
 export const DATA_DAY_D_CardLeft = [
