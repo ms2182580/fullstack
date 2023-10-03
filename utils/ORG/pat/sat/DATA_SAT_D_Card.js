@@ -1,128 +1,118 @@
 export const DATA_SAT_D_CardRight = [
   {
-    price: {
-      key: "Price",
-      data: ["$36,000 - $37,888"],
+    accessibilityFeatures: {
+      key: "Accessibility features",
+      data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
-    speed: {
-      key: "Speed",
-      data: ["7.5 mph (12 kmh)"],
+    platform: {
+      key: "Platform compatibility",
+      data: ["Windows", "Android", "Linux"],
     },
-    range: {
-      key: "Range",
-      data: ["24 miles (40 km)"],
+    support: {
+      key: "Support",
+      data: ["Online documentation", "Community Forums"],
     },
-    maxWeight: {
-      key: "Max weight",
-      data: ["300 lbs (136 kg)"],
+    payMethod: {
+      key: "Pay Method",
+      data: ["One in life"],
     },
 
     thirdPageData: {
       folderName: "detail",
       card: {
-        practiceAreas: "Sports/Fitness",
-        languages: "English",
-        operationHours: {
-          mondayFriday: "Mon-Fri: 3PM - 7PM",
-          saturday: "Saturday: 9AM-1PM",
-          sunday: "Sunday: 10AM-1PM",
+        withBackground: {
+          key: "Diagnosis Served",
+          data: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
-        classDuration: "30 Minutes - 1 hour",
-        payment: "$50/class (package deals and private lessons)",
-        paymentOptions: {
-          title: "Payment Options",
-          dataToShow: "Private Pay, Medicaid, DOE Contract",
-        },
-        setting: "In Person",
-        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
-        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
-        qualifications: {
-          title: "Qualifications",
-          dataToShow: {
-            0: {
-              title: "Years in Practice:",
-              value: "5 Years",
-            },
-            1: {
-              title: "Licence Number:",
-              value: "1239082",
-            },
-            2: {
-              title: "State of Licence:",
-              value: "New York...",
-            },
+        left: {
+          accessibilityFeatures: {
+            key: "Accessibility features",
+            data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
-
-          // dataToShow: ["Years in Practice: 5 Years", "Licence Number: 1239082", "State of Licence: New York..."],
+          platform: {
+            key: "Platform compatibility",
+            data: ["Windows", "Android", "Linux"],
+          },
+          support: {
+            key: "Support",
+            data: ["Online documentation", "Community Forums"],
+          },
+          payMethod: {
+            key: "Pay Method",
+            data: ["One in life"],
+          },
         },
-        AdditionalCredentials: ["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)..."],
-
-        about:
-          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+        right: {
+          inputMethods: {
+            key: "Input Methods",
+            data: ["Keyboard input", "Mouse Input", "Gesture Input"],
+          },
+          platform: {
+            key: "User Customization",
+            data: ["Customizable settings", "Adaptive interfaces"],
+          },
+        },
       },
     },
   },
   {
-    price: {
-      key: "Price",
-      data: ["From $1,495.00"],
+    accessibilityFeatures: {
+      key: "Accessibility features",
+      data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
-    speed: {
-      key: "Speed",
-      data: ["Manual"],
+    platform: {
+      key: "Platform compatibility",
+      data: ["iOS", "macOS"],
     },
-    range: {
-      key: "Range",
-      data: ["Self powered"],
+    support: {
+      key: "Support",
+      data: ["Online documentation", "Community Forums"],
     },
-    maxWeight: {
-      key: "Max Weight",
-      data: ["264 lbs (120 kg)"],
+    payMethod: {
+      key: "Pay Method",
+      data: ["Suscription"],
     },
 
     thirdPageData: {
       folderName: "detail",
       card: {
-        practiceAreas: "Sports/Fitness",
-        languages: "English",
-        operationHours: {
-          mondayFriday: "Mon-Fri: 3PM - 7PM",
-          saturday: "Saturday: 9AM-1PM",
-          sunday: "Sunday: 10AM-1PM",
+        withBackground: {
+          key: "Diagnosis Served",
+          data: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
-        classDuration: "30 Minutes - 1 hour",
-        payment: "$50/class (package deals and private lessons)",
-        paymentOptions: {
-          title: "Payment Options",
-          dataToShow: "Private Pay, Medicaid, DOE Contract",
-        },
-        setting: "In Person",
-        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
-        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
-        qualifications: {
-          title: "Qualifications",
-          dataToShow: {
-            0: {
-              title: "Years in Practice:",
-              value: "5 Years",
-            },
-            1: {
-              title: "Licence Number:",
-              value: "1239082",
-            },
-            2: {
-              title: "State of Licence:",
-              value: "New York...",
-            },
+
+        left: {
+          accessibilityFeatures: {
+            key: "Accessibility features",
+            data: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
-
-          // dataToShow: ["Years in Practice: 5 Years", "Licence Number: 1239082", "State of Licence: New York..."],
+          platform: {
+            key: "Platform compatibility",
+            data: ["iOS", "macOS"],
+          },
+          support: {
+            key: "Support",
+            data: ["Online documentation", "Community Forums"],
+          },
+          payMethod: {
+            key: "Pay Method",
+            data: ["Suscription"],
+          },
         },
-        AdditionalCredentials: ["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)..."],
-
-        about:
-          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+        right: {
+          inputMethods: {
+            key: "Input Methods",
+            data: ["Keyboard input", "Mouse Input", "Gesture Input"],
+          },
+          platform: {
+            key: "User Customization",
+            data: ["Customizable settings", "Adaptive interfaces"],
+          },
+        },
       },
+
+      about:
+        "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
     },
   },
 ]

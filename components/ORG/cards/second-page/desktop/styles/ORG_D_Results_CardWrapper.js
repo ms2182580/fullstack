@@ -91,12 +91,34 @@ export const ORG_D_Results_CardWrapper = styled.div`
     }
 
     & > :nth-child(5) {
-      margin-bottom: 32px;
+      display: grid;
+      gap: 16px;
+
+      .HIGHLIGHTS_PLUS {
+        border: 2px solid crimson;
+      }
+
+      .HIGHLIGHTS {
+        border: 2px solid green;
+      }
+
+      .NO_THIRDPAGE_DATA {
+        & > :nth-child(1) {
+          font-weight: 600;
+          color: ${PRIMARY.PRIMARY_HOVER};
+
+          & > :nth-child(1) {
+            font-weight: 400;
+
+            color: ${NEUTRALS.BLACK};
+          }
+        }
+      }
     }
 
-    & > *:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)):not(:last-child) {
+    /* & > *:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)):not(:last-child) {
       margin-bottom: 16px;
-    }
+    } */
 
     & > p {
       & > * {
