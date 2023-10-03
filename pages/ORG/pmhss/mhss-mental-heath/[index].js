@@ -14,13 +14,9 @@ export default function INDEX_MHSS_Detail() {
           <INDEX_D_MHSS_MH_Detail />
         </>
       ) : (
-        <>
-          {/* 
-        !FH
-        Activate Detail in mobile version
-        */}
-          {/* <INDEX_M_STDetail /> */}
-        </>
+        
+          <>{/* Mobile */}</>
+        
       )}
     </>
   )
