@@ -4,6 +4,7 @@ import { Fragment, useEffect } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
+import { formatDataToThirdPage } from "../../../../../utils/ORG/formatDataToThirdPage"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { Highlights_D } from "../../../highlights/Highlights_D"
@@ -24,19 +25,35 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  console.dir("secondpageDataORG:", secondpageDataORG)
   const router = useRouter()
 
-  /* 
-  ? With this you move the user to the third page. Think how to make a context that can be used for every third page
-  const router = useRouter()
-  const { setSTDataThirdpage_D } = useORG_Ctx_STDataThirdpage_D()
-  const goToDynamic = (e, everySingleValue, filters) => {
-    setSTDataThirdpage_D({ data: [everySingleValue], filters: [filters] })
-    const toWhere = `${router.pathname}/IndividualProvider`
-    router.push(toWhere)
-  } */
+  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
+    console.log(
+      "thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state:",
+      thirdPageData_Card_Right,
+      thirdPageData_Card_Left,
+      thirdPageData_Card,
+      mainNameORG,
+      subTitle,
+      fullName,
+      state,
+    )
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
-  // const [cardData, setCardData] = useState(DATA_PCMPS_D[0].slice(1))
+    setThirdpageDataORG(allDataToThirdPage)
+
+    let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
+
+    const toWhere = `${router.pathname}/${thirdPageURL}`
+    router.push(
+      {
+        pathname: toWhere,
+        query: { title: mainNameORG, subTitle, state },
+      },
+      toWhere,
+    )
+  }
 
   return (
     <>
@@ -93,7 +110,6 @@ export const ORG_D_Results_CardNoFilters = () => {
                 />
 
                 {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x, index) => {
-
                   if (x[0] === "highlightsPlus") {
                     return (
                       <Fragment key={`${x[0]}_${x[1].join(", ")}`}>
@@ -110,15 +126,17 @@ export const ORG_D_Results_CardNoFilters = () => {
                     )
                   }
 
-                  return (
-                    <Fragment key={`${x[0]}_${x[1].data.join(", ")}`}>
-                      <P
-                        primary_hover
-                        bold>
-                        {x[1].key}: <span>{new Intl.ListFormat("en").format(x[1].data)}</span>
-                      </P>
-                    </Fragment>
-                  )
+                  if (x[0] !== "thirdPageData") {
+                    return (
+                      <Fragment key={`${x[0]}_${x[1].data.join(", ")}`}>
+                        <P
+                          primary_hover
+                          bold>
+                          {x[1].key}: <span>{new Intl.ListFormat("en").format(x[1].data)}</span>
+                        </P>
+                      </Fragment>
+                    )
+                  }
                 })}
               </div>
 
@@ -127,7 +145,19 @@ export const ORG_D_Results_CardNoFilters = () => {
                   <ORG_D_Results_ViewProfileSvg />
                   <P white>View Profile</P>
                 </div>
-                <div>
+                <div
+                  onClick={(e) =>
+                    handleMoveToThirdPage(
+                      e,
+                      secondpageDataORG.right[renderThisFilter],
+                      secondpageDataORG.left[renderThisContact],
+                      secondpageDataORG.cardData[renderThisCard],
+                      secondpageDataORG.mainNameORG,
+                      secondpageDataORG.cardData[renderThisCard].subtitle,
+                      secondpageDataORG.cardData[renderThisCard].fullName,
+                      secondpageDataORG.cardData[renderThisCard]?.state || "",
+                    )
+                  }>
                   <ORG_D_Results_RequestConsultationSvg />
                   <P white>See Availability</P>
                 </div>
