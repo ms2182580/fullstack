@@ -6,13 +6,14 @@ import { DATA_AT_D_CardLeft } from '../../../../../../../utils/ORG/pat/at/DATA_A
 import { DATA_SAT_D_CardRight } from '../../../../../../../utils/ORG/pat/sat/DATA_SAT_D_Card'
 import { renderFiltersInUI_CMPS_DAY } from '../../../../../../../utils/ORG/pcmps/day/DATA_DAY_D_Filters'
 import { INDEX_ORG_Search_D } from '../../../../../cards/second-page/desktop/INDEX_ORG_Search_D'
+import { renderFiltersInUI_MHSS_FS } from '../../../../../../../utils/ORG/pmhss/fs/DATA_FS_D_Filters'
 
 export const INDEX_D_FamilySupports_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
   useEffect(() => {
-    setSecondpageFiltersORG(renderFiltersInUI_CMPS_DAY)
+    setSecondpageFiltersORG(renderFiltersInUI_MHSS_FS)
     setSecondpageDataORG({
       cardData: DATA_PAT_D[1].slice(1),
       mainNameORG: DATA_PAT_D[1][0],

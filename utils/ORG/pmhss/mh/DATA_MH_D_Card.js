@@ -1,108 +1,226 @@
+import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D";
+
 export const DATA_MH_D_CardRight = [
   {
-    highlights: ["Free Consultation"],
-    highlightsPlus: ["Accepting new clients"],
-    yearsInPractice: "10",
-    agesServed: "13+ years old",
-    languages: "English, Mandarin, Cantonese",
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
+    },
 
-    thirdPageData: {
-      folderName: "detail",
-      card: {
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
+    },
+
+    yearsInPractice: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Years in practice",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["10"],
+    },
+
+    agesServed: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["13+ years old"],
+    },
+
+    languages: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "English",
+        "Mandarin",
+        "Cantonese",
+      ],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
         practiceAreas: "Sports/Fitness",
-        languages: "English",
-        operationHours: {
-          mondayFriday: "Mon-Fri: 3PM - 7PM",
-          saturday: "Saturday: 9AM-1PM",
-          sunday: "Sunday: 10AM-1PM",
+
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Focus Areas",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "ADHD",
+            "ADHD Coaching",
+            "Adolescent/Teen Issues",
+            "Anxiety",
+            "Behavioral Therapy",
+            "Mental Health Consultation",
+            "Therapy",
+            "Parenting Counseling",
+          ],
         },
-        classDuration: "30 Minutes - 1 hour",
-        payment: "$50/class (package deals and private lessons)",
-        paymentOptions: {
-          title: "Payment Options",
-          dataToShow: "Private Pay, Medicaid, DOE Contract",
-        },
-        setting: "In Person",
-        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
-        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
-        qualifications: {
-          title: "Qualifications",
-          dataToShow: {
-            0: {
-              title: "Years in Practice:",
-              value: "5 Years",
-            },
-            1: {
-              title: "Licence Number:",
-              value: "1239082",
-            },
-            2: {
-              title: "State of Licence:",
-              value: "New York...",
-            },
+
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
+          operationHours: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Mon-Fri: 8:00AM - 5:00PM",
+            ],
           },
-
-          // dataToShow: ["Years in Practice: 5 Years", "Licence Number: 1239082", "State of Licence: New York..."],
         },
-        AdditionalCredentials: ["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)..."],
 
-        about:
-          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
+          professionalExperience: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Professional Experience",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "The Truong-MacGill Law Firm, since 2010",
+            ],
+          },
+        },
       },
     },
   },
   {
-    highlights: ["Free Consultation"],
-    highlightsPlus: ["Accepting new clients"],
-    yearsInPractice: "7",
-    agesServed: "3-21 years old",
-    languages: "English, Spanish",
-    thirdPageData: {
-      folderName: "detail",
-      card: {
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
+    },
+
+    yearsInPractice: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Years in practice",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["10"],
+    },
+
+    agesServed: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["13+ years old"],
+    },
+
+    languages: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "English",
+        "Mandarin",
+        "Cantonese",
+      ],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
         practiceAreas: "Sports/Fitness",
-        languages: "English",
-        operationHours: {
-          mondayFriday: "Mon-Fri: 3PM - 7PM",
-          saturday: "Saturday: 9AM-1PM",
-          sunday: "Sunday: 10AM-1PM",
+
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Focus Areas",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "ADHD",
+            "ADHD Coaching",
+            "Adolescent/Teen Issues",
+            "Anxiety",
+            "Behavioral Therapy",
+            "Mental Health Consultation",
+            "Therapy",
+            "Parenting Counseling",
+          ],
         },
-        classDuration: "30 Minutes - 1 hour",
-        payment: "$50/class (package deals and private lessons)",
-        paymentOptions: {
-          title: "Payment Options",
-          dataToShow: "Private Pay, Medicaid, DOE Contract",
-        },
-        setting: "In Person",
-        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
-        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
-        qualifications: {
-          title: "Qualifications",
-          dataToShow: {
-            0: {
-              title: "Years in Practice:",
-              value: "5 Years",
-            },
-            1: {
-              title: "Licence Number:",
-              value: "1239082",
-            },
-            2: {
-              title: "State of Licence:",
-              value: "New York...",
-            },
+
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
+          operationHours: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Mon-Fri: 8:00AM - 5:00PM",
+            ],
           },
-
-          // dataToShow: ["Years in Practice: 5 Years", "Licence Number: 1239082", "State of Licence: New York..."],
         },
-        AdditionalCredentials: ["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)..."],
 
-        about:
-          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
+          professionalExperience: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Professional Experience",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "The Truong-MacGill Law Firm, since 2010",
+            ],
+          },
+        },
       },
     },
   },
-]
+  {
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
+    },
+
+    yearsInPractice: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Years in practice",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["10"],
+    },
+
+    agesServed: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["13+ years old"],
+    },
+
+    languages: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "English",
+        "Mandarin",
+        "Cantonese",
+      ],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        practiceAreas: "Sports/Fitness",
+
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Focus Areas",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "ADHD",
+            "ADHD Coaching",
+            "Adolescent/Teen Issues",
+            "Anxiety",
+            "Behavioral Therapy",
+            "Mental Health Consultation",
+            "Therapy",
+            "Parenting Counseling",
+          ],
+        },
+
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
+          operationHours: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Mon-Fri: 8:00AM - 5:00PM",
+            ],
+          },
+        },
+
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
+          professionalExperience: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Professional Experience",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "The Truong-MacGill Law Firm, since 2010",
+            ],
+          },
+        },
+      },
+    },
+  },
+];
 
 export const DATA_MH_D_CardLeft = [
   {
@@ -135,4 +253,4 @@ export const DATA_MH_D_CardLeft = [
       howFar: "20",
     },
   },
-]
+];
