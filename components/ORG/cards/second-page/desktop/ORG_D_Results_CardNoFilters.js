@@ -32,6 +32,7 @@ export const ORG_D_Results_CardNoFilters = () => {
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
+
     setThirdpageDataORG(allDataToThirdPage)
 
     let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
