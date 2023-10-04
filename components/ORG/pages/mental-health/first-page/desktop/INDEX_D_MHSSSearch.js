@@ -7,7 +7,7 @@ import { ButtonSmall } from "../../../../../../components/ui/buttons/general/ind
 import { P } from "../../../../../../components/ui/heading_body_text/DesktopMobileFonts.js"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
-import { DATA_MH_D } from "../../../../../../utils/ORG/pmhss/mh/DATA_MH_D.js"
+import { DATA_PMH_D } from "../../../../../../utils/ORG/pmhss/DATA_PMH_D.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_MHSSSearchWrapper } from "./styles/INDEX_D_MHSSSearchWrapper.js"
@@ -19,7 +19,7 @@ export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_MH_D.length)
+      setHowMuchDisplay(DATA_PMH_D.length)
     }
   }, [isSelected])
 
@@ -40,7 +40,7 @@ export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_MHSSSearchWrapper>
-      {DATA_MH_D.map((x, iData) => {
+      {DATA_PMH_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (
