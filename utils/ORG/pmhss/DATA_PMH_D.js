@@ -1,15 +1,15 @@
-import ORG_MHSS1 from "../../../../assets/images/ORG/mental-health/ORG_MHSS1.png"
-import ORG_MHSS2 from "../../../../assets/images/ORG/mental-health/ORG_MHSS2.png"
-import ORG_MHSS3 from "../../../../assets/images/ORG/mental-health/ORG_MHSS3.png"
-import { generateRandomNumber } from "../../../generateRandomNumber"
+import { generateRandomNumber } from "@/utils/generateRandomNumber"
+import ORG_MHSS1 from "../../../assets/images/ORG/mental-health/ORG_MHSS1.png"
+import ORG_MHSS2 from "../../../assets/images/ORG/mental-health/ORG_MHSS2.png"
+import ORG_MHSS3 from "../../../assets/images/ORG/mental-health/ORG_MHSS3.png"
 
-export const DATA_MH_D = [
+export const DATA_PMH_D = [
   [
     "Popular Mental Health Services",
     {
       imageToUse: ORG_MHSS1,
       title: "Kristie Leung, LMHC",
-      name: {
+      fullName: {
         first: "Kristie",
         last: "Leung"
       },
@@ -23,7 +23,7 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS2,
       title: "Melissa Smith, LMHC, MA",
-      name: {
+      fullName: {
         first: "Melissa",
         last: "Smith"
       },
@@ -37,7 +37,7 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS3,
       title: "Sarah L. Hershman, MD",
-      name: {
+      fullName: {
         first: "Sarah L.",
         last: "Hershman"
       },
@@ -54,6 +54,10 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS1,
       title: "Kristie Leung, LMHC",
+      fullName: {
+        first: "Sarah L.",
+        last: "Hershman"
+      },
       subtitle: "Psychotherapist",
       city: "New York, NY",
       rating: generateRandomNumber(4, 5),
@@ -64,6 +68,10 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS2,
       title: "Melissa Smith, LMHC, MA",
+      fullName: {
+        first: "Sarah L.",
+        last: "Hershman"
+      },
       subtitle: "Psychotherapist",
       city: "New York, NY",
       rating: generateRandomNumber(4, 5),
@@ -74,6 +82,10 @@ export const DATA_MH_D = [
     {
       imageToUse: ORG_MHSS3,
       title: "Sarah L. Hershman, MD",
+      fullName: {
+        first: "Sarah L.",
+        last: "Hershman"
+      },
       subtitle: "Psychotherapist",
       city: "New York, NY",
       rating: generateRandomNumber(4, 5),
