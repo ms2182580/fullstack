@@ -18,6 +18,10 @@ export const ORG_D_Detail_Card_SecondRow_InfoWrapper = styled.div`
       font-weight: 600;
     }
   }
+  
+  &.DISPLAY_BLOCK{
+    
+  }
 
   .dataObj {
     display: flex;

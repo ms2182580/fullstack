@@ -93,7 +93,7 @@ export const ORG_D_Results_CardWrapper = styled.div`
     & > :nth-child(5) {
       display: grid;
       gap: 16px;
-
+      
       .HIGHLIGHTS_PLUS {
         border: 2px solid crimson;
       }
@@ -104,8 +104,9 @@ export const ORG_D_Results_CardWrapper = styled.div`
 
       .NO_THIRDPAGE_DATA {
         & > :nth-child(1) {
-          font-weight: 600;
+          font-weight: 700;
           color: ${PRIMARY.PRIMARY_HOVER};
+          
 
           & > :nth-child(1) {
             font-weight: 400;

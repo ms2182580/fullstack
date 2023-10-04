@@ -102,27 +102,27 @@ export const ORG_D_Results_CardNoFilters = () => {
 
                 <div>
                   {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x, index) => {
-                    if (x[0] === "highlightsPlus") {
+                    if (x[0] === DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS) {
                       return (
                         <span
                           className="HIGHLIGHTS_PLUS"
-                          key={`${x[0]}_${x[1].join(", ")}`}>
+                          key={`${x[0]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                           <p>"highlightsPlus"</p>
                         </span>
                       )
                     }
 
-                    if (x[0] === "highlights") {
+                    if (x[0] === DATA_ORG_KeyNamesForCards_D.HIGHLIGHT) {
                       return (
                         <span
                           className="HIGHLIGHTS"
-                          key={`${x[0]}_${x[1].join(", ")}`}>
-                          <Highlights_D highlights={x[1]} />
+                          key={`${x[0]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
+                          <Highlights_D highlights={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]} />
                         </span>
                       )
                     }
 
-                    if (x[0] !== "thirdPageData") {
+                    if (x[0] !== DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA) {
                       return (
                         <span
                           className="NO_THIRDPAGE_DATA"

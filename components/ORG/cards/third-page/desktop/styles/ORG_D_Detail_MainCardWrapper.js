@@ -69,6 +69,8 @@ export const ORG_D_Detail_MainCardWrapper = styled.div`
     position: relative;
 
     & > :nth-child(1) {
+      
+      
       & > :nth-child(1) {
         position: absolute;
         right: 24px;
@@ -114,7 +116,7 @@ export const ORG_D_Detail_MainCardWrapper = styled.div`
           cursor: pointer;
         }
       }
-
+      
       & > :last-child {
         margin-bottom: 64px;
         display: flex;
@@ -136,6 +138,10 @@ export const ORG_D_Detail_MainCardWrapper = styled.div`
       
       .NO_HIGHLIGHT {
         margin-bottom: 0px;
+      }
+      
+      .ONE_HIGHLIGHT_AT_LEAST{
+        margin-bottom: 44px;
       }
       
     }

@@ -3,6 +3,7 @@ import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/ORG/filt
 import { ORG_Filters_D_More2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_More2"
 import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
 const DATA_DAY_D_Filters = {
   allActivities: {
@@ -261,58 +262,58 @@ const allMoreFilters = {
 
 export const renderFiltersInUI_CMPS_DAY = [
   {
-    component: ORG_Filters_D_More2,
-    parameters: {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
       titleOnModal: "",
       allCheckboxes: allActivities,
       customButtonName: "Activities",
     },
   },
   {
-    component: ORG_Filters_D_Checkbox2,
-    parameters: {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
       buttonName: ORG_FILTERS_KEYS_D.diagnosis.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.diagnosis,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
-    component: ORG_Filters_D_Range2,
-    parameters: {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
       min: DATA_DAY_D_Filters.age.minimum,
       max: DATA_DAY_D_Filters.age.maximum,
       buttonName: DATA_DAY_D_Filters.age.buttonName,
       addCharacter: DATA_DAY_D_Filters.age.addCharacter,
       whichMeasure: DATA_DAY_D_Filters.age.whichMeasure,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
-    component: ORG_Filters_D_Range2,
-    parameters: {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
       min: DATA_DAY_D_Filters.distance.minimum,
       max: DATA_DAY_D_Filters.distance.maximum,
       buttonName: DATA_DAY_D_Filters.distance.buttonName,
       addCharacter: DATA_DAY_D_Filters.distance.addCharacter,
       whichMeasure: DATA_DAY_D_Filters.distance.whichMeasure,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
 
   {
-    component: ORG_Filters_D_Checkbox2,
-    parameters: { buttonName: DATA_DAY_D_Filters.campType.buttonName, categoriesToDisplay: DATA_DAY_D_Filters.campType.categoriesToDisplay },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: { buttonName: DATA_DAY_D_Filters.campType.buttonName, categoriesToDisplay: DATA_DAY_D_Filters.campType.categoriesToDisplay },
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
 
   {
-    component: ORG_Filters_D_Checkbox2,
-    parameters: { buttonName: DATA_DAY_D_Filters.priceRange.buttonName, categoriesToDisplay: DATA_DAY_D_Filters.priceRange.categoriesToDisplay },
-    shouldAddClassName: "DAY_CAMPS_PRICE_RANGE",
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: { buttonName: DATA_DAY_D_Filters.priceRange.buttonName, categoriesToDisplay: DATA_DAY_D_Filters.priceRange.categoriesToDisplay },
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: "DAY_CAMPS_PRICE_RANGE",
   },
   {
-    component: ORG_Filters_D_More2,
-    parameters: { allCheckboxes: allMoreFilters.checkbox },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: { allCheckboxes: allMoreFilters.checkbox },
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
 ]
