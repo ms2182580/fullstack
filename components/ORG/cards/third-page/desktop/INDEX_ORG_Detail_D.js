@@ -13,7 +13,6 @@ import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
 
 export const INDEX_ORG_Detail_D = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
-  console.log('✅thirdpageDataORG:', thirdpageDataORG)
 
   const { modalShowedCtx } = useCtx_ShowModal()
 
