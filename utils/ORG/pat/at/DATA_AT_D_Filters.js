@@ -41,7 +41,7 @@ export const DATA_AT_D_Filters = {
   },
 }
 
-export const renderFiltersInUI_AA_AT = [
+export const renderFiltersInUI_AT_AT = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
@@ -52,7 +52,7 @@ export const renderFiltersInUI_AA_AT = [
       addCharacter: DATA_AT_D_Filters.price.addCharacter,
       whichMeasure: DATA_AT_D_Filters.price.whichMeasure,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
 
   },
   {
@@ -65,7 +65,7 @@ export const renderFiltersInUI_AA_AT = [
       addCharacter: DATA_AT_D_Filters.weight.addCharacter,
       whichMeasure: DATA_AT_D_Filters.weight.whichMeasure,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -74,7 +74,7 @@ export const renderFiltersInUI_AA_AT = [
       titleOnModal: DATA_AT_D_Filters.type.titleOnModal,
       categoriesToDisplay: DATA_AT_D_Filters.type.categoriesToDisplay,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -83,7 +83,7 @@ export const renderFiltersInUI_AA_AT = [
       titleOnModal: DATA_AT_D_Filters.mobility.titleOnModal,
       categoriesToDisplay: DATA_AT_D_Filters.mobility.categoriesToDisplay,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -92,7 +92,7 @@ export const renderFiltersInUI_AA_AT = [
       titleOnModal: DATA_AT_D_Filters.seat.titleOnModal,
       categoriesToDisplay: DATA_AT_D_Filters.seat.categoriesToDisplay,
     },
-    shouldAddClassName: false,
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -101,6 +101,6 @@ export const renderFiltersInUI_AA_AT = [
       titleOnModal: DATA_AT_D_Filters.setting.titleOnModal,
       categoriesToDisplay: DATA_AT_D_Filters.setting.categoriesToDisplay,
     },
-    shouldAddClassName: "AA_AT_SETTING_CHECKBOX",
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: "AA_AT_SETTING_CHECKBOX",
   },
 ]

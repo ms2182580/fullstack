@@ -10,13 +10,7 @@ export const ORG_Filters_D_More2 = ({
   // customButtonName = "More Filters",
   ...props
 }) => {
-  const {
-    customButtonName = "More Filters",
-    allCheckboxes = [
-      /* weight or any other character */
-    ],
-    allRanges = [],
-  } = props.props
+  const { customButtonName = "More Filters", allCheckboxes = [] /* weight or any other character */, allRanges = [] } = props.props
 
   const className = props.shouldAddClassName
 

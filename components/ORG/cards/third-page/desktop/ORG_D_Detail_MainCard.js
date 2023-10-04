@@ -102,15 +102,22 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             reviews={thirdpageDataORG.card.leftPart.reviews}
           />
 
-          <div className={!thirdpageDataORG.card.rightPart.highlightsPlus && !thirdpageDataORG.card.rightPart.highlights && "NO_HIGHLIGHT"}>
+          <div
+            className={
+              !thirdpageDataORG.card.rightPart.highlightsPlus && !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]
+                ? "NO_HIGHLIGHT"
+                : "ONE_HIGHLIGHT_AT_LEAST"
+            }>
             <Highlights_2_D highlights={thirdpageDataORG.card.rightPart.highlightsPlus} />
-            <ORG_D_Detail_HighlightBoxes meetingFormat={thirdpageDataORG.card.rightPart.highlights} />
+            <ORG_D_Detail_HighlightBoxes
+              meetingFormat={thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
+            />
           </div>
         </div>
 
         <div>
           {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card).map((x, index) => {
-            if (x[0] === "withBackground") {
+            if (x[0] === DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND) {
               return (
                 <div key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                   <ORG_D_Detail_Card_SecondRow_Info
@@ -124,27 +131,36 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           })}
 
           <div>
-            {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card.left).map((x, index) => {
-              return (
-                <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
-                  <ORG_D_Detail_Card_SecondRow_Info
-                    title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
-                    dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
-                  />
-                </Fragment>
-              )
-            })}
+            {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.LEFT]).map(
+              (x, index) => {
+                return (
+                  <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
+                    <ORG_D_Detail_Card_SecondRow_Info
+                      title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
+                      dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
+                    />
+                  </Fragment>
+                )
+              },
+            )}
           </div>
 
           <div>
-            {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card.right).map((x, index) => (
-              <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
-                <ORG_D_Detail_Card_SecondRow_Info
-                  title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
-                  dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
-                />
-              </Fragment>
-            ))}
+            {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.RIGHT]).map(
+              (x, index) => {
+                let shouldDisplayInBlock = x[1][DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK] ? true : false
+
+                return (
+                  <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
+                    <ORG_D_Detail_Card_SecondRow_Info
+                      title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
+                      dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
+                      displayBlock={shouldDisplayInBlock}
+                    />
+                  </Fragment>
+                )
+              },
+            )}
           </div>
         </div>
 

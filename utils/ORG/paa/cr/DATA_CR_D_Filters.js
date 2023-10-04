@@ -1,3 +1,10 @@
+import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox_Isolated"
+import { ORG_Filters_D_More2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_More2"
+import { ORG_Filters_D_Range_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range_Isolated"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
+
 export const DATA_CR_D_Filters = {
   areasOfLaw: {
     buttonName: "Area(s) of Law",
@@ -50,7 +57,7 @@ export const DATA_CR_D_Filters = {
       minimum: "0",
       maximum: "100000.00",
       whichMeasure: "$",
-      addCharacter: "toLeft"
+      addCharacter: "toLeft",
     },
 
     distance: {
@@ -58,7 +65,7 @@ export const DATA_CR_D_Filters = {
       minimum: "0",
       maximum: "20",
       whichMeasure: "miles",
-      addCharacter: "toRight"
+      addCharacter: "toRight",
     },
     agesServed: {
       buttonName: "Ages Served",
@@ -66,15 +73,118 @@ export const DATA_CR_D_Filters = {
       maximum: "100",
       maximumSpecialCharacter: "100+",
       whichMeasure: "years",
-      addCharacter: "toRight"
-    }
+      addCharacter: "toRight",
+    },
+  },
+}
 
+const allMoreFilters = {
+  range: [
+    <ORG_Filters_D_Range_Isolated
+      buttonName={DATA_CR_D_Filters.moreFilters.price.buttonName}
+      min={DATA_CR_D_Filters.moreFilters.price.minimum}
+      max={DATA_CR_D_Filters.moreFilters.price.maximum}
+      whichMeasure={DATA_CR_D_Filters.moreFilters.price.whichMeasure}
+      addCharacter={DATA_CR_D_Filters.moreFilters.price.addCharacter}
+      minSpecialCharacter={DATA_CR_D_Filters.moreFilters.price.minimumSpecialCharacter}
+      addCharacterMinSpecialCharacter={false}
+    />,
+
+    <ORG_Filters_D_Range_Isolated
+      buttonName={DATA_CR_D_Filters.moreFilters.distance.buttonName}
+      min={DATA_CR_D_Filters.moreFilters.distance.minimum}
+      max={DATA_CR_D_Filters.moreFilters.distance.maximum}
+      addCharacter={DATA_CR_D_Filters.moreFilters.distance.addCharacter}
+      whichMeasure={DATA_CR_D_Filters.moreFilters.distance.whichMeasure}
+    />,
+
+    <ORG_Filters_D_Range_Isolated
+      buttonName={DATA_CR_D_Filters.moreFilters.agesServed.buttonName}
+      min={DATA_CR_D_Filters.moreFilters.agesServed.minimum}
+      max={DATA_CR_D_Filters.moreFilters.agesServed.maximum}
+      maxSpecialCharacter={DATA_CR_D_Filters.moreFilters.agesServed.maximumSpecialCharacter}
+      addCharacter={DATA_CR_D_Filters.moreFilters.agesServed.addCharacter}
+      whichMeasure={DATA_CR_D_Filters.moreFilters.agesServed.whichMeasure}
+    />,
+  ],
+  checkbox: [
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.areasOfLaw.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay}
+    />,
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.jurisdiction.titleOnModal}
+      categoriesToDisplay={DATA_CR_D_Filters.jurisdiction.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.professionalExperience.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.professionalExperience.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.languajesSpoken.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.moreFilters.operationHours.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.moreFilters.operationHours.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={DATA_CR_D_Filters.moreFilters.payment.buttonName}
+      categoriesToDisplay={DATA_CR_D_Filters.moreFilters.payment.categoriesToDisplay}
+    />,
+  ],
+}
+
+export const renderFiltersInUI_AA_CR = [
+  {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
+      buttonName: DATA_CR_D_Filters.areasOfLaw.buttonName,
+      categoriesToDisplay: DATA_CR_D_Filters.areasOfLaw.categoriesToDisplay,
+    },
   },
 
-
-
-
-
-
-
-}
+  {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
+      buttonName: DATA_CR_D_Filters.jurisdiction.buttonName,
+      titleOnModal: DATA_CR_D_Filters.jurisdiction.titleOnModal,
+      categoriesToDisplay: DATA_CR_D_Filters.jurisdiction.categoriesToDisplay,
+    },
+  },
+  {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
+      buttonName: DATA_CR_D_Filters.professionalExperience.buttonName,
+      categoriesToDisplay: DATA_CR_D_Filters.professionalExperience.categoriesToDisplay,
+    },
+  },
+  {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
+      buttonName: DATA_CR_D_Filters.languajesSpoken.buttonName,
+      categoriesToDisplay: DATA_CR_D_Filters.languajesSpoken.categoriesToDisplay,
+    },
+  },
+  {
+    [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,
+    [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
+      allCheckboxes: allMoreFilters.checkbox,
+      allRanges: allMoreFilters.range,
+    },
+  },
+]

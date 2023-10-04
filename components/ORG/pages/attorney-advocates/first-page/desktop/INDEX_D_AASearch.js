@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
-import { DATA_CR_D } from "../../../../../../utils/ORG/paa/cr/DATA_CR_D"
+import { DATA_PCR_D } from "../../../../../../utils/ORG/paa/DATA_PCR_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -19,7 +19,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_CR_D.length)
+      setHowMuchDisplay(DATA_PCR_D.length)
     }
   }, [isSelected])
 
@@ -41,7 +41,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_AASearchWrapper>
-      {DATA_CR_D.map((x, iData) => {
+      {DATA_PCR_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (
