@@ -88,7 +88,7 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
 
           <div>
             <H2 bold>
-              {thirdpageDataORG.fullName.first} {thirdpageDataORG.fullName.last} CCC-SLP
+              {thirdpageDataORG.fullName.first} {thirdpageDataORG.fullName.last}
             </H2>
 
             <ORG_D_Detail_Tooltip />
