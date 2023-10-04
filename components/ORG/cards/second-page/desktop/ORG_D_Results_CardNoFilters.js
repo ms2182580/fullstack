@@ -122,7 +122,7 @@ export const ORG_D_Results_CardNoFilters = () => {
                       )
                     }
 
-                    if (x[0] !== "thirdPageData") {
+                    if (x[0] !== DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA) {
                       return (
                         <span
                           className="NO_THIRDPAGE_DATA"

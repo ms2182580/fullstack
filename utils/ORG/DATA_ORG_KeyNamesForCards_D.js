@@ -6,9 +6,5 @@ export const DATA_ORG_KeyNamesForCards_D = {
   CARD: "card",
   WITH_BACKGROUND: "withBackground",
   LEFT: "left",
-  RIGHT: "right"
-
-
+  RIGHT: "right",
 }
-
-

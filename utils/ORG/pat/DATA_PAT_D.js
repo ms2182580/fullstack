@@ -100,7 +100,11 @@ export const DATA_PAT_D = [
     "Popular Smart Devices with Assistive Technology",
     {
       imageToUse: ORG_AT7,
-      title: "Amazon Echo Dot ",
+      title: "Amazon Echo Dot",
+      fullName: {
+        first: "Amazon Echo Dot ",
+        last: "",
+      },
       subtitle: "Smart home device",
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
@@ -110,6 +114,10 @@ export const DATA_PAT_D = [
     {
       imageToUse: ORG_AT8,
       title: "Google Nest Hub",
+      fullName: {
+        first: "Google Nest Hub",
+        last: "",
+      },
       subtitle: "Smart home device",
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
@@ -119,6 +127,10 @@ export const DATA_PAT_D = [
     {
       imageToUse: ORG_AT9,
       title: "Wyze Plug",
+      fullName: {
+        first: "Wyze Plug",
+        last: "",
+      },
       subtitle: "Smart plug",
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
