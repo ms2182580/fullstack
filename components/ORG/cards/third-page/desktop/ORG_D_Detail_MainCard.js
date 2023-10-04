@@ -110,7 +110,12 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             }>
             <Highlights_2_D highlights={thirdpageDataORG.card.rightPart.highlightsPlus} />
             <ORG_D_Detail_HighlightBoxes
-              meetingFormat={thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
+              // meetingFormat={thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
+              meetingFormat={
+                thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]
+                  ? thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]
+                  : undefined
+              }
             />
           </div>
         </div>
