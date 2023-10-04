@@ -11,9 +11,9 @@ export const Highlights_D = ({ highlights }) => {
   return (
     <Highlights_DWrapper>
       {Array.isArray(highlights) ? (
-        highlights.map((x) => (
+        highlights.map((x, index) => (
           <>
-            <div key={x}>
+            <div key={`${x}_${index}`}>
               <P>{x}</P>
             </div>
           </>
