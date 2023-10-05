@@ -1,7 +1,7 @@
-import { INDEX_D_ST_SLP_Detail } from "../../../../components/ORG/pages/speech-therapists/third-page/st-speech-language-pathologists/dekstop/INDEX_D_ST_SLP_Detail"
+import { INDEX_D_ST_OT_Detail } from "../../../../components/ORG/pages/speech-therapists/third-page/st-ocuppational-therapists/desktop/INDEX_D_ST_SLP_Detail"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
-export default function INDEX_PST_SLP_Detail() {
+export default function INDEX_PST_OT_Detail() {
   const { isMobile } = useCheckUserWidth()
 
   return (
@@ -11,7 +11,7 @@ export default function INDEX_PST_SLP_Detail() {
           {/* 
         It need to solve the problem of where is the data if the user pass from certain ammount of width to other, this is from mobile (max 1024px) to desktop (min 1025px)
          */}
-          <INDEX_D_ST_SLP_Detail />
+          <INDEX_D_ST_OT_Detail />
         </>
       ) : (
         <>
