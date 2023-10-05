@@ -55,20 +55,60 @@ export const DATA_MH_D_CardRight = [
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
-          operationHours: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
+          facility: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Mon-Fri: 8:00AM - 5:00PM",
+              "Clinic", "Private Practice",
+            ],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true
+          },
+          languages: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English", "Mandarin", "Cantonese",
+            ],
+          },
+          setting: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Virtual", "In-person",
+            ],
+          },
+          wheelchairAccessible: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair accessible",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Yes",
+            ],
+          },
+          parkingAvailable: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Parking available",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Yes",
             ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
-          professionalExperience: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Professional Experience",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "The Truong-MacGill Law Firm, since 2010",
-            ],
+          paymentOptions: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["In-network insurance", "Medicaid", "DOE Contract"],
+          },
+          outOfPocketFees: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Out-of-pocket fees",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$200 for 60 minutes"],
+          },
+          qualifications: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 10", "License Number: 1409990926", "State of License: New York"],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
+          },
+          education: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Education",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["New York University"],
+          },
+          practiceName: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice name",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
       },
