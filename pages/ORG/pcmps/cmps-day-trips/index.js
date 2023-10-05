@@ -1,4 +1,4 @@
-import { INDEX_D_DayTrips_Results } from "../../../../components/ORG/pages/camps/second-page/cpms-day-trips/desktop/INDEX_D_DayTrips_Results";
+import { INDEX_D_DayTrips_Results } from "../../../../components/ORG/pages/camps/second-page/cmps-day-trips/desktop/INDEX_D_DayTrips_Results";
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth";
 
 export default function ORG_INDEX_CMPS_DayTrips_Results() {
