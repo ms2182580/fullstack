@@ -2,7 +2,10 @@ import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
 
 export const DATA_DAY_D_CardRight = [
   {
-    highlights: ["Tour available"],
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Tour available"],
+    },
     programEmphasis: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s Syndrome"],
@@ -20,14 +23,14 @@ export const DATA_DAY_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish"],
     },
 
-    thirdPageData: {
-      folderName: "detail",
-      card: {
-        withBackground: {
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s", "Syndrome"],
         },
-        left: {
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served:",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
@@ -57,7 +60,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
-        right: {
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           price: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$225.00"],
@@ -96,7 +99,11 @@ export const DATA_DAY_D_CardRight = [
   },
 
   {
-    highlights: ["Tour available"],
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Tour available"],
+    },
+
     programEmphasis: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s Syndrome"],
@@ -114,14 +121,14 @@ export const DATA_DAY_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish"],
     },
 
-    thirdPageData: {
-      folderName: "detail",
-      card: {
-        withBackground: {
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s", "Syndrome"],
         },
-        left: {
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served:",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
@@ -151,7 +158,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
-        right: {
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           price: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$225.00"],
@@ -190,7 +197,11 @@ export const DATA_DAY_D_CardRight = [
   },
 
   {
-    highlights: ["Tour available"],
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Tour available"],
+    },
+
     programEmphasis: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD", "Down Syndrome"],
@@ -210,14 +221,14 @@ export const DATA_DAY_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish"],
     },
 
-    thirdPageData: {
-      folderName: "detail",
-      card: {
-        withBackground: {
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD", "Down Syndrome"],
         },
-        left: {
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served:",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
@@ -247,7 +258,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
-        right: {
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           price: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$300/day"],
