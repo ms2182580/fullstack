@@ -1,29 +1,29 @@
-import { useRouter } from "next/router.js"
-import path from "path"
-import { useCtx_ShowModal } from "../../../../../../../context/Ctx_ShowModal.js"
-import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
-import { InFrontModal_D_Wrapper } from "../../../../../../inFront_D/styles/InFrontModal_D_Wrapper.js"
-import { PSYT_D_Results_Header } from "./PSYT_D_Results_Header.js"
-import { PSYT_D_Results_MainEntry } from "./PSYT_D_Results_MainEntry.js"
-import { INDEX_D_Psychiatrists_ResultsWrapper } from "./styles/INDEX_D_Psychiatrists_ResultsWrapper.js"
+import { useEffect } from "react"
+import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider.js"
+import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
+import { DATA_PPSYT_D } from "../../../../../../../utils/ORG/pdctr/DATA_PSYT_D.js"
+import { DATA_PSYT_D_CardLeft, DATA_PSYT_D_CardRight } from "../../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D_Card.js"
+import { renderFiltersInUI_DCTR_PSYT } from "../../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D_Filters.js"
+import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
 
 export const INDEX_D_Psychiatrists_Results = () => {
-  const { modalShowedCtx } = useCtx_ShowModal()
-  const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
-  const { pathname } = useRouter()
+  const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
+
+  useEffect(() => {
+    setSecondpageFiltersORG(renderFiltersInUI_DCTR_PSYT)
+    setSecondpageDataORG({
+      cardData: DATA_PPSYT_D[0].slice(1),
+      mainNameORG: DATA_PPSYT_D[0][0],
+      right: DATA_PSYT_D_CardRight,
+      left: DATA_PSYT_D_CardLeft,
+    })
+  }, [])
 
   return (
     <>
-      <INDEX_D_Psychiatrists_ResultsWrapper
-        ORGShowFullMapFilter={
-          ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
-        }>
-        <PSYT_D_Results_Header />
-
-        <PSYT_D_Results_MainEntry />
-
-        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
-      </INDEX_D_Psychiatrists_ResultsWrapper>
+      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
     </>
   )
+
 }
