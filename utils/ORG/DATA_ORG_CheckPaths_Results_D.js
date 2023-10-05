@@ -45,20 +45,20 @@ export const DATA_ORG_CheckPaths_Results_D = {
   ],
   pcmps: [
     "cmps-day",
-    "cpms-overnight-camps",
-    "cpms-day-trips",
+    "cmps-overnight-camps",
+    "cmps-day-trips",
     {
       acronymsFolderRouteName: {
         "cmps-day": "day",
-        "cpms-overnight-camps": "ovn",
-        "cpms-day-trips": "dayt",
+        "cmps-overnight-camps": "ovn",
+        "cmps-day-trips": "dayt",
       },
     },
     {
       fullName: {
         "cmps-day": "Day Camps",
-        "cpms-overnight-camps": "Overnight Camps",
-        "cpms-day-trips": "Day Trips",
+        "cmps-overnight-camps": "Overnight Camps",
+        "cmps-day-trips": "Day Trips",
       },
     },
   ],

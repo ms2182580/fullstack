@@ -1,8 +1,8 @@
 import Image from "next/image.js"
 import { useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
-import { DATA_CC_D } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D.js"
 import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Card.js"
+import { DATA_PCC_D } from "../../../../../../../utils/ORG/pcc/cc/DATA_PCC_D.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Results_CardEmail } from "../../../../../cards/second-page/desktop/ORG_D_Results_CardEmail.js"
@@ -26,7 +26,7 @@ export const CC_D_Results_CardNoFilters = () => {
     router.push(toWhere)
   } */
 
-  const [cardData, setCardData] = useState(DATA_CC_D[0].slice(1))
+  const [cardData, setCardData] = useState(DATA_PCC_D[0].slice(1))
 
   return (
     <>

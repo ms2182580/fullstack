@@ -61,13 +61,12 @@ export const DATA_PCR_D = [
       goToThirdPage: "",
     },
   ],
-
   [
     "Popular Special Education Attorneys",
     {
       imageToUse: ORG_AA4,
       title: "Denise N. Truong-MacGill, JD",
-      fullNamme: {
+      fullName: {
         first: "Denise N.",
         last: "Truong-MacGill",
       },
@@ -112,7 +111,7 @@ export const DATA_PCR_D = [
     {
       imageToUse: ORG_AA7,
       title: "Denise N. Truong-MacGill, JD",
-      fullNamme: {
+      fullName: {
         first: "Denise N.",
         last: "Truong-MacGill",
       },
@@ -157,7 +156,7 @@ export const DATA_PCR_D = [
     {
       imageToUse: ORG_AA10,
       title: "Denise N. Truong-MacGill, JD",
-      fullNamme: {
+      fullName: {
         first: "Denise N.",
         last: "Truong-MacGill",
       },
@@ -202,7 +201,7 @@ export const DATA_PCR_D = [
     {
       imageToUse: ORG_AA13,
       title: "Denise N. Truong-MacGill, JD",
-      fullNamme: {
+      fullName: {
         first: "Denise N.",
         last: "Truong-MacGill",
       },

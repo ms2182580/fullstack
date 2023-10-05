@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { formatDataToThirdPage } from "../../../../../../../utils/ORG/formatDataToThirdPage.js"
-import { DATA_CC_D } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D.js"
+import { DATA_PCC_D } from "../../../../../../../utils/ORG/pcc/DATA_PCC_D.js"
 import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -46,8 +46,8 @@ export const CC_D_Results_CardNoFilters = () => {
     )
   }
 
-  const [cardData, setCardData] = useState(DATA_CC_D[0].slice(1))
-  const [mainNameORG, setMainNameORG] = useState(DATA_CC_D[0][0])
+  const [cardData, setCardData] = useState(DATA_PCC_D[0].slice(1))
+  const [mainNameORG, setMainNameORG] = useState(DATA_PCC_D[0][0])
 
   return (
     <>

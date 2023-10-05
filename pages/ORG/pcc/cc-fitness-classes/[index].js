@@ -1,14 +1,14 @@
-import { INDEX_D_AA_CR_Detail } from "../../../../components/ORG/pages/attorney-advocates/third-page/aa-civil-rights/desktop/INDEX_D_AA_CR_Detail"
+import { INDEX_D_CC_FC_Detail } from "../../../../components/ORG/pages/community-classes/third-page/cc-fitness-classes/desktop/INDEX_D_CC_FC_Detail"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
-export default function ORG_INDEX_AA_CivilRights_Detail() {
+export default function ORG_INDEX_CC_FitnessClasses_Detail() {
   const { isMobile } = useCheckUserWidth()
 
   return (
     <>
       {isMobile === false ? (
         <>
-          <INDEX_D_AA_CR_Detail />
+          <INDEX_D_CC_FC_Detail />
         </>
       ) : (
         <>{/* Mobile */}</>
