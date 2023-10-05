@@ -45,9 +45,10 @@ export const ORG_D_Results_CardNoFilters = () => {
       toWhere,
     )
   }
-
+ // console.log("❤️",secondpageDataORG)
   return (
-    <>
+
+        <>
       {Array(10)
         .fill(0)
         .map((x, i) => {
@@ -77,8 +78,9 @@ export const ORG_D_Results_CardNoFilters = () => {
                   <ORG_D_Results_CardEmail email={secondpageDataORG.left[renderThisContact].email} />
 
                   <ORG_D_Results_CardWebsite
-                    firstName={secondpageDataORG.left[renderThisContact].web.fistName}
-                    lastName={secondpageDataORG.left[renderThisContact].web.lastName}
+
+                    firstName={secondpageDataORG.left[renderThisContact].web?.fistName || ""}
+                    lastName={secondpageDataORG.left[renderThisContact].web?.lastName || ""}
                   />
 
                   <ORG_D_Results_CardLocation
