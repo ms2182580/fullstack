@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
-import { DATA_SLP_D } from "../../../../../../utils/ORG/pst/slp/DATA_SLP_D"
+import { DATA_PSLP_D } from "../../../../../../utils/ORG/pst/DATA_PSLP_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts"
@@ -19,7 +19,7 @@ export const INDEX_D_STSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_SLP_D.length)
+      setHowMuchDisplay(DATA_PSLP_D.length)
     }
   }, [isSelected])
 
@@ -44,7 +44,7 @@ export const INDEX_D_STSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_STSearchWrapper>
-      {DATA_SLP_D.map((x, iData) => {
+      {DATA_PSLP_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (

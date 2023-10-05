@@ -9,6 +9,7 @@ import { formatDataToThirdPage } from "../../../../../utils/ORG/formatDataToThir
 import { capitalizeWords } from "../../../../../utils/capitalizeWords"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { Highlights_2_D } from "../../../highlights/Highlights_2_D"
 import { Highlights_D } from "../../../highlights/Highlights_D"
 import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../verified/Verified"
@@ -110,7 +111,9 @@ export const ORG_D_Results_CardNoFilters = () => {
                         <span
                           className="HIGHLIGHTS_PLUS"
                           key={`${x[0]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
-                          <p>"highlightsPlus"</p>
+
+                          <Highlights_2_D highlights={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]} />
+
                         </span>
                       )
                     }

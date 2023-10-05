@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { formatDataToThirdPage } from "../../../../../../../utils/ORG/formatDataToThirdPage.js"
-import { DATA_SLP_D } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D.js"
+import { DATA_PSLP_D } from "../../../../../../../utils/ORG/pst/slp/DATA_PSLP_D.js"
 import { DATA_SLP_D_CardLeft, DATA_SLP_D_CardRight } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -45,9 +45,9 @@ export const SLP_D_Results_CardNoFilters = () => {
     )
   }
 
-  const [cardData, setCardData] = useState(DATA_SLP_D[0].slice(1))
+  const [cardData, setCardData] = useState(DATA_PSLP_D[0].slice(1))
   console.log('cardData:', cardData)
-  const [mainNameORG, setMainNameORG] = useState(DATA_SLP_D[0][0])
+  const [mainNameORG, setMainNameORG] = useState(DATA_PSLP_D[0][0])
 
   return (
     <>

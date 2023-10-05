@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/index.js"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
-import { DATA_LT_D } from "../../../../../../utils/ORG/prp/lt/DATA_LT_D.js"
+import { DATA_PLT_D } from "../../../../../../utils/ORG/prp/DATA_PLT_D.js"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -19,7 +19,7 @@ export const INDEX_D_RPSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_LT_D.length)
+      setHowMuchDisplay(DATA_PLT_D.length)
     }
   }, [isSelected])
 
@@ -40,7 +40,7 @@ export const INDEX_D_RPSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_RPSearchWrapper>
-      {DATA_LT_D.map((x, iData) => {
+      {DATA_PLT_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (
