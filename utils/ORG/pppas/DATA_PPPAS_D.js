@@ -1,9 +1,9 @@
-import ORG_PPAS1 from "../../../../assets/images/ORG/private-public-agencies/ORG_PPAS1.png"
-import ORG_PPAS2 from "../../../../assets/images/ORG/private-public-agencies/ORG_PPAS2.png"
-import ORG_PPAS3 from "../../../../assets/images/ORG/private-public-agencies/ORG_PPAS3.png"
-import { generateRandomNumber } from "../../../generateRandomNumber"
+import ORG_PPAS1 from "../../../assets/images/ORG/private-public-agencies/ORG_PPAS1.png"
+import ORG_PPAS2 from "../../../assets/images/ORG/private-public-agencies/ORG_PPAS2.png"
+import ORG_PPAS3 from "../../../assets/images/ORG/private-public-agencies/ORG_PPAS3.png"
+import { generateRandomNumber } from "../../generateRandomNumber"
 
-export const DATA_A_D = [
+export const DATA_PPPAS_D = [
   [
     "Popular Associations",
     {

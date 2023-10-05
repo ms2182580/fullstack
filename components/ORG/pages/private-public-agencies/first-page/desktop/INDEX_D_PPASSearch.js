@@ -1,3 +1,4 @@
+import { DATA_PPPAS_D } from "@/utils/ORG/pppas/DATA_PPPAS_D"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -5,7 +6,6 @@ import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { ButtonSmall } from "../../../../../../components/ui/buttons/general/index"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
-import { DATA_A_D } from "../../../../../../utils/ORG/pppas/a/DATA_A_D"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
@@ -19,7 +19,7 @@ export const INDEX_D_PPASSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_A_D.length)
+      setHowMuchDisplay(DATA_PPPAS_D.length)
     }
   }, [isSelected])
 
@@ -40,7 +40,7 @@ export const INDEX_D_PPASSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_PPASSearchWrapper>
-      {DATA_A_D.map((x, iData) => {
+      {DATA_PPPAS_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (
