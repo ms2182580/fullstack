@@ -6,7 +6,7 @@ import { useORG_Ctx_D_ThirdpageData } from "../../../../../../context/ORG_Ctx_D_
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
 import { formatDataToThirdPage } from "../../../../../../utils/ORG/formatDataToThirdPage.js"
-import { DATA_CC_D } from "../../../../../../utils/ORG/pcc/cc/DATA_CC_D.js"
+import { DATA_PCC_D } from "../../../../../../utils/ORG/pcc/DATA_PCC_D.js"
 import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -22,7 +22,7 @@ export const INDEX_D_CCSearch = ({ positionInArray, isSelected = false }) => {
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_CC_D.length)
+      setHowMuchDisplay(DATA_PCC_D.length)
     }
   }, [isSelected])
 
@@ -69,7 +69,7 @@ export const INDEX_D_CCSearch = ({ positionInArray, isSelected = false }) => {
 
   return (
     <INDEX_D_CCSearchWrapper>
-      {DATA_CC_D.map((x, iData) => {
+      {DATA_PCC_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (
