@@ -127,6 +127,8 @@ export const ORG_D_Results_CardNoFilters = () => {
 
                     if (x[0] !== DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA) {
 
+                      console.log("💙x", x)
+
                       return (
                         <span
                           className="NO_THIRDPAGE_DATA"
