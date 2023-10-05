@@ -95,7 +95,7 @@ export const ORG_D_Results_CardWrapper = styled.div`
       gap: 16px;
       
       .HIGHLIGHTS_PLUS {
-        border: 2px solid crimson;
+        /* border: 2px solid crimson; */
       }
 
       .HIGHLIGHTS {
