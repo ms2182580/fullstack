@@ -1,4 +1,4 @@
-import { INDEX_D_AT_SAT_Detail } from "../../../../components/ORG/pages/assistive-technology/third-page/at-smart-devices/desktop/INDEX_D_AT_SAT_Detail"
+import { INDEX_D_CMPS_DAY_Detail } from "../../../../components/ORG/pages/camps/third-page/cmps-day/desktop/INDEX_D_CMPS_DAY_Detail"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
 export default function ORG_INDEX_CMPS_DAY_Detail() {
@@ -8,7 +8,7 @@ export default function ORG_INDEX_CMPS_DAY_Detail() {
     <>
       {isMobile === false ? (
         <>
-          <INDEX_D_AT_SAT_Detail />
+          <INDEX_D_CMPS_DAY_Detail />
         </>
       ) : (
         <>{/* Mobile */}</>
