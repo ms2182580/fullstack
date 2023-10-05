@@ -2,18 +2,18 @@ import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D";
 
 export const DATA_MH_D_CardRight = [
   {
-    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
-      ],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
-    },
-
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
         DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
       ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
     yearsInPractice: {
@@ -38,8 +38,6 @@ export const DATA_MH_D_CardRight = [
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
       [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
-        practiceAreas: "Sports/Fitness",
-
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Focus Areas",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [

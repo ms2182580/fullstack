@@ -1,29 +1,29 @@
-import { useRouter } from "next/router.js"
-import path from "path"
-import { useCtx_ShowModal } from "../../../../../../../context/Ctx_ShowModal.js"
-import { useORG_CtxShowFiltersDesktop } from "../../../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
-import { InFrontModal_D_Wrapper } from "../../../../../../inFront_D/styles/InFrontModal_D_Wrapper.js"
-import { SLP_D_Results_Header } from "./SLP_D_Results_Header.js"
-import { SLP_D_Results_MainEntry } from "./SLP_D_Results_MainEntry.js"
-import { INDEX_D_SLP_ResultsWrapper } from "./styles/INDEX_D_SLP_ResultsWrapper.js"
+import { useEffect } from "react"
+import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider.js"
+import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
+import { DATA_PSLP_D } from "../../../../../../../utils/ORG/pst/DATA_PSLP_D.js"
+import { DATA_SLP_D_CardLeft, DATA_SLP_D_CardRight } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Card.js"
+import { renderFiltersInUI_ST_SLP } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Filters.js"
+import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
 
 export const INDEX_D_SLP_Results = () => {
-  const { modalShowedCtx } = useCtx_ShowModal()
-  const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
-  const { pathname } = useRouter()
+  const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
+
+  useEffect(() => {
+    setSecondpageFiltersORG(renderFiltersInUI_ST_SLP)
+    setSecondpageDataORG({
+      cardData: DATA_PSLP_D[0].slice(1),
+      mainNameORG: DATA_PSLP_D[0][0],
+      right: DATA_SLP_D_CardRight,
+      left: DATA_SLP_D_CardLeft,
+    })
+  }, [])
 
   return (
     <>
-      <INDEX_D_SLP_ResultsWrapper
-        ORGShowFullMapFilter={
-          ORGShowFullMapFilter && pathname === `${path.dirname(pathname)}/${path.basename(pathname)}`
-        }>
-        <SLP_D_Results_Header />
-
-        <SLP_D_Results_MainEntry />
-
-        <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
-      </INDEX_D_SLP_ResultsWrapper>
+      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
     </>
   )
+
 }
