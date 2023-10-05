@@ -50,6 +50,7 @@ export const DATA_CR_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Please contact office for further details"],
           },
         },
+        
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           professionalExperience: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Professional Experience",

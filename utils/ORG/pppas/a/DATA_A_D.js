@@ -9,6 +9,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS1,
       title: "Housing Advocacy for People with Disabilities ",
+      fullName: {
+        first: "Housing Advocacy for People with Disabilities",
+        last: ""
+      },
       subtitle: "Housing Organization",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -19,6 +23,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS2,
       title: "Housing Works",
+      fullName: {
+        first: "Housing Advocacy for People with Disabilities",
+        last: ""
+      },
       subtitle: "Housing Nonprofit Organization",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -29,6 +37,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS3,
       title: "City Harvest",
+      fullName: {
+        first: "City Harvest",
+        last: ""
+      },
       subtitle: "Food Rescue Organization",
       city: "Westchester, NY",
       rating: generateRandomNumber(4, 5),
@@ -42,6 +54,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS1,
       title: "Housing Advocacy for People with Disabilities ",
+      fullName: {
+        first: "Housing Advocacy for People with Disabilities",
+        last: ""
+      },
       subtitle: "Housing Organization",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -52,6 +68,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS2,
       title: "Housing Works",
+      fullName: {
+        first: "Housing Works",
+        last: ""
+      },
       subtitle: "Housing Nonprofit Organization",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -62,6 +82,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS3,
       title: "City Harvest",
+      fullName: {
+        first: "City Harvest",
+        last: ""
+      },
       subtitle: "Food Rescue Organization",
       city: "Westchester, NY",
       rating: generateRandomNumber(4, 5),
@@ -75,6 +99,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS1,
       title: "Housing Advocacy for People with Disabilities ",
+      fullName: {
+        first: "Housing Advocacy for People with Disabilities",
+        last: ""
+      },
       subtitle: "Housing Organization",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -85,6 +113,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS2,
       title: "Housing Works",
+      fullName: {
+        first: "Housing Works",
+        last: ""
+      },
       subtitle: "Housing Nonprofit Organization",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -95,6 +127,10 @@ export const DATA_A_D = [
     {
       imageToUse: ORG_PPAS3,
       title: "City Harvest",
+      fullName: {
+        first: "City Harvest",
+        last: ""
+      },
       subtitle: "Food Rescue Organization",
       city: "Westchester, NY",
       rating: generateRandomNumber(4, 5),
