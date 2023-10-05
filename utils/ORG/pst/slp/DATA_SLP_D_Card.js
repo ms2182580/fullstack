@@ -1,120 +1,232 @@
+import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+
 export const DATA_SLP_D_CardRight = [
   {
-    highlights: ["Free Consultation", "Referral Required"],
-    highlightsPlus: ["Accepting new clients"],
-    typeof: {
-      title: "Type Speech Therapist",
-      content: ["Psychologists"],
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
-    practiceAreas: "Autism, ADHD",
-    yearsInPractice: "5",
-    agesServed: "5-21 years old",
-    languages: "English, Spanish, French",
-    name: {
-      first: "Mary",
-      lastName: "Jane",
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation", "Referral Required"],
     },
 
-    thirdPageData: {
-      folderName: "detail",
-      card: {
-        practiceAreas: "Sports/Fitness",
-        languages: "English",
-        operationHours: {
-          mondayFriday: "Mon-Fri: 3PM - 7PM",
-          saturday: "Saturday: 9AM-1PM",
-          sunday: "Sunday: 10AM-1PM",
+    practiceAreas: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD"],
+    },
+
+    yearsInPractice: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Years In Practice",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5"],
+    },
+
+    agesServed: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
+    },
+
+    languages: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+    },
+
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD"],
         },
-        classDuration: "30 Minutes - 1 hour",
-        payment: "$50/class (package deals and private lessons)",
-        paymentOptions: {
-          title: "Payment Options",
-          dataToShow: "Private Pay, Medicaid, DOE Contract",
-        },
-        setting: "In Person",
-        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
-        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
-        qualifications: {
-          title: "Qualifications",
-          dataToShow: {
-            0: {
-              title: "Years in Practice:",
-              value: "5 Years",
-            },
-            1: {
-              title: "Licence Number:",
-              value: "1239082",
-            },
-            2: {
-              title: "State of Licence:",
-              value: "New York...",
-            },
+
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
+          agesServed: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
           },
 
-          // dataToShow: ["Years in Practice: 5 Years", "Licence Number: 1239082", "State of Licence: New York..."],
-        },
-        AdditionalCredentials: ["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)..."],
+          languages: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+          },
 
-        about:
-          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+          setting: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic"],
+          },
+          wheelchairAccessible: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair Accessible",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
+          },
+        },
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
+          paymentOptions: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+          },
+          qualifications: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 5 years", "License Number: 1239082", "State of License: New York."],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
+          },
+          additionalCredentials: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional credentials",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)..."],
+          },
+        },
       },
     },
   },
   {
-    highlights: ["Free Consultation"],
-    highlightsPlus: ["Accepting new clients"],
-    typeof: {
-      title: "Type Speech Therapist",
-      content: ["Psychologists"],
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
-    practiceAreas: "Autism, ADHD",
-    yearsInPractice: "5",
-    agesServed: "5-21 years old",
-    languages: "English, Spanish, French",
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
+    },
 
-    thirdPageData: {
-      folderName: "detail",
-      card: {
-        practiceAreas: "Sports/Fitness",
-        languages: "English",
-        operationHours: {
-          mondayFriday: "Mon-Fri: 3PM - 7PM",
-          saturday: "Saturday: 9AM-1PM",
-          sunday: "Sunday: 10AM-1PM",
+    practiceAreas: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD"],
+    },
+
+    yearsInPractice: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Years In Practice",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5"],
+    },
+
+    agesServed: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
+    },
+
+    languages: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+    },
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD"],
         },
-        classDuration: "30 Minutes - 1 hour",
-        payment: "$50/class (package deals and private lessons)",
-        paymentOptions: {
-          title: "Payment Options",
-          dataToShow: "Private Pay, Medicaid, DOE Contract",
-        },
-        setting: "In Person",
-        classSize: "4 - 11 Students, 1 Teacher, 1 ABA Therapist",
-        classSchedule: "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
-        qualifications: {
-          title: "Qualifications",
-          // dataToShow: ["Years in Practice: 5 Years", "Licence Number: 1239082", "State of Licence: New York..."],
-          dataToShow: {
-            0: {
-              title: "Years in Practice:",
-              value: "5 Years",
-            },
-            1: {
-              title: "Licence Number:",
-              value: "1239082",
-            },
-            2: {
-              title: "State of Licence:",
-              value: "New York...",
-            },
+
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
+          agesServed: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
+          },
+
+          languages: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+          },
+
+          setting: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic"],
+          },
+          wheelchairAccessible: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair Accessible",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
-        AdditionalCredentials: ["Lee Silverman Voice Treatment Certification", "SLP, Board Certified Behavior Analyst (BCBA)..."],
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
+          paymentOptions: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+          },
+          qualifications: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 5 years", "License Number: 1239082", "State of License: New York."],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
+          },
+          additionalCredentials: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional credentials",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)..."],
+          },
+        },
+      },
+    },
+  },
+  {
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
+    },
 
-        about:
-          "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
+    },
+
+    practiceAreas: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD"],
+    },
+
+    yearsInPractice: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Years In Practice",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5"],
+    },
+
+    agesServed: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
+    },
+
+    languages: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+    },
+    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
+      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
+      [DATA_ORG_KeyNamesForCards_D.CARD]: {
+        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+          [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD"],
+        },
+
+        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
+          agesServed: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
+          },
+
+          languages: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+          },
+
+          setting: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic"],
+          },
+          wheelchairAccessible: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair Accessible",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
+          },
+        },
+        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
+          paymentOptions: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+          },
+          qualifications: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 5 years", "License Number: 1239082", "State of License: New York."],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
+          },
+          additionalCredentials: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional credentials",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)..."],
+          },
+        },
       },
     },
   },

@@ -1,16 +1,16 @@
-import ORG_ST1 from "../../../../assets/images/ORG/speech-therapists/ORG_ST1.png";
-import ORG_ST2 from "../../../../assets/images/ORG/speech-therapists/ORG_ST2.png";
-import ORG_ST3 from "../../../../assets/images/ORG/speech-therapists/ORG_ST3.png";
-import ORG_ST4 from "../../../../assets/images/ORG/speech-therapists/ORG_ST4.png";
-import { generateRandomNumber } from "../../../generateRandomNumber";
+import ORG_ST1 from "../../../assets/images/ORG/speech-therapists/ORG_ST1.png";
+import ORG_ST2 from "../../../assets/images/ORG/speech-therapists/ORG_ST2.png";
+import ORG_ST3 from "../../../assets/images/ORG/speech-therapists/ORG_ST3.png";
+import ORG_ST4 from "../../../assets/images/ORG/speech-therapists/ORG_ST4.png";
+import { generateRandomNumber } from "../../generateRandomNumber";
 
-export const DATA_SLP_D = [
+export const DATA_PSLP_D = [
   [
     "Popular Speech Language Pathologists",
     {
       imageToUse: ORG_ST1,
       title: "Mary Jane, CCC -SLP",
-      name: {
+      fullName: {
         first: "Mary",
         last: "Jane"
       },
@@ -25,7 +25,7 @@ export const DATA_SLP_D = [
     {
       imageToUse: ORG_ST2,
       title: "John Lowry, CCC -SLP",
-      name: {
+      fullName: {
         first: "John",
         last: "Lowry"
       },
@@ -40,7 +40,7 @@ export const DATA_SLP_D = [
     {
       imageToUse: ORG_ST3,
       title: "Sarah Smith, CCC -SLP",
-      name: {
+      fullName: {
         first: "Sarah",
         last: "Smith"
       },
@@ -58,7 +58,7 @@ export const DATA_SLP_D = [
     {
       imageToUse: ORG_ST4,
       title: "Peter Abidi, CCC -SLP",
-      name: {
+      fullName: {
         first: "Peter",
         last: "Abidi"
       },
@@ -73,7 +73,7 @@ export const DATA_SLP_D = [
     {
       imageToUse: ORG_ST2,
       title: "John Lowry, CCC -SLP",
-      name: {
+      fullName: {
         first: "John",
         last: "Lowry"
       },
@@ -88,7 +88,7 @@ export const DATA_SLP_D = [
     {
       imageToUse: ORG_ST3,
       title: "Sarah Smith, CCC -SLP",
-      name: {
+      fullName: {
         first: "Sarah",
         last: "Smith"
       },
