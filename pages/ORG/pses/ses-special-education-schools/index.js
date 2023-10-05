@@ -9,6 +9,7 @@ export default function ORG_INDEX_SES_SpecialEducationSchools_Results() {
       {isMobile === false ? (
         <>
           <INDEX_D_SpecialEducationSchools_Results />
+          
         </>
       ) : (
         <>{/* Mobile component. We dont have design for this in this path */}</>

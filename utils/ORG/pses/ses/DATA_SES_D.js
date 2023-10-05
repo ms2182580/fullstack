@@ -15,6 +15,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES1,
       title: "NYL William O'Connor Middle School",
+      fullName: {
+        first: "NYL William O'Connor Middle School",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -25,6 +29,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES2,
       title: "Brooklyn Autism Center",
+      fullName: {
+        first: "Brooklyn Autism Center",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -35,6 +43,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES3,
       title: "Shema Kolainu - Hear Our Voices",
+      fullName: {
+        first: "Shema Kolainu - Hear Our Voices",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -48,6 +60,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES4,
       title: "NYL William O'Connor Middle School",
+      fullName: {
+        first: "NYL William O'Connor Middle School",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -58,6 +74,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES5,
       title: "Brooklyn Autism Center",
+      fullName: {
+        first: "Brooklyn Autism Center",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -68,6 +88,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES6,
       title: "Shema Kolainu - Hear Our Voices",
+      fullName: {
+        first: "Shema Kolainu - Hear Our Voices",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -81,6 +105,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES7,
       title: "NYL William O'Connor Middle School",
+      fullName: {
+        first: "NYL William O'Connor Middle School",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -91,6 +119,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES8,
       title: "Brooklyn Autism Center",
+      fullName: {
+        first: "Brooklyn Autism Center",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
@@ -101,6 +133,10 @@ export const DATA_SES_D = [
     {
       imageToUse: ORG_SES9,
       title: "Shema Kolainu - Hear Our Voices",
+      fullName: {
+        first: "Shema Kolainu - Hear Our Voices",
+        last: ""
+      },
       subtitle: "Preschool",
       city: "Brooklyn, NY",
       rating: generateRandomNumber(4, 5),
