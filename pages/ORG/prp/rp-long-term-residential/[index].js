@@ -1,4 +1,4 @@
-import { INDEX_D_RP_LT_Detail } from "../../../../components/ORG/pages/residential-programs/third-page/rp-long-term-residential/desktop/INDEX_D_AA_CR_Detail"
+import { INDEX_D_RP_LT_Detail } from "../../../../components/ORG/pages/residential-programs/third-page/rp-long-term-residential/desktop/INDEX_D_RP_LT_Detail"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
 export default function ORG_INDEX_RP_LongTerm_Detail() {
