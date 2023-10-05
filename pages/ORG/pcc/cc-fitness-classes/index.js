@@ -1,4 +1,4 @@
-import { INDEX_D_FitnessClasses_Results } from "../../../../components/ORG/pages/community-classes/second-page/cc-fitness-classes/desktop/INDEX_D_FitnessClasses_Results";
+import { INDEX_D_FitnessClasses_Results } from "../../../../components/ORG/pages/community-classes/second-page/cc-fitness-classes/desktop/INDEX_D_CommunityClasses_Results";
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth";
 
 export default function ORG_INDEX_CC_FitnessClasses_Results() {
