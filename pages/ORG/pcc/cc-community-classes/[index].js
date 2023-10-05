@@ -1,4 +1,4 @@
-import { INDEX_D_CC_CC_Detail } from "../../../../components/ORG/pages/community-classes/third-page/cc-community-classes/desktop/INDEX_D_AT_SAT_Detail"
+import { INDEX_D_CC_CC_Detail } from "../../../../components/ORG/pages/community-classes/third-page/cc-community-classes/desktop/INDEX_D_CC_CC_Detail"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
 export default function ORG_INDEX_CC_CommunityClasses_Detail() {
