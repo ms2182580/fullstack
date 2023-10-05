@@ -7,7 +7,7 @@ export const INDEX_D_CC_FC_Detail = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   if (thirdpageDataORG === "") {
-    if (route.isReady) route.push("/ORG/pcc/cc-community-classes/")
+    if (route.isReady) route.push("/ORG/pcc/cc-fitness-classes")
 
     return
   }
