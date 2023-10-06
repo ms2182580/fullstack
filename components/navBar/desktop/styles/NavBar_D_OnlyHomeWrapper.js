@@ -7,6 +7,8 @@ export const NavBar_D_OnlyHomeWrapper = styled.div`
   align-items: center;
   padding-inline: clamp(16px, calc(15vw - 80px), 126px);
   padding-top: 50px;
+  max-width: 1920px;
+  margin-inline:auto;
 
   position: absolute;
   top: 0;
