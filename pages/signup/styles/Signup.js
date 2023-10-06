@@ -8,6 +8,7 @@ const SignupWrapper = styled.div`
   background-color: hsl(0, 0%, 100%);
   background-color: #fafcfe;
   position: relative;
+  
 
   @media (${device.laptop}) {
     flex-direction: column;
