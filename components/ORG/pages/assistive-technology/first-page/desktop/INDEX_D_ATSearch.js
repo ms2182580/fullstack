@@ -68,21 +68,6 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
     )
 
 
-    // if (!failed) {
-    //   let getFolderName = getFolder.acronym
-    //   let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
-    //   let getDetailName = DATA_AT_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
-
-    //   const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
-
-    //   push(
-    //     {
-    //       pathname: toWhere,
-    //       query: { title: titleSubCategory, subTitle: theData.subtitle },
-    //     },
-    //     toWhere,
-    //   )
-    // }
   }
 
   return (
