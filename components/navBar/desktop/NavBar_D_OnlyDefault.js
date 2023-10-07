@@ -58,7 +58,7 @@ export const NavBar_D_OnlyDefault = () => {
           onKeyDown={handleNavigateHome}
           onClick={handleNavigateHome}>
           {" "}
-          <H2>Inclusive</H2>
+          <H2>Inclusives</H2>
           <ChatAILogo />
         </span>
         <NavBar_D_SearchComponent />
