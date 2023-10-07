@@ -65,11 +65,11 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             lastName={thirdpageDataORG.fullName.last}
           />
           <ORG_D_Detail_CardLocation
-            locationCity={thirdpageDataORG.card.leftPart.location.city}
-            locationStreetNumber={thirdpageDataORG.card.leftPart.location.streetNumber}
-            locationStreetName={thirdpageDataORG.card.leftPart.location.streetName}
-            locationState={thirdpageDataORG.card.leftPart.location.state}
-            howFar={thirdpageDataORG.card.leftPart.location.howFar}
+            locationCity={thirdpageDataORG.card.leftPart?.location.city}
+            locationStreetNumber={thirdpageDataORG.card.leftPart?.location.streetNumber}
+            locationStreetName={thirdpageDataORG.card.leftPart?.location.streetName}
+            locationState={thirdpageDataORG.card.leftPart?.location.state}
+            howFar={thirdpageDataORG.card.leftPart?.location.howFar}
           />
         </div>
 
@@ -138,7 +138,6 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           <div>
             {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.LEFT]).map(
               (x, index) => {
-                console.log("🟩x", x)
                 return (
                   <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                     <ORG_D_Detail_Card_SecondRow_Info

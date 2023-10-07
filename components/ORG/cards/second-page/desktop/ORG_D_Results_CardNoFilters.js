@@ -31,6 +31,8 @@ export const ORG_D_Results_CardNoFilters = () => {
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
+    console.log('thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName:', thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
+
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
 
@@ -47,10 +49,9 @@ export const ORG_D_Results_CardNoFilters = () => {
       toWhere,
     )
   }
- // console.log("❤️",secondpageDataORG)
   return (
 
-        <>
+    <>
       {Array(10)
         .fill(0)
         .map((x, i) => {
@@ -129,9 +130,6 @@ export const ORG_D_Results_CardNoFilters = () => {
                     }
 
                     if (x[0] !== DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA) {
-
-                      console.log("💙x", x)
-
                       return (
                         <span
                           className="NO_THIRDPAGE_DATA"

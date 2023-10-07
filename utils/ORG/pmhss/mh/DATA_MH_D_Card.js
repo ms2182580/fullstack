@@ -371,4 +371,19 @@ export const DATA_MH_D_CardLeft = [
       howFar: "20",
     },
   },
+  {
+    phone: "(212) 098-0266",
+    email: "info@libertylakecamp.com",
+    web: {
+      fistName: "libertylake",
+      lastName: "camp",
+    },
+    location: {
+      city: "New York",
+      streetName: "Spring Street, Fl 9",
+      streetNumber: "200",
+      state: "NY 10012",
+      howFar: "20",
+    },
+  },
 ];

@@ -3,10 +3,10 @@ import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts.
 import { ORG_D_Detail_CardLocationWrapper } from "./styles/ORG_D_Detail_CardLocationWrapper.js"
 
 export const ORG_D_Detail_CardLocation = ({
-  locationCity,
-  locationStreetNumber,
-  locationStreetName,
-  locationState,
+  locationCity = "",
+  locationStreetNumber = "",
+  locationStreetName = "",
+  locationState = "",
   howFar
 }) => {
   return (

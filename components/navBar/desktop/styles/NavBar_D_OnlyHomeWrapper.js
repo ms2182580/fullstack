@@ -13,6 +13,9 @@ export const NavBar_D_OnlyHomeWrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 2;
+  
+  max-width: 1440px;
+  margin-inline: auto;
 
   & > :nth-child(1) {
     display: flex;

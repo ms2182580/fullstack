@@ -2,7 +2,6 @@ import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCar
 
 export const DATA_CC_D_CardRight = [
   {
-    // mainName: "Karate Group Class",
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Trial", "Consistent Routine"],
@@ -75,7 +74,6 @@ export const DATA_CC_D_CardRight = [
       },
     },
   },
-
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],

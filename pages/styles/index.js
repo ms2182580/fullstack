@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 
-html,body{
+html,body {
   max-width: 100vw;
   font-size: 16px;
 }

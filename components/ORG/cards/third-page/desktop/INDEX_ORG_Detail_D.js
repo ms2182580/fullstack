@@ -38,10 +38,10 @@ export const INDEX_ORG_Detail_D = () => {
           <ORG_D_Detail_FAQS
             name={thirdpageDataORG.card.leftPart.title}
             lastName={""}
-            locationCity={thirdpageDataORG.card.leftPart.location.city}
-            locationStreetNumber={thirdpageDataORG.card.leftPart.location.streetNumber}
-            locationStreetName={thirdpageDataORG.card.leftPart.location.streetName}
-            locationState={thirdpageDataORG.card.leftPart.location.state}
+            locationCity={thirdpageDataORG.card.leftPart?.location?.city}
+            locationStreetNumber={thirdpageDataORG.card.leftPart?.location?.streetNumber}
+            locationStreetName={thirdpageDataORG.card.leftPart?.location?.streetName}
+            locationState={thirdpageDataORG.card.leftPart?.location?.state}
           />
 
           <ORG_D_Detail_BreadcrumbsLastUpdated thirdpageDataORG={thirdpageDataORG} />
