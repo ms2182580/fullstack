@@ -23,8 +23,9 @@ export const NavBar_D_OnlyORGWrapper = styled.div`
       display: flex;
       gap: 8px;
 
-      & > :nth-child(1) {
+      & > :nth-child(1) { //TITULO INCLUSIVE LADO IZQUIERDO
         color: ${PRIMARY.PRIMARY_LOGO};
+        font-weight:800;
       }
 
       & > :nth-child(2) {

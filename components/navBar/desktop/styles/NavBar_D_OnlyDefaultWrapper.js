@@ -10,6 +10,23 @@ export const NavBar_D_OnlyDefaultWrapper = styled.div`
 
   padding-top: 28px;
 
+/*
+  //& > :nth-last-child()
+  & > :nth-child(1){
+    & > *{ // everything here
+      background-color: white;
+    }
+    & > :not(:nth-child(2)){
+    }
+         .MY_CLASS_NAME_2{
+    }
+  }
+    .MY_CLASS_NAME{
+  }
+ */
+
+
+
   & > :nth-child(1) {
     display: flex;
     align-items: center;
@@ -25,13 +42,15 @@ export const NavBar_D_OnlyDefaultWrapper = styled.div`
       display: flex;
       gap: 8px;
 
-      & > :nth-child(1) {
+      & > :nth-child(1) { //TITULO INCLUSIVE LADO IZQUIERDO
         color: ${PRIMARY.PRIMARY_LOGO};
+        font-weight:800;
       }
 
       & > :nth-child(2) {
         & > * {
           fill: ${PRIMARY.PRIMARY_LOGO};
+          
         }
       }
     }
@@ -41,8 +60,13 @@ export const NavBar_D_OnlyDefaultWrapper = styled.div`
       align-items: center;
       justify-content: center;
       gap: 20px;
-    }
+      }
   }
+
+  & > :nth-child(3) {
+      font-weight:500;
+      }
+  
 
   & > :nth-child(2) {
     content: "";
