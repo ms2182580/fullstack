@@ -6,14 +6,12 @@ import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Sear
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "../../../../../utils/ORG/DATA_ORG_CheckPaths_Search_D.js"
-import { DATA_ORG_D as DATA } from "../../../../../utils/ORG/DATA_ORG_D.js"
+import { DATA_ORG_D } from "../../../../../utils/ORG/DATA_ORG_D.js"
 import { useScrollHorizontal } from "../../../../../utils/useScrollHorizontal.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_SearchComponent } from "../../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
-
-// console.log('DATA:', DATA)
 
 export const INDEX_D_ORG = () => {
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
@@ -137,7 +135,7 @@ export const INDEX_D_ORG = () => {
             </P>
           </li>
 
-          {DATA.map((x, i) => (
+          {DATA_ORG_D.map((x, i) => (
             <li
               key={`${x.nameJSX}_${i}`}
               data-name={x.componentName}
@@ -163,7 +161,7 @@ export const INDEX_D_ORG = () => {
         </div>
       </div>
 
-      {DATA.map((x, i) => {
+      {DATA_ORG_D.map((x, i) => {
         if (singleCardIsSelected === false) {
           return (
             <Fragment key={`${x.componentName}`}>

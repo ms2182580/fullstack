@@ -1,4 +1,8 @@
+import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { DATA_ORG_KeyNamesForCards_D } from '@/utils/ORG/DATA_ORG_KeyNamesForCards_D'
+import { formatDataToThirdPage } from '@/utils/ORG/formatDataToThirdPage'
 import { DATA_PPPAS_D } from "@/utils/ORG/pppas/DATA_PPPAS_D"
+import { DATA_A_D_CardLeft, DATA_A_D_CardRight } from '@/utils/ORG/pppas/a/DATA_A_D_Card'
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -38,6 +42,43 @@ export const INDEX_D_PPASSearch = ({ positionInArray, isSelected = false }) => {
     )
   }
 
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory) => {
+    let getDataLeft = DATA_A_D_CardLeft[resourceArrPosition]
+    let getDataRight = DATA_A_D_CardRight[resourceArrPosition]
+
+    const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName)
+
+    setThirdpageDataORG(allDataToThirdPage)
+
+    let getFolder = {}
+    for (const x in DATA_ORG_D) {
+      if (DATA_ORG_D[x].componentName === INDEX_D_PPASSearch.name) {
+        getFolder.acronym = DATA_ORG_D[x].acronym
+        getFolder.position = x
+        break
+      }
+    }
+    let failed = Object.keys(getFolder).length === 0
+
+    if (!failed) {
+      let getFolderName = getFolder.acronym
+      let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
+      let getDetailName = DATA_A_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+
+      const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
+
+      push(
+        {
+          pathname: toWhere,
+          query: { title: titleSubCategory, subTitle: theData.subtitle },
+        },
+        toWhere,
+      )
+    }
+  }
+
   return (
     <INDEX_D_PPASSearchWrapper>
       {DATA_PPPAS_D.map((x, iData) => {
@@ -47,9 +88,9 @@ export const INDEX_D_PPASSearch = ({ positionInArray, isSelected = false }) => {
             <>
               <div key={`${x.title}_${iData}`}>
                 <H2 semi_bold>{title}</H2>
-                {objects.map((obj, i) => {
+                {objects.map((obj, iSubData) => {
                   return (
-                    <div key={`${i}_${obj.titleImage}_${obj.reviews}`}>
+                    <div key={`${iSubData}_${obj.titleImage}_${obj.reviews}`}>
                       <div>
                         <Image
                           src={obj.imageToUse}
@@ -71,7 +112,7 @@ export const INDEX_D_PPASSearch = ({ positionInArray, isSelected = false }) => {
                       />
                       <P>{obj.textReview}</P>
 
-                      <span>
+                      <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title)}>
                         <ButtonSmall>
                           <ORG_D_Search_ViewProfileSvg /> View Profile
                         </ButtonSmall>

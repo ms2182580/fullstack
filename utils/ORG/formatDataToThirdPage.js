@@ -1,7 +1,7 @@
 import { filterThirdPageDataOnObject } from "./filterThirdPageDataOnObject"
 
 export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullName) => {
-  let getFilterThirdPageDataOnObject = filterThirdPageDataOnObject(rightPart.thirdPageData)
+  let getFilterThirdPageDataOnObject = filterThirdPageDataOnObject(rightPart?.thirdPageData)
 
   let allDataToThirdPage = {
     card: {
@@ -12,10 +12,10 @@ export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullNam
         city: dataCard.city,
         rating: dataCard.rating,
         reviews: dataCard.reviews,
-        phone: dataCardLeft.phone,
-        email: dataCardLeft.email,
-        website: dataCardLeft.web,
-        location: dataCardLeft.location,
+        phone: dataCardLeft?.phone || "",
+        email: dataCardLeft?.email || "",
+        website: dataCardLeft?.web || "",
+        location: dataCardLeft?.location || "",
       },
       rightPart: rightPart,
 

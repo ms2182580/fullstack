@@ -1,3 +1,6 @@
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
+import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "@/utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
@@ -5,9 +8,7 @@ import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/inde
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
-import { formatDataToThirdPage } from "../../../../../../utils/ORG/formatDataToThirdPage.js"
 import { DATA_PCC_D } from "../../../../../../utils/ORG/pcc/DATA_PCC_D.js"
-import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -43,28 +44,39 @@ export const INDEX_D_CCSearch = ({ positionInArray, isSelected = false }) => {
 
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-  const handleMoveToThirdPage = (e, theData, possitionSubArr, title) => {
-    let getDataRight = DATA_CC_D_CardRight.filter((x) => x.mainName === theData.title)[0]
+  const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory) => {
+    let getDataLeft = DATA_CC_D_CardLeft[resourceArrPosition]
+    let getDataRight = DATA_CC_D_CardRight[resourceArrPosition]
 
-    let getDataLeft = DATA_CC_D_CardLeft.filter((x) => x.mainName === theData.title)[0]
-
-    const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight)
+    const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName)
 
     setThirdpageDataORG(allDataToThirdPage)
 
-    let folder = DATA_ORG_D[positionInArray].acronym
-    let subFolder = DATA_ORG_CheckPaths_Results_D[folder][possitionSubArr]
-    let thirdPageURL = getDataRight.thirdPageData.folderName
+    let getFolder = {}
+    for (const x in DATA_ORG_D) {
+      if (DATA_ORG_D[x].componentName === INDEX_D_CCSearch.name) {
+        getFolder.acronym = DATA_ORG_D[x].acronym
+        getFolder.position = x
+        break
+      }
+    }
+    let failed = Object.keys(getFolder).length === 0
 
-    const toWhere = `${pathname}/${folder}/${subFolder}/${thirdPageURL}`
+    if (!failed) {
+      let getFolderName = getFolder.acronym
+      let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
+      let getDetailName = DATA_CC_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
 
-    push(
-      {
-        pathname: toWhere,
-        query: { possitionSubArr, title },
-      },
-      toWhere,
-    )
+      const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
+
+      push(
+        {
+          pathname: toWhere,
+          query: { title: titleSubCategory, subTitle: theData.subtitle },
+        },
+        toWhere,
+      )
+    }
   }
 
   return (
@@ -76,9 +88,9 @@ export const INDEX_D_CCSearch = ({ positionInArray, isSelected = false }) => {
             <>
               <div key={`${x.title}_${iData}`}>
                 <H2 semi_bold>{title}</H2>
-                {objects.map((obj, i) => {
+                {objects.map((obj, iSubData) => {
                   return (
-                    <div key={`${i}_${obj.titleImage}_${obj.reviews}`}>
+                    <div key={`${iSubData}_${obj.titleImage}_${obj.reviews}`}>
                       <div>
                         <Image
                           src={obj.imageToUse}
@@ -100,26 +112,11 @@ export const INDEX_D_CCSearch = ({ positionInArray, isSelected = false }) => {
                       />
                       <P>{obj.textReview}</P>
 
-                      {/* 
-                      //? THis was done for make only the Karate Group Class of Community Classes be render
-                      */}
-                      {i === 0 && iData === 0 ? (
-                        <>
-                          <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, title)}>
-                            <ButtonSmall>
-                              <ORG_D_Search_ViewProfileSvg /> View Profile
-                            </ButtonSmall>
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          <span>
-                            <ButtonSmall>
-                              <ORG_D_Search_ViewProfileSvg /> View Profile
-                            </ButtonSmall>
-                          </span>
-                        </>
-                      )}
+                      <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title)}>
+                        <ButtonSmall>
+                          <ORG_D_Search_ViewProfileSvg /> View Profile
+                        </ButtonSmall>
+                      </span>
                     </div>
                   )
                 })}

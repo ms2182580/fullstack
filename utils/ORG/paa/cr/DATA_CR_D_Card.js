@@ -50,7 +50,7 @@ export const DATA_CR_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Please contact office for further details"],
           },
         },
-        
+
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           professionalExperience: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Professional Experience",
@@ -243,6 +243,21 @@ export const DATA_CR_D_CardLeft = [
     location: {
       city: "Brooklyn",
       streetName: "Remsen Street, Suite #2",
+      streetNumber: "163",
+      state: "NY 11201",
+      howFar: "3",
+    },
+  },
+  {
+    phone: "(212) 312-6693",
+    email: "abrahams@abrahamslow.com",
+    web: {
+      fistName: "abraham",
+      lastName: "slaw",
+    },
+    location: {
+      city: "Brooklyn",
+      streetName: "56 Joralemon Street, Floor 11",
       streetNumber: "163",
       state: "NY 11201",
       howFar: "3",

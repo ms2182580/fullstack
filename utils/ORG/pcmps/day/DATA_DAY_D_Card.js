@@ -328,4 +328,19 @@ export const DATA_DAY_D_CardLeft = [
       howFar: "20",
     },
   },
+  {
+    phone: "(212) 098-0266",
+    email: "info@libertylakecamp.com",
+    web: {
+      fistName: "libertylake",
+      lastName: "camp",
+    },
+    location: {
+      city: "Westchester",
+      streetName: "Anderson Road",
+      streetNumber: "735",
+      state: "NY 10577",
+      howFar: "20",
+    },
+  },
 ]

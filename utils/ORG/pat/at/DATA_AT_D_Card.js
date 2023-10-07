@@ -208,4 +208,34 @@ export const DATA_AT_D_CardLeft = [
       howFar: "3",
     },
   },
+  {
+    phone: "(012) 345-6789, ext. 4001",
+    email: "denise@truong-macgill.com",
+    web: {
+      fistName: "truong",
+      lastName: "macgill",
+    },
+    location: {
+      city: "Brooklyn",
+      streetName: "Remsen Street, Suite #2",
+      streetNumber: "163",
+      state: "NY 11201",
+      howFar: "3",
+    },
+  },
+  {
+    phone: "(012) 345-6789, ext. 4001",
+    email: "denise@truong-macgill.com",
+    web: {
+      fistName: "truong",
+      lastName: "macgill",
+    },
+    location: {
+      city: "Brooklyn",
+      streetName: "Remsen Street, Suite #2",
+      streetNumber: "163",
+      state: "NY 11201",
+      howFar: "3",
+    },
+  },
 ]
