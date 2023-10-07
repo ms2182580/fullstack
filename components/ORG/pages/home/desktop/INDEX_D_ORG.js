@@ -176,6 +176,7 @@ export const INDEX_D_ORG = () => {
               key={`${x.componentName}_${i}_${matchNameState}`}
               isSelected={singleCardIsSelected}
               positionInArray={i}
+              componentName={x.componentName}
             />
           )
         }

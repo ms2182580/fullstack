@@ -15,7 +15,7 @@ import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts"
 import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { INDEX_D_ATSearchWrapper } from "./styles/INDEX_D_ATSearchWrapper.js"
 
-export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false }) => {
+export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componentName }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -51,31 +51,38 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false }) => {
 
     setThirdpageDataORG(allDataToThirdPage)
 
-    let getFolder = {}
-    for (const x in DATA_ORG_D) {
-      if (DATA_ORG_D[x].componentName === INDEX_D_ATSearch.name) {
-        getFolder.acronym = DATA_ORG_D[x].acronym
-        getFolder.position = x
-        break
-      }
-    }
-    let failed = Object.keys(getFolder).length === 0
+    let getAcronym = DATA_ORG_D.filter((x) => x.componentName === componentName)[0]
 
-    if (!failed) {
-      let getFolderName = getFolder.acronym
-      let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
-      let getDetailName = DATA_AT_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+    let getFolderName = getAcronym.acronym
+    let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolderName][subCategoryArrPosition]
+    let getDetailName = DATA_AT_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
 
-      const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
+    const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
 
-      push(
-        {
-          pathname: toWhere,
-          query: { title: titleSubCategory, subTitle: theData.subtitle },
-        },
-        toWhere,
-      )
-    }
+    push(
+      {
+        pathname: toWhere,
+        query: { title: titleSubCategory, subTitle: theData.subtitle },
+      },
+      toWhere,
+    )
+
+
+    // if (!failed) {
+    //   let getFolderName = getFolder.acronym
+    //   let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
+    //   let getDetailName = DATA_AT_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+
+    //   const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
+
+    //   push(
+    //     {
+    //       pathname: toWhere,
+    //       query: { title: titleSubCategory, subTitle: theData.subtitle },
+    //     },
+    //     toWhere,
+    //   )
+    // }
   }
 
   return (

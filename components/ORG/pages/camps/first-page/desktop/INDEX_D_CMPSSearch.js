@@ -16,7 +16,7 @@ import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/Sta
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_CMPSSearchWrapper } from "./styles/INDEX_D_CMPSSearchWrapper.js"
 
-export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
+export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false, componentName }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export const INDEX_D_CMPSSearch = ({ positionInArray, isSelected = false }) => {
 
     let getFolder = {}
     for (const x in DATA_ORG_D) {
-      if (DATA_ORG_D[x].componentName === INDEX_D_CMPSSearch.name) {
+      if (DATA_ORG_D[x].componentName === componentName) {
         getFolder.acronym = DATA_ORG_D[x].acronym
         getFolder.position = x
         break

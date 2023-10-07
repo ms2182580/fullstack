@@ -17,7 +17,7 @@ import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_MHSSSearchWrapper } from "./styles/INDEX_D_MHSSSearchWrapper.js"
 
-export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false }) => {
+export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false, componentName }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const INDEX_D_MHSSSearch = ({ positionInArray, isSelected = false }) => {
 
     let getFolder = {}
     for (const x in DATA_ORG_D) {
-      if (DATA_ORG_D[x].componentName === INDEX_D_MHSSSearch.name) {
+      if (DATA_ORG_D[x].componentName === componentName) {
         getFolder.acronym = DATA_ORG_D[x].acronym
         getFolder.position = x
         break
