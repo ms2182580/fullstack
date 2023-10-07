@@ -169,7 +169,7 @@ export const H2 = styled.h2`
   font-size: ${FontsHeadDesktop.HEADING_2};
   line-height: ${LineHeightHeadDesktop.HEADING_2};
   font-weight: ${(x) =>
-    x.bolder
+    x.bolder 
       ? SharedVariables.FontWeight_800
       : x.bold
         ? SharedVariables.FontWeight_700
