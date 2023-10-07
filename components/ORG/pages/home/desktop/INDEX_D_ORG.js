@@ -47,7 +47,6 @@ export const INDEX_D_ORG = () => {
       let liOffSetLeft_IsActive = getIsActive.offsetLeft
 
       let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
-
     }
   }, [refOfORGSelections])
 
@@ -165,7 +164,10 @@ export const INDEX_D_ORG = () => {
         if (singleCardIsSelected === false) {
           return (
             <Fragment key={`${x.componentName}`}>
-              <x.component positionInArray={i} />
+              <x.component
+                positionInArray={i}
+                componentName={x.componentName}
+              />
             </Fragment>
           )
         }
