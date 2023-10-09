@@ -38,6 +38,7 @@ export const Footer_DWrapper = styled.footer`
       & > *:not(:first-child):not(:nth-child(2)) {
         color: rgba(108, 108, 108, 0.65);
         cursor: default;
+        
       }
     }
 
@@ -46,6 +47,7 @@ export const Footer_DWrapper = styled.footer`
       & > * {
         color: rgba(108, 108, 108, 0.65);
         cursor: default;
+        
       }
     }
 
@@ -119,7 +121,7 @@ export const Footer_DWrapper = styled.footer`
       border: none;
       border-radius: 8px;
       background-color: ${SECONDARY_SNT.YELLOW};
-
+      
       cursor: pointer;
 
       position: relative;
@@ -140,6 +142,8 @@ export const Footer_DWrapper = styled.footer`
         top: 0;
         z-index: -12;
         transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+        
+        
       }
 
       &::after {
@@ -155,6 +159,7 @@ export const Footer_DWrapper = styled.footer`
         top: 0;
         z-index: -15;
         transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+        
       }
 
       &:hover::before,
