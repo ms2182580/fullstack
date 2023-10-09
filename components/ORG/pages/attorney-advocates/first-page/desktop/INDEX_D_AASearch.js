@@ -1,5 +1,5 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { DATA_ORG_KeyNamesForCards_D } from '@/utils/ORG/DATA_ORG_KeyNamesForCards_D'
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from '@/utils/ORG/formatDataToThirdPage'
 import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from '@/utils/ORG/paa/cr/DATA_CR_D_Card'
 import Image from "next/image"
@@ -16,7 +16,7 @@ import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/Sta
 import { Verified } from "../../../../verified/Verified"
 import { INDEX_D_AASearchWrapper } from "./styles/INDEX_D_AASearchWrapper.js"
 
-export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
+export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componentName }) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -53,31 +53,24 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false }) => {
 
     setThirdpageDataORG(allDataToThirdPage)
 
-    let getFolder = {}
-    for (const x in DATA_ORG_D) {
-      if (DATA_ORG_D[x].componentName === INDEX_D_AASearch.name) {
-        getFolder.acronym = DATA_ORG_D[x].acronym
-        getFolder.position = x
-        break
-      }
-    }
-    let failed = Object.keys(getFolder).length === 0
+    let getAcronym = DATA_ORG_D.filter((x) => x.componentName === componentName)[0]
 
-    if (!failed) {
-      let getFolderName = getFolder.acronym
-      let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
-      let getDetailName = DATA_CR_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+    let getFolderName = getAcronym.acronym
+    let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolderName][subCategoryArrPosition]
+    let getDetailName = DATA_CR_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
 
-      const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
+    const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
 
-      push(
-        {
-          pathname: toWhere,
-          query: { title: titleSubCategory, subTitle: theData.subtitle },
-        },
-        toWhere,
-      )
-    }
+    push(
+      {
+        pathname: toWhere,
+        query: { title: titleSubCategory, subTitle: theData.subtitle },
+      },
+      toWhere,
+    )
+
+
+
   }
 
   return (
