@@ -2,10 +2,9 @@ import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
 export const Home_IntroducingAI_DWrapper = styled.div`
-  padding-inline: clamp(8px, 20vw - 180px, 120px);
+ //padding-inline: clamp(8px, 20vw - 180px, 120px);
   padding-top: 300px;
   padding-bottom: 300px;
-
   background-color: #030b40;
 
   display: grid;
@@ -13,13 +12,25 @@ export const Home_IntroducingAI_DWrapper = styled.div`
   grid-template-rows: 1fr;
 
   grid-auto-flow: column;
-
   gap: 60px;
-
   color: white;
 
+  
+
+
+
+  display: flex;
+  align-items: center;
+ justify-content: center;
+
+
+
   .LEFT {
-    align-self: flex-end;
+  // align-self: flex-end;
+  //display: grid;
+    align-self: center;
+    display:block;
+    
   }
 
   .RIGHT {

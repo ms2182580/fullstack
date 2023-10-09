@@ -7,12 +7,18 @@ export const ORG_D_Detail_ContactUsWrapper = styled.div`
 
   padding-bottom: 52px;
 
+
+.MaxWidth{
+  width:100%; 
+}
+
   & > *:not(:first-child) {
     margin-inline: 24px;
   }
 
   & > *:not(:last-child) {
     margin-bottom: 24px;
+    
   }
 
   & > :nth-child(1) {
@@ -63,6 +69,7 @@ export const ORG_D_Detail_ContactUsWrapper = styled.div`
     & > :nth-child(1) {
       font-size: 20px;
       font-weight: 600;
+      
     }
   }
 

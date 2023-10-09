@@ -22,6 +22,7 @@ export const NavBar_D_OnlyHomeWrapper = styled.div`
   & > :nth-child(1) {
     display: flex;
     gap: 8px;
+    
 
     & > :nth-child(1) {
       font-size: 56px;
@@ -38,6 +39,61 @@ export const NavBar_D_OnlyHomeWrapper = styled.div`
     color: ${NEUTRALS.BLACK};
     font-size: 18px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
   }
+
+  //Animación botón
+  & > :nth-child(2) {
+     
+      background-color: ${SECONDARY_SNT.YELLOW};
+      
+      cursor: pointer;
+
+      position: relative;
+      z-index: 3;
+
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        width: 0%;
+        height: 100%;
+        display: block;
+        background: hsl(50.4, 100%, 69.2%);
+        position: absolute;
+        transform: skewX(-45deg);
+        left: -10%;
+        opacity: 1;
+        top: 0;
+        z-index: -12;
+        transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+      }
+
+      &::after {
+        content: "";
+        width: 0%;
+        height: 100%;
+        display: block;
+        background: hsl(50.4, 100%, 49.2%);
+        position: absolute;
+        transform: skewX(-45deg);
+        left: -10%;
+        opacity: 0;
+        top: 0;
+        z-index: -15;
+        transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+      }
+
+      &:hover::before,
+      &:focus::before {
+        opacity: 1;
+        width: 120%;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        opacity: 1;
+        width: 136%;
+      }
+    }
 `

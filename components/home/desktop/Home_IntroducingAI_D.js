@@ -7,15 +7,18 @@ import { Home_IntroducingAI_DWrapper } from "./styles/Home_IntroducingAI_DWrappe
 export const Home_IntroducingAI_D = () => {
   return (
     <Home_IntroducingAI_DWrapper>
+      
+
       <div className="LEFT">
         <Image
           src={Home_IntroduccingAI}
-          layout="responsive"
-          objectFit="fill"
-          width={1}
-          height={1}
-
-          alt="Dashboard of AI Inclusive"
+        //  layout="responsive"
+        //  objectFit="fill"
+        //  width={1}
+       //   height={1}          
+          alt="Dashboard of AI Inclusive" 
+               
+          
         />
       </div>
 
@@ -32,6 +35,10 @@ export const Home_IntroducingAI_D = () => {
           <span>See more</span>
         </button>
       </div>
+
+      
+      
+      
     </Home_IntroducingAI_DWrapper>
   )
 }

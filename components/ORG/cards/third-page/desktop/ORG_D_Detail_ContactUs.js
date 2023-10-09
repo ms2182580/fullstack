@@ -82,7 +82,7 @@ export const ORG_D_Detail_ContactUs = () => {
 
       <div>
         <p>I’m interested in improving</p>
-        <div>
+        <div className="MaxWidth">
           {arrTags.map((xElement, index) => (
             <Fragment key={`${xElement}_${index}`}>
               <div>{xElement}</div>
