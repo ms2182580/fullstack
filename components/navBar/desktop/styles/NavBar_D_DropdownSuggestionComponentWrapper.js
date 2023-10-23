@@ -26,6 +26,7 @@ export const NavBar_D_DropdownSuggestionComponentWrapper = styled.div`
       & > div {
         padding: 1.5rem;
 
+        word-break: break-all;
         &:hover {
           background-color: ${PRIMARY.PRIMARY_CTA};
           color: ${NEUTRALS.OFF_WHITE};

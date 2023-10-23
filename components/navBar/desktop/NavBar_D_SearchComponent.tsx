@@ -8,8 +8,8 @@ export const NavBar_D_SearchComponent = () => {
   return (
     <NavBar_D_SearchComponentWrapper>
       <NavBar_D_InputKeyword />
-      <NavBar_D_InputLocation />
       <NavBar_D_InputDiagnosis />
+      <NavBar_D_InputLocation />
 
       <button>
         <Search2SVG />

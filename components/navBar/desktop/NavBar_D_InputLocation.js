@@ -1,3 +1,4 @@
+import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { CurrentLocationSvg } from "../../../assets/Icons"
@@ -25,30 +26,34 @@ export const NavBar_D_InputLocation = () => {
 
   return (
     <div>
-      <span>
+      <div>
+        <Caption>Location</Caption>
+
         <span>
-          <Image
-            src={ORGDesktop_LocationIcon}
-            alt=""
+          <span>
+            <Image
+              src={ORGDesktop_LocationIcon}
+              alt=""
+            />
+          </span>
+          <input
+            placeholder="City or zip code"
+            onFocus={() => setIsFocusCity(true)}
+            onBlur={() => {
+              if (!isHoveredCity) {
+                setIsFocusCity(false)
+              }
+            }}
+            value={cityInput}
+            onChange={(e) => {
+              setCityInput(e.target.value)
+              setCitiesContext(e.target.value)
+            }}
+            ref={inputRefCity}
+            tabIndex={shouldTab}
           />
         </span>
-        <input
-          placeholder="City or zip code"
-          onFocus={() => setIsFocusCity(true)}
-          onBlur={() => {
-            if (!isHoveredCity) {
-              setIsFocusCity(false)
-            }
-          }}
-          value={cityInput}
-          onChange={(e) => {
-            setCityInput(e.target.value)
-            setCitiesContext(e.target.value)
-          }}
-          ref={inputRefCity}
-          tabIndex={shouldTab}
-        />
-      </span>
+      </div>
 
       <NavBar_D_DropdownSuggestionWrapper>
         <NavBar_D_DropdownSuggestionComponent

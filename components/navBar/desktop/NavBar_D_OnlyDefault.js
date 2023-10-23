@@ -1,6 +1,6 @@
 import { ChatAILogo } from "@/assets/Icons/index.js"
 import { NavBar_D_InfoDropdown } from "@/components/navBar/desktop/NavBar_D_InfoDropdown.js"
-import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent.js"
+import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent"
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"

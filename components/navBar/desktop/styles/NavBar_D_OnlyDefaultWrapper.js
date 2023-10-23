@@ -2,17 +2,14 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const NavBar_D_OnlyDefaultWrapper = styled.header`
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-
   background-color: ${PRIMARY.OFF_WHITE};
 
   position: relative;
 
-  padding-top: 28px;
+  padding-top: 16px;
 
   display: grid;
-  gap: 20px;
-
+  gap: 34px;
   justify-self: center;
 
   & > :nth-child(1) {
@@ -22,7 +19,7 @@ export const NavBar_D_OnlyDefaultWrapper = styled.header`
   & > :nth-child(2) {
     margin-left: clamp(8px, 1vw - 20px, 50px);
     margin-right: clamp(8px, 1vw - 20px, 80px);
-    padding-top: 25px;
+
     padding-bottom: 45px;
 
     display: grid;
@@ -101,5 +98,14 @@ export const NavBar_D_OnlyDefaultWrapper = styled.header`
       justify-content: flex-end;
       gap: 8px;
     }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   }
 `
