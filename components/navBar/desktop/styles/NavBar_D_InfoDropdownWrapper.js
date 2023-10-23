@@ -1,10 +1,9 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
-export const NavBar_D_InfoDropdownWrapper = styled.div`
+export const NavBar_D_InfoDropdownWrapper = styled.ul`
   position: absolute;
   top: calc(100% + 10px);
-  left: 0;
   z-index: 3;
 
   padding: 33px;
@@ -18,15 +17,18 @@ export const NavBar_D_InfoDropdownWrapper = styled.div`
   border-radius: 8px;
 
   cursor: default;
+  list-style: none;
 
-  & > * {
-    border: 2px solid transparent;
-    cursor: pointer;
+  & > li {
+    & > * {
+      border: 2px solid transparent;
+      cursor: pointer;
 
-    color: ${NEUTRALS.LIGHT_GREY};
+      color: ${NEUTRALS.LIGHT_GREY};
 
-    &:hover {
-      border-bottom: 2px solid ${NEUTRALS.LIGHT_GREY};
+      &:hover {
+        border-bottom: 2px solid ${NEUTRALS.LIGHT_GREY};
+      }
     }
   }
 `

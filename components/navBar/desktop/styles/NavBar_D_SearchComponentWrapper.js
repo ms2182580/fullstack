@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const NavBar_D_SearchComponentWrapper = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   position: relative;
   z-index: 3;
@@ -43,7 +42,6 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
         border: 1px ${NEUTRALS.DARK_GREY} solid;
         border-left-style: none;
         border-radius: 0px 5px 5px 0px;
-
       }
     }
   }
@@ -94,15 +92,17 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
   }
 
   & > :last-child {
-    position: absolute;
-    z-index: 2;
-    right: 8px;
-    height: 100%;
-    width: 55px;
+    margin-left: 19px;
+    width: 65.6px;
 
-    & > :nth-child(1) {
-      height: 100%;
-      width: 55px;
-    }
+    background-color: ${PRIMARY.PRIMARY_CTA};
+
+    border-radius: 6.4px;
+    border: 0;
+
+    display: grid;
+    place-content: center;
+
+    cursor: pointer;
   }
 `
