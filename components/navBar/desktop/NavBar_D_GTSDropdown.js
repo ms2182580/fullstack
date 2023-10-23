@@ -15,9 +15,13 @@ export const NavBar_D_GTSDropdown = ({ theRef }) => {
   return (
     <NavBar_D_GTSDropdownWrapper ref={theRef}>
       {LIST.map((x, i) => (
-        <>
-          <H4 tabIndex={0} normal key={`${x.name}_${i}`}>{x.name}</H4>
-        </>
+        <li key={`${x.name}_${i}`}>
+          <H4
+            tabIndex={0}
+            normal>
+            {x.name}
+          </H4>
+        </li>
       ))}
     </NavBar_D_GTSDropdownWrapper>
   )

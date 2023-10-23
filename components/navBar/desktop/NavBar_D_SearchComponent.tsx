@@ -1,5 +1,4 @@
-import { SearchSVG } from "../../../assets/Icons"
-import { ButtonSmall } from '../../../components/ui/buttons/general/index.js'
+import { Search2SVG } from "../../../assets/Icons"
 import { NavBar_D_InputDiagnosis } from "./NavBar_D_InputDiagnosis"
 import { NavBar_D_InputKeyword } from "./NavBar_D_InputKeyword"
 import { NavBar_D_InputLocation } from "./NavBar_D_InputLocation"
@@ -9,14 +8,12 @@ export const NavBar_D_SearchComponent = () => {
   return (
     <NavBar_D_SearchComponentWrapper>
       <NavBar_D_InputKeyword />
-      <NavBar_D_InputLocation />
       <NavBar_D_InputDiagnosis />
+      <NavBar_D_InputLocation />
 
-      <span>
-        <ButtonSmall>
-          <SearchSVG />
-        </ButtonSmall>
-      </span>
+      <button>
+        <Search2SVG />
+      </button>
     </NavBar_D_SearchComponentWrapper>
   )
 }

@@ -1,6 +1,6 @@
-import { ChatAILogo, NavBar_D_QuickCarePlanSvg } from "@/assets/Icons/index.js"
+import { ChatAILogo } from "@/assets/Icons/index.js"
 import { NavBar_D_InfoDropdown } from "@/components/navBar/desktop/NavBar_D_InfoDropdown.js"
-import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent.js"
+import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent"
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"
@@ -53,6 +53,10 @@ export const NavBar_D_OnlyDefault = () => {
   return (
     <NavBar_D_OnlyDefaultWrapper>
       <div>
+        <NavBar_D_SearchComponent />
+      </div>
+
+      <div>
         <span
           tabIndex={0}
           onKeyDown={handleNavigateHome}
@@ -61,18 +65,7 @@ export const NavBar_D_OnlyDefault = () => {
           <H2>Inclusive</H2>
           <ChatAILogo />
         </span>
-        <NavBar_D_SearchComponent />
 
-        <div>
-          <NavBar_D_Accessibility />
-
-          <NavBar_D_SignComponent />
-        </div>
-      </div>
-
-      <div />
-
-      <div>
         <div>
           <span>
             <NavBar_D_HamburgerComponent />
@@ -84,36 +77,33 @@ export const NavBar_D_OnlyDefault = () => {
                 <Link href="/ORG">Resource Directory</Link>
               </H4>
             </li>
-
             <li
               onClick={handleToggleGTSDropdown}
               onKeyDown={handleToggleGTSDropdown}
               tabIndex={0}
               className={classNameToFocusLogic_GTS}>
               <H4>Guide to Services</H4>
-
               {infoDropdownStateGTS && <NavBar_D_GTSDropdown theRef={refGTS} />}
             </li>
-
             <li>
               <H4>Ask a Question</H4>
             </li>
-
             <li
               onClick={handleToggleInfoDropdown}
               onKeyDown={handleToggleInfoDropdown}
               tabIndex={0}
               className={classNameToFocusLogic_INFO}>
               <H4>Info</H4>
-
               {infoDropdownStateInfo && <NavBar_D_InfoDropdown theRef={refInfo} />}
             </li>
           </ul>
         </div>
 
-        <div>
-          <NavBar_D_QuickCarePlanSvg /> <p>Quick Care Plan</p>
-        </div>
+        <span>
+          <NavBar_D_Accessibility />
+
+          <NavBar_D_SignComponent />
+        </span>
       </div>
     </NavBar_D_OnlyDefaultWrapper>
   )

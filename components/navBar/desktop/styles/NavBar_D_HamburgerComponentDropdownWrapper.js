@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
+export const NavBar_D_HamburgerComponentDropdownWrapper = styled.nav`
   position: absolute;
   z-index: 4;
   background-color: ${NEUTRALS.OFF_WHITE};
@@ -10,7 +10,6 @@ export const NavBar_D_HamburgerComponentDropdownWrapper = styled.div`
 
   & > :nth-child(1) {
     list-style: none;
-
     & > * {
       padding: 26px;
       cursor: pointer;

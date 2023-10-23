@@ -1,3 +1,4 @@
+import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import Image from "next/image"
 import { useRef, useState } from "react"
 import ORGDesktop_AgeIcon from "../../../assets/Icons/ORGDesktop_AgeIcon.png"
@@ -5,14 +6,7 @@ import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
 import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
 
-const suggestionsKeywords = [
-  "Autism (ASD)",
-  "ADHD",
-  "Down Syndrome",
-  "Cerebral Palsy",
-  "Frafile X",
-  "Other"
-]
+const suggestionsKeywords = ["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Frafile X", "Other"]
 
 export const NavBar_D_InputDiagnosis = () => {
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
@@ -30,30 +24,37 @@ export const NavBar_D_InputDiagnosis = () => {
 
   return (
     <div>
-      <span>
+      <div>
+        <Caption>
+          <span>*</span>
+          Diagnosis
+        </Caption>
+
         <span>
-          <Image
-            src={ORGDesktop_AgeIcon}
-            alt=""
+          <span>
+            <Image
+              src={ORGDesktop_AgeIcon}
+              alt=""
+            />
+          </span>
+          <input
+            placeholder="Diagnosis (Ex: Autism...)"
+            onFocus={() => setIsFocusKeyword(true)}
+            onBlur={() => {
+              if (!isHoveredKeyword) {
+                setIsFocusKeyword(false)
+              }
+            }}
+            value={keywordInput}
+            onChange={(e) => {
+              setKeywordInput(e.target.value)
+              // setKeywordsContext(e.target.value)
+            }}
+            ref={inputRefKeyword}
+            tabIndex={shouldTab}
           />
         </span>
-        <input
-          placeholder="Diagnosis"
-          onFocus={() => setIsFocusKeyword(true)}
-          onBlur={() => {
-            if (!isHoveredKeyword) {
-              setIsFocusKeyword(false)
-            }
-          }}
-          value={keywordInput}
-          onChange={(e) => {
-            setKeywordInput(e.target.value)
-            // setKeywordsContext(e.target.value)
-          }}
-          ref={inputRefKeyword}
-          tabIndex={shouldTab}
-        />
-      </span>
+      </div>
 
       <NavBar_D_DropdownSuggestionWrapper>
         <NavBar_D_DropdownSuggestionComponent

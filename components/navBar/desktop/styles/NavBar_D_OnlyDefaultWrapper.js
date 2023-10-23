@@ -1,40 +1,35 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const NavBar_D_OnlyDefaultWrapper = styled.div`
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-
+export const NavBar_D_OnlyDefaultWrapper = styled.header`
   background-color: ${PRIMARY.OFF_WHITE};
 
   position: relative;
 
-  padding-top: 28px;
+  padding-top: 16px;
 
-/*
-  //& > :nth-last-child()
-  & > :nth-child(1){
-    & > *{ // everything here
-      background-color: white;
-    }
-    & > :not(:nth-child(2)){
-    }
-         .MY_CLASS_NAME_2{
-    }
-  }
-    .MY_CLASS_NAME{
-  }
- */
-
-
+  display: grid;
+  gap: 34px;
+  justify-self: center;
 
   & > :nth-child(1) {
-    display: flex;
+    margin-inline: clamp(32px, 10vw, 220px);
+  }
+
+  & > :nth-child(2) {
+    margin-left: clamp(8px, 1vw - 20px, 50px);
+    margin-right: clamp(8px, 1vw - 20px, 80px);
+
+    padding-bottom: 45px;
+
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
     align-items: center;
-    gap: 40px;
-    justify-content: space-between;
-    margin-inline: clamp(16px, calc(10vw - 80px), 96px);
-    position: relative;
-    margin-bottom: 28px;
+
+    & > * {
+      width: fit-content;
+    }
 
     & > :nth-child(1) {
       cursor: pointer;
@@ -42,60 +37,48 @@ export const NavBar_D_OnlyDefaultWrapper = styled.div`
       display: flex;
       gap: 8px;
 
-      & > :nth-child(1) { //TITULO INCLUSIVE LADO IZQUIERDO
+      margin-right: clamp(8px, 10vw - 40px, 48px);
+
+      & > :nth-child(1) {
         color: ${PRIMARY.PRIMARY_LOGO};
-        font-weight:800;
+        font-weight: 800;
       }
 
       & > :nth-child(2) {
         & > * {
           fill: ${PRIMARY.PRIMARY_LOGO};
-          
         }
       }
     }
 
-    & > :nth-child(3) {
-      display: flex;
+    & > :nth-child(2) {
+      display: grid;
+      grid-auto-flow: column;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
+
+      margin-right: clamp(8px, 10vw - 40px, 51px);
+
+      & > :nth-child(1) {
+        margin-right: clamp(8px, 10vw - 40px, 46px);
       }
-  }
-
-  & > :nth-child(3) {
-      font-weight:500;
-      }
-  
-
-  & > :nth-child(2) {
-    content: "";
-    height: 4px;
-    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-    width: 100%;
-    position: absolute;
-  }
-
-  & > :nth-child(3) {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 33px;
-    padding-bottom: 33px;
-    margin-left: clamp(16px, calc(10vw - 80px), 90px);
-    margin-right: clamp(16px, calc(10vw - 80px), 66px);
-
-    & > :nth-child(1) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 49px;
 
       & > :nth-child(2) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        list-style: none;
+
+        display: grid;
+        grid-auto-flow: column;
 
         gap: clamp(20px, 7vw - 50px, 51px);
+
+        & > * {
+          cursor: pointer;
+        }
+
+        & > li ~ li {
+          & > h4 {
+            color: ${NEUTRALS.LIGHT_GREY};
+          }
+        }
 
         & > :nth-child(1) {
           & > * {
@@ -105,62 +88,24 @@ export const NavBar_D_OnlyDefaultWrapper = styled.div`
             }
           }
         }
-
-        & > *:not(:first-child) {
-          & > h4 {
-            color: ${NEUTRALS.LIGHT_GREY};
-          }
-        }
-
-        li {
-          list-style: none;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          border-bottom: 4px solid transparent;
-
-          & > h4 {
-            font-weight: 500;
-          }
-          &.active {
-            border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
-          }
-        }
-
-        & > :nth-child(2),
-        & > :nth-child(4) {
-          position: relative;
-        }
       }
     }
 
-    & > :last-child {
+    & > :nth-child(3) {
+      margin-left: clamp(8px, 7vw - 100px, 51px);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       gap: 8px;
-
-      padding: 6px 16px;
-
-      background-color: ${NEUTRALS.LIGHT_GREY};
-
-      border: 2px solid ${NEUTRALS.DARK_GREY};
-      border-radius: 16px;
-
-      cursor: not-allowed;
-
-      & > :nth-child(1) {
-        & > * {
-          fill: ${NEUTRALS.DARK_GREY};
-        }
-      }
-
-      & > :nth-child(2) {
-        font-size: 18px;
-        font-weight: 600;
-        color: ${NEUTRALS.DARK_GREY};
-      }
     }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   }
 `
