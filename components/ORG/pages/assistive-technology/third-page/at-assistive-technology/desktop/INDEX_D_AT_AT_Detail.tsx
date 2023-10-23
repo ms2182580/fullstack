@@ -1,17 +1,10 @@
+import { SectionToRender_InnerData_ARG } from '@/utils/ORG/third-page/SectionToRender'
 import { useRouter } from "next/router"
-import { FC } from "react"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { INDEX_ORG_Detail_D } from "../../../../../cards/third-page/desktop/INDEX_ORG_Detail_D"
 import { ORG_D_Detail_ContactUs } from "../../../../../cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "../../../../../cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_Reviews } from "../../../../../cards/third-page/desktop/ORG_D_Detail_Reviews"
-
-export const enum SectionToRender_InnerData_KEYS {
-  NAME = "name",
-  COMPONENT = "component",
-}
-
-export type SectionToRender_InnerData = { name: string; component: FC }[]
 
 export const INDEX_D_AT_AT_Detail = () => {
   const route = useRouter()
@@ -23,7 +16,7 @@ export const INDEX_D_AT_AT_Detail = () => {
     return
   }
 
-  const theArrayOfObject: SectionToRender_InnerData = [
+  const theArrayOfObject: SectionToRender_InnerData_ARG = [
     { name: "Where to buy", component: ORG_D_Detail_ContactUs },
     { name: ORG_D_Detail_ContactUs.name, component: ORG_D_Detail_ContactUs },
     { name: "Similar Products", component: ORG_D_Detail_ContactUs },

@@ -1,5 +1,6 @@
 import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { FC, Fragment } from "react"
+import { SectionToRender_PROPS } from '@/utils/ORG/third-page/SectionToRender'
+import { Fragment } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
@@ -11,15 +12,6 @@ import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
 import { ORG_D_Detail_Reviews } from "./ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "./ORG_D_Detail_Schedule"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
-
-export type SectionToRender_InnerData = {
-  name: string
-  component: FC
-}
-
-export type SectionToRender_PROPS = {
-  sectionToRender: SectionToRender_InnerData[]
-}
 
 export const INDEX_ORG_Detail_D = ({ sectionToRender }: SectionToRender_PROPS) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
