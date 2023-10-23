@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../../../../../../../context/Ctx_ShowModal.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { InFrontModal_D_Wrapper } from "../../../../../../../inFront_D/styles/InFrontModal_D_Wrapper.js"
+import { InFrontModal_D_Wrapper } from "../../../../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ChatAI } from "../../../../../../ChatAI/index.js"
 import { CC_Karate_D_BreadcrumbsLastUpdated } from "./CC_Karate_D_BreadcrumbsLastUpdated.js"
 import { CC_Karate_D_ContactUs } from "./CC_Karate_D_ContactUs.js"

@@ -1,3 +1,4 @@
+import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
@@ -10,8 +11,12 @@ import { ORG_D_Detail_Reviews_Header } from "./ORG_D_Detail_Reviews_Header"
 import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
 import { ORG_D_Detail_ReviewsWrapper } from "./styles/ORG_D_Detail_ReviewsWrapper"
 
-export const ORG_D_Detail_Reviews = ({ name, lastName, rating, reviews }) => {
-  const [getReviews, setGetReviews] = useState(ORG_ST_Review(name, lastName))
+export const ORG_D_Detail_Reviews = () => {
+  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  const { fullName, card } = thirdpageDataORG
+
+  const [getReviews, setGetReviews] = useState(ORG_ST_Review(fullName.first, fullName.last))
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName())
 
   const { push } = useRouter()
@@ -46,8 +51,8 @@ export const ORG_D_Detail_Reviews = ({ name, lastName, rating, reviews }) => {
   return (
     <ORG_D_Detail_ReviewsWrapper id="Reviews">
       <ORG_D_Detail_Reviews_Header
-        rating={rating}
-        reviews={reviews}
+        rating={card.leftPart.rating}
+        reviews={card.leftPart.reviews}
         handlePushTo404={handlePushTo404}
       />
 
@@ -74,8 +79,8 @@ export const ORG_D_Detail_Reviews = ({ name, lastName, rating, reviews }) => {
         <ORG_D_Detail_Review_Modal
           showModal={showModal}
           handleHideModal={handleHideModal}
-          rating={rating}
-          reviews={reviews}
+          rating={card.leftPart.rating}
+          reviews={card.leftPart.reviews}
           getReviews={getReviews}
           name={name}
           lastName={lastName}

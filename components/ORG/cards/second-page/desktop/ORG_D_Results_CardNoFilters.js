@@ -31,10 +31,9 @@ export const ORG_D_Results_CardNoFilters = () => {
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
-    console.log('thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName:', thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
+    // console.log('thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName:', thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
-
 
     setThirdpageDataORG(allDataToThirdPage)
 
@@ -50,7 +49,6 @@ export const ORG_D_Results_CardNoFilters = () => {
     )
   }
   return (
-
     <>
       {Array(10)
         .fill(0)
@@ -81,7 +79,6 @@ export const ORG_D_Results_CardNoFilters = () => {
                   <ORG_D_Results_CardEmail email={secondpageDataORG.left[renderThisContact].email} />
 
                   <ORG_D_Results_CardWebsite
-
                     firstName={secondpageDataORG.left[renderThisContact].web?.fistName || ""}
                     lastName={secondpageDataORG.left[renderThisContact].web?.lastName || ""}
                   />
@@ -112,9 +109,7 @@ export const ORG_D_Results_CardNoFilters = () => {
                         <span
                           className="HIGHLIGHTS_PLUS"
                           key={`${x[0]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
-
                           <Highlights_2_D highlights={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]} />
-
                         </span>
                       )
                     }
