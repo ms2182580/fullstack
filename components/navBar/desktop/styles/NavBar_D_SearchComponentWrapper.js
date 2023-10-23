@@ -46,11 +46,11 @@ export const NavBar_D_SearchComponentWrapper = styled.div`
     }
   }
 
-  & > :nth-child(2) {
-    flex-grow: 1;
+  & > :nth-child(1) {
+    flex-basis: 405px;
   }
 
-  & > :nth-child(1),
+  & > :nth-child(2),
   & > :nth-child(3) {
     flex-basis: 250px;
   }

@@ -10,7 +10,11 @@ import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestio
 
 const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
 
-export const NavBar_D_InputLocation = () => {
+export type widthOfDropdown_TYPE = {
+  widthOfDropdown: number
+}
+
+export const NavBar_D_InputLocation = ({ widthOfDropdown }: widthOfDropdown_TYPE) => {
   const [isFocusCity, setIsFocusCity] = useState(false)
   const [isHoveredCity, setIsHoveredCity] = useState(false)
   const inputRefCity = useRef()
@@ -55,11 +59,10 @@ export const NavBar_D_InputLocation = () => {
         </span>
       </div>
 
-      <NavBar_D_DropdownSuggestionWrapper>
+      <NavBar_D_DropdownSuggestionWrapper widthOfDropdown={widthOfDropdown}>
         <NavBar_D_DropdownSuggestionComponent
           isFocus={isFocusCity}
           setIsHover={setIsHoveredCity}
-          setIsFocus={setIsFocusCity}
           suggestions={suggestionsCity}
           keywordClickByUser={cityInput}
           setKeywordClickByUser={setCityInput}
@@ -67,6 +70,7 @@ export const NavBar_D_InputLocation = () => {
           inputRefFocus={inputRefCity}
           haveIcon={true}
           whichIcon={CurrentLocationSvg}
+          theRef={undefined}
         />
       </NavBar_D_DropdownSuggestionWrapper>
     </div>
