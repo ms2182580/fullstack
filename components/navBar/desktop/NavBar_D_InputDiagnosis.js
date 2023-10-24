@@ -64,7 +64,6 @@ export const NavBar_D_InputDiagnosis = () => {
           suggestions={suggestionsKeywords}
           keywordClickByUser={keywordInput}
           setKeywordClickByUser={setKeywordInput}
-          // setKeywordClickByUserContext={setKeywordsContext}
           inputRefFocus={inputRefKeyword}
           isFirstOrSecondDropdown={true}
         />

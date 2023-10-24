@@ -1,5 +1,11 @@
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import ORG_AT1 from "../../../assets/images/ORG/assistive-technology/ORG_AT1.png"
+import ORG_AT10 from "../../../assets/images/ORG/assistive-technology/ORG_AT10.png"
+import ORG_AT11 from "../../../assets/images/ORG/assistive-technology/ORG_AT11.png"
+import ORG_AT12 from "../../../assets/images/ORG/assistive-technology/ORG_AT12.png"
+import ORG_AT13 from "../../../assets/images/ORG/assistive-technology/ORG_AT13.png"
+import ORG_AT14 from "../../../assets/images/ORG/assistive-technology/ORG_AT14.png"
+import ORG_AT15 from "../../../assets/images/ORG/assistive-technology/ORG_AT15.png"
 import ORG_AT2 from "../../../assets/images/ORG/assistive-technology/ORG_AT2.png"
 import ORG_AT3 from "../../../assets/images/ORG/assistive-technology/ORG_AT3.png"
 import ORG_AT4 from "../../../assets/images/ORG/assistive-technology/ORG_AT4.png"
@@ -11,7 +17,7 @@ import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png
 
 export const DATA_PAT_D = [
   [
-    "Popular Assistive Technology",
+    "Popular Wheelchairs & Mobility Devices",
     {
       imageToUse: ORG_AT1,
       title: "Permobil F5 Corpus VS",
@@ -52,9 +58,50 @@ export const DATA_PAT_D = [
       goToThirdPage: "",
     },
   ],
-
   [
-    "Popular Software Assistive Technology",
+    "Popular Tools for School",
+    {
+      imageToUse: ORG_AT10,
+      title: "AudioNote",
+      fullName: {
+        first: "AudioNote",
+        last: "",
+      },
+      subtitle: "Electronic notetakers",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
+      goToThirdPage: "",
+    },
+    {
+      imageToUse: ORG_AT11,
+      title: "Amazon Polly",
+      fullName: {
+        first: "Amazon Polly",
+        last: "",
+      },
+      subtitle: "Text-to-speech software",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
+      goToThirdPage: "",
+    },
+    {
+      imageToUse: ORG_AT12,
+      title: "Tipy Keyboard",
+      fullName: {
+        first: "Tipy Keyboard",
+        last: "",
+      },
+      subtitle: "Adaptive keyboards and mice",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      textReview: "This plug is compact, reliable, and affordable enough that you could ...",
+      goToThirdPage: "",
+    },
+  ],
+  [
+    "Popular Augmented Communication Software",
     {
       imageToUse: ORG_AT4,
       title: "Proloquo",
@@ -95,7 +142,6 @@ export const DATA_PAT_D = [
       goToThirdPage: "",
     },
   ],
-
   [
     "Popular Smart Devices with Assistive Technology",
     {
@@ -129,6 +175,48 @@ export const DATA_PAT_D = [
       title: "Wyze Plug",
       fullName: {
         first: "Wyze Plug",
+        last: "",
+      },
+      subtitle: "Smart plug",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      textReview: "This plug is compact, reliable, and affordable enough that you could ...",
+      goToThirdPage: "",
+    },
+  ],
+  [
+    "Innovative Hi-tech Assistive Technology",
+    {
+      imageToUse: ORG_AT13,
+      title: "Emotiv EPOC",
+      fullName: {
+        first: "Emotiv EPOC ",
+        last: "",
+      },
+      subtitle: "Brain-computer Interface",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
+      goToThirdPage: "",
+    },
+    {
+      imageToUse: ORG_AT14,
+      title: "Occulus Rift",
+      fullName: {
+        first: "Occulus Rift",
+        last: "",
+      },
+      subtitle: "Virtual reality systems",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
+      goToThirdPage: "",
+    },
+    {
+      imageToUse: ORG_AT15,
+      title: "JACO Assistive...",
+      fullName: {
+        first: "JACO Assistive...",
         last: "",
       },
       subtitle: "Smart plug",

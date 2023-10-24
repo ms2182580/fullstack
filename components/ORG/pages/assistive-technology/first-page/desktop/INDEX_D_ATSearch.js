@@ -1,7 +1,7 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
-import { DATA_AT_D_CardLeft, DATA_AT_D_CardRight } from "@/utils/ORG/pat/at/DATA_AT_D_Card"
+import { DATA_AT_D_CardLeft, DATA_AT_D_CardRight } from "@/utils/ORG/pat/wcmd/DATA_AT_D_Card"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -29,8 +29,11 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
   const { pathname, push } = useRouter()
 
   const handleMoveToSecondPage = (e, title, possitionSubArr) => {
+    // console.log("title, possitionSubArr:", title, possitionSubArr)
     let folder = DATA_ORG_D[positionInArray].acronym
+    // console.log("folder:", folder)
     let subFolder = DATA_ORG_CheckPaths_Results_D[folder][possitionSubArr]
+    // console.log("subFolder:", subFolder)
 
     push(
       {
@@ -66,8 +69,6 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
       },
       toWhere,
     )
-
-
   }
 
   return (
@@ -77,7 +78,7 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
         while (howMuchDisplay > iData) {
           return (
             <>
-              <div key={`${x.title}_${iData}_${objects[iData].titleImage}_${objects[iData].reviews}`}>
+              <div key={`${x.title}_${iData}`}>
                 <H2 semi_bold>{title}</H2>
                 {objects.map((obj, iSubData) => {
                   return (

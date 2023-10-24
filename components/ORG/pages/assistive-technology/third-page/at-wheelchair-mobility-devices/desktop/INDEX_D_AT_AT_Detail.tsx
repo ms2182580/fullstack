@@ -1,4 +1,4 @@
-import { SectionToRender_InnerData_ARG } from '@/utils/ORG/third-page/SectionToRender'
+import { SectionToRender_InnerData_ARG } from "@/utils/ORG/third-page/SectionToRender"
 import { useRouter } from "next/router"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { INDEX_ORG_Detail_D } from "../../../../../cards/third-page/desktop/INDEX_ORG_Detail_D"
