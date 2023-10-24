@@ -240,7 +240,7 @@ export const DATA_ORG_CheckPaths_Results_D = {
 //   → ST
 /*  */
 
-/* //!FH0 create all of this */
+/* !FH Modify this in the «next.config.js» file */
 // 2° generation
 // "pat":
 //   → WMD // was: AT

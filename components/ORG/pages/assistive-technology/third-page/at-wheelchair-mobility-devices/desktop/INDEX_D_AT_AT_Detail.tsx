@@ -1,3 +1,4 @@
+import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/ORG/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_WhereToBuy"
 import { SectionToRender_InnerData_ARG } from "@/utils/ORG/third-page/SectionToRender"
 import { useRouter } from "next/router"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -17,7 +18,7 @@ export const INDEX_D_AT_AT_Detail = () => {
   }
 
   const theArrayOfObject: SectionToRender_InnerData_ARG = [
-    { name: "Where to buy", component: ORG_D_Detail_ContactUs },
+    { name: ORG_D_Detail_AT_WCMD_WhereToBuy.name, component: ORG_D_Detail_AT_WCMD_WhereToBuy },
     { name: ORG_D_Detail_ContactUs.name, component: ORG_D_Detail_ContactUs },
     { name: "Similar Products", component: ORG_D_Detail_ContactUs },
     { name: ORG_D_Detail_Reviews.name, component: ORG_D_Detail_Reviews },
