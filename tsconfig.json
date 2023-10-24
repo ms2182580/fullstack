@@ -28,6 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
     "pages/_app.jsx",
     "components/navBar/desktop/NavBar_D_DropdownSuggestionComponent.js"
   ],
