@@ -1,20 +1,29 @@
 export const DATA_ORG_CheckPaths_Results_D = {
   pat: [
-    "at-assistive-technology",
+    /* 
+    This trust in the order of the arr to know where the resource should move
+    */
+    "at-wheelchair-mobility-devices",
+    "at-tools-for-school",
+    "at-augmented-software-software",
     "at-smart-devices",
-    "at-software",
+    "at-innovative-hi-tech",
     {
       acronymsFolderRouteName: {
-        "at-assistive-technology": "at",
-        "at-smart-devices": "sat",
-        "at-software": "sdat",
+        "at-wheelchair-mobility-devices": "wcmd",
+        "at-smart-devices": "sdat",
+        "at-tools-for-school": "tfs",
+        "at-augmented-software-software": "ass",
+        "at-innovative-hi-tech": "iht",
       },
     },
     {
       fullName: {
-        "at-assistive-technology": "Assistive Technology",
-        "at-smart-devices": "Software Assistive Technology",
-        "at-software": "Smart Devices with Assistive Technology",
+        "at-wheelchair-mobility-devices": "Wheelchairs & Mobility Devices",
+        "at-smart-devices": "Smart Devices with Assistive Technology",
+        "at-tools-for-school": "Tools for School",
+        "at-augmented-software-software": "Augmented Communication Software",
+        "at-innovative-hi-tech": "Innovative Hi-tech Assistive Technology",
       },
     },
   ],
@@ -189,10 +198,56 @@ export const DATA_ORG_CheckPaths_Results_D = {
   ],
 }
 
+// # 1° generation
 // "pat":
 //   → AT
 //   → SAT
 //   → SDAT
+// "paa":
+//   → CR
+//   → SE
+//   → ELMP
+//   → DISA
+//   → IDD
+// "pcmps":
+//   → DAY
+//   → OVN
+//   → DAYT
+// "pcc":
+//   → CC
+//   → FC
+//   → AC
+// "pdctr":
+//   → PSYT
+//   → FM
+//   → NO
+// "pmhss":
+//   → MH
+//   → FS
+// "pppas":
+//   → A
+//   → PNFPO
+//   → SO
+// "pses":
+//   → SES
+//   → PRE
+//   → PV
+// "pst":
+//   → SLP
+//   → OT
+// "prp"
+//   → LT
+//   → ST
+/*  */
+
+/* //!FH0 create all of this */
+// 2° generation
+// "pat":
+//   → WMD // was: AT
+//   → TFS // mew
+//   → ACS // was: SAT
+//   → SDAT
+//   → IHTAT // new
 // "paa":
 //   → CR
 //   → SE

@@ -1,14 +1,14 @@
-import { INDEX_D_FamilySupports_Results } from "../../../../components/ORG/pages/mental-health/second-page/mhss-family-support/desktop/INDEX_D_FamilySupports_Results"
+import { INDEX_D_TFS_Results } from "../../../../components/ORG/pages/assistive-technology/second-page/at-tools-for-school/desktop/INDEX_D_TFS_Results"
 import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 
-export default function ORG_INDEX_MHSS_FamilySupport_Results() {
+export default function ORG_INDEX_AT_TFS_Results() {
   const { isMobile } = useCheckUserWidth()
 
   return (
     <>
       {isMobile === false ? (
         <>
-          <INDEX_D_FamilySupports_Results />
+          <INDEX_D_TFS_Results />
         </>
       ) : (
         <>{/* Mobile component. We dont have design for this in this path */}</>
