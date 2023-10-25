@@ -1,8 +1,8 @@
+import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../../../../assets/Icons/index.js"
 import { capitalizeWords } from "../../../../../../../../utils/capitalizeWords.js"
-import { ButtonSmall } from "../../../../../../../ui/buttons/general/index.js"
 import { H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { CC_Karate_D_ContactUsWrapper } from "./styles/CC_Karate_D_ContactUsWrapper.js"
 

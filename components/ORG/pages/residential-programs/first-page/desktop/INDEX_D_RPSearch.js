@@ -1,7 +1,8 @@
+import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { DATA_ORG_KeyNamesForCards_D } from '@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js'
-import { formatDataToThirdPage } from '@/utils/ORG/formatDataToThirdPage.js'
-import { DATA_LT_D_CardLeft, DATA_LT_D_CardRight } from '@/utils/ORG/prp/lt/DATA_LT_D_Card.js'
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
+import { DATA_LT_D_CardLeft, DATA_LT_D_CardRight } from "@/utils/ORG/prp/lt/DATA_LT_D_Card.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
@@ -9,7 +10,6 @@ import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/inde
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
 import { DATA_PLT_D } from "../../../../../../utils/ORG/prp/DATA_PLT_D.js"
-import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D.js"

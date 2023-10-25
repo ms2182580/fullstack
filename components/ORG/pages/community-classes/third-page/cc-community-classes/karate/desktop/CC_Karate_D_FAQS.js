@@ -1,3 +1,4 @@
+import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../../../../context/Ctx_ShowModal.js"
@@ -5,7 +6,6 @@ import { ORG_ReviewsUsersName } from "../../../../../../../../utils/ORG_ReviewsU
 import { ORG_ST_FAQS } from "../../../../../../../../utils/ORG_ST_FAQS_D.js"
 import { ORG_ST_Review_Months } from "../../../../../../../../utils/ORG_ST_Review_D.js"
 import { useScrollLock } from "../../../../../../../../utils/useScrollLock.js"
-import { ButtonSmall } from "../../../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { CC_D_Detail_FAQS_Modal } from "./CC_D_Detail_FAQS_Modal.js"
@@ -28,7 +28,6 @@ export const CC_Karate_D_FAQS = ({ name, lastName, locationCity, locationStreetN
   const toMoveTheView = useRef()
 
   let handleMoveUserView = (e) => {
-
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
       const position = toMoveTheView.current.getBoundingClientRect().top + window.scrollY
       window.scrollTo({ top: position })

@@ -12,7 +12,7 @@ export const INDEX_D_AT_AT_Detail = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   if (thirdpageDataORG === "") {
-    if (route.isReady) route.push("/ORG/pat/at-assistive-technology/")
+    if (route.isReady) route.push("/ORG/pat/at-wheelchair-mobility-devices/")
 
     return
   }
@@ -20,7 +20,6 @@ export const INDEX_D_AT_AT_Detail = () => {
   const theArrayOfObject: SectionToRender_InnerData_ARG = [
     { name: ORG_D_Detail_AT_WCMD_WhereToBuy.name, component: ORG_D_Detail_AT_WCMD_WhereToBuy },
     { name: ORG_D_Detail_ContactUs.name, component: ORG_D_Detail_ContactUs },
-    { name: "Similar Products", component: ORG_D_Detail_ContactUs },
     { name: ORG_D_Detail_Reviews.name, component: ORG_D_Detail_Reviews },
     { name: ORG_D_Detail_FAQS.name, component: ORG_D_Detail_FAQS },
   ]
