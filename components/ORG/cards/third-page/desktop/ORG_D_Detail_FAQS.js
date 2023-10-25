@@ -70,6 +70,9 @@ export const ORG_D_Detail_FAQS = () => {
             type="text"
             placeholder="Search in Q&A..."
           />
+          <span onClick={handleShowModal}>
+            <ButtonSmall secondary>Ask a Question</ButtonSmall>
+          </span>
         </div>
 
         <div>
@@ -78,9 +81,7 @@ export const ORG_D_Detail_FAQS = () => {
             hover>
             Common Questions and Answers
           </H4>
-          <span onClick={handleShowModal}>
-            <ButtonSmall secondary>Ask a Question</ButtonSmall>
-          </span>
+          
         </div>
 
         {faqsData.votes.map((x, i) => {

@@ -20,7 +20,6 @@ const nextConfig = {
       {
         source: "/sat",
         destination: "/ORG/pat/at-software",
-
         permanent: true,
       },
       {
@@ -167,10 +166,8 @@ const nextConfig = {
         destination: "/ORG/prp/rp-short-term-residential",
         permanent: true,
       },
-
-
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
