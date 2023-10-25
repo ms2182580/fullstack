@@ -309,6 +309,7 @@ export const H3 = styled.h3`
 `
 
 export const H4 = styled.h4`
+
   font-size: ${FontsHeadDesktop.HEADING_4};
   line-height: ${LineHeightHeadDesktop.HEADING_4};
   font-weight: ${(x) =>

@@ -1,10 +1,61 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_FAQSWrapper = styled.div`
+export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  
+
+  .AdvocacyGroupsContainer{
+    margin-left:24px;
+    padding-bottom:80px;
+   
+   
+    & > :nth-child(1){
+
+    }
+  }
+
+  .AdvocacyGroupsItems{
+    display: flex;
+    flex-direction:row;
+    gap:53px;
+
+  }
+
+  .ViewAllLink{
+    display: flex;
+    //margin:right !important;
+    //background-color:black;
+    padding-left:120px;
+   align-items: flex-end;
+  }
+
+  .AdvocacyCard{
+    display: flex;
+    flex-direction: column;
+   gap:16px;
+   
+   
+  }
+
+  .ImageContainer{
+    display: flex;
+    border-radius:8px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   margin-right: auto;
+    flex-wrap: wrap;
+  }
+
+  .Imagen{
+    border-radius:8px;   
+  }
+
+  .CardsTitle{
+    padding-bottom:32px;
+
+  }
 
   & > :nth-child(1),
   & > :nth-child(2),
@@ -12,12 +63,14 @@ export const ORG_D_Detail_FAQSWrapper = styled.div`
   & > :last-child {
     padding-left: 32px;
     padding-right: 55px;
+    
   }
   
   & > :nth-child(1) {
+        
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-   
+
     padding: 24px;
     margin-bottom: 24px;
 
@@ -27,10 +80,12 @@ export const ORG_D_Detail_FAQSWrapper = styled.div`
   & > :nth-child(2) {
     display: flex;
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 80px;
+    margin-top:80px;
     gap:25%;
 
     & > :nth-child(1) {
+      
       position: absolute;
       left: 43px;
       top: 0;
@@ -39,38 +94,30 @@ export const ORG_D_Detail_FAQSWrapper = styled.div`
     }
 
     & > :nth-child(2) {
+      
       width: 100%;
       padding: 10px 10px 10px 60px;
 
       background: ${NEUTRALS.OFF_WHITE};
       border: 1px solid ${NEUTRALS.BLACK};
       border-radius: 16px;
+border: 0.5px solid var(--Black, #00080B);
 
       &[type="text"]:focus {
         border: 1px solid transparent;
       }
     }
+  } & > :nth-child(3) {
+   // margin-bottom: 80px;
   }
+  & > :nth-last-child(1) {
+   // margin-bottom: 80px;
+        
+      }
 
-  & > :nth-child(3) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-  }
+ 
 
-  & > div:not(:nth-child(2)):not(:nth-child(3)) {
-    margin-bottom: 40px;
-  }
+ 
 
-  & > :last-child {
-    cursor: pointer;
-
-    width: fit-content;
-    margin-left: auto;
-    
-    &:hover {
-      filter: brightness(70%);
-    }
-  }
+ 
 `
