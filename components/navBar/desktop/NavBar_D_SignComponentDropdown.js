@@ -1,5 +1,5 @@
 import { useRouter } from "next/router.js"
-import { useEffect } from 'react'
+import { useEffect } from "react"
 import {
   NavBar_D_AAQSvg,
   NavBar_D_AccessibilityModeSvg,
@@ -11,7 +11,7 @@ import {
   NavBar_D_UpgradeSvg,
   NavBar_D_UserDashboardSvg,
 } from "../../../assets/Icons/index.js"
-import { ButtonSmall } from "../../ui/buttons/general/index.js"
+import { ButtonSmall } from "../../ui/buttons/general/index"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { NavBar_D_SignComponentDropdownWrapper } from "./styles/NavBar_D_SignComponentDropdownWrapper.js"
 
@@ -31,13 +31,19 @@ export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown, showDr
   }, [showDropdownProfile])
 
   return (
-    <NavBar_D_SignComponentDropdownWrapper ref={theRef} tabIndex={0}>
+    <NavBar_D_SignComponentDropdownWrapper
+      ref={theRef}
+      tabIndex={0}>
       <div>
         <span
           onClick={handlePushToSignup}
           onKeyDown={handlePushToSignup}
           tabIndex={0}>
-          <ButtonSmall preventFocus={-1} secondary>Sign Up</ButtonSmall>
+          <ButtonSmall
+            preventFocus={-1}
+            secondary>
+            Sign Up
+          </ButtonSmall>
         </span>
         <span>
           <ButtonSmall>Sign In</ButtonSmall>

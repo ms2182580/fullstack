@@ -1,8 +1,8 @@
+import { ButtonSmall } from "@/components/ui/buttons/general"
 import Image from "next/image.js"
 import { useRouter } from "next/router"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "../../../../../../../../assets/Icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
 import { ORG_D_Detail_MainCardLeftPhotos } from "../../../../../../../../components/ORG/cards/third-page/desktop/ORG_D_Detail_MainCardLeftPhotos.js"
-import { ButtonSmall } from "../../../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3 } from "../../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Results_Card_Hearth } from "../../../../../../cards/second-page/desktop/ORG_D_Results_Card_Hearth"
@@ -16,7 +16,7 @@ import { ORG_D_Detail_HighlightBoxes } from "../../../../../../cards/third-page/
 import { ORG_D_Detail_MapComponent } from "../../../../../../cards/third-page/desktop/ORG_D_Detail_MapComponent.js"
 import { ORG_D_Detail_Share } from "../../../../../../cards/third-page/desktop/ORG_D_Detail_Share.js"
 import { ORG_D_Detail_Tooltip } from "../../../../../../cards/third-page/desktop/ORG_D_Detail_Tooltip.js"
-import { StarsRatingReview_D } from "../../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../../verified/Verified.js"
 import { CC_Karate_D_MainCardWrapper } from "./styles/CC_Karate_D_MainCardWrapper.js"
 

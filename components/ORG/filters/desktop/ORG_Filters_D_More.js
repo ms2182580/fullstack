@@ -1,12 +1,10 @@
+import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { Fragment, cloneElement, useState } from "react"
 import { XDesktopSvg } from "../../../../assets/Icons/index.js"
 import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
-import { ButtonSmall } from "../../../ui/buttons/general/index.js"
 import { ORG_Filters_D_MoreWrapper } from "./styles/ORG_Filters_D_MoreWrapper.js"
 
 export const ORG_Filters_D_More = ({ allCheckboxes = [], allRanges = [], customButtonName = "More Filters", ...props }) => {
-
-
   // const { setModalShowedCtx } = useCtx_ShowModal()
   // const [mustShowFilter, setMustShowFilter] = useState(false)
   // const handleShowFilter = (e) => {

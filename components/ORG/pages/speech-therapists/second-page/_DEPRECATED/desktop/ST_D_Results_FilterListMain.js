@@ -6,7 +6,7 @@ import { useORG_CtxShowFiltersDesktop } from "../../../../../../context/ORG_CtxS
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../../../../context/ORG_Ctx_FiltersApplyDesktop.js"
 import { ORG_INITIAL_VALUES_FILTERS_D } from "../../../../../../utils/ORG_initialValuesFilters.js"
 import { useShouldTab } from "../../../../../../utils/ORG_shouldTab.js"
-import { BtnSmall } from "../../../../../ui/buttons/general/styles/ButtonStyled.js"
+import { BtnSmall } from "../../../../../ui/buttons/general/styles/ButtonStyled"
 import { ST_D_Results_FiltersContainer } from "./ST_D_Results_FiltersContainer.js"
 import { ST_D_Results_FilterListChildWrapper } from "./styles/ST_D_Results_FilterListChildWrapper.js"
 import { ST_D_Results_FilterListMainWrapper } from "./styles/ST_D_Results_FilterListMainWrapper.js"
@@ -85,11 +85,9 @@ export const ST_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
   const [shouldClear, setShouldClear] = useState(false)
 
   const [mustShowFiltersDesktop, setMustShowFiltersDesktop] = useState(false)
-  const { ORGShowFullMapFilter, setORGShowFullMapFilter, ORGshowFullMapButton, setORGShowFullMapButton } =
-    useORG_CtxShowFiltersDesktop()
+  const { ORGShowFullMapFilter, setORGShowFullMapFilter, ORGshowFullMapButton, setORGShowFullMapButton } = useORG_CtxShowFiltersDesktop()
 
-  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } =
-    useORG_Ctx_FiltersApplyDesktop()
+  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } = useORG_Ctx_FiltersApplyDesktop()
 
   const { modalShowedCtx, setModalShowedCtx } = useCtx_ShowModal()
 
@@ -118,14 +116,7 @@ export const ST_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
 
       dispatch({
         type: "clearAll",
-        payload: [
-          setFilterData,
-          setTempState,
-          setFilterAreApply,
-          setFiltersAppliedNewFilters,
-          setDefaultWord,
-          defaultWord
-        ]
+        payload: [setFilterData, setTempState, setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord],
       })
     }
   }
@@ -158,8 +149,8 @@ export const ST_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
           filterData,
           setFiltersAppliedNewFilters,
           setDefaultWord,
-          defaultWord
-        ]
+          defaultWord,
+        ],
       })
     }
   }

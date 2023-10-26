@@ -1,6 +1,14 @@
-import { BtnLarge, BtnMedium, BtnSmall } from "./styles/ButtonStyled.js"
+import { BtnLarge, BtnMedium, BtnSmall } from "./styles/ButtonStyled"
 
-export const ButtonSmall = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }) => {
+export type Props = {
+  children?: string
+  secondary?: boolean
+  disabled?: boolean
+  preventFocus?: 0 | -1
+  goToDynamic?: () => void
+}
+
+export const ButtonSmall = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }: Props) => {
   return (
     <BtnSmall
       secondary={secondary}
@@ -11,7 +19,7 @@ export const ButtonSmall = ({ children, secondary, disabled, preventFocus = 0, g
     </BtnSmall>
   )
 }
-export const ButtonMedium = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }) => {
+export const ButtonMedium = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }: Props) => {
   return (
     <BtnMedium
       secondary={secondary}
@@ -22,7 +30,7 @@ export const ButtonMedium = ({ children, secondary, disabled, preventFocus = 0, 
     </BtnMedium>
   )
 }
-export const ButtonLarge = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }) => {
+export const ButtonLarge = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }: Props) => {
   return (
     <BtnLarge
       secondary={secondary}

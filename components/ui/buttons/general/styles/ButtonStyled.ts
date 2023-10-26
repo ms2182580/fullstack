@@ -3,10 +3,15 @@ import { FontsWeights } from "../../../../../assets/Fonts/Weights"
 import { COLORS } from "../../variables"
 
 const SharedVariables = {
-  BorderRadius: "8px"
+  BorderRadius: "8px",
 }
 
-const BtnDefault = styled.button`
+interface Props {
+  secondary?: boolean
+  disabled?: boolean
+}
+
+const BtnDefault = styled.button<Props>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,14 +50,13 @@ const BtnDefault = styled.button`
   }
 `
 
-export const BtnSmall = styled(BtnDefault)`
+export const BtnSmall = styled(BtnDefault)<Props>`
   height: 48px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-inline: 32px;
   font-size: 16px;
-  border:${({ disabled }) => disabled ? `2px solid transparent` : ``};
-  
+  border: ${({ disabled }) => (disabled ? `2px solid transparent` : ``)};
 `
 export const BtnMedium = styled(BtnDefault)`
   font-size: 20px;

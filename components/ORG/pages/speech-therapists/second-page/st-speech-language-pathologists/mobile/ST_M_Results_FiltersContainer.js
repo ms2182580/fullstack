@@ -1,6 +1,6 @@
 import { XDesktopSvg } from "../../../../../../../assets/Icons/index.js"
 import { ORG_FILTERS_DATA_M, ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories.js"
-import { BtnSmall } from "../../../../../../ui/buttons/general/styles/ButtonStyled.js"
+import { BtnSmall } from "../../../../../../ui/buttons/general/styles/ButtonStyled"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_FilterCheckboxContainer } from "./ST_M_Results_FilterCheckboxContainer.js"
 import { ST_M_Results_FiltersContainerWrapper } from "./styles/ST_M_Results_FiltersContainerWrapper.js"
@@ -19,14 +19,13 @@ export const ST_M_Results_FiltersContainer = ({
   shouldClear,
   showStateChildren,
   state,
-  tempState
+  tempState,
 }) => {
   const handleCloseFilters = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       handleShowFilters()
     }
   }
-
 
   return (
     <ST_M_Results_FiltersContainerWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
