@@ -4,8 +4,6 @@ import { useCheckUserWidth } from "../../../../context/CheckUserWidth"
 export default function ORG_INDEX_AT_WCMD_Results() {
   const { isMobile } = useCheckUserWidth()
 
-  // const { pathname, query, route, ...allProps } = useRouter()
-
   return (
     <>
       {isMobile === false ? (

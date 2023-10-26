@@ -6,7 +6,7 @@ import { ButtonSmall } from "../../../../ui/buttons/general/index"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 
-import { DATA_PAT_D } from "@/utils/ORG/pat/DATA_PAT_D.js"
+import { DATA_PAT_D } from "@/utils/ORG/pat/DATA_PAT_D"
 
 import image1 from "@/assets/images/ORG/attorney-advocates/ORG_AA19.png"
 import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA20.png"
