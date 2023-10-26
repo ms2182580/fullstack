@@ -14,6 +14,16 @@ import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg"
 import image3 from "@/assets/images/ORG/attorney-advocates/ORG_AA18.jpg"
 import Image from "next/image.js"
 
+import ArrowImage from "../../../../../assets/Icons/ArrowDown.png"
+
+/*
+ <Image
+            src={ArrowImage} 
+          
+            className="IconoImagen"
+            
+            />
+*/
 
 
 export const ORG_D_Detail_AditionalResources = () => {
@@ -93,7 +103,9 @@ export const ORG_D_Detail_AditionalResources = () => {
          <Image
             src={image2} alt='image2' width={249.6} height={170.4} className="Imagen"
             />
-        </div>        
+        
+           
+        </div>   
          
          <H4 nmedium>Children's advocates NY</H4>
 
