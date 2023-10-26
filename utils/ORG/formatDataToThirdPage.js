@@ -1,6 +1,7 @@
+import { SPECIFIC_DATA } from "./DATA_ORG_D"
 import { filterThirdPageDataOnObject } from "./filterThirdPageDataOnObject"
 
-export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullName) => {
+export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullName, specificDataForThisResource) => {
   let getFilterThirdPageDataOnObject = filterThirdPageDataOnObject(rightPart?.thirdPageData)
 
   let allDataToThirdPage = {
@@ -18,10 +19,9 @@ export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullNam
         location: dataCardLeft?.location || "",
       },
       rightPart: rightPart,
-
     },
     fullName,
-    other: getFilterThirdPageDataOnObject,
+    other: { getFilterThirdPageDataOnObject, [SPECIFIC_DATA.SPECIFIC_DATA]: specificDataForThisResource },
   }
 
   return allDataToThirdPage

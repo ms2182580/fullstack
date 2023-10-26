@@ -9,34 +9,38 @@ import { INDEX_D_RPSearch } from "../../components/ORG/pages/residential-program
 import { INDEX_D_SESSearch } from "../../components/ORG/pages/special-education-schools/first-page/desktop/INDEX_D_SESSearch.js"
 import { INDEX_D_STSearch } from "../../components/ORG/pages/speech-therapists/first-page/dekstop/INDEX_D_STSearch"
 
+export const enum SPECIFIC_DATA {
+  SPECIFIC_DATA = "SPECIFIC_DATA",
+}
+
 export const DATA_ORG_D = [
   {
     nameJSX: "Assistive Technology",
     component: INDEX_D_ATSearch,
     componentName: INDEX_D_ATSearch.name,
     acronym: "pat",
-    folderName: "assistive-technology"
+    folderName: "assistive-technology",
   },
   {
     nameJSX: "Attorney and Advocates",
     component: INDEX_D_AASearch,
     componentName: INDEX_D_AASearch.name,
     acronym: "paa",
-    folderName: "attorney-advocates"
+    folderName: "attorney-advocates",
   },
   {
     nameJSX: "Camps",
     component: INDEX_D_CMPSSearch,
     componentName: INDEX_D_CMPSSearch.name,
     acronym: "pcmps",
-    folderName: "camps"
+    folderName: "camps",
   },
   {
     nameJSX: "Community Classes",
     component: INDEX_D_CCSearch,
     componentName: INDEX_D_CCSearch.name,
     acronym: "pcc",
-    folderName: "community-classes"
+    folderName: "community-classes",
   },
 
   {
@@ -44,41 +48,41 @@ export const DATA_ORG_D = [
     component: INDEX_D_DCTRSearch,
     componentName: INDEX_D_DCTRSearch.name,
     acronym: "pdctr",
-    folderName: "doctors"
+    folderName: "doctors",
   },
   {
     nameJSX: "Mental Health Support/Services",
     component: INDEX_D_MHSSSearch,
     componentName: INDEX_D_MHSSSearch.name,
     acronym: "pmhss",
-    folderName: "mental-health"
+    folderName: "mental-health",
   },
   {
     nameJSX: "Private & Public Agencies/Services",
     component: INDEX_D_PPASSearch,
     componentName: INDEX_D_PPASSearch.name,
     acronym: "pppas",
-    folderName: "ptivate-public-agencies"
+    folderName: "ptivate-public-agencies",
   },
   {
     nameJSX: "Special Education Schools",
     component: INDEX_D_SESSearch,
     componentName: INDEX_D_SESSearch.name,
     acronym: "pses",
-    folderName: "special-education-schools"
+    folderName: "special-education-schools",
   },
   {
     nameJSX: "Therapeutic Providers & Services",
     component: INDEX_D_STSearch,
     componentName: INDEX_D_STSearch.name,
     acronym: "pst",
-    folderName: "speech-therapists"
+    folderName: "speech-therapists",
   },
   {
     nameJSX: "Residential Programs",
     component: INDEX_D_RPSearch,
     componentName: INDEX_D_RPSearch.name,
     acronym: "prp",
-    folderName: "residential-programs"
-  }
+    folderName: "residential-programs",
+  },
 ]

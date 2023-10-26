@@ -1,3 +1,4 @@
+import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
 import { useEffect } from "react"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider"
@@ -17,8 +18,8 @@ export const INDEX_D_ASS_Results = () => {
       mainNameORG: DATA_PAT_D[2][0],
       right: DATA_SDAT_D_CardRight,
       left: DATA_SDAT_D_CardLeft,
-      [DATA_PAT_D_KEYS.AT_SPECIFIC_DATA]: {
-        [DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
+      [SPECIFIC_DATA.SPECIFIC_DATA]: {
+        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: DATA_SDAT_D_CardLeft[0][DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY],
       },
     })
   }, [])

@@ -7,7 +7,7 @@ export const INDEX_D_AT_ASS_Detail = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   if (thirdpageDataORG === "") {
-    if (route.isReady) route.push("/ORG/pat//at-software/")
+    if (route.isReady) route.push("/ORG/pat/at-augmented-software-software")
 
     return
   }
