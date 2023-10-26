@@ -93,7 +93,7 @@ export const ORG_D_Results_CardWrapper = styled.div`
     & > :nth-child(5) {
       display: grid;
       gap: 16px;
-      
+
       .HIGHLIGHTS_PLUS {
         /* border: 2px solid crimson; */
       }
@@ -106,7 +106,6 @@ export const ORG_D_Results_CardWrapper = styled.div`
         & > :nth-child(1) {
           font-weight: 700;
           color: ${PRIMARY.PRIMARY_HOVER};
-          
 
           & > :nth-child(1) {
             font-weight: 400;
@@ -150,6 +149,16 @@ export const ORG_D_Results_CardWrapper = styled.div`
       gap: 8px;
 
       cursor: pointer;
+    }
+
+    & > :nth-child(2) {
+      & > :nth-child(1) {
+        fill: white;
+      }
+
+      & > :nth-child(2) {
+        text-transform: capitalize;
+      }
     }
   }
 `

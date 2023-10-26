@@ -1,7 +1,8 @@
+import { DATA_PAT_D_KEYS } from "@/utils/ORG/pat/DATA_PAT_D"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
+import { ORG_D_Results_ATSvg, ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D } from "../../../../../utils/ORG/DATA_ORG_KeyNamesForCards_D"
@@ -28,6 +29,7 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  // console.log("secondpageDataORG:", secondpageDataORG)
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
@@ -158,8 +160,18 @@ export const ORG_D_Results_CardNoFilters = () => {
                       secondpageDataORG.cardData[renderThisCard]?.state || "",
                     )
                   }>
-                  <ORG_D_Results_RequestConsultationSvg />
-                  <P white>See Availability</P>
+                  {Boolean(secondpageDataORG[DATA_PAT_D_KEYS.AT_SPECIFIC_DATA]) ? (
+                    <>
+                      <ORG_D_Results_ATSvg />
+
+                      <P white>{secondpageDataORG[DATA_PAT_D_KEYS.AT_SPECIFIC_DATA][DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]}</P>
+                    </>
+                  ) : (
+                    <>
+                      <ORG_D_Results_RequestConsultationSvg />
+                      <P white>see availability</P>
+                    </>
+                  )}
                 </div>
                 <div>
                   <ORG_D_Results_AddtocareplanSvg />

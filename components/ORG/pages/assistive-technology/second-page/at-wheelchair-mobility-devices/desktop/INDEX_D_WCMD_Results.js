@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider.js"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
-import { DATA_PAT_D } from "../../../../../../../utils/ORG/pat/DATA_PAT_D.js"
+import { DATA_PAT_D, DATA_PAT_D_KEYS } from "../../../../../../../utils/ORG/pat/DATA_PAT_D"
 import { DATA_AT_D_CardLeft, DATA_AT_D_CardRight } from "../../../../../../../utils/ORG/pat/wcmd/DATA_AT_D_Card.js"
 import { renderFiltersInUI_AT_AT } from "../../../../../../../utils/ORG/pat/wcmd/DATA_AT_D_Filters.js"
 import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
@@ -17,6 +17,9 @@ export const INDEX_D_WCMD_Results = () => {
       mainNameORG: DATA_PAT_D[0][0],
       right: DATA_AT_D_CardRight,
       left: DATA_AT_D_CardLeft,
+      [DATA_PAT_D_KEYS.AT_SPECIFIC_DATA]: {
+        [DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
+      },
     })
   }, [])
 

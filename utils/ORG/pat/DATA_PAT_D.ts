@@ -227,3 +227,9 @@ export const DATA_PAT_D = [
     },
   ],
 ]
+
+export const enum DATA_PAT_D_KEYS {
+  AT_SPECIFIC_DATA = "AT_SPECIFIC_DATA",
+  BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",
+  BUTTON_TO_THIRDPAGE_NAME_VALUE = "purchase option",
+}
