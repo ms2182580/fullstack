@@ -7,7 +7,8 @@ const SharedVariables = {
 }
 
 interface Props {
-  secondary: boolean
+  secondary?: boolean
+  disabled?: boolean
 }
 
 const BtnDefault = styled.button<Props>`
@@ -49,7 +50,7 @@ const BtnDefault = styled.button<Props>`
   }
 `
 
-export const BtnSmall = styled(BtnDefault)`
+export const BtnSmall = styled(BtnDefault)<Props>`
   height: 48px;
   padding-top: 12px;
   padding-bottom: 12px;

@@ -1,18 +1,11 @@
 import { FC } from "react"
 
-type CardFirstRow = {
-  image: string
-  title: string
-  subtitle: string
-  linkRef: string
-}
-
 export type SectionToRender_InnerData_ARG = {
   name: string
-  component: FC
+  component?: FC
   isSimilarProducts?: {
     cardFirstRow: {
-      image: string
+      image: any
       title: string
       subtitle: string
       linkRef: string
@@ -36,10 +29,10 @@ export type SectionToRender_InnerData_ARG = {
 
 export type SectionToRender_InnerData = {
   name: string
-  component: FC
+  component?: FC
   isSimilarProducts?: {
     cardFirstRow: {
-      image: string
+      image: any
       title: string
       subtitle: string
       linkRef: string
@@ -62,5 +55,5 @@ export type SectionToRender_InnerData = {
 }
 
 export type SectionToRender_PROPS = {
-  sectionToRender: SectionToRender_InnerData[]
+  sectionToRender?: SectionToRender_InnerData[] | null
 }
