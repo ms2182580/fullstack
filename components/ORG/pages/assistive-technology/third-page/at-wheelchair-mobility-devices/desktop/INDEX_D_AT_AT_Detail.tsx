@@ -1,6 +1,4 @@
-import ORG_AT13 from "@/assets/images/ORG/assistive-technology/ORG_AT13.png"
-import ORG_AT15 from "@/assets/images/ORG/assistive-technology/ORG_AT15.png"
-import { ORG_D_Detail_AT_SimilarProducts } from "@/components/ORG/cards_resources/third-page/general/desktop/ORG_D_Detail_AT_SimilarProducts"
+import { ORG_D_Detail_AT_WCMD_SimilarProducts } from "@/components/ORG/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_SimilarProducts"
 import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/ORG/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_WhereToBuy"
 import { SectionToRender_InnerData_ARG } from "@/utils/ORG/third-page/SectionToRender"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
@@ -115,65 +113,7 @@ export const INDEX_D_AT_AT_Detail = () => {
   const theArrayOfObject: SectionToRender_InnerData_ARG = [
     { name: ORG_D_Detail_AT_WCMD_WhereToBuy.name, component: ORG_D_Detail_AT_WCMD_WhereToBuy },
     { name: ORG_D_Detail_ContactUs.name, component: ORG_D_Detail_ContactUs },
-    {
-      name: ORG_D_Detail_AT_SimilarProducts.name,
-      component: ORG_D_Detail_AT_SimilarProducts,
-      isSimilarProducts: {
-        cardFirstRow: [
-          {
-            image: ORG_AT13.src,
-            title: "Really long product name...",
-            subtitle: "Device type name here. Short product description [no more than 3 lines",
-            linkRef: "#",
-          },
-          {
-            image: ORG_AT15.src,
-            title: "Really long product name...",
-            subtitle: "Device type name here. Short product description [no more than 3 lines",
-            linkRef: "#",
-          },
-          {
-            image: ORG_AT13.src,
-            title: "Really long product name...",
-            subtitle: "Device type name here. Short product description [no more than 3 lines",
-            linkRef: "#",
-          },
-        ],
-
-        cardSecondRow: [
-          {
-            key: "Customer rating",
-            values: categoriesOfProducts[0].values.map((item) => ({
-              component: item.component,
-            })),
-          },
-          {
-            key: "Price",
-            values: categoriesOfProducts[1].values.map((item) => ({
-              value: item.value,
-            })),
-          },
-          {
-            key: "Speed",
-            values: categoriesOfProducts[2].values.map((item) => ({
-              value: item.value,
-            })),
-          },
-          {
-            key: "Range",
-            values: categoriesOfProducts[3].values.map((item) => ({
-              value: item.value,
-            })),
-          },
-          {
-            key: "Seat lift",
-            values: categoriesOfProducts[4].values.map((item) => ({
-              value: item.value,
-            })),
-          },
-        ],
-      },
-    },
+    { name: ORG_D_Detail_AT_WCMD_SimilarProducts.name, component: ORG_D_Detail_AT_WCMD_SimilarProducts },
     { name: ORG_D_Detail_Reviews.name, component: ORG_D_Detail_Reviews },
     { name: ORG_D_Detail_FAQS.name, component: ORG_D_Detail_FAQS },
   ]
@@ -181,6 +121,7 @@ export const INDEX_D_AT_AT_Detail = () => {
   return (
     <>
       <INDEX_ORG_Detail_D sectionToRender={theArrayOfObject} />
+      {/* <INDEX_ORG_Detail_D /> */}
     </>
   )
 }

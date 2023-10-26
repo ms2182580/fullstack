@@ -1,6 +1,6 @@
 import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { Fragment } from "react"
 import { ORG_D_Detail_AT_SimilarProducts_Section } from "./ORG_D_Detail_AT_SimilarProducts_Section"
 import { ORG_D_Detail_AT_SimilarProductsWrapper } from "./styles/ORG_D_Detail_AT_SimilarProductsWrapper"
@@ -126,7 +126,7 @@ export const ORG_D_Detail_AT_SimilarProducts = ({ cardFirstRow, cardSecondRow })
         <div>
           {cardFirstRow.map((xcardFirstRow, index) => {
             return (
-              <Fragment>
+              <Fragment key={index}>
                 <ORG_D_Detail_AT_SimilarProducts_Section
                   image={xcardFirstRow.image}
                   title={xcardFirstRow.title}
