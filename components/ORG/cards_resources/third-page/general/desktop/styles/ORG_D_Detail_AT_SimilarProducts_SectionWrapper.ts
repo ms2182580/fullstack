@@ -2,10 +2,7 @@ import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const ORG_D_Detail_AT_SimilarProducts_SectionWrapper = styled.div`
-  /* border: 2px solid green; */
-
   display: grid;
-  /* grid-auto-flow: row; */
 
   & > :nth-child(2) {
     font-weight: 700;
