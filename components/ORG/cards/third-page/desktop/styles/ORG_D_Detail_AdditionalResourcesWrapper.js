@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg"
 
 export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
   background: #fcfdfe;
@@ -28,7 +29,7 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
     display: flex;
     //margin:right !important;
     //background-color:black;
-    padding-left:120px;
+    //padding-left:120px;
    align-items: flex-end;
   }
 
@@ -40,22 +41,44 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
    
   }
 
+  .CardsTitle{
+    padding-bottom:32px;
+
+  };
+
   .ImageContainer{
     display: flex;
     border-radius:8px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
    margin-right: auto;
     flex-wrap: wrap;
+    position:relative;
+    margin: 0 auto;
+    
+   // background-image:{image2};
+//display:grid;
+//grid-template-areas:"overlay";
   }
 
   .Imagen{
     border-radius:8px;   
+    width: 100%;
+  height: 100%;
+  margin-top:-2px;
+  //position: absolute !important;
+  //object-fit: cover;
+  //grid-area:overlay;
+  
   }
 
-  .CardsTitle{
-    padding-bottom:32px;
-
+  .IconoImagen{
+  //position: absolute !important;
+  bottom: 0;
+  left: 0;
+  position:relative;
+  //grid-area:overlay;
   }
+
 
   & > :nth-child(1),
   & > :nth-child(2),
