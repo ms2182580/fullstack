@@ -1,5 +1,6 @@
 import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { SectionToRender_PROPS } from '@/utils/ORG/third-page/SectionToRender'
+import { ORG_D_Detail_AT_SimilarProducts } from "@/components/ORG/cards_resources/third-page/general/desktop/ORG_D_Detail_AT_SimilarProducts"
+import { SectionToRender_PROPS } from "@/utils/ORG/third-page/SectionToRender"
 import { Fragment } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -29,6 +30,17 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender }: SectionToRender_PROPS) =
           {sectionToRender ? (
             <>
               {sectionToRender.map((x, index) => {
+                if (x.name === "ORG_D_Detail_AT_SimilarProducts") {
+                  return (
+                    <Fragment key={`${x.name}_${index}`}>
+                      <ORG_D_Detail_AT_SimilarProducts
+                        cardFirstRow={x.isSimilarProducts.cardFirstRow}
+                        cardSecondRow={x.isSimilarProducts.cardSecondRow}
+                      />
+                    </Fragment>
+                  )
+                }
+
                 return (
                   <Fragment key={`${x.name}_${index}`}>
                     <x.component />

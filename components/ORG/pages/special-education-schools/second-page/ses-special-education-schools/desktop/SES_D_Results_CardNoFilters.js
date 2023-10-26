@@ -11,7 +11,7 @@ import { ORG_D_Results_CardWebsite } from "../../../../../cards/second-page/desk
 import { ORG_D_Results_Card_Hearth } from "../../../../../cards/second-page/desktop/ORG_D_Results_Card_Hearth.js"
 import { ORG_D_Results_Cardphone } from "../../../../../cards/second-page/desktop/ORG_D_Results_Cardphone.js"
 import { Highlights_D } from "../../../../../highlights/Highlights_D.js"
-import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../verified/Verified.js"
 import { SES_D_Results_CardWrapper } from "./styles/SES_D_Results_CardWrapper.js"
 

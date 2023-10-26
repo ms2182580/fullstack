@@ -16,7 +16,7 @@ import { ORG_D_Detail_HighlightBoxes } from "../../../../../../cards/third-page/
 import { ORG_D_Detail_MapComponent } from "../../../../../../cards/third-page/desktop/ORG_D_Detail_MapComponent.js"
 import { ORG_D_Detail_Share } from "../../../../../../cards/third-page/desktop/ORG_D_Detail_Share.js"
 import { ORG_D_Detail_Tooltip } from "../../../../../../cards/third-page/desktop/ORG_D_Detail_Tooltip.js"
-import { StarsRatingReview_D } from "../../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../../verified/Verified.js"
 import { CC_Karate_D_MainCardWrapper } from "./styles/CC_Karate_D_MainCardWrapper.js"
 

@@ -33,4 +33,7 @@
     "pages/_app.jsx",
     "components/navBar/desktop/NavBar_D_DropdownSuggestionComponent.js"
   ],
+  "exclude": [
+    "node_modules"
+  ]
 }

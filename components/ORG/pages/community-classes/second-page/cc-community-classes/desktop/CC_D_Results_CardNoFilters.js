@@ -14,7 +14,7 @@ import { ORG_D_Results_CardWebsite } from "../../../../../cards/second-page/desk
 import { ORG_D_Results_Card_Hearth } from "../../../../../cards/second-page/desktop/ORG_D_Results_Card_Hearth.js"
 import { ORG_D_Results_Cardphone } from "../../../../../cards/second-page/desktop/ORG_D_Results_Cardphone.js"
 import { Highlights_D } from "../../../../../highlights/Highlights_D.js"
-import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../verified/Verified.js"
 import { CC_D_Results_CardWrapper } from "./styles/CC_D_Results_CardWrapper.js"
 
@@ -24,7 +24,6 @@ export const CC_D_Results_CardNoFilters = () => {
   useEffect(() => {
     setThirdpageDataORG("")
   }, [])
-
 
   const router = useRouter()
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG) => {
@@ -127,16 +126,7 @@ export const CC_D_Results_CardNoFilters = () => {
                 */}
                 {renderThisCard === 0 ? (
                   <>
-                    <div
-                      onClick={(e) =>
-                        handleMoveToThirdPage(
-                          e,
-                          DATA_CC_D_CardRight[renderThisCard],
-                          DATA_CC_D_CardLeft[renderThisCard],
-                          cardData[renderThisCard],
-                          mainNameORG
-                        )
-                      }>
+                    <div onClick={(e) => handleMoveToThirdPage(e, DATA_CC_D_CardRight[renderThisCard], DATA_CC_D_CardLeft[renderThisCard], cardData[renderThisCard], mainNameORG)}>
                       <ORG_D_Results_RequestConsultationSvg />
                       <P white>See Availability</P>
                     </div>
