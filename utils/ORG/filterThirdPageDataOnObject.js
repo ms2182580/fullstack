@@ -1,4 +1,4 @@
-export const filterThirdPageDataOnObject = (obj) => {
+export const filterThirdPageDataOnObject = (obj, ...allRest) => {
   let filteredObj = {}
 
   for (let key in obj) {

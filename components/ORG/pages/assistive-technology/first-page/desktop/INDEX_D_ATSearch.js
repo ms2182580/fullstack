@@ -7,7 +7,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
-import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
+import { DATA_ORG_D, SPECIFIC_DATA } from "../../../../../../utils/ORG/DATA_ORG_D"
 import { DATA_PAT_D } from "../../../../../../utils/ORG/pat/DATA_PAT_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
@@ -46,11 +46,11 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
 
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-  const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory) => {
+  const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory, specificDataForThisResource) => {
     let getDataLeft = DATA_AT_D_CardLeft[resourceArrPosition]
     let getDataRight = DATA_AT_D_CardRight[resourceArrPosition]
 
-    const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName)
+    const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName, specificDataForThisResource)
 
     setThirdpageDataORG(allDataToThirdPage)
 
@@ -70,6 +70,8 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
       toWhere,
     )
   }
+
+  // console.log("DATA_PAT_D:", DATA_PAT_D)
 
   return (
     <INDEX_D_ATSearchWrapper>
@@ -97,7 +99,7 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
                       />
                       <P>{obj.textReview}</P>
 
-                      <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title)}>
+                      <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title, obj[SPECIFIC_DATA.SPECIFIC_DATA])}>
                         <ButtonSmall>
                           <ORG_D_Search_ViewProfileSvg /> View Profile
                         </ButtonSmall>

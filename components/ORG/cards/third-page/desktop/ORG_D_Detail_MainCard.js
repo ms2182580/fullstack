@@ -1,3 +1,5 @@
+import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
+import { DATA_PAT_D_KEYS } from "@/utils/ORG/pat/DATA_PAT_D"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { Fragment } from "react"
@@ -12,6 +14,7 @@ import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsR
 import { Verified } from "../../../verified/Verified"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
+import { ORG_D_Detail_Brand } from "./ORG_D_Detail_Brand"
 import { ORG_D_Detail_CardEmail } from "./ORG_D_Detail_CardEmail"
 import { ORG_D_Detail_CardLocation } from "./ORG_D_Detail_CardLocation"
 import { ORG_D_Detail_CardPhone } from "./ORG_D_Detail_CardPhone"
@@ -57,7 +60,13 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           lastName={""}
         />
 
-        <div>
+        <aside>
+          {thirdpageDataORG.other[SPECIFIC_DATA.SPECIFIC_DATA] && (
+            <>
+              <ORG_D_Detail_Brand brand={thirdpageDataORG.other[SPECIFIC_DATA.SPECIFIC_DATA][DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]} />
+            </>
+          )}
+
           <ORG_D_Detail_CardPhone phoneNumber={thirdpageDataORG.card.leftPart.phone} />
           <ORG_D_Detail_CardEmail email={thirdpageDataORG.card.leftPart.email} />
           <ORG_D_Detail_CardWebsite
@@ -71,7 +80,7 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
             locationState={thirdpageDataORG.card.leftPart?.location.state}
             howFar={thirdpageDataORG.card.leftPart?.location.howFar}
           />
-        </div>
+        </aside>
 
         <ORG_D_Detail_MapComponent />
       </div>
@@ -138,7 +147,6 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
           <div>
             {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.LEFT]).map(
               (x, index) => {
-
                 return (
                   <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
                     <ORG_D_Detail_Card_SecondRow_Info

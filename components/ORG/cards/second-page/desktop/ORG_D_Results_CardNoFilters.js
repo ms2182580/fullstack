@@ -1,3 +1,4 @@
+import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
 import { DATA_PAT_D_KEYS } from "@/utils/ORG/pat/DATA_PAT_D"
 import Image from "next/image"
 import { useRouter } from "next/router"
@@ -29,13 +30,12 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
-  // console.log("secondpageDataORG:", secondpageDataORG)
   const router = useRouter()
 
-  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state) => {
+  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state, specificDataForThisResource) => {
     // console.log('thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName:', thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
 
-    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, specificDataForThisResource)
 
     setThirdpageDataORG(allDataToThirdPage)
 
@@ -158,6 +158,7 @@ export const ORG_D_Results_CardNoFilters = () => {
                       secondpageDataORG.cardData[renderThisCard].subtitle,
                       secondpageDataORG.cardData[renderThisCard].fullName,
                       secondpageDataORG.cardData[renderThisCard]?.state || "",
+                      secondpageDataORG[SPECIFIC_DATA.SPECIFIC_DATA],
                     )
                   }>
                   {Boolean(secondpageDataORG[DATA_PAT_D_KEYS.AT_SPECIFIC_DATA]) ? (

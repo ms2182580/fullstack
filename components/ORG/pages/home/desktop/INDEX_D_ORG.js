@@ -6,7 +6,7 @@ import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Sear
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "../../../../../utils/ORG/DATA_ORG_CheckPaths_Search_D.js"
-import { DATA_ORG_D } from "../../../../../utils/ORG/DATA_ORG_D.js"
+import { DATA_ORG_D } from "../../../../../utils/ORG/DATA_ORG_D"
 import { useScrollHorizontal } from "../../../../../utils/useScrollHorizontal.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
