@@ -1,16 +1,11 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_ContactUsWrapper = styled.div`
+export const ORG_D_Detail_ContactUsWrapper = styled.aside`
   border-radius: 8px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
   padding-bottom: 52px;
-
-
-.MaxWidth{
-  width:100%; 
-}
 
   & > *:not(:first-child) {
     margin-inline: 24px;
@@ -18,7 +13,6 @@ export const ORG_D_Detail_ContactUsWrapper = styled.div`
 
   & > *:not(:last-child) {
     margin-bottom: 24px;
-    
   }
 
   & > :nth-child(1) {
@@ -26,7 +20,7 @@ export const ORG_D_Detail_ContactUsWrapper = styled.div`
     padding-top: 24px;
     padding-bottom: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-    
+
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
@@ -64,42 +58,7 @@ export const ORG_D_Detail_ContactUsWrapper = styled.div`
     }
   }
 
-  & > :nth-child(5),
-  & > :nth-child(6) {
-    & > :nth-child(1) {
-      font-size: 20px;
-      font-weight: 600;
-      
-    }
-  }
-
   & > :nth-child(5) {
-    & > :nth-child(2) {
-      border-radius: 8px;
-      border: 1px solid ${NEUTRALS.BLACK};
-      padding-top: 19px;
-      padding-bottom: 33px;
-      padding-left: 17px;
-
-      margin-right: 22%;
-
-      display: flex;
-      flex-wrap: wrap;
-      row-gap: 16px;
-      column-gap: 18px;
-
-      & > * {
-        border-radius: 8px;
-        background-color: ${NEUTRALS.LIGHT_GREY};
-        padding: 5px 10px;
-        color: ${NEUTRALS.DARK_GREY};
-
-        cursor: not-allowed;
-      }
-    }
-  }
-
-  & > :nth-child(6) {
     & > :nth-child(2) {
       resize: none;
 
@@ -125,31 +84,36 @@ export const ORG_D_Detail_ContactUsWrapper = styled.div`
 
   & > :last-child {
     display: flex;
+    align-items: center;
     gap: 46px;
 
     & > :nth-child(1) {
       border: 2px solid ${NEUTRALS.LIGHT_GREY};
-      
+
       padding-top: 8px;
       padding-bottom: 8px;
       padding-inline: 48px;
       border-radius: 8px;
-      
+
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      gap: 8px;
-      
-      color: ${NEUTRALS.LIGHT_GREY};
-      
-      background-color: ${NEUTRALS.OFF_WHITE};
-      
-      cursor: not-allowed;
-      
-      
 
-      
+      gap: 8px;
+
+      color: ${NEUTRALS.LIGHT_GREY};
+
+      background-color: ${NEUTRALS.OFF_WHITE};
+
+      cursor: not-allowed;
+    }
+
+    & > :nth-child(2) {
+      cursor: pointer;
+
+      font-weight: 600;
+      color: ${PRIMARY.PRIMARY_CTA};
+      font-size: 18px;
     }
   }
 `

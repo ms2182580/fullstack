@@ -15,7 +15,7 @@ import { ORG_D_Results_Card_Hearth } from "../../../../../cards/second-page/desk
 import { ORG_D_Results_Cardphone } from "../../../../../cards/second-page/desktop/ORG_D_Results_Cardphone.js"
 import { Highlights_2_D } from "../../../../../highlights/Highlights_2_D.js"
 import { Highlights_D } from "../../../../../highlights/Highlights_D.js"
-import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../verified/Verified.js"
 import { SLP_D_Results_CardWrapper } from "./styles/SLP_D_Results_CardWrapper.js"
 
@@ -46,7 +46,7 @@ export const SLP_D_Results_CardNoFilters = () => {
   }
 
   const [cardData, setCardData] = useState(DATA_PSLP_D[0].slice(1))
-  console.log('cardData:', cardData)
+  console.log("cardData:", cardData)
   const [mainNameORG, setMainNameORG] = useState(DATA_PSLP_D[0][0])
 
   return (

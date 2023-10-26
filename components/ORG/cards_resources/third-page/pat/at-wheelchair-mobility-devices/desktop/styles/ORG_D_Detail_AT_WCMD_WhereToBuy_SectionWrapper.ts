@@ -4,8 +4,6 @@ import styled from "styled-components"
 export const ORG_D_Detail_AT_WCMD_WhereToBuy_SectionWrapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  /* grid-template-columns: repeat(2, 250px 1fr); */
-  /* display: flex; */
 
   padding-top: 65px;
   padding-bottom: 65px;
@@ -14,7 +12,6 @@ export const ORG_D_Detail_AT_WCMD_WhereToBuy_SectionWrapper = styled.div`
 
   & > :nth-child(1) {
     display: grid;
-    /* width: 250px; */
   }
 
   & > :nth-child(2) {

@@ -1,7 +1,7 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
-import { formatDataToThirdPage } from '@/utils/ORG/formatDataToThirdPage'
-import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from '@/utils/ORG/paa/cr/DATA_CR_D_Card'
+import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
+import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from "@/utils/ORG/paa/cr/DATA_CR_D_Card"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -9,7 +9,7 @@ import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
 import { DATA_PCR_D } from "../../../../../../utils/ORG/paa/DATA_PCR_D"
-import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
+import { ButtonSmall } from "../../../../../ui/buttons/general/index"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
@@ -30,7 +30,6 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
   const { pathname, push } = useRouter()
 
   const handleMoveToSecondPage = (e, title, possitionSubArr) => {
-
     let folder = DATA_ORG_D[positionInArray].acronym
     let subFolder = DATA_ORG_CheckPaths_Results_D[folder][possitionSubArr]
 
@@ -68,9 +67,6 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
       },
       toWhere,
     )
-
-
-
   }
 
   return (
@@ -111,8 +107,6 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
                           reviews={obj.reviews}
                         />
                         <P>{obj.textReview}</P>
-
-
 
                         <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title)}>
                           <ButtonSmall>

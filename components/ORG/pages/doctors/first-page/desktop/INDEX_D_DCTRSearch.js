@@ -1,18 +1,18 @@
-import { useORG_Ctx_D_ThirdpageData } from '@/context/ORG_Ctx_D_ThirdpageData_Provider.js'
-import { DATA_ORG_KeyNamesForCards_D } from '@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js'
-import { formatDataToThirdPage } from '@/utils/ORG/formatDataToThirdPage.js'
-import { DATA_PPSYT_D } from '@/utils/ORG/pdctr/DATA_PSYT_D.js'
-import { DATA_PSYT_D_CardLeft, DATA_PSYT_D_CardRight } from '@/utils/ORG/pdctr/psyt/DATA_PSYT_D_Card.js'
+import { ButtonSmall } from "@/components/ui/buttons/general/index"
+import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
+import { DATA_PPSYT_D } from "@/utils/ORG/pdctr/DATA_PSYT_D.js"
+import { DATA_PSYT_D_CardLeft, DATA_PSYT_D_CardRight } from "@/utils/ORG/pdctr/psyt/DATA_PSYT_D_Card.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons/index.js"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D.js"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D.js"
-import { ButtonSmall } from "../../../../../ui/buttons/general/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
-import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../verified/Verified.js"
 import { INDEX_D_DCTRSearchWrapper } from "./styles/INDEX_D_DCTRSearchWrapper.js"
 

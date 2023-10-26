@@ -16,7 +16,7 @@ import { ORG_D_Results_Card_Hearth } from "../../../../../cards/second-page/desk
 import { ORG_D_Results_Cardphone } from "../../../../../cards/second-page/desktop/ORG_D_Results_Cardphone.js"
 import { Highlights_2_D } from "../../../../../highlights/Highlights_2_D.js"
 import { Highlights_D } from "../../../../../highlights/Highlights_D.js"
-import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../../../verified/Verified.js"
 import { MH_D_Results_CardWrapper } from "./styles/MH_D_Results_CardWrapper.js"
 

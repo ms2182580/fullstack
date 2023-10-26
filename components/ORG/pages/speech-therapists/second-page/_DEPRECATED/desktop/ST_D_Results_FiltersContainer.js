@@ -1,11 +1,9 @@
 import { XDesktopSvg } from "../../../../../../assets/Icons/index.js"
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../utils/ORG_FiltersCategories.js"
-import { BtnSmall } from "../../../../../ui/buttons/general/styles/ButtonStyled.js"
+import { BtnSmall } from "../../../../../ui/buttons/general/styles/ButtonStyled"
 import { ST_D_Results_FilterCheckboxContainer } from "./ST_D_Results_FilterCheckboxContainer.js"
 import { ST_D_Results_FilterRangeInput } from "./ST_D_Results_FilterRangeInput.js"
 import { ST_D_Results_FiltersContainerWrapper } from "./styles/ST_D_Results_FiltersContainerWrapper.js"
-
-
 
 export const ST_D_Results_FiltersContainer = ({
   clearAll,

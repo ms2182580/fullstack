@@ -10,7 +10,7 @@ import { ORG_D_Results_CardLocation } from "../../../../../cards/second-page/des
 import { ORG_D_Results_CardWebsite } from "../../../../../cards/second-page/desktop/ORG_D_Results_CardWebsite.js"
 import { ORG_D_Results_Card_Hearth } from "../../../../../cards/second-page/desktop/ORG_D_Results_Card_Hearth.js"
 import { ORG_D_Results_Cardphone } from "../../../../../cards/second-page/desktop/ORG_D_Results_Cardphone.js"
-import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { AT_D_Results_CardWrapper } from "./styles/AT_D_Results_CardWrapper.js"
 
 export const AT_D_Results_CardNoFilters = () => {

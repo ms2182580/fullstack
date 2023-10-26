@@ -1,13 +1,12 @@
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useORG_Ctx_STDataThirdpage_D } from "../../../../../context/ORG_Ctx_STDataThirdpageDesktop_Provider.js"
-import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled.js"
+import { BtnSmall } from "../../../../ui/buttons/general/styles/ButtonStyled"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D.js"
+import { StarsRatingReview_D } from "../../../stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "../../../verified/Verified.js"
 import { ST_D_Search_LandingCardsWrapper } from "./styles/ST_D_Search_LandingCardsWrapper.js"
-
 
 export const ST_D_Search_LandingCards = ({ dataToUse, reviews, filters }) => {
   const router = useRouter()

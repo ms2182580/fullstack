@@ -5,7 +5,7 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
   position: absolute;
   z-index: 4;
   right: 0;
-  top: 100%;
+  top: calc(100% - 45px);
 
   background-color: ${NEUTRALS.OFF_WHITE};
   padding-top: 24px;

@@ -1,8 +1,14 @@
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { PatternStars } from "../PatternsStars.js"
-import { StarsRatingReview_DWrapper } from "./styles/StarsRatingReview_DWrapper.js"
+import { StarsRatingReview_DWrapper } from "./styles/StarsRatingReview_DWrapper"
 
-export const StarsRatingReview_D = ({ rating, reviews = "", isDetail = false }) => {
+export type Props = {
+  rating?: number
+  reviews?: number | ""
+  isDetail?: boolean
+}
+
+export const StarsRatingReview_D = ({ rating, reviews = "", isDetail = false }: Props) => {
   return (
     <StarsRatingReview_DWrapper isDetail={isDetail}>
       <PatternStars rating={rating} />
@@ -11,15 +17,9 @@ export const StarsRatingReview_D = ({ rating, reviews = "", isDetail = false }) 
 
       {reviews ? (
         <>
-          <P
-            hyperlink_normal
-            underline>
-            ({reviews} reviews)
-          </P>
+          <P>({reviews} reviews)</P>
         </>
       ) : null}
-
-
     </StarsRatingReview_DWrapper>
   )
 }
