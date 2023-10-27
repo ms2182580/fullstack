@@ -19,7 +19,7 @@ let defaultSectionToRender = [
   { component: ORG_D_Detail_FAQS, defaultId: "faqs" },
 ]
 
-export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = [] }) => {
+export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = null }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { modalShowedCtx } = useCtx_ShowModal()

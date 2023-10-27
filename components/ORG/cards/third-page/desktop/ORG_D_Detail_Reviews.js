@@ -12,7 +12,7 @@ import { ORG_D_Detail_Reviews_Header } from "./ORG_D_Detail_Reviews_Header"
 import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
 import { ORG_D_Detail_ReviewsWrapper } from "./styles/ORG_D_Detail_ReviewsWrapper"
 
-export const ORG_D_Detail_Reviews = ({ defaultId, arrayInnerNavBar }) => {
+export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { fullName, card } = thirdpageDataORG
@@ -50,7 +50,7 @@ export const ORG_D_Detail_Reviews = ({ defaultId, arrayInnerNavBar }) => {
   }
 
   return (
-    <ORG_D_Detail_ReviewsWrapper id={defaultId ? defaultId : arrayInnerNavBar[4][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}>
+    <ORG_D_Detail_ReviewsWrapper id={Boolean(arrayInnerNavBar) ? arrayInnerNavBar[4][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] : defaultId}>
       <ORG_D_Detail_Reviews_Header
         rating={card.leftPart.rating}
         reviews={card.leftPart.reviews}

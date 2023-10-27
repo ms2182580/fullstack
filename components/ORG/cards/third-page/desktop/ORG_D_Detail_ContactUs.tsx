@@ -23,7 +23,8 @@ const arrTags = [
 
 let maxCharacterTextarea = 2000
 
-export const ORG_D_Detail_ContactUs = ({ defaultId, arrayInnerNavBar }) => {
+export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavBar }) => {
+  console.log("arrayInnerNavBar:", arrayInnerNavBar)
   const [textareaValueState, setTextareaValueState] = useState("")
 
   let handleTextareaValueState = (e) => {
@@ -40,7 +41,7 @@ export const ORG_D_Detail_ContactUs = ({ defaultId, arrayInnerNavBar }) => {
   }
 
   return (
-    <ORG_D_Detail_ContactUsWrapper id={defaultId ? defaultId : arrayInnerNavBar[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}>
+    <ORG_D_Detail_ContactUsWrapper id={Boolean(arrayInnerNavBar) ? arrayInnerNavBar[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] : defaultId}>
       <header>
         <H3> Contact Us</H3>
       </header>
