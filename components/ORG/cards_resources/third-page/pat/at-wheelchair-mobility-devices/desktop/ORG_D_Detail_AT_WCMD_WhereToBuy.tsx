@@ -3,6 +3,7 @@ import ORG_AT_ThirdPage2 from "@/assets/images/ORG/assistive-technology/ORG_AT_T
 import ORG_AT_ThirdPage3 from "@/assets/images/ORG/assistive-technology/ORG_AT_ThirdPage3_A.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
 import { ORG_D_Detail_AT_WCMD_WhereToBuy_Section, Section_Props } from "./ORG_D_Detail_AT_WCMD_WhereToBuy_Section"
 import { ORG_D_Detail_AT_WCMD_WhereToBuyWrapper } from "./styles/ORG_D_Detail_AT_WCMD_WhereToBuyWrapper"
 
@@ -26,9 +27,9 @@ const section_3: Section_Props = {
   productSpecifications: ["1 in stock", "Free delivery", "Accepts Insurance"],
 }
 
-export const ORG_D_Detail_AT_WCMD_WhereToBuy = () => {
+export const ORG_D_Detail_AT_WCMD_WhereToBuy = ({ arrayInnerNavBar }) => {
   return (
-    <ORG_D_Detail_AT_WCMD_WhereToBuyWrapper>
+    <ORG_D_Detail_AT_WCMD_WhereToBuyWrapper id={arrayInnerNavBar[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}>
       <header>
         <H3>Where to buy</H3>
       </header>

@@ -1,4 +1,5 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
@@ -11,7 +12,7 @@ import { ORG_D_Detail_Reviews_Header } from "./ORG_D_Detail_Reviews_Header"
 import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
 import { ORG_D_Detail_ReviewsWrapper } from "./styles/ORG_D_Detail_ReviewsWrapper"
 
-export const ORG_D_Detail_Reviews = () => {
+export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { fullName, card } = thirdpageDataORG
@@ -49,7 +50,7 @@ export const ORG_D_Detail_Reviews = () => {
   }
 
   return (
-    <ORG_D_Detail_ReviewsWrapper id="Reviews">
+    <ORG_D_Detail_ReviewsWrapper id={Boolean(arrayInnerNavBar) ? arrayInnerNavBar[4][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] : defaultId}>
       <ORG_D_Detail_Reviews_Header
         rating={card.leftPart.rating}
         reviews={card.leftPart.reviews}
