@@ -11,6 +11,7 @@ import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
 import { ORG_D_Detail_Reviews } from "./ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "./ORG_D_Detail_Schedule"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
+import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
 let defaultSectionToRender = [
   { component: ORG_D_Detail_Schedule, defaultId: "schedule" },
@@ -19,7 +20,7 @@ let defaultSectionToRender = [
   { component: ORG_D_Detail_FAQS, defaultId: "faqs" },
 ]
 
-export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = null }) => {
+export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = null, layout_MainCardRight = Layout_MainCardRight_VALUES.DEFAULT }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { modalShowedCtx } = useCtx_ShowModal()
@@ -32,12 +33,11 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = 
             thirdpageDataORG={thirdpageDataORG}
             arrayInnerNavBar={arrayInnerNavBar}
             defaultSectionToRender={defaultSectionToRender}
-
           />
 
           <ORG_D_Detail_MainCard
-            thirdpageDataORG={thirdpageDataORG}
             arrayInnerNavBar={arrayInnerNavBar}
+            layout_MainCardRight={layout_MainCardRight}
           />
 
           {sectionToRender ? (
@@ -47,8 +47,7 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = 
 
                 return (
                   <Fragment key={`${x.name}_${index}`}>
-                    <Component arrayInnerNavBar={arrayInnerNavBar}
-                    />
+                    <Component arrayInnerNavBar={arrayInnerNavBar} />
                   </Fragment>
                 )
               })}
@@ -60,8 +59,7 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = 
 
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component defaultId={x.defaultId}
-                    />
+                    <x.component defaultId={x.defaultId} />
                   </Fragment>
                 )
               })}

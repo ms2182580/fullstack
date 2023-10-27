@@ -1,7 +1,7 @@
 import { DATA_MH_D_CardLeft, DATA_MH_D_CardRight } from "@/utils/ORG/pmhss/mh/DATA_MH_D_Card.js"
 
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"

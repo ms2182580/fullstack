@@ -1,6 +1,6 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
 import { DATA_A_D_CardLeft, DATA_A_D_CardRight } from "@/utils/ORG/pppas/a/DATA_A_D_Card.js"
 import Image from "next/image.js"

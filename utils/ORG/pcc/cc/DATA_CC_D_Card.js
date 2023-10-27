@@ -4,7 +4,7 @@ export const DATA_CC_D_CardRight = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Trial", "Consistent Routine"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Trial", "Consistent Routine", "Stretching", "Calisthenics", "Punching/Kicking"],
     },
 
     typeOfMartialArts: {
@@ -67,8 +67,13 @@ export const DATA_CC_D_CardRight = [
           },
           additionalCredentials: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional Credentials",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Masters of Business Administration", "Martial Arts Teacher-Training Certification", "Masters in Early Childhood Special Education", "Board Certified Behavior Analyst (BCBA)"],
-            [DATA_ORG_KeyNamesForCards_D.CARD]: true
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Masters of Business Administration",
+              "Martial Arts Teacher-Training Certification",
+              "Masters in Early Childhood Special Education",
+              "Board Certified Behavior Analyst (BCBA)",
+            ],
+            [DATA_ORG_KeyNamesForCards_D.CARD]: true,
           },
         },
       },
@@ -141,16 +146,19 @@ export const DATA_CC_D_CardRight = [
           },
           additionalCredentials: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional Credentials",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Masters of Business Administration", "Martial Arts Teacher-Training Certification", "Masters in Early Childhood Special Education", "Board Certified Behavior Analyst (BCBA)"],
-            [DATA_ORG_KeyNamesForCards_D.CARD]: true
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Masters of Business Administration",
+              "Martial Arts Teacher-Training Certification",
+              "Masters in Early Childhood Special Education",
+              "Board Certified Behavior Analyst (BCBA)",
+            ],
+            [DATA_ORG_KeyNamesForCards_D.CARD]: true,
           },
         },
       },
     },
-
   },
   {
-
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Class"],
@@ -217,13 +225,17 @@ export const DATA_CC_D_CardRight = [
           },
           additionalCredentials: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional Credentials",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Masters of Business Administration", "Martial Arts Teacher-Training Certification", "Masters in Early Childhood Special Education", "Board Certified Behavior Analyst (BCBA)"],
-            [DATA_ORG_KeyNamesForCards_D.CARD]: true
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Masters of Business Administration",
+              "Martial Arts Teacher-Training Certification",
+              "Masters in Early Childhood Special Education",
+              "Board Certified Behavior Analyst (BCBA)",
+            ],
+            [DATA_ORG_KeyNamesForCards_D.CARD]: true,
           },
         },
       },
     },
-
   },
 ]
 
