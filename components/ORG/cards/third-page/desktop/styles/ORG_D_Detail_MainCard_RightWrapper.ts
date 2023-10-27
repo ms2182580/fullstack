@@ -9,15 +9,10 @@ export const enum Layout_MainCardRight_VALUES {
   DEFAULT = "DEFAULT",
   LIKE_COMMUNITY_CLASSES = "LIKE_COMMUNITY_CLASSES",
   LIKE_MENTAL_HEALTH = "LIKE_MENTAL_HEALTH",
-  LIKE_ATTORNEY = "LIKE_ATTORNEY",
 }
 
 export type Props = {
-  [Layout_MainCardRight_KEY.KEY]?:
-    | Layout_MainCardRight_VALUES.DEFAULT
-    | Layout_MainCardRight_VALUES.LIKE_ATTORNEY
-    | Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES
-    | Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH
+  [Layout_MainCardRight_KEY.KEY]?: Layout_MainCardRight_VALUES.DEFAULT | Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES | Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH
 }
 
 export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
@@ -117,12 +112,47 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
     }
   }
 
-  &.${Layout_MainCardRight_VALUES.LIKE_ATTORNEY} {
-    /* border: 2px solid green; */
-  }
-
   &.${Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH} {
-    /* border: 2px solid goldenrod; */
+    & > :nth-child(2) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "diag diag"
+        "leftPart rightPart";
+      grid-auto-flow: dense;
+      margin-bottom: 24px;
+      column-gap: clamp(20px, 1vw, 91px);
+
+      & > :nth-child(1) {
+        grid-area: diag;
+
+        & > * {
+          width: 100%;
+        }
+      }
+
+      & > :nth-child(2) {
+        grid-area: leftPart;
+      }
+
+      & > :nth-child(3) {
+        grid-area: rightPart;
+      }
+
+      & > :nth-child(1),
+      & > :nth-child(2),
+      & > :nth-child(3) {
+        & > * {
+          & > :nth-child(1) {
+            font-weight: 700;
+          }
+
+          :not(:last-child) {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
   }
 
   & > :nth-child(1) {

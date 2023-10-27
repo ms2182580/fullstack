@@ -34,7 +34,7 @@ export const INDEX_D_AA_CR_Detail = () => {
     <>
       <INDEX_ORG_Detail_D
         sectionToRender={theArrayOfObject}
-        layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_ATTORNEY}
+        layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES}
       />
     </>
   )
