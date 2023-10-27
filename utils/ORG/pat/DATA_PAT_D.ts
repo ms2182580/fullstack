@@ -14,9 +14,9 @@ import ORG_AT6 from "../../../assets/images/ORG/assistive-technology/ORG_AT6.png
 import ORG_AT7 from "../../../assets/images/ORG/assistive-technology/ORG_AT7.png"
 import ORG_AT8 from "../../../assets/images/ORG/assistive-technology/ORG_AT8.png"
 import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png"
+import { InnerNavBar_InnerData } from "../third-page/SectionToRender"
 
 export const enum DATA_PAT_D_KEYS {
-  // AT_SPECIFIC_DATA = SPECIFIC_DATA.SPECIFIC_DATA,
   BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",
   BUTTON_TO_THIRDPAGE_NAME_VALUE = "purchase option",
   BRAND_THIRDPAGE_KEY = "BRAND_THIRDPAGE_KEY",
@@ -27,6 +27,15 @@ export const AT_SPECIFIC_DATA = {
   [DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
   [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: DATA_PAT_D_KEYS.BRAND_THIRDPAGE_VALUE,
 }
+
+export const arrayInnerNavBar: InnerNavBar_InnerData = [
+  { INNER_NAV_BAR_KEY: "about" },
+  { INNER_NAV_BAR_KEY: "shop" },
+  { INNER_NAV_BAR_KEY: "contact" },
+  { INNER_NAV_BAR_KEY: "compare" },
+  { INNER_NAV_BAR_KEY: "reviews" },
+  { INNER_NAV_BAR_KEY: "faqs" },
+]
 
 export const DATA_PAT_D = [
   [

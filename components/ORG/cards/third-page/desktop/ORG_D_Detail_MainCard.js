@@ -1,5 +1,6 @@
 import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
 import { DATA_PAT_D_KEYS } from "@/utils/ORG/pat/DATA_PAT_D"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { Fragment } from "react"
@@ -27,7 +28,7 @@ import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { ORG_D_Detail_MainCardWrapper } from "./styles/ORG_D_Detail_MainCardWrapper"
 
-export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
+export const ORG_D_Detail_MainCard = ({ thirdpageDataORG, defaultId = "about", arrayInnerNavBar }) => {
   const { push, query } = useRouter()
   let handlePushTo404 = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
@@ -36,7 +37,7 @@ export const ORG_D_Detail_MainCard = ({ thirdpageDataORG }) => {
   }
 
   return (
-    <ORG_D_Detail_MainCardWrapper id="About">
+    <ORG_D_Detail_MainCardWrapper id={defaultId ? defaultId : arrayInnerNavBar[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}>
       <div className="LEFT">
         <div>
           <Image

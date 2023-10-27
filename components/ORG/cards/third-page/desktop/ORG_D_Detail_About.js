@@ -32,9 +32,7 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef }) => {
   }
 
   return (
-    <ORG_D_Detail_AboutWrapper
-      id="About"
-      ref={aboutRef}>
+    <ORG_D_Detail_AboutWrapper ref={aboutRef}>
       <H4>About</H4>
       <div>
         <P>

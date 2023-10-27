@@ -1,3 +1,4 @@
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
 import { useRouter } from "next/router.js"
 import { useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/Icons/index.js"
@@ -22,7 +23,7 @@ const arrTags = [
 
 let maxCharacterTextarea = 2000
 
-export const ORG_D_Detail_ContactUs = () => {
+export const ORG_D_Detail_ContactUs = ({ defaultId, arrayInnerNavBar }) => {
   const [textareaValueState, setTextareaValueState] = useState("")
 
   let handleTextareaValueState = (e) => {
@@ -39,7 +40,7 @@ export const ORG_D_Detail_ContactUs = () => {
   }
 
   return (
-    <ORG_D_Detail_ContactUsWrapper id="Contact">
+    <ORG_D_Detail_ContactUsWrapper id={defaultId ? defaultId : arrayInnerNavBar[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}>
       <header>
         <H3> Contact Us</H3>
       </header>

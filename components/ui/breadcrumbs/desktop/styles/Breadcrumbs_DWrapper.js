@@ -32,19 +32,18 @@ export const Breadcrumbs_DWrapper = styled.div`
       transition: all linear 0.2s;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
       width: 100%;
       left: 0;
     }
-    
   }
-  
-  & > :last-child{
+
+  & > :last-child {
     font-weight: 600;
-    
-    &::after{
-      all:unset;
+
+    &::after {
+      all: unset;
     }
-    
   }
 `

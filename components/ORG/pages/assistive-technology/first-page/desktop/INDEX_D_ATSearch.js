@@ -71,8 +71,6 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
     )
   }
 
-  // console.log("DATA_PAT_D:", DATA_PAT_D)
-
   return (
     <INDEX_D_ATSearchWrapper>
       {DATA_PAT_D.map((x, iData) => {
