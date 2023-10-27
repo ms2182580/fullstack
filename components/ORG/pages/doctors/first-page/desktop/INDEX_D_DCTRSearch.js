@@ -1,6 +1,6 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
 import { DATA_PPSYT_D } from "@/utils/ORG/pdctr/DATA_PSYT_D.js"
 import { DATA_PSYT_D_CardLeft, DATA_PSYT_D_CardRight } from "@/utils/ORG/pdctr/psyt/DATA_PSYT_D_Card.js"

@@ -2,29 +2,12 @@ import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRend
 import { useRouter } from "next/router.js"
 import { useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/Icons/index.js"
-import { capitalizeWords } from "../../../../../utils/capitalizeWords.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_ContactUsWrapper } from "./styles/ORG_D_Detail_ContactUsWrapper.js"
-
-const arrTags = [
-  "coordination",
-  "strength",
-  "endurance",
-  "Weigh Management",
-  "flexibility",
-  "improved posture",
-  "socialization",
-  "independence",
-  "self steem",
-  "behavioral improvemet",
-  "verbal skills",
-  "other",
-].map((x) => capitalizeWords(x))
 
 let maxCharacterTextarea = 2000
 
 export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavBar }) => {
-  console.log("arrayInnerNavBar:", arrayInnerNavBar)
   const [textareaValueState, setTextareaValueState] = useState("")
 
   let handleTextareaValueState = (e) => {

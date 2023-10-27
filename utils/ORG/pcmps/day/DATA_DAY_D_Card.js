@@ -32,7 +32,7 @@ export const DATA_DAY_D_CardRight = [
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served:",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
           },
           languages: {
@@ -90,7 +90,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["2017"],
           },
           importantContacts: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Important Contacts:",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Important Contacts",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Susan McCamper"],
           },
         },
@@ -130,7 +130,7 @@ export const DATA_DAY_D_CardRight = [
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served:",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
           },
           languages: {
@@ -188,7 +188,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["2017"],
           },
           importantContacts: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Important Contacts:",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Important Contacts",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Susan McCamper"],
           },
         },
@@ -230,7 +230,7 @@ export const DATA_DAY_D_CardRight = [
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages served:",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["5-21 years old"],
           },
           languages: {
@@ -288,7 +288,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["2017"],
           },
           importantContacts: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Important Contacts:",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Important Contacts",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Susan McCamper"],
           },
         },

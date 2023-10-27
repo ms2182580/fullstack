@@ -1,4 +1,4 @@
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D.js"
+import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
 import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "@/utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import Image from "next/image.js"
