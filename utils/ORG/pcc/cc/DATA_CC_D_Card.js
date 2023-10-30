@@ -1,4 +1,8 @@
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import ORG_Detail_CC_Karate_Photo_1 from "@/assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_1.png"
+import ORG_Detail_CC_Karate_Photo_2 from "@/assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_2.png"
+import ORG_Detail_CC_Karate_Photo_3 from "@/assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_3.png"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import { generateRandomNumber } from "@/utils/generateRandomNumber"
 
 export const DATA_CC_D_CardRight = [
   {
@@ -77,6 +81,29 @@ export const DATA_CC_D_CardRight = [
           },
         },
       },
+
+      [DATA_ORG_KeyNamesForCards_D_KEYS.USERS_ALSO_VIEWES]: [
+        {
+          image: ORG_Detail_CC_Karate_Photo_1,
+          title: "Integrated Classes",
+          rating: generateRandomNumber(4, 5),
+          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
+        },
+        {
+          image: ORG_Detail_CC_Karate_Photo_2,
+          title: "Parent/Child & Sibling Class",
+          rating: generateRandomNumber(4, 5),
+          review:
+            "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.” ",
+        },
+        {
+          image: ORG_Detail_CC_Karate_Photo_3,
+          title: "Parent/Child & Sibling Class",
+          rating: generateRandomNumber(4, 5),
+          review:
+            "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.” ",
+        },
+      ],
     },
   },
   {
@@ -156,6 +183,29 @@ export const DATA_CC_D_CardRight = [
           },
         },
       },
+
+      [DATA_ORG_KeyNamesForCards_D_KEYS.USERS_ALSO_VIEWES]: [
+        {
+          image: ORG_Detail_CC_Karate_Photo_1,
+          title: "Integrated Classes",
+          rating: generateRandomNumber(4, 5),
+          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
+        },
+        {
+          image: ORG_Detail_CC_Karate_Photo_2,
+          title: "Parent/Child & Sibling Class",
+          rating: generateRandomNumber(4, 5),
+          review:
+            "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.” ",
+        },
+        {
+          image: ORG_Detail_CC_Karate_Photo_3,
+          title: "Parent/Child & Sibling Class",
+          rating: generateRandomNumber(4, 5),
+          review:
+            "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.” ",
+        },
+      ],
     },
   },
   {
@@ -235,6 +285,29 @@ export const DATA_CC_D_CardRight = [
           },
         },
       },
+
+      [DATA_ORG_KeyNamesForCards_D_KEYS.USERS_ALSO_VIEWES]: [
+        {
+          image: ORG_Detail_CC_Karate_Photo_1,
+          title: "Integrated Classes",
+          rating: generateRandomNumber(4, 5),
+          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
+        },
+        {
+          image: ORG_Detail_CC_Karate_Photo_2,
+          title: "Parent/Child & Sibling Class",
+          rating: generateRandomNumber(4, 5),
+          review:
+            "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.” ",
+        },
+        {
+          image: ORG_Detail_CC_Karate_Photo_3,
+          title: "Parent/Child & Sibling Class",
+          rating: generateRandomNumber(4, 5),
+          review:
+            "“I had a great time doing Karate with my brother. We learned new moves and met other people who love Karate. It was one of the best experiences I've had in a while.” ",
+        },
+      ],
     },
   },
 ]

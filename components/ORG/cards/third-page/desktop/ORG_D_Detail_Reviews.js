@@ -1,5 +1,5 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"

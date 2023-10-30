@@ -1,4 +1,4 @@
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { NavBar_D_WriteAReviewSvg, SearchSVG } from "../../../../../assets/Icons"
@@ -34,7 +34,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar, defaul
               let isFAQs = x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] === "faqs" ? "FAQs" : x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]
 
               return (
-                <li key={`${x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}_${index}`}>
+                <li key={`_${index}`}>
                   <H3>
                     <a href={`#${x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}`}>{isFAQs}</a>
                   </H3>

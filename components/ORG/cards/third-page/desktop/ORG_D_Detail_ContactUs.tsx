@@ -1,4 +1,4 @@
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/Icons/index.js"

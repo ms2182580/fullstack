@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { NEUTRALS, SEMANTICS } from "../../../../../assets/Colors"
 
 export type Props = {
-  isDetail: boolean
+  isDetail?: boolean
 }
 
 export const StarsRatingReview_DWrapper = styled.div<Props>`

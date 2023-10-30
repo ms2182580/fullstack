@@ -1,6 +1,6 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
