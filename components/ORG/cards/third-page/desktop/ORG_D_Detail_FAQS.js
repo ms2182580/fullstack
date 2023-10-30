@@ -1,6 +1,6 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
@@ -46,16 +46,20 @@ export const ORG_D_Detail_FAQS = ({ defaultId = "faqs", arrayInnerNavBar }) => {
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
-  const handleHideModal = () => {
-    unlockScroll()
-    setShowModal(false)
-    setModalShowedCtx(false)
+  const handleHideModal = (e) => {
+    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown") {
+      unlockScroll()
+      setShowModal(false)
+      setModalShowedCtx(false)
+    }
   }
 
   return (

@@ -24,4 +24,7 @@ export const enum DATA_ORG_KeyNamesForCards_D_KEYS {
   HIGHLIGHT = "highlight",
   HIGHLIGHT_PLUS = "highlight_plus",
   DISPLAY_BLOCK = "display_block",
+  GET_FILTER_THIRDPAGE_DATAONOBJECT = "getFilterThirdPageDataOnObject",
+  OTHER = "other",
+  USERS_ALSO_VIEWES = "USERS_ALSO_VIEWES",
 }

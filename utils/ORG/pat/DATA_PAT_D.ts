@@ -14,7 +14,7 @@ import ORG_AT6 from "../../../assets/images/ORG/assistive-technology/ORG_AT6.png
 import ORG_AT7 from "../../../assets/images/ORG/assistive-technology/ORG_AT7.png"
 import ORG_AT8 from "../../../assets/images/ORG/assistive-technology/ORG_AT8.png"
 import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png"
-import { InnerNavBar_InnerData } from "../third-page/SectionToRender"
+import { InnerNavBar_InnerData } from "../third-page/InnerNavBar"
 
 export const enum DATA_PAT_D_KEYS {
   BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",

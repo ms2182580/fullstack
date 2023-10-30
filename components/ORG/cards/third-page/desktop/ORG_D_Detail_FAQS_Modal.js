@@ -10,13 +10,15 @@ export const ORG_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, last
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (componentRef.current && !componentRef.current.contains(event.target)) {
-        handleHideModal()
+      if ((componentRef.current && !componentRef.current.contains(event.target) && event.type === "mousedown") || (event.key === "Escape" && event.type === "keydown")) {
+        handleHideModal(event)
       }
     }
     document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("keydown", handleClickOutside)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("keydown", handleClickOutside)
     }
   }, [componentRef])
 
@@ -40,7 +42,10 @@ export const ORG_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, last
     <ORG_D_Detail_FAQS_ModalWrapper
       ref={componentRef}
       showModal={showModal}>
-      <span onClick={() => handleHideModal()}>
+      <span
+        onClick={handleHideModal}
+        onKeyDown={handleHideModal}
+        tabIndex={0}>
         <XSvg />
       </span>
       <H4 hover>Question</H4>

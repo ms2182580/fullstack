@@ -1,5 +1,5 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/SectionToRender"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
@@ -37,16 +37,20 @@ export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
-  const handleHideModal = () => {
-    unlockScroll()
-    setShowModal(false)
-    setModalShowedCtx(false)
+  const handleHideModal = (e) => {
+    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown") {
+      unlockScroll()
+      setShowModal(false)
+      setModalShowedCtx(false)
+    }
   }
 
   return (
@@ -68,7 +72,10 @@ export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }
         ))}
       </div>
 
-      <span onClick={handleShowModal}>
+      <span
+        onClick={handleShowModal}
+        onKeyDown={handleShowModal}
+        tabIndex={0}>
         <P
           hyperlink_normal
           semibold>
@@ -83,8 +90,8 @@ export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }
           rating={card.leftPart.rating}
           reviews={card.leftPart.reviews}
           getReviews={getReviews}
-          name={name}
-          lastName={lastName}
+          name={fullName.first}
+          lastName={fullName.last}
         />
       )}
     </ORG_D_Detail_ReviewsWrapper>
