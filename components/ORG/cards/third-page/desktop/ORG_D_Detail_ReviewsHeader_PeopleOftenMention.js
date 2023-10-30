@@ -6,23 +6,23 @@ export const ORG_D_Detail_ReviewsHeader_PeopleOftenMention = ({ modal }) => {
   return (
     <ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper modal={modal}>
       <P semibold>People often mention</P>
-      <div>
-        <div>
-          <P>All</P>
-          <P>Scheduling</P>
-          <P>Office Environment</P>
-          <P>Wait Times</P>
-          <P>Provider Feedback</P>
-        </div>
-        <div>
+      <ul>
+        <li>
+          <P tabIndex={0}>All</P>
+          <P tabIndex={0}>Scheduling</P>
+          <P tabIndex={0}>Office Environment</P>
+          <P tabIndex={0}>Wait Times</P>
+          <P tabIndex={0}>Provider Feedback</P>
+        </li>
+        <li tabIndex={0}>
           <P
             semibold
             primary_cta>
             Most relevant
           </P>
           <ArrowDownSvg />
-        </div>
-      </div>
+        </li>
+      </ul>
     </ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper>
   )
 }

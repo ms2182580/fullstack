@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_Review_ModalWrapper = styled.div`
+export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   position: fixed;
   top: 50%;
@@ -9,7 +9,7 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: clamp(932px, 91%, 1310px);
   background-color: ${NEUTRALS.OFF_WHITE};
-  z-index:5;
+  z-index: 5;
   cursor: default;
   padding-top: 42px;
   padding-inline: 31px;
@@ -21,6 +21,11 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.div`
     top: 26px;
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+
     & > :nth-child(1) > path {
       fill: ${NEUTRALS.BLACK};
       border: 2px solid crimson;
@@ -28,25 +33,21 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.div`
   }
 
   & > :nth-child(2) {
-    & > :nth-child(2){
-      margin-bottom:36px;
+    & > :nth-child(2) {
+      margin-bottom: 36px;
     }
-    
-    
-    & > :nth-child(4){
+
+    & > :nth-child(4) {
       & > :nth-child(2) {
-        border:none;
-        margin-bottom:34px;
+        border: none;
+        margin-bottom: 34px;
       }
     }
   }
-  
-  & > :nth-child(3){
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:22px;
+
+  & > :nth-child(3) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
-  
-  
-  
 `
