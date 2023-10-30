@@ -46,16 +46,20 @@ export const ORG_D_Detail_FAQS = ({ defaultId = "faqs", arrayInnerNavBar }) => {
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
-  const handleHideModal = () => {
-    unlockScroll()
-    setShowModal(false)
-    setModalShowedCtx(false)
+  const handleHideModal = (e) => {
+    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown") {
+      unlockScroll()
+      setShowModal(false)
+      setModalShowedCtx(false)
+    }
   }
 
   return (
