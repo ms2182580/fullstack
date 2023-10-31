@@ -22,6 +22,7 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.aside`
   }
 
   & > :nth-child(2) {
+    list-style: none;
     margin-left: ${leftMarginTags};
     margin-right: ${rightMarginTags};
     margin-bottom: 66px;
@@ -100,6 +101,8 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.aside`
 
         & > :nth-child(2) {
           margin-bottom: 9px;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
         }
 
         & > :nth-child(3) {

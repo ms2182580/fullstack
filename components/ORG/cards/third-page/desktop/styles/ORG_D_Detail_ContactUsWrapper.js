@@ -59,6 +59,31 @@ export const ORG_D_Detail_ContactUsWrapper = styled.aside`
   }
 
   & > :nth-child(5) {
+    display: grid;
+    gap: 4px;
+
+    & > :nth-child(2) {
+      list-style: none;
+      padding: 19px 22px;
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 18px;
+
+      border: 1px solid ${NEUTRALS.BLACK};
+      border-radius: 8px;
+
+      & > * {
+        padding: 5px 10px;
+        background-color: ${NEUTRALS.LIGHT_GREY};
+        border-radius: inherit;
+      }
+    }
+  }
+
+  & > :nth-child(6) {
     & > :nth-child(2) {
       resize: none;
 

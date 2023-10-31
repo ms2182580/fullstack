@@ -14,13 +14,17 @@ export const PCC_General_D_UsersAlsoViewed = () => {
   return (
     <PCC_General_D_UsersAlsoViewedWrapper id="Information">
       <H3>Users also viewed</H3>
-      <div>
-        {tags.map((xElement, index) => (
-          <Fragment key={`${xElement}_${index}`}>
-            <div>{xElement}</div>
-          </Fragment>
-        ))}
-      </div>
+      <ul>
+        {tags.map((xElement, index) => {
+          const isLastIndex = tags.length - 1 !== index
+
+          return (
+            <Fragment key={`${xElement}_${index}`}>
+              <li tabIndex={isLastIndex && 0}>{xElement}</li>
+            </Fragment>
+          )
+        })}
+      </ul>
 
       <div>
         {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.OTHER][DATA_ORG_KeyNamesForCards_D_KEYS.GET_FILTER_THIRDPAGE_DATAONOBJECT][
