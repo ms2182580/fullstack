@@ -2,13 +2,15 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper = styled.div`
-  & > :nth-child(1) {
-    margin-bottom: 15px;
-  }
+  display: grid;
+  gap: 16px;
 
-  & > :nth-child(2) {
+  position: relative;
+
+  & > :nth-child(3) {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 24px;
 
     & > :nth-child(1) {
       display: flex;
@@ -38,8 +40,15 @@ export const ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper = styled.div`
       gap: 12px;
       cursor: pointer;
     }
-  }
 
-  /* & > :last-child {
-  } */
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+
+      width: calc(100% - calc(24px * 2));
+      height: 1px;
+      background-color: #686868;
+    }
+  }
 `

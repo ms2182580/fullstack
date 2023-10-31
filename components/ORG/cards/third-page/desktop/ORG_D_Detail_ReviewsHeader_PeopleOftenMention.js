@@ -1,10 +1,16 @@
 import { ArrowDownSvg } from "../../../../../assets/Icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { ORG_D_Detail_Review_StarsRating } from "./ORG_D_Detail_Review_StarsRating.js"
 import { ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper } from "./styles/ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper.js"
 
-export const ORG_D_Detail_ReviewsHeader_PeopleOftenMention = ({ modal }) => {
+export const ORG_D_Detail_ReviewsHeader_PeopleOftenMention = ({ modal = false, rating, reviews }) => {
   return (
     <ORG_D_Detail_ReviewsHeader_PeopleOftenMentionWrapper modal={modal}>
+      <ORG_D_Detail_Review_StarsRating
+        rating={rating}
+        reviews={reviews}
+      />
+
       <P semibold>People often mention</P>
       <ul>
         <li>
