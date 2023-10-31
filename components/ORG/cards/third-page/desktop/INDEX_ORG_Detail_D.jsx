@@ -20,7 +20,7 @@ let defaultSectionToRender = [
   { component: ORG_D_Detail_FAQS, defaultId: "faqs" },
 ]
 
-export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = null, layout_MainCardRight = Layout_MainCardRight_VALUES.DEFAULT }) => {
+export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = null, layout_MainCardRight = Layout_MainCardRight_VALUES.DEFAULT, selectTags = null }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { modalShowedCtx } = useCtx_ShowModal()
@@ -47,7 +47,10 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = 
 
                 return (
                   <Fragment key={`${x.name}_${index}`}>
-                    <Component arrayInnerNavBar={arrayInnerNavBar} />
+                    <Component
+                      arrayInnerNavBar={arrayInnerNavBar}
+                      selectTags={selectTags}
+                    />
                   </Fragment>
                 )
               })}
@@ -59,7 +62,10 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, arrayInnerNavBar = 
 
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component defaultId={x.defaultId} />
+                    <x.component
+                      defaultId={x.defaultId}
+                      selectTags={selectTags}
+                    />
                   </Fragment>
                 )
               })}
