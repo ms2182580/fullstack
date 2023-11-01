@@ -48,5 +48,11 @@ export const ORG_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
 
   & > :nth-child(2) {
     grid-template-columns: 1fr;
+
+    & > * {
+      & > :nth-child(2) {
+        order: 3;
+      }
+    }
   }
 `

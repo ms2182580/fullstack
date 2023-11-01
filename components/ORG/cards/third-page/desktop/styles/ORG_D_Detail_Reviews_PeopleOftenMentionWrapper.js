@@ -58,10 +58,6 @@ export const ORG_D_Detail_Reviews_PeopleOftenMentionWrapper = styled.div`
   }
 
   &.${Classes_ORG_D_Detail_IsModal.IS_MODAL} {
-    & > :nth-child(1) {
-      /* margin-bottom: 20px; */
-    }
-
     & > :nth-child(3) {
       margin-bottom: 0px;
       & > :nth-child(1) {

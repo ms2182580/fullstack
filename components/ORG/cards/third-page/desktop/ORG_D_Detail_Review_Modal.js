@@ -47,19 +47,12 @@ export const ORG_D_Detail_Review_Modal = ({ showModal, handleHideModal, rating, 
         isModal={true}
       />
 
-      {/* <ORG_D_Detail_Review_StarsRating
-        rating={rating}
-        reviews={reviews}
-        isDetailModalDesktop={true}
-      /> */}
-
       <div>
         <ORG_D_Detail_Review_Modal_DetailRating rating={rating} />
 
         <ORG_D_Detail_Review_Modal_DetailReviews
           name={name}
           lastName={lastName}
-          getReviews={getReviews}
         />
       </div>
     </ORG_D_Detail_Review_ModalWrapper>

@@ -1,8 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-/* visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)}; */
-
 export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
   position: fixed;
   z-index: 5;
@@ -11,7 +9,6 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
   transform: translate(-50%, -50%);
 
   width: clamp(932px, 91%, 1310px);
-  /* height: 75%; */
 
   background-color: ${NEUTRALS.OFF_WHITE};
 
@@ -42,6 +39,8 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
   }
 
   & > :nth-child(2) {
+    color: ${PRIMARY.PRIMARY_CTA};
+
     & > :nth-child(2) {
       margin-bottom: 36px;
     }
@@ -57,6 +56,10 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
   & > :nth-child(3) {
     display: flex;
     justify-content: space-between;
+
+    & > :nth-child(1) {
+      font-weight: 400;
+    }
 
     & > :nth-child(2) {
       display: flex;

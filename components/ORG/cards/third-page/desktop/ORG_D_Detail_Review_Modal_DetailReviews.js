@@ -17,7 +17,10 @@ export const ORG_D_Detail_Review_Modal_DetailReviews = ({ name, lastName }) => {
         />
       </div>
 
-      <ORG_D_Detail_Reviews_IndividualComponent getReviews={getReviews} />
+      <ORG_D_Detail_Reviews_IndividualComponent
+        getReviews={getReviews}
+        isModal={true}
+      />
     </ORG_D_Detail_Review_Modal_DetailReviewsWrapper>
   )
 }
