@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
+export const ORG_D_Detail_Review_Modal_ViewAllWrapper = styled.aside`
   position: fixed;
   z-index: 5;
   top: 50%;
@@ -34,7 +34,6 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
 
     & > :nth-child(1) > path {
       fill: ${NEUTRALS.BLACK};
-      border: 2px solid crimson;
     }
   }
 

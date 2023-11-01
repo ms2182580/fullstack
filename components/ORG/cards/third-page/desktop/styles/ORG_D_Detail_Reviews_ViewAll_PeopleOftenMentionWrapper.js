@@ -2,7 +2,7 @@ import { Classes_ORG_D_Detail_IsModal } from "@/utils/ORG/third-page/IsModal"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_Reviews_PeopleOftenMentionWrapper = styled.div`
+export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div`
   display: grid;
   gap: 16px;
 

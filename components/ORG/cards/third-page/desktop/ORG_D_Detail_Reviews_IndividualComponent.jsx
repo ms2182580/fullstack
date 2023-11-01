@@ -2,13 +2,13 @@ import { PatternStars } from "@/components/ORG/stars-rating-review/PatternsStars
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_ReviewsUsersName } from "@/utils/ORG_ReviewsUsersName.js"
 import { ORG_ST_Review_Months } from "@/utils/ORG_ST_Review_D.js"
-import { useState } from "react"
+import { useMemo } from "react"
 import { ORG_D_Detail_Reviews_IndividualComponentWrapper } from "./styles/ORG_D_Detail_Reviews_IndividualComponentWrapper.js"
 
 export const ORG_D_Detail_Reviews_IndividualComponent = ({ getReviews, isModal = false }) => {
-  const [howMuchToGetNames, setHowMuchToGetNames] = useState(getReviews.length)
+  const allUserNames = useMemo(() => ORG_ReviewsUsersName(getReviews.length), [])
 
-  const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName(howMuchToGetNames))
+  const theDate = useMemo(() => ORG_ST_Review_Months(), [])
 
   return (
     <ORG_D_Detail_Reviews_IndividualComponentWrapper isModal={isModal}>
@@ -21,7 +21,7 @@ export const ORG_D_Detail_Reviews_IndividualComponent = ({ getReviews, isModal =
 
             <div>
               <P bold>-{allUserNames[index]}</P>
-              <P>{ORG_ST_Review_Months()} 2022</P>
+              <P>{theDate} 2022</P>
             </div>
           </div>
         )

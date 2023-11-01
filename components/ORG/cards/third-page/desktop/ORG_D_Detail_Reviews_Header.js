@@ -1,7 +1,7 @@
 import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_Review_StarsRating } from "./ORG_D_Detail_Review_StarsRating.js"
-import { ORG_D_Detail_ReviewsHeader_PeopleOftenMention } from "./ORG_D_Detail_Reviews_PeopleOftenMention.js"
+import { ORG_D_Detail_ReviewsHeader_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention.js"
 import { ORG_D_Detail_Reviews_HeaderWrapper } from "./styles/ORG_D_Detail_Reviews_HeaderWrapper.js"
 
 export const ORG_D_Detail_Reviews_Header = ({ rating, reviews, isDetailModalDesktop = false, modal = false, handlePushTo404 }) => {
