@@ -8,8 +8,8 @@ import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
 import { useScrollLock } from "../../../../../utils/useScrollLock"
 import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_Review_Modal } from "./ORG_D_Detail_Review_Modal"
-import { ORG_D_Detail_ReviewsHeader_PeopleOftenMention } from "./ORG_D_Detail_ReviewsHeader_PeopleOftenMention"
 import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
+import { ORG_D_Detail_Reviews_PeopleOftenMention } from "./ORG_D_Detail_Reviews_PeopleOftenMention"
 import { ORG_D_Detail_ReviewsWrapper } from "./styles/ORG_D_Detail_ReviewsWrapper"
 
 export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }) => {
@@ -67,7 +67,7 @@ export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }
         <Caption tabIndex={0}>Learn more here.</Caption>
       </Caption>
 
-      <ORG_D_Detail_ReviewsHeader_PeopleOftenMention
+      <ORG_D_Detail_Reviews_PeopleOftenMention
         rating={card.leftPart.rating}
         reviews={card.leftPart.reviews}
       />
@@ -75,8 +75,8 @@ export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }
       <ORG_D_Detail_Reviews_IndividualComponent getReviews={getReviews} />
 
       <P
-        // onClick={handleShowModal}
-        // onKeyDown={handleShowModal}
+        onClick={handleShowModal}
+        onKeyDown={handleShowModal}
         tabIndex={0}>
         View All
       </P>

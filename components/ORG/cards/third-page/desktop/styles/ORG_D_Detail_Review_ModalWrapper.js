@@ -1,19 +1,28 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+
+/* visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)}; */
 
 export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
-  visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   position: fixed;
+  z-index: 5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   width: clamp(932px, 91%, 1310px);
+  /* height: 75%; */
+
   background-color: ${NEUTRALS.OFF_WHITE};
-  z-index: 5;
+
   cursor: default;
+
   padding-top: 42px;
   padding-inline: 31px;
   border-radius: 8px;
+
+  display: grid;
+  gap: 36px;
 
   & > :nth-child(1) {
     position: absolute;
@@ -46,6 +55,33 @@ export const ORG_D_Detail_Review_ModalWrapper = styled.aside`
   }
 
   & > :nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+
+    & > :nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid ${PRIMARY.PRIMARY_CTA};
+      border-radius: 6px;
+
+      padding: 9px;
+
+      cursor: pointer;
+
+      &:hover,
+      &:focus-visible {
+        background-color: ${PRIMARY.PRIMARY_CTA};
+
+        & > * {
+          fill: ${NEUTRALS.OFF_WHITE};
+        }
+      }
+    }
+  }
+
+  & > :nth-child(5) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
