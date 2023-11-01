@@ -5,8 +5,6 @@ import { ORG_D_Detail_Review_Modal_WriteAReview_Form } from "./ORG_D_Detail_Revi
 import { ORG_D_Detail_Review_Modal_WriteAReviewWrapper } from "./styles/ORG_D_Detail_Review_Modal_WriteAReviewWrapper"
 
 export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleHideModal_WriteAReview }) => {
-  // console.log("name, lastName:", name, lastName)
-
   const componentRef = useRef(null)
   useEffect(() => {
     function handleClickOutside(event) {
@@ -33,7 +31,10 @@ export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleH
 
       <H2>Write a review </H2>
       <H4>
-        Tell us about your experience with <strong>Dr. Jay Enguertem.</strong>
+        Tell us about your experience with{" "}
+        <strong>
+          {name} {lastName}
+        </strong>
       </H4>
 
       <div>

@@ -1,4 +1,6 @@
 import { Checkbox } from "@/components/ORG/inputs/desktop/Checkbox"
+import { useCheckBreadcrumbs } from "@/utils/ORG/useCheckBreadcrumbs"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import {
   ORG_D_Detail_Review_Modal_WriteAReview_FormWrapper,
@@ -22,6 +24,9 @@ let toCheckCheckboxes = new Array(listOfCheckbox.length).fill(0).map(() => {
 // console.log("toCheckCheckboxes:", toCheckCheckboxes)
 
 export const ORG_D_Detail_Review_Modal_WriteAReview_Form = () => {
+  const { query } = useRouter()
+  const { titleFormatted } = useCheckBreadcrumbs(query.title)
+
   const handleSubmit = (event) => {
     event.preventDefault()
     // Handle form submission manually here
@@ -80,7 +85,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Form = () => {
 
       <fieldset>
         <label>
-          Anything else to add about <strong>Karate Class for Kids?</strong>
+          Anything else to add about <strong>{titleFormatted}?</strong>
           <textarea placeholder="Ex: I used this resource for my daughter, they were fantastic... etc. " />
         </label>
       </fieldset>
