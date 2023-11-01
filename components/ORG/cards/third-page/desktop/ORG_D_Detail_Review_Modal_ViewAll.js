@@ -3,10 +3,10 @@ import { useEffect, useRef } from "react"
 import { NavBar_D_WriteAReviewSvg, XSvg } from "../../../../../assets/Icons/index.js"
 import { ORG_D_Detail_Review_Modal_DetailRating } from "./ORG_D_Detail_Review_Modal_DetailRating.js"
 import { ORG_D_Detail_Review_Modal_DetailReviews } from "./ORG_D_Detail_Review_Modal_DetailReviews.js"
-import { ORG_D_Detail_Reviews_PeopleOftenMention } from "./ORG_D_Detail_Reviews_PeopleOftenMention.js"
-import { ORG_D_Detail_Review_ModalWrapper } from "./styles/ORG_D_Detail_Review_ModalWrapper.js"
+import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention.js"
+import { ORG_D_Detail_Review_Modal_ViewAllWrapper } from "./styles/ORG_D_Detail_Review_Modal_ViewAllWrapper.js"
 
-export const ORG_D_Detail_Review_Modal = ({ showModal, handleHideModal, rating, reviews, getReviews, name, lastName }) => {
+export const ORG_D_Detail_Review_Modal_ViewAll = ({ showModal, handleHideModal, handleShowModal_WriteAReview, rating, reviews, getReviews, name, lastName }) => {
   const componentRef = useRef(null)
   useEffect(() => {
     function handleClickOutside(event) {
@@ -23,7 +23,7 @@ export const ORG_D_Detail_Review_Modal = ({ showModal, handleHideModal, rating, 
   }, [componentRef])
 
   return (
-    <ORG_D_Detail_Review_ModalWrapper
+    <ORG_D_Detail_Review_Modal_ViewAllWrapper
       ref={componentRef}
       showModal={showModal}>
       <span
@@ -36,12 +36,15 @@ export const ORG_D_Detail_Review_Modal = ({ showModal, handleHideModal, rating, 
       <H2>Reviews</H2>
       <span>
         <H4>All reviews are submitted by verified patients or their responsible party.</H4>
-        <span tabIndex={0}>
+        <span
+          tabIndex={0}
+          onKeyDown={handleShowModal_WriteAReview}
+          onClick={handleShowModal_WriteAReview}>
           <NavBar_D_WriteAReviewSvg />
         </span>
       </span>
 
-      <ORG_D_Detail_Reviews_PeopleOftenMention
+      <ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention
         rating={rating}
         reviews={reviews}
         isModal={true}
@@ -55,6 +58,6 @@ export const ORG_D_Detail_Review_Modal = ({ showModal, handleHideModal, rating, 
           lastName={lastName}
         />
       </div>
-    </ORG_D_Detail_Review_ModalWrapper>
+    </ORG_D_Detail_Review_Modal_ViewAllWrapper>
   )
 }
