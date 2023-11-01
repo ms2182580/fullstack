@@ -21,8 +21,6 @@ let toCheckCheckboxes = new Array(listOfCheckbox.length).fill(0).map(() => {
   }
 })
 
-// console.log("toCheckCheckboxes:", toCheckCheckboxes)
-
 export const ORG_D_Detail_Review_Modal_WriteAReview_Form = () => {
   const { query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)

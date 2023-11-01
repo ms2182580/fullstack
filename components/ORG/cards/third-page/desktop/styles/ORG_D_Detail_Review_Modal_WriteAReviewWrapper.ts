@@ -1,4 +1,4 @@
-import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const ORG_D_Detail_Review_Modal_WriteAReviewWrapper = styled.div`
@@ -34,6 +34,18 @@ export const ORG_D_Detail_Review_Modal_WriteAReviewWrapper = styled.div`
 
     & > :nth-child(1) > path {
       fill: ${NEUTRALS.BLACK};
+    }
+  }
+
+  & > :nth-child(2) {
+    color: ${PRIMARY.PRIMARY_HOVER};
+  }
+
+  & > :nth-child(3) {
+    font-weight: 400;
+
+    strong {
+      font-weight: 700;
     }
   }
 

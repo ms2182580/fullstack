@@ -34,6 +34,10 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_FormWrapper = styled.form`
       padding: 10px 16px;
     }
 
+    strong {
+      font-weight: 700;
+    }
+
     textarea {
       resize: vertical;
       min-height: 72px;

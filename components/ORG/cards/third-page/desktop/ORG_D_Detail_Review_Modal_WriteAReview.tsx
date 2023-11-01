@@ -2,6 +2,7 @@ import { XSvg } from "@/assets/Icons"
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useEffect, useRef } from "react"
 import { ORG_D_Detail_Review_Modal_WriteAReview_Form } from "./ORG_D_Detail_Review_Modal_WriteAReview_Form"
+import { ORG_D_Detail_Review_Modal_WriteAReview_Stars } from "./ORG_D_Detail_Review_Modal_WriteAReview_Stars"
 import { ORG_D_Detail_Review_Modal_WriteAReviewWrapper } from "./styles/ORG_D_Detail_Review_Modal_WriteAReviewWrapper"
 
 export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleHideModal_WriteAReview }) => {
@@ -38,7 +39,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleH
       </H4>
 
       <div>
-        <ul className="LEFT">aaa</ul>
+        <ORG_D_Detail_Review_Modal_WriteAReview_Stars />
 
         <ORG_D_Detail_Review_Modal_WriteAReview_Form />
       </div>
