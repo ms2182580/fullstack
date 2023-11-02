@@ -7,8 +7,6 @@ export const CheckboxWrapper = styled.span`
     align-items: center;
     gap: 8px;
 
-    /* border: 2px solid crimson; */
-
     input[type="checkbox"] {
       /* removing default appearance */
       -webkit-appearance: none;
@@ -40,21 +38,6 @@ export const CheckboxWrapper = styled.span`
         }
       }
     }
-
-    /* input.CHECKED {
-      border-radius: 4px;
-      background-color: #007a7e;
-      position: relative;
-
-      &::before {
-        content: "A";
-        font-size: 1.5em;
-        color: #fff;
-        position: absolute;
-        right: 1px;
-        top: -5px;
-      }
-    } */
 
     span {
       white-space: nowrap;
