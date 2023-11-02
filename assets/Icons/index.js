@@ -2017,3 +2017,107 @@ export const Navbar_AccessibilitySvg = (props) => (
     </defs>
   </svg>
 )
+
+export const ORG_D_Detail_ReviewSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={32}
+    height={32}
+    fill="none"
+    {...props}>
+    <g clipPath="url(#a)">
+      <g filter="url(#b)">
+        <path
+          fill="#4B348B"
+          d="M16 21a11.008 11.008 0 0 1-9.175-4.941L1.25 26h7.188l3.624 6 5.159-11.068c-.406.045-.813.068-1.221.068Zm9.188-4.954c-1.32 2-3.255 3.517-5.512 4.322l-2.57 5.6L19.937 32l3.625-6h7.188l-5.563-9.954Z"
+        />
+      </g>
+      <path
+        fill="#4B348B"
+        d="M16 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+      />
+      <g filter="url(#c)">
+        <path
+          fill="#4B348B"
+          d="M16 1c-4.963 0-9 4.037-9 9s4.037 9 9 9c4.962 0 9-4.037 9-9s-4.038-9-9-9Zm0 14a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"
+        />
+      </g>
+    </g>
+    <defs>
+      <filter
+        id="b"
+        width={37.5}
+        height={23.954}
+        x={-2.75}
+        y={16.046}
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse">
+        <feFlood
+          floodOpacity={0}
+          result="BackgroundImageFix"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={2} />
+        <feComposite
+          in2="hardAlpha"
+          operator="out"
+        />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_3435_30228"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_3435_30228"
+          result="shape"
+        />
+      </filter>
+      <filter
+        id="c"
+        width={26}
+        height={26}
+        x={3}
+        y={1}
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse">
+        <feFlood
+          floodOpacity={0}
+          result="BackgroundImageFix"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={2} />
+        <feComposite
+          in2="hardAlpha"
+          operator="out"
+        />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+        <feBlend
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_3435_30228"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_3435_30228"
+          result="shape"
+        />
+      </filter>
+      <clipPath id="a">
+        <path
+          fill="#fff"
+          d="M0 0h32v32H0z"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+)
