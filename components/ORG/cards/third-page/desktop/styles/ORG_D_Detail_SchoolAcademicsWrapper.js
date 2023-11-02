@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors";
 import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg";
+import Image from "next/image.js"
 
-export const ORG_D_Detail_AdmissionWrapper = styled.div`
+export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -11,13 +12,8 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
     padding: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   }
-  //HEADER
-  & > :nth-child(1) {
-  }
-
-  .BorderSection{
-    border-bottom: 1px solid hsl(0, 0%, 88.6%);
-  }
+ 
+ 
   section {
     display: flex;
     flex-direction: column;
@@ -26,23 +22,28 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
    // border-bottom: 1px solid hsl(0, 0%, 88.6%);
     margin-left: 24px;
     margin-right: 24px;
-    padding-left:32px;
+    //padding-left:24px;
     
 
     & > :nth-child(1) {
       // height:50px;
       margin-bottom: 4px;
     }
-
-    & > :nth-child(2) {
-      padding-left: 16px;
-    }
+    
+    
   
-  }  
-
-  .ulNoPoint {
-    list-style-type: none;
   }
+
+  .sectionRow{
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+  }
+  
+  .BorderSection{
+    border-bottom: 1px solid hsl(0, 0%, 88.6%);
+  }
+
   li {
     height: 32px;
     margin-top: 4px;
@@ -50,6 +51,10 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
     & > :nth-child(1) {
       font-weight: 600;
     }
+  }
+  
+  .ulNoPoint {
+    list-style-type: none;
   }
 
   Table{
@@ -59,9 +64,10 @@ width:50%;
 padding-top:19px;
 padding-left:16px;
 
+
 & > :last-child{
-  text-align: right;
-  padding:13px;
+  //text-align: right;
+ // padding:13px;
 }
 
   }
@@ -89,5 +95,22 @@ padding-left:16px;
   .Button{
     padding-top:24px;
   }
+
+  .TestScoresRow{
+    gap:200px;
+    display:flex;
+    flex-direction:row;
+    & > :nth-child(1) {
+      
+      width:200px;
+    }
+
+  }
+
+  .ShadowTable{
+    box-shadow: 0px 3.6px 3.6px 0px rgba(0, 0, 0, 0.25);
+  }
+
+
 
 `;
