@@ -21,8 +21,16 @@ export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleH
     }
   }, [componentRef])
 
+  useEffect(() => {
+    if (componentRef.current) {
+      componentRef.current.focus()
+    }
+  }, [])
+
   return (
-    <ORG_D_Detail_Review_Modal_WriteAReviewWrapper ref={componentRef}>
+    <ORG_D_Detail_Review_Modal_WriteAReviewWrapper
+      ref={componentRef}
+      tabIndex={0}>
       <span
         onClick={handleHideModal_WriteAReview}
         onKeyDown={handleHideModal_WriteAReview}

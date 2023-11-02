@@ -14,6 +14,10 @@ export const enum CheckAllCheckbox_KEYS {
   STATE_OF_INPUT = "STATE_OF_INPUT",
 }
 
+export const enum FieldsetClass {
+  FIELDSET_FIRST_INPUT = "FIELDSET_FIRST_INPUT",
+}
+
 let toCheckCheckboxes = new Array(listOfCheckbox.length).fill(0).map(() => {
   return {
     [CheckAllCheckbox_KEYS.INPUT_SELECTED]: null,
@@ -60,6 +64,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Form = () => {
             value={inputText}
             onChange={handleInputText}
             required
+            className={FieldsetClass.FIELDSET_FIRST_INPUT}
           />
         </label>
       </fieldset>
