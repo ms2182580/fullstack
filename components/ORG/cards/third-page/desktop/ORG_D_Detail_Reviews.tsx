@@ -29,7 +29,6 @@ export const ORG_D_Detail_Reviews = ({ defaultId = "reviews", arrayInnerNavBar }
       lockScroll()
       setShowModal_ViewAll(true)
       setModalShowedCtx(true)
-
       setShowModal_WriteAReview(false)
     }
   }
