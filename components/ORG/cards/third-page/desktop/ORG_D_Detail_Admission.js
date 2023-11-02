@@ -53,7 +53,7 @@ export const ORG_D_Detail_Admission = () => {
         <header>
           <H3>Admissions</H3>
         </header>
-        <section>
+        <section className="BorderSection">
           <H4 primary_hover bold>
             Application Cycle
           </H4>
@@ -76,7 +76,7 @@ export const ORG_D_Detail_Admission = () => {
           </P>
         </section>
 
-        <section>
+        <section className="BorderSection">
           <H4 primary_hover bold>
             Tuition cost
           </H4>
