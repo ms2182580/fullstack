@@ -27,6 +27,7 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
 
   .ViewAllLink{
     display: flex;
+    
     //margin:right !important;
     //background-color:black;
     //padding-left:120px;
