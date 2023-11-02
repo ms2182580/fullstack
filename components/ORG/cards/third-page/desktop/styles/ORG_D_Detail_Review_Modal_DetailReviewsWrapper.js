@@ -11,7 +11,7 @@ export const ORG_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
 
   scrollbar-color: #b7b7b7 transparent;
   scrollbar-width: thin;
-  
+
   & > :nth-child(1) {
     position: relative;
     margin-bottom: 25px;
@@ -44,5 +44,15 @@ export const ORG_D_Detail_Review_Modal_DetailReviewsWrapper = styled.div`
 
   & > *:not(:first-child) {
     margin-bottom: 24px;
+  }
+
+  & > :nth-child(2) {
+    grid-template-columns: 1fr;
+
+    & > * {
+      & > :nth-child(2) {
+        order: 3;
+      }
+    }
   }
 `

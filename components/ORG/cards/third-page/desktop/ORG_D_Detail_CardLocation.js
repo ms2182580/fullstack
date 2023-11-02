@@ -2,13 +2,7 @@ import { LocationSvg } from "../../../../../assets/Icons/index.js"
 import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_D_Detail_CardLocationWrapper } from "./styles/ORG_D_Detail_CardLocationWrapper.js"
 
-export const ORG_D_Detail_CardLocation = ({
-  locationCity = "",
-  locationStreetNumber = "",
-  locationStreetName = "",
-  locationState = "",
-  howFar
-}) => {
+export const ORG_D_Detail_CardLocation = ({ locationCity = "", locationStreetNumber = "", locationStreetName = "", locationState = "", howFar }) => {
   return (
     <ORG_D_Detail_CardLocationWrapper>
       <div>
@@ -22,7 +16,11 @@ export const ORG_D_Detail_CardLocation = ({
         </P>
         <P>{locationState} </P>
 
-        <Caption> ({howFar} miles away)</Caption>
+        {howFar !== "" && (
+          <>
+            <Caption> ({howFar} miles away)</Caption>
+          </>
+        )}
       </div>
     </ORG_D_Detail_CardLocationWrapper>
   )

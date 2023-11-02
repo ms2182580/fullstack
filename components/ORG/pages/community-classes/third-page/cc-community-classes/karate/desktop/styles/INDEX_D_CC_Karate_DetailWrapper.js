@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const INDEX_D_CC_Karate_DetailWrapper = styled.div`
   position: relative;
   padding-bottom: 8px;
-  
+
   & > :nth-child(1) {
     margin-inline: clamp(16px, calc(10vw - 80px), 96px);
     padding-top: 56px;
@@ -29,6 +29,4 @@ export const INDEX_D_CC_Karate_DetailWrapper = styled.div`
       left: 0;
     }
   }
-  
-  
 `

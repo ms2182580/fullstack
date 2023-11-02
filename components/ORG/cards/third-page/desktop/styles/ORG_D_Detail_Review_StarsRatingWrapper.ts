@@ -1,3 +1,4 @@
+import { Classes_ORG_D_Detail_IsModal } from "@/utils/ORG/third-page/IsModal"
 import styled from "styled-components"
 
 export const ORG_D_Detail_Review_StarsRatingWrapper = styled.div`
@@ -16,15 +17,12 @@ export const ORG_D_Detail_Review_StarsRatingWrapper = styled.div`
     color: #939090;
   }
 
-  &.isDetailModalDesktop {
-    margin-bottom: 20px;
+  &.${Classes_ORG_D_Detail_IsModal.IS_MODAL} {
+    display: flex;
+    gap: 12px;
 
     & > :nth-child(1) {
       font-size: 40px;
-    }
-
-    & > :nth-child(2) {
-      margin-right: 14px;
     }
 
     & > :nth-child(3) {

@@ -1,6 +1,8 @@
+import { SPECIFIC_DATA } from "./DATA_ORG_D"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "./DATA_ORG_KeyNamesForCards_D"
 import { filterThirdPageDataOnObject } from "./filterThirdPageDataOnObject"
 
-export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullName) => {
+export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullName, specificDataForThisResource) => {
   let getFilterThirdPageDataOnObject = filterThirdPageDataOnObject(rightPart?.thirdPageData)
 
   let allDataToThirdPage = {
@@ -18,10 +20,12 @@ export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullNam
         location: dataCardLeft?.location || "",
       },
       rightPart: rightPart,
-
     },
     fullName,
-    other: getFilterThirdPageDataOnObject,
+    [DATA_ORG_KeyNamesForCards_D_KEYS.OTHER]: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.GET_FILTER_THIRDPAGE_DATAONOBJECT]: getFilterThirdPageDataOnObject,
+      [SPECIFIC_DATA.SPECIFIC_DATA]: specificDataForThisResource,
+    },
   }
 
   return allDataToThirdPage

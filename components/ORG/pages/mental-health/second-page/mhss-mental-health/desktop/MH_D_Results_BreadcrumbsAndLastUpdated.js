@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router.js'
-import { useEffect, useState } from 'react'
-import { DATA_ORG_D } from '../../../../../../../utils/ORG/DATA_ORG_D.js'
-import { Breadcrumbs_D } from '../../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js'
+import { useRouter } from "next/router.js"
+import { useEffect, useState } from "react"
+import { DATA_ORG_D } from "../../../../../../../utils/ORG/DATA_ORG_D"
+import { Breadcrumbs_D } from "../../../../../../ui/breadcrumbs/desktop/Breadcrumbs_D.js"
 
 export const MH_D_Results_BreadcrumbsAndLastUpdated = () => {
   const [breadcrumbsState, setBreadcrumbsState] = useState(null)
@@ -17,10 +17,12 @@ export const MH_D_Results_BreadcrumbsAndLastUpdated = () => {
 
   return (
     <>
-      <Breadcrumbs_D whichDisplay={[
-        ["Resource Directory", "ORG"],
-        [`${breadcrumbsState}`, ""]
-      ]} />
+      <Breadcrumbs_D
+        whichDisplay={[
+          ["Resource Directory", "ORG"],
+          [`${breadcrumbsState}`, ""],
+        ]}
+      />
     </>
   )
 }

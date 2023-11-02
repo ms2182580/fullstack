@@ -3,6 +3,7 @@ import ORG_AT15 from "@/assets/images/ORG/assistive-technology/ORG_AT15.png"
 import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import { Fragment } from "react"
 import { ORG_D_Detail_AT_WCMD_SimilarProducts_Section } from "./ORG_D_Detail_AT_WCMD_SimilarProducts_Section"
@@ -139,9 +140,9 @@ const categoriesOfProducts: CategoriesOfProducts_Types = [
   },
 ]
 
-export const ORG_D_Detail_AT_WCMD_SimilarProducts = () => {
+export const ORG_D_Detail_AT_WCMD_SimilarProducts = ({ arrayInnerNavBar }) => {
   return (
-    <ORG_D_Detail_AT_WCMD_SimilarProductsWrapper>
+    <ORG_D_Detail_AT_WCMD_SimilarProductsWrapper id={arrayInnerNavBar[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]}>
       <header>
         <H3>Similar products</H3>
       </header>

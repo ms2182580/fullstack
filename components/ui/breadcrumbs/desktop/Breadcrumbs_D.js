@@ -15,7 +15,6 @@ export const Breadcrumbs_D = ({ whichDisplay = [] }) => {
   const { push } = useRouter()
 
   let moveUserTo = (e, href) => {
-    // console.log("e:", e)
     if (e.key === "Enter") {
       push(href)
     }

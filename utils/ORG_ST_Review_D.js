@@ -38,9 +38,9 @@ const AboutCollection = {
 
     "I was impressed by the quality of service provided. __FULLNAMEHERE__ was knowledgeable, responsive and a pleasure to work with.",
 
-    "I highly recommend this service for their exceptional work and attention to detail. __FULLNAMEHERE_ went above and beyond to ensure my satisfaction.",
+    "I highly recommend this service for their exceptional work and attention to detail. __FULLNAMEHERE__ went above and beyond to ensure my satisfaction.",
 
-    "The service provided was outstanding. The __NAMEHERE__ was professional, courteous and delivered beyond my expectations. Highly recommend!"
+    "The service provided was outstanding. The __NAMEHERE__ was professional, courteous and delivered beyond my expectations. Highly recommend!",
   ],
 
   ThreeStars: [
@@ -50,8 +50,8 @@ const AboutCollection = {
 
     "I can't say that I was overly impressed with this professional I saw. The service was fine, but not exceptional",
 
-    "I was not particularly impressed with __NAMEHERE__. The service was satisfactory, but nothing special."
-  ]
+    "I was not particularly impressed with __NAMEHERE__. The service was satisfactory, but nothing special.",
+  ],
 }
 
 export const getAllReviews = (amountOfReviews = 3) => {
@@ -119,20 +119,7 @@ export const ORG_ST_Review_Map = (name, lastName, review) => {
   return <div>ORG_ST_Review_Map</div>
 }
 
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-]
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 export const ORG_ST_Review_Months = (howMuch = 1) => {
   if (howMuch === 1) {

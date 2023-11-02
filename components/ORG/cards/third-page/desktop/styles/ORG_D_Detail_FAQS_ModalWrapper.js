@@ -24,6 +24,11 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
     top: 26px;
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+
     & > :nth-child(1) > path {
       fill: ${NEUTRALS.BLACK};
       border: 2px solid crimson;
@@ -48,14 +53,12 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
       resize: vertical;
       min-height: 193px;
       max-height: 430px;
-      
+
       margin-bottom: 43px;
-      
-      &:focus{
+
+      &:focus {
         border: 1px solid transparent;
       }
-      
-      
     }
   }
 

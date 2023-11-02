@@ -1,5 +1,6 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/Icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
@@ -13,7 +14,7 @@ import { ORG_D_Detail_FAQS_Modal } from "./ORG_D_Detail_FAQS_Modal.js"
 import { ORG_D_Detail_FAQS_VoteQuestionsAnswers } from "./ORG_D_Detail_FAQS_VoteQuestionsAnswers.js"
 import { ORG_D_Detail_FAQSWrapper } from "./styles/ORG_D_Detail_FAQSWrapper.js"
 
-export const ORG_D_Detail_FAQS = () => {
+export const ORG_D_Detail_FAQS = ({ defaultId = "faqs", arrayInnerNavBar }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { card } = thirdpageDataORG
@@ -45,23 +46,25 @@ export const ORG_D_Detail_FAQS = () => {
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx } = useCtx_ShowModal()
 
-  const handleShowModal = () => {
-    lockScroll()
-    setShowModal(true)
-    setModalShowedCtx(true)
+  const handleShowModal = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      lockScroll()
+      setShowModal(true)
+      setModalShowedCtx(true)
+    }
   }
 
-  const handleHideModal = () => {
-    unlockScroll()
-    setShowModal(false)
-    setModalShowedCtx(false)
+  const handleHideModal = (e) => {
+    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown") {
+      unlockScroll()
+      setShowModal(false)
+      setModalShowedCtx(false)
+    }
   }
 
   return (
     <>
-      <ORG_D_Detail_FAQSWrapper
-        id="FAQs"
-        ref={toMoveTheView}>
+      <ORG_D_Detail_FAQSWrapper id={Boolean(arrayInnerNavBar) ? arrayInnerNavBar[5][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] : defaultId}>
         <H3 semibold>Frequently Asked Questions</H3>
 
         <div>
@@ -81,7 +84,6 @@ export const ORG_D_Detail_FAQS = () => {
             hover>
             Common Questions and Answers
           </H4>
-          
         </div>
 
         {faqsData.votes.map((x, i) => {

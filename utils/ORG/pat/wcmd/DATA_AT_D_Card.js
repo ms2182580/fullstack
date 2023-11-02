@@ -1,4 +1,5 @@
 import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { DATA_PAT_D_KEYS } from "../DATA_PAT_D"
 
 export const DATA_AT_D_CardRight = [
   {
@@ -195,47 +196,50 @@ export const DATA_AT_D_CardRight = [
 export const DATA_AT_D_CardLeft = [
   {
     phone: "(012) 345-6789, ext. 4001",
-    email: "denise@truong-macgill.com",
+    email: "info@assistiveware.com",
+    [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "permobile corpus industries inc",
     web: {
-      fistName: "truong",
-      lastName: "macgill",
+      fistName: "assistiveware",
+      lastName: "",
     },
     location: {
-      city: "Brooklyn",
-      streetName: "Remsen Street, Suite #2",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
+      city: "Netherlands",
+      streetName: "Laurierstraat 193",
+      streetNumber: "",
+      state: "Amsterdam, null 1016 PL",
+      howFar: "",
     },
   },
   {
     phone: "(012) 345-6789, ext. 4001",
-    email: "denise@truong-macgill.com",
+    email: "info@assistiveware.com",
+    [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "permobile corpus industries inc",
     web: {
-      fistName: "truong",
-      lastName: "macgill",
+      fistName: "assistiveware",
+      lastName: "",
     },
     location: {
-      city: "Brooklyn",
-      streetName: "Remsen Street, Suite #2",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
+      city: "Netherlands",
+      streetName: "Laurierstraat 193",
+      streetNumber: "",
+      state: "Amsterdam, null 1016 PL",
+      howFar: "",
     },
   },
   {
     phone: "(012) 345-6789, ext. 4001",
-    email: "denise@truong-macgill.com",
+    email: "info@assistiveware.com",
+    [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "permobile corpus industries inc",
     web: {
-      fistName: "truong",
-      lastName: "macgill",
+      fistName: "assistiveware",
+      lastName: "",
     },
     location: {
-      city: "Brooklyn",
-      streetName: "Remsen Street, Suite #2",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
+      city: "Netherlands",
+      streetName: "Laurierstraat 193",
+      streetNumber: "",
+      state: "Amsterdam, null 1016 PL",
+      howFar: "",
     },
   },
 ]

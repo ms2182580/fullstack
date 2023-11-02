@@ -7,7 +7,7 @@ export const INDEX_D_AT_IHT_Detail = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   if (thirdpageDataORG === "") {
-    if (route.isReady) route.push("/ORG/pat/at-smart-devices/")
+    if (route.isReady) route.push("/ORG/pat/at-innovative-hi-tech")
 
     return
   }

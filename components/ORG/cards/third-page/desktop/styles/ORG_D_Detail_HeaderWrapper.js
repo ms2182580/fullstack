@@ -19,6 +19,8 @@ export const ORG_D_Detail_HeaderWrapper = styled.div`
           cursor: pointer;
           border-bottom: 4px solid transparent;
 
+          text-transform: capitalize;
+
           font-weight: 600;
 
           &:hover {
@@ -40,9 +42,25 @@ export const ORG_D_Detail_HeaderWrapper = styled.div`
     }
 
     & > :nth-last-child(1) {
-      border: 2px solid ${NEUTRALS.LIGHT_GREY};
+      border: 2px solid ${PRIMARY.PRIMARY_CTA};
       border-radius: 8px;
-      cursor: not-allowed;
+
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: ${PRIMARY.PRIMARY_CTA};
+
+        & > div {
+          & > :nth-child(1) {
+            fill: ${NEUTRALS.OFF_WHITE};
+          }
+
+          p {
+            color: ${NEUTRALS.OFF_WHITE};
+          }
+        }
+      }
 
       & > div {
         display: flex;
@@ -52,6 +70,11 @@ export const ORG_D_Detail_HeaderWrapper = styled.div`
         padding-right: 48px;
         padding-top: 8px;
         padding-bottom: 8px;
+
+        p {
+          font-weight: 600;
+          color: ${PRIMARY.PRIMARY_CTA};
+        }
       }
     }
   }

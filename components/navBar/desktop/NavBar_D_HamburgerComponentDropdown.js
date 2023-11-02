@@ -1,5 +1,5 @@
 import { DATA_ORG_CheckPaths_Search_D, ROUTER_PUSH_SEARCH } from "@/utils/ORG/DATA_ORG_CheckPaths_Search_D.js"
-import { DATA_ORG_D } from "@/utils/ORG/DATA_ORG_D.js"
+import { DATA_ORG_D } from "@/utils/ORG/DATA_ORG_D"
 import { useRouter } from "next/router.js"
 import { Fragment, useRef, useState } from "react"
 import { NavBar_D_WriteAReviewSvg, Navbar_D_AccessibilityModeSvg } from "../../../assets/Icons/index.js"

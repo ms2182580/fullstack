@@ -14,6 +14,28 @@ import ORG_AT6 from "../../../assets/images/ORG/assistive-technology/ORG_AT6.png
 import ORG_AT7 from "../../../assets/images/ORG/assistive-technology/ORG_AT7.png"
 import ORG_AT8 from "../../../assets/images/ORG/assistive-technology/ORG_AT8.png"
 import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png"
+import { InnerNavBar_InnerData } from "../third-page/InnerNavBar"
+
+export const enum DATA_PAT_D_KEYS {
+  BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",
+  BUTTON_TO_THIRDPAGE_NAME_VALUE = "purchase option",
+  BRAND_THIRDPAGE_KEY = "BRAND_THIRDPAGE_KEY",
+  BRAND_THIRDPAGE_VALUE = "permobile corpus industries inc",
+}
+
+export const AT_SPECIFIC_DATA = {
+  [DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
+  [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: DATA_PAT_D_KEYS.BRAND_THIRDPAGE_VALUE,
+}
+
+export const arrayInnerNavBar: InnerNavBar_InnerData = [
+  { INNER_NAV_BAR_KEY: "about" },
+  { INNER_NAV_BAR_KEY: "shop" },
+  { INNER_NAV_BAR_KEY: "contact" },
+  { INNER_NAV_BAR_KEY: "compare" },
+  { INNER_NAV_BAR_KEY: "reviews" },
+  { INNER_NAV_BAR_KEY: "faqs" },
+]
 
 export const DATA_PAT_D = [
   [
@@ -30,6 +52,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Permobil combined all the performance features of the F5 Corpus with superior...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT2,
@@ -43,6 +66,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "A lightweight rigid 7000 Series Aluminium Alloy frame and carbon fibre side guard ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT3,
@@ -56,6 +80,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Effortless centre-of-gravity pivot, the Fuze T50 Manual Tilt-in-Space wheelchair...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
   ],
   [
@@ -72,6 +97,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT11,
@@ -85,6 +111,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT12,
@@ -98,6 +125,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
   ],
   [
@@ -114,6 +142,9 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Proloquo is a new, groundbreaking AAC app designed for nonspeaking children ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: {
+        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
+      },
     },
     {
       imageToUse: ORG_AT5,
@@ -127,6 +158,9 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This user-friendly app makes communication more intuitive and ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: {
+        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
+      },
     },
     {
       imageToUse: ORG_AT6,
@@ -140,6 +174,9 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This app is great for people who want maximum flexibility. Out of the box, ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: {
+        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
+      },
     },
   ],
   [
@@ -156,6 +193,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT8,
@@ -169,6 +207,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT9,
@@ -182,6 +221,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
   ],
   [
@@ -198,6 +238,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT14,
@@ -211,6 +252,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT15,
@@ -224,12 +266,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
+      SPECIFIC_DATA: AT_SPECIFIC_DATA,
     },
   ],
 ]
-
-export const enum DATA_PAT_D_KEYS {
-  AT_SPECIFIC_DATA = "AT_SPECIFIC_DATA",
-  BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",
-  BUTTON_TO_THIRDPAGE_NAME_VALUE = "purchase option",
-}

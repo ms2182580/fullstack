@@ -12,9 +12,25 @@ export const INDEX_D_RP_LT_Detail = () => {
     return
   }
 
+  const selectTags = {
+    title: "I have questions about",
+    data: [
+      "Payment",
+      "Accessibility Options",
+      "Schedule a tour",
+      "Specialized programming",
+      "Reasonable accomodations",
+      "Languages",
+      "Amenities",
+      "Roommate selection",
+      "On-site staff",
+      "Something else",
+    ],
+  }
+
   return (
     <>
-      <INDEX_ORG_Detail_D />
+      <INDEX_ORG_Detail_D selectTags={selectTags} />
     </>
   )
 }
