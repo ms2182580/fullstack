@@ -61,8 +61,9 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
 font-size:16px;
 border-spacing:0px;
 width:50%;
-padding-top:19px;
-padding-left:16px;
+//padding-top:19px;
+margin-top:19px;
+margin-left:16px;
 
 
 & > :last-child{
