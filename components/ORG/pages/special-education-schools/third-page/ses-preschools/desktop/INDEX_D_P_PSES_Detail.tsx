@@ -7,6 +7,7 @@ import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG
 import { ORG_D_Detail_Admission } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_Admission"
 import { SectionToRender_InnerData_ARG } from "@/utils/ORG/third-page/SectionToRender"
 import { ORG_D_Detail_SchoolAcademics } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_SchoolAcademics"
+import { ORG_D_Detail_StudentDemographics } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_StudentDemographics"
 
 export const INDEX_D_SES_PSES_Detail = () => {
   const route = useRouter()
@@ -22,7 +23,8 @@ export const INDEX_D_SES_PSES_Detail = () => {
     { name: ORG_D_Detail_ContactUs.name, component: ORG_D_Detail_ContactUs },
     {name: ORG_D_Detail_Admission.name, component: ORG_D_Detail_Admission},
     {name: ORG_D_Detail_SchoolAcademics.name, component:ORG_D_Detail_SchoolAcademics},
-    //School Academics
+    {name:ORG_D_Detail_StudentDemographics.name, component:ORG_D_Detail_StudentDemographics},
+    
     //Student Demographics
     { name: ORG_D_Detail_Reviews.name, component: ORG_D_Detail_Reviews },
     { name: ORG_D_Detail_FAQS.name, component: ORG_D_Detail_FAQS },
