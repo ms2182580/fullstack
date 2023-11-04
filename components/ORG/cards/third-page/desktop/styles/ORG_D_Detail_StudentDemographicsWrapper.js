@@ -11,6 +11,8 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
   header {
     padding: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   section {
@@ -33,7 +35,7 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
     display: flex;
     flex-direction: row;
     gap: 20px;
-    align-items:center;
+    align-items: center;
   }
 
   .BorderSection {
@@ -44,15 +46,14 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
     font-size: 16px;
     border-spacing: 0px;
     width: 100%;
-    
+
     //height:100%;
-    
+
     //margin-top: px;
     // margin-left: 16px;
   }
   tr {
     height: 36px;
-    
   }
   tr:nth-child(even) {
     background-color: rgba(211, 214, 215, 0.2);
@@ -62,7 +63,6 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
     background-color: rgba(211, 214, 215, 0.2);
     text-align: left;
     padding-left: 26px;
-    
   }
   td {
     width: 100%;
@@ -72,22 +72,20 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
 
   .ShadowTable {
     box-shadow: 0px 3.6px 3.6px 0px rgba(0, 0, 0, 0.25);
-    font-size:16;
+    font-size: 16;
   }
 
   .ElementsBackground {
     background-color: #fafafa;
-//width: 100%;
+    //width: 100%;
     display: flex;
     border-left: 3px solid rgba(217, 217, 217, 0);
     border-radius: 8px;
     //padding: 24px;
-    padding-left:24px;
-    padding-bottom:24px;
-    padding-top:24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    padding-top: 24px;
     //width: fit-content;
     //height:fill;
-    
-    
   }
 `;

@@ -10,12 +10,14 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
   header {
     padding: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   //HEADER
   & > :nth-child(1) {
   }
 
-  .BorderSection{
+  .BorderSection {
     border-bottom: 1px solid hsl(0, 0%, 88.6%);
   }
   section {
@@ -23,11 +25,10 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
     flex-direction: column;
     padding-bottom: 38px;
     padding-top: 24px;
-   // border-bottom: 1px solid hsl(0, 0%, 88.6%);
+    // border-bottom: 1px solid hsl(0, 0%, 88.6%);
     margin-left: 24px;
     margin-right: 24px;
-    padding-left:32px;
-    
+    padding-left: 32px;
 
     & > :nth-child(1) {
       // height:50px;
@@ -37,8 +38,7 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
     & > :nth-child(2) {
       padding-left: 16px;
     }
-  
-  }  
+  }
 
   .ulNoPoint {
     list-style-type: none;
@@ -46,48 +46,43 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
   li {
     height: 32px;
     margin-top: 4px;
-    
+
     & > :nth-child(1) {
       font-weight: 600;
     }
   }
 
-  Table{
-font-size:16px;
-border-spacing:0px;
-width:50%;
-padding-top:19px;
-padding-left:16px;
+  Table {
+    font-size: 16px;
+    border-spacing: 0px;
+    width: 50%;
+    padding-top: 19px;
+    padding-left: 16px;
 
-& > :last-child{
-  text-align: right;
-  padding:13px;
-}
-
+    & > :last-child {
+      text-align: right;
+      padding: 13px;
+    }
   }
-  tr{
-    height:36px;
-   
-    
+  tr {
+    height: 36px;
   }
   tr:nth-child(even) {
-      background-color:rgba(211, 214, 215, 0.20);
-      
-    }
-  th{
-    font-size:18px;
-    background-color:rgba(211, 214, 215, 0.20);
+    background-color: rgba(211, 214, 215, 0.2);
+  }
+  th {
+    font-size: 18px;
+    background-color: rgba(211, 214, 215, 0.2);
     text-align: left;
-    padding-left:26px;
+    padding-left: 26px;
   }
-  td{
-    width:100%;
-    padding-left:26px;
-    padding-right:13px;
-  }
-
-  .Button{
-    padding-top:24px;
+  td {
+    width: 100%;
+    padding-left: 26px;
+    padding-right: 13px;
   }
 
+  .Button {
+    padding-top: 24px;
+  }
 `;
