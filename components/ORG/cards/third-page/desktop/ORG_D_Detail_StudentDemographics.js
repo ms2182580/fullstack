@@ -37,7 +37,7 @@ export const ORG_D_Detail_StudentDemographics = () => {
           <H3>Student Demographics</H3>
         </header>
 
-        <section className="BorderSection">
+        <section>
           <div className="sectionRow">
             <div className="ElementsBackground">
               <table className="ShadowTable">

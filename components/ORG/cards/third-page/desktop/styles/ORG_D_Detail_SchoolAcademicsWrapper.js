@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors";
-import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg";
-import Image from "next/image.js"
 
 export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
   background: #fcfdfe;
@@ -11,107 +9,94 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
   header {
     padding: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
- 
- 
+
   section {
     display: flex;
     flex-direction: column;
     padding-bottom: 38px;
     padding-top: 24px;
-   // border-bottom: 1px solid hsl(0, 0%, 88.6%);
+    // border-bottom: 1px solid hsl(0, 0%, 88.6%);
     margin-left: 24px;
     margin-right: 24px;
     //padding-left:24px;
-    
 
     & > :nth-child(1) {
       // height:50px;
       margin-bottom: 4px;
     }
-    
-    
-  
   }
 
-  .sectionRow{
+  .sectionRow {
     display: flex;
     flex-direction: row;
-    gap:25px;
+    gap: 25px;
   }
-  
-  .BorderSection{
+
+  .BorderSection {
     border-bottom: 1px solid hsl(0, 0%, 88.6%);
   }
 
   li {
     height: 32px;
     margin-top: 4px;
-    
+
     & > :nth-child(1) {
       font-weight: 600;
     }
   }
-  
+
   .ulNoPoint {
     list-style-type: none;
   }
 
-  Table{
-font-size:16px;
-border-spacing:0px;
-width:50%;
-//padding-top:19px;
-margin-top:19px;
-margin-left:16px;
+  Table {
+    font-size: 16px;
+    border-spacing: 0px;
+    width: 50%;
+    //padding-top:19px;
+    margin-top: 19px;
+    margin-left: 16px;
 
-
-& > :last-child{
-  //text-align: right;
- // padding:13px;
-}
-
+    & > :last-child {
+      //text-align: right;
+      // padding:13px;
+    }
   }
-  tr{
-    height:36px;
-   
-    
+  tr {
+    height: 36px;
   }
   tr:nth-child(even) {
-      background-color:rgba(211, 214, 215, 0.20);
-      
-    }
-  th{
-    font-size:18px;
-    background-color:rgba(211, 214, 215, 0.20);
+    background-color: rgba(211, 214, 215, 0.2);
+  }
+  th {
+    font-size: 18px;
+    background-color: rgba(211, 214, 215, 0.2);
     text-align: left;
-    padding-left:26px;
+    padding-left: 26px;
   }
-  td{
-    width:100%;
-    padding-left:26px;
-    padding-right:13px;
-  }
-
-  .Button{
-    padding-top:24px;
+  td {
+    width: 100%;
+    padding-left: 26px;
+    padding-right: 13px;
   }
 
-  .TestScoresRow{
-    gap:200px;
-    display:flex;
-    flex-direction:row;
+  .Button {
+    padding-top: 24px;
+  }
+
+  .TestScoresRow {
+    gap: 200px;
+    display: flex;
+    flex-direction: row;
     & > :nth-child(1) {
-      
-      width:200px;
+      width: 200px;
     }
-
   }
 
-  .ShadowTable{
+  .ShadowTable {
     box-shadow: 0px 3.6px 3.6px 0px rgba(0, 0, 0, 0.25);
   }
-
-
-
 `;
