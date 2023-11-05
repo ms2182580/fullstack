@@ -10,7 +10,6 @@ export const INDEX_D_CC_AC_Detail = () => {
 
   if (thirdpageDataORG === "") {
     if (route.isReady) route.push("/ORG/pcc/cc-art-classes")
-
     return
   }
 
