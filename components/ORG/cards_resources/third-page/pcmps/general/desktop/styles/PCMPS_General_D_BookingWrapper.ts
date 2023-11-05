@@ -1,11 +1,21 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
+import { ElementActiveHeight_KEYS } from "../PCMPS_General_D_Booking"
 
 export const enum PCMPS_General_D_Booking_CLASS {
   IS_DISABLED = "IS_DISABLED",
+  IS_SELECTED = "IS_SELECTED",
+  THE_MODAL = "THE_MODAL",
+  IS_LEFT = "IS_LEFT",
+  IS_RIGHT = "IS_RIGHT",
 }
 
-export const PCMPS_General_D_BookingWrapper = styled.aside`
+type Props = {
+  distanceModal?: {}
+  shouldShowMoldal?: boolean
+}
+
+export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
   border-radius: 8px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
@@ -102,6 +112,8 @@ export const PCMPS_General_D_BookingWrapper = styled.aside`
       line-height: 24px;
       letter-spacing: 0.32px;
 
+      position: relative;
+
       & > * {
         width: 100%;
         text-align: center;
@@ -126,6 +138,122 @@ export const PCMPS_General_D_BookingWrapper = styled.aside`
 
         cursor: default;
       }
+
+      .${PCMPS_General_D_Booking_CLASS.IS_SELECTED} {
+        background-color: ${PRIMARY.PRIMARY_HOVER};
+      }
+
+      .${PCMPS_General_D_Booking_CLASS.THE_MODAL} {
+        border: 2px solid ${NEUTRALS.BLACK};
+        background-color: ${NEUTRALS.OFF_WHITE};
+        color: ${NEUTRALS.BLACK};
+
+        padding-bottom: 18px;
+
+        cursor: default;
+
+        position: absolute;
+
+        top: ${(x) =>
+          x.distanceModal !== null &&
+          `calc(${x.distanceModal[ElementActiveHeight_KEYS.DISTANCE_FROM_TOP]}px + ${x.distanceModal[ElementActiveHeight_KEYS.HEIGHT_OF_ELEMENT]}px + 24px)`};
+
+        visibility: ${({ distanceModal, shouldShowMoldal }) => (distanceModal !== null && shouldShowMoldal ? "visible" : "hidden")};
+
+        display: grid;
+        gap: 18px;
+
+        & > :nth-child(1) {
+          display: flex;
+          justify-content: space-between;
+
+          & > :nth-child(1) {
+            color: ${PRIMARY.PRIMARY_HOVER};
+            font-weight: 700;
+          }
+
+          & > :nth-child(2) {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            & > :nth-child(1) {
+              font-weight: 500;
+            }
+
+            & > :nth-child(2) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 2px;
+
+              cursor: pointer;
+
+              & > * {
+                & > * {
+                  fill: ${NEUTRALS.BLACK};
+                }
+              }
+            }
+          }
+        }
+
+        & > :nth-child(2) {
+          list-style: none;
+
+          li {
+            display: grid;
+            align-items: center;
+            font-size: 20px;
+
+            gap: 16px;
+            grid-template-columns: auto 1fr;
+
+            & > :nth-child(2) {
+              justify-self: flex-start;
+              font-weight: 500;
+            }
+          }
+        }
+
+        & > :nth-child(3) {
+          list-style: none;
+
+          display: grid;
+          grid-template-columns: auto repeat(2, 1fr);
+
+          column-gap: 16px;
+          row-gap: 8px;
+
+          grid-template-areas:
+            "title IS_LEFT_0 IS_RIGHT_4"
+            "title IS_LEFT_1 IS_RIGHT_5"
+            "title IS_LEFT_2 IS_RIGHT_6"
+            "title IS_LEFT_3 IS_RIGHT_7";
+
+          & > * {
+            justify-self: flex-start;
+
+            font-size: 20px;
+          }
+
+          & > :nth-child(1) {
+            grid-area: title;
+          }
+
+          & > *:not(:first-child) {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-auto-flow: column;
+
+            gap: 16px;
+
+            & > :nth-child(2) {
+              font-weight: 500;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -146,8 +274,18 @@ export const PCMPS_General_D_BookingWrapper = styled.aside`
 
     background-color: ${NEUTRALS.LIGHT_GREY};
     border: none;
+  }
+`
 
-    /* margin-left: auto; */
-    /* width: 100%; */
+export type LI_Booking_Props = {
+  isIndex?: number
+}
+
+export const LI_Booking = styled.li<LI_Booking_Props>`
+  &.${PCMPS_General_D_Booking_CLASS.IS_LEFT}_${({ isIndex }) => isIndex} {
+    grid-area: ${({ isIndex }) => `${PCMPS_General_D_Booking_CLASS.IS_LEFT}_${isIndex}`};
+  }
+
+  &.${PCMPS_General_D_Booking_CLASS.IS_RIGHT} {
   }
 `
