@@ -148,6 +148,7 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
         background-color: ${NEUTRALS.OFF_WHITE};
         color: ${NEUTRALS.BLACK};
 
+        padding-top: 18px;
         padding-bottom: 18px;
 
         cursor: default;
