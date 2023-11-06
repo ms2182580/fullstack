@@ -9,7 +9,7 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_HeaderWrapper } from "./styles/ORG_D_Detail_HeaderWrapper"
 
-export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar, defaultSectionToRender }) => {
+export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null, defaultSectionToRender, sectionToRender = null }) => {
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
@@ -28,7 +28,55 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar, defaul
       />
 
       <ul>
-        {arrayInnerNavBar ? (
+        <li>
+          <H3>
+            <a href="#about">About</a>
+          </H3>
+        </li>
+
+        {sectionToRender !== null ? (
+          <>
+            {sectionToRender.map((x, index) => {
+              const toJSX = x.toNavbar.jsx ? x.toNavbar.jsx : x.toNavbar.id
+              console.log("toJSX:", toJSX)
+
+              if (x.toNavbar.id !== null) {
+                return (
+                  <li key={`_${index}`}>
+                    <H3>
+                      <a href={`#${x.toNavbar.id}`}>{toJSX}</a>
+                    </H3>
+                  </li>
+                )
+              }
+            })}
+          </>
+        ) : (
+          <>
+            <li>
+              <H3>
+                <a href={`#${defaultSectionToRender[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Contact</a>
+              </H3>
+            </li>
+            <li>
+              <H3>
+                <a href="#Information">Information</a>
+              </H3>
+            </li>
+            <li>
+              <H3>
+                <a href={`#${defaultSectionToRender[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Reviews</a>
+              </H3>
+            </li>
+            <li>
+              <H3>
+                <a href={`#${defaultSectionToRender[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>FAQs</a>
+              </H3>
+            </li>
+          </>
+        )}
+
+        {/* {arrayInnerNavBar ? (
           <>
             {arrayInnerNavBar.map((x, index) => {
               let isFAQs = x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] === "faqs" ? "FAQs" : x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]
@@ -44,11 +92,6 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar, defaul
           </>
         ) : (
           <>
-            <li>
-              <H3>
-                <a href="#about">About</a>
-              </H3>
-            </li>
             <li>
               <H3>
                 <a href={`#${defaultSectionToRender[1].defaultId}`}>Contact</a>
@@ -70,7 +113,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar, defaul
               </H3>
             </li>
           </>
-        )}
+        )} */}
 
         <li tabIndex={0}>
           <div>

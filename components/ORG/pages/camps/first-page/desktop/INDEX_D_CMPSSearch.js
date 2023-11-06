@@ -1,7 +1,7 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
-import { DATA_PCMPS_D } from "@/utils/ORG/pcmps/DATA_PCMPS_D.js"
+import { DATA_PCMPS_D } from "@/utils/ORG/pcmps/DATA_PCMPS_D"
 import { DATA_DAY_D_CardLeft, DATA_DAY_D_CardRight } from "@/utils/ORG/pcmps/day/DATA_DAY_D_Card.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"

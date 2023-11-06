@@ -4,9 +4,9 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_ScheduleWrapper } from "./styles/ORG_D_Detail_ScheduleWrapper.js"
 
-export const ORG_D_Detail_Schedule = ({ defaultID }) => {
+export const ORG_D_Detail_Schedule = ({ idInnerbar = "#" }) => {
   return (
-    <ORG_D_Detail_ScheduleWrapper id={defaultID}>
+    <ORG_D_Detail_ScheduleWrapper id={idInnerbar}>
       <div>
         <div>
           <H3 semibold>Book a class below</H3>
