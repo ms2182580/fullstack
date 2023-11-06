@@ -45,7 +45,8 @@ const modalData = {
   },
 }
 
-export const PCMPS_General_D_Booking = () => {
+export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
+  console.log("idInnerbar:", idInnerbar)
   const [dataToModal, setDataToModal] = useState(dataToModal_InitialData)
   const [shouldShowMoldal, setShouldShowMoldal] = useState(false)
   const [elementActiveHeight, setElementActiveHeight] = useState(null)
@@ -120,7 +121,8 @@ export const PCMPS_General_D_Booking = () => {
   return (
     <PCMPS_General_D_BookingWrapper
       distanceModal={elementActiveHeight}
-      shouldShowMoldal={shouldShowMoldal}>
+      shouldShowMoldal={shouldShowMoldal}
+      id={idInnerbar}>
       <header>
         <H3>Select a date</H3>
       </header>

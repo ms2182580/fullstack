@@ -22,9 +22,9 @@ const packingListData = {
   },
 }
 
-export const PCMPS_General_D_PackingList = () => {
+export const PCMPS_General_D_PackingList = ({ idInnerbar = "#" }) => {
   return (
-    <PCMPS_General_D_PackingListWrapper>
+    <PCMPS_General_D_PackingListWrapper id={idInnerbar}>
       <header>
         <div>
           <H3>Camper Packing List</H3>

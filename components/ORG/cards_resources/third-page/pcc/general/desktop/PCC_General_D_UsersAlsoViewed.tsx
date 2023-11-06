@@ -8,11 +8,11 @@ import { PCC_General_D_UsersAlsoViewedWrapper } from "./styles/PCC_General_D_Use
 
 const tags = ["All", "Similar Price", "Same subject", "Similar class structure", "Also from Kicking the spectrum", "More Tags"]
 
-export const PCC_General_D_UsersAlsoViewed = () => {
+export const PCC_General_D_UsersAlsoViewed = ({ idInnerbar = "#" }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   return (
-    <PCC_General_D_UsersAlsoViewedWrapper id="Information">
+    <PCC_General_D_UsersAlsoViewedWrapper id={idInnerbar}>
       <H3>Users also viewed</H3>
       <ul>
         {tags.map((xElement, index) => {
