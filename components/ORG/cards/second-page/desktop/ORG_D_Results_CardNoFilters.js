@@ -33,8 +33,6 @@ export const ORG_D_Results_CardNoFilters = () => {
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state, specificDataForThisResource) => {
-    // console.log('thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName:', thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName)
-
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, specificDataForThisResource)
 
     setThirdpageDataORG(allDataToThirdPage)

@@ -20,12 +20,7 @@ import { ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCa
 export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-  const { push, query } = useRouter()
-  let handlePushTo404 = (e) => {
-    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
-      push("/404")
-    }
-  }
+  const { query } = useRouter()
 
   return (
     <ORG_D_Detail_MainCard_RightWrapper

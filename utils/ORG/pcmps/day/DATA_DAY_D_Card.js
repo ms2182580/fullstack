@@ -69,7 +69,7 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
           },
-          paymentOptions: {
+          campType: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Camp Type",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Day Camp"],
           },
