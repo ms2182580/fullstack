@@ -1,6 +1,7 @@
 import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { MapProperties_KEYS } from "@/utils/ORG/third-page/howIsMap"
+import { TooltipDefault } from "@/utils/ORG/third-page/tooltip"
 import { Fragment } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -28,6 +29,7 @@ export const INDEX_ORG_Detail_D = ({
   contactUsCustomProperties = null,
   addToCarePlanWithIcon = false,
   howIsMap = { [MapProperties_KEYS.HOW_MANY]: 1 },
+  tooltipDisplay = TooltipDefault,
 }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
@@ -47,6 +49,7 @@ export const INDEX_ORG_Detail_D = ({
             layout_MainCardRight={layout_MainCardRight}
             addToCarePlanWithIcon={addToCarePlanWithIcon}
             howIsMap={howIsMap}
+            tooltipDisplay={tooltipDisplay}
           />
 
           {sectionToRender ? (

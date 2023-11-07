@@ -6,6 +6,7 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import { Tooltip_KEYS, Tooltip_VALUES } from "@/utils/ORG/third-page/tooltip"
 import { capitalizeWords } from "@/utils/capitalizeWords"
 import Image from "next/image"
 import { useRouter } from "next/router"
@@ -17,7 +18,7 @@ import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon }) => {
+export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon, tooltipDisplay }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { query } = useRouter()
@@ -44,7 +45,11 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
             {thirdpageDataORG.fullName.first} {thirdpageDataORG.fullName.last}
           </H2>
 
-          <ORG_D_Detail_Tooltip />
+          {tooltipDisplay[Tooltip_KEYS.WHAT_DISPLAY] === Tooltip_VALUES.NO_DISPLAY ? null : (
+            <>
+              <ORG_D_Detail_Tooltip allProps={tooltipDisplay} />
+            </>
+          )}
         </header>
 
         <H3>{query.subTitle}</H3>

@@ -9,15 +9,12 @@ export const useCheckBreadcrumbs = (titleToFormat) => {
   useEffect(() => {
     if (!titleToFormat) {
       let theRoute = router.asPath.split("/").at(-1)
-
       let index = `p${theRoute.split("-")[0]}`
       let fullName = DATA_ORG_CheckPaths_Results_D[index].at(-1).fullName[theRoute]
 
       setTitleFormatted(fullName)
     } else {
-
       setTitleFormatted(titleToFormat.split(" ").slice(1).join(" "))
-
     }
   }, [])
 
