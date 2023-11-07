@@ -71,7 +71,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
   &.${Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES} {
     & > :nth-child(2) {
       display: grid;
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto 1fr;
       gap: 24px;
       grid-template-areas:
@@ -210,6 +210,14 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       }
     }
 
+    .NO_HIGHLIGHT {
+      margin-bottom: 0px;
+    }
+
+    .ONE_HIGHLIGHT_AT_LEAST {
+      margin-bottom: 44px;
+    }
+
     & > :last-child {
       margin-bottom: 64px;
       display: flex;
@@ -227,14 +235,6 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       & > :nth-child(2) {
         gap: 24px;
       }
-    }
-
-    .NO_HIGHLIGHT {
-      margin-bottom: 0px;
-    }
-
-    .ONE_HIGHLIGHT_AT_LEAST {
-      margin-bottom: 44px;
     }
   }
 

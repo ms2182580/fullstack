@@ -1,6 +1,7 @@
 import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { MapProperties_KEYS } from "@/utils/ORG/third-page/howIsMap"
+import { TooltipDefault } from "@/utils/ORG/third-page/tooltip"
 import { Fragment } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -28,6 +29,7 @@ export const INDEX_ORG_Detail_D = ({
   contactUsCustomProperties = null,
   addToCarePlanWithIcon = false,
   howIsMap = { [MapProperties_KEYS.HOW_MANY]: 1 },
+  tooltipDisplay = TooltipDefault,
 }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
@@ -47,32 +49,29 @@ export const INDEX_ORG_Detail_D = ({
             layout_MainCardRight={layout_MainCardRight}
             addToCarePlanWithIcon={addToCarePlanWithIcon}
             howIsMap={howIsMap}
+            tooltipDisplay={tooltipDisplay}
           />
 
           {sectionToRender ? (
             <>
               {sectionToRender.map((x, index) => {
-                let Component = x.component
-
-                const idInnerbar = x.toNavbar ? x.toNavbar.id : null
-
-                return (
-                  <Fragment key={`${x.name}_${index}`}>
-                    <Component
-                      contactUsCustomProperties={contactUsCustomProperties}
-                      idInnerbar={idInnerbar}
-                    />
-                  </Fragment>
-                )
+                if (x.component !== null) {
+                  const idInnerbar = x.toNavbar ? x.toNavbar.id : null
+                  return (
+                    <Fragment key={`${x.name}_${index}`}>
+                      <x.component
+                        contactUsCustomProperties={contactUsCustomProperties}
+                        idInnerbar={idInnerbar}
+                      />
+                    </Fragment>
+                  )
+                }
               })}
             </>
           ) : (
             <>
               {defaultSectionToRender.map((x, index) => {
                 let theComponentName = x.component.name
-
-                let theIDInnerbar = x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]
-                console.log("theIDInnerbar:", theIDInnerbar)
 
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>

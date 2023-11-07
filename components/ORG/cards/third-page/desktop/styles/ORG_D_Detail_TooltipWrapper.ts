@@ -1,5 +1,9 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+
+// export const enum ORG_D_Detail_Tooltip_CLASSES {
+//   LIKE_ATTORNEY = "LIKE_ATTORNEY",
+// }
 
 export const ORG_D_Detail_TooltipWrapper = styled.div`
   display: flex;
@@ -20,10 +24,13 @@ export const ORG_D_Detail_TooltipWrapper = styled.div`
       border-width: 0 16.5px 28px 16.5px;
       border-color: transparent transparent ${NEUTRALS.OFF_WHITE} transparent;
       filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.3));
-      
     }
 
     & > :nth-child(2) {
+      h3 {
+        color: ${PRIMARY.PRIMARY_CTA};
+      }
+
       width: 600px;
       position: absolute;
       background-color: ${NEUTRALS.OFF_WHITE};
@@ -33,8 +40,6 @@ export const ORG_D_Detail_TooltipWrapper = styled.div`
       right: -72px;
       border-radius: 8px;
       padding: 16px 32px;
-      
     }
   }
-
 `

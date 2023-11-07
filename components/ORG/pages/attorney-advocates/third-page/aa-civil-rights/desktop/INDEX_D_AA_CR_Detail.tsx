@@ -4,6 +4,7 @@ import { INDEX_ORG_Detail_D } from "../../../../../cards/third-page/desktop/INDE
 
 import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { arraySectionToRender_PAA } from "@/utils/ORG/paa/third-page/desktop/arraySectionToRender"
+import { tooltipToRender_PAA } from "@/utils/ORG/paa/third-page/desktop/tooltipToRender"
 
 export const INDEX_D_AA_CR_Detail = () => {
   const route = useRouter()
@@ -21,6 +22,7 @@ export const INDEX_D_AA_CR_Detail = () => {
         sectionToRender={arraySectionToRender_PAA}
         layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES}
         addToCarePlanWithIcon={true}
+        tooltipDisplay={tooltipToRender_PAA}
       />
     </>
   )
