@@ -52,27 +52,23 @@ export const INDEX_ORG_Detail_D = ({
           {sectionToRender ? (
             <>
               {sectionToRender.map((x, index) => {
-                let Component = x.component
-
-                const idInnerbar = x.toNavbar ? x.toNavbar.id : null
-
-                return (
-                  <Fragment key={`${x.name}_${index}`}>
-                    <Component
-                      contactUsCustomProperties={contactUsCustomProperties}
-                      idInnerbar={idInnerbar}
-                    />
-                  </Fragment>
-                )
+                if (x.component !== null) {
+                  const idInnerbar = x.toNavbar ? x.toNavbar.id : null
+                  return (
+                    <Fragment key={`${x.name}_${index}`}>
+                      <x.component
+                        contactUsCustomProperties={contactUsCustomProperties}
+                        idInnerbar={idInnerbar}
+                      />
+                    </Fragment>
+                  )
+                }
               })}
             </>
           ) : (
             <>
               {defaultSectionToRender.map((x, index) => {
                 let theComponentName = x.component.name
-
-                let theIDInnerbar = x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]
-                console.log("theIDInnerbar:", theIDInnerbar)
 
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>

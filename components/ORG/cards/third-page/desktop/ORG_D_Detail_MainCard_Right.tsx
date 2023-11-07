@@ -5,11 +5,11 @@ import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/deskto
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { capitalizeWords } from "@/utils/capitalizeWords"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { Fragment } from "react"
+import { Fragment, useMemo } from "react"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
 import { ORG_D_Detail_Card_SecondRow_Info } from "./ORG_D_Detail_Card_SecondRow_Info"
 import { ORG_D_Detail_HighlightBoxes } from "./ORG_D_Detail_HighlightBoxes"
@@ -21,6 +21,10 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { query } = useRouter()
+
+  let atLeastOneHighlightplus = useMemo(() => {
+    return Boolean(thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS])
+  }, [])
 
   return (
     <ORG_D_Detail_MainCard_RightWrapper
@@ -53,11 +57,19 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
         <div
           className={
-            !thirdpageDataORG.card.rightPart.highlightsPlus && !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]
+            !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS] &&
+            !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]
               ? "NO_HIGHLIGHT"
               : "ONE_HIGHLIGHT_AT_LEAST"
           }>
-          <Highlights_2_D highlights={thirdpageDataORG.card.rightPart.highlightsPlus} />
+          {atLeastOneHighlightplus && (
+            <Highlights_2_D
+              highlights={
+                thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]
+              }
+            />
+          )}
+
           <ORG_D_Detail_HighlightBoxes
             meetingFormat={
               thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]

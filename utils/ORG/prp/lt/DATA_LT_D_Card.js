@@ -1,7 +1,12 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 
 export const DATA_LT_D_CardRight = [
   {
+    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Accepting new residents"],
+    },
+
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Referral Required", "Does Evaluations"],

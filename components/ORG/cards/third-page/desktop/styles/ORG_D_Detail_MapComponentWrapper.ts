@@ -49,7 +49,6 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
 
     & > :nth-child(2) {
       margin-bottom: 10px;
-      /* margin-left: 48px; */
       margin-left: 22px;
     }
   }

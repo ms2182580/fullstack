@@ -13,8 +13,8 @@ export type InnerNavBar_InnerData = {
 }[]
 
 export type ArraySectionToRender_Type = {
-  name: string
-  component: FC
+  name: string | null
+  component: FC | null
   toNavbar?: {
     id: string | null
     jsx?: string
