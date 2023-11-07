@@ -15,14 +15,6 @@ export const INDEX_D_AT_AT_Detail = () => {
     return
   }
 
-  // const arraySectionToRender = [
-  //   { name: ORG_D_Detail_AT_WCMD_WhereToBuy.name, component: ORG_D_Detail_AT_WCMD_WhereToBuy,  },
-  //   { name: ORG_D_Detail_ContactUs.name, component: ORG_D_Detail_ContactUs },
-  //   { name: ORG_D_Detail_AT_WCMD_SimilarProducts.name, component: ORG_D_Detail_AT_WCMD_SimilarProducts },
-  //   { name: ORG_D_Detail_Reviews.name, component: ORG_D_Detail_Reviews },
-  //   { name: ORG_D_Detail_FAQS.name, component: ORG_D_Detail_FAQS },
-  // ]
-
   return (
     <>
       <INDEX_ORG_Detail_D
