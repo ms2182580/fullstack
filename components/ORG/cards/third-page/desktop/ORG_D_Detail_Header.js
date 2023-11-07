@@ -38,7 +38,6 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
           <>
             {sectionToRender.map((x, index) => {
               const toJSX = x.toNavbar.jsx ? x.toNavbar.jsx : x.toNavbar.id
-              console.log("toJSX:", toJSX)
 
               if (x.toNavbar.id !== null) {
                 return (

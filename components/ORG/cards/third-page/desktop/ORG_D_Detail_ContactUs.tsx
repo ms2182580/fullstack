@@ -14,11 +14,11 @@ export type SelectTags_Types = { title: string; data: string[] }
 type Props = {
   defaultId: string
   arrayInnerNavBar: InnerNavBar_InnerData | null
-  selectTags: SelectTags_Types | null
+  contactUsCustomProperties: SelectTags_Types | null
   idInnerbar: string
 }
 
-export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavBar = null, selectTags = null, idInnerbar = "#" }: Props) => {
+export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavBar = null, contactUsCustomProperties = null, idInnerbar = "#" }: Props) => {
   const [textareaValueState, setTextareaValueState] = useState("")
 
   let handleTextareaValueState = (e) => {
@@ -77,14 +77,14 @@ export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavB
         </div>
       </span>
 
-      {selectTags ? (
+      {contactUsCustomProperties ? (
         <>
           <div>
             <header>
-              <H3>{selectTags.title}</H3>
+              <H3>{contactUsCustomProperties.title}</H3>
             </header>
             <ul>
-              {selectTags.data.map((x, index) => {
+              {contactUsCustomProperties.data.map((x, index) => {
                 return (
                   <Fragment key={`${x}_${index}`}>
                     <li>{x}</li>

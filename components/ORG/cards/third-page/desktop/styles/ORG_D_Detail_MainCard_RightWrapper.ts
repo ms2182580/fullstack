@@ -1,4 +1,4 @@
-import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const enum Layout_MainCardRight_KEY {
@@ -13,6 +13,10 @@ export const enum Layout_MainCardRight_VALUES {
 
 export type Props = {
   [Layout_MainCardRight_KEY.KEY]?: Layout_MainCardRight_VALUES.DEFAULT | Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES | Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH
+}
+
+export const enum ORG_D_Detail_MainCard_Right_CLASSES {
+  ADD_TO_CARE_PLAN_WITH_ICON = "ADD_TO_CARE_PLAN_WITH_ICON",
 }
 
 export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
@@ -240,11 +244,42 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
   & > :last-child {
     display: flex;
     justify-content: end;
+    align-items: center;
     gap: 16px;
 
-    & > :nth-child(2):hover {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      padding: 8px 32px;
+
+      border-radius: 8px;
+
+      border: 2px solid ${PRIMARY.PRIMARY_CTA};
+      background: ${PRIMARY.PRIMARY_CTA};
+
+      color: ${NEUTRALS.OFF_WHITE};
+
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0.24px;
+
       cursor: pointer;
-      filter: brightness(90%);
+    }
+
+    & > :nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover,
+      &:focus-visible {
+        cursor: pointer;
+        filter: brightness(90%);
+      }
     }
   }
 `

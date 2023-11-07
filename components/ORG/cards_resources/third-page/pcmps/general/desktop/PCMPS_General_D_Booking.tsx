@@ -46,7 +46,6 @@ const modalData = {
 }
 
 export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
-  console.log("idInnerbar:", idInnerbar)
   const [dataToModal, setDataToModal] = useState(dataToModal_InitialData)
   const [shouldShowMoldal, setShouldShowMoldal] = useState(false)
   const [elementActiveHeight, setElementActiveHeight] = useState(null)
