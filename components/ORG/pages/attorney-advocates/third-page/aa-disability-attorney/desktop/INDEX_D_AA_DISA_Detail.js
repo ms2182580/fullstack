@@ -14,7 +14,10 @@ export const INDEX_D_AA_DISA_Detail = () => {
 
   return (
     <>
-      <INDEX_ORG_Detail_D layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES} />
+      <INDEX_ORG_Detail_D
+        layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES}
+        addToCarePlanWithIcon={true}
+      />
     </>
   )
 }

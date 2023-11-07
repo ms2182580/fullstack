@@ -19,7 +19,7 @@ export const INDEX_D_CMPS_DAY_Detail = () => {
       <INDEX_ORG_Detail_D
         sectionToRender={arraySectionToRender_PCMPS}
         layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES}
-        // arrayInnerNavBar={arrayInnerNavBar_PCMPS}
+        addToCarePlanWithIcon={true}
       />
     </>
   )

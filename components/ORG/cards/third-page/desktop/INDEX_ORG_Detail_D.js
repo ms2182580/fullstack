@@ -21,7 +21,12 @@ let defaultSectionToRender = [
   { component: ORG_D_Detail_FAQS, [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]: "faqs" },
 ]
 
-export const INDEX_ORG_Detail_D = ({ sectionToRender = null, layout_MainCardRight = Layout_MainCardRight_VALUES.DEFAULT, selectTags = null, howIsMap = null }) => {
+export const INDEX_ORG_Detail_D = ({
+  sectionToRender = null,
+  layout_MainCardRight = Layout_MainCardRight_VALUES.DEFAULT,
+  contactUsCustomProperties = null,
+  addToCarePlanWithIcon = false,
+}) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { modalShowedCtx } = useCtx_ShowModal()
@@ -36,7 +41,10 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, layout_MainCardRigh
             sectionToRender={sectionToRender}
           />
 
-          <ORG_D_Detail_MainCard layout_MainCardRight={layout_MainCardRight} />
+          <ORG_D_Detail_MainCard
+            layout_MainCardRight={layout_MainCardRight}
+            addToCarePlanWithIcon={addToCarePlanWithIcon}
+          />
 
           {sectionToRender ? (
             <>
@@ -48,7 +56,7 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, layout_MainCardRigh
                 return (
                   <Fragment key={`${x.name}_${index}`}>
                     <Component
-                      selectTags={selectTags}
+                      contactUsCustomProperties={contactUsCustomProperties}
                       idInnerbar={idInnerbar}
                     />
                   </Fragment>
@@ -67,7 +75,7 @@ export const INDEX_ORG_Detail_D = ({ sectionToRender = null, layout_MainCardRigh
                   <Fragment key={`${theComponentName}_${index}`}>
                     <x.component
                       idInnerbar={x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}
-                      selectTags={selectTags}
+                      contactUsCustomProperties={contactUsCustomProperties}
                     />
                   </Fragment>
                 )

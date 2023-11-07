@@ -1,7 +1,7 @@
+import { ORG_D_Search_CarePlanSvg } from "@/assets/Icons"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "@/assets/Icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
 import { Highlights_2_D } from "@/components/ORG/highlights/Highlights_2_D"
 import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
-import { ButtonSmall } from "@/components/ui/buttons/general"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -17,7 +17,7 @@ import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight }) => {
+export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { push, query } = useRouter()
@@ -129,19 +129,20 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight }) => {
       />
 
       <div>
-        <span
-          onClick={handlePushTo404}
-          onKeyDown={handlePushTo404}
-          tabIndex={0}>
-          <ButtonSmall>Add to Care Plan</ButtonSmall>
-        </span>
+        <button>
+          {" "}
+          {addToCarePlanWithIcon && <ORG_D_Search_CarePlanSvg />}
+          Add to Care Plan
+        </button>
 
-        <Image
-          src={ORG_D_Detail_Share_Modal_QRAltIcon}
-          layout="fixed"
-          width={48}
-          height={48}
-        />
+        <span tabIndex={0}>
+          <Image
+            src={ORG_D_Detail_Share_Modal_QRAltIcon}
+            layout="fixed"
+            width={48}
+            height={48}
+          />
+        </span>
       </div>
     </ORG_D_Detail_MainCard_RightWrapper>
   )

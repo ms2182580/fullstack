@@ -12,7 +12,7 @@ export const INDEX_D_RP_LT_Detail = () => {
     return
   }
 
-  const selectTags = {
+  const contactUsCustomProperties = {
     title: "I have questions about",
     data: [
       "Payment",
@@ -30,7 +30,7 @@ export const INDEX_D_RP_LT_Detail = () => {
 
   return (
     <>
-      <INDEX_ORG_Detail_D selectTags={selectTags} />
+      <INDEX_ORG_Detail_D contactUsCustomProperties={contactUsCustomProperties} />
     </>
   )
 }

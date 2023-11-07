@@ -15,7 +15,10 @@ export const INDEX_D_MH_MHSS_Detail = () => {
 
   return (
     <>
-      <INDEX_ORG_Detail_D layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH} />
+      <INDEX_ORG_Detail_D
+        layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH}
+        addToCarePlanWithIcon={true}
+      />
     </>
   )
 }
