@@ -1,4 +1,5 @@
 import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { tooltipToRender_PAA } from "@/utils/ORG/paa/third-page/desktop/tooltipToRender"
 import { useRouter } from "next/router"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { INDEX_ORG_Detail_D } from "../../../../../cards/third-page/desktop/INDEX_ORG_Detail_D"
@@ -17,6 +18,7 @@ export const INDEX_D_AA_ELMP_Detail = () => {
       <INDEX_ORG_Detail_D
         layout_MainCardRight={Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES}
         addToCarePlanWithIcon={true}
+        tooltipDisplay={tooltipToRender_PAA}
       />
     </>
   )
