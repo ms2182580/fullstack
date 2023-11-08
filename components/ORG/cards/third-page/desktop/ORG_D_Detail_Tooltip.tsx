@@ -11,12 +11,6 @@ import { ORG_D_Detail_TooltipWrapper } from "./styles/ORG_D_Detail_TooltipWrappe
 This can help to make a better tooltip
 https://css-tip.com/tooltip-mask/ */
 
-/* 
-!FH0
-
-Make tooltip for every resource!
-*/
-
 export const ORG_D_Detail_Tooltip = ({ allProps }) => {
   let isCustom = allProps[Tooltip_KEYS.WHAT_DISPLAY] === Tooltip_VALUES.CUSTOM
   let isDefault = allProps[Tooltip_KEYS.WHAT_DISPLAY] === Tooltip_VALUES.DEFAULT
