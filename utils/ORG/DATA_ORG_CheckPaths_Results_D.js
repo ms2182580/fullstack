@@ -196,6 +196,26 @@ export const DATA_ORG_CheckPaths_Results_D = {
       },
     },
   ],
+
+  pves: [
+    "ves-open-positions",
+    "ves-highly-reviewed-companies",
+    "ves-supported-employment-programs",
+    "ves-apprenticeships-internships",
+    "ves-job-training-coaches",
+    {
+      acronymsFolderRouteName: {},
+    },
+    {
+      fullName: {
+        "ves-open-positions": "open positions",
+        "ves-highly-reviewed-companies": "highly reviewed companies",
+        "ves-supported-employment-programs": "supported employment programs",
+        "ves-apprenticeships-internships": "Apprenticeships and Internships",
+        "ves-job-training-coaches": "Job Training Coaches",
+      },
+    },
+  ],
 }
 
 // # 1° generation
@@ -240,8 +260,7 @@ export const DATA_ORG_CheckPaths_Results_D = {
 //   → ST
 /*  */
 
-/* !FH Modify this in the «next.config.js» file */
-// 2° generation
+// # 2° generation
 // "pat":
 //   → WMD // was: AT
 //   → TFS // mew
@@ -283,3 +302,53 @@ export const DATA_ORG_CheckPaths_Results_D = {
 // "prp"
 //   → LT
 //   → ST
+
+/*  */
+// # 3° generation
+// "pat":
+//   → WMD // was: AT
+//   → TFS // mew
+//   → ACS // was: SAT
+//   → SDAT
+//   → IHTAT // new
+// "paa":
+//   → CR
+//   → SE
+//   → ELMP
+//   → DISA
+//   → IDD
+// "pcmps":
+//   → DAY
+//   → OVN
+//   → DAYT
+// "pcc":
+//   → CC
+//   → FC
+//   → AC
+// "pdctr":
+//   → PSYT
+//   → FM
+//   → NO
+// "pmhss":
+//   → MH
+//   → FS
+// "pppas":
+//   → A
+//   → PNFPO
+//   → SO
+// "pses":
+//   → SES
+//   → PRE
+//   → PV
+// "pst":
+//   → SLP
+//   → OT
+// "prp"
+//   → LT
+//   → ST
+// "pves"
+//   → OP
+//   → HR
+//   → SEP
+//   → AI
+//   → JTC

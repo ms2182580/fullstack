@@ -17,8 +17,9 @@ export const NavBar_D_OnlyDefaultWrapper = styled.header`
   }
 
   & > :nth-child(2) {
-    margin-left: clamp(8px, 1vw - 20px, 50px);
-    margin-right: clamp(8px, 1vw - 20px, 80px);
+    margin-inline: clamp(8px, 1vw - 20px, 50px);
+
+    /* margin-right: clamp(8px, 1vw - 20px, 80px); */
 
     padding-bottom: 45px;
 
