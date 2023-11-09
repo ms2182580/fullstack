@@ -13,8 +13,10 @@ export const useCheckBreadcrumbs = (titleToFormat) => {
       let fullName = DATA_ORG_CheckPaths_Results_D[index].at(-1).fullName[theRoute]
 
       setTitleFormatted(fullName)
-    } else {
+    } else if (titleToFormat.split(" ")[0].toLowerCase() === "popular") {
       setTitleFormatted(titleToFormat.split(" ").slice(1).join(" "))
+    } else {
+      setTitleFormatted(titleToFormat)
     }
   }, [])
 
