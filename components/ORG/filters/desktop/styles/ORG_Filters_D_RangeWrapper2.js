@@ -8,41 +8,44 @@ const BUTTON_COLOR = "#3B4250"
 
 export const ORG_Filters_D_RangeWrapper2 = styled.div`
   position: relative;
-  & > :nth-child(1){
-    & > :nth-child(1){
+  & > :nth-child(1) {
+    & > :nth-child(1) {
       padding-top: 8px;
       padding-bottom: 8px;
       padding-inline: 16px;
+
+      text-transform: capitalize;
     }
   }
 
   .container {
     position: absolute;
-    top:150%;
+    top: 150%;
     left: 0;
 
-    z-index:5;
+    z-index: 5;
     background-color: ${NEUTRALS.OFF_WHITE};
 
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    
-    visibility: ${({ mustShowFilter }) => mustShowFilter ? `visible` : `hidden`};
-    padding:48px;
-    
-    
-    & > :nth-child(1){
-      position:absolute;
-      right:16px;
-      top:16px;
-      
+
+    visibility: ${({ mustShowFilter }) => (mustShowFilter ? `visible` : `hidden`)};
+    padding: 48px;
+
+    p {
+      text-transform: capitalize;
+    }
+
+    & > :nth-child(1) {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+
       cursor: pointer;
-      
+
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      
     }
 
     & > label {
@@ -52,20 +55,18 @@ export const ORG_Filters_D_RangeWrapper2 = styled.div`
     & > p {
       margin-bottom: 21px;
     }
-    
-    & > :last-child{
+
+    & > :last-child {
       display: flex;
       align-items: center;
-      gap:40px;
+      gap: 40px;
       & > * {
-        width:100%;
-        & > *{
-          
-          width:100%;
+        width: 100%;
+        & > * {
+          width: 100%;
         }
       }
     }
-    
   }
 
   .thumb,
@@ -166,13 +167,12 @@ export const ORG_Filters_D_RangeWrapper2 = styled.div`
 
     display: flex;
     justify-content: center;
-    gap:8px;
-    
-    padding-bottom:48px;
-    
+    gap: 8px;
+
+    padding-bottom: 48px;
+
     /* border: 2px solid crimson; */
-    padding-inline:18px;
-    
+    padding-inline: 18px;
 
     & > div {
       border: 1px solid ${BUTTON_COLOR};

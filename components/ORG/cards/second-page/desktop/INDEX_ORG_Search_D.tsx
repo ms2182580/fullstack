@@ -6,7 +6,7 @@ import { ORG_D_Results_Header } from "./ORG_D_Results_Header.js"
 import { ORG_D_Results_Main } from "./ORG_D_Results_Main.js"
 import { INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper.js"
 
-export const INDEX_ORG_Search_D = ({ layout_MainCardLeft }) => {
+export const INDEX_ORG_Search_D = () => {
   const { modalShowedCtx } = useCtx_ShowModal()
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()

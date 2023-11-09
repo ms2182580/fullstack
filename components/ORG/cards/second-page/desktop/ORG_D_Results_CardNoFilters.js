@@ -19,6 +19,7 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  // console.log("secondpageDataORG:", secondpageDataORG)
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state, specificDataForThisResource) => {
@@ -52,15 +53,18 @@ export const ORG_D_Results_CardNoFilters = () => {
               <ORG_D_Results_Main_Left
                 renderThisCard={renderThisCard}
                 renderThisContact={renderThisContact}
-                secondpageDataORG={secondpageDataORG}
               />
 
               <ORG_D_Results_Main_Right
                 renderThisFilter={renderThisFilter}
                 renderThisCard={renderThisCard}
-                secondpageDataORG={secondpageDataORG}
               />
 
+              {/* 
+                !FH0
+                Make this a component
+                Change the name below: "See Availability" for "Apply Now"
+                */}
               <div className="BOTTOM-BUTTONS">
                 <div>
                   <ORG_D_Results_ViewProfileSvg />

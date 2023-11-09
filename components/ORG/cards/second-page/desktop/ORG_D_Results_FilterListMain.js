@@ -176,7 +176,6 @@ export const ORG_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
 
   return (
     <ORG_D_Results_FilterListMainWrapper>
-
       {secondpageFiltersORG.map((x, index) => (
         <Fragment key={`${x.parameters.buttonName}_${index}`}>
           <x.component
@@ -185,7 +184,6 @@ export const ORG_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
           />
         </Fragment>
       ))}
-
     </ORG_D_Results_FilterListMainWrapper>
   )
 }

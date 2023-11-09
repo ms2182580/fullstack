@@ -1,4 +1,5 @@
 import { Verified } from "@/components/ORG/verified/Verified"
+import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import Image from "next/image"
 import { ORG_D_Results_CardEmail } from "./ORG_D_Results_CardEmail"
 import { ORG_D_Results_CardLocation } from "./ORG_D_Results_CardLocation"
@@ -7,8 +8,15 @@ import { ORG_D_Results_Card_Hearth } from "./ORG_D_Results_Card_Hearth"
 import { ORG_D_Results_Cardphone } from "./ORG_D_Results_Cardphone"
 import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_LeftWrapper"
 
-export const ORG_D_Results_Main_Left = ({ secondpageDataORG, renderThisCard, renderThisContact }) => {
-  // const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) => {
+  const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+
+  /* 
+  !FH0
+  Fix Image → Do something if secondpageDataORG.LAYOUT_MAIN_CARD_SPECIFIC && (renderThisContact === 0 || renderThisContact === 1) {// do something}
+    
+  Fix data below the image → if secondpageDataORG.LAYOUT_MAIN_CARD_SPECIFIC {// do something}
+  */
 
   return (
     <ORG_D_Results_Main_LeftWrapper>

@@ -76,7 +76,6 @@ export const NavBar_D_HamburgerComponentDropdown = ({ theRef, setShowDropdown })
   const router = useRouter()
 
   let moveUserToORGSearch = (e, acronym) => {
-    console.log("acronym:", acronym)
     if (e.type === "click" || e.key === "Enter") {
       const checkExistPath = DATA_ORG_CheckPaths_Search_D.filter((x) => x === acronym)
 

@@ -7,8 +7,12 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
   & > :nth-child(1) {
     & > :nth-child(1) {
       padding-top: 8px;
+
       padding-bottom: 8px;
       padding-inline: 16px;
+
+      text-transform: capitalize;
+      font-weight: 600;
     }
   }
 
@@ -50,6 +54,8 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
     & > :nth-child(2) {
       cursor: pointer;
       user-select: ${({ allowSelection }) => (allowSelection ? `auto` : `none`)};
+
+      text-transform: capitalize;
     }
 
     & > :nth-child(3) {
@@ -167,13 +173,12 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
       }
     }
   }
-  
-  &.AA_AT_SETTING_CHECKBOX{
+
+  &.AA_AT_SETTING_CHECKBOX {
     & > :nth-child(2) {
       @media (max-width: 1100px) {
-        left:-70px
+        left: -70px;
       }
     }
-    
   }
 `
