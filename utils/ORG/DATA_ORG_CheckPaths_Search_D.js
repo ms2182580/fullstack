@@ -13,7 +13,7 @@ New order:
 "pst",
 "pves" // → Full name: «Vocational & Employment Supports». This is a new resource, subcategory and category
 */
-export const DATA_ORG_CheckPaths_Search_D = ["pat", "paa", "pcmps", "pcc", "pdctr", "pmhss", "pppas", "pses", "pst", "prp"]
+export const DATA_ORG_CheckPaths_Search_D = ["pat", "paa", "pcmps", "pcc", "pdctr", "pmhss", "pppas", "pses", "pst", "prp", "pves"]
 
 export const ROUTER_PUSH_SEARCH = {
   nameJSX: "nameJSX",

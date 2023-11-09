@@ -38,17 +38,17 @@ export const INDEX_D_ORG = () => {
 
   const { moveToLeft, moveToRight, stateToCss, setListRef } = useScrollHorizontal(refOfORGSelections)
 
-  useEffect(() => {
-    if (refOfORGSelections) {
-      let allChildren = Array.from(refOfORGSelections.current.children)
-      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
+  // useEffect(() => {
+  //   if (refOfORGSelections) {
+  //     let allChildren = Array.from(refOfORGSelections.current.children)
+  //     let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
 
-      let liClientWidth_IsActive = getIsActive.clientWidth
-      let liOffSetLeft_IsActive = getIsActive.offsetLeft
+  //     let liClientWidth_IsActive = getIsActive.clientWidth
+  //     let liOffSetLeft_IsActive = getIsActive.offsetLeft
 
-      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
-    }
-  }, [refOfORGSelections])
+  //     let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
+  //   }
+  // }, [refOfORGSelections])
 
   useLayoutEffect(() => {
     if (query[ROUTER_PUSH_SEARCH.nameJSX]) {

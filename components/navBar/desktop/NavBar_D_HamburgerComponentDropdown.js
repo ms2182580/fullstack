@@ -29,6 +29,10 @@ const LIST = [
     acronym: "pst",
   },
   {
+    nameJSX: "Vocational & Employment Supports",
+    acronym: "pves",
+  },
+  {
     nameJSX: "Mental Health Services",
     acronym: "pmhss",
   },
@@ -45,7 +49,7 @@ const LIST = [
     acronym: "pat",
   },
   {
-    nameJSX: "Special Education Schools",
+    nameJSX: "Schools & Educational Resources",
     acronym: "pses",
   },
   {
@@ -72,6 +76,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({ theRef, setShowDropdown })
   const router = useRouter()
 
   let moveUserToORGSearch = (e, acronym) => {
+    console.log("acronym:", acronym)
     if (e.type === "click" || e.key === "Enter") {
       const checkExistPath = DATA_ORG_CheckPaths_Search_D.filter((x) => x === acronym)
 
