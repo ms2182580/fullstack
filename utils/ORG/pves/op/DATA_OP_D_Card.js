@@ -1,25 +1,25 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 
-export const DATA_A_D_CardRight = [
+export const DATA_OP_D_CardRight = [
   {
-    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Disability Rights", "Housing Support"],
+    [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["On-Site"],
     },
 
-    areaOfFocus: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Area of focus",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Housing Advocacy"],
+    insurance: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
     },
 
-    servicesOffered: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Services offered",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Housing", "Rent Relief", "Housing Discrimination", "Home-Owner Assistance Fund"],
+    benefits: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
-    languagesSpoken: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "English",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "translators on site"],
+    salary: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Salary",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["$90,000 - $100,000"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -58,35 +58,28 @@ export const DATA_A_D_CardRight = [
         },
       },
     },
-
-    //highlights: ["Disability Rights", "Housing Support"],
-    //areaOfFocus: "Housing Advocacy",
-    // servicesOffered: ["Housing", "Rent Relief", "Housing Discrimination", "Home-Owner Assistance Fund"],
-    //languagesSpoken: ["English", "translators on site"]
   },
-
   {
-    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Disability Etiquette", "Resource Guide"],
+    [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Hybrid"],
     },
 
-    areaOfFocus: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Area of focus",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cerebral Palsy"],
+    insurance: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
     },
 
-    servicesOffered: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Services offered",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assistive Technology", "Healthcare", "Safety", "Transportation", "Research & Statistics", "Resource Guide"],
+    benefits: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
-    languagesSpoken: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "English",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "translators on site"],
+    salary: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Salary",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["$90,000 - $100,000"],
     },
 
-    /* THIRD PAGE HERE */
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
       [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
@@ -108,10 +101,6 @@ export const DATA_A_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["In-Person & Virtual"],
           },
-          /*        about:{
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "About",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Are your housing issues keeping you up at night? Do you owe your landlord money? Are you worried about eviction? We may be able to help!"],
-          }   */
         },
 
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
@@ -123,35 +112,28 @@ export const DATA_A_D_CardRight = [
         },
       },
     },
-
-    // highlights: ["Disability Etiquette", "Resource Guide"],
-    //areaOfFocus: "Cerebral Palsy",
-    // servicesOffered: ["Assistive Technology", "Healthcare", "Safety", "Transportation", "Research & Statistics", "Resource Guide"],
-    // languagesSpoken: ["English", "Spanish", "translators on site"]
   },
-
   {
-    [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Disability Etiquette", "Resource Guide"],
+    [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Hybrid"],
     },
 
-    areaOfFocus: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Area of focus",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cerebral Palsy"],
+    insurance: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
     },
 
-    servicesOffered: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Services offered",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assistive Technology", "Healthcare", "Safety", "Transportation", "Research & Statistics", "Resource Guide"],
+    benefits: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
-    languagesSpoken: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "English",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "translators on site"],
+    salary: {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Salary",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["$90,000 - $100,000"],
     },
 
-    /* THIRD PAGE HERE */
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
       [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
@@ -173,10 +155,6 @@ export const DATA_A_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["In-Person & Virtual"],
           },
-          /*        about:{
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "About",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Are your housing issues keeping you up at night? Do you owe your landlord money? Are you worried about eviction? We may be able to help!"],
-          }   */
         },
 
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
@@ -188,47 +166,41 @@ export const DATA_A_D_CardRight = [
         },
       },
     },
-
-    // highlights: ["Disability Etiquette", "Resource Guide"],
-    //areaOfFocus: "Cerebral Palsy",
-    // servicesOffered: ["Assistive Technology", "Healthcare", "Safety", "Transportation", "Research & Statistics", "Resource Guide"],
-    // languagesSpoken: ["English", "Spanish", "translators on site"]
   },
 ]
 
-export const DATA_A_D_CardLeft = [
+export const DATA_OP_D_CardLeft = [
   {
-    phone: "(212) 345-6789, ext. 4001",
-
-    email: "www.truong-macgill.com",
+    phone: "",
+    email: "",
     location: {
-      city: "Brooklyn",
-      streetName: "Remsen Street, Suite #2",
-      streetNumber: "163",
-      state: "NY 11201",
-      howFar: "3",
+      city: "Meta NY Headquarters",
+      streetName: "Hudson Yards",
+      streetNumber: "50",
+      state: "New York, NY",
+      howFar: "10",
     },
   },
   {
-    phone: "(212) 360-1224",
-    email: "info@ucp.org",
+    phone: "",
+    email: "",
     location: {
-      city: "Brooklyn",
-      streetName: "Pineapple Street",
-      streetNumber: "29",
-      state: "NY 11201",
-      howFar: "3",
+      city: "Meta NY Headquarters",
+      streetName: "Hudson Yards",
+      streetNumber: "50",
+      state: "New York, NY",
+      howFar: "10",
     },
   },
   {
-    phone: "(212) 360-1224",
-    email: "info@ucp.org",
+    phone: "",
+    email: "",
     location: {
-      city: "Brooklyn",
-      streetName: "Pineapple Street",
-      streetNumber: "29",
-      state: "NY 11201",
-      howFar: "3",
+      city: "Amazon New York",
+      streetName: "West 33rd Street",
+      streetNumber: "450 ",
+      state: "New York, NY 10001",
+      howFar: "10",
     },
   },
 ]

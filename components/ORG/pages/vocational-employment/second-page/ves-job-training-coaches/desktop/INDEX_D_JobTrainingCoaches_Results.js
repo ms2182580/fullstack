@@ -1,22 +1,22 @@
+import { DATA_PVES_D } from "@/utils/ORG/pves/DATA_PVES_D"
+import { DATA_OP_D_CardLeft, DATA_OP_D_CardRight } from "@/utils/ORG/pves/op/DATA_OP_D_Card.js"
+import { renderFiltersInUI_VES_OP } from "@/utils/ORG/pves/op/DATA_OP_D_Filters.js"
 import { useEffect } from "react"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider.js"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
-import { DATA_PLT_D } from "../../../../../../../utils/ORG/prp/DATA_PLT_D.js"
-import { DATA_LT_D_CardLeft, DATA_LT_D_CardRight } from "../../../../../../../utils/ORG/prp/lt/DATA_LT_D_Card.js"
-import { renderFiltersInUI_RP_LT } from "../../../../../../../utils/ORG/prp/lt/DATA_LT_D_Filters.js"
 import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
-export const INDEX_D_LongTermResidential_Results = () => {
+export const INDEX_D_JobTrainingCoaches_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
   useEffect(() => {
-    setSecondpageFiltersORG(renderFiltersInUI_RP_LT)
+    setSecondpageFiltersORG(renderFiltersInUI_VES_OP)
     setSecondpageDataORG({
-      cardData: DATA_PLT_D[0].slice(1),
-      mainNameORG: DATA_PLT_D[0][0],
-      right: DATA_LT_D_CardRight,
-      left: DATA_LT_D_CardLeft,
+      cardData: DATA_PVES_D[4].slice(1),
+      mainNameORG: DATA_PVES_D[4][0],
+      right: DATA_OP_D_CardRight,
+      left: DATA_OP_D_CardLeft,
     })
   }, [])
 

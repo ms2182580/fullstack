@@ -4,7 +4,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PCC_D } from "../../../../../../../utils/ORG/pcc/DATA_PCC_D.js"
 import { DATA_CC_D_CardLeft, DATA_CC_D_CardRight } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Card.js"
 import { renderFiltersInUI_CC_CC } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Filters.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
+import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_FitnessClasses_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -20,9 +20,5 @@ export const INDEX_D_FitnessClasses_Results = () => {
     })
   }, [])
 
-  return (
-    <>
-      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
-    </>
-  )
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
 }

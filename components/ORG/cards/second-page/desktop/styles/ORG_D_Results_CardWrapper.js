@@ -12,7 +12,7 @@ export const ORG_D_Results_CardWrapper = styled.div`
   border-radius: 8px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
-  & > .LEFT-PART {
+  /* & > .LEFT-PART {
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     grid-area: leftPart;
 
@@ -95,11 +95,9 @@ export const ORG_D_Results_CardWrapper = styled.div`
       gap: 16px;
 
       .HIGHLIGHTS_PLUS {
-        /* border: 2px solid crimson; */
       }
 
       .HIGHLIGHTS {
-        /* border: 2px solid green; */
       }
 
       .NO_THIRDPAGE_DATA {
@@ -116,17 +114,13 @@ export const ORG_D_Results_CardWrapper = styled.div`
       }
     }
 
-    /* & > *:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)):not(:last-child) {
-      margin-bottom: 16px;
-    } */
-
     & > p {
       & > * {
         color: ${NEUTRALS.BLACK};
         font-weight: 400;
       }
     }
-  }
+  } */
 
   & > .BOTTOM-BUTTONS {
     grid-area: bottomButtons;

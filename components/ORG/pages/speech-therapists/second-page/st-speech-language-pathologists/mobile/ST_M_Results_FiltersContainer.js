@@ -1,5 +1,5 @@
 import { XDesktopSvg } from "../../../../../../../assets/Icons/index.js"
-import { ORG_FILTERS_DATA_M, ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories.js"
+import { ORG_FILTERS_DATA_M, ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories"
 import { BtnSmall } from "../../../../../../ui/buttons/general/styles/ButtonStyled"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_FilterCheckboxContainer } from "./ST_M_Results_FilterCheckboxContainer.js"

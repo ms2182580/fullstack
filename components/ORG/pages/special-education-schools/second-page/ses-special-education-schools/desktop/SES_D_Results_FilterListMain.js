@@ -1,6 +1,6 @@
 import { DATA_CC_D_Filters } from "../../../../../../../utils/ORG/pcc/cc/DATA_CC_D_Filters.js"
 import { DATA_SES_D_Filters } from "../../../../../../../utils/ORG/pses/ses/DATA_SES_D_Filters.js"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"

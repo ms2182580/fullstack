@@ -1,11 +1,10 @@
-import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox2";
-import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox_Isolated";
-import { ORG_Filters_D_More2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_More2";
-import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2";
-import { ORG_Filters_D_Range_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range_Isolated";
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories";
-import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D";
-import { DATA_MH_D_Filters } from "../../pmhss/mh/DATA_MH_D_Filters";
+import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox_Isolated"
+import { ORG_Filters_D_More2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_More2"
+import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2"
+import { ORG_Filters_D_Range_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range_Isolated"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
 export const DATA_A_D_Filters = {
   areasOfFocus: {
@@ -62,54 +61,48 @@ const allMoreFilters = {
       titleOnModal={ORG_FILTERS_KEYS_D.operationHours.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.operationHours}
     />,
-
-
-
   ],
-};
+}
 
 export const renderFiltersInUI_PPPAS_PNFPO = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
-      buttonName:DATA_A_D_Filters.areasOfFocus.buttonName,
-      categoriesToDisplay:DATA_A_D_Filters.areasOfFocus.categoriesToDisplay,
+      buttonName: DATA_A_D_Filters.areasOfFocus.buttonName,
+      categoriesToDisplay: DATA_A_D_Filters.areasOfFocus.categoriesToDisplay,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
-      buttonName:DATA_A_D_Filters.servicesOffered.buttonName,
-      categoriesToDisplay:DATA_A_D_Filters.servicesOffered.categoriesToDisplay,
+      buttonName: DATA_A_D_Filters.servicesOffered.buttonName,
+      categoriesToDisplay: DATA_A_D_Filters.servicesOffered.categoriesToDisplay,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
-      buttonName:ORG_FILTERS_KEYS_D.language.alternativeTitle,
-      categoriesToDisplay:ORG_FILTERS_DATA_D.languages,
+      buttonName: ORG_FILTERS_KEYS_D.language.alternativeTitle,
+      categoriesToDisplay: ORG_FILTERS_DATA_D.languages,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
-      buttonName:ORG_FILTERS_KEYS_D.operationHours.titleToShow,
-        categoriesToDisplay:ORG_FILTERS_DATA_D.operationHours,
+      buttonName: ORG_FILTERS_KEYS_D.operationHours.titleToShow,
+      categoriesToDisplay: ORG_FILTERS_DATA_D.operationHours,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
-      allCheckboxes:allMoreFilters.checkbox,
-      allRanges:allMoreFilters.ranges,
+      allCheckboxes: allMoreFilters.checkbox,
+      allRanges: allMoreFilters.ranges,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
-];
-
-
-
+]

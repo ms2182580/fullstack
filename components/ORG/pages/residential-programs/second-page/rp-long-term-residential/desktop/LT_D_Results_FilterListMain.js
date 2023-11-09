@@ -1,5 +1,5 @@
 import { DATA_LT_D_Filters } from "../../../../../../../utils/ORG/prp/lt/DATA_LT_D_Filters.js"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
@@ -75,7 +75,6 @@ const allMoreFilters = {
       titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
     />,
-
   ],
 }
 
@@ -226,14 +225,11 @@ export const LT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
         max={DATA_LT_D_Filters.duration.maximum}
         addCharacter={DATA_LT_D_Filters.duration.addCharacter}
         whichMeasure={DATA_LT_D_Filters.duration.whichMeasure}
-
         minSpecialCharacter={DATA_LT_D_Filters.duration.minSpecialCharacter}
         maxSpecialCharacter={DATA_LT_D_Filters.duration.maxSpecialCharacter}
         addCharacterMaxSpecialCharacter={DATA_LT_D_Filters.duration.addCharacterMaxSpecialCharacter}
         addCharacterMinSpecialCharacter={DATA_LT_D_Filters.duration.addCharacterMinSpecialCharacter}
-
       />
-
 
       <ORG_Filters_D_Checkbox
         buttonName={DATA_LT_D_Filters.houseType.buttonName}
@@ -246,9 +242,7 @@ export const LT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
         categoriesToDisplay={DATA_LT_D_Filters.accommodations.categoriesToDisplay}
       />
 
-      <ORG_Filters_D_More
-        allCheckboxes={allMoreFilters.checkbox}
-      />
+      <ORG_Filters_D_More allCheckboxes={allMoreFilters.checkbox} />
     </LT_D_Results_FilterListMainWrapper>
   )
 }

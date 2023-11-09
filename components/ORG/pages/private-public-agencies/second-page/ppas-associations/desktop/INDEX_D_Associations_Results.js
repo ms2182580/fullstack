@@ -4,7 +4,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PPPAS_D } from "../../../../../../../utils/ORG/pppas/DATA_PPPAS_D.js"
 import { DATA_A_D_CardLeft, DATA_A_D_CardRight } from "../../../../../../../utils/ORG/pppas/a/DATA_A_D_Card.js"
 import { renderFiltersInUI_PPPAS_PNFPO } from "../../../../../../../utils/ORG/pppas/a/DATA_A_D_Filters.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
+import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_Associations_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -20,9 +20,5 @@ export const INDEX_D_Associations_Results = () => {
     })
   }, [])
 
-  return (
-    <>
-      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
-    </>
-  )
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
 }

@@ -4,7 +4,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PCMPS_D } from "../../../../../../../utils/ORG/pcmps/DATA_PCMPS_D"
 import { DATA_DAY_D_CardLeft, DATA_DAY_D_CardRight } from "../../../../../../../utils/ORG/pcmps/day/DATA_DAY_D_Card.js"
 import { renderFiltersInUI_CMPS_DAY } from "../../../../../../../utils/ORG/pcmps/day/DATA_DAY_D_Filters.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
+import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_Day_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
