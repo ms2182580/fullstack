@@ -1,3 +1,4 @@
+import { INDEX_D_VESSearch } from "@/components/ORG/pages/vocational-employment/first-page/desktop/INDEX_D_VESSearch"
 import { INDEX_D_ATSearch } from "../../components/ORG/pages/assistive-technology/first-page/desktop/INDEX_D_ATSearch"
 import { INDEX_D_AASearch } from "../../components/ORG/pages/attorney-advocates/first-page/desktop/INDEX_D_AASearch"
 import { INDEX_D_CMPSSearch } from "../../components/ORG/pages/camps/first-page/desktop/INDEX_D_CMPSSearch.js"
@@ -84,5 +85,12 @@ export const DATA_ORG_D = [
     componentName: INDEX_D_RPSearch.name,
     acronym: "prp",
     folderName: "residential-programs",
+  },
+  {
+    nameJSX: "Vocational & Employment Supports",
+    component: INDEX_D_VESSearch,
+    componentName: INDEX_D_VESSearch.name,
+    acronym: "pves",
+    folderName: "x",
   },
 ]
