@@ -43,7 +43,6 @@ export const DATA_ORG_D = [
     acronym: "pcc",
     folderName: "community-classes",
   },
-
   {
     nameJSX: "Doctors",
     component: INDEX_D_DCTRSearch,
@@ -66,7 +65,14 @@ export const DATA_ORG_D = [
     folderName: "ptivate-public-agencies",
   },
   {
-    nameJSX: "Special Education Schools",
+    nameJSX: "Residential Programs",
+    component: INDEX_D_RPSearch,
+    componentName: INDEX_D_RPSearch.name,
+    acronym: "prp",
+    folderName: "residential-programs",
+  },
+  {
+    nameJSX: "Schools & Educational Resources",
     component: INDEX_D_SESSearch,
     componentName: INDEX_D_SESSearch.name,
     acronym: "pses",
@@ -79,13 +85,7 @@ export const DATA_ORG_D = [
     acronym: "pst",
     folderName: "speech-therapists",
   },
-  {
-    nameJSX: "Residential Programs",
-    component: INDEX_D_RPSearch,
-    componentName: INDEX_D_RPSearch.name,
-    acronym: "prp",
-    folderName: "residential-programs",
-  },
+
   {
     nameJSX: "Vocational & Employment Supports",
     component: INDEX_D_VESSearch,
