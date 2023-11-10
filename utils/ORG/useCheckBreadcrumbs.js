@@ -12,12 +12,16 @@ export const useCheckBreadcrumbs = (titleToFormat) => {
       let index = `p${theRoute.split("-")[0]}`
       let fullName = DATA_ORG_CheckPaths_Results_D[index].at(-1).fullName[theRoute]
 
-      setTitleFormatted(fullName)
-    } else if (titleToFormat.split(" ")[0].toLowerCase() === "popular") {
-      setTitleFormatted(titleToFormat.split(" ").slice(1).join(" "))
-    } else {
-      setTitleFormatted(titleToFormat)
+      return setTitleFormatted(fullName)
     }
+
+    const theFirstWordIsPopular = titleToFormat.split(" ")[0].toLowerCase() === "popular"
+
+    if (theFirstWordIsPopular) {
+      return setTitleFormatted(titleToFormat.split(" ").slice(1).join(" "))
+    }
+
+    return setTitleFormatted(titleToFormat)
   }, [])
 
   return { titleFormatted }

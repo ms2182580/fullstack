@@ -19,6 +19,7 @@ export const INDEX_D_OpenPositions_Results = () => {
       right: DATA_OP_D_CardRight,
       left: DATA_OP_D_CardLeft,
       [Layout_MainCard_Search_KEY.KEY]: Layout_MainCard_Search_VALUE.VES_LIKE,
+      isOpenPosition: true,
     })
   }, [])
 

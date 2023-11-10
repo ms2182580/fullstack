@@ -1,6 +1,7 @@
 import { DATA_PVES_D } from "@/utils/ORG/pves/DATA_PVES_D"
 import { DATA_OP_D_CardLeft, DATA_OP_D_CardRight } from "@/utils/ORG/pves/op/DATA_OP_D_Card.js"
 import { renderFiltersInUI_VES_OP } from "@/utils/ORG/pves/op/DATA_OP_D_Filters.js"
+import { Layout_MainCard_Search_KEY, Layout_MainCard_Search_VALUE } from "@/utils/ORG/pves/second-page/desktop/specificLayout"
 import { useEffect } from "react"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider.js"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
@@ -17,6 +18,8 @@ export const INDEX_D_ApprenticeshipsInternships_Results = () => {
       mainNameORG: DATA_PVES_D[3][0],
       right: DATA_OP_D_CardRight,
       left: DATA_OP_D_CardLeft,
+      [Layout_MainCard_Search_KEY.KEY]: Layout_MainCard_Search_VALUE.VES_LIKE,
+      isDefault: true,
     })
   }, [])
 

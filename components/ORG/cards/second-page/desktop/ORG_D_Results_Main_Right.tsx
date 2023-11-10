@@ -13,7 +13,7 @@ export const ORG_D_Results_Main_Right = ({ renderThisCard, renderThisFilter }) =
 
   /* 
   !FH0
-  - Fix Rating
+  ▬ Fix Rating
   */
 
   return (

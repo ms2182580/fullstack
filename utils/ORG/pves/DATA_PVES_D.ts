@@ -6,7 +6,6 @@ import ORG_RP3 from "@/assets/images/ORG/residential-programs/ORG_RP3.png"
 import ORG_RP6 from "@/assets/images/ORG/residential-programs/ORG_RP6.png"
 import ORG_VES1 from "@/assets/images/ORG/vocational-employment/ORG_VES1.png"
 import ORG_VES1_C from "@/assets/images/ORG/vocational-employment/ORG_VES1_C.png"
-import ORG_VES2 from "@/assets/images/ORG/vocational-employment/ORG_VES2.png"
 import ORG_VES3 from "@/assets/images/ORG/vocational-employment/ORG_VES3.png"
 import ORG_VES4 from "@/assets/images/ORG/vocational-employment/ORG_VES4.png"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
@@ -41,7 +40,7 @@ export const DATA_PVES_D = [
       highlight_plus: ["Position with agency", "Part-time"],
     },
     {
-      imageToUse: ORG_VES2,
+      imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
         first: "",
@@ -54,7 +53,7 @@ export const DATA_PVES_D = [
       highlight_plus: ["Position with agency", "Part-time"],
     },
     {
-      imageToUse: ORG_VES2,
+      imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
         first: "",

@@ -1,7 +1,11 @@
 import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const ORG_D_Results_Main_LeftWrapper = styled.div`
+type Props = {
+  isOpenPositionAndThirdPosition?: boolean
+}
+
+export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   grid-area: leftPart;
 
@@ -23,8 +27,7 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div`
 
     margin-bottom: 28px;
 
-    width: 100%;
-    height: 175px;
+    height: 158px;
 
     & > :nth-child(2) {
       position: absolute;

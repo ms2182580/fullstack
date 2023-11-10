@@ -1,6 +1,11 @@
+import { SEMANTICS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const ORG_D_Results_CardLocationWrapper = styled.div`
+type Props = {
+  isVES_Like?: boolean
+}
+
+export const ORG_D_Results_CardLocationWrapper = styled.div<Props>`
   & > :nth-child(2) {
     & > :not(:last-child) {
       overflow: hidden;
@@ -11,6 +16,8 @@ export const ORG_D_Results_CardLocationWrapper = styled.div`
 
     & > :last-child {
       font-weight: 500;
+      color: ${SEMANTICS.HYPERLINK_NORMAL};
+      text-decoration: underline;
     }
   }
 `
