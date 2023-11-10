@@ -1,8 +1,7 @@
-import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
-import { DATA_PAT_D_KEYS } from "@/utils/ORG/pat/DATA_PAT_D"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
-import { ORG_D_Results_ATSvg, ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
+import { useEffect, useMemo } from "react"
+import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../assets/Icons"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { formatDataToThirdPage } from "../../../../../utils/ORG/formatDataToThirdPage"
@@ -19,7 +18,6 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
-  // console.log("secondpageDataORG:", secondpageDataORG)
   const router = useRouter()
 
   const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state, specificDataForThisResource) => {
@@ -39,6 +37,17 @@ export const ORG_D_Results_CardNoFilters = () => {
     )
   }
 
+  const existSpecificData = useMemo(() => {
+    const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+    if (Boolean(weHaveData)) {
+      return {
+        ComponentSvg: secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.SVG],
+        nameToJSX: secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME],
+      }
+    }
+    return false
+  }, [secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]])
+
   return (
     <>
       {Array(10)
@@ -48,8 +57,10 @@ export const ORG_D_Results_CardNoFilters = () => {
           let renderThisFilter = i % secondpageDataORG.right.length
           let renderThisContact = i % secondpageDataORG.left.length
 
+          let thisKey = `${secondpageDataORG.cardData[renderThisCard].title}_${i}`
+
           return (
-            <ORG_D_Results_CardWrapper key={`${secondpageDataORG.cardData[renderThisCard].reviews}_${i}`}>
+            <ORG_D_Results_CardWrapper key={thisKey}>
               <ORG_D_Results_Main_Left
                 renderThisCard={renderThisCard}
                 renderThisContact={renderThisContact}
@@ -81,14 +92,14 @@ export const ORG_D_Results_CardNoFilters = () => {
                       secondpageDataORG.cardData[renderThisCard].subtitle,
                       secondpageDataORG.cardData[renderThisCard].fullName,
                       secondpageDataORG.cardData[renderThisCard]?.state || "",
-                      secondpageDataORG[SPECIFIC_DATA.SPECIFIC_DATA],
+                      secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY],
                     )
                   }>
-                  {Boolean(secondpageDataORG[DATA_PAT_D_KEYS.AT_SPECIFIC_DATA]) ? (
+                  {existSpecificData ? (
                     <>
-                      <ORG_D_Results_ATSvg />
+                      <existSpecificData.ComponentSvg />
 
-                      <P white>{secondpageDataORG[DATA_PAT_D_KEYS.AT_SPECIFIC_DATA][DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]}</P>
+                      <P white>{existSpecificData.nameToJSX}</P>
                     </>
                   ) : (
                     <>

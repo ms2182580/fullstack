@@ -12,6 +12,7 @@ import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_Left
 
 export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) => {
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  console.log("secondpageDataORG:", secondpageDataORG)
 
   const isVES_Like = useMemo(() => {
     return secondpageDataORG[Layout_MainCard_Search_KEY.KEY] === Layout_MainCard_Search_VALUE.VES_LIKE

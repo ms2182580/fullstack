@@ -3,6 +3,7 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Results_CardLocationWrapper } from "./styles/ORG_D_Results_CardLocationWrapper"
 
 export const ORG_D_Results_CardLocation = ({ locationCity, locationStreetNumber, locationStreetName, locationState, howFar, isVES_Like = false }) => {
+  console.log("locationCity, locationStreetNumber, locationStreetName, locationState:", locationCity, locationStreetNumber, locationStreetName, locationState)
   return (
     <ORG_D_Results_CardLocationWrapper isVES_Like={isVES_Like}>
       <LocationResultsSvg />

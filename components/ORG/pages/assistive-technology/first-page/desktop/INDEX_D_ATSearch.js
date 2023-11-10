@@ -2,12 +2,13 @@ import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Pr
 import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
 import { DATA_AT_D_CardLeft, DATA_AT_D_CardRight } from "@/utils/ORG/pat/wcmd/DATA_AT_D_Card"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
-import { DATA_ORG_D, SPECIFIC_DATA } from "../../../../../../utils/ORG/DATA_ORG_D"
+import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
 import { DATA_PAT_D } from "../../../../../../utils/ORG/pat/DATA_PAT_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
@@ -97,7 +98,7 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
                       />
                       <P>{obj.textReview}</P>
 
-                      <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title, obj[SPECIFIC_DATA.SPECIFIC_DATA])}>
+                      <span onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title, obj[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY])}>
                         <ButtonSmall>
                           <ORG_D_Search_ViewProfileSvg /> View Profile
                         </ButtonSmall>
