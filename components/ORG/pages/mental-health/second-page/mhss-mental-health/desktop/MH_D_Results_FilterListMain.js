@@ -1,5 +1,5 @@
 import { DATA_MH_D_Filters } from "../../../../../../../utils/ORG/pmhss/mh/DATA_MH_D_Filters.js"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
@@ -102,14 +102,6 @@ const allMoreFilters = {
       titleOnModal={ORG_FILTERS_KEYS_D.wheelChair.titleToShow}
       categoriesToDisplay={ORG_FILTERS_DATA_D.wheelChair}
     />,
-
-
-
-
-
-
-
-
   ],
 }
 
@@ -247,12 +239,10 @@ export const MH_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =>
         whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
       />
 
-
       <ORG_Filters_D_Checkbox
         buttonName={DATA_MH_D_Filters.viewOnly.buttonName}
         categoriesToDisplay={DATA_MH_D_Filters.viewOnly.categoriesToDisplay}
       />
-
 
       <ORG_Filters_D_More allCheckboxes={allMoreFilters.checkbox} />
     </MH_D_Results_FilterListMainWrapper>

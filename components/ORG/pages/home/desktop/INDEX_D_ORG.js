@@ -134,20 +134,22 @@ export const INDEX_D_ORG = () => {
             </P>
           </li>
 
-          {DATA_ORG_D.map((x, i) => (
-            <li
-              key={`${x.nameJSX}_${i}`}
-              data-name={x.componentName}
-              onClick={handleShowOneCard}
-              className={singleCardIsSelected && matchNameState === x.componentName ? "isActive" : ""}>
-              <P
-                primary_cta
-                semibold
-                data-name={x.componentName}>
-                {x.nameJSX}
-              </P>
-            </li>
-          ))}
+          {DATA_ORG_D.map((x, i) => {
+            return (
+              <li
+                key={`${x.nameJSX}_${i}`}
+                data-name={x.componentName}
+                onClick={handleShowOneCard}
+                className={singleCardIsSelected && matchNameState === x.componentName ? "isActive" : ""}>
+                <P
+                  primary_cta
+                  semibold
+                  data-name={x.componentName}>
+                  {x.nameJSX}
+                </P>
+              </li>
+            )
+          })}
         </ul>
 
         <div className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
@@ -175,7 +177,7 @@ export const INDEX_D_ORG = () => {
         if (singleCardIsSelected && matchNameState === x.componentName) {
           return (
             <x.component
-              key={`${x.componentName}_${i}_${matchNameState}`}
+              key={`${x.componentName}_${i}`}
               isSelected={singleCardIsSelected}
               positionInArray={i}
               componentName={x.componentName}

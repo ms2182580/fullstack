@@ -4,7 +4,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PCR_D } from "../../../../../../../utils/ORG/paa/DATA_PCR_D.js"
 import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Card.js"
 import { renderFiltersInUI_AA_CR } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Filters.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D.js"
+import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_CivilRights_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -20,9 +20,5 @@ export const INDEX_D_CivilRights_Results = () => {
     })
   }, [])
 
-  return (
-    <>
-      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
-    </>
-  )
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
 }

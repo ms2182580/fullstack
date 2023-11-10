@@ -1,5 +1,5 @@
 import { DATA_PSYT_D_Filters } from "../../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D_Filters.js"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories.js"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../../../../../utils/ORG_FiltersCategories"
 import { ORG_Filters_D_Checkbox } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox.js"
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../../filters/desktop/ORG_Filters_D_Checkbox_Isolated.js"
 import { ORG_Filters_D_More } from "../../../../../filters/desktop/ORG_Filters_D_More.js"
@@ -247,8 +247,6 @@ export const PSYT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) 
   //   }
   // }, [mustShowFiltersDesktop])
 
-
-
   return (
     <PSYT_D_Results_FilterListMainWrapper>
       <ORG_Filters_D_Checkbox
@@ -269,7 +267,6 @@ export const PSYT_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) 
       <ORG_Filters_D_Checkbox
         buttonName={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
         categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
-
       />
 
       <ORG_Filters_D_Checkbox

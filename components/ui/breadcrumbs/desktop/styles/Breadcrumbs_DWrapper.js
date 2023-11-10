@@ -5,6 +5,10 @@ export const Breadcrumbs_DWrapper = styled.div`
   display: flex;
   align-items: center;
 
+  p {
+    text-transform: capitalize;
+  }
+
   & > * {
     display: flex;
     align-items: center;

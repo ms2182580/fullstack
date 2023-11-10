@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
-export const ORG_D_Results_MainEntryWrapper = styled.div`
+export const ORG_D_Results_MainWrapper = styled.div`
   position: relative;
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
@@ -24,7 +24,7 @@ export const ORG_D_Results_MainEntryWrapper = styled.div`
     display: grid;
     grid-template-columns: ${(x) => (x.ORGshowFullMapButton ? `1fr` : `2fr 1fr`)};
     margin-bottom: ${(x) => (x.ORGshowFullMapButton ? `318px` : `189px`)};
-    
+
     margin-left: clamp(16px, calc(10vw - 80px), 96px);
   }
 
@@ -36,13 +36,11 @@ export const ORG_D_Results_MainEntryWrapper = styled.div`
   & > :nth-child(4) {
     grid-area: breadcrumbsAndUpdate;
   }
-  
+
   & > :nth-child(3),
-  & > :nth-child(4){
+  & > :nth-child(4) {
     padding-inline: clamp(16px, calc(10vw - 80px), 96px);
   }
-  
-  
 
   /* @media ${device.laptop} {
     grid-template-columns: 1fr 1fr;

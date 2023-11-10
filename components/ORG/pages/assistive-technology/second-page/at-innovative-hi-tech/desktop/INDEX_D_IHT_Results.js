@@ -1,4 +1,4 @@
-import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import { useEffect } from "react"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider"
@@ -18,7 +18,7 @@ export const INDEX_D_IHT_Results = () => {
       mainNameORG: DATA_PAT_D[4][0],
       right: DATA_SDAT_D_CardRight,
       left: DATA_SDAT_D_CardLeft,
-      [SPECIFIC_DATA.SPECIFIC_DATA]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     })
   }, [])
 

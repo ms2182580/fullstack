@@ -10,9 +10,11 @@ import { INDEX_D_RPSearch } from "../../components/ORG/pages/residential-program
 import { INDEX_D_SESSearch } from "../../components/ORG/pages/special-education-schools/first-page/desktop/INDEX_D_SESSearch.js"
 import { INDEX_D_STSearch } from "../../components/ORG/pages/speech-therapists/first-page/dekstop/INDEX_D_STSearch"
 
-export const enum SPECIFIC_DATA {
-  SPECIFIC_DATA = "SPECIFIC_DATA",
-}
+// export const enum SPECIFIC_DATA_KEY {
+//   SPECIFIC_DATA_KEY = "SPECIFIC_DATA_KEY",
+//   BUTTON_TO_THIRDPAGE_NAME = "BUTTON_TO_THIRDPAGE_NAME",
+//   SVG = "SVG",
+// }
 
 export const DATA_ORG_D = [
   {

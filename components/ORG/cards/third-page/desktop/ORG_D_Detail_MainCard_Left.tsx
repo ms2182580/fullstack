@@ -1,8 +1,8 @@
 import { Verified } from "@/components/ORG/verified/Verified"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { SPECIFIC_DATA } from "@/utils/ORG/DATA_ORG_D"
-import { DATA_PAT_D_KEYS } from "@/utils/ORG/pat/DATA_PAT_D"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import Image from "next/image"
+import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_Brand } from "./ORG_D_Detail_Brand"
 import { ORG_D_Detail_CardEmail } from "./ORG_D_Detail_CardEmail"
@@ -15,6 +15,10 @@ import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCar
 
 export const ORG_D_Detail_MainCard_Left = ({ howIsMap }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  const haveSomeBrandToShow = useMemo(() => {
+    return Boolean(thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY])
+  }, [])
 
   return (
     <ORG_D_Detail_MainCard_LeftWrapper>
@@ -41,9 +45,9 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap }) => {
       />
 
       <aside>
-        {thirdpageDataORG.other[SPECIFIC_DATA.SPECIFIC_DATA] && (
+        {haveSomeBrandToShow && (
           <>
-            <ORG_D_Detail_Brand brand={thirdpageDataORG.other[SPECIFIC_DATA.SPECIFIC_DATA][DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]} />
+            <ORG_D_Detail_Brand brand={thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.BRAND]} />
           </>
         )}
 

@@ -205,9 +205,9 @@ export const DATA_AT_D_CardLeft = [
     location: {
       city: "Netherlands",
       streetName: "Laurierstraat 193",
-      streetNumber: "",
+      streetNumber: "163",
       state: "Amsterdam, null 1016 PL",
-      howFar: "",
+      howFar: "3",
     },
   },
   {
@@ -221,9 +221,9 @@ export const DATA_AT_D_CardLeft = [
     location: {
       city: "Netherlands",
       streetName: "Laurierstraat 193",
-      streetNumber: "",
+      streetNumber: "163",
       state: "Amsterdam, null 1016 PL",
-      howFar: "",
+      howFar: "3",
     },
   },
   {
@@ -237,9 +237,9 @@ export const DATA_AT_D_CardLeft = [
     location: {
       city: "Netherlands",
       streetName: "Laurierstraat 193",
-      streetNumber: "",
+      streetNumber: "163",
       state: "Amsterdam, null 1016 PL",
-      howFar: "",
+      howFar: "3",
     },
   },
 ]

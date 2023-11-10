@@ -6,11 +6,15 @@ import ORG_RP3 from "@/assets/images/ORG/residential-programs/ORG_RP3.png"
 import ORG_RP6 from "@/assets/images/ORG/residential-programs/ORG_RP6.png"
 import ORG_VES1 from "@/assets/images/ORG/vocational-employment/ORG_VES1.png"
 import ORG_VES1_C from "@/assets/images/ORG/vocational-employment/ORG_VES1_C.png"
-import ORG_VES2 from "@/assets/images/ORG/vocational-employment/ORG_VES2.png"
 import ORG_VES3 from "@/assets/images/ORG/vocational-employment/ORG_VES3.png"
 import ORG_VES4 from "@/assets/images/ORG/vocational-employment/ORG_VES4.png"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
+import { BRAND_OPTION_DEFAULT, Structure_SpecificData } from "../specificData"
 
+export const VES_SPECIFIC_DATA: Structure_SpecificData = {
+  BUTTON_TO_THIRDPAGE_NAME: "Apply now",
+  SVG: BRAND_OPTION_DEFAULT.DEFAULT,
+}
 export const DATA_PVES_D = [
   [
     "Open Positions",
@@ -23,6 +27,8 @@ export const DATA_PVES_D = [
       },
       subtitle: "Human Care Healthcare Service",
       city: "Brooklyn, NY 11216",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Bilingual"],
       highlight_plus: ["Part-time", "Position with agency"],
@@ -36,12 +42,14 @@ export const DATA_PVES_D = [
       },
       subtitle: "Human Care Healthcare Service",
       city: "Brooklyn, NY 11216",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
     },
     {
-      imageToUse: ORG_VES2,
+      imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
         first: "",
@@ -49,12 +57,14 @@ export const DATA_PVES_D = [
       },
       subtitle: "Human Care Healthcare Service",
       city: "Brooklyn, NY 11216",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
     },
     {
-      imageToUse: ORG_VES2,
+      imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
         first: "",
@@ -62,6 +72,8 @@ export const DATA_PVES_D = [
       },
       subtitle: "Human Care Healthcare Service",
       city: "Brooklyn, NY 11216",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],

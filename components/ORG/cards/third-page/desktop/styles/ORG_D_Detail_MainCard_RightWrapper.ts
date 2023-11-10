@@ -218,7 +218,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       margin-bottom: 44px;
     }
 
-    & > :last-child {
+    & > :last-child:not(.NO_HIGHLIGHT) {
       margin-bottom: 64px;
       display: flex;
       flex-direction: column;

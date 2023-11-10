@@ -1,3 +1,4 @@
+import { ORG_D_Results_ATSvg } from "@/assets/Icons"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import ORG_AT1 from "../../../assets/images/ORG/assistive-technology/ORG_AT1.png"
 import ORG_AT10 from "../../../assets/images/ORG/assistive-technology/ORG_AT10.png"
@@ -14,17 +15,19 @@ import ORG_AT6 from "../../../assets/images/ORG/assistive-technology/ORG_AT6.png
 import ORG_AT7 from "../../../assets/images/ORG/assistive-technology/ORG_AT7.png"
 import ORG_AT8 from "../../../assets/images/ORG/assistive-technology/ORG_AT8.png"
 import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png"
+import { SPECIFIC_DATA_KEY, Structure_SpecificData } from "../specificData"
+import { AT_WCMD_SPECIFIC_DATA } from "./wcmd/second-page/desktop/toThirdPageButton"
 
 export const enum DATA_PAT_D_KEYS {
   BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",
   BUTTON_TO_THIRDPAGE_NAME_VALUE = "purchase option",
   BRAND_THIRDPAGE_KEY = "BRAND_THIRDPAGE_KEY",
-  BRAND_THIRDPAGE_VALUE = "permobile corpus industries inc",
 }
 
-export const AT_SPECIFIC_DATA = {
-  [DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_KEY]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
-  [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: DATA_PAT_D_KEYS.BRAND_THIRDPAGE_VALUE,
+export const AT_SPECIFIC_DATA: Structure_SpecificData = {
+  [SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
+  [SPECIFIC_DATA_KEY.SVG]: ORG_D_Results_ATSvg,
+  BRAND: "Permobil",
 }
 
 export const DATA_PAT_D = [
@@ -42,7 +45,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Permobil combined all the performance features of the F5 Corpus with superior...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_WCMD_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT2,
@@ -56,7 +59,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "A lightweight rigid 7000 Series Aluminium Alloy frame and carbon fibre side guard ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_WCMD_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT3,
@@ -70,7 +73,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Effortless centre-of-gravity pivot, the Fuze T50 Manual Tilt-in-Space wheelchair...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_WCMD_SPECIFIC_DATA,
     },
   ],
   [
@@ -87,7 +90,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT11,
@@ -101,7 +104,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT12,
@@ -115,7 +118,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
   ],
   [
@@ -132,9 +135,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Proloquo is a new, groundbreaking AAC app designed for nonspeaking children ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: {
-        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
-      },
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT5,
@@ -148,9 +149,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This user-friendly app makes communication more intuitive and ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: {
-        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
-      },
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT6,
@@ -164,9 +163,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This app is great for people who want maximum flexibility. Out of the box, ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: {
-        [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
-      },
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
   ],
   [
@@ -183,7 +180,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT8,
@@ -197,7 +194,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT9,
@@ -211,7 +208,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
   ],
   [
@@ -228,7 +225,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT14,
@@ -242,7 +239,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT15,
@@ -256,7 +253,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
-      SPECIFIC_DATA: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
     },
   ],
 ]

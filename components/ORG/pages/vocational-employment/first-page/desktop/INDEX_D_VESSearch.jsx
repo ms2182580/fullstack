@@ -144,10 +144,9 @@ export const INDEX_D_VESSearch = ({ positionInArray, isSelected = false, compone
                 </div>
 
                 <span
-                // onClick={() => {
-                //   handleMoveToSecondPage(undefined, title, iData)
-                // }}
-                >
+                  onClick={() => {
+                    handleMoveToSecondPage(undefined, title, iData)
+                  }}>
                   <ButtonSmall secondary>See all (25)</ButtonSmall>
                 </span>
               </div>
