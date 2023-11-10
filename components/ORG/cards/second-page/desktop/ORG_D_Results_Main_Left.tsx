@@ -12,7 +12,6 @@ import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_Left
 
 export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) => {
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
-  console.log("secondpageDataORG:", secondpageDataORG)
 
   const isVES_Like = useMemo(() => {
     return secondpageDataORG[Layout_MainCard_Search_KEY.KEY] === Layout_MainCard_Search_VALUE.VES_LIKE
@@ -29,13 +28,6 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) =
   const isOpenPositionAndThirdPosition = useMemo(() => {
     return isVES_Like && !isDefault && isOpenPosition && renderThisCard > 1
   }, [])
-
-  /* 
-  !FH0
-  ▬ ✅Fix Image → Do something if secondpageDataORG.LAYOUT_MAIN_CARD_SPECIFIC && (renderThisContact === 0 || renderThisContact === 1) {// do something}
-    
-  ▬ ✅Fix data below the image → if secondpageDataORG.LAYOUT_MAIN_CARD_SPECIFIC {// do something}
-  */
 
   return (
     <ORG_D_Results_Main_LeftWrapper

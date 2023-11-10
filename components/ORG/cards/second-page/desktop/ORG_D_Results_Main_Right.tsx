@@ -11,11 +11,6 @@ import { ORG_D_Results_Main_RightWrapper } from "./styles/ORG_D_Results_Main_Rig
 export const ORG_D_Results_Main_Right = ({ renderThisCard, renderThisFilter }) => {
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
-  /* 
-  !FH0
-  ▬ Fix Rating
-  */
-
   return (
     <ORG_D_Results_Main_RightWrapper>
       <H3>{secondpageDataORG.cardData[renderThisCard].title}</H3>

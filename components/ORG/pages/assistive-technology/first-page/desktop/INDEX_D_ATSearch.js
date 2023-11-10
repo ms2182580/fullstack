@@ -79,11 +79,11 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
         while (howMuchDisplay > iData) {
           return (
             <>
-              <div key={`${x.title}_${iData}`}>
+              <div key={`${title}_${iData}`}>
                 <H2 semi_bold>{title}</H2>
                 {objects.map((obj, iSubData) => {
                   return (
-                    <div key={`${iSubData}_${obj.titleImage}_${obj.reviews}`}>
+                    <div key={`${iSubData}_${obj.title}_${obj.reviews}`}>
                       <div>
                         <Image
                           src={obj.imageToUse}

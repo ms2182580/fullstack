@@ -7,7 +7,6 @@ type Props = {
 
 export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-  grid-area: leftPart;
 
   display: flex;
   flex-direction: column;

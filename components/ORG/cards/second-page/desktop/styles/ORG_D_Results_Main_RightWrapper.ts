@@ -2,7 +2,6 @@ import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const ORG_D_Results_Main_RightWrapper = styled.div`
-  grid-area: rightPart;
   border-top-right-radius: inherit;
   padding: 24px;
 
