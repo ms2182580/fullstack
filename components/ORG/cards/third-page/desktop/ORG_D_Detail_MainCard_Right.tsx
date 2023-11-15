@@ -11,7 +11,7 @@ import { Tooltip_KEYS, Tooltip_VALUES } from "@/utils/ORG/third-page/tooltip"
 import { capitalizeWords } from "@/utils/capitalizeWords"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { Fragment, useMemo } from "react"
+import { Fragment, useMemo, useState } from "react"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
 import { ORG_D_Detail_Card_SecondRow_Info } from "./ORG_D_Detail_Card_SecondRow_Info"
 import { ORG_D_Detail_HighlightBoxes } from "./ORG_D_Detail_HighlightBoxes"
@@ -19,14 +19,8 @@ import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { Layout_MainCardRight_VALUES, ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-/* 
-!FH0
-Crete somewhere here, the data for the right part
-*/
-
 export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon, tooltipDisplay, isPVES }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
-  console.log("thirdpageDataORG:", thirdpageDataORG)
 
   const { query } = useRouter()
 
@@ -39,7 +33,14 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
       DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
     ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].length
 
-  console.log("getLengthResponsabilitiesData:", getLengthResponsabilitiesData)
+  const [shouldShowTooltip, setShouldShowTooltip] = useState(false)
+
+  let handleShowTooltip = () => {
+    setShouldShowTooltip(true)
+  }
+  let handleHideTooltip = () => {
+    setShouldShowTooltip(false)
+  }
 
   return (
     <ORG_D_Detail_MainCard_RightWrapper
@@ -74,11 +75,29 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
         <div className={isPVES ? `${Layout_MainCardRight_VALUES.IS_PVES}` : ``}>
           {isPVES ? (
-            <>
-              <H2>
+            <div>
+              <H2
+                onFocus={handleShowTooltip}
+                onBlur={handleHideTooltip}
+                onMouseEnter={handleShowTooltip}
+                onMouseLeave={handleHideTooltip}
+                tabIndex={0}>
                 {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA].brandName}
               </H2>
-            </>
+
+              {shouldShowTooltip && (
+                <div className={Layout_MainCardRight_VALUES.TOOLTIP}>
+                  Click here to see more <br />
+                  jobs from{" "}
+                  <span>
+                    {
+                      thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]
+                        .brandName
+                    }
+                  </span>
+                </div>
+              )}
+            </div>
           ) : (
             <H3>{query.subTitle}</H3>
           )}
@@ -165,7 +184,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
               return (
                 <li key={x}>
-                  {x} <span>See more</span>
+                  {x} <span tabIndex={0}>See more</span>
                 </li>
               )
             })}
@@ -191,11 +210,14 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
         <div>
           {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.LEFT]).map(
             (x, index) => {
+              let shouldDisplayInBlock = x[1][DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK] ? true : false
+
               return (
                 <Fragment key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}_${index}`}>
                   <ORG_D_Detail_Card_SecondRow_Info
                     title={capitalizeWords(x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME])}
                     dataToShow={x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]}
+                    displayBlock={shouldDisplayInBlock}
                   />
                 </Fragment>
               )

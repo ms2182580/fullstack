@@ -14,6 +14,7 @@ export const enum Layout_MainCardRight_VALUES {
   IS_PVES = "IS_PVES",
   DOUBLE_COLUMN_CARD = "DOUBLE_COLUMN_CARD",
   IS_PVES_SPECIFIC_DATA = "IS_PVES_SPECIFIC_DATA",
+  TOOLTIP = "TOOLTIP",
 }
 
 export type Props = {
@@ -201,7 +202,48 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
 
       &.${Layout_MainCardRight_VALUES.IS_PVES} {
         & > :nth-child(1) {
+          width: fit-content;
+
+          cursor: pointer;
+
           text-transform: capitalize;
+          position: relative;
+
+          .${Layout_MainCardRight_VALUES.TOOLTIP} {
+            position: absolute;
+
+            width: max-content;
+
+            background-color: #fff3b4;
+            top: -150%;
+
+            text-transform: lowercase;
+            font-size: 14px;
+
+            padding: 14px 10px;
+
+            border-radius: 8px;
+
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+            &::first-letter {
+              text-transform: capitalize;
+            }
+
+            & > :nth-child(2) {
+              text-transform: uppercase;
+            }
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 16%;
+
+              border: 8px solid #fff3b4;
+              border-color: #fff3b4 transparent transparent transparent;
+            }
+          }
         }
 
         & > *:not(:first-child) {
@@ -274,6 +316,8 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       span {
         color: ${SEMANTICS.HYPERLINK_NORMAL};
         text-decoration: underline;
+
+        cursor: pointer;
       }
     }
   }
