@@ -18,7 +18,6 @@ export const INDEX_D_WCMD_Results = () => {
       cardData: DATA_PAT_D[0].slice(1),
       mainNameORG: DATA_PAT_D[0][0],
       right: DATA_AT_D_CardRight,
-
       left: DATA_AT_D_CardLeft,
       [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_WCMD_SPECIFIC_DATA,
     })

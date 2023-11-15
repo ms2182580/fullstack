@@ -11,6 +11,7 @@ export const enum SPECIFIC_DATA_KEY {
   BUTTON_TO_THIRDPAGE_NAME = "BUTTON_TO_THIRDPAGE_NAME",
   SVG = "SVG",
   BRAND = "BRAND",
+  THIRD_PAGE_DATA = "THIRD_PAGE_DATA",
 }
 
 export type Structure_SpecificData = {

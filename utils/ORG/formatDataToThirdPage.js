@@ -18,6 +18,7 @@ export const formatDataToThirdPage = (dataCard, dataCardLeft, rightPart, fullNam
         email: dataCardLeft?.email || "",
         website: dataCardLeft?.web || "",
         location: dataCardLeft?.location || "",
+        [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: dataCardLeft[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY] || "",
       },
       rightPart: rightPart,
     },
