@@ -3,9 +3,10 @@ import ORG_D_Detail_Share_Modal_QRAltIcon from "@/assets/Icons/ORG_D_Detail_Shar
 import { Highlights_2_D } from "@/components/ORG/highlights/Highlights_2_D"
 import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import { Tooltip_KEYS, Tooltip_VALUES } from "@/utils/ORG/third-page/tooltip"
 import { capitalizeWords } from "@/utils/capitalizeWords"
 import Image from "next/image"
@@ -16,16 +17,29 @@ import { ORG_D_Detail_Card_SecondRow_Info } from "./ORG_D_Detail_Card_SecondRow_
 import { ORG_D_Detail_HighlightBoxes } from "./ORG_D_Detail_HighlightBoxes"
 import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
-import { ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
+import { Layout_MainCardRight_VALUES, ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon, tooltipDisplay }) => {
+/* 
+!FH0
+Crete somewhere here, the data for the right part
+*/
+
+export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon, tooltipDisplay, isPVES }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  console.log("thirdpageDataORG:", thirdpageDataORG)
 
   const { query } = useRouter()
 
   let atLeastOneHighlightplus = useMemo(() => {
     return Boolean(thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS])
   }, [])
+
+  const getLengthResponsabilitiesData =
+    thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+      DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
+    ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].length
+
+  console.log("getLengthResponsabilitiesData:", getLengthResponsabilitiesData)
 
   return (
     <ORG_D_Detail_MainCard_RightWrapper
@@ -42,7 +56,13 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
         <header>
           <H2>
-            {thirdpageDataORG.fullName.first} {thirdpageDataORG.fullName.last}
+            {thirdpageDataORG.fullName.first !== "" ? (
+              <>
+                {thirdpageDataORG.fullName.first} {thirdpageDataORG.fullName.last}
+              </>
+            ) : (
+              <>{thirdpageDataORG.card.leftPart.title}</>
+            )}
           </H2>
 
           {tooltipDisplay[Tooltip_KEYS.WHAT_DISPLAY] === Tooltip_VALUES.NO_DISPLAY ? null : (
@@ -52,8 +72,27 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
           )}
         </header>
 
-        <H3>{query.subTitle}</H3>
-        <P>{thirdpageDataORG.card.leftPart.city}</P>
+        <div className={isPVES ? `${Layout_MainCardRight_VALUES.IS_PVES}` : ``}>
+          {isPVES ? (
+            <>
+              <H2>
+                {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA].brandName}
+              </H2>
+            </>
+          ) : (
+            <H3>{query.subTitle}</H3>
+          )}
+
+          <P>{thirdpageDataORG.card.leftPart.city}</P>
+
+          {isPVES ? (
+            <>
+              <P>
+                {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA].datePosted}
+              </P>
+            </>
+          ) : null}
+        </div>
 
         <StarsRatingReview_D
           rating={thirdpageDataORG.card.leftPart.rating}
@@ -62,10 +101,10 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
         <div
           className={
-            !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS] &&
+            !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT] &&
             !thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]
-              ? "NO_HIGHLIGHT"
-              : "ONE_HIGHLIGHT_AT_LEAST"
+              ? Layout_MainCardRight_VALUES.NO_HIGHLIGHT
+              : Layout_MainCardRight_VALUES.ONE_HIGHLIGHT_AT_LEAST
           }>
           {atLeastOneHighlightplus && (
             <Highlights_2_D
@@ -75,6 +114,9 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
             />
           )}
 
+          {/* 
+          Should I use this «Highlights_D» component instead?
+          */}
           <ORG_D_Detail_HighlightBoxes
             meetingFormat={
               thirdpageDataORG[DATA_ORG_KeyNamesForCards_D.CARD].rightPart[DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]
@@ -85,7 +127,53 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
         </div>
       </div>
 
-      <div>
+      {isPVES && (
+        <div className={Layout_MainCardRight_VALUES.IS_PVES_SPECIFIC_DATA}>
+          <H4>
+            {
+              thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+                DATA_ORG_KeyNamesForCards_D_KEYS.JOB_DESCRIPTION
+              ][DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]
+            }
+            :
+          </H4>
+
+          <P>
+            {
+              thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+                DATA_ORG_KeyNamesForCards_D_KEYS.JOB_DESCRIPTION
+              ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]
+            }
+          </P>
+
+          <H4>
+            {
+              thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+                DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
+              ][DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]
+            }
+            :
+          </H4>
+
+          <ul>
+            {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+              DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
+            ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].map((x, index, arr) => {
+              if (index < getLengthResponsabilitiesData - 1) {
+                return <li key={x}>{x}</li>
+              }
+
+              return (
+                <li key={x}>
+                  {x} <span>See more</span>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )}
+
+      <div className={Layout_MainCardRight_VALUES.DOUBLE_COLUMN_CARD}>
         {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card).map((x, index) => {
           if (x[0] === DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND) {
             return (
@@ -134,11 +222,15 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
         </div>
       </div>
 
-      <ORG_D_Detail_About
-        name={thirdpageDataORG.fullName.first}
-        lastName={thirdpageDataORG.fullName.last}
-        aboutRef={null}
-      />
+      {isPVES ? null : (
+        <>
+          <ORG_D_Detail_About
+            name={thirdpageDataORG.fullName.first}
+            lastName={thirdpageDataORG.fullName.last}
+            aboutRef={null}
+          />
+        </>
+      )}
 
       <div>
         <button>

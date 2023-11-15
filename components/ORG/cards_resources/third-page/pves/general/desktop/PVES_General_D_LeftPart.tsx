@@ -5,7 +5,6 @@ import { useState } from "react"
 import { PVES_General_D_LeftPartWrapper, TooltipDisplay } from "./styles/PVES_General_D_LeftPartWrapper"
 
 export const PVES_General_D_LeftPart = ({ allData }) => {
-  console.log("allData:", allData)
   const [showTooltipText, setShowTooltipText] = useState(false)
 
   let handleShowTooltipText = () => {

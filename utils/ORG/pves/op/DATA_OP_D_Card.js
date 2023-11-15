@@ -44,7 +44,7 @@ export const DATA_OP_D_CardRight = [
           [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Responsibilities",
           [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
             "Conceptualize and own the data architecture for multiple large-scale projects, while evaluating design and operational cost-benefit tradeoffs within systems",
-            "Create and contribute to frameworks that improve the efficacy of logging data, while working with data infrastructure to triage issues and resolve... See more",
+            "Create and contribute to frameworks that improve the efficacy of logging data, while working with data infrastructure to triage issues and resolve...",
           ],
         },
 
@@ -240,6 +240,8 @@ export const DATA_OP_D_CardLeft = [
           key: "ADA Compliant workspace:",
           value: "yes",
         },
+        brandName: "meta",
+        datePosted: "Posted 10 hours ago",
       },
     },
   },

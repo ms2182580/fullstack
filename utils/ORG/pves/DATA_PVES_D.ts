@@ -53,6 +53,9 @@ export const DATA_PVES_D = [
             key: "ADA Compliant workspace:",
             value: "yes",
           },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
         },
       },
     },

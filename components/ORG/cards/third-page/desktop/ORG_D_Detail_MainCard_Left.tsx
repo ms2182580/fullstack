@@ -15,7 +15,7 @@ import { ORG_D_Detail_MainCardLeftPhotos } from "./ORG_D_Detail_MainCardLeftPhot
 import { ORG_D_Detail_MapComponent } from "./ORG_D_Detail_MapComponent"
 import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCard_LeftWrapper"
 
-export const ORG_D_Detail_MainCard_Left = ({ howIsMap }) => {
+export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const haveSomeBrandToShow = useMemo(() => {
@@ -25,15 +25,6 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap }) => {
       return Boolean(haveSpecificData[SPECIFIC_DATA_KEY.BRAND])
     }
 
-    return false
-  }, [])
-
-  const isPVES = useMemo(() => {
-    let haveSpecificData = thirdpageDataORG.card.leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
-
-    if (haveSpecificData) {
-      return Boolean(haveSpecificData[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA].isPVES)
-    }
     return false
   }, [])
 
