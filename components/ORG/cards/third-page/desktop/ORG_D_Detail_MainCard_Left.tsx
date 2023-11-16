@@ -29,13 +29,13 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
   }, [])
 
   return (
-    <ORG_D_Detail_MainCard_LeftWrapper>
+    <ORG_D_Detail_MainCard_LeftWrapper isPVES={isPVES}>
       <div>
         <Image
           src={thirdpageDataORG.card.leftPart.photo.src}
-          layout="responsive"
-          objectFit="contain"
-          objectPosition={"0px 0px"}
+          layout={isPVES ? "fill" : "responsive"}
+          objectFit={isPVES ? "scale-down" : "contain"}
+          objectPosition={isPVES ? "" : "0px 0px"}
           width={1}
           height={1}
           alt={`Image of ${thirdpageDataORG.card.leftPart.title}`}

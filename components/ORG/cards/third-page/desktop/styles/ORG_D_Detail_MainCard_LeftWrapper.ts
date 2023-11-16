@@ -1,7 +1,11 @@
-import { PRIMARY } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside`
+export type Props = {
+  isPVES?: boolean
+}
+
+export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   display: flex;
   flex-direction: column;
@@ -21,6 +25,8 @@ export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside`
     border: none;
 
     height: 210px;
+
+    background-color: ${({ isPVES }) => (isPVES ? `${NEUTRALS.OFF_WHITE}` : "")};
 
     & > :nth-child(2) {
       cursor: pointer;
