@@ -28,10 +28,13 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
     return Boolean(thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS])
   }, [])
 
-  const getLengthResponsabilitiesData =
-    thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
-      DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
-    ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].length
+  const getLengthResponsabilitiesData = useMemo(() => {
+    return isPVES
+      ? thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+          DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
+        ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].length
+      : null
+  }, [isPVES])
 
   const [shouldShowTooltip, setShouldShowTooltip] = useState(false)
 
@@ -178,15 +181,24 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
             {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
               DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
             ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].map((x, index, arr) => {
-              if (index < getLengthResponsabilitiesData - 1) {
-                return <li key={x}>{x}</li>
+              // const getLengthResponsabilitiesData =
+              //   thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
+              //     DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
+              //   ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].length || null
+
+              if (getLengthResponsabilitiesData !== null) {
+                if (index < getLengthResponsabilitiesData - 1) {
+                  return <li key={x}>{x}</li>
+                }
+
+                return (
+                  <li key={x}>
+                    {x} <span tabIndex={0}>See more</span>
+                  </li>
+                )
               }
 
-              return (
-                <li key={x}>
-                  {x} <span tabIndex={0}>See more</span>
-                </li>
-              )
+              return <li key={x}>{x}</li>
             })}
           </ul>
         </div>

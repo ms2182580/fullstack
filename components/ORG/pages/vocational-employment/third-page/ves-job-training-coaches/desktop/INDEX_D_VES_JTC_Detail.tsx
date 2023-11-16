@@ -3,12 +3,12 @@ import { useRouter } from "next/router"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { INDEX_ORG_Detail_D } from "../../../../../cards/third-page/desktop/INDEX_ORG_Detail_D"
 
-export const INDEX_D_VES_OP_Detail = () => {
+export const INDEX_D_VES_JTC_Detail = () => {
   const route = useRouter()
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   if (thirdpageDataORG === "") {
-    if (route.isReady) route.push("/ORG/pves/ves-open-positions")
+    if (route.isReady) route.push("/ORG/pves/ves-job-training-coaches")
 
     return
   }
@@ -18,7 +18,7 @@ export const INDEX_D_VES_OP_Detail = () => {
       <INDEX_ORG_Detail_D
         // sectionToRender={arraySectionToRender_PAT}
         tooltipDisplay={tooltipToRender_PVES}
-        isPVES={true}
+        // isPVES={true}
       />
     </>
   )
