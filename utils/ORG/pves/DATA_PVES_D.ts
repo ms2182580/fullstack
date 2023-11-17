@@ -9,12 +9,14 @@ import ORG_VES1_C from "@/assets/images/ORG/vocational-employment/ORG_VES1_C.png
 import ORG_VES3 from "@/assets/images/ORG/vocational-employment/ORG_VES3.png"
 import ORG_VES4 from "@/assets/images/ORG/vocational-employment/ORG_VES4.png"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
-import { BRAND_OPTION_DEFAULT, Structure_SpecificData } from "../specificData"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../DATA_ORG_KeyNamesForCards_D"
+import { BRAND_OPTION_DEFAULT, SPECIFIC_DATA_KEY, Structure_SpecificData } from "../specificData"
 
 export const VES_SPECIFIC_DATA: Structure_SpecificData = {
   BUTTON_TO_THIRDPAGE_NAME: "Apply now",
   SVG: BRAND_OPTION_DEFAULT.DEFAULT,
 }
+
 export const DATA_PVES_D = [
   [
     "Open Positions",
@@ -22,22 +24,46 @@ export const DATA_PVES_D = [
       imageToUse: ORG_VES1_C,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
-      city: "Brooklyn, NY 11216",
+      city: "New York, NY",
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Bilingual"],
       highlight_plus: ["Part-time", "Position with agency"],
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
+      },
     },
     {
       imageToUse: ORG_VES1_C,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
@@ -47,12 +73,36 @@ export const DATA_PVES_D = [
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
+      },
     },
     {
       imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
@@ -62,12 +112,36 @@ export const DATA_PVES_D = [
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
+      },
     },
     {
       imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
@@ -77,6 +151,30 @@ export const DATA_PVES_D = [
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
+      },
     },
   ],
   [
@@ -153,7 +251,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_RP3,
       title: "Community Connections",
       fullName: {
-        first: "Pathways Residence",
+        first: "Community Connections",
         last: "",
       },
       subtitle: "Family Services-Group Home",
@@ -195,7 +293,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_RP3,
       title: "Community Connections",
       fullName: {
-        first: "Pathways Residence",
+        first: "Community Connections",
         last: "",
       },
       subtitle: "Family Services-Group Home",

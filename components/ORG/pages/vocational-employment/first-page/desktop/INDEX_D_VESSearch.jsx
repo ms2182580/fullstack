@@ -1,10 +1,10 @@
 import { Highlights_2_D } from "@/components/ORG/highlights/Highlights_2_D.js"
 import { Highlights_D } from "@/components/ORG/highlights/Highlights_D.js"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage.js"
-import { DATA_MH_D_CardLeft, DATA_MH_D_CardRight } from "@/utils/ORG/pmhss/mh/DATA_MH_D_Card.js"
 import { DATA_PVES_D } from "@/utils/ORG/pves/DATA_PVES_D"
+import { DATA_OP_D_CardLeft, DATA_OP_D_CardRight } from "@/utils/ORG/pves/op/DATA_OP_D_Card.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
@@ -47,8 +47,8 @@ export const INDEX_D_VESSearch = ({ positionInArray, isSelected = false, compone
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory) => {
-    let getDataLeft = DATA_MH_D_CardLeft[resourceArrPosition]
-    let getDataRight = DATA_MH_D_CardRight[resourceArrPosition]
+    let getDataLeft = DATA_OP_D_CardLeft[resourceArrPosition]
+    let getDataRight = DATA_OP_D_CardRight[resourceArrPosition]
 
     const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName)
 
@@ -67,14 +67,23 @@ export const INDEX_D_VESSearch = ({ positionInArray, isSelected = false, compone
     if (!failed) {
       let getFolderName = getFolder.acronym
       let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolder.acronym][subCategoryArrPosition]
-      let getDetailName = DATA_MH_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+      let getDetailName = DATA_OP_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.FOLDER_NAME]
 
       const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
+
+      let isOpenPosition = titleSubCategory === "Open Positions"
+      let isDefault_and_doNotUse_isPVES = String(isOpenPosition || titleSubCategory === "Highly-reviewed Companies")
 
       push(
         {
           pathname: toWhere,
-          query: { title: titleSubCategory, subTitle: theData.subtitle },
+          query: {
+            title: titleSubCategory,
+            subTitle: theData.subtitle,
+            renderThisContact: resourceArrPosition,
+            isOpenPosition: String(isOpenPosition),
+            isDefault_and_doNotUse_isPVES,
+          },
         },
         toWhere,
       )
@@ -132,9 +141,7 @@ export const INDEX_D_VESSearch = ({ positionInArray, isSelected = false, compone
                             <P>{obj.textReview}</P>
                           </>
                         )}
-                        <button
-                        // onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title)}
-                        >
+                        <button onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title)}>
                           <ORG_D_Search_ViewProfileSvg />
                           {iData === 0 ? "View Listing" : "View Profile"}
                         </button>

@@ -9,6 +9,12 @@ export const enum Layout_MainCardRight_VALUES {
   DEFAULT = "DEFAULT",
   LIKE_COMMUNITY_CLASSES = "LIKE_COMMUNITY_CLASSES",
   LIKE_MENTAL_HEALTH = "LIKE_MENTAL_HEALTH",
+  NO_HIGHLIGHT = "NO_HIGHLIGHT",
+  ONE_HIGHLIGHT_AT_LEAST = "ONE_HIGHLIGHT_AT_LEAST",
+  IS_PVES = "IS_PVES",
+  DOUBLE_COLUMN_CARD = "DOUBLE_COLUMN_CARD",
+  IS_PVES_SPECIFIC_DATA = "IS_PVES_SPECIFIC_DATA",
+  TOOLTIP = "TOOLTIP",
 }
 
 export type Props = {
@@ -30,7 +36,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
   position: relative;
 
   &.${Layout_MainCardRight_VALUES.DEFAULT} {
-    & > :nth-child(2) {
+    .${Layout_MainCardRight_VALUES.DOUBLE_COLUMN_CARD} {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
@@ -69,7 +75,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
   }
 
   &.${Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES} {
-    & > :nth-child(2) {
+    .${Layout_MainCardRight_VALUES.DOUBLE_COLUMN_CARD} {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto 1fr;
@@ -117,7 +123,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
   }
 
   &.${Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH} {
-    & > :nth-child(2) {
+    .${Layout_MainCardRight_VALUES.DOUBLE_COLUMN_CARD} {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
@@ -187,12 +193,66 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       }
     }
 
-    & > :nth-child(4) {
+    & > :nth-child(3) {
       margin-bottom: 12px;
-      color: ${NEUTRALS.DARK_GREY};
+
+      p {
+        color: ${NEUTRALS.DARK_GREY};
+      }
+
+      &.${Layout_MainCardRight_VALUES.IS_PVES} {
+        & > :nth-child(1) {
+          width: fit-content;
+
+          cursor: pointer;
+
+          text-transform: capitalize;
+          position: relative;
+
+          .${Layout_MainCardRight_VALUES.TOOLTIP} {
+            position: absolute;
+
+            width: max-content;
+
+            background-color: #fff3b4;
+            top: -150%;
+
+            text-transform: lowercase;
+            font-size: 14px;
+
+            padding: 14px 10px;
+
+            border-radius: 8px;
+
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+            &::first-letter {
+              text-transform: capitalize;
+            }
+
+            & > :nth-child(2) {
+              text-transform: uppercase;
+            }
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 16%;
+
+              border: 8px solid #fff3b4;
+              border-color: #fff3b4 transparent transparent transparent;
+            }
+          }
+        }
+
+        & > *:not(:first-child) {
+          color: ${NEUTRALS.DARK_GREY};
+        }
+      }
     }
 
-    & > :nth-child(5) {
+    & > :nth-child(4) {
       margin-bottom: 16px;
 
       & > :nth-child(1) {
@@ -238,7 +298,28 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
     }
   }
 
-  & > :nth-child(3) {
+  .${Layout_MainCardRight_VALUES.IS_PVES_SPECIFIC_DATA} {
+    margin-bottom: 42px;
+
+    h4 {
+      color: ${PRIMARY.PRIMARY_HOVER};
+      font-weight: 700;
+    }
+
+    & > :nth-child(2) {
+      margin-bottom: 32px;
+    }
+
+    ul {
+      list-style: none;
+
+      span {
+        color: ${SEMANTICS.HYPERLINK_NORMAL};
+        text-decoration: underline;
+
+        cursor: pointer;
+      }
+    }
   }
 
   & > :last-child {

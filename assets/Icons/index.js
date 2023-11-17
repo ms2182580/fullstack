@@ -470,6 +470,22 @@ export const QuestionTooltip_DefaultSvg = (props) => (
   </svg>
 )
 
+export const TooltipExclamationSvg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={17}
+    height={17}
+    fill="none"
+    {...props}>
+    <path
+      fill="#36C"
+      fillRule="evenodd"
+      d="M8.594 16.328a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm-.551-9.222a.6.6 0 0 0-.176.424v3.6a.6.6 0 0 0 1.2 0v-3.6a.6.6 0 0 0-1.024-.424Zm0-2.357a.6.6 0 1 1 .848.848.6.6 0 0 1-.848-.848Z"
+      clipRule="evenodd"
+    />
+  </svg>
+)
+
 export const QuestionTooltip_AASvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

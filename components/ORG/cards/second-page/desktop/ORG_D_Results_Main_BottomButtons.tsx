@@ -25,7 +25,7 @@ export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisC
     router.push(
       {
         pathname: toWhere,
-        query: { title: mainNameORG, subTitle, state },
+        query: { title: mainNameORG, subTitle, state, renderThisContact },
       },
       toWhere,
     )
