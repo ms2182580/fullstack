@@ -4,6 +4,7 @@ import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Pr
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_Brand } from "./ORG_D_Detail_Brand"
@@ -17,6 +18,29 @@ import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCar
 
 export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  const theRoute = useRouter()
+
+  const conditionToImages = useMemo(() => {
+    let isOpenPosition =
+      thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.isOpenPosition ||
+      null
+
+    let isOpenPositionThirdResource = isPVES && isOpenPosition && Number(theRoute.query.renderThisContact) >= 2
+
+    let isOpenPositionFirstTwoResources = isPVES && isOpenPosition && Number(theRoute.query.renderThisContact) < 2
+
+    let isAllOtherPVES = isPVES && !isOpenPosition
+
+    let isDefault = !isOpenPositionThirdResource && !isOpenPositionFirstTwoResources && !isAllOtherPVES
+
+    return {
+      isOpenPositionThirdResource,
+      isOpenPositionFirstTwoResources,
+      isAllOtherPVES,
+      isDefault,
+    }
+  }, [])
 
   const haveSomeBrandToShow = useMemo(() => {
     let haveSpecificData = thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
@@ -33,9 +57,17 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
       <div>
         <Image
           src={thirdpageDataORG.card.leftPart.photo.src}
-          layout={isPVES ? "fill" : "responsive"}
-          objectFit={isPVES ? "scale-down" : "contain"}
-          objectPosition={isPVES ? "" : "0px 0px"}
+          layout={
+            conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "fill" : conditionToImages.isOpenPositionThirdResource ? "fill" : "responsive"
+          }
+          objectFit={
+            conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES
+              ? "scale-down"
+              : conditionToImages.isOpenPositionThirdResource
+              ? "fill"
+              : "contain"
+          }
+          objectPosition={conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "" : "0px 0px"}
           width={1}
           height={1}
           alt={`Image of ${thirdpageDataORG.card.leftPart.title}`}

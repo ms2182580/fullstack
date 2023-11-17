@@ -1,7 +1,7 @@
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 import { SPECIFIC_DATA_KEY } from "../../specificData"
 
-export const DATA_OP_D_CardRight = [
+export const DATA_HR_D_CardRight = [
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
@@ -256,7 +256,7 @@ export const DATA_OP_D_CardRight = [
   },
 ]
 
-export const DATA_OP_D_CardLeft = [
+export const DATA_HR_D_CardLeft = [
   {
     phone: "",
     email: "",
@@ -271,7 +271,7 @@ export const DATA_OP_D_CardLeft = [
     [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
         isPVES: true,
-        isOpenPosition: true,
+        isOpenPosition: false,
 
         tooltipApplyNow: [
           "Accommodation during the application and hiring process available",
@@ -309,7 +309,7 @@ export const DATA_OP_D_CardLeft = [
     [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
         isPVES: true,
-        isOpenPosition: true,
+        isOpenPosition: false,
 
         tooltipApplyNow: [
           "Accommodation during the application and hiring process available",
@@ -347,7 +347,7 @@ export const DATA_OP_D_CardLeft = [
     [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
         isPVES: true,
-        isOpenPosition: true,
+        isOpenPosition: false,
 
         tooltipApplyNow: [
           "Accommodation during the application and hiring process available",

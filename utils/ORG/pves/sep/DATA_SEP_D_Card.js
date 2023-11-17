@@ -1,7 +1,7 @@
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 import { SPECIFIC_DATA_KEY } from "../../specificData"
 
-export const DATA_OP_D_CardRight = [
+export const DATA_SEP_D_CardRight = [
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
@@ -256,10 +256,10 @@ export const DATA_OP_D_CardRight = [
   },
 ]
 
-export const DATA_OP_D_CardLeft = [
+export const DATA_SEP_D_CardLeft = [
   {
-    phone: "",
-    email: "",
+    phone: "(123)456-7890",
+    email: "something@email.com",
     location: {
       city: "50 Hudson Yards",
       streetName: "NY Headquarters ",
@@ -270,8 +270,8 @@ export const DATA_OP_D_CardLeft = [
 
     [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
-        isPVES: true,
-        isOpenPosition: true,
+        isPVES: false,
+        isOpenPosition: false,
 
         tooltipApplyNow: [
           "Accommodation during the application and hiring process available",
@@ -297,8 +297,8 @@ export const DATA_OP_D_CardLeft = [
     },
   },
   {
-    phone: "",
-    email: "",
+    phone: "(123)456-7890",
+    email: "something@email.com",
     location: {
       city: "50 Hudson Yards",
       streetName: "NY Headquarters ",
@@ -308,8 +308,8 @@ export const DATA_OP_D_CardLeft = [
     },
     [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
-        isPVES: true,
-        isOpenPosition: true,
+        isPVES: false,
+        isOpenPosition: false,
 
         tooltipApplyNow: [
           "Accommodation during the application and hiring process available",
@@ -335,8 +335,8 @@ export const DATA_OP_D_CardLeft = [
     },
   },
   {
-    phone: "",
-    email: "",
+    phone: "(123)456-7890",
+    email: "something@email.com",
     location: {
       city: "450 West 33rd Street",
       streetName: "",
@@ -346,8 +346,8 @@ export const DATA_OP_D_CardLeft = [
     },
     [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
-        isPVES: true,
-        isOpenPosition: true,
+        isPVES: false,
+        isOpenPosition: false,
 
         tooltipApplyNow: [
           "Accommodation during the application and hiring process available",

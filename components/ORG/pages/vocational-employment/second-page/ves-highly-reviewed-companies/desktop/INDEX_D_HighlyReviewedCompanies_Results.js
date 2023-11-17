@@ -1,5 +1,5 @@
 import { DATA_PVES_D, VES_SPECIFIC_DATA } from "@/utils/ORG/pves/DATA_PVES_D"
-import { DATA_OP_D_CardLeft, DATA_OP_D_CardRight } from "@/utils/ORG/pves/op/DATA_OP_D_Card.js"
+import { DATA_HR_D_CardLeft, DATA_HR_D_CardRight } from "@/utils/ORG/pves/hr/DATA_HR_D_Card.js"
 import { renderFiltersInUI_VES_OP } from "@/utils/ORG/pves/op/DATA_OP_D_Filters.js"
 import { Layout_MainCard_Search_KEY, Layout_MainCard_Search_VALUE } from "@/utils/ORG/pves/second-page/desktop/specificLayout"
 import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
@@ -17,8 +17,8 @@ export const INDEX_D_HighlyReviewedCompanies_Results = () => {
     setSecondpageDataORG({
       cardData: DATA_PVES_D[1].slice(1),
       mainNameORG: DATA_PVES_D[1][0],
-      right: DATA_OP_D_CardRight,
-      left: DATA_OP_D_CardLeft,
+      right: DATA_HR_D_CardRight,
+      left: DATA_HR_D_CardLeft,
       [Layout_MainCard_Search_KEY.KEY]: Layout_MainCard_Search_VALUE.VES_LIKE,
       isOpenPosition: false,
       [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: VES_SPECIFIC_DATA,
