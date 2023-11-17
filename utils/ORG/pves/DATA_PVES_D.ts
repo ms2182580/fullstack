@@ -24,7 +24,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_VES1_C,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
@@ -63,7 +63,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_VES1_C,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
@@ -93,7 +93,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_RP2,
       title: "Account assistant Aid",
       fullName: {
-        first: "",
+        first: "Account assistant Aid",
         last: "",
       },
       subtitle: "Human Care Healthcare Service",
@@ -179,7 +179,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_RP3,
       title: "Community Connections",
       fullName: {
-        first: "Pathways Residence",
+        first: "Community Connections",
         last: "",
       },
       subtitle: "Family Services-Group Home",
@@ -221,7 +221,7 @@ export const DATA_PVES_D = [
       imageToUse: ORG_RP3,
       title: "Community Connections",
       fullName: {
-        first: "Pathways Residence",
+        first: "Community Connections",
         last: "",
       },
       subtitle: "Family Services-Group Home",

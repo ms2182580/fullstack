@@ -1,6 +1,6 @@
 import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { useMemo } from "react"
 import { NavBar_D_WriteAReviewSvg, SearchSVG } from "../../../../../assets/Icons"
 import { checkRouteThirdPage } from "../../../../../utils/ORG/checkRouteThirdPage"
 import { useCheckBreadcrumbs } from "../../../../../utils/ORG/useCheckBreadcrumbs"
@@ -13,7 +13,11 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
-  const [formattedActualRoute, setFormattedActualRoute] = useState(`${thirdpageDataORG.fullName.first} ${thirdpageDataORG.fullName.last}`)
+  console.log("thirdpageDataORG:", thirdpageDataORG)
+
+  const formattedActualRoute = useMemo(() => {
+    return `${thirdpageDataORG.fullName.first} ${thirdpageDataORG.fullName.last}`
+  }, [])
 
   let { theURLFormatted } = checkRouteThirdPage(pathname)
 
