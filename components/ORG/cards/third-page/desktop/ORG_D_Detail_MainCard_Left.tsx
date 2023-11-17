@@ -23,16 +23,19 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
 
   const conditionToImages = useMemo(() => {
     let isOpenPosition =
-      thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.isOpenPosition ||
+      (thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.isOpenPosition &&
+        theRoute.query.isOpenPosition === "true") ||
       null
 
-    let isOpenPositionThirdResource = isPVES && isOpenPosition && Number(theRoute.query.renderThisContact) >= 2
+    let isPVESCurated = theRoute.query.isDefault_and_doNotUse_isPVES ? theRoute.query.isDefault_and_doNotUse_isPVES === "true" : isPVES
 
-    let isOpenPositionFirstTwoResources = isPVES && isOpenPosition && Number(theRoute.query.renderThisContact) < 2
+    let isOpenPositionThirdResource = isPVESCurated && isOpenPosition && Number(theRoute.query.renderThisContact) >= 2
 
-    let isAllOtherPVES = isPVES && !isOpenPosition
+    let isOpenPositionFirstTwoResources = isPVESCurated && isOpenPosition && Number(theRoute.query.renderThisContact) < 2
 
-    let isDefault = !isOpenPositionThirdResource && !isOpenPositionFirstTwoResources && !isAllOtherPVES
+    let isAllOtherPVES = isOpenPosition || isPVESCurated ? Boolean(!isOpenPosition) : false
+
+    let isDefault = isOpenPositionThirdResource === false && !isOpenPositionFirstTwoResources === false && !isAllOtherPVES === false
 
     return {
       isOpenPositionThirdResource,

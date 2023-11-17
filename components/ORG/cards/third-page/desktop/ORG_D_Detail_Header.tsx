@@ -13,8 +13,6 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
-  console.log("thirdpageDataORG:", thirdpageDataORG)
-
   const formattedActualRoute = useMemo(() => {
     return `${thirdpageDataORG.fullName.first} ${thirdpageDataORG.fullName.last}`
   }, [])

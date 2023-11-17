@@ -73,21 +73,30 @@ export const DATA_PVES_D = [
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
-    },
-    {
-      imageToUse: ORG_RP2,
-      title: "Account assistant Aid",
-      fullName: {
-        first: "",
-        last: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
       },
-      subtitle: "Human Care Healthcare Service",
-      city: "Brooklyn, NY 11216",
-      rating: generateRandomNumber(4, 5),
-      reviews: generateRandomNumber(47, 999),
-      hourlyRate: "Part-time,  $17 - $19.00 / hour",
-      highlight: ["Community -based", "SSI-Approved"],
-      highlight_plus: ["Position with agency", "Part-time"],
     },
     {
       imageToUse: ORG_RP2,
@@ -103,6 +112,69 @@ export const DATA_PVES_D = [
       hourlyRate: "Part-time,  $17 - $19.00 / hour",
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
+      },
+    },
+    {
+      imageToUse: ORG_RP2,
+      title: "Account assistant Aid",
+      fullName: {
+        first: "Account assistant Aid",
+        last: "",
+      },
+      subtitle: "Human Care Healthcare Service",
+      city: "Brooklyn, NY 11216",
+      rating: generateRandomNumber(4, 5),
+      reviews: generateRandomNumber(47, 999),
+      hourlyRate: "Part-time,  $17 - $19.00 / hour",
+      highlight: ["Community -based", "SSI-Approved"],
+      highlight_plus: ["Position with agency", "Part-time"],
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
+          isPVES: true,
+
+          tooltipApplyNow:
+            "Accommodation during the application and hiring process available. Contact the Applicant-Candidate Accommodation Team.You can reach us by phone at 888-435-9287, Monday through Friday, between 6 a.m. and 4 p.m. ET.",
+
+          workType: {
+            key: "work type",
+            value: "Full-time",
+          },
+          salaryRange: {
+            key: "salary range",
+            value: "$17.00/hr",
+          },
+          ADA: {
+            key: "ADA Compliant workspace:",
+            value: "yes",
+          },
+
+          brandName: "meta",
+          datePosted: "Posted 10 hours ago",
+        },
+      },
     },
   ],
   [
