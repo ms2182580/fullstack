@@ -4,6 +4,7 @@ import { ORG_D_Detail_Reviews } from "@/components/ORG/cards/third-page/desktop/
 import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PRP: InnerNavBar_InnerData = [
+  { INNER_NAV_BAR_KEY: "about" },
   { INNER_NAV_BAR_KEY: "location" },
   { INNER_NAV_BAR_KEY: "contact", INNER_NAV_BAR_VALUE: "contact us" },
   { INNER_NAV_BAR_KEY: "reviews" },

@@ -8,15 +8,19 @@ export const enum InnerNavBar_InnerData_KEYS {
 }
 
 export type InnerNavBar_InnerData = {
-  [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]: string
+  [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]: string | DefaultValue_InnerData.about
   [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE]?: string
 }[]
+
+const enum DefaultValue_InnerData {
+  about = "about",
+}
 
 export type ArraySectionToRender_Type = {
   name: string | null
   component: FC | null
   toNavbar?: {
-    id: string | null
+    id: string | DefaultValue_InnerData.about | null
     jsx?: string
   }
 }[]

@@ -17,6 +17,7 @@ import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
 import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
 let defaultSectionToRender = [
+  { [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]: "about" },
   { component: ORG_D_Detail_Schedule, [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]: "booking" },
   { component: ORG_D_Detail_ContactUs, [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]: "contact" },
   { component: ORG_D_Detail_Reviews, [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]: "reviews" },
@@ -71,16 +72,18 @@ export const INDEX_ORG_Detail_D = ({
           ) : (
             <>
               {defaultSectionToRender.map((x, index) => {
-                let theComponentName = x.component.name
+                if (x.component) {
+                  let theComponentName = x.component.name
 
-                return (
-                  <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component
-                      idInnerbar={x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}
-                      contactUsCustomProperties={contactUsCustomProperties}
-                    />
-                  </Fragment>
-                )
+                  return (
+                    <Fragment key={`${theComponentName}_${index}`}>
+                      <x.component
+                        idInnerbar={x[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}
+                        contactUsCustomProperties={contactUsCustomProperties}
+                      />
+                    </Fragment>
+                  )
+                }
               })}
             </>
           )}

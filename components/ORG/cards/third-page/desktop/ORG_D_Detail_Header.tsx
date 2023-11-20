@@ -10,6 +10,7 @@ import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_HeaderWrapper } from "./styles/ORG_D_Detail_HeaderWrapper"
 
 export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null, defaultSectionToRender, sectionToRender = null }) => {
+  console.log("defaultSectionToRender:", defaultSectionToRender)
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
@@ -30,12 +31,6 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
       />
 
       <ul>
-        <li>
-          <H3>
-            <a href="#about">About</a>
-          </H3>
-        </li>
-
         {sectionToRender !== null ? (
           <>
             {sectionToRender.map((x, index) => {
@@ -54,6 +49,12 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
           </>
         ) : (
           <>
+            <li>
+              <H3>
+                <a href={`#${defaultSectionToRender[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>About</a>
+              </H3>
+            </li>
+
             <li>
               <H3>
                 <a href={`#${defaultSectionToRender[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Contact</a>

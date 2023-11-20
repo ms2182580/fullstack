@@ -1,3 +1,4 @@
+import { arraySectionToRender_PVES } from "@/utils/ORG/pves/op/third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PVES } from "@/utils/ORG/pves/third-page/desktop/tooltipToRender"
 import { useRouter } from "next/router"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -16,7 +17,7 @@ export const INDEX_D_VES_OP_Detail = () => {
   return (
     <>
       <INDEX_ORG_Detail_D
-        // sectionToRender={arraySectionToRender_PAT}
+        sectionToRender={arraySectionToRender_PVES}
         tooltipDisplay={tooltipToRender_PVES}
         // isPVES={true}
       />
