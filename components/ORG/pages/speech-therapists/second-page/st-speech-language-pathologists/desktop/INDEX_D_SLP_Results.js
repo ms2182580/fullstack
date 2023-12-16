@@ -4,7 +4,6 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PSLP_D } from "../../../../../../../utils/ORG/pst/DATA_PSLP_D.js"
 import { DATA_SLP_D_CardLeft, DATA_SLP_D_CardRight } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Card.js"
 import { renderFiltersInUI_ST_SLP } from "../../../../../../../utils/ORG/pst/slp/DATA_SLP_D_Filters.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_SLP_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -20,5 +19,5 @@ export const INDEX_D_SLP_Results = () => {
     })
   }, [])
 
-  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }

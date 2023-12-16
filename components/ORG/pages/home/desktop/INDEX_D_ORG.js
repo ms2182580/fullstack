@@ -1,3 +1,4 @@
+import { INDEX_ORG_Search_D } from "@/components/ORG/cards/first-page/desktop/INDEX_ORG_Search_D"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react"
@@ -6,14 +7,13 @@ import ORGDesktop_Search_Hero from "../../../../../assets/images/ORGDesktop_Sear
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "../../../../../utils/ORG/DATA_ORG_CheckPaths_Search_D.js"
-import { DATA_ORG_D } from "../../../../../utils/ORG/DATA_ORG_D"
 import { useScrollHorizontal } from "../../../../../utils/useScrollHorizontal.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_SearchComponent } from "../../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
-export const INDEX_D_ORG = () => {
+export const INDEX_D_ORG = ({ dataToDisplay }) => {
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 
@@ -134,17 +134,17 @@ export const INDEX_D_ORG = () => {
             </P>
           </li>
 
-          {DATA_ORG_D.map((x, i) => {
+          {dataToDisplay.map((x, i) => {
             return (
               <li
                 key={`${x.nameJSX}_${i}`}
-                data-name={x.componentName}
+                data-name={x.nameJSX}
                 onClick={handleShowOneCard}
-                className={singleCardIsSelected && matchNameState === x.componentName ? "isActive" : ""}>
+                className={singleCardIsSelected && matchNameState === x.nameJSX ? "isActive" : ""}>
                 <P
                   primary_cta
                   semibold
-                  data-name={x.componentName}>
+                  data-name={x.nameJSX}>
                   {x.nameJSX}
                 </P>
               </li>
@@ -162,26 +162,33 @@ export const INDEX_D_ORG = () => {
         </div>
       </div>
 
-      {DATA_ORG_D.map((x, i) => {
+      {dataToDisplay.map((x, i) => {
+        const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
+
         if (singleCardIsSelected === false) {
           return (
-            <Fragment key={`${x.componentName}`}>
-              <x.component
+            <Fragment key={`${x.nameJSX}`}>
+              <INDEX_ORG_Search_D
                 positionInArray={i}
-                componentName={x.componentName}
+                // componentName={x.componentName}
+                theData={x.thisParticularData}
+                someLayoutSpecial={someLayoutSpecial}
               />
             </Fragment>
           )
         }
 
-        if (singleCardIsSelected && matchNameState === x.componentName) {
+        if (singleCardIsSelected && matchNameState === x.nameJSX) {
           return (
-            <x.component
-              key={`${x.componentName}_${i}`}
-              isSelected={singleCardIsSelected}
-              positionInArray={i}
-              componentName={x.componentName}
-            />
+            <Fragment key={`${x.nameJSX}_${i}`}>
+              <INDEX_ORG_Search_D
+                isSelected={singleCardIsSelected}
+                positionInArray={i}
+                // componentName={x.componentName}
+                theData={x.thisParticularData}
+                someLayoutSpecial={someLayoutSpecial}
+              />
+            </Fragment>
           )
         }
 

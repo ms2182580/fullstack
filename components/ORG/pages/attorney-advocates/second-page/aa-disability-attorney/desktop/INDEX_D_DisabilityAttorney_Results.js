@@ -4,7 +4,6 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PCR_D } from "../../../../../../../utils/ORG/paa/DATA_PCR_D"
 import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Card"
 import { renderFiltersInUI_AA_CR } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Filters"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_DisabilityAttorney_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -20,9 +19,5 @@ export const INDEX_D_DisabilityAttorney_Results = () => {
     })
   }, [])
 
-  return (
-    <>
-      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
-    </>
-  )
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }

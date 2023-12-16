@@ -4,7 +4,6 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PMH_D } from "../../../../../../../utils/ORG/pmhss/DATA_PMH_D"
 import { renderFiltersInUI_MHSS_FS } from "../../../../../../../utils/ORG/pmhss/fs/DATA_FS_D_Filters"
 import { DATA_MH_D_CardLeft, DATA_MH_D_CardRight } from "../../../../../../../utils/ORG/pmhss/mh/DATA_MH_D_Card"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_FamilySupports_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -21,5 +20,5 @@ export const INDEX_D_FamilySupports_Results = () => {
     })
   }, [])
 
-  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }

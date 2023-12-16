@@ -23,12 +23,7 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(1) {
-    background: linear-gradient(
-      169deg,
-      rgba(75, 52, 139, 0.35) 0%,
-      rgba(255, 154, 108, 0.46) 45.31%,
-      rgba(228, 204, 255, 0.56) 100%
-    );
+    background: linear-gradient(169deg, rgba(75, 52, 139, 0.35) 0%, rgba(255, 154, 108, 0.46) 45.31%, rgba(228, 204, 255, 0.56) 100%);
     width: 100%;
 
     display: grid;
@@ -164,9 +159,8 @@ export const INDEX_D_ORGWrapper = styled.div`
       position: relative;
 
       padding-right: 70px;
-      
+
       /* scroll-behavior: smooth; */
-      
 
       & > li {
         list-style: none;
@@ -217,8 +211,8 @@ export const INDEX_D_ORGWrapper = styled.div`
               fill: ${NEUTRALS.BLACK};
             }
           }
-          
-          &:hover{
+
+          &:hover {
             /* all:unset; */
             /* background-color: unset; */
           }

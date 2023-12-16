@@ -6,7 +6,6 @@ import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
 import { useEffect } from "react"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider.js"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_HighlyReviewedCompanies_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -25,5 +24,5 @@ export const INDEX_D_HighlyReviewedCompanies_Results = () => {
     })
   }, [])
 
-  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }

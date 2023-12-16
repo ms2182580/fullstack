@@ -1,14 +1,9 @@
-import Image from "next/image.js"
-import UnderConstructionImagePurple from "../../../../../../../assets/images/UnderConstructionImagePurple.png"
-import { INDEX_D_PreSchools_ResultsWrapper } from "./styles/INDEX_D_PreSchools_ResultsWrapper.js"
-import { DATA_SES_D } from "../../../../../../../utils/ORG/pses/ses/DATA_SES_D"
-import { DATA_SES_D_CardLeft, DATA_SES_D_CardRight } from "../../../../../../../utils/ORG/pses/ses/DATA_SES_D_Card"
-import { renderFiltersInUI_PPPAS_PNFPO } from "../../../../../../../utils/ORG/pppas/a/DATA_A_D_Filters"
 import { useEffect } from "react"
-import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_SecondpageData } from "../../../../../../../context/ORG_Ctx_D_SecondpageData_Provider"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
+import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { DATA_A_D_CardLeft, DATA_A_D_CardRight } from "../../../../../../../utils/ORG/pppas/a/DATA_A_D_Card"
+import { renderFiltersInUI_PPPAS_PNFPO } from "../../../../../../../utils/ORG/pppas/a/DATA_A_D_Filters"
+import { DATA_SES_D } from "../../../../../../../utils/ORG/pses/ses/DATA_SES_D"
 
 export const INDEX_D_PreSchools_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -24,9 +19,5 @@ export const INDEX_D_PreSchools_Results = () => {
     })
   }, [])
 
-  return (
-    <>
-      {secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}
-    </>
-  )
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }

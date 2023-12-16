@@ -4,7 +4,6 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { DATA_PPSYT_D } from "../../../../../../../utils/ORG/pdctr/DATA_PSYT_D.js"
 import { DATA_PSYT_D_CardLeft, DATA_PSYT_D_CardRight } from "../../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D_Card.js"
 import { renderFiltersInUI_DCTR_PSYT } from "../../../../../../../utils/ORG/pdctr/psyt/DATA_PSYT_D_Filters.js"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_Psychiatrists_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -20,5 +19,5 @@ export const INDEX_D_Psychiatrists_Results = () => {
     })
   }, [])
 
-  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }

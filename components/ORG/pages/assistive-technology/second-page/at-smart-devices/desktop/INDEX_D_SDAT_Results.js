@@ -6,7 +6,6 @@ import { useORG_Ctx_D_SecondpageFilters } from "../../../../../../../context/ORG
 import { AT_SPECIFIC_DATA, DATA_PAT_D } from "../../../../../../../utils/ORG/pat/DATA_PAT_D"
 import { DATA_SAT_D_CardRight } from "../../../../../../../utils/ORG/pat/ass/DATA_SAT_D_Card"
 import { renderFiltersInUI_AT_AT } from "../../../../../../../utils/ORG/pat/wcmd/DATA_AT_D_Filters"
-import { INDEX_ORG_Search_D } from "../../../../../cards/second-page/desktop/INDEX_ORG_Search_D"
 
 export const INDEX_D_SDAT_Results = () => {
   const { secondpageFiltersORG, setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
@@ -23,5 +22,5 @@ export const INDEX_D_SDAT_Results = () => {
     })
   }, [])
 
-  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Search_D />}</>
+  return <>{secondpageFiltersORG !== "" && <INDEX_ORG_Results_D />}</>
 }
