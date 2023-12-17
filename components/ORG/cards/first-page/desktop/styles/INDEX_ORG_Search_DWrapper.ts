@@ -103,7 +103,8 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           letter-spacing: 0.256px;
 
           background-color: ${PRIMARY.PRIMARY_CTA};
-          padding: 9px 62px;
+          padding-top: 9px;
+          padding-bottom: 9px;
 
           border-radius: 6.2px;
           border: medium;
@@ -111,9 +112,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           cursor: pointer;
 
           white-space: nowrap;
-
-          & > * {
-          }
         }
       }
     }
@@ -155,8 +153,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           padding-bottom: 4px;
 
           & > * {
-            all: unset;
-
             box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
 
