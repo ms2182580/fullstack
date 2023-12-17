@@ -9,9 +9,15 @@ import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
+import { All_Layouts_Accepted, INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
+
+/* 
+!FH0
+Fix bug on camps and doctors ORG 1° page
+*/
 
 export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, componentName, theData, someLayoutSpecial }) => {
+  // console.log("someLayoutSpecial:", someLayoutSpecial)
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -84,12 +90,16 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, compon
                           <Image
                             src={obj.imageToUse}
                             alt={obj.title}
-                            layout="responsive"
-                            objectFit="contain"
-                            width={1}
-                            height={0.522}
+                            layout={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? "responsive" : "intrinsic"}
+                            objectFit={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? "contain" : "initial"}
+                            width={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? 1 : 1200}
+                            height={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? 0.522 : 600}
                           />
-                          <Verified />
+                          {someLayoutSpecial === All_Layouts_Accepted.like_PAT ? null : (
+                            <>
+                              <Verified />
+                            </>
+                          )}
                         </div>
                         <H3>{obj.title}</H3>
                         <H4>{obj.subtitle}</H4>
@@ -115,14 +125,12 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, compon
                         )}
 
                         <P>{obj.textReview}</P>
-                        <span
+                        <button
                         // onClick={(e) => handleMoveToThirdPage(e, obj, iData, iSubData, title, obj[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY])}
                         >
-                          <ButtonSmall>
-                            <ORG_D_Search_ViewProfileSvg />
-                            {someLayoutSpecial === "like_PVES" && iData === 0 ? "View Listing" : "View Profile"}
-                          </ButtonSmall>
-                        </span>
+                          <ORG_D_Search_ViewProfileSvg />
+                          {someLayoutSpecial === "like_PVES" && iData === 0 ? "View Listing" : "View Profile"}
+                        </button>
                       </div>
                     )
                   })}

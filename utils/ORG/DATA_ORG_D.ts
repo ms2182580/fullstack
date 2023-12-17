@@ -26,6 +26,7 @@ type DATA_ORG_D_TYPES = {
   folderName?: string
   somethingSpecial?: {
     layout?: keyof typeof All_Layouts_Accepted
+    details?: unknown
   }
 }[]
 
@@ -37,6 +38,9 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     thisParticularData: DATA_PAT_D,
     acronym: "pat",
     folderName: "assistive-technology",
+    somethingSpecial: {
+      layout: "like_PAT",
+    },
   },
   {
     nameJSX: "Attorney and Advocates",
@@ -120,6 +124,9 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     folderName: "x",
     somethingSpecial: {
       layout: "like_PVES",
+      details: {
+        changeLayoutOnlyInPosition: 0,
+      },
     },
   },
 ]

@@ -1,3 +1,4 @@
+import { INDEX_ORG_Results_D } from "@/components/ORG/cards/second-page/desktop/INDEX_ORG_Results_D"
 import { DATA_PVES_D, VES_SPECIFIC_DATA } from "@/utils/ORG/pves/DATA_PVES_D"
 import { DATA_OP_D_CardLeft, DATA_OP_D_CardRight } from "@/utils/ORG/pves/op/DATA_OP_D_Card.js"
 import { renderFiltersInUI_VES_OP } from "@/utils/ORG/pves/op/DATA_OP_D_Filters.js"
@@ -28,7 +29,7 @@ export const INDEX_D_OpenPositions_Results = () => {
     <>
       {secondpageFiltersORG !== "" && (
         <>
-          <INDEX_ORG_Search_D />
+          <INDEX_ORG_Results_D />
         </>
       )}
     </>

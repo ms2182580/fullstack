@@ -11,7 +11,7 @@ interface Props {
   disabled?: boolean
 }
 
-const BtnDefault = styled.button<Props>`
+export const BtnDefault = styled.button<Props>`
   display: flex;
   justify-content: center;
   align-items: center;
