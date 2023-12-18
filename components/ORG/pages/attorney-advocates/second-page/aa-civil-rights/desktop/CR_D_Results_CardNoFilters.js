@@ -1,8 +1,8 @@
 import Image from "next/image.js"
 import { useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "../../../../../../../assets/Icons/index.js"
-import { DATA_PCR_D } from "../../../../../../../utils/ORG/paa/DATA_PCR_D.js"
-import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Card.js"
+import { DATA_PAA_D } from "../../../../../../../utils/ORG/paa/DATA_PAA_D.js"
+import { DATA_CardLeft_AA, DATA_CardRight_AA } from "../../../../../../../utils/ORG/paa/cr/DATA_CR_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Results_CardEmail } from "../../../../../cards/second-page/desktop/ORG_D_Results_CardEmail.js"
@@ -26,7 +26,7 @@ export const CR_D_Results_CardNoFilters = () => {
     router.push(toWhere)
   } */
 
-  const [cardData, setCardData] = useState(DATA_PCR_D[0].slice(1))
+  const [cardData, setCardData] = useState(DATA_PAA_D[0].slice(1))
 
   return (
     <>
@@ -35,7 +35,7 @@ export const CR_D_Results_CardNoFilters = () => {
         .map((x, i) => {
           let renderThisCard = i % 3
           let renderThisFilter = i % 3 === 0 ? 0 : 1
-          let renderThisContact = i % DATA_CR_D_CardLeft.length
+          let renderThisContact = i % DATA_CardLeft_AA.length
 
           return (
             <CR_D_Results_CardWrapper key={`${cardData[renderThisCard].reviews}_${i}`}>
@@ -54,21 +54,21 @@ export const CR_D_Results_CardNoFilters = () => {
                 </div>
 
                 <div>
-                  <ORG_D_Results_Cardphone phoneNumber={DATA_CR_D_CardLeft[renderThisContact].phone} />
+                  <ORG_D_Results_Cardphone phoneNumber={DATA_CardLeft_AA[renderThisContact].phone} />
 
-                  <ORG_D_Results_CardEmail email={DATA_CR_D_CardLeft[renderThisContact].email} />
+                  <ORG_D_Results_CardEmail email={DATA_CardLeft_AA[renderThisContact].email} />
 
                   <ORG_D_Results_CardWebsite
-                    firstName={DATA_CR_D_CardLeft[renderThisContact].web.fistName}
-                    lastName={DATA_CR_D_CardLeft[renderThisContact].web.lastName}
+                    firstName={DATA_CardLeft_AA[renderThisContact].web.fistName}
+                    lastName={DATA_CardLeft_AA[renderThisContact].web.lastName}
                   />
 
                   <ORG_D_Results_CardLocation
-                    locationCity={DATA_CR_D_CardLeft[renderThisContact].location.city}
-                    locationStreetNumber={DATA_CR_D_CardLeft[renderThisContact].location.streetNumber}
-                    locationStreetName={DATA_CR_D_CardLeft[renderThisContact].location.streetName}
-                    locationState={DATA_CR_D_CardLeft[renderThisContact].location.state}
-                    howFar={DATA_CR_D_CardLeft[renderThisContact].location.howFar}
+                    locationCity={DATA_CardLeft_AA[renderThisContact].location.city}
+                    locationStreetNumber={DATA_CardLeft_AA[renderThisContact].location.streetNumber}
+                    locationStreetName={DATA_CardLeft_AA[renderThisContact].location.streetName}
+                    locationState={DATA_CardLeft_AA[renderThisContact].location.state}
+                    howFar={DATA_CardLeft_AA[renderThisContact].location.howFar}
                   />
                 </div>
               </div>
@@ -82,27 +82,27 @@ export const CR_D_Results_CardNoFilters = () => {
                   reviews={cardData[renderThisCard].reviews}
                 />
 
-                <Highlights_D highlights={DATA_CR_D_CardRight[renderThisFilter].highlights} />
+                <Highlights_D highlights={DATA_CardRight_AA[renderThisFilter].highlights} />
 
                 <P
                   primary_hover
                   bold>
-                  Areas of Law: <span>{DATA_CR_D_CardRight[renderThisFilter].areasOfLaw}</span>
+                  Areas of Law: <span>{DATA_CardRight_AA[renderThisFilter].areasOfLaw}</span>
                 </P>
                 <P
                   primary_hover
                   bold>
-                  Jurisdiction: <span>{DATA_CR_D_CardRight[renderThisFilter].jurisdiction}</span>
+                  Jurisdiction: <span>{DATA_CardRight_AA[renderThisFilter].jurisdiction}</span>
                 </P>
                 <P
                   primary_hover
                   bold>
-                  Professional Experience: <span>{DATA_CR_D_CardRight[renderThisFilter].professionalExperience}</span>
+                  Professional Experience: <span>{DATA_CardRight_AA[renderThisFilter].professionalExperience}</span>
                 </P>
                 <P
                   primary_hover
                   bold>
-                  Languages Spoken: <span>{DATA_CR_D_CardRight[renderThisFilter].languagesSpoken}</span>
+                  Languages Spoken: <span>{DATA_CardRight_AA[renderThisFilter].languagesSpoken}</span>
                 </P>
               </div>
 

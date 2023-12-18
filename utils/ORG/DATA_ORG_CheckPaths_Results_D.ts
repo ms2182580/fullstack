@@ -1,3 +1,8 @@
+export const enum DATA_ORG_CheckPaths_Results_D_KEYS {
+  acronymsFolderRouteName = "acronymsFolderRouteName",
+  fullName = "fullName",
+}
+
 export const DATA_ORG_CheckPaths_Results_D = {
   pat: [
     /* 
@@ -9,16 +14,14 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "at-smart-devices",
     "at-innovative-hi-tech",
     {
-      acronymsFolderRouteName: {
-        "at-wheelchair-mobility-devices": "wcmd",
-        "at-smart-devices": "sdat",
-        "at-tools-for-school": "tfs",
-        "at-augmented-software-software": "ass",
-        "at-innovative-hi-tech": "iht",
-      },
+      "at-wheelchair-mobility-devices": "wcmd",
+      "at-smart-devices": "sdat",
+      "at-tools-for-school": "tfs",
+      "at-augmented-software-software": "ass" /* This is a typo, should be ACS */,
+      "at-innovative-hi-tech": "iht",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "at-wheelchair-mobility-devices": "Wheelchairs & Mobility Devices",
         "at-smart-devices": "Smart Devices with Assistive Technology",
         "at-tools-for-school": "Tools for School",
@@ -34,16 +37,14 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "aa-disability-attorney",
     "aa-idd",
     {
-      acronymsFolderRouteName: {
-        "aa-civil-rights": "cr",
-        "aa-special-education": "se",
-        "aa-elder-law-medicaid-planning": "elmp",
-        "aa-disability-attorney": "disa",
-        "aa-idd": "idd",
-      },
+      "aa-civil-rights": "cr",
+      "aa-special-education": "se",
+      "aa-elder-law-medicaid-planning": "elmp",
+      "aa-disability-attorney": "disa",
+      "aa-idd": "idd",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "aa-civil-rights": "Civil Rights Attorneys",
         "aa-special-education": "Special Education Attorneys",
         "aa-elder-law-medicaid-planning": "Elder Law & Medicaid Planning Attorneys",
@@ -57,14 +58,12 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "cmps-overnight-camps",
     "cmps-day-trips",
     {
-      acronymsFolderRouteName: {
-        "cmps-day": "day",
-        "cmps-overnight-camps": "ovn",
-        "cmps-day-trips": "dayt",
-      },
+      "cmps-day": "day",
+      "cmps-overnight-camps": "ovn",
+      "cmps-day-trips": "dayt",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "cmps-day": "Day Camps",
         "cmps-overnight-camps": "Overnight Camps",
         "cmps-day-trips": "Day Trips",
@@ -76,14 +75,12 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "cc-fitness-classes",
     "cc-art-classes",
     {
-      acronymsFolderRouteName: {
-        "cc-community-classes": "cc",
-        "cc-fitness-classes": "fc",
-        "cc-art-classes": "ac",
-      },
+      "cc-community-classes": "cc",
+      "cc-fitness-classes": "fc",
+      "cc-art-classes": "ac",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "cc-community-classes": "Community Classes",
         "cc-fitness-classes": "Fitness Classes",
         "cc-art-classes": "Art Classes",
@@ -95,14 +92,12 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "dctr-family-medicine",
     "dctr-neuro-oncologists",
     {
-      acronymsFolderRouteName: {
-        "dctr-psychiatrists": "psyt",
-        "dctr-family-medicine": "fm",
-        "dctr-neuro-oncologists": "no",
-      },
+      "dctr-psychiatrists": "psyt",
+      "dctr-family-medicine": "fm",
+      "dctr-neuro-oncologists": "no",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "dctr-psychiatrists": "Psychiatrists",
         "dctr-family-medicine": "Family Medicine Doctors",
         "dctr-neuro-oncologists": "Neuro-oncologists",
@@ -113,13 +108,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "mhss-mental-heath",
     "mhss-family-support",
     {
-      acronymsFolderRouteName: {
-        "mhss-mental-heath": "mh",
-        "mhss-family-support": "fs",
-      },
+      "mhss-mental-heath": "mh",
+      "mhss-family-support": "fs",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "mhss-mental-heath": "Mental Health Services",
         "mhss-family-support": "Family Support Services",
       },
@@ -130,14 +123,12 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "ppas-not-for-profit-organization",
     "ppas-state-offices",
     {
-      acronymsFolderRouteName: {
-        "ppas-associations": "a",
-        "ppas-not-for-profit-organization": "pnfpo",
-        "ppas-state-offices": "so",
-      },
+      "ppas-associations": "a",
+      "ppas-not-for-profit-organization": "pnfpo",
+      "ppas-state-offices": "so",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "ppas-associations": "Associations",
         "ppas-not-for-profit-organization": "Private Not-for-Profit Organizations",
         "ppas-state-offices": "State Offices",
@@ -149,14 +140,12 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "ses-preschools",
     "ses-private-schools",
     {
-      acronymsFolderRouteName: {
-        "ses-special-education-schools": "ses",
-        "ses-preschools": "pre",
-        "ses-private-schools": "pv",
-      },
+      "ses-special-education-schools": "ses",
+      "ses-preschools": "pre",
+      "ses-private-schools": "pv",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "ses-special-education-schools": "Special Education Schools",
         "ses-preschools": "Preschools",
         "ses-private-schools": "Private Schools",
@@ -167,13 +156,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "st-speech-language-pathologists",
     "st-ocuppational-therapists",
     {
-      acronymsFolderRouteName: {
-        "st-speech-language-pathologists": "slp",
-        "st-ocuppational-therapists": "ot",
-      },
+      "st-speech-language-pathologists": "slp",
+      "st-ocuppational-therapists": "ot",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "st-speech-language-pathologists": "Speech Language Pathologists",
         "st-ocuppational-therapists": "Occupational Therapists",
       },
@@ -184,13 +171,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "rp-long-term-residential",
     "rp-short-term-residential",
     {
-      acronymsFolderRouteName: {
-        "rp-long-term-residential": "lt",
-        "rp-short-term-residential": "st",
-      },
+      "rp-long-term-residential": "lt",
+      "rp-short-term-residential": "st",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "rp-long-term-residential": "Long-Term Residential Programs",
         "rp-short-term-residential": "Short-Term Residential Programs",
       },
@@ -204,10 +189,14 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "ves-apprenticeships-internships",
     "ves-job-training-coaches",
     {
-      acronymsFolderRouteName: {},
+      "ves-open-positions": "op",
+      "ves-highly-reviewed-companies": "hr",
+      "ves-supported-employment-programs": "sep",
+      "ves-apprenticeships-internships": "ai",
+      "ves-job-training-coaches": "jtc",
     },
     {
-      fullName: {
+      [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "ves-open-positions": "open positions",
         "ves-highly-reviewed-companies": "highly reviewed companies",
         "ves-supported-employment-programs": "supported employment programs",

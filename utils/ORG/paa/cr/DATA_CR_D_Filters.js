@@ -149,7 +149,9 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_AA_CR = [
+/* renderFiltersInUI_AA_CR */
+
+export const filtersUI_PAA = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {

@@ -1,5 +1,5 @@
 import { All_Layouts_Accepted } from "@/components/ORG/cards/first-page/desktop/styles/INDEX_ORG_Search_DWrapper"
-import { DATA_PCR_D } from "./paa/DATA_PCR_D"
+import { DATA_PAA_D } from "./paa/DATA_PCR_D"
 import { DATA_PAT_D } from "./pat/DATA_PAT_D"
 import { DATA_PCC_D } from "./pcc/DATA_PCC_D"
 import { DATA_PCMPS_D } from "./pcmps/DATA_PCMPS_D"
@@ -46,7 +46,7 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     nameJSX: "Attorney and Advocates",
     // component: INDEX_D_AASearch,
     // componentName: INDEX_D_AASearch.name,
-    thisParticularData: DATA_PCR_D,
+    thisParticularData: DATA_PAA_D,
     acronym: "paa",
     folderName: "attorney-advocates",
   },

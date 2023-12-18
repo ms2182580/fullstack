@@ -1,6 +1,6 @@
 import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
 
-export const DATA_CR_D_CardRight = [
+export const DATA_CardRight_PAA = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
@@ -232,7 +232,7 @@ export const DATA_CR_D_CardRight = [
   },
 ]
 
-export const DATA_CR_D_CardLeft = [
+export const DATA_CardLeft_PAA = [
   {
     phone: "(012) 345-6789, ext. 4001",
     email: "denise@truong-macgill.com",

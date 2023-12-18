@@ -42,8 +42,8 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   // const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory, specificDataForThisResource) => {
-  //   let getDataLeft = DATA_AT_D_CardLeft[resourceArrPosition]
-  //   let getDataRight = DATA_AT_D_CardRight[resourceArrPosition]
+  //   let getDataLeft = DATA_CardLeft_AT[resourceArrPosition]
+  //   let getDataRight = DATA_CardRight_AT[resourceArrPosition]
 
   //   const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName, specificDataForThisResource)
 
@@ -53,7 +53,7 @@ export const INDEX_D_ATSearch = ({ positionInArray, isSelected = false, componen
 
   //   let getFolderName = getAcronym.acronym
   //   let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolderName][subCategoryArrPosition]
-  //   let getDetailName = DATA_AT_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+  //   let getDetailName = DATA_CardRight_AT[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
 
   //   const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
 

@@ -24,7 +24,7 @@ export const enum DATA_PAT_D_KEYS {
   BRAND_THIRDPAGE_KEY = "BRAND_THIRDPAGE_KEY",
 }
 
-export const AT_SPECIFIC_DATA: Structure_SpecificData = {
+export const PAT_SPECIFIC_DATA: Structure_SpecificData = {
   [SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
   [SPECIFIC_DATA_KEY.SVG]: ORG_D_Results_ATSvg,
   BRAND: "Permobil",
@@ -90,7 +90,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT11,
@@ -104,7 +104,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT12,
@@ -118,7 +118,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
   ],
   [
@@ -135,7 +135,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Proloquo is a new, groundbreaking AAC app designed for nonspeaking children ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT5,
@@ -149,7 +149,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This user-friendly app makes communication more intuitive and ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT6,
@@ -163,7 +163,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This app is great for people who want maximum flexibility. Out of the box, ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
   ],
   [
@@ -180,7 +180,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT8,
@@ -194,7 +194,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT9,
@@ -208,7 +208,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
   ],
   [
@@ -225,7 +225,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Amazon Echo is a form of speaker which connects to other cloud-based ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT14,
@@ -239,7 +239,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Voice Assistant - OS supported: Android and iOS controls your smart home ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT15,
@@ -253,7 +253,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This plug is compact, reliable, and affordable enough that you could ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
     },
   ],
 ]

@@ -14,6 +14,7 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  // console.log("secondpageDataORG:", secondpageDataORG)
 
   return (
     <>

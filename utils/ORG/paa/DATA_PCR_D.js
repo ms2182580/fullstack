@@ -15,7 +15,7 @@ import ORG_AA7 from "../../../assets/images/ORG/attorney-advocates/ORG_AA7.png"
 import ORG_AA8 from "../../../assets/images/ORG/attorney-advocates/ORG_AA8.png"
 import ORG_AA9 from "../../../assets/images/ORG/attorney-advocates/ORG_AA9.png"
 
-export const DATA_PCR_D = [
+export const DATA_PAA_D = [
   [
     "Popular Civil Rights Attorneys",
     {

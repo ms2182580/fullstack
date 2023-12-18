@@ -1,7 +1,7 @@
 import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
 import { DATA_PAT_D_KEYS } from "../DATA_PAT_D"
 
-export const DATA_AT_D_CardRight = [
+export const DATA_CardRight_PAT = [
   {
     price: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "price",
@@ -193,7 +193,7 @@ export const DATA_AT_D_CardRight = [
   },
 ]
 
-export const DATA_AT_D_CardLeft = [
+export const DATA_CardLeft_PAT = [
   {
     phone: "(012) 345-6789, ext. 4001",
     email: "info@assistiveware.com",

@@ -2,7 +2,7 @@ import Image from "next/image.js"
 import { useState } from "react"
 import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_MoreinformationSvg, ORG_D_Results_WheretobuySvg } from "../../../../../../../assets/Icons/index.js"
 import { DATA_PAT_D } from "../../../../../../../utils/ORG/pat/DATA_PAT_D"
-import { DATA_AT_D_CardLeft, DATA_AT_D_CardRight } from "../../../../../../../utils/ORG/pat/at/DATA_AT_D_Card.js"
+import { DATA_CardLeft_AT, DATA_CardRight_AT } from "../../../../../../../utils/ORG/pat/at/DATA_AT_D_Card.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Results_CardEmail } from "../../../../../cards/second-page/desktop/ORG_D_Results_CardEmail.js"
@@ -33,7 +33,7 @@ export const AT_D_Results_CardNoFilters = () => {
         .map((x, i) => {
           let renderThisCard = i % 3
           let renderThisFilter = i % 3 === 0 ? 0 : 1
-          let renderThisContact = i % DATA_AT_D_CardLeft.length
+          let renderThisContact = i % DATA_CardLeft_AT.length
 
           return (
             <>
@@ -53,21 +53,21 @@ export const AT_D_Results_CardNoFilters = () => {
                   </div>
 
                   <div>
-                    <ORG_D_Results_Cardphone phoneNumber={DATA_AT_D_CardLeft[renderThisContact].phone} />
+                    <ORG_D_Results_Cardphone phoneNumber={DATA_CardLeft_AT[renderThisContact].phone} />
 
-                    <ORG_D_Results_CardEmail email={DATA_AT_D_CardLeft[renderThisContact].email} />
+                    <ORG_D_Results_CardEmail email={DATA_CardLeft_AT[renderThisContact].email} />
 
                     <ORG_D_Results_CardWebsite
-                      firstName={DATA_AT_D_CardLeft[renderThisContact].web.fistName}
-                      lastName={DATA_AT_D_CardLeft[renderThisContact].web.lastName}
+                      firstName={DATA_CardLeft_AT[renderThisContact].web.fistName}
+                      lastName={DATA_CardLeft_AT[renderThisContact].web.lastName}
                     />
 
                     <ORG_D_Results_CardLocation
-                      locationCity={DATA_AT_D_CardLeft[renderThisContact].location.city}
-                      locationStreetNumber={DATA_AT_D_CardLeft[renderThisContact].location.streetNumber}
-                      locationStreetName={DATA_AT_D_CardLeft[renderThisContact].location.streetName}
-                      locationState={DATA_AT_D_CardLeft[renderThisContact].location.state}
-                      howFar={DATA_AT_D_CardLeft[renderThisContact].location.howFar}
+                      locationCity={DATA_CardLeft_AT[renderThisContact].location.city}
+                      locationStreetNumber={DATA_CardLeft_AT[renderThisContact].location.streetNumber}
+                      locationStreetName={DATA_CardLeft_AT[renderThisContact].location.streetName}
+                      locationState={DATA_CardLeft_AT[renderThisContact].location.state}
+                      howFar={DATA_CardLeft_AT[renderThisContact].location.howFar}
                     />
                   </div>
                 </div>
@@ -83,22 +83,22 @@ export const AT_D_Results_CardNoFilters = () => {
                   <P
                     primary_hover
                     bold>
-                    Price: <span>{DATA_AT_D_CardRight[renderThisFilter].price}</span>
+                    Price: <span>{DATA_CardRight_AT[renderThisFilter].price}</span>
                   </P>
                   <P
                     primary_hover
                     bold>
-                    Speed: <span>{DATA_AT_D_CardRight[renderThisFilter].speed}</span>
+                    Speed: <span>{DATA_CardRight_AT[renderThisFilter].speed}</span>
                   </P>
                   <P
                     primary_hover
                     bold>
-                    Range: <span>{DATA_AT_D_CardRight[renderThisFilter].range}</span>
+                    Range: <span>{DATA_CardRight_AT[renderThisFilter].range}</span>
                   </P>
                   <P
                     primary_hover
                     bold>
-                    Max. Weight: <span>{DATA_AT_D_CardRight[renderThisFilter].maxWeight}</span>
+                    Max. Weight: <span>{DATA_CardRight_AT[renderThisFilter].maxWeight}</span>
                   </P>
                 </div>
 

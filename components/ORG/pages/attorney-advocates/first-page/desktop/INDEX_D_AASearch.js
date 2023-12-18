@@ -1,14 +1,14 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
-import { DATA_CR_D_CardLeft, DATA_CR_D_CardRight } from "@/utils/ORG/paa/cr/DATA_CR_D_Card"
+import { DATA_CardLeft_AA, DATA_CardRight_AA } from "@/utils/ORG/paa/cr/DATA_CR_D_Card"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { ORG_D_Search_ViewProfileSvg } from "../../../../../../assets/Icons"
 import { DATA_ORG_CheckPaths_Results_D } from "../../../../../../utils/ORG/DATA_ORG_CheckPaths_Results_D"
 import { DATA_ORG_D } from "../../../../../../utils/ORG/DATA_ORG_D"
-import { DATA_PCR_D } from "../../../../../../utils/ORG/paa/DATA_PCR_D"
+import { DATA_PAA_D } from "../../../../../../utils/ORG/paa/DATA_PAA_D"
 import { ButtonSmall } from "../../../../../ui/buttons/general/index"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
@@ -23,7 +23,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(DATA_PCR_D.length)
+      setHowMuchDisplay(DATA_PAA_D.length)
     }
   }, [isSelected])
 
@@ -45,8 +45,8 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const handleMoveToThirdPage = (e, theData, subCategoryArrPosition, resourceArrPosition, titleSubCategory) => {
-    let getDataLeft = DATA_CR_D_CardLeft[resourceArrPosition]
-    let getDataRight = DATA_CR_D_CardRight[resourceArrPosition]
+    let getDataLeft = DATA_CardLeft_AA[resourceArrPosition]
+    let getDataRight = DATA_CardRight_AA[resourceArrPosition]
 
     const allDataToThirdPage = formatDataToThirdPage(theData, getDataLeft, getDataRight, theData.fullName)
 
@@ -56,7 +56,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
 
     let getFolderName = getAcronym.acronym
     let getResourceName = DATA_ORG_CheckPaths_Results_D[getFolderName][subCategoryArrPosition]
-    let getDetailName = DATA_CR_D_CardRight[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
+    let getDetailName = DATA_CardRight_AA[resourceArrPosition][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]
 
     const toWhere = `${pathname}/${getFolderName}/${getResourceName}/${getDetailName}`
 
@@ -71,7 +71,7 @@ export const INDEX_D_AASearch = ({ positionInArray, isSelected = false, componen
 
   return (
     <INDEX_D_AASearchWrapper>
-      {DATA_PCR_D.map((x, iData) => {
+      {DATA_PAA_D.map((x, iData) => {
         const [title, ...objects] = x
         while (howMuchDisplay > iData) {
           return (
