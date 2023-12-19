@@ -1,0 +1,137 @@
+import { ORG_D_Search_ViewProfileSvg } from "@/assets/Icons"
+import { Highlights_2_D } from "@/components/ORG/highlights/Highlights_2_D"
+import { Highlights_D } from "@/components/ORG/highlights/Highlights_D"
+import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
+import { Verified } from "@/components/ORG/verified/Verified"
+import { ButtonSmall } from "@/components/ui/buttons/general"
+import { Caption, P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
+import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
+import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
+import { formatDataToURLOnThirdPage } from "@/utils/ORG/formatDataToURLOnThirdPage"
+import { getDataToMoveView } from "@/utils/ORG/getDataToMoveView"
+import { handleMoveToSecondPage } from "@/utils/ORG/handleMoveToSecondPage"
+import { allRoutes } from "@/utils/ORG/useCheckSlug_ORG"
+import Image from "next/image"
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
+import { All_Layouts_Accepted, INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
+
+export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theData, someLayoutSpecial }) => {
+  const [howMuchDisplay, setHowMuchDisplay] = useState(1)
+
+  useEffect(() => {
+    if (!isSelected) {
+      setHowMuchDisplay(1)
+    } else {
+      setHowMuchDisplay(theData.length)
+    }
+  }, [isSelected])
+
+  const { pathname, push } = useRouter()
+  const { setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
+
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+
+  const handleMoveToThirdPage = (_, categoryPosition, subcategoryPosition, resourcePosition) => {
+    const { theActualFilter, subcategory, rightCard, leftCard, subcategorySpecificData, subFolder } = getDataToMoveView({ categoryPosition, subcategoryPosition })
+
+    const stringForBreadcrumbs = subcategory[0]
+    const cardData = subcategory.slice(1)
+
+    const thirdPageData_Card = cardData[resourcePosition]
+    const thirdPageData_Card_Left = leftCard[resourcePosition]
+    const thirdPageData_Card_Right = rightCard[resourcePosition]
+    const fullName = cardData[resourcePosition].fullName
+
+    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, subcategorySpecificData)
+
+    setThirdpageDataORG(allDataToThirdPage)
+
+    const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
+
+    const toWhere = `${pathname}/${allRoutes.detail}/${specificDetail}`
+
+    push(
+      {
+        pathname: toWhere,
+        query: { title: stringForBreadcrumbs },
+      },
+      toWhere,
+    )
+  }
+
+  return (
+    <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
+      {theData.map((x, iData) => {
+        const [title, ...objects] = x
+        while (howMuchDisplay > iData) {
+          return (
+            <>
+              <div key={`${title}_${iData}`}>
+                <H2>{title}</H2>
+                <div>
+                  {objects.map((obj, iSubData) => {
+                    return (
+                      <div key={`${iSubData}_${obj.title}_${obj.reviews}`}>
+                        <div>
+                          <Image
+                            src={obj.imageToUse}
+                            alt={obj.title}
+                            layout={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? "responsive" : "intrinsic"}
+                            objectFit={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? "contain" : "initial"}
+                            width={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? 1 : 1200}
+                            height={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? 0.522 : 600}
+                          />
+                          {someLayoutSpecial === All_Layouts_Accepted.like_PAT ? null : (
+                            <>
+                              <Verified />
+                            </>
+                          )}
+                        </div>
+                        <H3>{obj.title}</H3>
+                        <H4>{obj.subtitle}</H4>
+                        {obj?.city && <P>{obj?.city}</P>}
+                        {someLayoutSpecial === "like_PVES" && iData === 0 ? (
+                          <>
+                            <Caption>{obj.hourlyRate}</Caption>
+                            <div>
+                              <Highlights_D highlights={obj.highlight} />
+                              <Highlights_2_D
+                                highlights={obj.highlight_plus}
+                                withIcon={false}
+                              />
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <StarsRatingReview_D
+                              rating={obj.rating}
+                              reviews={obj.reviews}
+                            />
+                          </>
+                        )}
+
+                        <P>{obj.textReview}</P>
+                        <button onClick={(_) => handleMoveToThirdPage(_, positionInArray, iData, iSubData)}>
+                          <ORG_D_Search_ViewProfileSvg />
+                          {someLayoutSpecial === "like_PVES" && iData === 0 ? "View Listing" : "View Profile"}
+                        </button>
+                      </div>
+                    )
+                  })}
+                </div>
+                <span onClick={(_) => handleMoveToSecondPage(_, positionInArray, iData, setSecondpageFiltersORG, setSecondpageDataORG, pathname, push)}>
+                  <ButtonSmall secondary>See all (25)</ButtonSmall>
+                </span>
+              </div>
+            </>
+          )
+        }
+      })}
+    </INDEX_ORG_Search_DWrapper>
+  )
+}

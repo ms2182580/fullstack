@@ -3,7 +3,9 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
-import { BRAND_OPTION_DEFAULT, SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
+import { formatDataToURLOnThirdPage } from "@/utils/ORG/formatDataToURLOnThirdPage"
+import { BRAND_OPTION_DEFAULT, SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
+import { allRoutes } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_Main_BottomButtonsWrapper"
@@ -12,20 +14,25 @@ export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisC
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
-  const router = useRouter()
+  const { pathname, push } = useRouter()
 
-  const handleMoveToThirdPage = (e, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, subTitle, fullName, state, specificDataForThisResource) => {
+  const handleMoveToThirdPage = (_, thirdPageData_Card_Right, thirdPageData_Card_Left, thirdPageData_Card, mainNameORG, fullName, specificDataForThisResource) => {
     const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, specificDataForThisResource)
+
+    // *This was done in this way to match the same variable name on the function of the 1° page to the 3° page on the file «INDEX_ORG_Search_D.tsx»
+    const stringForBreadcrumbs = mainNameORG
 
     setThirdpageDataORG(allDataToThirdPage)
 
-    let thirdPageURL = thirdPageData_Card_Right.thirdPageData.folderName
+    const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
 
-    const toWhere = `${router.pathname}/${thirdPageURL}`
-    router.push(
+    // *This "toWhere" variable is slightly different from the same way to move to the user to third page from «INDEX_ORG_Search_D.tsx» file
+    const toWhere = `/${pathname.split("/")[1]}/${allRoutes.detail}/${specificDetail}`
+
+    push(
       {
         pathname: toWhere,
-        query: { title: mainNameORG, subTitle, state, renderThisContact },
+        query: { title: stringForBreadcrumbs },
       },
       toWhere,
     )
@@ -54,16 +61,14 @@ export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisC
         <P>View Profile</P>
       </div>
       <div
-        onClick={(e) =>
+        onClick={(_) =>
           handleMoveToThirdPage(
-            e,
+            _,
             secondpageDataORG.right[renderThisFilter],
             secondpageDataORG.left[renderThisContact],
             secondpageDataORG.cardData[renderThisCard],
             secondpageDataORG.mainNameORG,
-            secondpageDataORG.cardData[renderThisCard].subtitle,
             secondpageDataORG.cardData[renderThisCard].fullName,
-            secondpageDataORG.cardData[renderThisCard]?.state || "",
             secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY],
           )
         }>

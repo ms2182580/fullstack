@@ -1,6 +1,12 @@
 export const ORG_FILTERS_DATA_D = Object.freeze({
   agesServed: ["0-18 months", "2-3 years", "4-5 years", "6-11 years", "12-21 years", "22-40 years", "41-64 years", "65+ years"],
-  agesServedRange: { minimum: "0", maximum: "100", maxSpecialCharacter: "100+", whichMeasure: "years", addCharacter: "toRight" },
+  agesServedRange: {
+    minimum: "0",
+    maximum: "100",
+    maxSpecialCharacter: "100+",
+    whichMeasure: "years",
+    addCharacter: "toRight",
+  },
   diagnosis: ["Autism", "ADHD", "Down Syndrome", "Cerebral Palsy", "Fragile X", "Other"],
   distance: ["0-5", "5-10", "10-20", "+20"],
   distanceRange: {

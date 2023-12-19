@@ -6,8 +6,6 @@ import { useOutsideHide } from "../../../utils/useOutsideHide.js"
 import { NavBar_D_HamburgerComponentDropdown } from "./NavBar_D_HamburgerComponentDropdown.js"
 import { NavBar_D_HamburgerComponentWrapper } from "./styles/NavBar_D_HamburgerComponentWrapper.js"
 
-
-
 export const NavBar_D_HamburgerComponent = () => {
   const [showDropdown, setShowDropdown] = useState(false)
   const refDropdown = useRef()

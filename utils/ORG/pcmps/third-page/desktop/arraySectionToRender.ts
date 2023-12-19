@@ -16,6 +16,13 @@ export const arrayInnerNavBar_PCMPS: InnerNavBar_InnerData = [
 
 export const arraySectionToRender_PCMPS: ArraySectionToRender_Type = [
   {
+    name: null,
+    component: null,
+    toNavbar: {
+      id: arrayInnerNavBar_PCMPS[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
+    },
+  },
+  {
     name: PCMPS_General_D_Booking.name,
     component: PCMPS_General_D_Booking,
     toNavbar: {

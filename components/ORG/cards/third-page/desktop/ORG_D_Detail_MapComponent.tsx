@@ -2,18 +2,20 @@ import ORG_Map_231 from "@/assets/Icons/ORG_Map_231.png"
 import ORG_Map_2_231_A from "@/assets/Icons/ORG_Map_2_231_A.png"
 import ORG_Map_2_231_B from "@/assets/Icons/ORG_Map_2_231_B.png"
 import ORG_Map_450 from "@/assets/Icons/ORG_Map_450.jpg"
-import { MapProperties_KEYS } from "@/utils/ORG/third-page/howIsMap"
 import Image from "next/image"
 import { useMemo } from "react"
 import { ORG_D_Detail_CardLocation } from "./ORG_D_Detail_CardLocation"
 import { ORG_D_Detail_MapComponentWrapper, ORG_D_Detail_MapComponent_CLASSES } from "./styles/ORG_D_Detail_MapComponentWrapper"
 
-/* 
-!FH
-✅- Make the placeholder look like a map
-- Create the funciontality of a map here
-- Add to the alt of the image, the direction and the name of where is pointing 
-*/
+export const enum MapProperties_KEYS {
+  HEIGHT = "HEIGHT",
+  HOW_MANY = "HOW_MANY",
+}
+
+export type MapProperties = {
+  [MapProperties_KEYS.HEIGHT]?: 231 | 450
+  [MapProperties_KEYS.HOW_MANY]: null | 1 | 2
+}
 
 export const ORG_D_Detail_MapComponent = ({ howIsMap }) => {
   if (howIsMap === null) {

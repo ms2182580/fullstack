@@ -2,7 +2,7 @@ import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desk
 import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-export const DATA_AT_D_Filters = {
+const DATA_AT_D_Filters = {
   price: {
     buttonName: "Price",
     min: "100",
@@ -41,7 +41,7 @@ export const DATA_AT_D_Filters = {
   },
 }
 
-export const renderFiltersInUI_AT_AT = [
+export const filtersUI_PAT = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
@@ -53,7 +53,6 @@ export const renderFiltersInUI_AT_AT = [
       whichMeasure: DATA_AT_D_Filters.price.whichMeasure,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
-
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,

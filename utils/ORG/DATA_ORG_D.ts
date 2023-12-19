@@ -1,14 +1,15 @@
-import { INDEX_D_VESSearch } from "@/components/ORG/pages/vocational-employment/first-page/desktop/INDEX_D_VESSearch"
-import { INDEX_D_ATSearch } from "../../components/ORG/pages/assistive-technology/first-page/desktop/INDEX_D_ATSearch"
-import { INDEX_D_AASearch } from "../../components/ORG/pages/attorney-advocates/first-page/desktop/INDEX_D_AASearch"
-import { INDEX_D_CMPSSearch } from "../../components/ORG/pages/camps/first-page/desktop/INDEX_D_CMPSSearch.js"
-import { INDEX_D_CCSearch } from "../../components/ORG/pages/community-classes/first-page/desktop/INDEX_D_CCSearch"
-import { INDEX_D_DCTRSearch } from "../../components/ORG/pages/doctors/first-page/desktop/INDEX_D_DCTRSearch"
-import { INDEX_D_MHSSSearch } from "../../components/ORG/pages/mental-health/first-page/desktop/INDEX_D_MHSSSearch.js"
-import { INDEX_D_PPASSearch } from "../../components/ORG/pages/private-public-agencies/first-page/desktop/INDEX_D_PPASSearch.js"
-import { INDEX_D_RPSearch } from "../../components/ORG/pages/residential-programs/first-page/desktop/INDEX_D_RPSearch"
-import { INDEX_D_SESSearch } from "../../components/ORG/pages/special-education-schools/first-page/desktop/INDEX_D_SESSearch.js"
-import { INDEX_D_STSearch } from "../../components/ORG/pages/speech-therapists/first-page/dekstop/INDEX_D_STSearch"
+import { All_Layouts_Accepted } from "@/components/ORG/cards/first-page/desktop/styles/INDEX_ORG_Search_DWrapper"
+import { DATA_PAA_D } from "./paa/DATA_PCR_D"
+import { DATA_PAT_D } from "./pat/DATA_PAT_D"
+import { DATA_PCC_D } from "./pcc/DATA_PCC_D"
+import { DATA_PCMPS_D } from "./pcmps/DATA_PCMPS_D"
+import { DATA_PDCTR_D } from "./pdctr/DATA_PDCTR_D"
+import { DATA_PMHSS_D } from "./pmhss/DATA_PMHSS_D"
+import { DATA_PPPAS_D } from "./pppas/DATA_PPPAS_D"
+import { DATA_PRP_D } from "./prp/DATA_PRP_D"
+import { DATA_PSES_D } from "./pses/DATA_PSES_D"
+import { DATA_PST_D } from "./pst/DATA_PST_D"
+import { DATA_PVES_D } from "./pves/DATA_PVES_D"
 
 // export const enum SPECIFIC_DATA_KEY {
 //   SPECIFIC_DATA_KEY = "SPECIFIC_DATA_KEY",
@@ -16,83 +17,116 @@ import { INDEX_D_STSearch } from "../../components/ORG/pages/speech-therapists/f
 //   SVG = "SVG",
 // }
 
-export const DATA_ORG_D = [
+type DATA_ORG_D_TYPES = {
+  nameJSX: string
+  // component: FC
+  // componentName: string
+  thisParticularData: unknown
+  acronym: string
+  folderName?: string
+  somethingSpecial?: {
+    layout?: keyof typeof All_Layouts_Accepted
+    details?: unknown
+  }
+}[]
+
+export const DATA_ORG_D: DATA_ORG_D_TYPES = [
   {
     nameJSX: "Assistive Technology",
-    component: INDEX_D_ATSearch,
-    componentName: INDEX_D_ATSearch.name,
+    // component: INDEX_D_ATSearch,
+    // componentName: INDEX_D_ATSearch.name,
+    thisParticularData: DATA_PAT_D,
     acronym: "pat",
     folderName: "assistive-technology",
+    somethingSpecial: {
+      layout: "like_PAT",
+    },
   },
   {
     nameJSX: "Attorney and Advocates",
-    component: INDEX_D_AASearch,
-    componentName: INDEX_D_AASearch.name,
+    // component: INDEX_D_AASearch,
+    // componentName: INDEX_D_AASearch.name,
+    thisParticularData: DATA_PAA_D,
     acronym: "paa",
     folderName: "attorney-advocates",
   },
   {
     nameJSX: "Camps",
-    component: INDEX_D_CMPSSearch,
-    componentName: INDEX_D_CMPSSearch.name,
+    // component: INDEX_D_CMPSSearch,
+    // componentName: INDEX_D_CMPSSearch.name,
+    thisParticularData: DATA_PCMPS_D,
     acronym: "pcmps",
     folderName: "camps",
   },
   {
     nameJSX: "Community Classes",
-    component: INDEX_D_CCSearch,
-    componentName: INDEX_D_CCSearch.name,
+    // component: INDEX_D_CCSearch,
+    // componentName: INDEX_D_CCSearch.name,
+    thisParticularData: DATA_PCC_D,
     acronym: "pcc",
     folderName: "community-classes",
   },
   {
     nameJSX: "Doctors",
-    component: INDEX_D_DCTRSearch,
-    componentName: INDEX_D_DCTRSearch.name,
+    // component: INDEX_D_DCTRSearch,
+    // componentName: INDEX_D_DCTRSearch.name,
+    thisParticularData: DATA_PDCTR_D,
     acronym: "pdctr",
     folderName: "doctors",
   },
   {
     nameJSX: "Mental Health Support/Services",
-    component: INDEX_D_MHSSSearch,
-    componentName: INDEX_D_MHSSSearch.name,
+    // component: INDEX_D_MHSSSearch,
+    // componentName: INDEX_D_MHSSSearch.name,
+    thisParticularData: DATA_PMHSS_D,
     acronym: "pmhss",
     folderName: "mental-health",
   },
   {
     nameJSX: "Private & Public Agencies/Services",
-    component: INDEX_D_PPASSearch,
-    componentName: INDEX_D_PPASSearch.name,
+    // component: INDEX_D_PPASSearch,
+    // componentName: INDEX_D_PPASSearch.name,
+    thisParticularData: DATA_PPPAS_D,
     acronym: "pppas",
     folderName: "ptivate-public-agencies",
   },
   {
     nameJSX: "Residential Programs",
-    component: INDEX_D_RPSearch,
-    componentName: INDEX_D_RPSearch.name,
+    // component: INDEX_D_RPSearch,
+    // componentName: INDEX_D_RPSearch.name,
+    thisParticularData: DATA_PRP_D,
     acronym: "prp",
     folderName: "residential-programs",
   },
   {
     nameJSX: "Schools & Educational Resources",
-    component: INDEX_D_SESSearch,
-    componentName: INDEX_D_SESSearch.name,
+    // component: INDEX_D_SESSearch,
+    // componentName: INDEX_D_SESSearch.name,
+    thisParticularData: DATA_PSES_D,
     acronym: "pses",
     folderName: "special-education-schools",
   },
   {
     nameJSX: "Therapeutic Providers & Services",
-    component: INDEX_D_STSearch,
-    componentName: INDEX_D_STSearch.name,
+    // component: INDEX_D_STSearch,
+    // componentName: INDEX_D_STSearch.name,
+    thisParticularData: DATA_PST_D,
     acronym: "pst",
     folderName: "speech-therapists",
   },
 
   {
     nameJSX: "Vocational & Employment Supports",
-    component: INDEX_D_VESSearch,
-    componentName: INDEX_D_VESSearch.name,
+    // component: INDEX_D_VESSearch,
+    // componentName: INDEX_D_VESSearch.name,
+    thisParticularData: DATA_PVES_D,
     acronym: "pves",
     folderName: "x",
+    somethingSpecial: {
+      layout: "like_PVES",
+      details: {
+        changeLayoutOnlyInPosition: 0,
+      },
+    },
   },
 ]

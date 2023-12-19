@@ -87,7 +87,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({ theRef, setShowDropdown })
         router.push(
           {
             pathname: `/ORG`,
-            query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].componentName },
+            query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].nameJSX },
           },
           `/ORG`,
         )

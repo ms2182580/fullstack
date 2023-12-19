@@ -1,6 +1,6 @@
 import { Verified } from "@/components/ORG/verified/Verified"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
-import { Layout_MainCard_Search_KEY, Layout_MainCard_Search_VALUE } from "@/utils/ORG/pves/second-page/desktop/specificLayout"
+import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
 import Image from "next/image"
 import { useMemo } from "react"
 import { ORG_D_Results_CardEmail } from "./ORG_D_Results_CardEmail"
@@ -13,8 +13,21 @@ import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_Left
 export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) => {
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
+  /* 
+  !FH0
+  - Why PVES have no correct display of elements here?
+  
+  https://www.figma.com/file/lpHBroZRY7imHzHhMm1gAb/Regenesis-for-August%2C-2023-Launch?type=design&node-id=126-94233&mode=dev
+  
+  - Check other subcategories if anything is wrong
+  
+  - Keep with third page
+  
+  - Clean everything of not used files and report to jill the improvement
+  */
+
   const isVES_Like = useMemo(() => {
-    return secondpageDataORG[Layout_MainCard_Search_KEY.KEY] === Layout_MainCard_Search_VALUE.VES_LIKE
+    return secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] === LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
   }, [])
 
   const isOpenPosition = useMemo(() => {
@@ -29,10 +42,17 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) =
     return isVES_Like && !isDefault && isOpenPosition && renderThisCard > 1
   }, [])
 
+  const layout = useMemo(() => {
+    const theLayout = secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ?? null
+
+    return theLayout
+  }, [])
+
   return (
     <ORG_D_Results_Main_LeftWrapper
       isOpenPositionAndThirdPosition={isOpenPositionAndThirdPosition}
-      className={isOpenPositionAndThirdPosition && "isOpenPositionAndThirdPosition"}>
+      className={isOpenPositionAndThirdPosition && "isOpenPositionAndThirdPosition"}
+      LAYOUT_RESULTS_MAIN_CARD={layout}>
       <div>
         <Image
           src={secondpageDataORG.cardData[renderThisCard].imageToUse.src}
@@ -62,7 +82,6 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) =
           width={1}
           height={1}
         />
-
         <ORG_D_Results_Card_Hearth />
 
         <Verified />

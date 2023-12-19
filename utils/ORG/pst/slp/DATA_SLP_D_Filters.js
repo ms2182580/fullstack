@@ -36,7 +36,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_ST_SLP = [
+export const filtersUI_PST = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
@@ -65,7 +65,7 @@ export const renderFiltersInUI_ST_SLP = [
       buttonName: ORG_FILTERS_KEYS_D.diagnosis.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.diagnosis,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -73,7 +73,7 @@ export const renderFiltersInUI_ST_SLP = [
       buttonName: ORG_FILTERS_KEYS_D.viewOnly.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.viewOnly,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -81,7 +81,7 @@ export const renderFiltersInUI_ST_SLP = [
       buttonName: ORG_FILTERS_KEYS_D.insurance.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.insurance,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -89,7 +89,7 @@ export const renderFiltersInUI_ST_SLP = [
       buttonName: ORG_FILTERS_KEYS_D.meetingFormat.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.meetingFormat,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,

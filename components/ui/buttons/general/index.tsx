@@ -1,7 +1,8 @@
+import { ReactNode } from "react"
 import { BtnLarge, BtnMedium, BtnSmall } from "./styles/ButtonStyled"
 
 export type Props = {
-  children?: string
+  children?: string | ReactNode
   secondary?: boolean
   disabled?: boolean
   preventFocus?: 0 | -1

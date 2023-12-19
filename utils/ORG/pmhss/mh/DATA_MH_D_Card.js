@@ -1,18 +1,17 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D";
+import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { mapRender_PMHSS } from "../third-page/desktop/mapRender"
+import { tooltipToRender_PMHSS } from "../third-page/desktop/tooltipToRender"
 
-export const DATA_MH_D_CardRight = [
+export const DATA_CardRight_PMHSS = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
-      ],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
-      ],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
@@ -28,11 +27,7 @@ export const DATA_MH_D_CardRight = [
 
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-        "English",
-        "Mandarin",
-        "Cantonese",
-      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -55,34 +50,24 @@ export const DATA_MH_D_CardRight = [
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           facility: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Clinic", "Private Practice",
-            ],
-            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic", "Private Practice"],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           languages: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "English", "Mandarin", "Cantonese",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Virtual", "In-person",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Virtual", "In-person"],
           },
           wheelchairAccessible: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair accessible",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Yes",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
           parkingAvailable: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Parking available",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Yes",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
 
@@ -109,21 +94,20 @@ export const DATA_MH_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
-      ],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
-      ],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
@@ -139,11 +123,7 @@ export const DATA_MH_D_CardRight = [
 
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-        "English",
-        "Mandarin",
-        "Cantonese",
-      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -168,34 +148,24 @@ export const DATA_MH_D_CardRight = [
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           facility: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Clinic", "Private Practice",
-            ],
-            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic", "Private Practice"],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           languages: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "English", "Mandarin", "Cantonese",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Virtual", "In-person",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Virtual", "In-person"],
           },
           wheelchairAccessible: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair accessible",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Yes",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
           parkingAvailable: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Parking available",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Yes",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
 
@@ -222,21 +192,21 @@ export const DATA_MH_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
-      ],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
-        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
-      ],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
@@ -252,11 +222,7 @@ export const DATA_MH_D_CardRight = [
 
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-        "English",
-        "Mandarin",
-        "Cantonese",
-      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -281,34 +247,24 @@ export const DATA_MH_D_CardRight = [
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           facility: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Clinic", "Private Practice",
-            ],
-            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic", "Private Practice"],
+            [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           languages: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "English", "Mandarin", "Cantonese",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Virtual", "In-person",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Virtual", "In-person"],
           },
           wheelchairAccessible: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Wheelchair accessible",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Yes",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
           parkingAvailable: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Parking available",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
-              "Yes",
-            ],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Yes"],
           },
         },
 
@@ -335,12 +291,16 @@ export const DATA_MH_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
       },
     },
   },
-];
+]
 
-export const DATA_MH_D_CardLeft = [
+export const DATA_CardLeft_PMHSS = [
   {
     phone: "(123)456-7890",
     email: "kristieleung@bellevuehealth.com",
@@ -386,4 +346,4 @@ export const DATA_MH_D_CardLeft = [
       howFar: "20",
     },
   },
-];
+]

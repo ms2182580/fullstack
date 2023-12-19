@@ -13,16 +13,7 @@ const DATA_DAY_D_Filters = {
 
     fitness: {
       buttonName: "Fitness",
-      categoriesToDisplay: [
-        "Boxing",
-        "Martial Arts",
-        "Dance",
-        "Tenis",
-        "Cycling Training",
-        "Futbol",
-        "Yoga and Pilates",
-        "Aquatic Fitnes",
-      ],
+      categoriesToDisplay: ["Boxing", "Martial Arts", "Dance", "Tenis", "Cycling Training", "Futbol", "Yoga and Pilates", "Aquatic Fitnes"],
     },
     art: {
       buttonName: "Art",
@@ -127,14 +118,14 @@ const DATA_DAY_D_Filters = {
     minimum: "3",
     maximum: "18",
     whichMeasure: "years",
-    addCharacter: "toRight"
+    addCharacter: "toRight",
   },
   distance: {
     buttonName: "Distance",
     minimum: "0",
     maximum: "20",
     whichMeasure: "miles",
-    addCharacter: "toRight"
+    addCharacter: "toRight",
   },
 
   campType: {
@@ -260,7 +251,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_CMPS_DAY = [
+export const filtersUI_PCMPS = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {

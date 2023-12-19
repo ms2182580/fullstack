@@ -1,4 +1,5 @@
-import { INDEX_Home } from "../../components/home/desktop/INDEX_Home.js"
+// import { INDEX_Home } from "../../components/home/desktop/INDEX_Home.js"
+import { INDEX_Home } from "@/components/home/desktop/INDEX_Home.js"
 import { useCheckUserWidth } from "../../context/CheckUserWidth.js"
 
 export default function HOME_INDEX() {

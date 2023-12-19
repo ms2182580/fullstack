@@ -1,10 +1,13 @@
 import ORG_Detail_CC_Karate_Photo_1 from "@/assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_1.png"
 import ORG_Detail_CC_Karate_Photo_2 from "@/assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_2.png"
 import ORG_Detail_CC_Karate_Photo_3 from "@/assets/images/ORG/community-classes/ORG_Detail_CC_Karate_Photo_3.png"
+import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
+import { arraySectionToRender_PCC } from "../third-page/desktop/arraySectionToRender"
+import { tooltipToRender_PCC } from "../third-page/desktop/tooltipToRender"
 
-export const DATA_CC_D_CardRight = [
+export const DATA_CardRight_PCC = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
@@ -80,6 +83,10 @@ export const DATA_CC_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.CARD]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCC,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCC,
       },
 
       [DATA_ORG_KeyNamesForCards_D_KEYS.USERS_ALSO_VIEWES]: [
@@ -182,6 +189,10 @@ export const DATA_CC_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.CARD]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCC,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCC,
       },
 
       [DATA_ORG_KeyNamesForCards_D_KEYS.USERS_ALSO_VIEWES]: [
@@ -284,6 +295,10 @@ export const DATA_CC_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.CARD]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCC,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCC,
       },
 
       [DATA_ORG_KeyNamesForCards_D_KEYS.USERS_ALSO_VIEWES]: [
@@ -312,7 +327,7 @@ export const DATA_CC_D_CardRight = [
   },
 ]
 
-export const DATA_CC_D_CardLeft = [
+export const DATA_CardLeft_PCC = [
   {
     mainName: "Karate Group Class",
     phone: "(012) 345-6789",

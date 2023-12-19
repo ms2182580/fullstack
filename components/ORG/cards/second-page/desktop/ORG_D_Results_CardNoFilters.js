@@ -20,7 +20,7 @@ export const ORG_D_Results_CardNoFilters = () => {
       {Array(10)
         .fill(0)
         .map((x, i) => {
-          let renderThisCard = i % 3
+          let renderThisCard = i % secondpageDataORG.right.length
           let renderThisFilter = i % secondpageDataORG.right.length
           let renderThisContact = i % secondpageDataORG.left.length
 

@@ -10,11 +10,12 @@ import ORG_VES3 from "@/assets/images/ORG/vocational-employment/ORG_VES3.png"
 import ORG_VES4 from "@/assets/images/ORG/vocational-employment/ORG_VES4.png"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../DATA_ORG_KeyNamesForCards_D"
-import { BRAND_OPTION_DEFAULT, SPECIFIC_DATA_KEY, Structure_SpecificData } from "../specificData"
+import { BRAND_OPTION_DEFAULT, LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY, Structure_SpecificData } from "../second-page/desktop/specificData"
 
-export const VES_SPECIFIC_DATA: Structure_SpecificData = {
+const VES_SPECIFIC_DATA: Structure_SpecificData = {
   BUTTON_TO_THIRDPAGE_NAME: "Apply now",
   SVG: BRAND_OPTION_DEFAULT.DEFAULT,
+  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE,
 }
 
 export const DATA_PVES_D = [
@@ -35,6 +36,8 @@ export const DATA_PVES_D = [
       highlight: ["Bilingual"],
       highlight_plus: ["Part-time", "Position with agency"],
       [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+
         [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
           isPVES: true,
 
@@ -74,6 +77,7 @@ export const DATA_PVES_D = [
       highlight: ["SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
       [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
         [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
           isPVES: true,
 
@@ -113,6 +117,7 @@ export const DATA_PVES_D = [
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
       [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
         [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
           isPVES: true,
 
@@ -152,6 +157,7 @@ export const DATA_PVES_D = [
       highlight: ["Community -based", "SSI-Approved"],
       highlight_plus: ["Position with agency", "Part-time"],
       [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
         [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]: {
           isPVES: true,
 
@@ -191,6 +197,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Health at Home blgs are old but well taken care of. Small but comfortable... ",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_VES3,
@@ -204,6 +213,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Management has always been friendly and attentive. They take the time to...",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_VES4,
@@ -217,6 +229,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“It’s been a great experience living here. The building is clean, safe, and comfort... ",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
   ],
   [
@@ -233,6 +248,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Health at Home blgs are old but well taken care of. Small but comfortable... ",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_RP2,
@@ -246,6 +264,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Management has always been friendly and attentive. They take the time to...",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_RP3,
@@ -259,6 +280,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“It’s been a great experience living here. The building is clean, safe, and comfort... ",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
   ],
   [
@@ -275,6 +299,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Health at Home blgs are old but well taken care of. Small but comfortable... ",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_RP2,
@@ -288,6 +315,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Management has always been friendly and attentive. They take the time to...",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_RP3,
@@ -301,6 +331,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“It’s been a great experience living here. The building is clean, safe, and comfort... ",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
   ],
   [
@@ -317,6 +350,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“I required assistance with what seemed like an impossible landlord-tenant issue...",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_CC8,
@@ -330,6 +366,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Management has always been friendly and attentive. They take the time to...",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
     {
       imageToUse: ORG_RP6,
@@ -343,6 +382,9 @@ export const DATA_PVES_D = [
       rating: generateRandomNumber(4, 5),
       reviews: generateRandomNumber(47, 999),
       textReview: "“Management has always been friendly and attentive. They take the time to...",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: {
+        ...VES_SPECIFIC_DATA,
+      },
     },
   ],
 ]

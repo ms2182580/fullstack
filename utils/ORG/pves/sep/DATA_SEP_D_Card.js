@@ -1,5 +1,5 @@
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
-import { SPECIFIC_DATA_KEY } from "../../specificData"
+import { SPECIFIC_DATA_KEY } from "../../second-page/desktop/specificData"
 
 export const DATA_SEP_D_CardRight = [
   {

@@ -1,0 +1,6 @@
+import styled from "styled-components"
+
+export const INDEX_ORG_Results_DWrapper = styled.div`
+  position: relative;
+  user-select: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
+`

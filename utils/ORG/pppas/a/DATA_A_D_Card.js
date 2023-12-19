@@ -1,6 +1,7 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { tooltipToRender_PPPAS } from "../third-page/desktop/tooltipToRender"
 
-export const DATA_A_D_CardRight = [
+export const DATA_CardRight_PPPAS = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
@@ -56,6 +57,7 @@ export const DATA_A_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
         },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PPPAS,
       },
     },
 
@@ -121,6 +123,8 @@ export const DATA_A_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PPPAS,
       },
     },
 
@@ -186,6 +190,8 @@ export const DATA_A_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PPPAS,
       },
     },
 
@@ -196,7 +202,7 @@ export const DATA_A_D_CardRight = [
   },
 ]
 
-export const DATA_A_D_CardLeft = [
+export const DATA_CardLeft_PPPAS = [
   {
     phone: "(212) 345-6789, ext. 4001",
 

@@ -19,6 +19,10 @@ export const ORG_D_Detail_Card_SecondRow_InfoWrapper = styled.div`
     }
   }
 
+  & > * {
+    text-transform: capitalize;
+  }
+
   &.DISPLAY_BLOCK {
   }
 

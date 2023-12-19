@@ -6,6 +6,7 @@ import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/ORG/cards_resource
 import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PAT: InnerNavBar_InnerData = [
+  { INNER_NAV_BAR_KEY: "about" },
   { INNER_NAV_BAR_KEY: "shop" },
   { INNER_NAV_BAR_KEY: "contact", INNER_NAV_BAR_VALUE: "contact us" },
   { INNER_NAV_BAR_KEY: "compare" },

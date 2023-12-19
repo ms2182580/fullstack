@@ -94,7 +94,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_RP_LT = [
+export const filtersUI_PRP = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
