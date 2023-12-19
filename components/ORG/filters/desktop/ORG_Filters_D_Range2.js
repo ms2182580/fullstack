@@ -24,18 +24,18 @@ export const ORG_Filters_D_Range2 = ({
   ...props
 }) => {
   const {
-    addCharacter = "", /* toLeft, toRight, weigth */
+    addCharacter = "" /* toLeft, toRight, weigth */,
     buttonName = "noNameOnThisButton",
     clearAll,
-    labelName = "", /* name to display on the card  */
+    labelName = "" /* name to display on the card  */,
     max = 999,
     min = 0,
     minSpecialCharacter,
     maxSpecialCharacter,
-    addCharacterMinSpecialCharacter, /* toLeft, toRight*/
-    addCharacterMaxSpecialCharacter, /* toLeft, toRight*/
+    addCharacterMinSpecialCharacter /* toLeft, toRight*/,
+    addCharacterMaxSpecialCharacter /* toLeft, toRight*/,
     shouldClear,
-    whichMeasure = "", /* weight or any other character */
+    whichMeasure = "" /* weight or any other character */,
   } = props.props
 
   const { className } = props.shouldAddClassName

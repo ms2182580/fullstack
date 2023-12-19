@@ -1,6 +1,10 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arrayInnerNavBar_PCMPS, arraySectionToRender_PCMPS } from "../third-page/desktop/arraySectionToRender"
+import { mapRender_PCMPS } from "../third-page/desktop/mapRender"
+import { tooltipToRender_PCMPS } from "../third-page/desktop/tooltipToRender"
 
-export const DATA_DAY_D_CardRight = [
+export const DATA_CardRight_PCMPS = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
@@ -94,6 +98,12 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Susan McCamper"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PCMPS,
       },
     },
   },
@@ -192,6 +202,12 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Susan McCamper"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PCMPS,
       },
     },
   },
@@ -292,12 +308,18 @@ export const DATA_DAY_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Susan McCamper"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PCMPS,
       },
     },
   },
 ]
 
-export const DATA_DAY_D_CardLeft = [
+export const DATA_CardLeft_PCMPS = [
   {
     phone: "(123)456-7890",
     email: "hello@belcorcamp.com",

@@ -1,6 +1,6 @@
 import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
 
-export const DATA_SLP_D_CardRight = [
+export const DATA_CardRight_PST = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
@@ -232,7 +232,7 @@ export const DATA_SLP_D_CardRight = [
   },
 ]
 
-export const DATA_SLP_D_CardLeft = [
+export const DATA_CardLeft_PST = [
   {
     phone: "(123)456-7890",
     email: "maryjaneSLP@gmail.com",

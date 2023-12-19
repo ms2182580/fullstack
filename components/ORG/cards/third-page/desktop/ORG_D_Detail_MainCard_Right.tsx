@@ -6,7 +6,7 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
-import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
 import { Tooltip_KEYS, Tooltip_VALUES } from "@/utils/ORG/third-page/tooltip"
 import { capitalizeWords } from "@/utils/capitalizeWords"
 import Image from "next/image"
@@ -69,7 +69,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
             )}
           </H2>
 
-          {tooltipDisplay[Tooltip_KEYS.WHAT_DISPLAY] === Tooltip_VALUES.NO_DISPLAY ? null : (
+          {tooltipDisplay?.[Tooltip_KEYS.WHAT_DISPLAY] === Tooltip_VALUES.NO_DISPLAY ? null : (
             <>
               <ORG_D_Detail_Tooltip allProps={tooltipDisplay} />
             </>
@@ -180,12 +180,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
           <ul>
             {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
               DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
-            ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].map((x, index, arr) => {
-              // const getLengthResponsabilitiesData =
-              //   thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
-              //     DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
-              //   ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].length || null
-
+            ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].map((x, index) => {
               if (getLengthResponsabilitiesData !== null) {
                 if (index < getLengthResponsabilitiesData - 1) {
                   return <li key={x}>{x}</li>

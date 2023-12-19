@@ -64,7 +64,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_PPPAS_PNFPO = [
+export const filtersUI_PPPAS = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {

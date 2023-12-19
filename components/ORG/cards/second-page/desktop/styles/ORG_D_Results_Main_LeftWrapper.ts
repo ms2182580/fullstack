@@ -1,8 +1,14 @@
 import { PRIMARY } from "@/assets/Colors"
-import styled from "styled-components"
+import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
+import styled, { css } from "styled-components"
+
+const isATLayout = () => css`
+  display: none;
+`
 
 type Props = {
   isOpenPositionAndThirdPosition?: boolean
+  [SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD]?: LAYOUT_RESULTS_MAIN_CARD_VALUES | null
 }
 
 export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
@@ -43,6 +49,12 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
       bottom: 16px;
       right: 16px;
       z-index: 3;
+
+      ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
+        LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE &&
+        css`
+          ${isATLayout()}
+        `}
     }
   }
 

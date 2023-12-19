@@ -1,4 +1,4 @@
-import { ORG_D_Results_ATSvg } from "@/assets/Icons"
+import { ORG_D_Results_ATSvg, ORG_D_Results_WheretobuySvg } from "@/assets/Icons"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import ORG_AT1 from "../../../assets/images/ORG/assistive-technology/ORG_AT1.png"
 import ORG_AT10 from "../../../assets/images/ORG/assistive-technology/ORG_AT10.png"
@@ -15,8 +15,7 @@ import ORG_AT6 from "../../../assets/images/ORG/assistive-technology/ORG_AT6.png
 import ORG_AT7 from "../../../assets/images/ORG/assistive-technology/ORG_AT7.png"
 import ORG_AT8 from "../../../assets/images/ORG/assistive-technology/ORG_AT8.png"
 import ORG_AT9 from "../../../assets/images/ORG/assistive-technology/ORG_AT9.png"
-import { SPECIFIC_DATA_KEY, Structure_SpecificData } from "../specificData"
-import { AT_WCMD_SPECIFIC_DATA } from "./wcmd/second-page/desktop/toThirdPageButton"
+import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY, Structure_SpecificData } from "../second-page/desktop/specificData"
 
 export const enum DATA_PAT_D_KEYS {
   BUTTON_TO_THIRDPAGE_NAME_KEY = "BUTTON_TO_THIRDPAGE_NAME",
@@ -25,9 +24,21 @@ export const enum DATA_PAT_D_KEYS {
 }
 
 export const PAT_SPECIFIC_DATA: Structure_SpecificData = {
-  [SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
-  [SPECIFIC_DATA_KEY.SVG]: ORG_D_Results_ATSvg,
+  BUTTON_TO_THIRDPAGE_NAME: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
+  SVG: ORG_D_Results_ATSvg,
   BRAND: "Permobil",
+  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE,
+}
+
+export const enum AT_WCMD_D_SEARCH_VALUES {
+  BRAND = "Permobile corpus Industries Inc.",
+}
+
+export const AT_WCMD_SPECIFIC_DATA: Structure_SpecificData = {
+  BUTTON_TO_THIRDPAGE_NAME: "where to buy",
+  SVG: ORG_D_Results_WheretobuySvg,
+  BRAND: AT_WCMD_D_SEARCH_VALUES.BRAND,
+  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE,
 }
 
 export const DATA_PAT_D = [

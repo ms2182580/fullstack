@@ -5,7 +5,7 @@ import { ORG_Filters_D_Range_Isolated } from "../../../../components/ORG/filters
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-export const DATA_PSYT_D_Filters = {
+const DATA_PSYT_D_Filters = {
   practiceAreas: {
     buttonName: "Practice Areas",
     categoriesToDisplay: [
@@ -117,7 +117,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_DCTR_PSYT = [
+export const filtersUI_PDCTR = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {

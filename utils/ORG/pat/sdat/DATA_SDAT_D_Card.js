@@ -1,209 +1,204 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
-import { DATA_PAT_D_KEYS } from "../DATA_PAT_D"
+import { MapProperties_KEYS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_MapComponent"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arrayInnerNavBar_PAT, arraySectionToRender_PAT } from "../third-page/desktop/arraySectionToRender"
+import { tooltipToRender_PAT } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_SDAT_D_CardRight = [
   {
-    input: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+    accessibilityFeatures: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "accessibility features",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
-    sensors: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["gyroscopes"],
+    platform: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "platform compatibility",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Windows", "Android", "Linux"],
     },
-    connectivityOptions: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Connectivity Options",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Wi-Fi", "Bluetooth"],
+    support: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
     },
-    operatingSystem: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "operating system",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Android (Fire OS)"],
+    payMethod: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["One in life"],
     },
 
-    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
-      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
-      [DATA_ORG_KeyNamesForCards_D.CARD]: {
-        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+    thirdPageData: {
+      folderName: "detail",
+      card: {
+        withBackground: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
-
-        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
-          input: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+        left: {
+          accessibilityFeatures: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
-          sensors: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["gyroscopes"],
+          platform: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Windows", "Android", "Linux"],
           },
-          connectivityOptions: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Connectivity Options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Wi-Fi", "Bluetooth"],
+          support: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
           },
-          operatingSystem: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "operating system",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Android (Fire OS)"],
+          payMethod: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["One in life"],
           },
         },
-        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
-          dataCollectionAndAnalysis: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Data Collection and Analysis",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Interaction Data", "Machine Learning"],
+        right: {
+          inputMethods: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
           },
+          platform: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
+          },
+        },
 
-          thirdPartyIntegration: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Third Party Integration",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Health services", "Smart Home Integration", "Content Platforms"],
-          },
-
-          securityAndPrivacy: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Security and Privacy",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Data Encryption", "Authentication Mechanisms", "Privacy Controls"],
-          },
-
-          supportAndDocumentation: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support and Documentation",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Manuals", "Online Forums and Communities", "Help Center and Customer Support"],
-          },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: {
+          [MapProperties_KEYS.HOW_MANY]: null,
         },
       },
     },
   },
   {
-    input: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+    accessibilityFeatures: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
-    sensors: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["gyroscopes"],
+    platform: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["iOS", "macOS"],
     },
-    connectivityOptions: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Connectivity Options",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Wi-Fi", "Bluetooth"],
+    support: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
     },
-    operatingSystem: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "operating system",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Android (Fire OS)"],
+    payMethod: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Suscription"],
     },
 
-    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
-      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
-      [DATA_ORG_KeyNamesForCards_D.CARD]: {
-        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+    thirdPageData: {
+      folderName: "detail",
+      card: {
+        withBackground: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
 
-        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
-          input: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+        left: {
+          accessibilityFeatures: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
-          sensors: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["gyroscopes"],
+          platform: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["iOS", "macOS"],
           },
-          connectivityOptions: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Connectivity Options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Wi-Fi", "Bluetooth"],
+          support: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
           },
-          operatingSystem: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "operating system",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Android (Fire OS)"],
+          payMethod: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Suscription"],
           },
         },
-        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
-          dataCollectionAndAnalysis: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Data Collection and Analysis",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Interaction Data", "Machine Learning"],
+        right: {
+          inputMethods: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
           },
+          platform: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
+          },
+        },
 
-          thirdPartyIntegration: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Third Party Integration",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Health services", "Smart Home Integration", "Content Platforms"],
-          },
-
-          securityAndPrivacy: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Security and Privacy",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Data Encryption", "Authentication Mechanisms", "Privacy Controls"],
-          },
-
-          supportAndDocumentation: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support and Documentation",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Manuals", "Online Forums and Communities", "Help Center and Customer Support"],
-          },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: {
+          [MapProperties_KEYS.HOW_MANY]: null,
         },
       },
+
+      about:
+        "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
     },
   },
   {
-    input: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+    accessibilityFeatures: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
     },
-    sensors: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["gyroscopes"],
+    platform: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["iOS", "macOS"],
     },
-    connectivityOptions: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Connectivity Options",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Wi-Fi", "Bluetooth"],
+    support: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
     },
-    operatingSystem: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "operating system",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Android (Fire OS)"],
+    payMethod: {
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Suscription"],
     },
 
-    [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
-      [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
-      [DATA_ORG_KeyNamesForCards_D.CARD]: {
-        [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
+    thirdPageData: {
+      folderName: "detail",
+      card: {
+        withBackground: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
           [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
         },
 
-        [DATA_ORG_KeyNamesForCards_D.LEFT]: {
-          input: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+        left: {
+          accessibilityFeatures: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
           },
-          sensors: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["gyroscopes"],
+          platform: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["iOS", "macOS"],
           },
-          connectivityOptions: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Connectivity Options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Wi-Fi", "Bluetooth"],
+          support: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
           },
-          operatingSystem: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "operating system",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Android (Fire OS)"],
+          payMethod: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Suscription"],
           },
         },
-        [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
-          dataCollectionAndAnalysis: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Data Collection and Analysis",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Interaction Data", "Machine Learning"],
+        right: {
+          inputMethods: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
           },
+          platform: {
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
+          },
+        },
 
-          thirdPartyIntegration: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Third Party Integration",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Health services", "Smart Home Integration", "Content Platforms"],
-          },
-
-          securityAndPrivacy: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Security and Privacy",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Data Encryption", "Authentication Mechanisms", "Privacy Controls"],
-          },
-
-          supportAndDocumentation: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support and Documentation",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Manuals", "Online Forums and Communities", "Help Center and Customer Support"],
-          },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PAT,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: {
+          [MapProperties_KEYS.HOW_MANY]: null,
         },
       },
+
+      about:
+        "Moving students to regular classes is the goal. We have expertise working with individuals who have a variety of developmental disabilities, including Autism, ADHD, Pervasive Developmental Disorder, speech and language delays, physical impairments, and many others...",
     },
   },
 ]
@@ -212,17 +207,46 @@ export const DATA_SDAT_D_CardLeft = [
   {
     phone: "(012) 345-6789, ext. 4001",
     email: "denise@truong-macgill.com",
-    [DATA_PAT_D_KEYS.BRAND_THIRDPAGE_KEY]: "Permobil",
     web: {
-      fistName: "assistiveware",
-      lastName: "",
+      fistName: "truong",
+      lastName: "macgill",
     },
     location: {
-      city: "Netherlands",
-      streetName: "Laurierstraat 193",
-      streetNumber: "",
-      state: "Amsterdam, null 1016 PL",
-      howFar: "",
+      city: "Brooklyn",
+      streetName: "Remsen Street, Suite #2",
+      streetNumber: "163",
+      state: "NY 11201",
+      howFar: "3",
+    },
+  },
+  {
+    phone: "(012) 345-6789, ext. 4001",
+    email: "denise@truong-macgill.com",
+    web: {
+      fistName: "truong",
+      lastName: "macgill",
+    },
+    location: {
+      city: "Brooklyn",
+      streetName: "Remsen Street, Suite #2",
+      streetNumber: "163",
+      state: "NY 11201",
+      howFar: "3",
+    },
+  },
+  {
+    phone: "(012) 345-6789, ext. 4001",
+    email: "denise@truong-macgill.com",
+    web: {
+      fistName: "truong",
+      lastName: "macgill",
+    },
+    location: {
+      city: "Brooklyn",
+      streetName: "Remsen Street, Suite #2",
+      streetNumber: "163",
+      state: "NY 11201",
+      howFar: "3",
     },
   },
 ]

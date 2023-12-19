@@ -1,6 +1,7 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { tooltipToRender_PDCTR } from "../third-page/desktop/tooltipToRender"
 
-export const DATA_PSYT_D_CardRight = [
+export const DATA_CardRight_PDCTR = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
@@ -82,6 +83,8 @@ export const DATA_PSYT_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PDCTR,
       },
     },
   },
@@ -166,6 +169,8 @@ export const DATA_PSYT_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PDCTR,
       },
     },
   },
@@ -199,7 +204,6 @@ export const DATA_PSYT_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages Spoken",
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "Sign Language"],
     },
-
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
       [DATA_ORG_KeyNamesForCards_D.FOLDER_NAME]: "detail",
@@ -251,12 +255,14 @@ export const DATA_PSYT_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PDCTR,
       },
     },
   },
 ]
 
-export const DATA_PSYT_D_CardLeft = [
+export const DATA_CardLeft_PDCTR = [
   {
     phone: "(212) 721 - 9596",
     email: "cfernandez@valleygh.com",

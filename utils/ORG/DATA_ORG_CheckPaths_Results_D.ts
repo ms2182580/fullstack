@@ -3,6 +3,80 @@ export const enum DATA_ORG_CheckPaths_Results_D_KEYS {
   fullName = "fullName",
 }
 
+export enum CATEGORY_KEYS {
+  PAT = "pat",
+  PAA = "paa",
+  PCMPS = "pcmps",
+  PCC = "pcc",
+  PDCTR = "pdctr",
+  PMHSS = "pmhss",
+  PPPAS = "pppas",
+  PSES = "pses",
+  PST = "pst",
+  PRP = "prp",
+  PVES = "pves",
+}
+
+export enum SUBCATEGORY_KEYS {
+  /* PAT subcategories */
+  WCMD = "wcmd",
+  TFS = "tfs",
+  ACS = "acs",
+  SDAT = "sdat",
+  IHTAT = "ihtat",
+
+  /* PAA Subcategories */
+  CR = "cr",
+  SE = "se",
+  ELMP = "elmp",
+  DISA = "disa",
+  IDD = "idd",
+
+  /* PCMPS subcategories */
+  DAY = "day",
+  OVN = "ovn",
+  DAYT = "dayt",
+
+  /* PCC subcategories */
+  CC = "cc",
+  FC = "fc",
+  AC = "ac",
+
+  /* PDCTR subcategories */
+  PSYT = "psyt",
+  FM = "fm",
+  NO = "no",
+
+  /* PMHSS subcategories */
+  MH = "mh",
+  FS = "fs",
+
+  /* PPPAS subcategories */
+  A = "a",
+  PNFPO = "pnfpo",
+  SO = "so",
+
+  /* PSES subcategories */
+  SES = "ses",
+  PRE = "pre",
+  PV = "pv",
+
+  /* PST subcategories */
+  SLP = "slp",
+  OT = "ot",
+
+  /* PRP subcategories */
+  LT = "lt",
+  ST = "st",
+
+  /* PVES subcategories */
+  OP = "op",
+  HR = "hr",
+  SEP = "sep",
+  AI = "ai",
+  JTC = "jtc",
+}
+
 export const DATA_ORG_CheckPaths_Results_D = {
   pat: [
     /* 
@@ -14,11 +88,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "at-smart-devices",
     "at-innovative-hi-tech",
     {
-      "at-wheelchair-mobility-devices": "wcmd",
-      "at-smart-devices": "sdat",
-      "at-tools-for-school": "tfs",
-      "at-augmented-software-software": "ass" /* This is a typo, should be ACS */,
-      "at-innovative-hi-tech": "iht",
+      "at-wheelchair-mobility-devices": SUBCATEGORY_KEYS.WCMD,
+      "at-smart-devices": SUBCATEGORY_KEYS.SDAT,
+      "at-tools-for-school": SUBCATEGORY_KEYS.TFS,
+      "at-augmented-software-software": SUBCATEGORY_KEYS.ACS /* This is a typo, should be ACS */,
+      "at-innovative-hi-tech": SUBCATEGORY_KEYS.IHTAT,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -37,11 +111,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "aa-disability-attorney",
     "aa-idd",
     {
-      "aa-civil-rights": "cr",
-      "aa-special-education": "se",
-      "aa-elder-law-medicaid-planning": "elmp",
-      "aa-disability-attorney": "disa",
-      "aa-idd": "idd",
+      "aa-civil-rights": SUBCATEGORY_KEYS.CR,
+      "aa-special-education": SUBCATEGORY_KEYS.SE,
+      "aa-elder-law-medicaid-planning": SUBCATEGORY_KEYS.ELMP,
+      "aa-disability-attorney": SUBCATEGORY_KEYS.DISA,
+      "aa-idd": SUBCATEGORY_KEYS.IDD,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -58,9 +132,9 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "cmps-overnight-camps",
     "cmps-day-trips",
     {
-      "cmps-day": "day",
-      "cmps-overnight-camps": "ovn",
-      "cmps-day-trips": "dayt",
+      "cmps-day": SUBCATEGORY_KEYS.DAY,
+      "cmps-overnight-camps": SUBCATEGORY_KEYS.OVN,
+      "cmps-day-trips": SUBCATEGORY_KEYS.DAYT,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -75,9 +149,9 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "cc-fitness-classes",
     "cc-art-classes",
     {
-      "cc-community-classes": "cc",
-      "cc-fitness-classes": "fc",
-      "cc-art-classes": "ac",
+      "cc-community-classes": SUBCATEGORY_KEYS.CC,
+      "cc-fitness-classes": SUBCATEGORY_KEYS.FC,
+      "cc-art-classes": SUBCATEGORY_KEYS.AC,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -92,9 +166,9 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "dctr-family-medicine",
     "dctr-neuro-oncologists",
     {
-      "dctr-psychiatrists": "psyt",
-      "dctr-family-medicine": "fm",
-      "dctr-neuro-oncologists": "no",
+      "dctr-psychiatrists": SUBCATEGORY_KEYS.PSYT,
+      "dctr-family-medicine": SUBCATEGORY_KEYS.FM,
+      "dctr-neuro-oncologists": SUBCATEGORY_KEYS.NO,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -108,8 +182,8 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "mhss-mental-heath",
     "mhss-family-support",
     {
-      "mhss-mental-heath": "mh",
-      "mhss-family-support": "fs",
+      "mhss-mental-heath": SUBCATEGORY_KEYS.MH,
+      "mhss-family-support": SUBCATEGORY_KEYS.FS,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -123,9 +197,9 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "ppas-not-for-profit-organization",
     "ppas-state-offices",
     {
-      "ppas-associations": "a",
-      "ppas-not-for-profit-organization": "pnfpo",
-      "ppas-state-offices": "so",
+      "ppas-associations": SUBCATEGORY_KEYS.A,
+      "ppas-not-for-profit-organization": SUBCATEGORY_KEYS.PNFPO,
+      "ppas-state-offices": SUBCATEGORY_KEYS.SO,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -140,9 +214,9 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "ses-preschools",
     "ses-private-schools",
     {
-      "ses-special-education-schools": "ses",
-      "ses-preschools": "pre",
-      "ses-private-schools": "pv",
+      "ses-special-education-schools": SUBCATEGORY_KEYS.SES,
+      "ses-preschools": SUBCATEGORY_KEYS.PRE,
+      "ses-private-schools": SUBCATEGORY_KEYS.PV,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -156,8 +230,8 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "st-speech-language-pathologists",
     "st-ocuppational-therapists",
     {
-      "st-speech-language-pathologists": "slp",
-      "st-ocuppational-therapists": "ot",
+      "st-speech-language-pathologists": SUBCATEGORY_KEYS.SLP,
+      "st-ocuppational-therapists": SUBCATEGORY_KEYS.OT,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -171,8 +245,8 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "rp-long-term-residential",
     "rp-short-term-residential",
     {
-      "rp-long-term-residential": "lt",
-      "rp-short-term-residential": "st",
+      "rp-long-term-residential": SUBCATEGORY_KEYS.LT,
+      "rp-short-term-residential": SUBCATEGORY_KEYS.ST,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -189,11 +263,11 @@ export const DATA_ORG_CheckPaths_Results_D = {
     "ves-apprenticeships-internships",
     "ves-job-training-coaches",
     {
-      "ves-open-positions": "op",
-      "ves-highly-reviewed-companies": "hr",
-      "ves-supported-employment-programs": "sep",
-      "ves-apprenticeships-internships": "ai",
-      "ves-job-training-coaches": "jtc",
+      "ves-open-positions": SUBCATEGORY_KEYS.OP,
+      "ves-highly-reviewed-companies": SUBCATEGORY_KEYS.HR,
+      "ves-supported-employment-programs": SUBCATEGORY_KEYS.SEP,
+      "ves-apprenticeships-internships": SUBCATEGORY_KEYS.AI,
+      "ves-job-training-coaches": SUBCATEGORY_KEYS.JTC,
     },
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
@@ -295,7 +369,7 @@ export const DATA_ORG_CheckPaths_Results_D = {
 /*  */
 // # 3° generation
 // "pat":
-//   → WMD // was: AT
+//   → WCMD // was: AT
 //   → TFS // mew
 //   → ACS // was: SAT
 //   → SDAT

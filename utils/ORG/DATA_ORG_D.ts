@@ -3,12 +3,12 @@ import { DATA_PAA_D } from "./paa/DATA_PCR_D"
 import { DATA_PAT_D } from "./pat/DATA_PAT_D"
 import { DATA_PCC_D } from "./pcc/DATA_PCC_D"
 import { DATA_PCMPS_D } from "./pcmps/DATA_PCMPS_D"
-import { DATA_PPSYT_D } from "./pdctr/DATA_PSYT_D"
-import { DATA_PMH_D } from "./pmhss/DATA_PMH_D"
+import { DATA_PDCTR_D } from "./pdctr/DATA_PDCTR_D"
+import { DATA_PMHSS_D } from "./pmhss/DATA_PMHSS_D"
 import { DATA_PPPAS_D } from "./pppas/DATA_PPPAS_D"
-import { DATA_PLT_D } from "./prp/DATA_PLT_D"
-import { DATA_SES_D } from "./pses/ses/DATA_SES_D"
-import { DATA_PSLP_D } from "./pst/DATA_PSLP_D"
+import { DATA_PRP_D } from "./prp/DATA_PRP_D"
+import { DATA_PSES_D } from "./pses/DATA_PSES_D"
+import { DATA_PST_D } from "./pst/DATA_PST_D"
 import { DATA_PVES_D } from "./pves/DATA_PVES_D"
 
 // export const enum SPECIFIC_DATA_KEY {
@@ -70,7 +70,7 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     nameJSX: "Doctors",
     // component: INDEX_D_DCTRSearch,
     // componentName: INDEX_D_DCTRSearch.name,
-    thisParticularData: DATA_PPSYT_D,
+    thisParticularData: DATA_PDCTR_D,
     acronym: "pdctr",
     folderName: "doctors",
   },
@@ -78,7 +78,7 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     nameJSX: "Mental Health Support/Services",
     // component: INDEX_D_MHSSSearch,
     // componentName: INDEX_D_MHSSSearch.name,
-    thisParticularData: DATA_PMH_D,
+    thisParticularData: DATA_PMHSS_D,
     acronym: "pmhss",
     folderName: "mental-health",
   },
@@ -94,7 +94,7 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     nameJSX: "Residential Programs",
     // component: INDEX_D_RPSearch,
     // componentName: INDEX_D_RPSearch.name,
-    thisParticularData: DATA_PLT_D,
+    thisParticularData: DATA_PRP_D,
     acronym: "prp",
     folderName: "residential-programs",
   },
@@ -102,7 +102,7 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     nameJSX: "Schools & Educational Resources",
     // component: INDEX_D_SESSearch,
     // componentName: INDEX_D_SESSearch.name,
-    thisParticularData: DATA_SES_D,
+    thisParticularData: DATA_PSES_D,
     acronym: "pses",
     folderName: "special-education-schools",
   },
@@ -110,7 +110,7 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES = [
     nameJSX: "Therapeutic Providers & Services",
     // component: INDEX_D_STSearch,
     // componentName: INDEX_D_STSearch.name,
-    thisParticularData: DATA_PSLP_D,
+    thisParticularData: DATA_PST_D,
     acronym: "pst",
     folderName: "speech-therapists",
   },

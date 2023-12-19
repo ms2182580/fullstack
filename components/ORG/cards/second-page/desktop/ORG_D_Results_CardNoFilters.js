@@ -14,14 +14,13 @@ export const ORG_D_Results_CardNoFilters = () => {
   }, [])
 
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
-  // console.log("secondpageDataORG:", secondpageDataORG)
 
   return (
     <>
       {Array(10)
         .fill(0)
         .map((x, i) => {
-          let renderThisCard = i % 3
+          let renderThisCard = i % secondpageDataORG.right.length
           let renderThisFilter = i % secondpageDataORG.right.length
           let renderThisContact = i % secondpageDataORG.left.length
 

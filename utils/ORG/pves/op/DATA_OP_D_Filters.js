@@ -112,7 +112,7 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_VES_OP = [
+export const filtersUI_PVES = [
   {
     [DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS]: {

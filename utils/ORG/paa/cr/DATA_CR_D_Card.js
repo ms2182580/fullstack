@@ -1,4 +1,7 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arrayInnerNavBar_PAA, arraySectionToRender_PAA } from "../third-page/desktop/arraySectionToRender"
+import { tooltipToRender_PAA } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_CardRight_PAA = [
   {
@@ -75,6 +78,11 @@ export const DATA_CardRight_PAA = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Family Law, Best Lawyers in America, 2020"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
       },
     },
   },
@@ -151,6 +159,11 @@ export const DATA_CardRight_PAA = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Family Law, Best Lawyers in America, 2020"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
       },
     },
   },
@@ -227,6 +240,11 @@ export const DATA_CardRight_PAA = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Family Law, Best Lawyers in America, 2020"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PAA,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
       },
     },
   },

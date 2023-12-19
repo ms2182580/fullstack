@@ -2,9 +2,8 @@ import { PVES_General_D_LeftPart } from "@/components/ORG/cards_resources/third-
 import { Verified } from "@/components/ORG/verified/Verified"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
-import { SPECIFIC_DATA_KEY } from "@/utils/ORG/specificData"
+import { SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
 import Image from "next/image"
-import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_Brand } from "./ORG_D_Detail_Brand"
@@ -19,31 +18,29 @@ import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCar
 export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-  const theRoute = useRouter()
+  // const conditionToImages = useMemo(() => {
+  //   let isOpenPosition =
+  //     (thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.isOpenPosition &&
+  //       theRoute.query.isOpenPosition === "true") ||
+  //     null
 
-  const conditionToImages = useMemo(() => {
-    let isOpenPosition =
-      (thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.isOpenPosition &&
-        theRoute.query.isOpenPosition === "true") ||
-      null
+  //   let isPVESCurated = theRoute.query.isDefault_and_doNotUse_isPVES ? theRoute.query.isDefault_and_doNotUse_isPVES === "true" : isPVES
 
-    let isPVESCurated = theRoute.query.isDefault_and_doNotUse_isPVES ? theRoute.query.isDefault_and_doNotUse_isPVES === "true" : isPVES
+  //   let isOpenPositionThirdResource = isPVESCurated && isOpenPosition && Number(theRoute.query.renderThisContact) >= 2
 
-    let isOpenPositionThirdResource = isPVESCurated && isOpenPosition && Number(theRoute.query.renderThisContact) >= 2
+  //   let isOpenPositionFirstTwoResources = isPVESCurated && isOpenPosition && Number(theRoute.query.renderThisContact) < 2
 
-    let isOpenPositionFirstTwoResources = isPVESCurated && isOpenPosition && Number(theRoute.query.renderThisContact) < 2
+  //   let isAllOtherPVES = isOpenPosition || isPVESCurated ? Boolean(!isOpenPosition) : false
 
-    let isAllOtherPVES = isOpenPosition || isPVESCurated ? Boolean(!isOpenPosition) : false
+  //   let isDefault = isOpenPositionThirdResource === false && !isOpenPositionFirstTwoResources === false && !isAllOtherPVES === false
 
-    let isDefault = isOpenPositionThirdResource === false && !isOpenPositionFirstTwoResources === false && !isAllOtherPVES === false
-
-    return {
-      isOpenPositionThirdResource,
-      isOpenPositionFirstTwoResources,
-      isAllOtherPVES,
-      isDefault,
-    }
-  }, [])
+  //   return {
+  //     isOpenPositionThirdResource,
+  //     isOpenPositionFirstTwoResources,
+  //     isAllOtherPVES,
+  //     isDefault,
+  //   }
+  // }, [])
 
   const haveSomeBrandToShow = useMemo(() => {
     let haveSpecificData = thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
@@ -55,24 +52,44 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
     return false
   }, [])
 
+  const layout = useMemo(() => {
+    const theLayout = thirdpageDataORG.other?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ?? null
+
+    return theLayout
+  }, [])
+
   return (
-    <ORG_D_Detail_MainCard_LeftWrapper isPVES={isPVES}>
+    <ORG_D_Detail_MainCard_LeftWrapper
+      isPVES={isPVES}
+      LAYOUT_RESULTS_MAIN_CARD={layout}>
       <div>
         <Image
           src={thirdpageDataORG.card.leftPart.photo.src}
-          layout={
-            conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "fill" : conditionToImages.isOpenPositionThirdResource ? "fill" : "responsive"
-          }
-          objectFit={
-            conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES
-              ? "scale-down"
-              : conditionToImages.isOpenPositionThirdResource
-              ? "fill"
-              : "contain"
-          }
-          objectPosition={conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "" : "0px 0px"}
+          // layout={
+          //   conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "fill" : conditionToImages.isOpenPositionThirdResource ? "fill" : "responsive"
+          // }
+          // objectFit={
+          //   conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES
+          //     ? "scale-down"
+          //     : conditionToImages.isOpenPositionThirdResource
+          //     ? "fill"
+          //     : "contain"
+          // }
+          // objectPosition={conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "" : "0px 0px"}
+          // width={1}
+          // height={1}
+
+          /* width={1200}
+          height={600} */
+          /* layout="responsive"
+          objectFit="contain"
           width={1}
-          height={1}
+          height={0.522} */
+
+          layout="responsive"
+          objectFit="contain"
+          width={1}
+          height={0.522}
           alt={`Image of ${thirdpageDataORG.card.leftPart.title}`}
         />
 

@@ -6,7 +6,7 @@ import { ORG_Filters_D_Range_Isolated } from "../../../../components/ORG/filters
 import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-export const DATA_CC_D_Filters = {
+const DATA_CC_D_Filters = {
   skillLevel: {
     buttonName: "Skill Level",
     categoriesToDisplay: ["Any Level", "Beginner", "Intermediate", "Advanced", "Expert"],
@@ -116,14 +116,14 @@ const allMoreFilters = {
   ],
 }
 
-export const renderFiltersInUI_CC_CC = [
+export const filtersUI_PCC = [
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
       buttonName: DATA_CC_D_Filters.skillLevel.buttonName,
       categoriesToDisplay: DATA_CC_D_Filters.skillLevel.categoriesToDisplay,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
@@ -134,7 +134,7 @@ export const renderFiltersInUI_CC_CC = [
       whichMeasure: ORG_FILTERS_DATA_D.agesServedRange.whichMeasure,
       addCharacter: ORG_FILTERS_DATA_D.agesServedRange.addCharacter,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
@@ -145,7 +145,7 @@ export const renderFiltersInUI_CC_CC = [
       addCharacter: ORG_FILTERS_DATA_D.distanceRange.addCharacter,
       whichMeasure: ORG_FILTERS_DATA_D.distanceRange.whichMeasure,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Range2,
@@ -156,7 +156,7 @@ export const renderFiltersInUI_CC_CC = [
       addCharacter: DATA_CC_D_Filters.price.addCharacter,
       whichMeasure: DATA_CC_D_Filters.price.whichMeasure,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -164,7 +164,7 @@ export const renderFiltersInUI_CC_CC = [
       buttonName: ORG_FILTERS_KEYS_D.language.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.languages,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
@@ -172,7 +172,7 @@ export const renderFiltersInUI_CC_CC = [
       buttonName: ORG_FILTERS_KEYS_D.meetingFormat.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.meetingFormat,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
   {
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_More2,

@@ -1,7 +1,9 @@
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
-import { SPECIFIC_DATA_KEY } from "../../specificData"
+import { SPECIFIC_DATA_KEY } from "../../second-page/desktop/specificData"
+import { tooltipToRender_PVES } from "../third-page/desktop/tooltipToRender"
+import { arraySectionToRender_PVES } from "./third-page/desktop/arraySectionToRender"
 
-export const DATA_OP_D_CardRight = [
+export const DATA_CardRight_PVES = [
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
@@ -19,7 +21,7 @@ export const DATA_OP_D_CardRight = [
     },
 
     benefits: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
       [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
@@ -83,6 +85,9 @@ export const DATA_OP_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
       },
     },
   },
@@ -167,6 +172,9 @@ export const DATA_OP_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
       },
     },
   },
@@ -251,6 +259,9 @@ export const DATA_OP_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
       },
     },
   },
@@ -335,12 +346,15 @@ export const DATA_OP_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
       },
     },
   },
 ]
 
-export const DATA_OP_D_CardLeft = [
+export const DATA_CardLeft_PVES = [
   {
     phone: "",
     email: "",
