@@ -1,3 +1,4 @@
+import { maxDesktopScreenSize } from "@/assets/screenSizes/ScreenSizes"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SECONDARY_SNT } from "../../../../assets/Colors"
 
@@ -5,8 +6,12 @@ export const Footer_DWrapper = styled.footer`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
   position: relative;
 
+  margin-inline: auto;
+
   & > *:not(:last-child) {
     padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+    max-width: ${maxDesktopScreenSize};
+    margin-inline: auto;
   }
 
   & > :nth-child(1) {
@@ -38,7 +43,6 @@ export const Footer_DWrapper = styled.footer`
       & > *:not(:first-child):not(:nth-child(2)) {
         color: rgba(108, 108, 108, 0.65);
         cursor: default;
-        
       }
     }
 
@@ -47,7 +51,6 @@ export const Footer_DWrapper = styled.footer`
       & > * {
         color: rgba(108, 108, 108, 0.65);
         cursor: default;
-        
       }
     }
 
@@ -98,6 +101,8 @@ export const Footer_DWrapper = styled.footer`
 
     padding-bottom: 24px;
 
+    position: relative;
+
     & > :nth-child(1) {
       border-radius: 8px;
       border: none;
@@ -121,7 +126,7 @@ export const Footer_DWrapper = styled.footer`
       border: none;
       border-radius: 8px;
       background-color: ${SECONDARY_SNT.YELLOW};
-      
+
       cursor: pointer;
 
       position: relative;
@@ -142,8 +147,6 @@ export const Footer_DWrapper = styled.footer`
         top: 0;
         z-index: -12;
         transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-        
-        
       }
 
       &::after {
@@ -159,7 +162,6 @@ export const Footer_DWrapper = styled.footer`
         top: 0;
         z-index: -15;
         transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-        
       }
 
       &:hover::before,
@@ -174,15 +176,20 @@ export const Footer_DWrapper = styled.footer`
         width: 136%;
       }
     }
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - clamp(16px, calc(10vw - 80px), 96px) * 2);
+      height: 3px;
+      border-radius: 50%;
+
+      background: linear-gradient(90deg, hsla(255.9, 45.5%, 37.5%, 0.1) 1%, ${PRIMARY.PRIMARY_HOVER} 50%, hsla(255.9, 45.5%, 37.5%, 0.1) 99%);
+    }
   }
 
   & > :nth-child(3) {
-    border: 2px solid ${PRIMARY.PRIMARY_HOVER};
-    border-radius: 50px;
-    margin-inline: clamp(16px, calc(10vw - 80px), 96px);
-  }
-
-  & > :nth-child(4) {
     padding-top: 16px;
     padding-bottom: 16px;
     display: flex;
@@ -210,51 +217,56 @@ export const Footer_DWrapper = styled.footer`
     }
   }
 
-  & > :nth-child(5) {
-    padding-inline: clamp(16px, calc(10vw - 80px), 96px);
-    padding-top: 8px;
-    padding-bottom: 8px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  & > :last-child {
     background-color: ${PRIMARY.PRIMARY_HOVER};
 
     & > :nth-child(1) {
-      color: ${NEUTRALS.OFF_WHITE};
-    }
+      padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+      padding-top: 8px;
+      padding-bottom: 8px;
 
-    & > :nth-child(2) {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
 
-      gap: 87px;
+      max-width: ${maxDesktopScreenSize};
+      margin-inline: auto;
 
       & > :nth-child(1) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        & > :nth-child(1) {
-          & > * {
-            fill: ${NEUTRALS.OFF_WHITE};
-          }
-        }
-
-        & > :nth-child(2) {
-          color: ${NEUTRALS.OFF_WHITE};
-        }
+        color: ${NEUTRALS.OFF_WHITE};
       }
+
       & > :nth-child(2) {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 24px;
 
-        & > * {
-          cursor: pointer;
+        gap: 87px;
+
+        & > :nth-child(1) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          & > :nth-child(1) {
+            & > * {
+              fill: ${NEUTRALS.OFF_WHITE};
+            }
+          }
+
+          & > :nth-child(2) {
+            color: ${NEUTRALS.OFF_WHITE};
+          }
+        }
+        & > :nth-child(2) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+
+          & > * {
+            cursor: pointer;
+          }
         }
       }
     }

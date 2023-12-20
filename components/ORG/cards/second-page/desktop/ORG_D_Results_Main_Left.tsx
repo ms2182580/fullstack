@@ -13,19 +13,6 @@ import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_Left
 export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) => {
   const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
-  /* 
-  !FH0
-  - Why PVES have no correct display of elements here?
-  
-  https://www.figma.com/file/lpHBroZRY7imHzHhMm1gAb/Regenesis-for-August%2C-2023-Launch?type=design&node-id=126-94233&mode=dev
-  
-  - Check other subcategories if anything is wrong
-  
-  - Keep with third page
-  
-  - Clean everything of not used files and report to jill the improvement
-  */
-
   const isVES_Like = useMemo(() => {
     return secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] === LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
   }, [])

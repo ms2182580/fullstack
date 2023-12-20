@@ -1,8 +1,9 @@
-import { PageLayout } from "../components/PageLayout.js"
+import { Page_layout } from "@/components/pageLayout/pageLayout"
+import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { CheckUserWidth_Provider } from "../context/CheckUserWidth.js"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
-import { NavbarHomeHeight_Provider } from '../context/NavbarHome_Ctx_Height.js'
+import { NavbarHomeHeight_Provider } from "../context/NavbarHome_Ctx_Height.js"
 import { ORG_CtxFetchNoFiltersDesktop_Provider } from "../context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { ORG_CtxFetchNoFiltersMobile_Provider } from "../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { ORG_CtxFetchWithFiltersDesktop_Provider } from "../context/ORG_CtxFetchWithFiltersDesktop_Provider.js"
@@ -11,8 +12,8 @@ import { ORG_CtxFiltersLeftDesktop_Provider } from "../context/ORG_CtxFiltersLef
 import { ORG_CtxFiltersLeftMobile_Provider } from "../context/ORG_CtxFiltersLeftMobile_Provider.js"
 import { ORG_CtxShowFiltersDesktop_Provider } from "../context/ORG_CtxShowFiltersDesktop_Provider.js"
 import { ORG_Ctx_2Page_Provider } from "../context/ORG_Ctx_2Page_Provider.js"
-import { ORG_Ctx_D_SecondpageData_Provider } from '../context/ORG_Ctx_D_SecondpageData_Provider.js'
-import { ORG_Ctx_D_SecondpageFilters_Provider } from '../context/ORG_Ctx_D_SecondpageFilters_Provider.js'
+import { ORG_Ctx_D_SecondpageData_Provider } from "../context/ORG_Ctx_D_SecondpageData_Provider.js"
+import { ORG_Ctx_D_SecondpageFilters_Provider } from "../context/ORG_Ctx_D_SecondpageFilters_Provider.js"
 import { ORG_Ctx_D_ThirdpageData_Provider } from "../context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ORG_CtxFiltersApplyDesktop_Provider } from "../context/ORG_Ctx_FiltersApplyDesktop.js"
 import { ORG_CtxFiltersApplyMobile_Provider } from "../context/ORG_Ctx_FiltersApplyMobile.js"
@@ -45,14 +46,16 @@ function MyApp({ Component, pageProps }) {
                                         <ORG_Ctx_2Page_Provider>
                                           <CheckUserWidth_Provider>
                                             <NavbarHomeHeight_Provider>
-                                              <PageLayout>
-                                                <GlobalStyle />
-                                                <link
-                                                  rel="icon"
-                                                  href="/favicon.ico"
-                                                />
-                                                <Component {...pageProps} />
-                                              </PageLayout>
+                                              <Ctx_sessionStorage_typedFlow_Provider>
+                                                <Page_layout>
+                                                  <GlobalStyle />
+                                                  <link
+                                                    rel="icon"
+                                                    href="/favicon.ico"
+                                                  />
+                                                  <Component {...pageProps} />
+                                                </Page_layout>
+                                              </Ctx_sessionStorage_typedFlow_Provider>
                                             </NavbarHomeHeight_Provider>
                                           </CheckUserWidth_Provider>
                                         </ORG_Ctx_2Page_Provider>
@@ -78,4 +81,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
-

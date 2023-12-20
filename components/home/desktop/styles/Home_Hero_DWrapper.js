@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors";
+import styled from "styled-components"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const Home_Hero_DWrapper = styled.div`
   margin-bottom: 158px;
@@ -7,12 +7,7 @@ export const Home_Hero_DWrapper = styled.div`
   & > :nth-child(1) {
     padding-top: ${({ paddingTop }) => `calc(155px + ${paddingTop}px)`};
 
-    background: linear-gradient(
-      45deg,
-      hsl(304.9, 45.7%, 58.1%, 0.5) 11%,
-      hsl(18.8, 100%, 71.2%, 0.5) 55%,
-      hsl(304.9, 45.7%, 64.1%, 0.58) 72%
-    );
+    background: linear-gradient(45deg, hsl(304.9, 45.7%, 58.1%, 0.5) 11%, hsl(18.8, 100%, 71.2%, 0.5) 55%, hsl(304.9, 45.7%, 64.1%, 0.58) 72%);
 
     position: relative;
 
@@ -25,11 +20,7 @@ export const Home_Hero_DWrapper = styled.div`
       width: 100%;
 
       height: 4%;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(255, 255, 255, 1) 78%
-      );
+      background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 1) 78%);
     }
 
     & > :nth-child(1) {
@@ -81,7 +72,7 @@ export const Home_Hero_DWrapper = styled.div`
 
             white-space: nowrap; /* Keeps the content on a single line */
 
-           /* &.word-transition {
+            /* &.word-transition {
               transition: opacity 0.5s;
             }
 
@@ -94,7 +85,7 @@ export const Home_Hero_DWrapper = styled.div`
             }*/
           }
         }
-      }     
+      }
     }
 
     & > :nth-child(2) {
@@ -150,4 +141,4 @@ export const Home_Hero_DWrapper = styled.div`
     text-align: center;
     color: #3a3230;
   }
-`;
+`

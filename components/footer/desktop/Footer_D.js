@@ -69,7 +69,7 @@ export const Footer_D = () => {
         </button>
       </div>
 
-      <div />
+      {/* <div /> */}
 
       <div>
         <div
@@ -83,16 +83,17 @@ export const Footer_D = () => {
       </div>
 
       <div>
-        <Caption>© 2023 The INCLUSIVE Group, All rights reserved.</Caption>
-
-        <span>
-          <div tabIndex={0}>
-            <LanguageIconSvg /> <Caption>English (US)</Caption>
-          </div>
-          <div>
-            <Twitter2Svg tabIndex={0} /> <Facebook3Svg tabIndex={0} /> <Instagram2Svg tabIndex={0} /> <LinkedinSvg tabIndex={0} />{" "}
-          </div>
-        </span>
+        <div>
+          <Caption>© 2023 The INCLUSIVE Group, All rights reserved.</Caption>
+          <span>
+            <div tabIndex={0}>
+              <LanguageIconSvg /> <Caption>English (US)</Caption>
+            </div>
+            <div>
+              <Twitter2Svg tabIndex={0} /> <Facebook3Svg tabIndex={0} /> <Instagram2Svg tabIndex={0} /> <LinkedinSvg tabIndex={0} />{" "}
+            </div>
+          </span>
+        </div>
       </div>
     </Footer_DWrapper>
   )
