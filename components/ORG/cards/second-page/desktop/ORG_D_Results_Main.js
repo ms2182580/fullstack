@@ -1,11 +1,11 @@
+import { MapComponent } from "@/components/map/map"
 import { useEffect, useRef, useState } from "react"
 import { useORG_CtxShowFiltersDesktop } from "../../../../../context/ORG_CtxShowFiltersDesktop_Provider.js"
 import { ORG_D_Results_BreadcrumbsAndLastUpdated } from "./ORG_D_Results_BreadcrumbsAndLastUpdated.js"
 import { ORG_D_Results_Choisepath } from "./ORG_D_Results_Choisepath.js"
 import { ORG_D_Results_FilterSortbyHeader } from "./ORG_D_Results_FilterSortbyHeader.js"
 import { ORG_D_Results_FinalButton } from "./ORG_D_Results_FinalButton.js"
-import { ORG_D_Results_Map } from "./ORG_D_Results_Map.js"
-import { ORG_D_Results_MainWrapper } from "./styles/ORG_D_Results_MainWrapper.js"
+import { ORG_D_Results_MainWrapper } from "./styles/ORG_D_Results_MainWrapper"
 
 export const ORG_D_Results_Main = () => {
   const { ORGshowFullMapButton, ORGShowFullMapFilter, setORGShowFullMapButton, setORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
@@ -42,10 +42,19 @@ export const ORG_D_Results_Main = () => {
     }
   }, [])
 
+  const [isFullMap, setIsFullMap] = useState(false)
+
+  const handleIsFullMap = (e) => {
+    if (e.type === "click" || (e.key === "Enter" && e.type === "keydown")) {
+      setIsFullMap((prevState) => !prevState)
+    }
+  }
+
   return (
     <ORG_D_Results_MainWrapper
       ORGshowFullMapButton={ORGshowFullMapButton}
-      id="topOfORG">
+      id="topOfORG"
+      isFullMap={isFullMap}>
       <ORG_D_Results_FilterSortbyHeader
         refUserViewShowFullMapButton={refUserViewShowFullMapButton}
         refUserViewShowFullMapFilter={refUserViewShowFullMapFilter}
@@ -54,7 +63,12 @@ export const ORG_D_Results_Main = () => {
       <div>
         <ORG_D_Results_Choisepath />
 
-        <ORG_D_Results_Map refUserViewShowFullMapButton={refUserViewShowFullMapButton} />
+        <MapComponent
+          isFullMap={isFullMap}
+          handleIsFullMap={handleIsFullMap}
+        />
+
+        {/* <ORG_D_Results_Map refUserViewShowFullMapButton={refUserViewShowFullMapButton} /> */}
       </div>
 
       <ORG_D_Results_FinalButton />
