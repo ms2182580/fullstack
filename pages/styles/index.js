@@ -9,9 +9,6 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   font-family: 'Poppins', sans-serif;
   
-  /* outline: 2px solid crimson; */
-  
-  
 }
 
 
@@ -22,8 +19,6 @@ const GlobalStyle = createGlobalStyle`
 
 
 html,body{
-  //max-width: 1920px;
-  max-width: 1920px;
   font-size: 16px;
   margin-inline:auto;
   

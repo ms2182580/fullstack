@@ -1,9 +1,8 @@
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useTypewriter } from "react-simple-typewriter"
 import { H2 } from "../../../components/ui/heading_body_text/HeaderFonts"
 import { useNavbarHomeHeight } from "../../../context/NavbarHome_Ctx_Height.js"
 import { Home_Hero_DWrapper } from "./styles/Home_Hero_DWrapper.js"
-import {useTypewriter, Cursor} from 'react-simple-typewriter';
 
 const WORDS = ["states", "families", "life", "insurance"]
 const FADE_OUT_TIME = 2000
@@ -22,9 +21,9 @@ export const Home_Hero_D = () => {
   /* 
   !FH
   Make this active only if the user have his sight here. Maybe use IntersectionObserver
-  */ 
- 
-/*
+  */
+
+  /*
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOut(true) // Start fading out the previous word
@@ -47,16 +46,15 @@ export const Home_Hero_D = () => {
 <span className={`word-transition ${fadeOut ? "fade-out" : "fade-in"}`}>{currentWord}</span>
   */
 
-
-
-
- const [text] = useTypewriter({
-  words: [ 'insurance', 'states', 'families'],
-  loop:{},
- });
+  const [text] = useTypewriter({
+    words: ["insurance", "states", "families"],
+    typeSpeed: 160,
+    deleteSpeed: 160,
+    loop: {},
+  })
 
   return (
-    <Home_Hero_DWrapper paddingTop={height.height}>
+    <Home_Hero_DWrapper paddingTop={height?.height}>
       <div>
         <h1>
           <span>Our AI service plans</span>
@@ -64,15 +62,8 @@ export const Home_Hero_D = () => {
           <span className="CHANGE_WORD">
             <span>
               for
-              
-              <span >
-                {text}                
-              </span>
-             
-              
-
+              <span>{text}</span>
             </span>
-            
           </span>
         </h1>
         <H2>

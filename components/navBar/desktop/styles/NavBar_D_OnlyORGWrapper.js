@@ -1,9 +1,13 @@
+import { maxDesktopScreenSize } from "@/assets/screenSizes/ScreenSizes"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const NavBar_D_OnlyORGWrapper = styled.div`
+export const NavBar_D_OnlyORGWrapper = styled.nav`
   background-color: ${PRIMARY.OFF_WHITE};
   position: relative;
+
+  max-width: ${maxDesktopScreenSize};
+  margin-inline: auto;
 
   & > :nth-child(1) {
     display: flex;
@@ -23,9 +27,10 @@ export const NavBar_D_OnlyORGWrapper = styled.div`
       display: flex;
       gap: 8px;
 
-      & > :nth-child(1) { //TITULO INCLUSIVE LADO IZQUIERDO
+      & > :nth-child(1) {
+        //TITULO INCLUSIVE LADO IZQUIERDO
         color: ${PRIMARY.PRIMARY_LOGO};
-        font-weight:800;
+        font-weight: 800;
       }
 
       & > :nth-child(2) {
@@ -65,9 +70,9 @@ export const NavBar_D_OnlyORGWrapper = styled.div`
             border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
           }
         }
-        
-        & > *:not(:first-child){
-          & > *{
+
+        & > *:not(:first-child) {
+          & > * {
             color: ${NEUTRALS.LIGHT_GREY};
           }
         }
