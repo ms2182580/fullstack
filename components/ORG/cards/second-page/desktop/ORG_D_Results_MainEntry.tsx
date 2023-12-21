@@ -1,18 +1,11 @@
 import { MapComponent } from "@/components/map/map"
 import { useRouter } from "next/router"
 import { useState } from "react"
-import { ORG_D_Results_BreadcrumbsAndLastUpdated } from "./ORG_D_Results_BreadcrumbsAndLastUpdated"
+import { ORG_D_Results_Breadcrumbs } from "./ORG_D_Results_Breadcrumbs"
 import { ORG_D_Results_Choisepath } from "./ORG_D_Results_Choisepath"
 import { ORG_D_Results_FilterSortbyHeader } from "./ORG_D_Results_FilterSortbyHeader.js"
 import { ORG_D_Results_FinalButton } from "./ORG_D_Results_FinalButton.js"
 import { ORG_D_Results_MainEntryWrapper } from "./styles/ORG_D_Results_MainEntryWrapper"
-
-// type ContextValues = {
-//   ORGshowFullMapButton: boolean
-//   ORGShowFullMapFilter: boolean
-//   setORGShowFullMapButton: (value: boolean) => void
-//   setORGShowFullMapFilter: (value: boolean) => void
-// }
 
 export type ORG_D_Results_MainEntry_PROPS = {
   isTypedFlow?: boolean
@@ -57,7 +50,7 @@ export const ORG_D_Results_MainEntry = ({ titleToFormat = "nothing", isTypedFlow
         </>
       )}
 
-      <ORG_D_Results_BreadcrumbsAndLastUpdated
+      <ORG_D_Results_Breadcrumbs
         isTypedFlow={isTypedFlow}
         titleToFormat={titleToFormat}
       />
