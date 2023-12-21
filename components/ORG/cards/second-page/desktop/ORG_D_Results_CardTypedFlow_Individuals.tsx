@@ -3,7 +3,9 @@ import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/deskto
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
+import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToSecondPage } from "@/utils/ORG/handleMoveToSecondPage"
+import { handleMoveToThirdPage } from "@/utils/ORG/handleMoveToThirdPage"
 import { KEYS_SUGGESTION_KEYWORDS } from "@/utils/ORG/typed-flow/suggestionKeywords"
 import { CheckTypeOfData, Keys_StructureDataToReturn, useTypedFlow_CheckDiagnosisChoosed } from "@/utils/ORG/useTypedFlow_CheckDiagnosisChoosed"
 import Image from "next/image"
@@ -72,25 +74,19 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
     }
   }, [])
 
-  const { pathname, push } = useRouter()
+  const { push } = useRouter()
 
   const { setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
-  const handleGoToThirdPage = (goToThirdPage_folder_name: string, id_folder_resource: number) => {
-    // console.log("id_folder_resource:", id_folder_resource)
-    // push({
-    //   pathname: `/ORG/${goToThirdPage_folder_name}/details`,
-    //   query: { id: id_folder_resource },
-    // })
-  }
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   return (
     <ORG_D_Results_CardTypedFlow_IndividualsWrapper>
       <div>
         <h2>{title} for:</h2>
         <span
-          onClick={(_) => handleMoveToSecondPage(_, categoryPosition, 0, setSecondpageFiltersORG, setSecondpageDataORG, "/ORG", push)}
+          onClick={(event) => handleMoveToSecondPage({ event, categoryPosition, subcategoryPosition: 0, setSecondpageFiltersORG, setSecondpageDataORG, push })}
           tabIndex={0}>
           See all (25)
         </span>
@@ -113,7 +109,17 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
                         height={1}
                       />
                     </span>
-                    <button onClick={() => handleGoToThirdPage(x.goToThirdPage.folder_name, x.goToThirdPage.id)}>
+                    <button
+                      onClick={(event) =>
+                        handleMoveToThirdPage({
+                          event,
+                          categoryPosition,
+                          subcategoryPosition: 0,
+                          resourcePosition: index,
+                          setThirdpageDataORG,
+                          push,
+                        })
+                      }>
                       <ORG_D_Results_ViewProfileSvg />
                       View Profile
                     </button>

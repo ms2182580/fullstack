@@ -9,11 +9,8 @@ import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { formatDataToThirdPage } from "@/utils/ORG/formatDataToThirdPage"
-import { formatDataToURLOnThirdPage } from "@/utils/ORG/formatDataToURLOnThirdPage"
-import { getDataToMoveView } from "@/utils/ORG/getDataToMoveView"
 import { handleMoveToSecondPage } from "@/utils/ORG/handleMoveToSecondPage"
-import { allRoutes } from "@/utils/ORG/useCheckSlug_ORG"
+import { handleMoveToThirdPage } from "@/utils/ORG/handleMoveToThirdPage"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -36,33 +33,33 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
 
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
-  const handleMoveToThirdPage = (_, categoryPosition, subcategoryPosition, resourcePosition) => {
-    const { theActualFilter, subcategory, rightCard, leftCard, subcategorySpecificData, subFolder } = getDataToMoveView({ categoryPosition, subcategoryPosition })
+  // const handleMoveToThirdPage = ({ event, categoryPosition, subcategoryPosition, resourcePosition }) => {
+  //   const { theActualFilter, subcategory, rightCard, leftCard, subcategorySpecificData, subFolder } = getDataToMoveView({ categoryPosition, subcategoryPosition })
 
-    const stringForBreadcrumbs = subcategory[0]
-    const cardData = subcategory.slice(1)
+  //   const stringForBreadcrumbs = subcategory[0]
+  //   const cardData = subcategory.slice(1)
 
-    const thirdPageData_Card = cardData[resourcePosition]
-    const thirdPageData_Card_Left = leftCard[resourcePosition]
-    const thirdPageData_Card_Right = rightCard[resourcePosition]
-    const fullName = cardData[resourcePosition].fullName
+  //   const thirdPageData_Card = cardData[resourcePosition]
+  //   const thirdPageData_Card_Left = leftCard[resourcePosition]
+  //   const thirdPageData_Card_Right = rightCard[resourcePosition]
+  //   const fullName = cardData[resourcePosition].fullName
 
-    const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, subcategorySpecificData)
+  //   const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, subcategorySpecificData)
 
-    setThirdpageDataORG(allDataToThirdPage)
+  //   setThirdpageDataORG(allDataToThirdPage)
 
-    const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
+  //   const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
 
-    const toWhere = `${pathname}/${allRoutes.detail}/${specificDetail}`
+  //   const toWhere = `${allRoutes.ORG}/${allRoutes.detail}/${specificDetail}`
 
-    push(
-      {
-        pathname: toWhere,
-        query: { title: stringForBreadcrumbs },
-      },
-      toWhere,
-    )
-  }
+  //   push(
+  //     {
+  //       pathname: toWhere,
+  //       query: { title: stringForBreadcrumbs },
+  //     },
+  //     toWhere,
+  //   )
+  // }
 
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
@@ -116,7 +113,10 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
                         )}
 
                         <P>{obj.textReview}</P>
-                        <button onClick={(_) => handleMoveToThirdPage(_, positionInArray, iData, iSubData)}>
+                        <button
+                          onClick={(event) =>
+                            handleMoveToThirdPage({ event, categoryPosition: positionInArray, subcategoryPosition: iData, resourcePosition: iSubData, setThirdpageDataORG, push })
+                          }>
                           <ORG_D_Search_ViewProfileSvg />
                           {someLayoutSpecial === "like_PVES" && iData === 0 ? "View Listing" : "View Profile"}
                         </button>
@@ -124,7 +124,10 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
                     )
                   })}
                 </div>
-                <span onClick={(_) => handleMoveToSecondPage(_, positionInArray, iData, setSecondpageFiltersORG, setSecondpageDataORG, pathname, push)}>
+                <span
+                  onClick={(event) =>
+                    handleMoveToSecondPage({ event, categoryPosition: positionInArray, subcategoryPosition: iData, setSecondpageFiltersORG, setSecondpageDataORG, push })
+                  }>
                   <ButtonSmall secondary>See all (25)</ButtonSmall>
                 </span>
               </div>

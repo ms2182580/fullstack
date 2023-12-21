@@ -56,7 +56,7 @@ const Resources = [
 export const ORG_D_Results_CardTypedFlow = () => {
   return (
     <ORG_D_Results_CardTypedFlowWrapper>
-      {Resources.map((x, index) => {
+      {Resources.map((x) => {
         let theTitle: any = x.title
 
         let dataToRender: any = x.dataToRender
