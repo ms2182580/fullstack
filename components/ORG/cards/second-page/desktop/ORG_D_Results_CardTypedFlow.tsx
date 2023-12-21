@@ -6,18 +6,11 @@ import { DATA_PST_D } from "@/utils/ORG/pst/DATA_PST_D"
 import { Fragment } from "react"
 import { ORG_D_Results_CardTypedFlow_Individuals } from "./ORG_D_Results_CardTypedFlow_Individuals"
 import { ORG_D_Results_CardTypedFlowWrapper } from "./styles/ORG_D_Results_CardTypedFlowWrapper"
-/* import { DATA_PPSYT_D } from "@/utils/ORG/pdctr/DATA_PSYT_D"
-import { DATA_PMH_D } from "@/utils/ORG/pmhss/DATA_PMH_D"
-import { DATA_PSLP_D } from "@/utils/ORG/pst/DATA_PSLP_D"
-import { Fragment } from "react"
-import { ORG_D_Results_CardTypedFlow_Individuals } from "./ORG_D_Results_CardTypedFlow_Individuals"
-import { ORG_D_Results_CardTypedFlowWrapper } from "./styles/ORG_D_Results_CardTypedFlowWrapper" */
 
-// export type Resources_TYPE = {
-//   title: string | object
-//   // dataToRender: (string | number | { [key: string]: string | number })[]
-//   dataToRender: string | number | object
-// }
+/* 
+!FH0
+- Add all the data needed to use this to move the view to second and third page (like home of ORG)
+*/
 
 const Resources = [
   {

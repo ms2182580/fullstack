@@ -6,7 +6,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFi
 import { useRouter } from "next/router.js"
 import path from "path"
 import { useEffect } from "react"
-import { ORG_D_Results_Header_Props } from "../../cards/second-page/desktop/ORG_D_Results_Header_Props"
+import { ORG_D_Results_Header } from "../../cards/second-page/desktop/ORG_D_Results_Header"
 import { ORG_D_Results_MainEntry } from "../../cards/second-page/desktop/ORG_D_Results_MainEntry"
 import { INDEX_TypedFlow_DWrapper } from "./styles/INDEX_TypedFlow_DWrapper"
 
@@ -35,9 +35,9 @@ export const INDEX_TypedFlow_D = () => {
     <>
       {secondpageFiltersORG !== "" && (
         <INDEX_TypedFlow_DWrapper ORGShowFullMapFilter={ORGShowFullMapFilter && router.pathname === `${path.dirname(router.pathname)}/${path.basename(router.pathname)}`}>
-          <ORG_D_Results_Header_Props
+          <ORG_D_Results_Header
             titleToFormat={inputTypesByUser}
-            typedFlow={true}
+            isTypedFlow={true}
           />
 
           <ORG_D_Results_MainEntry

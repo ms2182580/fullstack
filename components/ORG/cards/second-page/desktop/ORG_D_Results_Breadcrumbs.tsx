@@ -4,27 +4,22 @@ import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
 
-export type ORG_D_Results_BreadcrumbsAndLastUpdated_PROPS = {
+type PROPS = {
   titleToFormat: string
   isTypedFlow?: boolean
 }
 
-export const ORG_D_Results_BreadcrumbsAndLastUpdated = ({ titleToFormat, isTypedFlow = false }: ORG_D_Results_BreadcrumbsAndLastUpdated_PROPS) => {
+export const ORG_D_Results_Breadcrumbs = ({ titleToFormat, isTypedFlow = false }: PROPS) => {
   const { query } = useRouter()
 
   const { titleFormatted } = useCheckBreadcrumbs(query.title, isTypedFlow)
 
   const { titleFormatted: titleFormatted_TypedFlow } = useCheckBreadcrumbsProps(titleToFormat, isTypedFlow)
 
-  const whichWordOnBreadcrumb = useMemo(
-    () => {
-      const whichFinalWord = titleFormatted ? titleFormatted : `Results for: ${titleFormatted_TypedFlow}`
-      return whichFinalWord
-    },
-    [
-      /*dependencies here*/
-    ],
-  )
+  const whichWordOnBreadcrumb = useMemo(() => {
+    const whichFinalWord = titleFormatted ? titleFormatted : `Typed by user: ${titleFormatted_TypedFlow}`
+    return whichFinalWord
+  }, [titleFormatted, titleFormatted_TypedFlow])
 
   return (
     <>

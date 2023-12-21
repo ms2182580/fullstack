@@ -45,12 +45,6 @@ export type Props = {
   dataToRender: Item[]
 }
 
-/* 
-!FH0
-- Hard code this thing to allow the user to reach the second page and the third page as it was in the first page of ORG. Is the same behavior
-- Do not make things complicated (do not follow the flow of how it would be), hard code this part
-*/
-
 export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceived", dataToRender }: Props) => {
   let { diagnosisChoosed } = useSessionStorage_typedFlow()
 

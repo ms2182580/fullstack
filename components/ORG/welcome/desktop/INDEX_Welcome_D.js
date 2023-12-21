@@ -68,7 +68,6 @@ export const INDEX_Welcome_D = () => {
      * If the user already reached once typed-flow */
 
     if (reachTypedFlow) {
-      setActualSessionStorage
       router.push("/ORG/typed-flow")
     }
   }, [reachTypedFlow])
