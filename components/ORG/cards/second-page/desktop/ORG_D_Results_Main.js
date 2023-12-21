@@ -5,7 +5,7 @@ import { ORG_D_Results_BreadcrumbsAndLastUpdated } from "./ORG_D_Results_Breadcr
 import { ORG_D_Results_Choisepath } from "./ORG_D_Results_Choisepath.js"
 import { ORG_D_Results_FilterSortbyHeader } from "./ORG_D_Results_FilterSortbyHeader.js"
 import { ORG_D_Results_FinalButton } from "./ORG_D_Results_FinalButton.js"
-import { ORG_D_Results_MainWrapper } from "./styles/ORG_D_Results_MainWrapper"
+import { ORG_D_Results_MainWrapper } from "./styles/ORG_D_Results_MainEntryWrapper.js"
 
 export const ORG_D_Results_Main = () => {
   const { ORGshowFullMapButton, ORGShowFullMapFilter, setORGShowFullMapButton, setORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()

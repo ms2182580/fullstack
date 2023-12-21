@@ -6,7 +6,7 @@ type Props = {
   isFullMap?: boolean
 }
 
-export const ORG_D_Results_MainWrapper = styled.div<Props>`
+export const ORG_D_Results_MainEntryWrapper = styled.div<Props>`
   position: relative;
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;

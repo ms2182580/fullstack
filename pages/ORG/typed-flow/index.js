@@ -1,14 +1,24 @@
-import { useRouter } from "next/router"
+// import { INDEX_TypedFlow_D } from "../../../components/ORG/pages/typed-flow/desktop/INDEX_TypedFlow_D"
+import { INDEX_TypedFlow_D } from "@/components/ORG/typed-flow/desktop/INDEX_TypedFlow_D"
+import { useCheckUserWidth } from "../../../context/CheckUserWidth"
 
-export default function Page() {
-
-  const router = useRouter()
-  // console.log('router:', router)
-
+export default function INDEX_TypedFlow_Results_D() {
+  const { isMobile } = useCheckUserWidth()
+  /* 
+  - ❔If the user arrive here after completing the welcome path, should be move to pathname/ORG/ with a focus on the corresponding input to type // What does this mean?
+  !FH
+  - The only way to enter safetely here after finish the welcome path is by the ORG inputs at second page or navigation bar
+  */
 
   return (
     <>
-      <h1>Typed Flow Here, without []</h1>
+      {isMobile === false ? (
+        <>
+          <INDEX_TypedFlow_D />
+        </>
+      ) : (
+        <>{/* Mobile version here! */}</>
+      )}
     </>
   )
 }

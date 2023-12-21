@@ -1,3 +1,4 @@
+import { KEYS_VALUES_useSessionStorage, useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { useNavbarHomeHeight } from "../../../context/NavbarHome_Ctx_Height.js"
 import { Home_ComingSoonAI_D } from "./Home_ComingSoonAI_D.js"
 import { Home_GetServicePlan_D } from "./Home_GetServicePlan_D.js"
@@ -12,16 +13,20 @@ import { INDEX_HomeWrapper } from "./styles/INDEX_HomeWrapper.js"
 export const INDEX_Home = () => {
   let { height } = useNavbarHomeHeight()
 
-  return (
-    <INDEX_HomeWrapper>
-      <Home_Hero_D />
-      <Home_GetServicePlan_D />
-      <Home_OurPlatformCarousal_D />
-      <Home_IntroducingAI_D />
-      <Home_ComingSoonAI_D />
-      <Home_PlanWith_D />
-      <Home_Pricing_D />
-      <Home_Survey_D />
-    </INDEX_HomeWrapper>
-  )
+  let { actualSessionStorage } = useSessionStorage_typedFlow()
+
+  if (actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST) {
+    return (
+      <INDEX_HomeWrapper>
+        <Home_Hero_D />
+        <Home_GetServicePlan_D />
+        <Home_OurPlatformCarousal_D />
+        <Home_IntroducingAI_D />
+        <Home_ComingSoonAI_D />
+        <Home_PlanWith_D />
+        <Home_Pricing_D />
+        <Home_Survey_D />
+      </INDEX_HomeWrapper>
+    )
+  }
 }

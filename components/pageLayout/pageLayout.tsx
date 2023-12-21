@@ -1,6 +1,8 @@
+import { KEYS_VALUES_useSessionStorage, useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import dynamic from "next/dynamic.js"
 import Head from "next/head"
 import { useRouter } from "next/router.js"
+import { useEffect } from "react"
 import { useCheckUserWidth } from "../../context/CheckUserWidth.js"
 import { MainWrapper } from "./styles/MainWrapper"
 
@@ -13,14 +15,16 @@ const Footer_Mobile = dynamic(() => import("../footer/mobile/Footer_M.js").then(
 export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
   const { isMobile } = useCheckUserWidth()
   const { push, pathname } = useRouter()
+  // console.log("pathname:", pathname)
 
-  // let { actualSessionStorage } = useSessionStorage_typedFlow()
+  let { actualSessionStorage } = useSessionStorage_typedFlow()
+  // console.log("actualSessionStorage:", actualSessionStorage)
 
-  // useEffect(() => {
-  //   if (actualSessionStorage === KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST) {
-  //     push(`/ORG/welcome`)
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (actualSessionStorage === KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST) {
+      push("/ORG/welcome")
+    }
+  }, [])
 
   return (
     <>
@@ -32,7 +36,7 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
         />
       </Head>
 
-      {/* {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
+      {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
         <>
           <NavBar_Mobile />
         </>
@@ -43,13 +47,11 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
             <NavBar_Desktop />
           </>
         )
-      )} */}
-
-      <NavBar_Desktop />
+      )}
 
       <MainWrapper isMainInHome={pathname === "/"}>{children}</MainWrapper>
 
-      {/* {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
+      {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
         <>
           <Footer_Mobile />
         </>
@@ -60,9 +62,7 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
             <Footer_Desktop />
           </>
         )
-      )} */}
-
-      <Footer_Desktop />
+      )}
     </>
   )
 }
