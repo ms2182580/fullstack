@@ -14,6 +14,7 @@ import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponen
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
 export const INDEX_D_ORG = ({ dataToDisplay }) => {
+  console.log("dataToDisplay:", dataToDisplay)
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 

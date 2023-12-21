@@ -1,6 +1,9 @@
 import { ORG_D_Results_ViewProfileSvg } from "@/assets/Icons"
 import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
+import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
+import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
+import { handleMoveToSecondPage } from "@/utils/ORG/handleMoveToSecondPage"
 import { KEYS_SUGGESTION_KEYWORDS } from "@/utils/ORG/typed-flow/suggestionKeywords"
 import { CheckTypeOfData, Keys_StructureDataToReturn, useTypedFlow_CheckDiagnosisChoosed } from "@/utils/ORG/useTypedFlow_CheckDiagnosisChoosed"
 import Image from "next/image"
@@ -43,9 +46,11 @@ type Item = {
 export type Props = {
   title: string
   dataToRender: Item[]
+  toSecondPageData: object
+  categoryPosition: number
 }
 
-export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceived", dataToRender }: Props) => {
+export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceived", dataToRender, toSecondPageData, categoryPosition }: Props) => {
   let { diagnosisChoosed } = useSessionStorage_typedFlow()
 
   let { formatedDiagnosis, formatedSymptoms } = useTypedFlow_CheckDiagnosisChoosed(
@@ -67,7 +72,10 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
     }
   }, [])
 
-  const { push } = useRouter()
+  const { pathname, push } = useRouter()
+
+  const { setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
   const handleGoToThirdPage = (goToThirdPage_folder_name: string, id_folder_resource: number) => {
     // console.log("id_folder_resource:", id_folder_resource)
@@ -81,7 +89,11 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
     <ORG_D_Results_CardTypedFlow_IndividualsWrapper>
       <div>
         <h2>{title} for:</h2>
-        <span tabIndex={0}>See all (25)</span>
+        <span
+          onClick={(_) => handleMoveToSecondPage(_, categoryPosition, 0, setSecondpageFiltersORG, setSecondpageDataORG, "/ORG", push)}
+          tabIndex={0}>
+          See all (25)
+        </span>
       </div>
       <h3>{whichDataReturn && whichDataReturn}</h3>
 

@@ -12,7 +12,11 @@ export const ORG_D_Results_CardTypedFlow_IndividualsWrapper = styled.section`
       color: ${PRIMARY.PRIMARY_CTA};
       font-weight: 600;
 
-      cursor: default;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover,
       &:focus-visible {
