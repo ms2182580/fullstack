@@ -17,6 +17,6 @@ export const handleMoveToSecondPage = ({ event, categoryPosition, subcategoryPos
   })
 
   push({
-    pathname: `${allRoutes.ORG}/${allRoutes.results}/${subFolder}`,
+    pathname: `/${allRoutes.ORG}/${allRoutes.results}/${subFolder}`,
   })
 }
