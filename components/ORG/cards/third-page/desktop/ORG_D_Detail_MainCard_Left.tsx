@@ -92,9 +92,7 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
           height={0.522}
           alt={`Image of ${thirdpageDataORG.card.leftPart.title}`}
         />
-
         <ORG_D_Results_Card_Hearth />
-
         <Verified />
       </div>
 

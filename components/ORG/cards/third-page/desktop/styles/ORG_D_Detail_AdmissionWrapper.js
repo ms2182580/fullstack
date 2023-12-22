@@ -1,8 +1,7 @@
-import styled from "styled-components";
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors";
-import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg";
+import styled from "styled-components"
+import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_AdmissionWrapper = styled.div`
+export const ORG_D_Detail_AdmissionWrapper = styled.article`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -13,25 +12,21 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
-  //HEADER
-  & > :nth-child(1) {
-  }
 
   .BorderSection {
     border-bottom: 1px solid hsl(0, 0%, 88.6%);
   }
+
   section {
     display: flex;
     flex-direction: column;
     padding-bottom: 38px;
     padding-top: 24px;
-    // border-bottom: 1px solid hsl(0, 0%, 88.6%);
     margin-left: 24px;
     margin-right: 24px;
     padding-left: 32px;
 
     & > :nth-child(1) {
-      // height:50px;
       margin-bottom: 4px;
     }
 
@@ -82,7 +77,35 @@ export const ORG_D_Detail_AdmissionWrapper = styled.div`
     padding-right: 13px;
   }
 
-  .Button {
-    padding-top: 24px;
+  & > :last-child {
+    & > :nth-child(2) {
+      margin-bottom: 24px;
+    }
+
+    & > :nth-child(3) {
+      border-radius: 8px;
+      border: 2px solid ${PRIMARY.PRIMARY_CTA};
+
+      background-color: ${NEUTRALS.OFF_WHITE};
+
+      width: 344px;
+      padding: 8px 116px;
+
+      font-weight: 600;
+      font-size: 16px;
+      color: ${PRIMARY.PRIMARY_CTA};
+
+      display: grid;
+      grid-auto-flow: column;
+      white-space: nowrap;
+
+      gap: 8px;
+
+      &:hover,
+      &:focus-visible {
+        color: ${NEUTRALS.OFF_WHITE};
+        background-color: ${PRIMARY.PRIMARY_CTA};
+      }
+    }
   }
-`;
+`

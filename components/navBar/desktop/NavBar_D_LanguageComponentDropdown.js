@@ -63,16 +63,16 @@ export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguag
         <LanguageIconSvg /> Select Language
       </H4>
 
-      <div>
+      <ul>
         {displayLanguages.map((xDisplayLanguages, index) => (
-          <div
+          <li
             key={xDisplayLanguages.languageName}
             tabIndex={index === 0 ? 0 : -1}>
             <Image src={xDisplayLanguages.flag} />
             <H4>{xDisplayLanguages.languageName}</H4>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <div>
         <H4>

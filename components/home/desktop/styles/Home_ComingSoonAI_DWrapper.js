@@ -6,10 +6,10 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
   padding-top: 152px;
   padding-bottom: 152px;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
 
-  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
 
   gap: 48px;
 
@@ -17,6 +17,8 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
     display: grid;
     align-self: center;
     gap: 24px;
+
+    max-width: 652px;
 
     & > :nth-child(1) {
       background-color: ${SECONDARY_ORG_PLUS.PINK};
@@ -71,7 +73,7 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
       align-items: center;
       gap: 16px;
       position: relative;
-      
+
       padding-top: 24px;
 
       & > :nth-child(1) {
@@ -114,6 +116,8 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
   }
 
   .RIGHT {
-    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 `

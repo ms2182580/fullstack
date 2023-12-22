@@ -1,5 +1,5 @@
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
+import { ArraySection_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/ORG/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/ORG/third-page/tooltip"
 import { Fragment, useMemo } from "react"
@@ -20,7 +20,8 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
   const { modalShowedCtx } = useCtx_ShowModal()
 
   const getAllSpecificThirdPageData = useMemo(() => {
-    const dataObj = thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD][`rightPart`][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD]
+    const dataObj =
+      thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]?.[`rightPart`]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]
 
     const renderSections = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
 
@@ -33,7 +34,9 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
     const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? { [MapProperties_KEYS.HOW_MANY]: 1 }
 
     return { renderSections, arrayInnerNavBar, tooltip, layoutMainCardRight, howIsMap }
-  }, [])
+  }, [thirdpageDataORG])
+
+  /* console.log("🔰getAllSpecificThirdPageData:", getAllSpecificThirdPageData) */
 
   return (
     <>
@@ -42,7 +45,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
           <ORG_D_Detail_Header
             thirdpageDataORG={thirdpageDataORG}
             arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
-            defaultSectionToRender={defaultSectionToRender}
+            defaultSectionToRender={getAllSpecificThirdPageData.defaultSectionToRender}
             sectionToRender={getAllSpecificThirdPageData.renderSections}
           />
 
@@ -56,18 +59,15 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
           {getAllSpecificThirdPageData.renderSections ? (
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
-                let Component = x.component
+                let theIdForComponent = x[ArraySection_KEYS.TO_NAVBAR][ArraySection_KEYS.ID] ?? "#"
 
-                let theIdForComponent = getAllSpecificThirdPageData?.arrayInnerNavBar?.[index]?.[InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY] ?? "#"
-
-                if (Component) {
+                if (x.component) {
                   return (
-                    <Fragment key={`${x.name}_${index}`}>
-                      <Component
-                        idInnerbar={theIdForComponent}
-                        selectTags={selectTags}
-                      />
-                    </Fragment>
+                    <>
+                      <Fragment key={`${index}`}>
+                        <x.component idInnerbar={theIdForComponent} />
+                      </Fragment>
+                    </>
                   )
                 }
               })}

@@ -1,7 +1,5 @@
-import styled from "styled-components";
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors";
-import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg";
-import Image from "next/image.js";
+import styled from "styled-components"
+import { PRIMARY } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
   background: #fcfdfe;
@@ -20,13 +18,10 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
     flex-direction: column;
     padding-bottom: 38px;
     padding-top: 24px;
-    // border-bottom: 1px solid hsl(0, 0%, 88.6%);
     margin-left: 24px;
     margin-right: 24px;
-    //padding-left:24px;
 
     & > :nth-child(1) {
-      // height:50px;
       margin-bottom: 4px;
     }
   }
@@ -46,12 +41,8 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
     font-size: 16px;
     border-spacing: 0px;
     width: 100%;
-
-    //height:100%;
-
-    //margin-top: px;
-    // margin-left: 16px;
   }
+
   tr {
     height: 36px;
   }
@@ -77,15 +68,11 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
 
   .ElementsBackground {
     background-color: #fafafa;
-    //width: 100%;
     display: flex;
     border-left: 3px solid rgba(217, 217, 217, 0);
     border-radius: 8px;
-    //padding: 24px;
     padding-left: 24px;
     padding-bottom: 24px;
     padding-top: 24px;
-    //width: fit-content;
-    //height:fill;
   }
-`;
+`

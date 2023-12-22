@@ -2,7 +2,7 @@
 
 const nextConfig = {
   swcMinify: true,
-  reactStrictMode: false,
+  reactStrictMode: true,
   compiler: {
     styledComponents: true,
   },
@@ -166,8 +166,8 @@ const nextConfig = {
         destination: "/ORG/prp/rp-short-term-residential",
         permanent: true,
       },
-    ];
+    ]
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

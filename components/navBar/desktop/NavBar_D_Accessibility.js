@@ -37,7 +37,7 @@ export const NavBar_D_Accessibility = () => {
 
   const classNameToFocusLogic = "Accessibility"
   const { focusedElement } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement, setShowDropdownAccessibility, ["span", "div"], classNameToFocusLogic)
+  useCloseNotActiveElementAnymore(focusedElement, setShowDropdownAccessibility, ["span", "ul", "li"], classNameToFocusLogic)
 
   return (
     <NavBar_D_AccessibilityWrapper>
@@ -49,7 +49,14 @@ export const NavBar_D_Accessibility = () => {
         <Navbar_AccessibilitySvg />
       </span>
 
-      {showDropdownAccessibility && <NavBar_D_AccessibilityDropdown theRef={refDropdownAccessibility} />}
+      {showDropdownAccessibility && (
+        <>
+          <NavBar_D_AccessibilityDropdown
+            theRef={refDropdownAccessibility}
+            showDropdownAccessibility={showDropdownAccessibility}
+          />
+        </>
+      )}
     </NavBar_D_AccessibilityWrapper>
   )
 }

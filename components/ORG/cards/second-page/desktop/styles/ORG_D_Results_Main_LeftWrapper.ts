@@ -1,4 +1,4 @@
-import { PRIMARY } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
 import styled, { css } from "styled-components"
 
@@ -23,7 +23,15 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
 
   & > :nth-child(1) {
     position: relative;
-    background-color: white;
+
+    ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
+      LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE
+        ? css`
+            background-color: transparent;
+          `
+        : css`
+            background-color: ${NEUTRALS.OFF_WHITE};
+          `}
 
     padding-inline: 20%;
     overflow: hidden;
@@ -51,7 +59,7 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
       z-index: 3;
 
       ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
-        LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE &&
+        (LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE || LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE) &&
         css`
           ${isATLayout()}
         `}

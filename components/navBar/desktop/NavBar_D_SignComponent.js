@@ -34,7 +34,7 @@ export const NavBar_D_SignComponent = () => {
 
   const classNameToFocusLogic_LANG = "Language"
   const { focusedElement: focusedElement_LANG } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement_LANG, setShowDropdownLanguage, ["span", "div"], classNameToFocusLogic_LANG)
+  useCloseNotActiveElementAnymore(focusedElement_LANG, setShowDropdownLanguage, ["span", "div", "ul", "li"], classNameToFocusLogic_LANG)
 
   const classNameToFocusLogic_SIGN = "SIGN_IN"
   const { focusedElement: focusedElement_SIGN } = useActiveElement()
@@ -42,7 +42,9 @@ export const NavBar_D_SignComponent = () => {
 
   return (
     <>
-      <NavBar_D_SignComponentWrapper>
+      <NavBar_D_SignComponentWrapper
+        showDropdownProfile={showDropdownProfile}
+        showDropdownLanguage={showDropdownLanguage}>
         <span
           onClick={handleShowDropdownLanguage}
           onKeyDown={handleShowDropdownLanguage}

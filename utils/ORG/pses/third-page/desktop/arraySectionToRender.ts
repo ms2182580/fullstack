@@ -1,5 +1,4 @@
 import { ORG_D_Detail_Admission } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_Admission"
-import { ORG_D_Detail_ContactUs } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_Reviews } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_SchoolAcademics } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_SchoolAcademics"
@@ -20,14 +19,6 @@ export const arraySectionToRender_PSES: ArraySectionToRender_Type = [
     component: null,
     toNavbar: {
       id: arrayInnerNavBar_PSES[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-    },
-  },
-  {
-    name: ORG_D_Detail_ContactUs.name,
-    component: ORG_D_Detail_ContactUs,
-    toNavbar: {
-      id: arrayInnerNavBar_PSES[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PSES[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
     },
   },
   {
@@ -52,8 +43,6 @@ export const arraySectionToRender_PSES: ArraySectionToRender_Type = [
       id: null,
     },
   },
-
-  //Student Demographics
   {
     name: ORG_D_Detail_Reviews.name,
     component: ORG_D_Detail_Reviews,
@@ -69,6 +58,4 @@ export const arraySectionToRender_PSES: ArraySectionToRender_Type = [
       jsx: arrayInnerNavBar_PSES[4][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
     },
   },
-  //{ name: ORG_D_Detail_AditionalResources.name, //component: ORG_D_Detail_AditionalResources },
-  //{ name: ORG_D_Detail_HelpfulWebResources.name, //component: ORG_D_Detail_HelpfulWebResources },
 ]

@@ -4,7 +4,6 @@ import { NEUTRALS } from "../../../../assets/Colors"
 export const NavBar_D_SignComponentDropdownWrapper = styled.div`
   position: absolute;
   z-index: 4;
-  right: 0;
   top: calc(100% - 45px);
 
   background-color: ${NEUTRALS.OFF_WHITE};
@@ -21,7 +20,14 @@ export const NavBar_D_SignComponentDropdownWrapper = styled.div`
     align-items: center;
     justify-content: flex-start;
 
-    cursor: pointer;
+    cursor: default;
+
+    font-weight: 500;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.8;
+    }
   }
 
   & > :nth-child(1) {
@@ -35,8 +41,5 @@ export const NavBar_D_SignComponentDropdownWrapper = styled.div`
   .separator {
     border: 1px solid ${NEUTRALS.DARK_GREY};
     width: 100%;
-
-    /* width: calc(100% + 24px * 2); */
-    /* margin-left: -24px; */
   }
 `

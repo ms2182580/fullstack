@@ -4,8 +4,9 @@ import styled from "styled-components"
 export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
   position: absolute;
   z-index: 4;
-  right: 0;
   top: calc(100% - 45px);
+
+  width: 370px;
 
   background-color: ${NEUTRALS.OFF_WHITE};
   padding-top: 24px;
@@ -41,6 +42,17 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
 
     position: relative;
 
+    & > * {
+      & > * {
+        font-weight: 500;
+
+        &:hover,
+        &:focus-visible {
+          opacity: 0.8;
+        }
+      }
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -74,6 +86,7 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
 
   & > :nth-child(3) {
     padding-inline: 24px;
+
     & > :nth-child(1) {
       display: flex;
       align-items: center;
@@ -84,6 +97,11 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
         & > * {
           stroke: ${NEUTRALS.LIGHT_GREY};
         }
+      }
+
+      &:hover,
+      &:focus-visible {
+        opacity: 0.8;
       }
     }
   }

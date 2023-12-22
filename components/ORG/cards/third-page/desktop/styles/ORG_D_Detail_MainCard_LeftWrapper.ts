@@ -49,7 +49,7 @@ export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
       right: 1rem;
 
       ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
-        LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE &&
+        LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE &&
         css`
           ${isATLayout()}
         `}

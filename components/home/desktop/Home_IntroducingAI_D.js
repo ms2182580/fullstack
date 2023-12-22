@@ -1,24 +1,22 @@
 import Image from "next/image.js"
-import Home_IntroduccingAI from '../../../assets/images/Home_IntroduccingAI.png'
+import Home_IntroduccingAI from "../../../assets/images/Home_IntroduccingAI.png"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { Home_IntroducingAI_DWrapper } from "./styles/Home_IntroducingAI_DWrapper.js"
-
 
 export const Home_IntroducingAI_D = () => {
   return (
     <Home_IntroducingAI_DWrapper>
-      
-
       <div className="LEFT">
         <Image
           src={Home_IntroduccingAI}
-        //  layout="responsive"
-        //  objectFit="fill"
-        //  width={1}
-       //   height={1}          
-          alt="Dashboard of AI Inclusive" 
-               
-          
+          // layout="responsive"
+          // objectFit="contain"
+          // width={1200}
+          // height={600}
+
+          // width={1}
+          // height={0.988}
+          alt="Dashboard of AI Inclusive"
         />
       </div>
 
@@ -35,10 +33,6 @@ export const Home_IntroducingAI_D = () => {
           <span>See more</span>
         </button>
       </div>
-
-      
-      
-      
     </Home_IntroducingAI_DWrapper>
   )
 }

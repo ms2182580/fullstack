@@ -1,39 +1,16 @@
-import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js";
-import { useEffect, useRef, useState } from "react";
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js";
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js";
-import { DATA_PAT_D } from "@/utils/ORG/pat/DATA_PAT_D";
-import { ORG_D_Detail_SchoolAcademicsWrapper } from "./styles/ORG_D_Detail_SchoolAcademicsWrapper.js";
-import imageGraph from "@/assets/images/ORG/special-education-schools/pieGraph.png";
-import bar1 from "@/assets/images/ORG/special-education-schools/bar_AllStudents.png";
-import bar2 from "@/assets/images/ORG/special-education-schools/bar_StudentsDIsabilities.png";
-import Image from "next/image";
-
-
+/* import bar1 from "@/assets/images/ORG/special-education-schools/bar_AllStudents.png"
+import bar2 from "@/assets/images/ORG/special-education-schools/bar_StudentsDIsabilities.png"
+import imageGraph from "@/assets/images/ORG/special-education-schools/pieGraph.png" */
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
+import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { ORG_D_Detail_SchoolAcademicsWrapper } from "./styles/ORG_D_Detail_SchoolAcademicsWrapper"
 
 export const ORG_D_Detail_SchoolAcademics = () => {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData();
-
-  const { card } = thirdpageDataORG;
-
-  const [showAll, setShowAll] = useState(false);
-  const toMoveTheView = useRef();
-
-  let isSelected = true;
-
-  const [howMuchDisplay, setHowMuchDisplay] = useState(1);
-
-  useEffect(() => {
-    if (!isSelected) {
-      setHowMuchDisplay(1);
-    } else {
-      setHowMuchDisplay(DATA_PAT_D.length);
-    }
-  }, [isSelected]);
-
   return (
     <>
-      <ORG_D_Detail_SchoolAcademicsWrapper ref={toMoveTheView}>
+      <ORG_D_Detail_SchoolAcademicsWrapper
+      // style={{ border: "20px black solid", backgroundColor: "green" }}
+      >
         <header>
           <H3>School Academics</H3>
         </header>
@@ -41,20 +18,19 @@ export const ORG_D_Detail_SchoolAcademics = () => {
         <section className="BorderSection">
           <H4>
             Ungraded Curriculum &nbsp;{" "}
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="17"
               viewBox="0 0 16 17"
-              fill="none"
-            >
+              fill="none">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M8 16.5C12.4183 16.5 16 12.9183 16 8.5C16 4.08172 12.4183 0.5 8 0.5C3.58172 0.5 0 4.08172 0 8.5C0 12.9183 3.58172 16.5 8 16.5ZM5.21928 6.24935C5.20735 6.21706 5.20193 6.18258 5.20334 6.14804C5.30144 4.33414 6.73469 3.70312 8.04299 3.70312C9.48553 3.70312 10.8031 4.48387 10.8031 6.09992C10.8031 7.25393 10.1474 7.80366 9.51857 8.29885C8.75755 8.89671 8.47565 9.12024 8.47565 9.88815V10.0005C8.47565 10.0714 8.44845 10.1394 8.40004 10.1895C8.35163 10.2397 8.28596 10.2678 8.2175 10.2678H7.38006C7.31231 10.2678 7.24726 10.2403 7.19897 10.191C7.15067 10.1418 7.123 10.0749 7.12191 10.0047L7.11881 9.77264C7.07958 8.7812 7.62995 8.1705 8.32489 7.64751C8.93515 7.17264 9.32135 6.86034 9.32135 6.1812C9.32135 5.29885 8.67287 4.932 7.96451 4.932C7.13637 4.932 6.6717 5.44323 6.57876 6.14484C6.56018 6.29136 6.44659 6.41222 6.30409 6.41222H5.4522C5.41883 6.41283 5.38569 6.40637 5.35482 6.39323C5.32395 6.38008 5.296 6.36054 5.27269 6.3358C5.24938 6.31105 5.2312 6.28163 5.21928 6.24935ZM7.85402 13.3031C7.24995 13.3031 6.8111 12.8817 6.8111 12.3117C6.8111 11.7213 7.24995 11.3063 7.85299 11.3063C8.48184 11.3063 8.91553 11.7213 8.91553 12.3117C8.91553 12.8817 8.48288 13.3031 7.85402 13.3031Z"
                 fill="#3366CC"
               />
-            </svg>
+            </svg> */}
           </H4>
 
           <div className="sectionRow">
@@ -84,7 +60,11 @@ export const ORG_D_Detail_SchoolAcademics = () => {
               </thead>
             </table>
 
-            <Image src={imageGraph} alt="image2" objectFit="contain" />
+            {/* <Image
+              src={imageGraph}
+              alt="image2"
+              objectFit="contain"
+            /> */}
           </div>
         </section>
 
@@ -93,25 +73,30 @@ export const ORG_D_Detail_SchoolAcademics = () => {
 
           <P>
             <ul className="ulNoPoint">
-              <li>
-                Test scores for the school are above the state average that are
-                given once a year.
-              </li>
+              <li>Test scores for the school are above the state average that are given once a year.</li>
             </ul>
           </P>
           <br></br>
 
           <div className="TestScoresRow">
             <span>All Students</span>{" "}
-            <Image src={bar1} alt="image2" objectFit="contain" />
+            {/* <Image
+              src={bar1}
+              alt="image2"
+              objectFit="contain"
+            /> */}
           </div>
 
           <div className="TestScoresRow">
             <span>Students with disabilities</span>{" "}
-            <Image src={bar2} alt="image2" objectFit="contain" />
+            {/* <Image
+              src={bar2}
+              alt="image2"
+              objectFit="contain"
+            /> */}
           </div>
         </section>
       </ORG_D_Detail_SchoolAcademicsWrapper>
     </>
-  );
-};
+  )
+}

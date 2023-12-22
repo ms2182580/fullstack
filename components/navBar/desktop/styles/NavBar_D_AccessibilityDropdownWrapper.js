@@ -1,16 +1,17 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
-export const NavBar_D_AccessibilityDropdownWrapper = styled.div`
+export const NavBar_D_AccessibilityDropdownWrapper = styled.ul`
   position: absolute;
   top: calc(100% + 10px);
   left: -1000%;
   z-index: 4;
 
-  /* padding: 24px 0px; */
   padding-top: 24px;
-  display: flex;
-  flex-direction: column;
+  padding-bottom: 24px;
+
+  display: grid;
+
   gap: 24px;
   width: max-content;
 
@@ -22,24 +23,24 @@ export const NavBar_D_AccessibilityDropdownWrapper = styled.div`
 
   & > * {
     border: 1px solid transparent;
-    cursor: pointer;
 
     color: ${NEUTRALS.LIGHT_GREY};
 
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     margin-inline: 24px;
-    padding-bottom: 24px;
 
     & > :nth-child(2) {
       color: ${NEUTRALS.DARK_GREY};
       font-weight: 500;
     }
-  }
 
-  & > *:not(:last-child) {
-    border-bottom: 1px solid ${NEUTRALS.DARK_GREY};
+    &:hover,
+    &:focus-visible {
+      opacity: 0.8;
+    }
   }
 `

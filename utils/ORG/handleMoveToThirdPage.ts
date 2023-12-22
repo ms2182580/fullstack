@@ -20,6 +20,7 @@ export const handleMoveToThirdPage = ({ event, categoryPosition, subcategoryPosi
 
   const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
 
+  // const toWhere = `/${allRoutes.ORG}/${allRoutes.detail}`
   const toWhere = `/${allRoutes.ORG}/${allRoutes.detail}/${specificDetail}`
 
   push(

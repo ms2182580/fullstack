@@ -27,7 +27,7 @@ export const PAT_SPECIFIC_DATA: Structure_SpecificData = {
   BUTTON_TO_THIRDPAGE_NAME: DATA_PAT_D_KEYS.BUTTON_TO_THIRDPAGE_NAME_VALUE,
   SVG: ORG_D_Results_ATSvg,
   BRAND: "Permobil",
-  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE,
+  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE,
 }
 
 export const enum AT_WCMD_D_SEARCH_VALUES {
@@ -38,7 +38,13 @@ export const AT_WCMD_SPECIFIC_DATA: Structure_SpecificData = {
   BUTTON_TO_THIRDPAGE_NAME: "where to buy",
   SVG: ORG_D_Results_WheretobuySvg,
   BRAND: AT_WCMD_D_SEARCH_VALUES.BRAND,
-  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_LIKE,
+  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE,
+}
+
+export const AT_ACS_SPECIFIC_DATA: Structure_SpecificData = {
+  SVG: ORG_D_Results_WheretobuySvg,
+  BRAND: AT_WCMD_D_SEARCH_VALUES.BRAND,
+  LAYOUT_RESULTS_MAIN_CARD: LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE,
 }
 
 export const DATA_PAT_D = [
@@ -146,7 +152,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "Proloquo is a new, groundbreaking AAC app designed for nonspeaking children ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_ACS_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT5,
@@ -160,7 +166,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This user-friendly app makes communication more intuitive and ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_ACS_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_AT6,
@@ -174,7 +180,7 @@ export const DATA_PAT_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "This app is great for people who want maximum flexibility. Out of the box, ...",
       goToThirdPage: "",
-      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: PAT_SPECIFIC_DATA,
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: AT_ACS_SPECIFIC_DATA,
     },
   ],
   [

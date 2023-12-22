@@ -27,39 +27,11 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
     }
   }, [isSelected])
 
-  const { pathname, push } = useRouter()
+  const { push } = useRouter()
   const { setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
 
   const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
-
-  // const handleMoveToThirdPage = ({ event, categoryPosition, subcategoryPosition, resourcePosition }) => {
-  //   const { theActualFilter, subcategory, rightCard, leftCard, subcategorySpecificData, subFolder } = getDataToMoveView({ categoryPosition, subcategoryPosition })
-
-  //   const stringForBreadcrumbs = subcategory[0]
-  //   const cardData = subcategory.slice(1)
-
-  //   const thirdPageData_Card = cardData[resourcePosition]
-  //   const thirdPageData_Card_Left = leftCard[resourcePosition]
-  //   const thirdPageData_Card_Right = rightCard[resourcePosition]
-  //   const fullName = cardData[resourcePosition].fullName
-
-  //   const allDataToThirdPage = formatDataToThirdPage(thirdPageData_Card, thirdPageData_Card_Left, thirdPageData_Card_Right, fullName, subcategorySpecificData)
-
-  //   setThirdpageDataORG(allDataToThirdPage)
-
-  //   const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
-
-  //   const toWhere = `${allRoutes.ORG}/${allRoutes.detail}/${specificDetail}`
-
-  //   push(
-  //     {
-  //       pathname: toWhere,
-  //       query: { title: stringForBreadcrumbs },
-  //     },
-  //     toWhere,
-  //   )
-  // }
 
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>

@@ -16,11 +16,19 @@ const enum DefaultValue_InnerData {
   about = "about",
 }
 
+export const enum ArraySection_KEYS {
+  NAME = "name",
+  COMPONENT = "component",
+  TO_NAVBAR = "toNavbar",
+  ID = "id",
+  JSX = "jsx",
+}
+
 export type ArraySectionToRender_Type = {
-  name: string | null
-  component: FC | null
-  toNavbar?: {
-    id: string | DefaultValue_InnerData.about | null
-    jsx?: string
+  [ArraySection_KEYS.NAME]: string | null
+  [ArraySection_KEYS.COMPONENT]: FC | null
+  [ArraySection_KEYS.TO_NAVBAR]?: {
+    [ArraySection_KEYS.ID]: string | DefaultValue_InnerData.about | null
+    [ArraySection_KEYS.JSX]?: string
   }
 }[]

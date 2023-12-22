@@ -1,36 +1,23 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
-export const Home_IntroducingAI_DWrapper = styled.div`
- //padding-inline: clamp(8px, 20vw - 180px, 120px);
+export const Home_IntroducingAI_DWrapper = styled.article`
   padding-top: 300px;
   padding-bottom: 300px;
   background-color: #030b40;
 
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  grid-template-rows: 1fr;
-
-  grid-auto-flow: column;
   gap: 60px;
   color: white;
 
-  
-
-
-
   display: flex;
   align-items: center;
- justify-content: center;
-
-
+  justify-content: center;
 
   .LEFT {
-  // align-self: flex-end;
-  //display: grid;
+    // align-self: flex-end;
+    //display: grid;
     align-self: center;
-    display:block;
-    
+    display: block;
   }
 
   .RIGHT {

@@ -1,10 +1,14 @@
-import styled from "styled-components";
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors";
+import styled from "styled-components"
+import { PRIMARY } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+
+  /* background-color: yellow;
+  filter: sepia(80%);
+  border: 20px solid black; */
 
   header {
     padding: 24px;
@@ -18,13 +22,17 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
     flex-direction: column;
     padding-bottom: 38px;
     padding-top: 24px;
-    // border-bottom: 1px solid hsl(0, 0%, 88.6%);
     margin-left: 24px;
     margin-right: 24px;
-    //padding-left:24px;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    & > * {
+      grid-column: span 7;
+    }
 
     & > :nth-child(1) {
-      // height:50px;
       margin-bottom: 4px;
     }
   }
@@ -37,6 +45,17 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
 
   .BorderSection {
     border-bottom: 1px solid hsl(0, 0%, 88.6%);
+
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 70%;
+    }
   }
 
   li {
@@ -56,14 +75,8 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
     font-size: 16px;
     border-spacing: 0px;
     width: 50%;
-    //padding-top:19px;
     margin-top: 19px;
     margin-left: 16px;
-
-    & > :last-child {
-      //text-align: right;
-      // padding:13px;
-    }
   }
   tr {
     height: 36px;
@@ -99,4 +112,4 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.div`
   .ShadowTable {
     box-shadow: 0px 3.6px 3.6px 0px rgba(0, 0, 0, 0.25);
   }
-`;
+`

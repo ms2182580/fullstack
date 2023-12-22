@@ -1,3 +1,4 @@
+import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const NavBar_D_SignComponentWrapper = styled.div`
@@ -15,5 +16,28 @@ export const NavBar_D_SignComponentWrapper = styled.div`
     flex-direction: row;
     cursor: pointer;
     position: relative;
+    &:hover,
+    &:focus-visible {
+      opacity: 0.8;
+    }
+  }
+
+  & > :nth-child(1) {
+    opacity: ${({ showDropdownLanguage }) => showDropdownLanguage && "0.8"};
+    & > * {
+      & > * {
+        fill: ${({ showDropdownLanguage }) => showDropdownLanguage && `${PRIMARY.PRIMARY_CTA}`};
+      }
+    }
+  }
+
+  & > :nth-child(2) {
+    opacity: ${({ showDropdownProfile }) => showDropdownProfile && "0.8"};
+
+    & > * {
+      & > * {
+        fill: ${({ showDropdownProfile }) => showDropdownProfile && `${PRIMARY.PRIMARY_CTA}`};
+      }
+    }
   }
 `
