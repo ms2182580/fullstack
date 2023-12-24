@@ -1,6 +1,7 @@
 import { Breadcrumbs_D } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs_D"
 import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
 import { useCheckBreadcrumbs } from "@/utils/ORG/useCheckBreadcrumbs"
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { NavBar_D_WriteAReviewSvg, SearchSVG } from "../../../../../assets/Icons"
@@ -26,7 +27,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
     <ORG_D_Detail_HeaderWrapper>
       <Breadcrumbs_D
         whichDisplay={[
-          ["Resource Directory", "ORG"],
+          ["Resource Directory", `${ALL_ROUTES.ORG}`],
           [`${titleFormatted}`, `${theURLFormatted}`],
           [`${formattedActualRoute}`, ""],
         ]}

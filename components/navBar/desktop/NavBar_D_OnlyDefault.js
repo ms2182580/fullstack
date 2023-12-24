@@ -2,6 +2,7 @@ import { ChatAILogo } from "@/assets/Icons/index.js"
 import { NavBar_D_InfoDropdown } from "@/components/navBar/desktop/NavBar_D_InfoDropdown.js"
 import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent"
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"
 import { useOutsideHide } from "@/utils/useOutsideHide.js"
@@ -72,9 +73,9 @@ export const NavBar_D_OnlyDefault = () => {
           </span>
 
           <ul>
-            <li className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
+            <li className={/[org]\/\w|[org]/.test(route.pathname) ? "active" : null}>
               <H4>
-                <Link href="/ORG">Resource Directory</Link>
+                <Link href={`/${ALL_ROUTES.ORG}`}>Resource Directory</Link>
               </H4>
             </li>
             <li

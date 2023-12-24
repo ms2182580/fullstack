@@ -1,5 +1,6 @@
 import { DATA_ORG_CheckPaths_Search_D, ROUTER_PUSH_SEARCH } from "@/utils/ORG/DATA_ORG_CheckPaths_Search_D.js"
 import { DATA_ORG_D } from "@/utils/ORG/DATA_ORG_D"
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { Fragment, useRef, useState } from "react"
 import { NavBar_D_WriteAReviewSvg, Navbar_D_AccessibilityModeSvg } from "../../../assets/Icons/index.js"
@@ -86,7 +87,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({ theRef, setShowDropdown })
 
         router.push(
           {
-            pathname: `/ORG`,
+            pathname: `/${ALL_ROUTES.ORG}`,
             query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].nameJSX },
           },
           `/ORG`,

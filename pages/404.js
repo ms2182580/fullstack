@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { BackArrow } from "../assets/Icons"
@@ -21,10 +22,10 @@ const Custom404 = () => {
 
       router.push(
         {
-          pathname: `/ORG`,
+          pathname: `/${ALL_ROUTES.ORG}`,
           query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].componentName },
         },
-        `/ORG`,
+        `/${ALL_ROUTES.ORG}`,
       )
     } else {
       setCheckSomePath(true)

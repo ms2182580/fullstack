@@ -1,5 +1,6 @@
 import { INDEX_ORG_Detail_D } from "@/components/ORG/cards/third-page/desktop/INDEX_ORG_Detail_D"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
@@ -10,7 +11,7 @@ export default function ORG_Detail() {
 
   useEffect(() => {
     if (thirdpageDataORG === "") {
-      push("/ORG")
+      push(`/${ALL_ROUTES.ORG}`)
       return
     }
   }, [])

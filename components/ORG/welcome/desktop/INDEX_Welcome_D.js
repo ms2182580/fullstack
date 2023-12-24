@@ -1,4 +1,5 @@
 import { KEYS_VALUES_useSessionStorage, useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { Fragment, useEffect, useState } from "react"
 import { Welcome_D_0 } from "./Welcome_D_0"
@@ -46,7 +47,7 @@ export const INDEX_Welcome_D = () => {
        * This prevent the user of leave the page if the codition «taskCompleted» is false &&
        * If the user do not reached the typed-flow yet */
       if (!taskCompleted && !reachTypedFlow && !cancelWelcomePath) {
-        router.push("/ORG/welcome")
+        router.push(`/${ALL_ROUTES.ORG}/${ALL_ROUTES.WELCOME}`)
       }
     }
   }, [taskCompleted])
@@ -58,7 +59,7 @@ export const INDEX_Welcome_D = () => {
     if (taskCompleted && !reachTypedFlow) {
       setActualSessionStorage(KEYS_VALUES_useSessionStorage.SESSION_STORAGE_SECOND)
 
-      router.push("/ORG/typed-flow")
+      router.push(`/${ALL_ROUTES.ORG}/typed-flow`)
     }
   }, [taskCompleted])
 
@@ -68,7 +69,7 @@ export const INDEX_Welcome_D = () => {
      * If the user already reached once typed-flow */
 
     if (reachTypedFlow) {
-      router.push("/ORG/typed-flow")
+      router.push(`/${ALL_ROUTES.ORG}/typed-flow`)
     }
   }, [reachTypedFlow])
 

@@ -36,8 +36,6 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
     return { renderSections, arrayInnerNavBar, tooltip, layoutMainCardRight, howIsMap }
   }, [thirdpageDataORG])
 
-  /* console.log("🔰getAllSpecificThirdPageData:", getAllSpecificThirdPageData) */
-
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>

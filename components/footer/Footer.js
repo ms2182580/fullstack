@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
@@ -13,20 +14,20 @@ export const Footer = () => {
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
 
-  const FooterMainContent_SandP_dataToShow = [{ title: "Resource Directory", route: "/ORG" }]
+  const FooterMainContent_SandP_dataToShow = [{ title: "Resource Directory", route: `/${ALL_ROUTES.ORG}` }]
 
   const FooterMainContent_LandG_dataToShow = [
     { title: "I/DD Community Classes", route: "/404" },
-    { title: "Family Learning Center", route: "/404" }
+    { title: "Family Learning Center", route: "/404" },
   ]
   const FooterMainContent_GH_dataToShow = [
     { title: "Path to Services", route: "/404" },
     { title: "Help Center", route: "/404" },
-    { title: "Not from NYC?", route: "/404" }
+    { title: "Not from NYC?", route: "/404" },
   ]
   const FooterMainContent_IHCBS_dataToShow = [
     { title: "Community Classes", route: "/ORG" },
-    { title: "DLS", route: "/404" }
+    { title: "DLS", route: "/404" },
   ]
   const FooterMainContent_SAFETY_dataToShow = [{ title: "Safety In The Community", route: "/404" }]
 

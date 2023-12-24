@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { checkRouteThirdPage } from "../../../../../utils/ORG/checkRouteThirdPage"
@@ -24,7 +25,7 @@ export const ORG_D_Detail_BreadcrumbsLastUpdated = ({ thirdpageDataORG }) => {
       <div>
         <Breadcrumbs_D
           whichDisplay={[
-            ["Resource Directory", "ORG"],
+            ["Resource Directory", `${ALL_ROUTES.ORG}`],
             [`${titleFormatted}`, `${theURLFormatted}`],
             [`${formattedActualRoute}`, ""],
           ]}

@@ -1,7 +1,7 @@
 import { formatDataToThirdPage } from "./formatDataToThirdPage"
 import { formatDataToURLOnThirdPage } from "./formatDataToURLOnThirdPage"
 import { getDataToMoveView } from "./getDataToMoveView"
-import { allRoutes } from "./useCheckSlug_ORG"
+import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 export const handleMoveToThirdPage = ({ event, categoryPosition, subcategoryPosition, resourcePosition, setThirdpageDataORG, push }) => {
   const { theActualFilter, subcategory, rightCard, leftCard, subcategorySpecificData, subFolder } = getDataToMoveView({ categoryPosition, subcategoryPosition })
@@ -20,8 +20,7 @@ export const handleMoveToThirdPage = ({ event, categoryPosition, subcategoryPosi
 
   const specificDetail = formatDataToURLOnThirdPage({ stringToFormat: thirdPageData_Card.title })
 
-  // const toWhere = `/${allRoutes.ORG}/${allRoutes.detail}`
-  const toWhere = `/${allRoutes.ORG}/${allRoutes.detail}/${specificDetail}`
+  const toWhere = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.DETAIL}/${specificDetail}`
 
   push(
     {
