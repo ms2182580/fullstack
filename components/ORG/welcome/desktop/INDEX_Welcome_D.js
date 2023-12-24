@@ -1,5 +1,5 @@
 import { KEYS_VALUES_useSessionStorage, useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
-import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { Fragment, useEffect, useState } from "react"
 import { Welcome_D_0 } from "./Welcome_D_0"

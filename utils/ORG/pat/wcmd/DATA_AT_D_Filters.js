@@ -1,5 +1,5 @@
-import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox2"
-import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2"
+import { ORG_Filters_D_Checkbox2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_Range2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range2"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
 const DATA_AT_D_Filters = {

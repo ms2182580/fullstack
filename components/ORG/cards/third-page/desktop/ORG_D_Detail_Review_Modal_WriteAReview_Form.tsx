@@ -1,5 +1,5 @@
-import { Checkbox } from "@/components/ORG/inputs/desktop/Checkbox"
-import { useCheckBreadcrumbs } from "@/utils/ORG/useCheckBreadcrumbs"
+import { Checkbox } from "@/components/org/inputs/desktop/Checkbox"
+import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import {

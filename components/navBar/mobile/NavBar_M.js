@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"

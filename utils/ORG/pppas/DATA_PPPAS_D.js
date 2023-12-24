@@ -1,6 +1,6 @@
-import ORG_PPAS1 from "../../../assets/images/ORG/private-public-agencies/ORG_PPAS1.png"
-import ORG_PPAS2 from "../../../assets/images/ORG/private-public-agencies/ORG_PPAS2.png"
-import ORG_PPAS3 from "../../../assets/images/ORG/private-public-agencies/ORG_PPAS3.png"
+import ORG_PPAS1 from "../../../assets/images/org/private-public-agencies/ORG_PPAS1.png"
+import ORG_PPAS2 from "../../../assets/images/org/private-public-agencies/ORG_PPAS2.png"
+import ORG_PPAS3 from "../../../assets/images/org/private-public-agencies/ORG_PPAS3.png"
 import { generateRandomNumber } from "../../generateRandomNumber"
 
 export const DATA_PPPAS_D = [
@@ -11,7 +11,7 @@ export const DATA_PPPAS_D = [
       title: "Housing Advocacy for People with Disabilities ",
       fullName: {
         first: "Housing Advocacy for People with Disabilities",
-        last: ""
+        last: "",
       },
       subtitle: "Housing Organization",
       city: "Brooklyn, NY",
@@ -25,7 +25,7 @@ export const DATA_PPPAS_D = [
       title: "Housing Works",
       fullName: {
         first: "Housing Advocacy for People with Disabilities",
-        last: ""
+        last: "",
       },
       subtitle: "Housing Nonprofit Organization",
       city: "Brooklyn, NY",
@@ -39,7 +39,7 @@ export const DATA_PPPAS_D = [
       title: "City Harvest",
       fullName: {
         first: "City Harvest",
-        last: ""
+        last: "",
       },
       subtitle: "Food Rescue Organization",
       city: "Westchester, NY",
@@ -56,7 +56,7 @@ export const DATA_PPPAS_D = [
       title: "Housing Advocacy for People with Disabilities ",
       fullName: {
         first: "Housing Advocacy for People with Disabilities",
-        last: ""
+        last: "",
       },
       subtitle: "Housing Organization",
       city: "Brooklyn, NY",
@@ -70,7 +70,7 @@ export const DATA_PPPAS_D = [
       title: "Housing Works",
       fullName: {
         first: "Housing Works",
-        last: ""
+        last: "",
       },
       subtitle: "Housing Nonprofit Organization",
       city: "Brooklyn, NY",
@@ -84,7 +84,7 @@ export const DATA_PPPAS_D = [
       title: "City Harvest",
       fullName: {
         first: "City Harvest",
-        last: ""
+        last: "",
       },
       subtitle: "Food Rescue Organization",
       city: "Westchester, NY",
@@ -101,7 +101,7 @@ export const DATA_PPPAS_D = [
       title: "Housing Advocacy for People with Disabilities ",
       fullName: {
         first: "Housing Advocacy for People with Disabilities",
-        last: ""
+        last: "",
       },
       subtitle: "Housing Organization",
       city: "Brooklyn, NY",
@@ -115,7 +115,7 @@ export const DATA_PPPAS_D = [
       title: "Housing Works",
       fullName: {
         first: "Housing Works",
-        last: ""
+        last: "",
       },
       subtitle: "Housing Nonprofit Organization",
       city: "Brooklyn, NY",
@@ -129,7 +129,7 @@ export const DATA_PPPAS_D = [
       title: "City Harvest",
       fullName: {
         first: "City Harvest",
-        last: ""
+        last: "",
       },
       subtitle: "Food Rescue Organization",
       city: "Westchester, NY",

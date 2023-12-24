@@ -1,5 +1,5 @@
 import ORG_D_Detail_Review from "@/assets/Icons/ORG_D_Detail_Review.png"
-import { PatternStars } from "@/components/ORG/stars-rating-review/PatternsStars.js"
+import { PatternStars } from "@/components/org/stars-rating-review/PatternsStars.js"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_ReviewsUsersName } from "@/utils/ORG_ReviewsUsersName.js"
 import { ORG_ST_Review_Months } from "@/utils/ORG_ST_Review_D.js"

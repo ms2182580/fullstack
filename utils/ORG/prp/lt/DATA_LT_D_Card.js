@@ -1,4 +1,4 @@
-import { Layout_MainCardRight_VALUES } from "@/components/ORG/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 import { arraySectionToRender_PRP } from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PRP } from "../third-page/desktop/tooltipToRender"

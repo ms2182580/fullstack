@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { NavBar_D_OnlyDefault } from "./NavBar_D_OnlyDefault.js"
 import { NavBar_D_OnlyHome } from "./NavBar_D_OnlyHome.js"
@@ -14,7 +15,7 @@ export const INDEX_NavBar_D = () => {
     )
   }
 
-  if (route.pathname !== "/" && route.pathname === "/ORG") {
+  if (route.pathname !== "/" && route.pathname === `/${ALL_ROUTES.ORG}`) {
     return (
       <>
         <NavBar_D_OnlyORG />
@@ -22,7 +23,7 @@ export const INDEX_NavBar_D = () => {
     )
   }
 
-  if (route.pathname !== "/" && route.pathname !== "/ORG") {
+  if (route.pathname !== "/" && route.pathname !== `/${ALL_ROUTES.ORG}`) {
     return (
       <>
         <NavBar_D_OnlyDefault />

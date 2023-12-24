@@ -11,7 +11,7 @@ export const FooterSignupLoginButtons = () => {
   // const [shouldTab, setShouldTab] = useState(0)
 
   // useEffect(() => {
-  //   if (ORGShowFullMapFilter && pathname === "/ORG/SpeechTherapists") {
+  //   if (ORGShowFullMapFilter && pathname === "/org/SpeechTherapists") {
   //     setShouldTab(-1)
   //   } else {
   //     setShouldTab(0)

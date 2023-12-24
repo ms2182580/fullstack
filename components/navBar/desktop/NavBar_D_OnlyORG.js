@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import Link from "next/link.js"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"

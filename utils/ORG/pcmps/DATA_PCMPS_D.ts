@@ -1,7 +1,7 @@
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
-import ORG_CMPS1 from "../../../assets/images/ORG/camps/ORG_CMPS1.png"
-import ORG_CMPS2 from "../../../assets/images/ORG/camps/ORG_CMPS2.png"
-import ORG_CMPS3 from "../../../assets/images/ORG/camps/ORG_CMPS3.png"
+import ORG_CMPS1 from "../../../assets/images/org/camps/ORG_CMPS1.png"
+import ORG_CMPS2 from "../../../assets/images/org/camps/ORG_CMPS2.png"
+import ORG_CMPS3 from "../../../assets/images/org/camps/ORG_CMPS3.png"
 
 export const DATA_PCMPS_D = [
   [

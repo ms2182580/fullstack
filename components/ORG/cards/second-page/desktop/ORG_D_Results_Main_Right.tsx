@@ -1,11 +1,11 @@
-import { Highlights_2_D } from "@/components/ORG/highlights/Highlights_2_D"
-import { Highlights_D } from "@/components/ORG/highlights/Highlights_D"
-import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
+import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
+import { Highlights_D } from "@/components/org/highlights/Highlights_D"
+import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
 import { capitalizeWords } from "@/utils/capitalizeWords"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { ORG_D_Results_Main_RightWrapper } from "./styles/ORG_D_Results_Main_RightWrapper"
 
 export const ORG_D_Results_Main_Right = ({ renderThisCard, renderThisFilter }) => {

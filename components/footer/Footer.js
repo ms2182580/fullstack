@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
@@ -26,7 +26,7 @@ export const Footer = () => {
     { title: "Not from NYC?", route: "/404" },
   ]
   const FooterMainContent_IHCBS_dataToShow = [
-    { title: "Community Classes", route: "/ORG" },
+    { title: "Community Classes", route: `/${ALL_ROUTES.ORG}` },
     { title: "DLS", route: "/404" },
   ]
   const FooterMainContent_SAFETY_dataToShow = [{ title: "Safety In The Community", route: "/404" }]
@@ -37,7 +37,7 @@ export const Footer = () => {
   return (
     <>
       <FooterWrapper
-        ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/ORG/speech-therapists"}
+        ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/org/speech-therapists"}
         mustShowFiltersMobile={mustShowFiltersMobile}>
         <H2
           bold

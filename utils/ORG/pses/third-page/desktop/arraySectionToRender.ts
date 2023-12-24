@@ -1,9 +1,9 @@
-import { ORG_D_Detail_Admission } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_Admission"
-import { ORG_D_Detail_FAQS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_Reviews } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_Reviews"
-import { ORG_D_Detail_SchoolAcademics } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_SchoolAcademics"
-import { ORG_D_Detail_StudentDemographics } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_StudentDemographics"
-import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
+import { ORG_D_Detail_Admission } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Admission"
+import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
+import { ORG_D_Detail_SchoolAcademics } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_SchoolAcademics"
+import { ORG_D_Detail_StudentDemographics } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_StudentDemographics"
+import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PSES: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "about" },

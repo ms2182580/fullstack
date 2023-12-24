@@ -1,6 +1,6 @@
-/* import bar1 from "@/assets/images/ORG/special-education-schools/bar_AllStudents.png"
-import bar2 from "@/assets/images/ORG/special-education-schools/bar_StudentsDIsabilities.png"
-import imageGraph from "@/assets/images/ORG/special-education-schools/pieGraph.png" */
+/* import bar1 from "@/assets/images/org/special-education-schools/bar_AllStudents.png"
+import bar2 from "@/assets/images/org/special-education-schools/bar_StudentsDIsabilities.png"
+import imageGraph from "@/assets/images/org/special-education-schools/pieGraph.png" */
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_SchoolAcademicsWrapper } from "./styles/ORG_D_Detail_SchoolAcademicsWrapper"

@@ -1,4 +1,4 @@
-import { INDEX_Welcome_D } from "@/components/ORG/welcome/desktop/INDEX_Welcome_D"
+import { INDEX_Welcome_D } from "@/components/org/welcome/desktop/INDEX_Welcome_D"
 
 /* 
 !FH0

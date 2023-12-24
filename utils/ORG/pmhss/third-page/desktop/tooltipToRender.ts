@@ -1,4 +1,4 @@
-import { Tooltip_INTERFACE, Tooltip_VALUES, TypeOfTooltipSVG_LIKE } from "@/utils/ORG/third-page/tooltip"
+import { Tooltip_INTERFACE, Tooltip_VALUES, TypeOfTooltipSVG_LIKE } from "@/utils/org/third-page/tooltip"
 
 export const tooltipToRender_PMHSS: Tooltip_INTERFACE = {
   WHAT_DISPLAY: Tooltip_VALUES.CUSTOM,

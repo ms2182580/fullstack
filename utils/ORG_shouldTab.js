@@ -10,7 +10,7 @@ export const useShouldTab = () => {
   const [shouldTab, setShouldTab] = useState(0)
 
   useEffect(() => {
-    if (ORGShowFullMapFilter && pathname === "/ORG/speech-therapists") {
+    if (ORGShowFullMapFilter && pathname === "/org/speech-therapists") {
       setShouldTab(-1)
     } else {
       setShouldTab(0)

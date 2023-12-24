@@ -1,85 +1,75 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
-import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg"
 
 export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  
 
-  .AdvocacyGroupsContainer{
-    margin-left:24px;
-    padding-bottom:80px;
-   
-   
-    & > :nth-child(1){
+  .AdvocacyGroupsContainer {
+    margin-left: 24px;
+    padding-bottom: 80px;
 
+    & > :nth-child(1) {
     }
   }
 
-  .AdvocacyGroupsItems{
+  .AdvocacyGroupsItems {
     display: flex;
-    flex-direction:row;
-    gap:53px;
-
+    flex-direction: row;
+    gap: 53px;
   }
 
-  .ViewAllLink{
+  .ViewAllLink {
     display: flex;
-    
+
     //margin:right !important;
     //background-color:black;
     //padding-left:120px;
-   align-items: flex-end;
+    align-items: flex-end;
   }
 
-  .AdvocacyCard{
+  .AdvocacyCard {
     display: flex;
     flex-direction: column;
-   gap:16px;
-   
-   
+    gap: 16px;
   }
 
-  .CardsTitle{
-    padding-bottom:32px;
+  .CardsTitle {
+    padding-bottom: 32px;
+  }
 
-  };
-
-  .ImageContainer{
+  .ImageContainer {
     display: flex;
-    border-radius:8px;
+    border-radius: 8px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-   margin-right: auto;
+    margin-right: auto;
     flex-wrap: wrap;
-    position:relative;
+    position: relative;
     margin: 0 auto;
-    
-   // background-image:{image2};
-//display:grid;
-//grid-template-areas:"overlay";
+
+    // background-image:{image2};
+    //display:grid;
+    //grid-template-areas:"overlay";
   }
 
-  .Imagen{
-    border-radius:8px;   
+  .Imagen {
+    border-radius: 8px;
     width: 100%;
-  height: 100%;
-  margin-top:-2px;
-  //position: absolute !important;
-  //object-fit: cover;
-  //grid-area:overlay;
-  
+    height: 100%;
+    margin-top: -2px;
+    //position: absolute !important;
+    //object-fit: cover;
+    //grid-area:overlay;
   }
 
-  .IconoImagen{
-  //position: absolute !important;
-  bottom: 0;
-  left: 0;
-  position:relative;
-  //grid-area:overlay;
+  .IconoImagen {
+    //position: absolute !important;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    //grid-area:overlay;
   }
-
 
   & > :nth-child(1),
   & > :nth-child(2),
@@ -87,11 +77,9 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
   & > :last-child {
     padding-left: 32px;
     padding-right: 55px;
-    
   }
-  
+
   & > :nth-child(1) {
-        
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
@@ -105,11 +93,10 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
     display: flex;
     position: relative;
     margin-bottom: 80px;
-    margin-top:80px;
-    gap:25%;
+    margin-top: 80px;
+    gap: 25%;
 
     & > :nth-child(1) {
-      
       position: absolute;
       left: 43px;
       top: 0;
@@ -118,30 +105,23 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
     }
 
     & > :nth-child(2) {
-      
       width: 100%;
       padding: 10px 10px 10px 60px;
 
       background: ${NEUTRALS.OFF_WHITE};
       border: 1px solid ${NEUTRALS.BLACK};
       border-radius: 16px;
-border: 0.5px solid var(--Black, #00080B);
+      border: 0.5px solid var(--Black, #00080b);
 
       &[type="text"]:focus {
         border: 1px solid transparent;
       }
     }
-  } & > :nth-child(3) {
-   // margin-bottom: 80px;
+  }
+  & > :nth-child(3) {
+    // margin-bottom: 80px;
   }
   & > :nth-last-child(1) {
-   // margin-bottom: 80px;
-        
-      }
-
- 
-
- 
-
- 
+    // margin-bottom: 80px;
+  }
 `

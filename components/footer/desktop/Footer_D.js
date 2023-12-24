@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { ChatAILogo, Facebook3Svg, Footer_D_AccessibilityModeSvg, Instagram2Svg, LanguageIconSvg, LinkedinSvg, Twitter2Svg } from "../../../assets/Icons/index.js"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts.js"

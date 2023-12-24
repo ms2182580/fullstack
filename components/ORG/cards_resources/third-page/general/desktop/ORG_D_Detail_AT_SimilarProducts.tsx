@@ -1,4 +1,4 @@
-import { StarsRatingReview_D } from "@/components/ORG/stars-rating-review/desktop/StarsRatingReview_D"
+import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { Fragment } from "react"

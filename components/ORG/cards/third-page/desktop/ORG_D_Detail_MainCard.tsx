@@ -1,6 +1,6 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/ORG/DATA_ORG_KeyNamesForCards_D"
-import { SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
+import { SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
 import { useMemo } from "react"
 import { ORG_D_Detail_MainCard_Left } from "./ORG_D_Detail_MainCard_Left"
 import { ORG_D_Detail_MainCard_Right } from "./ORG_D_Detail_MainCard_Right"

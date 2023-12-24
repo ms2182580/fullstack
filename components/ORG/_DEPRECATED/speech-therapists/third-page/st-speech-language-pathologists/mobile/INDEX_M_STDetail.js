@@ -19,7 +19,7 @@ export const INDEX_M_STDetail = () => {
   const { STDataThirdpage_M } = useORG_Ctx_STDataThirdpage_M()
 
   if (STDataThirdpage_M === "") {
-    if (route.isReady) route.push("/ORG/pst/st-speech-language-pathologists")
+    if (route.isReady) route.push("/org/pst/st-speech-language-pathologists")
     return
   }
 
@@ -50,22 +50,12 @@ export const INDEX_M_STDetail = () => {
         } else {
           return `${x[0].toUpperCase()} ${x.slice(1)} old`
         }
-      })
+      }),
     )
 
-    setQualifications([
-      ["Education Level: Master's"],
-      ["Years in Practice: 5 years"],
-      ["License Number: 1239082"],
-      ["State of License: New York"]
-    ])
+    setQualifications([["Education Level: Master's"], ["Years in Practice: 5 years"], ["License Number: 1239082"], ["State of License: New York"]])
 
-    setAdditionalCredentials([
-      ["Lee Silverman Voice Treatment"],
-      ["Certification"],
-      ["SLP, Board Certified Behavior "],
-      ["Analyst (BCBA)"]
-    ])
+    setAdditionalCredentials([["Lee Silverman Voice Treatment"], ["Certification"], ["SLP, Board Certified Behavior "], ["Analyst (BCBA)"]])
   }, [])
 
   const [highlight, setHighlight] = useState("about")
@@ -75,14 +65,8 @@ export const INDEX_M_STDetail = () => {
   const reviewsRef = useRef(null)
 
   useEffect(() => {
-    if (
-      aboutRef.current !== null &&
-      detailsRef.current !== null &&
-      contactRef.current !== null &&
-      reviewsRef.current !== null
-    ) {
+    if (aboutRef.current !== null && detailsRef.current !== null && contactRef.current !== null && reviewsRef.current !== null) {
       const handleScroll = () => {
-
         const aboutPosition = aboutRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
         const detailsPosition = detailsRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
         const contactPosition = contactRef.current.offsetTop - Number(scrollMarginTopState.replace("px", "")) - 1
@@ -110,7 +94,7 @@ export const INDEX_M_STDetail = () => {
     <>
       <INDEX_M_STDetailWrapper>
         <ST_M_HeaderWrapper>
-          <LinkNoStyle href="/ORG/speech-therapists">
+          <LinkNoStyle href="/org/speech-therapists">
             <BackArrow />
             <Caption bolder>Back to Results</Caption>
           </LinkNoStyle>

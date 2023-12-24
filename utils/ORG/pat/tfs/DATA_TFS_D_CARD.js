@@ -1,4 +1,4 @@
-import { MapProperties_KEYS } from "@/components/ORG/cards/third-page/desktop/ORG_D_Detail_MapComponent"
+import { MapProperties_KEYS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_MapComponent"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 import { DATA_PAT_D_KEYS } from "../DATA_PAT_D"
 import { arrayInnerNavBar_PAT, arraySectionToRender_PAT } from "../third-page/desktop/arraySectionToRender"

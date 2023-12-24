@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import { GetServicePlan3, ORG_D_Search_CarePlanSvg, ORG_Detail_SearchFAQSSVG } from "../../../assets/Icons/index"
 
-import { ALL_ROUTES } from "@/utils/ORG/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { Home_GetServicePlan_Cards_D } from "./Home_GetServicePlan_Cards_D"
 import { Home_GetServicePlan_DWrapper } from "./styles/Home_GetServicePlan_DWrapper.js"
