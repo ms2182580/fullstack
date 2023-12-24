@@ -6,7 +6,7 @@ import { ST_M_Results_HeaderWrapper } from "./styles/ST_M_Results_HeaderWrapper.
 export const ST_M_Results_Header = () => {
   return (
     <ST_M_Results_HeaderWrapper>
-      <LinkNoStyle href="/ORG/">
+      <LinkNoStyle href="/org/">
         <BackArrow />
         <Caption bolder>Back to Search</Caption>
       </LinkNoStyle>

@@ -1,11 +1,10 @@
-import { ORG_Filters_D_Checkbox2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox2";
-import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Checkbox_Isolated";
-import { ORG_Filters_D_More2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_More2";
-import { ORG_Filters_D_Range2 } from "../../../../components/ORG/filters/desktop/ORG_Filters_D_Range2";
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories";
-import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D";
-import { DATA_MH_D_Filters } from "../mh/DATA_MH_D_Filters";
-
+import { ORG_Filters_D_Checkbox2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/org/filters/desktop/ORG_Filters_D_Checkbox_Isolated"
+import { ORG_Filters_D_More2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_More2"
+import { ORG_Filters_D_Range2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range2"
+import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
+import { DATA_MH_D_Filters } from "../mh/DATA_MH_D_Filters"
 
 export const DATA_FS_D_Filters = {
   price: {
@@ -32,14 +31,7 @@ export const DATA_FS_D_Filters = {
   mobility: {
     buttonName: "Mobility",
     titleOnModal: "Mobility Features",
-    categoriesToDisplay: [
-      "Foldable",
-      "Reclinig Backrests",
-      "Adjustable Armrests",
-      "Adjustable Leg Rests",
-      "Power Elevating Seats",
-      "Lightweight Frames",
-    ],
+    categoriesToDisplay: ["Foldable", "Reclinig Backrests", "Adjustable Armrests", "Adjustable Leg Rests", "Power Elevating Seats", "Lightweight Frames"],
   },
   seat: {
     buttonName: "Seat",
@@ -51,7 +43,7 @@ export const DATA_FS_D_Filters = {
     titleOnModal: "Setting",
     categoriesToDisplay: ["Indoor", "Outdoor"],
   },
-};
+}
 
 const allMoreFilters = {
   checkbox: [
@@ -61,9 +53,7 @@ const allMoreFilters = {
     />,
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={DATA_MH_D_Filters.moreFilters.outOfPocketFees.buttonName}
-      categoriesToDisplay={
-        DATA_MH_D_Filters.moreFilters.outOfPocketFees.categoriesToDisplay
-      }
+      categoriesToDisplay={DATA_MH_D_Filters.moreFilters.outOfPocketFees.categoriesToDisplay}
     />,
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.inMoreFilters}
@@ -85,9 +75,7 @@ const allMoreFilters = {
 
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={DATA_MH_D_Filters.moreFilters.providerType.buttonName}
-      categoriesToDisplay={
-        DATA_MH_D_Filters.moreFilters.providerType.categoriesToDisplay
-      }
+      categoriesToDisplay={DATA_MH_D_Filters.moreFilters.providerType.categoriesToDisplay}
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
@@ -95,7 +83,7 @@ const allMoreFilters = {
       categoriesToDisplay={ORG_FILTERS_DATA_D.wheelChair}
     />,
   ],
-};
+}
 
 export const renderFiltersInUI_MHSS_FS = [
   {
@@ -143,5 +131,4 @@ export const renderFiltersInUI_MHSS_FS = [
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
-];
-
+]

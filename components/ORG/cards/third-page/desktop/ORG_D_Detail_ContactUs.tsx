@@ -1,4 +1,4 @@
-import { InnerNavBar_InnerData } from "@/utils/ORG/third-page/InnerNavBar"
+import { InnerNavBar_InnerData } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/Icons/index.js"

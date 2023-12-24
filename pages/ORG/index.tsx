@@ -1,9 +1,9 @@
-import { DATA_ORG_D } from "@/utils/ORG/DATA_ORG_D"
+import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
 import dynamic from "next/dynamic"
 import { useCheckUserWidth } from "../../context/CheckUserWidth"
 
-const INDEX_D_ORG_Search = dynamic(() => import("../../components/ORG/home/desktop/INDEX_D_ORG").then((mod) => mod.INDEX_D_ORG), { ssr: false })
-const INDEX_M_STSearch_Component = dynamic(() => import("@/components/ORG/_DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch").then((mod) => mod.INDEX_M_STSearch), {
+const INDEX_D_ORG_Search = dynamic(() => import("../../components/org/home/desktop/INDEX_D_ORG").then((mod) => mod.INDEX_D_ORG), { ssr: false })
+const INDEX_M_STSearch_Component = dynamic(() => import("@/components/org/_DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch").then((mod) => mod.INDEX_M_STSearch), {
   ssr: false,
 })
 

@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import Link from "next/link.js"
 import { Fragment } from "react"
 import { Home_OurPlatform_BrainSvg, Home_OurPlatform_JetSvg, Home_OurPlatform_UserCollaborationSvg, LeftArrowTinySvg, RightArrowTinySvg } from "../../../assets/Icons/index.js"
@@ -13,8 +14,8 @@ const DATA_CARD = [
     title: "Resources",
     subtitle: "Find and resource, anywhere, at any time.",
     lastButtonText: "Search",
-    toWhere: "ORG",
-    isDisabled: false
+    toWhere: `${ALL_ROUTES.ORG}`,
+    isDisabled: false,
   },
   {
     icon: <Home_OurPlatform_BrainSvg />,
@@ -23,7 +24,7 @@ const DATA_CARD = [
     subtitle: "A step-by-step guide through bureaucracy.",
     lastButtonText: "Start",
     toWhere: "",
-    isDisabled: true
+    isDisabled: true,
   },
   {
     icon: <Home_OurPlatform_UserCollaborationSvg />,
@@ -32,7 +33,7 @@ const DATA_CARD = [
     subtitle: "Identify each need and list each services.",
     lastButtonText: "Create",
     toWhere: "",
-    isDisabled: true
+    isDisabled: true,
   },
   {
     icon: <Home_OurPlatform_JetSvg />,
@@ -41,7 +42,7 @@ const DATA_CARD = [
     subtitle: "Get  the answers you need from our community.",
     lastButtonText: "Ask",
     toWhere: "",
-    isDisabled: true
+    isDisabled: true,
   },
 ]
 
@@ -58,7 +59,6 @@ export const Home_OurPlatformCarousal_D = () => {
       </div>
 
       <div className="RIGHT">
-
         <ul ref={setListRef}>
           {DATA_CARD.map((xDATA_CARD) => (
             <Fragment key={`${xDATA_CARD.title}`}>

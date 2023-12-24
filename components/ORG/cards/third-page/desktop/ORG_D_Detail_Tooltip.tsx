@@ -1,5 +1,5 @@
 import { QuestionTooltip_AASvg, QuestionTooltip_DefaultSvg } from "@/assets/Icons/index.js"
-import { Tooltip_KEYS, Tooltip_VALUES, TypeOfTooltipSVG_LIKE } from "@/utils/ORG/third-page/tooltip"
+import { Tooltip_KEYS, Tooltip_VALUES, TypeOfTooltipSVG_LIKE } from "@/utils/org/third-page/tooltip"
 import { useRef, useState } from "react"
 import { useOutsideHide } from "../../../../../utils/useOutsideHide.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"

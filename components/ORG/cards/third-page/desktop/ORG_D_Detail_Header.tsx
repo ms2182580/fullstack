@@ -1,6 +1,7 @@
 import { Breadcrumbs_D } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs_D"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/ORG/third-page/InnerNavBar"
-import { useCheckBreadcrumbs } from "@/utils/ORG/useCheckBreadcrumbs"
+import { InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { NavBar_D_WriteAReviewSvg, SearchSVG } from "../../../../../assets/Icons"
@@ -16,7 +17,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
   }, [])
 
   /* 
-  This data should move the the previous page website.com/ORG/results/<name_of_subcategory_here>
+  This data should move the the previous page website.com/org/results/<name_of_subcategory_here>
   let { theURLFormatted } = checkRouteThirdPage(pathname) 
   */
 
@@ -26,7 +27,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
     <ORG_D_Detail_HeaderWrapper>
       <Breadcrumbs_D
         whichDisplay={[
-          ["Resource Directory", "ORG"],
+          ["Resource Directory", `${ALL_ROUTES.ORG}`],
           [`${titleFormatted}`, `${theURLFormatted}`],
           [`${formattedActualRoute}`, ""],
         ]}

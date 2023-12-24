@@ -1,8 +1,9 @@
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
-import { checkRouteThirdPage } from "../../../../../utils/ORG/checkRouteThirdPage"
-import { useCheckBreadcrumbs } from "../../../../../utils/ORG/useCheckBreadcrumbs"
 import { ORG_ST_LastUpdate } from "../../../../../utils/ORG_ST_Review_D"
+import { checkRouteThirdPage } from "../../../../../utils/org/checkRouteThirdPage"
+import { useCheckBreadcrumbs } from "../../../../../utils/org/useCheckBreadcrumbs"
 import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_BreadcrumbsLastUpdatedWrapper } from "./styles/ORG_D_Detail_BreadcrumbsLastUpdatedWrapper"
@@ -24,7 +25,7 @@ export const ORG_D_Detail_BreadcrumbsLastUpdated = ({ thirdpageDataORG }) => {
       <div>
         <Breadcrumbs_D
           whichDisplay={[
-            ["Resource Directory", "ORG"],
+            ["Resource Directory", `${ALL_ROUTES.ORG}`],
             [`${titleFormatted}`, `${theURLFormatted}`],
             [`${formattedActualRoute}`, ""],
           ]}

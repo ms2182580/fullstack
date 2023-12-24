@@ -6,12 +6,12 @@ import { ButtonSmall } from "../../../../ui/buttons/general/index"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 
-import { DATA_PAT_D } from "@/utils/ORG/pat/DATA_PAT_D"
+import { DATA_PAT_D } from "@/utils/org/pat/DATA_PAT_D"
 import { ORG_D_Detail_AdditionalResourcesWrapper } from "./styles/ORG_D_Detail_AdditionalResourcesWrapper.js"
 
-import image1 from "@/assets/images/ORG/attorney-advocates/ORG_AA16.jpg"
-import image2 from "@/assets/images/ORG/attorney-advocates/ORG_AA17.jpg"
-import image3 from "@/assets/images/ORG/attorney-advocates/ORG_AA18.jpg"
+import image1 from "@/assets/images/org/attorney-advocates/ORG_AA16.jpg"
+import image2 from "@/assets/images/org/attorney-advocates/ORG_AA17.jpg"
+import image3 from "@/assets/images/org/attorney-advocates/ORG_AA18.jpg"
 import Image from "next/image.js"
 
 /*

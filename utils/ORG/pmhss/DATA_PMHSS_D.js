@@ -1,7 +1,7 @@
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
-import ORG_MHSS1 from "../../../assets/images/ORG/mental-health/ORG_MHSS1.png"
-import ORG_MHSS2 from "../../../assets/images/ORG/mental-health/ORG_MHSS2.png"
-import ORG_MHSS3 from "../../../assets/images/ORG/mental-health/ORG_MHSS3.png"
+import ORG_MHSS1 from "../../../assets/images/org/mental-health/ORG_MHSS1.png"
+import ORG_MHSS2 from "../../../assets/images/org/mental-health/ORG_MHSS2.png"
+import ORG_MHSS3 from "../../../assets/images/org/mental-health/ORG_MHSS3.png"
 
 export const DATA_PMHSS_D = [
   [

@@ -1,4 +1,4 @@
-import { suggestionKeywords } from "@/utils/ORG/typed-flow/suggestionKeywords"
+import { suggestionKeywords } from "@/utils/org/typed-flow/suggestionKeywords"
 import { useEffect, useRef, useState } from "react"
 import { Welcome_D_1_DropdownOptions } from "./Welcome_D_1_DropdownOptions.js"
 import { Welcome_D_1_DropdownWrapper } from "./styles/Welcome_D_1_DropdownWrapper.js"

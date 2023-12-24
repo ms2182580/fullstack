@@ -1,4 +1,4 @@
-import imageGraph from "@/assets/images/ORG/special-education-schools/pieGraph.png"
+import imageGraph from "@/assets/images/org/special-education-schools/pieGraph.png"
 import Image from "next/image"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_StudentDemographicsWrapper } from "./styles/ORG_D_Detail_StudentDemographicsWrapper.js"

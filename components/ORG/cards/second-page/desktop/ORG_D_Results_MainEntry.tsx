@@ -44,7 +44,7 @@ export const ORG_D_Results_MainEntry = ({ titleToFormat = "nothing", isTypedFlow
         />
       </div>
 
-      {pathname === "/ORG/typed-flow" ? null : (
+      {pathname === "/org/typed-flow" ? null : (
         <>
           <ORG_D_Results_FinalButton />
         </>

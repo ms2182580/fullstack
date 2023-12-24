@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
@@ -10,7 +11,7 @@ export const NavBar_M = () => {
   const [isORGState, setIsORGState] = useState(false)
 
   useEffect(() => {
-    if (route.pathname === "/ORG") {
+    if (route.pathname === `/${ALL_ROUTES.ORG}`) {
       setIsORGState(true)
     } else {
       setIsORGState(false)
@@ -25,7 +26,7 @@ export const NavBar_M = () => {
   }
   const navigateORG = (e) => {
     if (e.key === "Enter") {
-      route.push("/ORG")
+      route.push(`/${ALL_ROUTES.ORG}`)
     }
   }
 
@@ -50,8 +51,8 @@ export const NavBar_M = () => {
         <li
           tabIndex={0}
           onKeyDown={navigateORG}
-          className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
-          <LinkNoStyle href="/ORG">Resource directory</LinkNoStyle>
+          className={/[org]\/\w|[org]/.test(route.pathname) ? "active" : null}>
+          <LinkNoStyle href={`/${ALL_ROUTES.ORG}`}>Resource directory</LinkNoStyle>
         </li>
         <li>Ask a question</li>
 

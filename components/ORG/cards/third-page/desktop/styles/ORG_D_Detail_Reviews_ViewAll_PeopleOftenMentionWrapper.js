@@ -1,4 +1,4 @@
-import { Classes_ORG_D_Detail_IsModal } from "@/utils/ORG/third-page/IsModal"
+import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 

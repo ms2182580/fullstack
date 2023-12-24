@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import Link from "next/link.js"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
@@ -68,9 +69,9 @@ export const NavBar_D_OnlyORG = () => {
           </span>
 
           <ul>
-            <li className={/[ORG]\/\w|[ORG]/.test(route.pathname) ? "active" : null}>
+            <li className={/[org]\/\w|[org]/.test(route.pathname) ? "active" : null}>
               <H4>
-                <Link href="/ORG">Resource Directory</Link>
+                <Link href={`/${ALL_ROUTES.ORG}`}>Resource Directory</Link>
               </H4>
             </li>
 

@@ -1,6 +1,6 @@
 import { DownArrowTinySvg, LeftArrowSvg, RightArrowSvg, XSvg } from "@/assets/Icons"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { useCheckBreadcrumbs } from "@/utils/ORG/useCheckBreadcrumbs"
+import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { useOutsideHide } from "@/utils/useOutsideHide"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"

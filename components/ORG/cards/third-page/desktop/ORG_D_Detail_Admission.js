@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ORG_D_Detail_AdmissionWrapper } from "./styles/ORG_D_Detail_AdmissionWrapper.js"
+import { ORG_D_Detail_AdmissionWrapper } from "./styles/ORG_D_Detail_AdmissionWrapper"
 
 export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
   const toMoveTheView = useRef()

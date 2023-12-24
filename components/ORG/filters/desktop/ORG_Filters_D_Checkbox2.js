@@ -1,7 +1,7 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useState } from "react"
 import { XDesktopSvg } from "../../../../assets/Icons/index.js"
-import { useShowFilters } from "../../../../utils/ORG/useShowFilters.js"
+import { useShowFilters } from "../../../../utils/org/useShowFilters.js"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
 import { ORG_Filters_D_CheckboxWrapper2 } from "./styles/ORG_Filters_D_CheckboxWrapper2.js"

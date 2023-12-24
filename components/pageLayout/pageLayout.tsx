@@ -1,4 +1,5 @@
 import { KEYS_VALUES_useSessionStorage, useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import dynamic from "next/dynamic.js"
 import Head from "next/head"
 import { useRouter } from "next/router.js"
@@ -20,47 +21,48 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
 
   useEffect(() => {
     if (actualSessionStorage === KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST) {
-      push("/ORG/welcome")
+      push(`/${ALL_ROUTES.ORG}/${ALL_ROUTES.WELCOME}`)
     }
   }, [])
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta
-          name="description"
-          content="inclusive - website"
-        />
-      </Head>
-
-      {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
+      <>
+        <Head>
+          <title>{title}</title>
+          <meta
+            name="description"
+            content="inclusive - website"
+          />
+        </Head>
         <>
-          <NavBar_Mobile />
+          {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
+            <>
+              <NavBar_Mobile />
+            </>
+          ) : (
+            !isMobile &&
+            actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST && (
+              <>
+                <NavBar_Desktop />
+              </>
+            )
+          )}
+          <MainWrapper isMainInHome={pathname === "/"}>{children}</MainWrapper>
+          {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
+            <>
+              <Footer_Mobile />
+            </>
+          ) : (
+            !isMobile &&
+            actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST && (
+              <>
+                <Footer_Desktop />
+              </>
+            )
+          )}
         </>
-      ) : (
-        !isMobile &&
-        actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST && (
-          <>
-            <NavBar_Desktop />
-          </>
-        )
-      )}
-
-      <MainWrapper isMainInHome={pathname === "/"}>{children}</MainWrapper>
-
-      {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
-        <>
-          <Footer_Mobile />
-        </>
-      ) : (
-        !isMobile &&
-        actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST && (
-          <>
-            <Footer_Desktop />
-          </>
-        )
-      )}
+      </>
     </>
   )
 }

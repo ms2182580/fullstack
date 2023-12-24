@@ -1,5 +1,6 @@
-import { useCheckBreadcrumbs } from "@/utils/ORG/useCheckBreadcrumbs"
-import { useCheckBreadcrumbsProps } from "@/utils/ORG/useCheckBreadcrumbsProps"
+import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
+import { useCheckBreadcrumbsProps } from "@/utils/org/useCheckBreadcrumbsProps"
+import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Breadcrumbs_D } from "../../../../ui/breadcrumbs/desktop/Breadcrumbs_D"
@@ -25,7 +26,7 @@ export const ORG_D_Results_Breadcrumbs = ({ titleToFormat, isTypedFlow = false }
     <>
       <Breadcrumbs_D
         whichDisplay={[
-          ["Resource Directory", "ORG"],
+          ["Resource Directory", `${ALL_ROUTES.ORG}`],
           [`${whichWordOnBreadcrumb}`, ""],
         ]}
       />

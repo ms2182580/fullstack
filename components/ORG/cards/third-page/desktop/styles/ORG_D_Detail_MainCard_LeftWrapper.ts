@@ -1,5 +1,5 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/ORG/second-page/desktop/specificData"
+import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
 import styled, { css } from "styled-components"
 
 const isATLayout = () => css`
