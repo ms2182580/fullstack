@@ -10,10 +10,6 @@ export const ORG_D_Detail_HeaderWrapper = styled.div`
     margin-top: 64px;
     margin-bottom: 16px;
 
-    & > * {
-      /* border: 2px solid green; */
-    }
-
     & > li {
       list-style: none;
       & > h3 {
