@@ -1,5 +1,5 @@
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useRef, useState } from "react"
 import ORGDesktop_AgeIcon from "../../../assets/Icons/ORGDesktop_AgeIcon.png"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"

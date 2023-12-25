@@ -1,5 +1,5 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Link from "next/link"
 import { ORG_D_Detail_AT_WCMD_SimilarProducts_SectionWrapper } from "./styles/ORG_D_Detail_AT_WCMD_SimilarProducts_SectionWrapper"
 

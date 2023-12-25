@@ -1,5 +1,5 @@
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
 import ORGDesktop_LoupeIcon from "../../../assets/Icons/ORGDesktop_LoupeIcon.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"

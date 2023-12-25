@@ -43,7 +43,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
           <ORG_D_Detail_Header
             thirdpageDataORG={thirdpageDataORG}
             arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
-            defaultSectionToRender={getAllSpecificThirdPageData.defaultSectionToRender}
+            defaultSectionToRender={defaultSectionToRender}
             sectionToRender={getAllSpecificThirdPageData.renderSections}
           />
 

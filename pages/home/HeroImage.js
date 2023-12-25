@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useEffect, useState } from "react"
 import homeImage_communityPeople from "../../assets/images/homeImage_communityPeople.png"
 import { ButtonLarge as BtnLarge } from "../../components/ui/buttons/general/index"

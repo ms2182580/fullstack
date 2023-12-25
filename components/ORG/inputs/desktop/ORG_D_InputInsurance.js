@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
 import ORGDesktop_InsuranceIcon from "../../../../assets/Icons/ORGDesktop_InsuranceIcon.png"
 import { useORG_InputCtx } from "../../../../context/ORG_Input"

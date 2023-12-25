@@ -11,7 +11,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFi
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { All_Layouts_Accepted, INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
@@ -40,6 +40,8 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
+  console.log("someLayoutSpecial:", someLayoutSpecial)
+
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
       {theData.map((x, iData) => {
@@ -57,10 +59,10 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
                           <Image
                             src={obj.imageToUse}
                             alt={obj.title}
-                            layout={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? "responsive" : "intrinsic"}
-                            objectFit={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? "contain" : "initial"}
-                            width={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? 1 : 1200}
-                            height={someLayoutSpecial === All_Layouts_Accepted.like_PAT ? 0.522 : 600}
+                            layout={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? "responsive" : "intrinsic"}
+                            objectFit={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? "contain" : "initial"}
+                            width={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? 1 : 1200}
+                            height={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? 0.522 : 600}
                           />
                           {someLayoutSpecial === All_Layouts_Accepted.like_PAT ? null : (
                             <>

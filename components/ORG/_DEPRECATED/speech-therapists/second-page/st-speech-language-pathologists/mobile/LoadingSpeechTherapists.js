@@ -1,11 +1,11 @@
 import { Player } from "@lottiefiles/react-lottie-player"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useEffect } from "react"
 import LottieLoading from "../../../../../../../assets/Icons/LottieLoading.json"
 import RobotLoading from "../../../../../../../assets/Icons/RobotLoading.png"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
-import { P } from '../../../../../../ui/heading_body_text/DesktopMobileFonts'
-import { H1 } from '../../../../../../ui/heading_body_text/HeaderFonts'
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H1 } from "../../../../../../ui/heading_body_text/HeaderFonts"
 import { LoadingSpeechTherapistsWrapper } from "./styles/LoadingSpeechTherapistsWrapper"
 
 export const LoadingSpeechTherapists = () => {

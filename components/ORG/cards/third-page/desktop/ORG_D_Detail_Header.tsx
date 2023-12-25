@@ -2,6 +2,7 @@ import { Breadcrumbs_D } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs_D
 import { InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { NavBar_D_WriteAReviewSvg, SearchSVG } from "../../../../../assets/Icons"
@@ -20,6 +21,8 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
   This data should move the the previous page website.com/org/results/<name_of_subcategory_here>
   let { theURLFormatted } = checkRouteThirdPage(pathname) 
   */
+
+  console.log("defaultSectionToRender:", defaultSectionToRender)
 
   const theURLFormatted = "#"
 
@@ -54,28 +57,28 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
           <>
             <li>
               <H3>
-                <a href={`#${defaultSectionToRender[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>About</a>
+                <Link href={`#${defaultSectionToRender[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>About</Link>
               </H3>
             </li>
 
             <li>
               <H3>
-                <a href={`#${defaultSectionToRender[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Contact</a>
+                <Link href={`#${defaultSectionToRender[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Contact</Link>
               </H3>
             </li>
             <li>
               <H3>
-                <a href="#Information">Information</a>
+                <Link href="#Information">Information</Link>
               </H3>
             </li>
             <li>
               <H3>
-                <a href={`#${defaultSectionToRender[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Reviews</a>
+                <Link href={`#${defaultSectionToRender[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>Reviews</Link>
               </H3>
             </li>
             <li>
               <H3>
-                <a href={`#${defaultSectionToRender[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>FAQs</a>
+                <Link href={`#${defaultSectionToRender[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>FAQs</Link>
               </H3>
             </li>
           </>
