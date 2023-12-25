@@ -8,13 +8,7 @@ import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
 import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 
-const suggestionsKeywords = [
-  "Physical Therapist",
-  "Speech Therapist",
-  "Occupational Therapist",
-  "Dance Class",
-  "Art Camp"
-]
+const suggestionsKeywords = ["Physical Therapist", "Speech Therapist", "Occupational Therapist", "Dance Class", "Art Camp"]
 
 export const ORG_D_InputKeyword = ({ setTypedInputKeyword }) => {
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
@@ -28,11 +22,9 @@ export const ORG_D_InputKeyword = ({ setTypedInputKeyword }) => {
     setKeywordInput(keywordsContext)
   }, [keywordsContext])
 
-
   useEffect(() => {
     setTypedInputKeyword(keywordInput)
   }, [keywordInput])
-
 
   const shouldTab = useShouldTab()
 

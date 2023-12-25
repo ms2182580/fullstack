@@ -24,12 +24,7 @@ export const ST_M_Search_InputLocation = () => {
   const citySecondLevelRef = useRef(null)
   useEffect(() => {
     function handleClickOutside(event) {
-      if (
-        cityFirstLevelRef.current &&
-        !cityFirstLevelRef.current.contains(event.target) &&
-        citySecondLevelRef.current &&
-        !citySecondLevelRef.current.contains(event.target)
-      ) {
+      if (cityFirstLevelRef.current && !cityFirstLevelRef.current.contains(event.target) && citySecondLevelRef.current && !citySecondLevelRef.current.contains(event.target)) {
         setIsFocusCity(false)
       }
     }
@@ -56,10 +51,10 @@ export const ST_M_Search_InputLocation = () => {
           onBlur={
             !isTouchScreen
               ? () => {
-                if (!isHoveredCity) {
-                  setIsFocusCity(false)
+                  if (!isHoveredCity) {
+                    setIsFocusCity(false)
+                  }
                 }
-              }
               : undefined
           }
           onTouchStart={(e) => {

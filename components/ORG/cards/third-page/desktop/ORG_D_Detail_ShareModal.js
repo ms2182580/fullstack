@@ -28,7 +28,6 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
 
   // useOutsideHide(componentRef, setShow)
 
-
   useEffect(() => {
     function handleClickOutside(event) {
       if (componentRef.current && !componentRef.current.contains(event.target)) {
@@ -165,8 +164,8 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
           shouldShowCopyLink === "shouldShowCopyLinkTrue"
             ? "shouldShowCopyLinkTrue shouldShowCopyLinkDefault"
             : shouldShowCopyLink === "shouldShowCopyLinkFalse"
-              ? "shouldShowCopyLinkFalse shouldShowCopyLinkDefault"
-              : "shouldShowCopyLinkDefault"
+            ? "shouldShowCopyLinkFalse shouldShowCopyLinkDefault"
+            : "shouldShowCopyLinkDefault"
         }>
         <Image
           src={ORG_STDetail_Share_Modal_LinkCopiedIcon}

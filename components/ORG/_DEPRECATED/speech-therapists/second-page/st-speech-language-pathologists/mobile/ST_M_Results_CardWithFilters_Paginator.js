@@ -9,7 +9,7 @@ export const ST_M_Results_CardWithFilters_Paginator = ({ dataLength, activeIndex
       <div
         key={index}
         className={classes}
-        onClick={() => handlePageChange(index)}></div>
+        onClick={() => handlePageChange(index)}></div>,
     )
   }
 
@@ -19,15 +19,13 @@ export const ST_M_Results_CardWithFilters_Paginator = ({ dataLength, activeIndex
     }
   }
 
-
   return (
     <ST_M_Results_CardWithFilters_PaginatorWrapper>
       {dots.map((dot, i) => (
         <span
           key={`${dot}${i}`}
           tabIndex={0}
-          onKeyDown={(e) => handleChangeCard(e, i)}
-        >
+          onKeyDown={(e) => handleChangeCard(e, i)}>
           {dot}
         </span>
       ))}

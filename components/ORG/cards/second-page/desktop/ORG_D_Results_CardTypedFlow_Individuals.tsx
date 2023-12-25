@@ -53,7 +53,7 @@ export type Props = {
 }
 
 export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceived", dataToRender, toSecondPageData, categoryPosition }: Props) => {
-  let { diagnosisChoosed } = useSessionStorage_typedFlow()
+  let { diagnosisChoosed }: any = useSessionStorage_typedFlow()
 
   let { formatedDiagnosis, formatedSymptoms } = useTypedFlow_CheckDiagnosisChoosed(
     diagnosisChoosed || {
@@ -62,7 +62,7 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
     },
   )
 
-  const [whichDataReturn, setWhichDataReturn] = useState(null)
+  const [whichDataReturn, setWhichDataReturn] = useState<any>(null)
 
   useEffect(() => {
     if (formatedDiagnosis[Keys_StructureDataToReturn.RETURNED_DATA_TYPEOF] !== CheckTypeOfData.FALSE) {
@@ -76,10 +76,10 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
 
   const { push } = useRouter()
 
-  const { setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
-  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
-  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   return (
     <ORG_D_Results_CardTypedFlow_IndividualsWrapper>
@@ -107,6 +107,8 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
                         objectFit="cover"
                         width={1}
                         height={1}
+                        /* !FH change this. Put a proper alt */
+                        alt="someImage"
                       />
                     </span>
                     <button

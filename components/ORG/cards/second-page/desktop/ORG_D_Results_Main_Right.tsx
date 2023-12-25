@@ -8,8 +8,13 @@ import { capitalizeWords } from "@/utils/capitalizeWords"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { ORG_D_Results_Main_RightWrapper } from "./styles/ORG_D_Results_Main_RightWrapper"
 
-export const ORG_D_Results_Main_Right = ({ renderThisCard, renderThisFilter }) => {
-  const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+type Props = {
+  renderThisCard: number
+  renderThisFilter: number
+}
+
+export const ORG_D_Results_Main_Right = ({ renderThisCard, renderThisFilter }: Props) => {
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   return (
     <ORG_D_Results_Main_RightWrapper>
@@ -22,7 +27,7 @@ export const ORG_D_Results_Main_Right = ({ renderThisCard, renderThisFilter }) =
       />
 
       <div>
-        {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x, index) => {
+        {Object.entries(secondpageDataORG.right[renderThisFilter]).map((x: any, index) => {
           if (x[0] === DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS) {
             return (
               <span

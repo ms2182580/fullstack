@@ -47,12 +47,7 @@ export const ST_M_Search_InputKeyword = () => {
     }
   }, [])
 
-  const suggestionDropdownTP = [
-    "Speech Therapist",
-    "Behavioral Therapist",
-    "Physical Therapist",
-    "Occupational Therapist"
-  ]
+  const suggestionDropdownTP = ["Speech Therapist", "Behavioral Therapist", "Physical Therapist", "Occupational Therapist"]
 
   return (
     <ST_M_Search_InputWrapper>
@@ -70,10 +65,10 @@ export const ST_M_Search_InputKeyword = () => {
           onBlur={
             !isTouchScreen
               ? () => {
-                if (!isHoveredKeyword) {
-                  setIsFocusKeyword(false)
+                  if (!isHoveredKeyword) {
+                    setIsFocusKeyword(false)
+                  }
                 }
-              }
               : undefined
           }
           onTouchStart={(e) => {

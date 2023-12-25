@@ -6,10 +6,10 @@ import {
   ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction_CLASS,
 } from "./styles/ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteractionWrapper"
 
-export const ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction = ({ SVGArr, nameToJSX, setWhichComponentIsSelected, indexComponent, handleFocusComponent }) => {
+export const ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction = ({ SVGArr, nameToJSX, setWhichComponentIsSelected, indexComponent, handleFocusComponent }: any) => {
   const [shouldHighlight_Hover, setShouldHighlight_Hover] = useState(-1)
 
-  let handleOnMouseEnter = (e, index = 0) => {
+  let handleOnMouseEnter = (e: any, index = 0) => {
     setShouldHighlight_Hover(index)
     setWhichComponentIsSelected(indexComponent)
   }
@@ -20,7 +20,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction = ({ 
       <div
         className={`indexComponent_${indexComponent}`}
         tabIndex={0}>
-        {SVGArr.map((x, index) => {
+        {SVGArr.map((x: any, index: number) => {
           const TheStar = x
 
           const highlightClassName = index <= shouldHighlight_Hover
@@ -28,8 +28,8 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction = ({ 
           return (
             <Fragment>
               <TheStar
-                onMouseEnter={(e) => handleOnMouseEnter(e, index)}
-                onFocus={(e) => handleOnMouseEnter(e, index)}
+                onMouseEnter={(e: any) => handleOnMouseEnter(e, index)}
+                onFocus={(e: any) => handleOnMouseEnter(e, index)}
                 onKeyDown={handleFocusComponent}
                 className={highlightClassName ? ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction_CLASS.HIGHLIGHT : ""}
                 tabIndex={0}

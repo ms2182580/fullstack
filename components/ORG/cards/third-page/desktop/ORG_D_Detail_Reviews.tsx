@@ -12,8 +12,8 @@ import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention"
 import { ORG_D_Detail_ReviewsWrapper } from "./styles/ORG_D_Detail_ReviewsWrapper"
 
-export const ORG_D_Detail_Reviews = ({ idInnerbar = "#", arrayInnerNavBar }) => {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+export const ORG_D_Detail_Reviews = ({ idInnerbar = "#" }) => {
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { fullName, card } = thirdpageDataORG
 
@@ -21,9 +21,9 @@ export const ORG_D_Detail_Reviews = ({ idInnerbar = "#", arrayInnerNavBar }) => 
 
   const [showModal_ViewAll, setShowModal_ViewAll] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
-  const { setModalShowedCtx } = useCtx_ShowModal()
+  const { setModalShowedCtx }: any = useCtx_ShowModal()
 
-  const handleShowModal_ViewAll = (e) => {
+  const handleShowModal_ViewAll = (e: any) => {
     if (e.type === "click" || e.key === "Enter") {
       lockScroll()
       setShowModal_ViewAll(true)
@@ -32,7 +32,7 @@ export const ORG_D_Detail_Reviews = ({ idInnerbar = "#", arrayInnerNavBar }) => 
     }
   }
 
-  const handleHideModal_ViewAll = (e) => {
+  const handleHideModal_ViewAll = (e: any) => {
     if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown") {
       unlockScroll()
       setShowModal_ViewAll(false)
@@ -42,7 +42,7 @@ export const ORG_D_Detail_Reviews = ({ idInnerbar = "#", arrayInnerNavBar }) => 
 
   const [showModal_WriteAReview, setShowModal_WriteAReview] = useState(false)
 
-  const handleShowModal_WriteAReview = (e) => {
+  const handleShowModal_WriteAReview = (e: any) => {
     if (e.type === "click" || e.key === "Enter") {
       lockScroll()
       setShowModal_WriteAReview(true)
@@ -52,7 +52,7 @@ export const ORG_D_Detail_Reviews = ({ idInnerbar = "#", arrayInnerNavBar }) => 
     }
   }
 
-  const handleHideModal_WriteAReview = (e) => {
+  const handleHideModal_WriteAReview = (e: any) => {
     if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown" || e.type === "click") {
       unlockScroll()
       setShowModal_WriteAReview(false)
@@ -66,6 +66,7 @@ export const ORG_D_Detail_Reviews = ({ idInnerbar = "#", arrayInnerNavBar }) => 
         <header>
           <H3>Reviews</H3>
           <button
+            type="button"
             tabIndex={0}
             onClick={handleShowModal_WriteAReview}
             onKeyDown={handleShowModal_WriteAReview}>

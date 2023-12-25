@@ -5,10 +5,10 @@ import { ORG_D_Detail_Review_Modal_WriteAReview_Form } from "./ORG_D_Detail_Revi
 import { ORG_D_Detail_Review_Modal_WriteAReview_Stars } from "./ORG_D_Detail_Review_Modal_WriteAReview_Stars"
 import { ORG_D_Detail_Review_Modal_WriteAReviewWrapper } from "./styles/ORG_D_Detail_Review_Modal_WriteAReviewWrapper"
 
-export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleHideModal_WriteAReview }) => {
-  const componentRef = useRef(null)
+export const ORG_D_Detail_Review_Modal_WriteAReview = ({ name, lastName, handleHideModal_WriteAReview }: any) => {
+  const componentRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    function handleClickOutside(event) {
+    function handleClickOutside(event: any) {
       if ((componentRef.current && !componentRef.current.contains(event.target) && event.type === "mousedown") || (event.key === "Escape" && event.type === "keydown")) {
         handleHideModal_WriteAReview(event)
       }

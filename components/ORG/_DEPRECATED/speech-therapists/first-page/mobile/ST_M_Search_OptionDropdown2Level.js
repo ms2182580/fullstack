@@ -19,7 +19,7 @@ export const ST_M_Search_OptionDropdown2Level = ({
   isHover = undefined,
   setIsFocusKeyword = undefined,
   theRef,
-  shouldShowImmediately = false
+  shouldShowImmediately = false,
 }) => {
   const { setKeywordsContext } = useORG_InputCtx()
   const { isTouchScreen } = useCheckMobile()
@@ -46,10 +46,10 @@ export const ST_M_Search_OptionDropdown2Level = ({
       onBlur={
         !isTouchScreen
           ? () => {
-            if (isHover === false) {
-              setIsFocusKeyword(false)
+              if (isHover === false) {
+                setIsFocusKeyword(false)
+              }
             }
-          }
           : undefined
       }>
       <div

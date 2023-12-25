@@ -33,6 +33,8 @@ export const ORG_D_Detail_AT_WCMD_WhereToBuy_Section = ({ imageSource = "", amou
           width={250}
           height={100}
           objectFit="contain"
+          /* !FH Fix this alt */
+          alt={`Image `}
         />
       </span>
       <span>

@@ -1,12 +1,6 @@
 import { ST_M_Search_OptionDropdown1LevelWrapper } from "./styles/ST_M_Search_OptionDropdown1LevelWrapper"
 
-export const ST_M_Search_OptionDropdown1Level = ({
-  isFocus = true,
-  setIsHover,
-  children,
-  setIsFocusKeyword,
-  theRef
-}) => {
+export const ST_M_Search_OptionDropdown1Level = ({ isFocus = true, setIsHover, children, setIsFocusKeyword, theRef }) => {
   return (
     <>
       {isFocus && (

@@ -27,18 +27,18 @@ const default_data_map: Default_data_map_type = {
 
 type Props = {
   isFullMap: boolean
-  handleIsFullMap: (e) => void
+  handleIsFullMap: (e: any) => void
 }
 
 // let dataToCards = Array(10).fill({})
 // console.log("dataToCards:", dataToCards)
 
 export const MapComponent = ({ isFullMap, handleIsFullMap }: Props) => {
-  const mapRef = useRef(null)
+  const mapRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (mapRef.current && isFullMap) {
-      mapRef.current.scrollIntoView({ behavior: "smooth" })
+      mapRef.current?.scrollIntoView({ behavior: "smooth" })
     }
   }, [mapRef, isFullMap])
 

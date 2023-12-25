@@ -17,9 +17,9 @@ export type MapProperties = {
   [MapProperties_KEYS.HOW_MANY]: null | 1 | 2
 }
 
-export const ORG_D_Detail_MapComponent = ({ howIsMap }) => {
+export const ORG_D_Detail_MapComponent = ({ howIsMap }: any): JSX.Element | null => {
   if (howIsMap === null) {
-    return
+    return null
   }
 
   const heighOfMap = useMemo(() => {
@@ -100,4 +100,6 @@ export const ORG_D_Detail_MapComponent = ({ howIsMap }) => {
       </ORG_D_Detail_MapComponentWrapper>
     )
   }
+
+  return null
 }

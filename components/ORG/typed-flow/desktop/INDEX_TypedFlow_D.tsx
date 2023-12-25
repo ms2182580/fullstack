@@ -12,10 +12,10 @@ import { ORG_D_Results_MainEntry } from "../../cards/second-page/desktop/ORG_D_R
 import { INDEX_TypedFlow_DWrapper } from "./styles/INDEX_TypedFlow_DWrapper"
 
 export const INDEX_TypedFlow_D = () => {
-  let { setReachTypedFlow, reachWelcome, setActualSessionStorage, diagnosisChoosed, inputTypesByUser } = useSessionStorage_typedFlow()
+  let { setReachTypedFlow, reachWelcome, setActualSessionStorage, diagnosisChoosed, inputTypesByUser }: any = useSessionStorage_typedFlow()
   const router = useRouter()
 
-  const { secondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { secondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
 
   useEffect(() => {
     if (!reachWelcome || diagnosisChoosed === "" || secondpageFiltersORG === "") {
@@ -29,8 +29,8 @@ export const INDEX_TypedFlow_D = () => {
     }
   }, [])
 
-  const { modalShowedCtx } = useCtx_ShowModal()
-  const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
+  const { modalShowedCtx }: any = useCtx_ShowModal()
+  const { ORGShowFullMapFilter }: any = useORG_CtxShowFiltersDesktop()
 
   return (
     <>

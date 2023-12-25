@@ -8,8 +8,9 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
+    "strict": true,
+    "noImplicitAny": false,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -35,5 +36,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

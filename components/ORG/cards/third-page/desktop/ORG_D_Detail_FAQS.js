@@ -13,7 +13,7 @@ import { ORG_D_Detail_FAQS_Modal } from "./ORG_D_Detail_FAQS_Modal.js"
 import { ORG_D_Detail_FAQS_VoteQuestionsAnswers } from "./ORG_D_Detail_FAQS_VoteQuestionsAnswers.js"
 import { ORG_D_Detail_FAQSWrapper } from "./styles/ORG_D_Detail_FAQSWrapper.js"
 
-export const ORG_D_Detail_FAQS = ({ idInnerbar = "#", arrayInnerNavBar }) => {
+export const ORG_D_Detail_FAQS = ({ idInnerbar = "#" }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   const { card } = thirdpageDataORG

@@ -173,7 +173,7 @@ export const ORG_D_Detail_AT_WCMD_SimilarProducts = ({ idInnerbar = "#" }) => {
                 <span>{xCategories.key}</span>
 
                 <span>
-                  {xCategories.values.map((xValues, indexValues) => {
+                  {xCategories.values.map((xValues: any, indexValues) => {
                     if (Boolean(xValues.component)) {
                       return (
                         <Fragment key={`${xValues.component.toRender}_${indexValues}`}>

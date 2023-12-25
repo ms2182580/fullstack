@@ -8,7 +8,7 @@ const INDEX_M_STSearch_Component = dynamic(() => import("@/components/org/_DEPRE
 })
 
 const ORG_INDEX = () => {
-  const { isMobile } = useCheckUserWidth()
+  const { isMobile }: any = useCheckUserWidth()
 
   return (
     <>

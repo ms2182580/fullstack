@@ -5,7 +5,7 @@ import { ORG_D_Results_MainEntry } from "./ORG_D_Results_MainEntry"
 import { INDEX_ORG_Results_DWrapper } from "./styles/INDEX_ORG_Results_DWrapper.js"
 
 export const INDEX_ORG_Results_D = () => {
-  const { modalShowedCtx } = useCtx_ShowModal()
+  const { modalShowedCtx }: any = useCtx_ShowModal()
 
   return (
     <INDEX_ORG_Results_DWrapper>

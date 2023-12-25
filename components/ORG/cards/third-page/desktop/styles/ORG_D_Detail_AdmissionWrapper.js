@@ -9,11 +9,11 @@ export const ORG_D_Detail_AdmissionWrapper = styled.article`
   /* background-color: darkgoldenrod; */
   /* background-color: lightcyan; */
 
-  /* background-color: darkmagenta; */
-  /* filter: sepia(80%); */
+  /* background-color: darkmagenta;
+  filter: sepia(80%); */
 
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 
   header {
     padding: 24px;

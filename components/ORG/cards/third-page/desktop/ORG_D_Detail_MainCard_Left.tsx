@@ -15,8 +15,8 @@ import { ORG_D_Detail_MainCardLeftPhotos } from "./ORG_D_Detail_MainCardLeftPhot
 import { ORG_D_Detail_MapComponent } from "./ORG_D_Detail_MapComponent"
 import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCard_LeftWrapper"
 
-export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }) => {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   // const conditionToImages = useMemo(() => {
   //   let isOpenPosition =

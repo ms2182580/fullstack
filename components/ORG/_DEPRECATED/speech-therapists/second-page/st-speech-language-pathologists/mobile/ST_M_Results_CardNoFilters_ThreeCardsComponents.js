@@ -2,7 +2,7 @@ import { cloneElement, Fragment, useState } from "react"
 import { BookmarkSaveSTMobileSvg } from "../../../../../../../assets/Icons"
 import { DataArray } from "./cards-places/DataArray"
 import { ST_M_Results_CardNoFilters_Paginator } from "./ST_M_Results_CardNoFilters_Paginator"
-import { ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper } from './styles/ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper.js'
+import { ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper } from "./styles/ST_M_Results_CardNoFilters_ThreeCardsComponentsWrapper.js"
 
 export const ST_M_Results_CardNoFilters_ThreeCardsComponents = ({ ...props }) => {
   const [index, setIndex] = useState(0)
@@ -116,7 +116,6 @@ export const ST_M_Results_CardNoFilters_ThreeCardsComponents = ({ ...props }) =>
 
         {DataArray.map((person, n) => {
           let position = n > index ? "nextCard" : n === index ? "activeCard" : "prevCard"
-
 
           return (
             <Fragment key={`${person.key}${n}`}>

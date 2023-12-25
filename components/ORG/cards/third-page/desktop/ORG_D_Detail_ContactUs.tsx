@@ -21,14 +21,14 @@ type Props = {
 export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavBar = null, contactUsCustomProperties = null, idInnerbar = "#" }: Props) => {
   const [textareaValueState, setTextareaValueState] = useState("")
 
-  let handleTextareaValueState = (e) => {
+  let handleTextareaValueState = (e: any) => {
     if (e.target.value.length <= maxCharacterTextarea) {
       setTextareaValueState(e.target.value)
     }
   }
 
   const { push } = useRouter()
-  let handlePushTo404 = (e) => {
+  let handlePushTo404 = (e: any) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
       push("/404")
     }

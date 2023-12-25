@@ -8,7 +8,7 @@ export type ORG_D_Results_Choisepath_PROPS = {
 }
 
 export const ORG_D_Results_Choisepath = ({ isTypedFlow = false }: ORG_D_Results_Choisepath_PROPS) => {
-  const { ORGshowFullMapButton, ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
+  const { ORGshowFullMapButton, ORGShowFullMapFilter }: any = useORG_CtxShowFiltersDesktop()
 
   return (
     <ORG_D_Results_ChoisepathWrapper>

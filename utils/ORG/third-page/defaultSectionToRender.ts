@@ -6,7 +6,7 @@ import { FC } from "react"
 
 export type WhichDefaultId = "schedule" | "contactus" | "reviews" | "faqs"
 
-export type DefaultSectionToRender_Type = { component: FC; defaultId: WhichDefaultId }[]
+export type DefaultSectionToRender_Type = { component: FC<any>; defaultId: WhichDefaultId }[]
 
 export const defaultSectionToRender: DefaultSectionToRender_Type = [
   { component: ORG_D_Detail_Schedule, defaultId: "schedule" },

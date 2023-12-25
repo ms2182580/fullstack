@@ -155,7 +155,7 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
 
         position: absolute;
 
-        top: ${(x) =>
+        top: ${(x: any) =>
           x.distanceModal !== null &&
           `calc(${x.distanceModal[ElementActiveHeight_KEYS.DISTANCE_FROM_TOP]}px + ${x.distanceModal[ElementActiveHeight_KEYS.HEIGHT_OF_ELEMENT]}px + 24px)`};
 

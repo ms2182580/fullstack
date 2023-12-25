@@ -21,7 +21,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Stars = () => {
 
   const [whichComponentIsSelected, setWhichComponentIsSelected] = useState(-1)
 
-  let handleFocusComponent = (e) => {
+  let handleFocusComponent = (e: any) => {
     if (e.key === "Enter" && e.shiftKey === false) {
       if (whichComponentIsSelected < allStarsToJSX.length - 1) {
         let nextIndexComponent = `indexComponent_${whichComponentIsSelected + 1}`

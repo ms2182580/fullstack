@@ -6,8 +6,8 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 
 export default function ORG_RESULTS() {
-  const { secondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
-  const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  const { secondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const { push } = useRouter()
 

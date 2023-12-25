@@ -8,10 +8,16 @@ import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_Main_BottomButtonsWrapper"
 
-export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisCard, renderThisContact }) => {
-  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+type Props = {
+  renderThisFilter: number
+  renderThisCard: number
+  renderThisContact: number
+}
 
-  const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisCard, renderThisContact }: Props) => {
+  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
   const { push } = useRouter()
 
   const existSpecificData = useMemo(() => {

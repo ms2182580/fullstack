@@ -117,7 +117,6 @@ export const ST_M_Results_CardWithFilters_ThreeCardsComponents = ({ ...props }) 
         {DataArray.map((person, n) => {
           let position = n > index ? "nextCard" : n === index ? "activeCard" : "prevCard"
 
-
           return (
             <Fragment key={`${person.key}${n}`}>
               {cloneElement(person, {

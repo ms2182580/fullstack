@@ -1,12 +1,12 @@
 import { useEffect, useReducer, useState } from "react"
-import { ORG_STSearch_M_FilterIcon } from '../../../../../../../assets/Icons/index.js'
-import { useORG_Ctx_FetchWithFiltersMobile } from '../../../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider'
+import { ORG_STSearch_M_FilterIcon } from "../../../../../../../assets/Icons/index.js"
+import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider"
 import { useORG_Ctx_filtersLeftMobile } from "../../../../../../../context/ORG_CtxFiltersLeftMobile_Provider.js"
-import { useORG_Ctx_FiltersApplyMobile } from '../../../../../../../context/ORG_Ctx_FiltersApplyMobile'
+import { useORG_Ctx_FiltersApplyMobile } from "../../../../../../../context/ORG_Ctx_FiltersApplyMobile"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { ORG_INITIAL_VALUES_FILTERS_M } from "../../../../../../../utils/ORG_initialValuesFilters.js"
 import { checkTwoObjects } from "../../../../../../../utils/checkTwoObjects.js"
-import { Caption } from '../../../../../../ui/heading_body_text/DesktopMobileFonts'
+import { Caption } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Results_FiltersContainer } from "./ST_M_Results_FiltersContainer.js"
 import { ST_M_Results_FilterListMainWrapper } from "./styles/ST_M_Results_FilterListMainWrapper.js"
 
@@ -85,8 +85,7 @@ export const ST_M_Results_FilterList = () => {
 
   const { mustShowFiltersMobile, setMustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
 
-  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } =
-    useORG_Ctx_FiltersApplyMobile()
+  const { setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord } = useORG_Ctx_FiltersApplyMobile()
 
   const handleClearAll = (e) => {
     if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
@@ -97,15 +96,7 @@ export const ST_M_Results_FilterList = () => {
 
       dispatch({
         type: "clearAll",
-        payload: [
-          setFilterData,
-          setTempState,
-          setFilterAreApply,
-          setFiltersAppliedNewFilters,
-          setDefaultWord,
-          defaultWord,
-          setMustShowFiltersMobile
-        ]
+        payload: [setFilterData, setTempState, setFilterAreApply, setFiltersAppliedNewFilters, setDefaultWord, defaultWord, setMustShowFiltersMobile],
       })
     }
   }
@@ -134,8 +125,8 @@ export const ST_M_Results_FilterList = () => {
           setFiltersAppliedNewFilters,
           setDefaultWord,
           defaultWord,
-          setShouldFetchMobileWithFilters
-        ]
+          setShouldFetchMobileWithFilters,
+        ],
       })
     }
   }

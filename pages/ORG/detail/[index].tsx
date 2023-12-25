@@ -5,7 +5,7 @@ import { useRouter } from "next/router"
 import { useEffect } from "react"
 
 export default function ORG_Detail() {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { push } = useRouter()
 
