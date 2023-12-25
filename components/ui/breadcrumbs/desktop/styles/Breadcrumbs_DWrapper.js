@@ -1,12 +1,23 @@
 import styled from "styled-components"
-import { PRIMARY } from "../../../../../assets/Colors"
+import { SEMANTICS } from "../../../../../assets/Colors"
 
 export const Breadcrumbs_DWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  p {
+  a {
     text-transform: capitalize;
+    color: ${SEMANTICS.HYPERLINK_NORMAL};
+
+    text-decoration: none;
+
+    &:visited {
+      color: ${SEMANTICS.HYPERLINK_VISITED};
+
+      &::after {
+        background-color: ${SEMANTICS.HYPERLINK_VISITED};
+      }
+    }
   }
 
   & > * {
@@ -22,7 +33,6 @@ export const Breadcrumbs_DWrapper = styled.div`
 
   & > *:not(svg) {
     position: relative;
-    cursor: pointer;
 
     &::after {
       content: "";
@@ -32,7 +42,7 @@ export const Breadcrumbs_DWrapper = styled.div`
       height: 2px;
       left: 50%;
       bottom: 0;
-      background-color: ${PRIMARY.PRIMARY_HOVER};
+      background-color: ${SEMANTICS.HYPERLINK_NORMAL};
       transition: all linear 0.2s;
     }
 

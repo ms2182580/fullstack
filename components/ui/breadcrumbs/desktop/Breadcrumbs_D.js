@@ -1,31 +1,20 @@
+import Breadcrumbs_Home from "@/assets/Icons/Breadcrumbs_Home.svg"
 import Link from "next/link.js"
-import { useRouter } from "next/router.js"
 import { Fragment } from "react"
-import { ArrowRightSvg, HomeSvg } from "../../../../assets/Icons/index.js"
+import { ArrowRightSvg } from "../../../../assets/Icons/index.js"
 import { useTabIndex } from "../../../../utils/useTabindex.js"
-import { P } from "../../heading_body_text/DesktopMobileFonts.js"
 import { Breadcrumbs_DWrapper } from "./styles/Breadcrumbs_DWrapper"
 
 export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
   const useTab = useTabIndex()
 
-  const { push } = useRouter()
-
-  let moveUserTo = (e, href) => {
-    if (e.key === "Enter") {
-      push(href)
-    }
-  }
-
   return (
     <Breadcrumbs_DWrapper typedFlow={typedFlow}>
-      <Link href="/">
-        <span
-          onKeyDown={(e) => moveUserTo(e, "/")}
-          tabIndex={useTab}>
-          <HomeSvg />
-          <P>Home</P>
-        </span>
+      <Link
+        href="/"
+        tabIndex={useTab}>
+        <Breadcrumbs_Home />
+        Home
       </Link>
 
       {whichDisplay.map((x) => {
@@ -36,12 +25,10 @@ export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
             <Fragment key={x[0]}>
               <ArrowRightSvg />
 
-              <Link href={defaultRoute}>
-                <P
-                  onKeyDown={(e) => moveUserTo(e, defaultRoute)}
-                  tabIndex={useTab}>
-                  {x[0]}
-                </P>
+              <Link
+                href={defaultRoute}
+                tabIndex={useTab}>
+                {x[0]}
               </Link>
             </Fragment>
           )
@@ -52,13 +39,11 @@ export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
             <Fragment key={x[0]}>
               <ArrowRightSvg />
 
-              <Link href="#">
-                <P
-                  tabIndex={useTab}
-                  onKeyDown={(e) => moveUserTo(e, "#")}>
-                  {typedFlow && <span>Results for: </span>}
-                  {x[0]}
-                </P>
+              <Link
+                href="#"
+                tabIndex={useTab}>
+                {typedFlow && <span>Results for: </span>}
+                {x[0]}
               </Link>
             </Fragment>
           )
