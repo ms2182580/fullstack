@@ -86,11 +86,6 @@ export const Footer_DWrapper = styled.footer`
           background-color: rgba(255, 255, 255, 0.65);
           border-radius: inherit;
         }
-
-        /* &:hover {
-          color: ${NEUTRALS.OFF_WHITE};
-          background-color: ${PRIMARY.PRIMARY_CTA};
-        } */
       }
     }
   }

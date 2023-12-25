@@ -6,15 +6,6 @@ export const ORG_D_Detail_AdmissionWrapper = styled.article`
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 
-  /* background-color: darkgoldenrod; */
-  /* background-color: lightcyan; */
-
-  /* background-color: darkmagenta;
-  filter: sepia(80%); */
-
-  /* display: flex; */
-  /* flex-direction: column; */
-
   header {
     padding: 24px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
