@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import styled from "styled-components"
 import { COLORS } from "../../variables"
 
@@ -11,7 +11,7 @@ const SharedVariables = {
   JustifyContent: "center",
   ImgMargin: "8px",
   HoverBorderColor: "#4B348B",
-  Color: "#00080B"
+  Color: "#00080B",
 }
 
 export const LoginBtnsStyled = styled.button`

@@ -2,7 +2,7 @@ import { StarsRatingReview_D } from "@/components/org/stars-rating-review/deskto
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { Fragment } from "react"
 import { PCC_General_D_UsersAlsoViewedWrapper } from "./styles/PCC_General_D_UsersAlsoViewedWrapper"
 

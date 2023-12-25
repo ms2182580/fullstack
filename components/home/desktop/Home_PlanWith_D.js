@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { Home_PlanWithSvg } from "../../../assets/Icons"
 import Home_PlanWith from "../../../assets/images/Home_PlanWith.png"
 import { H3 } from "../../ui/heading_body_text/HeaderFonts"
@@ -23,7 +23,9 @@ export const Home_PlanWith_D = () => {
         <p>
           Plan with <span>alternative communication</span>
         </p>
-        <p>Make audio plans, translated into 6 languages with AAC accessibility. Listen to recommendations on your Amazon <span>Echo!</span></p>
+        <p>
+          Make audio plans, translated into 6 languages with AAC accessibility. Listen to recommendations on your Amazon <span>Echo!</span>
+        </p>
         <button>See all integrations</button>
 
         <div>

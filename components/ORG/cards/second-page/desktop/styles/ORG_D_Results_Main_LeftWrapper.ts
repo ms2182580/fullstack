@@ -24,15 +24,6 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
   & > :nth-child(1) {
     position: relative;
 
-    ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
-      LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE
-        ? css`
-            background-color: transparent;
-          `
-        : css`
-            background-color: ${NEUTRALS.OFF_WHITE};
-          `}
-
     padding-inline: 20%;
     overflow: hidden;
 
@@ -41,6 +32,8 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
     margin-bottom: 28px;
 
     height: 158px;
+
+    background-color: ${NEUTRALS.OFF_WHITE};
 
     & > :nth-child(2) {
       position: absolute;
@@ -62,6 +55,8 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
         (LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE || LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE) &&
         css`
           ${isATLayout()}
+
+          border: 2px solid crimson;
         `}
     }
   }

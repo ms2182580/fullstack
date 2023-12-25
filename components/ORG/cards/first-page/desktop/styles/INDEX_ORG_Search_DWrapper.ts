@@ -61,6 +61,12 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
           position: relative;
 
+          /* display: flex;
+          align-items: center;
+          justify-content: center; */
+
+          /* border: 2px solid crimson; */
+
           & > :nth-child(2) {
             position: absolute;
             right: 16px;

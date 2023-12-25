@@ -1,7 +1,7 @@
 import { Verified } from "@/components/org/verified/Verified"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useMemo } from "react"
 import { ORG_D_Results_CardEmail } from "./ORG_D_Results_CardEmail"
 import { ORG_D_Results_CardLocation } from "./ORG_D_Results_CardLocation"

@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import EmailIcon from "../../../../assets/Icons/EmailIcon.png"
 import FacebookIcon from "../../../../assets/Icons/FacebookIcon.jpg"
 import GoogleIcon from "../../../../assets/Icons/GoogleIcon.png"
