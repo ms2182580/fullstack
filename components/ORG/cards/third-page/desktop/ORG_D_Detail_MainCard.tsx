@@ -6,8 +6,8 @@ import { ORG_D_Detail_MainCard_Left } from "./ORG_D_Detail_MainCard_Left"
 import { ORG_D_Detail_MainCard_Right } from "./ORG_D_Detail_MainCard_Right"
 import { ORG_D_Detail_MainCardWrapper } from "./styles/ORG_D_Detail_MainCardWrapper"
 
-export const ORG_D_Detail_MainCard = ({ defaultId = "about", arrayInnerNavBar, layout_MainCardRight, addToCarePlanWithIcon, howIsMap, tooltipDisplay }) => {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+export const ORG_D_Detail_MainCard = ({ defaultId = "about", layout_MainCardRight, addToCarePlanWithIcon, howIsMap, tooltipDisplay }: any) => {
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const isPVES = useMemo(() => {
     let haveSpecificData = thirdpageDataORG.card.leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]

@@ -19,8 +19,8 @@ import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_Tooltip } from "./ORG_D_Detail_Tooltip"
 import { Layout_MainCardRight_VALUES, ORG_D_Detail_MainCard_RightWrapper } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon, tooltipDisplay, isPVES }) => {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePlanWithIcon, tooltipDisplay, isPVES }: any) => {
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { query } = useRouter()
 
@@ -180,7 +180,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
           <ul>
             {thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.CARD].rightPart[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D_KEYS.CARD][
               DATA_ORG_KeyNamesForCards_D_KEYS.RESPONSABILITIES
-            ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].map((x, index) => {
+            ][DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME].map((x: any, index: number) => {
               if (getLengthResponsabilitiesData !== null) {
                 if (index < getLengthResponsabilitiesData - 1) {
                   return <li key={x}>{x}</li>
@@ -200,7 +200,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
       )}
 
       <div className={Layout_MainCardRight_VALUES.DOUBLE_COLUMN_CARD}>
-        {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card).map((x, index) => {
+        {Object.entries(thirdpageDataORG.card.rightPart.thirdPageData.card).map((x: any) => {
           if (x[0] === DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND) {
             return (
               <div key={`${x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]}_${x[1][DATA_ORG_KeyNamesForCards_D.VALUE_NAME].join(", ")}`}>
@@ -216,7 +216,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
         <div>
           {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.LEFT]).map(
-            (x, index) => {
+            (x: any, index) => {
               let shouldDisplayInBlock = x[1][DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK] ? true : false
 
               return (
@@ -234,7 +234,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
 
         <div>
           {Object.entries(thirdpageDataORG.card.rightPart[DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][DATA_ORG_KeyNamesForCards_D.CARD][DATA_ORG_KeyNamesForCards_D.RIGHT]).map(
-            (x, index) => {
+            (x: any, index) => {
               let shouldDisplayInBlock = x[1][DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK] ? true : false
 
               return (
@@ -274,6 +274,7 @@ export const ORG_D_Detail_MainCard_Right = ({ layout_MainCardRight, addToCarePla
             layout="fixed"
             width={48}
             height={48}
+            alt="QR Icon"
           />
         </span>
       </div>

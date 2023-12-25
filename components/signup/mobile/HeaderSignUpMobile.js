@@ -11,12 +11,15 @@ export const HeaderSignUpMobile = (parameters) => {
       router.push("/signup")
     }
   }
-  
+
   return (
-    <HeaderSignUpMobileWrapper >
-        <LinkNoStyle href="/signup">
-          <XSvg tabIndex={0} onKeyDown={handleMoveView}/>
-        </LinkNoStyle>
+    <HeaderSignUpMobileWrapper>
+      <LinkNoStyle href="/signup">
+        <XSvg
+          tabIndex={0}
+          onKeyDown={handleMoveView}
+        />
+      </LinkNoStyle>
       <P semibold>Sign up with Email</P>
     </HeaderSignUpMobileWrapper>
   )

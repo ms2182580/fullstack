@@ -23,7 +23,7 @@ export const ORG_D_Results_MainEntry = ({ titleToFormat = "nothing", isTypedFlow
 
   const [isFullMap, setIsFullMap] = useState(false)
 
-  const handleIsFullMap = (e) => {
+  const handleIsFullMap = (e: any) => {
     if (e.type === "click" || (e.key === "Enter" && e.type === "keydown")) {
       setIsFullMap((prevState) => !prevState)
     }

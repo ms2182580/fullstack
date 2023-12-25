@@ -8,15 +8,15 @@ import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
 import { useLoginCtx } from "../../context/LoginCtx"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import TermsAndServices, {
-  CaptionSignUp,
   CAPTION_EMAIL_SIGNUP,
+  CaptionSignUp,
   DisplayErrorComponent,
   Form,
   H4_EMAIL_SIGNUP,
   InputEmail,
   InputPassword,
   StyleInputFirst,
-  StyleInputSecond
+  StyleInputSecond,
 } from "./styles/SignupForm"
 // import { supabase } from "../../utils/supabaseClient"
 // console.log('supabase:', supabase)
@@ -27,20 +27,19 @@ const SignupForm = () => {
   const { setIsLogin, setWhoIsLogin } = useLoginCtx()
   const router = useRouter()
 
-  const { isMobile,  widthWindow } = useWidthWindow1024()
+  const { isMobile, widthWindow } = useWidthWindow1024()
 
   // console.log('size.laptop:', size.laptop)
-  
 
   const [email, setEmail] = useState({
     value: "",
     hasError: false,
-    touched: false
+    touched: false,
   })
   const [password, setPassword] = useState({
     value: "",
     hasError: false,
-    touched: false
+    touched: false,
   })
 
   const [passwordReveal, setPasswordReveal] = useState(false)
@@ -125,18 +124,14 @@ const SignupForm = () => {
     const inputValue = e.target.value.trim().toLowerCase()
     let emailHasError = false
 
-    if (
-      !/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(
-        inputValue
-      )
-    ) {
+    if (!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(inputValue)) {
       emailHasError = true
     }
 
     setEmail((prevState) => ({
       ...prevState,
       value: e.target.value,
-      hasError: emailHasError
+      hasError: emailHasError,
     }))
     setEmailAlreadyRegistered("")
   }
@@ -146,13 +141,13 @@ const SignupForm = () => {
       setEmail((prevState) => ({
         ...prevState,
         hasError: true,
-        touched: true
+        touched: true,
       }))
     }
 
     setEmail((prevState) => ({
       ...prevState,
-      touched: true
+      touched: true,
     }))
   }
 
@@ -167,7 +162,7 @@ const SignupForm = () => {
     setPassword((prevState) => ({
       ...prevState,
       value: e.target.value,
-      hasError: passwordHasError
+      hasError: passwordHasError,
     }))
     setEmailAlreadyRegistered("")
   }
@@ -176,14 +171,14 @@ const SignupForm = () => {
     setPassword((prevState) => ({
       ...prevState,
 
-      touched: true
+      touched: true,
     }))
   }
 
   const showPassword = () => {
     setPasswordReveal(!passwordReveal)
   }
-  
+
   if (widthWindow > 1024 && router.pathname === "/signup/SignupForm") {
     router.push("/signup")
   }
@@ -205,7 +200,7 @@ const SignupForm = () => {
                 displayRedEmail={{
                   emailAlreadyRegistered,
                   hasError: email.hasError,
-                  hasTouched: email.touched
+                  hasTouched: email.touched,
                 }}>
                 Email
               </H4_EMAIL_SIGNUP>
@@ -216,7 +211,7 @@ const SignupForm = () => {
                 displayRedEmail={{
                   emailAlreadyRegistered,
                   hasError: email.hasError,
-                  hasTouched: email.touched
+                  hasTouched: email.touched,
                 }}>
                 Email
               </CAPTION_EMAIL_SIGNUP>
@@ -227,7 +222,7 @@ const SignupForm = () => {
             customMargin={{
               emailAlreadyRegistered,
               hasError: email.hasError,
-              hasTouched: email.touched
+              hasTouched: email.touched,
             }}>
             <EmailSvg className="EmailIconSF" />
 
@@ -243,12 +238,10 @@ const SignupForm = () => {
               whichOutline={{
                 emailAlreadyRegistered,
                 hasError: email.hasError,
-                hasTouched: email.touched
+                hasTouched: email.touched,
               }}
             />
-            {email.touched && email.hasError && (
-              <Caption className={`CaptionInRedSF DisplayErrorFirst`}>It should be a valid email address!</Caption>
-            )}
+            {email.touched && email.hasError && <Caption className={`CaptionInRedSF DisplayErrorFirst`}>It should be a valid email address!</Caption>}
             {emailAlreadyRegistered !== "" && (
               <DisplayErrorComponent className="CaptionInRedSF DisplayErrorFirst">
                 <ExclamationSvg />
@@ -265,21 +258,9 @@ const SignupForm = () => {
           </StyleInputFirst>
 
           {isMobile === false ? (
-            <>
-              {password.touched && password.hasError ? (
-                <h4>Password</h4>
-              ) : (
-                <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</h4>
-              )}
-            </>
+            <>{password.touched && password.hasError ? <h4>Password</h4> : <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</h4>}</>
           ) : (
-            <>
-              {password.touched && password.hasError ? (
-                <span>Password</span>
-              ) : (
-                <span className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</span>
-              )}
-            </>
+            <>{password.touched && password.hasError ? <span>Password</span> : <span className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</span>}</>
           )}
 
           <StyleInputSecond>
@@ -304,15 +285,13 @@ const SignupForm = () => {
               className="InputSecondSF"
               whichOutline={{
                 hasError: password.hasError,
-                hasTouched: password.touched
+                hasTouched: password.touched,
               }}
             />
             {password.touched && password.hasError ? (
               <CaptionSignUp className="DisplayErrorSecond">Password must include at least 8 characters</CaptionSignUp>
             ) : (
-              <CaptionSignUp className={`${password.touched ? "CaptionInRedSF" : ""}`}>
-                Password must include at least 8 characters
-              </CaptionSignUp>
+              <CaptionSignUp className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password must include at least 8 characters</CaptionSignUp>
             )}
           </StyleInputSecond>
 

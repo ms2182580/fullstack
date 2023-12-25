@@ -13,6 +13,7 @@ export const ORG_D_Detail_AT_WCMD_SimilarProducts_Section = ({ image, title, sub
           width={240}
           height={184}
           objectFit="contain"
+          alt={`Image of ${title}`}
         />
       </div>
 

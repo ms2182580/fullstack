@@ -76,7 +76,6 @@ const Signup = () => {
             <LinkNoStyle href="/">
               <BackArrow />
               <span>Return to Home</span>
-
             </LinkNoStyle>
           </span>
         </>
@@ -135,7 +134,6 @@ const Signup = () => {
             <div>
               <SignupForm />
             </div>
-
           </RightSignup>
         </>
       ) : (
@@ -144,9 +142,9 @@ const Signup = () => {
             onTouchStart={
               isTouchScreen
                 ? (e) => {
-                  e.stopPropagation()
-                  handleShowLoginButtons()
-                }
+                    e.stopPropagation()
+                    handleShowLoginButtons()
+                  }
                 : undefined
             }
             onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}
@@ -154,9 +152,7 @@ const Signup = () => {
               if (e.key === "Escape") {
                 handleHideLoginButtons()
               }
-
-            }}
-          >
+            }}>
             <ButtonSmall>Join Inclusive</ButtonSmall>
           </span>
 

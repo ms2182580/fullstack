@@ -9,7 +9,7 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_HeaderWrapper } from "./styles/ORG_D_Detail_HeaderWrapper"
 
-export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null, defaultSectionToRender, sectionToRender = null }) => {
+export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, sectionToRender = null }: any) => {
   const { pathname, query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
   const formattedActualRoute = useMemo(() => {
@@ -36,7 +36,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, arrayInnerNavBar = null,
       <ul>
         {sectionToRender !== null ? (
           <>
-            {sectionToRender.map((x, index) => {
+            {sectionToRender.map((x: any, index: number) => {
               const toJSX = x.toNavbar.jsx ? x.toNavbar.jsx : x.toNavbar.id
 
               if (x.toNavbar.id !== null) {

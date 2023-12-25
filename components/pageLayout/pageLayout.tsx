@@ -14,10 +14,10 @@ const Footer_Desktop = dynamic(() => import("../footer/desktop/Footer_D.js").the
 const Footer_Mobile = dynamic(() => import("../footer/mobile/Footer_M.js").then((mod) => mod.Footer_M), { ssr: false })
 
 export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
-  const { isMobile } = useCheckUserWidth()
+  const { isMobile }: any = useCheckUserWidth()
   const { push, pathname } = useRouter()
 
-  let { actualSessionStorage } = useSessionStorage_typedFlow()
+  let { actualSessionStorage }: any = useSessionStorage_typedFlow()
 
   useEffect(() => {
     if (actualSessionStorage === KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST) {

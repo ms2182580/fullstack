@@ -10,28 +10,14 @@ import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
 export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
-  const {
-    userFetched,
-    setUserFetched: setData,
-    filtersST,
-    setFiltersST: setFilters,
-    actualSort,
-    setActualSort,
-    pagination
-  } = useORG_Ctx_FetchNoFiltersDesktop()
+  const { userFetched, setUserFetched: setData, filtersST, setFiltersST: setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  const { filterAreApply, filtersAppliedNewFilters, setFiltersAppliedNewFilters, defaultWord } =
-    useORG_Ctx_FiltersApplyDesktop()
+  const { filterAreApply, filtersAppliedNewFilters, setFiltersAppliedNewFilters, defaultWord } = useORG_Ctx_FiltersApplyDesktop()
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 
-  const {
-    userFetched: dataF,
-    setUserFetched: setDataF,
-    filtersST: filtersF,
-    setFiltersST: setFiltersF
-  } = useORG_Ctx_FetchWithFiltersDesktop()
+  const { userFetched: dataF, setUserFetched: setDataF, filtersST: filtersF, setFiltersST: setFiltersF } = useORG_Ctx_FetchWithFiltersDesktop()
 
   const handleDropdownClick = (e) => {
     setShowDropdown((prevstate) => !prevstate)
@@ -50,29 +36,19 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     setWhichTitle(elementSelected)
     setActualSort(elementSelected)
 
-    const { newOrderData, newOrderFilters } = ORG_SortybyFunction_D(
-      elementSelected,
-      filtersST,
-      userFetched,
-      "CustomDropdownFilters. Fetch no filters"
-    )
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction_D(elementSelected, filtersST, userFetched, "CustomDropdownFilters. Fetch no filters")
 
     setData((prevState) => ({
       ...prevState,
-      allData: newOrderData
+      allData: newOrderData,
     }))
     setFilters(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_D(
-      elementSelected,
-      filtersF,
-      dataF,
-      "CustomDropdownFilters. Fetch with filters"
-    )
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_D(elementSelected, filtersF, dataF, "CustomDropdownFilters. Fetch with filters")
 
     setDataF((prevState) => ({
       ...prevState,
-      allData: newOrderDataF
+      allData: newOrderDataF,
     }))
     setFiltersF(newOrderFiltersF)
 
@@ -98,13 +74,14 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     setFiltersAppliedNewFilters(false)
   }, [whichTitle])
 
-
   const refDropdown = useRef(null)
   useOutsideHide(refDropdown, setShowDropdown)
 
   return (
     <>
-      <SingleDropdownWrapper className="SingleDropdownWrapper" ref={refDropdown}>
+      <SingleDropdownWrapper
+        className="SingleDropdownWrapper"
+        ref={refDropdown}>
         <span
           onClick={handleDropdownClick}
           onKeyDown={(e) => {

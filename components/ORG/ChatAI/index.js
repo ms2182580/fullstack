@@ -48,7 +48,6 @@ export const ChatAI = () => {
   return (
     <ChatAIWrapper>
       <span
-
         onClick={handleShowChat}
         onDoubleClick={handleCloseChat}
         onKeyDown={handleShowChat}

@@ -17,10 +17,10 @@ export type widthOfDropdown_TYPE = {
 export const NavBar_D_InputLocation = ({ widthOfDropdown }: widthOfDropdown_TYPE) => {
   const [isFocusCity, setIsFocusCity] = useState(false)
   const [isHoveredCity, setIsHoveredCity] = useState(false)
-  const inputRefCity = useRef()
+  const inputRefCity = useRef<HTMLInputElement>(null)
   const [cityInput, setCityInput] = useState("")
 
-  const { setCitiesContext, citiesContext } = useORG_InputCtx()
+  const { setCitiesContext, citiesContext }: any = useORG_InputCtx()
 
   useEffect(() => {
     setCityInput(citiesContext)

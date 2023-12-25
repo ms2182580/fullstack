@@ -9,7 +9,7 @@ import { PCC_General_D_UsersAlsoViewedWrapper } from "./styles/PCC_General_D_Use
 const tags = ["All", "Similar Price", "Same subject", "Similar class structure", "Also from Kicking the spectrum", "More Tags"]
 
 export const PCC_General_D_UsersAlsoViewed = ({ idInnerbar = "#" }) => {
-  const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   return (
     <PCC_General_D_UsersAlsoViewedWrapper id={idInnerbar}>
@@ -20,7 +20,7 @@ export const PCC_General_D_UsersAlsoViewed = ({ idInnerbar = "#" }) => {
 
           return (
             <Fragment key={`${xElement}_${index}`}>
-              <li tabIndex={isLastIndex && 0}>{xElement}</li>
+              <li tabIndex={isLastIndex ? 0 : -1}>{xElement}</li>
             </Fragment>
           )
         })}
@@ -39,6 +39,8 @@ export const PCC_General_D_UsersAlsoViewed = ({ idInnerbar = "#" }) => {
                 objectPosition={"0% 0px"}
                 width={1}
                 height={1}
+                /* !FH FIX THIS  */
+                alt={"image"}
               />
             </div>
             <div>

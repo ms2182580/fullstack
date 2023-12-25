@@ -7,10 +7,10 @@ import { LoginButtonsMobileWrapper } from "../styles/LoginButtonsMobileWrapper"
 
 export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, fadeOut }) => {
   const [shouldInteract, setShouldInteract] = useState(false)
-  
+
   const thisRef = useRef(null)
   useOutsideHide(thisRef, handleHideLoginButtons, delayMilliseconds)
-  
+
   useEffect(() => {
     if (showLoginButtons) {
       setTimeout(() => {
@@ -22,12 +22,11 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, f
       setShouldInteract(false)
     }
   }, [showLoginButtons])
-  
 
   // const hideWithEsc = (e) => {
   //   KeepWriteHere
   //   useOutsideHide(thisRef, handleHideLoginButtons, delayMilliseconds)
-    
+
   // }
 
   return (
@@ -35,21 +34,13 @@ export const LoginButtonsMobile = ({ showLoginButtons, handleHideLoginButtons, f
       showLoginButtons={showLoginButtons}
       className={showLoginButtons && fadeOut === false ? "fadeIn" : fadeOut ? "fadeOut" : ""}
       ref={thisRef}
-      shouldInteract={shouldInteract}
-      
-    
-
-      
-    >
+      shouldInteract={shouldInteract}>
       <div></div>
       <GoogleLoginBtn bolder={true} />
       <FacebookLoginBtn bolder={true} />
       <LinkNoStyle href="/signup/SignupForm">
         <EmailLoginBtn bolder={true} />
       </LinkNoStyle>
-
     </LoginButtonsMobileWrapper>
   )
 }
-
-

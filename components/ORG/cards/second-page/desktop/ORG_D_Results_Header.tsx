@@ -7,7 +7,7 @@ type PROPS = {
   isTypedFlow?: boolean
 }
 
-export const ORG_D_Results_Header = ({ titleToFormat, isTypedFlow = false }: PROPS) => {
+export const ORG_D_Results_Header = ({ titleToFormat = "noTitleProvide", isTypedFlow = false }: PROPS) => {
   return (
     <ORG_D_Results_HeaderWrapper isTypedFlow={isTypedFlow}>
       {isTypedFlow ? <P>Search for Therapeutic Providers & Services</P> : null}

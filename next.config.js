@@ -1,16 +1,20 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
+
+  /* swcMinify: true,
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
   },
   images: {
     domains: ["randomuser.me"],
-  },
+  }, */
 
-  async redirects() {
+  /* async redirects() {
     return [
       {
         source: "/at",
@@ -167,7 +171,7 @@ const nextConfig = {
         permanent: true,
       },
     ]
-  },
+  }, */
 }
 
 module.exports = nextConfig

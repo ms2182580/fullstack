@@ -10,8 +10,13 @@ import { ORG_D_Results_Card_Hearth } from "./ORG_D_Results_Card_Hearth"
 import { ORG_D_Results_Cardphone } from "./ORG_D_Results_Cardphone"
 import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_LeftWrapper"
 
-export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) => {
-  const { secondpageDataORG } = useORG_Ctx_D_SecondpageData()
+type Props = {
+  renderThisCard: number
+  renderThisContact: number
+}
+
+export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }: Props) => {
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const isVES_Like = useMemo(() => {
     return secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] === LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
@@ -38,7 +43,7 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }) =
   return (
     <ORG_D_Results_Main_LeftWrapper
       isOpenPositionAndThirdPosition={isOpenPositionAndThirdPosition}
-      className={isOpenPositionAndThirdPosition && "isOpenPositionAndThirdPosition"}
+      className={isOpenPositionAndThirdPosition ? "isOpenPositionAndThirdPosition" : ""}
       LAYOUT_RESULTS_MAIN_CARD={layout}>
       <div>
         <Image

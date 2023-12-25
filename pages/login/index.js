@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 // import { supabase } from "../../utils/supabaseClient"
 import { useRouter } from "next/router"
 import { useLoginCtx } from "../../context/LoginCtx"
 
 const initialState = {
   email: "",
-  password: ""
+  password: "",
 }
 
 // const signInWithEmail = async (email, password) => {
@@ -38,18 +38,17 @@ const Login = () => {
   const handleEmail = (e) => {
     setFormValues((prevState) => ({
       ...prevState,
-      email: e.target.value
+      email: e.target.value,
     }))
   }
   const handlePassword = (e) => {
     setFormValues((prevState) => ({
       ...prevState,
-      password: e.target.value
+      password: e.target.value,
     }))
   }
 
-  const copyEmail = () => {
-  }
+  const copyEmail = () => {}
   const copyPassword = () => {
     navigator.clipboard.writeText("password1")
   }
@@ -58,11 +57,17 @@ const Login = () => {
     <>
       Login here
       {/* <form onSubmit={handleSubmit}> */}
-      <form >
+      <form>
         <label>Email</label>
-        <input type="email" onChange={handleEmail} />
+        <input
+          type="email"
+          onChange={handleEmail}
+        />
         <label>Password</label>
-        <input type="password" onChange={handlePassword} />
+        <input
+          type="password"
+          onChange={handlePassword}
+        />
         <button>Submit</button>
       </form>
       {/* <p onClick={copyEmail}>Email</p> */}

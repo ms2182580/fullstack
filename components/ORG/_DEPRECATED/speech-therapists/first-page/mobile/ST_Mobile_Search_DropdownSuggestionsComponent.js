@@ -13,7 +13,7 @@ export const ST_Mobile_Search_DropdownSuggestionsComponent = ({
   haveIcon = false,
   whichIcon,
   theRef,
-  isFirstOrSecondDropdown = false
+  isFirstOrSecondDropdown = false,
 }) => {
   let IconSvg = whichIcon
 
@@ -28,23 +28,23 @@ export const ST_Mobile_Search_DropdownSuggestionsComponent = ({
           onMouseEnter={
             !isTouchScreen && setIsHover !== undefined
               ? () => {
-                setIsHover(true)
-              }
+                  setIsHover(true)
+                }
               : undefined
           }
           onMouseLeave={
             !isTouchScreen && setIsHover !== undefined
               ? () => {
-                setIsHover(false)
-              }
+                  setIsHover(false)
+                }
               : undefined
           }
           onTouchStart={
             isTouchScreen
               ? (e) => {
-                e.stopPropagation()
-                setIsFocus(true)
-              }
+                  e.stopPropagation()
+                  setIsFocus(true)
+                }
               : undefined
           }
           onClick={() => inputRefFocus.current.focus()}>
@@ -100,4 +100,3 @@ export const ST_Mobile_Search_DropdownSuggestionsComponent = ({
     </ST_Mobile_Search_DropdownSuggestionsComponentWrapper>
   )
 }
-

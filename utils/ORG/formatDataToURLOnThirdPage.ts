@@ -9,8 +9,12 @@ type Props = {
  */
 
 export const formatDataToURLOnThirdPage = ({ stringToFormat = "No String Provide", whichCharacterToReplace = "_" }: Props): string => {
-  return stringToFormat
+  const matchedChars = stringToFormat.match(/[a-zA-Z]|\s|[0-9]/g)
+  const formattedString = matchedChars ? matchedChars.join("").replace(/\s+/g, `${whichCharacterToReplace}`) : ""
+  return formattedString
+
+  /* return stringToFormat
     .match(/[a-zA-Z]|\s|[0-9]/g)
     .join("")
-    .replace(/\s+/g, `${whichCharacterToReplace}`)
+    .replace(/\s+/g, `${whichCharacterToReplace}`) */
 }

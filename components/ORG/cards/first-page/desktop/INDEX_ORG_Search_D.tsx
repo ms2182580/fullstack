@@ -16,7 +16,14 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { All_Layouts_Accepted, INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
 
-export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theData, someLayoutSpecial }) => {
+type Props = {
+  positionInArray: number
+  isSelected: boolean
+  theData: object[]
+  someLayoutSpecial: any
+}
+
+export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theData, someLayoutSpecial }: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -28,22 +35,22 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
   }, [isSelected])
 
   const { push } = useRouter()
-  const { setSecondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
-  const { setSecondpageDataORG } = useORG_Ctx_D_SecondpageData()
+  const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
-  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
       {theData.map((x, iData) => {
-        const [title, ...objects] = x
+        const [title, ...objects]: any = x
         while (howMuchDisplay > iData) {
           return (
             <>
               <div key={`${title}_${iData}`}>
                 <H2>{title}</H2>
                 <div>
-                  {objects.map((obj, iSubData) => {
+                  {objects.map((obj: any, iSubData: number) => {
                     return (
                       <div key={`${iSubData}_${obj.title}_${obj.reviews}`}>
                         <div>

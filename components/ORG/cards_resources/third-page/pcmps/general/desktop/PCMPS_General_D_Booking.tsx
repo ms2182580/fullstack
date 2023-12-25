@@ -46,11 +46,11 @@ const modalData = {
 }
 
 export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
-  const [dataToModal, setDataToModal] = useState(dataToModal_InitialData)
+  const [dataToModal, setDataToModal] = useState<any>(dataToModal_InitialData)
   const [shouldShowMoldal, setShouldShowMoldal] = useState(false)
-  const [elementActiveHeight, setElementActiveHeight] = useState(null)
+  const [elementActiveHeight, setElementActiveHeight] = useState<any>(null)
 
-  const refModal = useRef(null)
+  const refModal = useRef<HTMLLIElement>(null)
   useOutsideHide(refModal, setShouldShowMoldal)
 
   let handleGetData = (e, thisDayOfTheMonth: number): void => {

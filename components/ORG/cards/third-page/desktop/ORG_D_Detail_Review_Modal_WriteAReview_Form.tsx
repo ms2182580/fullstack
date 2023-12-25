@@ -29,7 +29,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Form = () => {
   const { query } = useRouter()
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault()
     // Handle form submission manually here
   }
@@ -45,7 +45,7 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Form = () => {
   const [inputText, setInputText] = useState("")
   const [inputText_PassCondition, setInputText_PassCondition] = useState(false)
 
-  let handleInputText = (e) => {
+  let handleInputText = (e: any) => {
     setInputText(e.target.value)
   }
 

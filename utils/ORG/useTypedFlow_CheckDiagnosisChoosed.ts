@@ -25,7 +25,7 @@ type StructureDataToReturn = {
 }
 
 let formatObject = (objToFormat: ArrOfStr): StructureDataToReturn => {
-  let dataInArr = []
+  let dataInArr: any = []
   let dataInArrHaveAtLeastOneElemenet = false
   if (objToFormat.length > 0) {
     dataInArrHaveAtLeastOneElemenet = true
