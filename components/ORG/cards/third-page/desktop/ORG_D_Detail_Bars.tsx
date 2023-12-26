@@ -1,32 +1,36 @@
-import Tooltip from "@/assets/Icons/tooltip.svg"
+import X_Svg from "@/assets/icons/X_Svg.svg"
+import Tooltip from "@/assets/icons/tooltip.svg"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import Image, { StaticImageData } from "next/image"
 import { ORG_D_Detail_BarsWrapper } from "./styles/ORG_D_Detail_BarsWrapper"
 
 export type CategoriesToDisplay_Data = {
   category: string
-  whichGraphic?: StaticImageData
+  whichGraphic: StaticImageData
 }[]
+
+export type shouldDisplayTooltip = { shouldDisplayTooltip?: boolean }
 
 export type ORG_D_Detail_Bars_Props = {
   title: string
   subtitle: string
-  shouldDisplayTooltip?: boolean
   categoriesToDisplay: CategoriesToDisplay_Data
-}
+} & shouldDisplayTooltip
 
-export const ORG_D_Detail_Bars = ({ title, subtitle, shouldDisplayTooltip = false, categoriesToDisplay }: ORG_D_Detail_Bars_Props) => {
+export const ORG_D_Detail_Bars = ({ title, subtitle, shouldDisplayTooltip = false, categoriesToDisplay = X_Svg }: ORG_D_Detail_Bars_Props) => {
   return (
-    <ORG_D_Detail_BarsWrapper>
+    <ORG_D_Detail_BarsWrapper shouldDisplayTooltip={shouldDisplayTooltip}>
       <div>
-        <H4>{title}</H4>
-        <P>{subtitle}</P>
-        {shouldDisplayTooltip ? (
-          <>
-            <Tooltip />
-          </>
-        ) : null}
+        <span>
+          <H4>{title}</H4>
+          {shouldDisplayTooltip ? (
+            <>
+              <Tooltip />
+            </>
+          ) : null}
+        </span>
+        <H3>{subtitle}</H3>
       </div>
 
       <ul>
@@ -41,7 +45,11 @@ export const ORG_D_Detail_Bars = ({ title, subtitle, shouldDisplayTooltip = fals
                     alt={`Image with graphic for ${x.category}`}
                   />
                 </>
-              ) : null}
+              ) : (
+                <>
+                  <X_Svg />
+                </>
+              )}
             </li>
           )
         })}

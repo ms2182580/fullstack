@@ -1,4 +1,4 @@
-import { EmailORGSvg } from "../../../../../../assets/Icons/index.js"
+import { EmailORGSvg } from "../../../../../../assets/icons/index.js"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Detail_CardEmailWrapper } from "./styles/ST_M_Detail_CardEmailWrapper.js"
 
@@ -9,7 +9,6 @@ export const ST_M_Detail_CardEmail = ({ email }) => {
       <div>
         <P>{email}</P>
       </div>
-
     </ST_M_Detail_CardEmailWrapper>
   )
 }

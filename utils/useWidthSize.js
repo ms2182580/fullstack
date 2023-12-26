@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { size } from "../assets/screenSizes/ScreenSizes"
+import { size } from "../assets/screen-sizes/ScreenSizes"
 
 export const useWidthSize = () => {
   const [widthWindow, setWidthWindow] = useState(Number(size.laptop))

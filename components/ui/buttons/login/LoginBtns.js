@@ -1,7 +1,7 @@
 import Image from "next/legacy/image"
-import EmailIcon from "../../../../assets/Icons/EmailIcon.png"
-import FacebookIcon from "../../../../assets/Icons/FacebookIcon.jpg"
-import GoogleIcon from "../../../../assets/Icons/GoogleIcon.png"
+import EmailIcon from "../../../../assets/icons/EmailIcon.png"
+import FacebookIcon from "../../../../assets/icons/FacebookIcon.jpg"
+import GoogleIcon from "../../../../assets/icons/GoogleIcon.png"
 import { LoginBtnsStyled } from "./styles/LoginBtnsStyled.js"
 
 export const FacebookLoginBtn = ({ bolder }) => {

@@ -7,6 +7,8 @@ export const ORG_D_Detail_TableCakeWrapper = styled.article`
   grid-auto-flow: column;
   gap: calc(8px * 5);
 
+  align-items: center;
+
   & > :nth-child(1) {
     display: grid;
 
@@ -16,20 +18,6 @@ export const ORG_D_Detail_TableCakeWrapper = styled.article`
       font-size: 18px;
       display: flex;
       align-items: center;
-    }
-
-    & > :nth-child(odd),
-    & > :nth-child(2) > :nth-child(even) {
-      background-color: rgba(211, 214, 215, 0.2);
-
-      width: 100%;
-
-      padding-inline: ${paddingOnTable};
-    }
-
-    & > :nth-child(2) > :nth-child(odd) {
-      padding-left: ${paddingOnTable};
-      padding-right: ${paddingOnTable};
     }
 
     & > :nth-child(2) {
@@ -44,8 +32,27 @@ export const ORG_D_Detail_TableCakeWrapper = styled.article`
 
         & > * {
           font-weight: 400;
+
+          text-transform: capitalize;
         }
       }
+    }
+
+    & > :nth-child(1),
+    & > :nth-child(2) > * > * {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    & > :nth-child(odd),
+    & > :nth-child(2) > :nth-child(even) {
+      background-color: rgba(211, 214, 215, 0.2);
+    }
+
+    & > :nth-child(odd),
+    & > :nth-child(2) > :nth-child(even),
+    & > :nth-child(2) > :nth-child(odd) {
+      padding-inline: ${paddingOnTable};
     }
   }
 `

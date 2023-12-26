@@ -1,6 +1,6 @@
 import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
-import ORGDesktop_InsuranceIcon from "../../../../assets/Icons/ORGDesktop_InsuranceIcon.png"
+import ORGDesktop_InsuranceIcon from "../../../../assets/icons/ORGDesktop_InsuranceIcon.png"
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"

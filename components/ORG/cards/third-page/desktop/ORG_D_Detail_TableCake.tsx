@@ -1,10 +1,10 @@
-import pieGraph from "@/assets/images/ORG/special-education-schools/pieGraph.png"
+import pieGraph from "@/assets/images/org/special-education-schools/pieGraph.png"
 import Image, { StaticImageData } from "next/image"
 import { ORG_D_Detail_TableCakeWrapper } from "./styles/ORG_D_Detail_TableCakeWrapper"
 
 export type TableData_Type = {
   dataTable: string
-  percentageThisData: number
+  percentageThisData: number | string
 }[]
 
 export type ORG_D_Detail_TableCake_Props = {

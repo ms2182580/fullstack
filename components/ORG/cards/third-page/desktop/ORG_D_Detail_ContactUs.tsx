@@ -1,7 +1,7 @@
 import { InnerNavBar_InnerData } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
-import { SendMessageSvg } from "../../../../../assets/Icons/index.js"
+import { SendMessageSvg } from "../../../../../assets/icons/index.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_ContactUsWrapper } from "./styles/ORG_D_Detail_ContactUsWrapper.js"
 

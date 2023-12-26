@@ -8,9 +8,9 @@ import {
   LetterSpacingHeadMobile,
   LineHeightHeadDesktop,
   LineHeightHeadMobile,
-} from "../../../assets/Fonts/HeadingValues"
-import { FontsWeights } from "../../../assets/Fonts/Weights"
-import { device } from "../../../assets/screenSizes/ScreenSizes.js"
+} from "../../../assets/fonts/HeadingValues"
+import { FontsWeights } from "../../../assets/fonts/Weights"
+import { device } from "../../../assets/screen-sizes/ScreenSizes.js"
 
 const SharedVariables = {
   FontWeight_400: `${FontsWeights.REGULAR_400}`,

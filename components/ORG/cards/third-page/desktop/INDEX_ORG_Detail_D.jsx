@@ -1,6 +1,6 @@
 import { ChatAI } from "@/components/org/ChatAI"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { ArraySection_KEYS, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { Fragment, useMemo } from "react"
@@ -63,7 +63,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
                   return (
                     <>
                       <Fragment key={`${index}`}>
-                        <x.component idInnerbar={theIdForComponent} />
+                        <x.component {...{ [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: theIdForComponent }} />
                       </Fragment>
                     </>
                   )

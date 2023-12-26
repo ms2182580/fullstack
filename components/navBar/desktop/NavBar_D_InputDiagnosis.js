@@ -1,7 +1,7 @@
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import Image from "next/legacy/image"
 import { useRef, useState } from "react"
-import ORGDesktop_AgeIcon from "../../../assets/Icons/ORGDesktop_AgeIcon.png"
+import ORGDesktop_AgeIcon from "../../../assets/icons/ORGDesktop_AgeIcon.png"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
 import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"

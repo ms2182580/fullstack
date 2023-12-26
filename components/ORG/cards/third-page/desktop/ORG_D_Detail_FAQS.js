@@ -1,7 +1,7 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { Fragment, useRef, useState } from "react"
-import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/Icons/index.js"
+import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
 import { ORG_ST_FAQS } from "../../../../../utils/ORG_ST_FAQS_D.js"

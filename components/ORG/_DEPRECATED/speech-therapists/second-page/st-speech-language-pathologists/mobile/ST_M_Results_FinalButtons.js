@@ -1,5 +1,5 @@
 import { useRouter } from "next/router.js"
-import { LeftArrowSvg, RightArrowSvg } from "../../../../../../../assets/Icons/index.js"
+import { LeftArrowSvg, RightArrowSvg } from "../../../../../../../assets/icons/index.js"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { useShouldTab } from "../../../../../../../utils/ORG_shouldTab.js"
@@ -8,7 +8,7 @@ import { ST_M_Results_NavigationButtonsNumbers } from "./ST_M_Results_Navigation
 import {
   ST_M_Results_FinalButtonsNextButtonWrapper,
   ST_M_Results_FinalButtonsPrevButtonWrapper,
-  ST_M_Results_FinalButtonsWrapper
+  ST_M_Results_FinalButtonsWrapper,
 } from "./styles/ST_M_Results_FinalButtonsWrapper.js"
 
 export const ST_M_Results_FinalButtons = () => {

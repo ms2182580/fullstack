@@ -1,11 +1,10 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useEffect, useRef } from "react"
-import { ChatAILogo } from "../../../assets/Icons/index"
+import { ChatAILogo } from "../../../assets/icons/index"
 import { useNavbarHomeHeight } from "../../../context/NavbarHome_Ctx_Height"
 import { H1 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_OnlyHomeWrapper } from "./styles/NavBar_D_OnlyHomeWrapper.js"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 
 export const NavBar_D_OnlyHome = () => {
   const route = useRouter()
@@ -28,16 +27,13 @@ export const NavBar_D_OnlyHome = () => {
   }, [route.pathname])
 
   return (
-    <NavBar_D_OnlyHomeWrapper ref={refHeight}
-    >
+    <NavBar_D_OnlyHomeWrapper ref={refHeight}>
       <div tabIndex={0}>
         <H1>Inclusive</H1>
         <ChatAILogo />
       </div>
-      
-     
-      <Link href="/signup">Sign up</Link>
 
+      <Link href="/signup">Sign up</Link>
     </NavBar_D_OnlyHomeWrapper>
   )
 }

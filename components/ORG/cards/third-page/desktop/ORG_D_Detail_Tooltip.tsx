@@ -1,4 +1,4 @@
-import { QuestionTooltip_AASvg, QuestionTooltip_DefaultSvg } from "@/assets/Icons/index.js"
+import { QuestionTooltip_AASvg, QuestionTooltip_DefaultSvg } from "@/assets/icons/index.js"
 import { Tooltip_KEYS, Tooltip_VALUES, TypeOfTooltipSVG_LIKE } from "@/utils/org/third-page/tooltip"
 import { useRef, useState } from "react"
 import { useOutsideHide } from "../../../../../utils/useOutsideHide.js"

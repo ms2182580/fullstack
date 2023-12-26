@@ -1,4 +1,4 @@
-import { maxDesktopScreenSize } from "@/assets/screenSizes/ScreenSizes"
+import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SECONDARY_SNT } from "../../../../assets/Colors"
 

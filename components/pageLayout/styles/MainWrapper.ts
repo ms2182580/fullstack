@@ -1,4 +1,4 @@
-import { maxDesktopScreenSize } from "@/assets/screenSizes/ScreenSizes"
+import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import styled, { css } from "styled-components"
 
 const homeStyles = () => css`
