@@ -1,5 +1,7 @@
-import { PRIMARY } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
+
+const paddingInline = "32px"
 
 export const PVES_General_D_GraphicsWrapper = styled.section`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
@@ -17,7 +19,7 @@ export const PVES_General_D_GraphicsWrapper = styled.section`
   }
 
   & > *:not(:first-child) {
-    padding-inline: 32px;
+    padding-inline: ${paddingInline};
   }
 
   & > :nth-child(2) {
@@ -26,7 +28,10 @@ export const PVES_General_D_GraphicsWrapper = styled.section`
 
     gap: 24px;
 
+    padding-bottom: 40px;
     margin-bottom: 40px;
+
+    position: relative;
 
     header {
       flex-basis: 100%;
@@ -46,6 +51,21 @@ export const PVES_General_D_GraphicsWrapper = styled.section`
 
       flex-basis: 600px;
       flex-grow: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: ${paddingInline};
+      right: 0;
+
+      height: 2px;
+      width: calc(100% - calc(${paddingInline} * 2));
+
+      background: linear-gradient(90deg, hsla(195, 4.8%, 83.5%, 0.9) 1%, ${NEUTRALS.LIGHT_GREY} 50%, hsla(195, 4.8%, 83.5%, 0.9) 99%);
+
+      border-radius: 50%;
     }
   }
 
