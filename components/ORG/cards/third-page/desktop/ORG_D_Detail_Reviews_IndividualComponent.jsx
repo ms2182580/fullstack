@@ -1,4 +1,4 @@
-import ORG_D_Detail_Review from "@/assets/Icons/ORG_D_Detail_Review.png"
+import ORG_D_Detail_Review from "@/assets/icons/ORG_D_Detail_Review.png"
 import { PatternStars } from "@/components/org/stars-rating-review/PatternsStars.js"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_ReviewsUsersName } from "@/utils/ORG_ReviewsUsersName.js"

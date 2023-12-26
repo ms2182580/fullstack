@@ -1,4 +1,4 @@
-import { maxDesktopScreenSize } from "@/assets/screenSizes/ScreenSizes"
+import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import styled from "styled-components"
 
 export const INDEX_HomeWrapper = styled.div`

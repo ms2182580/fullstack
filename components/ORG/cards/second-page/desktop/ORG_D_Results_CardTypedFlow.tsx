@@ -8,11 +8,6 @@ import { Fragment } from "react"
 import { ORG_D_Results_CardTypedFlow_Individuals } from "./ORG_D_Results_CardTypedFlow_Individuals"
 import { ORG_D_Results_CardTypedFlowWrapper } from "./styles/ORG_D_Results_CardTypedFlowWrapper"
 
-/* 
-!FH0
-- Add all the data needed to use this to move the view to second and third page (like home of ORG)
-*/
-
 type Resources_TYPE = {
   title: string
   dataToRender: object[]

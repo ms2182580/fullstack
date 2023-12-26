@@ -1,7 +1,7 @@
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
-import ORGDesktop_LoupeIcon from "../../../assets/Icons/ORGDesktop_LoupeIcon.png"
+import ORGDesktop_LoupeIcon from "../../../assets/icons/ORGDesktop_LoupeIcon.png"
 import { useORG_InputCtx } from "../../../context/ORG_Input"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"

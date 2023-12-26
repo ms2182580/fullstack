@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { PinResultsSvg } from "../../../../../assets/Icons/index.js"
+import { PinResultsSvg } from "../../../../../assets/icons/index.js"
 import { ORG_MapDefaultValue } from "../../../../../utils/ORG_MapValuesToShow.js"
 import { ORG_D_Results_CardsOnMapCard } from "./ORG_D_Results_CardsOnMapCard.js"
 import { ORG_D_Results_CardsOnMapWrapper } from "./styles/ORG_D_Results_CardsOnMapWrapper.js"
@@ -14,7 +14,7 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
     currWidth: window.innerWidth,
     prevWidth: null,
     currHeight: window.innerHeight,
-    prevHeight: null
+    prevHeight: null,
   })
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
           prevHeight: prevState.currHeight,
           prevWidth: prevState.currWidth,
           currWidth: entry.contentRect.width,
-          currHeight: entry.contentRect.height
+          currHeight: entry.contentRect.height,
         }))
       }
     })
@@ -51,7 +51,7 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
     if (windowSizeShrink.prevWidth !== null && windowSizeShrink.prevHeight !== null) {
       setActualWidthAndHeight({
         width: Math.round(windowSizeShrink.currWidth),
-        height: windowSizeShrink.currHeight
+        height: windowSizeShrink.currHeight,
       })
 
       setIsRenderAt((prevState) => {
@@ -68,8 +68,8 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   const [positionsShrinked, setPositionsShrinked] = useState([
     {
       top: 0,
-      left: 0
-    }
+      left: 0,
+    },
   ])
 
   useEffect(() => {

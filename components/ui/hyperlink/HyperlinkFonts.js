@@ -1,16 +1,15 @@
 import Link from "next/link"
 import styled from "styled-components"
-import { HyperLinkColor, SharedValues } from "../../../assets/Fonts/FontsValues"
-import { FontsWeights } from "../../../assets/Fonts/Weights"
+import { HyperLinkColor, SharedValues } from "../../../assets/fonts/FontsValues"
+import { FontsWeights } from "../../../assets/fonts/Weights"
 
 const SharedVariables = {
   Underline: "underline",
-  CursorPointer: "pointer"
+  CursorPointer: "pointer",
 }
 
 const theLink = styled.a`
-  font-weight: ${(x) =>
-    x.bold ? FontsWeights.BOLD_700 : x.bolder ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600};
+  font-weight: ${(x) => (x.bold ? FontsWeights.BOLD_700 : x.bolder ? FontsWeights.BOLDER_800 : FontsWeights.SEMIBOLD_600)};
   color: ${HyperLinkColor.TEXT_COLOR};
   text-decoration: ${SharedVariables.Underline};
   border-radius: 8px;

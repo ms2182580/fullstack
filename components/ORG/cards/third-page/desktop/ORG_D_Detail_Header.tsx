@@ -26,6 +26,8 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
 
   const theURLFormatted = "#"
 
+  console.log("sectionToRender:", sectionToRender)
+
   return (
     <ORG_D_Detail_HeaderWrapper>
       <Breadcrumbs_D

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
-import { device } from "../../../assets/screenSizes/ScreenSizes"
+import { device } from "../../../assets/screen-sizes/ScreenSizes"
 
 const SignupWrapper = styled.div`
   display: flex;
@@ -8,7 +8,6 @@ const SignupWrapper = styled.div`
   background-color: hsl(0, 0%, 100%);
   background-color: #fafcfe;
   position: relative;
-  
 
   @media (${device.laptop}) {
     flex-direction: column;

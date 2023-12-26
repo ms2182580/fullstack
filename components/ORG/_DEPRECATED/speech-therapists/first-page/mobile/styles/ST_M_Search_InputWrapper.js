@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../../../../assets/Colors"
-import { device } from "../../../../../../../assets/screenSizes/ScreenSizes"
+import { device } from "../../../../../../../assets/screen-sizes/ScreenSizes"
 
 export const ST_M_Search_InputWrapper = styled.div`
   display: flex;

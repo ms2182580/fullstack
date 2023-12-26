@@ -2,7 +2,7 @@ import { ORG_D_Detail_ContactUs } from "@/components/org/cards/third-page/deskto
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_AT_WCMD_SimilarProducts } from "@/components/org/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_SimilarProducts"
-import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/org/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_WhereToBuy"
+import { PVES_General_D_Graphics } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_Graphics"
 import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PVES: InnerNavBar_InnerData = [
@@ -15,10 +15,10 @@ export const arrayInnerNavBar_PVES: InnerNavBar_InnerData = [
 
 export const arraySectionToRender_PVES: ArraySectionToRender_Type = [
   {
-    name: ORG_D_Detail_AT_WCMD_WhereToBuy.name,
-    component: ORG_D_Detail_AT_WCMD_WhereToBuy,
+    name: PVES_General_D_Graphics.name,
+    component: PVES_General_D_Graphics,
     toNavbar: {
-      id: "about",
+      id: "jobDetails",
       jsx: arrayInnerNavBar_PVES[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
     },
   },

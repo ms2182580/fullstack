@@ -1,4 +1,4 @@
-import { LeftArrowLongSvg, Welcome_1Svg, XDesktopSvg } from "@/assets/Icons/index.js"
+import { LeftArrowLongSvg, Welcome_1Svg, XDesktopSvg } from "@/assets/icons/index.js"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"

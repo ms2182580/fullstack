@@ -1,7 +1,7 @@
 import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
 import { CurrentLocationSvg } from "../../../../assets/Icons"
-import ORGDesktop_LocationIcon from "../../../../assets/Icons/ORGDesktop_LocationIcon.png"
+import ORGDesktop_LocationIcon from "../../../../assets/icons/ORGDesktop_LocationIcon.png"
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"

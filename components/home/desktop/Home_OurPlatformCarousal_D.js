@@ -1,7 +1,7 @@
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import Link from "next/link.js"
 import { Fragment } from "react"
-import { Home_OurPlatform_BrainSvg, Home_OurPlatform_JetSvg, Home_OurPlatform_UserCollaborationSvg, LeftArrowTinySvg, RightArrowTinySvg } from "../../../assets/Icons/index.js"
+import { Home_OurPlatform_BrainSvg, Home_OurPlatform_JetSvg, Home_OurPlatform_UserCollaborationSvg, LeftArrowTinySvg, RightArrowTinySvg } from "../../../assets/icons/index.js"
 import { useScrollHorizontal } from "../../../utils/useScrollHorizontal.js"
 import { H1 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { Home_OurPlatformCarousal_Carousal_D } from "./Home_OurPlatformCarousal_Carousal_D.js"

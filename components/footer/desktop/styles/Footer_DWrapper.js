@@ -1,4 +1,4 @@
-import { maxDesktopScreenSize } from "@/assets/screenSizes/ScreenSizes"
+import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SECONDARY_SNT } from "../../../../assets/Colors"
 
@@ -86,11 +86,6 @@ export const Footer_DWrapper = styled.footer`
           background-color: rgba(255, 255, 255, 0.65);
           border-radius: inherit;
         }
-
-        /* &:hover {
-          color: ${NEUTRALS.OFF_WHITE};
-          background-color: ${PRIMARY.PRIMARY_CTA};
-        } */
       }
     }
   }

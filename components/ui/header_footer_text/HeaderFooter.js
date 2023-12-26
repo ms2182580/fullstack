@@ -1,17 +1,14 @@
 import styled from "styled-components"
-import { SharedValues, HeaderFootColor } from "../../../assets/Fonts/FontsValues"
-import { FontsWeights } from "../../../assets/Fonts/Weights"
+import { HeaderFootColor, SharedValues } from "../../../assets/fonts/FontsValues"
+import { FontsWeights } from "../../../assets/fonts/Weights"
 
 const SharedVariables = {
   Underline: "underline",
-  CursorPointer: "pointer"
+  CursorPointer: "pointer",
 }
 
 const HeaderFooterFont = styled.p`
-  font-weight: ${(x) =>
-    x.bold
-      ? FontsWeights.BOLD_700
-      : FontsWeights.REGULAR_400};
+  font-weight: ${(x) => (x.bold ? FontsWeights.BOLD_700 : FontsWeights.REGULAR_400)};
   color: ${HeaderFootColor.HeaderFootColor};
   text-decoration: ${SharedVariables.Underline};
   border-radius: 8px;
@@ -21,7 +18,7 @@ const HeaderFooterFont = styled.p`
     outline: 4px solid ${SharedValues.OUTLINE};
     text-decoration: underline;
   }
-  
+
   &:active {
     color: ${FontsWeights.BOLD_700};
     text-decoration: underline;

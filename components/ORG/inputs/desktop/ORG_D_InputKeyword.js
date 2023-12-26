@@ -1,6 +1,6 @@
 import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
-import ORGDesktop_LoupeIcon from "../../../../assets/Icons/ORGDesktop_LoupeIcon.png"
+import ORGDesktop_LoupeIcon from "../../../../assets/icons/ORGDesktop_LoupeIcon.png"
 import { useORG_InputCtx } from "../../../../context/ORG_Input"
 import { ORG_FILTERS_DATA_D } from "../../../../utils/ORG_FiltersCategories"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"

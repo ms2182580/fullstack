@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
-import { device } from "../../../assets/screenSizes/ScreenSizes"
+import { device } from "../../../assets/screen-sizes/ScreenSizes"
 
 const ORGLandingWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};

@@ -1,5 +1,5 @@
 import Image from "next/image.js"
-import { BookmarkSaveSTMobileSvg } from "../../../../../../assets/Icons/index.js"
+import { BookmarkSaveSTMobileSvg } from "../../../../../../assets/icons/index.js"
 import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
 import { FriendlyDiagnoses } from "../../../../friendlyDiagnoses/FriendlyDiagnoses.js"
@@ -45,7 +45,6 @@ export const ST_M_Detail_Card = ({ STData }) => {
         <div>
           <Caption>Speech Language Pathologist, CCC-SLP</Caption>
           <ST_M_Detail_Tooltip isThirdPage={true} />
-
         </div>
 
         <StartsRatingReview_Mobile
@@ -58,7 +57,6 @@ export const ST_M_Detail_Card = ({ STData }) => {
           isMobile={true}
         />
       </div>
-
     </ST_M_Detail_CardWrapper>
   )
 }

@@ -1,4 +1,15 @@
-import { ChatAIAA2Svg, ChatAIAttachSvg, ChatAIWWWSvg, ChatAI_0_Tiny_LogoSvg, ChatAI_D_AccessibilitySvg, DownArrowTinySvg, EmojiWaveSvg, ResizeSvg, SendMessageSvg, XSvg } from "../../../assets/Icons/index.js"
+import {
+  ChatAIAA2Svg,
+  ChatAIAttachSvg,
+  ChatAIWWWSvg,
+  ChatAI_0_Tiny_LogoSvg,
+  ChatAI_D_AccessibilitySvg,
+  DownArrowTinySvg,
+  EmojiWaveSvg,
+  ResizeSvg,
+  SendMessageSvg,
+  XSvg,
+} from "../../../assets/icons/index.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { ChatShowedWrapper } from "./styles/ChatShowedWrapper.js"
 
@@ -75,7 +86,9 @@ export const ChatShowed = ({ handleShowChat }) => {
 
       <footer>
         <div>
-          <p tabIndex={0}>Service <DownArrowTinySvg /></p>
+          <p tabIndex={0}>
+            Service <DownArrowTinySvg />
+          </p>
         </div>
         <div>
           <span tabIndex={0}>

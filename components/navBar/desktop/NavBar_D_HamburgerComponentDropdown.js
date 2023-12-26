@@ -3,7 +3,7 @@ import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { Fragment, useRef, useState } from "react"
-import { NavBar_D_WriteAReviewSvg, Navbar_D_AccessibilityModeSvg } from "../../../assets/Icons/index.js"
+import { NavBar_D_WriteAReviewSvg, Navbar_D_AccessibilityModeSvg } from "../../../assets/icons/index.js"
 import { useOutsideHideHover } from "../../../utils/useOutsideHideHover.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { NavBar_D_HamburgerComponentDropdown_CC } from "./NavBar_D_HamburgerComponentDropdown_CC.js"
@@ -90,7 +90,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({ theRef, setShowDropdown })
             pathname: `/${ALL_ROUTES.ORG}`,
             query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].nameJSX },
           },
-          `/ORG`,
+          `/${ALL_ROUTES.ORG}`,
         )
       }
     }
