@@ -12,7 +12,7 @@ import { useRef, useState } from "react"
 import { NavBar_D_Accessibility } from "./NavBar_D_Accessibility.js"
 import { NavBar_D_GTSDropdown } from "./NavBar_D_GTSDropdown.js"
 import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
-import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
+import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent"
 import { NavBar_D_OnlyDefaultWrapper } from "./styles/NavBar_D_OnlyDefaultWrapper.js"
 
 export const NavBar_D_OnlyDefault = () => {

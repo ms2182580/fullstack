@@ -1,11 +1,17 @@
 import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const NavBar_D_SignComponentWrapper = styled.div`
+type Props = {
+  showDropdownProfile?: boolean
+  showDropdownLanguage?: boolean
+}
+
+export const NavBar_D_SignComponentWrapper = styled.div<Props>`
   border-radius: 8px;
   border: 2px solid #151a26;
   padding: 0px 16px;
 
+  position: relative;
   z-index: 0;
   display: flex;
 
@@ -14,8 +20,10 @@ export const NavBar_D_SignComponentWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    cursor: pointer;
+
+    cursor: default;
     position: relative;
+
     &:hover,
     &:focus-visible {
       opacity: 0.8;

@@ -9,8 +9,9 @@ import FLAG_SPAIN from "@/assets/icons/nav-bar/FLAG_SPAIN.png"
 import FLAG_USA from "@/assets/icons/nav-bar/FLAG_USA.png"
 import { H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import Image from "next/image.js"
-import { useEffect } from "react"
-import { NavBar_D_LanguageComponentDropdownWrapper } from "./styles/NavBar_D_LanguageComponentDropdownWrapper.js"
+import { useRouter } from "next/router.js"
+import { RefObject, useEffect } from "react"
+import { NavBar_D_LanguageComponentDropdownWrapper } from "./styles/NavBar_D_LanguageComponentDropdownWrapper"
 
 const displayLanguages = [
   {
@@ -47,17 +48,27 @@ const displayLanguages = [
   },
 ]
 
-export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguage }) => {
+type Props = {
+  theRef: RefObject<HTMLDivElement>
+  showDropdownLanguage: boolean
+  isORG: boolean
+}
+
+export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguage, isORG }: Props) => {
   useEffect(() => {
     if (showDropdownLanguage) {
-      theRef.current.focus()
+      theRef?.current?.focus()
     }
   }, [showDropdownLanguage])
+
+  const { pathname } = useRouter()
+  console.log("pathname:", pathname)
 
   return (
     <NavBar_D_LanguageComponentDropdownWrapper
       ref={theRef}
-      tabIndex={0}>
+      tabIndex={0}
+      isORG={isORG}>
       <H4>
         {" "}
         <LanguageIconSvg /> Select Language
@@ -68,7 +79,10 @@ export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguag
           <li
             key={xDisplayLanguages.languageName}
             tabIndex={index === 0 ? 0 : -1}>
-            <Image src={xDisplayLanguages.flag} />
+            <Image
+              src={xDisplayLanguages.flag}
+              alt={`image of a flag. Language of this flag: ${xDisplayLanguages.languageName}`}
+            />
             <H4>{xDisplayLanguages.languageName}</H4>
           </li>
         ))}

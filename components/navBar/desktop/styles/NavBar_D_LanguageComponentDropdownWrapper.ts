@@ -1,10 +1,15 @@
 import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
+type Props = {
+  isORG?: boolean
+}
+
+export const NavBar_D_LanguageComponentDropdownWrapper = styled.div<Props>`
   position: absolute;
   z-index: 4;
-  top: calc(100% - 45px);
+
+  top: ${({ isORG }) => (isORG ? "calc(100%)" : "calc(100% - 45px)")};
 
   width: 370px;
 
@@ -72,7 +77,7 @@ export const NavBar_D_LanguageComponentDropdownWrapper = styled.div`
     }
 
     & > :nth-child(1) {
-      cursor: pointer;
+      cursor: default;
     }
 
     & > :not(:first-child) {
