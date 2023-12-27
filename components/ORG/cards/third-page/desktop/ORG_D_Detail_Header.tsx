@@ -22,11 +22,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
   let { theURLFormatted } = checkRouteThirdPage(pathname) 
   */
 
-  console.log("defaultSectionToRender:", defaultSectionToRender)
-
   const theURLFormatted = "#"
-
-  console.log("sectionToRender:", sectionToRender)
 
   return (
     <ORG_D_Detail_HeaderWrapper>
@@ -42,7 +38,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
         {sectionToRender !== null ? (
           <>
             {sectionToRender.map((x: any, index: number) => {
-              const toJSX = x.toNavbar.jsx ? x.toNavbar.jsx : x.toNavbar.id
+              const toJSX = x?.toNavbar?.jsx ? x.toNavbar.jsx : x.toNavbar.id
 
               if (x.toNavbar.id !== null) {
                 return (

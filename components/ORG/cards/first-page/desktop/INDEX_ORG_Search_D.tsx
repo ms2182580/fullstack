@@ -40,8 +40,6 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
-  console.log("someLayoutSpecial:", someLayoutSpecial)
-
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
       {theData.map((x, iData) => {

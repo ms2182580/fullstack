@@ -23,6 +23,7 @@ export const ORG_D_Detail_SchoolAcademicsWrapper = styled.section`
       margin-left: 8px;
 
       position: relative;
+
       &:after {
         content: "";
         position: absolute;
