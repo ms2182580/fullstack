@@ -38,11 +38,7 @@ export const ORG_D_Results_CardNoFilters = () => {
                 renderThisCard={renderThisCard}
               />
 
-              <ORG_D_Results_Main_BottomButtons
-                renderThisFilter={renderThisFilter}
-                renderThisCard={renderThisCard}
-                renderThisContact={renderThisContact}
-              />
+              <ORG_D_Results_Main_BottomButtons renderThisContact={renderThisContact} />
             </ORG_D_Results_CardWrapper>
           )
         })}

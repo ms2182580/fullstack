@@ -10,7 +10,7 @@ import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_Accessibility } from "./NavBar_D_Accessibility.js"
 import { NavBar_D_GTSDropdown } from "./NavBar_D_GTSDropdown.js"
 import { NavBar_D_HamburgerComponent } from "./NavBar_D_HamburgerComponent.js"
-import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent.js"
+import { NavBar_D_SignComponent } from "./NavBar_D_SignComponent"
 import { NavBar_D_OnlyORGWrapper } from "./styles/NavBar_D_OnlyORGWrapper.js"
 
 export const NavBar_D_OnlyORG = () => {

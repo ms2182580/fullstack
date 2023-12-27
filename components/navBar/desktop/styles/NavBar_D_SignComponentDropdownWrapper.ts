@@ -1,10 +1,14 @@
 import styled from "styled-components"
 import { NEUTRALS } from "../../../../assets/Colors"
 
-export const NavBar_D_SignComponentDropdownWrapper = styled.div`
+type Props = {
+  isORG?: boolean
+}
+
+export const NavBar_D_SignComponentDropdownWrapper = styled.div<Props>`
   position: absolute;
   z-index: 4;
-  top: calc(100% - 45px);
+  top: ${({ isORG }) => (isORG ? "100%" : "calc(100% - 45px)")};
 
   background-color: ${NEUTRALS.OFF_WHITE};
   padding: 24px;
@@ -36,6 +40,11 @@ export const NavBar_D_SignComponentDropdownWrapper = styled.div`
 
   & > *:not(:first-child) {
     gap: 8px;
+
+    & > * {
+      color: #6c6c6c;
+      font-weight: 500;
+    }
   }
 
   .separator {

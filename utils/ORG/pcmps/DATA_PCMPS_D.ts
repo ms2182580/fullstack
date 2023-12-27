@@ -2,6 +2,11 @@ import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import ORG_CMPS1 from "../../../assets/images/org/camps/ORG_CMPS1.png"
 import ORG_CMPS2 from "../../../assets/images/org/camps/ORG_CMPS2.png"
 import ORG_CMPS3 from "../../../assets/images/org/camps/ORG_CMPS3.png"
+import { SPECIFIC_DATA_KEY, Structure_SpecificData } from "../second-page/desktop/specificData"
+
+export const CMPS_DAY_SPECIFIC_DATA: Structure_SpecificData = {
+  BUTTON_TO_THIRDPAGE_NAME: "See Schedule",
+}
 
 export const DATA_PCMPS_D = [
   [
@@ -19,6 +24,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“My daughter attended and loved it! The on-site nurse was very helpful in making...",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CMPS2,
@@ -33,6 +39,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“Both of my daughters have attended every summer for 3 years now. Activities...",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CMPS3,
@@ -47,6 +54,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“Great camp with great activities and facilities!”",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
   ],
   [
@@ -64,6 +72,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“My daughter attended and loved it! The on-site nurse was very helpful in making...",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CMPS2,
@@ -78,6 +87,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“Both of my daughters have attended every summer for 3 years now. Activities...",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CMPS3,
@@ -92,6 +102,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“Great camp with great activities and facilities!”",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
   ],
   [
@@ -109,6 +120,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“My daughter attended and loved it! The on-site nurse was very helpful in making...",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CMPS2,
@@ -123,6 +135,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“Both of my daughters have attended every summer for 3 years now. Activities...",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CMPS3,
@@ -137,6 +150,7 @@ export const DATA_PCMPS_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“Great camp with great activities and facilities!”",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CMPS_DAY_SPECIFIC_DATA,
     },
   ],
 ]

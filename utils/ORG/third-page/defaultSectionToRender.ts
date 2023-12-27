@@ -6,10 +6,6 @@ import { ArraySectionToRender_Type } from "./InnerNavBar"
 
 export const defaultSectionToRender: ArraySectionToRender_Type = [
   {
-    /* 
-    !FH0
-    Make all the component receive the data like ORG_D_Detail_Reviews component does
-    */
     name: ORG_D_Detail_Schedule.name,
     component: ORG_D_Detail_Schedule,
     toNavbar: {

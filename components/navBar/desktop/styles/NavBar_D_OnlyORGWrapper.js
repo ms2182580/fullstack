@@ -54,7 +54,8 @@ export const NavBar_D_OnlyORGWrapper = styled.nav`
         display: flex;
         align-items: center;
 
-        cursor: pointer;
+        cursor: default;
+
         border-bottom: 4px solid transparent;
         gap: clamp(8px, calc(10vw - 90px), 56px);
 
@@ -65,6 +66,10 @@ export const NavBar_D_OnlyORGWrapper = styled.nav`
 
           & > h4 {
             font-weight: 500;
+            &:hover,
+            &:focus-visible {
+              opacity: 0.8;
+            }
           }
           &.active {
             border-bottom: 4px solid ${PRIMARY.PRIMARY_CTA};
@@ -94,7 +99,7 @@ export const NavBar_D_OnlyORGWrapper = styled.nav`
       justify-content: center;
       gap: 20px;
 
-      cursor: pointer;
+      cursor: default;
 
       & > :nth-child(1) {
         &:hover,

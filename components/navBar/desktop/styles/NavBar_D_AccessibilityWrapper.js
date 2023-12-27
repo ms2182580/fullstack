@@ -8,7 +8,7 @@ export const NavBar_D_AccessibilityWrapper = styled.div`
 
   position: relative;
 
-  cursor: pointer;
+  cursor: default;
 
   & > :nth-child(2) {
     & > :nth-child(1) {

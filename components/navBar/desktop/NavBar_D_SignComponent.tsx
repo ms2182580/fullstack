@@ -1,15 +1,16 @@
 import { useActiveElement } from "@/utils/useActiveElement"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore"
+import { useRouter } from "next/router"
 import { useRef, useState } from "react"
 import { LanguageIconSvg, ProfileIconSvg } from "../../../assets/icons"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
-import { NavBar_D_LanguageComponentDropdown } from "./NavBar_D_LanguageComponentDropdown.js"
-import { NavBar_D_SignComponentDropdown } from "./NavBar_D_SignComponentDropdown.js"
-import { NavBar_D_SignComponentWrapper } from "./styles/NavBar_D_SignComponentWrapper.js"
+import { NavBar_D_LanguageComponentDropdown } from "./NavBar_D_LanguageComponentDropdown"
+import { NavBar_D_SignComponentDropdown } from "./NavBar_D_SignComponentDropdown"
+import { NavBar_D_SignComponentWrapper } from "./styles/NavBar_D_SignComponentWrapper"
 
 export const NavBar_D_SignComponent = () => {
   const [showDropdownProfile, setShowDropdownProfile] = useState(false)
-  const refDropdownProfile = useRef()
+  const refDropdownProfile = useRef<HTMLDivElement>(null)
 
   useOutsideHide(refDropdownProfile, setShowDropdownProfile)
 
@@ -21,7 +22,7 @@ export const NavBar_D_SignComponent = () => {
   }
 
   const [showDropdownLanguage, setShowDropdownLanguage] = useState(false)
-  const refDropdownLanguage = useRef()
+  const refDropdownLanguage = useRef<HTMLDivElement>(null)
 
   useOutsideHide(refDropdownLanguage, setShowDropdownLanguage)
 
@@ -39,6 +40,8 @@ export const NavBar_D_SignComponent = () => {
   const classNameToFocusLogic_SIGN = "SIGN_IN"
   const { focusedElement: focusedElement_SIGN } = useActiveElement()
   useCloseNotActiveElementAnymore(focusedElement_SIGN, setShowDropdownProfile, ["span", "div", "button"], classNameToFocusLogic_SIGN)
+
+  const { pathname } = useRouter()
 
   return (
     <>
@@ -66,6 +69,7 @@ export const NavBar_D_SignComponent = () => {
           <NavBar_D_LanguageComponentDropdown
             theRef={refDropdownLanguage}
             showDropdownLanguage={showDropdownLanguage}
+            isORG={pathname === "/org"}
           />
         </>
       )}
@@ -76,6 +80,7 @@ export const NavBar_D_SignComponent = () => {
             theRef={refDropdownProfile}
             showDropdownProfile={showDropdownProfile}
             setShowDropdown={setShowDropdownProfile}
+            isORG={pathname === "/org"}
           />
         </>
       )}
