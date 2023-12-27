@@ -1,7 +1,7 @@
 import Link from "next/link"
 import styled from "styled-components"
-import { HyperLinkColor, SharedValues } from "../../../assets/fonts2/FontsValues"
-import { FontsWeights } from "../../../assets/fonts2/Weights"
+import { HyperLinkColor, SharedValues } from "../../../assets/fonts/FontsValues"
+import { FontsWeights } from "../../../assets/fonts/Weights"
 
 const SharedVariables = {
   Underline: "underline",

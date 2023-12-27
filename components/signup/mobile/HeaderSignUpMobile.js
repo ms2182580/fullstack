@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { XSvg } from "../../../assets/icons2"
+import { XSvg } from "../../../assets/icons"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { HeaderSignUpMobileWrapper } from "./styles/HeaderSignUpMobileWrapper"

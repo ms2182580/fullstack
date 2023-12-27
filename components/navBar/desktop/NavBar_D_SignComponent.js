@@ -1,7 +1,7 @@
 import { useActiveElement } from "@/utils/useActiveElement"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore"
 import { useRef, useState } from "react"
-import { LanguageIconSvg, ProfileIconSvg } from "../../../assets/icons2"
+import { LanguageIconSvg, ProfileIconSvg } from "../../../assets/icons"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { NavBar_D_LanguageComponentDropdown } from "./NavBar_D_LanguageComponentDropdown.js"
 import { NavBar_D_SignComponentDropdown } from "./NavBar_D_SignComponentDropdown.js"

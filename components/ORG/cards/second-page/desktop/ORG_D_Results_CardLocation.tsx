@@ -1,4 +1,4 @@
-import { LocationResultsSvg } from "../../../../../assets/icons2"
+import { LocationResultsSvg } from "../../../../../assets/icons"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Results_CardLocationWrapper } from "./styles/ORG_D_Results_CardLocationWrapper"
 

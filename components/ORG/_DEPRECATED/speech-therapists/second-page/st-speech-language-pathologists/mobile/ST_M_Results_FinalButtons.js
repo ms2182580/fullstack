@@ -1,5 +1,5 @@
 import { useRouter } from "next/router.js"
-import { LeftArrowSvg, RightArrowSvg } from "../../../../../../../assets/icons2/index.js"
+import { LeftArrowSvg, RightArrowSvg } from "../../../../../../../assets/icons/index.js"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { useShouldTab } from "../../../../../../../utils/ORG_shouldTab.js"

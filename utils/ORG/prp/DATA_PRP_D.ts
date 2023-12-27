@@ -1,4 +1,4 @@
-import { RP_Results_MiddleButton } from "@/assets/icons2/RP_Results_MiddleButton"
+import { RP_Results_MiddleButton } from "@/assets/icons/RP_Results_MiddleButton"
 import { Structure_SpecificData } from "@/utils/org/second-page/desktop/specificData"
 import ORG_RP1 from "../../../assets/images/org/residential-programs/ORG_RP1.png"
 import ORG_RP2 from "../../../assets/images/org/residential-programs/ORG_RP2.png"

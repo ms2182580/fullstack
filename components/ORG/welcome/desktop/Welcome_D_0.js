@@ -1,4 +1,4 @@
-import { Welcome_0Svg } from "@/assets/icons2/index"
+import { Welcome_0Svg } from "@/assets/icons/index"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Welcome_D_0Wrapper } from "./styles/Welcome_D_0Wrapper.js"

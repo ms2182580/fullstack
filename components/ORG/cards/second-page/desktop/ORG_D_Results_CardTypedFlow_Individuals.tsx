@@ -1,4 +1,4 @@
-import { ORG_D_Results_ViewProfileSvg } from "@/assets/icons2"
+import { ORG_D_Results_ViewProfileSvg } from "@/assets/icons"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"

@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react"
-import { StartEmptyBigSvg, StartEmptySvg, StartFullBigSvg, StartFullSvg } from "../../../assets/icons2"
+import { StartEmptyBigSvg, StartEmptySvg, StartFullBigSvg, StartFullSvg } from "../../../assets/icons"
 import { PatternStarsWrapper } from "./styles/PatternStarsWrapper"
 
 let ratingPatternFunc = (rating) => {

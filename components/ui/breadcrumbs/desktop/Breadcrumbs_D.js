@@ -1,7 +1,7 @@
 import Breadcrumbs_Home from "@/assets/icons/Breadcrumbs_Home.svg"
 import Link from "next/link.js"
 import { Fragment } from "react"
-import { ArrowRightSvg } from "../../../../assets/icons2/index.js"
+import { ArrowRightSvg } from "../../../../assets/icons/index.js"
 import { useTabIndex } from "../../../../utils/useTabindex.js"
 import { Breadcrumbs_DWrapper } from "./styles/Breadcrumbs_DWrapper"
 

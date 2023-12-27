@@ -1,4 +1,4 @@
-import { XDesktopSvg } from "../../../../../../../assets/icons2/index.js"
+import { XDesktopSvg } from "../../../../../../../assets/icons/index.js"
 import { ORG_FILTERS_DATA_M, ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories"
 import { BtnSmall } from "../../../../../../ui/buttons/general/styles/ButtonStyled"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"

@@ -1,7 +1,7 @@
 import { ChatAIWrapper } from "./styles/ChatAIWrapper.js"
 
 import { useEffect, useRef, useState } from "react"
-import { ChatAI_0_LogoSvg } from "../../../assets/icons2/index.js"
+import { ChatAI_0_LogoSvg } from "../../../assets/icons/index.js"
 import { ChatShowed } from "./ChatShowed.js"
 
 export const ChatAI = () => {
