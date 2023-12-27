@@ -4,7 +4,7 @@ import Tooltip from "@/assets/icons/tooltip.svg"
 import ArrowUp from "@/assets/images/arrow_up.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import Image from "next/image"
 import { PVES_General_D_PublicAssistanceApplicantsWrapper } from "./styles/PVES_General_D_PublicAssistanceApplicantsWrapper"
 
@@ -41,9 +41,11 @@ const cardData: CardData_Type = [
   },
 ]
 
-export const PVES_General_D_PublicAssistanceApplicants = ({ [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: theID = "#" }) => {
+export const PVES_General_D_PublicAssistanceApplicants = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   return (
-    <PVES_General_D_PublicAssistanceApplicantsWrapper id={theID}>
+    <PVES_General_D_PublicAssistanceApplicantsWrapper id={theIdForComponent}>
       <details open>
         <summary tabIndex={0}>
           <H3>Public Assistance Applicants</H3>

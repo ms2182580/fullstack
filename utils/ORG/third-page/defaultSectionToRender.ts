@@ -2,15 +2,41 @@ import { ORG_D_Detail_ContactUs } from "@/components/org/cards/third-page/deskto
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
-import { FC } from "react"
+import { ArraySectionToRender_Type } from "./InnerNavBar"
 
-export type WhichDefaultId = "schedule" | "contactus" | "reviews" | "faqs"
-
-export type DefaultSectionToRender_Type = { component: FC<any>; defaultId: WhichDefaultId }[]
-
-export const defaultSectionToRender: DefaultSectionToRender_Type = [
-  { component: ORG_D_Detail_Schedule, defaultId: "schedule" },
-  { component: ORG_D_Detail_ContactUs, defaultId: "contactus" },
-  { component: ORG_D_Detail_Reviews, defaultId: "reviews" },
-  { component: ORG_D_Detail_FAQS, defaultId: "faqs" },
+export const defaultSectionToRender: ArraySectionToRender_Type = [
+  {
+    /* 
+    !FH0
+    Make all the component receive the data like ORG_D_Detail_Reviews component does
+    */
+    name: ORG_D_Detail_Schedule.name,
+    component: ORG_D_Detail_Schedule,
+    toNavbar: {
+      id: "schedule",
+    },
+  },
+  {
+    name: ORG_D_Detail_ContactUs.name,
+    component: ORG_D_Detail_ContactUs,
+    toNavbar: {
+      id: "contactus",
+      jsx: "contact us",
+    },
+  },
+  {
+    name: ORG_D_Detail_Reviews.name,
+    component: ORG_D_Detail_Reviews,
+    toNavbar: {
+      id: "reviews",
+    },
+  },
+  {
+    name: ORG_D_Detail_FAQS.name,
+    component: ORG_D_Detail_FAQS,
+    toNavbar: {
+      id: "faqs",
+      jsx: "FAQs",
+    },
+  },
 ]

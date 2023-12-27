@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_FAQSWrapper = styled.div`
+export const ORG_D_Detail_FAQSWrapper = styled.section`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -13,11 +13,11 @@ export const ORG_D_Detail_FAQSWrapper = styled.div`
     padding-left: 32px;
     padding-right: 55px;
   }
-  
+
   & > :nth-child(1) {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-   
+
     padding: 24px;
     margin-bottom: 24px;
 
@@ -28,7 +28,7 @@ export const ORG_D_Detail_FAQSWrapper = styled.div`
     display: flex;
     position: relative;
     margin-bottom: 24px;
-    gap:25%;
+    gap: 25%;
 
     & > :nth-child(1) {
       position: absolute;
@@ -64,12 +64,17 @@ export const ORG_D_Detail_FAQSWrapper = styled.div`
   }
 
   & > :last-child {
-    cursor: pointer;
-
     width: fit-content;
     margin-left: auto;
-    
-    &:hover {
+
+    font-weight: 600;
+    color: ${SEMANTICS.HYPERLINK_NORMAL};
+    text-decoration: underline;
+
+    cursor: default;
+
+    &:hover,
+    &:focus-visible {
       filter: brightness(70%);
     }
   }

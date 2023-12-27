@@ -9,12 +9,20 @@ export const enum InnerNavBar_InnerData_KEYS {
 }
 
 export type InnerNavBar_InnerData = {
-  [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]: string | DefaultValue_InnerData.about
+  [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY]: string | WhichDefaultId.about
   [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE]?: string
 }[]
 
-const enum DefaultValue_InnerData {
+// const enum DefaultValue_InnerData {
+//   about = "about",
+// }
+
+export const enum WhichDefaultId {
   about = "about",
+  schedule = "schedule",
+  contactus = "contactus",
+  reviews = "reviews",
+  faqs = "faqs",
 }
 
 export const enum ArraySection_KEYS {
@@ -23,13 +31,16 @@ export const enum ArraySection_KEYS {
   TO_NAVBAR = "toNavbar",
   ID = "id",
   JSX = "jsx",
+  PROPS_COMPONENT = "props_component",
+  ALL_DATA = "all_data",
 }
 
 export type ArraySectionToRender_Type = {
   [ArraySection_KEYS.NAME]: string | null
   [ArraySection_KEYS.COMPONENT]: FC<any> | null
+  [ArraySection_KEYS.PROPS_COMPONENT]?: { [key: string]: string | object | string[] }
   [ArraySection_KEYS.TO_NAVBAR]: {
-    [ArraySection_KEYS.ID]: string | DefaultValue_InnerData.about | null
+    [ArraySection_KEYS.ID]: string | WhichDefaultId | null
     [ArraySection_KEYS.JSX]?: string
   }
 }[]

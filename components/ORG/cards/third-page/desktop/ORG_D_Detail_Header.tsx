@@ -1,5 +1,5 @@
 import { Breadcrumbs_D } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs_D"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { WhichDefaultId } from "@/utils/org/third-page/InnerNavBar"
 import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import Link from "next/link"
@@ -44,7 +44,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
                 return (
                   <li key={`_${index}`}>
                     <H3>
-                      <a href={`#${x.toNavbar.id}`}>{toJSX}</a>
+                      <Link href={`#${x.toNavbar.id}`}>{toJSX}</Link>
                     </H3>
                   </li>
                 )
@@ -53,6 +53,24 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
           </>
         ) : (
           <>
+            <li>
+              <H3>
+                <Link href={`#${WhichDefaultId.about}`}>About</Link>
+              </H3>
+            </li>
+
+            {defaultSectionToRender.map((x, index) => {
+              const toJSX = x?.toNavbar?.jsx ? x.toNavbar.jsx : x.toNavbar.id
+
+              return (
+                <li key={`_${index}`}>
+                  <H3>
+                    <Link href={`#${x.toNavbar.id}`}>{toJSX}</Link>
+                  </H3>
+                </li>
+              )
+            })}
+            {/* <>
             <li>
               <H3>
                 <Link href={`#${defaultSectionToRender[0][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>About</Link>
@@ -79,6 +97,7 @@ export const ORG_D_Detail_Header = ({ thirdpageDataORG, defaultSectionToRender, 
                 <Link href={`#${defaultSectionToRender[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_DEFAULT_ID_KEY]}`}>FAQs</Link>
               </H3>
             </li>
+          </> */}
           </>
         )}
 
