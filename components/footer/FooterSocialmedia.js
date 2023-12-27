@@ -1,4 +1,4 @@
-import { Facebook2Svg, InstagramSvg, TwitterSvg, YoutubeSvg } from "../../assets/icons/index.js"
+import { Facebook2Svg, InstagramSvg, TwitterSvg, YoutubeSvg } from "../../assets/icons2/index.js"
 import { Caption } from "../ui/heading_body_text/DesktopMobileFonts.js"
 import { FooterSocialmediaWrapper } from "./styles/FooterSocialmedia.js"
 

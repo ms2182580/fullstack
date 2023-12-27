@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { useState } from "react"
-import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/Icons"
+import { EmailSvg, ExclamationSvg, EyeSvg, LockSvg } from "../../assets/icons2"
 import { HeaderSignUpMobile } from "../../components/signup/mobile/HeaderSignUpMobile"
 import { ButtonMedium } from "../../components/ui/buttons/general"
 import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts"

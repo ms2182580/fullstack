@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { QuestionTooltip_DefaultSvg } from "../../../../../../../assets/icons/index.js"
+import { QuestionTooltip_DefaultSvg } from "../../../../../../../assets/icons2/index.js"
 import { useOutsideHide } from "../../../../../../../utils/useOutsideHide.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3 } from "../../../../../../ui/heading_body_text/HeaderFonts.js"

@@ -1,4 +1,4 @@
-import { ORG_HighlightPlusSvg } from "../../../assets/icons/index"
+import { ORG_HighlightPlusSvg } from "../../../assets/icons2/index"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { Highlights_2_DWrapper } from "./styles/Highlights_2_DWrapper.js"
 

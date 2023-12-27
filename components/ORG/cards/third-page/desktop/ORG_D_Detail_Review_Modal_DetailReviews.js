@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ORG_D_Detail_SearchReviewModalSVG } from "../../../../../assets/icons/index.js"
+import { ORG_D_Detail_SearchReviewModalSVG } from "../../../../../assets/icons2/index.js"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D.js"
 import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
 import { ORG_D_Detail_Review_Modal_DetailReviewsWrapper } from "./styles/ORG_D_Detail_Review_Modal_DetailReviewsWrapper.js"

@@ -1,6 +1,6 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { useEffect, useRef, useState } from "react"
-import { ORG_Detail_SearchUsefulResource } from "../../../../../assets/icons/index.js"
+import { ORG_Detail_SearchUsefulResource } from "../../../../../assets/icons2/index.js"
 
 import ArrowImage from "../../../../../assets/icons/DownArrowVector.png"
 

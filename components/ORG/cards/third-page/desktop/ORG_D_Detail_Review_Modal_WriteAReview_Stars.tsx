@@ -1,4 +1,4 @@
-import { StartEmptyBigSvg } from "@/assets/Icons"
+import { StartEmptyBigSvg } from "@/assets/icons2"
 import { useMemo, useState } from "react"
 import { FieldsetClass } from "./ORG_D_Detail_Review_Modal_WriteAReview_Form"
 import { ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction } from "./ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction"

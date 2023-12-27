@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ORG_D_Detail_FAQS_VoteArrowDownSvg, ORG_D_Detail_FAQS_VoteArrowUpSvg } from "../../../../../assets/icons/index.js"
+import { ORG_D_Detail_FAQS_VoteArrowDownSvg, ORG_D_Detail_FAQS_VoteArrowUpSvg } from "../../../../../assets/icons2/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper.js"
 

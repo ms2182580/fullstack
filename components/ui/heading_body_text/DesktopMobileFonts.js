@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../assets/Colors"
-import { FontsDesktopAndMobile } from "../../../assets/fonts/HeadingValues"
-import { FontsWeights } from "../../../assets/fonts/Weights"
+import { FontsDesktopAndMobile } from "../../../assets/fonts2/HeadingValues"
+import { FontsWeights } from "../../../assets/fonts2/Weights"
 
 const SharedVariables = {
   FontWeight_400: `${FontsWeights.REGULAR_400}`,

@@ -1,4 +1,4 @@
-import { WebsiteResultsSvg } from "../../../../../assets/icons/index.js"
+import { WebsiteResultsSvg } from "../../../../../assets/icons2/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_D_Results_CardWebsiteWrapper } from "./styles/ORG_D_Results_CardWebsiteWrapper.js"
 

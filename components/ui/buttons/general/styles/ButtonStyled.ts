@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { FontsWeights } from "../../../../../assets/fonts/Weights"
+import { FontsWeights } from "../../../../../assets/fonts2/Weights"
 import { COLORS } from "../../variables"
 
 const SharedVariables = {

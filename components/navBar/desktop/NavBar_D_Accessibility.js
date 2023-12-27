@@ -1,4 +1,4 @@
-import { Navbar_AccessibilitySvg } from "@/assets/icons/index.js"
+import { Navbar_AccessibilitySvg } from "@/assets/icons2/index.js"
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"
 import { useOutsideHide } from "@/utils/useOutsideHide.js"

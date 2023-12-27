@@ -1,7 +1,7 @@
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { BackArrow } from "../assets/Icons"
+import { BackArrow } from "../assets/icons2"
 import { P } from "../components/ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../components/ui/hyperlink/HyperlinkNoStyles"
 import { UnderConstruction } from "../components/under-construction/UnderConstruction"

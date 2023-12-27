@@ -1,4 +1,4 @@
-import { TooltipExclamationSvg } from "@/assets/Icons"
+import { TooltipExclamationSvg } from "@/assets/icons2"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"

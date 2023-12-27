@@ -1,4 +1,4 @@
-import { EmailResultsSvg } from "../../../../../assets/icons/index.js"
+import { EmailResultsSvg } from "../../../../../assets/icons2/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_D_Results_CardEmailWrapper } from "./styles/ORG_D_Results_CardEmailWrapper.js"
 

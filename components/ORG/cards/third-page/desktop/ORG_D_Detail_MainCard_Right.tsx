@@ -1,5 +1,5 @@
-import { ORG_D_Search_CarePlanSvg } from "@/assets/Icons"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "@/assets/icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
+import { ORG_D_Search_CarePlanSvg } from "@/assets/icons2"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"

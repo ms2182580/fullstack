@@ -1,4 +1,4 @@
-import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "@/assets/Icons"
+import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "@/assets/icons2/index.js"
 import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
 import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"

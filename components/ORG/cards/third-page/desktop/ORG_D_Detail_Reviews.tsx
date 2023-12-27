@@ -1,4 +1,4 @@
-import { NavBar_D_WriteAReviewSvg } from "@/assets/Icons"
+import { NavBar_D_WriteAReviewSvg } from "@/assets/icons2"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
