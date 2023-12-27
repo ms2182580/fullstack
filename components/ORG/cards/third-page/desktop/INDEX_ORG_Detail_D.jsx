@@ -57,7 +57,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
           {getAllSpecificThirdPageData.renderSections ? (
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
-                let theIdForComponent = x[ArraySection_KEYS.TO_NAVBAR][ArraySection_KEYS.ID] ?? "#"
+                let theIdForComponent = x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
 
                 if (x.component) {
                   return (

@@ -6,10 +6,14 @@ const paddingLeftFirstColumn = "48px"
 export const PVES_General_D_PublicAssistanceApplicantsWrapper = styled.section`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
   &:has(details[open]) {
     border-radius: 8px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &:has(details:not([open])) {
+    box-shadow: none;
   }
 
   details {

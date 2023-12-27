@@ -2,6 +2,7 @@ import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { PVES_General_D_Graphics } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_Graphics"
 import { PVES_General_D_PublicAssistanceApplicants } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_PublicAssistanceApplicants"
+import { PVES_General_D_RelatedJobs } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_RelatedJobs"
 import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PVES: InnerNavBar_InnerData = [
@@ -35,6 +36,13 @@ export const arraySectionToRender_PVES: ArraySectionToRender_Type = [
     toNavbar: {
       id: arrayInnerNavBar_PVES[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
       jsx: arrayInnerNavBar_PVES[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
+    },
+  },
+  {
+    name: PVES_General_D_RelatedJobs.name,
+    component: PVES_General_D_RelatedJobs,
+    toNavbar: {
+      id: null,
     },
   },
   {
