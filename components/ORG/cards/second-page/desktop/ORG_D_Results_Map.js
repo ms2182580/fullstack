@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import { useEffect, useRef, useState } from "react"
-import { LeftArrowTinySvg } from "../../../../../assets/icons/index.js"
+import { LeftArrowTinySvg } from "../../../../../assets/icons2/index.js"
 import ORG_Results_MapImage from "../../../../../assets/images/ORG_Results_MapImage.png"
 import { ORG_D_Results_CardsOnMap } from "./ORG_D_Results_CardsOnMap.js"
 import { ORG_D_Results_MapWrapper } from "./styles/ORG_D_Results_MapWrapper.js"

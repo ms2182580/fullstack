@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { HeaderFootColor, SharedValues } from "../../../assets/fonts/FontsValues"
-import { FontsWeights } from "../../../assets/fonts/Weights"
+import { HeaderFootColor, SharedValues } from "../../../assets/fonts2/FontsValues"
+import { FontsWeights } from "../../../assets/fonts2/Weights"
 
 const SharedVariables = {
   Underline: "underline",

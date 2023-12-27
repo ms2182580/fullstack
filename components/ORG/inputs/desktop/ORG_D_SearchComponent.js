@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { SearchSVG } from "../../../../assets/Icons"
+import { SearchSVG } from "../../../../assets/icons2"
 import { ORG_FILTERS_DATA_D } from "../../../../utils/ORG_FiltersCategories"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { ButtonSmall } from "../../../ui/buttons/general"

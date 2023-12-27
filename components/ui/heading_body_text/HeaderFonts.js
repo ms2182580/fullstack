@@ -8,8 +8,8 @@ import {
   LetterSpacingHeadMobile,
   LineHeightHeadDesktop,
   LineHeightHeadMobile,
-} from "../../../assets/fonts/HeadingValues"
-import { FontsWeights } from "../../../assets/fonts/Weights"
+} from "../../../assets/fonts2/HeadingValues"
+import { FontsWeights } from "../../../assets/fonts2/Weights"
 import { device } from "../../../assets/screen-sizes/ScreenSizes.js"
 
 const SharedVariables = {

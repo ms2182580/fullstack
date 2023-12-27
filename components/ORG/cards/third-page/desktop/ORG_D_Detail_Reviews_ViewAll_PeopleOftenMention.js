@@ -1,5 +1,5 @@
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
-import { ArrowDownSvg } from "../../../../../assets/icons/index.js"
+import { ArrowDownSvg } from "../../../../../assets/icons2/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_D_Detail_Review_StarsRating } from "./ORG_D_Detail_Review_StarsRating.js"
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper } from "./styles/ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper"

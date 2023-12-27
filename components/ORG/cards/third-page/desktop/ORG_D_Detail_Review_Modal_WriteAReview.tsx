@@ -1,4 +1,4 @@
-import { XSvg } from "@/assets/Icons"
+import { XSvg } from "@/assets/icons2"
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useEffect, useRef } from "react"
 import { ORG_D_Detail_Review_Modal_WriteAReview_Form } from "./ORG_D_Detail_Review_Modal_WriteAReview_Form"

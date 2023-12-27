@@ -1,7 +1,7 @@
 import Image from "next/image.js"
 import { useRouter } from "next/router"
 import { useState } from "react"
-import { BackArrow } from "../../assets/Icons"
+import { BackArrow } from "../../assets/icons2"
 import LoginImage from "../../assets/images/LoginImage.png"
 import LoginImageMobile from "../../assets/images/LoginImageMobile.jpg"
 import { delayMilliseconds } from "../../components/signup/delay"

@@ -1,4 +1,4 @@
-import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/Icons"
+import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/icons2"
 import { Map, Marker } from "pigeon-maps"
 import { useEffect, useRef } from "react"
 import { MapComponentWrapper } from "./styles/MapComponentWrapper"

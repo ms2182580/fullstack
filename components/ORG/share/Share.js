@@ -1,4 +1,4 @@
-import { ShareSvg } from "../../../assets/Icons"
+import { ShareSvg } from "../../../assets/icons2"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { ShareWrapper } from "./styles/ShareWrapper.js"
 

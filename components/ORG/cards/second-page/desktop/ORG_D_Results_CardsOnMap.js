@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { PinResultsSvg } from "../../../../../assets/icons/index.js"
+import { PinResultsSvg } from "../../../../../assets/icons2/index.js"
 import { ORG_MapDefaultValue } from "../../../../../utils/ORG_MapValuesToShow.js"
 import { ORG_D_Results_CardsOnMapCard } from "./ORG_D_Results_CardsOnMapCard.js"
 import { ORG_D_Results_CardsOnMapWrapper } from "./styles/ORG_D_Results_CardsOnMapWrapper.js"

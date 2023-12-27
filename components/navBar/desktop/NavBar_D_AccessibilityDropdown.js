@@ -1,6 +1,6 @@
 import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useEffect } from "react"
-import { LanguageIconSvg, NavBar_D_AccessibilityModeSvg } from "../../../assets/icons/index"
+import { LanguageIconSvg, NavBar_D_AccessibilityModeSvg } from "../../../assets/icons2/index"
 import { NavBar_D_AccessibilityDropdownWrapper } from "./styles/NavBar_D_AccessibilityDropdownWrapper.js"
 
 const LIST = [

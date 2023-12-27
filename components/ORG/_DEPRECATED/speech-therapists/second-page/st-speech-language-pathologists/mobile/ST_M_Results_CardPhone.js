@@ -1,4 +1,4 @@
-import { PhoneSvg } from "../../../../../../../assets/icons/index.js"
+import { PhoneSvg } from "../../../../../../../assets/icons2/index.js"
 import { Caption } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ST_M_Results_CardPhoneWrapper } from "./styles/ST_M_Results_CardPhoneWrapper.js"
 

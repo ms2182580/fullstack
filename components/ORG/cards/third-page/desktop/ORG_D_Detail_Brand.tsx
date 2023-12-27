@@ -1,4 +1,4 @@
-import { WebsiteSvg } from "@/assets/Icons"
+import { WebsiteSvg } from "@/assets/icons2"
 import { ORG_D_Detail_BrandWrapper } from "./styles/ORG_D_Detail_BrandWrapper"
 
 export const ORG_D_Detail_Brand = ({ brand }: { brand?: string }) => {

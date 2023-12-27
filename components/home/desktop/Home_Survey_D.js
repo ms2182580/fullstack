@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Facebook2Svg, InstagramSvg, Linkedin2Svg, TwitterSvg } from "../../../assets/icons/index.js"
+import { Facebook2Svg, InstagramSvg, Linkedin2Svg, TwitterSvg } from "../../../assets/icons2/index.js"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { Home_Survey_DWrapper } from "./styles/Home_Survey_DWrapper.js"
