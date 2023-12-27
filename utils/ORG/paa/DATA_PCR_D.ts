@@ -17,7 +17,7 @@ import ORG_AA9 from "../../../assets/images/org/attorney-advocates/ORG_AA9.png"
 import { BRAND_OPTION_DEFAULT, SPECIFIC_DATA_KEY, Structure_SpecificData } from "../second-page/desktop/specificData"
 
 const AA_SPECIFIC_DATA: Structure_SpecificData = {
-  BUTTON_TO_THIRDPAGE_NAME: "reqest consultation",
+  BUTTON_TO_THIRDPAGE_NAME: "request consultation",
   SVG: BRAND_OPTION_DEFAULT.DEFAULT,
 }
 

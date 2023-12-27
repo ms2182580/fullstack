@@ -9,31 +9,34 @@ import { useMemo } from "react"
 import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_Main_BottomButtonsWrapper"
 
 type Props = {
-  renderThisFilter: number
-  renderThisCard: number
   renderThisContact: number
 }
 
-export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisCard, renderThisContact }: Props) => {
+export const ORG_D_Results_Main_BottomButtons = ({ renderThisContact }: Props) => {
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
   const { push } = useRouter()
 
-  const existSpecificData = useMemo(() => {
+  const buttonJSXAndSVGCustom = useMemo(() => {
     const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+    console.log("weHaveData:", weHaveData)
     if (Boolean(weHaveData)) {
       let whichSvg =
-        secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.SVG] === BRAND_OPTION_DEFAULT.DEFAULT
+        /* This check if the key SVG on weHaveData variable object is empty of have a declaration of «DEFAULT» */
+
+        !weHaveData[SPECIFIC_DATA_KEY.SVG] || weHaveData[SPECIFIC_DATA_KEY.SVG] === BRAND_OPTION_DEFAULT.DEFAULT
           ? ORG_D_Results_RequestConsultationSvg
-          : secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.SVG]
+          : weHaveData?.[SPECIFIC_DATA_KEY.SVG]
+
+      let whichJSX = !weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME] ? "See availability" : weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
 
       return {
         ComponentSvg: whichSvg,
-        nameToJSX: secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME],
+        nameToJSX: whichJSX,
       }
     }
-    return false
+    return null
   }, [secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]])
 
   return (
@@ -53,11 +56,11 @@ export const ORG_D_Results_Main_BottomButtons = ({ renderThisFilter, renderThisC
             push,
           })
         }>
-        {existSpecificData ? (
+        {buttonJSXAndSVGCustom ? (
           <>
-            <existSpecificData.ComponentSvg />
+            <buttonJSXAndSVGCustom.ComponentSvg />
 
-            <P>{existSpecificData.nameToJSX}</P>
+            <P>{buttonJSXAndSVGCustom.nameToJSX}</P>
           </>
         ) : (
           <>
