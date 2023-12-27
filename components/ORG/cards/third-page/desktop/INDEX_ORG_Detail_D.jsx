@@ -1,6 +1,6 @@
 import { ChatAI } from "@/components/org/ChatAI"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-import { ArraySection_KEYS, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { Fragment, useMemo } from "react"
@@ -58,12 +58,21 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
                 let theIdForComponent = x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
+                let customTitle = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
+
+                let allData = {
+                  theIdForComponent,
+                  ...customTitle,
+                }
 
                 if (x.component) {
                   return (
                     <>
                       <Fragment key={`${index}`}>
-                        <x.component {...{ [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: theIdForComponent }} />
+                        <x.component
+                          // {...{ [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: theIdForComponent }}
+                          {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
+                        />
                       </Fragment>
                     </>
                   )
@@ -75,11 +84,20 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
               {defaultSectionToRender.map((x, index) => {
                 let theComponentName = x.component.name
 
+                let theIdForComponent = x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
+                let customTitle = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
+
+                let allData = {
+                  theIdForComponent,
+                  ...customTitle,
+                }
+
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>
                     <x.component
-                      defaultId={x.defaultId}
-                      selectTags={selectTags}
+                      // defaultId={x.defaultId}
+                      // selectTags={selectTags}
+                      {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
                     />
                   </Fragment>
                 )

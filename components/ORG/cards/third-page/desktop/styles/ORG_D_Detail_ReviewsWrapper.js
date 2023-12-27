@@ -23,6 +23,12 @@ export const ORG_D_Detail_ReviewsWrapper = styled.aside`
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
     border-radius: 8px 8px 0 0;
 
+    & > :nth-child(1) {
+      & > span {
+        color: ${SEMANTICS.HYPERLINK_NORMAL};
+      }
+    }
+
     & > :nth-child(2) {
       display: flex;
       align-items: center;

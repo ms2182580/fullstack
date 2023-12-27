@@ -4,12 +4,8 @@ import bar2 from "@/assets/images/org/special-education-schools/bar_StudentsDIsa
 import { CategoriesToDisplay_Data, ORG_D_Detail_Bars, ORG_D_Detail_Bars_Props } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Bars"
 import { ORG_D_Detail_TableCake, ORG_D_Detail_TableCake_Props, TableData_Type } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_TableCake"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { PVES_General_D_GraphicsWrapper } from "./styles/PVES_General_D_GraphicsWrapper"
-
-type PVES_General_D_Graphics_Props = {
-  [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: string
-}
 
 const cakeLeft_Data: TableData_Type = [
   {
@@ -88,9 +84,11 @@ const bars: ORG_D_Detail_Bars_Props = {
   categoriesToDisplay: bars_Data,
 }
 
-export const PVES_General_D_Graphics = ({ [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: theID = "#" }: PVES_General_D_Graphics_Props) => {
+export const PVES_General_D_Graphics = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   return (
-    <PVES_General_D_GraphicsWrapper id={theID}>
+    <PVES_General_D_GraphicsWrapper id={theIdForComponent}>
       <H3>Employer Diversity, Equity & Inclusion</H3>
 
       <section>

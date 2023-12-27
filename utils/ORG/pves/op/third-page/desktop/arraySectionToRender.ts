@@ -1,5 +1,5 @@
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
+import { KEYS_FOR_PROPS, ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { PVES_General_D_Graphics } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_Graphics"
 import { PVES_General_D_PublicAssistanceApplicants } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_PublicAssistanceApplicants"
 import { PVES_General_D_RelatedJobs } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_RelatedJobs"
@@ -46,8 +46,12 @@ export const arraySectionToRender_PVES: ArraySectionToRender_Type = [
     },
   },
   {
+    /* 
+    !FH Check this and figure it out how to change the title
+    */
     name: ORG_D_Detail_Reviews.name,
     component: ORG_D_Detail_Reviews,
+    props_component: { [KEYS_FOR_PROPS.TITLE_ON_HEADER]: { title: "Employer reviews ( via Glassdoor )", highlight: ["Glassdoor"] } },
     toNavbar: {
       id: arrayInnerNavBar_PVES[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
     },

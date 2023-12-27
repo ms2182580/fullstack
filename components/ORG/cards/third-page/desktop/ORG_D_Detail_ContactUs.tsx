@@ -1,4 +1,4 @@
-import { InnerNavBar_InnerData } from "@/utils/org/third-page/InnerNavBar"
+import { ArraySection_KEYS, InnerNavBar_InnerData } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/icons/index.js"
@@ -12,13 +12,17 @@ const defaultSelectTags = ["Conversation", "Enunciation", "Swallowing", "Express
 export type SelectTags_Types = { title: string; data: string[] }
 
 type Props = {
-  defaultId: string
-  arrayInnerNavBar: InnerNavBar_InnerData | null
-  contactUsCustomProperties: SelectTags_Types | null
-  idInnerbar: string
+  [ArraySection_KEYS.ALL_DATA]: {
+    theIdForComponent: string
+    arrayInnerNavBar: InnerNavBar_InnerData | null
+    contactUsCustomProperties: SelectTags_Types | null
+    idInnerbar: string
+  }
 }
 
-export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavBar = null, contactUsCustomProperties = null, idInnerbar = "#" }: Props) => {
+export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps }: Props) => {
+  const { theIdForComponent = "#", contactUsCustomProperties = null } = allProps || {}
+
   const [textareaValueState, setTextareaValueState] = useState("")
 
   let handleTextareaValueState = (e: any) => {
@@ -35,7 +39,7 @@ export const ORG_D_Detail_ContactUs = ({ defaultId = "contactus", arrayInnerNavB
   }
 
   return (
-    <ORG_D_Detail_ContactUsWrapper id={idInnerbar}>
+    <ORG_D_Detail_ContactUsWrapper id={theIdForComponent}>
       <header>
         <H3>Contact Us</H3>
       </header>
