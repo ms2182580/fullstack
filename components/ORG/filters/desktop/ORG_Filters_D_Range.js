@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
-import { XDesktopSvg } from "../../../../assets/icons2/index"
+import { XDesktopSvg } from "../../../../assets/icons/index"
 import { useShowFilters } from "../../../../utils/org/useShowFilters"
 import { ButtonSmall } from "../../../ui/buttons/general"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"

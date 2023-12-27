@@ -1,4 +1,4 @@
-import { Search2SVG } from "../../../assets/icons2"
+import { Search2SVG } from "../../../assets/icons"
 import { NavBar_D_InputDiagnosis } from "./NavBar_D_InputDiagnosis"
 import { NavBar_D_InputKeyword } from "./NavBar_D_InputKeyword"
 import { NavBar_D_InputLocation } from "./NavBar_D_InputLocation"

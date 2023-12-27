@@ -1,6 +1,6 @@
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
-import { ChatAILogo, Facebook3Svg, Footer_D_AccessibilityModeSvg, Instagram2Svg, LanguageIconSvg, LinkedinSvg, Twitter2Svg } from "../../../assets/icons2/index.js"
+import { ChatAILogo, Facebook3Svg, Footer_D_AccessibilityModeSvg, Instagram2Svg, LanguageIconSvg, LinkedinSvg, Twitter2Svg } from "../../../assets/icons/index.js"
 import { Caption, P } from "../../../components/ui/heading_body_text/DesktopMobileFonts.js"
 import { H2, H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper.js"

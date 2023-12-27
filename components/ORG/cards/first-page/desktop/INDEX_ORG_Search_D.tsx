@@ -1,4 +1,4 @@
-import { ORG_D_Search_ViewProfileSvg } from "@/assets/icons2"
+import { ORG_D_Search_ViewProfileSvg } from "@/assets/icons"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"

@@ -9,7 +9,7 @@ import {
   ResizeSvg,
   SendMessageSvg,
   XSvg,
-} from "../../../assets/icons2/index.js"
+} from "../../../assets/icons/index.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
 import { ChatShowedWrapper } from "./styles/ChatShowedWrapper.js"
 

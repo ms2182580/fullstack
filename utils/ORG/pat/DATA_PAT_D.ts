@@ -1,4 +1,4 @@
-import { ORG_D_Results_ATSvg, ORG_D_Results_WheretobuySvg } from "@/assets/icons2"
+import { ORG_D_Results_ATSvg, ORG_D_Results_WheretobuySvg } from "@/assets/icons"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
 import ORG_AT1 from "../../../assets/images/org/assistive-technology/ORG_AT1.png"
 import ORG_AT10 from "../../../assets/images/org/assistive-technology/ORG_AT10.png"

@@ -1,4 +1,4 @@
-import { ShareSvg } from "@/assets/icons2"
+import { ShareSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { PCMPS_General_D_PackingListWrapper } from "./styles/PCMPS_General_D_PackingListWrapper"

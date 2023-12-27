@@ -1,4 +1,4 @@
-import { LeftArrowSvg, RightArrowSvg } from "../../../../../assets/icons2"
+import { LeftArrowSvg, RightArrowSvg } from "../../../../../assets/icons"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "../../../../../context/ORG_CtxFetchNoFiltersDesktop_Provider"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../../../ui/hyperlink/HyperlinkNoStyles"

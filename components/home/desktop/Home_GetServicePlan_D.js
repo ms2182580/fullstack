@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { GetServicePlan3, ORG_D_Search_CarePlanSvg, ORG_Detail_SearchFAQSSVG } from "../../../assets/icons2/index"
+import { GetServicePlan3, ORG_D_Search_CarePlanSvg, ORG_Detail_SearchFAQSSVG } from "../../../assets/icons/index"
 
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts.js"

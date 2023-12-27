@@ -1,6 +1,6 @@
 import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { useEffect, useRef } from "react"
-import { NavBar_D_WriteAReviewSvg, XSvg } from "../../../../../assets/icons2/index.js"
+import { NavBar_D_WriteAReviewSvg, XSvg } from "../../../../../assets/icons/index.js"
 import { ORG_D_Detail_Review_Modal_DetailRating } from "./ORG_D_Detail_Review_Modal_DetailRating.js"
 import { ORG_D_Detail_Review_Modal_DetailReviews } from "./ORG_D_Detail_Review_Modal_DetailReviews.js"
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention.js"

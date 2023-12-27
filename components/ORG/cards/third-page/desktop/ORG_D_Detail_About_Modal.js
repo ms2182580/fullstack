@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import ReactPlayer from "react-player"
-import { XSvg } from "../../../../../assets/icons2/index.js"
+import { XSvg } from "../../../../../assets/icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_About_ModalWrapper } from "./styles/ORG_D_Detail_About_ModalWrapper.js"

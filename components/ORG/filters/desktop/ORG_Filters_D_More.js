@@ -1,6 +1,6 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { Fragment, cloneElement, useState } from "react"
-import { XDesktopSvg } from "../../../../assets/icons2/index.js"
+import { XDesktopSvg } from "../../../../assets/icons/index.js"
 import { useShowFilters } from "../../../../utils/org/useShowFilters.js"
 import { ORG_Filters_D_MoreWrapper } from "./styles/ORG_Filters_D_MoreWrapper.js"
 
