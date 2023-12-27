@@ -1,5 +1,6 @@
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 import { SPECIFIC_DATA_KEY } from "../../second-page/desktop/specificData"
+import { arraySectionToRender_PVES } from "../op/third-page/desktop/arraySectionToRender"
 
 export const DATA_HR_D_CardRight = [
   {
@@ -83,6 +84,8 @@ export const DATA_HR_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
       },
     },
   },
@@ -167,6 +170,7 @@ export const DATA_HR_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
       },
     },
   },
@@ -251,6 +255,8 @@ export const DATA_HR_D_CardRight = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
       },
     },
   },

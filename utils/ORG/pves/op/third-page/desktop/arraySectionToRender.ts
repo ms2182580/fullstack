@@ -46,9 +46,6 @@ export const arraySectionToRender_PVES: ArraySectionToRender_Type = [
     },
   },
   {
-    /* 
-    !FH Check this and figure it out how to change the title
-    */
     name: ORG_D_Detail_Reviews.name,
     component: ORG_D_Detail_Reviews,
     props_component: { [KEYS_FOR_PROPS.TITLE_ON_HEADER]: { title: "Employer reviews ( via Glassdoor )", highlight: ["Glassdoor"] } },

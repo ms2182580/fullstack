@@ -108,7 +108,7 @@ export const DATA_CardRight_PVES = [
     },
 
     benefits: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
       [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
@@ -195,7 +195,7 @@ export const DATA_CardRight_PVES = [
     },
 
     benefits: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
       [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
@@ -282,7 +282,7 @@ export const DATA_CardRight_PVES = [
     },
 
     benefits: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "BBenefits",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
       [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
     },
 
