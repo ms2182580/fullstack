@@ -8,6 +8,11 @@ import ORG_CC7 from "../../../assets/images/org/community-classes/ORG_CC7.png"
 import ORG_CC8 from "../../../assets/images/org/community-classes/ORG_CC8.png"
 import ORG_CC9 from "../../../assets/images/org/community-classes/ORG_CC9.png"
 import { generateRandomNumber } from "../../generateRandomNumber"
+import { SPECIFIC_DATA_KEY, Structure_SpecificData } from "../second-page/desktop/specificData"
+
+export const CC_GENERAL_SPECIFIC_DATA: Structure_SpecificData = {
+  BUTTON_TO_THIRDPAGE_NAME: "Book a class",
+}
 
 export const DATA_PCC_D = [
   [
@@ -25,6 +30,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“The experienced instructors are doing an excellent job teaching the proper form.. ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CC2,
@@ -39,6 +45,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“I have noticed that my child has become more confident and independent... ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CC3,
@@ -53,6 +60,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“A great way to stay physically active, but also to learn important values such... ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
   ],
   [
@@ -70,6 +78,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“The experienced instructors are doing an excellent job teaching the proper form.. ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CC5,
@@ -84,6 +93,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“I have noticed that my child has become more confident and independent... ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CC6,
@@ -98,6 +108,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“A great way to stay physically active, but also to learn important values such... ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
   ],
   [
@@ -115,6 +126,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“The experienced instructors are doing an excellent job teaching the proper form.. ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CC8,
@@ -129,6 +141,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“I have noticed that my child has become more confident and independent... ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
     {
       imageToUse: ORG_CC9,
@@ -143,6 +156,7 @@ export const DATA_PCC_D = [
       reviews: generateRandomNumber(47, 999),
       textReview: "“A great way to stay physically active, but also to learn important values such... ",
       goToThirdPage: "",
+      [SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]: CC_GENERAL_SPECIFIC_DATA,
     },
   ],
 ]
