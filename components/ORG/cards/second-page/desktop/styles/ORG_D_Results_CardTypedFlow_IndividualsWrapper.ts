@@ -74,6 +74,8 @@ export const ORG_D_Results_CardTypedFlow_IndividualsWrapper = styled.section`
 
             color: ${NEUTRALS.OFF_WHITE};
 
+            cursor: pointer;
+
             &:hover,
             &:focus-visible {
               background-color: ${PRIMARY.PRIMARY_HOVER};
