@@ -6,6 +6,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFi
 import { useEffect, useState } from "react"
 import { Welcome_D_1_Dropdown } from "./Welcome_D_1_Dropdown.js"
 import { Welcome_D_1Wrapper } from "./styles/Welcome_D_1Wrapper.js"
+import { renderFiltersInUI_TypedFlow } from "@/utils/ORG/typed-flow/DATA_TypedFlow_D_Filters.js"
 
 export const Welcome_D_1 = ({ handleTaskCompleted, handlePreviousComponent }) => {
   const { setCancelWelcomePath, setDiagnosisChoosed, setInputTypesByUser } = useSessionStorage_typedFlow()
