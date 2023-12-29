@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.div`
+export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.section`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -17,7 +17,6 @@ export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.div`
     border-radius: 8px;
     border: 2px solid var(--Dark-Gray, #6c6c6c);
     background: var(--Light-Gray, #d3d6d7);
-    //background-color:black;
 
     color: #6c6c6c;
 
@@ -27,16 +26,11 @@ export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.div`
     font-weight: 600;
     line-height: 24px; /* 150% */
     letter-spacing: 0.24px;
-
-    & > :nth-child(1) {
-    }
   }
 
   .ViewAllLink {
     display: flex;
     margin-left: auto;
-    //background-color:black;
-    //padding-left:120px;
     align-items: flex-start;
     padding-bottom: 30px;
     cursor: pointer;
@@ -45,8 +39,6 @@ export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.div`
   .Link {
     overflow: hidden;
     color: var(--Hyperlink---Normal, #36c);
-    //  text-overflow: ellipsis;
-    //   white-space: nowrap;
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
@@ -55,16 +47,11 @@ export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.div`
     letter-spacing: 0.16px;
     text-decoration-line: underline;
     display: block;
-    //overflow:auto;
-    // overflow-wrap:break-word;
-    // overflow-x: auto;
   }
-  //.Link::after { content: '\A'; white-space: pre;}
 
   .WebDescription {
     display: flex;
     flex-direction: column;
-    // width: 30%;
     width: 100%;
     color: var(--Black, #00080b);
     font-family: Poppins;

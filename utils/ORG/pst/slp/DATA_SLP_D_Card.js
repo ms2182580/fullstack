@@ -1,4 +1,5 @@
-import { DATA_ORG_KeyNamesForCards_D } from "../../DATA_ORG_KeyNamesForCards_D"
+import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arraySectionToRender_PST } from "../third-page/desktop/arraySectionToRender"
 
 export const DATA_CardRight_PST = [
   {
@@ -75,6 +76,8 @@ export const DATA_CardRight_PST = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)..."],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PST,
       },
     },
   },
@@ -151,6 +154,8 @@ export const DATA_CardRight_PST = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)..."],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PST,
       },
     },
   },
@@ -227,6 +232,8 @@ export const DATA_CardRight_PST = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Lee Silverman Voice Treatment Certification SLP, Board Certified Behavior Analyst (BCBA)..."],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PST,
       },
     },
   },

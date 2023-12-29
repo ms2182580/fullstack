@@ -1,4 +1,4 @@
-import { ORG_D_Detail_ContactUs } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ContactUsCustomProperties_KEY, ORG_D_Detail_ContactUs, TEXT_BESIDE_BUTTON } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
@@ -32,6 +32,27 @@ export const arraySectionToRender_PCC: ArraySectionToRender_Type = [
   {
     name: ORG_D_Detail_ContactUs.name,
     component: ORG_D_Detail_ContactUs,
+    props_component: {
+      [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: {
+        [ContactUsCustomProperties_KEY.TITLE]: "I’m interested in improving",
+        [ContactUsCustomProperties_KEY.DATA]: [
+          "Coordination",
+          "Strength",
+          "Endurance",
+          "Weigh management",
+          "Flexibilty",
+          "Improved posture",
+          "Socialization",
+          "Independence",
+          "Self-esteem",
+          "behavioral improvement",
+          "Verbal Skills",
+          "Other",
+        ],
+      },
+      [TEXT_BESIDE_BUTTON.KEY]: "Find out if we’re a good fit for you",
+      [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: true,
+    },
     toNavbar: {
       id: arrayInnerNavBar_PCC[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
       jsx: arrayInnerNavBar_PCC[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],

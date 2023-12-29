@@ -1,4 +1,5 @@
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arraySectionToRender_PPAS } from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PPPAS } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_CardRight_PPPAS = [
@@ -57,6 +58,7 @@ export const DATA_CardRight_PPPAS = [
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
         },
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PPAS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PPPAS,
       },
     },
@@ -123,15 +125,10 @@ export const DATA_CardRight_PPPAS = [
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
         },
-
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PPAS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PPPAS,
       },
     },
-
-    // highlights: ["Disability Etiquette", "Resource Guide"],
-    //areaOfFocus: "Cerebral Palsy",
-    // servicesOffered: ["Assistive Technology", "Healthcare", "Safety", "Transportation", "Research & Statistics", "Resource Guide"],
-    // languagesSpoken: ["English", "Spanish", "translators on site"]
   },
 
   {
@@ -190,15 +187,10 @@ export const DATA_CardRight_PPPAS = [
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
         },
-
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PPAS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PPPAS,
       },
     },
-
-    // highlights: ["Disability Etiquette", "Resource Guide"],
-    //areaOfFocus: "Cerebral Palsy",
-    // servicesOffered: ["Assistive Technology", "Healthcare", "Safety", "Transportation", "Research & Statistics", "Resource Guide"],
-    // languagesSpoken: ["English", "Spanish", "translators on site"]
   },
 ]
 

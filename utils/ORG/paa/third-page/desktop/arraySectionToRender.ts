@@ -1,5 +1,5 @@
 import { ORG_D_Detail_AditionalResources } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_AditionalResources"
-import { ORG_D_Detail_ContactUs } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ContactUsCustomProperties_KEY, ORG_D_Detail_ContactUs, TEXT_BESIDE_BUTTON } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_HelpfulWebResources } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_HelpfulWebResources"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
@@ -25,6 +25,13 @@ export const arraySectionToRender_PAA: ArraySectionToRender_Type = [
   {
     name: ORG_D_Detail_ContactUs.name,
     component: ORG_D_Detail_ContactUs,
+    props_component: {
+      [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: {
+        [ContactUsCustomProperties_KEY.TITLE]: "I’d like to discuss",
+        [ContactUsCustomProperties_KEY.DATA]: ["Disability benefits", "Discrimination", "Guardianship", "Denial of services", "Educational accomodations", "IDEA & FAPE"],
+      },
+      [TEXT_BESIDE_BUTTON.KEY]: "Are our services a good fit for you?",
+    },
     toNavbar: {
       id: arrayInnerNavBar_PAA[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
     },

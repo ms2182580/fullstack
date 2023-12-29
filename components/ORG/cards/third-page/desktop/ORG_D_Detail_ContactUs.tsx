@@ -1,27 +1,64 @@
+import Send_Message_UsableSvg from "@/assets/icons/send_message.svg"
 import { ArraySection_KEYS, InnerNavBar_InnerData } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/icons/index.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ORG_D_Detail_ContactUsWrapper } from "./styles/ORG_D_Detail_ContactUsWrapper.js"
+import { ORG_D_Detail_ContactUsWrapper } from "./styles/ORG_D_Detail_ContactUsWrapper"
 
 let maxCharacterTextarea = 2000
 
 const defaultSelectTags = ["Conversation", "Enunciation", "Swallowing", "Expressive Speech", "Receptive Speech", "AAC Device", "Other"]
 
-export type SelectTags_Types = { title: string; data: string[] }
+export const enum ContactUsCustomProperties_KEY {
+  ContactUsCustomProperties_KEY = "ContactUsCustomProperties_KEY",
+  TITLE = "TITLE",
+  DATA = "DATA",
+}
+
+export type SelectTags_Types = {
+  [ContactUsCustomProperties_KEY.TITLE]: string
+  [ContactUsCustomProperties_KEY.DATA]: string[]
+}
+
+export const enum SEND_MESSAGE_BUTTON {
+  IS_USABLE = "IS_USABLE",
+}
+
+export const enum TEXT_BESIDE_BUTTON {
+  KEY = "KEY",
+  IS_LIKE_BUTTON = "IS_LIKE_BUTTON",
+}
 
 type Props = {
   [ArraySection_KEYS.ALL_DATA]: {
     theIdForComponent: string
     arrayInnerNavBar: InnerNavBar_InnerData | null
-    contactUsCustomProperties: SelectTags_Types | null
+    [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: SelectTags_Types | null | "no_display_UI"
     idInnerbar: string
+    [TEXT_BESIDE_BUTTON.KEY]: string | null
+    [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: boolean
+    [SEND_MESSAGE_BUTTON.IS_USABLE]: boolean
   }
 }
 
 export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps }: Props) => {
-  const { theIdForComponent = "#", contactUsCustomProperties = null } = allProps || {}
+  const {
+    theIdForComponent = "#",
+    [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: customContactUs = null,
+    [TEXT_BESIDE_BUTTON.KEY]: textBesideButton = null,
+    [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: textBesideButton_isLikeButton = false,
+    [SEND_MESSAGE_BUTTON.IS_USABLE]: sendMessageButton = false,
+  } = allProps || {}
+
+  /* 
+  !FH0
+  Fix the contactUs component for all the subcategories
+  
+  https://www.figma.com/file/yYp9zUlcinDFS1E6N59WeZ/ORG---Prototype?type=design&node-id=3285-32159&mode=dev
+  
+  */
+  // console.log("customContactUs:", customContactUs)
 
   const [textareaValueState, setTextareaValueState] = useState("")
 
@@ -39,11 +76,17 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
   }
 
   return (
-    <ORG_D_Detail_ContactUsWrapper id={theIdForComponent}>
+    <ORG_D_Detail_ContactUsWrapper
+      id={theIdForComponent}
+      contactUsCustomValue={customContactUs === "no_display_UI"}
+      textBesideButton_isLikeButton={textBesideButton_isLikeButton}
+      sendMessageButton={sendMessageButton}>
       <header>
         <H3>Contact Us</H3>
       </header>
+
       <p>Ready to work together? Let’s connect. </p>
+
       <span>
         <div>
           <H4>First name</H4>
@@ -81,14 +124,14 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
         </div>
       </span>
 
-      {contactUsCustomProperties ? (
+      {typeof customContactUs === "object" && customContactUs !== null ? (
         <>
           <div>
             <header>
-              <H3>{contactUsCustomProperties.title}</H3>
+              <H3>{customContactUs?.[ContactUsCustomProperties_KEY.TITLE]}</H3>
             </header>
             <ul>
-              {contactUsCustomProperties.data.map((x, index) => {
+              {customContactUs?.[ContactUsCustomProperties_KEY.DATA].map((x, index) => {
                 return (
                   <Fragment key={`${x}_${index}`}>
                     <li>{x}</li>
@@ -98,7 +141,7 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
             </ul>
           </div>
         </>
-      ) : (
+      ) : !customContactUs ? (
         <>
           <div>
             <header>
@@ -115,6 +158,8 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
             </ul>
           </div>
         </>
+      ) : (
+        customContactUs === "no_display_UI" && <div></div>
       )}
 
       <div>
@@ -128,15 +173,16 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
       </div>
 
       <div>
-        <button tabIndex={-1}>
-          <SendMessageSvg />
+        <button tabIndex={sendMessageButton ? 0 : -1}>
+          {sendMessageButton ? <Send_Message_UsableSvg /> : <SendMessageSvg />}
+
           <p>Send Message</p>
         </button>
         <span
-          onClick={handlePushTo404}
-          onKeyDown={handlePushTo404}
+          // onClick={handlePushTo404}
+          // onKeyDown={handlePushTo404}
           tabIndex={0}>
-          Is this product a good fit?
+          {textBesideButton ? textBesideButton : "Is this product a good fit?"}
         </span>
       </div>
     </ORG_D_Detail_ContactUsWrapper>

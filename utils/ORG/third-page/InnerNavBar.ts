@@ -38,7 +38,7 @@ export const enum ArraySection_KEYS {
 export type ArraySectionToRender_Type = {
   [ArraySection_KEYS.NAME]: string | null
   [ArraySection_KEYS.COMPONENT]: FC<any> | null
-  [ArraySection_KEYS.PROPS_COMPONENT]?: { [key: string]: string | object | string[] }
+  [ArraySection_KEYS.PROPS_COMPONENT]?: { [key: string]: string | object | string[] | boolean }
   [ArraySection_KEYS.TO_NAVBAR]: {
     [ArraySection_KEYS.ID]: string | WhichDefaultId | null
     [ArraySection_KEYS.JSX]?: string
