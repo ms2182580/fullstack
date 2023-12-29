@@ -58,21 +58,18 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
                 let theIdForComponent = x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
-                let customTitle = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
+                let allProps = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
 
                 let allData = {
                   theIdForComponent,
-                  ...customTitle,
+                  ...allProps,
                 }
 
                 if (x.component) {
                   return (
                     <>
                       <Fragment key={`${index}`}>
-                        <x.component
-                          // {...{ [InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_ID]: theIdForComponent }}
-                          {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
-                        />
+                        <x.component {...{ [ArraySection_KEYS.ALL_DATA]: allData }} />
                       </Fragment>
                     </>
                   )
@@ -94,11 +91,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
 
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component
-                      // defaultId={x.defaultId}
-                      // selectTags={selectTags}
-                      {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
-                    />
+                    <x.component {...{ [ArraySection_KEYS.ALL_DATA]: allData }} />
                   </Fragment>
                 )
               })}

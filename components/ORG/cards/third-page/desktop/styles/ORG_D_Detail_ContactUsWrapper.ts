@@ -1,7 +1,13 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_ContactUsWrapper = styled.aside`
+type Props = {
+  contactUsCustomValue: boolean
+  textBesideButton_isLikeButton: boolean
+  sendMessageButton: boolean
+}
+
+export const ORG_D_Detail_ContactUsWrapper = styled.section<Props>`
   border-radius: 8px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
@@ -59,8 +65,9 @@ export const ORG_D_Detail_ContactUsWrapper = styled.aside`
   }
 
   & > :nth-child(5) {
-    display: grid;
     gap: 4px;
+
+    display: ${({ contactUsCustomValue }) => (contactUsCustomValue ? "none" : "grid")};
 
     & > :nth-child(2) {
       list-style: none;
@@ -76,6 +83,8 @@ export const ORG_D_Detail_ContactUsWrapper = styled.aside`
       border-radius: 8px;
 
       & > * {
+        text-transform: capitalize;
+
         padding: 5px 10px;
         background-color: ${NEUTRALS.LIGHT_GREY};
         border-radius: inherit;
@@ -112,17 +121,33 @@ export const ORG_D_Detail_ContactUsWrapper = styled.aside`
     align-items: center;
     gap: 46px;
 
-    & > :nth-child(1) {
-      border: 2px solid ${NEUTRALS.LIGHT_GREY};
-
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-inline: 48px;
-      border-radius: 8px;
+    & > * {
+      height: 54px;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      cursor: default;
+    }
+
+    ${({ textBesideButton_isLikeButton }) =>
+      textBesideButton_isLikeButton
+        ? css`
+            & > * {
+              padding-inline: 48px;
+            }
+          `
+        : css`
+            & > :nth-child(1) {
+              padding-inline: 48px;
+            }
+          `}
+
+    & > :nth-child(1) {
+      border: 2px solid ${NEUTRALS.LIGHT_GREY};
+
+      border-radius: 8px;
 
       gap: 8px;
 
@@ -130,15 +155,38 @@ export const ORG_D_Detail_ContactUsWrapper = styled.aside`
 
       background-color: ${NEUTRALS.OFF_WHITE};
 
-      cursor: not-allowed;
+      font-weight: 600;
+      font-size: 16px;
+
+      ${({ sendMessageButton }) =>
+        sendMessageButton &&
+        css`
+          flex-direction: row-reverse;
+
+          border-color: ${PRIMARY.PRIMARY_CTA};
+          color: ${PRIMARY.PRIMARY_CTA};
+        `}
     }
 
     & > :nth-child(2) {
-      cursor: pointer;
-
       font-weight: 600;
       color: ${PRIMARY.PRIMARY_CTA};
       font-size: 18px;
+
+      ${({ textBesideButton_isLikeButton }) =>
+        textBesideButton_isLikeButton &&
+        css`
+          border: 2px solid ${PRIMARY.PRIMARY_CTA};
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 8px;
+
+          background-color: ${PRIMARY.PRIMARY_CTA};
+          color: ${NEUTRALS.OFF_WHITE};
+        `}
     }
   }
 `
