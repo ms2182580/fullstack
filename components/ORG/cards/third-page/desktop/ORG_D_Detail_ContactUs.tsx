@@ -51,15 +51,6 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
     [SEND_MESSAGE_BUTTON.IS_USABLE]: sendMessageButton = false,
   } = allProps || {}
 
-  /* 
-  !FH0
-  Fix the contactUs component for all the subcategories
-  
-  https://www.figma.com/file/yYp9zUlcinDFS1E6N59WeZ/ORG---Prototype?type=design&node-id=3285-32159&mode=dev
-  
-  */
-  // console.log("customContactUs:", customContactUs)
-
   const [textareaValueState, setTextareaValueState] = useState("")
 
   let handleTextareaValueState = (e: any) => {
