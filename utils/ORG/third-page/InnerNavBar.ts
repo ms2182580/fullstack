@@ -45,7 +45,7 @@ export type ArraySectionToRender_Type = {
      * Inside this key you have to check the specific component that's going to receive the props and match the keys inside. With that you know which props are going to receive the component you put  just above
      */
 
-    [key: string]: string | object | string[] | boolean // * Check the type of this array to know what you can pass inside this key
+    [key: string]: string | object | string[] | boolean // * Check the type of this array on the specific component you are putting here get know which key you can pass here
   }
   [ArraySection_KEYS.TO_NAVBAR]: {
     [ArraySection_KEYS.ID]: string | WhichDefaultId | null
