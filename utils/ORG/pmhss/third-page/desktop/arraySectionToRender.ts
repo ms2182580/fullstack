@@ -1,6 +1,7 @@
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { HEADER_TITLE, IS_USABLE_SECTION, ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
+import { ORG_D_Detail_AtTheSameClinic } from "@/components/org/cards_resources/third-page/general/desktop/ORG_D_Detail_AtTheSameClinic"
 import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PMHSS: InnerNavBar_InnerData = [
@@ -31,8 +32,8 @@ export const arraySectionToRender_PMHSS: ArraySectionToRender_Type = [
     },
   },
   {
-    name: null /* HERE SHOULD BE CREATED «AT THE SAME CLINIC» */,
-    component: null,
+    name: ORG_D_Detail_AtTheSameClinic.name,
+    component: ORG_D_Detail_AtTheSameClinic,
     toNavbar: {
       id: arrayInnerNavBar_PMHSS[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
       jsx: arrayInnerNavBar_PMHSS[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],

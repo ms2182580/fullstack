@@ -20,13 +20,6 @@ type Props = {
   }
 }
 
-/* 
-!FH0
-
--Make this section receive the props from the array
--Create the styles
-*/
-
 export const ORG_D_Detail_Schedule = ({ [ArraySection_KEYS.ALL_DATA]: allProps }: Props) => {
   const { theIdForComponent = "#", [IS_USABLE_SECTION.KEY]: isUsable = false, [HEADER_TITLE.KEY]: headerTitle = "Book a class below" } = allProps || {}
 
