@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
 const Address = z.object({
-  street: z.string(),
-  city: z.string(),
-  state: z.string(),
-  zipcode: z.string(),
+  street: z.string().optional(),
+  city: z.string().optional(),
+  state: z.string().optional(),
+  zipcode: z.string().optional(),
   zipFour: z.string().optional(),
   county: z.string().optional(),
   neighborhood: z.string().optional(),
@@ -42,13 +42,27 @@ const BusinessHours = z.object({
   sunday: DayHours.optional(),
 });
 
-const Business = z.object({
-  id: z.string().optional(), 
+const Media = z.object({
+  url: z.string().optional(),
+  description: z.string().optional(),
+});
+
+const Rating = z.object({
+  value: z.string().optional(),
+  description: z.string().optional(),
+});
+
+const FAQ = z.object({
+  question: z.string().optional(),
+  answer: z.string().optional(),
+});
+
+export default z.object({
   resourceId: z.string().optional(),
   entryType: z.string().optional(),
   recordName: z.string(),
   recordSubtitle: z.string().optional(),
-  listingType: z.string(),
+  listingType: z.string().optional(),
   recordSubtype: z.string().optional(),
   recordSubtypeBreakdown: z.array(z.string()).optional(),
   usageOrServiceSettings: z.string().optional(),
@@ -58,6 +72,7 @@ const Business = z.object({
   sic: z.array(Classification).optional(),
   naics: z.array(Classification).optional(),
   onlinePresence: OnlinePresence.optional(),
+  contactPerson: z.string().optional(),
   languages: z.array(z.string()).optional(),
   agesServed: z.string().optional(),
   servicesOffered: z.array(z.string()).optional(),
@@ -68,12 +83,27 @@ const Business = z.object({
   supportedDDFunctionality: z.string().optional(),
   wheelchairAccessible: z.boolean().optional(),
   businessHours: BusinessHours.optional(),
-  pictures: z.array(z.string()).optional(),
-  videos: z.string().optional(),
+  pictures: z.array(Media).optional(),
+  videos: Media.optional(),
   reviews: z.array(z.string()).optional(),
+  reviewTags: z.array(z.string()).optional(),
+  ratings: z.array(Rating).optional(),
+  faqs: z.array(FAQ).optional(),
+  questionTags: z.array(z.string()).optional(),
+  answerTags: z.array(z.string()).optional(),
   linkedListings: z.string().optional(),
   singleLocationVsFranchise: z.string().optional(),
   verifiedUnverifiedResource: z.string().optional(),
+  price: z.string().optional(),
+  paymentOptions: z.string().optional(),
+  governmentAffiliation: z.string().optional(),
+  goals: z.array(z.string()).optional(),
+  directServices: z.string().optional(),
+  administrativeServices: z.string().optional(),
+  oneClickIntake: z.string().optional(),
+  acceptNewClients: z.boolean().optional(),
+  evaluations: z.boolean().optional(),
+  providesAdditional: z.string().optional(),
+  knownFor: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
 });
-
-export default Business;

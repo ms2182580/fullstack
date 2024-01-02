@@ -1,6 +1,6 @@
 import express from "express"
 import * as trpcExpress from '@trpc/server/adapters/express';
-import { appRouter } from '../../server/routers/app';
+import { appRouter } from '../../server/routers/index';
 import csvToJson from "./middleware/csvToJson";
 
 const app =  express();

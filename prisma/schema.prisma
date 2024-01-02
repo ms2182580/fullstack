@@ -7,13 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Business {
+model Hardware {
     id                          String  @id @default(auto()) @map("_id") @db.ObjectId
     resourceId                  String?                
     entryType                   String?
     recordName                  String
     recordSubtitle              String?
-    listingType                 String
+    listingType                 String?
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
@@ -23,6 +23,7 @@ model Business {
     sic                         Classification[]
     naics                       Classification[]
     onlinePresence              OnlinePresence?
+    contactPerson               String?
     languages                   String[]
     agesServed                  String?
     servicesOffered             String[]
@@ -33,19 +34,712 @@ model Business {
     supportedDDFunctionality    String?
     wheelchairAccessible        Boolean?
     businessHours               BusinessHours?
-    pictures                    String[]
-    videos                      String?
+    pictures                    Media[]
+    videos                      Media?
     reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
     linkedListings              String?
     singleLocationVsFranchise   String?
     verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Software {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Camp {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Class {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Education {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Agency {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Legal {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Doctor {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model MentalHealth {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Organization {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Residency {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Therapy {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Vocation {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
+}
+
+model Other {
+    id                          String  @id @default(auto()) @map("_id") @db.ObjectId
+    resourceId                  String?                
+    entryType                   String?
+    recordName                  String
+    recordSubtitle              String?
+    listingType                 String?
+    recordSubtype               String?
+    recordSubtypeBreakdown      String[]
+    usageOrServiceSettings      String?
+    address                     Address?
+    listingDescription          String?
+    parentCompanyDescription    String?
+    sic                         Classification[]
+    naics                       Classification[]
+    onlinePresence              OnlinePresence?
+    contactPerson               String?
+    languages                   String[]
+    agesServed                  String?
+    servicesOffered             String[]
+    diagnosisServed             String[]
+    diagnosisNotServed          String[]
+    symptomsSupported           String[]
+    symptomsNotSupported        String[]
+    supportedDDFunctionality    String?
+    wheelchairAccessible        Boolean?
+    businessHours               BusinessHours?
+    pictures                    Media[]
+    videos                      Media?
+    reviews                     String[]
+    reviewTags                  String[]
+    ratings                     Rating[]
+    faqs                        FAQ[]
+    questionTags                String[]
+    answerTags                  String[]
+    linkedListings              String?
+    singleLocationVsFranchise   String?
+    verifiedUnverifiedResource  String?
+    price                       String?
+    paymentOptions              String?
+    governmentAffiliation       String?
+    goals                       String[]
+    directServices              String?
+    administrativeServices      String?
+    oneClickIntake              String?
+    acceptNewClients            Boolean?
+    evaluations                 Boolean?
+    providesAdditional          String?
+    knownFor                    String[]
+    tags                        String[]
 }
 
 type Address {
-    street       String
-    city         String
-    state        String
-    zipcode      String
+    street       String?
+    city         String?
+    state        String?
+    zipcode      String?
     zipFour      String?
     county       String?
     neighborhood String?
@@ -81,4 +775,19 @@ type BusinessHours {
 type DayHours {
   open   String?
   close  String?
+}
+
+type Media {
+  url           String?
+  description   String?
+}
+
+type Rating {
+  value         String?
+  description   String?
+}
+
+type FAQ {
+  question    String?
+  answer      String?
 }
