@@ -66,7 +66,7 @@ export default z.object({
   recordSubtype: z.string().optional(),
   recordSubtypeBreakdown: z.array(z.string()).optional(),
   usageOrServiceSettings: z.string().optional(),
-  address: Address.optional(),
+  address: z.array(Address).optional(),
   listingDescription: z.string().optional(),
   parentCompanyDescription: z.string().optional(),
   sic: z.array(Classification).optional(),

@@ -17,7 +17,7 @@ model Hardware {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -69,7 +69,7 @@ model Software {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -121,7 +121,7 @@ model Camp {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -173,7 +173,7 @@ model Class {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -225,7 +225,7 @@ model Education {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -277,7 +277,7 @@ model Agency {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -329,7 +329,7 @@ model Legal {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -381,7 +381,7 @@ model Doctor {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -433,7 +433,7 @@ model MentalHealth {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -485,7 +485,7 @@ model Organization {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -537,7 +537,7 @@ model Residency {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -589,7 +589,7 @@ model Therapy {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -641,7 +641,7 @@ model Vocation {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
@@ -693,7 +693,7 @@ model Other {
     recordSubtype               String?
     recordSubtypeBreakdown      String[]
     usageOrServiceSettings      String?
-    address                     Address?
+    address                     Address[]
     listingDescription          String?
     parentCompanyDescription    String?
     sic                         Classification[]
