@@ -1,21 +1,30 @@
-import styled from "styled-components"
-import { NEUTRALS, SECONDARY_ORG_PLUS } from "../../../../../../assets/Colors"
+import styled, { css } from "styled-components"
+import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "../../../../../../assets/Colors"
+import { IS_USABLE_SECTION } from "../ORG_D_Detail_Schedule"
 
-export const ORG_D_Detail_ScheduleWrapper = styled.div`
+type Props = {
+  [IS_USABLE_SECTION.KEY]: boolean
+}
+
+export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   position: relative;
 
   padding-bottom: 24px;
 
-  &:before{
-    content: "";
-    position: absolute;
-    inset:0;
-    background-color: hsla(0, 0%, 100%, 0.5);
-    z-index: 1;
-    border-radius: 8px;
-  }
+  ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
+    !isUsable &&
+    css`
+      &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: hsla(0, 0%, 100%, 0.5);
+        z-index: 1;
+        border-radius: 8px;
+      }
+    `}
 
   & > :not(:first-child) {
     padding-inline: clamp(24px, 10vw - 48px, 106px);
@@ -27,16 +36,17 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
     justify-content: space-between;
 
     padding: 24px;
+    margin-bottom: 24px;
 
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
-    background-color: ${NEUTRALS.LIGHT_GREY};
-
-    margin-bottom: 24px;
+    background-color: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) => (isUsable ? `${PRIMARY.PRIMARY_BACKGROUND} ` : `${NEUTRALS.LIGHT_GREY}`)};
 
     & > :nth-child(1) {
       display: flex;
+      align-items: center;
+
       gap: 24px;
 
       & > :nth-child(2) {
@@ -47,7 +57,11 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
         padding-bottom: 4px;
 
         position: relative;
-        z-index: 2;
+        z-index: 1;
+
+        font-weight: 700;
+
+        cursor: default;
       }
     }
     & > :nth-child(2) {
@@ -70,13 +84,15 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
 
       h4 {
         color: ${NEUTRALS.DARK_GREY};
+        font-weight: 400;
       }
 
       & > :nth-child(2) {
-        /* padding-inline: 48px; */
         padding-inline: clamp(34px, 10vw - 80px, 48px);
 
         border: 2px solid ${NEUTRALS.DARK_GREY};
+
+        font-weight: 400;
 
         & > * {
           display: flex;
@@ -87,6 +103,38 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
           color: ${NEUTRALS.DARK_GREY};
         }
       }
+
+      ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
+        isUsable &&
+        css`
+          h4 {
+            color: ${NEUTRALS.BLACK};
+          }
+
+          & > :nth-child(2) {
+            border-color: ${NEUTRALS.BLACK};
+
+            &:hover,
+            &:focus-visible {
+              border-color: ${PRIMARY.PRIMARY_HOVER};
+              background-color: ${PRIMARY.PRIMARY_HOVER};
+
+              & > * {
+                color: ${NEUTRALS.OFF_WHITE};
+              }
+            }
+
+            & > * {
+              color: ${NEUTRALS.BLACK};
+
+              & > :nth-child(1) {
+                & > * {
+                  fill: currentColor;
+                }
+              }
+            }
+          }
+        `}
     }
   }
 
@@ -94,7 +142,7 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
     position: relative;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    
+
     column-gap: 24px;
 
     margin-bottom: 48px;
@@ -107,7 +155,8 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
       & > :nth-child(1),
       & > :nth-child(2) {
         text-align: center;
-        color: ${NEUTRALS.DARK_GREY};
+
+        color: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) => (isUsable ? `${NEUTRALS.BLACK} ` : `${NEUTRALS.DARK_GREY}`)};
       }
 
       & > :nth-child(1) {
@@ -126,7 +175,7 @@ export const ORG_D_Detail_ScheduleWrapper = styled.div`
     & > :nth-child(1),
     & > :last-child {
       & > * {
-        fill: ${NEUTRALS.DARK_GREY};
+        fill: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) => (isUsable ? `${NEUTRALS.BLACK}` : `${NEUTRALS.DARK_GREY}`)};
       }
     }
 

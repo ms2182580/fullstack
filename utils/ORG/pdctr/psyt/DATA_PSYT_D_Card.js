@@ -1,4 +1,5 @@
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arraySectionToRender_PDCTR } from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PDCTR } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_CardRight_PDCTR = [
@@ -84,6 +85,7 @@ export const DATA_CardRight_PDCTR = [
           },
         },
 
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PDCTR,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PDCTR,
       },
     },
@@ -170,6 +172,7 @@ export const DATA_CardRight_PDCTR = [
           },
         },
 
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PDCTR,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PDCTR,
       },
     },
@@ -256,6 +259,7 @@ export const DATA_CardRight_PDCTR = [
           },
         },
 
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PDCTR,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PDCTR,
       },
     },

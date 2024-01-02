@@ -50,8 +50,7 @@ export const arraySectionToRender_PCC: ArraySectionToRender_Type = [
           "Other",
         ],
       },
-      [TEXT_BESIDE_BUTTON.KEY]: "Find out if we’re a good fit for you",
-      [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: true,
+      [TEXT_BESIDE_BUTTON.KEY]: "Is this class a good fit for you?",
     },
     toNavbar: {
       id: arrayInnerNavBar_PCC[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],

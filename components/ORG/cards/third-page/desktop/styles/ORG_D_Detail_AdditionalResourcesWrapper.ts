@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
   background: #fcfdfe;
@@ -22,17 +22,24 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
 
   .ViewAllLink {
     display: flex;
-
-    //margin:right !important;
-    //background-color:black;
-    //padding-left:120px;
     align-items: flex-end;
+
+    & > * {
+      color: ${SEMANTICS.HYPERLINK_NORMAL};
+      font-weight: 600;
+      text-decoration: underline;
+    }
   }
 
   .AdvocacyCard {
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    & > :nth-child(2) {
+      font-weight: 500;
+      font-size: 16px;
+    }
   }
 
   .CardsTitle {
@@ -48,9 +55,23 @@ export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
     position: relative;
     margin: 0 auto;
 
-    // background-image:{image2};
-    //display:grid;
-    //grid-template-areas:"overlay";
+    height: 100%;
+
+    position: relative;
+
+    & > :nth-child(2) {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      &:hover,
+      &:focus-visible {
+        & > * {
+          fill: crimson;
+          filter: sepia(10%);
+        }
+      }
+    }
   }
 
   .Imagen {

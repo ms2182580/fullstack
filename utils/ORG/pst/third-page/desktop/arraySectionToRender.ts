@@ -6,6 +6,7 @@ import { ArraySectionToRender_Type, ArraySection_KEYS, InnerNavBar_InnerData, In
 
 export const arrayInnerNavBar_PST: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "about" },
+  { INNER_NAV_BAR_KEY: "location" },
   { INNER_NAV_BAR_KEY: "appointments" },
   { INNER_NAV_BAR_KEY: "reviews" },
   { INNER_NAV_BAR_KEY: "faqs", INNER_NAV_BAR_VALUE: "FAQs" },
@@ -23,7 +24,7 @@ export const arraySectionToRender_PST: ArraySectionToRender_Type = [
     name: null,
     component: null,
     toNavbar: {
-      id: "location",
+      id: arrayInnerNavBar_PST[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
     },
   },
   {

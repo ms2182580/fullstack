@@ -1,5 +1,6 @@
 import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { arraySectionToRender_PMHSS } from "../third-page/desktop/arraySectionToRender"
 import { mapRender_PMHSS } from "../third-page/desktop/mapRender"
 import { tooltipToRender_PMHSS } from "../third-page/desktop/tooltipToRender"
 
@@ -94,6 +95,8 @@ export const DATA_CardRight_PMHSS = [
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
           },
         },
+
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
@@ -193,6 +196,7 @@ export const DATA_CardRight_PMHSS = [
           },
         },
 
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
@@ -292,6 +296,7 @@ export const DATA_CardRight_PMHSS = [
           },
         },
 
+        [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
