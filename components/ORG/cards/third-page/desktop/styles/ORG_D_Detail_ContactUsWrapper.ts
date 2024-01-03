@@ -74,7 +74,6 @@ export const ORG_D_Detail_ContactUsWrapper = styled.section<Props>`
       padding: 19px 22px;
 
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
 
       gap: 18px;
@@ -88,6 +87,14 @@ export const ORG_D_Detail_ContactUsWrapper = styled.section<Props>`
         padding: 5px 10px;
         background-color: ${NEUTRALS.LIGHT_GREY};
         border-radius: inherit;
+
+        cursor: default;
+
+        &:hover,
+        &:focus-visible {
+          background-color: ${PRIMARY.PRIMARY_CTA};
+          color: ${NEUTRALS.OFF_WHITE};
+        }
       }
     }
   }

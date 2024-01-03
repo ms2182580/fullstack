@@ -125,7 +125,7 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
               {customContactUs?.[ContactUsCustomProperties_KEY.DATA].map((x, index) => {
                 return (
                   <Fragment key={`${x}_${index}`}>
-                    <li>{x}</li>
+                    <li tabIndex={0}>{x}</li>
                   </Fragment>
                 )
               })}
@@ -142,7 +142,7 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
               {defaultSelectTags.map((x, index) => {
                 return (
                   <Fragment key={`${x}_${index}`}>
-                    <li>{x}</li>
+                    <li tabIndex={0}>{x}</li>
                   </Fragment>
                 )
               })}

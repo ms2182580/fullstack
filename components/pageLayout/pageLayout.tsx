@@ -48,6 +48,7 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
               </>
             )
           )}
+
           <MainWrapper isMainInHome={pathname === "/"}>{children}</MainWrapper>
           {isMobile && actualSessionStorage !== KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST ? (
             <>

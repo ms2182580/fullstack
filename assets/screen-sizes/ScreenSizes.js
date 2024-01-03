@@ -18,4 +18,4 @@ export const device = {
   desktopL: `(max-width: ${size.desktop}px)`,
 }
 
-export const maxDesktopScreenSize = `1920px`
+export const maxDesktopScreenSize = `1440px`

@@ -60,7 +60,7 @@ const LIST = [
 ]
 
 export const NavBar_D_HamburgerComponentDropdown = ({ theRef, setShowDropdown }) => {
-  const [showNestedCC, setShowNestedCC] = useState(false)
+  const [showNestedCC, setShowNestedCC] = useState(true)
 
   const theRefCC = useRef()
 
