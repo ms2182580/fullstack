@@ -22,6 +22,7 @@ import { ORG_CtxSTDataThirdpageMobile_Provider } from "../context/ORG_Ctx_STData
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import GlobalStyle from "./styles/index.js"
+import { trpc } from '../utils/trpc';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -80,4 +81,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default trpc.withTRPC(MyApp);
