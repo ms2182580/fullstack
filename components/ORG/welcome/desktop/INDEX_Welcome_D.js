@@ -1,4 +1,7 @@
-import { KEYS_VALUES_useSessionStorage, useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
+import {
+  KEYS_VALUES_useSessionStorage,
+  useSessionStorage_typedFlow,
+} from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
 import { Fragment, useEffect, useState } from "react"
@@ -27,13 +30,26 @@ export const INDEX_Welcome_D = () => {
     }
   }
 
-  let handleTaskCompleted = (e, haveAtLeastOneMatch = false, userTypeAtLeastSomething = "") => {
-    if ((e.type === "click" || e.key === "Enter") && haveAtLeastOneMatch && userTypeAtLeastSomething !== "") {
+  let handleTaskCompleted = (
+    e,
+    haveAtLeastOneMatch = false,
+    userTypeAtLeastSomething = ""
+  ) => {
+    if (
+      (e.type === "click" || e.key === "Enter") &&
+      haveAtLeastOneMatch &&
+      userTypeAtLeastSomething !== ""
+    ) {
       setTaskCompleted(true)
     }
   }
 
-  let { setActualSessionStorage, setReachWelcome, reachTypedFlow, cancelWelcomePath } = useSessionStorage_typedFlow()
+  let {
+    setActualSessionStorage,
+    setReachWelcome,
+    reachTypedFlow,
+    cancelWelcomePath,
+  } = useSessionStorage_typedFlow()
 
   const router = useRouter()
 
@@ -57,7 +73,9 @@ export const INDEX_Welcome_D = () => {
      * This move the user to the typed-flow page when «taskCompleted» is true &&
      * If the user do not reach the typed-flow yet */
     if (taskCompleted && !reachTypedFlow) {
-      setActualSessionStorage(KEYS_VALUES_useSessionStorage.SESSION_STORAGE_SECOND)
+      setActualSessionStorage(
+        KEYS_VALUES_useSessionStorage.SESSION_STORAGE_SECOND
+      )
 
       router.push(`/${ALL_ROUTES.ORG}/typed-flow`)
     }
@@ -79,7 +97,9 @@ export const INDEX_Welcome_D = () => {
      */
 
     if (cancelWelcomePath) {
-      setActualSessionStorage(KEYS_VALUES_useSessionStorage.SESSION_STORAGE_SECOND)
+      setActualSessionStorage(
+        KEYS_VALUES_useSessionStorage.SESSION_STORAGE_SECOND
+      )
       router.push("/")
     }
   }, [cancelWelcomePath])
@@ -88,11 +108,15 @@ export const INDEX_Welcome_D = () => {
     <INDEX_Welcome_DWrapper taskCompleted={taskCompleted}>
       {!reachTypedFlow &&
         displayComponents.map((x, index) => {
+          let theKey = `${x.componentName}_${index}`
+
+          let TheComponent = x.component
+
           if (index === whichComponentShow) {
             return (
               <>
-                <Fragment key={`${x.componentName}_${index}`}>
-                  <x.component
+                <Fragment key={theKey}>
+                  <TheComponent
                     handleNextComponent={handleNextComponent}
                     handleTaskCompleted={handleTaskCompleted}
                     handlePreviousComponent={handlePreviousComponent}

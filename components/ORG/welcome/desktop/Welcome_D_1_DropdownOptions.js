@@ -15,7 +15,8 @@ export const Welcome_D_1_DropdownOptions = ({
   inputRefFocus,
 }) => {
   let handleSelecOption = (e) => {
-    let isDiagnosis = e.target.className === CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN
+    let isDiagnosis =
+      e.target.className === CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN
     if (isDiagnosis) {
       setDiagnosisCategory(() => ({
         diagnosis: [e.target.textContent],
@@ -44,31 +45,56 @@ export const Welcome_D_1_DropdownOptions = ({
           }}
           onClick={(e) => {
             inputRefFocus.current.focus()
-          }}>
+          }}
+        >
           <div
             className={CLASSNAME_ISDIAGNOSIS.DIAGNOSIS}
-            onClick={handleSelecOption}>
+            onClick={handleSelecOption}
+          >
             {suggestionKeywords.map((suggestionData, indexData) => {
-              const isMatchDiagnosis = suggestionData.diagnosis.toLowerCase().indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
+              const isMatchDiagnosis =
+                suggestionData.diagnosis
+                  .toLowerCase()
+                  .indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
 
               let highlightWordDiagnosis
               let leftSideOfWordDiagnosis
               let rightSideOfWordDiagnosis
 
-              let theRegex = new RegExp(diagnosisSearchedByUser.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"), "gi")
+              let theRegex = new RegExp(
+                diagnosisSearchedByUser.replace(
+                  /[-\/\\^$*+?.()|[\]{}]/g,
+                  "\\$&"
+                ),
+                "gi"
+              )
               let matchHighlight = suggestionData.diagnosis.match(theRegex)
 
-              if (isMatchDiagnosis && matchHighlight[0] !== "" && matchHighlight !== null) {
+              if (
+                isMatchDiagnosis &&
+                matchHighlight[0] !== "" &&
+                matchHighlight !== null
+              ) {
                 highlightWordDiagnosis = matchHighlight[0]
 
-                let indexOfWord = suggestionData.diagnosis.indexOf(highlightWordDiagnosis)
+                let indexOfWord = suggestionData.diagnosis.indexOf(
+                  highlightWordDiagnosis
+                )
 
-                leftSideOfWordDiagnosis = suggestionData.diagnosis.slice(0, indexOfWord)
+                leftSideOfWordDiagnosis = suggestionData.diagnosis.slice(
+                  0,
+                  indexOfWord
+                )
 
-                rightSideOfWordDiagnosis = suggestionData.diagnosis.slice(indexOfWord + highlightWordDiagnosis.length, suggestionData.diagnosis.length)
+                rightSideOfWordDiagnosis = suggestionData.diagnosis.slice(
+                  indexOfWord + highlightWordDiagnosis.length,
+                  suggestionData.diagnosis.length
+                )
               }
+
+              let theKey = `${suggestionData.diagnosis}_${indexData}`
               return (
-                <Fragment key={`${suggestionData.diagnosis}_${indexData}`}>
+                <Fragment key={theKey}>
                   {isMatchDiagnosis && (
                     <>
                       <span
@@ -78,13 +104,18 @@ export const Welcome_D_1_DropdownOptions = ({
                           inputRefFocus.current.focus()
                         }}
                         data-content={
-                          highlightWordDiagnosis ? `${leftSideOfWordDiagnosis}${highlightWordDiagnosis}${rightSideOfWordDiagnosis}` : suggestionData.diagnosissuggestion
+                          highlightWordDiagnosis
+                            ? `${leftSideOfWordDiagnosis}${highlightWordDiagnosis}${rightSideOfWordDiagnosis}`
+                            : suggestionData.diagnosissuggestion
                         }
-                        className={CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN}>
+                        className={CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN}
+                      >
                         {highlightWordDiagnosis ? (
                           <>
                             {leftSideOfWordDiagnosis}
-                            <span className={CLASSNAME_ISDIAGNOSIS.BOLD}>{highlightWordDiagnosis}</span>
+                            <span className={CLASSNAME_ISDIAGNOSIS.BOLD}>
+                              {highlightWordDiagnosis}
+                            </span>
                             {rightSideOfWordDiagnosis}
                           </>
                         ) : (
@@ -93,58 +124,91 @@ export const Welcome_D_1_DropdownOptions = ({
                       </span>
                     </>
                   )}
-                  <P className={CLASSNAME_ISDIAGNOSIS.IN_SYMPTOMS}>In symptoms ({suggestionData.diagnosis})</P>
+                  <P className={CLASSNAME_ISDIAGNOSIS.IN_SYMPTOMS}>
+                    In symptoms ({suggestionData.diagnosis})
+                  </P>
                   <ul
                     className={CLASSNAME_ISDIAGNOSIS.SUGGESTION}
-                    onClick={handleSelecOption}>
-                    {suggestionData.symptoms.map((suggestion, indexSymptoms) => {
-                      const isMatch = suggestion.toLowerCase().indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
+                    onClick={handleSelecOption}
+                  >
+                    {suggestionData.symptoms.map(
+                      (suggestion, indexSymptoms) => {
+                        const isMatch =
+                          suggestion
+                            .toLowerCase()
+                            .indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
 
-                      let highlightWord
-                      let leftSideOfWord
-                      let rightSideOfWord
+                        let highlightWord
+                        let leftSideOfWord
+                        let rightSideOfWord
 
-                      let theRegex = new RegExp(diagnosisSearchedByUser.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"), "gi")
+                        let theRegex = new RegExp(
+                          diagnosisSearchedByUser.replace(
+                            /[-\/\\^$*+?.()|[\]{}]/g,
+                            "\\$&"
+                          ),
+                          "gi"
+                        )
 
-                      let matchHighlightSuggestion = suggestion.match(theRegex)
+                        let matchHighlightSuggestion =
+                          suggestion.match(theRegex)
 
-                      if (isMatch && matchHighlightSuggestion[0] !== "" && matchHighlightSuggestion !== null) {
-                        highlightWord = matchHighlightSuggestion[0]
+                        if (
+                          isMatch &&
+                          matchHighlightSuggestion[0] !== "" &&
+                          matchHighlightSuggestion !== null
+                        ) {
+                          highlightWord = matchHighlightSuggestion[0]
 
-                        let indexOfWord = suggestion.indexOf(highlightWord)
+                          let indexOfWord = suggestion.indexOf(highlightWord)
 
-                        leftSideOfWord = suggestion.slice(0, indexOfWord)
+                          leftSideOfWord = suggestion.slice(0, indexOfWord)
 
-                        rightSideOfWord = suggestion.slice(indexOfWord + highlightWord.length, suggestion.length)
+                          rightSideOfWord = suggestion.slice(
+                            indexOfWord + highlightWord.length,
+                            suggestion.length
+                          )
+                        }
+                        return (
+                          <Fragment key={indexSymptoms}>
+                            {isMatch && (
+                              <>
+                                <li
+                                  onClick={() => {
+                                    setDiagnosisSearchedByUser(suggestion)
+                                    setInputTypesByUser(suggestion)
+
+                                    inputRefFocus.current.focus()
+                                  }}
+                                  data-content={
+                                    highlightWord
+                                      ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
+                                      : suggestion
+                                  }
+                                  className={
+                                    CLASSNAME_ISDIAGNOSIS.SUGGESTION_LI
+                                  }
+                                >
+                                  {highlightWord ? (
+                                    <>
+                                      {leftSideOfWord}
+                                      <span
+                                        className={CLASSNAME_ISDIAGNOSIS.BOLD}
+                                      >
+                                        {highlightWord}
+                                      </span>
+                                      {rightSideOfWord}
+                                    </>
+                                  ) : (
+                                    suggestion
+                                  )}
+                                </li>
+                              </>
+                            )}
+                          </Fragment>
+                        )
                       }
-                      return (
-                        <Fragment key={indexSymptoms}>
-                          {isMatch && (
-                            <>
-                              <li
-                                onClick={() => {
-                                  setDiagnosisSearchedByUser(suggestion)
-                                  setInputTypesByUser(suggestion)
-
-                                  inputRefFocus.current.focus()
-                                }}
-                                data-content={highlightWord ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}` : suggestion}
-                                className={CLASSNAME_ISDIAGNOSIS.SUGGESTION_LI}>
-                                {highlightWord ? (
-                                  <>
-                                    {leftSideOfWord}
-                                    <span className={CLASSNAME_ISDIAGNOSIS.BOLD}>{highlightWord}</span>
-                                    {rightSideOfWord}
-                                  </>
-                                ) : (
-                                  suggestion
-                                )}
-                              </li>
-                            </>
-                          )}
-                        </Fragment>
-                      )
-                    })}
+                    )}
                   </ul>
                 </Fragment>
               )
