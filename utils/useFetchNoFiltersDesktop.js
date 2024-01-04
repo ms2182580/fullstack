@@ -11,15 +11,19 @@ import {
   ORG_Filterdata_Reviews,
   ORG_Filterdata_ServiceSetting,
   ORG_Filterdata_SessionType,
-  ORG_Filterdata_YoP
+  ORG_Filterdata_YoP,
 } from "./ORG_FilterdataFunctions_D"
 import { ORG_Sortby_Desktop } from "./ORG_SortByData"
 
-export const useFetchNoFiltersDesktop = (pagination = 1, howMuch = 10, whichOne, shouldFetch = true) => {
+export const useFetchNoFiltersDesktop = (
+  pagination = 1,
+  howMuch = 10,
+  whichOne,
+  shouldFetch = true
+) => {
   const [data, setData] = useState()
   const [filters, setFilters] = useState([])
   const [actualSort, setActualSort] = useState(ORG_Sortby_Desktop.default)
-
 
   useEffect(() => {
     if (shouldFetch) {
@@ -67,8 +71,8 @@ export const useFetchNoFiltersDesktop = (pagination = 1, howMuch = 10, whichOne,
                 sessionType: sessionType,
                 yearsOfPractice: yearsOfPractice,
                 CCC_SLP:
-                  "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA)."
-              }
+                  "CCC-SLP Certificate of Clinical Competence in Speech Language Pathology - Nationally recognized professional from the American Speech-Language-Hearing Association (ASHA).",
+              },
             ]
           }
 
@@ -88,8 +92,6 @@ export const useFetchNoFiltersDesktop = (pagination = 1, howMuch = 10, whichOne,
         }
       }
       fetchData()
-
-
     }
   }, [pagination, howMuch, shouldFetch])
 

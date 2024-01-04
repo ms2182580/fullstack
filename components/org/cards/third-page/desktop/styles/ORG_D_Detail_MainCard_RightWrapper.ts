@@ -18,7 +18,10 @@ export const enum Layout_MainCardRight_VALUES {
 }
 
 export type Props = {
-  [Layout_MainCardRight_KEY.KEY]?: Layout_MainCardRight_VALUES.DEFAULT | Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES | Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH
+  [Layout_MainCardRight_KEY.KEY]?:
+    | Layout_MainCardRight_VALUES.DEFAULT
+    | Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES
+    | Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH
 }
 
 export const enum ORG_D_Detail_MainCard_Right_CLASSES {
@@ -347,8 +350,14 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       font-weight: 600;
       line-height: 24px;
       letter-spacing: 0.24px;
+      text-transform: capitalize;
 
-      cursor: pointer;
+      &:hover,
+      &:focus-visible {
+        background-color: ${PRIMARY.PRIMARY_HOVER};
+        border-color: ${PRIMARY.PRIMARY_HOVER};
+        color: ${NEUTRALS.OFF_WHITE};
+      }
     }
 
     & > :nth-child(2) {

@@ -21,19 +21,47 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
 
   const getAllSpecificThirdPageData = useMemo(() => {
     const dataObj =
-      thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]?.[`rightPart`]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]
+      thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]?.[
+        `rightPart`
+      ]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[
+        DATA_ORG_KeyNamesForCards_D_KEYS.CARD
+      ]
 
-    const renderSections = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
+    const renderSections =
+      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
 
-    const arrayInnerNavBar = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
+    const arrayInnerNavBar =
+      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
 
-    const tooltip = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ?? Tooltip_VALUES.DEFAULT
+    const tooltip =
+      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
+      Tooltip_VALUES.DEFAULT
 
-    const layoutMainCardRight = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ?? Layout_MainCardRight_VALUES.DEFAULT
+    const layoutMainCardRight =
+      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
+      Layout_MainCardRight_VALUES.DEFAULT
 
-    const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? { [MapProperties_KEYS.HOW_MANY]: 1 }
+    const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? {
+      [MapProperties_KEYS.HOW_MANY]: 1,
+    }
 
-    return { renderSections, arrayInnerNavBar, tooltip, layoutMainCardRight, howIsMap }
+    const buttonMainCard = {
+      [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]:
+        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
+        "add to care plan",
+      [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]:
+        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
+        false,
+    }
+
+    return {
+      renderSections,
+      arrayInnerNavBar,
+      tooltip,
+      layoutMainCardRight,
+      howIsMap,
+      buttonMainCard,
+    }
   }, [thirdpageDataORG])
 
   return (
@@ -49,15 +77,20 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
 
           <ORG_D_Detail_MainCard
             arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
-            layout_MainCardRight={getAllSpecificThirdPageData.layoutMainCardRight}
+            layout_MainCardRight={
+              getAllSpecificThirdPageData.layoutMainCardRight
+            }
             howIsMap={getAllSpecificThirdPageData.howIsMap}
             tooltipDisplay={getAllSpecificThirdPageData.tooltip}
+            buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
           />
 
           {getAllSpecificThirdPageData.renderSections ? (
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
-                let theIdForComponent = x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
+                let theIdForComponent =
+                  x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ??
+                  "#"
                 let allProps = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
 
                 let allData = {
@@ -69,7 +102,9 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
                   return (
                     <>
                       <Fragment key={`${index}`}>
-                        <x.component {...{ [ArraySection_KEYS.ALL_DATA]: allData }} />
+                        <x.component
+                          {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
+                        />
                       </Fragment>
                     </>
                   )
@@ -81,7 +116,9 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
               {defaultSectionToRender.map((x, index) => {
                 let theComponentName = x.component.name
 
-                let theIdForComponent = x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
+                let theIdForComponent =
+                  x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ??
+                  "#"
                 let customTitle = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
 
                 let allData = {
@@ -91,14 +128,18 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
 
                 return (
                   <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component {...{ [ArraySection_KEYS.ALL_DATA]: allData }} />
+                    <x.component
+                      {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
+                    />
                   </Fragment>
                 )
               })}
             </>
           )}
 
-          <ORG_D_Detail_BreadcrumbsLastUpdated thirdpageDataORG={thirdpageDataORG} />
+          <ORG_D_Detail_BreadcrumbsLastUpdated
+            thirdpageDataORG={thirdpageDataORG}
+          />
         </div>
         <ChatAI />
       </INDEX_ORG_Detail_DWrapper>

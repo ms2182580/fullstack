@@ -6,23 +6,42 @@ import { arraySectionToRender_PVES } from "./third-page/desktop/arraySectionToRe
 export const DATA_CardRight_PVES = [
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Temporary", "In-Person", "Agency position"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Temporary",
+        "In-Person",
+        "Agency position",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["On-Site", "Neuro-diverse team", "ADA Compliant workspace"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "On-Site",
+        "Neuro-diverse team",
+        "ADA Compliant workspace",
+      ],
     },
 
     insurance: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Medical",
+        "Dental",
+        "Vision ...",
+      ],
     },
 
     benefits: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Employee discounts",
+        "401(k) savings plan...",
+      ],
     },
 
     salary: {
@@ -53,11 +72,16 @@ export const DATA_CardRight_PVES = [
         [DATA_ORG_KeyNamesForCards_D_KEYS.LEFT]: {
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Education: H.S. Diploma", "Experience: Employment training program", "Skills: Typing, copying & phone call skills"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "Education: H.S. Diploma",
+              "Experience: Employment training program",
+              "Skills: Typing, copying & phone call skills",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           workspaceAccomodations: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Workspace Accomodations",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Workspace Accomodations",
             [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
               "Space: ADA Compliant Facilities, Workspace",
               "Furniture: Adaptive, Ergonomic",
@@ -66,8 +90,12 @@ export const DATA_CardRight_PVES = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           jobRestructuringTaskModification: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Job restructuring & Task Modification",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["AAC devices to present results", "Audio-visual recording of client inetrviews"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Job restructuring & Task Modification",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "AAC devices to present results",
+              "Audio-visual recording of client inetrviews",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
@@ -88,28 +116,49 @@ export const DATA_CardRight_PVES = [
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]: "Save Job",
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: false,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Temporary", "In-Person", "Agency position"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Temporary",
+        "In-Person",
+        "Agency position",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["On-Site", "Neuro-diverse team", "ADA Compliant workspace"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "On-Site",
+        "Neuro-diverse team",
+        "ADA Compliant workspace",
+      ],
     },
 
     insurance: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Medical",
+        "Dental",
+        "Vision ...",
+      ],
     },
 
     benefits: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Employee discounts",
+        "401(k) savings plan...",
+      ],
     },
 
     salary: {
@@ -140,11 +189,16 @@ export const DATA_CardRight_PVES = [
         [DATA_ORG_KeyNamesForCards_D_KEYS.LEFT]: {
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Education: H.S. Diploma", "Experience: Employment training program", "Skills: Typing, copying & phone call skills"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "Education: H.S. Diploma",
+              "Experience: Employment training program",
+              "Skills: Typing, copying & phone call skills",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           workspaceAccomodations: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Workspace Accomodations",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Workspace Accomodations",
             [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
               "Space: ADA Compliant Facilities, Workspace",
               "Furniture: Adaptive, Ergonomic",
@@ -153,8 +207,12 @@ export const DATA_CardRight_PVES = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           jobRestructuringTaskModification: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Job restructuring & Task Modification",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["AAC devices to present results", "Audio-visual recording of client inetrviews"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Job restructuring & Task Modification",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "AAC devices to present results",
+              "Audio-visual recording of client inetrviews",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
@@ -175,28 +233,49 @@ export const DATA_CardRight_PVES = [
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]: "Save Job",
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: false,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Temporary", "In-Person", "Agency position"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Temporary",
+        "In-Person",
+        "Agency position",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["On-Site", "Neuro-diverse team", "ADA Compliant workspace"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "On-Site",
+        "Neuro-diverse team",
+        "ADA Compliant workspace",
+      ],
     },
 
     insurance: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Medical",
+        "Dental",
+        "Vision ...",
+      ],
     },
 
     benefits: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Employee discounts",
+        "401(k) savings plan...",
+      ],
     },
 
     salary: {
@@ -227,11 +306,16 @@ export const DATA_CardRight_PVES = [
         [DATA_ORG_KeyNamesForCards_D_KEYS.LEFT]: {
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Education: H.S. Diploma", "Experience: Employment training program", "Skills: Typing, copying & phone call skills"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "Education: H.S. Diploma",
+              "Experience: Employment training program",
+              "Skills: Typing, copying & phone call skills",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           workspaceAccomodations: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Workspace Accomodations",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Workspace Accomodations",
             [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
               "Space: ADA Compliant Facilities, Workspace",
               "Furniture: Adaptive, Ergonomic",
@@ -240,8 +324,12 @@ export const DATA_CardRight_PVES = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           jobRestructuringTaskModification: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Job restructuring & Task Modification",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["AAC devices to present results", "Audio-visual recording of client inetrviews"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Job restructuring & Task Modification",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "AAC devices to present results",
+              "Audio-visual recording of client inetrviews",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
@@ -262,28 +350,49 @@ export const DATA_CardRight_PVES = [
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]: "Save Job",
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: false,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Temporary", "In-Person", "Agency position"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Temporary",
+        "In-Person",
+        "Agency position",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["On-Site", "Neuro-diverse team", "ADA Compliant workspace"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "On-Site",
+        "Neuro-diverse team",
+        "ADA Compliant workspace",
+      ],
     },
 
     insurance: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Insurance",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Medical", "Dental", "Vision ..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Medical",
+        "Dental",
+        "Vision ...",
+      ],
     },
 
     benefits: {
       [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Benefits",
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Employee discounts", "401(k) savings plan..."],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Employee discounts",
+        "401(k) savings plan...",
+      ],
     },
 
     salary: {
@@ -314,11 +423,16 @@ export const DATA_CardRight_PVES = [
         [DATA_ORG_KeyNamesForCards_D_KEYS.LEFT]: {
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Education: H.S. Diploma", "Experience: Employment training program", "Skills: Typing, copying & phone call skills"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "Education: H.S. Diploma",
+              "Experience: Employment training program",
+              "Skills: Typing, copying & phone call skills",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           workspaceAccomodations: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Workspace Accomodations",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Workspace Accomodations",
             [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
               "Space: ADA Compliant Facilities, Workspace",
               "Furniture: Adaptive, Ergonomic",
@@ -327,8 +441,12 @@ export const DATA_CardRight_PVES = [
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
           jobRestructuringTaskModification: {
-            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: "Job restructuring & Task Modification",
-            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["AAC devices to present results", "Audio-visual recording of client inetrviews"],
+            [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]:
+              "Job restructuring & Task Modification",
+            [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+              "AAC devices to present results",
+              "Audio-visual recording of client inetrviews",
+            ],
             [DATA_ORG_KeyNamesForCards_D_KEYS.DISPLAY_BLOCK]: true,
           },
         },
@@ -349,6 +467,8 @@ export const DATA_CardRight_PVES = [
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PVES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PVES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]: "Save Job",
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: false,
       },
     },
   },
