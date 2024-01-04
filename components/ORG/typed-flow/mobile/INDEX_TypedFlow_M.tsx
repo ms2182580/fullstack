@@ -10,13 +10,23 @@ import { ORG_M_Results_Header } from "../../cards/second-page/mobile/ORG_M_Resul
 import { ORG_M_Results_MainEntry } from "../../cards/second-page/mobile/ORG_M_Results_MainEntry"
 
 export const INDEX_TypedFlow_M = () => {
-  let { setReachTypedFlow, reachWelcome, setActualSessionStorage, diagnosisChoosed, inputTypesByUser }: any = useSessionStorage_typedFlow()
+  let {
+    setReachTypedFlow,
+    reachWelcome,
+    setActualSessionStorage,
+    diagnosisChoosed,
+    inputTypesByUser,
+  }: any = useSessionStorage_typedFlow()
   const router = useRouter()
 
   const { secondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
 
   useEffect(() => {
-    if (!reachWelcome || diagnosisChoosed === "" || secondpageFiltersORG === "") {
+    if (
+      !reachWelcome ||
+      diagnosisChoosed === "" ||
+      secondpageFiltersORG === ""
+    ) {
       router.push(`/${ALL_ROUTES.ORG}/${ALL_ROUTES.WELCOME}`)
     }
   }, [])
@@ -33,15 +43,7 @@ export const INDEX_TypedFlow_M = () => {
   return (
     <>
       {secondpageFiltersORG !== "" && (
-        <div
-        // ORGShowFullMapFilter={
-        //     ORGShowFullMapFilter &&
-        //     router.pathname ===
-        //         `${path.dirname(router.pathname)}/${path.basename(
-        //             router.pathname
-        //         )}`
-        // }
-        >
+        <div>
           <ORG_M_Results_Header
             titleToFormat={inputTypesByUser}
             isTypedFlow={true}
