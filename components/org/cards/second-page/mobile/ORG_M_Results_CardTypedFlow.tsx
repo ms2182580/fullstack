@@ -47,7 +47,7 @@ const Resources = [
     categoryPosition: 4,
   },
 ]
-console.log({ Resources })
+// console.log({ Resources })
 export const ORG_M_Results_CardTypedFlow = () => {
   return (
     <ORG_M_Results_CardTypedFlowWrapper>

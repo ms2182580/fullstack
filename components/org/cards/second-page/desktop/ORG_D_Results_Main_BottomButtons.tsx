@@ -1,9 +1,16 @@
-import { ORG_D_Results_AddtocareplanSvg, ORG_D_Results_RequestConsultationSvg, ORG_D_Results_ViewProfileSvg } from "@/assets/icons"
+import {
+  ORG_D_Results_AddtocareplanSvg,
+  ORG_D_Results_RequestConsultationSvg,
+  ORG_D_Results_ViewProfileSvg,
+} from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
-import { BRAND_OPTION_DEFAULT, SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
+import {
+  BRAND_OPTION_DEFAULT,
+  SPECIFIC_DATA_KEY,
+} from "@/utils/org/second-page/desktop/specificData"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_Main_BottomButtonsWrapper"
@@ -12,7 +19,9 @@ type Props = {
   renderThisContact: number
 }
 
-export const ORG_D_Results_Main_BottomButtons = ({ renderThisContact }: Props) => {
+export const ORG_D_Results_Main_BottomButtons = ({
+  renderThisContact,
+}: Props) => {
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
@@ -20,16 +29,19 @@ export const ORG_D_Results_Main_BottomButtons = ({ renderThisContact }: Props) =
 
   const buttonJSXAndSVGCustom = useMemo(() => {
     const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
-    console.log("weHaveData:", weHaveData)
+    // console.log("weHaveData:", weHaveData)
     if (Boolean(weHaveData)) {
       let whichSvg =
         /* This check if the key SVG on weHaveData variable object is empty of have a declaration of «DEFAULT» */
 
-        !weHaveData[SPECIFIC_DATA_KEY.SVG] || weHaveData[SPECIFIC_DATA_KEY.SVG] === BRAND_OPTION_DEFAULT.DEFAULT
+        !weHaveData[SPECIFIC_DATA_KEY.SVG] ||
+        weHaveData[SPECIFIC_DATA_KEY.SVG] === BRAND_OPTION_DEFAULT.DEFAULT
           ? ORG_D_Results_RequestConsultationSvg
           : weHaveData?.[SPECIFIC_DATA_KEY.SVG]
 
-      let whichJSX = !weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME] ? "See availability" : weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
+      let whichJSX = !weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
+        ? "See availability"
+        : weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
 
       return {
         ComponentSvg: whichSvg,
@@ -55,7 +67,8 @@ export const ORG_D_Results_Main_BottomButtons = ({ renderThisContact }: Props) =
             setThirdpageDataORG,
             push,
           })
-        }>
+        }
+      >
         {buttonJSXAndSVGCustom ? (
           <>
             <buttonJSXAndSVGCustom.ComponentSvg />
