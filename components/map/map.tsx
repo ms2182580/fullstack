@@ -1,18 +1,18 @@
-import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/icons";
-import { Map, Marker } from "pigeon-maps";
-import { useEffect, useRef } from "react";
-import { MapComponentWrapper } from "./styles/MapComponentWrapper";
+import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/icons"
+import { Map, Marker } from "pigeon-maps"
+import { useEffect, useRef } from "react"
+import { MapComponentWrapper } from "./styles/MapComponentWrapper"
 
 type Default_data_map_type = {
   coordinates: {
-    lat: number;
-    lon: number;
-  };
-  zoom: number;
+    lat: number
+    lon: number
+  }
+  zoom: number
   marker: {
-    defaultSize: number;
-  };
-};
+    defaultSize: number
+  }
+}
 
 const default_data_map: Default_data_map_type = {
   coordinates: {
@@ -23,36 +23,36 @@ const default_data_map: Default_data_map_type = {
   marker: {
     defaultSize: 50,
   },
-};
+}
 
 type Props = {
-  isFullMap: boolean;
-  handleIsFullMap: (e: any) => void;
-  isMobile?: boolean;
-};
+  isFullMap: boolean
+  handleIsFullMap: (e: any) => void
+  isMobile?: boolean
+}
 
 export const MapComponent = ({
   isFullMap,
   handleIsFullMap,
   isMobile = false,
 }: Props) => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  console.log({ isFullMap, isMobile });
+  const mapRef = useRef<HTMLDivElement>(null)
+  // console.log({ isFullMap, isMobile });
   useEffect(() => {
     if (mapRef.current && isFullMap) {
-      mapRef.current?.scrollIntoView({ behavior: "smooth" });
+      mapRef.current?.scrollIntoView({ behavior: "smooth" })
     }
-  }, [mapRef, isFullMap]);
+  }, [mapRef, isFullMap])
 
   // const { pathname } = useRouter()
   let mapProps = {
     ref: mapRef,
     widthFull: false,
     isFullMap: false,
-  };
+  }
   if (isMobile) {
-    mapProps.widthFull = true;
-    mapProps.isFullMap = isFullMap;
+    mapProps.widthFull = true
+    mapProps.isFullMap = isFullMap
   }
   return (
     <>
@@ -62,7 +62,8 @@ export const MapComponent = ({
             default_data_map.coordinates.lat,
             default_data_map.coordinates.lon,
           ]}
-          defaultZoom={default_data_map.zoom}>
+          defaultZoom={default_data_map.zoom}
+        >
           <Marker
             width={default_data_map.marker.defaultSize}
             anchor={[40.6712062, -73.9662055]}
@@ -84,9 +85,7 @@ export const MapComponent = ({
           />
         </Map>
 
-        <button
-          onClick={handleIsFullMap}
-          tabIndex={0}>
+        <button onClick={handleIsFullMap} tabIndex={0}>
           {isFullMap ? (
             <>
               Collapse map
@@ -101,5 +100,5 @@ export const MapComponent = ({
         </button>
       </MapComponentWrapper>
     </>
-  );
-};
+  )
+}
