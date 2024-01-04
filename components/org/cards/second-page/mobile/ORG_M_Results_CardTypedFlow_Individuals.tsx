@@ -5,6 +5,7 @@ import {
   ORG_M_Result_ViewInfoSvg,
   ORG_M_Result_ViewProfileSvg,
 } from "@/assets/icons"
+import { StartsRatingReview_Mobile } from "@/components/org/stars-rating-review/mobile/StartsRatingReview_Mobile"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
@@ -17,12 +18,11 @@ import {
 } from "@/utils/org/useTypedFlow_CheckDiagnosisChoosed"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
-import { Fragment, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import {
   ORG_M_Results_CardTypedFlow_Card,
   ORG_M_Results_CardTypedFlow_IndividualsWrapper,
 } from "./styles/ORG_M_Results_CardTypedFlow_IndividualsWrapper"
-import { StartsRatingReview_Mobile } from "@/components/ORG/stars-rating-review/mobile/StartsRatingReview_Mobile"
 
 // [key: string]: string | number
 export type TypeOfObjectInProp = { [key: string]: string | number }[]
@@ -133,10 +133,7 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
                 <span>
                   <span>
                     <ORG_M_Result_ViewProfileSvg />
-                    <P
-                      first={x.fullName.first}
-                      last={x.fullName.last}
-                    />
+                    <P first={x.fullName.first} last={x.fullName.last} />
                     {/* <p>
                       {x.fullName.first} {x.fullName.last}
                     </p> */}
