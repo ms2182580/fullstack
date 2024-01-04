@@ -1,4 +1,7 @@
-import { LanguageIconSvg, NavBar_D_AccessibilityModeSvg } from "@/assets/icons/index.js"
+import {
+  LanguageIconSvg,
+  NavBar_D_AccessibilityModeSvg,
+} from "@/assets/icons/index.js"
 import FLAG_CHINA from "@/assets/icons/nav-bar/FLAG_CHINA.png"
 import FLAG_EGIPT from "@/assets/icons/nav-bar/FLAG_EGIPT.png"
 import FLAG_FRANCE from "@/assets/icons/nav-bar/FLAG_FRANCE.png"
@@ -54,7 +57,11 @@ type Props = {
   isORG: boolean
 }
 
-export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguage, isORG }: Props) => {
+export const NavBar_D_LanguageComponentDropdown = ({
+  theRef,
+  showDropdownLanguage,
+  isORG,
+}: Props) => {
   useEffect(() => {
     if (showDropdownLanguage) {
       theRef?.current?.focus()
@@ -62,13 +69,14 @@ export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguag
   }, [showDropdownLanguage])
 
   const { pathname } = useRouter()
-  console.log("pathname:", pathname)
+  // console.log("pathname:", pathname)
 
   return (
     <NavBar_D_LanguageComponentDropdownWrapper
       ref={theRef}
       tabIndex={0}
-      isORG={isORG}>
+      isORG={isORG}
+    >
       <H4>
         {" "}
         <LanguageIconSvg /> Select Language
@@ -78,7 +86,8 @@ export const NavBar_D_LanguageComponentDropdown = ({ theRef, showDropdownLanguag
         {displayLanguages.map((xDisplayLanguages, index) => (
           <li
             key={xDisplayLanguages.languageName}
-            tabIndex={index === 0 ? 0 : -1}>
+            tabIndex={index === 0 ? 0 : -1}
+          >
             <Image
               src={xDisplayLanguages.flag}
               alt={`image of a flag. Language of this flag: ${xDisplayLanguages.languageName}`}

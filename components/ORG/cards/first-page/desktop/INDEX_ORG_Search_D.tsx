@@ -4,7 +4,10 @@ import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified } from "@/components/org/verified/Verified"
 import { ButtonSmall } from "@/components/ui/buttons/general"
-import { Caption, P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import {
+  Caption,
+  P,
+} from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
@@ -14,7 +17,10 @@ import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { All_Layouts_Accepted, INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
+import {
+  All_Layouts_Accepted,
+  INDEX_ORG_Search_DWrapper,
+} from "./styles/INDEX_ORG_Search_DWrapper"
 
 type Props = {
   positionInArray: number
@@ -23,7 +29,12 @@ type Props = {
   someLayoutSpecial: any
 }
 
-export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theData, someLayoutSpecial }: Props) => {
+export const INDEX_ORG_Search_D = ({
+  positionInArray,
+  isSelected = false,
+  theData,
+  someLayoutSpecial,
+}: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -57,12 +68,41 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
                           <Image
                             src={obj.imageToUse}
                             alt={obj.title}
-                            layout={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? "responsive" : "intrinsic"}
-                            objectFit={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? "contain" : "initial"}
-                            width={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? 1 : 1200}
-                            height={someLayoutSpecial === All_Layouts_Accepted.like_PAT || someLayoutSpecial === All_Layouts_Accepted.like_PVES ? 0.522 : 600}
+                            layout={
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PAT ||
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PVES
+                                ? "responsive"
+                                : "intrinsic"
+                            }
+                            objectFit={
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PAT ||
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PVES
+                                ? "contain"
+                                : "initial"
+                            }
+                            width={
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PAT ||
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PVES
+                                ? 1
+                                : 1200
+                            }
+                            height={
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PAT ||
+                              someLayoutSpecial ===
+                                All_Layouts_Accepted.like_PVES
+                                ? 0.522
+                                : 600
+                            }
                           />
-                          {someLayoutSpecial === All_Layouts_Accepted.like_PAT ? null : (
+                          {someLayoutSpecial ===
+                          All_Layouts_Accepted.like_PAT ? null : (
                             <>
                               <Verified />
                             </>
@@ -94,10 +134,20 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
                         <P>{obj.textReview}</P>
                         <button
                           onClick={(event) =>
-                            handleMoveToThirdPage({ event, categoryPosition: positionInArray, subcategoryPosition: iData, resourcePosition: iSubData, setThirdpageDataORG, push })
-                          }>
+                            handleMoveToThirdPage({
+                              event,
+                              categoryPosition: positionInArray,
+                              subcategoryPosition: iData,
+                              resourcePosition: iSubData,
+                              setThirdpageDataORG,
+                              push,
+                            })
+                          }
+                        >
                           <ORG_D_Search_ViewProfileSvg />
-                          {someLayoutSpecial === "like_PVES" && iData === 0 ? "View Listing" : "View Profile"}
+                          {someLayoutSpecial === "like_PVES" && iData === 0
+                            ? "View Listing"
+                            : "View Profile"}
                         </button>
                       </div>
                     )
@@ -105,8 +155,16 @@ export const INDEX_ORG_Search_D = ({ positionInArray, isSelected = false, theDat
                 </div>
                 <span
                   onClick={(event) =>
-                    handleMoveToSecondPage({ event, categoryPosition: positionInArray, subcategoryPosition: iData, setSecondpageFiltersORG, setSecondpageDataORG, push })
-                  }>
+                    handleMoveToSecondPage({
+                      event,
+                      categoryPosition: positionInArray,
+                      subcategoryPosition: iData,
+                      setSecondpageFiltersORG,
+                      setSecondpageDataORG,
+                      push,
+                    })
+                  }
+                >
                   <ButtonSmall secondary>See all (25)</ButtonSmall>
                 </span>
               </div>
