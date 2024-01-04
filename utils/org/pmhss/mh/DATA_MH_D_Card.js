@@ -1,5 +1,8 @@
 import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "../../DATA_ORG_KeyNamesForCards_D"
 import { arraySectionToRender_PMHSS } from "../third-page/desktop/arraySectionToRender"
 import { mapRender_PMHSS } from "../third-page/desktop/mapRender"
 import { tooltipToRender_PMHSS } from "../third-page/desktop/tooltipToRender"
@@ -7,12 +10,16 @@ import { tooltipToRender_PMHSS } from "../third-page/desktop/tooltipToRender"
 export const DATA_CardRight_PMHSS = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
@@ -28,7 +35,11 @@ export const DATA_CardRight_PMHSS = [
 
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "English",
+        "Mandarin",
+        "Cantonese",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -51,12 +62,19 @@ export const DATA_CardRight_PMHSS = [
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           facility: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic", "Private Practice"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Clinic",
+              "Private Practice",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           languages: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English",
+              "Mandarin",
+              "Cantonese",
+            ],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
@@ -75,7 +93,11 @@ export const DATA_CardRight_PMHSS = [
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["In-network insurance", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "In-network insurance",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
           outOfPocketFees: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Out-of-pocket fees",
@@ -83,7 +105,11 @@ export const DATA_CardRight_PMHSS = [
           },
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 10", "License Number: 1409990926", "State of License: New York"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Years in Practice: 10",
+              "License Number: 1409990926",
+              "State of License: New York",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           education: {
@@ -92,25 +118,33 @@ export const DATA_CardRight_PMHSS = [
           },
           practiceName: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice name",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Bellevue Mental Health",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PMHSS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: true,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
@@ -126,7 +160,11 @@ export const DATA_CardRight_PMHSS = [
 
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "English",
+        "Mandarin",
+        "Cantonese",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -151,12 +189,19 @@ export const DATA_CardRight_PMHSS = [
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           facility: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic", "Private Practice"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Clinic",
+              "Private Practice",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           languages: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English",
+              "Mandarin",
+              "Cantonese",
+            ],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
@@ -175,7 +220,11 @@ export const DATA_CardRight_PMHSS = [
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["In-network insurance", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "In-network insurance",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
           outOfPocketFees: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Out-of-pocket fees",
@@ -183,7 +232,11 @@ export const DATA_CardRight_PMHSS = [
           },
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 10", "License Number: 1409990926", "State of License: New York"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Years in Practice: 10",
+              "License Number: 1409990926",
+              "State of License: New York",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           education: {
@@ -192,25 +245,33 @@ export const DATA_CardRight_PMHSS = [
           },
           practiceName: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice name",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Bellevue Mental Health",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PMHSS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: true,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Consultation"],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Accepting new clients"],
     },
 
@@ -226,7 +287,11 @@ export const DATA_CardRight_PMHSS = [
 
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "languages",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "English",
+        "Mandarin",
+        "Cantonese",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA]: {
@@ -251,12 +316,19 @@ export const DATA_CardRight_PMHSS = [
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           facility: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Facility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Clinic", "Private Practice"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Clinic",
+              "Private Practice",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           languages: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Mandarin", "Cantonese"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English",
+              "Mandarin",
+              "Cantonese",
+            ],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
@@ -275,7 +347,11 @@ export const DATA_CardRight_PMHSS = [
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["In-network insurance", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "In-network insurance",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
           outOfPocketFees: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Out-of-pocket fees",
@@ -283,7 +359,11 @@ export const DATA_CardRight_PMHSS = [
           },
           qualifications: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Qualifications",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Years in Practice: 10", "License Number: 1409990926", "State of License: New York"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Years in Practice: 10",
+              "License Number: 1409990926",
+              "State of License: New York",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           education: {
@@ -292,14 +372,18 @@ export const DATA_CardRight_PMHSS = [
           },
           practiceName: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice name",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Bellevue Mental Health"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Bellevue Mental Health",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PMHSS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PMHSS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PMHSS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: true,
       },
     },
   },

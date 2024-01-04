@@ -1,18 +1,29 @@
 import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
-import { arrayInnerNavBar_PCMPS, arraySectionToRender_PCMPS } from "../third-page/desktop/arraySectionToRender"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "../../DATA_ORG_KeyNamesForCards_D"
+import {
+  arrayInnerNavBar_PCMPS,
+  arraySectionToRender_PCMPS,
+} from "../third-page/desktop/arraySectionToRender"
 import { mapRender_PCMPS } from "../third-page/desktop/mapRender"
 import { tooltipToRender_PCMPS } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_CardRight_PCMPS = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Tour available"],
     },
     programEmphasis: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s Syndrome"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Autism",
+        "Asperger’s Syndrome",
+      ],
     },
     price: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
@@ -20,7 +31,12 @@ export const DATA_CardRight_PCMPS = [
     },
     activities: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Activities",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Archery", "Arts & Crafts", "Swimming", "Tennis"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Archery",
+        "Arts & Crafts",
+        "Swimming",
+        "Tennis",
+      ],
     },
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
@@ -32,7 +48,11 @@ export const DATA_CardRight_PCMPS = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s", "Syndrome"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Autism",
+            "Asperger’s",
+            "Syndrome",
+          ],
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
@@ -71,7 +91,11 @@ export const DATA_CardRight_PCMPS = [
           },
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Private Pay",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
           campType: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Camp Type",
@@ -79,10 +103,16 @@ export const DATA_CardRight_PCMPS = [
           },
           activitiesAvailable: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Activities available",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Archery", "arts & crafts", "swimming", "tennis"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Archery",
+              "arts & crafts",
+              "swimming",
+              "tennis",
+            ],
           },
           religionOrCulturalAffiliations: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Religion or cultural affiliations",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]:
+              "Religion or cultural affiliations",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["No"],
           },
           coEd: {
@@ -100,23 +130,31 @@ export const DATA_CardRight_PCMPS = [
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCMPS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]:
+          arrayInnerNavBar_PCMPS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCMPS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: true,
       },
     },
   },
 
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Tour available"],
     },
 
     programEmphasis: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s Syndrome"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Autism",
+        "Asperger’s Syndrome",
+      ],
     },
     price: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
@@ -124,7 +162,12 @@ export const DATA_CardRight_PCMPS = [
     },
     activities: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Activities",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Archery", "Arts & Crafts", "Swimming", "Tennis"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Archery",
+        "Arts & Crafts",
+        "Swimming",
+        "Tennis",
+      ],
     },
     languages: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages",
@@ -136,7 +179,11 @@ export const DATA_CardRight_PCMPS = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "Asperger’s", "Syndrome"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Autism",
+            "Asperger’s",
+            "Syndrome",
+          ],
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
@@ -175,7 +222,11 @@ export const DATA_CardRight_PCMPS = [
           },
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Private Pay",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Camp Type",
@@ -183,10 +234,16 @@ export const DATA_CardRight_PCMPS = [
           },
           activitiesAvailable: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Activities available",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Archery", "arts & crafts", "swimming", "tennis"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Archery",
+              "arts & crafts",
+              "swimming",
+              "tennis",
+            ],
           },
           religionOrCulturalAffiliations: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Religion or cultural affiliations",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]:
+              "Religion or cultural affiliations",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["No"],
           },
           coEd: {
@@ -204,23 +261,32 @@ export const DATA_CardRight_PCMPS = [
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCMPS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]:
+          arrayInnerNavBar_PCMPS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCMPS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: true,
       },
     },
   },
 
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Tour available"],
     },
 
     programEmphasis: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD", "Down Syndrome"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Autism",
+        "ADHD",
+        "Down Syndrome",
+      ],
     },
     price: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
@@ -229,7 +295,12 @@ export const DATA_CardRight_PCMPS = [
 
     activities: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Activities",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Basketball", "Floor Hockey", "Badminton", "Tennis"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Basketball",
+        "Floor Hockey",
+        "Badminton",
+        "Tennis",
+      ],
     },
 
     languages: {
@@ -242,7 +313,11 @@ export const DATA_CardRight_PCMPS = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Program Emphasis",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Autism", "ADHD", "Down Syndrome"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Autism",
+            "ADHD",
+            "Down Syndrome",
+          ],
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           accessibilityFeatures: {
@@ -281,7 +356,11 @@ export const DATA_CardRight_PCMPS = [
           },
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Private Pay",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Camp Type",
@@ -289,10 +368,16 @@ export const DATA_CardRight_PCMPS = [
           },
           activities: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Activities",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Basketball", "Floor Hockey", "Badminton", "Tennis"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Basketball",
+              "Floor Hockey",
+              "Badminton",
+              "Tennis",
+            ],
           },
           religionOrCulturalAffiliations: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Religion or cultural affiliations",
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]:
+              "Religion or cultural affiliations",
             [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["No"],
           },
           coEd: {
@@ -310,10 +395,13 @@ export const DATA_CardRight_PCMPS = [
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCMPS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]: arrayInnerNavBar_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR]:
+          arrayInnerNavBar_PCMPS,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCMPS,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]: mapRender_PCMPS,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]: true,
       },
     },
   },
