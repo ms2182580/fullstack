@@ -15,10 +15,10 @@ import { therapyRouter } from "./therapy"
 import { vocationRouter } from "./vocation"
 
 export const appRouter = router({
-  agency: agencyRouter /* 🟥 Error → trpc.agency.getAll.useQuery() */,
+  agency: agencyRouter /* 🟩 OK */,
   camp: campRouter /* 🟩 OK */,
   class: classRouter /* 🟩 OK */,
-  doctor: doctorRouter /* 🟥 Error → trpc.agency.getAll.useQuery()*/,
+  doctor: doctorRouter /* 🟩 OK */,
   education: educationRouter /* 🟩 OK */,
   hardware: hardwareRouter /* 🟩 OK */,
   legal: legalRouter /* 🟩 OK */,
