@@ -1,5 +1,5 @@
-import { INDEX_TypedFlow_M } from "@/components/ORG/typed-flow/mobile/INDEX_TypedFlow_M"
 import { INDEX_TypedFlow_D } from "@/components/org/typed-flow/desktop/INDEX_TypedFlow_D"
+import { INDEX_TypedFlow_M } from "@/components/org/typed-flow/mobile/INDEX_TypedFlow_M"
 import { useCheckUserWidth } from "../../../context/CheckUserWidth"
 
 export default function INDEX_TypedFlow_Results_D() {
