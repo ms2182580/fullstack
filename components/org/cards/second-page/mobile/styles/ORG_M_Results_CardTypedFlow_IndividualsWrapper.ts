@@ -1,5 +1,5 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors";
-import styled from "styled-components";
+import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "@/assets/Colors"
+import styled from "styled-components"
 export const ORG_M_Results_CardTypedFlow_Card = styled.article`
   border: 1px solid ${NEUTRALS.LIGHT_GREY} !important;
   overflow: hidden;
@@ -9,9 +9,42 @@ export const ORG_M_Results_CardTypedFlow_Card = styled.article`
   border-radius: 8px;
   margin: 10px 0px;
   max-height: 386px;
+
   & > :nth-child(1) {
-    height: 115.775px !important;
-    width: 100% !important;
+    position: relative;
+    & > :nth-child(1) {
+      height: 115.775px !important;
+      width: 100% !important;
+    }
+
+    & > :nth-child(2) {
+      position: absolute;
+      top: 21px;
+      left: 21px;
+    }
+
+    & > :nth-child(3) {
+      position: absolute;
+      bottom: 4px;
+      right: 2px;
+      width: 64.8px;
+      height: 19.493px;
+      border-radius: 19.44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0.81px solid ${SECONDARY_ORG_PLUS.YELLOW};
+      background: ${SECONDARY_ORG_PLUS.YELLOW};
+
+      & > :nth-child(2) {
+        font-size: 9.72px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 19.44px; /* 200% */
+        letter-spacing: 0.097px;
+        margin-left: 3px;
+      }
+    }
   }
   & > :nth-child(2) {
     height: 200px;
@@ -169,7 +202,7 @@ export const ORG_M_Results_CardTypedFlow_Card = styled.article`
       }
     }
   }
-`;
+`
 export const ORG_M_Results_CardTypedFlow_IndividualsWrapper = styled.section`
   display: block;
   & > :nth-child(1) {
@@ -179,4 +212,4 @@ export const ORG_M_Results_CardTypedFlow_IndividualsWrapper = styled.section`
     // justify-content: center;
   }
   // width: 100%;
-`;
+`
