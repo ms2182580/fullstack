@@ -5,6 +5,7 @@ import { ORG_D_Results_FinalButton } from "../desktop/ORG_D_Results_FinalButton.
 import { ORG_M_Results_Choisepath } from "./ORG_M_Results_Choisepath"
 import { ORG_M_Results_FilterSortbyHeader } from "./ORG_M_Results_FilterSortbyHeader"
 import { ORG_M_Results_MainEntryWrapper } from "./styles/ORG_M_Results_MainEntryWrapper"
+import { ORG_M_Result_Pagination } from "./ORG_M_Result_Pagination"
 
 export type ORG_D_Results_MainEntry_PROPS = {
   isTypedFlow?: boolean
@@ -53,7 +54,7 @@ export const ORG_M_Results_MainEntry = ({
           <ORG_D_Results_FinalButton />
         </>
       )}
-
+      <ORG_M_Result_Pagination />
       {/* <ORG_D_Results_Breadcrumbs
                 isTypedFlow={isTypedFlow}
                 titleToFormat={titleToFormat}

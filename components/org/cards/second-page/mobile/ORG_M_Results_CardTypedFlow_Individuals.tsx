@@ -1,9 +1,11 @@
 import {
+  ORG_M_Result_HeartSvg,
   ORG_M_Result_PaginationSvg,
   ORG_M_Result_ShareSvg,
   ORG_M_Result_ViewCalenderSvg,
   ORG_M_Result_ViewInfoSvg,
   ORG_M_Result_ViewProfileSvg,
+  ORG_M_VarifiedSvg,
 } from "@/assets/icons"
 import { StartsRatingReview_Mobile } from "@/components/org/stars-rating-review/mobile/StartsRatingReview_Mobile"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
@@ -120,43 +122,35 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
         {dataToRender.map((x, index) => {
           return (
             <ORG_M_Results_CardTypedFlow_Card key={index}>
-              <Image
-                src={x.imageToUse}
-                layout="responsive"
-                objectFit="cover"
-                width={1}
-                height={1}
-                /* !FH change this. Put a proper alt */
-                alt="someImage"
-              />
+              <span>
+                <Image
+                  src={x.imageToUse}
+                  layout="responsive"
+                  objectFit="cover"
+                  width={1}
+                  height={1}
+                  /* !FH change this. Put a proper alt */
+                  alt="someImage"
+                />
+                <span>
+                  <ORG_M_Result_HeartSvg />
+                </span>
+                <span>
+                  <ORG_M_VarifiedSvg /> <span> Varified</span>
+                </span>
+              </span>
               <div>
                 <span>
                   <span>
                     <ORG_M_Result_ViewProfileSvg />
                     <P first={x.fullName.first} last={x.fullName.last} />
-                    {/* <p>
-                      {x.fullName.first} {x.fullName.last}
-                    </p> */}
                   </span>
                   <span>
                     <p>(1 miles away)</p>
                     <ORG_M_Result_ViewCalenderSvg />
                   </span>
                 </span>
-                {/* <button
-                                    onClick={(event) =>
-                                        handleMoveToThirdPage({
-                                            event,
-                                            categoryPosition,
-                                            subcategoryPosition: 0,
-                                            resourcePosition: index,
-                                            setThirdpageDataORG,
-                                            push,
-                                        })
-                                    }>
-                                    <ORG_D_Results_ViewProfileSvg />
-                                    View Profile
-                                </button> */}
+
                 <span>
                   <span>{x.subtitle}</span>
                   <span>
