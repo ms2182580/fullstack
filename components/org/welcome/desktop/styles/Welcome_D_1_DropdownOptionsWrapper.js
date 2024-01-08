@@ -11,6 +11,8 @@ export const Welcome_D_1_DropdownOptionsWrapper = styled.div`
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 
+    font-size: 16px;
+
     .${CLASSNAME_ISDIAGNOSIS.SUGGESTION} {
       list-style: none;
       padding-bottom: 16px;

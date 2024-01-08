@@ -11,8 +11,8 @@ export const Welcome_D_1_Dropdown = ({
   setHaveAtLeastOneMatchState,
   handleNothingSelected,
 }) => {
-  const [isFocus, setIsFocus] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
+  const [isFocus, setIsFocus] = useState(true)
+  const [isHovered, setIsHovered] = useState(true)
 
   const inputRef = useRef()
 
@@ -86,7 +86,11 @@ export const Welcome_D_1_Dropdown = ({
       setHaveAtLeastOneMatchState(true)
     }
 
-    if (!haveAtLeastOneMatchDiagnosis && !haveAtLeastOneMatchSymptoms && diagnosisSearchedByUser !== "") {
+    if (
+      !haveAtLeastOneMatchDiagnosis &&
+      !haveAtLeastOneMatchSymptoms &&
+      diagnosisSearchedByUser !== ""
+    ) {
       setDiagnosisCategory({})
       setHaveAtLeastOneMatchState(false)
     }
