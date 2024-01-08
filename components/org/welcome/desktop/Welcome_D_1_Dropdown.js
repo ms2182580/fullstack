@@ -86,7 +86,11 @@ export const Welcome_D_1_Dropdown = ({
       setHaveAtLeastOneMatchState(true)
     }
 
-    if (!haveAtLeastOneMatchDiagnosis && !haveAtLeastOneMatchSymptoms && diagnosisSearchedByUser !== "") {
+    if (
+      !haveAtLeastOneMatchDiagnosis &&
+      !haveAtLeastOneMatchSymptoms &&
+      diagnosisSearchedByUser !== ""
+    ) {
       setDiagnosisCategory({})
       setHaveAtLeastOneMatchState(false)
     }
