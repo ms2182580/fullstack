@@ -24,9 +24,19 @@ export const residencyRouter = router({
       return result;
     }),
 
-  getAll: publicProcedure
-    .query(async () => {
-      const result = await prisma.residency.findMany();
+    getAll: publicProcedure
+    .input(z.object({ 
+      limit: z.number().min(1).max(100).nullish(),
+      cursor: z.string().nullish()
+    }))
+    .query(async ({ input }) => {
+      const limit = input.limit ?? 50;
+      const { cursor } = input ;
+      const result = await prisma.residency.findMany({
+        take: limit,
+        skip: 1,
+        cursor: cursor ? {id: cursor} : undefined,
+      });
       return result;
     }),
 

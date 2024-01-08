@@ -25,8 +25,18 @@ export const agencyRouter = router({
     }),
 
   getAll: publicProcedure
-    .query(async () => {
-      const result = await prisma.agency.findMany();
+    .input(z.object({ 
+      limit: z.number().min(1).max(100).nullish(),
+      cursor: z.string().nullish()
+    }))
+    .query(async ({ input }) => {
+      const limit = input.limit ?? 50;
+      const { cursor } = input ;
+      const result = await prisma.agency.findMany({
+        take: limit,
+        skip: 1,
+        cursor: cursor ? {id: cursor} : undefined,
+      });
       return result;
     }),
 
