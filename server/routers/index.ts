@@ -18,7 +18,7 @@ export const appRouter = router({
   agency: agencyRouter /* 🟩 OK */,
   camp: campRouter /* 🟩 OK */,
   class: classRouter /* 🟩 OK */,
-  doctor: doctorRouter /* 🟩 OK */,
+  doctor: doctorRouter /* 🟥 PENDING CHANGE */,
   education: educationRouter /* 🟩 OK */,
   hardware: hardwareRouter /* 🟩 OK */,
   legal: legalRouter /* 🟩 OK */,

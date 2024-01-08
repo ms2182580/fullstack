@@ -4,7 +4,7 @@ import { getDataToMoveView } from "./getDataToMoveView"
 import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 export const handleMoveToThirdPage = ({
-  _,
+  event,
   categoryPosition,
   subcategoryPosition,
   resourcePosition,

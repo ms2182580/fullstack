@@ -1,4 +1,8 @@
-import { ArrowRightSvg, LeftArrowSvg, ORG_D_Search_CarePlanSvg } from "@/assets/icons/index.js"
+import {
+  ArrowRightSvg,
+  LeftArrowSvg,
+  ORG_D_Search_CarePlanSvg,
+} from "@/assets/icons/index.js"
 import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
 import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
@@ -6,6 +10,7 @@ import { H1 } from "@/components/ui/heading_body_text/HeaderFonts.js"
 import { useORG_Ctx_FetchNoFiltersDesktop } from "@/context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "@/utils/org/DATA_ORG_CheckPaths_Search_D.js"
+import { useFormatData } from "@/utils/org/useFormatData"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
@@ -13,7 +18,11 @@ import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
-export const INDEX_D_ORG = ({ dataToDisplay }) => {
+export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
+  const { dataToORG } = useFormatData({
+    allBackendData,
+  })
+
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 
@@ -36,7 +45,8 @@ export const INDEX_D_ORG = ({ dataToDisplay }) => {
   const { query } = useRouter()
   const refOfORGSelections = useRef(null)
 
-  const { moveToLeft, moveToRight, stateToCss, setListRef } = useScrollHorizontal(refOfORGSelections)
+  const { moveToLeft, moveToRight, stateToCss, setListRef } =
+    useScrollHorizontal(refOfORGSelections)
 
   // useEffect(() => {
   //   if (refOfORGSelections) {
@@ -91,14 +101,12 @@ export const INDEX_D_ORG = ({ dataToDisplay }) => {
           Find your I/DD <br /> community
           <br /> and resources
         </H1>
-
         <div>
           <div>
             <ORG_D_Search_CarePlanSvg />
             <P semibold>Care Plan</P>
           </div>
         </div>
-
         <div>
           <Image
             src={ORGDesktop_Search_Hero}
@@ -107,12 +115,15 @@ export const INDEX_D_ORG = ({ dataToDisplay }) => {
             objectFit="contain"
           />
         </div>
-
         <ORG_D_SearchComponent />
       </div>
 
       <div>
-        <div className={`${stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""}`}>
+        <div
+          className={`${
+            stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
+          }`}
+        >
           <div onClick={moveToLeft}>
             <LeftArrowSvg />
           </div>
@@ -123,47 +134,54 @@ export const INDEX_D_ORG = ({ dataToDisplay }) => {
           ref={(el) => {
             setListRef(el)
             refOfORGSelections.current = el
-          }}>
+          }}
+        >
           <li
             onClick={handleShowAll}
-            className={!singleCardIsSelected ? "isActive" : ""}>
-            <P
-              primary_cta
-              semibold>
+            className={!singleCardIsSelected ? "isActive" : ""}
+          >
+            <P primary_cta semibold>
               All
             </P>
           </li>
-
-          {dataToDisplay.map((x, i) => {
+          {dataToORG.map((x, i) => {
             return (
               <li
                 key={`${x.nameJSX}_${i}`}
                 data-name={x.nameJSX}
                 onClick={handleShowOneCard}
-                className={singleCardIsSelected && matchNameState === x.nameJSX ? "isActive" : ""}>
-                <P
-                  primary_cta
-                  semibold
-                  data-name={x.nameJSX}>
-                  {x.nameJSX}
+                className={
+                  singleCardIsSelected && matchNameState === x.nameJSX
+                    ? "isActive"
+                    : ""
+                }
+              >
+                <P primary_cta semibold data-name={x.nameJSX}>
+                  {x.nameJSX.toLowerCase()}
                 </P>
               </li>
             )
           })}
         </ul>
-
-        <div className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
+        <div
+          className={`${
+            stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
+          }`}
+        >
           <div
             onClick={moveToRight}
-            className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
+            className={`${
+              stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
+            }`}
+          >
             <ArrowRightSvg />
           </div>
           <div />
         </div>
       </div>
-
-      {dataToDisplay.map((x, i) => {
+      {dataToORG.map((x, i) => {
         const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
+        const dataComesFromBackend = x?.somethingSpecial?.isFromBackend ?? null
 
         if (singleCardIsSelected === false) {
           return (
@@ -172,11 +190,11 @@ export const INDEX_D_ORG = ({ dataToDisplay }) => {
                 positionInArray={i}
                 theData={x.thisParticularData}
                 someLayoutSpecial={someLayoutSpecial}
+                dataComesFromBackend={dataComesFromBackend}
               />
             </Fragment>
           )
         }
-
         if (singleCardIsSelected && matchNameState === x.nameJSX) {
           return (
             <Fragment key={`${x.nameJSX}_${i}`}>
@@ -185,11 +203,11 @@ export const INDEX_D_ORG = ({ dataToDisplay }) => {
                 positionInArray={i}
                 theData={x.thisParticularData}
                 someLayoutSpecial={someLayoutSpecial}
+                dataComesFromBackend={dataComesFromBackend}
               />
             </Fragment>
           )
         }
-
         return null
       })}
     </INDEX_D_ORGWrapper>

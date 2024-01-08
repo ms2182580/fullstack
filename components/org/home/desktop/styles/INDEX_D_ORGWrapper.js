@@ -23,7 +23,12 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(1) {
-    background: linear-gradient(169deg, rgba(75, 52, 139, 0.35) 0%, rgba(255, 154, 108, 0.46) 45.31%, rgba(228, 204, 255, 0.56) 100%);
+    background: linear-gradient(
+      169deg,
+      rgba(75, 52, 139, 0.35) 0%,
+      rgba(255, 154, 108, 0.46) 45.31%,
+      rgba(228, 204, 255, 0.56) 100%
+    );
     width: 100%;
 
     display: grid;
@@ -143,7 +148,11 @@ export const INDEX_D_ORGWrapper = styled.div`
         z-index: 1;
         height: 100%;
         width: 75px;
-        background: linear-gradient(-90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 8%);
+        background: linear-gradient(
+          -90deg,
+          hsla(0, 0%, 100%, 20%) 0%,
+          hsl(0, 0%, 100%) 8%
+        );
       }
     }
 
@@ -172,7 +181,7 @@ export const INDEX_D_ORGWrapper = styled.div`
         align-items: center;
         justify-content: center;
 
-        cursor: pointer;
+        text-transform: capitalize;
 
         &.isActive {
           background-color: ${PRIMARY.PRIMARY_CTA};
@@ -261,7 +270,11 @@ export const INDEX_D_ORGWrapper = styled.div`
         height: 100%;
         /* width: calc(90px + 6vw); */
         width: 75px;
-        background: linear-gradient(90deg, hsla(0, 0%, 100%, 20%) 0%, hsl(0, 0%, 100%) 8%);
+        background: linear-gradient(
+          90deg,
+          hsla(0, 0%, 100%, 20%) 0%,
+          hsl(0, 0%, 100%) 8%
+        );
         /* background: hsl(348, 83.3%, 47.1%, 0.4); */
       }
     }

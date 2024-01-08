@@ -2,8 +2,22 @@ import { getDataToMoveView } from "./getDataToMoveView"
 import { SPECIFIC_DATA_KEY } from "./second-page/desktop/specificData"
 import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
-export const handleMoveToSecondPage = ({ event, categoryPosition, subcategoryPosition, setSecondpageFiltersORG, setSecondpageDataORG, push }) => {
-  const { theActualFilter, subcategory, rightCard, leftCard, subcategorySpecificData, subFolder } = getDataToMoveView({ categoryPosition, subcategoryPosition })
+export const handleMoveToSecondPage = ({
+  event,
+  categoryPosition,
+  subcategoryPosition,
+  setSecondpageFiltersORG,
+  setSecondpageDataORG,
+  push,
+}) => {
+  const {
+    theActualFilter,
+    subcategory,
+    rightCard,
+    leftCard,
+    subcategorySpecificData,
+    subFolder,
+  } = getDataToMoveView({ categoryPosition, subcategoryPosition })
 
   setSecondpageFiltersORG(theActualFilter)
   setSecondpageDataORG({
