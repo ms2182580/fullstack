@@ -7,7 +7,7 @@ export enum All_Layouts_Accepted {
 }
 
 type INDEX_ORG_Search_DWrapper_Props = {
-  someLayoutSpecial: keyof typeof All_Layouts_Accepted
+  someLayoutSpecial?: keyof typeof All_Layouts_Accepted
 }
 
 const PROPS = {
@@ -36,6 +36,8 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
     & > :nth-child(1) {
       grid-area: title;
+
+      text-transform: capitalize;
     }
 
     & > :nth-child(2) {
@@ -60,12 +62,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           overflow: hidden;
 
           position: relative;
-
-          /* display: flex;
-          align-items: center;
-          justify-content: center; */
-
-          /* border: 2px solid crimson; */
 
           & > :nth-child(2) {
             position: absolute;
@@ -118,6 +114,11 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           cursor: pointer;
 
           white-space: nowrap;
+
+          &:hover,
+          &:focus-visible {
+            background-color: ${PRIMARY.PRIMARY_HOVER};
+          }
         }
       }
     }
@@ -211,4 +212,25 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
         }
       }
     `}
+
+  &.dataComesFromBackend {
+    & > * {
+      & > :nth-child(2) {
+        & > * {
+          display: grid;
+          justify-self: center;
+
+          width: clamp(310px, 10vw - 200px, 400px);
+
+          & > :nth-child(2) {
+            text-transform: capitalize;
+          }
+
+          & > :nth-child(4) {
+            color: ${NEUTRALS.DARK_GREY};
+          }
+        }
+      }
+    }
+  }
 `

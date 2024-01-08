@@ -8,7 +8,11 @@ export type Props = {
   isDetail?: boolean
 }
 
-export const StarsRatingReview_D = ({ rating, reviews = "", isDetail = false }: Props) => {
+export const StarsRatingReview_D = ({
+  rating = 5,
+  reviews = "",
+  isDetail = false,
+}: Props) => {
   return (
     <StarsRatingReview_DWrapper isDetail={isDetail}>
       <PatternStars rating={rating} />

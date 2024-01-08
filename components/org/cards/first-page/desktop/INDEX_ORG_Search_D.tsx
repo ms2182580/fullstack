@@ -1,4 +1,5 @@
 import { ORG_D_Search_ViewProfileSvg } from "@/assets/icons"
+import backup from "@/assets/images/org/backup/backup_image.jpg"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
@@ -27,6 +28,7 @@ type Props = {
   isSelected: boolean
   theData: object[]
   someLayoutSpecial: any
+  dataComesFromBackend?: boolean
 }
 
 export const INDEX_ORG_Search_D = ({
@@ -34,6 +36,7 @@ export const INDEX_ORG_Search_D = ({
   isSelected = false,
   theData,
   someLayoutSpecial,
+  dataComesFromBackend,
 }: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
@@ -50,6 +53,136 @@ export const INDEX_ORG_Search_D = ({
   const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+
+  if (dataComesFromBackend) {
+    // console.log("theData:", theData, "✨")
+    return (
+      <>
+        <INDEX_ORG_Search_DWrapper
+          someLayoutSpecial={someLayoutSpecial}
+          className={dataComesFromBackend && "dataComesFromBackend"}
+        >
+          {theData.map((x, iData) => {
+            const [title, ...objects]: any = x
+            let howMuch: number = objects.length
+            let onlyThree = objects.slice(0, 3)
+
+            if (title === "" || iData === 0) {
+              return <></>
+            }
+
+            while (howMuchDisplay > 3) {
+              return (
+                <>
+                  <section key={`${title}_${iData}`}>
+                    <header>
+                      <H2>{title}</H2>
+                    </header>
+
+                    <div>
+                      {onlyThree.map((obj: any, iSubData: number) => {
+                        return (
+                          <article key={`${obj.resourceId}`}>
+                            <div>
+                              <Image
+                                src={backup}
+                                alt={`backup image`}
+                                layout={
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PAT ||
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PVES
+                                    ? "responsive"
+                                    : "intrinsic"
+                                }
+                                objectFit={
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PAT ||
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PVES
+                                    ? "contain"
+                                    : "initial"
+                                }
+                                width={
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PAT ||
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PVES
+                                    ? 1
+                                    : 1200
+                                }
+                                height={
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PAT ||
+                                  someLayoutSpecial ===
+                                    All_Layouts_Accepted.like_PVES
+                                    ? 0.522
+                                    : 600
+                                }
+                              />
+                              {obj.verifiedUnverifiedResource !== "" && (
+                                <>
+                                  <Verified />
+                                </>
+                              )}
+                            </div>
+
+                            <H3>{obj.recordName.toLowerCase()}</H3>
+                            <H4>{obj.recordSubtype}</H4>
+
+                            <P>{obj?.address[0].city}</P>
+
+                            <StarsRatingReview_D
+                              rating={obj?.ratings?.[0]?.value || 99}
+                              reviews={99}
+                            />
+
+                            <P>{obj?.reviews?.[0]}</P>
+                            <button
+                            /* onClick={(_) =>
+                                handleMoveToThirdPage({
+                                  _,
+                                  categoryPosition: positionInArray,
+                                  subcategoryPosition: iData,
+                                  resourcePosition: iSubData,
+                                  setThirdpageDataORG,
+                                  push,
+                                })
+                              } */
+                            >
+                              <ORG_D_Search_ViewProfileSvg />
+                              {someLayoutSpecial === "like_PVES" && iData === 0
+                                ? "View Listing"
+                                : "View Profile"}
+                            </button>
+                          </article>
+                        )
+                      })}
+                    </div>
+
+                    <span
+                    /* onClick={(_) =>
+                        handleMoveToSecondPage({
+                          _,
+                          categoryPosition: positionInArray,
+                          subcategoryPosition: iData,
+                          setSecondpageFiltersORG,
+                          setSecondpageDataORG,
+                          push,
+                        })
+                      } */
+                    >
+                      <ButtonSmall secondary>See all ({howMuch})</ButtonSmall>
+                    </span>
+                  </section>
+                </>
+              )
+            }
+          })}
+        </INDEX_ORG_Search_DWrapper>
+      </>
+    )
+  }
 
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
