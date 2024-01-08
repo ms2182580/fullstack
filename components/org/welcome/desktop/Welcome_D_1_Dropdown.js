@@ -11,8 +11,8 @@ export const Welcome_D_1_Dropdown = ({
   setHaveAtLeastOneMatchState,
   handleNothingSelected,
 }) => {
-  const [isFocus, setIsFocus] = useState(true)
-  const [isHovered, setIsHovered] = useState(true)
+  const [isFocus, setIsFocus] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const inputRef = useRef()
 
