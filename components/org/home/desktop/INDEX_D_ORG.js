@@ -23,6 +23,8 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
     allBackendData,
   })
 
+  console.log("❤dataToORG:", dataToORG)
+
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 

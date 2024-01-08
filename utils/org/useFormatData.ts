@@ -18,7 +18,7 @@ type Return = {
     /*
      * By default this check for the key "recordSubtype", but other key can be used
      * The string of [Return_KEYS.SUB_CATEGORY_NAME] should be a key that is inside the object
-     * If there no key that match with any key inside the object the string "NOT_PROVIDED" will be use instead
+     * If there's no key that match with any key inside the object the string "NOT_PROVIDED" will be use instead
      */
     [Return_KEYS.SUB_CATEGORY_NAME]: string
     [Return_KEYS.CATEGORY_NAME]: string
@@ -64,8 +64,6 @@ const formatData = ({
 }
 
 const prepareToDATA_ORG_D = ({ dataToPrepare }) => {
-  let theORG = [...DATA_ORG_D]
-
   let arrToORG: any = []
 
   for (const x of dataToPrepare) {

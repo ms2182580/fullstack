@@ -24,7 +24,9 @@ const INDEX_M_STSearch_Component = dynamic(
 const ORG_INDEX = () => {
   const { isMobile }: any = useCheckUserWidth()
 
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery()
+  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 50 })
+  // const camp = trpc.camp.getAll.useQuery({ limit: 50 })
+  // console.log("🐢mentalHealthData:", mentalHealthData)
 
   if (!mentalHealthData.data) {
     return (
@@ -32,25 +34,7 @@ const ORG_INDEX = () => {
         <LoadingComponent />
       </>
     )
-  } /* else {
-    return (
-      <>
-        {isMobile === false ? (
-          <>
-            <INDEX_D_ORG_Search
-              dataToDisplay={DATA_ORG_D}
-              allBackendData={{ mentalHealthData }}
-            />
-          </>
-        ) : (
-          <>
-            <INDEX_M_STSearch_Component />
-          </>
-        )}
-      </>
-    )
-  } */
-
+  }
   return (
     <>
       {isMobile === false ? (
