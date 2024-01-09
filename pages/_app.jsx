@@ -1,5 +1,6 @@
 import { Page_layout } from "@/components/pageLayout/pageLayout"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
+import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { CheckUserWidth_Provider } from "../context/CheckUserWidth.js"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
@@ -21,8 +22,8 @@ import { ORG_CtxSTDataThirdpageDesktop_Provider } from "../context/ORG_Ctx_STDat
 import { ORG_CtxSTDataThirdpageMobile_Provider } from "../context/ORG_Ctx_STDataThirdpageMobile_Provider.js"
 import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
+import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
-import { trpc } from '../utils/trpc';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -42,26 +43,28 @@ function MyApp({ Component, pageProps }) {
                               <ORG_CtxFiltersApplyDesktop_Provider>
                                 <Ctx_ShowModal_Provider>
                                   <ORG_Ctx_D_SecondpageFilters_Provider>
-                                    <ORG_Ctx_D_SecondpageData_Provider>
-                                      <ORG_Ctx_D_ThirdpageData_Provider>
-                                        <ORG_Ctx_2Page_Provider>
-                                          <CheckUserWidth_Provider>
-                                            <NavbarHomeHeight_Provider>
-                                              <Ctx_sessionStorage_typedFlow_Provider>
-                                                <Page_layout>
-                                                  <GlobalStyle />
-                                                  <link
-                                                    rel="icon"
-                                                    href="/favicon.ico"
-                                                  />
-                                                  <Component {...pageProps} />
-                                                </Page_layout>
-                                              </Ctx_sessionStorage_typedFlow_Provider>
-                                            </NavbarHomeHeight_Provider>
-                                          </CheckUserWidth_Provider>
-                                        </ORG_Ctx_2Page_Provider>
-                                      </ORG_Ctx_D_ThirdpageData_Provider>
-                                    </ORG_Ctx_D_SecondpageData_Provider>
+                                    <ORG_Ctx_D_SecondpageData_Backend_Provider>
+                                      <ORG_Ctx_D_SecondpageData_Provider>
+                                        <ORG_Ctx_D_ThirdpageData_Provider>
+                                          <ORG_Ctx_2Page_Provider>
+                                            <CheckUserWidth_Provider>
+                                              <NavbarHomeHeight_Provider>
+                                                <Ctx_sessionStorage_typedFlow_Provider>
+                                                  <Page_layout>
+                                                    <GlobalStyle />
+                                                    <link
+                                                      rel="icon"
+                                                      href="/favicon.ico"
+                                                    />
+                                                    <Component {...pageProps} />
+                                                  </Page_layout>
+                                                </Ctx_sessionStorage_typedFlow_Provider>
+                                              </NavbarHomeHeight_Provider>
+                                            </CheckUserWidth_Provider>
+                                          </ORG_Ctx_2Page_Provider>
+                                        </ORG_Ctx_D_ThirdpageData_Provider>
+                                      </ORG_Ctx_D_SecondpageData_Provider>
+                                    </ORG_Ctx_D_SecondpageData_Backend_Provider>
                                   </ORG_Ctx_D_SecondpageFilters_Provider>
                                 </Ctx_ShowModal_Provider>
                               </ORG_CtxFiltersApplyDesktop_Provider>
@@ -81,4 +84,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default trpc.withTRPC(MyApp);
+export default trpc.withTRPC(MyApp)

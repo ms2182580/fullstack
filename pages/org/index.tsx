@@ -1,5 +1,4 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
-import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
 import { trpc } from "@/utils/trpc"
 import dynamic from "next/dynamic"
 import { useCheckUserWidth } from "../../context/CheckUserWidth"
@@ -38,11 +37,13 @@ const ORG_INDEX = () => {
       {isMobile === false ? (
         <>
           <INDEX_D_ORG_Search
-            dataToDisplay={DATA_ORG_D}
             allBackendData={{
               mentalHealth: mentalHealthData.data,
               // mentalHealth2: mentalHealthData.data,
             }}
+            /* allBackendFetched={{
+              mentalHealthFetched: mentalHealthData.isFetched,
+            }} */
           />
         </>
       ) : (

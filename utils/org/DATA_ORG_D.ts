@@ -17,15 +17,26 @@ import { DATA_PVES_D } from "./pves/DATA_PVES_D"
 //   SVG = "SVG",
 // }
 
+export const enum DATA_ORG_D_TYPES_KEYS {
+  NAME_JSX = "nameJSX",
+  THIS_PARTICULAR_DATA = "thisParticularData",
+  ACRONYM = "acronym",
+  FOLDER_NAME = "folderName",
+  SOMETHING_SPECIAL = "somethingSpecial",
+  LAYOUT = "layout",
+  DETAILS = "details",
+  IS_FROM_BACKEND = "isFromBackend",
+}
+
 export type DATA_ORG_D_TYPES = {
-  nameJSX: string
-  thisParticularData: unknown
-  acronym?: string
-  folderName?: string
-  somethingSpecial?: {
-    layout?: keyof typeof All_Layouts_Accepted
-    details?: unknown
-    isFromBackend?: boolean
+  [DATA_ORG_D_TYPES_KEYS.NAME_JSX]: string
+  [DATA_ORG_D_TYPES_KEYS.THIS_PARTICULAR_DATA]: unknown
+  [DATA_ORG_D_TYPES_KEYS.ACRONYM]?: string
+  [DATA_ORG_D_TYPES_KEYS.FOLDER_NAME]?: string
+  [DATA_ORG_D_TYPES_KEYS.SOMETHING_SPECIAL]?: {
+    [DATA_ORG_D_TYPES_KEYS.LAYOUT]?: keyof typeof All_Layouts_Accepted
+    [DATA_ORG_D_TYPES_KEYS.DETAILS]?: unknown
+    [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]?: boolean
   }
 }
 

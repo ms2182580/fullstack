@@ -17,7 +17,11 @@ import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
-export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
+export const INDEX_D_ORG = ({ allBackendData }) => {
+  /* //?TODO:BUG
+  * There's a bug here when you change something in development here and save it, it trigger useFormatData or something and new dataToORG is created in the UI
+  
+   */
   const { dataToORG } = useFormatData({
     allBackendData,
   })
@@ -94,126 +98,125 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
   }, [])
 
   return (
-    <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
-      <div>
-        <H1 semi_bold>
-          Find your I/DD <br /> community
-          <br /> and resources
-        </H1>
-        <div>
+    <>
+      <>
+        <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
           <div>
-            <ORG_D_Search_CarePlanSvg />
-            <P semibold>Care Plan</P>
+            <H1 semi_bold>
+              Find your I/DD <br /> community
+              <br /> and resources
+            </H1>
+            <div>
+              <div>
+                <ORG_D_Search_CarePlanSvg />
+                <P semibold>Care Plan</P>
+              </div>
+            </div>
+            <div>
+              <Image
+                src={ORGDesktop_Search_Hero}
+                alt="Image of doctors and patients looking forward, smiling and shaking hands"
+              />
+            </div>
+            <ORG_D_SearchComponent />
           </div>
-        </div>
-        <div>
-          <Image
-            src={ORGDesktop_Search_Hero}
-            alt="Image of doctors and patients looking forward, smiling and shaking hands"
-            /* layout="responsive"
-            objectFit="contain" */
-          />
-        </div>
-        <ORG_D_SearchComponent />
-      </div>
-
-      <div>
-        <div
-          className={`${
-            stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
-          }`}
-        >
-          <div onClick={moveToLeft}>
-            <LeftArrowSvg />
-          </div>
-          <div />
-        </div>
-
-        <ul
-          ref={(el) => {
-            setListRef(el)
-            refOfORGSelections.current = el
-          }}
-        >
-          <li
-            onClick={handleShowAll}
-            className={!singleCardIsSelected ? "isActive" : ""}
-          >
-            <P primary_cta semibold>
-              All
-            </P>
-          </li>
-          {dataToORG.map((x, i) => {
-            return (
+          <div>
+            <div
+              className={`${
+                stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
+              }`}
+            >
+              <div onClick={moveToLeft}>
+                <LeftArrowSvg />
+              </div>
+              <div />
+            </div>
+            <ul
+              ref={(el) => {
+                setListRef(el)
+                refOfORGSelections.current = el
+              }}
+            >
               <li
-                key={`${x.nameJSX}_${i}`}
-                data-name={x.nameJSX}
-                onClick={handleShowOneCard}
-                className={
-                  singleCardIsSelected && matchNameState === x.nameJSX
-                    ? "isActive"
-                    : ""
-                }
+                onClick={handleShowAll}
+                className={!singleCardIsSelected ? "isActive" : ""}
               >
-                <P primary_cta semibold data-name={x.nameJSX}>
-                  {x.nameJSX.toLowerCase()}
+                <P primary_cta semibold>
+                  All
                 </P>
               </li>
-            )
-          })}
-        </ul>
-        <div
-          className={`${
-            stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
-          }`}
-        >
-          <div
-            onClick={moveToRight}
-            className={`${
-              stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
-            }`}
-          >
-            <ArrowRightSvg />
+              {dataToORG.map((x, i) => {
+                return (
+                  <li
+                    key={`${x.nameJSX}_${i}`}
+                    data-name={x.nameJSX}
+                    onClick={handleShowOneCard}
+                    className={
+                      singleCardIsSelected && matchNameState === x.nameJSX
+                        ? "isActive"
+                        : ""
+                    }
+                  >
+                    <P primary_cta semibold data-name={x.nameJSX}>
+                      {x.nameJSX.toLowerCase()}
+                    </P>
+                  </li>
+                )
+              })}
+            </ul>
+            <div
+              className={`${
+                stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
+              }`}
+            >
+              <div
+                onClick={moveToRight}
+                className={`${
+                  stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
+                }`}
+              >
+                <ArrowRightSvg />
+              </div>
+              <div />
+            </div>
           </div>
-          <div />
-        </div>
-      </div>
-      {dataToORG.map((x, i) => {
-        const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
-        const dataComesFromBackend = x?.somethingSpecial?.isFromBackend ?? null
-
-        if (singleCardIsSelected === false) {
-          return (
-            <Fragment key={`${x.nameJSX}`}>
-              <INDEX_ORG_Search_D
-                positionInArray={i}
-                theData={x.thisParticularData}
-                someLayoutSpecial={someLayoutSpecial}
-                dataComesFromBackend={dataComesFromBackend}
-              />
-            </Fragment>
-          )
-        }
-
-        if (
-          singleCardIsSelected &&
-          matchNameState.toLowerCase() === x.nameJSX.toLowerCase()
-        ) {
-          return (
-            <Fragment key={`${x.nameJSX}_${i}`}>
-              <INDEX_ORG_Search_D
-                isSelected={singleCardIsSelected}
-                positionInArray={i}
-                theData={x.thisParticularData}
-                someLayoutSpecial={someLayoutSpecial}
-                dataComesFromBackend={dataComesFromBackend}
-              />
-            </Fragment>
-          )
-        }
-
-        return null
-      })}
-    </INDEX_D_ORGWrapper>
+          {dataToORG.map((x, i) => {
+            const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
+            const dataComesFromBackend =
+              x?.somethingSpecial?.isFromBackend ?? null
+            if (singleCardIsSelected === false) {
+              return (
+                <Fragment key={`${x.nameJSX}`}>
+                  <INDEX_ORG_Search_D
+                    positionInArray={i}
+                    theData={x.thisParticularData}
+                    someLayoutSpecial={someLayoutSpecial}
+                    dataComesFromBackend={dataComesFromBackend}
+                  />
+                </Fragment>
+              )
+            }
+            if (
+              singleCardIsSelected &&
+              matchNameState.toLowerCase() === x.nameJSX.toLowerCase()
+            ) {
+              return (
+                <Fragment key={`${x.nameJSX}_${i}`}>
+                  <INDEX_ORG_Search_D
+                    isSelected={singleCardIsSelected}
+                    positionInArray={i}
+                    theData={x.thisParticularData}
+                    someLayoutSpecial={someLayoutSpecial}
+                    dataComesFromBackend={dataComesFromBackend}
+                    allData={dataToORG}
+                  />
+                </Fragment>
+              )
+            }
+            return null
+          })}
+        </INDEX_D_ORGWrapper>
+      </>
+    </>
   )
 }

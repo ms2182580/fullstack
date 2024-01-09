@@ -222,9 +222,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
         justify-content: space-between;
 
         & > * {
-          /* width: clamp(310px, 10vw - 200px, 400px); */
-          /* max-width: 352px; */
-
           & > :nth-child(2) {
             text-transform: capitalize;
           }
