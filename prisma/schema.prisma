@@ -7,6 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model Hardware {
     id                          String  @id @default(auto()) @map("_id") @db.ObjectId
     resourceId                  String?                
@@ -735,6 +736,39 @@ model Other {
     tags                        String[]
 }
 
+model User {
+  id                            String  @id @default(auto()) @map("_id") @db.ObjectId
+  userType                      String?
+  userName                      String?  @unique
+  firstName                     String?
+  lastName                      String?
+  zipcode                       String?
+  individuals                   Individual[]
+}
+
+
+type Individual {
+  firstname                     String?
+  lastname                      String?
+  age                           String?
+  gender                        String?
+  livesWith                     String?
+  supportedBy                   String?
+  careCircle                    String?
+  culturalIdentification        String?
+  languagesSpoken               String?
+  languagesUnderstood           String?
+  address                       Address?
+  healthInformation             HealthInformation?
+  productsAndServicesReceived   ProductsAndServicesReceived?
+  schedule                      BusinessHours?
+  apperance                     Apperance?
+  interests                     String?
+  likes                         String?
+  dislikes                      String?
+  onlinePresence                OnlinePresence?
+}
+
 type Address {
     street       String?
     city         String?
@@ -744,7 +778,7 @@ type Address {
     county       String?
     neighborhood String?
     metroArea    String?
-    country      String
+    country      String?
 }
 
 type Classification {
@@ -760,6 +794,7 @@ type OnlinePresence {
   linkedIn          String?
   facebook          String?
   instagram         String?
+  tiktok            String?
 }
 
 type BusinessHours {
@@ -790,4 +825,60 @@ type Rating {
 type FAQ {
   question    String?
   answer      String?
+}
+
+type HealthInformation {
+  primaryDiagnosis                  String?
+  secondaryDiagnosis                String?
+  comorbidConditions                String?
+  verbal                            String?
+  deafHardOfHearing                 String?
+  communicationDevices              String?
+  signLanguage                      String?
+  blindVisionImpaired               String?
+  physicalImpairments               String?
+  ambulation                        String?
+  mobilityDeviceType                String?
+  developmentalDisability           String?
+  intellectualDisability            String?
+  cognitiveIntellectualImpairments  String?
+  emotionalImpairments              String?
+  adverseDisruptiveBehaviors        String?
+  selfInjuriousBehaviors            String?
+  violentTendencies                 String?
+  mentalHealthConditions            String?
+  additionalSupportsRequired        String?
+}
+
+type ProductsAndServicesReceived {
+  name            String?
+  providerName    String?
+  category        String?
+  subcategory     String?
+  reason          String?
+  goalDomain      String?
+  goal            String?
+  objective       String?
+  notes           String?
+  contactPerson   String?
+  street          String?
+  zipcode         String?
+  city            String?
+  delivery        String?
+  ratings         String?
+  frequency       String?
+  serviceSettings String?
+  scost           String?
+  paymentMethod   String?
+}
+
+type Apperance {
+  frontPicture  String?
+  Degree45Left  String?
+  Degree45Right String?
+  Degree90Left  String?
+  Degree90Right String?
+  reel          String?
+  video         String?
+  voice         String?
 }
