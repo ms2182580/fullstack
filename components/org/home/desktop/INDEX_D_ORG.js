@@ -7,7 +7,6 @@ import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
 import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts.js"
-import { useORG_Ctx_FetchNoFiltersDesktop } from "@/context/ORG_CtxFetchNoFiltersDesktop_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "@/utils/org/DATA_ORG_CheckPaths_Search_D.js"
 import { useFormatData } from "@/utils/org/useFormatData"
@@ -23,8 +22,6 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
     allBackendData,
   })
 
-  console.log("❤dataToORG:", dataToORG)
-
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 
@@ -38,11 +35,11 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
     setMatchNameState(e.target.dataset.name)
   }
 
-  const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
+  // const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
 
-  useEffect(() => {
-    setShouldFetchDesktopNoFilters(true)
-  }, [])
+  // useEffect(() => {
+  //   setShouldFetchDesktopNoFilters(true)
+  // }, [])
 
   const { query } = useRouter()
   const refOfORGSelections = useRef(null)
@@ -50,17 +47,17 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
     useScrollHorizontal(refOfORGSelections)
 
-  // useEffect(() => {
-  //   if (refOfORGSelections) {
-  //     let allChildren = Array.from(refOfORGSelections.current.children)
-  //     let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
+  /* useEffect(() => {
+    if (refOfORGSelections) {
+      let allChildren = Array.from(refOfORGSelections.current.children)
+      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
 
-  //     let liClientWidth_IsActive = getIsActive.clientWidth
-  //     let liOffSetLeft_IsActive = getIsActive.offsetLeft
+      let liClientWidth_IsActive = getIsActive.clientWidth
+      let liOffSetLeft_IsActive = getIsActive.offsetLeft
 
-  //     let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
-  //   }
-  // }, [refOfORGSelections])
+      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
+    }
+  }, [refOfORGSelections]) */
 
   useLayoutEffect(() => {
     if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
@@ -112,9 +109,9 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
         <div>
           <Image
             src={ORGDesktop_Search_Hero}
-            alt="" /* //!FH1 Add alt here  */
-            layout="fill"
-            objectFit="contain"
+            alt="Image of doctors and patients looking forward, smiling and shaking hands"
+            /* layout="responsive"
+            objectFit="contain" */
           />
         </div>
         <ORG_D_SearchComponent />
@@ -197,7 +194,11 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
             </Fragment>
           )
         }
-        if (singleCardIsSelected && matchNameState === x.nameJSX) {
+
+        if (
+          singleCardIsSelected &&
+          matchNameState.toLowerCase() === x.nameJSX.toLowerCase()
+        ) {
           return (
             <Fragment key={`${x.nameJSX}_${i}`}>
               <INDEX_ORG_Search_D
@@ -210,6 +211,7 @@ export const INDEX_D_ORG = ({ dataToDisplay, allBackendData }) => {
             </Fragment>
           )
         }
+
         return null
       })}
     </INDEX_D_ORGWrapper>

@@ -39,7 +39,6 @@ export const INDEX_ORG_Search_D = ({
   dataComesFromBackend,
 }: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
-  console.log("howMuchDisplay:", howMuchDisplay)
 
   useEffect(() => {
     if (!isSelected) {
@@ -56,7 +55,6 @@ export const INDEX_ORG_Search_D = ({
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   if (dataComesFromBackend) {
-    // console.log("dataComesFromBackend:", dataComesFromBackend, theData)
     return (
       <>
         <INDEX_ORG_Search_DWrapper
@@ -65,17 +63,15 @@ export const INDEX_ORG_Search_D = ({
         >
           {theData.map((x, iData) => {
             const [title, ...objects]: any = x
-            // console.log("objects:", objects)
             let howMuch: number = objects.length
             let onlyThree = objects.slice(0, 3)
-            // console.log("onlyThree:", onlyThree)
 
             /* If the resource have no category («title» variable) nothing is displayed */
             if (title === "") {
               return <></>
             }
 
-            while (howMuchDisplay > 3) {
+            while (howMuchDisplay > iData) {
               return (
                 <>
                   <section key={`${title}_${iData}`}>

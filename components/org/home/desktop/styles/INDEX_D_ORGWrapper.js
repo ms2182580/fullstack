@@ -32,7 +32,7 @@ export const INDEX_D_ORGWrapper = styled.div`
     width: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-areas:
       "text image"
       "search search";
@@ -41,6 +41,7 @@ export const INDEX_D_ORGWrapper = styled.div`
     & > :nth-child(1) {
       grid-area: text;
       padding-top: 56px;
+      min-width: max-content;
     }
 
     & > :nth-child(2) {

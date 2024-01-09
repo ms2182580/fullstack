@@ -55,6 +55,8 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
         padding-bottom: 24px;
 
+        max-width: 400px;
+
         & > :nth-child(1) {
           border-top-left-radius: 8px;
           border-top-right-radius: 8px;
@@ -216,11 +218,12 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
   &.dataComesFromBackend {
     & > * {
       & > :nth-child(2) {
-        & > * {
-          display: grid;
-          justify-self: center;
+        display: flex;
+        justify-content: space-between;
 
-          width: clamp(310px, 10vw - 200px, 400px);
+        & > * {
+          /* width: clamp(310px, 10vw - 200px, 400px); */
+          /* max-width: 352px; */
 
           & > :nth-child(2) {
             text-transform: capitalize;

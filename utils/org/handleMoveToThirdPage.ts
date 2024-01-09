@@ -42,7 +42,7 @@ export const handleMoveToThirdPage = ({
     stringToFormat: thirdPageData_Card.title,
   })
 
-  const toWhere = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.DETAIL}/${specificDetail}`
+  const toWhere: string = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.DETAIL}/${specificDetail}`
 
   push(
     {

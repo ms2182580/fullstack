@@ -25,8 +25,6 @@ const ORG_INDEX = () => {
   const { isMobile }: any = useCheckUserWidth()
 
   const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 50 })
-  // const camp = trpc.camp.getAll.useQuery({ limit: 50 })
-  // console.log("🐢mentalHealthData:", mentalHealthData)
 
   if (!mentalHealthData.data) {
     return (

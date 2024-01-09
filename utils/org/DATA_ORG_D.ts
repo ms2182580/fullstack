@@ -4,6 +4,7 @@ import { DATA_PAT_D } from "./pat/DATA_PAT_D"
 import { DATA_PCC_D } from "./pcc/DATA_PCC_D"
 import { DATA_PCMPS_D } from "./pcmps/DATA_PCMPS_D"
 import { DATA_PDCTR_D } from "./pdctr/DATA_PDCTR_D"
+import { DATA_PMHSS_D } from "./pmhss/DATA_PMHSS_D"
 import { DATA_PPPAS_D } from "./pppas/DATA_PPPAS_D"
 import { DATA_PRP_D } from "./prp/DATA_PRP_D"
 import { DATA_PSES_D } from "./pses/DATA_PSES_D"
@@ -64,12 +65,12 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES_Arr = [
     acronym: "pdctr",
     folderName: "doctors",
   },
-  /* {
+  {
     nameJSX: "Mental Health Support/Services",
     thisParticularData: DATA_PMHSS_D,
     acronym: "pmhss",
     folderName: "mental-health",
-  }, */
+  },
   {
     nameJSX: "Private & Public Agencies/Services",
     thisParticularData: DATA_PPPAS_D,

@@ -7,12 +7,6 @@ import { H1 } from "../ui/heading_body_text/HeaderFonts"
 import { LoadingComponentWrapper } from "./styles/LoadingComponentWrapper"
 
 export const LoadingComponent = () => {
-  /* const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop() */
-
-  /* useEffect(() => {
-    setShouldFetchDesktopNoFilters(true)
-  }, []) */
-
   return (
     <LoadingComponentWrapper>
       <H1 cta>Loading ...</H1>
