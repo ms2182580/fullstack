@@ -43,7 +43,8 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   // }, [])
 
   const haveSomeBrandToShow = useMemo(() => {
-    let haveSpecificData = thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+    let haveSpecificData =
+      thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
 
     if (haveSpecificData) {
       return Boolean(haveSpecificData[SPECIFIC_DATA_KEY.BRAND])
@@ -53,7 +54,10 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   }, [])
 
   const layout = useMemo(() => {
-    const theLayout = thirdpageDataORG.other?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ?? null
+    const theLayout =
+      thirdpageDataORG.other?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[
+        SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD
+      ] ?? null
 
     return theLayout
   }, [])
@@ -61,7 +65,8 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   return (
     <ORG_D_Detail_MainCard_LeftWrapper
       isPVES={isPVES}
-      LAYOUT_RESULTS_MAIN_CARD={layout}>
+      LAYOUT_RESULTS_MAIN_CARD={layout}
+    >
       <div>
         <Image
           src={thirdpageDataORG.card.leftPart.photo.src}
@@ -105,18 +110,34 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
       <aside>
         {haveSomeBrandToShow && (
           <>
-            <ORG_D_Detail_Brand brand={thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.OTHER][SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][SPECIFIC_DATA_KEY.BRAND]} />
+            <ORG_D_Detail_Brand
+              brand={
+                thirdpageDataORG[DATA_ORG_KeyNamesForCards_D_KEYS.OTHER][
+                  SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY
+                ][SPECIFIC_DATA_KEY.BRAND]
+              }
+            />
           </>
         )}
 
         {isPVES ? (
           <>
-            <PVES_General_D_LeftPart allData={thirdpageDataORG.card.leftPart[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]} />
+            <PVES_General_D_LeftPart
+              allData={
+                thirdpageDataORG.card.leftPart[
+                  SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY
+                ][DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]
+              }
+            />
           </>
         ) : (
           <>
-            <ORG_D_Detail_CardPhone phoneNumber={thirdpageDataORG.card.leftPart.phone} />
-            <ORG_D_Detail_CardEmail email={thirdpageDataORG.card.leftPart.email} />
+            <ORG_D_Detail_CardPhone
+              phoneNumber={thirdpageDataORG.card.leftPart.phone}
+            />
+            <ORG_D_Detail_CardEmail
+              email={thirdpageDataORG.card.leftPart.email}
+            />
             <ORG_D_Detail_CardWebsite
               firstName={thirdpageDataORG.fullName.first}
               lastName={thirdpageDataORG.fullName.last}
@@ -126,8 +147,12 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
 
         <ORG_D_Detail_CardLocation
           locationCity={thirdpageDataORG.card.leftPart?.location.city}
-          locationStreetNumber={thirdpageDataORG.card.leftPart?.location.streetNumber}
-          locationStreetName={thirdpageDataORG.card.leftPart?.location.streetName}
+          locationStreetNumber={
+            thirdpageDataORG.card.leftPart?.location.streetNumber
+          }
+          locationStreetName={
+            thirdpageDataORG.card.leftPart?.location.streetName
+          }
           locationState={thirdpageDataORG.card.leftPart?.location.state}
           howFar={thirdpageDataORG.card.leftPart?.location.howFar}
         />

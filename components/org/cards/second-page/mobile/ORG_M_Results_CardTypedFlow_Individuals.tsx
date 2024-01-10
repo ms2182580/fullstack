@@ -25,6 +25,7 @@ import {
   ORG_M_Results_CardTypedFlow_Card,
   ORG_M_Results_CardTypedFlow_IndividualsWrapper,
 } from "./styles/ORG_M_Results_CardTypedFlow_IndividualsWrapper"
+import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 
 // [key: string]: string | number
 export type TypeOfObjectInProp = { [key: string]: string | number }[]
@@ -140,7 +141,18 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
                 </span>
               </span>
               <div>
-                <span>
+                <span
+                  onClick={(event: any) =>
+                    handleMoveToThirdPage({
+                      event,
+                      categoryPosition,
+                      subcategoryPosition: 0,
+                      resourcePosition: index,
+                      setThirdpageDataORG,
+                      push,
+                    })
+                  }
+                >
                   <span>
                     <ORG_M_Result_ViewProfileSvg />
                     <P first={x.fullName.first} last={x.fullName.last} />
