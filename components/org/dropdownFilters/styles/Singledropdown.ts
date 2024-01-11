@@ -1,5 +1,8 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import {
+  NEUTRALS,
+  PRIMARY,
+} from "../../../../assets/Colors"
 
 export const SingleDropdownWrapper = styled.div`
   display: grid;
@@ -15,13 +18,16 @@ export const SingleDropdownWrapper = styled.div`
     border-radius: 8px;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: default;
     z-index: 3;
     background-color: white;
 
     & > p:nth-child(1) {
       margin-left: auto;
       user-select: none;
+
+      color: ${PRIMARY.PRIMARY_CTA};
+      font-weight: 600;
     }
 
     & > :nth-child(2) {
@@ -41,11 +47,7 @@ export const SingleDropdownWrapper = styled.div`
     width: 191px;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
-
-    & > *:not(:last-child):not(:first-child) {
-      /* margin-bottom: 8px; */
-    }
+    cursor: default;
 
     & > div:nth-child(1) {
       height: 1.67px;
@@ -71,8 +73,4 @@ export const SingleDropdownWrapper = styled.div`
   }
 `
 
-export const CustomC = styled.span`
-  background-color: ${(x) => (x.highlight ? PRIMARY.PRIMARY_CTA : "")};
-  color: ${(x) => (x.highlight ? NEUTRALS.OFF_WHITE : "")};
-  font-weight: ${(x) => (x.highlight ? `600` : ``)};
-`
+export const CustomC = styled.span``

@@ -6,6 +6,8 @@ Check how to move the view to the second page by this and create a new way to ma
 import { QUERY_BREADCRUMBS } from "@/components/org/cards/second-page/desktop/ORG_D_Results_Breadcrumbs"
 import { MouseEvent } from "react"
 import { DATA_ORG_D_TYPES_KEYS } from "./DATA_ORG_D"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "./DATA_ORG_KeyNamesForCards_D"
+import { getAllData } from "./categories/general/getAllData"
 import { checkStringToURL } from "./checkStringToURL"
 import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
@@ -23,10 +25,23 @@ export const handleMoveToSecondPage_Backend = ({
   push,
 }: Props) => {
   const [toBreadcrumb, ...allData] = raw
+  console.log("allData:", allData)
 
-  const { checkedToURL } = checkStringToURL({ stringToURL: toBreadcrumb })
+  const { checkedToURL } = checkStringToURL({
+    stringToURL: toBreadcrumb,
+  })
 
-  setSecondpageDataORG_Backend(allData)
+  const getCategoryName = allData[0].listingType
+
+  const getSpecificData = getAllData({
+    whoToFound: getCategoryName,
+  })
+
+  setSecondpageDataORG_Backend({
+    [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: allData,
+    [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]:
+      getSpecificData,
+  })
 
   const toWhere: string = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.RESULTS}/${checkedToURL}`
 

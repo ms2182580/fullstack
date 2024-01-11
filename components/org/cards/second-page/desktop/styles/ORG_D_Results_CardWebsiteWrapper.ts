@@ -8,6 +8,5 @@ export const ORG_D_Results_CardWebsiteWrapper = styled.div`
   & > :nth-child(2) {
     color: ${SEMANTICS.HYPERLINK_NORMAL};
     text-decoration-line: underline;
-    cursor: pointer;
   }
 `

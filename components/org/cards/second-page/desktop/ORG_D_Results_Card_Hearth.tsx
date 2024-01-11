@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ORG_D_Results_HearthSvg } from "../../../../../assets/icons/index.js"
-import { ORG_D_Results_Card_HearthWrapper } from "./styles/ORG_D_Results_Card_HearthWrapper.js"
+import { ORG_D_Results_Card_HearthWrapper } from "./styles/ORG_D_Results_Card_HearthWrapper"
 
 export const ORG_D_Results_Card_Hearth = () => {
   const [clickOnHearth, setClickOnHearth] = useState(false)
@@ -16,7 +16,8 @@ export const ORG_D_Results_Card_Hearth = () => {
       onClick={handleClickOnHearth}
       onKeyDown={handleClickOnHearth}
       clickOnHearth={clickOnHearth}
-      tabIndex={0}>
+      tabIndex={0}
+    >
       <ORG_D_Results_HearthSvg />
     </ORG_D_Results_Card_HearthWrapper>
   )

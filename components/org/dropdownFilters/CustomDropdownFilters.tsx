@@ -1,13 +1,29 @@
-import { Fragment, useEffect, useRef, useState } from "react"
-import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/icons"
-import { useORG_Ctx_FetchWithFiltersDesktop } from "../../../context/ORG_CtxFetchWithFiltersDesktop_Provider"
+import {
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
+import {
+  ArrowDownSvg,
+  ArrowUpSvg,
+} from "../../../assets/icons"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../context/ORG_Ctx_FiltersApplyDesktop"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
+import {
+  CustomC,
+  SingleDropdownWrapper,
+} from "./styles/Singledropdown"
 
-export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
+type CustomDropdownFilters_Props = {
+  suggestions: string[] | []
+}
+
+export const CustomDropdownFilters = ({
+  suggestions = [],
+}: CustomDropdownFilters_Props) => {
   // const { userFetched, setUserFetched: setData, filtersST, setFiltersST: setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -16,18 +32,18 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
     filtersAppliedNewFilters,
     setFiltersAppliedNewFilters,
     defaultWord,
-  } = useORG_Ctx_FiltersApplyDesktop()
+  }: any = useORG_Ctx_FiltersApplyDesktop()
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
 
-  const {
+  /* const {
     userFetched: dataF,
     setUserFetched: setDataF,
     filtersST: filtersF,
     setFiltersST: setFiltersF,
-  } = useORG_Ctx_FetchWithFiltersDesktop()
+  } = useORG_Ctx_FetchWithFiltersDesktop() */
 
-  const handleDropdownClick = (e) => {
+  const handleDropdownClick = () => {
     setShowDropdown((prevstate) => !prevstate)
   }
 
@@ -99,38 +115,47 @@ export const CustomDropdownFilters = ({ suggestions = [], noIcon = false }) => {
           }}
           tabIndex={shouldTab}
         >
-          <P primary_cta semibold>
+          <P>
+            {/* primary_cta semibold */}
             {whichTitle}
           </P>
-          <span>{showDropdown ? <ArrowDownSvg /> : <ArrowUpSvg />}</span>
+          <span>
+            {showDropdown ? (
+              <ArrowDownSvg />
+            ) : (
+              <ArrowUpSvg />
+            )}
+          </span>
         </span>
         <div className="dropdownSuggestions">
-          {showDropdown && suggestions.length !== 0 && (
-            <>
-              <div></div>
-              {suggestionsValidated.map((x) => {
-                // let highlight = whichTitle === defaultWord ? false : x === actualSort
+          {showDropdown &&
+            suggestions.length !== 0 &&
+            suggestionsValidated !== "Coming soon" && (
+              <>
+                <div></div>
+                {suggestionsValidated.map((x) => {
+                  // let highlight = whichTitle === defaultWord ? false : x === actualSort
 
-                return (
-                  <Fragment key={x}>
-                    {
-                      <Fragment>
-                        <CustomC
-                          // highlight={highlight}
-                          onClick={(e) => {
-                            getSelection(e)
-                          }}
-                        >
-                          {x}
-                        </CustomC>
-                      </Fragment>
-                    }
-                  </Fragment>
-                )
-              })}
-              <div></div>
-            </>
-          )}
+                  return (
+                    <Fragment key={x}>
+                      {
+                        <Fragment>
+                          <CustomC
+                            // highlight={highlight}
+                            onClick={(e) => {
+                              getSelection(e)
+                            }}
+                          >
+                            {x}
+                          </CustomC>
+                        </Fragment>
+                      }
+                    </Fragment>
+                  )
+                })}
+                <div></div>
+              </>
+            )}
         </div>
       </SingleDropdownWrapper>
     </>

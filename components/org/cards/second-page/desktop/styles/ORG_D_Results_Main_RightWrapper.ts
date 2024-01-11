@@ -1,9 +1,15 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const ORG_D_Results_Main_RightWrapper = styled.div`
+export type Props = {
+  backendData?: boolean
+}
+
+export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
   border-top-right-radius: inherit;
-  padding: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-inline: 44px;
 
   & > :nth-child(1) {
     font-weight: 700;
@@ -45,6 +51,39 @@ export const ORG_D_Results_Main_RightWrapper = styled.div`
       }
     }
   }
+
+  ${({ backendData }) =>
+    backendData &&
+    css`
+      & > :nth-child(5) {
+        list-style: none;
+        & > * {
+          display: flex;
+
+          gap: 8px;
+
+          text-transform: capitalize;
+
+          & > :nth-child(1) {
+            /* color: ${PRIMARY.PRIMARY_HOVER}; */
+            font-weight: 600;
+
+            padding: 8px;
+
+            position: relative;
+
+            &:after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background-color: ${NEUTRALS.LIGHT_GREY};
+              opacity: 0.7;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+    `}
 
   & > p {
     & > * {

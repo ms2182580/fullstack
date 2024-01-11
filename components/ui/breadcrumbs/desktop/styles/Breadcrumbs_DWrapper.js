@@ -5,7 +5,8 @@ export const Breadcrumbs_DWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  a {
+  a,
+  span {
     text-transform: capitalize;
     color: ${SEMANTICS.HYPERLINK_NORMAL};
 
@@ -18,6 +19,10 @@ export const Breadcrumbs_DWrapper = styled.div`
         background-color: ${SEMANTICS.HYPERLINK_VISITED};
       }
     }
+  }
+
+  span {
+    cursor: default;
   }
 
   & > * {

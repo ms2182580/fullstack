@@ -22,8 +22,11 @@ html,body{
   font-size: 16px;
   margin-inline:auto;
   
-  /* This property «overflow-x: hidden;» was added because a slight overflow on x axis when the browser is close to 1025px. I think the overflow is created by the navigation bar  */
-  overflow-x: hidden;
+  /* 
+  * This property «overflow-x: hidden;» was added because a slight overflow on x axis when the browser is close to 1025px. I think the overflow is created by the navigation bar 
+  * The problem with «overflow-x: hidden;» is that disable the position:sticky; of the map
+   */
+  /* overflow-x: hidden; */
   
 }
 

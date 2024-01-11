@@ -7,7 +7,7 @@ import { NavBar_D_HamburgerComponentDropdown } from "./NavBar_D_HamburgerCompone
 import { NavBar_D_HamburgerComponentWrapper } from "./styles/NavBar_D_HamburgerComponentWrapper.js"
 
 export const NavBar_D_HamburgerComponent = () => {
-  const [showDropdown, setShowDropdown] = useState(true)
+  const [showDropdown, setShowDropdown] = useState(false)
   const refDropdown = useRef()
 
   useOutsideHide(refDropdown, setShowDropdown)
@@ -20,7 +20,12 @@ export const NavBar_D_HamburgerComponent = () => {
 
   const classNameToFocusLogic = "HamburgerComponent"
   const { focusedElement } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement, setShowDropdown, ["li", "h4"], classNameToFocusLogic)
+  useCloseNotActiveElementAnymore(
+    focusedElement,
+    setShowDropdown,
+    ["li", "h4"],
+    classNameToFocusLogic
+  )
 
   return (
     <>
@@ -29,7 +34,8 @@ export const NavBar_D_HamburgerComponent = () => {
         onClick={handleShowDropdown}
         tabIndex={0}
         showDropdown={showDropdown}
-        className={classNameToFocusLogic}>
+        className={classNameToFocusLogic}
+      >
         <NavBar_D_HamburgerSvg />
       </NavBar_D_HamburgerComponentWrapper>
 

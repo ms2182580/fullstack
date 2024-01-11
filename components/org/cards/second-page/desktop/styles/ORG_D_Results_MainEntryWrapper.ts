@@ -13,7 +13,7 @@ export const ORG_D_Results_MainEntryWrapper = styled.div<Props>`
   grid-template-columns: 1fr;
   grid-template-areas:
     "header "
-    "filterAndMap "
+    "cardsAndMap "
     "btns"
     "breadcrumbsAndUpdate ";
 
@@ -25,23 +25,34 @@ export const ORG_D_Results_MainEntryWrapper = styled.div<Props>`
   }
 
   & > :nth-child(2) {
-    grid-area: filterAndMap;
+    grid-area: cardsAndMap;
     display: grid;
 
-    grid-template-columns: ${({ isFullMap }) => (isFullMap ? "1fr" : "2fr 1fr")};
-    margin-bottom: ${({ isFullMap }) => (isFullMap ? `318px` : `189px`)};
+    grid-template-columns: ${({ isFullMap }) =>
+      isFullMap ? "" : "1fr 1fr"};
+
+    margin-bottom: ${({ isFullMap }) =>
+      isFullMap ? `318px` : `189px`};
+
+    margin-left: ${({ isFullMap }) =>
+      isFullMap
+        ? ``
+        : `clamp(16px, calc(10vw - 80px), 96px)`};
+    margin-inline: ${({ isFullMap }) =>
+      isFullMap
+        ? `clamp(16px, calc(10vw - 80px), 96px)`
+        : ``};
 
     & > :nth-child(1) {
-      display: ${({ isFullMap }) => (isFullMap ? `none` : ``)};
+      display: ${({ isFullMap }) =>
+        isFullMap ? `none` : ``};
     }
-
-    margin-left: ${({ isFullMap }) => (isFullMap ? `` : `clamp(16px, calc(10vw - 80px), 96px)`)};
-    margin-inline: ${({ isFullMap }) => (isFullMap ? `clamp(16px, calc(10vw - 80px), 96px)` : ``)};
   }
 
   & > :nth-child(3) {
     grid-area: btns;
-    display: ${({ isFullMap }) => (isFullMap ? `none` : ``)};
+    display: ${({ isFullMap }) =>
+      isFullMap ? `none` : ``};
   }
 
   & > :nth-child(4) {
