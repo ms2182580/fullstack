@@ -16,32 +16,42 @@ import { useMemo } from "react"
 import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_Main_BottomButtonsWrapper"
 
 type Props = {
-  renderThisContact: number
+  renderThisContact?: number
+  backendData?: any
 }
 
 export const ORG_D_Results_Main_BottomButtons = ({
   renderThisContact,
+  backendData,
 }: Props) => {
-  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+  const { setThirdpageDataORG }: any =
+    useORG_Ctx_D_ThirdpageData()
 
-  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
+  const { secondpageDataORG }: any =
+    useORG_Ctx_D_SecondpageData()
   const { push } = useRouter()
 
   const buttonJSXAndSVGCustom = useMemo(() => {
-    const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+    const weHaveData =
+      secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
     // console.log("weHaveData:", weHaveData)
     if (Boolean(weHaveData)) {
       let whichSvg =
         /* This check if the key SVG on weHaveData variable object is empty of have a declaration of «DEFAULT» */
 
         !weHaveData[SPECIFIC_DATA_KEY.SVG] ||
-        weHaveData[SPECIFIC_DATA_KEY.SVG] === BRAND_OPTION_DEFAULT.DEFAULT
+        weHaveData[SPECIFIC_DATA_KEY.SVG] ===
+          BRAND_OPTION_DEFAULT.DEFAULT
           ? ORG_D_Results_RequestConsultationSvg
           : weHaveData?.[SPECIFIC_DATA_KEY.SVG]
 
-      let whichJSX = !weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
+      let whichJSX = !weHaveData?.[
+        SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME
+      ]
         ? "See availability"
-        : weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
+        : weHaveData?.[
+            SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME
+          ]
 
       return {
         ComponentSvg: whichSvg,
@@ -49,11 +59,35 @@ export const ORG_D_Results_Main_BottomButtons = ({
       }
     }
     return null
-  }, [secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]])
+  }, [
+    secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY],
+  ])
+
+  if (backendData) {
+    return (
+      <ORG_D_Results_Main_BottomButtonsWrapper>
+        <div tabIndex={0}>
+          <ORG_D_Results_ViewProfileSvg />
+          <P>View Profile</P>
+        </div>
+
+        <div tabIndex={0}>
+          <ORG_D_Results_RequestConsultationSvg />
+          <P>see availability</P>
+        </div>
+
+        <div tabIndex={0}>
+          <ORG_D_Results_AddtocareplanSvg />
+
+          <P>Add to Care Plan</P>
+        </div>
+      </ORG_D_Results_Main_BottomButtonsWrapper>
+    )
+  }
 
   return (
     <ORG_D_Results_Main_BottomButtonsWrapper>
-      <div>
+      <div tabIndex={0}>
         <ORG_D_Results_ViewProfileSvg />
         <P>View Profile</P>
       </div>
@@ -61,13 +95,16 @@ export const ORG_D_Results_Main_BottomButtons = ({
         onClick={(event) =>
           handleMoveToThirdPage({
             event,
-            categoryPosition: secondpageDataORG.categoryPosition,
-            subcategoryPosition: secondpageDataORG.subcategoryPosition,
+            categoryPosition:
+              secondpageDataORG.categoryPosition,
+            subcategoryPosition:
+              secondpageDataORG.subcategoryPosition,
             resourcePosition: renderThisContact,
             setThirdpageDataORG,
             push,
           })
         }
+        tabIndex={0}
       >
         {buttonJSXAndSVGCustom ? (
           <>
@@ -82,7 +119,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
           </>
         )}
       </div>
-      <div>
+      <div tabIndex={0}>
         <ORG_D_Results_AddtocareplanSvg />
 
         <P>Add to Care Plan</P>

@@ -5,14 +5,15 @@ import { ArrowRightSvg } from "../../../../assets/icons/index.js"
 import { useTabIndex } from "../../../../utils/useTabindex.js"
 import { Breadcrumbs_DWrapper } from "./styles/Breadcrumbs_DWrapper"
 
-export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
+export const Breadcrumbs_D = ({
+  whichDisplay = [],
+  typedFlow = false,
+}) => {
   const useTab = useTabIndex()
 
   return (
     <Breadcrumbs_DWrapper typedFlow={typedFlow}>
-      <Link
-        href="/"
-        tabIndex={useTab}>
+      <Link href="/" tabIndex={useTab}>
         <Breadcrumbs_Home />
         Home
       </Link>
@@ -25,9 +26,7 @@ export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
             <Fragment key={x[0]}>
               <ArrowRightSvg />
 
-              <Link
-                href={defaultRoute}
-                tabIndex={useTab}>
+              <Link href={defaultRoute} tabIndex={useTab}>
                 {x[0]}
               </Link>
             </Fragment>
@@ -39,12 +38,11 @@ export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
             <Fragment key={x[0]}>
               <ArrowRightSvg />
 
-              <Link
-                href="#"
-                tabIndex={useTab}>
+              <span>
                 {typedFlow && <span>Results for: </span>}
+
                 {x[0]}
-              </Link>
+              </span>
             </Fragment>
           )
         }

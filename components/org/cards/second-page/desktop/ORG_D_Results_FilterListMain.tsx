@@ -1,3 +1,5 @@
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import { useRouter } from "next/router"
 import { Fragment } from "react"
 import { useORG_Ctx_D_SecondpageFilters } from "../../../../../context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_FilterListMainWrapper"
@@ -61,7 +63,7 @@ import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_Filt
 // }
 // const nameToCloseTheFilters = "ShowFiltersDesktop"
 
-export const ORG_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) => {
+export const ORG_D_Results_FilterListMain = () => {
   // const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
 
   /*
@@ -172,18 +174,27 @@ export const ORG_D_Results_FilterListMain = ({ refUserViewShowFullMapFilter }) =
   //   }
   // }, [mustShowFiltersDesktop])
 
-  const { secondpageFiltersORG } = useORG_Ctx_D_SecondpageFilters()
+  const { secondpageFiltersORG }: any =
+    useORG_Ctx_D_SecondpageFilters()
+  // console.log("secondpageFiltersORG:", secondpageFiltersORG)
+
+  const { query } = useRouter()
 
   return (
     <ORG_D_Results_FilterListMainWrapper>
-      {secondpageFiltersORG.map((x, index) => (
-        <Fragment key={`${x.parameters.buttonName}_${index}`}>
-          <x.component
-            props={x.parameters}
-            shouldAddClassName={x.shouldAddClassName}
-          />
-        </Fragment>
-      ))}
+      {secondpageFiltersORG &&
+      !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+        ? secondpageFiltersORG.map((x, index) => (
+            <Fragment
+              key={`${x.parameters.buttonName}_${index}`}
+            >
+              <x.component
+                props={x.parameters}
+                shouldAddClassName={x.shouldAddClassName}
+              />
+            </Fragment>
+          ))
+        : null}
     </ORG_D_Results_FilterListMainWrapper>
   )
 }

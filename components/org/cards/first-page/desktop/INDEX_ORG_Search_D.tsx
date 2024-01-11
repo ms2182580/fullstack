@@ -1,5 +1,5 @@
 import { ORG_D_Search_ViewProfileSvg } from "@/assets/icons"
-import backup from "@/assets/images/org/backup/backup_image.jpg"
+import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
@@ -9,11 +9,17 @@ import {
   Caption,
   P,
 } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import {
+  H2,
+  H3,
+  H4,
+} from "@/components/ui/heading_body_text/HeaderFonts"
+import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
+import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
@@ -29,6 +35,7 @@ type Props = {
   theData: object[]
   someLayoutSpecial: any
   dataComesFromBackend?: boolean
+  allData: any
 }
 
 export const INDEX_ORG_Search_D = ({
@@ -37,6 +44,7 @@ export const INDEX_ORG_Search_D = ({
   theData,
   someLayoutSpecial,
   dataComesFromBackend,
+  allData,
 }: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
@@ -49,29 +57,38 @@ export const INDEX_ORG_Search_D = ({
   }, [isSelected])
 
   const { push } = useRouter()
-  const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
-  const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
+  const { setSecondpageFiltersORG }: any =
+    useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG }: any =
+    useORG_Ctx_D_SecondpageData()
 
-  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+  const {
+    setSecondpageDataORG: setSecondpageDataORG_Backend,
+  }: any = useORG_Ctx_D_SecondpageData_Backend()
+
+  const { setThirdpageDataORG }: any =
+    useORG_Ctx_D_ThirdpageData()
 
   if (dataComesFromBackend) {
-    // console.log("theData:", theData, "✨")
     return (
       <>
         <INDEX_ORG_Search_DWrapper
           someLayoutSpecial={someLayoutSpecial}
-          className={dataComesFromBackend && "dataComesFromBackend"}
+          className={
+            dataComesFromBackend && "dataComesFromBackend"
+          }
         >
           {theData.map((x, iData) => {
             const [title, ...objects]: any = x
             let howMuch: number = objects.length
             let onlyThree = objects.slice(0, 3)
 
-            if (title === "" || iData === 0) {
+            /* If the resource have no category («title» variable) nothing is displayed */
+            if (title === "") {
               return <></>
             }
 
-            while (howMuchDisplay > 3) {
+            while (howMuchDisplay > iData) {
               return (
                 <>
                   <section key={`${title}_${iData}`}>
@@ -80,66 +97,75 @@ export const INDEX_ORG_Search_D = ({
                     </header>
 
                     <div>
-                      {onlyThree.map((obj: any, iSubData: number) => {
-                        return (
-                          <article key={`${obj.resourceId}`}>
-                            <div>
-                              <Image
-                                src={backup}
-                                alt={`backup image`}
-                                layout={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? "responsive"
-                                    : "intrinsic"
+                      {onlyThree.map(
+                        (obj: any, iSubData: number) => {
+                          return (
+                            <article
+                              key={`${obj.resourceId}`}
+                            >
+                              <div>
+                                <Image
+                                  src={Backup_Image}
+                                  alt={`backup image`}
+                                  layout={
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PAT ||
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PVES
+                                      ? "responsive"
+                                      : "intrinsic"
+                                  }
+                                  objectFit={
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PAT ||
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PVES
+                                      ? "contain"
+                                      : "initial"
+                                  }
+                                  width={
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PAT ||
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PVES
+                                      ? 1
+                                      : 1200
+                                  }
+                                  height={
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PAT ||
+                                    someLayoutSpecial ===
+                                      All_Layouts_Accepted.like_PVES
+                                      ? 0.522
+                                      : 600
+                                  }
+                                />
+                                {obj.verifiedUnverifiedResource !==
+                                  "" && (
+                                  <>
+                                    <Verified />
+                                  </>
+                                )}
+                              </div>
+
+                              <H3>
+                                {obj.recordName.toLowerCase()}
+                              </H3>
+                              <H4>{obj.recordSubtype}</H4>
+
+                              <P>{obj?.address[0].city}</P>
+
+                              <StarsRatingReview_D
+                                rating={
+                                  obj?.ratings?.[0]
+                                    ?.value || 99
                                 }
-                                objectFit={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? "contain"
-                                    : "initial"
-                                }
-                                width={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? 1
-                                    : 1200
-                                }
-                                height={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? 0.522
-                                    : 600
-                                }
+                                reviews={99}
                               />
-                              {obj.verifiedUnverifiedResource !== "" && (
-                                <>
-                                  <Verified />
-                                </>
-                              )}
-                            </div>
 
-                            <H3>{obj.recordName.toLowerCase()}</H3>
-                            <H4>{obj.recordSubtype}</H4>
-
-                            <P>{obj?.address[0].city}</P>
-
-                            <StarsRatingReview_D
-                              rating={obj?.ratings?.[0]?.value || 99}
-                              reviews={99}
-                            />
-
-                            <P>{obj?.reviews?.[0]}</P>
-                            <button
-                            /* onClick={(_) =>
+                              <P>{obj?.reviews?.[0]}</P>
+                              <button
+                              /* onClick={(_) =>
                                 handleMoveToThirdPage({
                                   _,
                                   categoryPosition: positionInArray,
@@ -149,30 +175,32 @@ export const INDEX_ORG_Search_D = ({
                                   push,
                                 })
                               } */
-                            >
-                              <ORG_D_Search_ViewProfileSvg />
-                              {someLayoutSpecial === "like_PVES" && iData === 0
-                                ? "View Listing"
-                                : "View Profile"}
-                            </button>
-                          </article>
-                        )
-                      })}
+                              >
+                                <ORG_D_Search_ViewProfileSvg />
+                                {someLayoutSpecial ===
+                                  "like_PVES" && iData === 0
+                                  ? "View Listing"
+                                  : "View Profile"}
+                              </button>
+                            </article>
+                          )
+                        }
+                      )}
                     </div>
 
                     <span
-                    /* onClick={(_) =>
-                        handleMoveToSecondPage({
-                          _,
-                          categoryPosition: positionInArray,
-                          subcategoryPosition: iData,
-                          setSecondpageFiltersORG,
-                          setSecondpageDataORG,
+                      onClick={(event) =>
+                        handleMoveToSecondPage_Backend({
+                          event,
+                          raw: x,
+                          setSecondpageDataORG_Backend,
                           push,
                         })
-                      } */
+                      }
                     >
-                      <ButtonSmall secondary>See all ({howMuch})</ButtonSmall>
+                      <ButtonSmall secondary>
+                        See all ({howMuch})
+                      </ButtonSmall>
                     </span>
                   </section>
                 </>
@@ -185,7 +213,9 @@ export const INDEX_ORG_Search_D = ({
   }
 
   return (
-    <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
+    <INDEX_ORG_Search_DWrapper
+      someLayoutSpecial={someLayoutSpecial}
+    >
       {theData.map((x, iData) => {
         const [title, ...objects]: any = x
         while (howMuchDisplay > iData) {
@@ -194,97 +224,110 @@ export const INDEX_ORG_Search_D = ({
               <div key={`${title}_${iData}`}>
                 <H2>{title}</H2>
                 <div>
-                  {objects.map((obj: any, iSubData: number) => {
-                    return (
-                      <div key={`${iSubData}_${obj.title}_${obj.reviews}`}>
-                        <div>
-                          <Image
-                            src={obj.imageToUse}
-                            alt={obj.title}
-                            layout={
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PAT ||
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PVES
-                                ? "responsive"
-                                : "intrinsic"
-                            }
-                            objectFit={
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PAT ||
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PVES
-                                ? "contain"
-                                : "initial"
-                            }
-                            width={
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PAT ||
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PVES
-                                ? 1
-                                : 1200
-                            }
-                            height={
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PAT ||
-                              someLayoutSpecial ===
-                                All_Layouts_Accepted.like_PVES
-                                ? 0.522
-                                : 600
-                            }
-                          />
+                  {objects.map(
+                    (obj: any, iSubData: number) => {
+                      return (
+                        <div
+                          key={`${iSubData}_${obj.title}_${obj.reviews}`}
+                        >
+                          <div>
+                            <Image
+                              src={obj.imageToUse}
+                              alt={obj.title}
+                              layout={
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PAT ||
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PVES
+                                  ? "responsive"
+                                  : "intrinsic"
+                              }
+                              objectFit={
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PAT ||
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PVES
+                                  ? "contain"
+                                  : "initial"
+                              }
+                              width={
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PAT ||
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PVES
+                                  ? 1
+                                  : 1200
+                              }
+                              height={
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PAT ||
+                                someLayoutSpecial ===
+                                  All_Layouts_Accepted.like_PVES
+                                  ? 0.522
+                                  : 600
+                              }
+                            />
+                            {someLayoutSpecial ===
+                            All_Layouts_Accepted.like_PAT ? null : (
+                              <>
+                                <Verified />
+                              </>
+                            )}
+                          </div>
+                          <H3>{obj.title}</H3>
+                          <H4>{obj.subtitle}</H4>
+                          {obj?.city && <P>{obj?.city}</P>}
                           {someLayoutSpecial ===
-                          All_Layouts_Accepted.like_PAT ? null : (
+                            "like_PVES" && iData === 0 ? (
                             <>
-                              <Verified />
+                              <Caption>
+                                {obj.hourlyRate}
+                              </Caption>
+                              <div>
+                                <Highlights_D
+                                  highlights={obj.highlight}
+                                />
+                                <Highlights_2_D
+                                  highlights={
+                                    obj.highlight_plus
+                                  }
+                                  withIcon={false}
+                                />
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <StarsRatingReview_D
+                                rating={obj.rating}
+                                reviews={obj.reviews}
+                              />
                             </>
                           )}
-                        </div>
-                        <H3>{obj.title}</H3>
-                        <H4>{obj.subtitle}</H4>
-                        {obj?.city && <P>{obj?.city}</P>}
-                        {someLayoutSpecial === "like_PVES" && iData === 0 ? (
-                          <>
-                            <Caption>{obj.hourlyRate}</Caption>
-                            <div>
-                              <Highlights_D highlights={obj.highlight} />
-                              <Highlights_2_D
-                                highlights={obj.highlight_plus}
-                                withIcon={false}
-                              />
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <StarsRatingReview_D
-                              rating={obj.rating}
-                              reviews={obj.reviews}
-                            />
-                          </>
-                        )}
 
-                        <P>{obj.textReview}</P>
-                        <button
-                          onClick={(event) =>
-                            handleMoveToThirdPage({
-                              event,
-                              categoryPosition: positionInArray,
-                              subcategoryPosition: iData,
-                              resourcePosition: iSubData,
-                              setThirdpageDataORG,
-                              push,
-                            })
-                          }
-                        >
-                          <ORG_D_Search_ViewProfileSvg />
-                          {someLayoutSpecial === "like_PVES" && iData === 0
-                            ? "View Listing"
-                            : "View Profile"}
-                        </button>
-                      </div>
-                    )
-                  })}
+                          <P>{obj.textReview}</P>
+                          <button
+                            onClick={(event) =>
+                              handleMoveToThirdPage({
+                                event,
+                                categoryPosition:
+                                  positionInArray,
+                                subcategoryPosition: iData,
+                                resourcePosition: iSubData,
+                                setThirdpageDataORG,
+                                push,
+                              })
+                            }
+                          >
+                            <ORG_D_Search_ViewProfileSvg />
+                            {someLayoutSpecial ===
+                              "like_PVES" && iData === 0
+                              ? "View Listing"
+                              : "View Profile"}
+                          </button>
+                        </div>
+                      )
+                    }
+                  )}
                 </div>
                 <span
                   onClick={(event) =>
@@ -298,7 +341,9 @@ export const INDEX_ORG_Search_D = ({
                     })
                   }
                 >
-                  <ButtonSmall secondary>See all (25)</ButtonSmall>
+                  <ButtonSmall secondary>
+                    See all (25){" "}
+                  </ButtonSmall>
                 </span>
               </div>
             </>

@@ -1,8 +1,11 @@
 import { Fragment, useRef, useState } from "react"
-import { DownArrowSvg, UpArrowSvg } from "../../../../../../../assets/icons/index.js"
+import {
+  DownArrowSvg,
+  UpArrowSvg,
+} from "../../../../../../../assets/icons/index.js"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
-import { ORG_Sortby_Mobile } from "../../../../../../../utils/ORG_SortByData.js"
+import { ORG_Sortby_Mobile } from "../../../../../../../utils/ORG_SortByData"
 import { ORG_SortybyFunction_M } from "../../../../../../../utils/ORG_SortybyFunction_M.js"
 import { useOutsideHide } from "../../../../../../../utils/useOutsideHide.js"
 import { Caption } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -10,10 +13,22 @@ import { CustomC } from "../../../../../dropdownFilters/styles/Singledropdown.js
 import { ST_M_Results_SortByWrapper } from "./styles/ST_M_Results_SortByWrapper.js"
 
 export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
-  const { userFetched, setUserFetched, filtersST, setFiltersST, actualSort, setActualSort } = useORG_Ctx_FetchNoFiltersMobile()
+  const {
+    userFetched,
+    setUserFetched,
+    filtersST,
+    setFiltersST,
+    actualSort,
+    setActualSort,
+  } = useORG_Ctx_FetchNoFiltersMobile()
   const [showDropdown, setShowDropdown] = useState(false)
 
-  const { userFetched: dataF, setUserFetched: setDataF, filtersST: filtersF, setFiltersST: setFiltersF } = useORG_Ctx_FetchWithFiltersMobile()
+  const {
+    userFetched: dataF,
+    setUserFetched: setDataF,
+    filtersST: filtersF,
+    setFiltersST: setFiltersF,
+  } = useORG_Ctx_FetchWithFiltersMobile()
 
   const refElement = useRef(null)
 
@@ -28,7 +43,12 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
 
     setActualSort(elementSelected)
 
-    const { newOrderData, newOrderFilters } = ORG_SortybyFunction_M(elementSelected, filtersST, userFetched, "CustomDropdownFilters. Fetch no filters")
+    const { newOrderData, newOrderFilters } = ORG_SortybyFunction_M(
+      elementSelected,
+      filtersST,
+      userFetched,
+      "CustomDropdownFilters. Fetch no filters"
+    )
 
     setUserFetched((prevState) => ({
       ...prevState,
@@ -36,7 +56,13 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
     }))
     setFiltersST(newOrderFilters)
 
-    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_M(elementSelected, filtersF, dataF, "CustomDropdownFilters. Fetch with filters")
+    const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } =
+      ORG_SortybyFunction_M(
+        elementSelected,
+        filtersF,
+        dataF,
+        "CustomDropdownFilters. Fetch with filters"
+      )
 
     setDataF((prevState) => ({
       ...prevState,
@@ -55,16 +81,13 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
     <>
       <ST_M_Results_SortByWrapper
         showDropdown={showDropdown}
-        onClick={handleDropdownClick}>
+        onClick={handleDropdownClick}
+      >
         <span tabIndex={0}>
-          <Caption
-            bold
-            primary_cta>
+          <Caption bold primary_cta>
             {title}:{" "}
           </Caption>
-          <Caption
-            bold
-            primary_cta>
+          <Caption bold primary_cta>
             {" "}
             {actualSort}
           </Caption>
@@ -86,7 +109,8 @@ export const ST_M_Results_SortBy = ({ title = "Sort By" }) => {
                           onClick={(e) => {
                             getSelection(e)
                             handleDropdownClick()
-                          }}>
+                          }}
+                        >
                           {x}
                         </CustomC>
                       </Fragment>

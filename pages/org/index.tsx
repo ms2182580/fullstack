@@ -1,5 +1,4 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
-import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
 import { trpc } from "@/utils/trpc"
 import dynamic from "next/dynamic"
 import { useCheckUserWidth } from "../../context/CheckUserWidth"
@@ -24,7 +23,7 @@ const INDEX_M_STSearch_Component = dynamic(
 const ORG_INDEX = () => {
   const { isMobile }: any = useCheckUserWidth()
 
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery()
+  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 50 })
 
   if (!mentalHealthData.data) {
     return (
@@ -32,35 +31,19 @@ const ORG_INDEX = () => {
         <LoadingComponent />
       </>
     )
-  } /* else {
-    return (
-      <>
-        {isMobile === false ? (
-          <>
-            <INDEX_D_ORG_Search
-              dataToDisplay={DATA_ORG_D}
-              allBackendData={{ mentalHealthData }}
-            />
-          </>
-        ) : (
-          <>
-            <INDEX_M_STSearch_Component />
-          </>
-        )}
-      </>
-    )
-  } */
-
+  }
   return (
     <>
       {isMobile === false ? (
         <>
           <INDEX_D_ORG_Search
-            dataToDisplay={DATA_ORG_D}
             allBackendData={{
               mentalHealth: mentalHealthData.data,
               // mentalHealth2: mentalHealthData.data,
             }}
+            /* allBackendFetched={{
+              mentalHealthFetched: mentalHealthData.isFetched,
+            }} */
           />
         </>
       ) : (

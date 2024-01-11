@@ -4,16 +4,48 @@ import { ORG_D_Results_CardLocationWrapper } from "./styles/ORG_D_Results_CardLo
 
 type Props = {
   locationCity: string
-  locationStreetNumber: string
-  locationStreetName: string
+  locationStreetNumber?: string
+  locationStreetName?: string
   locationState: string
-  howFar: string
+  howFar?: string
   isVES_Like?: boolean
+  /*
+   * «backendData» and «locationStreetName_Backend» are props that only you can get from the database
+   */
+  backendData?: boolean
+  locationStreetName_Backend?: string
 }
 
-export const ORG_D_Results_CardLocation = ({ locationCity, locationStreetNumber, locationStreetName, locationState, howFar, isVES_Like = false }: Props) => {
+export const ORG_D_Results_CardLocation = ({
+  locationCity,
+  locationStreetNumber,
+  locationStreetName,
+  locationState,
+  howFar = "_",
+  isVES_Like = false,
+  backendData = false,
+  locationStreetName_Backend,
+}: Props) => {
+  if (backendData) {
+    return (
+      <ORG_D_Results_CardLocationWrapper>
+        <LocationResultsSvg />
+
+        <div>
+          <P>{locationStreetName_Backend}</P>
+          <P>
+            {locationCity}, {locationState}
+          </P>
+          <P> ({howFar} miles away)</P>
+        </div>
+      </ORG_D_Results_CardLocationWrapper>
+    )
+  }
+
   return (
-    <ORG_D_Results_CardLocationWrapper isVES_Like={isVES_Like}>
+    <ORG_D_Results_CardLocationWrapper
+      isVES_Like={isVES_Like}
+    >
       <LocationResultsSvg />
 
       {!isVES_Like ? (

@@ -1,3 +1,4 @@
+import { QUERY_BREADCRUMBS } from "@/components/org/cards/second-page/desktop/ORG_D_Results_Breadcrumbs"
 import { formatDataToThirdPage } from "./formatDataToThirdPage"
 import { formatDataToURLOnThirdPage } from "./formatDataToURLOnThirdPage"
 import { getDataToMoveView } from "./getDataToMoveView"
@@ -42,12 +43,12 @@ export const handleMoveToThirdPage = ({
     stringToFormat: thirdPageData_Card.title,
   })
 
-  const toWhere = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.DETAIL}/${specificDetail}`
+  const toWhere: string = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.DETAIL}/${specificDetail}`
 
   push(
     {
       pathname: toWhere,
-      query: { title: stringForBreadcrumbs },
+      query: { [QUERY_BREADCRUMBS.TITLE]: stringForBreadcrumbs },
     },
     toWhere
   )

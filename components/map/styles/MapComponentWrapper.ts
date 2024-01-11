@@ -1,16 +1,26 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors";
-import styled from "styled-components";
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import styled from "styled-components"
 
 type Props = {
-  widthFull?: boolean;
-  isFullMap?: boolean;
-};
+  widthFull?: boolean
+  isFullMap?: boolean
+}
 export const MapComponentWrapper = styled.div<Props>`
   height: ${({ widthFull, isFullMap }) =>
-    widthFull && isFullMap ? "80vh" : widthFull ? "25vh" : "100vh"};
-  width: ${({ widthFull }) => (widthFull ? "91vw" : "")};
+    widthFull && isFullMap
+      ? "80vh"
+      : widthFull
+      ? "25vh"
+      : "100vh"};
+
+  /* width: ${({ widthFull }) =>
+    widthFull ? "91vw" : ""}; */
+
+  /* width: 100rem; */
+
   position: sticky;
   top: 0;
+  left: 0;
 
   & > :last-child {
     position: absolute;
@@ -42,4 +52,4 @@ export const MapComponentWrapper = styled.div<Props>`
       filter: brightness(97%);
     }
   }
-`;
+`

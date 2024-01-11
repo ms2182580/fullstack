@@ -30,3 +30,17 @@ export type Structure_SpecificData = {
   [SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD]?: LAYOUT_RESULTS_MAIN_CARD_VALUES
   [SPECIFIC_DATA_KEY.HAVE_VERIFIED]?: boolean
 }
+
+export const enum BUTTON_TO_THIRDPAGE_TEXT_OPTIONS {
+  "where to buy" = "where to buy",
+  "request consultation" = "request consultation",
+  "default" = "see availability",
+  "contact us" = "contact us",
+  "apply now" = "apply now",
+}
+
+export const enum SPECIFIC_DATA_SECOND_PAGE {
+  SECOND_PAGE = "SECOND_PAGE",
+  BUTTON_TO_THIRDPAGE_TEXT = "BUTTON_TO_THIRDPAGE_TEXT",
+  SVG = "SVG",
+}

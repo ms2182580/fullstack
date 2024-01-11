@@ -3,11 +3,6 @@ import { CustomDropdownFilters } from "../../../dropdownFilters/CustomDropdownFi
 
 export const ORG_D_Results_Sortby = () => {
   return (
-    <>
-      <CustomDropdownFilters
-        suggestions={ORG_Sortby_Desktop.data}
-        defaultWord={ORG_Sortby_Desktop.default}
-      />
-    </>
+    <CustomDropdownFilters suggestions={ORG_Sortby_Desktop.data} />
   )
 }

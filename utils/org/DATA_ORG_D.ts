@@ -4,6 +4,7 @@ import { DATA_PAT_D } from "./pat/DATA_PAT_D"
 import { DATA_PCC_D } from "./pcc/DATA_PCC_D"
 import { DATA_PCMPS_D } from "./pcmps/DATA_PCMPS_D"
 import { DATA_PDCTR_D } from "./pdctr/DATA_PDCTR_D"
+import { DATA_PMHSS_D } from "./pmhss/DATA_PMHSS_D"
 import { DATA_PPPAS_D } from "./pppas/DATA_PPPAS_D"
 import { DATA_PRP_D } from "./prp/DATA_PRP_D"
 import { DATA_PSES_D } from "./pses/DATA_PSES_D"
@@ -16,15 +17,26 @@ import { DATA_PVES_D } from "./pves/DATA_PVES_D"
 //   SVG = "SVG",
 // }
 
+export const enum DATA_ORG_D_TYPES_KEYS {
+  NAME_JSX = "nameJSX",
+  THIS_PARTICULAR_DATA = "thisParticularData",
+  ACRONYM = "acronym",
+  FOLDER_NAME = "folderName",
+  SOMETHING_SPECIAL = "somethingSpecial",
+  LAYOUT = "layout",
+  DETAILS = "details",
+  IS_FROM_BACKEND = "isFromBackend",
+}
+
 export type DATA_ORG_D_TYPES = {
-  nameJSX: string
-  thisParticularData: unknown
-  acronym?: string
-  folderName?: string
-  somethingSpecial?: {
-    layout?: keyof typeof All_Layouts_Accepted
-    details?: unknown
-    isFromBackend?: boolean
+  [DATA_ORG_D_TYPES_KEYS.NAME_JSX]: string
+  [DATA_ORG_D_TYPES_KEYS.THIS_PARTICULAR_DATA]: unknown
+  [DATA_ORG_D_TYPES_KEYS.ACRONYM]?: string
+  [DATA_ORG_D_TYPES_KEYS.FOLDER_NAME]?: string
+  [DATA_ORG_D_TYPES_KEYS.SOMETHING_SPECIAL]?: {
+    [DATA_ORG_D_TYPES_KEYS.LAYOUT]?: keyof typeof All_Layouts_Accepted
+    [DATA_ORG_D_TYPES_KEYS.DETAILS]?: unknown
+    [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]?: boolean
   }
 }
 
@@ -64,12 +76,12 @@ export const DATA_ORG_D: DATA_ORG_D_TYPES_Arr = [
     acronym: "pdctr",
     folderName: "doctors",
   },
-  /* {
+  {
     nameJSX: "Mental Health Support/Services",
     thisParticularData: DATA_PMHSS_D,
     acronym: "pmhss",
     folderName: "mental-health",
-  }, */
+  },
   {
     nameJSX: "Private & Public Agencies/Services",
     thisParticularData: DATA_PPPAS_D,

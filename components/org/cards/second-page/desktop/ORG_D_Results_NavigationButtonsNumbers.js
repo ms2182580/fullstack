@@ -8,7 +8,9 @@ import { ORG_D_Results_FinalButtonsNumberPage_W } from "./styles/ORG_D_Results_F
 export const ORG_D_Results_NavigationButtonsNumbers = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersDesktop()
 
-  const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(Array(3).fill(0))
+  const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(
+    Array(3).fill(0)
+  )
 
   const { pathname } = useRouter()
 
@@ -16,7 +18,6 @@ export const ORG_D_Results_NavigationButtonsNumbers = () => {
     return (
       <div>
         {amountOfPagesToClick.map((x, i) => {
-
           const toMoveToThatPage = i + 1
 
           if (pagination === i + 1) {
@@ -33,11 +34,11 @@ export const ORG_D_Results_NavigationButtonsNumbers = () => {
             <Fragment key={i}>
               <LinkNoStyle
                 href="#topOfORG"
-              // as={pathname}
+                // as={pathname}
               >
                 <ORG_D_Results_FinalButtonsNumberPage_W
                   onClick={() => setPagination(toMoveToThatPage)}
-                // tabIndex={shouldTab}
+                  // tabIndex={shouldTab}
                 >
                   <P bold> {i + 1}</P>
                 </ORG_D_Results_FinalButtonsNumberPage_W>
@@ -65,12 +66,12 @@ export const ORG_D_Results_NavigationButtonsNumbers = () => {
               <Fragment key={i}>
                 <LinkNoStyle
                   href="#topOfORG"
-                // as={pathname}
-                // tabIndex={shouldTab}
+                  // as={pathname}
+                  // tabIndex={shouldTab}
                 >
                   <ORG_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[0])}
-                  // tabIndex={shouldTab}
+                    // tabIndex={shouldTab}
                   >
                     <P bold> {theNewOrder[i]}</P>
                   </ORG_D_Results_FinalButtonsNumberPage_W>
@@ -84,7 +85,7 @@ export const ORG_D_Results_NavigationButtonsNumbers = () => {
               <Fragment key={i}>
                 <ORG_D_Results_FinalButtonsNumberPage_W
                   isActive
-                // tabIndex={shouldTab}
+                  // tabIndex={shouldTab}
                 >
                   <P bold> {theNewOrder[i]}</P>
                 </ORG_D_Results_FinalButtonsNumberPage_W>
@@ -97,12 +98,12 @@ export const ORG_D_Results_NavigationButtonsNumbers = () => {
               <Fragment key={i}>
                 <LinkNoStyle
                   href="#topOfORG"
-                // as={pathname}
-                // tabIndex={shouldTab}
+                  // as={pathname}
+                  // tabIndex={shouldTab}
                 >
                   <ORG_D_Results_FinalButtonsNumberPage_W
                     onClick={() => setPagination(theNewOrder[2])}
-                  // tabIndex={shouldTab}
+                    // tabIndex={shouldTab}
                   >
                     <P bold> {theNewOrder[i]}</P>
                   </ORG_D_Results_FinalButtonsNumberPage_W>

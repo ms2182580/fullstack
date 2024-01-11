@@ -1,6 +1,10 @@
+import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import { Verified } from "@/components/org/verified/Verified"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
-import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
+import {
+  LAYOUT_RESULTS_MAIN_CARD_VALUES,
+  SPECIFIC_DATA_KEY,
+} from "@/utils/org/second-page/desktop/specificData"
 import Image from "next/legacy/image"
 import { useMemo } from "react"
 import { ORG_D_Results_CardEmail } from "./ORG_D_Results_CardEmail"
@@ -11,15 +15,26 @@ import { ORG_D_Results_Cardphone } from "./ORG_D_Results_Cardphone"
 import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_LeftWrapper"
 
 type Props = {
-  renderThisCard: number
-  renderThisContact: number
+  renderThisCard?: number
+  renderThisContact?: number
+  backendData?: any
 }
 
-export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }: Props) => {
-  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
+export const ORG_D_Results_Main_Left = ({
+  renderThisCard = 0,
+  renderThisContact = 0,
+  backendData,
+}: Props) => {
+  const { secondpageDataORG }: any =
+    useORG_Ctx_D_SecondpageData()
 
   const isVES_Like = useMemo(() => {
-    return secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] === LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
+    return (
+      secondpageDataORG?.[
+        SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY
+      ]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ===
+      LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
+    )
   }, [])
 
   const isOpenPosition = useMemo(() => {
@@ -31,23 +46,83 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }: P
   }, [])
 
   const isOpenPositionAndThirdPosition = useMemo(() => {
-    return isVES_Like && !isDefault && isOpenPosition && renderThisCard > 1
+    return (
+      isVES_Like &&
+      !isDefault &&
+      isOpenPosition &&
+      renderThisCard > 1
+    )
   }, [])
 
   const layout = useMemo(() => {
-    const theLayout = secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ?? null
+    const theLayout =
+      secondpageDataORG?.[
+        SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY
+      ]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ??
+      null
 
     return theLayout
   }, [])
 
+  if (backendData) {
+    return (
+      <ORG_D_Results_Main_LeftWrapper>
+        <div>
+          <Image
+            src={Backup_Image}
+            layout="fill"
+            alt={`Image of ${backendData.recordName}`}
+          />
+          <ORG_D_Results_Card_Hearth />
+        </div>
+
+        <div>
+          <ORG_D_Results_Cardphone
+            phoneNumber={
+              backendData.onlinePresence.telephoneNumber
+            }
+          />
+
+          <ORG_D_Results_CardEmail
+          // email={backendData.onlinePresence.email}
+          />
+
+          <ORG_D_Results_CardWebsite
+            backendData={backendData}
+            // website={backendData.onlinePresence.website}
+          />
+
+          <ORG_D_Results_CardLocation
+            backendData={backendData}
+            locationCity={backendData.address[0].city}
+            locationStreetName_Backend={
+              backendData.address[0].street
+            }
+            locationState={backendData.address[0].state}
+          />
+        </div>
+      </ORG_D_Results_Main_LeftWrapper>
+    )
+  }
+
   return (
     <ORG_D_Results_Main_LeftWrapper
-      isOpenPositionAndThirdPosition={isOpenPositionAndThirdPosition}
-      className={isOpenPositionAndThirdPosition ? "isOpenPositionAndThirdPosition" : ""}
-      LAYOUT_RESULTS_MAIN_CARD={layout}>
+      isOpenPositionAndThirdPosition={
+        isOpenPositionAndThirdPosition
+      }
+      className={
+        isOpenPositionAndThirdPosition
+          ? "isOpenPositionAndThirdPosition"
+          : ""
+      }
+      LAYOUT_RESULTS_MAIN_CARD={layout}
+    >
       <div>
         <Image
-          src={secondpageDataORG.cardData[renderThisCard].imageToUse.src}
+          src={
+            secondpageDataORG.cardData[renderThisCard]
+              .imageToUse.src
+          }
           layout={
             isVES_Like && isDefault && !isOpenPosition
               ? "fill"
@@ -83,11 +158,26 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }: P
         <>
           <div>
             <ORG_D_Results_CardLocation
-              locationCity={secondpageDataORG.left[renderThisContact].location.city}
-              locationStreetNumber={secondpageDataORG.left[renderThisContact].location.streetNumber}
-              locationStreetName={secondpageDataORG.left[renderThisContact].location.streetName}
-              locationState={secondpageDataORG.left[renderThisContact].location.state}
-              howFar={secondpageDataORG.left[renderThisContact].location.howFar}
+              locationCity={
+                secondpageDataORG.left[renderThisContact]
+                  .location.city
+              }
+              locationStreetNumber={
+                secondpageDataORG.left[renderThisContact]
+                  .location.streetNumber
+              }
+              locationStreetName={
+                secondpageDataORG.left[renderThisContact]
+                  .location.streetName
+              }
+              locationState={
+                secondpageDataORG.left[renderThisContact]
+                  .location.state
+              }
+              howFar={
+                secondpageDataORG.left[renderThisContact]
+                  .location.howFar
+              }
               isVES_Like={true}
             />
           </div>
@@ -95,21 +185,52 @@ export const ORG_D_Results_Main_Left = ({ renderThisCard, renderThisContact }: P
       ) : (
         <>
           <div>
-            <ORG_D_Results_Cardphone phoneNumber={secondpageDataORG.left[renderThisContact].phone} />
+            <ORG_D_Results_Cardphone
+              phoneNumber={
+                secondpageDataORG.left[renderThisContact]
+                  .phone
+              }
+            />
 
-            <ORG_D_Results_CardEmail email={secondpageDataORG.left[renderThisContact].email} />
+            <ORG_D_Results_CardEmail
+              email={
+                secondpageDataORG.left[renderThisContact]
+                  .email
+              }
+            />
 
             <ORG_D_Results_CardWebsite
-              firstName={secondpageDataORG.left[renderThisContact].web?.fistName || ""}
-              lastName={secondpageDataORG.left[renderThisContact].web?.lastName || ""}
+              firstName={
+                secondpageDataORG.left[renderThisContact]
+                  .web?.fistName || ""
+              }
+              lastName={
+                secondpageDataORG.left[renderThisContact]
+                  .web?.lastName || ""
+              }
             />
 
             <ORG_D_Results_CardLocation
-              locationCity={secondpageDataORG.left[renderThisContact].location.city}
-              locationStreetNumber={secondpageDataORG.left[renderThisContact].location.streetNumber}
-              locationStreetName={secondpageDataORG.left[renderThisContact].location.streetName}
-              locationState={secondpageDataORG.left[renderThisContact].location.state}
-              howFar={secondpageDataORG.left[renderThisContact].location.howFar}
+              locationCity={
+                secondpageDataORG.left[renderThisContact]
+                  .location.city
+              }
+              locationStreetNumber={
+                secondpageDataORG.left[renderThisContact]
+                  .location.streetNumber
+              }
+              locationStreetName={
+                secondpageDataORG.left[renderThisContact]
+                  .location.streetName
+              }
+              locationState={
+                secondpageDataORG.left[renderThisContact]
+                  .location.state
+              }
+              howFar={
+                secondpageDataORG.left[renderThisContact]
+                  .location.howFar
+              }
             />
           </div>
         </>
