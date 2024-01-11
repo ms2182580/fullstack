@@ -7,14 +7,11 @@ import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
 import { useScrollLock } from "../../../../../utils/useScrollLock"
 import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { ORG_D_Detail_ReviewsWrapper } from "../desktop/styles/ORG_D_Detail_ReviewsWrapper"
-import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "../desktop/ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention"
-import { ORG_D_Detail_Reviews_IndividualComponent } from "../desktop/ORG_D_Detail_Reviews_IndividualComponent"
 import { ORG_D_Detail_Review_Modal_ViewAll } from "../desktop/ORG_D_Detail_Review_Modal_ViewAll"
-import { ORG_D_Detail_Review_Modal_WriteAReview } from "../desktop/ORG_D_Detail_Review_Modal_WriteAReview"
 import { ORG_M_Detail_ReviewsWrapper } from "./styles/ORG_M_Detail_ReviewWrapper"
 import { ORG_M_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_M_Detail_Review_ViewAll_PeopleOftenMention"
-import { ORG_M_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
+import { ORG_M_Detail_Reviews_IndividualComponent } from "./ORG_M_Detail_Reviews_IndividualComponent"
+import { ORG_M_Detail_Review_Modal_WriteAReview } from "./ORG_M_Detail_Review_Modal_WriteAReview"
 
 export const enum KEYS_FOR_PROPS {
   TITLE_ON_HEADER = "TITLE_ON_HEADER",
@@ -82,7 +79,7 @@ export const ORG_M_Detail_Reviews = ({
 
   const handleShowModal_WriteAReview = (e: any) => {
     if (e.type === "click" || e.key === "Enter") {
-      lockScroll()
+      // lockScroll()
       setShowModal_WriteAReview(true)
       setModalShowedCtx(true)
 
@@ -105,40 +102,42 @@ export const ORG_M_Detail_Reviews = ({
 
   return (
     <>
-      <ORG_M_Detail_ReviewsWrapper id={theIdForComponent}>
-        <header>
-          <H3 color="#6E3A82">
-            {!customTitle ? "Reviews" : customTitleFormat}
-          </H3>
-          {/* <button
-            type="button"
-            tabIndex={0}
-            onClick={handleShowModal_WriteAReview}
-            onKeyDown={handleShowModal_WriteAReview}
-          >
-            <NavBar_D_WriteAReviewSvg />
-            Write a review
-          </button> */}
-        </header>
-        <Caption>
-          Your trust is our top concern, so providers can’t pay to alter or
-          remove reviews. We also don’t publish reviews that contain <br /> any
-          private patient health information.{" "}
-          <Caption tabIndex={0}>Learn more here.</Caption>
-        </Caption>
-        <ORG_M_Detail_Reviews_ViewAll_PeopleOftenMention
-          rating={card.leftPart.rating}
-          reviews={card.leftPart.reviews}
-        />
-        <ORG_M_Detail_Reviews_IndividualComponent getReviews={getReviews} />
-        <P
+      {!showModal_WriteAReview && (
+        <ORG_M_Detail_ReviewsWrapper id={theIdForComponent}>
+          <header>
+            <H3 color="#6E3A82">
+              {!customTitle ? "Reviews" : customTitleFormat}
+            </H3>
+          </header>
+          <Caption>
+            Your trust is our top concern, so providers can’t pay to alter or
+            remove reviews. We also don’t publish reviews that contain <br />{" "}
+            any private patient health information.{" "}
+            <Caption tabIndex={0}>Learn more here.</Caption>
+          </Caption>
+          <ORG_M_Detail_Reviews_ViewAll_PeopleOftenMention
+            rating={card.leftPart.rating}
+            reviews={card.leftPart.reviews}
+          />
+          <ORG_M_Detail_Reviews_IndividualComponent getReviews={getReviews} />
+          {/* <P
           onClick={handleShowModal_ViewAll}
           onKeyDown={handleShowModal_ViewAll}
           tabIndex={0}
         >
           View All
-        </P>
-      </ORG_M_Detail_ReviewsWrapper>
+        </P> */}
+          <button
+            type="button"
+            tabIndex={0}
+            onClick={handleShowModal_WriteAReview}
+            onKeyDown={handleShowModal_WriteAReview}
+          >
+            {/* <NavBar_D_WriteAReviewSvg /> */}
+            Write a review
+          </button>
+        </ORG_M_Detail_ReviewsWrapper>
+      )}
 
       {showModal_ViewAll && (
         <ORG_D_Detail_Review_Modal_ViewAll
@@ -154,7 +153,7 @@ export const ORG_M_Detail_Reviews = ({
       )}
 
       {showModal_WriteAReview && (
-        <ORG_D_Detail_Review_Modal_WriteAReview
+        <ORG_M_Detail_Review_Modal_WriteAReview
           name={fullName.first}
           lastName={fullName.last}
           handleHideModal_WriteAReview={handleHideModal_WriteAReview}

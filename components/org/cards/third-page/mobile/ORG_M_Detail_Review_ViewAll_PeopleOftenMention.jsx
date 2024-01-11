@@ -1,7 +1,7 @@
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
 import { Search_Review_Msvg } from "../../../../../assets/icons/index"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { ORG_M_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper } from "./styles/ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper"
+import { ORG_M_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper } from "./styles/ORG_M_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper"
 import { ORG_M_Detail_Review_StarsRating } from "./ORG_M_Detail_Review_StarsRating"
 
 export const ORG_M_Detail_Reviews_ViewAll_PeopleOftenMention = ({

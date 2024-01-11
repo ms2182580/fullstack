@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const enum ORG_D_Detail_Reviews_IndividualComponent_Classes {
+export const enum ORG_M_Detail_Reviews_IndividualComponent_Classes {
   IS_COMPONENT = "IS_COMPONENT",
   IS_MODAL = "IS_MODAL",
 }
@@ -26,7 +26,7 @@ export const ORG_M_Detail_Reviews_IndividualComponentWrapper = styled.div`
     gap: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 
-    .${ORG_D_Detail_Reviews_IndividualComponent_Classes.IS_COMPONENT} {
+    .${ORG_M_Detail_Reviews_IndividualComponent_Classes.IS_COMPONENT} {
       margin-top: auto;
       width: 100%;
 
@@ -122,7 +122,7 @@ export const ORG_M_Detail_Reviews_IndividualComponentWrapper = styled.div`
       }
     }
 
-    .${ORG_D_Detail_Reviews_IndividualComponent_Classes.IS_MODAL} {
+    .${ORG_M_Detail_Reviews_IndividualComponent_Classes.IS_MODAL} {
       & > :nth-child(1) {
         display: flex;
         gap: 8px;

@@ -2,7 +2,7 @@ import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const INDEX_ORG_Detail_MainCard = styled.div`
-  position: relative;
+  /* position: relative; */
   padding-bottom: 8px;
   & > :nth-child(1) {
     padding: 28px 16px;

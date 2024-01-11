@@ -6,11 +6,9 @@ import { ORG_ST_Review_Months } from "@/utils/ORG_ST_Review_D.js"
 import Image from "next/image.js"
 import { useMemo } from "react"
 import {
-  ORG_D_Detail_Reviews_IndividualComponentWrapper,
-  ORG_D_Detail_Reviews_IndividualComponent_Classes,
-} from "../desktop/styles/ORG_D_Detail_Reviews_IndividualComponentWrapper"
-import { ORG_M_Detail_Reviews_IndividualComponentWrapper } from "./styles/ORG_M_Detail_Reviews_IndividualComponentWrapper"
-// import { ORG_D_Detail_Reviews_IndividualComponentWrapper, ORG_D_Detail_Reviews_IndividualComponent_Classes } from "./styles/ORG_D_Detail_Reviews_IndividualComponentWrapper"
+  ORG_M_Detail_Reviews_IndividualComponentWrapper,
+  ORG_M_Detail_Reviews_IndividualComponent_Classes,
+} from "./styles/ORG_M_Detail_Reviews_IndividualComponentWrapper"
 
 const adittionalData = [
   "Agency Admin, Partners Health...",
@@ -64,8 +62,8 @@ export const ORG_M_Detail_Reviews_IndividualComponent = ({
             <footer
               className={
                 isModal
-                  ? ORG_D_Detail_Reviews_IndividualComponent_Classes.IS_MODAL
-                  : ORG_D_Detail_Reviews_IndividualComponent_Classes.IS_COMPONENT
+                  ? ORG_M_Detail_Reviews_IndividualComponent_Classes.IS_MODAL
+                  : ORG_M_Detail_Reviews_IndividualComponent_Classes.IS_COMPONENT
               }
             >
               <div>

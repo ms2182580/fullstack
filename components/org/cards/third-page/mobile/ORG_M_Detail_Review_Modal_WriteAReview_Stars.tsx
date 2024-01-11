@@ -1,8 +1,12 @@
 import { StartEmptyBigSvg } from "@/assets/icons"
 import { useMemo, useState } from "react"
-import { FieldsetClass } from "./ORG_D_Detail_Review_Modal_WriteAReview_Form"
-import { ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction } from "./ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction"
-import { ORG_D_Detail_Review_Modal_WriteAReview_StarsWrapper } from "./styles/ORG_D_Detail_Review_Modal_WriteAReview_StarsWrapper"
+import { FieldsetClass } from "../desktop/ORG_D_Detail_Review_Modal_WriteAReview_Form"
+// import { ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction } from "../desktop/ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction"
+import { ORG_M_Detail_Review_Modal_WriteAReview_StarsWrapper } from "./styles/ORG_M_Detail_Review_Modal_WriteAReview_StarsWrapper"
+import { ORG_M_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction } from "./ORG_M_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction"
+// import { FieldsetClass } from "./ORG_D_Detail_Review_Modal_WriteAReview_Form"
+// import { ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction } from "./ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction"
+// import { ORG_D_Detail_Review_Modal_WriteAReview_StarsWrapper } from "./styles/ORG_D_Detail_Review_Modal_WriteAReview_StarsWrapper"
 
 const allNamesToDisplay = [
   "Appointment scheduling",
@@ -14,11 +18,7 @@ const allNamesToDisplay = [
 
 const arrayFiveStars = new Array(5).fill(0).map((x, index) => StartEmptyBigSvg)
 
-// const allStarsToJSX = new Array(5).fill(0).map((x, index) => {
-//   return { SVG: arrayFiveStars, nameToJSX: allNamesToDisplay[index] }
-// })
-
-export const ORG_D_Detail_Review_Modal_WriteAReview_Stars = () => {
+export const ORG_M_Detail_Review_Modal_WriteAReview_Stars = () => {
   const allStarsToJSX = useMemo(() => {
     return new Array(5).fill(0).map((x, index) => {
       return { SVG: arrayFiveStars, nameToJSX: allNamesToDisplay[index] }
@@ -65,10 +65,10 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Stars = () => {
   }
 
   return (
-    <ORG_D_Detail_Review_Modal_WriteAReview_StarsWrapper>
+    <ORG_M_Detail_Review_Modal_WriteAReview_StarsWrapper>
       {allStarsToJSX.map((x, indexComponent) => (
         <li key={x.nameToJSX}>
-          <ORG_D_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction
+          <ORG_M_Detail_Review_Modal_WriteAReview_Stars_HoverInteraction
             SVGArr={x.SVG}
             nameToJSX={x.nameToJSX}
             setWhichComponentIsSelected={setWhichComponentIsSelected}
@@ -77,6 +77,6 @@ export const ORG_D_Detail_Review_Modal_WriteAReview_Stars = () => {
           />
         </li>
       ))}
-    </ORG_D_Detail_Review_Modal_WriteAReview_StarsWrapper>
+    </ORG_M_Detail_Review_Modal_WriteAReview_StarsWrapper>
   )
 }

@@ -4,7 +4,7 @@ import {
   P,
 } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { PatternStars } from "../../../stars-rating-review/PatternsStars.js"
-import { ORG_M_Detail_Review_StarsRatingWrapper } from "./styles/ORG_D_Detail_Review_StarsRatingWrapper"
+import { ORG_M_Detail_Review_StarsRatingWrapper } from "./styles/ORG_M_Detail_Review_StarsRatingWrapper"
 
 export const ORG_M_Detail_Review_StarsRating = ({
   rating,
