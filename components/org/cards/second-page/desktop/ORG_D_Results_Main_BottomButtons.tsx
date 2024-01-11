@@ -3,13 +3,16 @@ import {
   ORG_D_Results_RequestConsultationSvg,
   ORG_D_Results_ViewProfileSvg,
 } from "@/assets/icons"
+import DEFAULT_SVG from "@/assets/icons/org/second-page/DEFAULT_Button_To_Third_Page.svg"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import {
   BRAND_OPTION_DEFAULT,
   SPECIFIC_DATA_KEY,
+  SPECIFIC_DATA_SECOND_PAGE,
 } from "@/utils/org/second-page/desktop/specificData"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
@@ -24,43 +27,57 @@ export const ORG_D_Results_Main_BottomButtons = ({
   renderThisContact,
   backendData,
 }: Props) => {
-  const { setThirdpageDataORG }: any =
-    useORG_Ctx_D_ThirdpageData()
+  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
-  const { secondpageDataORG }: any =
-    useORG_Ctx_D_SecondpageData()
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
   const { push } = useRouter()
 
+  const { secondpageDataORG: secondpageDataORG_Backend }: any =
+    useORG_Ctx_D_SecondpageData_Backend()
+
   const buttonJSXAndSVGCustom = useMemo(() => {
-    const weHaveData =
-      secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
-    // console.log("weHaveData:", weHaveData)
-    if (Boolean(weHaveData)) {
-      let whichSvg =
+    if (!backendData) {
+      const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+      if (Boolean(weHaveData)) {
         /* This check if the key SVG on weHaveData variable object is empty of have a declaration of «DEFAULT» */
+        let whichSvg =
+          !weHaveData[SPECIFIC_DATA_KEY.SVG] ||
+          weHaveData[SPECIFIC_DATA_KEY.SVG] === BRAND_OPTION_DEFAULT.DEFAULT
+            ? ORG_D_Results_RequestConsultationSvg
+            : weHaveData?.[SPECIFIC_DATA_KEY.SVG]
 
-        !weHaveData[SPECIFIC_DATA_KEY.SVG] ||
-        weHaveData[SPECIFIC_DATA_KEY.SVG] ===
-          BRAND_OPTION_DEFAULT.DEFAULT
-          ? ORG_D_Results_RequestConsultationSvg
-          : weHaveData?.[SPECIFIC_DATA_KEY.SVG]
+        let whichJSX = !weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
+          ? "See availability"
+          : weHaveData?.[SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME]
 
-      let whichJSX = !weHaveData?.[
-        SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME
-      ]
-        ? "See availability"
-        : weHaveData?.[
-            SPECIFIC_DATA_KEY.BUTTON_TO_THIRDPAGE_NAME
-          ]
-
-      return {
-        ComponentSvg: whichSvg,
-        nameToJSX: whichJSX,
+        return {
+          ComponentSvg: whichSvg,
+          nameToJSX: whichJSX,
+        }
       }
     }
+
+    if (backendData) {
+      let theSecondPageData =
+        secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]
+
+      let whichButtonToThirdPageSvg =
+        theSecondPageData[SPECIFIC_DATA_SECOND_PAGE.SVG] ?? DEFAULT_SVG
+
+      let whichButtonToThirdPageText =
+        theSecondPageData[SPECIFIC_DATA_SECOND_PAGE.BUTTON_TO_THIRDPAGE_TEXT] ??
+        "See availability"
+
+      return {
+        ComponentSvg_Backend: whichButtonToThirdPageSvg,
+        nameToJSX_Backend: whichButtonToThirdPageText,
+      }
+    }
+
     return null
   }, [
     secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY],
+    secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
   ])
 
   if (backendData) {
@@ -73,7 +90,9 @@ export const ORG_D_Results_Main_BottomButtons = ({
 
         <div tabIndex={0}>
           <ORG_D_Results_RequestConsultationSvg />
-          <P>see availability</P>
+
+          {buttonJSXAndSVGCustom?.ComponentSvg_Backend}
+          <P>{buttonJSXAndSVGCustom?.nameToJSX_Backend}</P>
         </div>
 
         <div tabIndex={0}>
@@ -95,10 +114,8 @@ export const ORG_D_Results_Main_BottomButtons = ({
         onClick={(event) =>
           handleMoveToThirdPage({
             event,
-            categoryPosition:
-              secondpageDataORG.categoryPosition,
-            subcategoryPosition:
-              secondpageDataORG.subcategoryPosition,
+            categoryPosition: secondpageDataORG.categoryPosition,
+            subcategoryPosition: secondpageDataORG.subcategoryPosition,
             resourcePosition: renderThisContact,
             setThirdpageDataORG,
             push,

@@ -8,7 +8,7 @@ import { useEffect } from "react"
 
 export default function ORG_Detail() {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
-  const { isMobile } = useCheckUserWidth()
+  const { isMobile }: any = useCheckUserWidth()
 
   const { push } = useRouter()
 
