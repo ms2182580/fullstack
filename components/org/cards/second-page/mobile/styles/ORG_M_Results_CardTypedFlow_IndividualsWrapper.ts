@@ -49,6 +49,7 @@ export const ORG_M_Results_CardTypedFlow_Card = styled.article`
   & > :nth-child(2) {
     height: 200px;
     padding: 15px;
+    cursor: pointer;
     //first span
     & > :nth-child(1) {
       display: flex;
