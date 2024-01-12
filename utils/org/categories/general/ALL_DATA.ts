@@ -9,6 +9,7 @@ import {
   SPECIFIC_DATA_SECOND_PAGE,
 } from "../../second-page/desktop/specificData"
 import { ArraySectionToRender_Type } from "../../third-page/InnerNavBar"
+import { Tooltip_VALUES } from "../../third-page/tooltip"
 import { arraySectionToRender_TherapeuticService } from "../therapeutic-service/arraySectionToRender"
 import { mapRender_TherapeuticService } from "../therapeutic-service/mapRender"
 
@@ -18,6 +19,12 @@ import { mapRender_TherapeuticService } from "../therapeutic-service/mapRender"
 export const enum ALL_CATEGORY_KEYS {
   "THERAPEUTIC SERVICES" = "THERAPEUTIC SERVICES",
 }
+
+export const enum BUTTON_MAIN_CARD_TEXT_VALUES_ENUM {
+  ADD_TO_CARE_PLAN = "Add to Care Plan",
+}
+
+type BUTTON_MAIN_CARD_TEXT_VALUES = BUTTON_MAIN_CARD_TEXT_VALUES_ENUM
 
 type ALL_DATA_Type = {
   [key in ALL_CATEGORY_KEYS | string]: {
@@ -37,7 +44,9 @@ type ALL_DATA_Type = {
       [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]?: ArraySectionToRender_Type
       [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]?: Layout_MainCardRight_VALUES
       [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]?: MapProperties
+      [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]?: Tooltip_VALUES
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]?: boolean
+      [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]?: BUTTON_MAIN_CARD_TEXT_VALUES
     }
   }
 }

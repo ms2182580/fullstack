@@ -1,8 +1,3 @@
-/* 
-!FH0
-Check how to move the view to the second page by this and create a new way to make it considering the data that comes from the backend
-*/
-
 import { QUERY_BREADCRUMBS } from "@/components/org/cards/second-page/desktop/ORG_D_Results_Breadcrumbs"
 import { MouseEvent } from "react"
 import { DATA_ORG_D_TYPES_KEYS } from "./DATA_ORG_D"
@@ -27,10 +22,6 @@ export const handleMoveToSecondPage_Backend = ({
 }: Props) => {
   const [toBreadcrumb, ...allData] = raw
 
-  const { checkedToURL } = checkStringToURL({
-    stringToURL: toBreadcrumb,
-  })
-
   const getCategoryName = allData[0].listingType
 
   const getSpecificData = getAllData({
@@ -43,6 +34,10 @@ export const handleMoveToSecondPage_Backend = ({
       getSpecificData[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
     [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]:
       getSpecificData[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE],
+  })
+
+  const { checkedToURL } = checkStringToURL({
+    stringToURL: toBreadcrumb,
   })
 
   const toWhere: string = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.RESULTS}/${checkedToURL}`

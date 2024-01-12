@@ -7,8 +7,10 @@ import DEFAULT_SVG from "@/assets/icons/org/second-page/DEFAULT_Button_To_Third_
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
+import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import {
   BRAND_OPTION_DEFAULT,
   SPECIFIC_DATA_KEY,
@@ -21,13 +23,18 @@ import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_
 type Props = {
   renderThisContact?: number
   backendData?: any
+  whichResource?: number
 }
 
 export const ORG_D_Results_Main_BottomButtons = ({
   renderThisContact,
   backendData,
+  whichResource,
 }: Props) => {
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+
+  const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
+    useORG_Ctx_D_ThirdpageData_Backend()
 
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
   const { push } = useRouter()
@@ -35,6 +42,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
   const { secondpageDataORG: secondpageDataORG_Backend }: any =
     useORG_Ctx_D_SecondpageData_Backend()
 
+  console.log("secondpageDataORG_Backend:", secondpageDataORG_Backend)
   const buttonJSXAndSVGCustom = useMemo(() => {
     if (!backendData) {
       const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
@@ -80,10 +88,21 @@ export const ORG_D_Results_Main_BottomButtons = ({
     secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
   ])
 
-  if (backendData) {
+  if (backendData && whichResource !== undefined) {
     return (
       <ORG_D_Results_Main_BottomButtonsWrapper>
-        <div tabIndex={0}>
+        <div
+          tabIndex={0}
+          onClick={(event) =>
+            handleMoveToThirdPage_Backend({
+              event,
+              raw: backendData,
+              secondpageDataORG_Backend,
+              setThirdpageDataORG_Backend,
+              push,
+            })
+          }
+        >
           <ORG_D_Results_ViewProfileSvg />
           <P>View Profile</P>
         </div>

@@ -1,13 +1,14 @@
 import { ChatAI } from "@/components/org/ChatAI"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
-import { Fragment, useMemo } from "react"
+import { useRouter } from "next/router"
+import { useMemo } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
-import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
 import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
@@ -16,67 +17,108 @@ import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_Righ
 
 export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  const { thirdpageDataORG: thirdpageDataORG_Backend } =
+    useORG_Ctx_D_ThirdpageData_Backend()
 
   const { modalShowedCtx } = useCtx_ShowModal()
 
+  const { query } = useRouter()
+
   const getAllSpecificThirdPageData = useMemo(() => {
-    const dataObj =
-      thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]?.[
-        `rightPart`
-      ]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[
-        DATA_ORG_KeyNamesForCards_D_KEYS.CARD
-      ]
+    if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
+      const dataObj =
+        thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]?.[
+          `rightPart`
+        ]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[
+          DATA_ORG_KeyNamesForCards_D_KEYS.CARD
+        ]
+
+      const renderSections =
+        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
+
+      const arrayInnerNavBar =
+        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
+
+      const tooltip =
+        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
+        Tooltip_VALUES.DEFAULT
+
+      const layoutMainCardRight =
+        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
+        Layout_MainCardRight_VALUES.DEFAULT
+
+      const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? {
+        [MapProperties_KEYS.HOW_MANY]: 1,
+      }
+
+      const buttonMainCard = {
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]:
+          dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
+          "add to care plan",
+        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]:
+          dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
+          false,
+      }
+
+      return {
+        renderSections,
+        arrayInnerNavBar,
+        tooltip,
+        layoutMainCardRight,
+        howIsMap,
+        buttonMainCard,
+      }
+    }
+
+    const dataThirdPage =
+      thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]
 
     const renderSections =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
-
-    const arrayInnerNavBar =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
+      dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
 
     const tooltip =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
+      dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
       Tooltip_VALUES.DEFAULT
 
     const layoutMainCardRight =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
+      dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
       Layout_MainCardRight_VALUES.DEFAULT
 
-    const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? {
+    const howIsMap = dataThirdPage[
+      DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP
+    ] ?? {
       [MapProperties_KEYS.HOW_MANY]: 1,
     }
 
     const buttonMainCard = {
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]:
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
+        dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
         "add to care plan",
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]:
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
+        dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
         false,
     }
 
     return {
       renderSections,
-      arrayInnerNavBar,
       tooltip,
       layoutMainCardRight,
       howIsMap,
       buttonMainCard,
     }
-  }, [thirdpageDataORG])
-  console.log({ getAllSpecificThirdPageData })
+  }, [thirdpageDataORG, thirdpageDataORG_Backend])
+
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>
         <div>
           <ORG_D_Detail_Header
             thirdpageDataORG={thirdpageDataORG}
-            arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
             defaultSectionToRender={defaultSectionToRender}
             sectionToRender={getAllSpecificThirdPageData.renderSections}
           />
 
           <ORG_D_Detail_MainCard
-            arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
             layout_MainCardRight={
               getAllSpecificThirdPageData.layoutMainCardRight
             }
@@ -85,7 +127,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
             buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
           />
 
-          {getAllSpecificThirdPageData.renderSections ? (
+          {/* {getAllSpecificThirdPageData.renderSections ? (
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
                 let theIdForComponent =
@@ -135,11 +177,11 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
                 )
               })}
             </>
-          )}
+          )} */}
 
-          <ORG_D_Detail_BreadcrumbsLastUpdated
+          {/* <ORG_D_Detail_BreadcrumbsLastUpdated
             thirdpageDataORG={thirdpageDataORG}
-          />
+          /> */}
         </div>
         <ChatAI />
       </INDEX_ORG_Detail_DWrapper>

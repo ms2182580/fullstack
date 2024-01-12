@@ -6,6 +6,5 @@ export const ORG_D_Detail_MainCardLeftPhotosWrapper = styled.div`
   font-size: 14px;
   color: ${SEMANTICS.HYPERLINK_NORMAL};
   text-decoration: underline;
-  cursor: pointer;
   margin-bottom: 24px;
 `

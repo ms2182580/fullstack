@@ -1,13 +1,17 @@
 import { EmailORGSvg } from "../../../../../assets/icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ORG_D_Detail_CardEmailWrapper } from "./styles/ORG_D_Detail_CardEmailWrapper.js"
+import { ORG_D_Detail_CardEmailWrapper } from "./styles/ORG_D_Detail_CardEmailWrapper"
 
-export const ORG_D_Detail_CardEmail = ({ email }) => {
+type Props = {
+  email: string
+}
+
+export const ORG_D_Detail_CardEmail = ({ email }: Props) => {
   return (
     <ORG_D_Detail_CardEmailWrapper>
       <div>
         <EmailORGSvg />
-        <P bold>Email:</P>
+        <P>Email:</P>
       </div>
 
       <P tabIndex={0}>{email}</P>

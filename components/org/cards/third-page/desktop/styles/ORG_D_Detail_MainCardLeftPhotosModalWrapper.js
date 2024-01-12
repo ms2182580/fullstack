@@ -1,5 +1,9 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY, SECONDARY_BG_BIGBLOCKS_TEXT } from "../../../../../../assets/Colors"
+import {
+  NEUTRALS,
+  PRIMARY,
+  SECONDARY_BG_BIGBLOCKS_TEXT,
+} from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_MainCardLeftPhotosModalWrapper = styled.div`
   visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};

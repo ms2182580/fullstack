@@ -29,9 +29,11 @@ export const ORG_D_Detail_MainCardLeftPhotos = ({ photo, name, lastName }) => {
       <ORG_D_Detail_MainCardLeftPhotosWrapper
         onClick={handleShowModal}
         onKeyDown={handleShowModal}
-        tabIndex={0}>
+        tabIndex={0}
+      >
         <Caption hyperlink_normal>6 photos</Caption>
       </ORG_D_Detail_MainCardLeftPhotosWrapper>
+
       {showModal && (
         <ORG_D_Detail_MainCardLeftPhotosModal
           showModal={showModal}

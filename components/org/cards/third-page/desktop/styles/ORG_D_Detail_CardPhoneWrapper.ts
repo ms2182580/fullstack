@@ -9,6 +9,8 @@ export const ORG_D_Detail_CardPhoneWrapper = styled.div`
   }
   & > :nth-child(2) {
     margin-right: 4px;
+
+    font-weight: 700;
   }
   & > :nth-child(3) {
     color: #3f6ece;
