@@ -1,25 +1,14 @@
 import { ChatAI } from "@/components/org/ChatAI"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-// import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
-// import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
-import { Fragment, useMemo } from "react"
+import { useMemo } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
-// import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
-// import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
-// import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
-// // import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
-// import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
-// import { INDEX_ORG_Detail_DWrapper } from "../desktop/styles/INDEX_ORG_Detail_DWrapper"
-// import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
-// import { ORG_D_Detail_Header } from "../desktop/ORG_D_Detail_Header"
-// import { ORG_D_Detail_MainCard } from "../desktop/ORG_D_Detail_MainCard"
-import { MapProperties_KEYS } from "../desktop/ORG_D_Detail_MapComponent"
 import { ORG_M_Results_Header } from "../../second-page/mobile/ORG_M_Results_Header"
-import { INDEX_ORG_Detail_MWrapper } from "./styles/INDEX_ORG_Detail_MWrapper"
-import { ORG_M_Detail_MainCard } from "./ORG_M_Detail_MainCard"
+import { MapProperties_KEYS } from "../desktop/ORG_D_Detail_MapComponent"
 import { Layout_MainCardRight_VALUES } from "../desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { ORG_M_Detail_MainCard } from "./ORG_M_Detail_MainCard"
+import { INDEX_ORG_Detail_MWrapper } from "./styles/INDEX_ORG_Detail_MWrapper"
 
 export const INDEX_ORG_Detail_M = ({ selectTags = null }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
@@ -33,6 +22,8 @@ export const INDEX_ORG_Detail_M = ({ selectTags = null }) => {
       ]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[
         DATA_ORG_KeyNamesForCards_D_KEYS.CARD
       ]
+
+    console.log("dataObj:", dataObj)
 
     const renderSections =
       dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
