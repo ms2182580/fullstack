@@ -1,17 +1,30 @@
 import Image from "next/image.js"
 import { useEffect, useRef, useState } from "react"
-import { LeftArrowSvg, RightArrowSvg, XSvg } from "../../../../../assets/icons/index.js"
+import {
+  LeftArrowSvg,
+  RightArrowSvg,
+  XSvg,
+} from "../../../../../assets/icons/index.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
 import { ORG_D_Detail_MainCardLeftPhotosModalWrapper } from "./styles/ORG_D_Detail_MainCardLeftPhotosModalWrapper.js"
 
 const imagesToShow = [0, 1, 2, 3, 4, 5]
 
-export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModal, photo, name, lastName }) => {
+export const ORG_D_Detail_MainCardLeftPhotosModal = ({
+  showModal,
+  handleHideModal,
+  photo,
+  name,
+  lastName,
+}) => {
   const componentRef = useRef(null)
   useEffect(() => {
     function handleClickOutside(event) {
-      if (componentRef.current && !componentRef.current.contains(event.target)) {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
         handleHideModal()
       }
     }
@@ -41,7 +54,10 @@ export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModa
 
   const handlePrev = (ctrlKey = false) => {
     if (ctrlKey === false) {
-      setCurrentIndex((prevState) => (prevState - 1 + imagesToShow.length) % imagesToShow.length)
+      setCurrentIndex(
+        (prevState) =>
+          (prevState - 1 + imagesToShow.length) % imagesToShow.length
+      )
     } else {
       setCurrentIndex(0)
     }
@@ -70,7 +86,8 @@ export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModa
   return (
     <ORG_D_Detail_MainCardLeftPhotosModalWrapper
       ref={componentRef}
-      showModal={showModal}>
+      showModal={showModal}
+    >
       <span onClick={handleHideModal}>
         <XSvg />
       </span>
@@ -82,13 +99,18 @@ export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModa
           return (
             <div
               key={`${x}_${i}`}
-              className={imagesToShow.indexOf(imagesToShow[currentIndex]) === i ? "fade" : "slide fade"}>
+              className={
+                imagesToShow.indexOf(imagesToShow[currentIndex]) === i
+                  ? "fade"
+                  : "slide fade"
+              }
+            >
               <div>
                 <Image
                   src={photo}
                   layout="fill"
-                  width={1}
-                  height={1}
+                  // width={1}
+                  // height={1}
                   alt={`Photo of speech therapist: ${name} ${lastName} number ${i}`}
                 />
               </div>
@@ -102,12 +124,14 @@ export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModa
       <div>
         <span
           onClick={() => handlePrev()}
-          onDoubleClick={() => handlePrev(true)}>
+          onDoubleClick={() => handlePrev(true)}
+        >
           <LeftArrowSvg />
         </span>
         <span
           onClick={() => handleNext()}
-          onDoubleClick={() => handleNext(true)}>
+          onDoubleClick={() => handleNext(true)}
+        >
           <RightArrowSvg />
         </span>
       </div>
@@ -117,8 +141,13 @@ export const ORG_D_Detail_MainCardLeftPhotosModal = ({ showModal, handleHideModa
           return (
             <span
               key={`${x}_${i}`}
-              className={imagesToShow.indexOf(imagesToShow[currentIndex]) === i ? "styling active" : "styling"}
-              onClick={() => setCurrentIndex(imagesToShow.indexOf(i))}>
+              className={
+                imagesToShow.indexOf(imagesToShow[currentIndex]) === i
+                  ? "styling active"
+                  : "styling"
+              }
+              onClick={() => setCurrentIndex(imagesToShow.indexOf(i))}
+            >
               <div>
                 <Image
                   src={photo}

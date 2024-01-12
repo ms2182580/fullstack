@@ -78,6 +78,7 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
         & > :nth-child(2) {
           padding-top: 24px;
+          font-weight: 800;
         }
 
         & > :nth-child(2),

@@ -1,5 +1,8 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
+import {
+  LAYOUT_RESULTS_MAIN_CARD_VALUES,
+  SPECIFIC_DATA_KEY,
+} from "@/utils/org/second-page/desktop/specificData"
 import styled, { css } from "styled-components"
 
 const isATLayout = () => css`
@@ -9,6 +12,7 @@ const isATLayout = () => css`
 export type Props = {
   isPVES?: boolean
   [SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD]?: LAYOUT_RESULTS_MAIN_CARD_VALUES | null
+  isBackend?: boolean
 }
 
 export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
@@ -23,16 +27,14 @@ export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
   & > :nth-child(1) {
     position: relative;
     overflow: hidden;
-    /* border-top-left-radius: 8px; */
     margin-bottom: 24px;
 
     margin-bottom: 8px;
     border-radius: 8px;
     border: none;
 
-    /* height: 100%; */
-
-    background-color: ${({ isPVES }) => (isPVES ? `${NEUTRALS.OFF_WHITE}` : "")};
+    background-color: ${({ isPVES }) =>
+      isPVES ? `${NEUTRALS.OFF_WHITE}` : ""};
 
     background-color: ${NEUTRALS.OFF_WHITE};
 
@@ -49,11 +51,21 @@ export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
       right: 1rem;
 
       ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
-        LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE &&
+        LAYOUT_RESULTS_MAIN_CARD ===
+          LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE &&
         css`
           ${isATLayout()}
         `}
     }
+  }
+
+  & > :nth-child(2) {
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        display: grid;
+        gap: 28px;
+      `}
   }
 
   & > :nth-child(3) {

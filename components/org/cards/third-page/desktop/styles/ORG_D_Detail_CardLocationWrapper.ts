@@ -6,6 +6,10 @@ export const ORG_D_Detail_CardLocationWrapper = styled.div`
 
   & > :nth-child(1) {
     display: flex;
+
+    & > :nth-child(2) {
+      font-weight: 700;
+    }
   }
 
   & > :nth-child(1) > :nth-child(1) {
@@ -24,6 +28,6 @@ export const ORG_D_Detail_CardLocationWrapper = styled.div`
   }
 
   & > :last-child > :last-child {
-    font-weight:500;
+    font-weight: 500;
   }
 `

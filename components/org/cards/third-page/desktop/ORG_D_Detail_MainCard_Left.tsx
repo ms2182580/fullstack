@@ -1,9 +1,13 @@
+import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import { PVES_General_D_LeftPart } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_LeftPart"
 import { Verified } from "@/components/org/verified/Verified"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
 import Image from "next/legacy/image"
+import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_Brand } from "./ORG_D_Detail_Brand"
@@ -17,6 +21,8 @@ import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCar
 
 export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+  const { thirdpageDataORG: thirdpageDataORG_Backend }: any =
+    useORG_Ctx_D_ThirdpageData_Backend()
 
   // const conditionToImages = useMemo(() => {
   //   let isOpenPosition =
@@ -42,25 +48,116 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   //   }
   // }, [])
 
-  const haveSomeBrandToShow = useMemo(() => {
-    let haveSpecificData =
-      thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+  const { query } = useRouter()
 
-    if (haveSpecificData) {
-      return Boolean(haveSpecificData[SPECIFIC_DATA_KEY.BRAND])
+  const haveSomeBrandToShow = useMemo(() => {
+    if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
+      let haveSpecificData =
+        thirdpageDataORG.other[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]
+
+      if (haveSpecificData) {
+        return Boolean(haveSpecificData[SPECIFIC_DATA_KEY.BRAND])
+      }
+
+      return false
     }
 
     return false
   }, [])
 
   const layout = useMemo(() => {
-    const theLayout =
-      thirdpageDataORG.other?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[
-        SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD
-      ] ?? null
+    if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
+      const theLayout =
+        thirdpageDataORG.other?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[
+          SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD
+        ] ?? null
 
-    return theLayout
+      return theLayout
+    }
+
+    return null
   }, [])
+
+  if (query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
+    console.log(
+      thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        .address[0]
+    )
+
+    return (
+      <ORG_D_Detail_MainCard_LeftWrapper isBackend={true}>
+        <div>
+          <Image
+            src={Backup_Image}
+            layout="responsive"
+            // objectFit="contain"
+            width={1}
+            height={0.522}
+            alt={`Placeholder image`}
+          />
+
+          <ORG_D_Results_Card_Hearth />
+          <Verified />
+        </div>
+
+        <ORG_D_Detail_MainCardLeftPhotos
+          photo={Backup_Image}
+          name={
+            thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+              .recordName
+          }
+          lastName={""}
+        />
+
+        <aside>
+          <ORG_D_Detail_CardPhone
+            phoneNumber={
+              thirdpageDataORG_Backend[
+                DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+              ].onlinePresence.telephoneNumber
+            }
+            isBackend={true}
+          />
+          <ORG_D_Detail_CardEmail
+            email={
+              thirdpageDataORG_Backend[
+                DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+              ].onlinePresence.email
+            }
+          />
+          <ORG_D_Detail_CardWebsite
+            website={
+              thirdpageDataORG_Backend[
+                DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+              ].onlinePresence.website
+            }
+            isBackend={true}
+          />
+
+          <ORG_D_Detail_CardLocation
+            isBackend={true}
+            locationCity={
+              thirdpageDataORG_Backend[
+                DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+              ].address[0].city
+            }
+            locationStreetName_Backend={
+              thirdpageDataORG_Backend[
+                DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+              ].address[0].street
+            }
+            locationState={
+              thirdpageDataORG_Backend[
+                DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+              ].address[0].state
+            }
+          />
+        </aside>
+
+        <ORG_D_Detail_MapComponent howIsMap={howIsMap} />
+      </ORG_D_Detail_MainCard_LeftWrapper>
+    )
+  }
 
   return (
     <ORG_D_Detail_MainCard_LeftWrapper
@@ -70,27 +167,6 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
       <div>
         <Image
           src={thirdpageDataORG.card.leftPart.photo.src}
-          // layout={
-          //   conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "fill" : conditionToImages.isOpenPositionThirdResource ? "fill" : "responsive"
-          // }
-          // objectFit={
-          //   conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES
-          //     ? "scale-down"
-          //     : conditionToImages.isOpenPositionThirdResource
-          //     ? "fill"
-          //     : "contain"
-          // }
-          // objectPosition={conditionToImages.isOpenPositionFirstTwoResources || conditionToImages.isAllOtherPVES ? "" : "0px 0px"}
-          // width={1}
-          // height={1}
-
-          /* width={1200}
-          height={600} */
-          /* layout="responsive"
-          objectFit="contain"
-          width={1}
-          height={0.522} */
-
           layout="responsive"
           objectFit="contain"
           width={1}

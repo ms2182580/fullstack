@@ -1,5 +1,5 @@
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const enum Layout_MainCardRight_KEY {
   KEY = "layout_MainCardRight",
@@ -22,6 +22,8 @@ export type Props = {
     | Layout_MainCardRight_VALUES.DEFAULT
     | Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES
     | Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH
+
+  isBackend?: boolean
 }
 
 export const enum ORG_D_Detail_MainCard_Right_CLASSES {
@@ -173,7 +175,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       position: absolute;
       right: 24px;
       top: 24px;
-      cursor: pointer;
+      cursor: default;
 
       display: grid;
       grid-template-columns: 1fr;
@@ -372,4 +374,42 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       }
     }
   }
+
+  ${({ isBackend }) =>
+    isBackend &&
+    css`
+      & > :nth-child(2) {
+        & > ul {
+          list-style: none;
+
+          display: grid;
+          gap: 24px;
+
+          & > * {
+            width: fit-content;
+
+            position: relative;
+
+            padding: 16px;
+
+            font-weight: 600;
+
+            &:before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background-color: ${NEUTRALS.LIGHT_GREY};
+              opacity: 0.8;
+              border-radius: 16px;
+            }
+          }
+        }
+      }
+
+      & > :last-child {
+        & > :nth-child(1) {
+          gap: 16px;
+        }
+      }
+    `}
 `

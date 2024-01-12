@@ -6,8 +6,13 @@ export const ORG_D_Detail_CardEmailWrapper = styled.div`
   & > div:nth-child(1) {
     display: flex;
     align-items: center;
+
     & > :nth-child(1) {
       margin-right: 14px;
+    }
+
+    & > :nth-child(2) {
+      font-weight: 700;
     }
   }
 
@@ -17,7 +22,7 @@ export const ORG_D_Detail_CardEmailWrapper = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #3f6ece;
-    text-decoration-line:underline;
+    text-decoration-line: underline;
     cursor: pointer;
   }
 `

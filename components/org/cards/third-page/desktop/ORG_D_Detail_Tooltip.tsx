@@ -1,5 +1,12 @@
-import { QuestionTooltip_AASvg, QuestionTooltip_DefaultSvg } from "@/assets/icons/index.js"
-import { Tooltip_KEYS, Tooltip_VALUES, TypeOfTooltipSVG_LIKE } from "@/utils/org/third-page/tooltip"
+import {
+  QuestionTooltip_AASvg,
+  QuestionTooltip_DefaultSvg,
+} from "@/assets/icons/index.js"
+import {
+  Tooltip_KEYS,
+  Tooltip_VALUES,
+  TypeOfTooltipSVG_LIKE,
+} from "@/utils/org/third-page/tooltip"
 import { useRef, useState } from "react"
 import { useOutsideHide } from "../../../../../utils/useOutsideHide.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
@@ -36,8 +43,11 @@ export const ORG_D_Detail_Tooltip = ({ allProps }) => {
       onClick={handleShow}
       onKeyDown={handleShow}
       tabIndex={0}
-      onBlur={checkIfLoseFocus}>
-      {isCustom && allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.SVG] === TypeOfTooltipSVG_LIKE.ATTORNEY ? (
+      onBlur={checkIfLoseFocus}
+    >
+      {isCustom &&
+      allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.SVG] ===
+        TypeOfTooltipSVG_LIKE.ATTORNEY ? (
         <span>
           <QuestionTooltip_AASvg />
         </span>
@@ -51,17 +61,26 @@ export const ORG_D_Detail_Tooltip = ({ allProps }) => {
         <div>
           <div />
           <span>
-            {isDefault ? (
+            {isDefault || allProps === "DEFAULT" ? (
               <>
                 <H3>CCC-SLP</H3>
-                <P>Certificate of Clinical Competence in Speech Language pathology</P>
-                <P>- Nationally recognized professional from the American Speech-</P>
+                <P>
+                  Certificate of Clinical Competence in Speech Language
+                  pathology
+                </P>
+                <P>
+                  - Nationally recognized professional from the American Speech-
+                </P>
                 <P>Language-Hearing Association (ASHA).</P>
               </>
             ) : (
               <>
-                <H3>{allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.TEXT].title}</H3>
-                {allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.TEXT].paragraphs.map((x) => {
+                <H3>
+                  {allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.TEXT].title}
+                </H3>
+                {allProps[Tooltip_KEYS.CUSTOM_DATA][
+                  Tooltip_KEYS.TEXT
+                ].paragraphs.map((x) => {
                   return (
                     <>
                       <P key={x}>{x}</P>

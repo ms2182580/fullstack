@@ -1,14 +1,10 @@
-/* 
-!FH0
-Check how to move the view to the second page by this and create a new way to make it considering the data that comes from the backend
-*/
-
 import { QUERY_BREADCRUMBS } from "@/components/org/cards/second-page/desktop/ORG_D_Results_Breadcrumbs"
 import { MouseEvent } from "react"
 import { DATA_ORG_D_TYPES_KEYS } from "./DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "./DATA_ORG_KeyNamesForCards_D"
 import { getAllData } from "./categories/general/getAllData"
 import { checkStringToURL } from "./checkStringToURL"
+import { SPECIFIC_DATA_SECOND_PAGE } from "./second-page/desktop/specificData"
 import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 type Props = {
@@ -25,11 +21,6 @@ export const handleMoveToSecondPage_Backend = ({
   push,
 }: Props) => {
   const [toBreadcrumb, ...allData] = raw
-  console.log("allData:", allData)
-
-  const { checkedToURL } = checkStringToURL({
-    stringToURL: toBreadcrumb,
-  })
 
   const getCategoryName = allData[0].listingType
 
@@ -39,8 +30,14 @@ export const handleMoveToSecondPage_Backend = ({
 
   setSecondpageDataORG_Backend({
     [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: allData,
+    [SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]:
+      getSpecificData[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
     [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]:
-      getSpecificData,
+      getSpecificData[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE],
+  })
+
+  const { checkedToURL } = checkStringToURL({
+    stringToURL: toBreadcrumb,
   })
 
   const toWhere: string = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.RESULTS}/${checkedToURL}`

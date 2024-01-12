@@ -3,10 +3,10 @@ import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { ORG_D_Results_CardWebsiteWrapper } from "./styles/ORG_D_Results_CardWebsiteWrapper"
 
 type Props = {
-  firstName: string
-  lastName: string
+  firstName?: string
+  lastName?: string
   backendData?: boolean
-  website: string
+  website?: string
 }
 
 export const ORG_D_Results_CardWebsite = ({
@@ -14,14 +14,12 @@ export const ORG_D_Results_CardWebsite = ({
   lastName = "",
   backendData = false,
   website = "_",
-}) => {
+}: Props) => {
   if (firstName === "" && lastName === "" && !backendData) {
     return <></>
   }
   let firstPart = firstName.toLowerCase()
-  let secondPart = `${
-    lastName === "" ? "" : `-${lastName.toLowerCase()}`
-  }`
+  let secondPart = `${lastName === "" ? "" : `-${lastName.toLowerCase()}`}`
 
   // let formattedResult = !backendData ? `https://www.${firstPart}${secondPart}.com` : website
   let formattedResult = backendData
