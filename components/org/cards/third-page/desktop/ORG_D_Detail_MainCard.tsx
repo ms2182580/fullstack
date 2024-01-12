@@ -37,12 +37,6 @@ export const ORG_D_Detail_MainCard = ({
     return false
   }, [])
 
-  /* 
-  !FH0
-  
-  Make the backend data works here
-  */
-
   return (
     <ORG_D_Detail_MainCardWrapper id={defaultId}>
       <ORG_D_Detail_MainCard_Left howIsMap={howIsMap} isPVES={isPVES} />
