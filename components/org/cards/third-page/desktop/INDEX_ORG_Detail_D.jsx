@@ -5,7 +5,7 @@ import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesF
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { useRouter } from "next/router"
-import { useMemo } from "react"
+import { Fragment, useMemo } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
@@ -14,6 +14,7 @@ import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
 import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 
 export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
@@ -127,7 +128,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
             buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
           />
 
-          {/* {getAllSpecificThirdPageData.renderSections ? (
+          {getAllSpecificThirdPageData.renderSections ? (
             <>
               {getAllSpecificThirdPageData.renderSections.map((x, index) => {
                 let theIdForComponent =
@@ -177,7 +178,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
                 )
               })}
             </>
-          )} */}
+          )}
 
           {/*  <ORG_D_Detail_BreadcrumbsLastUpdated
             thirdpageDataORG={thirdpageDataORG}

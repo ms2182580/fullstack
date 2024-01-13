@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { ORG_M_Detail_FAQS_ModalWrapper } from "./styles/ORG_D_Detail_FAQS_ModalWrapper"
+import { ORG_M_Detail_FAQS_ModalWrapper } from "./styles/ORG_M_Detail_FAQS_ModalWrapper"
 import { XSvg } from "@/assets/icons"
 import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"

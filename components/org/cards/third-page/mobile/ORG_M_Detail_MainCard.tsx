@@ -119,6 +119,7 @@ export const ORG_M_Detail_MainCard = ({
       />
       <ORG_M_Detail_MainCardSections
         getAllSpecificThirdPageData={getAllSpecificThirdPageData}
+        thirdpageDataORG={thirdpageDataORG}
       />
     </INDEX_ORG_Detail_MainCard>
   )
