@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ORG_M_Results_CardTypedFlowWrapper = styled.div`
   display: grid;
@@ -10,4 +10,4 @@ export const ORG_M_Results_CardTypedFlowWrapper = styled.div`
   @media (max-width: 620px) {
     grid-template-columns: 287px;
   }
-`;
+`

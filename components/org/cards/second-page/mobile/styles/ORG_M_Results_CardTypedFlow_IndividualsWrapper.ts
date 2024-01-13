@@ -206,11 +206,17 @@ export const ORG_M_Results_CardTypedFlow_Card = styled.article`
 `
 export const ORG_M_Results_CardTypedFlow_IndividualsWrapper = styled.section`
   display: block;
+
   & > :nth-child(1) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    // justify-content: center;
+    display: grid;
+    grid-template-columns: 287px 287px 287px;
+    gap: 15px;
+    @media (max-width: 920px) {
+      grid-template-columns: 287px 287px;
+    }
+    @media (max-width: 620px) {
+      grid-template-columns: 287px;
+    }
   }
   // width: 100%;
 `
