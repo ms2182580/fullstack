@@ -3,6 +3,7 @@ import { ORG_M_Detail_MainCard_About } from "./ORG_M_Detail_MainCard_About"
 import { ORG_M_Detail_MainCardSectionWrapper } from "./styles/ORG_M_Detail_MainCardSections"
 import { ORG_M_Detail_Reviews } from "./ORG_M_Detail_Reviews"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { ORG_M_Detail_FAQS } from "./ORG_M_Detail_FAQS"
 
 enum TabSection {
   about = 1,
@@ -36,8 +37,21 @@ export const ORG_M_Detail_MainCardSections = ({
       theIdForComponent,
       ...allProps,
     }
-
     component = <ORG_M_Detail_Reviews all_data={allData} />
+  } else if (defaultId === "faqs") {
+    const currentIndex = getAllSpecificThirdPageData.renderSections.findIndex(
+      (item) => item.toNavbar.id === "faqs"
+    )
+    const data = getAllSpecificThirdPageData.renderSections[currentIndex]
+    let theIdForComponent =
+      data?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ?? "#"
+    let allProps = data?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
+
+    let allData = {
+      theIdForComponent,
+      ...allProps,
+    }
+    component = <ORG_M_Detail_FAQS all_data={allData} />
   }
 
   return (

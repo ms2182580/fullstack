@@ -1124,7 +1124,18 @@ export const AcceptingNewClientsSvg = (props) => (
     />
   </svg>
 )
-
+export const ORG_M_Detail_FAQS_VoteArrowUpSvg = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="10"
+    height="6"
+    viewBox="0 0 10 6"
+    fill="none"
+  >
+    <path d="M5.08451 0L9.76692 5.25H0.402105L5.08451 0Z" fill="#6E3A82" />
+  </svg>
+)
 export const ORG_D_Detail_FAQS_VoteArrowUpSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -1139,7 +1150,18 @@ export const ORG_D_Detail_FAQS_VoteArrowUpSvg = (props) => (
     />
   </svg>
 )
-
+export const ORG_M_Detail_FAQS_VoteArrowDownSvg = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="10"
+    height="6"
+    viewBox="0 0 10 6"
+    fill="none"
+  >
+    <path d="M5.08492 6L0.402511 0.75L9.76733 0.75L5.08492 6Z" fill="#6E3A82" />
+  </svg>
+)
 export const ORG_D_Detail_FAQS_VoteArrowDownSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

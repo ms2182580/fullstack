@@ -107,7 +107,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
       buttonMainCard,
     }
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
-
+  console.log({ thirdpageDataORG })
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>
@@ -179,9 +179,9 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
             </>
           )} */}
 
-          {/* <ORG_D_Detail_BreadcrumbsLastUpdated
+          {/*  <ORG_D_Detail_BreadcrumbsLastUpdated
             thirdpageDataORG={thirdpageDataORG}
-          /> */}
+          />*/}
         </div>
         <ChatAI />
       </INDEX_ORG_Detail_DWrapper>
