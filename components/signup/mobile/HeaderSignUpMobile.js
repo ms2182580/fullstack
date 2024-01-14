@@ -14,12 +14,12 @@ export const HeaderSignUpMobile = (parameters) => {
 
   return (
     <HeaderSignUpMobileWrapper>
-      <LinkNoStyle href="/signup">
+      {/* <LinkNoStyle href="/signup">
         <XSvg
           tabIndex={0}
           onKeyDown={handleMoveView}
         />
-      </LinkNoStyle>
+      </LinkNoStyle> */}
       <P semibold>Sign up with Email</P>
     </HeaderSignUpMobileWrapper>
   )

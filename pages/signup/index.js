@@ -8,15 +8,27 @@ import { delayMilliseconds } from "../../components/signup/delay"
 import { LoginButtonsMobile } from "../../components/signup/mobile/LoginButtonsMobile"
 import { LastComponentsMobileWrapper } from "../../components/signup/styles/LastComponentsMobileWrapper"
 import { ButtonSmall } from "../../components/ui/buttons/general"
-import { FacebookLoginBtn, GoogleLoginBtn } from "../../components/ui/buttons/login/LoginBtns.js"
+import {
+  FacebookLoginBtn,
+  GoogleLoginBtn,
+} from "../../components/ui/buttons/login/LoginBtns.js"
 import { Caption } from "../../components/ui/heading_body_text/DesktopMobileFonts.js"
-import { H1, H2, H4 } from "../../components/ui/heading_body_text/HeaderFonts.js"
-import { HyperlinkM, HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts.js"
+import {
+  H1,
+  H2,
+  H4,
+} from "../../components/ui/heading_body_text/HeaderFonts.js"
+import {
+  HyperlinkM,
+  HyperlinkXS,
+} from "../../components/ui/hyperlink/HyperlinkFonts.js"
 import { LinkNoStyle } from "../../components/ui/hyperlink/HyperlinkNoStyles"
 import { useCheckMobile } from "../../utils/useCheckMobile"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import SignupForm from "./SignupForm.js"
 import SignupWrapper, { LeftSignup, RightSignup } from "./styles/Signup.js"
+import { INDEX_D_Signup } from "@/components/signup/desktop/INDEX_D_Signup"
+import { INDEX_M_Signup } from "@/components/signup/mobile/INDEX_M_Signup"
 
 const Signup = () => {
   const { isMobile } = useWidthWindow1024()
@@ -64,118 +76,7 @@ const Signup = () => {
     }
   }
 
-  return (
-    <SignupWrapper
-      isMobile={isMobile}
-      showLoginButtons={showLoginButtons}>
-      {isMobile === false ? null : (
-        <>
-          <span
-            tabIndex={showLoginButtons ? -1 : 0}
-            onKeyDown={handleMoveView}>
-            <LinkNoStyle href="/">
-              <BackArrow />
-              <span>Return to Home</span>
-            </LinkNoStyle>
-          </span>
-        </>
-      )}
-
-      <LeftSignup>
-        {isMobile === false ? (
-          <>
-            <span>
-              <Image
-                src={LoginImage}
-                alt="People with one flag in their hand: one of them have one prosthetic leg, the other is in wheelchair and the third one it looks like is blind and have a dog in their other hand."
-              />
-            </span>
-
-            <H2>Connect to community based and recreational services</H2>
-          </>
-        ) : (
-          <div>
-            <H4>
-              Connect to <span>community based</span> <br />
-              and <span>recreational services</span>
-            </H4>
-
-            <span>
-              <Image
-                src={LoginImageMobile}
-                alt="People with one flag in their hand: one of them have one prosthetic leg, the other is in wheelchair and the third one it looks like is blind and have a dog in their other hand."
-              />
-            </span>
-          </div>
-        )}
-      </LeftSignup>
-
-      {isMobile === false ? (
-        <>
-          <RightSignup>
-            <H1>
-              Join <span>Inclusive</span>
-            </H1>
-            <div>
-              <H4>Already have an account?</H4>
-              <HyperlinkM
-                href="/login"
-                name="Log in"
-              />
-            </div>
-            <div>
-              <GoogleLoginBtn />
-              <FacebookLoginBtn />
-            </div>
-            <div>
-              <Caption>or</Caption>
-            </div>
-
-            <div>
-              <SignupForm />
-            </div>
-          </RightSignup>
-        </>
-      ) : (
-        <LastComponentsMobileWrapper>
-          <span
-            onTouchStart={
-              isTouchScreen
-                ? (e) => {
-                    e.stopPropagation()
-                    handleShowLoginButtons()
-                  }
-                : undefined
-            }
-            onClick={!isTouchScreen ? () => handleShowLoginButtons() : undefined}
-            onKeyDown={(e) => {
-              if (e.key === "Escape") {
-                handleHideLoginButtons()
-              }
-            }}>
-            <ButtonSmall>Join Inclusive</ButtonSmall>
-          </span>
-
-          <div>
-            <Caption>Already have an account?</Caption>
-            <HyperlinkXS
-              href="/login"
-              name="Log in"
-              tabIndex={showLoginButtons ? -1 : 0}
-            />
-          </div>
-
-          {showLoginButtons && (
-            <LoginButtonsMobile
-              showLoginButtons={showLoginButtons}
-              handleHideLoginButtons={handleHideLoginButtons}
-              fadeOut={fadeOut}
-            />
-          )}
-        </LastComponentsMobileWrapper>
-      )}
-    </SignupWrapper>
-  )
+  return <>{isMobile ? <INDEX_M_Signup /> : <INDEX_D_Signup />}</>
 }
 
 export default Signup
