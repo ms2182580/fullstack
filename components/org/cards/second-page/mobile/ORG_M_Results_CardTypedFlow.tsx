@@ -47,26 +47,23 @@ const Resources = [
     categoryPosition: 4,
   },
 ]
-// console.log({ Resources })
+
+let data: any = []
+Resources.forEach((item) => {
+  data.push(
+    item.dataToRender.map((i: any) => ({
+      ...i,
+      categoryPosition: item.categoryPosition,
+    }))
+  )
+})
+
 export const ORG_M_Results_CardTypedFlow = () => {
   return (
     <ORG_M_Results_CardTypedFlowWrapper>
-      {Resources.map((x) => {
-        let theTitle: any = x.title
-
-        let dataToRender: any = x.dataToRender
-
-        return (
-          <Fragment key={theTitle}>
-            <ORG_M_Results_CardTypedFlow_Individuals
-              title={theTitle}
-              dataToRender={dataToRender}
-              toSecondPageData={x.toSecondPageData}
-              categoryPosition={x.categoryPosition}
-            />
-          </Fragment>
-        )
-      })}
+      <Fragment key={"Card"}>
+        <ORG_M_Results_CardTypedFlow_Individuals dataToRender={data.flat()} />
+      </Fragment>
     </ORG_M_Results_CardTypedFlowWrapper>
   )
 }

@@ -52,6 +52,7 @@ type Item = {
   city: string
   rating: number
   reviews: number
+  categoryPosition: number
   textReview: string
   goToThirdPage: {
     folder_name: string
@@ -60,17 +61,11 @@ type Item = {
 }
 
 export type Props = {
-  title: string
   dataToRender: Item[]
-  toSecondPageData: object
-  categoryPosition: number
 }
 
 export const ORG_M_Results_CardTypedFlow_Individuals = ({
-  title = "noTitleReceived",
   dataToRender,
-  toSecondPageData,
-  categoryPosition,
 }: Props) => {
   let { diagnosisChoosed }: any = useSessionStorage_typedFlow()
   // console.log({ dataToRender });
@@ -106,8 +101,8 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
 
   const { push } = useRouter()
 
-  const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
-  const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
+  // const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
+  // const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
@@ -145,7 +140,7 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
                   onClick={(event: any) =>
                     handleMoveToThirdPage({
                       event,
-                      categoryPosition,
+                      categoryPosition: x.categoryPosition,
                       subcategoryPosition: 0,
                       resourcePosition: index,
                       setThirdpageDataORG,
