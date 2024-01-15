@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { blurEffect } from "@/components/ui/blur/blur"
+import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_Review_Modal_ViewAllWrapper = styled.aside`
@@ -87,5 +88,15 @@ export const ORG_D_Detail_Review_Modal_ViewAllWrapper = styled.aside`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
+
+    position: relative;
+
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        padding: 16px;
+
+        ${blurEffect({})}
+      `}
   }
 `

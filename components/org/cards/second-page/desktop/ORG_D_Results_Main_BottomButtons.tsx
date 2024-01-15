@@ -42,7 +42,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
   const { secondpageDataORG: secondpageDataORG_Backend }: any =
     useORG_Ctx_D_SecondpageData_Backend()
 
-  console.log("secondpageDataORG_Backend:", secondpageDataORG_Backend)
+  // console.log("secondpageDataORG_Backend:", secondpageDataORG_Backend)
   const buttonJSXAndSVGCustom = useMemo(() => {
     if (!backendData) {
       const weHaveData = secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]

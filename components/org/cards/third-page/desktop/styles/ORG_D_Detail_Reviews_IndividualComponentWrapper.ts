@@ -1,5 +1,6 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import styled from "styled-components"
+import { blurEffect } from "@/components/ui/blur/blur"
+import styled, { css } from "styled-components"
 
 export const enum ORG_D_Detail_Reviews_IndividualComponent_Classes {
   IS_COMPONENT = "IS_COMPONENT",
@@ -10,10 +11,38 @@ const enum Tooltip_Vars {
   LEFT = "50%",
 }
 
-export const ORG_D_Detail_Reviews_IndividualComponentWrapper = styled.div`
+type Props = {
+  isBackend?: boolean
+}
+
+export const ORG_D_Detail_Reviews_IndividualComponentWrapper = styled.div<Props>`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+
+  position: relative;
+
+  ${({ isBackend }) =>
+    isBackend &&
+    css`
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      ${blurEffect({})}
+
+      & >:last-child {
+        all: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        z-index: 2;
+
+        filter: drop-shadow(1px 1px 3px black);
+        font-size: 32px;
+      }
+    `}
 
   & > * {
     border-radius: 8px;

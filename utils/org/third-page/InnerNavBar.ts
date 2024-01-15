@@ -42,7 +42,7 @@ export type ArraySectionToRender_Type = {
     /*
      * This is the way to pass props to some components
      * The only key that is typed is this: «[ArraySection_KEYS.PROPS_COMPONENT]», you can use the autocomplete to get the key because this all array is typed
-     * Inside this key you have to check the specific component that's going to receive the props and match the keys inside. With that you know which props are going to receive the component you put  just above
+     * Inside this key you have to check the specific component that's going to receive the props and match the keys inside. With that you know which props are going to receive the component you put just above
      */
 
     [key: string]: string | object | string[] | boolean // * Check the type of this array on the specific component you are putting here get know which key you can pass here

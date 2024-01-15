@@ -1,7 +1,9 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
-import { Fragment, useRef, useState } from "react"
+import { useRouter } from "next/router.js"
+import { useMemo, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
@@ -10,11 +12,11 @@ import { ORG_ST_Review_Months } from "../../../../../utils/ORG_ST_Review_D.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-import { ORG_D_Detail_FAQS_Modal } from "./ORG_D_Detail_FAQS_Modal.js"
-import { ORG_D_Detail_FAQS_VoteQuestionsAnswers } from "./ORG_D_Detail_FAQS_VoteQuestionsAnswers.js"
 import { ORG_D_Detail_FAQSWrapper } from "./styles/ORG_D_Detail_FAQSWrapper"
 
-export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+export const ORG_D_Detail_FAQS = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
   const { theIdForComponent = "#" } = allProps || {}
 
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
@@ -25,9 +27,39 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
   const [allUserNames, setAllUserNames] = useState(ORG_ReviewsUsersName(5))
   const [month, setMonth] = useState(ORG_ST_Review_Months(5))
 
-  const [faqsData, setFaqsData] = useState(
-    ORG_ST_FAQS(card.leftPart.title, "", card.leftPart.location.city, card.leftPart.location.streetNumber, card.leftPart.location.streetName, card.leftPart.location.state),
+  const { query } = useRouter()
+
+  const theFaqs = useMemo(
+    () => {
+      if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
+        ORG_ST_FAQS(
+          card.leftPart.title,
+          "",
+          card.leftPart.location.city,
+          card.leftPart.location.streetNumber,
+          card.leftPart.location.streetName,
+          card.leftPart.location.state
+        )
+      }
+
+      return ""
+    },
+
+    [
+      /*dependencies here*/
+    ]
   )
+
+  // const [faqsData, setFaqsData] = useState(
+  //   ORG_ST_FAQS(
+  //     card.leftPart.title,
+  //     "",
+  //     card.leftPart.location.city,
+  //     card.leftPart.location.streetNumber,
+  //     card.leftPart.location.streetName,
+  //     card.leftPart.location.state
+  //   )
+  // )
 
   const handleShowAll = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
@@ -39,7 +71,8 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
 
   let handleMoveUserView = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
-      const position = toMoveTheView!.current!.getBoundingClientRect().top + window.scrollY
+      const position =
+        toMoveTheView!.current!.getBoundingClientRect().top + window.scrollY
       window.scrollTo({ top: position })
     }
   }
@@ -57,7 +90,12 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
   }
 
   const handleHideModal = (e) => {
-    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown" || e.type === "click") {
+    if (
+      e.key === "Enter" ||
+      e.key === "Escape" ||
+      e.type === "mousedown" ||
+      e.type === "click"
+    ) {
       unlockScroll()
       setShowModal(false)
       setModalShowedCtx(false)
@@ -66,17 +104,12 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
 
   return (
     <>
-      <ORG_D_Detail_FAQSWrapper
-        id={theIdForComponent}
-        ref={toMoveTheView}>
+      <ORG_D_Detail_FAQSWrapper id={theIdForComponent} ref={toMoveTheView}>
         <H3>Frequently Asked Questions</H3>
 
         <div>
           <ORG_Detail_SearchFAQSSVG />
-          <input
-            type="text"
-            placeholder="Search in Q&A..."
-          />
+          <input type="text" placeholder="Search in Q&A..." />
           <span onClick={handleShowModal}>
             <ButtonSmall secondary>Ask a Question</ButtonSmall>
           </span>
@@ -86,7 +119,7 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
           <H4>Common Questions and Answers</H4>
         </div>
 
-        {faqsData.votes.map((x, i) => {
+        {/* {faqsData.votes.map((x, i) => {
           if (showAll) {
             return (
               <Fragment key={`${faqsData.answers[i]}_${i}`}>
@@ -114,14 +147,11 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
               )
             }
           }
-        })}
+        })} */}
 
         {showAll === false ? (
           <>
-            <P
-              onClick={handleShowAll}
-              onKeyDown={handleShowAll}
-              tabIndex={0}>
+            <P onClick={handleShowAll} onKeyDown={handleShowAll} tabIndex={0}>
               See More
             </P>
           </>
@@ -136,14 +166,15 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
                 handleShowAll(e)
                 handleMoveUserView(e)
               }}
-              tabIndex={0}>
+              tabIndex={0}
+            >
               See Less
             </P>
           </>
         )}
       </ORG_D_Detail_FAQSWrapper>
 
-      {showModal && (
+      {/* {showModal && (
         <ORG_D_Detail_FAQS_Modal
           showModal={showModal}
           handleHideModal={handleHideModal}
@@ -151,7 +182,7 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
           lastName={""}
           setFaqsData={setFaqsData}
         />
-      )}
+      )} */}
     </>
   )
 }

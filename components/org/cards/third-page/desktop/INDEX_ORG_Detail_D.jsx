@@ -2,6 +2,7 @@ import { ChatAI } from "@/components/org/ChatAI"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { useRouter } from "next/router"
@@ -14,7 +15,6 @@ import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
 import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
-import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 
 export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
@@ -108,7 +108,7 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
       buttonMainCard,
     }
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
-  console.log({ thirdpageDataORG })
+
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>

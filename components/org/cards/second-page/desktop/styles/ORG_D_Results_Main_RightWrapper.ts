@@ -1,4 +1,5 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 export type Props = {
@@ -65,18 +66,7 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
 
         position: relative;
 
-        &:after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          z-index: 2;
-
-          box-shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.2);
-          border-radius: 16px;
-
-          backdrop-filter: blur(1.5px);
-          -webkit-backdrop-filter: blur(1.5px);
-        }
+        ${blurEffect({ zIndex: 2 })}
 
         & > * {
           display: flex;

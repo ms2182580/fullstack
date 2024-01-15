@@ -11,23 +11,23 @@ import {
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
+import { DATA_ORG_D_TYPES_KEYS } from "../../DATA_ORG_D"
 
-export const arrayInnerNavBar_PMHSS: InnerNavBar_InnerData =
-  [
-    { INNER_NAV_BAR_KEY: "about" },
-    { INNER_NAV_BAR_KEY: "booking" },
-    {
-      INNER_NAV_BAR_KEY: "otherProviders",
-      INNER_NAV_BAR_VALUE: "other providers",
-    },
-    { INNER_NAV_BAR_KEY: "reviews" },
-    {
-      INNER_NAV_BAR_KEY: "faqs",
-      INNER_NAV_BAR_VALUE: "FAQs",
-    },
-  ]
+export const arrayInnerNavBar_PMHSS: InnerNavBar_InnerData = [
+  { INNER_NAV_BAR_KEY: "about" },
+  { INNER_NAV_BAR_KEY: "booking" },
+  {
+    INNER_NAV_BAR_KEY: "otherProviders",
+    INNER_NAV_BAR_VALUE: "other providers",
+  },
+  { INNER_NAV_BAR_KEY: "reviews" },
+  {
+    INNER_NAV_BAR_KEY: "faqs",
+    INNER_NAV_BAR_VALUE: "FAQs",
+  },
+]
 
-export const arraySectionToRender_TherapeuticService: ArraySectionToRender_Type =
+export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type =
   [
     {
       name: null,
@@ -44,6 +44,7 @@ export const arraySectionToRender_TherapeuticService: ArraySectionToRender_Type 
       props_component: {
         [IS_USABLE_SECTION.KEY]: true,
         [HEADER_TITLE.KEY]: "Select an available time",
+        [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: true,
       },
       toNavbar: {
         id: arrayInnerNavBar_PMHSS[1][
@@ -66,6 +67,9 @@ export const arraySectionToRender_TherapeuticService: ArraySectionToRender_Type 
     {
       name: ORG_D_Detail_Reviews.name,
       component: ORG_D_Detail_Reviews,
+      props_component: {
+        [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: true,
+      },
       toNavbar: {
         id: arrayInnerNavBar_PMHSS[3][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY

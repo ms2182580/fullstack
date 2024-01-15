@@ -54,8 +54,6 @@ export const ORG_D_Results_Main_Right = ({
   renderThisFilter = 0,
   backendData,
 }: Props) => {
-  console.log("backendData:", backendData)
-
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   if (backendData) {

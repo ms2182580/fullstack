@@ -1,7 +1,11 @@
 import { NavBar_D_WriteAReviewSvg } from "@/assets/icons"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { useRouter } from "next/router"
 import { Fragment, useMemo, useState } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
@@ -22,8 +26,14 @@ export type Type_Props_TITLE_ON_HEADER = {
   highlight: string[] | string
 }
 
-export const ORG_D_Detail_Reviews = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
-  const { theIdForComponent = "#", [KEYS_FOR_PROPS.TITLE_ON_HEADER]: customTitle = null } = allProps || {}
+export const ORG_D_Detail_Reviews = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
+  const {
+    theIdForComponent = "#",
+    [KEYS_FOR_PROPS.TITLE_ON_HEADER]: customTitle = null,
+    [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: backendComponent = false,
+  } = allProps || {}
 
   const customTitleFormat = useMemo(() => {
     if (customTitle) {
@@ -43,9 +53,28 @@ export const ORG_D_Detail_Reviews = ({ [ArraySection_KEYS.ALL_DATA]: allProps })
 
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
+  const { thirdpageDataORG: thirdpageDataORG_backend }: any =
+    useORG_Ctx_D_ThirdpageData_Backend()
+
   const { fullName, card } = thirdpageDataORG
 
-  const [getReviews, setGetReviews] = useState(ORG_ST_Review(fullName.first, fullName.last))
+  const theReviews = useMemo(() => {
+    if (!backendComponent) {
+      return ORG_ST_Review(fullName.first, fullName.last)
+    }
+
+    return ORG_ST_Review(
+      thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        .recordName,
+      ""
+    )
+  }, [])
+
+  console.log("theReviews:", theReviews)
+
+  // const [getReviews, setGetReviews] = useState(
+  //   ORG_ST_Review(fullName.first, fullName.last)
+  // )
 
   const [showModal_ViewAll, setShowModal_ViewAll] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
@@ -81,12 +110,19 @@ export const ORG_D_Detail_Reviews = ({ [ArraySection_KEYS.ALL_DATA]: allProps })
   }
 
   const handleHideModal_WriteAReview = (e: any) => {
-    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown" || e.type === "click") {
+    if (
+      e.key === "Enter" ||
+      e.key === "Escape" ||
+      e.type === "mousedown" ||
+      e.type === "click"
+    ) {
       unlockScroll()
       setShowModal_WriteAReview(false)
       setModalShowedCtx(false)
     }
   }
+
+  const { query } = useRouter()
 
   return (
     <>
@@ -97,24 +133,37 @@ export const ORG_D_Detail_Reviews = ({ [ArraySection_KEYS.ALL_DATA]: allProps })
             type="button"
             tabIndex={0}
             onClick={handleShowModal_WriteAReview}
-            onKeyDown={handleShowModal_WriteAReview}>
+            onKeyDown={handleShowModal_WriteAReview}
+          >
             <NavBar_D_WriteAReviewSvg />
             Write a review
           </button>
         </header>
         <Caption>
-          Your trust is our top concern, so providers can’t pay to alter or remove reviews. We also don’t publish reviews that contain <br /> any private patient health
-          information. <Caption tabIndex={0}>Learn more here.</Caption>
+          Your trust is our top concern, so providers can’t pay to alter or
+          remove reviews. We also don’t publish reviews that contain <br /> any
+          private patient health information.{" "}
+          <Caption tabIndex={0}>Learn more here.</Caption>
         </Caption>
+
         <ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention
-          rating={card.leftPart.rating}
-          reviews={card.leftPart.reviews}
+          rating={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+              ? card.leftPart.rating
+              : ""
+          }
+          reviews={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+              ? card.leftPart.reviews
+              : ""
+          }
         />
-        <ORG_D_Detail_Reviews_IndividualComponent getReviews={getReviews} />
+        <ORG_D_Detail_Reviews_IndividualComponent getReviews={theReviews} />
         <P
           onClick={handleShowModal_ViewAll}
           onKeyDown={handleShowModal_ViewAll}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           View All
         </P>
       </ORG_D_Detail_ReviewsWrapper>
@@ -124,18 +173,34 @@ export const ORG_D_Detail_Reviews = ({ [ArraySection_KEYS.ALL_DATA]: allProps })
           showModal={showModal_ViewAll}
           handleHideModal={handleHideModal_ViewAll}
           handleShowModal_WriteAReview={handleShowModal_WriteAReview}
-          rating={card.leftPart.rating}
-          reviews={card.leftPart.reviews}
-          getReviews={getReviews}
-          name={fullName.first}
-          lastName={fullName.last}
+          rating={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+              ? card.leftPart.rating
+              : ""
+          }
+          reviews={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+              ? card.leftPart.reviews
+              : ""
+          }
+          getReviews={theReviews}
+          name={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.first : ""
+          }
+          lastName={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.last : ""
+          }
         />
       )}
 
       {showModal_WriteAReview && (
         <ORG_D_Detail_Review_Modal_WriteAReview
-          name={fullName.first}
-          lastName={fullName.last}
+          name={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.first : ""
+          }
+          lastName={
+            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.last : ""
+          }
           handleHideModal_WriteAReview={handleHideModal_WriteAReview}
         />
       )}
