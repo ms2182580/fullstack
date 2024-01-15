@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { blurEffect } from "@/components/ui/blur/blur"
+import styled, { css } from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
@@ -6,8 +7,7 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(932px, 91%, 1310px);
+  transform: translate(0vw, -150%);
   background-color: ${NEUTRALS.OFF_WHITE};
   z-index: 5;
   cursor: default;
@@ -42,6 +42,16 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
+    position: relative;
+
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        padding: 16px;
+
+        ${blurEffect({})}
+      `}
+
     & > :nth-child(1) {
       margin-bottom: 53px;
     }
@@ -64,5 +74,7 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
 
   & > :nth-child(4) {
     margin-bottom: 95px;
+
+    width: fit-content;
   }
 `

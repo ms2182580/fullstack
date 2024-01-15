@@ -1,9 +1,15 @@
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
-import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "../../../../../../assets/Colors"
+import {
+  NEUTRALS,
+  PRIMARY,
+  SECONDARY_ORG_PLUS,
+} from "../../../../../../assets/Colors"
 import { IS_USABLE_SECTION } from "../ORG_D_Detail_Schedule"
 
 type Props = {
   [IS_USABLE_SECTION.KEY]: boolean
+  isBackend?: boolean
 }
 
 export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
@@ -41,7 +47,8 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
-    background-color: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) => (isUsable ? `${PRIMARY.PRIMARY_BACKGROUND} ` : `${NEUTRALS.LIGHT_GREY}`)};
+    background-color: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
+      isUsable ? `${PRIMARY.PRIMARY_BACKGROUND} ` : `${NEUTRALS.LIGHT_GREY}`};
 
     & > :nth-child(1) {
       display: flex;
@@ -70,134 +77,149 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
   }
 
   & > :nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
 
-    margin-bottom: 35px;
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        padding-top: 16px;
+        padding-bottom: 16px;
 
-    & > * {
+        ${blurEffect({})}
+      `}
+
+    & > :nth-child(1) {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
+      justify-content: space-between;
 
-      h4 {
-        color: ${NEUTRALS.DARK_GREY};
-        font-weight: 400;
-      }
+      margin-bottom: 35px;
 
-      & > :nth-child(2) {
-        padding-inline: clamp(34px, 10vw - 80px, 48px);
+      & > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
 
-        border: 2px solid ${NEUTRALS.DARK_GREY};
-
-        font-weight: 400;
-
-        & > * {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-
+        h4 {
           color: ${NEUTRALS.DARK_GREY};
+          font-weight: 400;
         }
-      }
 
-      ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
-        isUsable &&
-        css`
-          h4 {
-            color: ${NEUTRALS.BLACK};
+        & > :nth-child(2) {
+          padding-inline: clamp(34px, 10vw - 80px, 48px);
+
+          border: 2px solid ${NEUTRALS.DARK_GREY};
+
+          font-weight: 400;
+
+          & > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            color: ${NEUTRALS.DARK_GREY};
           }
+        }
 
-          & > :nth-child(2) {
-            border-color: ${NEUTRALS.BLACK};
-
-            &:hover,
-            &:focus-visible {
-              border-color: ${PRIMARY.PRIMARY_HOVER};
-              background-color: ${PRIMARY.PRIMARY_HOVER};
-
-              & > * {
-                color: ${NEUTRALS.OFF_WHITE};
-              }
+        ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
+          isUsable &&
+          css`
+            h4 {
+              color: ${NEUTRALS.BLACK};
             }
 
-            & > * {
-              color: ${NEUTRALS.BLACK};
+            & > :nth-child(2) {
+              border-color: ${NEUTRALS.BLACK};
 
-              & > :nth-child(1) {
+              &:hover,
+              &:focus-visible {
+                border-color: ${PRIMARY.PRIMARY_HOVER};
+                background-color: ${PRIMARY.PRIMARY_HOVER};
+
                 & > * {
-                  fill: currentColor;
+                  color: ${NEUTRALS.OFF_WHITE};
+                }
+              }
+
+              & > * {
+                color: ${NEUTRALS.BLACK};
+
+                & > :nth-child(1) {
+                  & > * {
+                    fill: currentColor;
+                  }
                 }
               }
             }
-          }
-        `}
+          `}
+      }
     }
-  }
 
-  & > :nth-child(3) {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    & > :nth-child(2) {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
 
-    column-gap: 24px;
+      column-gap: 24px;
 
-    margin-bottom: 48px;
+      margin-bottom: 48px;
 
-    & > :not(:first-child):not(:last-child) {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+      & > :not(:first-child):not(:last-child) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        & > :nth-child(1),
+        & > :nth-child(2) {
+          text-align: center;
+
+          color: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
+            isUsable ? `${NEUTRALS.BLACK} ` : `${NEUTRALS.DARK_GREY}`};
+        }
+
+        & > :nth-child(1) {
+          margin-bottom: 4px;
+        }
+
+        & > :not(:nth-child(1)):not(:last-child) {
+          margin-bottom: 24px;
+        }
+
+        & > :not(:first-child):not(:nth-child(2)) {
+          width: 100%;
+        }
+      }
 
       & > :nth-child(1),
-      & > :nth-child(2) {
-        text-align: center;
-
-        color: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) => (isUsable ? `${NEUTRALS.BLACK} ` : `${NEUTRALS.DARK_GREY}`)};
+      & > :last-child {
+        & > * {
+          fill: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
+            isUsable ? `${NEUTRALS.BLACK}` : `${NEUTRALS.DARK_GREY}`};
+        }
       }
 
       & > :nth-child(1) {
-        margin-bottom: 4px;
+        position: absolute;
+        left: 24px;
       }
 
-      & > :not(:nth-child(1)):not(:last-child) {
-        margin-bottom: 24px;
-      }
-
-      & > :not(:first-child):not(:nth-child(2)) {
-        width: 100%;
-      }
-    }
-
-    & > :nth-child(1),
-    & > :last-child {
-      & > * {
-        fill: ${({ [IS_USABLE_SECTION.KEY]: isUsable }) => (isUsable ? `${NEUTRALS.BLACK}` : `${NEUTRALS.DARK_GREY}`)};
-      }
-    }
-
-    & > :nth-child(1) {
-      position: absolute;
-      left: 24px;
-    }
-
-    & > :nth-child(3) {
       & > :nth-child(3) {
-        height: 100%;
+        & > :nth-child(3) {
+          height: 100%;
+        }
+      }
+
+      & > :last-child {
+        position: absolute;
+        right: 24px;
       }
     }
 
     & > :last-child {
-      position: absolute;
-      right: 24px;
+      margin-left: auto;
+      margin-right: clamp(24px, 10vw - 48px, 106px);
     }
-  }
-
-  & > :last-child {
-    margin-left: auto;
-    margin-right: clamp(24px, 10vw - 48px, 106px);
   }
 `

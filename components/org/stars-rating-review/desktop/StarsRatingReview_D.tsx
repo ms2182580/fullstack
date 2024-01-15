@@ -9,24 +9,15 @@ export type Props = {
 }
 
 export const StarsRatingReview_D = ({
-  rating,
+  rating = 5,
   reviews = "",
   isDetail = false,
 }: Props) => {
   return (
-    <StarsRatingReview_DWrapper
-      isDetail={isDetail}
-      rating={rating}
-    >
+    <StarsRatingReview_DWrapper isDetail={isDetail} rating={rating}>
       <div>
-        {rating !== undefined ? (
-          <>
-            <PatternStars rating={rating} />
-            <P>{rating}.0</P>
-          </>
-        ) : (
-          <P>Rating Coming Soon!</P>
-        )}
+        <PatternStars rating={rating} />
+        <P>{rating}.0</P>
       </div>
 
       {reviews ? (

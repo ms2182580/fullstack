@@ -1,7 +1,12 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import styled from "styled-components"
+import { blurEffect } from "@/components/ui/blur/blur"
+import styled, { css } from "styled-components"
 
-export const ORG_D_Detail_AtTheSameClinicWrapper = styled.section`
+type Props = {
+  isBackend?: boolean
+}
+
+export const ORG_D_Detail_AtTheSameClinicWrapper = styled.section<Props>`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding-bottom: 32px;
@@ -27,6 +32,16 @@ export const ORG_D_Detail_AtTheSameClinicWrapper = styled.section`
     flex-wrap: wrap;
 
     list-style: none;
+
+    position: relative;
+
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        padding: 16px;
+
+        ${blurEffect({})}
+      `}
 
     & > * {
       display: grid;

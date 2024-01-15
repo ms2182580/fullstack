@@ -70,12 +70,6 @@ export const ORG_D_Detail_Reviews = ({
     )
   }, [])
 
-  console.log("theReviews:", theReviews)
-
-  // const [getReviews, setGetReviews] = useState(
-  //   ORG_ST_Review(fullName.first, fullName.last)
-  // )
-
   const [showModal_ViewAll, setShowModal_ViewAll] = useState(false)
   const { lockScroll, unlockScroll } = useScrollLock()
   const { setModalShowedCtx }: any = useCtx_ShowModal()

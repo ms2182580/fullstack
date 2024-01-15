@@ -1,3 +1,4 @@
+import { SECONDARY_ORG_PLUS } from "@/assets/Colors"
 import { css } from "styled-components"
 
 /*
@@ -24,5 +25,27 @@ export const blurEffect = ({
     background-color: hsl(0, 0%, 100%, 0.4);
 
     z-index: ${zIndex};
+  }
+
+  &:before {
+    content: "Coming Soon!";
+    white-space: nowrap;
+    font-size: 24px;
+    font-weight: 600;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: ${SECONDARY_ORG_PLUS.YELLOW};
+
+    padding: 24px;
+
+    z-index: 3;
+
+    border-radius: 16px;
+
+    box-shadow: 1px 1px 3px black;
   }
 `

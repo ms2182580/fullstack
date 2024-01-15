@@ -96,12 +96,6 @@ export const ORG_D_Detail_Reviews_IndividualComponent = ({
           </div>
         )
       })}
-
-      {query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? (
-        <>
-          <P>Coming Soon!</P>
-        </>
-      ) : null}
     </ORG_D_Detail_Reviews_IndividualComponentWrapper>
   )
 }

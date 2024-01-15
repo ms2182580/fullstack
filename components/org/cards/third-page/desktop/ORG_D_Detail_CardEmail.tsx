@@ -8,7 +8,7 @@ type Props = {
 
 export const ORG_D_Detail_CardEmail = ({ email }: Props) => {
   return (
-    <ORG_D_Detail_CardEmailWrapper>
+    <ORG_D_Detail_CardEmailWrapper shouldShow={email !== ""}>
       <div>
         <EmailORGSvg />
         <P>Email:</P>

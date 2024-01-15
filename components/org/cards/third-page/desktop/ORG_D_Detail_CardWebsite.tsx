@@ -21,7 +21,7 @@ export const ORG_D_Detail_CardWebsite = ({
   )
 
   return (
-    <ORG_D_Detail_CardWebsiteWrapper>
+    <ORG_D_Detail_CardWebsiteWrapper shouldShow={website !== ""}>
       <div>
         <WebsiteSvg />
 

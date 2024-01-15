@@ -44,7 +44,6 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
       props_component: {
         [IS_USABLE_SECTION.KEY]: true,
         [HEADER_TITLE.KEY]: "Select an available time",
-        [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: true,
       },
       toNavbar: {
         id: arrayInnerNavBar_PMHSS[1][

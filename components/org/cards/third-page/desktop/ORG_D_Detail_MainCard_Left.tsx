@@ -79,18 +79,12 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   }, [])
 
   if (query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
-    console.log(
-      thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
-        .address[0]
-    )
-
     return (
       <ORG_D_Detail_MainCard_LeftWrapper isBackend={true}>
         <div>
           <Image
             src={Backup_Image}
             layout="responsive"
-            // objectFit="contain"
             width={1}
             height={0.522}
             alt={`Placeholder image`}

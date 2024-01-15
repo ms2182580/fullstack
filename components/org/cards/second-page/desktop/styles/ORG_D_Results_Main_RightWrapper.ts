@@ -82,18 +82,6 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
             white-space: nowrap;
           }
         }
-
-        & > :last-child {
-          justify-content: center;
-          font-size: 24px;
-
-          filter: drop-shadow(1px 1px 3px hsl(0, 0%, 0%, 0.3));
-
-          font-weight: 600;
-
-          position: relative;
-          z-index: 3;
-        }
       }
     `}
 

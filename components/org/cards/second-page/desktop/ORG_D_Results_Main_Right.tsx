@@ -80,8 +80,6 @@ export const ORG_D_Results_Main_Right = ({
               </li>
             )
           })}
-
-          <li>Coming Soon!</li>
         </ul>
       </ORG_D_Results_Main_RightWrapper>
     )

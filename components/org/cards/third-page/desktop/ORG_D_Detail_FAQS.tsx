@@ -1,9 +1,11 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
-import { useMemo, useRef, useState } from "react"
+import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
@@ -12,6 +14,8 @@ import { ORG_ST_Review_Months } from "../../../../../utils/ORG_ST_Review_D.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { ORG_D_Detail_FAQS_Modal } from "./ORG_D_Detail_FAQS_Modal.js"
+import { ORG_D_Detail_FAQS_VoteQuestionsAnswers } from "./ORG_D_Detail_FAQS_VoteQuestionsAnswers.js"
 import { ORG_D_Detail_FAQSWrapper } from "./styles/ORG_D_Detail_FAQSWrapper"
 
 export const ORG_D_Detail_FAQS = ({
@@ -29,10 +33,12 @@ export const ORG_D_Detail_FAQS = ({
 
   const { query } = useRouter()
 
-  const theFaqs = useMemo(
-    () => {
-      if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
-        ORG_ST_FAQS(
+  const { thirdpageDataORG: thirdpageDataORG_backend }: any =
+    useORG_Ctx_D_ThirdpageData_Backend()
+
+  const [faqsData, setFaqsData] = useState(
+    !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+      ? ORG_ST_FAQS(
           card.leftPart.title,
           "",
           card.leftPart.location.city,
@@ -40,26 +46,19 @@ export const ORG_D_Detail_FAQS = ({
           card.leftPart.location.streetName,
           card.leftPart.location.state
         )
-      }
-
-      return ""
-    },
-
-    [
-      /*dependencies here*/
-    ]
+      : ORG_ST_FAQS(
+          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+            .recordName,
+          "",
+          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+            .address[0].city,
+          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+            .address[0].street,
+          "",
+          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+            .address[0].state
+        )
   )
-
-  // const [faqsData, setFaqsData] = useState(
-  //   ORG_ST_FAQS(
-  //     card.leftPart.title,
-  //     "",
-  //     card.leftPart.location.city,
-  //     card.leftPart.location.streetNumber,
-  //     card.leftPart.location.streetName,
-  //     card.leftPart.location.state
-  //   )
-  // )
 
   const handleShowAll = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
@@ -104,7 +103,11 @@ export const ORG_D_Detail_FAQS = ({
 
   return (
     <>
-      <ORG_D_Detail_FAQSWrapper id={theIdForComponent} ref={toMoveTheView}>
+      <ORG_D_Detail_FAQSWrapper
+        id={theIdForComponent}
+        ref={toMoveTheView}
+        isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+      >
         <H3>Frequently Asked Questions</H3>
 
         <div>
@@ -119,21 +122,9 @@ export const ORG_D_Detail_FAQS = ({
           <H4>Common Questions and Answers</H4>
         </div>
 
-        {/* {faqsData.votes.map((x, i) => {
-          if (showAll) {
-            return (
-              <Fragment key={`${faqsData.answers[i]}_${i}`}>
-                <ORG_D_Detail_FAQS_VoteQuestionsAnswers
-                  votes={x}
-                  questions={faqsData.questions[i]}
-                  answers={faqsData.answers[i]}
-                  allUserNames={allUserNames[i]}
-                  month={month[i]}
-                />
-              </Fragment>
-            )
-          } else {
-            while (i < 3) {
+        <div>
+          {faqsData.votes.map((x, i) => {
+            if (showAll) {
               return (
                 <Fragment key={`${faqsData.answers[i]}_${i}`}>
                   <ORG_D_Detail_FAQS_VoteQuestionsAnswers
@@ -145,9 +136,23 @@ export const ORG_D_Detail_FAQS = ({
                   />
                 </Fragment>
               )
+            } else {
+              while (i < 3) {
+                return (
+                  <Fragment key={`${faqsData.answers[i]}_${i}`}>
+                    <ORG_D_Detail_FAQS_VoteQuestionsAnswers
+                      votes={x}
+                      questions={faqsData.questions[i]}
+                      answers={faqsData.answers[i]}
+                      allUserNames={allUserNames[i]}
+                      month={month[i]}
+                    />
+                  </Fragment>
+                )
+              }
             }
-          }
-        })} */}
+          })}
+        </div>
 
         {showAll === false ? (
           <>
@@ -174,15 +179,21 @@ export const ORG_D_Detail_FAQS = ({
         )}
       </ORG_D_Detail_FAQSWrapper>
 
-      {/* {showModal && (
+      {showModal && (
         <ORG_D_Detail_FAQS_Modal
           showModal={showModal}
           handleHideModal={handleHideModal}
-          name={card.leftPart.title}
+          name={
+            !Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])
+              ? card.leftPart.title
+              : thirdpageDataORG_backend[
+                  DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+                ].recordName
+          }
           lastName={""}
           setFaqsData={setFaqsData}
         />
-      )} */}
+      )}
     </>
   )
 }

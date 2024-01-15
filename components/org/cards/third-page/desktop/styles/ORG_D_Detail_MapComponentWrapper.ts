@@ -1,7 +1,9 @@
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 
 type Props = {
   howIsMap?: null | {}
+  isBackend?: boolean
 }
 
 export const enum ORG_D_Detail_MapComponent_CLASSES {
@@ -16,7 +18,12 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
 
   display: ${({ howIsMap }) => (howIsMap === null ? "none" : "grid")};
 
-  cursor: pointer;
+  cursor: default;
+
+  position: relative;
+  padding: 24px;
+
+  ${blurEffect({})}
 
   & > :nth-child(1) {
     border-radius: 8px;

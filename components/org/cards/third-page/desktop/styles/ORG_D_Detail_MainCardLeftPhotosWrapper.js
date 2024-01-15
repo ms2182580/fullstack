@@ -7,4 +7,11 @@ export const ORG_D_Detail_MainCardLeftPhotosWrapper = styled.div`
   color: ${SEMANTICS.HYPERLINK_NORMAL};
   text-decoration: underline;
   margin-bottom: 24px;
+
+  cursor: default;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(120%);
+  }
 `

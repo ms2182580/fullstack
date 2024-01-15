@@ -1,7 +1,11 @@
 import styled from "styled-components"
 
-export const ORG_D_Detail_CardWebsiteWrapper = styled.div`
-  display: flex;
+type Props = {
+  shouldShow?: boolean
+}
+
+export const ORG_D_Detail_CardWebsiteWrapper = styled.div<Props>`
+  display: ${({ shouldShow }) => (shouldShow ? "flex" : "none")};
 
   & > div:nth-child(1) {
     display: flex;

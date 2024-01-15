@@ -29,19 +29,6 @@ export const ORG_D_Detail_Reviews_IndividualComponentWrapper = styled.div<Props>
       padding-bottom: 16px;
 
       ${blurEffect({})}
-
-      & >:last-child {
-        all: unset;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-        z-index: 2;
-
-        filter: drop-shadow(1px 1px 3px black);
-        font-size: 32px;
-      }
     `}
 
   & > * {

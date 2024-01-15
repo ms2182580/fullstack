@@ -2,6 +2,7 @@ import { ORG_D_Search_CarePlanSvg } from "@/assets/icons"
 import ORG_D_Detail_Share_Modal_QRAltIcon from "@/assets/icons/ORG_D_Detail_Share_Modal_QRAltIcon.png"
 import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
+import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -14,6 +15,7 @@ import {
   DATA_ORG_KeyNamesForCards_D_KEYS,
 } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { BUTTON_MAIN_CARD_TEXT_VALUES_ENUM } from "@/utils/org/categories/general/ALL_DATA"
+import { DATA_CardRight_PMHSS } from "@/utils/org/pmhss/mh/DATA_MH_D_Card"
 import { SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
 import { Tooltip_KEYS, Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import Image from "next/legacy/image"
@@ -28,6 +30,16 @@ import {
   Layout_MainCardRight_VALUES,
   ORG_D_Detail_MainCard_RightWrapper,
 } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
+
+console.log(
+  "DATA_CardRight_PMHSS:",
+  DATA_CardRight_PMHSS,
+  Object.entries(
+    DATA_CardRight_PMHSS[0][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][
+      DATA_ORG_KeyNamesForCards_D.CARD
+    ][DATA_ORG_KeyNamesForCards_D.LEFT]
+  )
+)
 
 export const ORG_D_Detail_MainCard_Right = ({
   layout_MainCardRight,
@@ -101,7 +113,6 @@ export const ORG_D_Detail_MainCard_Right = ({
   }, [thirdpageDataORG_Backend])
 
   if (query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
-    console.log("thirdpageDataORG_Backend:", thirdpageDataORG_Backend)
     return (
       <ORG_D_Detail_MainCard_RightWrapper
         className={layout_MainCardRight}
@@ -148,7 +159,9 @@ export const ORG_D_Detail_MainCard_Right = ({
               ].address[0].city
             }
           </P>
+        </div>
 
+        <div>
           <div>
             <StarsRatingReview_D
               reviews={
@@ -158,21 +171,109 @@ export const ORG_D_Detail_MainCard_Right = ({
               }
             />
           </div>
-        </div>
 
-        <div>
-          <ul>
-            {Array(5)
-              .fill(0)
-              .map((x, index) => {
-                let theKey = `${x}_${index}`
+          <span>
+            <Highlights_2_D
+              highlights={
+                DATA_CardRight_PMHSS[0][
+                  DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS
+                ][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]
+              }
+            />
+
+            <Highlights_D
+              highlights={
+                DATA_CardRight_PMHSS[0][DATA_ORG_KeyNamesForCards_D.HIGHLIGHT][
+                  DATA_ORG_KeyNamesForCards_D.VALUE_NAME
+                ]
+              }
+            />
+          </span>
+
+          <div>
+            <P>
+              {
+                DATA_CardRight_PMHSS[0][
+                  DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA
+                ][DATA_ORG_KeyNamesForCards_D.CARD][
+                  DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND
+                ][DATA_ORG_KeyNamesForCards_D.KEY_NAME]
+              }
+            </P>
+
+            <ul>
+              {new Intl.ListFormat("en").format(
+                DATA_CardRight_PMHSS[0][
+                  DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA
+                ][DATA_ORG_KeyNamesForCards_D.CARD][
+                  DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND
+                ][DATA_ORG_KeyNamesForCards_D.VALUE_NAME]
+              )}
+            </ul>
+          </div>
+
+          <div>
+            {/* {Object.entries(
+              DATA_CardRight_PMHSS[0][
+                DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA
+              ][DATA_ORG_KeyNamesForCards_D.CARD][
+                DATA_ORG_KeyNamesForCards_D.LEFT
+              ].map(({ key, value }, index) => {
                 return (
                   <>
-                    <li key={theKey}>More Coming Soon!</li>
+                    <li>
+                      <P>{key}</P>
+                      <P>{value}</P>
+                    </li>
+                  </>
+                )
+              })
+            )} */}
+
+            <ul>
+              {Object.values(
+                DATA_CardRight_PMHSS[0][
+                  DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA
+                ][DATA_ORG_KeyNamesForCards_D.CARD][
+                  DATA_ORG_KeyNamesForCards_D.LEFT
+                ]
+              ).map((x: any, index) => {
+                // console.log("x:", x)
+                let theKey: string = x.key
+                let theValue: string = new Intl.ListFormat("en").format(x.data)
+                return (
+                  <>
+                    <li key={theKey}>
+                      <P>{theKey}:</P>
+                      <P>{theValue}</P>
+                    </li>
                   </>
                 )
               })}
-          </ul>
+            </ul>
+
+            <ul>
+              {Object.values(
+                DATA_CardRight_PMHSS[0][
+                  DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA
+                ][DATA_ORG_KeyNamesForCards_D.CARD][
+                  DATA_ORG_KeyNamesForCards_D.RIGHT
+                ]
+              ).map((x: any, index) => {
+                // console.log("x:", x)
+                let theKey: string = x.key
+                let theValue: string = new Intl.ListFormat("en").format(x.data)
+                return (
+                  <>
+                    <li key={theKey}>
+                      <P>{theKey}:</P>
+                      <P>{theValue}</P>
+                    </li>
+                  </>
+                )
+              })}
+            </ul>
+          </div>
         </div>
 
         <ORG_D_Detail_About
