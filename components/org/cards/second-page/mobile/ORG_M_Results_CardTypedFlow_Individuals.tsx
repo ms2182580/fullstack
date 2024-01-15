@@ -9,9 +9,8 @@ import {
 } from "@/assets/icons"
 import { StartsRatingReview_Mobile } from "@/components/org/stars-rating-review/mobile/StartsRatingReview_Mobile"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
-import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
-import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import { KEYS_SUGGESTION_KEYWORDS } from "@/utils/org/typed-flow/suggestionKeywords"
 import {
   CheckTypeOfData,
@@ -25,7 +24,6 @@ import {
   ORG_M_Results_CardTypedFlow_Card,
   ORG_M_Results_CardTypedFlow_IndividualsWrapper,
 } from "./styles/ORG_M_Results_CardTypedFlow_IndividualsWrapper"
-import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 
 // [key: string]: string | number
 export type TypeOfObjectInProp = { [key: string]: string | number }[]
