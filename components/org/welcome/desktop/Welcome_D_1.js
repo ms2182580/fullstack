@@ -3,8 +3,8 @@ import {
   Welcome_1Svg,
   XDesktopSvg,
 } from "@/assets/icons/index.js"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
-import { H1 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider.js"
 import { renderFiltersInUI_TypedFlow } from "@/utils/org/typed-flow/DATA_TypedFlow_D_Filters.js"

@@ -14,8 +14,23 @@ const SharedVariables = {
   Underline: "underline",
   LineThrough: "line-through",
 }
-
-export const P = styled.p`
+type PType = {
+  bolder?: boolean
+  bold?: boolean
+  semibold?: boolean
+  medium?: boolean
+  underline?: boolean
+  linethrough?: boolean
+  dark_gray?: boolean
+  light_gray?: boolean
+  success?: boolean
+  error?: boolean
+  primary_cta?: boolean
+  primary_hover?: boolean
+  hyperlink_normal?: boolean
+  white?: boolean
+}
+export const P = styled.p<PType>`
   line-height: 32px;
   font-size: ${SharedVariables.FontSizeBody};
   font-weight: ${(x) =>
@@ -57,7 +72,7 @@ export const P = styled.p`
       ? NEUTRALS.OFF_WHITE
       : NEUTRALS.BLACK};
 `
-export const Caption = styled.span`
+export const Caption = styled.span<PType>`
   line-height: 24px;
   font-size: ${SharedVariables.FontSizeCaption};
   font-weight: ${(x) =>

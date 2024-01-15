@@ -1,8 +1,5 @@
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
-import {
-  Caption,
-  P,
-} from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { PatternStars } from "../../../stars-rating-review/PatternsStars.js"
 import { ORG_M_Detail_Review_StarsRatingWrapper } from "./styles/ORG_M_Detail_Review_StarsRatingWrapper"
 

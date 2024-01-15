@@ -1,15 +1,14 @@
-import { Caption, P } from '../../ui/heading_body_text/DesktopMobileFonts.js'
-import { FriendlyDiagnosesWrapper } from './styles/FriendlyDiagnosesWrapper.js'
-
+import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { FriendlyDiagnosesWrapper } from "./styles/FriendlyDiagnosesWrapper.js"
 
 export const FriendlyDiagnoses = ({ diagnosis, isMobile = false }) => {
-
   if (diagnosis === undefined) {
     return (
-      <div><p>❌Something go wrong</p></div>
+      <div>
+        <p>❌Something go wrong</p>
+      </div>
     )
   }
-
 
   return (
     <FriendlyDiagnosesWrapper isMobile={isMobile}>

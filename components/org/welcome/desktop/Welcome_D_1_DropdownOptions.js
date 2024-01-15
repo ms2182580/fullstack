@@ -1,4 +1,4 @@
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { Fragment } from "react"
 import { CLASSNAME_ISDIAGNOSIS } from "./Welcome_D_1_DropdownOptions_TYPE.ts"
 import { Welcome_D_1_DropdownOptionsWrapper } from "./styles/Welcome_D_1_DropdownOptionsWrapper.js"

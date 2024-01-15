@@ -1,7 +1,7 @@
 import Image from "next/image.js"
 import { BookmarkSaveSTMobileSvg } from "../../../../../../assets/icons/index.js"
-import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3 } from "../../../../../ui/heading_body_text/HeaderFonts.js"
+import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "../../../../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnoses } from "../../../../friendlyDiagnoses/FriendlyDiagnoses.js"
 import { StartsRatingReview_Mobile } from "../../../../stars-rating-review/mobile/StartsRatingReview_Mobile.js"
 import { Verified } from "../../../../verified/Verified.js"
@@ -35,9 +35,7 @@ export const ST_M_Detail_Card = ({ STData }) => {
           <H3>
             {firstName} {lastName}
           </H3>
-          <Caption
-            bolder
-            primary_cta>
+          <Caption bolder primary_cta>
             ({howFar} miles away)
           </Caption>
         </div>
@@ -47,15 +45,9 @@ export const ST_M_Detail_Card = ({ STData }) => {
           <ST_M_Detail_Tooltip isThirdPage={true} />
         </div>
 
-        <StartsRatingReview_Mobile
-          rating={rating}
-          reviews={reviews}
-        />
+        <StartsRatingReview_Mobile rating={rating} reviews={reviews} />
 
-        <FriendlyDiagnoses
-          diagnosis={diagnosis}
-          isMobile={true}
-        />
+        <FriendlyDiagnoses diagnosis={diagnosis} isMobile={true} />
       </div>
     </ST_M_Detail_CardWrapper>
   )

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_Review_Modal_DetailRatingWrapper } from "./styles/ORG_D_Detail_Review_Modal_DetailRatingWrapper.js"
 
 let fullFillRatingFunc = (arr) => {
@@ -22,13 +22,20 @@ const formatRatingFunc = (rating) => {
     return fullFillRatingFunc(toReturn)
   }
 
-  let finalArr = [toReturn[0] + 1, toReturn[0] - 1, toReturn[0] - 1, toReturn[0] + 1]
+  let finalArr = [
+    toReturn[0] + 1,
+    toReturn[0] - 1,
+    toReturn[0] - 1,
+    toReturn[0] + 1,
+  ]
 
   return fullFillRatingFunc(finalArr)
 }
 
 export const ORG_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
-  const [formatRating, setFormatRating] = useState(formatRatingFunc(Number(rating)))
+  const [formatRating, setFormatRating] = useState(
+    formatRatingFunc(Number(rating))
+  )
 
   return (
     <ORG_D_Detail_Review_Modal_DetailRatingWrapper>
@@ -37,9 +44,13 @@ export const ORG_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
         <div>
           {formatRating.finalArr[0].map((x) => {
             if (x === "full") {
-              return <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              )
             } else {
-              return <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              )
             }
           })}
         </div>
@@ -50,9 +61,13 @@ export const ORG_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
         <div>
           {formatRating.finalArr[1].map((x) => {
             if (x === "full") {
-              return <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              )
             } else {
-              return <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              )
             }
           })}
         </div>
@@ -63,9 +78,13 @@ export const ORG_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
         <div>
           {formatRating.finalArr[2].map((x) => {
             if (x === "full") {
-              return <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              )
             } else {
-              return <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              )
             }
           })}
         </div>
@@ -76,9 +95,13 @@ export const ORG_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
         <div>
           {formatRating.finalArr[3].map((x) => {
             if (x === "full") {
-              return <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Full"></div>
+              )
             } else {
-              return <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              return (
+                <div className="STDetail_Review_Modal_DetailRating_Empty"></div>
+              )
             }
           })}
         </div>

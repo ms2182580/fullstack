@@ -1,6 +1,6 @@
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Fragment } from "react"
 import { ORG_D_Detail_AT_SimilarProducts_Section } from "./ORG_D_Detail_AT_SimilarProducts_Section"
 import { ORG_D_Detail_AT_SimilarProductsWrapper } from "./styles/ORG_D_Detail_AT_SimilarProductsWrapper"
@@ -115,7 +115,10 @@ export const enum Grid_KEYS {
 //   },
 // ]
 
-export const ORG_D_Detail_AT_SimilarProducts = ({ cardFirstRow, cardSecondRow }) => {
+export const ORG_D_Detail_AT_SimilarProducts = ({
+  cardFirstRow,
+  cardSecondRow,
+}) => {
   return (
     <ORG_D_Detail_AT_SimilarProductsWrapper>
       <header>
@@ -145,14 +148,17 @@ export const ORG_D_Detail_AT_SimilarProducts = ({ cardFirstRow, cardSecondRow })
             return (
               <li
                 key={`${xCategories.key}_${indexCategories}`}
-                className={isOdd ? "isOdd" : "isEven"}>
+                className={isOdd ? "isOdd" : "isEven"}
+              >
                 <span>{xCategories.key}</span>
 
                 <span>
                   {xCategories.values.map((xValues, indexValues) => {
                     if (Boolean(xValues.component)) {
                       return (
-                        <Fragment key={`${xValues.component.toRender}_${indexValues}`}>
+                        <Fragment
+                          key={`${xValues.component.toRender}_${indexValues}`}
+                        >
                           <StarsRatingReview_D
                             rating={xValues.component.props.rating}
                             reviews={xValues.component.props.reviews}

@@ -12,7 +12,7 @@ import {
   NavBar_D_UserDashboardSvg,
 } from "../../../assets/icons/index.js"
 import { ButtonSmall } from "../../ui/buttons/general/index"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_SignComponentDropdownWrapper } from "./styles/NavBar_D_SignComponentDropdownWrapper"
 
 type Props = {
@@ -22,7 +22,12 @@ type Props = {
   isORG: boolean
 }
 
-export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown, showDropdownProfile, isORG }: Props) => {
+export const NavBar_D_SignComponentDropdown = ({
+  theRef,
+  setShowDropdown,
+  showDropdownProfile,
+  isORG,
+}: Props) => {
   const { push } = useRouter()
   const handlePushToSignup = (e) => {
     if (e.type === "click" || e.key === "Enter") {
@@ -41,15 +46,15 @@ export const NavBar_D_SignComponentDropdown = ({ theRef, setShowDropdown, showDr
     <NavBar_D_SignComponentDropdownWrapper
       ref={theRef}
       tabIndex={0}
-      isORG={isORG}>
+      isORG={isORG}
+    >
       <div>
         <span
           onClick={handlePushToSignup}
           onKeyDown={handlePushToSignup}
-          tabIndex={0}>
-          <ButtonSmall
-            preventFocus={-1}
-            secondary>
+          tabIndex={0}
+        >
+          <ButtonSmall preventFocus={-1} secondary>
             Sign Up
           </ButtonSmall>
         </span>

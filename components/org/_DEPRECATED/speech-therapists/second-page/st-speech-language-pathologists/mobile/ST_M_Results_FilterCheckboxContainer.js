@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react"
-import { DownArrowSvg, UpArrowSvg } from "../../../../../../../assets/icons/index.js"
+import {
+  DownArrowSvg,
+  UpArrowSvg,
+} from "../../../../../../../assets/icons/index.js"
 import { ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories"
-import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { PatternStars } from "../../../../../stars-rating-review/PatternsStars.js"
 import { ST_M_Results_FilterCheckboxInput } from "./ST_M_Results_FilterCheckboxInput.js"
-import { ST_M_Results_FilterCheckboxContainerULWrapper, ST_M_Results_FilterCheckboxContainerWrapper } from "./styles/ST_M_Results_FilterCheckboxContainerWrapper.js"
+import {
+  ST_M_Results_FilterCheckboxContainerULWrapper,
+  ST_M_Results_FilterCheckboxContainerWrapper,
+} from "./styles/ST_M_Results_FilterCheckboxContainerWrapper.js"
 
 export const ST_M_Results_FilterCheckboxContainer = ({
   categoriesToDisplay = ["nothing here"],
@@ -60,13 +66,16 @@ export const ST_M_Results_FilterCheckboxContainer = ({
       <div
         tabIndex={0}
         onKeyDown={(e) => handleShow(e)}
-        onClick={(e) => handleShowIndividual(e)}>
+        onClick={(e) => handleShowIndividual(e)}
+      >
         <P semibold>{title}</P>
 
         {showIndividual ? <UpArrowSvg /> : <DownArrowSvg />}
       </div>
 
-      <ST_M_Results_FilterCheckboxContainerULWrapper showIndividual={showIndividual}>
+      <ST_M_Results_FilterCheckboxContainerULWrapper
+        showIndividual={showIndividual}
+      >
         {categoriesToDisplay?.map((x, i) => {
           if (title === ORG_FILTERS_KEYS_M.distance.titleToShow) {
             return (

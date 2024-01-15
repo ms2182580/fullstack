@@ -1,5 +1,5 @@
 import { EmailORGSvg } from "../../../../../assets/icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_CardEmailWrapper } from "./styles/ORG_D_Detail_CardEmailWrapper"
 
 type Props = {

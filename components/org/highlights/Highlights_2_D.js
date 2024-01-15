@@ -1,5 +1,5 @@
 import { ORG_HighlightPlusSvg } from "../../../assets/icons/index"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Highlights_2_DWrapper } from "./styles/Highlights_2_DWrapper.js"
 
 export const Highlights_2_D = ({ highlights, withIcon = true }) => {

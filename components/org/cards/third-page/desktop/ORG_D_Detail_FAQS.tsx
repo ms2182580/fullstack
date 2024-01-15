@@ -8,13 +8,15 @@ import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.
 import { ORG_ST_FAQS } from "../../../../../utils/ORG_ST_FAQS_D.js"
 import { ORG_ST_Review_Months } from "../../../../../utils/ORG_ST_Review_D.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_FAQS_Modal } from "./ORG_D_Detail_FAQS_Modal.js"
 import { ORG_D_Detail_FAQS_VoteQuestionsAnswers } from "./ORG_D_Detail_FAQS_VoteQuestionsAnswers.js"
 import { ORG_D_Detail_FAQSWrapper } from "./styles/ORG_D_Detail_FAQSWrapper"
 
-export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+export const ORG_D_Detail_FAQS = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
   const { theIdForComponent = "#" } = allProps || {}
 
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
@@ -26,7 +28,14 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
   const [month, setMonth] = useState(ORG_ST_Review_Months(5))
 
   const [faqsData, setFaqsData] = useState(
-    ORG_ST_FAQS(card.leftPart.title, "", card.leftPart.location.city, card.leftPart.location.streetNumber, card.leftPart.location.streetName, card.leftPart.location.state),
+    ORG_ST_FAQS(
+      card.leftPart.title,
+      "",
+      card.leftPart.location.city,
+      card.leftPart.location.streetNumber,
+      card.leftPart.location.streetName,
+      card.leftPart.location.state
+    )
   )
 
   const handleShowAll = (e) => {
@@ -39,7 +48,8 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
 
   let handleMoveUserView = (e) => {
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
-      const position = toMoveTheView!.current!.getBoundingClientRect().top + window.scrollY
+      const position =
+        toMoveTheView!.current!.getBoundingClientRect().top + window.scrollY
       window.scrollTo({ top: position })
     }
   }
@@ -57,7 +67,12 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
   }
 
   const handleHideModal = (e) => {
-    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown" || e.type === "click") {
+    if (
+      e.key === "Enter" ||
+      e.key === "Escape" ||
+      e.type === "mousedown" ||
+      e.type === "click"
+    ) {
       unlockScroll()
       setShowModal(false)
       setModalShowedCtx(false)
@@ -66,17 +81,12 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
 
   return (
     <>
-      <ORG_D_Detail_FAQSWrapper
-        id={theIdForComponent}
-        ref={toMoveTheView}>
+      <ORG_D_Detail_FAQSWrapper id={theIdForComponent} ref={toMoveTheView}>
         <H3>Frequently Asked Questions</H3>
 
         <div>
           <ORG_Detail_SearchFAQSSVG />
-          <input
-            type="text"
-            placeholder="Search in Q&A..."
-          />
+          <input type="text" placeholder="Search in Q&A..." />
           <span onClick={handleShowModal}>
             <ButtonSmall secondary>Ask a Question</ButtonSmall>
           </span>
@@ -118,10 +128,7 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
 
         {showAll === false ? (
           <>
-            <P
-              onClick={handleShowAll}
-              onKeyDown={handleShowAll}
-              tabIndex={0}>
+            <P onClick={handleShowAll} onKeyDown={handleShowAll} tabIndex={0}>
               See More
             </P>
           </>
@@ -136,7 +143,8 @@ export const ORG_D_Detail_FAQS = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) =>
                 handleShowAll(e)
                 handleMoveUserView(e)
               }}
-              tabIndex={0}>
+              tabIndex={0}
+            >
               See Less
             </P>
           </>

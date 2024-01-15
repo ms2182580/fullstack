@@ -1,14 +1,12 @@
 import { EmailResultsSvg } from "../../../../../assets/icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Results_CardEmailWrapper } from "./styles/ORG_D_Results_CardEmailWrapper"
 
 type Props = {
   email?: string
 }
 
-export const ORG_D_Results_CardEmail = ({
-  email = "_",
-}: Props) => {
+export const ORG_D_Results_CardEmail = ({ email = "_" }: Props) => {
   return (
     <ORG_D_Results_CardEmailWrapper>
       <EmailResultsSvg />

@@ -1,7 +1,9 @@
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_HighlightBoxesWrapper } from "./styles/ORG_D_Detail_HighlightBoxesWrapper.js"
 
-export const ORG_D_Detail_HighlightBoxes = ({ meetingFormat }: any): JSX.Element | null => {
+export const ORG_D_Detail_HighlightBoxes = ({
+  meetingFormat,
+}: any): JSX.Element | null => {
   if (meetingFormat === undefined) {
     return null
   }

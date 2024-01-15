@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../assets/Colors"
 import {
   FontsDesktopAndMobile,
   FontsHeadDesktop,
@@ -23,8 +23,24 @@ const SharedVariables = {
   Underline: "underline",
   LineThrough: "line-through",
 }
-
-export const D1 = styled.p`
+type Type = {
+  bolder?: boolean
+  bold?: boolean
+  semibold?: boolean
+  medium?: boolean
+  underline?: boolean
+  linethrough?: boolean
+  dark_gray?: boolean
+  light_gray?: boolean
+  success?: boolean
+  error?: boolean
+  primary_cta?: boolean
+  primary_hover?: boolean
+  hyperlink_normal?: boolean
+  white?: boolean
+  normal?: boolean
+}
+export const D1 = styled.p<Type>`
   font-size: ${FontsHeadDesktop.DISPLAY_1};
   line-height: ${LineHeightHeadDesktop.DISPLAY_1};
   font-weight: ${(x) =>
@@ -93,7 +109,7 @@ export const D1 = styled.p`
   }
 `
 
-export const H1 = styled.h1`
+export const H1 = styled.h1<Type>`
   font-size: ${FontsHeadDesktop.HEADING_1};
   line-height: ${LineHeightHeadDesktop.HEADING_1};
   font-weight: ${(x) =>
@@ -165,7 +181,7 @@ export const H1 = styled.h1`
   }
 `
 
-export const H2 = styled.h2`
+export const H2 = styled.h2<Type>`
   font-size: ${FontsHeadDesktop.HEADING_2};
   line-height: ${LineHeightHeadDesktop.HEADING_2};
   font-weight: ${(x) =>
@@ -237,7 +253,7 @@ export const H2 = styled.h2`
   }
 `
 
-export const H3 = styled.h3`
+export const H3 = styled.h3<Type>`
   font-size: ${FontsHeadDesktop.HEADING_3};
   line-height: ${LineHeightHeadDesktop.HEADING_3};
   font-weight: ${(x) =>
@@ -308,7 +324,7 @@ export const H3 = styled.h3`
   }
 `
 
-export const H4 = styled.h4`
+export const H4 = styled.h4<Type>`
   font-size: ${FontsHeadDesktop.HEADING_4};
   line-height: ${LineHeightHeadDesktop.HEADING_4};
   font-weight: ${(x) =>

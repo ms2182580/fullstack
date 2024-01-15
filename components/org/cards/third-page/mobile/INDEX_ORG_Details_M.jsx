@@ -23,8 +23,6 @@ export const INDEX_ORG_Detail_M = ({ selectTags = null }) => {
         DATA_ORG_KeyNamesForCards_D_KEYS.CARD
       ]
 
-    console.log("dataObj:", dataObj)
-
     const renderSections =
       dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
 
@@ -61,7 +59,6 @@ export const INDEX_ORG_Detail_M = ({ selectTags = null }) => {
       buttonMainCard,
     }
   }, [thirdpageDataORG])
-  console.log({ thirdpageDataORG })
   return (
     <>
       <INDEX_ORG_Detail_MWrapper>

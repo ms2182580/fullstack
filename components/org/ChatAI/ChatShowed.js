@@ -10,7 +10,7 @@ import {
   SendMessageSvg,
   XSvg,
 } from "../../../assets/icons/index.js"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { ChatShowedWrapper } from "./styles/ChatShowedWrapper.js"
 
 export const ChatShowed = ({ handleShowChat }) => {
@@ -19,9 +19,7 @@ export const ChatShowed = ({ handleShowChat }) => {
       <div>
         <div>
           <ChatAI_0_Tiny_LogoSvg />
-          <H4
-            semibold
-            cta>
+          <H4 semibold cta>
             Ask a Question
           </H4>
         </div>
@@ -32,7 +30,8 @@ export const ChatShowed = ({ handleShowChat }) => {
           <span
             tabIndex={0}
             onClick={handleShowChat}
-            onKeyDown={handleShowChat}>
+            onKeyDown={handleShowChat}
+          >
             <XSvg />
           </span>
         </div>

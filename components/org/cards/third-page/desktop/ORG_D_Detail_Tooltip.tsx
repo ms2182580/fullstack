@@ -9,8 +9,8 @@ import {
 } from "@/utils/org/third-page/tooltip"
 import { useRef, useState } from "react"
 import { useOutsideHide } from "../../../../../utils/useOutsideHide.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_TooltipWrapper } from "./styles/ORG_D_Detail_TooltipWrapper"
 
 /* 

@@ -5,7 +5,10 @@ import ORG_Map_450 from "@/assets/icons/ORG_Map_450.jpg"
 import Image from "next/legacy/image"
 import { useMemo } from "react"
 import { ORG_D_Detail_CardLocation } from "./ORG_D_Detail_CardLocation"
-import { ORG_D_Detail_MapComponentWrapper, ORG_D_Detail_MapComponent_CLASSES } from "./styles/ORG_D_Detail_MapComponentWrapper"
+import {
+  ORG_D_Detail_MapComponentWrapper,
+  ORG_D_Detail_MapComponent_CLASSES,
+} from "./styles/ORG_D_Detail_MapComponentWrapper"
 
 export const enum MapProperties_KEYS {
   HEIGHT = "HEIGHT",
@@ -17,7 +20,9 @@ export type MapProperties = {
   [MapProperties_KEYS.HOW_MANY]: null | 1 | 2
 }
 
-export const ORG_D_Detail_MapComponent = ({ howIsMap }: any): JSX.Element | null => {
+export const ORG_D_Detail_MapComponent = ({
+  howIsMap,
+}: any): JSX.Element | null => {
   if (howIsMap === null) {
     return null
   }
@@ -36,7 +41,8 @@ export const ORG_D_Detail_MapComponent = ({ howIsMap }: any): JSX.Element | null
         {howIsMap[MapProperties_KEYS.HEIGHT] !== undefined ? (
           <span
             className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
-            tabIndex={0}>
+            tabIndex={0}
+          >
             <Image
               src={ORG_Map_450}
               alt={"Map image"}
@@ -48,7 +54,8 @@ export const ORG_D_Detail_MapComponent = ({ howIsMap }: any): JSX.Element | null
         ) : (
           <span
             className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
-            tabIndex={0}>
+            tabIndex={0}
+          >
             <Image
               src={ORG_Map_231}
               alt={"Map image"}
@@ -65,10 +72,12 @@ export const ORG_D_Detail_MapComponent = ({ howIsMap }: any): JSX.Element | null
     return (
       <ORG_D_Detail_MapComponentWrapper
         howIsMap={howIsMap}
-        className={ORG_D_Detail_MapComponent_CLASSES.AS_TWO_MAPS}>
+        className={ORG_D_Detail_MapComponent_CLASSES.AS_TWO_MAPS}
+      >
         <span
           className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <Image
             src={ORG_Map_2_231_A}
             alt={"Map image"}
@@ -83,12 +92,13 @@ export const ORG_D_Detail_MapComponent = ({ howIsMap }: any): JSX.Element | null
           locationState="Queens, NY "
           locationStreetName="Bellevue Mental Health"
           locationStreetNumber="25-12 30th Ave, Fl 2"
-          howFar={15}
+          howFar={"15"}
         />
 
         <span
           className={ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <Image
             src={ORG_Map_2_231_B}
             alt={"Map image"}

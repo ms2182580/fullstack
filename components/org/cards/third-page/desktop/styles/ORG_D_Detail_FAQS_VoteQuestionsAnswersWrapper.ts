@@ -1,7 +1,11 @@
 import styled from "styled-components"
 import { PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div`
+type Props = {
+  alreadyVoteUp: boolean
+  alreadyVoteDown: boolean
+}
+export const ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div<Props>`
   display: grid;
   grid-template-columns: 1fr 9fr;
   gap: 40px;
@@ -25,11 +29,13 @@ export const ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div`
     }
 
     & > span:nth-child(1) {
-      filter: ${({ alreadyVoteUp }) => (alreadyVoteUp ? `brightness(150%)` : ``)};
+      filter: ${({ alreadyVoteUp }) =>
+        alreadyVoteUp ? `brightness(150%)` : ``};
     }
 
     & > :nth-child(3) {
-      filter: ${({ alreadyVoteDown }) => (alreadyVoteDown ? `brightness(150%)` : ``)};
+      filter: ${({ alreadyVoteDown }) =>
+        alreadyVoteDown ? `brightness(150%)` : ``};
     }
 
     & > :nth-child(2) {

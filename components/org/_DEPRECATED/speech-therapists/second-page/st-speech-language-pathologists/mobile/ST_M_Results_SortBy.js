@@ -8,7 +8,7 @@ import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../../../context/
 import { ORG_Sortby_Mobile } from "../../../../../../../utils/ORG_SortByData"
 import { ORG_SortybyFunction_M } from "../../../../../../../utils/ORG_SortybyFunction_M.js"
 import { useOutsideHide } from "../../../../../../../utils/useOutsideHide.js"
-import { Caption } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { Caption } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC } from "../../../../../dropdownFilters/styles/Singledropdown.js"
 import { ST_M_Results_SortByWrapper } from "./styles/ST_M_Results_SortByWrapper.js"
 

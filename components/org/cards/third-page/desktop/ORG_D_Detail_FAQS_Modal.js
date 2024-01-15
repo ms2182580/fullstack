@@ -1,16 +1,27 @@
 import { useEffect, useRef, useState } from "react"
 import { XSvg } from "../../../../../assets/icons/index.js"
 import { ButtonSmall } from "../../../../ui/buttons/general/index"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_FAQS_ModalWrapper } from "./styles/ORG_D_Detail_FAQS_ModalWrapper.js"
 
-export const ORG_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, lastName, setFaqsData }) => {
+export const ORG_D_Detail_FAQS_Modal = ({
+  showModal,
+  handleHideModal,
+  name,
+  lastName,
+  setFaqsData,
+}) => {
   const componentRef = useRef(null)
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if ((componentRef.current && !componentRef.current.contains(event.target) && event.type === "mousedown") || (event.key === "Escape" && event.type === "keydown")) {
+      if (
+        (componentRef.current &&
+          !componentRef.current.contains(event.target) &&
+          event.type === "mousedown") ||
+        (event.key === "Escape" && event.type === "keydown")
+      ) {
         handleHideModal(event)
       }
     }
@@ -39,19 +50,15 @@ export const ORG_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, last
   }
 
   return (
-    <ORG_D_Detail_FAQS_ModalWrapper
-      ref={componentRef}
-      showModal={showModal}>
-      <span
-        onClick={handleHideModal}
-        onKeyDown={handleHideModal}
-        tabIndex={0}>
+    <ORG_D_Detail_FAQS_ModalWrapper ref={componentRef} showModal={showModal}>
+      <span onClick={handleHideModal} onKeyDown={handleHideModal} tabIndex={0}>
         <XSvg />
       </span>
       <H4 hover>Question</H4>
       <label>
         <Caption>
-          Got a question about {name} {lastName} SLP? Ask the Inclusive community!
+          Got a question about {name} {lastName} SLP? Ask the Inclusive
+          community!
         </Caption>
         <textarea
           onChange={handleNewQuestion}
@@ -64,10 +71,12 @@ export const ORG_D_Detail_FAQS_Modal = ({ showModal, handleHideModal, name, last
         onClick={(e) => {
           handleHideModal(e)
           handleAddQuestion()
-        }}>
+        }}
+      >
         <ButtonSmall
           secondary
-          disabled={newQuestion.trim() === "" ? true : false}>
+          disabled={newQuestion.trim() === "" ? true : false}
+        >
           Post Question
         </ButtonSmall>
       </span>
