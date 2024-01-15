@@ -1,6 +1,6 @@
-import { Caption } from '../../../ui/heading_body_text/DesktopMobileFonts.js'
-import { PatternStars } from '../PatternsStars.js'
-import { StartsRatingReview_MobileWrapper } from './styles/StartsRatingReview_MobileWrapper.js'
+import { Caption } from "../../../ui/heading_body_text/DesktopMobileFonts"
+import { PatternStars } from "../PatternsStars.js"
+import { StartsRatingReview_MobileWrapper } from "./styles/StartsRatingReview_MobileWrapper.js"
 
 export const StartsRatingReview_Mobile = ({ rating, reviews }) => {
   return (

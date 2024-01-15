@@ -1,16 +1,23 @@
 import { useEffect, useRef } from "react"
 import ReactPlayer from "react-player"
 import { XSvg } from "../../../../../assets/icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_About_ModalWrapper } from "./styles/ORG_D_Detail_About_ModalWrapper.js"
 
-export const ORG_D_Detail_About_Modal = ({ showModal, handleHideModal, aboutTextState }) => {
+export const ORG_D_Detail_About_Modal = ({
+  showModal,
+  handleHideModal,
+  aboutTextState,
+}) => {
   const componentRef = useRef(null)
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (componentRef.current && !componentRef.current.contains(event.target)) {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
         handleHideModal()
       }
     }
@@ -29,9 +36,7 @@ export const ORG_D_Detail_About_Modal = ({ showModal, handleHideModal, aboutText
   }, [componentRef])
 
   return (
-    <ORG_D_Detail_About_ModalWrapper
-      ref={componentRef}
-      showModal={showModal}>
+    <ORG_D_Detail_About_ModalWrapper ref={componentRef} showModal={showModal}>
       <span onClick={() => handleHideModal()}>
         <XSvg />
       </span>

@@ -1,5 +1,5 @@
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_AdmissionWrapper } from "./styles/ORG_D_Detail_AdmissionWrapper"
 
 export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
@@ -11,9 +11,7 @@ export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
         </header>
 
         <section className="BorderSection">
-          <H4
-            primary_hover
-            bold>
+          <H4 primary_hover bold>
             Application Cycle
           </H4>
 
@@ -36,9 +34,7 @@ export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
         </section>
 
         <section className="BorderSection">
-          <H4
-            primary_hover
-            bold>
+          <H4 primary_hover bold>
             Tuition cost
           </H4>
 
@@ -82,7 +78,8 @@ export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
                 underline
                 onClick={null}
                 onKeyDown={null}
-                tabIndex={0}>
+                tabIndex={0}
+              >
                 View All
               </P>
             </div>
@@ -90,14 +87,16 @@ export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
         </section>
 
         <section>
-          <H4
-            primary_hover
-            bold>
+          <H4 primary_hover bold>
             Requirements
           </H4>
 
           <ul>
-            <li>{"Children with developmental and learning disabilities must have neuropsychological (< 3 years old, preferred)."}</li>
+            <li>
+              {
+                "Children with developmental and learning disabilities must have neuropsychological (< 3 years old, preferred)."
+              }
+            </li>
             <li>Non-DOE approved school, parents willing to pay </li>
             <li>Students must have a IEP, 504 Plans not accepted </li>
           </ul>
@@ -109,7 +108,8 @@ export const ORG_D_Detail_Admission = ({ idInnerbar = "#" }) => {
               width="16"
               height="16"
               viewBox="0 0 16 16"
-              fill="none">
+              fill="none"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"

@@ -1,14 +1,25 @@
 import Send_Message_UsableSvg from "@/assets/icons/send_message.svg"
-import { ArraySection_KEYS, InnerNavBar_InnerData } from "@/utils/org/third-page/InnerNavBar"
+import {
+  ArraySection_KEYS,
+  InnerNavBar_InnerData,
+} from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useState } from "react"
 import { SendMessageSvg } from "../../../../../assets/icons/index.js"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_ContactUsWrapper } from "./styles/ORG_D_Detail_ContactUsWrapper"
 
 let maxCharacterTextarea = 2000
 
-const defaultSelectTags = ["Conversation", "Enunciation", "Swallowing", "Expressive Speech", "Receptive Speech", "AAC Device", "Other"]
+const defaultSelectTags = [
+  "Conversation",
+  "Enunciation",
+  "Swallowing",
+  "Expressive Speech",
+  "Receptive Speech",
+  "AAC Device",
+  "Other",
+]
 
 export const enum ContactUsCustomProperties_KEY {
   ContactUsCustomProperties_KEY = "ContactUsCustomProperties_KEY",
@@ -34,7 +45,10 @@ type Props = {
   [ArraySection_KEYS.ALL_DATA]: {
     theIdForComponent: string
     arrayInnerNavBar: InnerNavBar_InnerData | null
-    [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: SelectTags_Types | null | "no_display_UI"
+    [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]:
+      | SelectTags_Types
+      | null
+      | "no_display_UI"
     idInnerbar: string
     [TEXT_BESIDE_BUTTON.KEY]: string | null
     [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: boolean
@@ -42,10 +56,13 @@ type Props = {
   }
 }
 
-export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps }: Props) => {
+export const ORG_D_Detail_ContactUs = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}: Props) => {
   const {
     theIdForComponent = "#",
-    [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: customContactUs = null,
+    [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]:
+      customContactUs = null,
     [TEXT_BESIDE_BUTTON.KEY]: textBesideButton = null,
     [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: textBesideButton_isLikeButton = false,
     [SEND_MESSAGE_BUTTON.IS_USABLE]: sendMessageButton = false,
@@ -71,7 +88,8 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
       id={theIdForComponent}
       contactUsCustomValue={customContactUs === "no_display_UI"}
       textBesideButton_isLikeButton={textBesideButton_isLikeButton}
-      sendMessageButton={sendMessageButton}>
+      sendMessageButton={sendMessageButton}
+    >
       <header>
         <H3>Contact Us</H3>
       </header>
@@ -81,37 +99,25 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
       <span>
         <div>
           <H4>First name</H4>
-          <input
-            type="text"
-            placeholder="Ex: John"
-          />
+          <input type="text" placeholder="Ex: John" />
         </div>
 
         <div>
           <H4>Last name</H4>
-          <input
-            type="text"
-            placeholder="Ex: Stout"
-          />
+          <input type="text" placeholder="Ex: Stout" />
         </div>
       </span>
 
       <span>
         <div>
           <H4>Diagnosis</H4>
-          <input
-            type="text"
-            placeholder="Ex: ADHD, Spina Bifida"
-          />
+          <input type="text" placeholder="Ex: ADHD, Spina Bifida" />
         </div>
         <div>
           <H4>
             Email Address <span>(for replies only)</span>
           </H4>
-          <input
-            type="text"
-            placeholder="Ex: Message@sample.com"
-          />
+          <input type="text" placeholder="Ex: Message@sample.com" />
         </div>
       </span>
 
@@ -122,13 +128,15 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
               <H3>{customContactUs?.[ContactUsCustomProperties_KEY.TITLE]}</H3>
             </header>
             <ul>
-              {customContactUs?.[ContactUsCustomProperties_KEY.DATA].map((x, index) => {
-                return (
-                  <Fragment key={`${x}_${index}`}>
-                    <li tabIndex={0}>{x}</li>
-                  </Fragment>
-                )
-              })}
+              {customContactUs?.[ContactUsCustomProperties_KEY.DATA].map(
+                (x, index) => {
+                  return (
+                    <Fragment key={`${x}_${index}`}>
+                      <li tabIndex={0}>{x}</li>
+                    </Fragment>
+                  )
+                }
+              )}
             </ul>
           </div>
         </>
@@ -172,7 +180,8 @@ export const ORG_D_Detail_ContactUs = ({ [ArraySection_KEYS.ALL_DATA]: allProps 
         <span
           // onClick={handlePushTo404}
           // onKeyDown={handlePushTo404}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           {textBesideButton ? textBesideButton : "Is this product a good fit?"}
         </span>
       </div>

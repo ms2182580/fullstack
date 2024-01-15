@@ -2,7 +2,7 @@ import { useState } from "react"
 import { ShareSvg } from "../../../../../assets/icons/index.js"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_ShareModal } from "./ORG_D_Detail_ShareModal.js"
 import { ORG_D_Detail_ShareWrapper } from "./styles/ORG_D_Detail_ShareWrapper.js"
 
@@ -36,7 +36,8 @@ export const ORG_D_Detail_Share = ({ picture, name, lastName }) => {
       <ORG_D_Detail_ShareWrapper
         onClick={handleShowModal}
         onKeyDown={handleShowModal}
-        tabIndex={0}>
+        tabIndex={0}
+      >
         <ShareSvg />
         <P primary_hover>Share</P>
       </ORG_D_Detail_ShareWrapper>

@@ -2,7 +2,7 @@ import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
 import { useRouter } from "next/router.js"
 import { ArrowDownSvg } from "../../../../../assets/icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_Review_StarsRating } from "./ORG_D_Detail_Review_StarsRating.js"
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper } from "./styles/ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper"
 

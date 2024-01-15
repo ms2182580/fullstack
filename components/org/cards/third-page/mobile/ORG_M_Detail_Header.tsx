@@ -1,9 +1,9 @@
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { WhichDefaultId } from "@/utils/org/third-page/InnerNavBar"
-import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
+// import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useMemo } from "react"
+// import { useMemo } from "react"
 import { ORG_M_Detail_HeaderWrapper } from "./styles/ORG_M_Detail_HeaderWrapper"
 
 enum TabSection {
@@ -18,25 +18,25 @@ export const ORG_M_Detail_Header = ({
   sectionToRender = null,
 }: any) => {
   const { pathname, query, asPath } = useRouter()
-  const { titleFormatted } = useCheckBreadcrumbs(query.title)
+  // const { titleFormatted } = useCheckBreadcrumbs(query.title)
   const defaultId = asPath.split("#")[1] || "about"
-  const formattedActualRoute = useMemo(() => {
-    return `${thirdpageDataORG.fullName.first} ${thirdpageDataORG.fullName.last}`
-  }, [])
+  // const formattedActualRoute = useMemo(() => {
+  //   return `${thirdpageDataORG.fullName.first} ${thirdpageDataORG.fullName.last}`
+  // }, [])
   /*  
   This data should move the the previous page website.com/org/results/<name_of_subcategory_here>
   let { theURLFormatted } = checkRouteThirdPage(pathname) 
   */
-  const theURLFormatted = "#"
-  const activeSection = TabSection[defaultId]
 
+  const activeSection = TabSection[defaultId]
+  let tabs = ["about", "booking", "reviews", "faqs"]
   return (
     <ORG_M_Detail_HeaderWrapper activeIndex={activeSection}>
       {sectionToRender !== null ? (
         sectionToRender.map((x: any, index: number) => {
           const toJSX = x?.toNavbar?.jsx ? x.toNavbar.jsx : x.toNavbar.id
           if (toJSX === "other providers") return
-          if (x.toNavbar.id !== null) {
+          if (x.toNavbar.id !== null && tabs.includes(toJSX.toLowerCase())) {
             return (
               <li key={`_${index}`}>
                 {" "}

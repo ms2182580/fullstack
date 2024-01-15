@@ -2,13 +2,15 @@ import { useRouter } from "next/router"
 import { Fragment, useState } from "react"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useShouldTab } from "../../../../../../../utils/ORG_shouldTab.js"
-import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Results_FinalButtonsNumberPageWrapper } from "./styles/ST_M_Results_FinalButtonsWrapper.js"
 
 export const ST_M_Results_NavigationButtonsNumbers = () => {
   const { pagination, setPagination } = useORG_Ctx_FetchNoFiltersMobile()
 
-  const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(Array(3).fill(0))
+  const [amountOfPagesToClick, setAmountOfPagesToClick] = useState(
+    Array(3).fill(0)
+  )
 
   const { pathname, push } = useRouter()
   const shouldTab = useShouldTab()
@@ -27,7 +29,8 @@ export const ST_M_Results_NavigationButtonsNumbers = () => {
               <Fragment key={i}>
                 <ST_M_Results_FinalButtonsNumberPageWrapper
                   isActive
-                  tabIndex={shouldTab}>
+                  tabIndex={shouldTab}
+                >
                   <P bold> {i + 1}</P>
                 </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
@@ -41,7 +44,8 @@ export const ST_M_Results_NavigationButtonsNumbers = () => {
                   setPagination(toMoveToThatPage)
                   toTop()
                 }}
-                tabIndex={shouldTab}>
+                tabIndex={shouldTab}
+              >
                 <P bold> {i + 1}</P>
               </ST_M_Results_FinalButtonsNumberPageWrapper>
             </Fragment>
@@ -68,7 +72,8 @@ export const ST_M_Results_NavigationButtonsNumbers = () => {
                     setPagination(theNewOrder[0])
                     toTop()
                   }}
-                  tabIndex={shouldTab}>
+                  tabIndex={shouldTab}
+                >
                   <P bold> {theNewOrder[i]}</P>
                 </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
@@ -80,7 +85,8 @@ export const ST_M_Results_NavigationButtonsNumbers = () => {
               <Fragment key={i}>
                 <ST_M_Results_FinalButtonsNumberPageWrapper
                   isActive
-                  tabIndex={shouldTab}>
+                  tabIndex={shouldTab}
+                >
                   <P bold> {theNewOrder[i]}</P>
                 </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>
@@ -95,7 +101,8 @@ export const ST_M_Results_NavigationButtonsNumbers = () => {
                     setPagination(theNewOrder[2])
                     toTop()
                   }}
-                  tabIndex={shouldTab}>
+                  tabIndex={shouldTab}
+                >
                   <P bold> {theNewOrder[i]}</P>
                 </ST_M_Results_FinalButtonsNumberPageWrapper>
               </Fragment>

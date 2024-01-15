@@ -1,8 +1,5 @@
 import { LocationSvg } from "../../../../../assets/icons/index.js"
-import {
-  Caption,
-  P,
-} from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_CardLocationWrapper } from "./styles/ORG_D_Detail_CardLocationWrapper"
 
 type Props = {

@@ -1,5 +1,5 @@
 import { PhoneSvg } from "../../../../../../assets/icons/index.js"
-import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Detail_CardPhoneWrapper } from "./styles/ST_M_Detail_CardPhoneWrapper.js"
 
 export const ST_M_Detail_CardPhone = ({ phoneNumber }) => {

@@ -1,6 +1,6 @@
 import { Home_CheckSvg } from "../../../assets/images/index.js"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H2, H3, H4 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { H2, H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { Home_Pricing_DWrapper } from "./styles/Home_Pricing_DWrapper.js"
 
 export const Home_Pricing_D = () => {
@@ -27,7 +27,8 @@ export const Home_Pricing_D = () => {
                 <Home_CheckSvg /> <span>Unlimited</span> plan revisions
               </li>
               <li>
-                <Home_CheckSvg /> <span>Unlimited</span> answers from our community
+                <Home_CheckSvg /> <span>Unlimited</span> answers from our
+                community
               </li>
             </ul>
           </div>

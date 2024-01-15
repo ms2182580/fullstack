@@ -3,8 +3,8 @@ import { useRouter } from "next/router.js"
 import { useEffect, useRef, useState } from "react"
 import { XSvg } from "../../../../../assets/icons/index.js"
 import { ButtonSmall } from "../../../../ui/buttons/general/index"
-import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_FAQS_ModalWrapper } from "./styles/ORG_D_Detail_FAQS_ModalWrapper.js"
 
 export const ORG_D_Detail_FAQS_Modal = ({
@@ -99,11 +99,12 @@ export const ORG_D_Detail_FAQS_Modal = ({
           handleAddQuestion()
         }}
       >
+        }} >
         <ButtonSmall
           secondary
           disabled={newQuestion.trim() === "" ? true : false}
         >
-          Post Question
+          disabled={newQuestion.trim() === "" ? true : false}> Post Question
         </ButtonSmall>
       </span>
     </ORG_D_Detail_FAQS_ModalWrapper>

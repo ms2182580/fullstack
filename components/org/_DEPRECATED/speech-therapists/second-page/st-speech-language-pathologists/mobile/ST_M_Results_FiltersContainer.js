@@ -1,7 +1,10 @@
 import { XDesktopSvg } from "../../../../../../../assets/icons/index.js"
-import { ORG_FILTERS_DATA_M, ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories"
+import {
+  ORG_FILTERS_DATA_M,
+  ORG_FILTERS_KEYS_M,
+} from "../../../../../../../utils/ORG_FiltersCategories"
 import { BtnSmall } from "../../../../../../ui/buttons/general/styles/ButtonStyled"
-import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Results_FilterCheckboxContainer } from "./ST_M_Results_FilterCheckboxContainer.js"
 import { ST_M_Results_FiltersContainerWrapper } from "./styles/ST_M_Results_FiltersContainerWrapper.js"
 
@@ -28,10 +31,13 @@ export const ST_M_Results_FiltersContainer = ({
   }
 
   return (
-    <ST_M_Results_FiltersContainerWrapper mustShowFiltersMobile={mustShowFiltersMobile}>
+    <ST_M_Results_FiltersContainerWrapper
+      mustShowFiltersMobile={mustShowFiltersMobile}
+    >
       <div
         onClick={(e) => handleCloseFilters(e)}
-        onKeyDown={(e) => handleCloseFilters(e)}>
+        onKeyDown={(e) => handleCloseFilters(e)}
+      >
         <P semibold>Advanced Filters</P>
         <XDesktopSvg tabIndex={0} />
       </div>
@@ -240,14 +246,16 @@ export const ST_M_Results_FiltersContainer = ({
         <span
           onClick={(e) => handleAddFilters(e)}
           onKeyDown={(e) => handleAddFilters(e)}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <BtnSmall>Apply</BtnSmall>
         </span>
 
         <span
           onClick={(e) => handleClearAll(e)}
           onKeyDown={(e) => handleClearAll(e)}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <BtnSmall secondary>Clear all</BtnSmall>
         </span>
       </div>

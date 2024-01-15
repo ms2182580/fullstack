@@ -1,7 +1,7 @@
 import { ChatAILogo } from "@/assets/icons/index.js"
 import { NavBar_D_InfoDropdown } from "@/components/navBar/desktop/NavBar_D_InfoDropdown.js"
 import { NavBar_D_SearchComponent } from "@/components/navBar/desktop/NavBar_D_SearchComponent"
-import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"
@@ -45,11 +45,21 @@ export const NavBar_D_OnlyDefault = () => {
 
   const classNameToFocusLogic_GTS = "GTS"
   const { focusedElement: focusedElement_GTS } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement_GTS, setInfoDropdownStateGTS, ["h4"], classNameToFocusLogic_GTS)
+  useCloseNotActiveElementAnymore(
+    focusedElement_GTS,
+    setInfoDropdownStateGTS,
+    ["h4"],
+    classNameToFocusLogic_GTS
+  )
 
   const classNameToFocusLogic_INFO = "INFO"
   const { focusedElement: focusedElement_INFO } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement_INFO, setInfoDropdownStateInfo, ["h4"], classNameToFocusLogic_INFO)
+  useCloseNotActiveElementAnymore(
+    focusedElement_INFO,
+    setInfoDropdownStateInfo,
+    ["h4"],
+    classNameToFocusLogic_INFO
+  )
 
   return (
     <NavBar_D_OnlyDefaultWrapper>
@@ -61,7 +71,8 @@ export const NavBar_D_OnlyDefault = () => {
         <span
           tabIndex={0}
           onKeyDown={handleNavigateHome}
-          onClick={handleNavigateHome}>
+          onClick={handleNavigateHome}
+        >
           {" "}
           <H2>Inclusive</H2>
           <ChatAILogo />
@@ -73,7 +84,11 @@ export const NavBar_D_OnlyDefault = () => {
           </span>
 
           <ul>
-            <li className={/[org]\/\w|[org]/.test(route.pathname) ? "active" : null}>
+            <li
+              className={
+                /[org]\/\w|[org]/.test(route.pathname) ? "active" : null
+              }
+            >
               <H4>
                 <Link href={`/${ALL_ROUTES.ORG}`}>Resource Directory</Link>
               </H4>
@@ -82,7 +97,8 @@ export const NavBar_D_OnlyDefault = () => {
               onClick={handleToggleGTSDropdown}
               onKeyDown={handleToggleGTSDropdown}
               tabIndex={0}
-              className={classNameToFocusLogic_GTS}>
+              className={classNameToFocusLogic_GTS}
+            >
               <H4>Guide to Services</H4>
               {infoDropdownStateGTS && <NavBar_D_GTSDropdown theRef={refGTS} />}
             </li>
@@ -93,9 +109,12 @@ export const NavBar_D_OnlyDefault = () => {
               onClick={handleToggleInfoDropdown}
               onKeyDown={handleToggleInfoDropdown}
               tabIndex={0}
-              className={classNameToFocusLogic_INFO}>
+              className={classNameToFocusLogic_INFO}
+            >
               <H4>Info</H4>
-              {infoDropdownStateInfo && <NavBar_D_InfoDropdown theRef={refInfo} />}
+              {infoDropdownStateInfo && (
+                <NavBar_D_InfoDropdown theRef={refInfo} />
+              )}
             </li>
           </ul>
         </div>

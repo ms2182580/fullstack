@@ -7,8 +7,8 @@ import {
   RightArrowSvg,
 } from "../../../../../assets/icons/index.js"
 import { ButtonSmall } from "../../../../ui/buttons/general/index"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_ScheduleWrapper } from "./styles/ORG_D_Detail_ScheduleWrapper"
 
 export const enum IS_USABLE_SECTION {

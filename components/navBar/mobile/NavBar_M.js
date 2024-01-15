@@ -2,7 +2,7 @@ import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
-import { H2 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H2 } from "../../ui/heading_body_text/HeaderFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
 import { NavBar_M_Wrapper } from "./styles/NavBar_M_Wrapper.js"
 import {
@@ -46,17 +46,15 @@ export const NavBar_M = () => {
 
   return (
     <NavBar_M_Wrapper mustShowFiltersMobile={mustShowFiltersMobile}>
-      <span
-        tabIndex={0}
-        onKeyDown={navigateHome}
-        onClick={navigateHome}>
+      <span tabIndex={0} onKeyDown={navigateHome} onClick={navigateHome}>
         <NavBar_M_HamburgerSvg />
       </span>
       <div>
         <span
           tabIndex={0}
           onKeyDown={handleNavigateHome}
-          onClick={handleNavigateHome}>
+          onClick={handleNavigateHome}
+        >
           <H2 bold>Inclusive</H2>
           <ChatAILogo_M />
         </span>

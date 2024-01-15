@@ -1,13 +1,14 @@
 import { Fragment } from "react"
-import { Caption, P } from "../../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import {
+  Caption,
+  P,
+} from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Detail_CardInfoWrapper } from "./styles/ST_M_Detail_CardInfoWrapper.js"
 
 export const ST_M_Detail_CardInfo = ({ title, dataToShow }) => {
   return (
     <ST_M_Detail_CardInfoWrapper>
-      <Caption
-        primary_hover
-        bolder>
+      <Caption primary_hover bolder>
         {title}:
       </Caption>
 

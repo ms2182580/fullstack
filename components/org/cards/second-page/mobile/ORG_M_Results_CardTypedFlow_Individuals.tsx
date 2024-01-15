@@ -51,6 +51,7 @@ type Item = {
   rating: number
   reviews: number
   categoryPosition: number
+  resourcePosition: number
   textReview: string
   goToThirdPage: {
     folder_name: string
@@ -99,9 +100,6 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
 
   const { push } = useRouter()
 
-  // const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
-  // const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
-
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   let P = ({ first, last }) => {
@@ -140,7 +138,7 @@ export const ORG_M_Results_CardTypedFlow_Individuals = ({
                       event,
                       categoryPosition: x.categoryPosition,
                       subcategoryPosition: 0,
-                      resourcePosition: index,
+                      resourcePosition: x.resourcePosition,
                       setThirdpageDataORG,
                       push,
                     })

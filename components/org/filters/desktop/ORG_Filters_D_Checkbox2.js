@@ -2,7 +2,7 @@ import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { useState } from "react"
 import { XDesktopSvg } from "../../../../assets/icons/index.js"
 import { useShowFilters } from "../../../../utils/org/useShowFilters.js"
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
 import { ORG_Filters_D_CheckboxWrapper2 } from "./styles/ORG_Filters_D_CheckboxWrapper2.js"
 
@@ -21,11 +21,17 @@ export const ORG_Filters_D_Checkbox2 = ({
   // titleOnModal,
   ...props
 }) => {
-  const { buttonName = "noNameOnThisButton", categoriesToDisplay = ["nothing here"], titleOnModal } = props.props
+  const {
+    buttonName = "noNameOnThisButton",
+    categoriesToDisplay = ["nothing here"],
+    titleOnModal,
+  } = props.props
 
   const className = props.shouldAddClassName
 
-  const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
+  const [showRemaining, setShowRemaining] = useState(
+    categoriesToDisplay.length <= 3
+  )
   const handleShowRemaining = () => {
     setShowRemaining(true)
   }
@@ -88,14 +94,22 @@ export const ORG_Filters_D_Checkbox2 = ({
       mustShowFilter={mustShowFilter}
       showRemaining={showRemaining}
       allowSelection={allowSelection}
-      className={className && className}>
-      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{buttonName}</ButtonSmall> : <ButtonSmall>{buttonName}</ButtonSmall>}</span>
+      className={className && className}
+    >
+      <span onClick={handleShowFilter}>
+        {!mustShowFilter ? (
+          <ButtonSmall secondary>{buttonName}</ButtonSmall>
+        ) : (
+          <ButtonSmall>{buttonName}</ButtonSmall>
+        )}
+      </span>
 
       <div ref={refContainer}>
         <span
           onClick={handleShowFilter}
           onKeyDown={handleShowFilter}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <XDesktopSvg />
         </span>
 
@@ -103,7 +117,8 @@ export const ORG_Filters_D_Checkbox2 = ({
           semibold
           onDoubleClick={handleToggleAll}
           onMouseDown={handleMouseDown}
-          onMouseUp={handleOnMouseLeave}>
+          onMouseUp={handleOnMouseLeave}
+        >
           {titleOnModal || buttonName}
         </P>
 
@@ -137,7 +152,8 @@ shouldClearAllOptions={shouldClearAllOptions} */
               return (
                 <li
                   key={x}
-                  className={showRemaining ? "showRemaining" : "notShowYet"}>
+                  className={showRemaining ? "showRemaining" : "notShowYet"}
+                >
                   <label>
                     <P>{x}</P>
                     <ORG_Filters_D_Checkbox_Input
@@ -184,9 +200,7 @@ shouldClearAllOptions={shouldClearAllOptions} */
           })}
           {categoriesToDisplay.length > 4 && showRemaining === false && (
             <span onClick={handleShowRemaining}>
-              <P
-                semibold
-                hyperlink_normal>
+              <P semibold hyperlink_normal>
                 See All
               </P>
             </span>
@@ -196,7 +210,8 @@ shouldClearAllOptions={shouldClearAllOptions} */
         <div>
           <span
             onClick={handleShouldClearAllOptions}
-            onKeyDown={handleShouldClearAllOptions}>
+            onKeyDown={handleShouldClearAllOptions}
+          >
             <ButtonSmall secondary>Clear all</ButtonSmall>
           </span>
           <span>

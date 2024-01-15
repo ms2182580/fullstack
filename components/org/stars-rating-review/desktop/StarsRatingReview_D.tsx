@@ -1,4 +1,4 @@
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { PatternStars } from "../PatternsStars.js"
 import { StarsRatingReview_DWrapper } from "./styles/StarsRatingReview_DWrapper"
 
