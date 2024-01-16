@@ -31,6 +31,7 @@ export const ChatAI_ComingSoonWrapper = styled.div`
     left: 96%;
 
     border: 10px solid ${NEUTRALS.OFF_WHITE};
-    border-color: ${NEUTRALS.OFF_WHITE} ${NEUTRALS.OFF_WHITE} transparent transparent;
+    border-color: ${NEUTRALS.OFF_WHITE} ${NEUTRALS.OFF_WHITE} transparent
+      transparent;
   }
 `

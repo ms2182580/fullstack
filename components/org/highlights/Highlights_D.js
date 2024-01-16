@@ -1,4 +1,4 @@
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Highlights_DWrapper } from "./styles/Highlights_DWrapper.js"
 
 export const Highlights_D = ({ highlights }) => {

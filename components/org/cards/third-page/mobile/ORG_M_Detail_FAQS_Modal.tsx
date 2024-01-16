@@ -4,11 +4,6 @@ import { XSvg } from "@/assets/icons"
 import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
-// import { XSvg } from "../../../../../assets/icons/index.js"
-// import { ButtonSmall } from "../../../../ui/buttons/general/index"
-// import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-// import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
-// import { ORG_D_Detail_FAQS_ModalWrapper } from "./styles/ORG_D_Detail_FAQS_ModalWrapper.js"
 
 export const ORG_M_Detail_FAQS_Modal = ({
   showModal,
@@ -17,15 +12,15 @@ export const ORG_M_Detail_FAQS_Modal = ({
   lastName,
   setFaqsData,
 }) => {
-  const componentRef = useRef(null)
+  const componentRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    function handleClickOutside(event) {
+    function handleClickOutside(event: MouseEvent | KeyboardEvent) {
       if (
         (componentRef.current &&
-          !componentRef.current.contains(event.target) &&
+          !componentRef.current.contains(event.target as Node) &&
           event.type === "mousedown") ||
-        (event.key === "Escape" && event.type === "keydown")
+        ((event as KeyboardEvent).key === "Escape" && event.type === "keydown")
       ) {
         handleHideModal(event)
       }
@@ -59,7 +54,7 @@ export const ORG_M_Detail_FAQS_Modal = ({
       <span onClick={handleHideModal} onKeyDown={handleHideModal} tabIndex={0}>
         <XSvg />
       </span>
-      <H4 hover>Question</H4>
+      <H4 primary_hover>Question</H4>
       <label>
         <Caption>
           Got a question about {name} {lastName} SLP? Ask the Inclusive

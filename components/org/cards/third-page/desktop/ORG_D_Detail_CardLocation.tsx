@@ -1,8 +1,5 @@
 import { LocationSvg } from "../../../../../assets/icons/index.js"
-import {
-  Caption,
-  P,
-} from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_CardLocationWrapper } from "./styles/ORG_D_Detail_CardLocationWrapper"
 
 type Props = {
@@ -36,7 +33,11 @@ export const ORG_D_Detail_CardLocation = ({
           <P>{locationStreetName_Backend}</P>
           <P>{locationState} </P>
 
-          <Caption> ({howFar} miles away)</Caption>
+          {howFar !== "_" ? (
+            <>
+              <Caption> ({howFar} miles away)</Caption>
+            </>
+          ) : null}
         </div>
       </ORG_D_Detail_CardLocationWrapper>
     )

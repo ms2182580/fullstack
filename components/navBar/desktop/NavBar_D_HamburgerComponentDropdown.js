@@ -11,7 +11,7 @@ import {
   Navbar_D_AccessibilityModeSvg,
 } from "../../../assets/icons/index.js"
 import { useOutsideHideHover } from "../../../utils/useOutsideHideHover.js"
-import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_HamburgerComponentDropdown_CC } from "./NavBar_D_HamburgerComponentDropdown_CC.js"
 import { NavBar_D_HamburgerComponentDropdownWrapper } from "./styles/NavBar_D_HamburgerComponentDropdownWrapper.js"
 
@@ -87,10 +87,9 @@ export const NavBar_D_HamburgerComponentDropdown = ({
 
   let moveUserToORGSearch = (e, acronym) => {
     if (e.type === "click" || e.key === "Enter") {
-      const checkExistPath =
-        DATA_ORG_CheckPaths_Search_D.filter(
-          (x) => x === acronym
-        )
+      const checkExistPath = DATA_ORG_CheckPaths_Search_D.filter(
+        (x) => x === acronym
+      )
 
       if (checkExistPath.length !== 0) {
         setShowDropdown(false)
@@ -103,10 +102,8 @@ export const NavBar_D_HamburgerComponentDropdown = ({
           {
             pathname: `/${ALL_ROUTES.ORG}`,
             query: {
-              [ROUTER_PUSH_SEARCH.nameJSX]:
-                DATA_ORG_D[thisIndex].nameJSX,
-              [ROUTER_PUSH_SEARCH.componentName]:
-                DATA_ORG_D[thisIndex].nameJSX,
+              [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX,
+              [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].nameJSX,
             },
           },
           `/${ALL_ROUTES.ORG}`
@@ -116,9 +113,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({
   }
 
   return (
-    <NavBar_D_HamburgerComponentDropdownWrapper
-      ref={theRef}
-    >
+    <NavBar_D_HamburgerComponentDropdownWrapper ref={theRef}>
       <ul>
         {LIST.map((x, index) => {
           if (index === 0) {
@@ -129,17 +124,11 @@ export const NavBar_D_HamburgerComponentDropdown = ({
                   ref={theRefCC}
                   onFocus={handleShowHover}
                   data-content={x.nameJSX}
-                  onClick={(e) =>
-                    moveUserToORGSearch(e, x.acronym)
-                  }
-                  onKeyDown={(e) =>
-                    moveUserToORGSearch(e, x.acronym)
-                  }
+                  onClick={(e) => moveUserToORGSearch(e, x.acronym)}
+                  onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
                 >
                   <H4>{x.nameJSX}</H4>
-                  {showNestedCC && (
-                    <x.nestedDropdown.component />
-                  )}
+                  {showNestedCC && <x.nestedDropdown.component />}
                 </li>
               </Fragment>
             )
@@ -152,12 +141,8 @@ export const NavBar_D_HamburgerComponentDropdown = ({
                   tabIndex={0}
                   onFocus={handleHideHover}
                   data-content={x.nameJSX}
-                  onClick={(e) =>
-                    moveUserToORGSearch(e, x.acronym)
-                  }
-                  onKeyDown={(e) =>
-                    moveUserToORGSearch(e, x.acronym)
-                  }
+                  onClick={(e) => moveUserToORGSearch(e, x.acronym)}
+                  onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
                 >
                   <H4>{x.nameJSX}</H4>
                 </li>
@@ -169,16 +154,10 @@ export const NavBar_D_HamburgerComponentDropdown = ({
             <Fragment key={x.nameJSX}>
               <li
                 tabIndex={0}
-                onClick={(e) =>
-                  moveUserToORGSearch(e, x.acronym)
-                }
-                onKeyDown={(e) =>
-                  moveUserToORGSearch(e, x.acronym)
-                }
+                onClick={(e) => moveUserToORGSearch(e, x.acronym)}
+                onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
               >
-                <H4 data-content={x.nameJSX}>
-                  {x.nameJSX}
-                </H4>
+                <H4 data-content={x.nameJSX}>{x.nameJSX}</H4>
               </li>
             </Fragment>
           )
@@ -187,8 +166,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({
 
       <ul>
         <li>
-          <NavBar_D_WriteAReviewSvg />{" "}
-          <H4 tabIndex={0}>Write a review</H4>
+          <NavBar_D_WriteAReviewSvg /> <H4 tabIndex={0}>Write a review</H4>
         </li>
         <li>
           <Navbar_D_AccessibilityModeSvg />{" "}

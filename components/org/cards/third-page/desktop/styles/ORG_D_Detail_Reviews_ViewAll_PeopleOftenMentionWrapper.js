@@ -1,5 +1,6 @@
+import { blurEffect } from "@/components/ui/blur/blur"
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div`
@@ -7,6 +8,19 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
   gap: 16px;
 
   position: relative;
+
+  & > :nth-child(1) {
+    position: relative;
+
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        padding: 16px;
+        width: fit-content;
+
+        ${blurEffect({})}
+      `}
+  }
 
   & > :nth-child(3) {
     display: grid;
@@ -23,7 +37,8 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
         border: 1px solid #686868;
         padding: 4px 11px;
         border-radius: 8px;
-        cursor: pointer;
+        cursor: default;
+
         background-color: ${NEUTRALS.OFF_WHITE};
 
         display: flex;
@@ -43,7 +58,7 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
       align-items: center;
       justify-content: center;
       gap: 12px;
-      cursor: pointer;
+      cursor: default;
     }
 
     &:after {

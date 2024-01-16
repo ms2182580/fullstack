@@ -1,4 +1,5 @@
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 export const enum Layout_MainCardRight_KEY {
@@ -284,7 +285,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
     }
 
     & > :last-child:not(.NO_HIGHLIGHT) {
-      margin-bottom: 64px;
+      margin-bottom: ${({ isBackend }) => (isBackend ? "" : "64px")};
       display: flex;
       flex-direction: column;
       row-gap: 16px;
@@ -378,15 +379,51 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
   ${({ isBackend }) =>
     isBackend &&
     css`
+      display: grid;
+      gap: 24px;
+
       & > :nth-child(2) {
-        & > ul {
+        display: grid;
+        gap: 8px;
+
+        position: relative;
+        padding: 16px;
+
+        ${blurEffect({})}
+
+        & > :nth-child(2) {
+          display: grid;
+          gap: 8px;
+        }
+        & > :nth-child(3) {
+          padding: 8px 16px;
+
+          border-radius: 8px;
+          background: ${PRIMARY.PRIMARY_BACKGROUND};
+
+          & > :nth-child(1) {
+            color: ${PRIMARY.PRIMARY_HOVER};
+            font-weight: 700;
+          }
+
+          & > :nth-child(2) {
+            font-weight: 600;
+          }
+        }
+
+        & > :nth-child(4) {
           list-style: none;
 
           display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
           gap: 24px;
 
           & > * {
-            width: fit-content;
+            display: grid;
+            gap: 24px;
+
+            list-style: none;
 
             position: relative;
 
@@ -394,19 +431,31 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
 
             font-weight: 600;
 
-            &:before {
-              content: "";
-              position: absolute;
-              inset: 0;
-              background-color: ${NEUTRALS.LIGHT_GREY};
-              opacity: 0.8;
-              border-radius: 16px;
+            & > * {
+              & > :nth-child(1) {
+                color: ${PRIMARY.PRIMARY_HOVER};
+                font-weight: 700;
+              }
             }
           }
         }
       }
 
+      & > :nth-child(3) {
+        position: relative;
+        padding: 16px;
+
+        ${blurEffect({})}
+      }
       & > :last-child {
+        position: relative;
+        width: fit-content;
+        margin-left: auto;
+
+        padding: 16px;
+
+        ${blurEffect({})}
+
         & > :nth-child(1) {
           gap: 16px;
         }

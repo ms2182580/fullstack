@@ -7,7 +7,7 @@ type Props = {
 }
 export const ORG_M_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div<Props>`
   display: grid;
-  grid-template-columns: 1fr 9fr;
+  grid-template-columns: 1fr 29fr;
   gap: 5px;
 
   & > :nth-child(1) {
@@ -80,10 +80,6 @@ export const ORG_M_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div<Props>`
       gap: 16px;
     }
 
-    /* & > :nth-child(1) {
-      margin-bottom: 24px;
-    } */
-
     & > :nth-child(2) {
       & > :nth-child(1) {
         & > p > span {
@@ -96,15 +92,6 @@ export const ORG_M_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div<Props>`
           }
         }
       }
-
-      /* & > :nth-child(2) > :nth-child(2) {
-        margin-top: 15px;
-
-        display: flex;
-        & > :nth-child(1) > span {
-          font-weight: 400;
-        }
-      } */
 
       .shouldIndent {
         margin-left: 28px;

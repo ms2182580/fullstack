@@ -1,8 +1,16 @@
 import bar1 from "@/assets/images/org/special-education-schools/bar_AllStudents.png"
 import bar2 from "@/assets/images/org/special-education-schools/bar_StudentsDIsabilities.png"
-import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
-import { CategoriesToDisplay_Data, ORG_D_Detail_Bars, ORG_D_Detail_Bars_Props } from "./ORG_D_Detail_Bars"
-import { ORG_D_Detail_TableCake, ORG_D_Detail_TableCake_Props, TableData_Type } from "./ORG_D_Detail_TableCake"
+import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import {
+  CategoriesToDisplay_Data,
+  ORG_D_Detail_Bars,
+  ORG_D_Detail_Bars_Props,
+} from "./ORG_D_Detail_Bars"
+import {
+  ORG_D_Detail_TableCake,
+  ORG_D_Detail_TableCake_Props,
+  TableData_Type,
+} from "./ORG_D_Detail_TableCake"
 import { ORG_D_Detail_SchoolAcademicsWrapper } from "./styles/ORG_D_Detail_SchoolAcademicsWrapper"
 
 const schoolAcademicsUpgradedCurriculum_tableData: TableData_Type = [
@@ -42,7 +50,8 @@ const testScores_Data: CategoriesToDisplay_Data = [
 
 const testScores: ORG_D_Detail_Bars_Props = {
   title: "test Scores",
-  subtitle: "Test scores for the school are above the state average that are given once a year",
+  subtitle:
+    "Test scores for the school are above the state average that are given once a year",
   categoriesToDisplay: testScores_Data,
 }
 
@@ -62,7 +71,8 @@ export const ORG_D_Detail_SchoolAcademics = () => {
               width="16"
               height="17"
               viewBox="0 0 16 17"
-              fill="none">
+              fill="none"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"

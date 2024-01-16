@@ -5,7 +5,7 @@
 // import { useORG_Ctx_ShowFiltersMobile } from "../../../../../context/ORG_Ctx_ShowFiltersMobile.js"
 // import { ORG_Sortby_Mobile } from "../../../../../utils/ORG_SortByData"
 // import { ORG_SortybyFunction_D } from "../../../../../utils/ORG_SortybyFunction_D.js"
-// import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
+// import { Caption } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 // import { CustomC } from "../../../dropdownFilters/styles/Singledropdown.js"
 // import { STResults_SortByMobileWrapper } from "./styles/STResults_SortByMobileWrapper.js"
 

@@ -8,7 +8,12 @@ export const ChatAI = () => {
   const [showChat, setShowChat] = useState(false)
 
   let handleShowChat = (e) => {
-    if (e.type === "click" || e.code === "F1" || e.code === "Enter" || e.key === "Enter") {
+    if (
+      e.type === "click" ||
+      e.code === "F1" ||
+      e.code === "Enter" ||
+      e.key === "Enter"
+    ) {
       // setShowChat(true)
     }
   }
@@ -21,7 +26,10 @@ export const ChatAI = () => {
 
   useEffect(() => {
     const handleKeyPress = (event) => {
-      if ((event.shiftKey && event.key.toLowerCase() === "a") || event.key === "F1") {
+      if (
+        (event.shiftKey && event.key.toLowerCase() === "a") ||
+        event.key === "F1"
+      ) {
         // handleShowChat(event)
       }
 
@@ -67,7 +75,12 @@ export const ChatAI = () => {
   const [comingSoonText, setComingSoonText] = useState(false)
   const timeoutRef = useRef<any>(null)
   const handleShowComingSoonText = (e) => {
-    if (e.type === "click" || e.code === "F1" || e.code === "Enter" || e.key === "Enter") {
+    if (
+      e.type === "click" ||
+      e.code === "F1" ||
+      e.code === "Enter" ||
+      e.key === "Enter"
+    ) {
       if (comingSoonText && timeoutRef.current) {
         setComingSoonText(false)
         clearTimeout(timeoutRef.current)
@@ -101,7 +114,8 @@ export const ChatAI = () => {
         onKeyDown={handleShowComingSoonText}
         tabIndex={0}
         // ref={refToChat}
-        ref={timeoutRef}>
+        ref={timeoutRef}
+      >
         <ChatAI_0_LogoSvg />
       </span>
 

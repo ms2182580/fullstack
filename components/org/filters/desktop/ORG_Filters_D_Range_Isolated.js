@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_Range_IsolatedWrapper } from "./styles/ORG_Filters_D_Range_IsolatedWrapper.js"
 
 export const ORG_Filters_D_Range_Isolated = ({
@@ -31,7 +31,10 @@ export const ORG_Filters_D_Range_Isolated = ({
   const range = useRef(null)
 
   // Convert to percentage
-  const getPercent = useCallback((value) => Math.round(((value - min) / (max - min)) * 100), [min, max])
+  const getPercent = useCallback(
+    (value) => Math.round(((value - min) / (max - min)) * 100),
+    [min, max]
+  )
 
   // Set width of the range to decrease from the left side
   useEffect(() => {
@@ -65,12 +68,23 @@ export const ORG_Filters_D_Range_Isolated = ({
     //   setMinValUI(formatedValue)
     // }
 
-    if (whichMeasure !== "weight" && minSpecialCharacter !== undefined && addCharacter === "toLeft") {
+    if (
+      whichMeasure !== "weight" &&
+      minSpecialCharacter !== undefined &&
+      addCharacter === "toLeft"
+    ) {
       const shouldAddSpecialCharacter = value === Number(min)
 
-      let finalSpecialCharacter = shouldAddSpecialCharacter && addCharacterMinSpecialCharacter ? ` ${whichMeasure} ${minSpecialCharacter}` : `${minSpecialCharacter}`
+      let finalSpecialCharacter =
+        shouldAddSpecialCharacter && addCharacterMinSpecialCharacter
+          ? ` ${whichMeasure} ${minSpecialCharacter}`
+          : `${minSpecialCharacter}`
 
-      setMinValUI(shouldAddSpecialCharacter ? finalSpecialCharacter : ` ${whichMeasure}  ${formatedValue}`)
+      setMinValUI(
+        shouldAddSpecialCharacter
+          ? finalSpecialCharacter
+          : ` ${whichMeasure}  ${formatedValue}`
+      )
     }
 
     if (whichMeasure !== "weight" && addCharacter === "toRight") {
@@ -79,7 +93,9 @@ export const ORG_Filters_D_Range_Isolated = ({
 
     if (whichMeasure === "weight" && addCharacter === "toRight") {
       const inLbs = `${formatedValue} lbs`
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
+      const inKgs = `${Math.round(
+        new Intl.NumberFormat().format(value * 0.45359237)
+      )} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
@@ -106,7 +122,9 @@ export const ORG_Filters_D_Range_Isolated = ({
     if (whichMeasure === "weight" && addCharacter === "toRight") {
       const inLbs = `+${formatedValue} lbs`
 
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(value * 0.45359237))} kg`
+      const inKgs = `${Math.round(
+        new Intl.NumberFormat().format(value * 0.45359237)
+      )} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
@@ -143,7 +161,9 @@ export const ORG_Filters_D_Range_Isolated = ({
     if (whichMeasure === "weight") {
       const inLbs = `${formatedValueMin} lbs`
 
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(min * 0.45359237))} kg`
+      const inKgs = `${Math.round(
+        new Intl.NumberFormat().format(min * 0.45359237)
+      )} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
@@ -163,7 +183,9 @@ export const ORG_Filters_D_Range_Isolated = ({
     if (whichMeasure === "weight") {
       const inLbs = `+${formatedValueMax} lbs`
 
-      const inKgs = `${Math.round(new Intl.NumberFormat().format(max * 0.45359237))} kg`
+      const inKgs = `${Math.round(
+        new Intl.NumberFormat().format(max * 0.45359237)
+      )} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
@@ -183,9 +205,7 @@ export const ORG_Filters_D_Range_Isolated = ({
   // }, [updateFilterData, mustShowFiltersDesktop])
 
   return (
-    <ORG_Filters_D_Range_IsolatedWrapper
-      minVal={minVal}
-      maxVal={maxVal}>
+    <ORG_Filters_D_Range_IsolatedWrapper minVal={minVal} maxVal={maxVal}>
       {labelName !== "" && <label htmlFor="min">Minimum {labelName}</label>}
 
       <P semibold>{buttonName}</P>
@@ -211,10 +231,7 @@ export const ORG_Filters_D_Range_Isolated = ({
 
       <div className="slider">
         <div className="slider__track" />
-        <div
-          ref={range}
-          className="slider__range"
-        />
+        <div ref={range} className="slider__range" />
       </div>
 
       <div className="valuesToShow">

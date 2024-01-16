@@ -125,7 +125,8 @@ export const ORG_D_Detail_MainCardLeftPhotosModalWrapper = styled.div`
     gap: 8px;
 
     .styling {
-      cursor: pointer;
+      cursor: default;
+
       overflow: hidden;
       border-radius: 8px;
       padding: 8px;
@@ -154,11 +155,17 @@ export const ORG_D_Detail_MainCardLeftPhotosModalWrapper = styled.div`
       }
     }
 
-    .active,
-    .styling:hover {
+    .active {
       & > :nth-child(2) {
         color: ${NEUTRALS.OFF_WHITE};
         background-color: ${PRIMARY.PRIMARY_CTA};
+      }
+    }
+
+    .styling:hover {
+      & > :nth-child(2) {
+        color: ${NEUTRALS.OFF_WHITE};
+        background-color: ${PRIMARY.PRIMARY_HOVER};
       }
     }
   }

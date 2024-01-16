@@ -10,8 +10,8 @@ import {
 } from "../../second-page/desktop/specificData"
 import { ArraySectionToRender_Type } from "../../third-page/InnerNavBar"
 import { Tooltip_VALUES } from "../../third-page/tooltip"
-import { arraySectionToRender_TherapeuticService } from "../therapeutic-service/arraySectionToRender"
-import { mapRender_TherapeuticService } from "../therapeutic-service/mapRender"
+import { arraySectionToRender_TherapeuticServices } from "../therapeutic-services/arraySectionToRender"
+import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
 
 /*
  * Write here all the names of the categories to be used in the future, right now only "THERAPEUTIC SERVICES" is on the list
@@ -80,7 +80,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     SECOND_PAGE: {},
 
     THIRD_PAGE: {
-      SECTIONS: arraySectionToRender_TherapeuticService,
+      SECTIONS: arraySectionToRender_TherapeuticServices,
       LAYOUT_MAIN_CARD_RIGHT: Layout_MainCardRight_VALUES.LIKE_MENTAL_HEALTH,
       HOW_IS_MAP: mapRender_TherapeuticService,
       BUTTON_MAIN_CARD_ICON: true,

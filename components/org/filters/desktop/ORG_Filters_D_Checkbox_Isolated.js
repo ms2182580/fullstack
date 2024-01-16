@@ -1,10 +1,16 @@
 import { useState } from "react"
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
 import { ORG_Filters_D_Checkbox_IsolatedWrapper } from "./styles/ORG_Filters_D_Checkbox_IsolatedWrapper.js"
 
-export const ORG_Filters_D_Checkbox_Isolated = ({ categoriesToDisplay = ["empty"], titleOnModal = ``, shouldClearAllOptions }) => {
-  const [showRemaining, setShowRemaining] = useState(categoriesToDisplay.length <= 3)
+export const ORG_Filters_D_Checkbox_Isolated = ({
+  categoriesToDisplay = ["empty"],
+  titleOnModal = ``,
+  shouldClearAllOptions,
+}) => {
+  const [showRemaining, setShowRemaining] = useState(
+    categoriesToDisplay.length <= 3
+  )
   const handleShowRemaining = () => {
     setShowRemaining(true)
   }
@@ -31,7 +37,8 @@ export const ORG_Filters_D_Checkbox_Isolated = ({ categoriesToDisplay = ["empty"
         semibold
         onDoubleClick={handleToggleAll}
         onMouseDown={handleMouseDown}
-        onMouseUp={handleOnMouseLeave}>
+        onMouseUp={handleOnMouseLeave}
+      >
         {titleOnModal}
       </P>
 
@@ -64,7 +71,8 @@ shouldClearAllOptions={shouldClearAllOptions} */
             return (
               <li
                 key={x}
-                className={showRemaining ? "showRemaining" : "notShowYet"}>
+                className={showRemaining ? "showRemaining" : "notShowYet"}
+              >
                 <label>
                   <P>{x}</P>
                   <ORG_Filters_D_Checkbox_Input
@@ -111,9 +119,7 @@ shouldClearAllOptions={shouldClearAllOptions} */
         })}
         {categoriesToDisplay.length > 4 && showRemaining === false && (
           <span onClick={handleShowRemaining}>
-            <P
-              semibold
-              hyperlink_normal>
+            <P semibold hyperlink_normal>
               See All
             </P>
           </span>

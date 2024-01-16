@@ -1,4 +1,4 @@
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { PatternStars } from "../PatternsStars.js"
 import { StarsRatingReview_DWrapper } from "./styles/StarsRatingReview_DWrapper"
 
@@ -9,24 +9,15 @@ export type Props = {
 }
 
 export const StarsRatingReview_D = ({
-  rating,
+  rating = 5,
   reviews = "",
   isDetail = false,
 }: Props) => {
   return (
-    <StarsRatingReview_DWrapper
-      isDetail={isDetail}
-      rating={rating}
-    >
+    <StarsRatingReview_DWrapper isDetail={isDetail} rating={rating}>
       <div>
-        {rating !== undefined ? (
-          <>
-            <PatternStars rating={rating} />
-            <P>{rating}.0</P>
-          </>
-        ) : (
-          <P>Rating Coming Soon!</P>
-        )}
+        <PatternStars rating={rating} />
+        <P>{rating}.0</P>
       </div>
 
       {reviews ? (

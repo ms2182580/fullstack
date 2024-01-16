@@ -5,21 +5,15 @@ import {
 } from "@/assets/icons/index.js"
 import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
 import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
-import { H1 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "@/utils/org/DATA_ORG_CheckPaths_Search_D.js"
 import { useFormatData } from "@/utils/org/useFormatData"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
-import {
-  Fragment,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react"
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
 
@@ -32,10 +26,8 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
     allBackendData,
   })
 
-  const [singleCardIsSelected, setSingleCardIsSelected] =
-    useState(false)
-  const [matchNameState, setMatchNameState] =
-    useState("All")
+  const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
+  const [matchNameState, setMatchNameState] = useState("All")
 
   const handleShowAll = () => {
     setSingleCardIsSelected(false)
@@ -56,12 +48,8 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
   const { query } = useRouter()
   const refOfORGSelections = useRef(null)
 
-  const {
-    moveToLeft,
-    moveToRight,
-    stateToCss,
-    setListRef,
-  } = useScrollHorizontal(refOfORGSelections)
+  const { moveToLeft, moveToRight, stateToCss, setListRef } =
+    useScrollHorizontal(refOfORGSelections)
 
   /* useEffect(() => {
     if (refOfORGSelections) {
@@ -77,18 +65,13 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
 
   useLayoutEffect(() => {
     if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
-      let allChildren = Array.from(
-        refOfORGSelections.current.children
-      )
-      let getIsActive = allChildren.filter(
-        (x) => x.className === "isActive"
-      )[0]
+      let allChildren = Array.from(refOfORGSelections.current.children)
+      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
 
       let liClientWidth_IsActive = getIsActive.clientWidth
       let liOffSetLeft_IsActive = getIsActive.offsetLeft
 
-      let positionToMove =
-        liOffSetLeft_IsActive - liClientWidth_IsActive
+      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
 
       refOfORGSelections.current.scroll({
         left: positionToMove,
@@ -103,16 +86,14 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
       setSingleCardIsSelected(true)
       setMatchNameState(componentName)
 
-      const ulElement =
-        refOfORGSelections.current.getBoundingClientRect()
+      const ulElement = refOfORGSelections.current.getBoundingClientRect()
 
       const theElementTop = ulElement.top
       window.scrollTo({ top: theElementTop })
     }
   }, [query])
 
-  const { setThirdpageDataORG } =
-    useORG_Ctx_D_ThirdpageData()
+  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
 
   useEffect(() => {
     setThirdpageDataORG("")
@@ -120,9 +101,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
 
   return (
     <>
-      <INDEX_D_ORGWrapper
-        shouldHideAllLi={stateToCss.scrollRight}
-      >
+      <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
         <div>
           <H1 semi_bold>
             Find your I/DD <br /> community
@@ -145,9 +124,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
         <div>
           <div
             className={`${
-              stateToCss.scrollRight
-                ? "navBarLeftArrowShouldDisplay"
-                : ""
+              stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
             }`}
           >
             <div onClick={moveToLeft}>
@@ -163,9 +140,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
           >
             <li
               onClick={handleShowAll}
-              className={
-                !singleCardIsSelected ? "isActive" : ""
-              }
+              className={!singleCardIsSelected ? "isActive" : ""}
             >
               <P primary_cta semibold>
                 All
@@ -178,17 +153,12 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
                   data-name={x.nameJSX}
                   onClick={handleShowOneCard}
                   className={
-                    singleCardIsSelected &&
-                    matchNameState === x.nameJSX
+                    singleCardIsSelected && matchNameState === x.nameJSX
                       ? "isActive"
                       : ""
                   }
                 >
-                  <P
-                    primary_cta
-                    semibold
-                    data-name={x.nameJSX}
-                  >
+                  <P primary_cta semibold data-name={x.nameJSX}>
                     {x.nameJSX.toLowerCase()}
                   </P>
                 </li>
@@ -197,17 +167,13 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
           </ul>
           <div
             className={`${
-              stateToCss.reachFinal
-                ? "navBarRightArrowShouldDisable"
-                : ""
+              stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
             }`}
           >
             <div
               onClick={moveToRight}
               className={`${
-                stateToCss.reachFinal
-                  ? "navBarRightArrowShouldDisable"
-                  : ""
+                stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
               }`}
             >
               <ArrowRightSvg />
@@ -216,8 +182,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
           </div>
         </div>
         {dataToORG.map((x, i) => {
-          const someLayoutSpecial =
-            x?.somethingSpecial?.layout ?? null
+          const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
           const dataComesFromBackend =
             x?.somethingSpecial?.isFromBackend ?? null
           if (singleCardIsSelected === false) {
@@ -227,17 +192,14 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
                   positionInArray={i}
                   theData={x.thisParticularData}
                   someLayoutSpecial={someLayoutSpecial}
-                  dataComesFromBackend={
-                    dataComesFromBackend
-                  }
+                  dataComesFromBackend={dataComesFromBackend}
                 />
               </Fragment>
             )
           }
           if (
             singleCardIsSelected &&
-            matchNameState.toLowerCase() ===
-              x.nameJSX.toLowerCase()
+            matchNameState.toLowerCase() === x.nameJSX.toLowerCase()
           ) {
             return (
               <Fragment key={`${x.nameJSX}_${i}`}>
@@ -246,9 +208,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
                   positionInArray={i}
                   theData={x.thisParticularData}
                   someLayoutSpecial={someLayoutSpecial}
-                  dataComesFromBackend={
-                    dataComesFromBackend
-                  }
+                  dataComesFromBackend={dataComesFromBackend}
                   allData={dataToORG}
                 />
               </Fragment>

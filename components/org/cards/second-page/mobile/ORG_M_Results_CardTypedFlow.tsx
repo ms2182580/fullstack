@@ -51,8 +51,9 @@ const Resources = [
 let data: any = []
 Resources.forEach((item) => {
   data.push(
-    item.dataToRender.map((i: any) => ({
+    item.dataToRender.map((i: any, index: number) => ({
       ...i,
+      resourcePosition: index,
       categoryPosition: item.categoryPosition,
     }))
   )

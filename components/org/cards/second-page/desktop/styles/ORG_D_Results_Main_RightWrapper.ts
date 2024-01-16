@@ -1,4 +1,5 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 export type Props = {
@@ -57,29 +58,28 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
     css`
       & > :nth-child(5) {
         list-style: none;
+        width: fit-content;
+
+        padding: 8px;
+
+        /* margin-left: -32px; */
+
+        position: relative;
+
+        ${blurEffect({ zIndex: 2 })}
+
         & > * {
           display: flex;
+          align-items: center;
 
           gap: 8px;
 
           text-transform: capitalize;
 
           & > :nth-child(1) {
-            /* color: ${PRIMARY.PRIMARY_HOVER}; */
-            font-weight: 600;
+            color: ${PRIMARY.PRIMARY_HOVER};
 
-            padding: 8px;
-
-            position: relative;
-
-            &:after {
-              content: "";
-              position: absolute;
-              inset: 0;
-              background-color: ${NEUTRALS.LIGHT_GREY};
-              opacity: 0.7;
-              border-radius: 8px;
-            }
+            white-space: nowrap;
           }
         }
       }

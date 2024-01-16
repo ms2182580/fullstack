@@ -4,8 +4,10 @@ import MHSS_SameClinic_3 from "@/assets/images/org/mental-health/MHSS_SameClinic
 import MHSS_SameClinic_4 from "@/assets/images/org/mental-health/MHSS_SameClinic_4.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { ORG_D_Detail_AtTheSameClinicWrapper } from "./styles/ORG_D_Detail_AtTheSameClinicWrapper"
 
 export const enum PROPS_KEY {
@@ -49,11 +51,18 @@ const dataToDisplay: DataToDisplay_Type = [
   },
 ]
 
-export const ORG_D_Detail_AtTheSameClinic = ({ [ArraySection_KEYS.ALL_DATA]: allProps }: Props) => {
+export const ORG_D_Detail_AtTheSameClinic = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}: Props) => {
   const { theIdForComponent = "#" } = allProps || {}
 
+  const { query } = useRouter()
+
   return (
-    <ORG_D_Detail_AtTheSameClinicWrapper id={theIdForComponent}>
+    <ORG_D_Detail_AtTheSameClinicWrapper
+      id={theIdForComponent}
+      isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+    >
       <header>
         <H3>At the same clinic</H3>
       </header>
@@ -62,10 +71,7 @@ export const ORG_D_Detail_AtTheSameClinic = ({ [ArraySection_KEYS.ALL_DATA]: all
         {dataToDisplay.map((x) => {
           return (
             <li key={x.title}>
-              <Image
-                src={x.image}
-                alt={x.title}
-              />
+              <Image src={x.image} alt={x.title} />
               <P>{x.title}</P>
               <button>View Profile</button>
             </li>

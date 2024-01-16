@@ -5,8 +5,8 @@ import image3 from "@/assets/images/org/attorney-advocates/ORG_AA21.png"
 import Image from "next/image"
 import { ORG_Detail_SearchUsefulResource } from "../../../../../assets/icons/index.js"
 import { ButtonSmall } from "../../../../ui/buttons/general/index"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H3 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_HelpfulWebResourcesWrapper } from "./styles/ORG_D_Detail_HelpfulWebResourcesWrapper"
 
 export const ORG_D_Detail_HelpfulWebResources = () => {
@@ -17,19 +17,13 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
           <summary tabIndex={0}>
             <H3>Helpful web resources </H3>
             <span className="DesplegateButton">
-              <Image
-                src={ArrowUp}
-                alt="arrow to open or close the text"
-              />
+              <Image src={ArrowUp} alt="arrow to open or close the text" />
             </span>
           </summary>
           <div>
             <div>
               <ORG_Detail_SearchUsefulResource />
-              <input
-                type="text"
-                placeholder="Search the web"
-              />
+              <input type="text" placeholder="Search the web" />
               <span>
                 <ButtonSmall secondary>Bookmark resources</ButtonSmall>
               </span>
@@ -58,10 +52,13 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                             <a
                               target="_blank"
                               href="https://www.ablenrc.org/"
-                              className="Link">
+                              className="Link"
+                            >
                               ABLE National Resource Center
                             </a>
-                            Special Needs Alliance and ABLE National Resource Center collaborate on efforts to educate individuals with disabilities, their families and other
+                            Special Needs Alliance and ABLE National Resource
+                            Center collaborate on efforts to educate individuals
+                            with disabilities, their families and other
                             stakeholders...
                           </p>
                         </li>
@@ -78,7 +75,8 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                           width="27"
                           height="26"
                           viewBox="0 0 27 26"
-                          fill="none">
+                          fill="none"
+                        >
                           <path
                             d="M25.7207 1H17.7207M25.7207 1L13.7207 13M25.7207 1V9"
                             stroke="#6C6C6C"
@@ -122,7 +120,8 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                             <a
                               target="_blank"
                               href="https://www.affordablecollegesonline.org/college-resource-center/resources-for-students-with-disabilities/"
-                              className="Link">
+                              className="Link"
+                            >
                               Affordable Colleges Online
                             </a>
                             College resources for students with disabilities
@@ -141,7 +140,8 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                           width="27"
                           height="26"
                           viewBox="0 0 27 26"
-                          fill="none">
+                          fill="none"
+                        >
                           <path
                             d="M25.7207 1H17.7207M25.7207 1L13.7207 13M25.7207 1V9"
                             stroke="#6C6C6C"
@@ -182,10 +182,14 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                             <a
                               target="_blank"
                               href="https://americanasc.org/"
-                              className="Link">
-                              The American Association of Settlement Consultants (AASC)
+                              className="Link"
+                            >
+                              The American Association of Settlement Consultants
+                              (AASC)
                             </a>
-                            The American Association of Settlement Consultants (AASC) is an industry advocacy group committed to a...
+                            The American Association of Settlement Consultants
+                            (AASC) is an industry advocacy group committed to
+                            a...
                           </p>
                         </li>
                       </ul>
@@ -201,7 +205,8 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                           width="27"
                           height="26"
                           viewBox="0 0 27 26"
-                          fill="none">
+                          fill="none"
+                        >
                           <path
                             d="M25.7207 1H17.7207M25.7207 1L13.7207 13M25.7207 1V9"
                             stroke="#6C6C6C"

@@ -1,9 +1,18 @@
 import { useState } from "react"
-import { ORG_D_Detail_FAQS_VoteArrowDownSvg, ORG_D_Detail_FAQS_VoteArrowUpSvg } from "../../../../../assets/icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper.js"
+import {
+  ORG_D_Detail_FAQS_VoteArrowDownSvg,
+  ORG_D_Detail_FAQS_VoteArrowUpSvg,
+} from "../../../../../assets/icons/index.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper } from "./styles/ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper"
 
-export const ORG_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answers, allUserNames, month }) => {
+export const ORG_D_Detail_FAQS_VoteQuestionsAnswers = ({
+  votes,
+  questions,
+  answers,
+  allUserNames,
+  month,
+}) => {
   const [votesState, setVotesState] = useState(Number(votes))
   const [alreadyVoteUp, setAlreadyVoteUp] = useState(false)
   const [alreadyVoteDown, setAlreadyVoteDown] = useState(false)
@@ -49,12 +58,10 @@ export const ORG_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answe
   return (
     <ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper
       alreadyVoteUp={alreadyVoteUp}
-      alreadyVoteDown={alreadyVoteDown}>
+      alreadyVoteDown={alreadyVoteDown}
+    >
       <div>
-        <span
-          onClick={handleUpVote}
-          onKeyDown={handleUpVote}
-          tabIndex={0}>
+        <span onClick={handleUpVote} onKeyDown={handleUpVote} tabIndex={0}>
           <ORG_D_Detail_FAQS_VoteArrowUpSvg />
         </span>
 
@@ -63,10 +70,7 @@ export const ORG_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answe
           <P semibold>votes</P>
         </div>
 
-        <span
-          onClick={handleDownVote}
-          onKeyDown={handleDownVote}
-          tabIndex={0}>
+        <span onClick={handleDownVote} onKeyDown={handleDownVote} tabIndex={0}>
           <ORG_D_Detail_FAQS_VoteArrowDownSvg />
         </span>
       </div>
@@ -91,9 +95,7 @@ export const ORG_D_Detail_FAQS_VoteQuestionsAnswers = ({ votes, questions, answe
               <div>
                 <P>{answers}</P>
                 <div>
-                  <P
-                    dark_gray
-                    semibold>
+                  <P dark_gray semibold>
                     By {allUserNames} <span>{month} 2023</span>
                   </P>
                 </div>

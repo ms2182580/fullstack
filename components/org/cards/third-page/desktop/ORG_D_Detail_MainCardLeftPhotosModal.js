@@ -5,8 +5,8 @@ import {
   RightArrowSvg,
   XSvg,
 } from "../../../../../assets/icons/index.js"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts.js"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_MainCardLeftPhotosModalWrapper } from "./styles/ORG_D_Detail_MainCardLeftPhotosModalWrapper.js"
 
 const imagesToShow = [0, 1, 2, 3, 4, 5]

@@ -1,9 +1,15 @@
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import Link from "next/link.js"
 import { Fragment } from "react"
-import { Home_OurPlatform_BrainSvg, Home_OurPlatform_JetSvg, Home_OurPlatform_UserCollaborationSvg, LeftArrowTinySvg, RightArrowTinySvg } from "../../../assets/icons/index.js"
+import {
+  Home_OurPlatform_BrainSvg,
+  Home_OurPlatform_JetSvg,
+  Home_OurPlatform_UserCollaborationSvg,
+  LeftArrowTinySvg,
+  RightArrowTinySvg,
+} from "../../../assets/icons/index.js"
 import { useScrollHorizontal } from "../../../utils/useScrollHorizontal.js"
-import { H1 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H1 } from "../../ui/heading_body_text/HeaderFonts"
 import { Home_OurPlatformCarousal_Carousal_D } from "./Home_OurPlatformCarousal_Carousal_D.js"
 import { Home_OurPlatformCarousal_DWrapper } from "./styles/Home_OurPlatformCarousal_DWrapper.js"
 
@@ -47,14 +53,18 @@ const DATA_CARD = [
 ]
 
 export const Home_OurPlatformCarousal_D = () => {
-  const { moveToLeft, moveToRight, stateToCss, setListRef } = useScrollHorizontal()
+  const { moveToLeft, moveToRight, stateToCss, setListRef } =
+    useScrollHorizontal()
 
   return (
     <Home_OurPlatformCarousal_DWrapper>
       <div className="LEFT">
         <p>CREATE LIFETIME PLANS WITH US</p>
         <H1>Our platform simplifies care management like never before.</H1>
-        <p>Get every tool you need to seamlessly draft a care strategy from your personal dashboard.</p>
+        <p>
+          Get every tool you need to seamlessly draft a care strategy from your
+          personal dashboard.
+        </p>
         <Link href="#">See your dashboard!</Link>
       </div>
 
@@ -72,14 +82,20 @@ export const Home_OurPlatformCarousal_D = () => {
             onClick={moveToLeft}
             onKeyDown={moveToLeft}
             tabIndex={0}
-            className={`${stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""}`}>
+            className={`${
+              stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
+            }`}
+          >
             <LeftArrowTinySvg />
           </span>
           <span
             onClick={moveToRight}
             onKeyDown={moveToRight}
             tabIndex={0}
-            className={`${stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""}`}>
+            className={`${
+              stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
+            }`}
+          >
             <RightArrowTinySvg />
           </span>
         </div>

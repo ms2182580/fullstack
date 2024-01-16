@@ -1,7 +1,12 @@
-import styled from "styled-components"
+import { blurEffect } from "@/components/ui/blur/blur"
+import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_FAQSWrapper = styled.section`
+type Props = {
+  isBackend?: boolean
+}
+
+export const ORG_D_Detail_FAQSWrapper = styled.section<Props>`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -59,8 +64,23 @@ export const ORG_D_Detail_FAQSWrapper = styled.section`
     margin-bottom: 24px;
   }
 
-  & > div:not(:nth-child(2)):not(:nth-child(3)) {
+  & > :nth-child(4) {
+    display: grid;
+    gap: 40px;
+
     margin-bottom: 40px;
+
+    position: relative;
+
+    ${({ isBackend }) =>
+      isBackend &&
+      css`
+        ${blurEffect({})}
+      `}
+  }
+
+  & > div:not(:nth-child(2)):not(:nth-child(3)) {
+    /* margin-bottom: 40px; */
   }
 
   & > :last-child {

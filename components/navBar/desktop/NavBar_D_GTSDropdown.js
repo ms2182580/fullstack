@@ -1,4 +1,4 @@
-import { H4 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_GTSDropdownWrapper } from "./styles/NavBar_D_GTSDropdownWrapper.js"
 
 const LIST = [
@@ -16,9 +16,7 @@ export const NavBar_D_GTSDropdown = ({ theRef }) => {
     <NavBar_D_GTSDropdownWrapper ref={theRef}>
       {LIST.map((x, i) => (
         <li key={`${x.name}_${i}`}>
-          <H4
-            tabIndex={0}
-            normal>
+          <H4 tabIndex={0} normal>
             {x.name}
           </H4>
         </li>

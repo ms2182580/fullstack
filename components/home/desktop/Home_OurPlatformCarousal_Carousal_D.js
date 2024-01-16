@@ -1,5 +1,5 @@
 import Link from "next/link.js"
-import { H3 } from "../../ui/heading_body_text/HeaderFonts.js"
+import { H3 } from "../../ui/heading_body_text/HeaderFonts"
 import { Home_OurPlatformCarousal_Carousal_DWrapper } from "./styles/Home_OurPlatformCarousal_Carousal_DWrapper.js"
 
 export const Home_OurPlatformCarousal_Carousal_D = ({ allData }) => {
