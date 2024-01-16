@@ -1,40 +1,41 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
-import { BackArrow } from "../assets/icons"
-import { P } from "../components/ui/heading_body_text/DesktopMobileFonts"
-import { LinkNoStyle } from "../components/ui/hyperlink/HyperlinkNoStyles"
-import { UnderConstruction } from "../components/under-construction/UnderConstruction"
-import { DATA_ORG_CheckPaths_Search_D, ROUTER_PUSH_SEARCH } from "../utils/org/DATA_ORG_CheckPaths_Search_D"
-import { DATA_ORG_D } from "../utils/org/DATA_ORG_D"
-import Custom404Wrapper from "./styles/Custom404Wrapper.js"
+import { Custom404_Component } from "@/components/error/error-page"
 
 const Custom404 = () => {
-  const router = useRouter()
-  const [checkSomePath, setCheckSomePath] = useState(null)
+  // const router = useRouter()
+  // const [checkSomePath, setCheckSomePath] = useState(null)
 
-  useEffect(() => {
-    const routeToMatch = router.asPath.match(/(?<=\/)\w*/)[0]
-    const checkSomePath = DATA_ORG_CheckPaths_Search_D.filter((x) => x === routeToMatch)
+  // useEffect(() => {
+  //   const routeToMatch = router.asPath.match(/(?<=\/)\w*/)[0]
+  //   const checkSomePath = DATA_ORG_CheckPaths_Search_D.filter(
+  //     (x) => x === routeToMatch
+  //   )
 
-    if (checkSomePath.length !== 0) {
-      let thisIndex = DATA_ORG_D.findIndex((x) => x.acronym === checkSomePath[0])
+  //   if (checkSomePath.length !== 0) {
+  //     let thisIndex = DATA_ORG_D.findIndex(
+  //       (x) => x.acronym === checkSomePath[0]
+  //     )
 
-      router.push(
-        {
-          pathname: `/${ALL_ROUTES.ORG}`,
-          query: { [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX, [ROUTER_PUSH_SEARCH.componentName]: DATA_ORG_D[thisIndex].componentName },
-        },
-        `/${ALL_ROUTES.ORG}`,
-      )
-    } else {
-      setCheckSomePath(true)
-    }
-  }, [])
+  //     router.push(
+  //       {
+  //         pathname: `/${ALL_ROUTES.ORG}`,
+  //         query: {
+  //           [ROUTER_PUSH_SEARCH.nameJSX]: DATA_ORG_D[thisIndex].nameJSX,
+  //           [ROUTER_PUSH_SEARCH.componentName]:
+  //             DATA_ORG_D[thisIndex].componentName,
+  //         },
+  //       },
+  //       `/${ALL_ROUTES.ORG}`
+  //     )
+  //   } else {
+  //     setCheckSomePath(true)
+  //   }
+  // }, [])
 
   return (
     <>
-      {checkSomePath !== null && (
+      <Custom404_Component />
+
+      {/* {checkSomePath !== null && (
         <Custom404Wrapper Custom404Wrapper>
           <span>
             <LinkNoStyle href={router.query.toWhere || "/"}>
@@ -43,7 +44,7 @@ const Custom404 = () => {
           </span>
           <UnderConstruction />
         </Custom404Wrapper>
-      )}
+      )} */}
     </>
   )
 }

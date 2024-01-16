@@ -13,7 +13,7 @@ const INDEX_D_ORG_Search = dynamic(
 const INDEX_M_STSearch_Component = dynamic(
   () =>
     import(
-      "@/components/org/_DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch"
+      "@/components/__DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch"
     ).then((mod) => mod.INDEX_M_STSearch),
   {
     ssr: false,

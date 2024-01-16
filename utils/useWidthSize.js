@@ -25,3 +25,9 @@ export const useWidthSize = () => {
 
   return { isMobile, widthWindow }
 }
+
+/* 
+
+!FH
+Change this actual implementation for this: https://twitter.com/midudev/status/1744719872913981720
+*/
