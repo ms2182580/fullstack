@@ -3,7 +3,10 @@ import { ORG_Filters_D_Checkbox_Isolated } from "../../../components/org/filters
 import { ORG_Filters_D_More2 } from "../../../components/org/filters/desktop/ORG_Filters_D_More2"
 import { ORG_Filters_D_Range2 } from "../../../components/org/filters/desktop/ORG_Filters_D_Range2"
 import { ORG_Filters_D_Range_Isolated } from "../../../components/org/filters/desktop/ORG_Filters_D_Range_Isolated"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../ORG_FiltersCategories"
+import {
+  ORG_FILTERS_DATA_D,
+  ORG_FILTERS_KEYS_D,
+} from "../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../DATA_ORG_KeyNamesForFilters_D"
 
 export const DATA_TypedFlow_D_Filters = {
@@ -51,12 +54,24 @@ export const DATA_TypedFlow_D_Filters = {
   moreFilters: {
     payment: {
       buttonName: "Payment Options",
-      categoriesToDisplay: ["Private pay", "Medicaid", "DOE", "Cash Discount", "Military Insurance"],
+      categoriesToDisplay: [
+        "Private pay",
+        "Medicaid",
+        "DOE",
+        "Cash Discount",
+        "Military Insurance",
+      ],
     },
 
     providerType: {
       buttonName: "Provider Type",
-      categoriesToDisplay: ["Private practice", "Agency-based", "Independent", "Academic or Research-Based", "Group practice"],
+      categoriesToDisplay: [
+        "Private practice",
+        "Agency-based",
+        "Independent",
+        "Academic or Research-Based",
+        "Group practice",
+      ],
     },
   },
 }
@@ -75,7 +90,9 @@ const allMoreFilters = {
       buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
       min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
       max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
-      maxSpecialCharacter={ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter}
+      maxSpecialCharacter={
+        ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter
+      }
       whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
       addCharacter={ORG_FILTERS_DATA_D.agesServedRange.addCharacter}
     />,
@@ -108,7 +125,8 @@ export const renderFiltersInUI_TypedFlow = [
     [DATA_ORG_KeyNamesForFilters_D.COMPONENT]: ORG_Filters_D_Checkbox2,
     [DATA_ORG_KeyNamesForFilters_D.PARAMETERS]: {
       buttonName: DATA_TypedFlow_D_Filters.category.buttonName,
-      categoriesToDisplay: DATA_TypedFlow_D_Filters.category.categoriesToDisplay,
+      categoriesToDisplay:
+        DATA_TypedFlow_D_Filters.category.categoriesToDisplay,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },
@@ -129,7 +147,8 @@ export const renderFiltersInUI_TypedFlow = [
       buttonName: ORG_FILTERS_KEYS_D.agesServedRange.buttonName,
       min: ORG_FILTERS_DATA_D.agesServedRange.minimum,
       max: ORG_FILTERS_DATA_D.agesServedRange.maximum,
-      maxSpecialCharacter: ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter,
+      maxSpecialCharacter:
+        ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter,
       whichMeasure: ORG_FILTERS_DATA_D.agesServedRange.whichMeasure,
       addCharacter: ORG_FILTERS_DATA_D.agesServedRange.addCharacter,
     },
@@ -164,7 +183,8 @@ export const renderFiltersInUI_TypedFlow = [
       buttonName: ORG_FILTERS_KEYS_D.serviceSetting.titleToShow,
       categoriesToDisplay: ORG_FILTERS_DATA_D.serviceSetting,
     },
-    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: "TYPEDFLOW_SETTING_RANGE",
+    [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]:
+      "TYPEDFLOW_SETTING_RANGE",
   },
 
   {

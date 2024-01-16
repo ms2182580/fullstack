@@ -31,15 +31,15 @@ export const LoginButtonsMobileWrapper = styled.div`
   pointer-events: ${(x) => (x.shouldInteract ? `auto` : `none`)};
 
   position: absolute;
+  bottom: 0px;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: ${NEUTRALS.OFF_WHITE};
-  margin-bottom: 176px;
   z-index: 2;
-
+  padding-bottom: 30px;
   &.fadeIn {
     animation: ${delayMilliseconds}ms ${fadeIn} ease-out forwards;
   }
@@ -53,8 +53,6 @@ export const LoginButtonsMobileWrapper = styled.div`
     margin-bottom: 40.5px;
     margin-top: 12.5px;
     border-radius: 3px;
-    
-    
   }
 
   & > button,
