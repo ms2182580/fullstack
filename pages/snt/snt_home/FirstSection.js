@@ -1,15 +1,11 @@
+import ArrowDown from "@/assets/images/ArrowDown.png"
+import { SNT_FirstSection } from "@/assets/images/index.js"
+import { ButtonLarge } from "@/components/ui/buttons/general/index"
+import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H1, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { HyperlinkXS } from "@/components/ui/hyperlink/HyperlinkFonts.js"
+import { LinkNoStyle } from "@/components/ui/hyperlink/HyperlinkNoStyles"
 import Image from "next/image.js"
-import ArrowDown from "../../../assets/images/ArrowDown.png"
-import { SNT_FirstSection } from "../../../assets/images/index.js"
-import { ButtonLarge } from "../../../components/ui/buttons/general/index"
-import { Caption } from "../../../components/ui/heading_body_text/DesktopMobileFonts"
-import {
-  H1,
-  H3,
-  H4,
-} from "../../../components/ui/heading_body_text/HeaderFonts"
-import { HyperlinkXS } from "../../../components/ui/hyperlink/HyperlinkFonts.js"
-import { LinkNoStyle } from "../../../components/ui/hyperlink/HyperlinkNoStyles.js"
 import FirstSectionWrapper, {
   LeftData,
   RightData,

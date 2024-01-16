@@ -1,32 +1,23 @@
-import { useWidthWindow1024 } from "@/utils/useWidthWindow1024"
-import {
-  INDEX_D_SignupWrapper,
-  LeftSignup,
-  RightSignup,
-} from "./styles/INDEX_D_SignupWrapper"
-import { useCheckMobile } from "@/utils/useCheckMobile"
-import { useState } from "react"
-import { delayMilliseconds } from "../delay"
-import Image from "next/image"
-import { LinkNoStyle } from "@/components/ui/hyperlink/HyperlinkNoStyles"
-import { BackArrow } from "@/assets/icons"
-import { H1, H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import {
-  HyperlinkM,
-  HyperlinkXS,
-} from "@/components/ui/hyperlink/HyperlinkFonts"
+import SignupForm from "@/components/signup/desktop/SignupForm"
 import {
   FacebookLoginBtn,
   GoogleLoginBtn,
 } from "@/components/ui/buttons/login/LoginBtns"
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { LastComponentsMobileWrapper } from "../styles/LastComponentsMobileWrapper"
-import { ButtonSmall } from "@/components/ui/buttons/general"
-import { LoginButtonsMobile } from "../mobile/LoginButtonsMobile"
-import LoginImage from "../../../assets/images/LoginImage.png"
-import LoginImageMobile from "../../../assets/images/LoginImageMobile.jpg"
+import { H1, H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { HyperlinkM } from "@/components/ui/hyperlink/HyperlinkFonts"
+import { useCheckMobile } from "@/utils/useCheckMobile"
+import { useWidthWindow1024 } from "@/utils/useWidthWindow1024"
+import Image from "next/image"
 import { useRouter } from "next/router"
-import SignupForm from "@/pages/signup/SignupForm"
+import { useState } from "react"
+import LoginImage from "../../../assets/images/LoginImage.png"
+import { delayMilliseconds } from "../delay"
+import {
+  INDEX_D_SignupWrapper,
+  LeftSignup,
+  RightSignup,
+} from "./styles/INDEX_D_SignupWrapper"
 
 export const INDEX_D_Signup = () => {
   const { isMobile } = useWidthWindow1024()

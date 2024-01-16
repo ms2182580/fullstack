@@ -1,17 +1,14 @@
+import {
+  ChatAILogo_M,
+  NavBar_M_HamburgerSvg,
+  NavBar_M_UserSvg,
+} from "@/assets/icons/index.js"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts"
-import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles.js"
 import { NavBar_M_Wrapper } from "./styles/NavBar_M_Wrapper.js"
-import {
-  ChatAILogo,
-  ChatAILogo_M,
-  NavBar_D_HamburgerSvg,
-  NavBar_M_HamburgerSvg,
-  NavBar_M_UserSvg,
-} from "@/assets/icons/index.js"
 
 export const NavBar_M = () => {
   const route = useRouter()

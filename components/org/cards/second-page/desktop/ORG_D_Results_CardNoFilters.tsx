@@ -47,7 +47,6 @@ export const ORG_D_Results_CardNoFilters = () => {
     )
   }
 
-  console.log("secondpageDataORG:", secondpageDataORG)
   if (secondpageDataORG !== undefined) {
     return (
       <>

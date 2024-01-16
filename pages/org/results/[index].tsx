@@ -4,20 +4,17 @@ import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFi
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
+import { useLayoutEffect, useMemo } from "react"
 
 export default function ORG_RESULTS() {
-  const { secondpageFiltersORG }: any =
-    useORG_Ctx_D_SecondpageFilters()
-  const { secondpageDataORG }: any =
-    useORG_Ctx_D_SecondpageData()
+  const { secondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const { push, query } = useRouter()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (
-      secondpageFiltersORG === "" &&
-      secondpageDataORG === "" &&
+      (secondpageFiltersORG === "" && secondpageDataORG === "") ||
       !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
     ) {
       push(`/${ALL_ROUTES.ORG}`)
@@ -25,9 +22,29 @@ export default function ORG_RESULTS() {
     }
   }, [])
 
+  const shouldRenderThePage = useMemo(() => {
+    if (
+      secondpageFiltersORG !== "" &&
+      secondpageDataORG !== "" &&
+      query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
+    ) {
+      return true
+    }
+
+    return false
+  }, [
+    secondpageFiltersORG,
+    secondpageFiltersORG,
+    query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND],
+  ])
+
   return (
     <>
-      <INDEX_ORG_Results_D />
+      {shouldRenderThePage && (
+        <>
+          <INDEX_ORG_Results_D />
+        </>
+      )}
     </>
   )
 }
