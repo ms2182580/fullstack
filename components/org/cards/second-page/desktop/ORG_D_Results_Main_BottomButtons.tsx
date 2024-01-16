@@ -102,19 +102,28 @@ export const ORG_D_Results_Main_BottomButtons = ({
               push,
             })
           }
+          onKeyDown={(event) =>
+            handleMoveToThirdPage_Backend({
+              event,
+              raw: backendData,
+              secondpageDataORG_Backend,
+              setThirdpageDataORG_Backend,
+              push,
+            })
+          }
         >
           <ORG_D_Results_ViewProfileSvg />
           <P>View Profile</P>
         </div>
 
-        <div tabIndex={0}>
+        <div>
           <ORG_D_Results_RequestConsultationSvg />
 
           {buttonJSXAndSVGCustom?.ComponentSvg_Backend}
           <P>{buttonJSXAndSVGCustom?.nameToJSX_Backend}</P>
         </div>
 
-        <div tabIndex={0}>
+        <div>
           <ORG_D_Results_AddtocareplanSvg />
 
           <P>Add to Care Plan</P>
@@ -125,10 +134,6 @@ export const ORG_D_Results_Main_BottomButtons = ({
 
   return (
     <ORG_D_Results_Main_BottomButtonsWrapper>
-      <div tabIndex={0}>
-        <ORG_D_Results_ViewProfileSvg />
-        <P>View Profile</P>
-      </div>
       <div
         onClick={(event) =>
           handleMoveToThirdPage({
@@ -140,8 +145,22 @@ export const ORG_D_Results_Main_BottomButtons = ({
             push,
           })
         }
+        onKeyDown={(event) =>
+          handleMoveToThirdPage({
+            event,
+            categoryPosition: secondpageDataORG.categoryPosition,
+            subcategoryPosition: secondpageDataORG.subcategoryPosition,
+            resourcePosition: renderThisContact,
+            setThirdpageDataORG,
+            push,
+          })
+        }
         tabIndex={0}
       >
+        <ORG_D_Results_ViewProfileSvg />
+        <P>View Profile</P>
+      </div>
+      <div>
         {buttonJSXAndSVGCustom ? (
           <>
             <buttonJSXAndSVGCustom.ComponentSvg />
@@ -155,7 +174,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
           </>
         )}
       </div>
-      <div tabIndex={0}>
+      <div>
         <ORG_D_Results_AddtocareplanSvg />
 
         <P>Add to Care Plan</P>

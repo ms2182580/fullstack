@@ -28,7 +28,7 @@ export const ORG_D_Results_CardLocation = ({
 }: Props) => {
   if (backendData) {
     return (
-      <ORG_D_Results_CardLocationWrapper>
+      <ORG_D_Results_CardLocationWrapper howFarExist={howFar !== "_"}>
         <LocationResultsSvg />
 
         <div>
@@ -36,7 +36,12 @@ export const ORG_D_Results_CardLocation = ({
           <P>
             {locationCity}, {locationState}
           </P>
-          <P> ({howFar} miles away)</P>
+
+          {howFar !== "_" && (
+            <>
+              <P> ({howFar} miles away)</P>
+            </>
+          )}
         </div>
       </ORG_D_Results_CardLocationWrapper>
     )
@@ -45,6 +50,7 @@ export const ORG_D_Results_CardLocation = ({
   return (
     <ORG_D_Results_CardLocationWrapper
       isVES_Like={isVES_Like}
+      howFarExist={howFar !== "_"}
     >
       <LocationResultsSvg />
 

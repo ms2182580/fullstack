@@ -62,25 +62,25 @@ export const ORG_D_Results_Main_Right = ({
         <H3>{backendData.recordName}</H3>
         <H4>{backendData.recordSubtype}</H4>
         <P>{backendData.address[0].city}</P>
-        <StarsRatingReview_D reviews={backendData.reviews.length} />
-
-        <ul>
-          {comingSoon.map((x, index) => {
-            let theValueOnMap =
-              typeof x.value === "string"
-                ? x.value
-                : Array.isArray(x.value)
-                ? new Intl.ListFormat("en").format(x.value)
-                : "_UNEXPECTED_"
-
-            return (
-              <li key={index}>
-                <P>{x.key}:</P>
-                <P>{theValueOnMap}</P>
-              </li>
-            )
-          })}
-        </ul>
+        <div>
+          <StarsRatingReview_D reviews={backendData.reviews.length} />
+          <ul>
+            {comingSoon.map((x, index) => {
+              let theValueOnMap =
+                typeof x.value === "string"
+                  ? x.value
+                  : Array.isArray(x.value)
+                  ? new Intl.ListFormat("en").format(x.value)
+                  : "_UNEXPECTED_"
+              return (
+                <li key={index}>
+                  <P>{x.key}:</P>
+                  <P>{theValueOnMap}</P>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </ORG_D_Results_Main_RightWrapper>
     )
   }

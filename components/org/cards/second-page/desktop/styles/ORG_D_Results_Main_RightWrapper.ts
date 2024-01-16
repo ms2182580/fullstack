@@ -56,30 +56,37 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
   ${({ backendData }) =>
     backendData &&
     css`
-      & > :nth-child(5) {
-        list-style: none;
-        width: fit-content;
+      & > :nth-child(4) {
+        display: grid;
+        gap: 24px;
 
-        padding: 8px;
-
-        /* margin-left: -32px; */
+        padding: 16px;
 
         position: relative;
-
+        width: fit-content;
         ${blurEffect({ zIndex: 2 })}
 
-        & > * {
-          display: flex;
-          align-items: center;
+        & > :nth-child(2) {
+          list-style: none;
+          width: fit-content;
 
-          gap: 8px;
+          display: grid;
+          gap: 16px;
+          position: relative;
 
-          text-transform: capitalize;
+          & > * {
+            display: flex;
+            align-items: center;
 
-          & > :nth-child(1) {
-            color: ${PRIMARY.PRIMARY_HOVER};
+            gap: 8px;
 
+            text-transform: capitalize;
             white-space: nowrap;
+
+            & > :nth-child(1) {
+              color: ${PRIMARY.PRIMARY_HOVER};
+              font-weight: 600;
+            }
           }
         }
       }

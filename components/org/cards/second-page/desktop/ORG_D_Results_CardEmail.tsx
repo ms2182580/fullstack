@@ -8,10 +8,16 @@ type Props = {
 
 export const ORG_D_Results_CardEmail = ({ email = "_" }: Props) => {
   return (
-    <ORG_D_Results_CardEmailWrapper>
-      <EmailResultsSvg />
-      {/* !FH Add the feature of copy the email with Enter key */}
-      <P tabIndex={0}>{email}</P>
-    </ORG_D_Results_CardEmailWrapper>
+    <>
+      {email !== "_" && (
+        <>
+          <ORG_D_Results_CardEmailWrapper shouldBeDisplayed={email !== "_"}>
+            <EmailResultsSvg />
+            {/* !FH Add the feature of copy the email with Enter key */}
+            <P tabIndex={0}>{email}</P>
+          </ORG_D_Results_CardEmailWrapper>
+        </>
+      )}
+    </>
   )
 }

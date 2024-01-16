@@ -1,8 +1,9 @@
 import { SEMANTICS } from "@/assets/Colors"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 type Props = {
   isVES_Like?: boolean
+  howFarExist?: boolean
 }
 
 export const ORG_D_Results_CardLocationWrapper = styled.div<Props>`
@@ -15,9 +16,13 @@ export const ORG_D_Results_CardLocationWrapper = styled.div<Props>`
     }
 
     & > :last-child {
-      font-weight: 500;
-      color: ${SEMANTICS.HYPERLINK_NORMAL};
-      text-decoration: underline;
+      ${({ howFarExist }) =>
+        howFarExist &&
+        css`
+          font-weight: 500;
+          color: ${SEMANTICS.HYPERLINK_NORMAL};
+          text-decoration: underline;
+        `}
     }
   }
 `
