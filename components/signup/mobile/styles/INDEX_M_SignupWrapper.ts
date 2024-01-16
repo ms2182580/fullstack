@@ -45,11 +45,16 @@ export const INDEX_M_SignupWrapper = styled.div<Props>`
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 5px;
         margin-bottom: 20px;
         //login in
-        & > a {
-          font-size: 10px;
+        & > :nth-child(1) {
+          font-size: 12px;
+        }
+        & > :nth-child(2) {
+          & > a {
+            font-size: 10px;
+          }
         }
       }
     }
