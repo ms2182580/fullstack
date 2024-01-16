@@ -1,4 +1,4 @@
-import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts.js"
+import { H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter } from "next/router.js"
 import { useEffect, useRef } from "react"

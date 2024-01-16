@@ -99,12 +99,11 @@ export const ORG_D_Detail_FAQS_Modal = ({
           handleAddQuestion()
         }}
       >
-        }} >
         <ButtonSmall
           secondary
           disabled={newQuestion.trim() === "" ? true : false}
         >
-          disabled={newQuestion.trim() === "" ? true : false}> Post Question
+          Post Question
         </ButtonSmall>
       </span>
     </ORG_D_Detail_FAQS_ModalWrapper>

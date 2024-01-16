@@ -72,8 +72,6 @@ export const ORG_D_Detail_FAQS = ({
     if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
       const position =
         toMoveTheView!.current!.getBoundingClientRect().top + window.scrollY
-      const position =
-        toMoveTheView!.current!.getBoundingClientRect().top + window.scrollY
       window.scrollTo({ top: position })
     }
   }
@@ -97,12 +95,6 @@ export const ORG_D_Detail_FAQS = ({
       e.type === "mousedown" ||
       e.type === "click"
     ) {
-    if (
-      e.key === "Enter" ||
-      e.key === "Escape" ||
-      e.type === "mousedown" ||
-      e.type === "click"
-    ) {
       unlockScroll()
       setShowModal(false)
       setModalShowedCtx(false)
@@ -120,7 +112,6 @@ export const ORG_D_Detail_FAQS = ({
 
         <div>
           <ORG_Detail_SearchFAQSSVG />
-          <input type="text" placeholder="Search in Q&A..." />
           <input type="text" placeholder="Search in Q&A..." />
           <span onClick={handleShowModal}>
             <ButtonSmall secondary>Ask a Question</ButtonSmall>
@@ -166,7 +157,6 @@ export const ORG_D_Detail_FAQS = ({
         {showAll === false ? (
           <>
             <P onClick={handleShowAll} onKeyDown={handleShowAll} tabIndex={0}>
-            <P onClick={handleShowAll} onKeyDown={handleShowAll} tabIndex={0}>
               See More
             </P>
           </>
@@ -181,8 +171,6 @@ export const ORG_D_Detail_FAQS = ({
                 handleShowAll(e)
                 handleMoveUserView(e)
               }}
-              tabIndex={0}
-            >
               tabIndex={0}
             >
               See Less

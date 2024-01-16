@@ -1,8 +1,8 @@
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts.js"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter } from "next/router.js"
 import { useMemo } from "react"
-import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts.js"
+import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_Review_Modal_DetailRatingWrapper } from "./styles/ORG_D_Detail_Review_Modal_DetailRatingWrapper.js"
 
 let fullFillRatingFunc = (arr) => {
