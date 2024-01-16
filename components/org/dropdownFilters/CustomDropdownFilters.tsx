@@ -1,21 +1,12 @@
-import {
-  Fragment,
-  useEffect,
-  useRef,
-  useState,
-} from "react"
-import {
-  ArrowDownSvg,
-  ArrowUpSvg,
-} from "../../../assets/icons"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import { useRouter } from "next/router"
+import { Fragment, useEffect, useRef, useState } from "react"
+import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/icons"
 import { useORG_Ctx_FiltersApplyDesktop } from "../../../context/ORG_Ctx_FiltersApplyDesktop"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { useOutsideHide } from "../../../utils/useOutsideHide"
 import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import {
-  CustomC,
-  SingleDropdownWrapper,
-} from "./styles/Singledropdown"
+import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
 type CustomDropdownFilters_Props = {
   suggestions: string[] | []
@@ -24,7 +15,6 @@ type CustomDropdownFilters_Props = {
 export const CustomDropdownFilters = ({
   suggestions = [],
 }: CustomDropdownFilters_Props) => {
-  // const { userFetched, setUserFetched: setData, filtersST, setFiltersST: setFilters, actualSort, setActualSort, pagination } = useORG_Ctx_FetchNoFiltersDesktop()
   const [showDropdown, setShowDropdown] = useState(false)
 
   const {
@@ -35,13 +25,6 @@ export const CustomDropdownFilters = ({
   }: any = useORG_Ctx_FiltersApplyDesktop()
 
   const [whichTitle, setWhichTitle] = useState(defaultWord)
-
-  /* const {
-    userFetched: dataF,
-    setUserFetched: setDataF,
-    filtersST: filtersF,
-    setFiltersST: setFiltersF,
-  } = useORG_Ctx_FetchWithFiltersDesktop() */
 
   const handleDropdownClick = () => {
     setShowDropdown((prevstate) => !prevstate)
@@ -102,11 +85,14 @@ export const CustomDropdownFilters = ({
   const refDropdown = useRef(null)
   useOutsideHide(refDropdown, setShowDropdown)
 
+  const { query } = useRouter()
+
   return (
     <>
       <SingleDropdownWrapper
         className="SingleDropdownWrapper"
         ref={refDropdown}
+        isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
       >
         <span
           onClick={handleDropdownClick}
@@ -119,13 +105,7 @@ export const CustomDropdownFilters = ({
             {/* primary_cta semibold */}
             {whichTitle}
           </P>
-          <span>
-            {showDropdown ? (
-              <ArrowDownSvg />
-            ) : (
-              <ArrowUpSvg />
-            )}
-          </span>
+          <span>{showDropdown ? <ArrowDownSvg /> : <ArrowUpSvg />}</span>
         </span>
         <div className="dropdownSuggestions">
           {showDropdown &&

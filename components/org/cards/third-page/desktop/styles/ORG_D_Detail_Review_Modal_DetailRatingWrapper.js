@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { PRIMARY } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_Review_Modal_DetailRatingWrapper = styled.div`
@@ -36,23 +36,5 @@ export const ORG_D_Detail_Review_Modal_DetailRatingWrapper = styled.div`
       align-items: center;
       justify-content: flex-end;
     }
-  }
-
-  & > :last-child {
-    ${({ isBackend }) =>
-      isBackend &&
-      css`
-        position: relative;
-        z-index: 2;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        filter: drop-shadow(1px 1px 1px black);
-        font-size: 32px;
-
-        margin-top: 24px;
-      `}
   }
 `

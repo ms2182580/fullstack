@@ -1,4 +1,3 @@
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter } from "next/router.js"
 import { useMemo } from "react"
@@ -119,12 +118,6 @@ export const ORG_D_Detail_Review_Modal_DetailRating = ({ rating }) => {
         </div>
         <H3>{formatRating.ammount[3]}.0</H3>
       </div>
-
-      {query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? (
-        <>
-          <P>Coming Soon!</P>
-        </>
-      ) : null}
     </ORG_D_Detail_Review_Modal_DetailRatingWrapper>
   )
 }

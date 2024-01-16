@@ -33,6 +33,15 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
       display: flex;
       gap: 16px;
 
+      position: relative;
+      padding: 4px;
+
+      ${({ isBackend }) =>
+        isBackend &&
+        css`
+          ${blurEffect({})}
+        `}
+
       & > * {
         border: 1px solid #686868;
         padding: 4px 11px;
@@ -59,6 +68,14 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
       justify-content: center;
       gap: 12px;
       cursor: default;
+
+      position: relative;
+
+      ${({ isBackend }) =>
+        isBackend &&
+        css`
+          ${blurEffect({})}
+        `}
     }
 
     &:after {
@@ -84,6 +101,14 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
       & > :nth-child(2) {
         all: unset;
 
+        position: relative;
+
+        ${({ isBackend }) =>
+          isBackend &&
+          css`
+            ${blurEffect({})}
+          `}
+
         & > :nth-child(1) {
           border: solid 2px ${PRIMARY.PRIMARY_CTA};
           padding: 4px 20px;
@@ -92,8 +117,6 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
           align-items: center;
           justify-content: center;
           gap: 12px;
-          cursor: pointer;
-
           position: relative;
 
           & > :nth-child(1) {

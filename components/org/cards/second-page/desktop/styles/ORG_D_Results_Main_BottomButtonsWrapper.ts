@@ -24,6 +24,10 @@ export const ORG_D_Results_Main_BottomButtonsWrapper = styled.div`
     flex-direction: column;
     gap: 8px;
 
+    cursor: default;
+  }
+
+  & > :nth-child(1) {
     cursor: pointer;
   }
 

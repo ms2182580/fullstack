@@ -1,15 +1,23 @@
-import styled from "styled-components"
-import {
-  NEUTRALS,
-  PRIMARY,
-} from "../../../../assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
+import styled, { css } from "styled-components"
+import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
-export const SingleDropdownWrapper = styled.div`
+type Props = {
+  isBackend?: boolean
+}
+
+export const SingleDropdownWrapper = styled.div<Props>`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: relative;
   z-index: 2;
+
+  ${({ isBackend }) =>
+    isBackend &&
+    css`
+      ${blurEffect({ zIndex: 4 })}
+    `}
 
   & > :nth-child(1) {
     width: 191px;
