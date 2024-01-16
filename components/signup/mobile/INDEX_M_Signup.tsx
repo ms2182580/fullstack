@@ -3,29 +3,19 @@ import { useCheckMobile } from "@/utils/useCheckMobile"
 import { useState } from "react"
 import { delayMilliseconds } from "../delay"
 import Image from "next/image"
-import { H1, H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import {
-  HyperlinkM,
-  HyperlinkS,
-  HyperlinkXS,
-} from "@/components/ui/hyperlink/HyperlinkFonts"
-import {
-  FacebookLoginBtn,
-  GoogleLoginBtn,
-} from "@/components/ui/buttons/login/LoginBtns"
-import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { LastComponentsMobileWrapper } from "../styles/LastComponentsMobileWrapper"
+import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { HyperlinkS } from "@/components/ui/hyperlink/HyperlinkFonts"
+
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { LoginButtonsMobile } from "../mobile/LoginButtonsMobile"
-import LoginImage from "../../../assets/images/LoginImage.png"
 import LoginImageMobile from "../../../assets/images/LoginImageMobile.jpg"
 import { useRouter } from "next/router"
 import { INDEX_M_SignupWrapper } from "./styles/INDEX_M_SignupWrapper"
 import { Signup_M_SignupForm } from "./Signup_M_SignupForm"
+import { BackArrow } from "@/assets/icons"
 
 export const INDEX_M_Signup = () => {
   const { isMobile } = useWidthWindow1024()
-
   const { isTouchScreen } = useCheckMobile()
   // console.log('isTouchScreen:', isTouchScreen)
 
@@ -69,35 +59,63 @@ export const INDEX_M_Signup = () => {
     }
   }
 
+  const handleHome = (e) => {
+    router.push("/")
+  }
+
   return (
     <INDEX_M_SignupWrapper showLoginButtons={showLoginButtons}>
+      <span onClick={handleHome}>
+        <BackArrow />
+        <span>Return to Home</span>
+      </span>
       <div>
+        <H4 primary_cta>
+          <span>Connect to</span> community based
+          <br /> <span>and</span> recreational services
+        </H4>
         <span>
           <Image
             src={LoginImageMobile}
             alt="People with one flag in their hand: one of them have one prosthetic leg, the other is in wheelchair and the third one it looks like is blind and have a dog in their other hand."
           />
         </span>
-        <H4>Connect to community based and recreational services</H4>
-
-        <H1>
-          Join <span>Inclusive</span>
-        </H1>
-        <div>
-          <H4>Already have an account?</H4>
-          <HyperlinkS href="/login" name="Log in" />
-        </div>
-        <div>
+        <span
+          onClick={() => handleShowLoginButtons()}
+          onTouchStart={(e) => {
+            e.stopPropagation()
+            handleShowLoginButtons()
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              handleHideLoginButtons()
+            }
+          }}
+        >
+          <ButtonSmall>Join Inclusive</ButtonSmall>
+          <div>
+            <H4>Already have an account?</H4>
+            <HyperlinkS href="/login" name="Log in" />
+          </div>
+        </span>
+        {showLoginButtons && (
+          <LoginButtonsMobile
+            fadeOut={fadeOut}
+            handleHideLoginButtons={handleHideLoginButtons}
+            showLoginButtons={showLoginButtons}
+          />
+        )}
+        {/* <div>
           <GoogleLoginBtn bolder={""} />
           <FacebookLoginBtn bolder={""} />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <Caption>or</Caption>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <Signup_M_SignupForm />
-        </div>
+        </div> */}
       </div>
     </INDEX_M_SignupWrapper>
   )

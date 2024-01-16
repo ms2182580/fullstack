@@ -8,6 +8,7 @@ import { HyperlinkXS } from "../../components/ui/hyperlink/HyperlinkFonts"
 import { useLoginCtx } from "../../context/LoginCtx"
 import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
 import TermsAndServices, {
+  ButtonWrapper,
   CAPTION_EMAIL_SIGNUP,
   CaptionSignUp,
   DisplayErrorComponent,
@@ -124,7 +125,11 @@ const SignupForm = () => {
     const inputValue = e.target.value.trim().toLowerCase()
     let emailHasError = false
 
-    if (!/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(inputValue)) {
+    if (
+      !/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(
+        inputValue
+      )
+    ) {
       emailHasError = true
     }
 
@@ -201,7 +206,8 @@ const SignupForm = () => {
                   emailAlreadyRegistered,
                   hasError: email.hasError,
                   hasTouched: email.touched,
-                }}>
+                }}
+              >
                 Email
               </H4_EMAIL_SIGNUP>
             </>
@@ -212,7 +218,8 @@ const SignupForm = () => {
                   emailAlreadyRegistered,
                   hasError: email.hasError,
                   hasTouched: email.touched,
-                }}>
+                }}
+              >
                 Email
               </CAPTION_EMAIL_SIGNUP>
             </>
@@ -223,7 +230,8 @@ const SignupForm = () => {
               emailAlreadyRegistered,
               hasError: email.hasError,
               hasTouched: email.touched,
-            }}>
+            }}
+          >
             <EmailSvg className="EmailIconSF" />
 
             <InputEmail
@@ -241,26 +249,43 @@ const SignupForm = () => {
                 hasTouched: email.touched,
               }}
             />
-            {email.touched && email.hasError && <Caption className={`CaptionInRedSF DisplayErrorFirst`}>It should be a valid email address!</Caption>}
+            {email.touched && email.hasError && (
+              <Caption className={`CaptionInRedSF DisplayErrorFirst`}>
+                It should be a valid email address!
+              </Caption>
+            )}
             {emailAlreadyRegistered !== "" && (
               <DisplayErrorComponent className="CaptionInRedSF DisplayErrorFirst">
                 <ExclamationSvg />
 
                 <Caption>
                   {emailAlreadyRegistered}{" "}
-                  <HyperlinkXS
-                    href="/login"
-                    name="log in?"
-                  />
+                  <HyperlinkXS href="/login" name="log in?" />
                 </Caption>
               </DisplayErrorComponent>
             )}
           </StyleInputFirst>
 
           {isMobile === false ? (
-            <>{password.touched && password.hasError ? <h4>Password</h4> : <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</h4>}</>
+            <>
+              {password.touched && password.hasError ? (
+                <h4>Password</h4>
+              ) : (
+                <h4 className={`${password.touched ? "CaptionInRedSF" : ""}`}>
+                  Password
+                </h4>
+              )}
+            </>
           ) : (
-            <>{password.touched && password.hasError ? <span>Password</span> : <span className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password</span>}</>
+            <>
+              {password.touched && password.hasError ? (
+                <span>Password</span>
+              ) : (
+                <span className={`${password.touched ? "CaptionInRedSF" : ""}`}>
+                  Password
+                </span>
+              )}
+            </>
           )}
 
           <StyleInputSecond>
@@ -268,10 +293,7 @@ const SignupForm = () => {
 
             {isMobile === false ? (
               <>
-                <EyeSvg
-                  className="eyeIconSF"
-                  onClick={showPassword}
-                />
+                <EyeSvg className="eyeIconSF" onClick={showPassword} />
               </>
             ) : null}
 
@@ -289,9 +311,15 @@ const SignupForm = () => {
               }}
             />
             {password.touched && password.hasError ? (
-              <CaptionSignUp className="DisplayErrorSecond">Password must include at least 8 characters</CaptionSignUp>
+              <CaptionSignUp className="DisplayErrorSecond">
+                Password must include at least 8 characters
+              </CaptionSignUp>
             ) : (
-              <CaptionSignUp className={`${password.touched ? "CaptionInRedSF" : ""}`}>Password must include at least 8 characters</CaptionSignUp>
+              <CaptionSignUp
+                className={`${password.touched ? "CaptionInRedSF" : ""}`}
+              >
+                Password must include at least 8 characters
+              </CaptionSignUp>
             )}
           </StyleInputSecond>
 
@@ -305,18 +333,15 @@ const SignupForm = () => {
                     name="Terms of Service"
                   />
                   and
-                  <HyperlinkXS
-                    href="/work-in-progress"
-                    name="Privacy Policy"
-                  />
+                  <HyperlinkXS href="/work-in-progress" name="Privacy Policy" />
                 </Caption>
               </TermsAndServices>
             </>
           ) : null}
 
-          <div>
+          <ButtonWrapper>
             <ButtonMedium>Sign up</ButtonMedium>
-          </div>
+          </ButtonWrapper>
         </Form>
       </section>
     </>

@@ -7,95 +7,53 @@ type Props = {
   showLoginButtons: boolean
 }
 export const INDEX_M_SignupWrapper = styled.div<Props>`
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   padding: 25px;
+  flex-direction: column;
+  //back to home
   & > :nth-child(1) {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+  }
+  & > :nth-child(2) {
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     padding: 15px;
     display: flex;
     width: 100%;
     align-items: center;
     flex-direction: column;
 
-    //h1
-    & > :nth-child(3) {
-      color: ${PRIMARY.PRIMARY_CTA};
+    // connect to community
+    & > :nth-child(1) {
+      text-align: center;
+      & > span {
+        color: black;
+      }
     }
 
     //div
-    & > :nth-child(4) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      //login in
-      & > a {
-        font-size: 10px;
-      }
-    }
-    //buttons
-    & > :nth-child(5) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 20px;
-      //login in
-      & > button {
+    & > :nth-child(3) {
+      & > :nth-child(1) {
         width: 100%;
+      }
+      & > :nth-child(2) {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        //login in
+        & > a {
+          font-size: 10px;
+        }
       }
     }
   }
-  /* @media (${device.laptop}) {
-    flex-direction: column;
-    align-items: center;
-
-    background-color: #fff;
-
-    & > :nth-child(1) {
-      visibility: ${(x) => (x.showLoginButtons ? `hidden` : `visible`)};
-
-      & > :nth-child(1) {
-        display: flex;
-        align-items: center;
-      }
-
-      margin: 24px auto 53px 18px;
-      & > :nth-child(1) > :nth-child(1) {
-        margin-right: 10px;
-      }
-      & > :nth-child(1) > :nth-child(2) {
-        font-size: 14px;
-      }
-    }
-
-    & > :nth-child(2) {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 10px;
-      position: relative;
-
-      &::before {
-        content: "";
-        position: ${(x) => (x.showLoginButtons ? `absolute` : `relative`)};
-        top: -100px;
-        width: 100vw;
-        height: calc(157%);
-
-        background-color: ${(x) => (x.showLoginButtons ? `#e5e5e5` : `unset`)};
-        opacity: 0.5;
-        z-index: 1;
-      }
-    }
-  } */
 `
 
 export const LeftSignup = styled.div`

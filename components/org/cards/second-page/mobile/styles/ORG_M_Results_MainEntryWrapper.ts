@@ -29,8 +29,8 @@ export const ORG_M_Results_MainEntryWrapper = styled.div<Props>`
     grid-area: filterAndMap;
     display: grid;
     height: 100%;
-    grid-template-columns: ${({ isFullMap }) =>
-      isFullMap ? "1fr" : "2fr 1fr"};
+    grid-template-columns: ${({ isFullMap }) => (isFullMap ? "1fr" : "1fr")};
+    margin-right: 20px;
     // margin-bottom: ${({ isFullMap }) => (isFullMap ? `318px` : `189px`)};
 
     // & > :nth-child(1) {
