@@ -31,15 +31,15 @@ import {
   ORG_D_Detail_MainCard_RightWrapper,
 } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-console.log(
-  "DATA_CardRight_PMHSS:",
-  DATA_CardRight_PMHSS,
-  Object.entries(
-    DATA_CardRight_PMHSS[0][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][
-      DATA_ORG_KeyNamesForCards_D.CARD
-    ][DATA_ORG_KeyNamesForCards_D.LEFT]
-  )
-)
+// console.log(
+//   "DATA_CardRight_PMHSS:",
+//   DATA_CardRight_PMHSS,
+//   Object.entries(
+//     DATA_CardRight_PMHSS[0][DATA_ORG_KeyNamesForCards_D.THIRD_PAGE_DATA][
+//       DATA_ORG_KeyNamesForCards_D.CARD
+//     ][DATA_ORG_KeyNamesForCards_D.LEFT]
+//   )
+// )
 
 export const ORG_D_Detail_MainCard_Right = ({
   layout_MainCardRight,

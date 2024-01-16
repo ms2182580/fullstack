@@ -1,10 +1,10 @@
-import { useRouter } from "next/router"
-import { ORG_M_Detail_MainCard_About } from "./ORG_M_Detail_MainCard_About"
-import { ORG_M_Detail_MainCardSectionWrapper } from "./styles/ORG_M_Detail_MainCardSections"
-import { ORG_M_Detail_Reviews } from "./ORG_M_Detail_Reviews"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { useRouter } from "next/router"
 import { ORG_M_Detail_FAQS } from "./ORG_M_Detail_FAQS"
+import { ORG_M_Detail_MainCard_About } from "./ORG_M_Detail_MainCard_About"
+import { ORG_M_Detail_Reviews } from "./ORG_M_Detail_Reviews"
 import { ORG_M_Detail_Schedule } from "./ORG_M_Detail_Schedule"
+import { ORG_M_Detail_MainCardSectionWrapper } from "./styles/ORG_M_Detail_MainCardSections"
 
 type Props = {
   getAllSpecificThirdPageData: any
@@ -17,7 +17,7 @@ export const ORG_M_Detail_MainCardSections = ({
   const { asPath } = useRouter()
 
   const defaultId = asPath.split("#")[1] || "about"
-  console.log({ thirdpageDataORG })
+  // console.log({ thirdpageDataORG })
   let component
   if (defaultId === "about") {
     component = <ORG_M_Detail_MainCard_About />
