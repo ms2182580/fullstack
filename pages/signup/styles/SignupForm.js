@@ -6,14 +6,18 @@ import { H4 } from "../../../components/ui/heading_body_text/HeaderFonts"
 
 export const H4_EMAIL_SIGNUP = styled(H4)`
   color: ${(x) =>
-    x.displayRedEmail.emailAlreadyRegistered !== "" || (x.displayRedEmail.hasError === true && x.displayRedEmail.hasTouched === true)
+    x.displayRedEmail.emailAlreadyRegistered !== "" ||
+    (x.displayRedEmail.hasError === true &&
+      x.displayRedEmail.hasTouched === true)
       ? `${SEMANTICS.ERROR_STATE}`
       : `${NEUTRALS.BLACK}`};
 `
 
 export const CAPTION_EMAIL_SIGNUP = styled(Caption)`
   color: ${(x) =>
-    x.displayRedEmail.emailAlreadyRegistered !== "" || (x.displayRedEmail.hasError === true && x.displayRedEmail.hasTouched === true)
+    x.displayRedEmail.emailAlreadyRegistered !== "" ||
+    (x.displayRedEmail.hasError === true &&
+      x.displayRedEmail.hasTouched === true)
       ? `${SEMANTICS.ERROR_STATE}`
       : `${NEUTRALS.BLACK}`};
 
@@ -58,7 +62,11 @@ export const StyleInputFirst = styled.div`
   flex-direction: column;
   position: relative;
 
-  margin-bottom: ${(x) => (x.customMargin.emailAlreadyRegistered !== "" || (x.customMargin.hasError === true && x.customMargin.hasTouched === true) ? `` : `56px`)};
+  margin-bottom: ${(x) =>
+    x.customMargin.emailAlreadyRegistered !== "" ||
+    (x.customMargin.hasError === true && x.customMargin.hasTouched === true)
+      ? ``
+      : `56px`};
 
   .EmailIconSF {
     position: absolute;
@@ -81,7 +89,8 @@ export const StyleInputFirst = styled.div`
 
 export const InputEmail = styled.input`
   outline: ${(x) =>
-    x.whichOutline.emailAlreadyRegistered !== "" || (x.whichOutline.hasError === true && x.whichOutline.hasTouched === true)
+    x.whichOutline.emailAlreadyRegistered !== "" ||
+    (x.whichOutline.hasError === true && x.whichOutline.hasTouched === true)
       ? `3px ${SEMANTICS.ERROR_STATE} solid`
       : `1px ${NEUTRALS.BLACK} solid`};
 
@@ -151,7 +160,10 @@ export const StyleInputSecond = styled.div`
 `
 
 export const InputPassword = styled.input`
-  outline: ${(x) => (x.whichOutline.hasError !== true && x.whichOutline.hasTouched ? `3px ${SEMANTICS.ERROR_STATE} solid` : `1px ${NEUTRALS.BLACK} solid`)};
+  outline: ${(x) =>
+    x.whichOutline.hasError !== true && x.whichOutline.hasTouched
+      ? `3px ${SEMANTICS.ERROR_STATE} solid`
+      : `1px ${NEUTRALS.BLACK} solid`};
 
   border-radius: 8px;
   border: none;
@@ -168,5 +180,8 @@ export const CaptionSignUp = styled(Caption)`
 
 const TermsAndServices = styled.div`
   margin-bottom: 24px;
+`
+export const ButtonWrapper = styled.div`
+  margin-bottom: 40px;
 `
 export default TermsAndServices
