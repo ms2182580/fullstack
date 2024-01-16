@@ -11,7 +11,7 @@ type Props = {
 
 export const blurEffect = ({
   zIndex = 1,
-  pixelsBackdropFilter = 1.5,
+  pixelsBackdropFilter = 1.1,
 }: Props) => css`
   &:after {
     content: "";
@@ -42,7 +42,7 @@ export const blurEffect = ({
 
     padding: 24px;
 
-    z-index: 3;
+    z-index: ${zIndex + 1};
 
     border-radius: 16px;
 

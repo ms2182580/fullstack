@@ -32,27 +32,40 @@ export const ORG_D_Detail_FAQSWrapper = styled.section<Props>`
   & > :nth-child(2) {
     display: flex;
     position: relative;
+    justify-content: space-between;
     margin-bottom: 24px;
-    gap: 25%;
+    /* gap: 25%; */
 
     & > :nth-child(1) {
-      position: absolute;
-      left: 43px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-    }
+      position: relative;
+      height: 100%;
 
-    & > :nth-child(2) {
-      width: 100%;
-      padding: 10px 10px 10px 60px;
+      ${({ isBackend }) =>
+        isBackend &&
+        css`
+          /* border: 2px solid crimson; */
 
-      background: ${NEUTRALS.OFF_WHITE};
-      border: 1px solid ${NEUTRALS.BLACK};
-      border-radius: 16px;
+          ${blurEffect({})}
+        `}
 
-      &[type="text"]:focus {
-        border: 1px solid transparent;
+      & > :nth-child(1) {
+        position: absolute;
+        left: 43px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      & > :nth-child(2) {
+        width: 100%;
+        padding: 10px 10px 10px calc(43px + 60px);
+
+        background: ${NEUTRALS.OFF_WHITE};
+        border: 1px solid ${NEUTRALS.BLACK};
+        border-radius: 16px;
+
+        &[type="text"]:focus {
+          border: 1px solid transparent;
+        }
       }
     }
   }

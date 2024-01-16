@@ -1,4 +1,6 @@
 import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/icons"
+import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import { useRouter } from "next/router"
 import { Map, Marker } from "pigeon-maps"
 import { useEffect, useRef } from "react"
 import { MapComponentWrapper } from "./styles/MapComponentWrapper"
@@ -37,14 +39,13 @@ export const MapComponent = ({
   isMobile = false,
 }: Props) => {
   const mapRef = useRef<HTMLDivElement>(null)
-  // console.log({ isFullMap, isMobile });
+
   useEffect(() => {
     if (mapRef.current && isFullMap) {
       mapRef.current?.scrollIntoView({ behavior: "smooth" })
     }
   }, [mapRef, isFullMap])
 
-  // const { pathname } = useRouter()
   let mapProps = {
     ref: mapRef,
     widthFull: false,
@@ -54,9 +55,15 @@ export const MapComponent = ({
     mapProps.widthFull = true
     mapProps.isFullMap = isFullMap
   }
+
+  const { query } = useRouter()
+
   return (
     <>
-      <MapComponentWrapper {...mapProps}>
+      <MapComponentWrapper
+        {...mapProps}
+        isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+      >
         <Map
           defaultCenter={[
             default_data_map.coordinates.lat,

@@ -45,10 +45,10 @@ export const ORG_D_Detail_ReviewsWrapper = styled.aside`
       font-size: 16px;
       font-weight: 600;
 
-      cursor: pointer;
+      cursor: default;
 
       &:hover,
-      &:focus {
+      &:focus-visible {
         background-color: ${PRIMARY.PRIMARY_CTA};
         color: ${NEUTRALS.OFF_WHITE};
 
@@ -77,6 +77,11 @@ export const ORG_D_Detail_ReviewsWrapper = styled.aside`
     color: ${SEMANTICS.HYPERLINK_NORMAL};
     font-weight: 600;
 
-    cursor: pointer;
+    cursor: default;
+
+    &:hover,
+    &:focus-visible {
+      filter: brightness(120%);
+    }
   }
 `

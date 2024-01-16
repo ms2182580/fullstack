@@ -111,8 +111,10 @@ export const ORG_D_Detail_FAQS = ({
         <H3>Frequently Asked Questions</H3>
 
         <div>
-          <ORG_Detail_SearchFAQSSVG />
-          <input type="text" placeholder="Search in Q&A..." />
+          <div>
+            <ORG_Detail_SearchFAQSSVG />
+            <input type="text" placeholder="Search in Q&A..." />
+          </div>
           <span onClick={handleShowModal}>
             <ButtonSmall secondary>Ask a Question</ButtonSmall>
           </span>
