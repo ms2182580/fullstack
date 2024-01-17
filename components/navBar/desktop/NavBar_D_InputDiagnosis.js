@@ -1,17 +1,29 @@
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import Image from "next/legacy/image"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ORGDesktop_AgeIcon from "../../../assets/icons/ORGDesktop_AgeIcon.png"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
 import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
+import { suggestionKeywords } from "@/utils/org/typed-flow/suggestionKeywords"
+import { NavBar_D_DropdownDiagnosesSuggestionComponent } from "./NavBar_D_DropdownDiagnosesOptions"
 
-const suggestionsKeywords = ["Autism (ASD)", "ADHD", "Down Syndrome", "Cerebral Palsy", "Frafile X", "Other"]
+const suggestionsKeywords = [
+  "Autism (ASD)",
+  "ADHD",
+  "Down Syndrome",
+  "Cerebral Palsy",
+  "Frafile X",
+  "Other",
+]
 
 export const NavBar_D_InputDiagnosis = () => {
-  const [isFocusKeyword, setIsFocusKeyword] = useState(false)
-  const [isHoveredKeyword, setIsHoveredKeyword] = useState(false)
-  const inputRefKeyword = useRef()
+  const { setCancelWelcomePath, setDiagnosisChoosed, setInputTypesByUser } =
+    useSessionStorage_typedFlow()
+  const [isFocus, setIsFocus] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
+  const inputRef = useRef()
   const [keywordInput, setKeywordInput] = useState("")
 
   // const { setKeywordsContext, keywordsContext } = useORG_InputCtx()
@@ -21,7 +33,130 @@ export const NavBar_D_InputDiagnosis = () => {
   // }, [keywordsContext])
 
   const shouldTab = useShouldTab()
+  const [diagnosisSearchedByUser, setDiagnosisSearchedByUser] = useState("")
+  const [diagnosisCategory, setDiagnosisCategory] = useState("")
+  const [haveAtLeastOneMatchState, setHaveAtLeastOneMatchState] =
+    useState(false)
+  const [showMessageToUserByEmptyInput, setShowMessageToUserByEmptyInput] =
+    useState(false)
+  let handleShowDropdown = () => {
+    setIsFocus(true)
+  }
+  let handleCloseDropdown = () => {
+    if (!isHovered) {
+      setIsFocus(false)
+    }
+  }
 
+  let handleSetDiagnosis = (e) => {
+    setDiagnosisSearchedByUser(e.target.value)
+    setInputTypesByUser(e.target.value)
+  }
+  let handleWhichMatch = (e) => {
+    const userInputLower = e.target.value.toLowerCase()
+
+    const finalObj = {
+      diagnosis: [],
+      symptoms: [],
+    }
+
+    suggestionKeywords.forEach((keywordObj) => {
+      keywordObj.symptoms.forEach((symptom) => {
+        if (symptom.toLowerCase().includes(userInputLower)) {
+          finalObj.symptoms.push(symptom)
+        }
+      })
+
+      if (keywordObj.diagnosis.toLowerCase().includes(userInputLower)) {
+        finalObj.diagnosis.push(keywordObj.diagnosis)
+      }
+    })
+
+    let haveAtLeastOneMatchDiagnosis = finalObj.diagnosis.length > 0
+    let haveAtLeastOneMatchSymptoms = finalObj.symptoms.length > 0
+
+    if (haveAtLeastOneMatchDiagnosis) {
+      setDiagnosisCategory((prevState) => ({
+        ...prevState,
+        diagnosis: [finalObj.diagnosis],
+      }))
+      setHaveAtLeastOneMatchState(true)
+    }
+
+    if (haveAtLeastOneMatchSymptoms) {
+      setDiagnosisCategory((prevState) => ({
+        ...prevState,
+        symptoms: [finalObj.symptoms],
+      }))
+      setHaveAtLeastOneMatchState(true)
+    }
+
+    if (haveAtLeastOneMatchDiagnosis && !haveAtLeastOneMatchSymptoms) {
+      setDiagnosisCategory(() => ({
+        diagnosis: [finalObj.diagnosis],
+        symptoms: [],
+      }))
+      setHaveAtLeastOneMatchState(true)
+    }
+
+    if (!haveAtLeastOneMatchDiagnosis && haveAtLeastOneMatchSymptoms) {
+      setDiagnosisCategory(() => ({
+        diagnosis: [],
+        symptoms: [finalObj.symptoms],
+      }))
+      setHaveAtLeastOneMatchState(true)
+    }
+
+    if (
+      !haveAtLeastOneMatchDiagnosis &&
+      !haveAtLeastOneMatchSymptoms &&
+      diagnosisSearchedByUser !== ""
+    ) {
+      setDiagnosisCategory({})
+      setHaveAtLeastOneMatchState(false)
+    }
+  }
+  let handleCloseWelcomePath = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setCancelWelcomePath(true)
+    }
+  }
+
+  let handleSetDiagnosisInContext = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setDiagnosisChoosed(diagnosisCategory)
+    }
+  }
+
+  let handleUserTryToGoNextPageWithEmptyButton = (e) => {
+    if (
+      (e.type === "click" || e.key === "Enter") &&
+      haveAtLeastOneMatchState === false &&
+      diagnosisSearchedByUser === ""
+    ) {
+      setShowMessageToUserByEmptyInput(true)
+    }
+
+    if (e.key === "Tab") {
+      setShowMessageToUserByEmptyInput(showMessageToUserByEmptyInput)
+    }
+  }
+
+  useEffect(() => {
+    if (haveAtLeastOneMatchState && diagnosisSearchedByUser !== "") {
+      setShowMessageToUserByEmptyInput(false)
+    }
+  }, [haveAtLeastOneMatchState, diagnosisSearchedByUser, diagnosisCategory])
+
+  let handleNothingSelected = () => {
+    if (
+      diagnosisCategory !== "" &&
+      haveAtLeastOneMatchState === false &&
+      diagnosisSearchedByUser !== ""
+    ) {
+      setShowMessageToUserByEmptyInput(true)
+    }
+  }
   return (
     <div>
       <div>
@@ -32,40 +167,37 @@ export const NavBar_D_InputDiagnosis = () => {
 
         <span>
           <span>
-            <Image
-              src={ORGDesktop_AgeIcon}
-              alt=""
-            />
+            <Image src={ORGDesktop_AgeIcon} alt="" />
           </span>
           <input
             placeholder="Diagnosis (Ex: Autism...)"
-            onFocus={() => setIsFocusKeyword(true)}
+            onFocus={handleShowDropdown}
             onBlur={() => {
-              if (!isHoveredKeyword) {
-                setIsFocusKeyword(false)
-              }
+              handleCloseDropdown()
+              handleNothingSelected()
             }}
-            value={keywordInput}
             onChange={(e) => {
-              setKeywordInput(e.target.value)
-              // setKeywordsContext(e.target.value)
+              handleSetDiagnosis(e)
+              handleWhichMatch(e)
             }}
-            ref={inputRefKeyword}
+            value={diagnosisSearchedByUser}
+            ref={inputRef}
             tabIndex={shouldTab}
           />
         </span>
       </div>
 
       <NavBar_D_DropdownSuggestionWrapper>
-        <NavBar_D_DropdownSuggestionComponent
-          isFocus={isFocusKeyword}
-          setIsHover={setIsHoveredKeyword}
-          setIsFocus={setIsFocusKeyword}
-          suggestions={suggestionsKeywords}
-          keywordClickByUser={keywordInput}
-          setKeywordClickByUser={setKeywordInput}
-          inputRefFocus={inputRefKeyword}
-          isFirstOrSecondDropdown={true}
+        <NavBar_D_DropdownDiagnosesSuggestionComponent
+          isFocus={isFocus}
+          setIsHovered={setIsHovered}
+          diagnosisSearchedByUser={diagnosisSearchedByUser}
+          setDiagnosisSearchedByUser={setDiagnosisSearchedByUser}
+          setInputTypesByUser={setInputTypesByUser}
+          setDiagnosisCategory={setDiagnosisCategory}
+          setHaveAtLeastOneMatchState={setHaveAtLeastOneMatchState}
+          suggestionKeywords={suggestionKeywords}
+          inputRefFocus={inputRef}
         />
       </NavBar_D_DropdownSuggestionWrapper>
     </div>
