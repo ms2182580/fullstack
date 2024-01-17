@@ -3,29 +3,28 @@ import { INDEX_ORG_Detail_M } from "@/components/org/cards/third-page/mobile/IND
 import { useCheckUserWidth } from "@/context/CheckUserWidth"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router"
-import { useLayoutEffect, useMemo } from "react"
+import { useMemo } from "react"
 
 export default function ORG_Detail() {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
   const { isMobile }: any = useCheckUserWidth()
 
-  const { push, query } = useRouter()
+  const { query } = useRouter()
 
-  useLayoutEffect(() => {
+  /* useEffect(() => {
     if (
-      thirdpageDataORG === "" &&
+      thirdpageDataORG === "" ||
       !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
     ) {
       push(`/${ALL_ROUTES.ORG}`)
       return
     }
-  }, [])
+  }, []) */
 
   const shouldRenderThePage = useMemo(() => {
     if (
-      thirdpageDataORG !== "" &&
+      thirdpageDataORG !== "" ||
       query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
     ) {
       return true

@@ -12,6 +12,7 @@ export const INDEX_M_SignupWrapper = styled.div<Props>`
   width: 100%;
   padding: 25px;
   flex-direction: column;
+
   //back to home
   & > :nth-child(1) {
     display: flex;
@@ -19,6 +20,7 @@ export const INDEX_M_SignupWrapper = styled.div<Props>`
     align-items: center;
     cursor: pointer;
   }
+
   & > :nth-child(2) {
     border-radius: 10px;
     padding: 15px;
