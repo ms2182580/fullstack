@@ -7,7 +7,13 @@ import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
 import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
 
-const suggestionsKeywords = ["Physical Therapist", "Speech Therapist", "Occupational Therapist", "Dance Class", "Art Camp"]
+const suggestionsKeywords = [
+  "Physical Therapist",
+  "Speech Therapist",
+  "Occupational Therapist",
+  "Dance Class",
+  "Art Camp",
+]
 
 export const NavBar_D_InputKeyword = () => {
   const [isFocusKeyword, setIsFocusKeyword] = useState(false)
@@ -30,10 +36,7 @@ export const NavBar_D_InputKeyword = () => {
 
         <span>
           <span>
-            <Image
-              src={ORGDesktop_LoupeIcon}
-              alt=""
-            />
+            <Image src={ORGDesktop_LoupeIcon} alt="" />
           </span>
           <input
             placeholder="Social skills, evaluation, school  etc."
