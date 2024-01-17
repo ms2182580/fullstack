@@ -115,7 +115,8 @@ export const Welcome_D_1Wrapper = styled.div`
     flex-direction: column;
 
     & > :nth-child(1) {
-      visibility: ${({ showMessageToUserByEmptyInput }) => (showMessageToUserByEmptyInput ? `visible` : `hidden`)};
+      visibility: ${({ showMessageToUserByEmptyInput }) =>
+        showMessageToUserByEmptyInput ? `visible` : `hidden`};
 
       color: crimson;
       filter: sepia(30%);
