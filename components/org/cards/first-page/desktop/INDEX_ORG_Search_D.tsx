@@ -16,9 +16,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFi
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
-import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
-import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -28,21 +26,23 @@ import {
 } from "./styles/INDEX_ORG_Search_DWrapper"
 
 type Props = {
-  positionInArray: number
-  isSelected: boolean
-  theData: object[]
-  someLayoutSpecial: any
+  positionInArray?: number
+  theData?: object[]
+  someLayoutSpecial?: any
   dataComesFromBackend?: boolean
-  allData: any
+  isSelected?: boolean
+  allSubcategories: string[]
+  allBackendData: any
 }
 
 export const INDEX_ORG_Search_D = ({
   positionInArray,
-  isSelected = false,
-  theData,
+  theData = [],
   someLayoutSpecial,
-  dataComesFromBackend,
-  allData,
+  dataComesFromBackend = true,
+  isSelected = false,
+  allSubcategories,
+  allBackendData,
 }: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
@@ -50,7 +50,7 @@ export const INDEX_ORG_Search_D = ({
     if (!isSelected) {
       setHowMuchDisplay(1)
     } else {
-      setHowMuchDisplay(theData.length)
+      setHowMuchDisplay(allSubcategories.length)
     }
   }, [isSelected])
 
@@ -73,114 +73,75 @@ export const INDEX_ORG_Search_D = ({
           someLayoutSpecial={someLayoutSpecial}
           className={dataComesFromBackend && "dataComesFromBackend"}
         >
-          {theData.map((x, iData) => {
-            const [title, ...objects]: any = x
-            let howMuch: number = objects.length
-            let onlyThree = objects.slice(0, 3)
-
-            /* If the resource have no category («title» variable) nothing is displayed */
-            if (title === "") {
-              return <></>
-            }
-
-            while (howMuchDisplay > iData) {
+          {allSubcategories.map((x, index) => {
+            while (howMuchDisplay > index) {
               return (
                 <>
-                  <section key={`${title}_${iData}`}>
+                  <section key={x}>
                     <header>
-                      <H2>{title}</H2>
+                      <H2>{x}</H2>
                     </header>
 
                     <div>
-                      {onlyThree.map((obj: any, iSubData: number) => {
-                        return (
-                          <article key={`${obj.resourceId}`}>
-                            <div>
-                              <Image
-                                src={Backup_Image}
-                                alt={`backup image`}
-                                layout={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? "responsive"
-                                    : "intrinsic"
-                                }
-                                objectFit={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? "contain"
-                                    : "initial"
-                                }
-                                width={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? 1
-                                    : 1200
-                                }
-                                height={
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PAT ||
-                                  someLayoutSpecial ===
-                                    All_Layouts_Accepted.like_PVES
-                                    ? 0.522
-                                    : 600
-                                }
-                              />
-                              {obj.verifiedUnverifiedResource !== "" && (
-                                <>
-                                  <Verified />
-                                </>
-                              )}
-                            </div>
+                      {allBackendData.mentalHealth.map(
+                        (xBackendData, indexBackend) => {
+                          return (
+                            <>
+                              <article key={`${x}_${xBackendData.listingType}`}>
+                                <div>
+                                  <Image
+                                    src={Backup_Image}
+                                    alt={`backup image`}
+                                    layout="intrinsic"
+                                    objectFit="initial"
+                                    width="1200"
+                                    height="600"
+                                  />
+                                </div>
 
-                            <H3>{obj.recordName.toLowerCase()}</H3>
-                            <H4>{obj.recordSubtype}</H4>
+                                <H3>{xBackendData.recordName.toLowerCase()}</H3>
+                                <H4>{xBackendData.recordSubtype}</H4>
 
-                            <P>{obj?.address[0].city}</P>
+                                <P>{xBackendData?.address[0].city}</P>
 
-                            <StarsRatingReview_D
-                              rating={obj?.ratings?.[0]?.value || 99}
-                              reviews={99}
-                            />
+                                <StarsRatingReview_D />
 
-                            <P>{obj?.reviews?.[0]}</P>
-                            <button
-                              onClick={(event) =>
-                                handleMoveToThirdPage_Backend({
-                                  event,
-                                  raw: onlyThree[iSubData],
-                                  setThirdpageDataORG_Backend,
-                                  push,
-                                })
-                              }
-                            >
-                              <ORG_D_Search_ViewProfileSvg />
-                              {someLayoutSpecial === "like_PVES" && iData === 0
-                                ? "View Listing"
-                                : "View Profile"}
-                            </button>
-                          </article>
-                        )
-                      })}
+                                {/* <P>{xBackendData?.reviews?.[0]}</P> */}
+                                <button
+                                // onClick={(event) =>
+                                //   handleMoveToThirdPage_Backend({
+                                //     event,
+                                //     raw: onlyThree[iSubData],
+                                //     setThirdpageDataORG_Backend,
+                                //     push,
+                                //   })
+                                // }
+                                >
+                                  <ORG_D_Search_ViewProfileSvg />
+                                  View Profile
+                                  {/* {someLayoutSpecial === "like_PVES" &&
+                                  iData === 0
+                                    ? "View Listing"
+                                    : "View Profile"} */}
+                                </button>
+                              </article>
+                            </>
+                          )
+                        }
+                      )}
                     </div>
 
                     <span
-                      onClick={(event) =>
-                        handleMoveToSecondPage_Backend({
-                          event,
-                          raw: x,
-                          setSecondpageDataORG_Backend,
-                          push,
-                        })
-                      }
+                    // onClick={(event) =>
+                    //   handleMoveToSecondPage_Backend({
+                    //     event,
+                    //     raw: x,
+                    //     setSecondpageDataORG_Backend,
+                    //     push,
+                    //   })
+                    // }
                     >
-                      <ButtonSmall secondary>See all ({howMuch})</ButtonSmall>
+                      <ButtonSmall secondary>See all 25</ButtonSmall>
                     </span>
                   </section>
                 </>
@@ -194,7 +155,7 @@ export const INDEX_ORG_Search_D = ({
 
   return (
     <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
-      {theData.map((x, iData) => {
+      {theData?.map((x, iData) => {
         const [title, ...objects]: any = x
         while (howMuchDisplay > iData) {
           return (

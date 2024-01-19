@@ -1,9 +1,3 @@
-import {
-  DATA_ORG_CheckPaths_Search_D,
-  ROUTER_PUSH_SEARCH,
-} from "@/utils/org/DATA_ORG_CheckPaths_Search_D.js"
-import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
 import { useRouter } from "next/router.js"
 import { Fragment, useRef, useState } from "react"
 import {
@@ -85,7 +79,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({
 
   const router = useRouter()
 
-  let moveUserToORGSearch = (e, acronym) => {
+  /* let moveUserToORGSearch = (e, acronym) => {
     if (e.type === "click" || e.key === "Enter") {
       const checkExistPath = DATA_ORG_CheckPaths_Search_D.filter(
         (x) => x === acronym
@@ -110,7 +104,7 @@ export const NavBar_D_HamburgerComponentDropdown = ({
         )
       }
     }
-  }
+  } */
 
   return (
     <NavBar_D_HamburgerComponentDropdownWrapper ref={theRef}>
@@ -124,8 +118,8 @@ export const NavBar_D_HamburgerComponentDropdown = ({
                   ref={theRefCC}
                   onFocus={handleShowHover}
                   data-content={x.nameJSX}
-                  onClick={(e) => moveUserToORGSearch(e, x.acronym)}
-                  onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
+                  // onClick={(e) => moveUserToORGSearch(e, x.acronym)}
+                  // onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
                 >
                   <H4>{x.nameJSX}</H4>
                   {showNestedCC && <x.nestedDropdown.component />}
@@ -141,8 +135,8 @@ export const NavBar_D_HamburgerComponentDropdown = ({
                   tabIndex={0}
                   onFocus={handleHideHover}
                   data-content={x.nameJSX}
-                  onClick={(e) => moveUserToORGSearch(e, x.acronym)}
-                  onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
+                  // onClick={(e) => moveUserToORGSearch(e, x.acronym)}
+                  // onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
                 >
                   <H4>{x.nameJSX}</H4>
                 </li>
@@ -154,8 +148,8 @@ export const NavBar_D_HamburgerComponentDropdown = ({
             <Fragment key={x.nameJSX}>
               <li
                 tabIndex={0}
-                onClick={(e) => moveUserToORGSearch(e, x.acronym)}
-                onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
+                // onClick={(e) => moveUserToORGSearch(e, x.acronym)}
+                // onKeyDown={(e) => moveUserToORGSearch(e, x.acronym)}
               >
                 <H4 data-content={x.nameJSX}>{x.nameJSX}</H4>
               </li>

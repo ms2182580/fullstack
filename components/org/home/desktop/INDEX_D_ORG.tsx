@@ -7,15 +7,16 @@ import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import { ROUTER_PUSH_SEARCH } from "@/utils/org/DATA_ORG_CheckPaths_Search_D.js"
 import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
-import { useFormatData } from "@/utils/org/useFormatData"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { Fragment, useEffect, useRef, useState } from "react"
+import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
+
+// console.log("ALL_DATA:", ALL_DATA)
 
 type Props = {
   allBackendData: object[] | any
@@ -26,16 +27,16 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
   * There's a bug here when you change something in development here and save it, it trigger useFormatData or something and new dataToORG is created in the UI
   
    */
-  const { dataToORG }: { dataToORG: object[] } = useFormatData({
-    allBackendData,
-  })
+  // const { dataToORG }: { dataToORG: object[] } = useFormatData({
+  //   allBackendData,
+  // })
+
+  console.log("allBackendData:", allBackendData)
 
   // console.log("dataToORG:", dataToORG)
 
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
-  const [matchNameState, setMatchNameState] = useState<
-    string | string[] | undefined
-  >("All")
+  const [matchNameState, setMatchNameState] = useState("All")
 
   const handleShowAll = () => {
     setSingleCardIsSelected(false)
@@ -59,19 +60,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
     useScrollHorizontal(refOfORGSelections)
 
-  /* useEffect(() => {
-    if (refOfORGSelections) {
-      let allChildren = Array.from(refOfORGSelections.current.children)
-      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
-
-      let liClientWidth_IsActive = getIsActive.clientWidth
-      let liOffSetLeft_IsActive = getIsActive.offsetLeft
-
-      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
-    }
-  }, [refOfORGSelections]) */
-
-  useLayoutEffect(() => {
+  /* useLayoutEffect(() => {
     if (
       query[ROUTER_PUSH_SEARCH.nameJSX] &&
       refOfORGSelections.current !== null
@@ -88,9 +77,9 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
         left: positionToMove,
       })
     }
-  }, [query, matchNameState])
+  }, [query, matchNameState]) */
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (
       query[ROUTER_PUSH_SEARCH.nameJSX] &&
       refOfORGSelections.current !== null
@@ -105,7 +94,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
       const theElementTop = ulElement.top
       window.scrollTo({ top: theElementTop })
     }
-  }, [query])
+  }, [query]) */
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
@@ -115,9 +104,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
 
   return (
     <>
-      <INDEX_D_ORGWrapper
-      // shouldHideAllLi={stateToCss.scrollRight}
-      >
+      <INDEX_D_ORGWrapper>
         <header>
           <H1>
             Find your I/DD <br /> community
@@ -138,10 +125,6 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           <ORG_D_SearchComponent />
         </header>
 
-        {/* 
-            //!FH0
-            make the arrow left a styled-component to pass the stateToCss.reachFinal there
-          */}
         <div>
           <div
             className={`${
@@ -189,10 +172,6 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
             })}
           </ul>
 
-          {/* 
-            //!FH0
-            make the arrow right a styled-component to pass the stateToCss.reachFinal there
-          */}
           <div
             className={`${
               stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
@@ -218,41 +197,35 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
         )
         
         */}
-        {/* {dataToORG.map((x, i) => {
-          const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
-          const dataComesFromBackend =
-            x?.somethingSpecial?.isFromBackend ?? null
+
+        {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
+          console.log("CATEGORY:", CATEGORY, matchNameState)
           if (singleCardIsSelected === false) {
             return (
-              <Fragment key={`${x.nameJSX}`}>
+              <Fragment key={CATEGORY}>
                 <INDEX_ORG_Search_D
-                  positionInArray={i}
-                  theData={x.thisParticularData}
-                  someLayoutSpecial={someLayoutSpecial}
-                  dataComesFromBackend={dataComesFromBackend}
+                  allSubcategories={SUB_CATEGORY}
+                  allBackendData={allBackendData}
                 />
               </Fragment>
             )
           }
+
           if (
             singleCardIsSelected &&
-            matchNameState.toLowerCase() === x.nameJSX.toLowerCase()
+            matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
           ) {
             return (
-              <Fragment key={`${x.nameJSX}_${i}`}>
+              <Fragment key={CATEGORY}>
                 <INDEX_ORG_Search_D
+                  allSubcategories={SUB_CATEGORY}
+                  allBackendData={allBackendData}
                   isSelected={singleCardIsSelected}
-                  positionInArray={i}
-                  theData={x.thisParticularData}
-                  someLayoutSpecial={someLayoutSpecial}
-                  dataComesFromBackend={dataComesFromBackend}
-                  allData={dataToORG}
                 />
               </Fragment>
             )
           }
-          return null
-        })} */}
+        })}
       </INDEX_D_ORGWrapper>
     </>
   )
