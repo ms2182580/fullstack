@@ -16,6 +16,7 @@ import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFi
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
+import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
@@ -31,6 +32,7 @@ type Props = {
   someLayoutSpecial?: any
   dataComesFromBackend?: boolean
   isSelected?: boolean
+  category: string
   allSubcategories: string[]
   allBackendData: any
 }
@@ -41,6 +43,7 @@ export const INDEX_ORG_Search_D = ({
   someLayoutSpecial,
   dataComesFromBackend = true,
   isSelected = false,
+  category,
   allSubcategories,
   allBackendData,
 }: Props) => {
@@ -132,14 +135,16 @@ export const INDEX_ORG_Search_D = ({
                     </div>
 
                     <span
-                    // onClick={(event) =>
-                    //   handleMoveToSecondPage_Backend({
-                    //     event,
-                    //     raw: x,
-                    //     setSecondpageDataORG_Backend,
-                    //     push,
-                    //   })
-                    // }
+                      onClick={(event) =>
+                        handleMoveToSecondPage_Backend({
+                          event,
+                          category,
+                          theSubcategory: allSubcategories[index],
+                          raw: allBackendData.mentalHealth,
+                          setSecondpageDataORG_Backend,
+                          push,
+                        })
+                      }
                     >
                       <ButtonSmall secondary>See all 25</ButtonSmall>
                     </span>
