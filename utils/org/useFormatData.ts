@@ -84,7 +84,7 @@ const prepareToDATA_ORG_D = ({ dataToPrepare }) => {
   return theDataToPush
 }
 
-export const useFormatData = ({ allBackendData, allBackendFetched }) => {
+export const useFormatData = ({ allBackendData }) => {
   const [allDataFormatted, setAllDataFormatted] = useState<any>([])
 
   useEffect(() => {

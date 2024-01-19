@@ -4,30 +4,38 @@ import {
   ORG_D_Search_CarePlanSvg,
 } from "@/assets/icons/index.js"
 import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
-import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ROUTER_PUSH_SEARCH } from "@/utils/org/DATA_ORG_CheckPaths_Search_D.js"
+import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
 import { useFormatData } from "@/utils/org/useFormatData"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { useRouter } from "next/router.js"
-import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
-import { INDEX_D_ORGWrapper } from "./styles/INDEX_D_ORGWrapper.js"
+import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
 
-export const INDEX_D_ORG = ({ allBackendData }) => {
+type Props = {
+  allBackendData: object[] | any
+}
+
+export const INDEX_D_ORG = ({ allBackendData }: Props) => {
   /* //?TODO:BUG
   * There's a bug here when you change something in development here and save it, it trigger useFormatData or something and new dataToORG is created in the UI
   
    */
-  const { dataToORG } = useFormatData({
+  const { dataToORG }: { dataToORG: object[] } = useFormatData({
     allBackendData,
   })
 
+  // console.log("dataToORG:", dataToORG)
+
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
-  const [matchNameState, setMatchNameState] = useState("All")
+  const [matchNameState, setMatchNameState] = useState<
+    string | string[] | undefined
+  >("All")
 
   const handleShowAll = () => {
     setSingleCardIsSelected(false)
@@ -46,7 +54,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
   // }, [])
 
   const { query } = useRouter()
-  const refOfORGSelections = useRef(null)
+  const refOfORGSelections = useRef<HTMLUListElement | null>(null)
 
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
     useScrollHorizontal(refOfORGSelections)
@@ -64,12 +72,15 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
   }, [refOfORGSelections]) */
 
   useLayoutEffect(() => {
-    if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
+    if (
+      query[ROUTER_PUSH_SEARCH.nameJSX] &&
+      refOfORGSelections.current !== null
+    ) {
       let allChildren = Array.from(refOfORGSelections.current.children)
       let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
 
       let liClientWidth_IsActive = getIsActive.clientWidth
-      let liOffSetLeft_IsActive = getIsActive.offsetLeft
+      let liOffSetLeft_IsActive = (getIsActive as HTMLUListElement).offsetLeft
 
       let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
 
@@ -80,7 +91,10 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
   }, [query, matchNameState])
 
   useEffect(() => {
-    if (query[ROUTER_PUSH_SEARCH.nameJSX]) {
+    if (
+      query[ROUTER_PUSH_SEARCH.nameJSX] &&
+      refOfORGSelections.current !== null
+    ) {
       let componentName = query[ROUTER_PUSH_SEARCH.nameJSX]
 
       setSingleCardIsSelected(true)
@@ -93,7 +107,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
     }
   }, [query])
 
-  const { setThirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
+  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   useEffect(() => {
     setThirdpageDataORG("")
@@ -101,9 +115,11 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
 
   return (
     <>
-      <INDEX_D_ORGWrapper shouldHideAllLi={stateToCss.scrollRight}>
-        <div>
-          <H1 semi_bold>
+      <INDEX_D_ORGWrapper
+      // shouldHideAllLi={stateToCss.scrollRight}
+      >
+        <header>
+          <H1>
             Find your I/DD <br /> community
             <br /> and resources
           </H1>
@@ -120,7 +136,12 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
             />
           </div>
           <ORG_D_SearchComponent />
-        </div>
+        </header>
+
+        {/* 
+            //!FH0
+            make the arrow left a styled-component to pass the stateToCss.reachFinal there
+          */}
         <div>
           <div
             className={`${
@@ -133,38 +154,45 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
             <div />
           </div>
           <ul
-            ref={(el) => {
+            ref={(el: any) => {
               setListRef(el)
               refOfORGSelections.current = el
             }}
           >
-            <li
+            <LI_Category
               onClick={handleShowAll}
-              className={!singleCardIsSelected ? "isActive" : ""}
+              isActiveCategory={!singleCardIsSelected}
             >
               <P primary_cta semibold>
                 All
               </P>
-            </li>
-            {dataToORG.map((x, i) => {
+            </LI_Category>
+            {/* 
+            //* Inner navigation bar here → scroll right
+            */}
+
+            {Object.values(ALL_DATA).map(({ CATEGORY }, index) => {
               return (
-                <li
-                  key={`${x.nameJSX}_${i}`}
-                  data-name={x.nameJSX}
+                <LI_Category
+                  key={`${CATEGORY}_${index}`}
+                  data-name={CATEGORY}
                   onClick={handleShowOneCard}
-                  className={
-                    singleCardIsSelected && matchNameState === x.nameJSX
-                      ? "isActive"
-                      : ""
+                  isActiveCategory={
+                    singleCardIsSelected && matchNameState === CATEGORY
                   }
                 >
-                  <P primary_cta semibold data-name={x.nameJSX}>
-                    {x.nameJSX.toLowerCase()}
+                  <P primary_cta semibold data-name={CATEGORY}>
+                    {CATEGORY}
                   </P>
-                </li>
+                </LI_Category>
               )
             })}
           </ul>
+
+          {/* 
+            //!FH0
+            make the arrow right a styled-component to pass the stateToCss.reachFinal there
+          */}
           <div
             className={`${
               stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
@@ -181,7 +209,16 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
             <div />
           </div>
         </div>
-        {dataToORG.map((x, i) => {
+        {/* 
+        // !FH0
+        use "ALL_DATA" like this Object.values(ALL_DATA).map()
+        
+        Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) =>
+           console.log("💛", CATEGORY, SUB_CATEGORY)
+        )
+        
+        */}
+        {/* {dataToORG.map((x, i) => {
           const someLayoutSpecial = x?.somethingSpecial?.layout ?? null
           const dataComesFromBackend =
             x?.somethingSpecial?.isFromBackend ?? null
@@ -215,7 +252,7 @@ export const INDEX_D_ORG = ({ allBackendData }) => {
             )
           }
           return null
-        })}
+        })} */}
       </INDEX_D_ORGWrapper>
     </>
   )

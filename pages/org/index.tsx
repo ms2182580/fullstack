@@ -23,7 +23,7 @@ const INDEX_M_STSearch_Component = dynamic(
 const ORG_INDEX = () => {
   const { isMobile }: any = useCheckUserWidth()
 
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 50 })
+  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
 
   if (!mentalHealthData.data) {
     return (
