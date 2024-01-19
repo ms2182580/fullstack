@@ -10,7 +10,6 @@ import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Pr
 import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
-import { useRouter } from "next/router.js"
 import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
@@ -31,10 +30,6 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
   //   allBackendData,
   // })
 
-  console.log("allBackendData:", allBackendData)
-
-  // console.log("dataToORG:", dataToORG)
-
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 
@@ -48,53 +43,10 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
     setMatchNameState(e.target.dataset.name)
   }
 
-  // const { setShouldFetchDesktopNoFilters } = useORG_Ctx_FetchNoFiltersDesktop()
-
-  // useEffect(() => {
-  //   setShouldFetchDesktopNoFilters(true)
-  // }, [])
-
-  const { query } = useRouter()
   const refOfORGSelections = useRef<HTMLUListElement | null>(null)
 
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
     useScrollHorizontal(refOfORGSelections)
-
-  /* useLayoutEffect(() => {
-    if (
-      query[ROUTER_PUSH_SEARCH.nameJSX] &&
-      refOfORGSelections.current !== null
-    ) {
-      let allChildren = Array.from(refOfORGSelections.current.children)
-      let getIsActive = allChildren.filter((x) => x.className === "isActive")[0]
-
-      let liClientWidth_IsActive = getIsActive.clientWidth
-      let liOffSetLeft_IsActive = (getIsActive as HTMLUListElement).offsetLeft
-
-      let positionToMove = liOffSetLeft_IsActive - liClientWidth_IsActive
-
-      refOfORGSelections.current.scroll({
-        left: positionToMove,
-      })
-    }
-  }, [query, matchNameState]) */
-
-  /* useEffect(() => {
-    if (
-      query[ROUTER_PUSH_SEARCH.nameJSX] &&
-      refOfORGSelections.current !== null
-    ) {
-      let componentName = query[ROUTER_PUSH_SEARCH.nameJSX]
-
-      setSingleCardIsSelected(true)
-      setMatchNameState(componentName)
-
-      const ulElement = refOfORGSelections.current.getBoundingClientRect()
-
-      const theElementTop = ulElement.top
-      window.scrollTo({ top: theElementTop })
-    }
-  }, [query]) */
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
@@ -150,9 +102,6 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
                 All
               </P>
             </LI_Category>
-            {/* 
-            //* Inner navigation bar here → scroll right
-            */}
 
             {Object.values(ALL_DATA).map(({ CATEGORY }, index) => {
               return (
@@ -188,22 +137,13 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
             <div />
           </div>
         </div>
-        {/* 
-        // !FH0
-        use "ALL_DATA" like this Object.values(ALL_DATA).map()
-        
-        Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) =>
-           console.log("💛", CATEGORY, SUB_CATEGORY)
-        )
-        
-        */}
 
         {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
-          console.log("CATEGORY:", CATEGORY, matchNameState)
           if (singleCardIsSelected === false) {
             return (
               <Fragment key={CATEGORY}>
                 <INDEX_ORG_Search_D
+                  category={CATEGORY}
                   allSubcategories={SUB_CATEGORY}
                   allBackendData={allBackendData}
                 />
@@ -218,6 +158,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
             return (
               <Fragment key={CATEGORY}>
                 <INDEX_ORG_Search_D
+                  category={CATEGORY}
                   allSubcategories={SUB_CATEGORY}
                   allBackendData={allBackendData}
                   isSelected={singleCardIsSelected}

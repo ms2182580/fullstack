@@ -9,35 +9,35 @@ import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 type Props = {
   event: MouseEvent
-  raw: any
+  category: string
+  theSubcategory: string
+  raw?: any
   setSecondpageDataORG_Backend: (allData) => void
   push
 }
 
 export const handleMoveToSecondPage_Backend = ({
   event,
+  category,
+  theSubcategory,
   raw,
   setSecondpageDataORG_Backend,
   push,
 }: Props) => {
-  const [toBreadcrumb, ...allData] = raw
-
-  const getCategoryName = allData[0].listingType
-
   const getSpecificData = getAllData({
-    whoToFound: getCategoryName,
+    whoToFound: category,
   })
 
   setSecondpageDataORG_Backend({
-    [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: allData,
+    [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: raw,
     [SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]:
-      getSpecificData[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
+      getSpecificData?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE] ?? {},
     [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]:
-      getSpecificData[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE],
+      getSpecificData?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE] ?? {},
   })
 
   const { checkedToURL } = checkStringToURL({
-    stringToURL: toBreadcrumb,
+    stringToURL: theSubcategory,
   })
 
   const toWhere: string = `/${ALL_ROUTES.ORG}/${ALL_ROUTES.RESULTS}/${checkedToURL}`
@@ -46,7 +46,7 @@ export const handleMoveToSecondPage_Backend = ({
     {
       pathname: toWhere,
       query: {
-        [QUERY_BREADCRUMBS.TITLE]: toBreadcrumb,
+        [QUERY_BREADCRUMBS.TITLE]: theSubcategory,
         [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: true,
       },
     },

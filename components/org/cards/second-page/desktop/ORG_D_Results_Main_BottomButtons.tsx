@@ -67,14 +67,15 @@ export const ORG_D_Results_Main_BottomButtons = ({
 
     if (backendData) {
       let theSecondPageData =
-        secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]
+        secondpageDataORG_Backend?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]
 
       let whichButtonToThirdPageSvg =
-        theSecondPageData[SPECIFIC_DATA_SECOND_PAGE.SVG] ?? DEFAULT_SVG
+        theSecondPageData?.[SPECIFIC_DATA_SECOND_PAGE.SVG] ?? DEFAULT_SVG
 
       let whichButtonToThirdPageText =
-        theSecondPageData[SPECIFIC_DATA_SECOND_PAGE.BUTTON_TO_THIRDPAGE_TEXT] ??
-        "See availability"
+        theSecondPageData?.[
+          SPECIFIC_DATA_SECOND_PAGE.BUTTON_TO_THIRDPAGE_TEXT
+        ] ?? "See availability"
 
       return {
         ComponentSvg_Backend: whichButtonToThirdPageSvg,
