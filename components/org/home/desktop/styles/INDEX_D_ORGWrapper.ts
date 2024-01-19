@@ -119,7 +119,7 @@ export const INDEX_D_ORGWrapper = styled.div`
         position: relative;
         z-index: 2;
 
-        cursor: pointer;
+        cursor: default;
 
         & > * {
           & > * {
@@ -173,8 +173,6 @@ export const INDEX_D_ORGWrapper = styled.div`
       bottom: 0;
       margin: auto;
 
-      /* border: 2px solid crimson; */
-
       &.navBarRightArrowShouldDisable {
         & > :nth-child(1) {
           border: 2px solid ${NEUTRALS.LIGHT_GREY};
@@ -186,11 +184,6 @@ export const INDEX_D_ORGWrapper = styled.div`
             & > * {
               fill: ${NEUTRALS.BLACK};
             }
-          }
-
-          &:hover {
-            /* all:unset; */
-            /* background-color: unset; */
           }
         }
       }
@@ -210,7 +203,9 @@ export const INDEX_D_ORGWrapper = styled.div`
         position: relative;
         z-index: 2;
 
-        cursor: pointer;
+        cursor: default;
+
+        /* border: 2px solid green !important; */
 
         & > * {
           & > * {
@@ -231,18 +226,15 @@ export const INDEX_D_ORGWrapper = styled.div`
       & > :nth-child(2) {
         position: absolute;
         top: 0;
-        /* right: -6vw; */
         right: 0px;
         z-index: 1;
         height: 100%;
-        /* width: calc(90px + 6vw); */
         width: 75px;
         background: linear-gradient(
           90deg,
           hsla(0, 0%, 100%, 20%) 0%,
           hsl(0, 0%, 100%) 8%
         );
-        /* background: hsl(348, 83.3%, 47.1%, 0.4); */
       }
     }
   }

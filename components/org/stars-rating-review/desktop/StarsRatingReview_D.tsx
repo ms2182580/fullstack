@@ -3,22 +3,26 @@ import { PatternStars } from "../PatternsStars.js"
 import { StarsRatingReview_DWrapper } from "./styles/StarsRatingReview_DWrapper"
 
 export type Props = {
-  rating?: number | undefined
-  reviews?: number | ""
+  rating?: number | null
+  reviews?: number | null
   isDetail?: boolean
 }
 
 export const StarsRatingReview_D = ({
-  rating = 5,
-  reviews = "",
+  rating = null,
+  reviews = null,
   isDetail = false,
 }: Props) => {
   return (
     <StarsRatingReview_DWrapper isDetail={isDetail} rating={rating}>
-      <div>
-        <PatternStars rating={rating} />
-        <P>{rating}.0</P>
-      </div>
+      {rating ? (
+        <>
+          <div>
+            <PatternStars rating={rating} />
+            <P>{rating}.0</P>
+          </div>
+        </>
+      ) : null}
 
       {reviews ? (
         <>
