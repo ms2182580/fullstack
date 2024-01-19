@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export const useOutsideHide = (ref, handleStateOutside) => {
+export const useOutsideHide = (ref, handleStateOutside, ...rest) => {
   useEffect(() => {
     setTimeout(() => {
       function handleClickOutside(event) {
@@ -22,7 +22,6 @@ export const useOutsideHide = (ref, handleStateOutside) => {
         document.removeEventListener("mousedown", handleClickOutside)
         document.removeEventListener("keydown", handleKeydown)
       }
-
     }, 0)
   }, [ref])
 }

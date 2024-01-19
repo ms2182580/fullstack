@@ -1,10 +1,19 @@
-import { DownArrowTinySvg, LeftArrowSvg, RightArrowSvg, XSvg } from "@/assets/icons"
+import {
+  DownArrowTinySvg,
+  LeftArrowSvg,
+  RightArrowSvg,
+  XSvg,
+} from "@/assets/icons"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { useOutsideHide } from "@/utils/useOutsideHide"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
-import { LI_Booking, PCMPS_General_D_BookingWrapper, PCMPS_General_D_Booking_CLASS } from "./styles/PCMPS_General_D_BookingWrapper"
+import {
+  LI_Booking,
+  PCMPS_General_D_BookingWrapper,
+  PCMPS_General_D_Booking_CLASS,
+} from "./styles/PCMPS_General_D_BookingWrapper"
 
 const daysOfTheWeek = ["Mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 
@@ -53,12 +62,21 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
   const refModal = useRef<HTMLLIElement>(null)
   useOutsideHide(refModal, setShouldShowMoldal)
 
+  useEffect(() => {
+    if (!shouldShowMoldal) setElementActiveHeight(null)
+  }, [shouldShowMoldal])
+
   let handleGetData = (e, thisDayOfTheMonth: number): void => {
     if (e.type === "click" || e.code === "Enter") {
       const date = new Date(`2023-05-${thisDayOfTheMonth + 1}`)
-      const fullNameOfTheDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(date)
+      const fullNameOfTheDay = new Intl.DateTimeFormat("en-US", {
+        weekday: "long",
+      }).format(date)
 
-      setDataToModal({ nameDayOfTheMonth: fullNameOfTheDay, numberDayOfTheMonth: thisDayOfTheMonth })
+      setDataToModal({
+        nameDayOfTheMonth: fullNameOfTheDay,
+        numberDayOfTheMonth: thisDayOfTheMonth,
+      })
       setShouldShowMoldal(true)
     }
   }
@@ -70,14 +88,18 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
           const targetElement = entry.target as HTMLElement // Type assertion
 
           setElementActiveHeight({
-            [ElementActiveHeight_KEYS.DISTANCE_FROM_TOP]: targetElement.offsetTop,
-            [ElementActiveHeight_KEYS.HEIGHT_OF_ELEMENT]: targetElement.offsetHeight,
+            [ElementActiveHeight_KEYS.DISTANCE_FROM_TOP]:
+              targetElement.offsetTop,
+            [ElementActiveHeight_KEYS.HEIGHT_OF_ELEMENT]:
+              targetElement.offsetHeight,
           })
         }
       })
     })
 
-    const target = document.querySelector(`.${PCMPS_General_D_Booking_CLASS.IS_SELECTED}`)
+    const target = document.querySelector(
+      `.${PCMPS_General_D_Booking_CLASS.IS_SELECTED}`
+    )
 
     if (target) {
       observer.observe(target)
@@ -121,7 +143,8 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
     <PCMPS_General_D_BookingWrapper
       distanceModal={elementActiveHeight}
       shouldShowMoldal={shouldShowMoldal}
-      id={idInnerbar}>
+      id={idInnerbar}
+    >
       <header>
         <H3>Select a date</H3>
       </header>
@@ -171,7 +194,8 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
                 className={
                   isDisabled
                     ? PCMPS_General_D_Booking_CLASS.IS_DISABLED
-                    : dataToModal !== null && thisDayOfTheMonth === dataToModal.numberDayOfTheMonth
+                    : dataToModal !== null &&
+                      thisDayOfTheMonth === dataToModal.numberDayOfTheMonth
                     ? PCMPS_General_D_Booking_CLASS.IS_SELECTED
                     : ""
                 }
@@ -185,7 +209,8 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
                   if (!isDisabled) {
                     handleGetData(e, thisDayOfTheMonth)
                   }
-                }}>
+                }}
+              >
                 {x}
               </li>
             )
@@ -194,15 +219,20 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
           <li
             className={PCMPS_General_D_Booking_CLASS.THE_MODAL}
             tabIndex={0}
-            ref={refModal}>
+            ref={refModal}
+          >
             <header>
               <H3>{titleFormatted}</H3>
               <span>
-                <H4>{dataToModal !== null && `${dataToModal.nameDayOfTheMonth}, May ${dataToModal.numberDayOfTheMonth}, 2023`}</H4>
+                <H4>
+                  {dataToModal !== null &&
+                    `${dataToModal.nameDayOfTheMonth}, May ${dataToModal.numberDayOfTheMonth}, 2023`}
+                </H4>
                 <span
                   tabIndex={0}
                   onClick={handleCloseModal}
-                  onKeyDown={handleCloseModal}>
+                  onKeyDown={handleCloseModal}
+                >
                   <XSvg />
                 </span>
               </span>
@@ -220,13 +250,17 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
                 <H4>{modalData.itinerary.value}:</H4>
               </li>
               {modalData.itinerary.data.map((x, index, arr) => {
-                let whichSide = index < 4 ? PCMPS_General_D_Booking_CLASS.IS_LEFT : PCMPS_General_D_Booking_CLASS.IS_RIGHT
+                let whichSide =
+                  index < 4
+                    ? PCMPS_General_D_Booking_CLASS.IS_LEFT
+                    : PCMPS_General_D_Booking_CLASS.IS_RIGHT
 
                 return (
                   <LI_Booking
                     isIndex={index}
                     key={`${x.time}_${x.value}`}
-                    className={`${whichSide} ${whichSide}_${index} `}>
+                    className={`${whichSide} ${whichSide}_${index} `}
+                  >
                     <span>{x.time}</span>
                     <span>{x.value}</span>
                   </LI_Booking>

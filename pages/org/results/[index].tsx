@@ -9,7 +9,7 @@ export default function ORG_RESULTS() {
   const { secondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
-  const { push, query } = useRouter()
+  const { query } = useRouter()
 
   /* useEffect(() => {
     if (

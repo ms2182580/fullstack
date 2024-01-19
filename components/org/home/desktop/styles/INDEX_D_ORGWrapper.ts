@@ -1,12 +1,5 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import styled, { keyframes } from "styled-components"
-
-const animatedScroll = keyframes`
-from {
-  
-}
-
-`
+import styled, { css } from "styled-components"
 
 export const INDEX_D_ORGWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
@@ -42,6 +35,8 @@ export const INDEX_D_ORGWrapper = styled.div`
       grid-area: text;
       padding-top: 56px;
       min-width: max-content;
+
+      font-weight: 700;
     }
 
     & > :nth-child(2) {
@@ -169,37 +164,6 @@ export const INDEX_D_ORGWrapper = styled.div`
       position: relative;
 
       padding-right: 70px;
-
-      /* scroll-behavior: smooth; */
-
-      & > li {
-        list-style: none;
-        border: 2px solid ${PRIMARY.PRIMARY_CTA};
-        padding: 8px 16px;
-        border-radius: 8px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        text-transform: capitalize;
-
-        &.isActive {
-          background-color: ${PRIMARY.PRIMARY_CTA};
-
-          & > p {
-            color: ${NEUTRALS.OFF_WHITE};
-          }
-        }
-
-        &:hover:not(.isActive) {
-          background-color: ${PRIMARY.PRIMARY_HOVER};
-
-          & > p {
-            color: ${NEUTRALS.OFF_WHITE};
-          }
-        }
-      }
     }
 
     & > :last-child {
@@ -208,6 +172,8 @@ export const INDEX_D_ORGWrapper = styled.div`
       top: 0;
       bottom: 0;
       margin: auto;
+
+      /* border: 2px solid crimson; */
 
       &.navBarRightArrowShouldDisable {
         & > :nth-child(1) {
@@ -279,5 +245,47 @@ export const INDEX_D_ORGWrapper = styled.div`
         /* background: hsl(348, 83.3%, 47.1%, 0.4); */
       }
     }
+  }
+`
+
+type Props_LI = {
+  isActiveCategory?: boolean
+}
+
+export const LI_Category = styled.li<Props_LI>`
+  list-style: none;
+  border: 2px solid ${PRIMARY.PRIMARY_CTA};
+  padding: 8px 16px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: capitalize;
+
+  cursor: default;
+
+  ${({ isActiveCategory }) =>
+    isActiveCategory &&
+    css`
+      background-color: ${PRIMARY.PRIMARY_CTA};
+      & > p {
+        color: ${NEUTRALS.OFF_WHITE};
+      }
+    `}
+
+  &:hover,
+  &:focus-visible {
+    ${({ isActiveCategory }) =>
+      !isActiveCategory &&
+      css`
+        background-color: ${PRIMARY.PRIMARY_HOVER};
+        border-color: ${PRIMARY.PRIMARY_HOVER};
+
+        & > p {
+          color: ${NEUTRALS.OFF_WHITE};
+        }
+      `}
   }
 `
