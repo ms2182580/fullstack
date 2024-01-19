@@ -91,14 +91,19 @@ export const ORG_D_Detail_MainCard_Right = ({
   const thirdPageSpecificData = useMemo(() => {
     if (query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
       const theThirdPage =
-        thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]
+        thirdpageDataORG_Backend?.[
+          DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE
+        ] ?? null
 
       const mainCardIcon =
-        theThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
-        false
+        theThirdPage?.[
+          DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON
+        ] ?? false
+
       const mainCardText =
-        theThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
-        BUTTON_MAIN_CARD_TEXT_VALUES_ENUM.ADD_TO_CARE_PLAN
+        theThirdPage?.[
+          DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT
+        ] ?? BUTTON_MAIN_CARD_TEXT_VALUES_ENUM.ADD_TO_CARE_PLAN
 
       return {
         mainCardIcon,

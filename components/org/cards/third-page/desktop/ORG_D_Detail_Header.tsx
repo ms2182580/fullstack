@@ -36,7 +36,7 @@ export const ORG_D_Detail_Header = ({
   let { theURLFormatted } = checkRouteThirdPage(pathname) 
   */
 
-  const theURLFormatted = "/#"
+  const theURLFormatted = "#"
 
   return (
     <ORG_D_Detail_HeaderWrapper>
@@ -58,8 +58,8 @@ export const ORG_D_Detail_Header = ({
               [
                 `${
                   thirdpageDataORG_Backend[
-                    DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
-                  ].recordSubtype
+                    DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY
+                  ]
                 }`,
                 ``,
               ],

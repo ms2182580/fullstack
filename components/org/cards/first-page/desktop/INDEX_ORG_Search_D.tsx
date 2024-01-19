@@ -18,6 +18,7 @@ import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Pr
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
 import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
+import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -111,14 +112,18 @@ export const INDEX_ORG_Search_D = ({
 
                                 {/* <P>{xBackendData?.reviews?.[0]}</P> */}
                                 <button
-                                // onClick={(event) =>
-                                //   handleMoveToThirdPage_Backend({
-                                //     event,
-                                //     raw: onlyThree[iSubData],
-                                //     setThirdpageDataORG_Backend,
-                                //     push,
-                                //   })
-                                // }
+                                  onClick={(event) =>
+                                    handleMoveToThirdPage_Backend({
+                                      event,
+                                      raw: allBackendData.mentalHealth[
+                                        indexBackend
+                                      ],
+                                      indexSubcategory: index,
+                                      category,
+                                      setThirdpageDataORG_Backend,
+                                      push,
+                                    })
+                                  }
                                 >
                                   <ORG_D_Search_ViewProfileSvg />
                                   View Profile

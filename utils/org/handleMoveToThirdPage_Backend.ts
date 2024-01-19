@@ -9,6 +9,8 @@ import { ALL_ROUTES } from "./useCheckSlug_ORG"
 type Props = {
   event: MouseEvent | KeyboardEvent<HTMLDivElement>
   raw: any
+  indexSubcategory?: number | null
+  category?: string
   secondpageDataORG_Backend?: object[]
   setThirdpageDataORG_Backend: (allData) => void
   push
@@ -17,6 +19,8 @@ type Props = {
 export const handleMoveToThirdPage_Backend = ({
   event,
   raw,
+  indexSubcategory = null,
+  category = "",
   secondpageDataORG_Backend,
   setThirdpageDataORG_Backend,
   push,
@@ -28,15 +32,23 @@ export const handleMoveToThirdPage_Backend = ({
     let gettingThirdPageData = secondpageDataORG_Backend
       ? secondpageDataORG_Backend
       : getAllData({
-          whoToFound: raw.listingType,
+          whoToFound: category,
         })
+
+    const subCategoryName =
+      indexSubcategory !== null
+        ? gettingThirdPageData[DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY][
+            indexSubcategory
+          ]
+        : gettingThirdPageData[DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY]
 
     setThirdpageDataORG_Backend({
       [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: raw,
+      [DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY]: subCategoryName,
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]:
-        gettingThirdPageData[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE],
+        gettingThirdPageData?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE] ??
+        null,
     })
-
     const { checkedToURL } = checkStringToURL({
       stringToURL: raw.recordName,
     })
