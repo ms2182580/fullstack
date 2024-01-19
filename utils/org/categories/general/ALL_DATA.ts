@@ -21,7 +21,6 @@ export const enum NamesCategories_KEY {
   "COMMUNITY INCLUSION & CLASSES" = "Community Inclusion & Classes",
   "FOUNDATIONS & ASSOCIATIONS" = "Foundations & Associations",
   "LEGAL RESOURCES" = "Legal Resources",
-  "MENTAL HEALTH PROVIDERS & SERVICES" = "Mental Health Providers & Services",
   "PHYSICIANS" = "Physicians",
   "RESIDENTIAL RESOURCES" = "Residential Resources",
   "SCHOOLS & EDUCATIONAL SERVICES" = "Schools & Educational Services",
@@ -61,6 +60,14 @@ type ALL_DATA_Type = {
   }
 }
 
+/* 
+!FH0
+
+Be sure that everything is okay here: categories
+
+https://docs.google.com/spreadsheets/d/1rME7CQIhVgxqa5LdrZ7rjgkG8g_EOGV29Gv32M2V9uA/edit#gid=0
+*/
+
 export const namesCategoriesOrder = [
   [NamesCategories_KEY["AGENCIES"]],
   [NamesCategories_KEY["ASSISTIVE SOFTWARE"]],
@@ -69,7 +76,6 @@ export const namesCategoriesOrder = [
   [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]],
   [NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"]],
   [NamesCategories_KEY["LEGAL RESOURCES"]],
-  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]],
   [NamesCategories_KEY["PHYSICIANS"]],
   [NamesCategories_KEY["RESIDENTIAL RESOURCES"]],
   [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]],
@@ -163,8 +169,8 @@ export const ALL_DATA: ALL_DATA_Type = {
     ],
   },
 
-  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: {
-    CATEGORY: NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"],
+  [NamesCategories_KEY["PHYSICIANS"]]: {
+    CATEGORY: NamesCategories_KEY["PHYSICIANS"],
     SUB_CATEGORY: [
       "Allergy Physicians",
       "Anesthetists",
@@ -197,6 +203,7 @@ export const ALL_DATA: ALL_DATA_Type = {
       "Pulmonary & Respitary diseases",
     ],
   },
+
   [NamesCategories_KEY["RESIDENTIAL RESOURCES"]]: {
     CATEGORY: NamesCategories_KEY["RESIDENTIAL RESOURCES"],
     SUB_CATEGORY: [

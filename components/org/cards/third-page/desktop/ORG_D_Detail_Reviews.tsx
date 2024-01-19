@@ -32,7 +32,7 @@ export const ORG_D_Detail_Reviews = ({
   const {
     theIdForComponent = "#",
     [KEYS_FOR_PROPS.TITLE_ON_HEADER]: customTitle = null,
-    [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: backendComponent = false,
+    // [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: backendComponent = false,
   } = allProps || {}
 
   const customTitleFormat = useMemo(() => {
@@ -58,8 +58,10 @@ export const ORG_D_Detail_Reviews = ({
 
   const { fullName, card } = thirdpageDataORG
 
+  const { query } = useRouter()
+
   const theReviews = useMemo(() => {
-    if (!backendComponent) {
+    if (!Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])) {
       return ORG_ST_Review(fullName.first, fullName.last)
     }
 
@@ -115,8 +117,6 @@ export const ORG_D_Detail_Reviews = ({
       setModalShowedCtx(false)
     }
   }
-
-  const { query } = useRouter()
 
   return (
     <>

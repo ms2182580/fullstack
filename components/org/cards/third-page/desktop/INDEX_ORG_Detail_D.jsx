@@ -72,20 +72,22 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
     }
 
     const dataThirdPage =
-      thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]
+      thirdpageDataORG_Backend?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE] ??
+      null
 
     const renderSections =
-      dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
+      dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
 
     const tooltip =
-      dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
+      dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
       Tooltip_VALUES.DEFAULT
 
     const layoutMainCardRight =
-      dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
-      Layout_MainCardRight_VALUES.DEFAULT
+      dataThirdPage?.[
+        DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT
+      ] ?? Layout_MainCardRight_VALUES.DEFAULT
 
-    const howIsMap = dataThirdPage[
+    const howIsMap = dataThirdPage?.[
       DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP
     ] ?? {
       [MapProperties_KEYS.HOW_MANY]: 1,
@@ -93,11 +95,13 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
 
     const buttonMainCard = {
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]:
-        dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
-        "add to care plan",
+        dataThirdPage?.[
+          DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT
+        ] ?? "add to care plan",
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]:
-        dataThirdPage[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
-        false,
+        dataThirdPage?.[
+          DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON
+        ] ?? false,
     }
 
     return {
