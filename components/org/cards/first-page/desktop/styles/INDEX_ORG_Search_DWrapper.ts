@@ -19,7 +19,7 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
   display: flex;
   flex-direction: column;
   gap: 40px;
-
+  position: relative;
   margin-bottom: 40px;
 
   & > * {
@@ -50,7 +50,7 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
       & > * {
         box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
-
+        background-color: white;
         display: grid;
 
         padding-bottom: 24px;
@@ -88,7 +88,7 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
         & > :nth-child(5),
         & > :nth-child(6) {
-          padding-bottom: 32px;
+          /* padding-bottom: 32px; */
         }
 
         & > :last-child {
@@ -229,6 +229,14 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
           & > :nth-child(4) {
             color: ${NEUTRALS.DARK_GREY};
+          }
+          & > :nth-child(5) {
+            margin: 32px 0px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 187.5% */
+            letter-spacing: 0.32px;
           }
         }
       }

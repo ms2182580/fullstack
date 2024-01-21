@@ -4,11 +4,15 @@ import styled, { css } from "styled-components"
 export const INDEX_D_ORGWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   margin-bottom: 56px;
-
+  background-image: url("/background/background1.svg");
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   position: relative;
 
   & > :nth-child(1) {
     padding-inline: clamp(16px, calc(10vw - 80px), 96px);
+    position: relative;
   }
 
   & > *:not(:nth-child(1)) {
@@ -16,14 +20,21 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(1) {
-    background: linear-gradient(
-      169deg,
-      rgba(75, 52, 139, 0.35) 0%,
-      rgba(255, 154, 108, 0.46) 45.31%,
-      rgba(228, 204, 255, 0.56) 100%
-    );
-    width: 100%;
+    & > :nth-child(5) {
+      margin-top: 109rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    & > :nth-child(6) {
+      margin-top: 185rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 
+  & > :nth-child(1) {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
@@ -75,9 +86,10 @@ export const INDEX_D_ORGWrapper = styled.div`
       grid-area: image;
 
       position: relative;
-      width: clamp(225px, calc(100vw - 3rem), 500px);
+      /* width: clamp(225px, calc(100vw - 3rem), 500px); */
       height: clamp(64px, calc(40vw - 3rem), 320px);
       justify-self: end;
+      margin-bottom: 50px;
     }
 
     & > :nth-child(4) {
@@ -87,7 +99,7 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(2) {
-    margin-top: 40px;
+    margin-top: 0px;
     margin-bottom: 40px;
     position: relative;
 
@@ -237,6 +249,9 @@ export const INDEX_D_ORGWrapper = styled.div`
         );
       }
     }
+  }
+  & > :nth-child(4) {
+    margin-bottom: 20px;
   }
 `
 

@@ -3,7 +3,7 @@ import {
   LeftArrowSvg,
   ORG_D_Search_CarePlanSvg,
 } from "@/assets/icons/index.js"
-import ORGDesktop_Search_Hero from "@/assets/images/ORGDesktop_Search_Hero.png"
+import ORGDesktop_Search_Hero from "@/assets/images/Index_D_Search_Hero.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
@@ -14,6 +14,7 @@ import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
+import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
 
 // console.log("ALL_DATA:", ALL_DATA)
 
@@ -59,14 +60,13 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
       <INDEX_D_ORGWrapper>
         <header>
           <H1>
-            Find your I/DD <br /> community
-            <br /> and resources
+            Find exactly what <br /> you're looking for
           </H1>
           <div>
-            <div>
+            {/* <div>
               <ORG_D_Search_CarePlanSvg />
               <P semibold>Care Plan</P>
-            </div>
+            </div> */}
           </div>
           <div>
             <Image
@@ -75,6 +75,20 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
             />
           </div>
           <ORG_D_SearchComponent />
+          <Image
+            src={"/background/background2.svg"}
+            width={1}
+            height={1}
+            layout="responsive"
+            alt="Background Image"
+          />
+          <Image
+            src={"/background/background3.svg"}
+            width={1}
+            height={1}
+            layout="responsive"
+            alt="Background Image"
+          />
         </header>
 
         <div>
@@ -168,6 +182,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           }
         })}
       </INDEX_D_ORGWrapper>
+      <Hero_D_Banner />
     </>
   )
 }

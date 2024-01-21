@@ -106,11 +106,14 @@ export const INDEX_ORG_Search_D = ({
                                 <H3>{xBackendData.recordName.toLowerCase()}</H3>
                                 <H4>{xBackendData.recordSubtype}</H4>
 
-                                <P>{xBackendData?.address[0].city}</P>
+                                {/* <P>{xBackendData?.address[0].city}</P> */}
 
-                                <StarsRatingReview_D />
+                                <StarsRatingReview_D
+                                  rating={xBackendData.ratings.length || 0}
+                                  reviews={xBackendData.reviews.length || 0}
+                                />
 
-                                {/* <P>{xBackendData?.reviews?.[0]}</P> */}
+                                <P>{xBackendData?.reviews?.[1]}</P>
                                 <button
                                   onClick={(event) =>
                                     handleMoveToThirdPage_Backend({
