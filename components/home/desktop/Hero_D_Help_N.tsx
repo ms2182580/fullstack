@@ -5,8 +5,11 @@ import {
   Label,
 } from "./styles/Hero_D_Help_NWrapper"
 import { ButtonSmall } from "@/components/ui/buttons/general"
+import { useRouter } from "next/router"
 
 export const Hero_D_Help_N = () => {
+  const router = useRouter()
+  const handleToRecommended = () => router.push("/recommended")
   return (
     <Home_D_Help_NWrapper>
       <H2>How Can we Help You?</H2>
@@ -20,7 +23,7 @@ export const Hero_D_Help_N = () => {
           <Input placeholder="00000" />
         </div>
       </form>
-      <ButtonSmall>View Options</ButtonSmall>
+      <ButtonSmall goToDynamic={handleToRecommended}>View Options</ButtonSmall>
     </Home_D_Help_NWrapper>
   )
 }
