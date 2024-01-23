@@ -1,42 +1,40 @@
+import { InclusiveLogo_D, InclusiveLogo_D_DownArrow } from "@/assets/icons"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { Home_D_NavBar_NWrapper } from "./styles/Home_D_NavBar_NWrapper"
-import { useRouter } from "next/router"
-import {
-  ChatAILogo_M,
-  InclusiveLogo_D,
-  InclusiveLogo_D_DownArrow,
-} from "@/assets/icons"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
-import { ButtonMedium, ButtonSmall } from "@/components/ui/buttons/general"
+import { useRouter } from "next/router"
+import { Home_D_NavBar_NWrapper } from "./styles/Home_D_NavBar_NWrapper"
 
 export const Home_D_NavBar_N = () => {
-  const route = useRouter()
+  const { push } = useRouter()
 
   const handleNavigateORG = (e) => {
     if (e.type === "click" || e.key === "Enter") {
-      route.push("/")
+      push(`${ALL_ROUTES.HOME}`)
     }
   }
   return (
     <Home_D_NavBar_NWrapper>
-      <span
-        tabIndex={0}
-        onKeyDown={handleNavigateORG}
-        onClick={handleNavigateORG}
-      >
-        <H2 bold>INCLUSIVE</H2>
-        <InclusiveLogo_D />
-      </span>
       <div>
-        <Link href={"/"}>
-          About Us{" "}
+        <span
+          tabIndex={0}
+          onKeyDown={handleNavigateORG}
+          onClick={handleNavigateORG}
+        >
+          <H2 bold>INCLUSIVE</H2>
+          <InclusiveLogo_D />
+        </span>
+        <div>
           <span>
-            <InclusiveLogo_D_DownArrow />
+            About Us{" "}
+            <span>
+              <InclusiveLogo_D_DownArrow />
+            </span>
           </span>
-        </Link>
-        <Link href={"/org/typed-flow"}>Resource Guide</Link>
-        <ButtonSmall secondary>Log In</ButtonSmall>
-        <ButtonSmall>Sign Up</ButtonSmall>
+          <Link href={`/${ALL_ROUTES.ORG}`}>Resource Guide</Link>
+          <button>Log In</button>
+          <Link href={`${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
+        </div>
       </div>
     </Home_D_NavBar_NWrapper>
   )

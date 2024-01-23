@@ -5,10 +5,8 @@ import {
 } from "@/components/ui/buttons/login/LoginBtns"
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1, H2, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { HyperlinkM } from "@/components/ui/hyperlink/HyperlinkFonts"
-import { useCheckMobile } from "@/utils/useCheckMobile"
-import { useWidthWindow1024 } from "@/utils/useWidthWindow1024"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import LoginImage from "../../../assets/images/LoginImage.png"
@@ -20,11 +18,6 @@ import {
 } from "./styles/INDEX_D_SignupWrapper"
 
 export const INDEX_D_Signup = () => {
-  const { isMobile } = useWidthWindow1024()
-
-  const { isTouchScreen } = useCheckMobile()
-  // console.log('isTouchScreen:', isTouchScreen)
-
   const [showLoginButtons, setShowLoginButtons] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
 
@@ -68,16 +61,14 @@ export const INDEX_D_Signup = () => {
   return (
     <INDEX_D_SignupWrapper showLoginButtons={showLoginButtons}>
       <LeftSignup>
-        <>
-          <span>
-            <Image
-              src={LoginImage}
-              alt="People with one flag in their hand: one of them have one prosthetic leg, the other is in wheelchair and the third one it looks like is blind and have a dog in their other hand."
-            />
-          </span>
+        <span>
+          <Image
+            src={LoginImage}
+            alt="People with one flag in their hand: one of them have one prosthetic leg, the other is in wheelchair and the third one it looks like is blind and have a dog in their other hand."
+          />
+        </span>
 
-          <H2>Connect to community based and recreational services</H2>
-        </>
+        <H2>Connect to community based and recreational services</H2>
       </LeftSignup>
 
       <RightSignup>
@@ -86,7 +77,7 @@ export const INDEX_D_Signup = () => {
         </H1>
         <div>
           <H4>Already have an account?</H4>
-          <HyperlinkM href="/login" name="Log in" />
+          <Link href="/login">Log In</Link>
         </div>
         <div>
           <GoogleLoginBtn bolder={""} />

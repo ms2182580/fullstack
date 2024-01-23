@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router"
 import { NavBar_D_OnlyDefault } from "./NavBar_D_OnlyDefault.js"
 import { NavBar_D_OnlyHome } from "./NavBar_D_OnlyHome.js"

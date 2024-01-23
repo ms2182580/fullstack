@@ -59,7 +59,7 @@ export const INDEX_D_SignupWrapper = styled.div<Props>`
   }
 `
 
-export const LeftSignup = styled.div`
+export const LeftSignup = styled.aside`
   position: relative;
   max-width: clamp(390px, -37.903rem + 88.434vw, 667px);
 

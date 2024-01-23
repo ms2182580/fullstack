@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router"
 import { useCtx_ShowModal } from "../../context/Ctx_ShowModal"
 import { useORG_CtxShowFiltersDesktop } from "../../context/ORG_CtxShowFiltersDesktop_Provider"
@@ -14,7 +14,9 @@ export const Footer = () => {
   const { ORGShowFullMapFilter } = useORG_CtxShowFiltersDesktop()
   const { pathname } = useRouter()
 
-  const FooterMainContent_SandP_dataToShow = [{ title: "Resource Directory", route: `/${ALL_ROUTES.ORG}` }]
+  const FooterMainContent_SandP_dataToShow = [
+    { title: "Resource Directory", route: `/${ALL_ROUTES.ORG}` },
+  ]
 
   const FooterMainContent_LandG_dataToShow = [
     { title: "I/DD Community Classes", route: "/404" },
@@ -29,7 +31,9 @@ export const Footer = () => {
     { title: "Community Classes", route: `/${ALL_ROUTES.ORG}` },
     { title: "DLS", route: "/404" },
   ]
-  const FooterMainContent_SAFETY_dataToShow = [{ title: "Safety In The Community", route: "/404" }]
+  const FooterMainContent_SAFETY_dataToShow = [
+    { title: "Safety In The Community", route: "/404" },
+  ]
 
   const { modalShowedCtx } = useCtx_ShowModal()
   const { mustShowFiltersMobile } = useORG_Ctx_ShowFiltersMobile()
@@ -37,11 +41,12 @@ export const Footer = () => {
   return (
     <>
       <FooterWrapper
-        ORGShowFullMapFilter={ORGShowFullMapFilter && pathname === "/org/speech-therapists"}
-        mustShowFiltersMobile={mustShowFiltersMobile}>
-        <H2
-          bold
-          logo>
+        ORGShowFullMapFilter={
+          ORGShowFullMapFilter && pathname === "/org/speech-therapists"
+        }
+        mustShowFiltersMobile={mustShowFiltersMobile}
+      >
+        <H2 bold logo>
           Inclusive
         </H2>
         <div>
@@ -74,7 +79,10 @@ export const Footer = () => {
         </div>
         <FooterSignupLoginButtons />
         <FooterSocialmedia />
-        <Caption>A public benefit company helping parents find the best services for their children.</Caption>
+        <Caption>
+          A public benefit company helping parents find the best services for
+          their children.
+        </Caption>
 
         {/* <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} /> */}
       </FooterWrapper>

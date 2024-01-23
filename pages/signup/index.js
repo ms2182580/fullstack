@@ -1,9 +1,9 @@
 import { INDEX_D_Signup } from "@/components/signup/desktop/INDEX_D_Signup"
 import { INDEX_M_Signup } from "@/components/signup/mobile/INDEX_M_Signup"
-import { useWidthWindow1024 } from "../../utils/useWidthWindow1024"
+import { useCheckUserWidth } from "@/context/CheckUserWidth"
 
 const Signup = () => {
-  const { isMobile } = useWidthWindow1024()
+  const { isMobile } = useCheckUserWidth()
 
   return (
     <>

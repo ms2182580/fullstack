@@ -3,7 +3,7 @@ import {
   NavBar_M_HamburgerSvg,
   NavBar_M_UserSvg,
 } from "@/assets/icons/index.js"
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"

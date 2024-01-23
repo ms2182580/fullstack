@@ -3,7 +3,7 @@ import {
   KEYS_VALUES_useSessionStorage,
   useSessionStorage_typedFlow,
 } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Head from "next/head"
 import { useRouter } from "next/router.js"
 import { useEffect } from "react"
@@ -45,7 +45,7 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
       actualSessionStorage ===
       KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST
     ) {
-      push(`/${ALL_ROUTES.ORG}/${ALL_ROUTES.WELCOME}`)
+      push(`/${ALL_ROUTES.ORG}/welcome`)
     }
   }, [])
 

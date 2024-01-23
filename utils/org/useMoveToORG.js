@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect } from "react"
+import { ALL_ROUTES } from "../ALL_ROUTES"
 import { DATA_ORG_D } from "./DATA_ORG_D"
-import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 export const useMoveToORG = () => {
   const router = useRouter()
@@ -17,7 +17,7 @@ export const useMoveToORG = () => {
         pathname: `/${ALL_ROUTES.ORG}`,
         query: { nameFromRoute: DATA_ORG_D[finIndex].nameJSX },
       },
-      `/${ALL_ROUTES.ORG}`,
+      `/${ALL_ROUTES.ORG}`
     )
   }, [])
 }
