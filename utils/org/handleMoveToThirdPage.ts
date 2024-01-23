@@ -1,8 +1,8 @@
 import { QUERY_BREADCRUMBS } from "@/components/org/cards/second-page/desktop/ORG_D_Results_Breadcrumbs"
+import { ALL_ROUTES } from "../ALL_ROUTES"
 import { formatDataToThirdPage } from "./formatDataToThirdPage"
 import { formatDataToURLOnThirdPage } from "./formatDataToURLOnThirdPage"
 import { getDataToMoveView } from "./getDataToMoveView"
-import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 export const handleMoveToThirdPage = ({
   event,

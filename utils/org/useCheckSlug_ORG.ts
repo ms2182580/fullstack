@@ -1,6 +1,5 @@
 import { useRouter } from "next/router"
-
-export const ALL_ROUTES = { ORG: "org", RESULTS: "results", DETAIL: "detail", WELCOME: "welcome" }
+import { ALL_ROUTES } from "../ALL_ROUTES"
 
 export const useCheckSlug_ORG = () => {
   const { asPath } = useRouter()

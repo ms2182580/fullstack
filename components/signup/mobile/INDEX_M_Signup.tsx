@@ -1,18 +1,17 @@
-import { useWidthWindow1024 } from "@/utils/useWidthWindow1024"
+import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useCheckMobile } from "@/utils/useCheckMobile"
+import { useWidthWindow1024 } from "@/utils/useWidthWindow1024"
+import Image from "next/image"
 import { useState } from "react"
 import { delayMilliseconds } from "../delay"
-import Image from "next/image"
-import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { HyperlinkS } from "@/components/ui/hyperlink/HyperlinkFonts"
 
-import { ButtonSmall } from "@/components/ui/buttons/general"
-import { LoginButtonsMobile } from "../mobile/LoginButtonsMobile"
-import LoginImageMobile from "../../../assets/images/LoginImageMobile.jpg"
-import { useRouter } from "next/router"
-import { INDEX_M_SignupWrapper } from "./styles/INDEX_M_SignupWrapper"
-import { Signup_M_SignupForm } from "./Signup_M_SignupForm"
 import { BackArrow } from "@/assets/icons"
+import { ButtonSmall } from "@/components/ui/buttons/general"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import LoginImageMobile from "../../../assets/images/LoginImageMobile.jpg"
+import { LoginButtonsMobile } from "../mobile/LoginButtonsMobile"
+import { INDEX_M_SignupWrapper } from "./styles/INDEX_M_SignupWrapper"
 
 export const INDEX_M_Signup = () => {
   const { isMobile } = useWidthWindow1024()
@@ -95,7 +94,7 @@ export const INDEX_M_Signup = () => {
           <ButtonSmall>Join Inclusive</ButtonSmall>
           <div>
             <H4>Already have an account?</H4>
-            <HyperlinkS href="/login" name="Log in" />
+            <Link href="/login">Log in</Link>
           </div>
         </span>
         {showLoginButtons && (

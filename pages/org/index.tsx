@@ -39,17 +39,11 @@ const ORG_INDEX = () => {
           <INDEX_D_ORG_Search
             allBackendData={{
               mentalHealth: mentalHealthData.data,
-              // mentalHealth2: mentalHealthData.data,
             }}
-            /* allBackendFetched={{
-              mentalHealthFetched: mentalHealthData.isFetched,
-            }} */
           />
         </>
       ) : (
         <>
-          {/* <INDEX_M_STSearch_Component /> */}
-
           <h1>1° page ORG on Mobile</h1>
         </>
       )}

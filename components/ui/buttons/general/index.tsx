@@ -9,35 +9,56 @@ export type Props = {
   goToDynamic?: () => void
 }
 
-export const ButtonSmall = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }: Props) => {
+export const ButtonSmall = ({
+  children,
+  secondary,
+  disabled,
+  preventFocus = 0,
+  goToDynamic,
+}: Props) => {
   return (
     <BtnSmall
       secondary={secondary}
       disabled={disabled}
       tabIndex={disabled ? -1 : preventFocus}
-      onClick={goToDynamic}>
+      onClick={goToDynamic}
+    >
       <p>{children}</p>
     </BtnSmall>
   )
 }
-export const ButtonMedium = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }: Props) => {
+export const ButtonMedium = ({
+  children,
+  secondary,
+  disabled,
+  preventFocus = 0,
+  goToDynamic,
+}: Props) => {
   return (
     <BtnMedium
       secondary={secondary}
       disabled={disabled}
       tabIndex={preventFocus}
-      onClick={goToDynamic}>
+      onClick={goToDynamic}
+    >
       <p>{children}</p>
     </BtnMedium>
   )
 }
-export const ButtonLarge = ({ children, secondary, disabled, preventFocus = 0, goToDynamic }: Props) => {
+export const ButtonLarge = ({
+  children,
+  secondary,
+  disabled,
+  preventFocus = 0,
+  goToDynamic,
+}: Props) => {
   return (
     <BtnLarge
       secondary={secondary}
       disabled={disabled}
       tabIndex={preventFocus}
-      onClick={goToDynamic}>
+      onClick={goToDynamic}
+    >
       <p>{children}</p>
     </BtnLarge>
   )

@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link.js"
 import { Fragment } from "react"
 import {

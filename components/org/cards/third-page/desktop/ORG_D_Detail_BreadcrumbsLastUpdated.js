@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_ST_LastUpdate } from "../../../../../utils/ORG_ST_Review_D"

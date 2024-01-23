@@ -1,11 +1,12 @@
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
 export const Label = styled.label`
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  display: block;
-  margin-bottom: 8px;
+  display: grid;
+  gap: 20px;
 `
 
 export const Input = styled.input`
@@ -18,14 +19,33 @@ export const Input = styled.input`
 `
 export const Home_D_Help_NWrapper = styled.div`
   margin-top: 100px;
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+
+  grid-template-areas:
+    "title ."
+    "form form"
+    "button .";
+
+  & > :nth-child(1) {
+    grid-area: title;
+  }
+
   & > :nth-child(2) {
+    grid-area: form;
     margin-top: 16px;
     display: grid;
     gap: 20px;
     grid-template-columns: 2fr 1.3fr;
   }
+
   & > :nth-child(3) {
-    margin: auto;
+    grid-area: button;
     margin-top: 32px;
+
+    margin-left: auto;
+    margin-right: 63px;
+
+    ${reusableButton({})}
   }
 `

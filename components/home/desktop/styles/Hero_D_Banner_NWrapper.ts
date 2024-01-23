@@ -1,4 +1,5 @@
-import { PRIMARY } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
 export const Home_D_Banner_NWrapper = styled.div`
@@ -18,8 +19,17 @@ export const Home_D_Banner_NWrapper = styled.div`
     line-height: 48px; /* 171.429% */
   }
   & > :nth-child(2) {
-    background-color: white;
+    /* background-color: white;
     border: white;
-    padding: 0px 48px;
+    padding: 0px 48px; */
+
+    ${reusableButton({ secondary: true })}
+
+    border-color: ${NEUTRALS.OFF_WHITE};
+
+    &:hover,
+    &:focus-visible {
+      border-color: ${PRIMARY.PRIMARY_HOVER};
+    }
   }
 `

@@ -1,6 +1,6 @@
+import { ALL_ROUTES } from "../ALL_ROUTES"
 import { getDataToMoveView } from "./getDataToMoveView"
 import { SPECIFIC_DATA_KEY } from "./second-page/desktop/specificData"
-import { ALL_ROUTES } from "./useCheckSlug_ORG"
 
 export const handleMoveToSecondPage = ({
   event,

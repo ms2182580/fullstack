@@ -3,7 +3,7 @@ import { useCtx_ShowModal } from "@/context/Ctx_ShowModal"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_CtxShowFiltersDesktop } from "@/context/ORG_CtxShowFiltersDesktop_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router.js"
 import { useEffect } from "react"
 import { ORG_M_Results_Header } from "../../cards/second-page/mobile/ORG_M_Results_Header"
@@ -27,7 +27,7 @@ export const INDEX_TypedFlow_M = () => {
       diagnosisChoosed === "" ||
       secondpageFiltersORG === ""
     ) {
-      router.push(`/${ALL_ROUTES.ORG}/${ALL_ROUTES.WELCOME}`)
+      router.push(`/${ALL_ROUTES.ORG}/welcome`)
     }
   }, [])
 

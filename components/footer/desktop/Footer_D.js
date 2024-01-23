@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router.js"
 import {
   ChatAILogo,

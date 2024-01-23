@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/org/useCheckSlug_ORG"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link.js"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
@@ -49,7 +49,12 @@ export const NavBar_D_OnlyORG = () => {
 
   const classNameToFocusLogic = "HamburgerComponent"
   const { focusedElement } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement, setInfoDropdownStateGTS, ["li", "h4"], classNameToFocusLogic)
+  useCloseNotActiveElementAnymore(
+    focusedElement,
+    setInfoDropdownStateGTS,
+    ["li", "h4"],
+    classNameToFocusLogic
+  )
 
   return (
     <NavBar_D_OnlyORGWrapper>
@@ -57,7 +62,8 @@ export const NavBar_D_OnlyORG = () => {
         <span
           tabIndex={0}
           onKeyDown={handleNavigateHome}
-          onClick={handleNavigateHome}>
+          onClick={handleNavigateHome}
+        >
           {" "}
           <H2>Inclusive</H2>
           <ChatAILogo />
@@ -69,7 +75,11 @@ export const NavBar_D_OnlyORG = () => {
           </span>
 
           <ul>
-            <li className={/[org]\/\w|[org]/.test(route.pathname) ? "active" : null}>
+            <li
+              className={
+                /[org]\/\w|[org]/.test(route.pathname) ? "active" : null
+              }
+            >
               <H4>
                 <Link href={`/${ALL_ROUTES.ORG}`}>Resource Directory</Link>
               </H4>
@@ -79,7 +89,8 @@ export const NavBar_D_OnlyORG = () => {
               onClick={handleToggleGTSDropdown}
               onKeyDown={handleToggleGTSDropdown}
               tabIndex={0}
-              className={classNameToFocusLogic}>
+              className={classNameToFocusLogic}
+            >
               <H4>Guide to Services</H4>
 
               {infoDropdownStateGTS && <NavBar_D_GTSDropdown theRef={refGTS} />}

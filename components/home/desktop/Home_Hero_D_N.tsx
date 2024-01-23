@@ -1,23 +1,21 @@
-import { Home_D_Hero_NWrapper } from "./styles/Home_D_Hero_NWrapper"
 import HeroImg from "@/assets/images/Hero/hero image.png"
-import Image from "next/image"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { Hero_D_Help_N } from "./Hero_D_Help_N"
-import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { Home_D_Hero_NWrapper } from "./styles/Home_D_Hero_NWrapper"
 
 export const Home_Hero_D_N = () => {
-  const route = useRouter()
+  const { push } = useRouter()
 
   const handleNavigateORG = (): void => {
-    route.push("/org/typed-flow")
+    push("/org")
   }
   return (
     <Home_D_Hero_NWrapper>
       <div>
         <div>
-          <H1>Heading</H1>
           <P>
             Inclusive uses AI to simplify and accelerate care coordination for
             families with <br /> Intellectual and developmental disabilities.
