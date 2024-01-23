@@ -1,9 +1,5 @@
 import styled from "styled-components"
-import {
-  NEUTRALS,
-  PRIMARY,
-  SECONDARY_ORG_PLUS,
-} from "../../../../assets/Colors"
+import { PRIMARY } from "../../../../assets/Colors"
 
 export const Home_D_NavBar_NWrapper = styled.div`
   display: flex;

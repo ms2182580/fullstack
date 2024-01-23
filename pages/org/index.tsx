@@ -10,15 +10,15 @@ const INDEX_D_ORG_Search = dynamic(
     ),
   { ssr: false }
 )
-const INDEX_M_STSearch_Component = dynamic(
-  () =>
-    import(
-      "@/components/__DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch"
-    ).then((mod) => mod.INDEX_M_STSearch),
-  {
-    ssr: false,
-  }
-)
+// const INDEX_M_STSearch_Component = dynamic(
+//   () =>
+//     import(
+//       "@/components/__DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch"
+//     ).then((mod) => mod.INDEX_M_STSearch),
+//   {
+//     ssr: false,
+//   }
+// )
 
 const ORG_INDEX = () => {
   const { isMobile }: any = useCheckUserWidth()
@@ -48,7 +48,9 @@ const ORG_INDEX = () => {
         </>
       ) : (
         <>
-          <INDEX_M_STSearch_Component />
+          {/* <INDEX_M_STSearch_Component /> */}
+
+          <h1>1° page ORG on Mobile</h1>
         </>
       )}
     </>
