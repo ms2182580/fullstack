@@ -68,8 +68,12 @@ export const ORG_D_Results_Main_BottomButtons = ({
       let theSecondPageData =
         secondpageDataORG_Backend?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]
 
+      console.log("theSecondPageData:", theSecondPageData)
+
       let whichButtonToThirdPageSvg =
         theSecondPageData?.[SPECIFIC_DATA_SECOND_PAGE.SVG] ?? DEFAULT_SVG
+
+      console.log("whichButtonToThirdPageSvg:", whichButtonToThirdPageSvg)
 
       let whichButtonToThirdPageText =
         theSecondPageData?.[
@@ -117,9 +121,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
         </div>
 
         <div>
-          <ORG_D_Results_RequestConsultationSvg />
-
-          {buttonJSXAndSVGCustom?.ComponentSvg_Backend}
+          {buttonJSXAndSVGCustom?.ComponentSvg_Backend()}
           <P>{buttonJSXAndSVGCustom?.nameToJSX_Backend}</P>
         </div>
 

@@ -15,14 +15,14 @@ import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
 
 export const enum NamesCategories_KEY {
   "AGENCIES" = "Agencies",
-  "ASSISTIVE SOFTWARE" = "Assistive Software",
   "ASSISTIVE HARDWARE" = "Assistive Hardware",
+  "ASSISTIVE SOFTWARE" = "Assistive Software",
+  "ATTORNEYS" = "Attorneys",
   "CAMPS" = "Camps",
   "COMMUNITY INCLUSION & CLASSES" = "Community Inclusion & Classes",
   "FOUNDATIONS & ASSOCIATIONS" = "Foundations & Associations",
-  "LEGAL RESOURCES" = "Legal Resources",
   "PHYSICIANS" = "Physicians",
-  "RESIDENTIAL RESOURCES" = "Residential Resources",
+  "RESIDENTIAL PROGRAMS" = "Residential Programs",
   "SCHOOLS & EDUCATIONAL SERVICES" = "Schools & Educational Services",
   "THERAPEUTIC SERVICES" = "Therapeutic Services",
   "VOCATIONAL RESOURCES" = "Vocational Resources",
@@ -42,11 +42,10 @@ type ALL_DATA_Type = {
 
     [SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?: {
       [SPECIFIC_DATA_SECOND_PAGE.BUTTON_TO_THIRDPAGE_TEXT]?: BUTTON_TO_THIRDPAGE_TEXT_OPTIONS
-      [SPECIFIC_DATA_SECOND_PAGE.SVG]?: {
-        pat: typeof PAT_SVG
-        prp: typeof PRP_SVG
-        default: typeof DEFAULT_SVG
-      }
+      [SPECIFIC_DATA_SECOND_PAGE.SVG]?:
+        | typeof PAT_SVG
+        | typeof PRP_SVG
+        | typeof DEFAULT_SVG
     }
 
     [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]?: {
@@ -63,21 +62,23 @@ type ALL_DATA_Type = {
 /* 
 !FH0
 
-Be sure that everything is okay here: categories
+- Be sure that everything is okay here: categories → 2° page and 3° page
 
 https://docs.google.com/spreadsheets/d/1rME7CQIhVgxqa5LdrZ7rjgkG8g_EOGV29Gv32M2V9uA/edit#gid=0
+
+- Implement also the filters
 */
 
 export const namesCategoriesOrder = [
   [NamesCategories_KEY["AGENCIES"]],
-  [NamesCategories_KEY["ASSISTIVE SOFTWARE"]],
   [NamesCategories_KEY["ASSISTIVE HARDWARE"]],
+  [NamesCategories_KEY["ASSISTIVE SOFTWARE"]],
+  [NamesCategories_KEY["ATTORNEYS"]],
   [NamesCategories_KEY["CAMPS"]],
   [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]],
   [NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"]],
-  [NamesCategories_KEY["LEGAL RESOURCES"]],
   [NamesCategories_KEY["PHYSICIANS"]],
-  [NamesCategories_KEY["RESIDENTIAL RESOURCES"]],
+  [NamesCategories_KEY["RESIDENTIAL PROGRAMS"]],
   [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]],
   [NamesCategories_KEY["THERAPEUTIC SERVICES"]],
   [NamesCategories_KEY["VOCATIONAL RESOURCES"]],
@@ -90,15 +91,6 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: ["Governmental", "Non-Governmental"],
   },
 
-  [NamesCategories_KEY["ASSISTIVE SOFTWARE"]]: {
-    CATEGORY: NamesCategories_KEY["ASSISTIVE SOFTWARE"],
-    SUB_CATEGORY: [
-      "Cloud-based",
-      "Computer programs",
-      "Mobile Apps",
-      "Webapps",
-    ],
-  },
   [NamesCategories_KEY["ASSISTIVE HARDWARE"]]: {
     CATEGORY: NamesCategories_KEY["ASSISTIVE HARDWARE"],
     SUB_CATEGORY: [
@@ -130,6 +122,41 @@ export const ALL_DATA: ALL_DATA_Type = {
       "wheeled mobility",
       "Writing Aids",
     ],
+
+    SECOND_PAGE: {
+      BUTTON_TO_THIRDPAGE_TEXT:
+        BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["where to buy"],
+
+      SVG: PAT_SVG,
+    },
+  },
+  [NamesCategories_KEY["ASSISTIVE SOFTWARE"]]: {
+    CATEGORY: NamesCategories_KEY["ASSISTIVE SOFTWARE"],
+    SUB_CATEGORY: [
+      "Cloud-based",
+      "Computer programs",
+      "Mobile Apps",
+      "Webapps",
+    ],
+
+    SECOND_PAGE: {
+      BUTTON_TO_THIRDPAGE_TEXT:
+        BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["where to buy"],
+
+      SVG: PAT_SVG,
+    },
+  },
+
+  [NamesCategories_KEY["ATTORNEYS"]]: {
+    CATEGORY: NamesCategories_KEY["ATTORNEYS"],
+    SUB_CATEGORY: [
+      "Attorney at firm ",
+      "Independent attorney",
+      "Indiviudal Advocate",
+      "Law firm",
+      "Legal Advocate organization",
+      "Legal consultation Services",
+    ],
   },
 
   [NamesCategories_KEY["CAMPS"]]: {
@@ -155,18 +182,6 @@ export const ALL_DATA: ALL_DATA_Type = {
   [NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"]]: {
     CATEGORY: NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"],
     SUB_CATEGORY: ["Associations", "Foundations", "Private NFPs"],
-  },
-
-  [NamesCategories_KEY["LEGAL RESOURCES"]]: {
-    CATEGORY: NamesCategories_KEY["LEGAL RESOURCES"],
-    SUB_CATEGORY: [
-      "Attorney at firm ",
-      "Independent attorney",
-      "Indiviudal Advocate",
-      "Law firm",
-      "Legal Advocate organization",
-      "Legal consultation Services",
-    ],
   },
 
   [NamesCategories_KEY["PHYSICIANS"]]: {
@@ -204,8 +219,8 @@ export const ALL_DATA: ALL_DATA_Type = {
     ],
   },
 
-  [NamesCategories_KEY["RESIDENTIAL RESOURCES"]]: {
-    CATEGORY: NamesCategories_KEY["RESIDENTIAL RESOURCES"],
+  [NamesCategories_KEY["RESIDENTIAL PROGRAMS"]]: {
+    CATEGORY: NamesCategories_KEY["RESIDENTIAL PROGRAMS"],
     SUB_CATEGORY: [
       "Accessible Housing with Universal Design Features",
       "Assisted Living Facility",
