@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
-import { CLASSNAME_ISDIAGNOSIS } from "@/components/org/welcome/desktop/Welcome_D_1_DropdownOptions_TYPE"
+import { CLASSNAME_ISDIAGNOSIS_NAVBAR } from "../NavBar_D_DropdownDiagnosesOptions"
 
 export const NavBar_D_DropdownDiagnosesSuggestionComponentWrapper = styled.div`
   & > :nth-child(1) {
@@ -11,7 +11,7 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponentWrapper = styled.div`
 
     font-size: 16px;
 
-    .${CLASSNAME_ISDIAGNOSIS.SUGGESTION} {
+    .${CLASSNAME_ISDIAGNOSIS_NAVBAR.SUGGESTION} {
       list-style: none;
       padding-bottom: 16px;
 
@@ -29,7 +29,7 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponentWrapper = styled.div`
 
         white-space: break-spaces;
 
-        .${CLASSNAME_ISDIAGNOSIS.BOLD} {
+        .${CLASSNAME_ISDIAGNOSIS_NAVBAR.BOLD} {
           font-weight: 700;
         }
 
@@ -52,8 +52,8 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponentWrapper = styled.div`
       }
     }
 
-    .${CLASSNAME_ISDIAGNOSIS.DIAGNOSIS} {
-      .${CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN} {
+    .${CLASSNAME_ISDIAGNOSIS_NAVBAR.DIAGNOSIS} {
+      .${CLASSNAME_ISDIAGNOSIS_NAVBAR.DIAGNOSIS_SPAN} {
         padding-bottom: 4px;
         text-decoration: underline;
         text-decoration-thickness: 2px;
@@ -64,7 +64,7 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponentWrapper = styled.div`
 
         cursor: pointer;
 
-        .${CLASSNAME_ISDIAGNOSIS.BOLD} {
+        .${CLASSNAME_ISDIAGNOSIS_NAVBAR.BOLD} {
           font-weight: 700;
         }
 
@@ -86,7 +86,7 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponentWrapper = styled.div`
         }
       }
 
-      .${CLASSNAME_ISDIAGNOSIS.IN_SYMPTOMS} {
+      .${CLASSNAME_ISDIAGNOSIS_NAVBAR.IN_SYMPTOMS} {
         white-space: break-spaces;
 
         font-size: 14px;

@@ -1,7 +1,15 @@
-import { CLASSNAME_ISDIAGNOSIS } from "@/components/org/welcome/desktop/Welcome_D_1_DropdownOptions_TYPE"
-import { Fragment } from "react"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { Fragment } from "react"
 import { NavBar_D_DropdownDiagnosesSuggestionComponentWrapper } from "./styles/NavBar_D_DropdownDiagnosesSuggestionWrapper"
+
+export const enum CLASSNAME_ISDIAGNOSIS_NAVBAR {
+  DIAGNOSIS = "DIAGNOSIS",
+  DIAGNOSIS_SPAN = "DIAGNOSIS_SPAN",
+  BOLD = "BOLD",
+  IN_SYMPTOMS = "IN_SYMPTOMS",
+  SUGGESTION = "SUGGESTION",
+  SUGGESTION_LI = "SUGGESTION_LI",
+}
 
 export const NavBar_D_DropdownDiagnosesSuggestionComponent = ({
   isFocus,
@@ -16,7 +24,7 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponent = ({
 }) => {
   let handleSelecOption = (e) => {
     let isDiagnosis =
-      e.target.className === CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN
+      e.target.className === CLASSNAME_ISDIAGNOSIS_NAVBAR.DIAGNOSIS_SPAN
     if (isDiagnosis) {
       setDiagnosisCategory(() => ({
         diagnosis: [e.target.textContent],
@@ -47,7 +55,7 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponent = ({
           }}
         >
           <div
-            className={CLASSNAME_ISDIAGNOSIS.DIAGNOSIS}
+            className={CLASSNAME_ISDIAGNOSIS_NAVBAR.DIAGNOSIS}
             onClick={handleSelecOption}
           >
             {suggestionKeywords.map((suggestionData, indexData) => {
@@ -108,12 +116,12 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponent = ({
                             ? `${leftSideOfWordDiagnosis}${highlightWordDiagnosis}${rightSideOfWordDiagnosis}`
                             : suggestionData.diagnosissuggestion
                         }
-                        className={CLASSNAME_ISDIAGNOSIS.DIAGNOSIS_SPAN}
+                        className={CLASSNAME_ISDIAGNOSIS_NAVBAR.DIAGNOSIS_SPAN}
                       >
                         {highlightWordDiagnosis ? (
                           <>
                             {leftSideOfWordDiagnosis}
-                            <span className={CLASSNAME_ISDIAGNOSIS.BOLD}>
+                            <span className={CLASSNAME_ISDIAGNOSIS_NAVBAR.BOLD}>
                               {highlightWordDiagnosis}
                             </span>
                             {rightSideOfWordDiagnosis}
@@ -124,11 +132,11 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponent = ({
                       </span>
                     </>
                   )}
-                  <P className={CLASSNAME_ISDIAGNOSIS.IN_SYMPTOMS}>
+                  <P className={CLASSNAME_ISDIAGNOSIS_NAVBAR.IN_SYMPTOMS}>
                     In symptoms ({suggestionData.diagnosis})
                   </P>
                   <ul
-                    className={CLASSNAME_ISDIAGNOSIS.SUGGESTION}
+                    className={CLASSNAME_ISDIAGNOSIS_NAVBAR.SUGGESTION}
                     onClick={handleSelecOption}
                   >
                     {suggestionData.symptoms.map(
@@ -186,14 +194,16 @@ export const NavBar_D_DropdownDiagnosesSuggestionComponent = ({
                                       : suggestion
                                   }
                                   className={
-                                    CLASSNAME_ISDIAGNOSIS.SUGGESTION_LI
+                                    CLASSNAME_ISDIAGNOSIS_NAVBAR.SUGGESTION_LI
                                   }
                                 >
                                   {highlightWord ? (
                                     <>
                                       {leftSideOfWord}
                                       <span
-                                        className={CLASSNAME_ISDIAGNOSIS.BOLD}
+                                        className={
+                                          CLASSNAME_ISDIAGNOSIS_NAVBAR.BOLD
+                                        }
                                       >
                                         {highlightWord}
                                       </span>

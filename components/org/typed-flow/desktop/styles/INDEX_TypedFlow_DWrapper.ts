@@ -1,11 +1,10 @@
 import styled from "styled-components"
 
-export interface Properties {
+type Props = {
   ORGShowFullMapFilter?: boolean
   path?: any
 }
 
-export const INDEX_TypedFlow_DWrapper = styled.div<Properties>`
+export const INDEX_TypedFlow_DWrapper = styled.div<Props>`
   position: relative;
-  user-select: ${(x) => (x.ORGShowFullMapFilter ? `none` : ``)};
 `

@@ -84,7 +84,8 @@ export const INDEX_Welcome_D = () => {
   useEffect(() => {
     /*
      * This prevent the user of access again to /welcome if they reach the third page already  &&
-     * If the user already reached once typed-flow */
+     * If the user already reached once typed-flow
+     */
 
     if (reachTypedFlow) {
       router.push(`/${ALL_ROUTES.ORG}/typed-flow`)
