@@ -37,7 +37,9 @@ export const StarsRatingReview_DWrapper = styled.div<Props>`
           `
         : css``}
   }
-
+  & > :nth-child(2) {
+    color: ${NEUTRALS.DARK_GREY};
+  }
   /* & > :nth-child(1) {
     margin-right: ${({ isDetail }) => (isDetail ? `20px` : `8px`)};
   }
