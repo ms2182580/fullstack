@@ -1,5 +1,6 @@
-import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import styled, { css } from "styled-components"
+
+const maxDesktopScreenSize = `1440px`
 
 const homeStyles = () => css`
   & > *:not(:nth-child(2)) {
