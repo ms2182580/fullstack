@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../assets/Colors"
+import { NEUTRALS } from "../../../assets/Colors"
 
 export const Home_IntroducingAI_DWrapper = styled.article`
   padding-top: 300px;

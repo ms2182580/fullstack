@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
 export const Home_OurPlatformCarousal_Carousal_DWrapper = styled.li`
   border: 1px solid rgba(224, 224, 224, 0.75);

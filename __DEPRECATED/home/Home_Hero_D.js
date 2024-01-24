@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useTypewriter } from "react-simple-typewriter"
-import { H2 } from "../../../components/ui/heading_body_text/HeaderFonts"
-import { useNavbarHomeHeight } from "../../../context/NavbarHome_Ctx_Height.js"
+import { H2 } from "../../components/ui/heading_body_text/HeaderFonts"
+import { useNavbarHomeHeight } from "../../context/NavbarHome_Ctx_Height.js"
 import { Home_Hero_DWrapper } from "./styles/Home_Hero_DWrapper.js"
 
 const WORDS = ["states", "families", "life", "insurance"]
@@ -68,7 +68,8 @@ export const Home_Hero_D = () => {
         </h1>
         <H2>
           <span>
-            Inclusive <span>uses AI to</span> <span>simplify care coordination</span> for families with
+            Inclusive <span>uses AI to</span>{" "}
+            <span>simplify care coordination</span> for families with
           </span>
           <span>Intellectual and developmental disabilities.</span>
         </H2>

@@ -3,10 +3,10 @@ import {
   GetServicePlan3,
   ORG_D_Search_CarePlanSvg,
   ORG_Detail_SearchFAQSSVG,
-} from "../../../assets/icons/index"
+} from "../../assets/icons/index"
 
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
-import { H2 } from "../../ui/heading_body_text/HeaderFonts"
+import { H2 } from "../../components/ui/heading_body_text/HeaderFonts"
 import { Home_GetServicePlan_Cards_D } from "./Home_GetServicePlan_Cards_D"
 import { Home_GetServicePlan_DWrapper } from "./styles/Home_GetServicePlan_DWrapper.js"
 

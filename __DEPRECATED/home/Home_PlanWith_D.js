@@ -1,7 +1,7 @@
 import Image from "next/legacy/image"
-import { Home_PlanWithSvg } from "../../../assets/icons"
 import Home_PlanWith from "../../../assets/images/Home_PlanWith.png"
-import { H3 } from "../../ui/heading_body_text/HeaderFonts"
+import { Home_PlanWithSvg } from "../../assets/icons"
+import { H3 } from "../../components/ui/heading_body_text/HeaderFonts"
 import { Home_PlanWith_DWrapper } from "./styles/Home_PlanWith_DWrapper.js"
 
 export const Home_PlanWith_D = () => {
@@ -24,7 +24,8 @@ export const Home_PlanWith_D = () => {
           Plan with <span>alternative communication</span>
         </p>
         <p>
-          Make audio plans, translated into 6 languages with AAC accessibility. Listen to recommendations on your Amazon <span>Echo!</span>
+          Make audio plans, translated into 6 languages with AAC accessibility.
+          Listen to recommendations on your Amazon <span>Echo!</span>
         </p>
         <button>See all integrations</button>
 
@@ -33,7 +34,8 @@ export const Home_PlanWith_D = () => {
             <Home_PlanWithSvg />
           </span>
           <div>
-            Learn more about service plans & privacy. <span tabIndex={0}>Learn More</span>
+            Learn more about service plans & privacy.{" "}
+            <span tabIndex={0}>Learn More</span>
           </div>
         </div>
       </div>
