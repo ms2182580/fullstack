@@ -6,7 +6,7 @@ export type Props = {
   secondary?: boolean
   disabled?: boolean
   preventFocus?: 0 | -1
-  goToDynamic?: () => void
+  goToDynamic?: (MouseEvent) => void
 }
 
 export const ButtonSmall = ({
