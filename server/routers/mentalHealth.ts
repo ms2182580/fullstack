@@ -29,15 +29,17 @@ export const mentalHealthRouter = router({
       z.object({
         limit: z.number().min(1).max(100).nullish(),
         cursor: z.string().nullish(),
+        filter: z.record(z.any()).optional(),
       })
     )
     .query(async ({ input }) => {
       const limit = input.limit ?? 50
-      const { cursor } = input
+      const { cursor, filter } = input ;
       const result = await prisma.mentalHealth.findMany({
         take: limit,
-        skip: 1,
-        cursor: cursor ? { id: cursor } : undefined,
+        skip: cursor ? 1 : 0,
+        cursor: cursor ? {id: cursor} : undefined,
+        where: filter,
       })
       return result
     }),
