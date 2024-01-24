@@ -1,6 +1,6 @@
 import Image from "next/image.js"
 import Home_IntroduccingAI from "../../../assets/images/Home_IntroduccingAI.png"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
+import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts"
 import { Home_IntroducingAI_DWrapper } from "./styles/Home_IntroducingAI_DWrapper.js"
 
 export const Home_IntroducingAI_D = () => {

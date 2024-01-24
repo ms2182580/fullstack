@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
 export const Home_Survey_DWrapper = styled.form`
   padding-top: 157px;
@@ -95,7 +95,7 @@ export const Home_Survey_DWrapper = styled.form`
     & > * {
       display: grid;
       border: none;
-      
+
       & > :nth-child(1) {
         font-size: 20px;
         font-weight: 500;
@@ -109,8 +109,6 @@ export const Home_Survey_DWrapper = styled.form`
         padding: 10px;
         border-radius: 8px;
         border: 1px solid ${NEUTRALS.BLACK};
-        
-        
 
         &::placeholder {
           font-style: italic;
@@ -123,13 +121,12 @@ export const Home_Survey_DWrapper = styled.form`
         height: 100px;
         resize: none;
       }
-      
-      & > :nth-child(3){
+
+      & > :nth-child(3) {
         margin-top: 8px;
         margin-left: auto;
-        
+
         color: ${NEUTRALS.DARK_GREY};
-        
       }
     }
 
@@ -138,9 +135,9 @@ export const Home_Survey_DWrapper = styled.form`
       padding: 10px 24px;
       border-radius: 8px;
       border: 1px solid ${NEUTRALS.BLACK};
-      
+
       font-size: 16px;
-      
+
       cursor: pointer;
     }
   }

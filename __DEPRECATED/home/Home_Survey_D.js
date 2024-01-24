@@ -4,9 +4,9 @@ import {
   InstagramSvg,
   Linkedin2Svg,
   TwitterSvg,
-} from "../../../assets/icons/index.js"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { H2 } from "../../ui/heading_body_text/HeaderFonts"
+} from "../../assets/icons/index.js"
+import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts.js"
+import { H2 } from "../../components/ui/heading_body_text/HeaderFonts.js"
 import { Home_Survey_DWrapper } from "./styles/Home_Survey_DWrapper.js"
 
 let maxCharacterTextarea = 2000

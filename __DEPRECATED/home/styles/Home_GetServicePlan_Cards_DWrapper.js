@@ -1,8 +1,10 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
 export const Home_GetServicePlan_Cards_DWrapper = styled.div`
-  margin-bottom: calc(68px + 35px); /* With the first value (68px) the component achieve 33px, to get 68px total is needed 35px more*/
+  margin-bottom: calc(
+    68px + 35px
+  ); /* With the first value (68px) the component achieve 33px, to get 68px total is needed 35px more*/
   & > :nth-child(1) {
     font-size: 107px;
     color: #dfdbd1;

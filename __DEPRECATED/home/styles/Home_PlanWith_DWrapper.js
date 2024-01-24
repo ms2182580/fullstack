@@ -1,24 +1,28 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "../../../assets/Colors"
 
-export const Home_ComingSoonAI_DWrapper = styled.div`
+export const Home_PlanWith_DWrapper = styled.div`
   padding-inline: clamp(8px, 20vw - 180px, 120px);
   padding-top: 152px;
   padding-bottom: 152px;
 
-  display: flex;
-  justify-content: space-between;
-
+  display: grid;
   grid-template-columns: 1fr 1fr;
+
+  grid-auto-flow: column;
 
   gap: 48px;
 
+  background: #fffdf8;
+
   .LEFT {
+    align-self: flex-start;
+  }
+
+  .RIGHT {
     display: grid;
     align-self: center;
     gap: 24px;
-
-    max-width: 652px;
 
     & > :nth-child(1) {
       background-color: ${SECONDARY_ORG_PLUS.PINK};
@@ -49,6 +53,10 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
       font-weight: 500;
       line-height: 30px;
       letter-spacing: 0.1px;
+
+      & > span {
+        font-style: italic;
+      }
     }
 
     & > :nth-child(4) {
@@ -77,9 +85,9 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
       padding-top: 24px;
 
       & > :nth-child(1) {
-        background-color: #fff4cb;
-        width: 52px;
-        height: 52px;
+        background-color: #ddebff;
+
+        padding: 14px;
 
         display: flex;
         align-items: center;
@@ -113,11 +121,5 @@ export const Home_ComingSoonAI_DWrapper = styled.div`
         right: 0;
       }
     }
-  }
-
-  .RIGHT {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
   }
 `

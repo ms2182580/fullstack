@@ -1,6 +1,10 @@
-import { Home_CheckSvg } from "../../../assets/images/index.js"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
-import { H2, H3, H4 } from "../../ui/heading_body_text/HeaderFonts"
+import { Home_CheckSvg } from "../../assets/images/index.js"
+import { P } from "../../components/ui/heading_body_text/DesktopMobileFonts.js"
+import {
+  H2,
+  H3,
+  H4,
+} from "../../components/ui/heading_body_text/HeaderFonts.js"
 import { Home_Pricing_DWrapper } from "./styles/Home_Pricing_DWrapper.js"
 
 export const Home_Pricing_D = () => {

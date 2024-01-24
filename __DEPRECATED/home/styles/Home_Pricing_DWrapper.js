@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
 export const Home_Pricing_DWrapper = styled.div`
   padding-inline: clamp(8px, 20vw - 180px, 162px);

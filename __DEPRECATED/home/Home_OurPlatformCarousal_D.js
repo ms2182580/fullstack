@@ -7,9 +7,9 @@ import {
   Home_OurPlatform_UserCollaborationSvg,
   LeftArrowTinySvg,
   RightArrowTinySvg,
-} from "../../../assets/icons/index.js"
-import { useScrollHorizontal } from "../../../utils/useScrollHorizontal.js"
-import { H1 } from "../../ui/heading_body_text/HeaderFonts"
+} from "../../assets/icons/index.js"
+import { H1 } from "../../components/ui/heading_body_text/HeaderFonts.js"
+import { useScrollHorizontal } from "../../utils/useScrollHorizontal.js"
 import { Home_OurPlatformCarousal_Carousal_D } from "./Home_OurPlatformCarousal_Carousal_D.js"
 import { Home_OurPlatformCarousal_DWrapper } from "./styles/Home_OurPlatformCarousal_DWrapper.js"
 

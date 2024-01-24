@@ -1,13 +1,10 @@
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import { NEUTRALS, PRIMARY } from "../../../assets/Colors"
 
 export const Home_OurPlatformCarousal_DWrapper = styled.div`
   padding-left: clamp(8px, 20vw - 180px, 120px);
   padding-top: 200px;
   padding-bottom: 200px;
-  
-  
-  
 
   display: grid;
   grid-template-columns: 510px 1fr;
@@ -19,7 +16,7 @@ export const Home_OurPlatformCarousal_DWrapper = styled.div`
   .LEFT {
     display: flex;
     flex-direction: column;
-    
+
     & > *:not(:last-child):not(:nth-last-child(2)) {
       margin-bottom: 16px;
     }
