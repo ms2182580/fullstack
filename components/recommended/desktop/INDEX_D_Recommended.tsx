@@ -3,13 +3,21 @@ import { INDEX_D_RecommendedWrapped } from "./styles/INDEX_D_RecommendedWrapper"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
-import { Fragment, useState } from "react"
-import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
+import { Fragment } from "react"
 import { Recommended_D_Individual } from "./Recommended_D_Individual"
+import { useRouter } from "next/router"
 type Props = {
   allBackendData: object[] | any
 }
 export const INDEX_D_Recommended = ({ allBackendData }: Props) => {
+  const router = useRouter()
+
+  const handleNavigateMoreSuggestion = (e: MouseEvent | KeyboardEvent) => {
+    if (e.type === "click" || (e as KeyboardEvent).key === "Enter") {
+      router.push("recommended/more-recommendation")
+    }
+  }
+
   return (
     <INDEX_D_RecommendedWrapped>
       <H1>Recommended for you</H1>
@@ -24,8 +32,6 @@ export const INDEX_D_Recommended = ({ allBackendData }: Props) => {
         to success to your child’s best life!
       </P>
       <div>
-        {/* {allBackendData.map(({ CATEGORY, SUB_CATEGORY }) => {
-          return ( */}
         <Fragment>
           <Recommended_D_Individual
             category={"CATEGORY"}
@@ -33,10 +39,10 @@ export const INDEX_D_Recommended = ({ allBackendData }: Props) => {
             allBackendData={allBackendData}
           />
         </Fragment>
-        {/* )
-        })} */}
       </div>
-      <ButtonSmall secondary>Show more suggestions</ButtonSmall>
+      <ButtonSmall goToDynamic={handleNavigateMoreSuggestion} secondary>
+        Show more suggestions
+      </ButtonSmall>
       <Hero_D_Banner />
     </INDEX_D_RecommendedWrapped>
   )
