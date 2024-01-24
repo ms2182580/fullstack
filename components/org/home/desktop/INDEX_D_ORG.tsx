@@ -1,9 +1,6 @@
-import {
-  ArrowRightSvg,
-  LeftArrowSvg,
-  ORG_D_Search_CarePlanSvg,
-} from "@/assets/icons/index.js"
+import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index.js"
 import ORGDesktop_Search_Hero from "@/assets/images/Index_D_Search_Hero.png"
+import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
@@ -14,9 +11,6 @@ import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
 import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
-import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
-
-// console.log("ALL_DATA:", ALL_DATA)
 
 type Props = {
   allBackendData: object[] | any

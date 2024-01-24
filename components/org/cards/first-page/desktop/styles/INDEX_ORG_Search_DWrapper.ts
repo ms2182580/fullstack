@@ -138,7 +138,16 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
       left: 0;
       right: 0;
       height: ${PROPS.HEIGHT};
-      background-color: ${PROPS.BACKGROUND_COLOR};
+      /* background-color: ${PROPS.BACKGROUND_COLOR}; */
+
+      background: linear-gradient(
+        90deg,
+        hsla(195, 4.8%, 83.5%, 0.9) 1%,
+        hsla(195, 4.8%, 83.5%, 1) 50%,
+        hsla(195, 4.8%, 83.5%, 0.9) 99%
+      );
+
+      border-radius: 50%;
     }
   }
 

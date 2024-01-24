@@ -15,18 +15,249 @@ import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
 
 export const enum NamesCategories_KEY {
   "AGENCIES" = "Agencies",
-  "ASSISTIVE HARDWARE" = "Assistive Hardware",
   "ASSISTIVE SOFTWARE" = "Assistive Software",
-  "ATTORNEYS" = "Attorneys",
+  "ASSISTIVE TECHNOLOGY HARDWARE" = "Assistive technology hardware",
   "CAMPS" = "Camps",
   "COMMUNITY INCLUSION & CLASSES" = "Community Inclusion & Classes",
-  "FOUNDATIONS & ASSOCIATIONS" = "Foundations & Associations",
+  "FOUNDATIONS" = "Foundations",
+  "LEGAL RESOURCES" = "Legal resources",
+  "MENTAL HEALTH PROVIDERS & SERVICES" = "Mental health providers & services",
   "PHYSICIANS" = "Physicians",
-  "RESIDENTIAL PROGRAMS" = "Residential Programs",
+  "RESIDENTIAL RESOURCES" = "Residential Resources",
   "SCHOOLS & EDUCATIONAL SERVICES" = "Schools & Educational Services",
   "THERAPEUTIC SERVICES" = "Therapeutic Services",
   "VOCATIONAL RESOURCES" = "Vocational Resources",
   "OTHER" = "Other",
+}
+
+export const NamesSubcategories_KEY = {
+  [NamesCategories_KEY["AGENCIES"]]: {
+    "Government Contracted Office": "Government Contracted Office",
+    "Governmental Office": "Governmental Office",
+    "Non-Governmental Office": "Non-Governmental Office",
+  },
+  [NamesCategories_KEY["ASSISTIVE SOFTWARE"]]: {
+    "Cloud-based": "Cloud-based",
+    "Computer programs": "Computer programs",
+    "Mobile Apps": "Mobile Apps",
+    Webapps: "Webapps",
+  },
+  [NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"]]: {
+    "Accessible Transportation Devices": "Accessible Transportation Devices",
+    "Adaptive Sports & Fitness Equipment":
+      "Adaptive Sports & Fitness Equipment",
+    "Assistive Listening Devices": "Assistive Listening Devices",
+    "Braille and Tactile Devices": "Braille and Tactile Devices",
+    "Communication Device": "Communication Device",
+    "Computer Accessibility Devices": "Computer Accessibility Devices",
+    "Environmental Control Devices:": "Environmental Control Devices:",
+    "Hearing Aids and Cochlear Implants:":
+      "Hearing Aids and Cochlear Implants:",
+    "Learning and Cognitive Support Devices":
+      "Learning and Cognitive Support Devices",
+    "Mobility Aids": "Mobility Aids",
+    "Prosthetics and Orthotics:": "Prosthetics and Orthotics:",
+    "Visual Aids": "Visual Aids",
+  },
+
+  [NamesCategories_KEY["CAMPS"]]: {
+    "Afterschool Camp": "Afterschool Camp",
+    "Day Camp": "Day Camp",
+    "Holiday Camp": "Holiday Camp",
+    "Sleep-away Camp": "Sleep-away Camp",
+  },
+
+  [NamesCategories_KEY["LEGAL RESOURCES"]]: {
+    "Attorney at firm": "Attorney at firm",
+    "Independent attorney": "Independent attorney",
+    "Indiviudal Advocate": "Indiviudal Advocate",
+    "Law firm": "Law firm",
+    "Legal Advocate organization": "Legal Advocate organization",
+    "Legal consultation Services": "Legal consultation Services",
+  },
+
+  [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]]: {
+    "CC - Arts & Crafts": "CC - Arts & Crafts",
+    "CC - Daily Living/Lifeskills": "CC - Daily Living/Lifeskills",
+    "CC - Fitness": "CC - Fitness",
+    "CC - Languages & communication ": "CC - Languages & communication ",
+    "CC - Performing arts": "CC - Performing arts",
+    "CC - Sports": "CC - Sports",
+    "Para/Semi-academic skill ": "Para/Semi-academic skill ",
+    "Recreational Activities": "Recreational Activities",
+    Other: "Other",
+  },
+
+  [NamesCategories_KEY["FOUNDATIONS"]]: {
+    Associations: "Associations",
+    Foundations: "Foundations",
+    "Private NFPs": "Private NFPs",
+  },
+
+  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: {
+    Agency: "Agency",
+    Clinic: "Clinic",
+    Counselor: "Counselor",
+    "Government office": "Government office",
+    "Group Practice": "Group Practice",
+    "Group Therapy": "Group Therapy",
+    Hotline: "Hotline",
+    "Peer support": "Peer support",
+    "Physicians ": "Physicians ",
+    "Private Practice ": "Private Practice ",
+    "Psychiatric Nurse Practitioners": "Psychiatric Nurse Practitioners",
+    Psychiatrists: "Psychiatrists",
+    Psychologists: "Psychologists",
+    Psychotherapist: "Psychotherapist",
+    "Support Groups": "Support Groups",
+    Other: "Other",
+  },
+
+  [NamesCategories_KEY["PHYSICIANS"]]: {
+    "Allergy Physicians": "Allergy Physicians",
+    Anesthetists: "Anesthetists",
+    "Balance Centers": "Balance Centers",
+    "Bed wetting consulants ": "Bed wetting consulants ",
+    "Cosmetic/reconstructive surgery": "Cosmetic/reconstructive surgery",
+    Dermatologists: "Dermatologists",
+    Endermologie: "Endermologie",
+    "Hand Surgery": "Hand Surgery",
+    "Health Screening and vaccination services ":
+      "Health Screening and vaccination services ",
+    "Hormone therapy": "Hormone therapy",
+    "In-patient clinics & treatment centers":
+      "In-patient clinics & treatment centers",
+    "Intensity modulated radiation therapy":
+      "Intensity modulated radiation therapy",
+    "Manipulative treament CTR": "Manipulative treament CTR",
+    Neonatologists: "Neonatologists",
+    Nephrology: "Nephrology",
+    "Oculists MD": "Oculists MD",
+    "Offices & cinics of doctors-osteopathy":
+      "Offices & cinics of doctors-osteopathy",
+    "Offices of clinics and doctors Osteopathy":
+      "Offices of clinics and doctors Osteopathy",
+    Oncologists: "Oncologists",
+    Opthamlogists: "Opthamlogists",
+    "Orthopedic surgeons": "Orthopedic surgeons",
+    "Osteopathic doctor": "Osteopathic doctor",
+    "Otorhinolaryngology (ENT) Physician":
+      "Otorhinolaryngology (ENT) Physician",
+    Pathologists: "Pathologists",
+    "Pediatric Neurology": "Pediatric Neurology",
+    "Physicians and surgeons": "Physicians and surgeons",
+    "Preventitive Medicine": "Preventitive Medicine",
+    "Prostate screening": "Prostate screening",
+    "Pulmonary & Respitary diseases": "Pulmonary & Respitary diseases",
+  },
+
+  [NamesCategories_KEY["RESIDENTIAL RESOURCES"]]: {
+    "Accessible Housing with Universal Design Features":
+      "Accessible Housing with Universal Design Features",
+    "Assisted Living Facility": "Assisted Living Facility",
+    "Cooperative Housing": "Cooperative Housing",
+    "Farmsteads or Rural Residential Settings":
+      "Farmsteads or Rural Residential Settings",
+    "Group Homes (Community Residential Homes)":
+      "Group Homes (Community Residential Homes)",
+    "Host Family or Shared Living Arrangements":
+      "Host Family or Shared Living Arrangements",
+    "Intermediate Care Facilities for Individuals with Intellectual Disabilities (ICF/IID)":
+      "Intermediate Care Facilities for Individuals with Intellectual Disabilities (ICF/IID)",
+    "Residential Care Facilities (RCF/DD)":
+      "Residential Care Facilities (RCF/DD)",
+    "Respite Care Facilities or Respite Homes":
+      "Respite Care Facilities or Respite Homes",
+    "Specialized Group Homes ": "Specialized Group Homes ",
+    "Supported Living (Supported Apartments or Supported Housing)":
+      "Supported Living (Supported Apartments or Supported Housing)",
+    "Transitional Housing": "Transitional Housing",
+  },
+
+  [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]]: {
+    "Early Intervention Programs & Schools":
+      "Early Intervention Programs & Schools",
+    "Pre-K Programs & Schools": "Pre-K Programs & Schools",
+    "K-12 Schools": "K-12 Schools",
+    "Home instruction programs/Services": "Home instruction programs/Services",
+    "College Programs": "College Programs",
+    "Educative therapy": "Educative therapy",
+    "Tutors & Special educators ": "Tutors & Special educators ",
+    "Certificate & Training programs": "Certificate & Training programs",
+    "Trade school": "Trade school",
+    "Day programs": "Day programs",
+  },
+
+  [NamesCategories_KEY["THERAPEUTIC SERVICES"]]: {
+    "ABA therapy [service]": "ABA therapy [service]",
+    "Aquatic therapy / Aquatic therapists":
+      "Aquatic therapy / Aquatic therapists",
+    "Art therapy": "Art therapy",
+    "Audiological therapy/ Audiologists": "Audiological therapy/ Audiologists",
+    "Bovine therapy": "Bovine therapy",
+    "Chelation therapy (Heavy metal removal)":
+      "Chelation therapy (Heavy metal removal)",
+    "Craniosacral therapy": "Craniosacral therapy",
+    "Equine therapy": "Equine therapy",
+    "Fitness therapy": "Fitness therapy",
+    "Hand therapy": "Hand therapy",
+    "Horse physical therapy": "Horse physical therapy",
+    Kenesiotherapy: "Kenesiotherapy",
+    "Lymphedema therapy (Massages to help circulation)":
+      "Lymphedema therapy (Massages to help circulation)",
+    "Music therapy": "Music therapy",
+    "Occupational Therapy": "Occupational Therapy",
+    "Physical Therapy": "Physical Therapy",
+    "Radiation therapy": "Radiation therapy",
+    "Rehabilitation services": "Rehabilitation services",
+    "Relaxation therapy": "Relaxation therapy",
+    "Speech Therapy": "Speech Therapy",
+    "Sports medicine and injuries": "Sports medicine and injuries",
+    "TMJ Treatment (Jaw issue, stiffness treatment)":
+      "TMJ Treatment (Jaw issue, stiffness treatment)",
+    "Vision therapy": "Vision therapy",
+    Other: "Other",
+  },
+
+  [NamesCategories_KEY["VOCATIONAL RESOURCES"]]: {
+    "Apprenticeships and Internships": "Apprenticeships and Internships",
+    "Community College or Adult Education Courses":
+      "Community College or Adult Education Courses",
+    "Community-Based Employment": "Community-Based Employment",
+    "Creative Arts and Crafts Programs (Art industry training)":
+      "Creative Arts and Crafts Programs (Art industry training)",
+    "Day Training and Habilitation Programs":
+      "Day Training and Habilitation Programs",
+    "Education opportunity": "Education opportunity",
+    "Entrepreneurship Programs": "Entrepreneurship Programs",
+    "Job & position consutlation programs (Coaches & Mentoring)":
+      "Job & position consutlation programs (Coaches & Mentoring)",
+    "Job Coaching and Job Placement Services":
+      "Job Coaching and Job Placement Services",
+    "Job Training Centers (Trains for position)":
+      "Job Training Centers (Trains for position)",
+    "Online learning opportunities": "Online learning opportunities",
+    "Pre-training & sills development program for inclusion":
+      "Pre-training & sills development program for inclusion",
+    "Sheltered Workshops (DD jobs worked together on fixed task)":
+      "Sheltered Workshops (DD jobs worked together on fixed task)",
+    "Supported Employment Programs (tech social skills)":
+      "Supported Employment Programs (tech social skills)",
+    "Technology and Computer Skills Training":
+      "Technology and Computer Skills Training",
+    "Training programs and oppoirtunities":
+      "Training programs and oppoirtunities",
+    "Transition to work programs": "Transition to work programs",
+    "Vocational Rehabilitation Programs (recommends Jobs)":
+      "Vocational Rehabilitation Programs (recommends Jobs)",
+  },
+
+  [NamesCategories_KEY["OTHER"]]: {
+    Job: "Job",
+    Other: "Other",
+    "Post (Event)": "Post (Event)",
+    "Post (Job)": "Post (Job)",
+  },
 }
 
 export const enum BUTTON_MAIN_CARD_TEXT_VALUES_ENUM {
@@ -71,73 +302,36 @@ https://docs.google.com/spreadsheets/d/1rME7CQIhVgxqa5LdrZ7rjgkG8g_EOGV29Gv32M2V
 
 export const namesCategoriesOrder = [
   [NamesCategories_KEY["AGENCIES"]],
-  [NamesCategories_KEY["ASSISTIVE HARDWARE"]],
   [NamesCategories_KEY["ASSISTIVE SOFTWARE"]],
-  [NamesCategories_KEY["ATTORNEYS"]],
+  [NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"]],
   [NamesCategories_KEY["CAMPS"]],
   [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]],
-  [NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"]],
+  [NamesCategories_KEY["FOUNDATIONS"]],
+  [NamesCategories_KEY["LEGAL RESOURCES"]],
+  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]],
   [NamesCategories_KEY["PHYSICIANS"]],
-  [NamesCategories_KEY["RESIDENTIAL PROGRAMS"]],
+  [NamesCategories_KEY["RESIDENTIAL RESOURCES"]],
   [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]],
   [NamesCategories_KEY["THERAPEUTIC SERVICES"]],
   [NamesCategories_KEY["VOCATIONAL RESOURCES"]],
   [NamesCategories_KEY["OTHER"]],
 ]
 
+// * The actual implementation on the UI rely on the order of this
+
 export const ALL_DATA: ALL_DATA_Type = {
   [NamesCategories_KEY["AGENCIES"]]: {
     CATEGORY: NamesCategories_KEY["AGENCIES"],
-    SUB_CATEGORY: ["Governmental", "Non-Governmental"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["AGENCIES"]]
+    ),
   },
 
-  [NamesCategories_KEY["ASSISTIVE HARDWARE"]]: {
-    CATEGORY: NamesCategories_KEY["ASSISTIVE HARDWARE"],
-    SUB_CATEGORY: [
-      "Accessible vehicles",
-      "Adaptations to computers, including specialized software",
-      "Adaptive switches, toys, etc.",
-      "Adaptive vehicles (buses, vans, cars)",
-      "Auditory trainers, TTY/TDDs, Braille Readers/ Notetakers",
-      "Augmentative and Alternative Communication (AAC) devices ",
-      "Bathing",
-      "Books on tape or other formats",
-      "Car seat",
-      "Environmental Control Units",
-      "Equiptment Accessories, Cases, carriers and bags",
-      "Eye gaze technology",
-      "Gaming",
-      "Hearing aid",
-      "Learning",
-      "Lifts and ramps",
-      "Magnifying glasses, CCTVs, calculators, tape recorders",
-      "Recreational devices",
-      "Scooters, standers, wheelchairs",
-      "Seat positioning",
-      "Smart home devices",
-      "Switches",
-      "Tablets",
-      "Toileting ",
-      "Toys",
-      "wheeled mobility",
-      "Writing Aids",
-    ],
-
-    SECOND_PAGE: {
-      BUTTON_TO_THIRDPAGE_TEXT:
-        BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["where to buy"],
-
-      SVG: PAT_SVG,
-    },
-  },
   [NamesCategories_KEY["ASSISTIVE SOFTWARE"]]: {
     CATEGORY: NamesCategories_KEY["ASSISTIVE SOFTWARE"],
-    SUB_CATEGORY: [
-      "Cloud-based",
-      "Computer programs",
-      "Mobile Apps",
-      "Webapps",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["ASSISTIVE SOFTWARE"]]
+    ),
 
     SECOND_PAGE: {
       BUTTON_TO_THIRDPAGE_TEXT:
@@ -147,135 +341,89 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["ATTORNEYS"]]: {
-    CATEGORY: NamesCategories_KEY["ATTORNEYS"],
-    SUB_CATEGORY: [
-      "Attorney at firm ",
-      "Independent attorney",
-      "Indiviudal Advocate",
-      "Law firm",
-      "Legal Advocate organization",
-      "Legal consultation Services",
-    ],
+  [NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"]]: {
+    CATEGORY: NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[
+        NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"]
+      ]
+    ),
+
+    SECOND_PAGE: {
+      BUTTON_TO_THIRDPAGE_TEXT:
+        BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["where to buy"],
+
+      SVG: PAT_SVG,
+    },
   },
 
   [NamesCategories_KEY["CAMPS"]]: {
     CATEGORY: NamesCategories_KEY["CAMPS"],
-    SUB_CATEGORY: [
-      "Comunity Program",
-      "Indiviudal (Instructor)",
-      "Organization (vendor)",
-      "Service (Community Class)",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["CAMPS"]]
+    ),
+  },
+
+  [NamesCategories_KEY["LEGAL RESOURCES"]]: {
+    CATEGORY: NamesCategories_KEY["LEGAL RESOURCES"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["LEGAL RESOURCES"]]
+    ),
   },
 
   [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]]: {
     CATEGORY: NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"],
-    SUB_CATEGORY: [
-      "Afterschool Camp",
-      "Day Camp",
-      "Holiday Camp",
-      "Sleep-away Camp",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[
+        NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]
+      ]
+    ),
   },
 
-  [NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"]]: {
-    CATEGORY: NamesCategories_KEY["FOUNDATIONS & ASSOCIATIONS"],
-    SUB_CATEGORY: ["Associations", "Foundations", "Private NFPs"],
+  [NamesCategories_KEY["FOUNDATIONS"]]: {
+    CATEGORY: NamesCategories_KEY["FOUNDATIONS"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["FOUNDATIONS"]]
+    ),
+  },
+
+  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: {
+    CATEGORY: NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[
+        NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+      ]
+    ),
   },
 
   [NamesCategories_KEY["PHYSICIANS"]]: {
     CATEGORY: NamesCategories_KEY["PHYSICIANS"],
-    SUB_CATEGORY: [
-      "Allergy Physicians",
-      "Anesthetists",
-      "Balance Centers",
-      "Bed wetting consulants ",
-      "Cosmetic/reconstructive surgery",
-      "Dermatologists",
-      "Endermologie",
-      "Hand Surgery",
-      "Health Screening and vaccination services ",
-      "Hormone therapy",
-      "In-patient clinics & treatment centers",
-      "Intensity modulated radiation therapy",
-      "Manipulative treament CTR",
-      "Neonatologists",
-      "Nephrology",
-      "Oculists MD",
-      "Offices & cinics of doctors-osteopathy",
-      "Offices of clinics and doctors Osteopathy",
-      "Oncologists",
-      "Opthamlogists",
-      "Orthopedic surgeons",
-      "Osteopathic doctor",
-      "Otorhinolaryngology (ENT) Physician",
-      "Pathologists",
-      "Pediatric Neurology",
-      "Physicians and surgeons",
-      "Preventitive Medicine",
-      "Prostate screening",
-      "Pulmonary & Respitary diseases",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["PHYSICIANS"]]
+    ),
   },
 
-  [NamesCategories_KEY["RESIDENTIAL PROGRAMS"]]: {
-    CATEGORY: NamesCategories_KEY["RESIDENTIAL PROGRAMS"],
-    SUB_CATEGORY: [
-      "Accessible Housing with Universal Design Features",
-      "Assisted Living Facility",
-      "Cooperative Housing",
-      "Farmsteads or Rural Residential Settings",
-      "Group Homes (Community Residential Homes)",
-      "Host Family or Shared Living Arrangements",
-      "Intermediate Care Facilities for Individuals with Intellectual Disabilities (ICF/IID)",
-      "Residential Care Facilities (RCF/DD)",
-      "Respite Care Facilities or Respite Homes",
-      "Specialized Group Homes ",
-      "Supported Living (Supported Apartments or Supported Housing)",
-      "Transitional Housing",
-    ],
+  [NamesCategories_KEY["RESIDENTIAL RESOURCES"]]: {
+    CATEGORY: NamesCategories_KEY["RESIDENTIAL RESOURCES"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["RESIDENTIAL RESOURCES"]]
+    ),
   },
+
   [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]]: {
     CATEGORY: NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"],
-    SUB_CATEGORY: [
-      "Boarding School",
-      "College Programs",
-      "Day School",
-      "Educative therapy",
-      "Home instruction programs/Services",
-      "Tutors & Special educators ",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[
+        NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]
+      ]
+    ),
   },
 
   [NamesCategories_KEY["THERAPEUTIC SERVICES"]]: {
     CATEGORY: NamesCategories_KEY["THERAPEUTIC SERVICES"],
-    SUB_CATEGORY: [
-      "ABA therapy [service]",
-      "Aquatic therapy / Aquatic therapists",
-      "Art therapy",
-      "Audiological therapy/ Audiologists",
-      "Bovine therapy",
-      "Chelation therapy (Heavy metal removal)",
-      "Craniosacral therapy",
-      "Equine therapy",
-      "Fitness therapy",
-      "Hand therapy",
-      "Horse physical therapy",
-      "Kenesiotherapy",
-      "Lymphedema therapy (Massages to help circulation)",
-      "Music therapy",
-      "Occupational Therapy",
-      "Other ",
-      "Physical Therapy",
-      "Radiation therapy",
-      "Rehabilitation services",
-      "Relaxation therapy",
-      "Speech Therapy",
-      "Sports medicine and injuries",
-      "TMJ Treatment (Jaw issue, stiffness treatment)",
-      "Vision therapy",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["THERAPEUTIC SERVICES"]]
+    ),
 
     SECOND_PAGE: {},
 
@@ -289,19 +437,15 @@ export const ALL_DATA: ALL_DATA_Type = {
 
   [NamesCategories_KEY["VOCATIONAL RESOURCES"]]: {
     CATEGORY: NamesCategories_KEY["VOCATIONAL RESOURCES"],
-    SUB_CATEGORY: [
-      "Education opportunity",
-      "Entrepreneurship Programs",
-      "Job & position consutlation programs (Coaches & Mentoring)",
-      "Job Lisitng",
-      "Pre-training & sills development program for inclusion",
-      "Sheltered Workshops (DD jobs worked together on fixed task)",
-      "Training programs and oppoirtunities",
-      "Transition to work programs",
-    ],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["VOCATIONAL RESOURCES"]]
+    ),
   },
+
   [NamesCategories_KEY["OTHER"]]: {
     CATEGORY: NamesCategories_KEY["OTHER"],
-    SUB_CATEGORY: ["Event", "Job", "Post"],
+    SUB_CATEGORY: Object.values(
+      NamesSubcategories_KEY[NamesCategories_KEY["OTHER"]]
+    ),
   },
 }
