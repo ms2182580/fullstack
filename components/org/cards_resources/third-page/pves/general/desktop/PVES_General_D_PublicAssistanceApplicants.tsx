@@ -41,7 +41,9 @@ const cardData: CardData_Type = [
   },
 ]
 
-export const PVES_General_D_PublicAssistanceApplicants = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+export const PVES_General_D_PublicAssistanceApplicants = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
   const { theIdForComponent = "#" } = allProps || {}
 
   return (
@@ -50,10 +52,7 @@ export const PVES_General_D_PublicAssistanceApplicants = ({ [ArraySection_KEYS.A
         <summary tabIndex={0}>
           <H3>Public Assistance Applicants</H3>
           <span>
-            <Image
-              src={ArrowUp}
-              alt="arrow to open or close the text"
-            />
+            <Image src={ArrowUp} alt="arrow to open or close the text" />
           </span>
         </summary>
         <div>
@@ -63,7 +62,9 @@ export const PVES_General_D_PublicAssistanceApplicants = ({ [ArraySection_KEYS.A
               <Tooltip />
             </span>
             <P>
-              This position may effect benefit eligibility for Individuals and families with intellectual and developmental disabilities. <span tabIndex={0}>See more here</span>
+              This position may effect benefit eligibility for Individuals and
+              families with intellectual and developmental disabilities.{" "}
+              <span tabIndex={0}>See more here</span>
             </P>
           </header>
 

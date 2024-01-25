@@ -8,13 +8,22 @@ import { useShouldTab } from "../../../utils/ORG_shouldTab"
 import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
 import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
 
-const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
+const suggestionsCity = [
+  "Current location",
+  "The Bronx",
+  "Manhattan",
+  "Queens",
+  "Brooklyn",
+  "Staten Island",
+]
 
 export type widthOfDropdown_TYPE = {
   widthOfDropdown: number
 }
 
-export const NavBar_D_InputLocation = ({ widthOfDropdown }: widthOfDropdown_TYPE) => {
+export const NavBar_D_InputLocation = ({
+  widthOfDropdown,
+}: widthOfDropdown_TYPE) => {
   const [isFocusCity, setIsFocusCity] = useState(false)
   const [isHoveredCity, setIsHoveredCity] = useState(false)
   const inputRefCity = useRef<HTMLInputElement>(null)
@@ -35,10 +44,7 @@ export const NavBar_D_InputLocation = ({ widthOfDropdown }: widthOfDropdown_TYPE
 
         <span>
           <span>
-            <Image
-              src={ORGDesktop_LocationIcon}
-              alt=""
-            />
+            <Image src={ORGDesktop_LocationIcon} alt="location icon" />
           </span>
           <input
             placeholder="City or zip code"

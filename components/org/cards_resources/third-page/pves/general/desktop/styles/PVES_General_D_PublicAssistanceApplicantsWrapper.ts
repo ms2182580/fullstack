@@ -1,4 +1,5 @@
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 
 const paddingLeftFirstColumn = "48px"
@@ -67,6 +68,10 @@ export const PVES_General_D_PublicAssistanceApplicantsWrapper = styled.section`
     & > :nth-child(2) {
       margin-inline: 46px;
       padding-bottom: 84px;
+
+      position: relative;
+      padding: 16px;
+      ${blurEffect({})}
 
       & > :nth-child(1) {
         display: grid;

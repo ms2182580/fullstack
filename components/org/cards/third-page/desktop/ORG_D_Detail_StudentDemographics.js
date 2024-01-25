@@ -1,12 +1,17 @@
 import imageGraph from "@/assets/images/org/special-education-schools/pieGraph.png"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import Image from "next/legacy/image"
 import { H3 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_StudentDemographicsWrapper } from "./styles/ORG_D_Detail_StudentDemographicsWrapper.js"
 
-export const ORG_D_Detail_StudentDemographics = () => {
+export const ORG_D_Detail_StudentDemographics = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   return (
     <>
-      <ORG_D_Detail_StudentDemographicsWrapper>
+      <ORG_D_Detail_StudentDemographicsWrapper id={theIdForComponent}>
         <header>
           <H3>Student Demographics</H3>
         </header>

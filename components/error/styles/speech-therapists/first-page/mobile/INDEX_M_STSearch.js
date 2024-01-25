@@ -8,7 +8,11 @@ export const INDEX_M_STSearch = () => {
   return (
     <INDEX_M_STSearchWrapper>
       <div>
-        <Image src={ORGMobile_Search_Hero} alt="" layout="intrinsic" />
+        <Image
+          src={ORGMobile_Search_Hero}
+          alt="Hero image"
+          layout="intrinsic"
+        />
       </div>
       <H3>
         Find Healthcare Providers <br />

@@ -1,13 +1,12 @@
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
+import { suggestionKeywords } from "@/utils/org/typed-flow/suggestionKeywords"
 import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
 import ORGDesktop_AgeIcon from "../../../assets/icons/ORGDesktop_AgeIcon.png"
 import { useShouldTab } from "../../../utils/ORG_shouldTab"
-import { NavBar_D_DropdownSuggestionComponent } from "./NavBar_D_DropdownSuggestionComponent"
-import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
-import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
-import { suggestionKeywords } from "@/utils/org/typed-flow/suggestionKeywords"
 import { NavBar_D_DropdownDiagnosesSuggestionComponent } from "./NavBar_D_DropdownDiagnosesOptions"
+import { NavBar_D_DropdownSuggestionWrapper } from "./NavBar_D_DropdownSuggestionWrapper"
 
 const suggestionsKeywords = [
   "Autism (ASD)",
@@ -167,7 +166,7 @@ export const NavBar_D_InputDiagnosis = () => {
 
         <span>
           <span>
-            <Image src={ORGDesktop_AgeIcon} alt="" />
+            <Image src={ORGDesktop_AgeIcon} alt="age icon" />
           </span>
           <input
             placeholder="Diagnosis (Ex: Autism...)"

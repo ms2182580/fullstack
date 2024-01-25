@@ -7,7 +7,7 @@ export const UnderConstruction = () => {
   return (
     <UnderConstructionWrapper>
       <div>
-        <Image src={UnderConstructionImage} alt="" />
+        <Image src={UnderConstructionImage} alt="under construccion image" />
       </div>
       <H1>Under Construction...</H1>
       <H3>

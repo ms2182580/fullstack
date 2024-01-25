@@ -1,4 +1,5 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 import { ElementActiveHeight_KEYS } from "../PCMPS_General_D_Booking"
 
@@ -22,6 +23,9 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
   padding-bottom: 24px;
 
   display: grid;
+
+  position: relative;
+  ${blurEffect({})}
 
   & > :nth-child(1) {
     padding: 24px;
@@ -157,9 +161,14 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
 
         top: ${(x: any) =>
           x.distanceModal !== null &&
-          `calc(${x.distanceModal[ElementActiveHeight_KEYS.DISTANCE_FROM_TOP]}px + ${x.distanceModal[ElementActiveHeight_KEYS.HEIGHT_OF_ELEMENT]}px + 24px)`};
+          `calc(${
+            x.distanceModal[ElementActiveHeight_KEYS.DISTANCE_FROM_TOP]
+          }px + ${
+            x.distanceModal[ElementActiveHeight_KEYS.HEIGHT_OF_ELEMENT]
+          }px + 24px)`};
 
-        visibility: ${({ distanceModal, shouldShowMoldal }) => (distanceModal !== null && shouldShowMoldal ? "visible" : "hidden")};
+        visibility: ${({ distanceModal, shouldShowMoldal }) =>
+          distanceModal !== null && shouldShowMoldal ? "visible" : "hidden"};
 
         display: grid;
         gap: 18px;
@@ -284,7 +293,8 @@ export type LI_Booking_Props = {
 
 export const LI_Booking = styled.li<LI_Booking_Props>`
   &.${PCMPS_General_D_Booking_CLASS.IS_LEFT}_${({ isIndex }) => isIndex} {
-    grid-area: ${({ isIndex }) => `${PCMPS_General_D_Booking_CLASS.IS_LEFT}_${isIndex}`};
+    grid-area: ${({ isIndex }) =>
+      `${PCMPS_General_D_Booking_CLASS.IS_LEFT}_${isIndex}`};
   }
 
   &.${PCMPS_General_D_Booking_CLASS.IS_RIGHT} {

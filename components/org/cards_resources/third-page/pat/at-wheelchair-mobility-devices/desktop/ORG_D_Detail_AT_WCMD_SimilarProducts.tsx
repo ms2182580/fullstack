@@ -4,6 +4,7 @@ import { StarsRatingReview_D } from "@/components/org/stars-rating-review/deskto
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { Fragment } from "react"
 import { ORG_D_Detail_AT_WCMD_SimilarProducts_Section } from "./ORG_D_Detail_AT_WCMD_SimilarProducts_Section"
 import { ORG_D_Detail_AT_WCMD_SimilarProductsWrapper } from "./styles/ORG_D_Detail_AT_WCMD_SimilarProductsWrapper"
@@ -142,9 +143,19 @@ const categoriesOfProducts: CategoriesOfProducts_Types = [
   },
 ]
 
-export const ORG_D_Detail_AT_WCMD_SimilarProducts = ({ idInnerbar = "#" }) => {
+type Props = {
+  [ArraySection_KEYS.ALL_DATA]: {
+    theIdForComponent: string
+  }
+}
+
+export const ORG_D_Detail_AT_WCMD_SimilarProducts = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}: Props) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   return (
-    <ORG_D_Detail_AT_WCMD_SimilarProductsWrapper id={idInnerbar}>
+    <ORG_D_Detail_AT_WCMD_SimilarProductsWrapper id={theIdForComponent}>
       <header>
         <H3>Similar products</H3>
       </header>

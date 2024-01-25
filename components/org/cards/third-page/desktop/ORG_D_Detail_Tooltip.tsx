@@ -45,16 +45,20 @@ export const ORG_D_Detail_Tooltip = ({ allProps }) => {
       tabIndex={0}
       onBlur={checkIfLoseFocus}
     >
-      {isCustom &&
-      allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.SVG] ===
-        TypeOfTooltipSVG_LIKE.ATTORNEY ? (
-        <span>
-          <QuestionTooltip_AASvg />
-        </span>
-      ) : (
-        <span>
-          <QuestionTooltip_DefaultSvg />
-        </span>
+      {allProps[Tooltip_KEYS.WHAT_DISPLAY] !== Tooltip_VALUES.NO_DISPLAY && (
+        <>
+          {isCustom &&
+          allProps[Tooltip_KEYS.CUSTOM_DATA][Tooltip_KEYS.SVG] ===
+            TypeOfTooltipSVG_LIKE.ATTORNEY ? (
+            <span>
+              <QuestionTooltip_AASvg />
+            </span>
+          ) : (
+            <span>
+              <QuestionTooltip_DefaultSvg />
+            </span>
+          )}
+        </>
       )}
 
       {show ? (

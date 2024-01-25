@@ -265,6 +265,8 @@ export const LI_Category = styled.li<Props_LI>`
   padding: 8px 16px;
   border-radius: 8px;
 
+  background-color: ${NEUTRALS.OFF_WHITE};
+
   display: flex;
   align-items: center;
   justify-content: center;

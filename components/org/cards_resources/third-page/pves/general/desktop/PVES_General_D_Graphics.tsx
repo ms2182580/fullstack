@@ -1,8 +1,16 @@
 import Tooltip from "@/assets/icons/tooltip.svg"
 import bar1 from "@/assets/images/org/special-education-schools/bar_AllStudents.png"
 import bar2 from "@/assets/images/org/special-education-schools/bar_StudentsDIsabilities.png"
-import { CategoriesToDisplay_Data, ORG_D_Detail_Bars, ORG_D_Detail_Bars_Props } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Bars"
-import { ORG_D_Detail_TableCake, ORG_D_Detail_TableCake_Props, TableData_Type } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_TableCake"
+import {
+  CategoriesToDisplay_Data,
+  ORG_D_Detail_Bars,
+  ORG_D_Detail_Bars_Props,
+} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Bars"
+import {
+  ORG_D_Detail_TableCake,
+  ORG_D_Detail_TableCake_Props,
+  TableData_Type,
+} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_TableCake"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { PVES_General_D_GraphicsWrapper } from "./styles/PVES_General_D_GraphicsWrapper"
@@ -80,11 +88,14 @@ const bars_Data: CategoriesToDisplay_Data = [
 const bars: ORG_D_Detail_Bars_Props = {
   title: "Neurodiversity & Accessibility",
   shouldDisplayTooltip: true,
-  subtitle: "This employer is above the national average in it’s neurodiversity hires.",
+  subtitle:
+    "This employer is above the national average in it’s neurodiversity hires.",
   categoriesToDisplay: bars_Data,
 }
 
-export const PVES_General_D_Graphics = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+export const PVES_General_D_Graphics = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
   const { theIdForComponent = "#" } = allProps || {}
 
   return (

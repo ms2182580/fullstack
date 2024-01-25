@@ -5,6 +5,12 @@ const transformData = (item) => ({
   entryType: item["Entry type"],
   recordName: item["Record Name"],
   recordSubtitle: item["Record Subtitle"],
+  /* 
+  const filteredData = trpc.camp.getAll.useQuery({ limit: 3, filter: {listingType: "Day Camp"} })
+  * The magic string "Day Camp" is the subcategory
+  * Every subcategory is listed inside ALL_DATA object → "@/utils/org/categories/general/ALL_DATA"
+  
+   */
   listingType: item["Listing Type"],
   recordSubtype: item["Record Subtype"],
   recordSubtypeBreakdown: [
@@ -14,6 +20,14 @@ const transformData = (item) => ({
     item["Record Subtype breakdown 4"],
   ].filter(Boolean),
   usageOrServiceSettings: item["Usage or service settings"],
+
+  /* 
+  const filteredData = trpc.camp.getAll.useQuery({ limit: 3, filter: {address: {state: "NY"} }) 
+  
+  * Get only resources in the state of New York 
+ 
+  */
+
   address: [
     {
       street: item["Street 1"],
@@ -38,10 +52,12 @@ const transformData = (item) => ({
       country: item["Country 2"],
     },
   ],
+
   verifiedUnverifiedResource: item["Verified/Unverified Resource"],
   price: item["Price"],
   listingDescription: item["Listing Description"],
   parentCompanyDescription: item["Parent company description"],
+
   sic: [
     { code: item["SIC Code 1"], description: item["SIC Code Description"] },
     { code: item["SIC Code 2"], description: item["SIC Codes Description 2"] },
@@ -50,6 +66,7 @@ const transformData = (item) => ({
     { code: item["NAICS Code"], description: item["NAICS Code Description"] },
     { code: item["NAICS 2"], description: item["NAICS 2 Description"] },
   ],
+
   onlinePresence: {
     email: item["Email"],
     telephoneNumber: item["Telephone Number"],
@@ -59,6 +76,7 @@ const transformData = (item) => ({
     facebook: item["Facebook"],
     instagram: item["Instagram"],
   },
+
   contactPerson: item["Contact Person"],
   languages: item["Languages"] ? item["Languages"].split(",") : [],
   agesServed: item["Ages Served"],

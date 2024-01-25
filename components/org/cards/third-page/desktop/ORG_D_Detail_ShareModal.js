@@ -23,14 +23,25 @@ import { ORG_D_Detail_ShareModalWrapper } from "./styles/ORG_D_Detail_ShareModal
 const timeShowLinkCopied = 2200
 const howLongAnimation = 700
 
-export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, name, lastName, showQRCode, setShowQRCode }) => {
+export const ORG_D_Detail_ShareModal = ({
+  showModal,
+  handleHideModal,
+  picture,
+  name,
+  lastName,
+  showQRCode,
+  setShowQRCode,
+}) => {
   const componentRef = useRef(null)
 
   // useOutsideHide(componentRef, setShow)
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (componentRef.current && !componentRef.current.contains(event.target)) {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
         handleHideModal()
       }
     }
@@ -49,7 +60,9 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
     }
   }, [componentRef])
 
-  const [shouldShowCopyLink, setShouldShowCopyLink] = useState("shouldShowCopyLinkDefault")
+  const [shouldShowCopyLink, setShouldShowCopyLink] = useState(
+    "shouldShowCopyLinkDefault"
+  )
 
   useEffect(() => {
     if (shouldShowCopyLink === "shouldShowCopyLinkTrue") {
@@ -80,7 +93,8 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
       ref={componentRef}
       showModal={showModal}
       showQRCode={showQRCode}
-      shouldShowCopyLink={shouldShowCopyLink}>
+      shouldShowCopyLink={shouldShowCopyLink}
+    >
       <span onClick={handleHideModal}>
         <XSvg />
       </span>
@@ -91,6 +105,7 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
           layout="fixed"
           width="115"
           height="86"
+          alt="image"
         />
         <H3>
           {name} {lastName} CCC-SLP
@@ -154,8 +169,12 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
             layout="fixed"
             width={196}
             height={196}
+            alt="QR icon"
           />
-          <P semibold>Friends can scan this QR code with their smartphone’s camera to see this provider</P>
+          <P semibold>
+            Friends can scan this QR code with their smartphone’s camera to see
+            this provider
+          </P>
         </div>
       )}
 
@@ -166,12 +185,14 @@ export const ORG_D_Detail_ShareModal = ({ showModal, handleHideModal, picture, n
             : shouldShowCopyLink === "shouldShowCopyLinkFalse"
             ? "shouldShowCopyLinkFalse shouldShowCopyLinkDefault"
             : "shouldShowCopyLinkDefault"
-        }>
+        }
+      >
         <Image
           src={ORG_STDetail_Share_Modal_LinkCopiedIcon}
           layout="fixed"
           width={22}
           height={22}
+          alt="Link copied image"
         />
         <H4> Linked copied to clipboard</H4>
       </div>

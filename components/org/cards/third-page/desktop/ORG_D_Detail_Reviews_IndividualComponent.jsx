@@ -88,7 +88,7 @@ export const ORG_D_Detail_Reviews_IndividualComponent = ({
                 </span>
                 {index === 2 && (
                   <span tabIndex={0} data-text="Verified Review">
-                    <Image src={ORG_D_Detail_Review} />
+                    <Image src={ORG_D_Detail_Review} alt="some icon" />
                   </span>
                 )}
               </div>

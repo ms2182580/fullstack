@@ -36,7 +36,8 @@ export const ST_M_Search_OptionDropdown2Level = ({
     }
   }
 
-  const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
+  const suggestionsValidated =
+    suggestions.length === 0 ? "Coming soon" : suggestions
 
   return (
     <ST_M_Search_OptionDropdown2LevelWrapper
@@ -51,17 +52,16 @@ export const ST_M_Search_OptionDropdown2Level = ({
               }
             }
           : undefined
-      }>
+      }
+    >
       <div
         onClick={handleDropdownClick}
         onKeyDown={handleDropdownKey}
-        tabIndex={0}>
+        tabIndex={0}
+      >
         {icon !== "no icon found" ? (
           <div>
-            <Image
-              src={icon}
-              alt=""
-            />
+            <Image src={icon} alt="icon image" />
           </div>
         ) : (
           <div></div>
@@ -72,15 +72,9 @@ export const ST_M_Search_OptionDropdown2Level = ({
 
         <span>
           {showDropdown ? (
-            <Image
-              src={ArrowUp}
-              alt=""
-            />
+            <Image src={ArrowUp} alt="arrow up image" />
           ) : (
-            <Image
-              src={ArrowDown}
-              alt=""
-            />
+            <Image src={ArrowDown} alt="arrow down image" />
           )}
         </span>
       </div>
@@ -96,7 +90,13 @@ export const ST_M_Search_OptionDropdown2Level = ({
                 <Fragment key={x}>
                   {isSpeechTherapist && landingHere ? (
                     <LinkNoStyle href={`${actualRoute}/${toWhere}`}>
-                      <p onTouchStart={() => setKeywordsContext("Speech Therapist")}>{x}</p>
+                      <p
+                        onTouchStart={() =>
+                          setKeywordsContext("Speech Therapist")
+                        }
+                      >
+                        {x}
+                      </p>
                     </LinkNoStyle>
                   ) : (
                     landingHere && (
@@ -111,7 +111,8 @@ export const ST_M_Search_OptionDropdown2Level = ({
                       <p
                         onTouchStart={(e) => {
                           setKeywordsContext(e.target.textContent)
-                        }}>
+                        }}
+                      >
                         {x}
                       </p>
                     </Fragment>
@@ -127,7 +128,8 @@ export const ST_M_Search_OptionDropdown2Level = ({
       {showDropdown && typeof suggestionsValidated === "string" && (
         <div
           className="ORGDropdownComingSoon"
-          onTouchStart={handleDropdownClick}>
+          onTouchStart={handleDropdownClick}
+        >
           <div>
             <div></div>
             <p>Coming Soon!</p>

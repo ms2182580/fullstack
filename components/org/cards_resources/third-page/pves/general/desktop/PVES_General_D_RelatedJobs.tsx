@@ -1,7 +1,10 @@
 import PVES_RelatedJob1 from "@/assets/images/org/vocational-employment/PVES_RelatedJob1.png"
 import PVES_RelatedJob2 from "@/assets/images/org/vocational-employment/PVES_RelatedJob2.png"
 import PVES_RelatedJob3 from "@/assets/images/org/vocational-employment/PVES_RelatedJob3.png"
-import { Caption, P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import {
+  Caption,
+  P,
+} from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import Image, { StaticImageData } from "next/image"
@@ -35,7 +38,9 @@ const dataCards: PVES_General_D_RelatedJobs_Card_Props[] = [
   },
 ]
 
-export const PVES_General_D_RelatedJobs = ({ [ArraySection_KEYS.ALL_DATA]: allProps }) => {
+export const PVES_General_D_RelatedJobs = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
   const { theIdForComponent = "#" } = allProps || {}
 
   return (
@@ -69,14 +74,16 @@ type PVES_General_D_RelatedJobs_Card_Props = {
   city: string
 }
 
-const PVES_General_D_RelatedJobs_Card = ({ image, workplaceType, title, city }: PVES_General_D_RelatedJobs_Card_Props) => {
+const PVES_General_D_RelatedJobs_Card = ({
+  image,
+  workplaceType,
+  title,
+  city,
+}: PVES_General_D_RelatedJobs_Card_Props) => {
   return (
     <PVES_General_D_RelatedJobs_CardWrapper>
       <span>
-        <Image
-          src={image}
-          alt={`Image for ${title} on city: ${city}`}
-        />
+        <Image src={image} alt={`Image for ${title} on city: ${city}`} />
       </span>
       <Caption>{workplaceType}</Caption>
       <H4>{title}</H4>
