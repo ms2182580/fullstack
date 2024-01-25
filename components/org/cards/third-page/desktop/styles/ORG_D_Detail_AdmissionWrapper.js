@@ -1,10 +1,14 @@
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_AdmissionWrapper = styled.article`
+export const ORG_D_Detail_AdmissionWrapper = styled.section`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+
+  position: relative;
+  ${blurEffect({})}
 
   header {
     padding: 24px;

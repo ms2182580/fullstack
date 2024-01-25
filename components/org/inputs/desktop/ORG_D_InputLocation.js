@@ -8,7 +8,14 @@ import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
 import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 
-const suggestionsCity = ["Current location", "The Bronx", "Manhattan", "Queens", "Brooklyn", "Staten Island"]
+const suggestionsCity = [
+  "Current location",
+  "The Bronx",
+  "Manhattan",
+  "Queens",
+  "Brooklyn",
+  "Staten Island",
+]
 
 export const ORG_D_InputLocation = () => {
   const [isFocusCity, setIsFocusCity] = useState(false)
@@ -26,18 +33,13 @@ export const ORG_D_InputLocation = () => {
 
   return (
     <div>
-      <P
-        dark_gray
-        bold>
+      <P dark_gray bold>
         Location
       </P>
 
       <span>
         <span>
-          <Image
-            src={ORGDesktop_LocationIcon}
-            alt=""
-          />
+          <Image src={ORGDesktop_LocationIcon} alt="location icon" />
         </span>
         <input
           placeholder="City or zip code"

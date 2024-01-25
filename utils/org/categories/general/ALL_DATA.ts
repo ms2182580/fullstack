@@ -9,9 +9,35 @@ import {
   SPECIFIC_DATA_SECOND_PAGE,
 } from "../../second-page/desktop/specificData"
 import { ArraySectionToRender_Type } from "../../third-page/InnerNavBar"
-import { Tooltip_VALUES } from "../../third-page/tooltip"
+import {
+  Tooltip_KEYS,
+  Tooltip_VALUES,
+  TypeOfTooltipSVG_LIKE,
+} from "../../third-page/tooltip"
+import { arraySectionToRender_Agencies } from "../agencies/arraySectionToRender"
+import { tooltipToRender_Agencies } from "../agencies/tooltipToRender"
+import { arraySectionToRender_AssistiveSoftware } from "../assistive-software/arraySectionToRender"
+import { arraySectionToRender_AssistiveTechnologyHardware } from "../assistive-technology-hardware/arraySectionToRender"
+import { arraySectionToRender_Camps } from "../camps/arraySectionToRender"
+import { mapRender_Camps } from "../camps/mapRender"
+import { tooltipToRender_Camps } from "../camps/tooltipToRender"
+import { arraySectionToRender_CommunityInclusionClasses } from "../community-inclusion-classes/arraySectionToRender"
+import { tooltipToRender_CommunityInclusionClasses } from "../community-inclusion-classes/tooltipToRender"
+import { arraySectionToRender_LegalResources } from "../legal-resources/arraySectionToRender"
+import { tooltipToRender_LegalResources } from "../legal-resources/tooltipToRender"
+import { arraySectionToRender_MentalHealth } from "../mental-health/arraySectionToRender"
+import { mapRender_PMHSS } from "../mental-health/mapRender"
+import { tooltipToRender_MentalHealth } from "../mental-health/tooltipToRender"
+import { arraySectionToRender_Physicians } from "../physicians/arraySectionToRender"
+import { tooltipToRender_Physicians } from "../physicians/tooltipToRender"
+import { arraySectionToRender_ResidentialResources } from "../residential-resources/arraySectionToRender"
+import { tooltipToRender_ResidentialResources } from "../residential-resources/tooltipToRender"
+import { arraySectionToRender_SchoolsEducational } from "../schools-educational/arraySectionToRender"
+import { tooltipToRender_SchoolsEducational } from "../schools-educational/tooltipToRender"
 import { arraySectionToRender_TherapeuticServices } from "../therapeutic-services/arraySectionToRender"
 import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
+import { arraySectionToRender_Vocational } from "../vocational/arraySectionToRender"
+import { tooltipToRender_Vocational } from "../vocational/tooltipToRender"
 
 export const enum NamesCategories_KEY {
   "AGENCIES" = "Agencies",
@@ -283,7 +309,16 @@ type ALL_DATA_Type = {
       [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]?: ArraySectionToRender_Type
       [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]?: Layout_MainCardRight_VALUES
       [DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP]?: MapProperties
-      [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]?: Tooltip_VALUES
+      [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]?: {
+        [Tooltip_KEYS.WHAT_DISPLAY]: Tooltip_VALUES
+        [Tooltip_KEYS.CUSTOM_DATA]?: {
+          [Tooltip_KEYS.SVG]?: TypeOfTooltipSVG_LIKE
+          [Tooltip_KEYS.TEXT]?: {
+            title: string
+            paragraphs: string[]
+          }
+        }
+      }
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]?: boolean
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]?: BUTTON_MAIN_CARD_TEXT_VALUES
     }
@@ -325,6 +360,11 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["AGENCIES"]]
     ),
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_Agencies,
+      TOOLTIP: tooltipToRender_Agencies,
+    },
   },
 
   [NamesCategories_KEY["ASSISTIVE SOFTWARE"]]: {
@@ -338,6 +378,14 @@ export const ALL_DATA: ALL_DATA_Type = {
         BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["where to buy"],
 
       SVG: PAT_SVG,
+    },
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_AssistiveSoftware,
+      HOW_IS_MAP: {
+        HOW_MANY: null,
+      },
+      TOOLTIP: { [Tooltip_KEYS.WHAT_DISPLAY]: Tooltip_VALUES.NO_DISPLAY },
     },
   },
 
@@ -355,6 +403,15 @@ export const ALL_DATA: ALL_DATA_Type = {
 
       SVG: PAT_SVG,
     },
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_AssistiveTechnologyHardware,
+
+      HOW_IS_MAP: {
+        HOW_MANY: null,
+      },
+      TOOLTIP: { [Tooltip_KEYS.WHAT_DISPLAY]: Tooltip_VALUES.NO_DISPLAY },
+    },
   },
 
   [NamesCategories_KEY["CAMPS"]]: {
@@ -362,6 +419,11 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["CAMPS"]]
     ),
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_Camps,
+      HOW_IS_MAP: mapRender_Camps,
+      TOOLTIP: tooltipToRender_Camps,
+    },
   },
 
   [NamesCategories_KEY["LEGAL RESOURCES"]]: {
@@ -369,6 +431,15 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["LEGAL RESOURCES"]]
     ),
+    SECOND_PAGE: {
+      BUTTON_TO_THIRDPAGE_TEXT:
+        BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["request consultation"],
+    },
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_LegalResources,
+      TOOLTIP: tooltipToRender_LegalResources,
+    },
   },
 
   [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]]: {
@@ -378,6 +449,11 @@ export const ALL_DATA: ALL_DATA_Type = {
         NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]
       ]
     ),
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_CommunityInclusionClasses,
+      TOOLTIP: tooltipToRender_CommunityInclusionClasses,
+    },
   },
 
   [NamesCategories_KEY["FOUNDATIONS"]]: {
@@ -394,6 +470,12 @@ export const ALL_DATA: ALL_DATA_Type = {
         NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
       ]
     ),
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_MentalHealth,
+      TOOLTIP: tooltipToRender_MentalHealth,
+      HOW_IS_MAP: mapRender_PMHSS,
+    },
   },
 
   [NamesCategories_KEY["PHYSICIANS"]]: {
@@ -401,6 +483,11 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["PHYSICIANS"]]
     ),
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_Physicians,
+      TOOLTIP: tooltipToRender_Physicians,
+    },
   },
 
   [NamesCategories_KEY["RESIDENTIAL RESOURCES"]]: {
@@ -408,6 +495,16 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["RESIDENTIAL RESOURCES"]]
     ),
+
+    SECOND_PAGE: {
+      BUTTON_TO_THIRDPAGE_TEXT: BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["contact us"],
+      SVG: PRP_SVG,
+    },
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_ResidentialResources,
+      TOOLTIP: tooltipToRender_ResidentialResources,
+    },
   },
 
   [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]]: {
@@ -417,6 +514,10 @@ export const ALL_DATA: ALL_DATA_Type = {
         NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]
       ]
     ),
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_SchoolsEducational,
+      TOOLTIP: tooltipToRender_SchoolsEducational,
+    },
   },
 
   [NamesCategories_KEY["THERAPEUTIC SERVICES"]]: {
@@ -440,6 +541,15 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["VOCATIONAL RESOURCES"]]
     ),
+
+    SECOND_PAGE: {
+      BUTTON_TO_THIRDPAGE_TEXT: BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["apply now"],
+    },
+
+    THIRD_PAGE: {
+      SECTIONS: arraySectionToRender_Vocational,
+      TOOLTIP: tooltipToRender_Vocational,
+    },
   },
 
   [NamesCategories_KEY["OTHER"]]: {

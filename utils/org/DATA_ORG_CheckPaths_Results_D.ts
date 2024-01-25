@@ -91,7 +91,8 @@ export const DATA_ORG_CheckPaths_Results_D = {
       "at-wheelchair-mobility-devices": SUBCATEGORY_KEYS.WCMD,
       "at-smart-devices": SUBCATEGORY_KEYS.SDAT,
       "at-tools-for-school": SUBCATEGORY_KEYS.TFS,
-      "at-augmented-software-software": SUBCATEGORY_KEYS.ACS /* This is a typo, should be ACS */,
+      "at-augmented-software-software":
+        SUBCATEGORY_KEYS.ACS /* This is a typo, should be ACS */,
       "at-innovative-hi-tech": SUBCATEGORY_KEYS.IHTAT,
     },
     {
@@ -121,7 +122,8 @@ export const DATA_ORG_CheckPaths_Results_D = {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "aa-civil-rights": "Civil Rights Attorneys",
         "aa-special-education": "Special Education Attorneys",
-        "aa-elder-law-medicaid-planning": "Elder Law & Medicaid Planning Attorneys",
+        "aa-elder-law-medicaid-planning":
+          "Elder Law & Medicaid Planning Attorneys",
         "aa-disability-attorney": "Disability Attorneys",
         "aa-idd": "I/DD Advocates",
       },
@@ -204,7 +206,8 @@ export const DATA_ORG_CheckPaths_Results_D = {
     {
       [DATA_ORG_CheckPaths_Results_D_KEYS.fullName]: {
         "ppas-associations": "Associations",
-        "ppas-not-for-profit-organization": "Private Not-for-Profit Organizations",
+        "ppas-not-for-profit-organization":
+          "Private Not-for-Profit Organizations",
         "ppas-state-offices": "State Offices",
       },
     },
@@ -366,7 +369,6 @@ export const DATA_ORG_CheckPaths_Results_D = {
 //   → LT
 //   → ST
 
-/*  */
 // # 3° generation
 // "pat":
 //   → WCMD // was: AT

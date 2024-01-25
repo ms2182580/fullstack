@@ -7,7 +7,13 @@ import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
 import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 
-const suggestionsKeywords = ["Aetna", "Blue Cross Blue Shield", "Cigna", "Tricare", "VSP"]
+const suggestionsKeywords = [
+  "Aetna",
+  "Blue Cross Blue Shield",
+  "Cigna",
+  "Tricare",
+  "VSP",
+]
 
 export const ORG_D_InputInsurance = () => {
   const [isFocusEnsurance, setIsFocusEnsurance] = useState(false)
@@ -25,18 +31,13 @@ export const ORG_D_InputInsurance = () => {
 
   return (
     <div>
-      <P
-        dark_gray
-        bold>
+      <P dark_gray bold>
         Insurance
       </P>
 
       <span>
         <span>
-          <Image
-            src={ORGDesktop_InsuranceIcon}
-            alt=""
-          />
+          <Image src={ORGDesktop_InsuranceIcon} alt="insurance icon" />
         </span>
         <input
           placeholder="VSP, Tricare, Cigna..."

@@ -42,7 +42,13 @@ export const ORG_D_Detail_ShareModalButton = ({
         <>
           {isHover === false ? (
             <>
-              <Image src={icon} layout="fixed" width={width} height={height} />
+              <Image
+                src={icon}
+                layout="fixed"
+                width={width}
+                height={height}
+                alt="icon"
+              />
             </>
           ) : (
             <>
@@ -51,12 +57,19 @@ export const ORG_D_Detail_ShareModalButton = ({
                 layout="fixed"
                 width={width}
                 height={height}
+                alt="icon"
               />
             </>
           )}
         </>
       ) : (
-        <Image src={icon} layout="fixed" width={width} height={height} />
+        <Image
+          src={icon}
+          layout="fixed"
+          width={width}
+          height={height}
+          alt="icon"
+        />
       )}
 
       <H4 hover>{text}</H4>

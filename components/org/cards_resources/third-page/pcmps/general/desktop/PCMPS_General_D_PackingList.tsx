@@ -1,20 +1,38 @@
 import { ShareSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { PCMPS_General_D_PackingListWrapper } from "./styles/PCMPS_General_D_PackingListWrapper"
 
 const packingListData = {
   clothing: {
     title: "clothing",
-    data: ["Ha", "Swimsui", "Flip flops/sandal", "Swim Goggle", "UV Protection clothing (if worn normally)"],
+    data: [
+      "Ha",
+      "Swimsui",
+      "Flip flops/sandal",
+      "Swim Goggle",
+      "UV Protection clothing (if worn normally)",
+    ],
   },
   toiletries: {
     title: "toiletries",
-    data: ["Sunscreen (at least 30 SPF, preferably waterproof)", "Insect repellant", "Large towel", "Shampoo", "Bodywash"],
+    data: [
+      "Sunscreen (at least 30 SPF, preferably waterproof)",
+      "Insect repellant",
+      "Large towel",
+      "Shampoo",
+      "Bodywash",
+    ],
   },
   medications: {
     title: "medications",
-    data: ["All prescription bottles with camper’s name labeled", "Allergy medications (if used)", "Inhalers (if used)", "Vitamins (if used)"],
+    data: [
+      "All prescription bottles with camper’s name labeled",
+      "Allergy medications (if used)",
+      "Inhalers (if used)",
+      "Vitamins (if used)",
+    ],
   },
   misc: {
     title: "misc.",
@@ -22,13 +40,26 @@ const packingListData = {
   },
 }
 
-export const PCMPS_General_D_PackingList = ({ idInnerbar = "#" }) => {
+type Props = {
+  [ArraySection_KEYS.ALL_DATA]: {
+    theIdForComponent: string
+  }
+}
+
+export const PCMPS_General_D_PackingList = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}: Props) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   return (
-    <PCMPS_General_D_PackingListWrapper id={idInnerbar}>
+    <PCMPS_General_D_PackingListWrapper id={theIdForComponent}>
       <header>
         <div>
           <H3>Camper Packing List</H3>
-          <P>Kind reminder: please label all belongings with the camper’s first and last name. </P>
+          <P>
+            Kind reminder: please label all belongings with the camper’s first
+            and last name.{" "}
+          </P>
         </div>
         <div tabIndex={0}>
           <ShareSvg />
@@ -76,7 +107,11 @@ export const PCMPS_General_D_PackingList = ({ idInnerbar = "#" }) => {
         </span>
       </div>
 
-      <P>All medications should be placed in a Ziplock baglabeled with the camper’s name to be handed to on-site nurse responsible for medication management.</P>
+      <P>
+        All medications should be placed in a Ziplock baglabeled with the
+        camper’s name to be handed to on-site nurse responsible for medication
+        management.
+      </P>
 
       <button>Print Packing List</button>
     </PCMPS_General_D_PackingListWrapper>

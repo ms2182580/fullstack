@@ -1,6 +1,7 @@
 import bar1 from "@/assets/images/org/special-education-schools/bar_AllStudents.png"
 import bar2 from "@/assets/images/org/special-education-schools/bar_StudentsDIsabilities.png"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import {
   CategoriesToDisplay_Data,
   ORG_D_Detail_Bars,
@@ -55,10 +56,14 @@ const testScores: ORG_D_Detail_Bars_Props = {
   categoriesToDisplay: testScores_Data,
 }
 
-export const ORG_D_Detail_SchoolAcademics = () => {
+export const ORG_D_Detail_SchoolAcademics = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   return (
     <>
-      <ORG_D_Detail_SchoolAcademicsWrapper>
+      <ORG_D_Detail_SchoolAcademicsWrapper id={theIdForComponent}>
         <header>
           <H3>School Academics</H3>
         </header>

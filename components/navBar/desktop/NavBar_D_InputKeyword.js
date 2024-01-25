@@ -36,7 +36,7 @@ export const NavBar_D_InputKeyword = () => {
 
         <span>
           <span>
-            <Image src={ORGDesktop_LoupeIcon} alt="" />
+            <Image src={ORGDesktop_LoupeIcon} alt="loupe icon" />
           </span>
           <input
             placeholder="Social skills, evaluation, school  etc."

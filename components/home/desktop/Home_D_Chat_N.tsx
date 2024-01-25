@@ -1,9 +1,9 @@
+import { Hero_D_ChatSvg } from "@/assets/icons"
+import { ButtonSmall } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import Image from "next/image"
 import { Home_D_Chat_NWrapper } from "./styles/Home_D_Chat_NWrapper"
-import { Hero_D_ChatSvg } from "@/assets/icons"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { ButtonSmall } from "@/components/ui/buttons/general"
 
 export const Home_D_Chat_N = () => {
   return (
@@ -25,7 +25,7 @@ export const Home_D_Chat_N = () => {
         src={"/background/DashboardChat.png"}
         height={820}
         width={1069}
-        alt="MacBook"
+        alt="MacBook image"
       />
     </Home_D_Chat_NWrapper>
   )

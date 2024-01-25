@@ -72,9 +72,9 @@ export const ST_M_Search_OptionDropdown2Level = ({
 
         <span>
           {showDropdown ? (
-            <Image src={ArrowUp} alt="" />
+            <Image src={ArrowUp} alt="Arrow up" />
           ) : (
-            <Image src={ArrowDown} alt="" />
+            <Image src={ArrowDown} alt="Arrow down" />
           )}
         </span>
       </div>

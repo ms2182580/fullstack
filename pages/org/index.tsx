@@ -10,20 +10,11 @@ const INDEX_D_ORG_Search = dynamic(
     ),
   { ssr: false }
 )
-// const INDEX_M_STSearch_Component = dynamic(
-//   () =>
-//     import(
-//       "@/components/__DEPRECATED/speech-therapists/first-page/mobile/INDEX_M_STSearch"
-//     ).then((mod) => mod.INDEX_M_STSearch),
-//   {
-//     ssr: false,
-//   }
-// )
 
 const ORG_INDEX = () => {
   const { isMobile }: any = useCheckUserWidth()
 
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
+  const mentalHealthData = trpc.camp.getAll.useQuery({ limit: 3 })
 
   if (!mentalHealthData.data) {
     return (
@@ -52,3 +43,61 @@ const ORG_INDEX = () => {
 }
 
 export default ORG_INDEX
+
+/* 
+? Possible custom hook to get all data
+
+
+let allListingTypes = ["agency", "camp", "class"]
+
+let theMethods = {
+  addMany: "addMany",
+  addOne: "addOne",
+  getAll: "getAll",
+  getOne: "getOne",
+}
+
+export const ALL_DATA = [
+  {
+    category: "agency",
+    subcategories: [
+      "Government Contracted Office",
+      "Governmental Office",
+      "Non-Governmental Office",
+    ],
+  },
+  {
+    category: "camp",
+    subcategories: [
+      "Afterschool Camp",
+      "Day Camp",
+      "Holiday Camp",
+      "Sleep-away Camp",
+    ],
+  },
+]
+
+export const useGetAllDataFromTRPC = ({ theData = ALL_DATA }) => {
+  const [allData, setAllData] = useState(null)
+
+  useEffect(() => {
+    let all_tRPC: any = []
+
+    for (const inside_ALL_Data of theData) {
+      let theCategory = inside_ALL_Data.category
+
+      for (const subcategories of inside_ALL_Data.subcategories) {
+        let getEveryDataFromtRPC = trpc[theCategory][theMethods.getAll].useQuery({ limite: 3, filter: { listingType: subcategories } })
+
+        all_tRPC.push(getEveryDataFromtRPC)
+      }
+    }
+
+    setAllData(all_tRPC)
+  }, [])
+
+  return allData
+}
+
+
+*/

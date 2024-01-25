@@ -1,4 +1,5 @@
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
+import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 
 let leftMarginTags = "32px"
@@ -7,10 +8,13 @@ let rightMarginTags = "123px"
 let leftMarginTagsLineBelow = "79px"
 let rightMarginTagsLineBelow = "169px"
 
-export const PCC_General_D_UsersAlsoViewedWrapper = styled.aside`
+export const PCC_General_D_UsersAlsoViewedWrapper = styled.section`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding-bottom: 24px;
+
+  position: relative;
+  ${blurEffect({})}
 
   & > :nth-child(1) {
     padding: 24px;

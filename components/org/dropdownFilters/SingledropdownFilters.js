@@ -7,7 +7,14 @@ import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { LinkNoStyle } from "../../ui/hyperlink/HyperlinkNoStyles"
 import { SingleDropdownWrapper } from "./styles/Singledropdown"
 
-const Singledropdown = ({ icon = "not found", title = "no title", suggestions = [], landingHere = false, actualRoute, toWhere }) => {
+const Singledropdown = ({
+  icon = "not found",
+  title = "no title",
+  suggestions = [],
+  landingHere = false,
+  actualRoute,
+  toWhere,
+}) => {
   const { setKeywordsContext, keywordsContext } = useORG_InputCtx()
 
   const [showDropdown, setShowDropdown] = useState(false)
@@ -21,36 +28,29 @@ const Singledropdown = ({ icon = "not found", title = "no title", suggestions = 
       setShowDropdown((prevstate) => !prevstate)
     }
   }
-  const suggestionsValidated = suggestions.length === 0 ? "Coming soon" : suggestions
+  const suggestionsValidated =
+    suggestions.length === 0 ? "Coming soon" : suggestions
 
   return (
     <>
       <SingleDropdownWrapper>
         {icon !== "not found" && (
           <div>
-            <Image
-              src={icon}
-              alt=""
-            />
+            <Image src={icon} alt="Icon" />
           </div>
         )}
 
         <span
           onClick={handleDropdownClick}
           onKeyDown={handleDropdownKey}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <P bold>{title}</P>
           <span>
             {showDropdown ? (
-              <Image
-                src={ArrowUp}
-                alt=""
-              />
+              <Image src={ArrowUp} alt="arrow up image" />
             ) : (
-              <Image
-                src={ArrowDown}
-                alt=""
-              />
+              <Image src={ArrowDown} alt="arrow down image" />
             )}
           </span>
         </span>
@@ -65,7 +65,11 @@ const Singledropdown = ({ icon = "not found", title = "no title", suggestions = 
                   <Fragment key={x}>
                     {isSpeechTherapist && landingHere ? (
                       <LinkNoStyle href={`${actualRoute.pathname}/${toWhere}`}>
-                        <p onClick={() => setKeywordsContext("Speech Therapist")}>{x}</p>
+                        <p
+                          onClick={() => setKeywordsContext("Speech Therapist")}
+                        >
+                          {x}
+                        </p>
                       </LinkNoStyle>
                     ) : (
                       landingHere && (
@@ -80,7 +84,8 @@ const Singledropdown = ({ icon = "not found", title = "no title", suggestions = 
                         <p
                           onClick={(e) => {
                             setKeywordsContext(e.target.textContent)
-                          }}>
+                          }}
+                        >
                           {x}
                         </p>
                       </Fragment>

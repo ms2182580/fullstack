@@ -5,6 +5,7 @@ import {
   XSvg,
 } from "@/assets/icons"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { useOutsideHide } from "@/utils/useOutsideHide"
 import { useRouter } from "next/router"
@@ -54,7 +55,17 @@ const modalData = {
   },
 }
 
-export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
+type Props = {
+  [ArraySection_KEYS.ALL_DATA]: {
+    theIdForComponent: string
+  }
+}
+
+export const PCMPS_General_D_Booking = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}: Props) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   const [dataToModal, setDataToModal] = useState<any>(dataToModal_InitialData)
   const [shouldShowMoldal, setShouldShowMoldal] = useState(false)
   const [elementActiveHeight, setElementActiveHeight] = useState<any>(null)
@@ -143,7 +154,7 @@ export const PCMPS_General_D_Booking = ({ idInnerbar = "#" }) => {
     <PCMPS_General_D_BookingWrapper
       distanceModal={elementActiveHeight}
       shouldShowMoldal={shouldShowMoldal}
-      id={idInnerbar}
+      id={theIdForComponent}
     >
       <header>
         <H3>Select a date</H3>
