@@ -1,20 +1,17 @@
+import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
+import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
+import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
+import { LI_Category } from "@/components/org/home/desktop/styles/INDEX_D_ORGWrapper"
+import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
+import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
+import Image from "next/image"
 import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_D_MoreRecommendationWrapper } from "./styles/INDEX_D_MoreRecommendationWrapper"
-import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
-import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
-import Image from "next/image"
-import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
-import {
-  INDEX_D_ORGWrapper,
-  LI_Category,
-} from "@/components/org/home/desktop/styles/INDEX_D_ORGWrapper"
-import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
-import ORGDesktop_Search_Hero from "@/assets/images/Index_D_Search_Hero.png"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
-import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
-import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
+
 type Props = {
   allBackendData: object[] | any
 }
