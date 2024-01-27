@@ -6,7 +6,7 @@ const transformData = (item) => ({
   recordName: item["Record Name"],
   recordSubtitle: item["Record Subtitle"],
   /* 
-  const filteredData = trpc.camp.getAll.useQuery({ limit: 3, filter: {listingType: "Day Camp"} })
+  const filteredData = trpc.camp.getAll.useQuery({ limit: 3, filter: {recordSubtype: "Day Camp"} })
   * The magic string "Day Camp" is the subcategory
   * Every subcategory is listed inside ALL_DATA object → "@/utils/org/categories/general/ALL_DATA"
   
