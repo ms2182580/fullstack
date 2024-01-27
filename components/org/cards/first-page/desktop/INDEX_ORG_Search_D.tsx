@@ -15,6 +15,7 @@ import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
 import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
@@ -71,6 +72,40 @@ export const INDEX_ORG_Search_D = ({
     useORG_Ctx_D_ThirdpageData_Backend()
 
   if (dataComesFromBackend) {
+    // console.log(
+    //   "💙Object.values(allBackendData):",
+    //   Object.entries(allBackendData)
+    // )
+
+    // console.log(
+    //   "💘category, allSubcategories:",
+    //   category,
+    //   allSubcategories,
+    //   Object.entries(allBackendData),
+    //   Object.entries(allBackendData)[0]
+    // )
+
+    // console.log(
+    //   "Object.entries(allBackendData):",
+    //   Object.entries(allBackendData)
+    // )
+
+    let someData = Object.entries(allBackendData).map(
+      ([categoryTitle, categoryData]) => {
+        if (categoryTitle === category) {
+          /* console.log(
+            `For the title: «${category}», 
+            display the data:`,
+            categoryData
+          ) */
+        }
+      }
+    )
+
+    // if (category === categoryName) {
+
+    // }
+
     return (
       <>
         <INDEX_ORG_Search_DWrapper
@@ -87,59 +122,63 @@ export const INDEX_ORG_Search_D = ({
                     </header>
 
                     <div>
-                      {allBackendData.mentalHealth.map(
-                        (xBackendData, indexBackend) => {
-                          return (
-                            <>
-                              <article key={`${x}_${xBackendData.listingType}`}>
-                                <div>
-                                  <Image
-                                    src={Backup_Image}
-                                    alt={`backup image`}
-                                    layout="intrinsic"
-                                    objectFit="initial"
-                                    width="1200"
-                                    height="600"
-                                  />
-                                </div>
-
-                                <H3>{xBackendData.recordName.toLowerCase()}</H3>
-                                <H4>{xBackendData.recordSubtype}</H4>
-
-                                {/* <P>{xBackendData?.address[0].city}</P> */}
-
-                                <StarsRatingReview_D
-                                  rating={xBackendData.ratings.length || 0}
-                                  reviews={xBackendData.reviews.length || 0}
+                      {allBackendData[
+                        NamesCategories_KEY[
+                          "MENTAL HEALTH PROVIDERS & SERVICES"
+                        ]
+                      ].map((xBackendData, indexBackend) => {
+                        return (
+                          <>
+                            <article key={`${x}_${xBackendData.listingType}`}>
+                              <div>
+                                <Image
+                                  src={Backup_Image}
+                                  alt={`backup image`}
+                                  layout="intrinsic"
+                                  objectFit="initial"
+                                  width="1200"
+                                  height="600"
                                 />
+                              </div>
 
-                                <P>{xBackendData?.reviews?.[1]}</P>
-                                <button
-                                  onClick={(event) =>
-                                    handleMoveToThirdPage_Backend({
-                                      event,
-                                      raw: allBackendData.mentalHealth[
-                                        indexBackend
-                                      ],
-                                      indexSubcategory: index,
-                                      category,
-                                      setThirdpageDataORG_Backend,
-                                      push,
-                                    })
-                                  }
-                                >
-                                  <ORG_D_Search_ViewProfileSvg />
-                                  View Profile
-                                  {/* {someLayoutSpecial === "like_PVES" &&
+                              <H3>{xBackendData.recordName.toLowerCase()}</H3>
+                              <H4>{xBackendData.recordSubtype}</H4>
+
+                              {/* <P>{xBackendData?.address[0].city}</P> */}
+
+                              <StarsRatingReview_D
+                                rating={xBackendData.ratings.length || 0}
+                                reviews={xBackendData.reviews.length || 0}
+                              />
+
+                              <P>{xBackendData?.reviews?.[1]}</P>
+                              <button
+                                onClick={(event) =>
+                                  handleMoveToThirdPage_Backend({
+                                    event,
+                                    raw: allBackendData[
+                                      NamesCategories_KEY[
+                                        "MENTAL HEALTH PROVIDERS & SERVICES"
+                                      ]
+                                    ][indexBackend],
+                                    indexSubcategory: index,
+                                    category,
+                                    setThirdpageDataORG_Backend,
+                                    push,
+                                  })
+                                }
+                              >
+                                <ORG_D_Search_ViewProfileSvg />
+                                View Profile
+                                {/* {someLayoutSpecial === "like_PVES" &&
                                   iData === 0
                                     ? "View Listing"
                                     : "View Profile"} */}
-                                </button>
-                              </article>
-                            </>
-                          )
-                        }
-                      )}
+                              </button>
+                            </article>
+                          </>
+                        )
+                      })}
                     </div>
 
                     <span
@@ -148,7 +187,11 @@ export const INDEX_ORG_Search_D = ({
                           event,
                           category,
                           theSubcategory: allSubcategories[index],
-                          raw: allBackendData.mentalHealth,
+                          raw: allBackendData[
+                            NamesCategories_KEY[
+                              "MENTAL HEALTH PROVIDERS & SERVICES"
+                            ]
+                          ],
                           setSecondpageDataORG_Backend,
                           push,
                         })

@@ -43,6 +43,6 @@ export const ROUTER_PUSH_SEARCH = {
 // PHSC → Physicians
 // RSNDT → Residential Resources
 // SCHE → Schools & Educational Services
-// TRPC → Therapeutic Services
+// THRP → Therapeutic Services
 // VCTNL → Vocational Resources
 // OTHR → Other

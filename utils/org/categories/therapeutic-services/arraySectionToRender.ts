@@ -13,7 +13,7 @@ import {
 } from "@/utils/org/third-page/InnerNavBar"
 import { DATA_ORG_D_TYPES_KEYS } from "../../DATA_ORG_D"
 
-export const arrayInnerNavBar_PMHSS: InnerNavBar_InnerData = [
+export const arrayInnerNavBar_THRP: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "about" },
   { INNER_NAV_BAR_KEY: "booking" },
   {
@@ -33,7 +33,7 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
       name: null,
       component: null,
       toNavbar: {
-        id: arrayInnerNavBar_PMHSS[0][
+        id: arrayInnerNavBar_THRP[0][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
       },
@@ -46,7 +46,7 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
         [HEADER_TITLE.KEY]: "Select an available time",
       },
       toNavbar: {
-        id: arrayInnerNavBar_PMHSS[1][
+        id: arrayInnerNavBar_THRP[1][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
       },
@@ -55,10 +55,10 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
       name: ORG_D_Detail_AtTheSameClinic.name,
       component: ORG_D_Detail_AtTheSameClinic,
       toNavbar: {
-        id: arrayInnerNavBar_PMHSS[2][
+        id: arrayInnerNavBar_THRP[2][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
-        jsx: arrayInnerNavBar_PMHSS[2][
+        jsx: arrayInnerNavBar_THRP[2][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
         ],
       },
@@ -70,7 +70,7 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
         [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: true,
       },
       toNavbar: {
-        id: arrayInnerNavBar_PMHSS[3][
+        id: arrayInnerNavBar_THRP[3][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
       },
@@ -79,10 +79,10 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
       name: ORG_D_Detail_FAQS.name,
       component: ORG_D_Detail_FAQS,
       toNavbar: {
-        id: arrayInnerNavBar_PMHSS[4][
+        id: arrayInnerNavBar_THRP[4][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
-        jsx: arrayInnerNavBar_PMHSS[4][
+        jsx: arrayInnerNavBar_THRP[4][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
         ],
       },
