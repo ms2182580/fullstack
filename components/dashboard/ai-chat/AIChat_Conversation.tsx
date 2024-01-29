@@ -13,33 +13,7 @@ import { AIChat_Conversation_IndividualAudio } from "./AIChat_Conversation_Indiv
 import { AIChat_Questions } from "./AIChat_Questions"
 import { AIChat_SuggestionsResponse } from "./AIChat_SuggestionsResponse"
 
-export const AIChat_Conversation = () => {
-  let messages = [
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
-    ` Proin sed libero enim sed faucibus turpis in. Id cursus metus
-    aliquam eleifend mi in. Turpis nunc eget lorem dolor sed viverra
-    ipsum nunc.`,
-    `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-    nisi ut aliquip ex ea commodo consequat?`,
-    `Yes`,
-    `Lorem ipsum?`,
-    `Yes`,
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.`,
-    ` Proin sed libero enim sed faucibus turpis in. Id cursus metus
-    aliquam eleifend mi in. Turpis nunc eget lorem dolor sed viverra
-    ipsum nunc.`,
-    `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-    nisi ut aliquip ex ea commodo consequat?`,
-    `Yes`,
-    `Lorem ipsum?`,
-    `Yes`,
-  ]
+export const AIChat_Conversation = ({ showModalToggle }) => {
   const data = [
     {
       component: <AIChat_Conversation_IndividualMap />,
@@ -58,6 +32,7 @@ export const AIChat_Conversation = () => {
         <AIChat_Conversation_Individual
           message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           isSender={true}
+          showModalToggle={showModalToggle}
         />
       ),
       isSender: false,
@@ -88,7 +63,11 @@ export const AIChat_Conversation = () => {
     },
     {
       component: (
-        <AIChat_Conversation_Individual message="Lorem ispum" isSender={true} />
+        <AIChat_Conversation_Individual
+          message="Lorem ispum"
+          isSender={true}
+          showModalToggle={showModalToggle}
+        />
       ),
       isSender: false,
     },
