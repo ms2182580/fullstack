@@ -14,13 +14,12 @@ import {
   P,
 } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
-import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import Image from "next/legacy/image"
@@ -82,7 +81,9 @@ export const Recommended_D_Individual = ({
         className={dataComesFromBackend && "dataComesFromBackend"}
       >
         <div>
-          {allBackendData.mentalHealth.map((xBackendData, indexBackend) => {
+          {allBackendData[
+            NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+          ].map((xBackendData, indexBackend) => {
             return (
               <article key={`_${xBackendData.listingType}`}>
                 <div>
@@ -111,7 +112,11 @@ export const Recommended_D_Individual = ({
                   onClick={(event) =>
                     handleMoveToThirdPage_Backend({
                       event,
-                      raw: allBackendData.mentalHealth[indexBackend],
+                      raw: allBackendData[
+                        NamesCategories_KEY[
+                          "MENTAL HEALTH PROVIDERS & SERVICES"
+                        ]
+                      ][indexBackend],
                       indexSubcategory: indexBackend,
                       category,
                       setThirdpageDataORG_Backend,

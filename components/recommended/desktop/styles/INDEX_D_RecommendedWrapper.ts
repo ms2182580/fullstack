@@ -1,10 +1,13 @@
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const INDEX_D_RecommendedWrapped = styled.div`
   max-width: 1440px;
   margin-top: 132px;
   margin-inline: auto;
+
+  display: grid;
+
   //h1
   & > :nth-child(1) {
     font-size: 48px;
@@ -28,6 +31,10 @@ export const INDEX_D_RecommendedWrapped = styled.div`
 
   /* button */
   & > :nth-child(5) {
+    border: 2px solid crimson;
+
+    ${reusableButton({ secondary: true })}
+
     margin-inline: auto;
     margin-bottom: 54.6px;
   }

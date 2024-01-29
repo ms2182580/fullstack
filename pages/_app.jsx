@@ -1,7 +1,9 @@
+import Dashboard_D_Layout from "@/components/dashboardLayout/DashboardLayout"
 import { Page_layout } from "@/components/pageLayout/pageLayout"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { ORG_Ctx_D_ThirdpageData_Backend_Provider } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
+import { useRouter } from "next/router.js"
 import { CheckUserWidth_Provider } from "../context/CheckUserWidth.js"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
@@ -25,14 +27,13 @@ import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFilter
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
-import { useRouter } from "next/router.js"
-import Dashboard_D_Layout from "@/components/dashboardLayout/DashboardLayout"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const pathname = router.pathname
-  console.log({ pathname })
+  // console.log({ pathname })
   let isDashboard = !!pathname.includes("/dashboard")
+
   return (
     <LoginCtxProvider>
       <ORG_InputCtxProvider>

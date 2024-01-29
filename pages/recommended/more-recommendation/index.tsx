@@ -1,5 +1,6 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 import { INDEX_D_MoreRecommendation } from "@/components/more-recommendation/desktop/INDEX_D_MoreRecommendation"
+import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { trpc } from "@/utils/trpc"
 
 export default function MoreRecommendation() {
@@ -16,7 +17,8 @@ export default function MoreRecommendation() {
     <>
       <INDEX_D_MoreRecommendation
         allBackendData={{
-          mentalHealth: mentalHealthData.data,
+          [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]:
+            mentalHealthData.data,
         }}
       />
     </>
