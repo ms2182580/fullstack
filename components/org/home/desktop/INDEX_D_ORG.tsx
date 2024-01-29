@@ -17,6 +17,7 @@ type Props = {
 }
 
 export const INDEX_D_ORG = ({ allBackendData }: Props) => {
+  console.log("🟥allBackendData:", allBackendData)
   /* //?TODO:BUG
   * There's a bug here when you change something in development here and save it, it trigger useFormatData or something and new dataToORG is created in the UI
   

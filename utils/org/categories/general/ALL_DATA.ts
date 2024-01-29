@@ -326,12 +326,8 @@ type ALL_DATA_Type = {
 }
 
 /* 
-!FH0
 
-- Be sure that everything is okay here: categories → 2° page and 3° page
-
-https://docs.google.com/spreadsheets/d/1rME7CQIhVgxqa5LdrZ7rjgkG8g_EOGV29Gv32M2V9uA/edit#gid=0
-
+!FH
 - Implement also the filters
 */
 

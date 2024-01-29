@@ -1,22 +1,22 @@
-import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { INDEX_D_RecommendedWrapped } from "./styles/INDEX_D_RecommendedWrapper"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { ButtonSmall } from "@/components/ui/buttons/general"
 import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
-import { Fragment } from "react"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import Link from "next/link"
 import { Recommended_D_Individual } from "./Recommended_D_Individual"
-import { useRouter } from "next/router"
+import { INDEX_D_RecommendedWrapped } from "./styles/INDEX_D_RecommendedWrapper"
+
 type Props = {
   allBackendData: object[] | any
 }
 export const INDEX_D_Recommended = ({ allBackendData }: Props) => {
-  const router = useRouter()
+  // const router = useRouter()
 
-  const handleNavigateMoreSuggestion = (e: MouseEvent | KeyboardEvent) => {
-    if (e.type === "click" || (e as KeyboardEvent).key === "Enter") {
-      router.push("recommended/more-recommendation")
-    }
-  }
+  // const handleNavigateMoreSuggestion = (e: MouseEvent | KeyboardEvent) => {
+  //   if (e.type === "click" || (e as KeyboardEvent).key === "Enter") {
+  //     router.push("recommended/more-recommendation")
+  //   }
+  // }
 
   return (
     <INDEX_D_RecommendedWrapped>
@@ -32,17 +32,22 @@ export const INDEX_D_Recommended = ({ allBackendData }: Props) => {
         to success to your child’s best life!
       </P>
       <div>
-        <Fragment>
-          <Recommended_D_Individual
-            category={"CATEGORY"}
-            allSubcategories={[]}
-            allBackendData={allBackendData}
-          />
-        </Fragment>
+        <Recommended_D_Individual
+          category={"CATEGORY"}
+          allSubcategories={[]}
+          allBackendData={allBackendData}
+        />
       </div>
-      <ButtonSmall goToDynamic={handleNavigateMoreSuggestion} secondary>
+      {/* 
+      //!FH0
+      Make changes here
+      Source: https://www.figma.com/file/mo5tAwQH5Yxt4ajX62Pcl8/AAPD-Cohort-6-Hi-fi-Designs?type=design&node-id=1654-79522&mode=dev
+      */}
+      <Link
+        href={`${ALL_ROUTES.RECOMMENDED}/${ALL_ROUTES["MORE-RECOMMENDATION"]}`}
+      >
         Show more suggestions
-      </ButtonSmall>
+      </Link>
       <Hero_D_Banner />
     </INDEX_D_RecommendedWrapped>
   )

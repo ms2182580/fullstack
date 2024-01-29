@@ -37,9 +37,10 @@ type Props = {
 }
 
 /* 
-!FH0
+!FH
 Make this work for every category
 */
+
 export const getMentalHealth = ({
   getAllSubcategories = false,
   howMuch = 3,

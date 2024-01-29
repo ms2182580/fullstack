@@ -59,6 +59,9 @@ export const INDEX_ORG_Search_D = ({
     }
   }, [isSelected])
 
+  console.log("🟩allBackendData:", allBackendData)
+  // console.log("allSubcategories:", allSubcategories,)
+
   const { push } = useRouter()
   const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
@@ -72,39 +75,12 @@ export const INDEX_ORG_Search_D = ({
     useORG_Ctx_D_ThirdpageData_Backend()
 
   if (dataComesFromBackend) {
-    // console.log(
-    //   "💙Object.values(allBackendData):",
-    //   Object.entries(allBackendData)
+    // let someData = Object.entries(allBackendData).map(
+    //   ([categoryTitle, categoryData]) => {
+    //     if (categoryTitle === category) {
+    //     }
+    //   }
     // )
-
-    // console.log(
-    //   "💘category, allSubcategories:",
-    //   category,
-    //   allSubcategories,
-    //   Object.entries(allBackendData),
-    //   Object.entries(allBackendData)[0]
-    // )
-
-    // console.log(
-    //   "Object.entries(allBackendData):",
-    //   Object.entries(allBackendData)
-    // )
-
-    let someData = Object.entries(allBackendData).map(
-      ([categoryTitle, categoryData]) => {
-        if (categoryTitle === category) {
-          /* console.log(
-            `For the title: «${category}», 
-            display the data:`,
-            categoryData
-          ) */
-        }
-      }
-    )
-
-    // if (category === categoryName) {
-
-    // }
 
     return (
       <>
