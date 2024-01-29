@@ -11,10 +11,12 @@ import {
 type Props = {
   message: string
   isSender: boolean
+  showModalToggle: () => void
 }
 export const AIChat_Conversation_Individual = ({
   message,
   isSender,
+  showModalToggle,
 }: Props) => {
   return (
     <AIChat_Conversation_IndividualWrapper isSender={isSender}>
@@ -22,7 +24,7 @@ export const AIChat_Conversation_Individual = ({
         <span>{message}</span>
       </P>
       <div className="response-group">
-        <span>
+        <span onClick={showModalToggle}>
           <Dashbaord_AIChatResponseAttechment />
         </span>
         <span>
