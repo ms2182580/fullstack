@@ -36,6 +36,13 @@ export const Home_D_NavBar_NWrapper = styled.nav`
       align-items: center;
       gap: 20px;
 
+      & > :nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
       & > a {
         text-decoration: none;
         font-size: 16px;
