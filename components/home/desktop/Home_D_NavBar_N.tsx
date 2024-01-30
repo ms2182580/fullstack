@@ -24,6 +24,7 @@ export const Home_D_NavBar_N = () => {
           <H2 bold>INCLUSIVE</H2>
           <InclusiveLogo_D />
         </span>
+
         <div>
           <span>
             About Us{" "}
