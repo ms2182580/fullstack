@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const INDEX_D_DashboardHeaderWrapper = styled.div`
   display: flex;
-  width: 1200px;
+  width: 100%;
   height: 66px;
   padding: 0px 24px;
   justify-content: flex-end;
