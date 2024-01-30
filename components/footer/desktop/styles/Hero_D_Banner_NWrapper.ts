@@ -19,10 +19,6 @@ export const Home_D_Banner_NWrapper = styled.div`
     line-height: 48px; /* 171.429% */
   }
   & > :nth-child(2) {
-    /* background-color: white;
-    border: white;
-    padding: 0px 48px; */
-
     ${reusableButton({ secondary: true })}
 
     border-color: ${NEUTRALS.OFF_WHITE};

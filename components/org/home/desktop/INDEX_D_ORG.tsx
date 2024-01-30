@@ -1,6 +1,6 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index.js"
 import ORGDesktop_Search_Hero from "@/assets/images/Index_D_Search_Hero.png"
-import { Hero_D_Banner } from "@/components/home/desktop/Hero_D_Banner"
+import { Hero_D_Banner } from "@/components/footer/desktop/Hero_D_Banner"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"

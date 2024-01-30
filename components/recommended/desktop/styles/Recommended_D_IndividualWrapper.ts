@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
+import styled from "styled-components"
+import { PRIMARY } from "../../../../assets/Colors"
 
 export enum All_Layouts_Accepted {
   like_PVES = "like_PVES",
@@ -15,13 +15,9 @@ export const Recommended_D_IndividualWrapped = styled.div<INDEX_ORG_Search_DWrap
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "title title title"
-      "cards cards cards"
-      ". . finalButton";
 
-    padding-top: 21px;
     position: relative;
+
     & > * {
       box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
@@ -63,10 +59,6 @@ export const Recommended_D_IndividualWrapped = styled.div<INDEX_ORG_Search_DWrap
       & > :nth-child(5) {
         margin-top: 24px;
         margin-bottom: 24px;
-      }
-      /* & > :nth-child(5), */
-      & > :nth-child(6) {
-        padding-bottom: 32px;
       }
 
       & > :last-child {

@@ -1,4 +1,4 @@
-import { Hero_D_Banner } from "./Hero_D_Banner"
+import { Hero_D_Banner } from "../../footer/desktop/Hero_D_Banner"
 import { Home_D_Service_N } from "./Home_D_Services_N"
 import { Home_Feature_D_N } from "./Home_Feature_D_N"
 import { Home_Hero_D_N } from "./Home_Hero_D_N"
