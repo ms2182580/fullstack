@@ -11,5 +11,7 @@ type Props = {
 }
 
 export const MainWrapper = styled.main<Props>`
-  ${defaultWidthWebsite()}
+  ${defaultWidthWebsite()};
+
+  position: relative;
 `
