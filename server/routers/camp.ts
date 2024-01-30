@@ -9,6 +9,8 @@ export const campRouter = router({
   addMany: publicProcedure
     .input(z.array(CampTypes))
     .mutation(async ({ input }) => {
+      await prisma.camp.deleteMany({});
+
       const result = await prisma.camp.createMany({
         data: input,
       })

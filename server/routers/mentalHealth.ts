@@ -9,6 +9,8 @@ export const mentalHealthRouter = router({
   addMany: publicProcedure
     .input(z.array(MentalHealthTypes))
     .mutation(async ({ input }) => {
+      await prisma.mentalHealth.deleteMany({});
+
       const result = await prisma.mentalHealth.createMany({
         data: input,
       })

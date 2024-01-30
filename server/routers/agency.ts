@@ -9,6 +9,8 @@ export const agencyRouter = router({
   addMany: publicProcedure
     .input( z.array(AgencyTypes) )
     .mutation(async ({ input }) => {
+      await prisma.agency.deleteMany({});
+      
       const result = await prisma.agency.createMany({
         data: input
       });
