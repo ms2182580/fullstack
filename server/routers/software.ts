@@ -9,6 +9,8 @@ export const softwareRouter = router({
   addMany: publicProcedure
     .input( z.array(SoftwareTypes) )
     .mutation(async ({ input }) => {
+      await prisma.software.deleteMany({});
+
       const result = await prisma.software.createMany({
         data: input
       });

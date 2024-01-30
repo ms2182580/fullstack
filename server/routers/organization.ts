@@ -9,6 +9,8 @@ export const organizationRouter = router({
   addMany: publicProcedure
     .input( z.array(OrganizationTypes) )
     .mutation(async ({ input }) => {
+      await prisma.organization.deleteMany({});
+
       const result = await prisma.organization.createMany({
         data: input
       });

@@ -9,6 +9,8 @@ export const legalRouter = router({
   addMany: publicProcedure
     .input( z.array(LegalTypes) )
     .mutation(async ({ input }) => {
+      await prisma.legal.deleteMany({});
+
       const result = await prisma.legal.createMany({
         data: input
       });

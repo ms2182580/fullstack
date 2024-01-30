@@ -9,6 +9,8 @@ export const residencyRouter = router({
   addMany: publicProcedure
     .input( z.array(ResidencyTypes) )
     .mutation(async ({ input }) => {
+      await prisma.residency.deleteMany({});
+
       const result = await prisma.residency.createMany({
         data: input
       });

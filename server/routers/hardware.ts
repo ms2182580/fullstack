@@ -9,6 +9,8 @@ export const hardwareRouter = router({
   addMany: publicProcedure
     .input( z.array(HardwareTypes) )
     .mutation(async ({ input }) => {
+      await prisma.hardware.deleteMany({});
+
       const result = await prisma.hardware.createMany({
         data: input
       });
