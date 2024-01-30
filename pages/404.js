@@ -1,4 +1,4 @@
-import { Custom404_Component } from "@/components/error/error-page"
+import { Custom404_Component } from "@/components/error-page/error-page"
 
 const Custom404 = () => {
   // const router = useRouter()

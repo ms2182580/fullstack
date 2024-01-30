@@ -4,9 +4,9 @@ import { SearchSVG } from "../../../../assets/icons"
 import { ORG_FILTERS_DATA_D } from "../../../../utils/ORG_FiltersCategories"
 import { useShouldTab } from "../../../../utils/ORG_shouldTab"
 import { ButtonSmall } from "../../../ui/buttons/general"
-import { ORG_D_InputInsurance } from "./ORG_D_InputInsurance"
-import { ORG_D_InputKeyword } from "./ORG_D_InputKeyword"
-import { ORG_D_InputLocation } from "./ORG_D_InputLocation"
+import { ORG_D_InputInsurance } from "../ORG_D_InputInsurance"
+import { ORG_D_InputKeyword } from "../ORG_D_InputKeyword"
+import { ORG_D_InputLocation } from "../ORG_D_InputLocation"
 import { ORG_D_SearchComponentWrapper } from "./styles/ORG_D_SearchComponentWrapper"
 
 export const ORG_D_SearchComponent = () => {
@@ -55,8 +55,6 @@ export const ORG_D_SearchComponent = () => {
     //   `${pathname}/${folder}/${subFolder}`,
     // )
   }
-
-  // console.log("typedInputKeyword:", typedInputKeyword)
 
   /* 
   
