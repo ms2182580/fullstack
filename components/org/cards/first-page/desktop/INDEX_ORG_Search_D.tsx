@@ -59,9 +59,6 @@ export const INDEX_ORG_Search_D = ({
     }
   }, [isSelected])
 
-  console.log("🟩allBackendData:", allBackendData)
-  // console.log("allSubcategories:", allSubcategories,)
-
   const { push } = useRouter()
   const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()

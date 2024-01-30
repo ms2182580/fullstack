@@ -29,7 +29,10 @@ export const ORG_D_SearchComponent = () => {
     }
 
     if (typedInputKeyword !== "") {
-      let matchSomeDiagnosis = ORG_FILTERS_DATA_D.diagnosis.find((xDiagnosis) => xDiagnosis.toLowerCase() === typedInputKeyword.toLowerCase())
+      let matchSomeDiagnosis = ORG_FILTERS_DATA_D.diagnosis.find(
+        (xDiagnosis) =>
+          xDiagnosis.toLowerCase() === typedInputKeyword.toLowerCase()
+      )
 
       if (matchSomeDiagnosis) {
         // console.log("Found a match, procede to move the view")
@@ -74,6 +77,13 @@ export const ORG_D_SearchComponent = () => {
       return () => clearTimeout(timer)
     }
   }, [selectValidKeyword])
+
+  /* 
+  !FH0 
+  New layout here
+  
+  source: https://www.figma.com/file/mo5tAwQH5Yxt4ajX62Pcl8/AAPD-Cohort-6-Hi-fi-Designs?type=design&node-id=1654-80744&mode=dev
+  */
 
   return (
     <>
