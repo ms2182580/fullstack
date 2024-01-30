@@ -4,10 +4,13 @@ import styled, { css } from "styled-components"
 export const INDEX_D_ORGWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   margin-bottom: 56px;
+  margin-top: 64px;
+
   background-image: url("/background/background1.svg");
-  margin-top: 100px;
   background-repeat: no-repeat;
   background-size: 100% auto;
+  background-position-y: 2%;
+
   position: relative;
 
   & > :nth-child(1) {
@@ -20,13 +23,15 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(1) {
-    & > :nth-child(5) {
+    position: relative;
+
+    & > :nth-child(4) {
       margin-top: 109rem;
       position: absolute;
       top: 0;
       left: 0;
     }
-    & > :nth-child(6) {
+    & > :nth-child(5) {
       margin-top: 185rem;
       position: absolute;
       top: 0;
@@ -36,63 +41,32 @@ export const INDEX_D_ORGWrapper = styled.div`
 
   & > :nth-child(1) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas:
       "text image"
       "search search";
     grid-auto-flow: dense;
 
+    justify-items: space-between;
+
+    gap: 16px;
+
     & > :nth-child(1) {
       grid-area: text;
-      padding-top: 56px;
+      margin-top: auto;
+      margin-bottom: auto;
       min-width: max-content;
 
       font-weight: 700;
     }
 
     & > :nth-child(2) {
-      position: absolute;
-      z-index: 1;
+      grid-area: image;
 
-      top: 0;
-      left: 0;
-      right: 0;
-
-      & > :nth-child(1) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-
-        cursor: pointer;
-
-        width: fit-content;
-        padding: 8px 48px;
-        margin: auto;
-
-        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
-
-        border-radius: 0 0 8px 8px;
-
-        background-color: ${PRIMARY.PRIMARY_CTA};
-
-        & > p {
-          color: ${NEUTRALS.OFF_WHITE};
-        }
-      }
+      justify-self: flex-end;
     }
 
     & > :nth-child(3) {
-      grid-area: image;
-
-      position: relative;
-      /* width: clamp(225px, calc(100vw - 3rem), 500px); */
-      height: clamp(64px, calc(40vw - 3rem), 320px);
-      justify-self: end;
-      margin-bottom: 50px;
-    }
-
-    & > :nth-child(4) {
       padding-top: 73px;
       grid-area: search;
     }
@@ -250,9 +224,9 @@ export const INDEX_D_ORGWrapper = styled.div`
       }
     }
   }
-  & > :nth-child(4) {
+  /* & > :nth-child(4) {
     margin-bottom: 20px;
-  }
+  } */
 `
 
 type Props_LI = {
