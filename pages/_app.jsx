@@ -27,11 +27,11 @@ import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFilter
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
+import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const pathname = router.pathname
-  // console.log({ pathname })
   let isDashboard = !!pathname.includes("/dashboard")
 
   return (
@@ -59,29 +59,31 @@ function MyApp({ Component, pageProps }) {
                                               <CheckUserWidth_Provider>
                                                 <NavbarHomeHeight_Provider>
                                                   <Ctx_sessionStorage_typedFlow_Provider>
-                                                    {isDashboard ? (
-                                                      <Dashboard_D_Layout>
-                                                        <GlobalStyle />
-                                                        <link
-                                                          rel="icon"
-                                                          href="/favicon.ico"
-                                                        />
-                                                        <Component
-                                                          {...pageProps}
-                                                        />
-                                                      </Dashboard_D_Layout>
-                                                    ) : (
-                                                      <Page_layout>
-                                                        <GlobalStyle />
-                                                        <link
-                                                          rel="icon"
-                                                          href="/favicon.ico"
-                                                        />
-                                                        <Component
-                                                          {...pageProps}
-                                                        />
-                                                      </Page_layout>
-                                                    )}
+                                                    <Dashboard_Ctx_AICHAT_Provider>
+                                                      {isDashboard ? (
+                                                        <Dashboard_D_Layout>
+                                                          <GlobalStyle />
+                                                          <link
+                                                            rel="icon"
+                                                            href="/favicon.ico"
+                                                          />
+                                                          <Component
+                                                            {...pageProps}
+                                                          />
+                                                        </Dashboard_D_Layout>
+                                                      ) : (
+                                                        <Page_layout>
+                                                          <GlobalStyle />
+                                                          <link
+                                                            rel="icon"
+                                                            href="/favicon.ico"
+                                                          />
+                                                          <Component
+                                                            {...pageProps}
+                                                          />
+                                                        </Page_layout>
+                                                      )}
+                                                    </Dashboard_Ctx_AICHAT_Provider>
                                                   </Ctx_sessionStorage_typedFlow_Provider>
                                                 </NavbarHomeHeight_Provider>
                                               </CheckUserWidth_Provider>
