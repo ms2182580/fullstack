@@ -3,10 +3,6 @@ import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SECONDARY_SNT } from "../../../../assets/Colors"
 
 export const Footer_D_NWrapper = styled.footer`
-  background-image: url("/background/background3.svg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  /* background-color: ${PRIMARY.PRIMARY_BACKGROUND}; */
   position: relative;
 
   margin-inline: auto;
@@ -17,7 +13,11 @@ export const Footer_D_NWrapper = styled.footer`
     margin-inline: auto;
   }
 
-  & > :nth-child(1) {
+  & > :nth-child(2) {
+    background-image: url("/background/background3.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
     padding-top: 72px;
     padding-bottom: 148px;
 
@@ -90,7 +90,7 @@ export const Footer_D_NWrapper = styled.footer`
     }
   }
 
-  & > :nth-child(2) {
+  & > :nth-child(3) {
     display: flex;
     justify-content: space-between;
 
@@ -189,7 +189,7 @@ export const Footer_D_NWrapper = styled.footer`
     }
   }
 
-  & > :nth-child(3) {
+  & > :nth-child(4) {
     padding-top: 16px;
     padding-bottom: 16px;
     display: flex;

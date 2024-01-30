@@ -1,3 +1,4 @@
+import { Hero_D_Banner } from "@/components/footer/desktop/Hero_D_Banner"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router.js"
 import {
@@ -33,6 +34,8 @@ export const Footer_D_N = () => {
 
   return (
     <Footer_D_NWrapper>
+      <Hero_D_Banner />
+
       <div>
         <div>
           <H4>INCLUSIVE</H4>
@@ -77,8 +80,6 @@ export const Footer_D_N = () => {
           <P semibold>Try Premium</P>
         </button> */}
       </div>
-
-      {/* <div /> */}
 
       <div>
         <div onClick={moveToTop} onKeyDown={moveToTop} tabIndex={0}>
