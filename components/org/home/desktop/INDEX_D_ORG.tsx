@@ -8,7 +8,7 @@ import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
-import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
+import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent"
 import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
 
 type Props = {

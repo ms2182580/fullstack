@@ -17,7 +17,6 @@ type Props = {
 }
 
 export const INDEX_D_MoreRecommendation = ({ allBackendData }: Props) => {
-  console.log("🟧allBackendData:", allBackendData)
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 
