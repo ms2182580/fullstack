@@ -4,7 +4,7 @@ export const SaveResource_MainWrapper = styled.div`
   padding-top: 80px;
   padding-left: 128px;
 
-  &.heading {
+  .heading {
     color: #312138;
     font-family: Poppins;
     font-size: 32px;
@@ -12,7 +12,7 @@ export const SaveResource_MainWrapper = styled.div`
     font-weight: 600;
     line-height: normal;
   }
-  &.description {
+  .description {
     margin-top: 8px;
     color: #312138;
     font-family: Poppins;
@@ -63,9 +63,7 @@ export const SaveResource_Filter = styled.div`
     justify-content: center;
     align-items: center;
     gap: 8px;
-    :hover {
-      cursor: pointer;
-    }
+
     .text {
       color: #3a343c;
       text-align: center;

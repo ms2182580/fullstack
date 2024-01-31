@@ -27,12 +27,14 @@ import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFilter
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
+import EditorLayout from "@/components/editorLayout/editorLayout"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const pathname = router.pathname
   // console.log({ pathname })
   let isDashboard = !!pathname.includes("/dashboard")
+  let isEditor = !!pathname.includes("/editor")
 
   return (
     <LoginCtxProvider>
@@ -70,6 +72,19 @@ function MyApp({ Component, pageProps }) {
                                                           {...pageProps}
                                                         />
                                                       </Dashboard_D_Layout>
+                                                    ) : isEditor ? (
+                                                      <>
+                                                        <EditorLayout>
+                                                          <GlobalStyle />
+                                                          <link
+                                                            rel="icon"
+                                                            href="/favicon.ico"
+                                                          />
+                                                          <Component
+                                                            {...pageProps}
+                                                          />
+                                                        </EditorLayout>
+                                                      </>
                                                     ) : (
                                                       <Page_layout>
                                                         <GlobalStyle />
