@@ -37,13 +37,6 @@ export const ORG_D_SearchComponent = (): ReactElement => {
   Create all the Typed Flow
   */
 
-  /* 
-  !FH0 
-  New layout here
-  
-  source: https://www.figma.com/file/mo5tAwQH5Yxt4ajX62Pcl8/AAPD-Cohort-6-Hi-fi-Designs?type=design&node-id=1654-80744&mode=dev
-  */
-
   return (
     <>
       <ORG_D_SearchComponentWrapper>
