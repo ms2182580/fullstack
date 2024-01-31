@@ -1,9 +1,6 @@
 import styled from "styled-components"
 
 export const ORG_D_SearchComponent_LabelInputWrapper = styled.label`
-  /* display: grid; */
-  /* grid-auto-flow: row; */
-
   display: flex;
   flex-direction: column;
 
@@ -27,7 +24,7 @@ export const ORG_D_SearchComponent_LabelInputWrapper = styled.label`
     & > :nth-child(1) {
       position: absolute;
       top: 50%;
-      left: 5%;
+      left: 4%;
 
       transform: translate(-50%, -50%);
 

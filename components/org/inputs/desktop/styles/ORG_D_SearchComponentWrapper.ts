@@ -4,8 +4,7 @@ import styled from "styled-components"
 
 export const ORG_D_SearchComponentWrapper = styled.div`
   display: grid;
-  grid-template-columns: 7fr 1fr 1fr 1fr;
-
+  grid-template-columns: 7fr 1fr 1fr 56px;
   gap: 16px;
 
   margin-bottom: 75px;
