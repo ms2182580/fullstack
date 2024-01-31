@@ -45,7 +45,7 @@ export const INDEX_D_Sidebar = () => {
     },
     {
       name: "Saved",
-      path: "/dashboard/saved",
+      path: "/dashboard/save-resources",
       icon: <Dashboard_D_SavedSvg />,
     },
   ]
