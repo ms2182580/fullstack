@@ -10,6 +10,7 @@ const SharedVariables = {
 type Props = {
   secondary?: boolean
   disabled?: boolean
+  width?: string
 }
 
 type Props_Reusable = {
@@ -148,6 +149,7 @@ export const BtnDefault = styled.button<Props>`
 
 export const BtnSmall = styled(BtnDefault)<Props>`
   height: 48px;
+  width: ${(x) => x.width};
   padding-top: 12px;
   padding-bottom: 12px;
   padding-inline: 32px;

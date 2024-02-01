@@ -6,7 +6,7 @@ import {
   Checkmark,
 } from "./styles/checkbox.style"
 
-const Checkbox = () => {
+export const Checkbox = () => {
   const [isChecked, setIsChecked] = useState(false)
 
   const handleCheckboxChange = () => {
@@ -24,5 +24,3 @@ const Checkbox = () => {
     </CheckboxWrapper>
   )
 }
-
-export default Checkbox
