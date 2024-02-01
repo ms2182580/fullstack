@@ -1,11 +1,15 @@
 import styled from "styled-components"
 
-export const INDEX_D_DashboardHeaderWrapper = styled.div`
+type Props = {
+  isCreatePlan: boolean
+}
+export const INDEX_D_DashboardHeaderWrapper = styled.div<Props>`
   display: flex;
   width: 100%;
   height: 66px;
   padding: 0px 24px;
-  justify-content: flex-end;
+  justify-content: ${(props) =>
+    props.isCreatePlan ? "flex-start;" : "flex-end;"};
   align-items: center;
   gap: 24px;
   flex-shrink: 0;
@@ -27,6 +31,38 @@ export const INDEX_D_DashboardHeaderWrapper = styled.div`
       flex-shrink: 0;
       border-radius: 26px;
       background: #e6e6e6;
+    }
+  }
+  .plan {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > :nth-child(1) {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      & > :nth-child(1) {
+        cursor: pointer;
+      }
+      & > :nth-child(2) {
+        border: none;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 34px; /* 170% */
+      }
+    }
+
+    & > :nth-child(2) {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      & > :nth-child(1) {
+        display: flex;
+        gap: 10px;
+      }
     }
   }
 `
