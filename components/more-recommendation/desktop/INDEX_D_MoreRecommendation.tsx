@@ -1,6 +1,5 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
 import More_recommended from "@/assets/images/recommended/more-recommended.png"
-import { Hero_D_Banner } from "@/components/footer/desktop/Hero_D_Banner"
 import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
 import { LI_Category } from "@/components/org/home/desktop/styles/INDEX_D_ORGWrapper"
 import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
@@ -161,7 +160,6 @@ export const INDEX_D_MoreRecommendation = ({ allBackendData }: Props) => {
           }
         })}
       </INDEX_D_MoreRecommendationWrapper>
-      <Hero_D_Banner />
     </>
   )
 }

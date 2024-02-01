@@ -1,13 +1,12 @@
-import React, { useState } from "react"
+import { useState } from "react"
+import Checkbox from "../common/checkbox"
+import { ButtonSmall } from "../ui/buttons/general"
 import {
-  CheckBoxContainer,
   SaveResource_Card,
   SaveResource_Filter,
   SaveResource_MainWrapper,
   SaveResource_SearchDiv,
 } from "./styles/MainWrapper"
-import { ButtonSmall } from "../ui/buttons/general"
-import Checkbox from "../common/checkbox"
 
 export const INDEX_SaveResources = () => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false)

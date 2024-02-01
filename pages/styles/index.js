@@ -36,6 +36,7 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
+  
 }
 
 h1,
