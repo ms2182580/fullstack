@@ -16,7 +16,7 @@ export const Support_usWrapper = styled.div`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
-  z-index: 99;
+  z-index: 1;
 
   font-size: 20px;
   font-weight: 600;
