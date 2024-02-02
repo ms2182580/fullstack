@@ -3,11 +3,15 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import {
   Footer_Wrapper,
+  ProgressBar,
+  ProgressBarWrapper,
   StepTab,
   Stepper_Wrapper,
+  Steps_Count,
   Tabs_Wrapper,
 } from "./stepper.style"
 import { BtnSmall } from "../../ui/buttons/general/styles/ButtonStyled"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 
 interface Step {
   title: string
@@ -42,7 +46,7 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
         </div>
       )}
 
-      <Tabs_Wrapper>
+      {/* <Tabs_Wrapper>
         {steps.map((step, index) => (
           <StepTab
             key={index}
@@ -53,10 +57,16 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
             {step.title}
           </StepTab>
         ))}
-      </Tabs_Wrapper>
+      </Tabs_Wrapper> */}
+      <ProgressBarWrapper>
+        <ProgressBar activeStep={activeStep} stepsLength={steps.length} />
+      </ProgressBarWrapper>
+      <Steps_Count>
+        Step {activeStep + 1} out of {steps.length}
+      </Steps_Count>
       <div>{steps[activeStep].content}</div>
       {activeStep < steps.length - 1 && (
-        <>
+        <div className="stepper_footer">
           <BtnSmall width="100%" onClick={handleNextStep}>
             Next
           </BtnSmall>
@@ -64,7 +74,7 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
             <div onClick={handleNextStep}>Skip</div>
             <Help_Icon_SVG />
           </Footer_Wrapper>
-        </>
+        </div>
       )}
     </Stepper_Wrapper>
   )

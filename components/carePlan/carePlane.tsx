@@ -8,8 +8,8 @@ interface Step {
 
 const steps: Step[] = [
   { title: "Step 1", content: <FirstStep /> },
-  { title: "Step 2", content: "Step 2 Content" },
-  { title: "Step 3", content: "Step 3 Content" },
+  { title: "Step 2", content: <FirstStep /> },
+  { title: "Step 3", content: <FirstStep /> },
 ]
 export const CarePlaneComponent = () => {
   return (

@@ -8,6 +8,9 @@ export const Stepper_Wrapper = styled.div`
   background-color: #ffffff;
   border: 1px solid #d3ced5;
   border-radius: 5px;
+  .stepper_footer {
+    padding: 0px 16px;
+  }
 `
 export const Tabs_Wrapper = styled.div`
   display: flex;
@@ -43,4 +46,26 @@ export const Footer_Wrapper = styled.div`
     color: #6e3a82;
     text-decoration: underline;
   }
+`
+export const ProgressBar = styled.div<{
+  activeStep: number
+  stepsLength: number
+}>`
+  height: 9px;
+  width: ${(props) => ((props.activeStep + 1) / props.stepsLength) * 100}%;
+  background-color: #6e3a82;
+  transition: width 0.3s ease-in-out;
+`
+
+export const ProgressBarWrapper = styled.div`
+  margin-top: 16px;
+  height: 9px;
+  background-color: #e0e0e0;
+`
+export const Steps_Count = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #746779;
+  margin-top: 10px;
 `
