@@ -19,6 +19,10 @@ export const INDEX_D_MoreRecommendationWrapper = styled.div`
     margin-inline: clamp(16px, calc(10vw - 80px), 96px);
   }
 
+  & > * {
+    /* outline: 2px solid crimson; */
+  }
+
   & > :nth-child(1) {
     display: grid;
     grid-template-columns: 1fr;
@@ -31,7 +35,16 @@ export const INDEX_D_MoreRecommendationWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      & > :nth-child(1) {
+        grid-area: text;
+      }
+
+      & > :nth-child(2) {
+        grid-area: image;
+      }
     }
+
     & > :nth-child(2) {
       padding-top: 73px;
       grid-area: search;

@@ -1,5 +1,5 @@
-import { InclusiveLogo_D, InclusiveLogo_D_DownArrow } from "@/assets/icons"
-import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { InclusiveLogo_D_DownArrow } from "@/assets/icons"
+import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -16,14 +16,8 @@ export const Home_D_NavBar_N = () => {
   return (
     <Home_D_NavBar_NWrapper>
       <div>
-        <span
-          tabIndex={0}
-          onKeyDown={handleNavigateORG}
-          onClick={handleNavigateORG}
-        >
-          <H2 bold>INCLUSIVE</H2>
-          <InclusiveLogo_D />
-        </span>
+        <INDEX_Logo />
+
         <div>
           <span>
             About Us{" "}

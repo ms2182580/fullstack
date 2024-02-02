@@ -26,12 +26,6 @@ export const INDEX_D_Recommended = ({ allBackendData }: Props) => {
         allBackendData={allBackendData}
       />
 
-      {/* 
-      //!FH0
-      Make changes here
-      Source: https://www.figma.com/file/mo5tAwQH5Yxt4ajX62Pcl8/AAPD-Cohort-6-Hi-fi-Designs?type=design&node-id=1654-79522&mode=dev
-      */}
-
       <div>
         <Image
           src={Recommended}

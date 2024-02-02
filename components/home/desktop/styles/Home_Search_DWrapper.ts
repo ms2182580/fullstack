@@ -3,48 +3,49 @@ import styled from "styled-components"
 
 export const Label = styled.label`
   font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   display: grid;
-  gap: 20px;
+  gap: 4px;
 `
 
 export const Input = styled.input`
   height: 56px;
-  border-radius: 12px;
-  border: 1px solid rgba(102, 102, 102, 0.35);
-  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #908395;
   width: 100%;
   padding: 0px 20px;
 `
-export const Home_D_Help_NWrapper = styled.div`
+export const Home_Search_DWrapper = styled.div`
   margin-top: 100px;
   display: grid;
-  grid-template-columns: 2fr 1.3fr;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 16px;
+
+  /* padding-bottom: 48px; */
 
   grid-template-areas:
     "title ."
-    "form form"
+    "leftInput rightInput"
     "button .";
 
   & > :nth-child(1) {
     grid-area: title;
+    margin-bottom: 16px;
   }
 
   & > :nth-child(2) {
-    grid-area: form;
-    margin-top: 16px;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 2fr 1.3fr;
+    grid-area: leftInput;
   }
 
   & > :nth-child(3) {
-    grid-area: button;
-    margin-top: 32px;
+    grid-area: rightInput;
+  }
 
+  & > :last-child {
+    grid-area: button;
+
+    margin-top: 32px;
     margin-left: auto;
-    margin-right: 63px;
 
     ${reusableButton({})}
   }

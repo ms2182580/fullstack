@@ -30,6 +30,15 @@ html,body{
   
 }
 
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  
+}
+
 h1,
 h2,
 h3,

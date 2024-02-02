@@ -1,6 +1,5 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index.js"
-import ORGDesktop_Search_Hero from "@/assets/images/Index_D_Search_Hero.png"
-import { Hero_D_Banner } from "@/components/footer/desktop/Hero_D_Banner"
+import ORG_1_page from "@/assets/images/org/1_page/org_1_page.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
@@ -9,7 +8,7 @@ import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
-import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent.js"
+import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent"
 import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
 
 type Props = {
@@ -17,7 +16,6 @@ type Props = {
 }
 
 export const INDEX_D_ORG = ({ allBackendData }: Props) => {
-  console.log("🟥allBackendData:", allBackendData)
   /* //?TODO:BUG
   * There's a bug here when you change something in development here and save it, it trigger useFormatData or something and new dataToORG is created in the UI
   
@@ -57,31 +55,21 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           <H1>
             Find exactly what <br /> you're looking for
           </H1>
-          <div>
-            {/* <div>
-              <ORG_D_Search_CarePlanSvg />
-              <P semibold>Care Plan</P>
-            </div> */}
-          </div>
-          <div>
-            <Image
-              src={ORGDesktop_Search_Hero}
-              alt="Image of doctors and patients looking forward, smiling and shaking hands"
-            />
-          </div>
+          <Image
+            src={ORG_1_page}
+            alt="Image of doctors and patients looking forward, smiling and shaking hands"
+          />
           <ORG_D_SearchComponent />
           <Image
             src={"/background/background2.svg"}
             width={1}
             height={1}
-            layout="responsive"
             alt="Background Image"
           />
           <Image
             src={"/background/background3.svg"}
             width={1}
             height={1}
-            layout="responsive"
             alt="Background Image"
           />
         </header>
@@ -177,7 +165,6 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           }
         })}
       </INDEX_D_ORGWrapper>
-      <Hero_D_Banner />
     </>
   )
 }

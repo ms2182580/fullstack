@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import {
-  CheckBoxContainer,
   SaveResource_Card,
   SaveResource_Filter,
   SaveResource_MainWrapper,

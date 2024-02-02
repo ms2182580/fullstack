@@ -1,14 +1,13 @@
-// import {
-//   KEYS_VALUES_useSessionStorage,
-//   useSessionStorage_typedFlow,
-// } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import dynamic from "next/dynamic.js"
 import Head from "next/head"
 import { useRouter } from "next/router.js"
+import { useMemo } from "react"
 import { useCheckUserWidth } from "../../context/CheckUserWidth.js"
-import { Footer_D_N } from "../footer/desktop/Footer_D_N"
+import { Footer_D } from "../footer/desktop/Footer_D"
 import { Home_D_NavBar_N } from "../home/desktop/Home_D_NavBar_N"
 import { MainWrapper } from "./styles/MainWrapper"
+import { Support_us } from "./support-us"
 
 const NavBar_Mobile = dynamic(
   () => import("../navBar/mobile/NavBar_M.js").then((mod) => mod.NavBar_M),
@@ -23,6 +22,15 @@ const Footer_Mobile = dynamic(
 export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
   const { isMobile }: any = useCheckUserWidth()
   const { pathname } = useRouter()
+
+  const shouldShowSupportUs = useMemo(() => {
+    const acceptedPath =
+      pathname.startsWith(`/${ALL_ROUTES.ORG}`) ||
+      pathname.startsWith(`/${ALL_ROUTES.RECOMMENDED}`) ||
+      pathname.startsWith(`/${ALL_ROUTES["MORE-RECOMMENDATION"]}`)
+
+    return acceptedPath
+  }, [pathname])
 
   return (
     <>
@@ -42,7 +50,15 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
             </>
           )}
 
-          <MainWrapper isMainInHome={pathname === "/"}>{children}</MainWrapper>
+          <MainWrapper isMainInHome={pathname === "/"}>
+            {children}
+
+            {shouldShowSupportUs && (
+              <>
+                <Support_us />
+              </>
+            )}
+          </MainWrapper>
 
           {isMobile ? (
             <>
@@ -50,7 +66,7 @@ export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
             </>
           ) : (
             <>
-              <Footer_D_N />
+              <Footer_D />
             </>
           )}
         </>

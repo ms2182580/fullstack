@@ -1,4 +1,3 @@
-import { PRIMARY } from "@/assets/Colors"
 import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
@@ -10,31 +9,29 @@ export const Home_D_NavBar_NWrapper = styled.nav`
 
   & > :nth-child(1) {
     display: flex;
-    height: 118px;
-    padding: 0px 56px;
     justify-content: space-between;
     align-items: center;
+
     background: #fff;
 
+    height: 118px;
     max-width: ${maxDesktopScreenSize};
-    margin-inline: auto;
 
-    //span
-    & > :nth-child(1) {
-      display: flex;
-      gap: 10px;
-      cursor: pointer;
-      //inclusive
-      & > :nth-child(1) {
-        color: ${PRIMARY.PRIMARY_LOGO};
-      }
-    }
+    margin-inline: auto;
+    padding: 0px 56px;
 
     //Div
     & > :nth-child(2) {
       display: flex;
       align-items: center;
       gap: 20px;
+
+      & > :nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
 
       & > a {
         text-decoration: none;
