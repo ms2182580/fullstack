@@ -23,9 +23,11 @@ export const INDEX_D_EditorWrapper = styled.div`
       font-weight: 400;
       line-height: 24px;
     }
+
     & > :nth-child(3) {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 24px;
       & > :nth-child(1),
       & > :nth-child(2) {
@@ -43,8 +45,10 @@ export const INDEX_D_EditorWrapper = styled.div`
         line-height: 24px; /* 171.429% */
         text-align: center;
       }
+
       & > :nth-child(2) {
         gap: 5px;
+        margin-left: 60px;
       }
     }
   }
@@ -57,7 +61,7 @@ export const INDEX_D_EditorWrapper = styled.div`
 
   #editor {
     width: 930px !important;
-    height: 700px !important;
+    height: 860px !important;
   }
   #toolbar {
     width: 100% !important;
@@ -69,7 +73,6 @@ export const INDEX_D_EditorWrapper = styled.div`
 
   .fr-box.fr-basic .fr-wrapper {
     border: none;
-    padding: 30px;
   }
   .fr-btn-grp.fr-float-left {
     display: flex;
@@ -90,7 +93,34 @@ export const INDEX_D_EditorWrapper = styled.div`
     margin-right: 10px !important;
     border: 1px solid black;
     width: 60px;
-    height: 32px;
+    height: 28px;
     border-radius: 10px;
+  }
+  .fr-command.fr-btn.fr-dropdown.fr-selection::after {
+    top: 5px;
+    right: 19px;
+    content: url(/svg/arrow-down.svg);
+    border: 0px;
+  }
+
+  .fr-command.fr-btn.fr-dropdown {
+    width: 60px;
+    height: 28px;
+    border-radius: 10px;
+  }
+  .fr-command.fr-btn.fr-dropdown::after {
+    top: 5px;
+    right: 19px;
+    content: url(/svg/arrow-down.svg);
+    border: 0px;
+  }
+  .fr-command.fr-btn.fr-dropdown.fr-options {
+    margin-top: 10px !important;
+    margin-left: -19px;
+    display: none;
+    /* top: 5px;
+    right: 19px;
+    content: url(/svg/arrow-down.svg);
+    border: 0px; */
   }
 `
