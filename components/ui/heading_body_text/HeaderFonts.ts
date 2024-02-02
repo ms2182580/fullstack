@@ -39,6 +39,8 @@ type Type = {
   hyperlink_normal?: boolean
   white?: boolean
   normal?: boolean
+  dark_maroon?: boolean
+  lineHeight?: string
 }
 export const D1 = styled.p<Type>`
   font-size: ${FontsHeadDesktop.DISPLAY_1};
@@ -255,7 +257,7 @@ export const H2 = styled.h2<Type>`
 
 export const H3 = styled.h3<Type>`
   font-size: ${FontsHeadDesktop.HEADING_3};
-  line-height: ${LineHeightHeadDesktop.HEADING_3};
+  line-height: ${(x) => x.lineHeight || LineHeightHeadDesktop.HEADING_3};
   font-weight: ${(x) =>
     x.bolder
       ? SharedVariables.FontWeight_800
@@ -284,6 +286,8 @@ export const H3 = styled.h3<Type>`
       ? SEMANTICS.HYPERLINK_NORMAL
       : x.white
       ? NEUTRALS.OFF_WHITE
+      : x.dark_maroon
+      ? PRIMARY.DARK_MAROON
       : NEUTRALS.BLACK};
   letter-spacing: ${LetterSpacingHeadDesktop.HEADING_3};
 

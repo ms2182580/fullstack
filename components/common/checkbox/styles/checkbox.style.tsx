@@ -7,7 +7,10 @@ export const CheckboxWrapper = styled.label`
   height: 32px;
   width: 32px;
 `
-
+export const CheckboxLabel = styled.label`
+  margin-right: 8px;
+  display: "flex";
+`
 export const CheckboxInput = styled.input`
   position: absolute;
   opacity: 0;
