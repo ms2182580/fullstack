@@ -2,12 +2,15 @@ import ORG_Map_231 from "@/assets/icons/ORG_Map_231.png"
 import ORG_Map_2_231_A from "@/assets/icons/ORG_Map_2_231_A.png"
 import ORG_Map_2_231_B from "@/assets/icons/ORG_Map_2_231_B.png"
 import ORG_Map_450 from "@/assets/icons/ORG_Map_450.jpg"
+import Navigation_Arrow from "@/assets/icons/navigation-arrow.svg"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Detail_CardLocation } from "./ORG_D_Detail_CardLocation"
 import {
+  GetDirectionsWrapper,
   ORG_D_Detail_MapComponentWrapper,
   ORG_D_Detail_MapComponent_CLASSES,
 } from "./styles/ORG_D_Detail_MapComponentWrapper"
@@ -40,81 +43,92 @@ export const ORG_D_Detail_MapComponent = ({
 
   if (howIsMap[MapProperties_KEYS.HOW_MANY] === 1) {
     return (
-      <ORG_D_Detail_MapComponentWrapper
-        howIsMap={howIsMap}
-        isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
-      >
-        {howIsMap[MapProperties_KEYS.HEIGHT] !== undefined ? (
+      <>
+        <GetDirectionsWrapper>
+          <P>Get Directions</P>
+          <Navigation_Arrow />
+        </GetDirectionsWrapper>
+
+        <ORG_D_Detail_MapComponentWrapper
+          howIsMap={howIsMap}
+          isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+        >
+          {howIsMap[MapProperties_KEYS.HEIGHT] !== undefined ? (
+            <span
+              className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
+              tabIndex={0}
+            >
+              <Image
+                src={ORG_Map_450}
+                alt={"Map image"}
+                height={heighOfMap}
+                layout={"responsive"}
+                objectFit={"cover"}
+              />
+            </span>
+          ) : (
+            <span
+              className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
+              tabIndex={0}
+            >
+              <Image
+                src={ORG_Map_231}
+                alt={"Map image"}
+                height={heighOfMap}
+                layout={"responsive"}
+              />
+            </span>
+          )}
+        </ORG_D_Detail_MapComponentWrapper>
+      </>
+    )
+  }
+
+  if (howIsMap[MapProperties_KEYS.HOW_MANY] === 2) {
+    return (
+      <>
+        <GetDirectionsWrapper>
+          <P>Get Directions</P>
+          <Navigation_Arrow />
+        </GetDirectionsWrapper>
+        <ORG_D_Detail_MapComponentWrapper
+          howIsMap={howIsMap}
+          className={ORG_D_Detail_MapComponent_CLASSES.AS_TWO_MAPS}
+          isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+        >
           <span
             className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
             tabIndex={0}
           >
             <Image
-              src={ORG_Map_450}
+              src={ORG_Map_2_231_A}
               alt={"Map image"}
               height={heighOfMap}
               layout={"responsive"}
               objectFit={"cover"}
             />
           </span>
-        ) : (
+          <ORG_D_Detail_CardLocation
+            locationCity="Bellevue Mental Health"
+            locationState="Queens, NY "
+            locationStreetName="Bellevue Mental Health"
+            locationStreetNumber="25-12 30th Ave, Fl 2"
+            howFar={"15"}
+          />
           <span
-            className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
+            className={ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP}
             tabIndex={0}
           >
             <Image
-              src={ORG_Map_231}
+              src={ORG_Map_2_231_B}
               alt={"Map image"}
               height={heighOfMap}
               layout={"responsive"}
+              objectFit={"cover"}
             />
           </span>
-        )}
-      </ORG_D_Detail_MapComponentWrapper>
-    )
-  }
-
-  if (howIsMap[MapProperties_KEYS.HOW_MANY] === 2) {
-    return (
-      <ORG_D_Detail_MapComponentWrapper
-        howIsMap={howIsMap}
-        className={ORG_D_Detail_MapComponent_CLASSES.AS_TWO_MAPS}
-        isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
-      >
-        <span
-          className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
-          tabIndex={0}
-        >
-          <Image
-            src={ORG_Map_2_231_A}
-            alt={"Map image"}
-            height={heighOfMap}
-            layout={"responsive"}
-            objectFit={"cover"}
-          />
-        </span>
-
-        <ORG_D_Detail_CardLocation
-          locationCity="Bellevue Mental Health"
-          locationState="Queens, NY "
-          locationStreetName="Bellevue Mental Health"
-          locationStreetNumber="25-12 30th Ave, Fl 2"
-          howFar={"15"}
-        />
-
-        <span
-          className={ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP}
-          tabIndex={0}
-        >
-          <Image
-            src={ORG_Map_2_231_B}
-            alt={"Map image"}
-            height={heighOfMap}
-            layout={"responsive"}
-            objectFit={"cover"}
-          />
-        </span>
-      </ORG_D_Detail_MapComponentWrapper>
+        </ORG_D_Detail_MapComponentWrapper>
+      </>
     )
   }
 

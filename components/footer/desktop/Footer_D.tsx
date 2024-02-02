@@ -12,14 +12,6 @@ import {
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper"
 
-/* 
-!FH0
-
-Crete new footer
-
-https://www.figma.com/file/mo5tAwQH5Yxt4ajX62Pcl8/AAPD-Cohort-6-Hi-fi-Designs?type=design&node-id=1654-79366&mode=dev
-
-*/
 export const Footer_D = () => {
   return (
     <Footer_DWrapper>

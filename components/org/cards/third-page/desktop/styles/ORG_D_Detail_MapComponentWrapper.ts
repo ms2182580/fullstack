@@ -14,8 +14,6 @@ export const enum ORG_D_Detail_MapComponent_CLASSES {
 }
 
 export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
-  margin-top: 32px;
-
   display: ${({ howIsMap }) => (howIsMap === null ? "none" : "grid")};
 
   cursor: default;
@@ -58,5 +56,18 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
       margin-bottom: 10px;
       margin-left: 22px;
     }
+  }
+`
+
+export const GetDirectionsWrapper = styled.div`
+  margin-top: 32px;
+  margin-bottom: 6px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  p {
+    font-weight: 600;
   }
 `

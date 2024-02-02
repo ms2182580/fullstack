@@ -69,6 +69,14 @@ export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
   }
 
   & > :nth-child(3) {
+    margin-right: auto;
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  & > :nth-child(4) {
     margin-left: 22px;
     margin-bottom: 16px;
     margin-right: 9px;
