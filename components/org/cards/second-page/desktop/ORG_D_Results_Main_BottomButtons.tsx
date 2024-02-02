@@ -68,12 +68,8 @@ export const ORG_D_Results_Main_BottomButtons = ({
       let theSecondPageData =
         secondpageDataORG_Backend?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]
 
-      console.log("theSecondPageData:", theSecondPageData)
-
       let whichButtonToThirdPageSvg =
         theSecondPageData?.[SPECIFIC_DATA_SECOND_PAGE.SVG] ?? DEFAULT_SVG
-
-      console.log("whichButtonToThirdPageSvg:", whichButtonToThirdPageSvg)
 
       let whichButtonToThirdPageText =
         theSecondPageData?.[

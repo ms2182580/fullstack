@@ -18,6 +18,10 @@ import { arraySectionToRender_Agencies } from "../agencies/arraySectionToRender"
 import { tooltipToRender_Agencies } from "../agencies/tooltipToRender"
 import { arraySectionToRender_AssistiveSoftware } from "../assistive-software/arraySectionToRender"
 import { arraySectionToRender_AssistiveTechnologyHardware } from "../assistive-technology-hardware/arraySectionToRender"
+import {
+  Type_FiltersToUI,
+  filtersUI_AssistiveTechnologyHardware,
+} from "../assistive-technology-hardware/filters"
 import { arraySectionToRender_Camps } from "../camps/arraySectionToRender"
 import { mapRender_Camps } from "../camps/mapRender"
 import { tooltipToRender_Camps } from "../camps/tooltipToRender"
@@ -303,6 +307,7 @@ type ALL_DATA_Type = {
         | typeof PAT_SVG
         | typeof PRP_SVG
         | typeof DEFAULT_SVG
+      [SPECIFIC_DATA_SECOND_PAGE.FILTERS]?: Type_FiltersToUI
     }
 
     [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]?: {
@@ -398,6 +403,8 @@ export const ALL_DATA: ALL_DATA_Type = {
         BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["where to buy"],
 
       SVG: PAT_SVG,
+
+      FILTERS: filtersUI_AssistiveTechnologyHardware,
     },
 
     THIRD_PAGE: {
