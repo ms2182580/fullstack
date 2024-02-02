@@ -13,8 +13,11 @@ import { useRouter } from "next/router"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import Link from "next/link"
+import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
+import { CreatePlan_D_Sidebar } from "./CreatePlan_D_Sidebar"
 
 export const INDEX_D_Sidebar = () => {
+  const { isPlan } = useDashboardAIChat_Ctx()
   const route = useRouter()
   const pathname = route.pathname
   const handleNavigateHome = (e) => {
@@ -51,35 +54,42 @@ export const INDEX_D_Sidebar = () => {
   ]
   let currentDashboardIndex =
     navigations.findIndex((i) => i.path.includes(pathname)) + 1
+
   return (
     <INDEX_D_SidebarWrapper currentDashboardPath={currentDashboardIndex}>
-      <div>
-        <span
-          tabIndex={0}
-          onKeyDown={handleNavigateHome}
-          onClick={handleNavigateHome}
-        >
-          <H2 bold>Inclusive</H2>
-          <ChatAILogo_M />
-        </span>
-        <ButtonSmall>
-          <Dashboard_D_CreateNewSvg />
-          <span>Create New</span>
-        </ButtonSmall>
-        <ul>
-          {navigations.map((li) => (
-            <li key={li.name}>
-              <Link href={li.path}>
-                <span>{li.icon}</span>
-                <span>{li.name}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <span>
-        Upgrade to Premium <Dashboard_UpgradePremiumArrowSvg />
-      </span>
+      {!isPlan ? (
+        <>
+          <div>
+            <span
+              tabIndex={0}
+              onKeyDown={handleNavigateHome}
+              onClick={handleNavigateHome}
+            >
+              <H2 bold>Inclusive</H2>
+              <ChatAILogo_M />
+            </span>
+            <ButtonSmall>
+              <Dashboard_D_CreateNewSvg />
+              <span>Create New</span>
+            </ButtonSmall>
+            <ul>
+              {navigations.map((li) => (
+                <li key={li.name}>
+                  <Link href={li.path}>
+                    <span>{li.icon}</span>
+                    <span>{li.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <span>
+            Upgrade to Premium <Dashboard_UpgradePremiumArrowSvg />
+          </span>
+        </>
+      ) : (
+        <CreatePlan_D_Sidebar />
+      )}
     </INDEX_D_SidebarWrapper>
   )
 }

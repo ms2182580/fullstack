@@ -8,7 +8,10 @@ import {
   Dashboard_D_CreateNewSvg,
   Dashboard_D_UploadPlanSvg,
 } from "@/assets/icons"
+import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
 export const Dashboard_D_PlatformBox = () => {
+  const { setIsPlan, isPlan } = useDashboardAIChat_Ctx()
+
   return (
     <Dashboard_D_PlatformBoxWrapper>
       <div>
@@ -18,7 +21,7 @@ export const Dashboard_D_PlatformBox = () => {
         </H4>
         <P>Create a care plan in minutes. Connect with coordinators faster. </P>
         <span>
-          <ButtonSmall>
+          <ButtonSmall goToDynamic={() => setIsPlan(!isPlan)}>
             <span>
               <Dashboard_D_CreateNewSvg />
             </span>
