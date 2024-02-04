@@ -1,9 +1,11 @@
 import styled from "styled-components"
-
-export const INDEX_D_DashboardWrapper = styled.div`
-  padding-top: 42px;
-  padding-left: 136px;
-
+type Props = {
+  isCreatePlan: boolean
+}
+export const INDEX_D_DashboardWrapper = styled.div<Props>`
+  padding-top: ${(props) => (props.isCreatePlan ? "0px" : "42px")};
+  padding-left: ${(props) => (props.isCreatePlan ? "0px" : "136px")};
+  width: 100%;
   & > :nth-child(1) {
     display: flex;
     align-items: center;

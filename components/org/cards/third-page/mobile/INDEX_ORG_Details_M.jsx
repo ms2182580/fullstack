@@ -24,29 +24,29 @@ export const INDEX_ORG_Detail_M = ({ selectTags = null }) => {
       ]
 
     const renderSections =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
+      dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
 
     const arrayInnerNavBar =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
+      dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
 
     const tooltip =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
+      dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
       Tooltip_VALUES.DEFAULT
 
     const layoutMainCardRight =
-      dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
+      dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
       Layout_MainCardRight_VALUES.DEFAULT
 
-    const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? {
+    const howIsMap = dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? {
       [MapProperties_KEYS.HOW_MANY]: 1,
     }
 
     const buttonMainCard = {
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]:
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
+        dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
         "add to care plan",
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]:
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
+        dataObj?.[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
         false,
     }
 
@@ -73,78 +73,6 @@ export const INDEX_ORG_Detail_M = ({ selectTags = null }) => {
             tooltipDisplay={getAllSpecificThirdPageData.tooltip}
             buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
           />
-          {/* <ORG_D_Detail_Header
-            thirdpageDataORG={thirdpageDataORG}
-            arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
-            defaultSectionToRender={defaultSectionToRender}
-            sectionToRender={getAllSpecificThirdPageData.renderSections}
-          /> */}
-
-          {/* <ORG_D_Detail_MainCard
-            arrayInnerNavBar={getAllSpecificThirdPageData.arrayInnerNavBar}
-            layout_MainCardRight={
-              getAllSpecificThirdPageData.layoutMainCardRight
-            }
-            howIsMap={getAllSpecificThirdPageData.howIsMap}
-            tooltipDisplay={getAllSpecificThirdPageData.tooltip}
-            buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
-          /> */}
-
-          {/* {getAllSpecificThirdPageData.renderSections ? (
-            <>
-              {getAllSpecificThirdPageData.renderSections.map((x, index) => {
-                let theIdForComponent =
-                  x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ??
-                  "#"
-                let allProps = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
-
-                let allData = {
-                  theIdForComponent,
-                  ...allProps,
-                }
-
-                if (x.component) {
-                  return (
-                    <>
-                      <Fragment key={`${index}`}>
-                        <x.component
-                          {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
-                        />
-                      </Fragment>
-                    </>
-                  )
-                }
-              })}
-            </>
-          ) : (
-            <>
-              {defaultSectionToRender.map((x, index) => {
-                let theComponentName = x.component.name
-
-                let theIdForComponent =
-                  x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ??
-                  "#"
-                let customTitle = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
-
-                let allData = {
-                  theIdForComponent,
-                  ...customTitle,
-                }
-
-                return (
-                  <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component
-                      {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
-                    />
-                  </Fragment>
-                )
-              })}
-            </>
-          )} */}
-
-          {/* <ORG_D_Detail_BreadcrumbsLastUpdated
-            thirdpageDataORG={thirdpageDataORG}
-          /> */}
         </div>
         <ChatAI />
       </INDEX_ORG_Detail_MWrapper>

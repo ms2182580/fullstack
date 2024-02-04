@@ -6,8 +6,6 @@ import { useState } from "react"
 import { AIChat_Conversation } from "./AIChat_Conversation"
 import { useDashboard_AIChat_HistoryModal } from "@/context/Dashboard_AIChat_HistoryModal"
 import { AIChat_History } from "./AIChat_History"
-import { useDashboard_AIChat_ResponseModal } from "@/context/Dashboard_AIChat_ResponseModal"
-import { AIChat_Plan_Modal } from "./AIChat_Plan_Modal"
 
 type Props = {
   showModalToggle: () => void
