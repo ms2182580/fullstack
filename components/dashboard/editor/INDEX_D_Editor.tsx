@@ -4,6 +4,7 @@ import "froala-editor/css/froala_editor.pkgd.min.css"
 import "font-awesome/css/font-awesome.css"
 import { useEffect, useState } from "react"
 import { Dashboard_BubbleChatSvg } from "@/assets/icons"
+import { CarePlaneComponent } from "@/components/carePlan/carePlane"
 
 export const Index_D_Editor = () => {
   const [isWindow, setIsWindow] = useState(false)
@@ -154,14 +155,14 @@ export const Index_D_Editor = () => {
         <span>File</span>
         <div id="toolbar" />
         <span>
-          <span>Optimize</span>
+          <span id="optimize">Optimize</span>
           <span>
             <Dashboard_BubbleChatSvg /> AIChat
           </span>
         </span>
       </div>
-      <div>
-        <div>Card</div>
+      <div id="first">
+        <CarePlaneComponent />
         <div id="editor" style={{ width: "100%", height: "100%" }}></div>
       </div>
     </INDEX_D_EditorWrapper>
