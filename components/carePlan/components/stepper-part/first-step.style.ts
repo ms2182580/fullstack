@@ -75,6 +75,12 @@ export const First_Step_Wrapper = styled.div`
                 }
               }
             }
+            .end_link{
+              a{
+                display:flex;
+                gap:10px;
+              }
+            }
       }
      
   

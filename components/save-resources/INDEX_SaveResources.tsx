@@ -1,5 +1,7 @@
 import { useState } from "react"
 import {
+  Model_Success_Wrapper,
+  Model_Wrapper,
   SaveResource_Card,
   SaveResource_Filter,
   SaveResource_MainWrapper,
@@ -9,7 +11,9 @@ import { ButtonSmall } from "../ui/buttons/general"
 import { Checkbox } from "../common/checkbox"
 import {
   Agencies_Icon_SVG,
+  Close_Icon_SVG,
   Edutcation_Icon_SVG,
+  File_Icon_SVG,
   Filter_Icon_SVG,
   Legal_Icon_SVG,
   Madical_Icon_SVG,
@@ -17,11 +21,14 @@ import {
   Single_Man_Icon_SVG,
   VerifiedTicket2Svg,
 } from "@/assets/icons"
-import { H2, H3 } from "../ui/heading_body_text/HeaderFonts"
+import { H2, H3, H4 } from "../ui/heading_body_text/HeaderFonts"
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
 
 export const INDEX_SaveResources = () => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false)
+  const [openAddCarePopup, setOpenAddCarePopup] = useState(false)
+  const [openViewCarePopup, setOpenViewCarePopup] = useState(false)
+
   return (
     <SaveResource_MainWrapper>
       <H3 lineHeight="48px" dark_maroon>
@@ -143,7 +150,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">New York, NY</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -171,7 +178,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">Online</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -203,7 +210,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">Brooklyn, NY</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -237,7 +244,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">Brooklyn, NY</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -269,7 +276,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">City, State</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -301,7 +308,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">Chelsea, New York</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -333,7 +340,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">New York, NY</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -365,7 +372,7 @@ export const INDEX_SaveResources = () => {
             </div>
             <div className="country">City, State</div>
             <div className="card-footer">
-              <div>
+              <div onClick={() => setOpenAddCarePopup(true)}>
                 <ButtonSmall>
                   <span>Add to care plan</span>
                 </ButtonSmall>
@@ -379,6 +386,67 @@ export const INDEX_SaveResources = () => {
           </div>
         </SaveResource_Card>
       </div>
+      {openAddCarePopup && (
+        <Model_Wrapper>
+          <div className="header">
+            <div className="text">
+              Which care plan would you like to add this resource to?
+            </div>
+            <div onClick={() => setOpenAddCarePopup(false)}>
+              <Close_Icon_SVG />
+            </div>
+          </div>
+          <div className="content_container">
+            <div className="item">
+              <Checkbox />
+              <div className="text">
+                {" "}
+                <File_Icon_SVG /> John's Care Plan
+              </div>
+            </div>
+            <div className="item">
+              <Checkbox />
+              <div className="text">
+                {" "}
+                <File_Icon_SVG /> John's Care Plan
+              </div>
+            </div>
+          </div>
+          <div className="footer">
+            <div
+              onClick={() => {
+                setOpenAddCarePopup(false)
+                setOpenViewCarePopup(true)
+              }}
+            >
+              <ButtonSmall>Add Resource</ButtonSmall>
+            </div>
+            <div onClick={() => setOpenAddCarePopup(false)}>
+              <ButtonSmall secondary>Create new plan</ButtonSmall>
+            </div>
+          </div>
+        </Model_Wrapper>
+      )}
+      {openViewCarePopup && (
+        <Model_Success_Wrapper>
+          <div className="header">
+            <div onClick={() => setOpenViewCarePopup(false)}>
+              <Close_Icon_SVG />
+            </div>
+          </div>
+          <div className="content_container">
+            <img src="/images/model_suc.png" alt="model_suc" />
+
+            <div className="text">
+              <H4>Success! ‘XYZ Resource’ has been saved.</H4>
+              <P>View your changes to your care plan now!</P>
+            </div>
+            <div className="footer" onClick={() => setOpenViewCarePopup(false)}>
+              <ButtonSmall>View care plan</ButtonSmall>
+            </div>
+          </div>
+        </Model_Success_Wrapper>
+      )}
     </SaveResource_MainWrapper>
   )
 }
