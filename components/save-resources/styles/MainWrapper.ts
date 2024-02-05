@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const SaveResource_MainWrapper = styled.div`
   padding-top: 80px;
   padding-left: 128px;
+  position: relative;
 
   .heading {
     color: #312138;
@@ -225,6 +226,88 @@ export const SaveResource_Card = styled.div`
       span {
         white-space: nowrap;
       }
+    }
+  }
+`
+
+export const Model_Wrapper = styled.div`
+  position: fixed;
+  top: 300px;
+  width: 703px;
+  height: 314px;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #d3ced5;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      font-family: Poppins;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 34px;
+      letter-spacing: 0px;
+      text-align: left;
+      color: #1d1a1e;
+    }
+  }
+  .content_container {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .item {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      .text {
+        display: flex;
+        gap: 10px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #3a343c;
+      }
+    }
+  }
+  .footer {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+`
+
+export const Model_Success_Wrapper = styled.div`
+  position: absolute;
+  top: 300px;
+  width: 526px;
+  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #d3ced5;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  .header {
+    display: flex;
+    justify-content: end;
+  }
+  .content_container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .footer {
+    button {
+      width: 90%;
     }
   }
 `
