@@ -54,7 +54,7 @@ export const INDEX_D_EditorWrapper = styled.div`
   }
   & > :nth-child(2) {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     gap: 24px;
   }
