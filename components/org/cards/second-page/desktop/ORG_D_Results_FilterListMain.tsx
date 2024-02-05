@@ -1,5 +1,8 @@
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
-import { DATA_ORG_KeyNamesForFilters_D_ENUM } from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
+import {
+  DATA_ORG_KeyNamesForFilters_D_ENUM,
+  FiltersRangeKeys,
+} from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
 import { SPECIFIC_DATA_SECOND_PAGE } from "@/utils/org/second-page/desktop/specificData"
 import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_FilterListMainWrapper"
 
@@ -12,7 +15,10 @@ export const ORG_D_Results_FilterListMain = () => {
       {secondpageDataORG[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE][
         SPECIFIC_DATA_SECOND_PAGE.FILTERS
       ].map((x, index) => {
-        let theKey = x[DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS].buttonName
+        let theKey =
+          x[DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS][
+            FiltersRangeKeys.BUTTON_NAME
+          ]
 
         let TheComponent = x[DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]
 

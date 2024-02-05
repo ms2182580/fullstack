@@ -27,7 +27,8 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 
-    visibility: ${({ mustShowFilter }) => (mustShowFilter ? `visible` : `hidden`)};
+    visibility: ${({ mustShowFilter }) =>
+      mustShowFilter ? `visible` : `hidden`};
     padding: 48px;
 
     display: flex;
@@ -44,18 +45,28 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
       right: 16px;
       top: 16px;
 
-      cursor: pointer;
-
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &:hover,
+      &:focus-visible {
+        filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.15));
+      }
     }
 
     & > :nth-child(2) {
-      cursor: pointer;
-      user-select: ${({ allowSelection }) => (allowSelection ? `auto` : `none`)};
+      cursor: default;
+
+      user-select: ${({ allowSelection }) =>
+        allowSelection ? `auto` : `none`};
 
       text-transform: capitalize;
+
+      &:hover,
+      &:focus-visible {
+        filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.15));
+      }
     }
 
     & > :nth-child(3) {
@@ -82,7 +93,8 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
           height: 36px;
           position: relative;
           padding-left: 49px;
-          cursor: pointer;
+
+          cursor: default;
           user-select: none;
 
           &.viewOnly {

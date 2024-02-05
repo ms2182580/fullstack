@@ -353,8 +353,7 @@ export const namesCategoriesOrder = [
   [NamesCategories_KEY["OTHER"]],
 ]
 
-// * The actual implementation on the UI rely on the order of this
-
+// * The actual implementation on the UI rely on the order of this object
 export const ALL_DATA: ALL_DATA_Type = {
   [NamesCategories_KEY["AGENCIES"]]: {
     CATEGORY: NamesCategories_KEY["AGENCIES"],

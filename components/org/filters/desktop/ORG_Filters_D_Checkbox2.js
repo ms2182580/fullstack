@@ -6,21 +6,7 @@ import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_Checkbox_Input } from "./ORG_Filters_D_Checkbox_Input.js"
 import { ORG_Filters_D_CheckboxWrapper2 } from "./styles/ORG_Filters_D_CheckboxWrapper2.js"
 
-export const ORG_Filters_D_Checkbox2 = ({
-  // clearAll,
-  // dispatch,
-  // setClearAll,
-  // setFilterData,
-  // setTempState,
-  // shouldClearAllOptions,
-  // showStateChildren,
-  // tempState,
-  // toUpdateFilters,
-  // buttonName = "noNameOnThisButton",
-  // categoriesToDisplay = ["nothing here"],
-  // titleOnModal,
-  ...props
-}) => {
+export const ORG_Filters_D_Checkbox2 = ({ ...props }) => {
   const {
     buttonName = "noNameOnThisButton",
     categoriesToDisplay = ["nothing here"],
@@ -75,8 +61,10 @@ export const ORG_Filters_D_Checkbox2 = ({
 
   const [shouldToggleAllOptions, setShouldToggleAllOptions] = useState(false)
   const handleToggleAll = (e) => {
-    setShouldToggleAllOptions((prevState) => !prevState)
-    handleShowRemaining()
+    if (e.code === "Enter" || e.type === "dblclick") {
+      setShouldToggleAllOptions((prevState) => !prevState)
+      handleShowRemaining()
+    }
   }
 
   const [allowSelection, setAllowSelection] = useState(true)
@@ -109,6 +97,7 @@ export const ORG_Filters_D_Checkbox2 = ({
           onClick={handleShowFilter}
           onKeyDown={handleShowFilter}
           tabIndex={0}
+          aria-label="Close"
         >
           <XDesktopSvg />
         </span>
@@ -116,8 +105,10 @@ export const ORG_Filters_D_Checkbox2 = ({
         <P
           semibold
           onDoubleClick={handleToggleAll}
+          onKeyDown={handleToggleAll}
           onMouseDown={handleMouseDown}
           onMouseUp={handleOnMouseLeave}
+          tabIndex={0}
         >
           {titleOnModal || buttonName}
         </P>
@@ -137,11 +128,11 @@ export const ORG_Filters_D_Checkbox2 = ({
 
                       // dispatch={dispatch}
                       // tempState={tempState}
-                      /* setTempState={setTempState} */
+                      // setTempState={setTempState}
                       // setFilterData={setFilterData}
-                      /* toUpdateFilters={toUpdateFilters}
-clearAll={clearAll}
-shouldClearAllOptions={shouldClearAllOptions} */
+                      // toUpdateFilters={toUpdateFilters}
+                      //   clearAll={clearAll}
+                      //   shouldClearAllOptions={shouldClearAllOptions}
                     />
                     <span></span>
                   </label>
