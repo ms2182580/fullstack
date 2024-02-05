@@ -5,7 +5,6 @@ import { Dashboard_D_ChatBot } from "./Dashboard_D_ChatBox"
 import { Dashboard_D_PlanList } from "./Dashboard_D_PlanList"
 import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
 import { Index_D_Editor } from "./editor/INDEX_D_Editor"
-
 export const INDEX_D_Dashboard = () => {
   const { isPlan } = useDashboardAIChat_Ctx()
 

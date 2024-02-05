@@ -13,7 +13,9 @@ export const FirstStep = () => {
           <div className="step_header_title">Create care plan</div>
           <div className="step_header_subtitle">Services </div>
         </div>
-        <BtnSmall secondary>Ask</BtnSmall>
+        <BtnSmall secondary id="chat">
+          Ask
+        </BtnSmall>
       </div>
       <div className="step_body">
         <div className="step_description">
