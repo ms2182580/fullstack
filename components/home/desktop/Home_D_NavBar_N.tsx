@@ -27,7 +27,7 @@ export const Home_D_NavBar_N = () => {
           </span>
           <Link href={`/${ALL_ROUTES.ORG}`}>Resource Guide</Link>
           <button>Log In</button>
-          <Link href={`${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
+          <Link href={`/${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
         </div>
       </div>
     </Home_D_NavBar_NWrapper>
