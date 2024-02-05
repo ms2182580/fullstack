@@ -8,6 +8,9 @@ export const Stepper_Wrapper = styled.div`
   background-color: #ffffff;
   border: 1px solid #d3ced5;
   border-radius: 5px;
+  .back_icon {
+    margin-left: 16px;
+  }
   .stepper_footer {
     padding: 0px 16px;
   }

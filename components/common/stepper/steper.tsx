@@ -40,24 +40,12 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
   return (
     <Stepper_Wrapper>
       {activeStep >= 1 && (
-        <div onClick={handleBackStep}>
+        <div className="back_icon" onClick={handleBackStep}>
           {" "}
           <BackArrow_Icon_SVG />
         </div>
       )}
 
-      {/* <Tabs_Wrapper>
-        {steps.map((step, index) => (
-          <StepTab
-            key={index}
-            isActive={index === activeStep}
-            isClickable={index < activeStep}
-            onClick={() => handleStepClick(index)}
-          >
-            {step.title}
-          </StepTab>
-        ))}
-      </Tabs_Wrapper> */}
       <ProgressBarWrapper>
         <ProgressBar activeStep={activeStep} stepsLength={steps.length} />
       </ProgressBarWrapper>
