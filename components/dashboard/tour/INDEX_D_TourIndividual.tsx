@@ -14,7 +14,6 @@ import {
 import { ButtonSmall } from "@/components/ui/buttons/general"
 
 export const INDEX_D_TourIndividual = (props: any) => {
-  console.log({ props })
   let content = <div></div>
 
   if (props.currentStep === 0) {
@@ -80,7 +79,7 @@ export const INDEX_D_TourIndividual = (props: any) => {
           <Dashboard_TourCloseSvg />
         </span>
         <Dashboard_TourSaveSvg />
-        <span>2 out of 5</span>
+        <span>3 out of 5</span>
         <span>Getting started - saved</span>
         <div>
           <span>
@@ -106,7 +105,7 @@ export const INDEX_D_TourIndividual = (props: any) => {
           <Dashboard_TourCloseSvg />
         </span>
         <Dashboard_TourChatSvg />
-        <span>2 out of 5</span>
+        <span>4 out of 5</span>
         <span>Getting started - chat</span>
         <div>
           <span>
@@ -130,12 +129,12 @@ export const INDEX_D_TourIndividual = (props: any) => {
   }
   if (props.currentStep === 4) {
     content = (
-      <DefaultDesign top="330%" left="112%">
+      <DefaultDesign top="250%" left="12%">
         <span onClick={() => props.setIsOpen(false)}>
           <Dashboard_TourCloseSvg />
         </span>
         <Dashboard_TourOptimize />
-        <span>4 out of 5</span>
+        <span>5 out of 5</span>
         <span>Getting started - optimize</span>
         <div>
           <span>
@@ -148,7 +147,7 @@ export const INDEX_D_TourIndividual = (props: any) => {
           <ButtonSmall
             goToDynamic={() => props.setCurrentStep(props.currentStep + 1)}
           >
-            Next
+            Done
           </ButtonSmall>
         </div>
       </DefaultDesign>
