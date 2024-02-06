@@ -2,7 +2,6 @@ import {
   BackArrow_Icon_SVG,
   CardBlack_Icon_SVG,
   Direction_Icon_SVG,
-  EmailSvg,
   Info_Icon_SVG,
   Internet_Icon_SVG,
   LeftArrowSvg,
@@ -10,7 +9,6 @@ import {
   Location_filed_Icon_SVG,
   Mail_Icon_SVG,
   ORG_D_Search_ViewProfileSvg,
-  PhoneSvg,
   Phone_Icon_SVG,
   SearchBlack_Icon_SVG,
 } from "@/assets/icons"
@@ -30,12 +28,11 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
-import { useEffect, useRef, useState } from "react"
-import { ButtonSmall } from "../ui/buttons/general"
-import { StarsRatingReview_D } from "../org/stars-rating-review/desktop/StarsRatingReview_D"
-import { H3, H4 } from "../ui/heading_body_text/HeaderFonts"
 import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
 import { MapComponent } from "../map/map"
+import { StarsRatingReview_D } from "../org/stars-rating-review/desktop/StarsRatingReview_D"
+import { ButtonSmall } from "../ui/buttons/general"
 // import { LI_Category } from "./styles/content-part.style"
 
 interface Step {

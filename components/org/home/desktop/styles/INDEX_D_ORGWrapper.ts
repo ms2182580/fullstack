@@ -9,7 +9,7 @@ export const INDEX_D_ORGWrapper = styled.div`
   background-image: url("/background/background1.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position-y: 2%;
+  background-position-y: 224px;
 
   position: relative;
 

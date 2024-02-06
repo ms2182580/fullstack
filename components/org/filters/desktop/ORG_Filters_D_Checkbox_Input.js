@@ -14,7 +14,7 @@ export const ORG_Filters_D_Checkbox_Input = ({
   clearAll,
   shouldClear */
   shouldClearAllOptions,
-  shouldToggleAllOptions
+  shouldToggleAllOptions,
 }) => {
   const [checked, setChecked] = useState(false)
 
@@ -23,7 +23,15 @@ export const ORG_Filters_D_Checkbox_Input = ({
   }, [shouldClearAllOptions])
 
   useEffect(() => {
-    setChecked(prevState => !prevState)
+    if (shouldToggleAllOptions) {
+      setChecked(true)
+    } else {
+      setChecked(false)
+    }
+
+    // setChecked((prevState) => !prevState)
+
+    // console.log("shouldToggleAllOptions:", shouldToggleAllOptions)
   }, [shouldToggleAllOptions])
 
   useEffect(() => {

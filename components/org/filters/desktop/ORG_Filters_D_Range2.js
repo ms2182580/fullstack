@@ -13,28 +13,10 @@ const calculateKGOnWeight = ({ valueToEvaluate }) => {
   )} kg`
 }
 
-export const ORG_Filters_D_Range2 = ({
-  // addCharacter = "" /* toLeft, toRight, weigth */,
-  // buttonName = "noNameOnThisButton",
-  // clearAll,
-  // labelName = "" /* name to display on the card  */,
-  // max = 999,
-  // min = 0,
-  // minSpecialCharacter,
-  // maxSpecialCharacter,
-  // addCharacterMinSpecialCharacter /* toLeft, toRight*/,
-  // addCharacterMaxSpecialCharacter /* toLeft, toRight*/,
-  // mustShowFiltersDesktop,
-  // setTempState,
-  // shouldClear,
-  // toUpdateFilters,
-  // whichMeasure = "" /* weight or any other character */,
-  ...props
-}) => {
+export const ORG_Filters_D_Range2 = ({ ...props }) => {
   const {
     addCharacter = "" /* toLeft, toRight, weigth */,
     buttonName = "noNameOnThisButton",
-    clearAll,
     labelName = "" /* name to display on the card  */,
     max = 999,
     min = 0,

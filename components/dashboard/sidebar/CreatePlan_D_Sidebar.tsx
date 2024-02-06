@@ -14,16 +14,19 @@ export const CreatePlan_D_Sidebar = () => {
       name: "Create",
       icon: <Dashboard_CreatePlanCreateSvg />,
       hander: () => setOption(1),
+      id: "#",
     },
     {
       name: "Upload",
       icon: <Dashboard_CreatePlanUploadSvg />,
       hander: () => setOption(2),
+      id: "upload",
     },
     {
       name: "Saved",
       icon: <Dashboard_CreatePlanSaveSvg />,
       hander: () => setOption(3),
+      id: "saved",
     },
   ]
   return (
@@ -34,7 +37,7 @@ export const CreatePlan_D_Sidebar = () => {
       </span>
       <ul>
         {options.map((option, index) => (
-          <li key={index} onClick={option.hander}>
+          <li key={index} onClick={option.hander} id={option.id}>
             {option.icon}
             <span>{option.name}</span>
           </li>

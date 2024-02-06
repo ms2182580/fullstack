@@ -62,10 +62,6 @@
 
 export const ORG_D_Results_FilterListMain = () => {
   // const { filtersLeftContext: filterData, setFiltersLeftContext: setFilterData } = useORG_Ctx_filtersLeftDesktop()
-  /* 
-  !FH0
-  Put the filters here
-  */
   /*
   !FH
   The problem is the "setFiltersLeftContext" that is making re renders to the context provider "ORG_CtxFiltersLeft_Provider"

@@ -4,6 +4,20 @@ import "froala-editor/css/froala_editor.pkgd.min.css"
 import "font-awesome/css/font-awesome.css"
 import { useEffect, useState } from "react"
 import { Dashboard_BubbleChatSvg } from "@/assets/icons"
+import { CarePlaneComponent } from "@/components/carePlan/carePlane"
+import Stepper from "@/components/common/stepper/steper"
+import { FirstStep } from "@/components/carePlan/components/stepper-part/first-step.component"
+
+interface Step {
+  title: string
+  content: React.ReactNode
+}
+
+const steps: Step[] = [
+  { title: "Step 1", content: <FirstStep /> },
+  { title: "Step 2", content: <FirstStep /> },
+  { title: "Step 3", content: <FirstStep /> },
+]
 
 export const Index_D_Editor = () => {
   const [isWindow, setIsWindow] = useState(false)
@@ -154,14 +168,16 @@ export const Index_D_Editor = () => {
         <span>File</span>
         <div id="toolbar" />
         <span>
-          <span>Optimize</span>
+          <span id="optimize">Optimize</span>
           <span>
             <Dashboard_BubbleChatSvg /> AIChat
           </span>
         </span>
       </div>
-      <div>
-        <div>Card</div>
+      <div id="first">
+        <div className="stepper">
+          <Stepper steps={steps} />
+        </div>
         <div id="editor" style={{ width: "100%", height: "100%" }}></div>
       </div>
     </INDEX_D_EditorWrapper>
