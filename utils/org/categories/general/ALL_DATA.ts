@@ -4,6 +4,7 @@ import PRP_SVG from "@/assets/icons/org/second-page/PRP_Button_To_Third_Page.svg
 import { MapProperties } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_MapComponent"
 import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { Type_FiltersToUI } from "../../DATA_ORG_KeyNamesForFilters_D"
 import {
   BUTTON_TO_THIRDPAGE_TEXT_OPTIONS,
   SPECIFIC_DATA_SECOND_PAGE,
@@ -18,16 +19,14 @@ import { arraySectionToRender_Agencies } from "../agencies/arraySectionToRender"
 import { tooltipToRender_Agencies } from "../agencies/tooltipToRender"
 import { arraySectionToRender_AssistiveSoftware } from "../assistive-software/arraySectionToRender"
 import { arraySectionToRender_AssistiveTechnologyHardware } from "../assistive-technology-hardware/arraySectionToRender"
-import {
-  Type_FiltersToUI,
-  filtersUI_AssistiveTechnologyHardware,
-} from "../assistive-technology-hardware/filters"
+import { filtersUI_AssistiveTechnologyHardware } from "../assistive-technology-hardware/filters"
 import { arraySectionToRender_Camps } from "../camps/arraySectionToRender"
 import { mapRender_Camps } from "../camps/mapRender"
 import { tooltipToRender_Camps } from "../camps/tooltipToRender"
 import { arraySectionToRender_CommunityInclusionClasses } from "../community-inclusion-classes/arraySectionToRender"
 import { tooltipToRender_CommunityInclusionClasses } from "../community-inclusion-classes/tooltipToRender"
 import { arraySectionToRender_LegalResources } from "../legal-resources/arraySectionToRender"
+import { filtersUI_LegalResources } from "../legal-resources/filters"
 import { tooltipToRender_LegalResources } from "../legal-resources/tooltipToRender"
 import { arraySectionToRender_MentalHealth } from "../mental-health/arraySectionToRender"
 import { mapRender_PMHSS } from "../mental-health/mapRender"
@@ -436,6 +435,8 @@ export const ALL_DATA: ALL_DATA_Type = {
     SECOND_PAGE: {
       BUTTON_TO_THIRDPAGE_TEXT:
         BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["request consultation"],
+
+      FILTERS: filtersUI_LegalResources,
     },
 
     THIRD_PAGE: {

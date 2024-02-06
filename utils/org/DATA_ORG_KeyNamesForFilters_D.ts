@@ -1,3 +1,5 @@
+import { JSXElementConstructor } from "react"
+
 export const DATA_ORG_KeyNamesForFilters_D = {
   COMPONENT: "component",
   PARAMETERS: "parameters",
@@ -23,8 +25,42 @@ export const enum FiltersRangeKeys {
   "ADD_CHARACTER" = "addCharacter",
 }
 
+type TypeSingleFilterRange = {
+  [FiltersRangeKeys.BUTTON_NAME]: string
+  [FiltersRangeKeys.LABEL_NAME]?: string
+  [FiltersRangeKeys.MAX]: string
+  [FiltersRangeKeys.MIN]: string
+  [FiltersRangeKeys.MIN_SPECIAL_CHARACTER]?: string
+  [FiltersRangeKeys.MAX_SPECIAL_CHARACTER]?: string
+  [FiltersRangeKeys.ADD_CHARACTER_MINSPECIAL_CHARACTER]?: "toLeft" | "toRight"
+  [FiltersRangeKeys.ADD_CHARACTER_MAXSPECIAL_CHARACTER]?: "toLeft" | "toRight"
+  [FiltersRangeKeys.WHICH_MEASURE]: string | "weight"
+  [FiltersRangeKeys.ADD_CHARACTER]?: "" | "toLeft" | "toRight" | "weight"
+}
+
+export type TypeAllFiltersRange = {
+  [category: string]: TypeSingleFilterRange
+}
+
 export const enum FiltersCheckboxKeys {
   "BUTTON_NAME" = "buttonName",
   "CATEGORIES_TO_DISPLAY" = "categoriesToDisplay",
   "TITLE_ON_MODAL" = "titleOnModal",
 }
+
+type TypeSingleFilterCheckbox = {
+  [FiltersCheckboxKeys.BUTTON_NAME]: string
+  [FiltersCheckboxKeys.CATEGORIES_TO_DISPLAY]: string[]
+  [FiltersCheckboxKeys.TITLE_ON_MODAL]?: string
+}
+
+export type TypeAllFiltersCheckbox = {
+  [category: string]: TypeSingleFilterCheckbox
+}
+
+export type Type_FiltersToUI = {
+  [DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]: JSXElementConstructor<any>
+  [DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS]:
+    | TypeSingleFilterRange
+    | TypeSingleFilterCheckbox
+}[]
