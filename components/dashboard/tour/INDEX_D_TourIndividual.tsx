@@ -6,12 +6,12 @@ import {
   Dashboard_TourOptimize,
   Dashboard_TourSaveSvg,
 } from "@/assets/icons"
+import { ButtonSmall } from "@/components/ui/buttons/general"
 import {
   DefaultDesign,
   FirstSreen,
   INDEX_D_TourIndividualWrapper,
 } from "./styles/INDEX_D_TourIndividualWrapper"
-import { ButtonSmall } from "@/components/ui/buttons/general"
 
 export const INDEX_D_TourIndividual = (props: any) => {
   let content = <div></div>
@@ -42,6 +42,7 @@ export const INDEX_D_TourIndividual = (props: any) => {
       </FirstSreen>
     )
   }
+
   if (props.currentStep === 1) {
     content = (
       <DefaultDesign top="-70%" left="62%">
@@ -138,7 +139,7 @@ export const INDEX_D_TourIndividual = (props: any) => {
         <span>Getting started - optimize</span>
         <div>
           <span>
-            Once a plan has been created, you can optimize  your plan based on
+            Once a plan has been created, you can optimize your plan based on
             factors such as private cost and functional behaviors.
           </span>
         </div>

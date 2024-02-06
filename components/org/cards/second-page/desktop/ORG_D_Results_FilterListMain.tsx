@@ -8,28 +8,32 @@ import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_Filt
 
 export const ORG_D_Results_FilterListMain = () => {
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData_Backend()
-  // console.log("secondpageDataORG:", secondpageDataORG)
+  console.log("secondpageDataORG:", secondpageDataORG)
 
   return (
     <ORG_D_Results_FilterListMainWrapper>
-      {secondpageDataORG[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE][
+      {secondpageDataORG?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?.[
         SPECIFIC_DATA_SECOND_PAGE.FILTERS
-      ].map((x, index) => {
-        let theKey =
-          x[DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS][
-            FiltersRangeKeys.BUTTON_NAME
-          ]
+      ]
+        ? secondpageDataORG?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?.[
+            SPECIFIC_DATA_SECOND_PAGE.FILTERS
+          ].map((x, index) => {
+            let theKey =
+              x[DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS][
+                FiltersRangeKeys.BUTTON_NAME
+              ]
 
-        let TheComponent = x[DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]
+            let TheComponent = x[DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]
 
-        return (
-          <li key={theKey}>
-            <TheComponent
-              props={x[DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS]}
-            />
-          </li>
-        )
-      })}
+            return (
+              <li key={theKey}>
+                <TheComponent
+                  props={x[DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS]}
+                />
+              </li>
+            )
+          })
+        : null}
 
       {/* {secondpageFiltersORG && !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
         ? secondpageFiltersORG.map((x, index) => (
