@@ -1,4 +1,6 @@
-import { JSXElementConstructor } from "react"
+import { ORG_Filters_D_Checkbox2 } from "@/components/org/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_More2 } from "@/components/org/filters/desktop/ORG_Filters_D_More2"
+import { ORG_Filters_D_Range2 } from "@/components/org/filters/desktop/ORG_Filters_D_Range2"
 
 export const DATA_ORG_KeyNamesForFilters_D = {
   COMPONENT: "component",
@@ -59,7 +61,10 @@ export type TypeAllFiltersCheckbox = {
 }
 
 export type Type_FiltersToUI = {
-  [DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]: JSXElementConstructor<any>
+  [DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]:
+    | typeof ORG_Filters_D_Range2
+    | typeof ORG_Filters_D_Checkbox2
+    | typeof ORG_Filters_D_More2
   [DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS]:
     | TypeSingleFilterRange
     | TypeSingleFilterCheckbox

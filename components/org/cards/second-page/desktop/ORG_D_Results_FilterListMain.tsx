@@ -8,7 +8,6 @@ import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_Filt
 
 export const ORG_D_Results_FilterListMain = () => {
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData_Backend()
-  console.log("secondpageDataORG:", secondpageDataORG)
 
   return (
     <ORG_D_Results_FilterListMainWrapper>
