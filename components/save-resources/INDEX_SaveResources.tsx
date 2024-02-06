@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import {
   Model_Success_Wrapper,
   Model_Wrapper,
@@ -23,11 +23,28 @@ import {
 } from "@/assets/icons"
 import { H2, H3, H4 } from "../ui/heading_body_text/HeaderFonts"
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
+import useClickOutside from "../common/hooks/use-click-outside"
 
 export const INDEX_SaveResources = () => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false)
   const [openAddCarePopup, setOpenAddCarePopup] = useState(false)
   const [openViewCarePopup, setOpenViewCarePopup] = useState(false)
+
+  const refFilter = useRef<HTMLDivElement>(null)
+  const refAddCare = useRef<HTMLDivElement>(null)
+  const refViewCare = useRef<HTMLDivElement>(null)
+
+  const handleCloseViewCarePopup = () => {
+    setOpenViewCarePopup(false)
+  }
+  const handleCloseAddCarePopup = () => {
+    setOpenAddCarePopup(false)
+  }
+
+  useClickOutside(
+    [refFilter, refAddCare, refViewCare],
+    [setOpenFilterPopup, setOpenAddCarePopup, setOpenViewCarePopup]
+  )
 
   return (
     <SaveResource_MainWrapper>
@@ -58,7 +75,7 @@ export const INDEX_SaveResources = () => {
             <div className="text">Filters</div>
           </div>
           {openFilterPopup && (
-            <div className="filter-box">
+            <div ref={refFilter} className="filter-box">
               <div className="filter-item">
                 <div className="filter-text">
                   <div>
@@ -387,65 +404,72 @@ export const INDEX_SaveResources = () => {
         </SaveResource_Card>
       </div>
       {openAddCarePopup && (
-        <Model_Wrapper>
-          <div className="header">
-            <div className="text">
-              Which care plan would you like to add this resource to?
-            </div>
-            <div onClick={() => setOpenAddCarePopup(false)}>
-              <Close_Icon_SVG />
-            </div>
-          </div>
-          <div className="content_container">
-            <div className="item">
-              <Checkbox />
+        <div ref={refAddCare}>
+          <Model_Wrapper>
+            <div className="header">
               <div className="text">
-                {" "}
-                <File_Icon_SVG /> John's Care Plan
+                Which care plan would you like to add this resource to?
+              </div>
+              <div onClick={() => handleCloseAddCarePopup()}>
+                <Close_Icon_SVG />
               </div>
             </div>
-            <div className="item">
-              <Checkbox />
-              <div className="text">
-                {" "}
-                <File_Icon_SVG /> John's Care Plan
+            <div className="content_container">
+              <div className="item">
+                <Checkbox />
+                <div className="text">
+                  {" "}
+                  <File_Icon_SVG /> John's Care Plan
+                </div>
+              </div>
+              <div className="item">
+                <Checkbox />
+                <div className="text">
+                  {" "}
+                  <File_Icon_SVG /> John's Care Plan
+                </div>
               </div>
             </div>
-          </div>
-          <div className="footer">
-            <div
-              onClick={() => {
-                setOpenAddCarePopup(false)
-                setOpenViewCarePopup(true)
-              }}
-            >
-              <ButtonSmall>Add Resource</ButtonSmall>
+            <div className="footer">
+              <div
+                onClick={() => {
+                  handleCloseAddCarePopup()
+                  setOpenViewCarePopup(true)
+                }}
+              >
+                <ButtonSmall>Add Resource</ButtonSmall>
+              </div>
+              <div onClick={() => handleCloseAddCarePopup()}>
+                <ButtonSmall secondary>Create new plan</ButtonSmall>
+              </div>
             </div>
-            <div onClick={() => setOpenAddCarePopup(false)}>
-              <ButtonSmall secondary>Create new plan</ButtonSmall>
-            </div>
-          </div>
-        </Model_Wrapper>
+          </Model_Wrapper>
+        </div>
       )}
       {openViewCarePopup && (
-        <Model_Success_Wrapper>
-          <div className="header">
-            <div onClick={() => setOpenViewCarePopup(false)}>
-              <Close_Icon_SVG />
+        <div ref={refViewCare}>
+          <Model_Success_Wrapper>
+            <div className="header">
+              <div onClick={() => handleCloseViewCarePopup()}>
+                <Close_Icon_SVG />
+              </div>
             </div>
-          </div>
-          <div className="content_container">
-            <img src="/images/model_suc.png" alt="model_suc" />
+            <div className="content_container">
+              <img src="/images/model_suc.png" alt="model_suc" />
 
-            <div className="text">
-              <H4>Success! ‘XYZ Resource’ has been saved.</H4>
-              <P>View your changes to your care plan now!</P>
+              <div className="text">
+                <H4>Success! ‘XYZ Resource’ has been saved.</H4>
+                <P>View your changes to your care plan now!</P>
+              </div>
+              <div
+                className="footer"
+                onClick={() => handleCloseViewCarePopup()}
+              >
+                <ButtonSmall>View care plan</ButtonSmall>
+              </div>
             </div>
-            <div className="footer" onClick={() => setOpenViewCarePopup(false)}>
-              <ButtonSmall>View care plan</ButtonSmall>
-            </div>
-          </div>
-        </Model_Success_Wrapper>
+          </Model_Success_Wrapper>
+        </div>
       )}
     </SaveResource_MainWrapper>
   )
