@@ -5,7 +5,7 @@ import "font-awesome/css/font-awesome.css"
 import { useEffect, useState } from "react"
 import { Dashboard_BubbleChatSvg } from "@/assets/icons"
 import { CarePlaneComponent } from "@/components/carePlan/carePlane"
-import Stepper from "@/components/common/stepper/steper"
+import { Stepper } from "@/components/common/stepper/steper"
 import { FirstStep } from "@/components/carePlan/components/stepper-part/first-step.component"
 
 interface Step {
