@@ -4,8 +4,10 @@ import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { BtnSmall } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import { Action_Icon_SVG, GreaterThan_Icon_SVG } from "@/assets/icons"
 import Link from "next/link"
+import { useDashboardEditorAIChat_Ctx } from "@/context/Ctx_Dashboard_EditorChatModal"
 
 export const FirstStep = () => {
+  const { setIsChat } = useDashboardEditorAIChat_Ctx()
   return (
     <First_Step_Wrapper>
       <div className="step_header">
@@ -13,7 +15,7 @@ export const FirstStep = () => {
           <div className="step_header_title">Create care plan</div>
           <div className="step_header_subtitle">Services </div>
         </div>
-        <BtnSmall secondary id="chat">
+        <BtnSmall secondary id="chat" onClick={() => setIsChat(true)}>
           Ask
         </BtnSmall>
       </div>
