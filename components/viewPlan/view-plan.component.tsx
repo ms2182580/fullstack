@@ -1,11 +1,26 @@
+import {
+  Add_Icon_SVG,
+  Divider_Line_SVG,
+  DoubleAction_Icon_SVG,
+  Help_Icon_SVG,
+  Plus_Outline_Icon_SVG,
+  ProfileIconSvg,
+  VerifiedTicket2Svg,
+} from "@/assets/icons"
 import React from "react"
-import { Profile_Card, Text_Card, ViewPlan_Wrapper } from "./view-plan.style"
-import Stepper from "../common/stepper/steper"
 import { FirstStep } from "../carePlan/components/stepper-part/first-step.component"
-import { Add_Icon_SVG, Help_Icon_SVG, ProfileIconSvg } from "@/assets/icons"
-import { P } from "../ui/heading_body_text/DesktopMobileFonts"
-import { BtnSmall } from "../ui/buttons/general/styles/ButtonStyled"
 import { Footer_Wrapper } from "../common/stepper/stepper.style"
+import { BtnSmall } from "../ui/buttons/general/styles/ButtonStyled"
+import {
+  Action_Card,
+  Item_Card,
+  Profile_Card,
+  Ride_Card,
+  Support_Sec,
+  Text_Card,
+  ViewPlan_Wrapper,
+} from "./view-plan.style"
+import { Checkbox } from "../common/checkbox"
 
 interface Step {
   title: string
@@ -172,6 +187,528 @@ export const ViewPlan = () => {
                 </p>
               </div>
             </Text_Card>
+          </div>
+        </div>
+        <div className="ar_divider">
+          {" "}
+          <Divider_Line_SVG />
+        </div>
+        <div className="inner_content">
+          <div className="sec_header">
+            <div className="sec_title">Goals</div>
+            <div>
+              <DoubleAction_Icon_SVG />
+            </div>
+          </div>
+          <div className="ride_sec">
+            <Ride_Card>
+              <div className="card_header">
+                <div className="title">Ride a bike</div>
+                <div className="des_wrapper">
+                  <div className="desc">Timeline: length of time</div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <div className="features">
+                  <div>
+                    <div className="ft_title">Desired outcome</div>
+                    <div className="ft_desc">
+                      Learn to ride a bike with training wheels.
+                    </div>
+                  </div>
+                  <div>
+                    <div className="ft_title">Support</div>
+                    <div className="ft_desc">
+                      Physical support, adapted bike with training wheels.
+                    </div>
+                  </div>
+                </div>
+                <div className="action_steps">
+                  <div className="as_header">
+                    <div className="as_title">Action steps</div>
+                    <Plus_Outline_Icon_SVG />
+                  </div>
+                  <ul className="as_list">
+                    <li className="as_item">
+                      Gradually introduce the concept of pedaling and balance.{" "}
+                    </li>
+                    <li className="as_item">
+                      Practice in a safe and open space with family support.{" "}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </Ride_Card>
+            <Ride_Card>
+              <div className="card_header">
+                <div className="title">Ride a bike</div>
+                <div className="des_wrapper">
+                  <div className="desc">Timeline: length of time</div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <div className="features">
+                  <div>
+                    <div className="ft_title">Desired outcome</div>
+                    <div className="ft_desc">
+                      Learn to ride a bike with training wheels.
+                    </div>
+                  </div>
+                  <div>
+                    <div className="ft_title">Support</div>
+                    <div className="ft_desc">
+                      Physical support, adapted bike with training wheels.
+                    </div>
+                  </div>
+                </div>
+                <div className="action_steps">
+                  <div className="as_header">
+                    <div className="as_title">Action steps</div>
+                    <Plus_Outline_Icon_SVG />
+                  </div>
+                  <ul className="as_list">
+                    <li className="as_item">
+                      Gradually introduce the concept of pedaling and balance.{" "}
+                    </li>
+                    <li className="as_item">
+                      Practice in a safe and open space with family support.{" "}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </Ride_Card>
+            <Ride_Card>
+              <div className="card_header">
+                <div className="title">Ride a bike</div>
+                <div className="des_wrapper">
+                  <div className="desc">Timeline: length of time</div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <div className="features">
+                  <div>
+                    <div className="ft_title">Desired outcome</div>
+                    <div className="ft_desc">
+                      Learn to ride a bike with training wheels.
+                    </div>
+                  </div>
+                  <div>
+                    <div className="ft_title">Support</div>
+                    <div className="ft_desc">
+                      Physical support, adapted bike with training wheels.
+                    </div>
+                  </div>
+                </div>
+                <div className="action_steps">
+                  <div className="as_header">
+                    <div className="as_title">Action steps</div>
+                    <Plus_Outline_Icon_SVG />
+                  </div>
+                  <ul className="as_list">
+                    <li className="as_item">
+                      Gradually introduce the concept of pedaling and balance.{" "}
+                    </li>
+                    <li className="as_item">
+                      Practice in a safe and open space with family support.{" "}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </Ride_Card>
+          </div>
+        </div>
+        <div className="ar_divider">
+          {" "}
+          <Divider_Line_SVG />
+        </div>
+        <div className="inner_content">
+          <div className="sec_header">
+            <div className="sec_title">Action plan</div>
+            <div>
+              <DoubleAction_Icon_SVG />
+            </div>
+          </div>
+          <div className="ride_sec">
+            <Action_Card>
+              <div className="card_header">
+                <div className="title">General</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <div className="inner_card">
+                  <Checkbox />
+                  <div>
+                    <div className="in_title">Action item</div>
+                    <div className="in_desc">Write something...</div>
+                  </div>
+                </div>
+                <div className="inner_card">
+                  <Checkbox />
+                  <div>
+                    <div className="in_title">Action item</div>
+                    <div className="in_desc">Write something...</div>
+                  </div>
+                </div>
+              </div>
+            </Action_Card>
+            <Action_Card>
+              <div className="card_header">
+                <div className="title">General</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <div className="inner_card">
+                  <Checkbox />
+                  <div>
+                    <div className="in_title">Action item</div>
+                    <div className="in_desc">Write something...</div>
+                  </div>
+                </div>
+                <div className="inner_card">
+                  <Checkbox />
+                  <div>
+                    <div className="in_title">Action item</div>
+                    <div className="in_desc">Write something...</div>
+                  </div>
+                </div>
+              </div>
+            </Action_Card>
+          </div>
+        </div>
+        <div className="ar_divider">
+          {" "}
+          <Divider_Line_SVG />
+        </div>
+        <div className="inner_content">
+          <div className="sec_header">
+            <div className="sec_title">Circle of Support</div>
+            <div>
+              <DoubleAction_Icon_SVG />
+            </div>
+          </div>
+          <div className="ride_sec">
+            <Support_Sec>
+              <div className="card_header">
+                <div className="title">Care team</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                    <div className="header-label">
+                      <div>
+                        <VerifiedTicket2Svg />
+                      </div>
+                      <div className="label-text">Verified</div>
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                    <div className="header-label">
+                      <div>
+                        <VerifiedTicket2Svg />
+                      </div>
+                      <div className="label-text">Verified</div>
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                    <div className="header-label">
+                      <div>
+                        <VerifiedTicket2Svg />
+                      </div>
+                      <div className="label-text">Verified</div>
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+              </div>
+            </Support_Sec>
+            <Support_Sec>
+              <div className="card_header">
+                <div className="title">Legal resources</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                    <div className="header-label">
+                      <div>
+                        <VerifiedTicket2Svg />
+                      </div>
+                      <div className="label-text">Verified</div>
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                    <div className="header-label">
+                      <div>
+                        <VerifiedTicket2Svg />
+                      </div>
+                      <div className="label-text">Verified</div>
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                    <div className="header-label">
+                      <div>
+                        <VerifiedTicket2Svg />
+                      </div>
+                      <div className="label-text">Verified</div>
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+              </div>
+            </Support_Sec>
+            <Support_Sec>
+              <div className="card_header">
+                <div className="title">Assistive technology</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="card_body">
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+                <Item_Card>
+                  <div className="card-header">
+                    <div>
+                      <img src="/images/checker.png" alt="karate" />
+                    </div>
+                  </div>
+                  <div className="item_card_body">
+                    <div className="title">Listing Title</div>
+                    <div className="desc">
+                      <div>Listing type</div>
+                      <div>Name of Work Place</div>
+                      <div>Address</div>
+                      <div>City, State</div>
+                      <div>(000) 123-1234</div>
+                    </div>
+                  </div>
+                </Item_Card>
+              </div>
+            </Support_Sec>
+            <Support_Sec>
+              <div className="card_header">
+                <div className="title">Emergency contact</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="emr_card_body">
+                <div>
+                  <div className="bd_label">Name:</div>
+                  <div className="bd_desc">Write something...</div>
+                </div>
+                <div>
+                  <div className="bd_label">Relationship:</div>
+                  <div className="bd_desc">Write something...</div>
+                </div>
+                <div>
+                  <div className="bd_label">Contact:</div>
+                  <div className="bd_desc">Write something...</div>
+                </div>
+              </div>
+            </Support_Sec>
+          </div>
+        </div>
+        <div className="ar_divider">
+          {" "}
+          <Divider_Line_SVG />
+        </div>
+        <div className="inner_content">
+          <div className="sec_header">
+            <div className="sec_title">Miscellaneous</div>
+            <div>
+              <DoubleAction_Icon_SVG />
+            </div>
+          </div>
+          <div className="ride_sec">
+            <Support_Sec>
+              <div className="card_header">
+                <div className="title">Chat explorations</div>
+                <div>
+                  <DoubleAction_Icon_SVG />
+                </div>
+              </div>
+              <div className="meisc_body">
+                <div className="meisc_color_card">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                <div className="pdf_view">
+                  <div className="file_name">PDFfilename.pdf</div>
+                  <div className="pdf_content">
+                    <div>
+                      You don’t need to have a full time ecommerce business to
+                      earn a little extra money through your website. You don’t
+                      even need to be there all the time. All you need to do is
+                      wait for the day your advertisers will pay you.
+                    </div>
+                    <div>
+                      However, this is not as easy as it seems. You can’t expect
+                      to just make a website and watch the money roll in. You
+                      have to exert first the effort to make the site popular
+                      and produce a huge traffic flow. Advertisers would only
+                      post their banners and ads on sites where they know there
+                      are many people who will see them. The more traffic and
+                      visitors you have the likely the chance that advertisers
+                      will want their ads on your site. You can also have
+                      pay-per-click advertising in your site. As each visitor
+                      clicks on an ad, the advertiser will pay you for those
+                      redirects. Google’s Adsense and Yahoo’s Search marketing
+                      are some of those that offer this performance based
+                      marketing strategies.
+                    </div>
+                    <div>
+                      They can provide a way to make money online by simply
+                      placing ads on your site. These ads are also links to the
+                      sites of the advertisers. The advertisers pay Google and
+                      Yahoo for every clicks done to their ...
+                    </div>
+                  </div>
+                </div>
+                <div className="meisc_color_card">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                <div className="meisc_simple_card">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+              </div>
+            </Support_Sec>
           </div>
         </div>
       </div>
