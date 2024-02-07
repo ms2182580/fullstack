@@ -27,11 +27,11 @@ export const enum FiltersRangeKeys {
   "ADD_CHARACTER" = "addCharacter",
 }
 
-type TypeSingleFilterRange = {
+export type TypeSingleFilterRange = {
   [FiltersRangeKeys.BUTTON_NAME]: string
   [FiltersRangeKeys.LABEL_NAME]?: string
-  [FiltersRangeKeys.MAX]: string
-  [FiltersRangeKeys.MIN]: string
+  [FiltersRangeKeys.MAX]: string | number
+  [FiltersRangeKeys.MIN]: string | number
   [FiltersRangeKeys.MIN_SPECIAL_CHARACTER]?: string
   [FiltersRangeKeys.MAX_SPECIAL_CHARACTER]?: string
   [FiltersRangeKeys.ADD_CHARACTER_MINSPECIAL_CHARACTER]?: "toLeft" | "toRight"
@@ -60,6 +60,16 @@ export type TypeAllFiltersCheckbox = {
   [category: string]: TypeSingleFilterCheckbox
 }
 
+export const enum AllMoreFilters_KEY {
+  RANGES = "RANGES",
+  CHECKBOXES = "CHECKBOXES",
+}
+
+export type Type_AllMoreFilters = {
+  [AllMoreFilters_KEY.RANGES]?: JSX.Element[]
+  [AllMoreFilters_KEY.CHECKBOXES]?: JSX.Element[]
+}
+
 export type Type_FiltersToUI = {
   [DATA_ORG_KeyNamesForFilters_D_ENUM.COMPONENT]:
     | typeof ORG_Filters_D_Range2
@@ -68,4 +78,5 @@ export type Type_FiltersToUI = {
   [DATA_ORG_KeyNamesForFilters_D_ENUM.PARAMETERS]:
     | TypeSingleFilterRange
     | TypeSingleFilterCheckbox
+    | Type_AllMoreFilters
 }[]

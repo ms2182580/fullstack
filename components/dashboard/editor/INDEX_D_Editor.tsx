@@ -1,12 +1,11 @@
-import { INDEX_D_EditorWrapper } from "./styles/Index_D_EditorWrapper"
-import "froala-editor/css/froala_style.min.css"
-import "froala-editor/css/froala_editor.pkgd.min.css"
-import "font-awesome/css/font-awesome.css"
-import { useEffect, useState } from "react"
 import { Dashboard_BubbleChatSvg } from "@/assets/icons"
-import { CarePlaneComponent } from "@/components/carePlan/carePlane"
-import { Stepper } from "@/components/common/stepper/steper"
 import { FirstStep } from "@/components/carePlan/components/stepper-part/first-step.component"
+import { Stepper } from "@/components/common/stepper/steper"
+import "font-awesome/css/font-awesome.css"
+import "froala-editor/css/froala_editor.pkgd.min.css"
+import "froala-editor/css/froala_style.min.css"
+import { useEffect, useState } from "react"
+import { INDEX_D_EditorWrapper } from "./styles/Index_D_EditorWrapper"
 
 interface Step {
   title: string
@@ -174,6 +173,7 @@ export const Index_D_Editor = () => {
           </span>
         </span>
       </div>
+
       <div id="first">
         <div className="stepper">
           <Stepper steps={steps} />

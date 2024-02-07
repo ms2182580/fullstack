@@ -6,7 +6,12 @@ const THUMB_COLOR = "#151A26"
 const THUMB_SIZE = "19px"
 const BUTTON_COLOR = "#3B4250"
 
-export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
+type Props = {
+  minVal?: number
+  maxVal?: number
+}
+
+export const ORG_Filters_D_Range_IsolatedWrapper = styled.div<Props>`
   & > label {
     display: none;
   }
@@ -30,7 +35,6 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
     position: absolute;
     height: 0px;
     width: ${SLICE_WIDTH};
-    
   }
 
   .thumb--left {
@@ -74,7 +78,7 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
   .slider {
     position: relative;
     width: calc(${SLICE_WIDTH} - 5px);
-    
+
     margin-left: 2px;
   }
 
@@ -115,7 +119,7 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
 
     display: flex;
     justify-content: center;
-    gap:8px;
+    gap: 8px;
 
     padding-inline: 18px;
 
@@ -139,7 +143,6 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div`
       background-color: ${THUMB_COLOR};
       margin-top: auto;
       margin-bottom: auto;
-      
     }
   }
 

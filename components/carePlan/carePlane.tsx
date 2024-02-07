@@ -392,7 +392,7 @@ export const CarePlaneComponent = () => {
                       Corpus with superior power standing wheelchair
                       functionality. Fully programmable standing sequences allow
                       you to find the perfect position using supine,
-                      semi-reclined or sit to stand techniques... show more   
+                      semi-reclined or sit to stand techniques... show more
                     </Item_Desc>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
+import { AllMoreFilters_KEY } from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
 import { Fragment, cloneElement, useState } from "react"
 import { XDesktopSvg } from "../../../../assets/icons/index.js"
 import { useShowFilters } from "../../../../utils/org/useShowFilters.js"
@@ -10,7 +11,12 @@ export const ORG_Filters_D_More2 = ({
   // customButtonName = "More Filters",
   ...props
 }) => {
-  const { customButtonName = "More Filters", allCheckboxes = [] /* weight or any other character */, allRanges = [] } = props.props
+  const {
+    customButtonName = "More Filters",
+    [AllMoreFilters_KEY.CHECKBOXES]:
+      allCheckboxes = [] /* weight or any other character */,
+    [AllMoreFilters_KEY.RANGES]: allRanges = [],
+  } = props.props
 
   const className = props.shouldAddClassName
 
@@ -45,14 +51,22 @@ export const ORG_Filters_D_More2 = ({
   return (
     <ORG_Filters_D_MoreWrapper2
       mustShowFilter={mustShowFilter}
-      className={className && className}>
-      <span onClick={handleShowFilter}>{!mustShowFilter ? <ButtonSmall secondary>{customButtonName}</ButtonSmall> : <ButtonSmall>{customButtonName}</ButtonSmall>}</span>
+      className={className && className}
+    >
+      <span onClick={handleShowFilter}>
+        {!mustShowFilter ? (
+          <ButtonSmall secondary>{customButtonName}</ButtonSmall>
+        ) : (
+          <ButtonSmall>{customButtonName}</ButtonSmall>
+        )}
+      </span>
 
       <div ref={refContainer}>
         <span
           onClick={handleShowFilter}
           onKeyDown={handleShowFilter}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           <XDesktopSvg />
         </span>
 
@@ -60,7 +74,11 @@ export const ORG_Filters_D_More2 = ({
           {allRanges.map((x, i) => {
             return (
               <>
-                <Fragment key={i}>{cloneElement(x, { shouldClearAllOptions: shouldClearAllOptions })}</Fragment>
+                <Fragment key={i}>
+                  {cloneElement(x, {
+                    shouldClearAllOptions: shouldClearAllOptions,
+                  })}
+                </Fragment>
               </>
             )
           })}
@@ -70,7 +88,11 @@ export const ORG_Filters_D_More2 = ({
           {allCheckboxes.map((x, i) => {
             return (
               <>
-                <Fragment key={i}>{cloneElement(x, { shouldClearAllOptions: shouldClearAllOptions })}</Fragment>
+                <Fragment key={i}>
+                  {cloneElement(x, {
+                    shouldClearAllOptions: shouldClearAllOptions,
+                  })}
+                </Fragment>
               </>
             )
           })}
@@ -79,7 +101,8 @@ export const ORG_Filters_D_More2 = ({
         <div>
           <span
             onClick={handleShouldClearAllOptions}
-            onKeyDown={handleShouldClearAllOptions}>
+            onKeyDown={handleShouldClearAllOptions}
+          >
             <ButtonSmall secondary>Clear all</ButtonSmall>
           </span>
           <span>

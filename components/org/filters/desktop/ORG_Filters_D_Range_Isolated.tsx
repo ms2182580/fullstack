@@ -1,25 +1,18 @@
+import { TypeSingleFilterRange } from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
-import { ORG_Filters_D_Range_IsolatedWrapper } from "./styles/ORG_Filters_D_Range_IsolatedWrapper.js"
+import { ORG_Filters_D_Range_IsolatedWrapper } from "./styles/ORG_Filters_D_Range_IsolatedWrapper"
 
 export const ORG_Filters_D_Range_Isolated = ({
   addCharacter = "" /* toLeft, toRight, weigth */,
   buttonName = "noNameOnThisButton",
-  clearAll,
   labelName = "" /* name to display on the card  */,
   max = 999,
   min = 0,
   minSpecialCharacter,
   maxSpecialCharacter,
-  addCharacterMinSpecialCharacter = true,
-  addCharacterMaxSpecialCharacter,
-  // mustShowFiltersDesktop,
-  // setTempState,
-  shouldClear,
-  shouldClearAllOptions,
-  // toUpdateFilters,
   whichMeasure = "" /* weight or any other character */,
-}) => {
+}: TypeSingleFilterRange) => {
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
   const [minValUI, setMinValUI] = useState(min)
@@ -28,11 +21,12 @@ export const ORG_Filters_D_Range_Isolated = ({
 
   const minValRef = useRef(min)
   const maxValRef = useRef(max)
-  const range = useRef(null)
+  const range = useRef<HTMLDivElement | null>(null)
 
   // Convert to percentage
   const getPercent = useCallback(
-    (value) => Math.round(((value - min) / (max - min)) * 100),
+    (value) =>
+      Math.round(((value - Number(min)) / (Number(max) - Number(min))) * 100),
     [min, max]
   )
 
@@ -59,7 +53,7 @@ export const ORG_Filters_D_Range_Isolated = ({
   }, [maxVal, getPercent])
 
   const handleMinValue = (event) => {
-    const value = Math.min(Number(event.target.value), maxVal)
+    const value = Math.min(Number(event.target.value), Number(maxVal))
     setMinVal(value)
 
     const formatedValue = new Intl.NumberFormat().format(value)
@@ -75,10 +69,9 @@ export const ORG_Filters_D_Range_Isolated = ({
     ) {
       const shouldAddSpecialCharacter = value === Number(min)
 
-      let finalSpecialCharacter =
-        shouldAddSpecialCharacter && addCharacterMinSpecialCharacter
-          ? ` ${whichMeasure} ${minSpecialCharacter}`
-          : `${minSpecialCharacter}`
+      let finalSpecialCharacter = shouldAddSpecialCharacter
+        ? ` ${whichMeasure} ${minSpecialCharacter}`
+        : `${minSpecialCharacter}`
 
       setMinValUI(
         shouldAddSpecialCharacter
@@ -93,8 +86,9 @@ export const ORG_Filters_D_Range_Isolated = ({
 
     if (whichMeasure === "weight" && addCharacter === "toRight") {
       const inLbs = `${formatedValue} lbs`
+
       const inKgs = `${Math.round(
-        new Intl.NumberFormat().format(value * 0.45359237)
+        Number(new Intl.NumberFormat().format(Number(value) * 0.45359237))
       )} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
@@ -104,7 +98,7 @@ export const ORG_Filters_D_Range_Isolated = ({
   }
 
   const handleMaxValue = (event) => {
-    const value = Math.max(Number(event.target.value), minVal)
+    const value = Math.max(Number(event.target.value), Number(minVal))
     setMaxVal(value)
 
     const formatedValue = new Intl.NumberFormat().format(value)
@@ -123,7 +117,7 @@ export const ORG_Filters_D_Range_Isolated = ({
       const inLbs = `+${formatedValue} lbs`
 
       const inKgs = `${Math.round(
-        new Intl.NumberFormat().format(value * 0.45359237)
+        Number(new Intl.NumberFormat().format(Number(value) * 0.45359237))
       )} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
@@ -142,7 +136,7 @@ export const ORG_Filters_D_Range_Isolated = ({
   const updateToInitialValues = () => {
     setMinVal(min)
     minValRef.current = min
-    const formatedValueMin = new Intl.NumberFormat("en-US").format(min)
+    const formatedValueMin = new Intl.NumberFormat("en-US").format(Number(min))
 
     if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
       if (addCharacter === "toRight") {
@@ -162,7 +156,7 @@ export const ORG_Filters_D_Range_Isolated = ({
       const inLbs = `${formatedValueMin} lbs`
 
       const inKgs = `${Math.round(
-        new Intl.NumberFormat().format(min * 0.45359237)
+        Number(new Intl.NumberFormat().format(Number(min) * 0.45359237))
       )} kg`
 
       setMinValUI(`${inLbs} · ${inKgs}`)
@@ -170,7 +164,7 @@ export const ORG_Filters_D_Range_Isolated = ({
 
     setMaxVal(max)
     maxValRef.current = max
-    const formatedValueMax = new Intl.NumberFormat("en-US").format(max)
+    const formatedValueMax = new Intl.NumberFormat("en-US").format(Number(max))
 
     if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
       setMaxValUI(formatedValueMax)
@@ -184,16 +178,16 @@ export const ORG_Filters_D_Range_Isolated = ({
       const inLbs = `+${formatedValueMax} lbs`
 
       const inKgs = `${Math.round(
-        new Intl.NumberFormat().format(max * 0.45359237)
+        Number(new Intl.NumberFormat().format(Number(max) * 0.45359237))
       )} kg`
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
   }
 
-  useEffect(() => {
-    updateToInitialValues()
-  }, [shouldClearAllOptions])
+  // useEffect(() => {
+  //   updateToInitialValues()
+  // }, [shouldClearAllOptions])
 
   // useEffect(() => {
   //   setTempState((prevState) => {
@@ -205,7 +199,10 @@ export const ORG_Filters_D_Range_Isolated = ({
   // }, [updateFilterData, mustShowFiltersDesktop])
 
   return (
-    <ORG_Filters_D_Range_IsolatedWrapper minVal={minVal} maxVal={maxVal}>
+    <ORG_Filters_D_Range_IsolatedWrapper
+      minVal={Number(minVal)}
+      maxVal={Number(maxVal)}
+    >
       {labelName !== "" && <label htmlFor="min">Minimum {labelName}</label>}
 
       <P semibold>{buttonName}</P>
@@ -216,7 +213,7 @@ export const ORG_Filters_D_Range_Isolated = ({
         value={minVal}
         onChange={handleMinValue}
         className="thumb thumb--left"
-        style={{ zIndex: minVal > max - 100 && "5" }}
+        style={{ zIndex: Number(minVal) > Number(max) - 100 ? 5 : 3 }}
       />
 
       {labelName !== "" && <label htmlFor="max">Maximum {labelName}</label>}
