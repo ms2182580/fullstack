@@ -21,7 +21,7 @@ interface Step {
 interface StepperProps {
   steps: Step[]
 }
-const Stepper: React.FC<StepperProps> = ({ steps }) => {
+export const Stepper: React.FC<StepperProps> = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0)
 
   const handleStepClick = (stepIndex: number) => {
@@ -67,5 +67,3 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
     </Stepper_Wrapper>
   )
 }
-
-export default Stepper

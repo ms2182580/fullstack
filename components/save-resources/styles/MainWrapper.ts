@@ -287,8 +287,8 @@ export const Model_Wrapper = styled.div`
 `
 
 export const Model_Success_Wrapper = styled.div`
-  position: absolute;
-  top: 300px;
+  position: fixed;
+  top: 50px;
   width: 526px;
   padding: 32px;
   background-color: #ffffff;

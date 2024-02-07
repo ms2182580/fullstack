@@ -12,7 +12,7 @@ import {
   Phone_Icon_SVG,
   SearchBlack_Icon_SVG,
 } from "@/assets/icons"
-import Stepper from "../common/stepper/steper"
+import { Stepper } from "../common/stepper/steper"
 import {
   CarePlan_Wrapper,
   Item_Desc,
