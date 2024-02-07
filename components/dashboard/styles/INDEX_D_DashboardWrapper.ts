@@ -3,6 +3,7 @@ type Props = {
   isCreatePlan: boolean
 }
 export const INDEX_D_DashboardWrapper = styled.div<Props>`
+  position: relative;
   padding-top: ${(props) => (props.isCreatePlan ? "0px" : "42px")};
   padding-left: ${(props) => (props.isCreatePlan ? "0px" : "136px")};
   width: 100%;
