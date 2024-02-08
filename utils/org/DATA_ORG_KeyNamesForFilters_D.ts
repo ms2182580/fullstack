@@ -65,11 +65,13 @@ export type TypeAllFiltersCheckbox = {
 export const enum AllMoreFilters_KEY {
   RANGES = "RANGES",
   CHECKBOXES = "CHECKBOXES",
+  CUSTOM_BUTTON_NAME = "CUSTOM_BUTTON_NAME",
 }
 
 export type Type_AllMoreFilters = {
   [AllMoreFilters_KEY.RANGES]?: JSX.Element[]
   [AllMoreFilters_KEY.CHECKBOXES]?: JSX.Element[]
+  [AllMoreFilters_KEY.CUSTOM_BUTTON_NAME]?: string
 }
 
 export type Type_FiltersToUI = {

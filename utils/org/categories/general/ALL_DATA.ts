@@ -21,6 +21,7 @@ import { arraySectionToRender_AssistiveSoftware } from "../assistive-software/ar
 import { arraySectionToRender_AssistiveTechnologyHardware } from "../assistive-technology-hardware/arraySectionToRender"
 import { filtersUI_AssistiveTechnologyHardware } from "../assistive-technology-hardware/filters"
 import { arraySectionToRender_Camps } from "../camps/arraySectionToRender"
+import { filtersUI_Camps } from "../camps/filters"
 import { mapRender_Camps } from "../camps/mapRender"
 import { tooltipToRender_Camps } from "../camps/tooltipToRender"
 import { arraySectionToRender_CommunityInclusionClasses } from "../community-inclusion-classes/arraySectionToRender"
@@ -420,6 +421,10 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["CAMPS"]]
     ),
+
+    SECOND_PAGE: {
+      FILTERS: filtersUI_Camps,
+    },
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_Camps,
       HOW_IS_MAP: mapRender_Camps,

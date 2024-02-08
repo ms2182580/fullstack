@@ -31,6 +31,10 @@ export const ORG_Filters_D_Checkbox_Isolated = ({
     setAllowSelection(true)
   }
 
+  /* 
+  !FH
+  Make this work with tabIndex={0}, this is: with keyboard: tab and enter key
+  */
   return (
     <ORG_Filters_D_Checkbox_IsolatedWrapper allowSelection={allowSelection}>
       <P

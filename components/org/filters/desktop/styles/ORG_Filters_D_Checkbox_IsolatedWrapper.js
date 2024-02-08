@@ -1,11 +1,17 @@
 import styled from "styled-components"
-import { NEUTRALS, SEMANTICS } from "../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../assets/Colors"
 
 export const ORG_Filters_D_Checkbox_IsolatedWrapper = styled.div`
   & > :nth-child(1) {
     margin-bottom: 12px;
     user-select: ${({ allowSelection }) => (allowSelection ? `auto` : `none`)};
-    cursor: pointer;
+    cursor: default;
+
+    &:hover,
+    &:focus-visible {
+      filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.1));
+      color: ${PRIMARY.PRIMARY_HOVER};
+    }
   }
 
   & > :nth-child(2) {
@@ -32,8 +38,8 @@ export const ORG_Filters_D_Checkbox_IsolatedWrapper = styled.div`
         height: 36px;
         position: relative;
         padding-left: 49px;
-        cursor: pointer;
         user-select: none;
+        cursor: default;
 
         & > :nth-child(1) {
           line-height: normal;
@@ -96,11 +102,13 @@ export const ORG_Filters_D_Checkbox_IsolatedWrapper = styled.div`
     }
 
     & > span:last-child {
-      cursor: pointer;
+      cursor: default;
+
       text-decoration-line: underline;
       text-decoration-color: ${SEMANTICS.HYPERLINK_NORMAL};
 
-      &:hover > p {
+      &:hover > p,
+      &:focus-visible > p {
         color: ${SEMANTICS.FOCUS_RING};
       }
     }

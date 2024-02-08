@@ -12,7 +12,7 @@ export const ORG_Filters_D_More2 = ({
   ...props
 }) => {
   const {
-    customButtonName = "More Filters",
+    [AllMoreFilters_KEY.CUSTOM_BUTTON_NAME]: customButtonName = "More Filters",
     [AllMoreFilters_KEY.CHECKBOXES]:
       allCheckboxes = [] /* weight or any other character */,
     [AllMoreFilters_KEY.RANGES]: allRanges = [],
