@@ -1,4 +1,5 @@
 import { ORG_Filters_D_Checkbox2 } from "@/components/org/filters/desktop/ORG_Filters_D_Checkbox2"
+import { ORG_Filters_D_Checkbox_Isolated } from "@/components/org/filters/desktop/ORG_Filters_D_Checkbox_Isolated"
 import { ORG_Filters_D_More2 } from "@/components/org/filters/desktop/ORG_Filters_D_More2"
 import { ORG_Filters_D_Range_Isolated } from "@/components/org/filters/desktop/ORG_Filters_D_Range_Isolated"
 import {
@@ -12,77 +13,6 @@ import {
   Type_FiltersToUI,
 } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-// export const DATA_CR_D_Filters = {
-//   // areasOfLaw: {
-//   //   buttonName: "Area(s) of Law",
-
-//   //   categoriesToDisplay: [
-//   //     "Civil Rights",
-//   //     "Disability Rights",
-//   //     "Public Accomodations",
-//   //     "Employment Discrimination",
-//   //     "Housing Discrimination",
-//   //     "Police Misconduct",
-//   //     "Prisoners' Rights",
-//   //     "Voting Rights",
-//   //     "Education Discrimination",
-//   //     "LGBTQ+",
-//   //     "Immigration Rights",
-//   //   ],
-//   // },
-
-//   // jurisdiction: {
-//   //   buttonName: "Jurisdiction",
-//   //   titleOnModal: "Jurisdictions Admitted to Practice",
-//   //   categoriesToDisplay: [
-//   //     "New York",
-//   //     "New Jersey",
-//   //     "Connecticut",
-//   //     "California",
-//   //     "Texas",
-//   //     "Florida",
-//   //     "Illinois",
-//   //     "Pennsylvania",
-//   //   ],
-//   // },
-
-//   // professionalExperience: {
-//   //   buttonName: "Professional Experience",
-//   //   categoriesToDisplay: [
-//   //     "Private Practice",
-//   //     "Law Firm",
-//   //     "Clerkship",
-//   //     "Government Agencies",
-//   //     "In-House Counsel",
-//   //     "Public Interest Organizations",
-//   //   ],
-//   // },
-
-//   moreFilters: {
-//     operationHours: {
-//       buttonName: "Operation Hours",
-//       categoriesToDisplay: [
-//         "Open Now",
-//         "Weekday",
-//         "Weekdays & Weekends",
-//         "After Hours",
-//       ],
-//     },
-
-//     payment: {
-//       buttonName: "Payment",
-//       categoriesToDisplay: [
-//         "Free Consultation",
-//         "Retainer Minimum",
-//         "Payment Plan",
-//         "Flat Fee",
-//         "Hourly Rate",
-//         "Contingency Fee",
-//       ],
-//     },
-//   },
-// }
-
 export const FILTERS_RANGE: TypeAllFiltersRange = {
   price: {
     buttonName: "Price",
@@ -93,11 +23,6 @@ export const FILTERS_RANGE: TypeAllFiltersRange = {
     addCharacter: "toLeft",
   },
 }
-
-/* 
-!FH0
-Get all filters for LEGAL. Here you will have "More Filters"
-*/
 
 export const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
   areasOfLaw: {
@@ -202,6 +127,50 @@ const FILTERS_MORE: Type_AllMoreFilters = {
         ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter
       }
       addCharacterMaxSpecialCharacter={"toLeft"}
+    />,
+  ],
+
+  CHECKBOXES: [
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={FILTERS_CHECKBOX.areasOfLaw.buttonName}
+      categoriesToDisplay={FILTERS_CHECKBOX.areasOfLaw.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={FILTERS_CHECKBOX.jurisdiction.titleOnModal}
+      categoriesToDisplay={FILTERS_CHECKBOX.jurisdiction.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={FILTERS_CHECKBOX.professionalExperience.buttonName}
+      categoriesToDisplay={
+        FILTERS_CHECKBOX.professionalExperience.categoriesToDisplay
+      }
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={FILTERS_CHECKBOX.languajesSpoken.buttonName}
+      categoriesToDisplay={FILTERS_CHECKBOX.languajesSpoken.categoriesToDisplay}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.diagnosis.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.diagnosis}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.meetingFormat.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.operationHours.titleToShow}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.operationHours}
+    />,
+
+    <ORG_Filters_D_Checkbox_Isolated
+      titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
+      categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
     />,
   ],
 }

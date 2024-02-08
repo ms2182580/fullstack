@@ -6,7 +6,7 @@ import { ORG_Filters_D_Checkbox_IsolatedWrapper } from "./styles/ORG_Filters_D_C
 export const ORG_Filters_D_Checkbox_Isolated = ({
   categoriesToDisplay = ["empty"],
   titleOnModal = ``,
-  shouldClearAllOptions,
+  // shouldClearAllOptions,
 }) => {
   const [showRemaining, setShowRemaining] = useState(
     categoriesToDisplay.length <= 3
@@ -52,7 +52,7 @@ export const ORG_Filters_D_Checkbox_Isolated = ({
                   <ORG_Filters_D_Checkbox_Input
                     type="checkbox"
                     name={x}
-                    shouldClearAllOptions={shouldClearAllOptions}
+                    // shouldClearAllOptions={shouldClearAllOptions}
                     shouldToggleAllOptions={shouldToggleAllOptions}
                     // dispatch={dispatch}
                     // tempState={tempState}
@@ -78,7 +78,7 @@ shouldClearAllOptions={shouldClearAllOptions} */
                   <ORG_Filters_D_Checkbox_Input
                     type="checkbox"
                     name={x}
-                    shouldClearAllOptions={shouldClearAllOptions}
+                    // shouldClearAllOptions={shouldClearAllOptions}
                     shouldToggleAllOptions={shouldToggleAllOptions}
                     // dispatch={dispatch}
                     // tempState={tempState}
@@ -101,7 +101,7 @@ shouldClearAllOptions={shouldClearAllOptions} */
                   <ORG_Filters_D_Checkbox_Input
                     type="checkbox"
                     name={x}
-                    shouldClearAllOptions={shouldClearAllOptions}
+                    // shouldClearAllOptions={shouldClearAllOptions}
                     shouldToggleAllOptions={shouldToggleAllOptions}
                     // dispatch={dispatch}
                     // tempState={tempState}
