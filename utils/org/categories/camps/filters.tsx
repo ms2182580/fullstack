@@ -316,8 +316,8 @@ export const filtersUI_Camps: Type_FiltersToUI = [
     component: ORG_Filters_D_Range2,
     parameters: {
       buttonName: ORG_FILTERS_KEYS_D.distance.titleToShow,
-      min: ORG_FILTERS_DATA_D.distanceRange.minimum,
-      max: ORG_FILTERS_DATA_D.distanceRange.maximum,
+      min: ORG_FILTERS_DATA_D.distanceRange.min,
+      max: ORG_FILTERS_DATA_D.distanceRange.max,
       whichMeasure: ORG_FILTERS_DATA_D.distanceRange.whichMeasure,
       addCharacter: "toRight",
     },

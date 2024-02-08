@@ -25,6 +25,7 @@ import { filtersUI_Camps } from "../camps/filters"
 import { mapRender_Camps } from "../camps/mapRender"
 import { tooltipToRender_Camps } from "../camps/tooltipToRender"
 import { arraySectionToRender_CommunityInclusionClasses } from "../community-inclusion-classes/arraySectionToRender"
+import { filtersUI_CommunityInclusionClasses } from "../community-inclusion-classes/filters"
 import { tooltipToRender_CommunityInclusionClasses } from "../community-inclusion-classes/tooltipToRender"
 import { arraySectionToRender_LegalResources } from "../legal-resources/arraySectionToRender"
 import { filtersUI_LegalResources } from "../legal-resources/filters"
@@ -457,6 +458,10 @@ export const ALL_DATA: ALL_DATA_Type = {
         NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]
       ]
     ),
+
+    SECOND_PAGE: {
+      FILTERS: filtersUI_CommunityInclusionClasses,
+    },
 
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_CommunityInclusionClasses,

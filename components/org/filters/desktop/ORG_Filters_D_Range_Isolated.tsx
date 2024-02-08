@@ -84,7 +84,7 @@ export const ORG_Filters_D_Range_Isolated = ({
 
       if (addCharacter === "toLeft") {
         let toUpdateInState = shouldAddSpecialCharacter
-          ? `${minSpecialCharacter}`
+          ? `${minSpecialCharacter} ${formatedValue}`
           : `${whichMeasure} ${formatedValue}`
 
         setMinValUI(toUpdateInState)

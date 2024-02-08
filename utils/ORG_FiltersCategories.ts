@@ -26,8 +26,9 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
   ],
   distance: ["0-5", "5-10", "10-20", "+20"],
   distanceRange: {
-    minimum: "0",
-    maximum: "20",
+    buttonName: "Distance",
+    min: "0",
+    max: "20",
     whichMeasure: "miles",
     addCharacter: "toRight",
   },
