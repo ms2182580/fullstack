@@ -70,7 +70,7 @@ export const ORG_Filters_D_More2 = ({
           <XDesktopSvg />
         </span>
 
-        <div className="rangeMoreFilters">
+        <div>
           {allRanges.map((x, i) => {
             return (
               <>

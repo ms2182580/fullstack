@@ -25,31 +25,38 @@ export const ORG_Filters_D_MoreWrapper2 = styled.div`
 
     padding: 48px;
 
-    visibility: ${({ mustShowFilter }) => (mustShowFilter ? `visible` : `hidden`)};
+    visibility: ${({ mustShowFilter }) =>
+      mustShowFilter ? `visible` : `hidden`};
+
+    @media (max-width: 1277px) {
+      top: calc(88px + 48px + 32px + 24px);
+    }
 
     & > :nth-child(1) {
-      cursor: pointer;
+      cursor: default;
       position: absolute;
       top: 16px;
       right: 13px;
+
+      &:hover,
+      &:focus-visible {
+        filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.25));
+      }
+    }
+
+    /* All Filters here */
+    & > :nth-child(2) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+      column-gap: 128px;
+      padding-bottom: 30px;
     }
 
     & > *:not(:first-child) {
       & > * {
         text-transform: capitalize;
       }
-    }
-
-    @media (max-width: 1277px) {
-      top: calc(88px + 48px + 32px + 24px);
-    }
-
-    .rangeMoreFilters {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 30px;
-      column-gap: 128px;
-      padding-bottom: 30px;
     }
 
     .checkboxesMoreFilters {

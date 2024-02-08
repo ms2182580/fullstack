@@ -201,6 +201,7 @@ const FILTERS_MORE: Type_AllMoreFilters = {
       maxSpecialCharacter={
         ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter
       }
+      addCharacterMaxSpecialCharacter={"toLeft"}
     />,
   ],
 }

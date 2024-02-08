@@ -18,7 +18,7 @@ export const ORG_Filters_D_RangeWrapper2 = styled.div`
     }
   }
 
-  .container {
+  & > :nth-child(2) {
     position: absolute;
     top: 150%;
     left: 0;
@@ -29,7 +29,8 @@ export const ORG_Filters_D_RangeWrapper2 = styled.div`
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 
-    visibility: ${({ mustShowFilter }) => (mustShowFilter ? `visible` : `hidden`)};
+    visibility: ${({ mustShowFilter }) =>
+      mustShowFilter ? `visible` : `hidden`};
     padding: 48px;
 
     p {

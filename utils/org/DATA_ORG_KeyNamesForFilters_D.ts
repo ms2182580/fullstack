@@ -15,16 +15,17 @@ export const enum DATA_ORG_KeyNamesForFilters_D_ENUM {
 }
 
 export const enum FiltersRangeKeys {
-  "BUTTON_NAME" = "buttonName",
-  "LABEL_NAME" = "labelName",
-  "MAX" = "max",
-  "MIN" = "min",
-  "MIN_SPECIAL_CHARACTER" = "minSpecialCharacter",
-  "MAX_SPECIAL_CHARACTER" = "maxSpecialCharacter",
-  "ADD_CHARACTER_MINSPECIAL_CHARACTER" = "addCharacterMinSpecialCharacter",
-  "ADD_CHARACTER_MAXSPECIAL_CHARACTER" = "addCharacterMaxSpecialCharacter",
-  "WHICH_MEASURE" = "whichMeasure",
-  "ADD_CHARACTER" = "addCharacter",
+  BUTTON_NAME = "buttonName",
+  LABEL_NAME = "labelName",
+  MAX = "max",
+  MIN = "min",
+  MIN_SPECIAL_CHARACTER = "minSpecialCharacter",
+  MAX_SPECIAL_CHARACTER = "maxSpecialCharacter",
+  ADD_CHARACTER_MINSPECIAL_CHARACTER = "addCharacterMinSpecialCharacter",
+  ADD_CHARACTER_MAXSPECIAL_CHARACTER = "addCharacterMaxSpecialCharacter",
+  WHICH_MEASURE = "whichMeasure",
+  ADD_CHARACTER = "addCharacter",
+  CLASS_NAME = "SHOULD_ADD_CLASS_NAME",
 }
 
 export type TypeSingleFilterRange = {
@@ -38,6 +39,7 @@ export type TypeSingleFilterRange = {
   [FiltersRangeKeys.ADD_CHARACTER_MAXSPECIAL_CHARACTER]?: "toLeft" | "toRight"
   [FiltersRangeKeys.WHICH_MEASURE]: string | "weight"
   [FiltersRangeKeys.ADD_CHARACTER]?: "" | "toLeft" | "toRight" | "weight"
+  [FiltersRangeKeys.CLASS_NAME]?: string
 }
 
 export type TypeAllFiltersRange = {

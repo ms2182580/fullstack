@@ -3,21 +3,32 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_Range_IsolatedWrapper } from "./styles/ORG_Filters_D_Range_IsolatedWrapper"
 
+const calculateKGOnWeight = ({ valueToEvaluate }) => {
+  return `${Math.round(
+    Number(new Intl.NumberFormat().format(Number(valueToEvaluate) * 0.45359237))
+  )} kg`
+}
+
 export const ORG_Filters_D_Range_Isolated = ({
-  addCharacter = "" /* toLeft, toRight, weigth */,
-  buttonName = "noNameOnThisButton",
-  labelName = "" /* name to display on the card  */,
-  max = 999,
-  min = 0,
-  minSpecialCharacter,
-  maxSpecialCharacter,
-  whichMeasure = "" /* weight or any other character */,
+  ...props
 }: TypeSingleFilterRange) => {
+  const {
+    addCharacter = "" /* toLeft, toRight, weigth */,
+    buttonName = "noNameOnThisButton",
+    labelName = "" /* name to display on the card  */,
+    max = 999,
+    min = 0,
+    minSpecialCharacter,
+    maxSpecialCharacter,
+    addCharacterMinSpecialCharacter /* toLeft, toRight*/,
+    addCharacterMaxSpecialCharacter /* toLeft, toRight*/,
+    whichMeasure = "" /* weight or any other character */,
+  }: TypeSingleFilterRange = props
+
   const [minVal, setMinVal] = useState(min)
   const [maxVal, setMaxVal] = useState(max)
   const [minValUI, setMinValUI] = useState(min)
   const [maxValUI, setMaxValUI] = useState(max)
-  // const [updateFilterData, setUpdateFilterData] = useState(categoriesToDisplay.slice(minVal, maxVal + 1))
 
   const minValRef = useRef(min)
   const maxValRef = useRef(max)
@@ -39,8 +50,6 @@ export const ORG_Filters_D_Range_Isolated = ({
       range.current.style.left = `${minPercent}%`
       range.current.style.width = `${maxPercent - minPercent}%`
     }
-
-    // setUpdateFilterData(categoriesToDisplay.slice(minVal, maxVal + 1))
   }, [minVal, getPercent])
 
   useEffect(() => {
@@ -56,40 +65,54 @@ export const ORG_Filters_D_Range_Isolated = ({
     const value = Math.min(Number(event.target.value), Number(maxVal))
     setMinVal(value)
 
-    const formatedValue = new Intl.NumberFormat().format(value)
+    const formatedValue = new Intl.NumberFormat("en-US").format(value)
 
-    // if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
-    //   setMinValUI(formatedValue)
-    // }
+    if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
+      setMinValUI(formatedValue)
 
-    if (
-      whichMeasure !== "weight" &&
-      minSpecialCharacter !== undefined &&
-      addCharacter === "toLeft"
-    ) {
+      if (addCharacter === "toLeft") {
+        setMinValUI(`${whichMeasure} ${formatedValue}`)
+      }
+
+      if (addCharacter === "toRight") {
+        setMinValUI(`${formatedValue} ${whichMeasure}`)
+      }
+    }
+
+    if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
       const shouldAddSpecialCharacter = value === Number(min)
 
-      let finalSpecialCharacter = shouldAddSpecialCharacter
-        ? ` ${whichMeasure} ${minSpecialCharacter}`
-        : `${minSpecialCharacter}`
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = shouldAddSpecialCharacter
+          ? `${minSpecialCharacter}`
+          : `${whichMeasure} ${formatedValue}`
 
-      setMinValUI(
-        shouldAddSpecialCharacter
-          ? finalSpecialCharacter
-          : ` ${whichMeasure}  ${formatedValue}`
-      )
+        setMinValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMinSpecialCharacter === "toLeft") {
+          let toUpdateInState = shouldAddSpecialCharacter
+            ? `${minSpecialCharacter} ${formatedValue} ${whichMeasure}`
+            : `${formatedValue} ${whichMeasure} `
+
+          setMinValUI(toUpdateInState)
+        }
+
+        if (addCharacterMinSpecialCharacter === "toRight") {
+          let toUpdateInState = shouldAddSpecialCharacter
+            ? `${whichMeasure} ${formatedValue} ${minSpecialCharacter}`
+            : `${whichMeasure} ${formatedValue}`
+
+          setMinValUI(toUpdateInState)
+        }
+      }
     }
 
-    if (whichMeasure !== "weight" && addCharacter === "toRight") {
-      setMinValUI(`${formatedValue} ${whichMeasure}`)
-    }
-
-    if (whichMeasure === "weight" && addCharacter === "toRight") {
+    if (whichMeasure === "weight") {
       const inLbs = `${formatedValue} lbs`
 
-      const inKgs = `${Math.round(
-        Number(new Intl.NumberFormat().format(Number(value) * 0.45359237))
-      )} kg`
+      const inKgs = calculateKGOnWeight({ valueToEvaluate: value })
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
@@ -101,24 +124,52 @@ export const ORG_Filters_D_Range_Isolated = ({
     const value = Math.max(Number(event.target.value), Number(minVal))
     setMaxVal(value)
 
-    const formatedValue = new Intl.NumberFormat().format(value)
+    const formatedValue = new Intl.NumberFormat("en-US").format(value)
 
     if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
-      setMaxValUI(formatedValue)
+      if (addCharacter === "toLeft") {
+        setMaxValUI(`${whichMeasure} ${formatedValue}`)
+      }
+
+      if (addCharacter === "toRight") {
+        setMaxValUI(`${formatedValue} ${whichMeasure}`)
+      }
     }
 
     if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
-      const addSpecialCharacter = value === Number(max)
+      const shouldAddSpecialCharacter = value === Number(max)
 
-      setMaxValUI(addSpecialCharacter ? maxSpecialCharacter : formatedValue)
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = shouldAddSpecialCharacter
+          ? `${maxSpecialCharacter} ${whichMeasure} ${formatedValue}`
+          : `${whichMeasure} ${formatedValue}`
+
+        setMaxValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMaxSpecialCharacter === "toLeft") {
+          let toUpdateInState = shouldAddSpecialCharacter
+            ? `${maxSpecialCharacter} ${whichMeasure}`
+            : `${formatedValue} ${whichMeasure} `
+
+          setMaxValUI(toUpdateInState)
+        }
+
+        if (addCharacterMaxSpecialCharacter === "toRight") {
+          let toUpdateInState = shouldAddSpecialCharacter
+            ? `${whichMeasure} ${formatedValue} ${maxSpecialCharacter}`
+            : `${whichMeasure} ${formatedValue}`
+
+          setMaxValUI(toUpdateInState)
+        }
+      }
     }
 
-    if (whichMeasure === "weight" && addCharacter === "toRight") {
+    if (whichMeasure === "weight") {
       const inLbs = `+${formatedValue} lbs`
 
-      const inKgs = `${Math.round(
-        Number(new Intl.NumberFormat().format(Number(value) * 0.45359237))
-      )} kg`
+      const inKgs = calculateKGOnWeight({ valueToEvaluate: value })
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
@@ -126,12 +177,7 @@ export const ORG_Filters_D_Range_Isolated = ({
     maxValRef.current = value
   }
 
-  // const [shouldClearAllOptions, setShouldClearAllOptions] = useState(false)
-  // const handleShouldClearAllOptions = (e) => {
-  //   if (e.type === "click" || e.key === "Enter" || e === "from useEffect") {
-  //     setShouldClearAllOptions((prevState) => !prevState)
-  //   }
-  // }
+  const [shouldClearAllOptions, setShouldClearAllOptions] = useState(false)
 
   const updateToInitialValues = () => {
     setMinVal(min)
@@ -139,25 +185,41 @@ export const ORG_Filters_D_Range_Isolated = ({
     const formatedValueMin = new Intl.NumberFormat("en-US").format(Number(min))
 
     if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
-      if (addCharacter === "toRight") {
-        setMinValUI(`${formatedValueMin} ${whichMeasure}`)
+      if (addCharacter === "toLeft") {
+        setMinValUI(`${whichMeasure} ${formatedValueMin}`)
       }
 
-      if (addCharacter === "toLeft") {
+      if (addCharacter === "toRight") {
         setMinValUI(`${formatedValueMin} ${whichMeasure}`)
       }
     }
 
     if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
-      setMinValUI(minSpecialCharacter)
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = `${minSpecialCharacter}`
+
+        setMinValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMinSpecialCharacter === "toLeft") {
+          let toUpdateInState = `${minSpecialCharacter} ${formatedValueMin} ${whichMeasure}`
+
+          setMinValUI(toUpdateInState)
+        }
+
+        if (addCharacterMinSpecialCharacter === "toRight") {
+          let toUpdateInState = `${whichMeasure} ${formatedValueMin} ${minSpecialCharacter}`
+
+          setMinValUI(toUpdateInState)
+        }
+      }
     }
 
     if (whichMeasure === "weight") {
       const inLbs = `${formatedValueMin} lbs`
 
-      const inKgs = `${Math.round(
-        Number(new Intl.NumberFormat().format(Number(min) * 0.45359237))
-      )} kg`
+      const inKgs = calculateKGOnWeight({ valueToEvaluate: min })
 
       setMinValUI(`${inLbs} · ${inKgs}`)
     }
@@ -167,27 +229,58 @@ export const ORG_Filters_D_Range_Isolated = ({
     const formatedValueMax = new Intl.NumberFormat("en-US").format(Number(max))
 
     if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
-      setMaxValUI(formatedValueMax)
+      if (addCharacter === "toLeft") {
+        setMaxValUI(`${whichMeasure} ${formatedValueMax}`)
+      }
+
+      if (addCharacter === "toRight") {
+        setMaxValUI(`${formatedValueMax} ${whichMeasure}`)
+      }
     }
 
     if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
-      setMaxValUI(maxSpecialCharacter)
+      const value = Math.max(Number(maxValRef.current), Number(maxVal))
+
+      const shouldAddSpecialCharacter = value === Number(max)
+      if (addCharacter === "toLeft") {
+        let toUpdateInState = shouldAddSpecialCharacter
+          ? `${maxSpecialCharacter} ${whichMeasure} ${formatedValueMax}`
+          : `${whichMeasure} ${formatedValueMax}`
+
+        setMaxValUI(toUpdateInState)
+      }
+
+      if (addCharacter === "toRight") {
+        if (addCharacterMaxSpecialCharacter === "toLeft") {
+          let toUpdateInState = shouldAddSpecialCharacter
+            ? `${maxSpecialCharacter} ${whichMeasure}`
+            : `${formatedValueMax} ${whichMeasure} `
+
+          setMaxValUI(toUpdateInState)
+        }
+
+        if (addCharacterMaxSpecialCharacter === "toRight") {
+          let toUpdateInState = shouldAddSpecialCharacter
+            ? `${whichMeasure} ${formatedValueMax} ${maxSpecialCharacter}`
+            : `${whichMeasure} ${formatedValueMax}`
+
+          setMaxValUI(toUpdateInState)
+        }
+      }
     }
 
     if (whichMeasure === "weight") {
       const inLbs = `+${formatedValueMax} lbs`
 
-      const inKgs = `${Math.round(
-        Number(new Intl.NumberFormat().format(Number(max) * 0.45359237))
-      )} kg`
+      const inKgs = calculateKGOnWeight({ valueToEvaluate: max })
 
       setMaxValUI(`${inLbs} · ${inKgs}`)
     }
   }
 
-  // useEffect(() => {
-  //   updateToInitialValues()
-  // }, [shouldClearAllOptions])
+  useEffect(() => {
+    updateToInitialValues()
+  }, [shouldClearAllOptions])
 
   // useEffect(() => {
   //   setTempState((prevState) => {
@@ -205,7 +298,7 @@ export const ORG_Filters_D_Range_Isolated = ({
     >
       {labelName !== "" && <label htmlFor="min">Minimum {labelName}</label>}
 
-      <P semibold>{buttonName}</P>
+      <P semibold>{labelName || buttonName}</P>
       <input
         type="range"
         min={min}
@@ -225,7 +318,6 @@ export const ORG_Filters_D_Range_Isolated = ({
         onChange={handleMaxValue}
         className="thumb thumb--right"
       />
-
       <div className="slider">
         <div className="slider__track" />
         <div ref={range} className="slider__range" />
@@ -233,24 +325,8 @@ export const ORG_Filters_D_Range_Isolated = ({
 
       <div className="valuesToShow">
         <div>{minValUI}</div>
-
         <span />
-
-        <div>
-          {addCharacter === "toLeft" && whichMeasure !== "" ? (
-            <>
-              {whichMeasure} {maxValUI}
-            </>
-          ) : addCharacter === "toRight" && whichMeasure !== "weight" ? (
-            <>
-              {maxValUI} {whichMeasure}
-            </>
-          ) : addCharacter === "toRight" && whichMeasure === "weight" ? (
-            <>{maxValUI}</>
-          ) : (
-            <>{maxValUI}</>
-          )}
-        </div>
+        <div>{maxValUI}</div>
       </div>
     </ORG_Filters_D_Range_IsolatedWrapper>
   )

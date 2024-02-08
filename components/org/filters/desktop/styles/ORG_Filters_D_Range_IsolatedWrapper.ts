@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../assets/Colors"
 
-const SLICE_WIDTH = "38vw"
+const SLICE_WIDTH = "100%"
 const THUMB_COLOR = "#151A26"
 const THUMB_SIZE = "19px"
 const BUTTON_COLOR = "#3B4250"
@@ -12,6 +12,8 @@ type Props = {
 }
 
 export const ORG_Filters_D_Range_IsolatedWrapper = styled.div<Props>`
+  position: relative;
+
   & > label {
     display: none;
   }
@@ -145,16 +147,4 @@ export const ORG_Filters_D_Range_IsolatedWrapper = styled.div<Props>`
       margin-bottom: auto;
     }
   }
-
-  /* & > :last-child {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    & > * {
-      width: 100%;
-      & > * {
-        width: 100%;
-      }
-    }
-  } */
 `
