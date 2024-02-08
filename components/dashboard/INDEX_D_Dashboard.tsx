@@ -8,7 +8,9 @@ import { INDEX_D_AIChatPopup } from "./ai-chat/popup/INDEX_D_AIChatPopup"
 import { Index_D_Editor } from "./editor/INDEX_D_Editor"
 import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
 
-const patchHotFix = () => {}
+const patchHotFix = () => {
+  return "Please, fix this"
+}
 
 export const INDEX_D_Dashboard = () => {
   const { isPlan } = useDashboardAIChat_Ctx()
