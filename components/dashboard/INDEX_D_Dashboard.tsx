@@ -1,12 +1,15 @@
 import { Dashboard_D_SunSvg } from "@/assets/icons"
-import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
-import { Dashboard_D_PlatformBox } from "./Dashboard_D_PlatformBox"
+import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
+import { useDashboardEditorAIChat_Ctx } from "@/context/Ctx_Dashboard_EditorChatModal"
 import { Dashboard_D_ChatBot } from "./Dashboard_D_ChatBox"
 import { Dashboard_D_PlanList } from "./Dashboard_D_PlanList"
-import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
-import { Index_D_Editor } from "./editor/INDEX_D_Editor"
-import { useDashboardEditorAIChat_Ctx } from "@/context/Ctx_Dashboard_EditorChatModal"
+import { Dashboard_D_PlatformBox } from "./Dashboard_D_PlatformBox"
 import { INDEX_D_AIChatPopup } from "./ai-chat/popup/INDEX_D_AIChatPopup"
+import { Index_D_Editor } from "./editor/INDEX_D_Editor"
+import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
+
+const patchHotFix = () => {}
+
 export const INDEX_D_Dashboard = () => {
   const { isPlan } = useDashboardAIChat_Ctx()
   const { isChat } = useDashboardEditorAIChat_Ctx()
@@ -27,7 +30,7 @@ export const INDEX_D_Dashboard = () => {
           <Index_D_Editor />
         </>
       )}
-      {isChat && <INDEX_D_AIChatPopup />}
+      {isChat && <INDEX_D_AIChatPopup showModalToggle={patchHotFix} />}
     </INDEX_D_DashboardWrapper>
   )
 }
