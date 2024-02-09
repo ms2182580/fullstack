@@ -1,19 +1,22 @@
+import { XDesktopSvg } from "@/assets/icons"
+import { ButtonSmall } from "@/components/ui/buttons/general"
+import { TypeSingleFilterRange } from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
+import { useShowFilters } from "@/utils/org/useShowFilters"
 import { useCallback, useEffect, useRef, useState } from "react"
-import { XDesktopSvg } from "../../../../assets/icons/index"
-import { useShowFilters } from "../../../../utils/org/useShowFilters"
-import { ButtonSmall } from "../../../ui/buttons/general"
 import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_Filters_D_RangeWrapper2 } from "./styles/ORG_Filters_D_RangeWrapper2"
 
 const calculateKGOnWeight = ({ valueToEvaluate }) => {
   return `${Math.round(
-    new Intl.NumberFormat()
-      .format(valueToEvaluate * 0.45359237)
-      .replace(",", ".")
+    Number(new Intl.NumberFormat().format(Number(valueToEvaluate) * 0.45359237))
   )} kg`
 }
 
-export const ORG_Filters_D_Range2 = ({ ...props }) => {
+type Props = {
+  props: TypeSingleFilterRange
+}
+
+export const ORG_Filters_D_Range2 = ({ ...props }: Props) => {
   const {
     addCharacter = "" /* toLeft, toRight, weigth */,
     buttonName = "noNameOnThisButton",
@@ -24,11 +27,8 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
     maxSpecialCharacter,
     addCharacterMinSpecialCharacter /* toLeft, toRight*/,
     addCharacterMaxSpecialCharacter /* toLeft, toRight*/,
-    shouldClear,
     whichMeasure = "" /* weight or any other character */,
   } = props.props
-
-  const { className } = props?.shouldAddClassName || "noClassName"
 
   const { mustShowFilter, handleShowFilter, refContainer } = useShowFilters()
 
@@ -36,11 +36,10 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
   const [maxVal, setMaxVal] = useState(max)
   const [minValUI, setMinValUI] = useState(min)
   const [maxValUI, setMaxValUI] = useState(max)
-  // const [updateFilterData, setUpdateFilterData] = useState(categoriesToDisplay.slice(minVal, maxVal + 1))
 
   const minValRef = useRef(min)
   const maxValRef = useRef(max)
-  const range = useRef(null)
+  const range = useRef<HTMLDivElement | null>(null)
 
   // Convert to percentage
   const getPercent = useCallback(
@@ -70,12 +69,6 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
   }, [maxVal, getPercent])
 
   const handleMinValue = (event) => {
-    /* 
-    !FH0:
-      - Make the whole behavior of the range and checkbox be on some single and central file
-      - Make the Range be visible focusable
-      - Make the user be able to move by 10, 100, 1000 with some combination of keys
-     */
     const value = Math.min(Number(event.target.value), Number(maxVal))
     setMinVal(value)
 
@@ -98,7 +91,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
 
       if (addCharacter === "toLeft") {
         let toUpdateInState = shouldAddSpecialCharacter
-          ? `${minSpecialCharacter} ${whichMeasure} ${formatedValue}`
+          ? `${minSpecialCharacter} ${formatedValue}`
           : `${whichMeasure} ${formatedValue}`
 
         setMinValUI(toUpdateInState)
@@ -164,7 +157,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
       if (addCharacter === "toRight") {
         if (addCharacterMaxSpecialCharacter === "toLeft") {
           let toUpdateInState = shouldAddSpecialCharacter
-            ? `${maxSpecialCharacter} ${formatedValue} ${whichMeasure}`
+            ? `${maxSpecialCharacter} ${whichMeasure}`
             : `${formatedValue} ${whichMeasure} `
 
           setMaxValUI(toUpdateInState)
@@ -201,7 +194,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
   const updateToInitialValues = () => {
     setMinVal(min)
     minValRef.current = min
-    const formatedValueMin = new Intl.NumberFormat("en-US").format(min)
+    const formatedValueMin = new Intl.NumberFormat("en-US").format(Number(min))
 
     if (whichMeasure !== "weight" && minSpecialCharacter === undefined) {
       if (addCharacter === "toLeft") {
@@ -215,7 +208,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
 
     if (whichMeasure !== "weight" && minSpecialCharacter !== undefined) {
       if (addCharacter === "toLeft") {
-        let toUpdateInState = `${minSpecialCharacter} ${whichMeasure} ${formatedValueMin}`
+        let toUpdateInState = `${minSpecialCharacter}`
 
         setMinValUI(toUpdateInState)
       }
@@ -245,7 +238,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
 
     setMaxVal(max)
     maxValRef.current = max
-    const formatedValueMax = new Intl.NumberFormat("en-US").format(max)
+    const formatedValueMax = new Intl.NumberFormat("en-US").format(Number(max))
 
     if (whichMeasure !== "weight" && maxSpecialCharacter === undefined) {
       if (addCharacter === "toLeft") {
@@ -258,7 +251,8 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
     }
 
     if (whichMeasure !== "weight" && maxSpecialCharacter !== undefined) {
-      const value = Math.max(maxValRef.current, maxVal)
+      const value = Math.max(Number(maxValRef.current), Number(maxVal))
+
       const shouldAddSpecialCharacter = value === Number(max)
       if (addCharacter === "toLeft") {
         let toUpdateInState = shouldAddSpecialCharacter
@@ -271,7 +265,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
       if (addCharacter === "toRight") {
         if (addCharacterMaxSpecialCharacter === "toLeft") {
           let toUpdateInState = shouldAddSpecialCharacter
-            ? `${maxSpecialCharacter} ${formatedValueMax} ${whichMeasure}`
+            ? `${maxSpecialCharacter} ${whichMeasure}`
             : `${formatedValueMax} ${whichMeasure} `
 
           setMaxValUI(toUpdateInState)
@@ -311,10 +305,10 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
 
   return (
     <ORG_Filters_D_RangeWrapper2
-      minVal={minVal}
-      maxVal={maxVal}
+      minVal={Number(minVal)}
+      maxVal={Number(maxVal)}
       mustShowFilter={mustShowFilter}
-      className={className && className}
+      // className={className && className}
     >
       <span onClick={handleShowFilter}>
         {!mustShowFilter ? (
@@ -343,7 +337,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
           value={minVal}
           onChange={handleMinValue}
           className="thumb thumb--left"
-          style={{ zIndex: minVal > max - 100 && "5" }}
+          style={{ zIndex: Number(minVal) > Number(max) - 100 ? 5 : 3 }}
         />
 
         {labelName !== "" && <label htmlFor="max">Maximum {labelName}</label>}

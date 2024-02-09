@@ -171,7 +171,7 @@ const allActivities_JSX: Type_AllActivities = [
   />,
 ]
 
-export const FILTERS_RANGE: TypeAllFiltersRange = {
+const FILTERS_RANGE: TypeAllFiltersRange = {
   age: {
     buttonName: "Age",
     min: "3",
@@ -181,7 +181,7 @@ export const FILTERS_RANGE: TypeAllFiltersRange = {
   },
 }
 
-export const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
+const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
   campType: {
     buttonName: "Camp Type",
     categoriesToDisplay: [

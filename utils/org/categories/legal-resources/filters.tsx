@@ -13,7 +13,7 @@ import {
   Type_FiltersToUI,
 } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-export const FILTERS_RANGE: TypeAllFiltersRange = {
+const FILTERS_RANGE: TypeAllFiltersRange = {
   price: {
     buttonName: "Price",
     minSpecialCharacter: "Pro Bono",
@@ -24,7 +24,7 @@ export const FILTERS_RANGE: TypeAllFiltersRange = {
   },
 }
 
-export const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
+const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
   areasOfLaw: {
     buttonName: "Area(s) of Law",
 
@@ -110,7 +110,7 @@ const FILTERS_MORE: Type_AllMoreFilters = {
     />,
 
     <ORG_Filters_D_Range_Isolated
-      buttonName={ORG_FILTERS_KEYS_D.distance.titleToShow}
+      buttonName={ORG_FILTERS_KEYS_D.distanceRange.buttonName}
       min={ORG_FILTERS_DATA_D.distanceRange.min}
       max={ORG_FILTERS_DATA_D.distanceRange.max}
       whichMeasure={ORG_FILTERS_DATA_D.distanceRange.whichMeasure}
@@ -118,9 +118,9 @@ const FILTERS_MORE: Type_AllMoreFilters = {
     />,
 
     <ORG_Filters_D_Range_Isolated
-      buttonName={ORG_FILTERS_KEYS_D.agesServed.titleToShow}
-      min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
-      max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
+      buttonName={ORG_FILTERS_KEYS_D.agesServedRange.buttonName}
+      min={ORG_FILTERS_DATA_D.agesServedRange.min}
+      max={ORG_FILTERS_DATA_D.agesServedRange.max}
       whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
       addCharacter={"toRight"}
       maxSpecialCharacter={

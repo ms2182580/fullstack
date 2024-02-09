@@ -14,7 +14,7 @@ import {
   Type_FiltersToUI,
 } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-export const FILTERS_RANGE: TypeAllFiltersRange = {
+const FILTERS_RANGE: TypeAllFiltersRange = {
   age: {
     buttonName: "Age",
     min: "0",
@@ -34,7 +34,7 @@ export const FILTERS_RANGE: TypeAllFiltersRange = {
   },
 }
 
-export const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
+const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
   skillLevel: {
     buttonName: "Skill Level",
     categoriesToDisplay: [
@@ -95,8 +95,8 @@ const FILTERS_MORE: Type_AllMoreFilters = {
 
     <ORG_Filters_D_Range_Isolated
       buttonName={ORG_FILTERS_KEYS_D.agesServed.titleToShow}
-      min={ORG_FILTERS_DATA_D.agesServedRange.minimum}
-      max={ORG_FILTERS_DATA_D.agesServedRange.maximum}
+      min={ORG_FILTERS_DATA_D.agesServedRange.min}
+      max={ORG_FILTERS_DATA_D.agesServedRange.max}
       whichMeasure={ORG_FILTERS_DATA_D.agesServedRange.whichMeasure}
       addCharacter={"toRight"}
       maxSpecialCharacter={

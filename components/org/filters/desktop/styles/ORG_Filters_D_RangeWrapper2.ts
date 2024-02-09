@@ -6,7 +6,13 @@ const THUMB_COLOR = "#151A26"
 const THUMB_SIZE = "19px"
 const BUTTON_COLOR = "#3B4250"
 
-export const ORG_Filters_D_RangeWrapper2 = styled.div`
+type Props = {
+  minVal?: number
+  maxVal?: number
+  mustShowFilter?: boolean
+}
+
+export const ORG_Filters_D_RangeWrapper2 = styled.div<Props>`
   position: relative;
   & > :nth-child(1) {
     & > :nth-child(1) {

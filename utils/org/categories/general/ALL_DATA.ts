@@ -31,6 +31,7 @@ import { arraySectionToRender_LegalResources } from "../legal-resources/arraySec
 import { filtersUI_LegalResources } from "../legal-resources/filters"
 import { tooltipToRender_LegalResources } from "../legal-resources/tooltipToRender"
 import { arraySectionToRender_MentalHealth } from "../mental-health/arraySectionToRender"
+import { filtersUI_MentalHealth } from "../mental-health/filters"
 import { mapRender_PMHSS } from "../mental-health/mapRender"
 import { tooltipToRender_MentalHealth } from "../mental-health/tooltipToRender"
 import { arraySectionToRender_Physicians } from "../physicians/arraySectionToRender"
@@ -484,6 +485,10 @@ export const ALL_DATA: ALL_DATA_Type = {
         NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
       ]
     ),
+
+    SECOND_PAGE: {
+      FILTERS: filtersUI_MentalHealth,
+    },
 
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_MentalHealth,

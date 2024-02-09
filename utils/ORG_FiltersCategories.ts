@@ -10,8 +10,8 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
     "65+ years",
   ],
   agesServedRange: {
-    minimum: "0",
-    maximum: "100",
+    min: "0",
+    max: "100",
     maxSpecialCharacter: "100+",
     whichMeasure: "years",
     addCharacter: "toRight",
@@ -161,7 +161,7 @@ export const ORG_FILTERS_DATA_M = Object.freeze({
     "Contract",
   ],
   languages: ["English", "Spanish", "Chinese", "Tagalog", "French"],
-  meetingFormat: ["Virtual", "In-Person"],
+  meetingFormat: ["Virtual", "In-Person", "Site determined by client"],
   providerType: [
     "Independent",
     "Agency-based",

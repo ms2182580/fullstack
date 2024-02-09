@@ -6,7 +6,7 @@ import {
   Type_FiltersToUI,
 } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-export const FILTERS_RANGE: TypeAllFiltersRange = {
+const FILTERS_RANGE: TypeAllFiltersRange = {
   price: {
     buttonName: "Price",
     labelName: "Budget",
@@ -26,7 +26,7 @@ export const FILTERS_RANGE: TypeAllFiltersRange = {
   },
 }
 
-export const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
+const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
   level: {
     buttonName: "Hi-tech",
     categoriesToDisplay: ["High-tech", "Medium-tech", "Low-tech"],
