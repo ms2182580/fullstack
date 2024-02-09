@@ -7,6 +7,8 @@ import { Dashboard_D_PlatformBox } from "./Dashboard_D_PlatformBox"
 import { INDEX_D_AIChatPopup } from "./ai-chat/popup/INDEX_D_AIChatPopup"
 import { Index_D_Editor } from "./editor/INDEX_D_Editor"
 import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
+import { useDashboardAIChatUploadFile_Ctx } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
+import { INDEX_D_UploadFile } from "./upload-file/INDEX_D_UploadFile"
 
 const patchHotFix = () => {
   return "Please, fix this"
@@ -15,6 +17,7 @@ const patchHotFix = () => {
 export const INDEX_D_Dashboard = () => {
   const { isPlan } = useDashboardAIChat_Ctx()
   const { isChat } = useDashboardEditorAIChat_Ctx()
+  const { isUpload, setIsUpload } = useDashboardAIChatUploadFile_Ctx()
   return (
     <INDEX_D_DashboardWrapper isCreatePlan={isPlan}>
       {!isPlan ? (
@@ -33,6 +36,7 @@ export const INDEX_D_Dashboard = () => {
         </>
       )}
       {isChat && <INDEX_D_AIChatPopup showModalToggle={patchHotFix} />}
+      {isUpload && <INDEX_D_UploadFile />}
     </INDEX_D_DashboardWrapper>
   )
 }
