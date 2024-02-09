@@ -34,6 +34,7 @@ import { arraySectionToRender_MentalHealth } from "../mental-health/arraySection
 import { mapRender_PMHSS } from "../mental-health/mapRender"
 import { tooltipToRender_MentalHealth } from "../mental-health/tooltipToRender"
 import { arraySectionToRender_Physicians } from "../physicians/arraySectionToRender"
+import { filtersUI_Physicians } from "../physicians/filters"
 import { tooltipToRender_Physicians } from "../physicians/tooltipToRender"
 import { arraySectionToRender_ResidentialResources } from "../residential-resources/arraySectionToRender"
 import { tooltipToRender_ResidentialResources } from "../residential-resources/tooltipToRender"
@@ -496,6 +497,10 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["PHYSICIANS"]]
     ),
+
+    SECOND_PAGE: {
+      FILTERS: filtersUI_Physicians,
+    },
 
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_Physicians,

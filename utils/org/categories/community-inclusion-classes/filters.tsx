@@ -132,11 +132,6 @@ const FILTERS_MORE: Type_AllMoreFilters = {
       categoriesToDisplay={ORG_FILTERS_DATA_D.meetingFormat}
     />,
 
-    // <ORG_Filters_D_Checkbox_Isolated
-    //   titleOnModal={ORG_FILTERS_KEYS_D.insurance.titleToShowCard}
-    //   categoriesToDisplay={ORG_FILTERS_DATA_D.insurance}
-    // />,
-
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={FILTERS_CHECKBOX.daysOfTheWeek.buttonName}
       categoriesToDisplay={FILTERS_CHECKBOX.daysOfTheWeek.categoriesToDisplay}

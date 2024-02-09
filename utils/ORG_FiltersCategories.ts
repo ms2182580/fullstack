@@ -59,10 +59,22 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
     "Evening",
     "Late Night",
   ],
-  providerType: ["Independent", "Agency-based", "Traveling"],
+  providerType: [
+    "Independent",
+    "Agency-based",
+    "Traveling",
+    "Private practice",
+    "Academic or Research-Based",
+    "Group practice",
+  ],
   serviceSetting: ["Clinic", "Home", "School", "Community"],
   sessionType: ["Individual", "Group"],
-  viewOnly: ["Accepting new patients", "Conducts evaluations"],
+  viewOnly: [
+    "Accepting new clients",
+    "Conducts evaluations",
+    "Free consultation",
+    "Referral not required",
+  ],
   yearsOfPractice: [
     "1+ Years",
     "3+ Years",
@@ -150,7 +162,14 @@ export const ORG_FILTERS_DATA_M = Object.freeze({
   ],
   languages: ["English", "Spanish", "Chinese", "Tagalog", "French"],
   meetingFormat: ["Virtual", "In-Person"],
-  providerType: ["Independent", "Agency-based", "Traveling"],
+  providerType: [
+    "Independent",
+    "Agency-based",
+    "Traveling",
+    "Private practice",
+    "Academic or Research-Based",
+    "Group practice",
+  ],
   rating: ["1", "2", "3", "4", "5"],
   serviceSetting: ["Clinic", "Home", "School", "Community"],
   sessionType: ["Individual", "Group"],
@@ -169,6 +188,7 @@ export const ORG_FILTERS_DATA_M = Object.freeze({
     "7+ Years",
     "10+ Years",
   ],
+  wheelChair: ["Yes", "No"],
 })
 
 export const ORG_FILTERS_KEYS_M = Object.freeze({

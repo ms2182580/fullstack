@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NEUTRALS, SEMANTICS } from "../../../../../assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../assets/Colors"
 
 export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
   position: relative;
@@ -49,9 +49,16 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
       align-items: center;
       justify-content: center;
 
+      color: currentColor;
+
       &:hover,
       &:focus-visible {
         filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.15));
+        & > * {
+          & > * {
+            fill: ${PRIMARY.PRIMARY_HOVER};
+          }
+        }
       }
     }
 
@@ -66,6 +73,7 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
       &:hover,
       &:focus-visible {
         filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.15));
+        color: ${PRIMARY.PRIMARY_HOVER};
       }
     }
 
@@ -108,7 +116,7 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
           & > input {
             position: absolute;
             opacity: 0;
-            cursor: pointer;
+            cursor: default;
             height: 0;
             width: 0;
           }
@@ -154,7 +162,7 @@ export const ORG_Filters_D_CheckboxWrapper2 = styled.div`
       }
 
       & > span:last-child {
-        cursor: pointer;
+        cursor: default;
         text-decoration-line: underline;
         text-decoration-color: ${SEMANTICS.HYPERLINK_NORMAL};
 

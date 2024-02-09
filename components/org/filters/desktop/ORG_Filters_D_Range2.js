@@ -70,6 +70,12 @@ export const ORG_Filters_D_Range2 = ({ ...props }) => {
   }, [maxVal, getPercent])
 
   const handleMinValue = (event) => {
+    /* 
+    !FH0:
+      - Make the whole behavior of the range and checkbox be on some single and central file
+      - Make the Range be visible focusable
+      - Make the user be able to move by 10, 100, 1000 with some combination of keys
+     */
     const value = Math.min(Number(event.target.value), Number(maxVal))
     setMinVal(value)
 
