@@ -15,7 +15,6 @@ export const Dashboard_D_PlatformBox = () => {
   const { setIsPlan, isPlan } = useDashboardAIChat_Ctx()
   const { isUpload, setIsUpload } = useDashboardAIChatUploadFile_Ctx()
   const { setIsOpen } = useTour()
-  console.log({ isUpload })
   return (
     <Dashboard_D_PlatformBoxWrapper>
       <div>

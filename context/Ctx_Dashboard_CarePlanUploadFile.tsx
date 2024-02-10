@@ -1,10 +1,13 @@
 import { ReactNode, createContext, useContext, useState } from "react"
+type PlanState = "CHILD" | "EXISTING" | "NONE"
 
 interface DashboardAIChatUploadFileContextProps {
   isUpload: boolean
   setIsUpload: React.Dispatch<React.SetStateAction<boolean>>
   file: File | null
   setFile: React.Dispatch<React.SetStateAction<File | null>>
+  planState: string
+  setPlanState: React.Dispatch<React.SetStateAction<PlanState>>
 }
 const Dashboard_AIChat_UploadFile_Ctx =
   createContext<DashboardAIChatUploadFileContextProps | null>(null)
@@ -17,10 +20,11 @@ export const Dashboard_Ctx_AICHAT_UploadFile_Provider = ({
 }: DashboardCtxAICHATProviderProps) => {
   const [isUpload, setIsUpload] = useState(false)
   const [file, setFile] = useState<File | null>(null)
+  const [planState, setPlanState] = useState<PlanState>("NONE")
 
   return (
     <Dashboard_AIChat_UploadFile_Ctx.Provider
-      value={{ isUpload, setIsUpload, file, setFile }}
+      value={{ isUpload, setIsUpload, file, setFile,planState,setPlanState }}
     >
       {children}
     </Dashboard_AIChat_UploadFile_Ctx.Provider>

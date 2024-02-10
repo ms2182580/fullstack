@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 type Props = {
   isFile: boolean
+  isQuick: boolean
 }
 export const INDEX_D_UploadFileWrapper = styled.div<Props>`
   position: fixed;
@@ -150,7 +151,7 @@ export const INDEX_D_UploadFileWrapper = styled.div<Props>`
       gap: 13px;
       align-self: stretch;
       border-radius: 8px;
-      background: #f3f1f3;
+      background: ${(props) => (props.isQuick ? "#f3f1f3" : "white")};
 
       & > :nth-child(1) {
         display: flex;
@@ -167,17 +168,30 @@ export const INDEX_D_UploadFileWrapper = styled.div<Props>`
       & > :nth-child(3),
       & > :nth-child(4),
       & > :nth-child(5) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 2px;
         color: ${PRIMARY.PRIMARY_CTA};
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 27px;
+        cursor: pointer;
+        & > :nth-child(1) {
+          width: 24px;
+          height: 24px;
+        }
+        & > :nth-child(2) {
+          margin-left: 10px;
+          display: flex;
+          gap: 10px;
+        }
       }
     }
 
     & > :nth-child(7) {
-      margin-top: 32px;
+      margin-top: ${(props) => (props.isQuick ? "32px" : "10px")};
       max-width: 130px;
     }
     //input
