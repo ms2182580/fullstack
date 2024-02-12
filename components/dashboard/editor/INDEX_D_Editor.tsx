@@ -6,6 +6,8 @@ import "froala-editor/css/froala_editor.pkgd.min.css"
 import "froala-editor/css/froala_style.min.css"
 import { useEffect, useState } from "react"
 import { INDEX_D_EditorWrapper } from "./styles/Index_D_EditorWrapper"
+import { useDashboardAIChatUploadFile_Ctx } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
+import { Editor_D_PlanInfo } from "./Editor_D_PlanInfo"
 
 interface Step {
   title: string
@@ -20,7 +22,7 @@ const steps: Step[] = [
 
 export const Index_D_Editor = () => {
   const [isWindow, setIsWindow] = useState(false)
-
+  const { planState } = useDashboardAIChatUploadFile_Ctx()
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsWindow(true)
@@ -178,7 +180,11 @@ export const Index_D_Editor = () => {
         <div className="stepper">
           <Stepper steps={steps} />
         </div>
-        <div id="editor" style={{ width: "100%", height: "100%" }}></div>
+        {planState === "EXISTING" ? (
+          <Editor_D_PlanInfo />
+        ) : (
+          <div id="editor" style={{ width: "100%", height: "100%" }}></div>
+        )}
       </div>
     </INDEX_D_EditorWrapper>
   )
