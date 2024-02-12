@@ -16,6 +16,7 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
     whichMeasure: "years",
     addCharacter: "toRight",
   },
+  coed: ["coed", "all boys", "all girls"],
   diagnosis: [
     "Autism",
     "ADHD",
@@ -59,6 +60,13 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
     "Evening",
     "Late Night",
   ],
+  priceRange: {
+    buttonName: "Price",
+    min: "100",
+    max: "100000",
+    whichMeasure: "$",
+    addCharacter: "toLeft",
+  },
   providerType: [
     "Independent",
     "Agency-based",
@@ -66,6 +74,17 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
     "Private practice",
     "Academic or Research-Based",
     "Group practice",
+  ],
+  religion: [
+    "Agnostic",
+    "Atheist",
+    "Buddhist",
+    "Catholic",
+    "Christian",
+    "Hindu",
+    "Islam",
+    "Judaism",
+    "Protestantism",
   ],
   serviceSetting: ["Clinic", "Home", "School", "Community"],
   sessionType: ["Individual", "Group"],
@@ -88,6 +107,7 @@ export const ORG_FILTERS_DATA_D = Object.freeze({
 export const ORG_FILTERS_KEYS_D = Object.freeze({
   agesServed: { titleToShow: "Ages Served", updateState: "agesServed" },
   agesServedRange: { buttonName: "Age", buttonOnMoreFilter: "Ages Served" },
+  coed: { titleToShow: "Coed" },
   diagnosis: {
     titleToShow: "Diagnosis",
     updateState: "diagnosis",
@@ -114,8 +134,10 @@ export const ORG_FILTERS_KEYS_D = Object.freeze({
     titleToShow: "Operation Hours",
     updateState: "operationHours",
   },
+  priceRange: { titleToShow: "Price" },
   providerType: { titleToShow: "Provider Type", updateState: "providerType" },
   rating: { titleToShow: "Rating", updateState: "rating" },
+  religion: { titleToShow: "Religion Affiliation" },
   reviews: { titleToShow: "Reviews", updateState: "reviews" },
   serviceSetting: { titleToShow: "Setting", updateState: "serviceSetting" },
   sessionType: { titleToShow: "Session Type", updateState: "sessionType" },

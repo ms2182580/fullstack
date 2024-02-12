@@ -95,19 +95,12 @@ const FILTERS_MORE: Type_AllMoreFilters = {
 export const filtersUI_Agencies: Type_FiltersToUI = [
   {
     component: ORG_Filters_D_Checkbox2,
-    parameters: { ...FILTERS_CHECKBOX.areasOfFocus },
+    parameters: FILTERS_CHECKBOX.areasOfFocus,
   },
   {
     component: ORG_Filters_D_Checkbox2,
-    parameters: { ...FILTERS_CHECKBOX.servicesOffered },
+    parameters: FILTERS_CHECKBOX.servicesOffered,
   },
-  /* 
-  <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
-      categoriesToDisplay={ORG_FILTERS_DATA_D.languages}
-    />,
-  */
-
   {
     component: ORG_Filters_D_Checkbox2,
     parameters: {

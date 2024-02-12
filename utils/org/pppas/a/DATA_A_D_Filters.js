@@ -9,13 +9,6 @@ import {
 } from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-/* 
-!FH0
-Create this filters
-
-https://www.figma.com/file/lpHBroZRY7imHzHhMm1gAb/Regenesis-for-August%2C-2023-Launch?type=design&node-id=68-86456&mode=design&t=6Es5ypwLnLolvsho-4
-*/
-
 export const DATA_A_D_Filters = {
   areasOfFocus: {
     buttonName: "Area(s) of Focus",

@@ -3,13 +3,23 @@ import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/org/filt
 import { ORG_Filters_D_More2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_More2"
 import { ORG_Filters_D_Range2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range2"
 import { ORG_Filters_D_Range_Isolated } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range_Isolated"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import {
+  ORG_FILTERS_DATA_D,
+  ORG_FILTERS_KEYS_D,
+} from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
 const DATA_SES_D_Filters = {
   schoolType: {
     buttonName: "School Type",
-    categoriesToDisplay: ["Public", "Private", "Private (DOE - Approved)", "International Schools", "Montessori Schools", "Online Schools"],
+    categoriesToDisplay: [
+      "Public",
+      "Private",
+      "Private (DOE - Approved)",
+      "International Schools",
+      "Montessori Schools",
+      "Online Schools",
+    ],
   },
   price: {
     buttonName: "Price",
@@ -21,7 +31,14 @@ const DATA_SES_D_Filters = {
 
   servicesOffered: {
     buttonName: "Services Offered",
-    categoriesToDisplay: ["Housing", "Rent Relief", "Home-Owner Assistance Fund", "Mortgage Assistance", "Emergency Rent Relief", "Public Housing Initiatives"],
+    categoriesToDisplay: [
+      "Housing",
+      "Rent Relief",
+      "Home-Owner Assistance Fund",
+      "Mortgage Assistance",
+      "Emergency Rent Relief",
+      "Public Housing Initiatives",
+    ],
   },
 
   moreFilters: {
@@ -46,7 +63,17 @@ const DATA_SES_D_Filters = {
 
     religionAfiliation: {
       buttonName: "Religion Affiliation",
-      categoriesToDisplay: ["Buddhist", "Catholic", "Christian", "Hindu", "Islam", "Judaism", "Protestantism", "Agnostic", "Atheist"],
+      categoriesToDisplay: [
+        "Agnostic",
+        "Atheist",
+        "Buddhist",
+        "Catholic",
+        "Christian",
+        "Hindu",
+        "Islam",
+        "Judaism",
+        "Protestantism",
+      ],
     },
 
     language: {
@@ -56,24 +83,24 @@ const DATA_SES_D_Filters = {
     servicesOffered: {
       buttonName: "Specialties",
       categoriesToDisplay: [
-        "Behavior therapy",
-        "Speech & Language",
-        "Occupational",
-        "Physical Therapy",
-        "Psychology",
-        "Art Therapy",
-        "Music Therapy",
-        "Play Therapy",
-        "Geriatric Therapy",
-        "Family Therapy",
-        "Dance therapy",
-        "Pain Management Therapy",
-        "Sexual Abuse Therapy",
-        "Post-Traumatic Stress Disorder",
-        "Eating Dirorder Therapy",
-        "Depression Therapy",
         "Anxiety Therapy",
+        "Art Therapy",
+        "Behavior therapy",
         "Couples Therapy",
+        "Dance therapy",
+        "Depression Therapy",
+        "Eating Dirorder Therapy",
+        "Family Therapy",
+        "Geriatric Therapy",
+        "Music Therapy",
+        "Occupational",
+        "Pain Management Therapy",
+        "Physical Therapy",
+        "Play Therapy",
+        "Post-Traumatic Stress Disorder",
+        "Psychology",
+        "Sexual Abuse Therapy",
+        "Speech & Language",
         "Trauma Therapy",
       ],
     },
@@ -114,12 +141,16 @@ const allMoreFilters = {
     />,
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={DATA_SES_D_Filters.moreFilters.coEd.buttonName}
-      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.coEd.categoriesToDisplay}
+      categoriesToDisplay={
+        DATA_SES_D_Filters.moreFilters.coEd.categoriesToDisplay
+      }
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={DATA_SES_D_Filters.moreFilters.specialties.buttonName}
-      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.specialties.categoriesToDisplay}
+      categoriesToDisplay={
+        DATA_SES_D_Filters.moreFilters.specialties.categoriesToDisplay
+      }
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
@@ -128,8 +159,12 @@ const allMoreFilters = {
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
-      titleOnModal={DATA_SES_D_Filters.moreFilters.religionAfiliation.buttonName}
-      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.religionAfiliation.categoriesToDisplay}
+      titleOnModal={
+        DATA_SES_D_Filters.moreFilters.religionAfiliation.buttonName
+      }
+      categoriesToDisplay={
+        DATA_SES_D_Filters.moreFilters.religionAfiliation.categoriesToDisplay
+      }
     />,
 
     <ORG_Filters_D_Checkbox_Isolated
@@ -144,7 +179,9 @@ const allMoreFilters = {
 
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={DATA_SES_D_Filters.moreFilters.servicesOffered.buttonName}
-      categoriesToDisplay={DATA_SES_D_Filters.moreFilters.servicesOffered.categoriesToDisplay}
+      categoriesToDisplay={
+        DATA_SES_D_Filters.moreFilters.servicesOffered.categoriesToDisplay
+      }
     />,
   ],
 }
@@ -166,7 +203,8 @@ export const filtersUI_PSES = [
       max: ORG_FILTERS_DATA_D.agesServedRange.maximum,
       addCharacter: ORG_FILTERS_DATA_D.agesServedRange.addCharacter,
       whichMeasure: ORG_FILTERS_DATA_D.agesServedRange.whichMeasure,
-      maxSpecialCharacter: ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter,
+      maxSpecialCharacter:
+        ORG_FILTERS_DATA_D.agesServedRange.maxSpecialCharacter,
     },
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,
   },

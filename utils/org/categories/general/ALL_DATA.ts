@@ -41,6 +41,7 @@ import { tooltipToRender_Physicians } from "../physicians/tooltipToRender"
 import { arraySectionToRender_ResidentialResources } from "../residential-resources/arraySectionToRender"
 import { tooltipToRender_ResidentialResources } from "../residential-resources/tooltipToRender"
 import { arraySectionToRender_SchoolsEducational } from "../schools-educational/arraySectionToRender"
+import { filtersUI_SchoolsEducational } from "../schools-educational/filters"
 import { tooltipToRender_SchoolsEducational } from "../schools-educational/tooltipToRender"
 import { arraySectionToRender_TherapeuticServices } from "../therapeutic-services/arraySectionToRender"
 import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
@@ -542,6 +543,10 @@ export const ALL_DATA: ALL_DATA_Type = {
         NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]
       ]
     ),
+
+    SECOND_PAGE: {
+      FILTERS: filtersUI_SchoolsEducational,
+    },
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_SchoolsEducational,
       TOOLTIP: tooltipToRender_SchoolsEducational,
