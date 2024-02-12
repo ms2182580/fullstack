@@ -29,6 +29,7 @@ import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
 import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
 import { Dashboard_Ctx_Editor_AICHAT_Provider } from "@/context/Ctx_Dashboard_EditorChatModal"
+import { Dashboard_Ctx_AICHAT_UploadFile_Provider } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -63,29 +64,31 @@ function MyApp({ Component, pageProps }) {
                                                   <Ctx_sessionStorage_typedFlow_Provider>
                                                     <Dashboard_Ctx_AICHAT_Provider>
                                                       <Dashboard_Ctx_Editor_AICHAT_Provider>
-                                                        {isDashboard ? (
-                                                          <Dashboard_D_Layout>
-                                                            <GlobalStyle />
-                                                            <link
-                                                              rel="icon"
-                                                              href="/favicon.ico"
-                                                            />
-                                                            <Component
-                                                              {...pageProps}
-                                                            />
-                                                          </Dashboard_D_Layout>
-                                                        ) : (
-                                                          <Page_layout>
-                                                            <GlobalStyle />
-                                                            <link
-                                                              rel="icon"
-                                                              href="/favicon.ico"
-                                                            />
-                                                            <Component
-                                                              {...pageProps}
-                                                            />
-                                                          </Page_layout>
-                                                        )}
+                                                        <Dashboard_Ctx_AICHAT_UploadFile_Provider>
+                                                          {isDashboard ? (
+                                                            <Dashboard_D_Layout>
+                                                              <GlobalStyle />
+                                                              <link
+                                                                rel="icon"
+                                                                href="/favicon.ico"
+                                                              />
+                                                              <Component
+                                                                {...pageProps}
+                                                              />
+                                                            </Dashboard_D_Layout>
+                                                          ) : (
+                                                            <Page_layout>
+                                                              <GlobalStyle />
+                                                              <link
+                                                                rel="icon"
+                                                                href="/favicon.ico"
+                                                              />
+                                                              <Component
+                                                                {...pageProps}
+                                                              />
+                                                            </Page_layout>
+                                                          )}
+                                                        </Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                       </Dashboard_Ctx_Editor_AICHAT_Provider>
                                                     </Dashboard_Ctx_AICHAT_Provider>
                                                   </Ctx_sessionStorage_typedFlow_Provider>

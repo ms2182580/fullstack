@@ -10,8 +10,10 @@ import {
 } from "@/assets/icons"
 import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
 import { useTour } from "@reactour/tour"
+import { useDashboardAIChatUploadFile_Ctx } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
 export const Dashboard_D_PlatformBox = () => {
   const { setIsPlan, isPlan } = useDashboardAIChat_Ctx()
+  const { isUpload, setIsUpload } = useDashboardAIChatUploadFile_Ctx()
   const { setIsOpen } = useTour()
   return (
     <Dashboard_D_PlatformBoxWrapper>
@@ -33,7 +35,12 @@ export const Dashboard_D_PlatformBox = () => {
             </span>
             <span>Create Plan</span>
           </ButtonSmall>
-          <ButtonSmall secondary>
+          <ButtonSmall
+            secondary
+            goToDynamic={() => {
+              setIsUpload(!isUpload)
+            }}
+          >
             <Dashboard_D_UploadPlanSvg />
             Upload Plan
           </ButtonSmall>
