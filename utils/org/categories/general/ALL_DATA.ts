@@ -16,6 +16,7 @@ import {
   TypeOfTooltipSVG_LIKE,
 } from "../../third-page/tooltip"
 import { arraySectionToRender_Agencies } from "../agencies/arraySectionToRender"
+import { filtersUI_Agencies } from "../agencies/filters"
 import { tooltipToRender_Agencies } from "../agencies/tooltipToRender"
 import { arraySectionToRender_AssistiveSoftware } from "../assistive-software/arraySectionToRender"
 import { arraySectionToRender_AssistiveTechnologyHardware } from "../assistive-technology-hardware/arraySectionToRender"
@@ -476,6 +477,10 @@ export const ALL_DATA: ALL_DATA_Type = {
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["FOUNDATIONS"]]
     ),
+
+    SECOND_PAGE: {
+      FILTERS: filtersUI_Agencies,
+    },
   },
 
   [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: {

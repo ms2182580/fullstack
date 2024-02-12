@@ -3,17 +3,42 @@ import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/org/filt
 import { ORG_Filters_D_More2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_More2"
 import { ORG_Filters_D_Range2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range2"
 import { ORG_Filters_D_Range_Isolated } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range_Isolated"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import {
+  ORG_FILTERS_DATA_D,
+  ORG_FILTERS_KEYS_D,
+} from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
+
+/* 
+!FH0
+Create this filters
+
+https://www.figma.com/file/lpHBroZRY7imHzHhMm1gAb/Regenesis-for-August%2C-2023-Launch?type=design&node-id=68-86456&mode=design&t=6Es5ypwLnLolvsho-4
+*/
 
 export const DATA_A_D_Filters = {
   areasOfFocus: {
     buttonName: "Area(s) of Focus",
-    categoriesToDisplay: ["Housing Advocacy", "Food Rescue", "Healthcare", "Animal Welfare", "Mental Health", "Gender Equality", "Arts and Culture"],
+    categoriesToDisplay: [
+      "Housing Advocacy",
+      "Food Rescue",
+      "Healthcare",
+      "Animal Welfare",
+      "Mental Health",
+      "Gender Equality",
+      "Arts and Culture",
+    ],
   },
   servicesOffered: {
     buttonName: "Services Offered",
-    categoriesToDisplay: ["Housing", "Rent Relief", "Home-Owner Assistance Fund", "Mortgage Assistance", "Emergency Rent Relief", "Public Housing Initiatives"],
+    categoriesToDisplay: [
+      "Housing",
+      "Rent Relief",
+      "Home-Owner Assistance Fund",
+      "Mortgage Assistance",
+      "Emergency Rent Relief",
+      "Public Housing Initiatives",
+    ],
   },
 }
 
