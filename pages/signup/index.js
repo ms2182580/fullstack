@@ -1,4 +1,4 @@
-import { INDEX_D_Signup } from "@/components/signup/desktop/INDEX_D_Signup"
+import { Signup_N_Form } from "@/components/signup/desktop/Signup_N_Form"
 import { INDEX_M_Signup } from "@/components/signup/mobile/INDEX_M_Signup"
 import { useCheckUserWidth } from "@/context/CheckUserWidth"
 
@@ -13,7 +13,7 @@ const Signup = () => {
         </>
       ) : (
         <>
-          <INDEX_D_Signup />
+          <Signup_N_Form />
         </>
       )}
     </>

@@ -6,12 +6,15 @@ import { useRouter } from "next/router"
 import { Home_D_NavBar_NWrapper } from "./styles/Home_D_NavBar_NWrapper"
 
 export const Home_D_NavBar_N = () => {
-  const { push } = useRouter()
+  const { push, pathname } = useRouter()
 
   const handleNavigateORG = (e) => {
     if (e.type === "click" || e.key === "Enter") {
       push(`${ALL_ROUTES.HOME}`)
     }
+  }
+  if (pathname === "/signup") {
+    return null
   }
   return (
     <Home_D_NavBar_NWrapper>

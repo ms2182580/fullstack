@@ -30,6 +30,7 @@ import GlobalStyle from "./styles/index.js"
 import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
 import { Dashboard_Ctx_Editor_AICHAT_Provider } from "@/context/Ctx_Dashboard_EditorChatModal"
 import { Dashboard_Ctx_AICHAT_UploadFile_Provider } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
+import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -65,29 +66,31 @@ function MyApp({ Component, pageProps }) {
                                                     <Dashboard_Ctx_AICHAT_Provider>
                                                       <Dashboard_Ctx_Editor_AICHAT_Provider>
                                                         <Dashboard_Ctx_AICHAT_UploadFile_Provider>
-                                                          {isDashboard ? (
-                                                            <Dashboard_D_Layout>
-                                                              <GlobalStyle />
-                                                              <link
-                                                                rel="icon"
-                                                                href="/favicon.ico"
-                                                              />
-                                                              <Component
-                                                                {...pageProps}
-                                                              />
-                                                            </Dashboard_D_Layout>
-                                                          ) : (
-                                                            <Page_layout>
-                                                              <GlobalStyle />
-                                                              <link
-                                                                rel="icon"
-                                                                href="/favicon.ico"
-                                                              />
-                                                              <Component
-                                                                {...pageProps}
-                                                              />
-                                                            </Page_layout>
-                                                          )}
+                                                          <Ctx_Signup_Provider>
+                                                            {isDashboard ? (
+                                                              <Dashboard_D_Layout>
+                                                                <GlobalStyle />
+                                                                <link
+                                                                  rel="icon"
+                                                                  href="/favicon.ico"
+                                                                />
+                                                                <Component
+                                                                  {...pageProps}
+                                                                />
+                                                              </Dashboard_D_Layout>
+                                                            ) : (
+                                                              <Page_layout>
+                                                                <GlobalStyle />
+                                                                <link
+                                                                  rel="icon"
+                                                                  href="/favicon.ico"
+                                                                />
+                                                                <Component
+                                                                  {...pageProps}
+                                                                />
+                                                              </Page_layout>
+                                                            )}
+                                                          </Ctx_Signup_Provider>
                                                         </Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                       </Dashboard_Ctx_Editor_AICHAT_Provider>
                                                     </Dashboard_Ctx_AICHAT_Provider>
