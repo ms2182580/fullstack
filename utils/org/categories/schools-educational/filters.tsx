@@ -9,20 +9,9 @@ import {
 } from "@/utils/ORG_FiltersCategories"
 import {
   TypeAllFiltersCheckbox,
-  TypeAllFiltersRange,
   Type_AllMoreFilters,
   Type_FiltersToUI,
 } from "../../DATA_ORG_KeyNamesForFilters_D"
-
-const FILTERS_RANGE: TypeAllFiltersRange = {
-  price: {
-    buttonName: "Price",
-    min: "0",
-    max: "100000",
-    whichMeasure: "$",
-    addCharacter: "toLeft",
-  },
-}
 
 const FILTERS_CHECKBOX: TypeAllFiltersCheckbox = {
   schoolType: {
@@ -98,11 +87,11 @@ const FILTERS_MORE: Type_AllMoreFilters = {
       addCharacterMaxSpecialCharacter={"toLeft"}
     />,
     <ORG_Filters_D_Range_Isolated
-      buttonName={FILTERS_RANGE.price.buttonName}
-      min={FILTERS_RANGE.price.min}
-      max={FILTERS_RANGE.price.max}
-      whichMeasure={FILTERS_RANGE.price.whichMeasure}
-      addCharacter={FILTERS_RANGE.price.addCharacter}
+      buttonName={ORG_FILTERS_KEYS_D.priceRange.titleToShow}
+      min={ORG_FILTERS_DATA_D.priceRange.min}
+      max={ORG_FILTERS_DATA_D.priceRange.max}
+      whichMeasure={ORG_FILTERS_DATA_D.priceRange.whichMeasure}
+      addCharacter="toLeft"
     />,
   ],
 

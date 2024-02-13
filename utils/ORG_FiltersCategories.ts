@@ -121,7 +121,7 @@ export const ORG_FILTERS_KEYS_D = Object.freeze({
     titleToShowCard: "Payment options",
   },
   language: {
-    titleToShow: "Language",
+    titleToShow: "Languages",
     updateState: "language",
     alternativeTitle: "Languages(s) Spoken",
   },

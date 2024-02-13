@@ -44,6 +44,7 @@ import { arraySectionToRender_SchoolsEducational } from "../schools-educational/
 import { filtersUI_SchoolsEducational } from "../schools-educational/filters"
 import { tooltipToRender_SchoolsEducational } from "../schools-educational/tooltipToRender"
 import { arraySectionToRender_TherapeuticServices } from "../therapeutic-services/arraySectionToRender"
+import { filtersUI_Therapeutic } from "../therapeutic-services/filters"
 import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
 import { arraySectionToRender_Vocational } from "../vocational/arraySectionToRender"
 import { tooltipToRender_Vocational } from "../vocational/tooltipToRender"
@@ -559,7 +560,9 @@ export const ALL_DATA: ALL_DATA_Type = {
       NamesSubcategories_KEY[NamesCategories_KEY["THERAPEUTIC SERVICES"]]
     ),
 
-    SECOND_PAGE: {},
+    SECOND_PAGE: {
+      FILTERS: filtersUI_Therapeutic,
+    },
 
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_TherapeuticServices,
