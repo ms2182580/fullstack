@@ -2,7 +2,10 @@ import { ORG_Filters_D_Checkbox2 } from "../../../../components/org/filters/desk
 import { ORG_Filters_D_Checkbox_Isolated } from "../../../../components/org/filters/desktop/ORG_Filters_D_Checkbox_Isolated"
 import { ORG_Filters_D_More2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_More2"
 import { ORG_Filters_D_Range2 } from "../../../../components/org/filters/desktop/ORG_Filters_D_Range2"
-import { ORG_FILTERS_DATA_D, ORG_FILTERS_KEYS_D } from "../../../ORG_FiltersCategories"
+import {
+  ORG_FILTERS_DATA_D,
+  ORG_FILTERS_KEYS_D,
+} from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
 export const DATA_LT_D_Filters = {
@@ -55,24 +58,24 @@ export const DATA_LT_D_Filters = {
     specialties: {
       buttonName: "Specialties",
       categoriesToDisplay: [
-        "Behavior therapy",
-        "Speech & Language",
-        "Occupational",
-        "Physical Therapy",
-        "Psychology",
-        "Art Therapy",
-        "Music Therapy",
-        "Play Therapy",
-        "Geriatric Therapy",
-        "Family Therapy",
-        "Dance therapy",
-        "Pain Management Therapy",
-        "Sexual Abuse Therapy",
-        "Post-Traumatic Stress Disorder",
-        "Eating Dirorder Therapy",
-        "Depression Therapy",
         "Anxiety Therapy",
+        "Art Therapy",
+        "Behavior therapy",
         "Couples Therapy",
+        "Dance therapy",
+        "Depression Therapy",
+        "Eating Dirorder Therapy",
+        "Family Therapy",
+        "Geriatric Therapy",
+        "Music Therapy",
+        "Occupational",
+        "Pain Management Therapy",
+        "Physical Therapy",
+        "Play Therapy",
+        "Post-Traumatic Stress Disorder",
+        "Psychology",
+        "Sexual Abuse Therapy",
+        "Speech & Language",
         "Trauma Therapy",
       ],
     },
@@ -85,7 +88,9 @@ const allMoreFilters = {
   checkbox: [
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={DATA_LT_D_Filters.moreFilters.specialties.buttonName}
-      categoriesToDisplay={DATA_LT_D_Filters.moreFilters.specialties.categoriesToDisplay}
+      categoriesToDisplay={
+        DATA_LT_D_Filters.moreFilters.specialties.categoriesToDisplay
+      }
     />,
     <ORG_Filters_D_Checkbox_Isolated
       titleOnModal={ORG_FILTERS_KEYS_D.language.titleToShow}
@@ -147,8 +152,10 @@ export const filtersUI_PRP = [
 
       minSpecialCharacter: DATA_LT_D_Filters.duration.minSpecialCharacter,
       maxSpecialCharacter: DATA_LT_D_Filters.duration.maxSpecialCharacter,
-      addCharacterMaxSpecialCharacter: DATA_LT_D_Filters.duration.addCharacterMaxSpecialCharacter,
-      addCharacterMinSpecialCharacter: DATA_LT_D_Filters.duration.addCharacterMinSpecialCharacter,
+      addCharacterMaxSpecialCharacter:
+        DATA_LT_D_Filters.duration.addCharacterMaxSpecialCharacter,
+      addCharacterMinSpecialCharacter:
+        DATA_LT_D_Filters.duration.addCharacterMinSpecialCharacter,
     },
 
     [DATA_ORG_KeyNamesForFilters_D.SHOULD_ADD_CLASSNAME]: false,

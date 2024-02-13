@@ -39,6 +39,7 @@ import { arraySectionToRender_Physicians } from "../physicians/arraySectionToRen
 import { filtersUI_Physicians } from "../physicians/filters"
 import { tooltipToRender_Physicians } from "../physicians/tooltipToRender"
 import { arraySectionToRender_ResidentialResources } from "../residential-resources/arraySectionToRender"
+import { filtersUI_ResidentialResources } from "../residential-resources/filters"
 import { tooltipToRender_ResidentialResources } from "../residential-resources/tooltipToRender"
 import { arraySectionToRender_SchoolsEducational } from "../schools-educational/arraySectionToRender"
 import { filtersUI_SchoolsEducational } from "../schools-educational/filters"
@@ -529,6 +530,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     SECOND_PAGE: {
       BUTTON_TO_THIRDPAGE_TEXT: BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["contact us"],
       SVG: PRP_SVG,
+      FILTERS: filtersUI_ResidentialResources,
     },
 
     THIRD_PAGE: {

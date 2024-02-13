@@ -157,7 +157,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }: Props) => {
       if (addCharacter === "toRight") {
         if (addCharacterMaxSpecialCharacter === "toLeft") {
           let toUpdateInState = shouldAddSpecialCharacter
-            ? `${maxSpecialCharacter} ${whichMeasure}`
+            ? `${maxSpecialCharacter} ${formatedValue} ${whichMeasure}  `
             : `${formatedValue} ${whichMeasure} `
 
           setMaxValUI(toUpdateInState)
@@ -265,7 +265,7 @@ export const ORG_Filters_D_Range2 = ({ ...props }: Props) => {
       if (addCharacter === "toRight") {
         if (addCharacterMaxSpecialCharacter === "toLeft") {
           let toUpdateInState = shouldAddSpecialCharacter
-            ? `${maxSpecialCharacter} ${whichMeasure}`
+            ? `${maxSpecialCharacter} ${formatedValueMax} ${whichMeasure}  `
             : `${formatedValueMax} ${whichMeasure} `
 
           setMaxValUI(toUpdateInState)

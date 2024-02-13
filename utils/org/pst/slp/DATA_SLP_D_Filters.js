@@ -8,13 +8,6 @@ import {
 } from "../../../ORG_FiltersCategories"
 import { DATA_ORG_KeyNamesForFilters_D } from "../../DATA_ORG_KeyNamesForFilters_D"
 
-/* 
-!FH0
-Create this filters
-
-https://www.figma.com/file/lpHBroZRY7imHzHhMm1gAb/Regenesis-for-August%2C-2023-Launch?type=design&node-id=68-85929&mode=design&t=l0hHG7lyuHHadL2r-4
-*/
-
 export const DATA_SLP_D_Filters = {
   viewOnly: {
     buttonName: "View Only",
