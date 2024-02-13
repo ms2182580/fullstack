@@ -48,6 +48,7 @@ import { arraySectionToRender_TherapeuticServices } from "../therapeutic-service
 import { filtersUI_Therapeutic } from "../therapeutic-services/filters"
 import { mapRender_TherapeuticService } from "../therapeutic-services/mapRender"
 import { arraySectionToRender_Vocational } from "../vocational/arraySectionToRender"
+import { filtersUI_VocationalResources } from "../vocational/filters"
 import { tooltipToRender_Vocational } from "../vocational/tooltipToRender"
 
 export const enum NamesCategories_KEY {
@@ -582,6 +583,7 @@ export const ALL_DATA: ALL_DATA_Type = {
 
     SECOND_PAGE: {
       BUTTON_TO_THIRDPAGE_TEXT: BUTTON_TO_THIRDPAGE_TEXT_OPTIONS["apply now"],
+      FILTERS: filtersUI_VocationalResources,
     },
 
     THIRD_PAGE: {
