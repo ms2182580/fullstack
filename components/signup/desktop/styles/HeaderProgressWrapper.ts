@@ -1,7 +1,10 @@
 import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const HeaderProgressWrapper = styled.div`
+type props = {
+  progress: number
+}
+export const HeaderProgressWrapper = styled.div<props>`
   width: 100%;
   position: relative;
   & > :nth-child(1) {
@@ -18,7 +21,7 @@ export const HeaderProgressWrapper = styled.div`
     left: 0px;
     background-color: ${PRIMARY.PRIMARY_LOGO};
     height: 10px;
-    width: 25%;
+    width: ${(props) => `${props.progress}%`};
     display: flex;
   }
   & > :nth-child(3) {

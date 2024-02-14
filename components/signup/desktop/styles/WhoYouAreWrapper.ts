@@ -1,11 +1,18 @@
+import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const WhoYouAreWrapper = styled.div`
+type Props = {
+  selected: number
+}
+export const WhoYouAreWrapper = styled.div<Props>`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 32px;
 
+  & > :nth-child(${(props) => props.selected}) {
+    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+  }
   & > * {
     display: flex;
     margin-top: 112px;

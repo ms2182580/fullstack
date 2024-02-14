@@ -1,21 +1,25 @@
 import { Signup_D_Professional, Signup_N_ParentSvg } from "@/assets/icons"
 import { WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
+import { useState } from "react"
 
 export const WhoYouAre = () => {
+  const [selected, setSelected] = useState(0)
   let data = [
     {
       svg: <Signup_N_ParentSvg />,
       name: "I'm a parent or caregiver",
+      id: 1,
     },
     {
       svg: <Signup_D_Professional />,
       name: "I'm a professional",
+      id: 2,
     },
   ]
   return (
-    <WhoYouAreWrapper>
+    <WhoYouAreWrapper selected={selected}>
       {data.map((item) => (
-        <div>
+        <div onClick={() => setSelected(item.id)}>
           {item.svg}
           <span>{item.name}</span>
         </div>

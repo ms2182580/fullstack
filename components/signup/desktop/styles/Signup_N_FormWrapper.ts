@@ -1,25 +1,35 @@
-import styled from "styled-components"
+import { PRIMARY } from "@/assets/Colors"
+import styled, { css } from "styled-components"
 
-export const Signup_N_FormWrapper = styled.div`
+type Props = {
+  isSignup: boolean
+}
+const lastChild = css`
+  & > :last-child {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    width: 1184px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 24px;
+    border-top: 1px solid #d3ced5;
+    background-color: #fff2ed;
+    & > :nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+`
+export const Signup_N_FormWrapper = styled.div<Props>`
   display: flex;
 
   & > :nth-child(2) {
     width: 100%;
     position: relative;
-    & > :last-child {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      display: flex;
-      width: 1174px;
-      padding-top: 24px;
-      padding-bottom: 24px;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-end;
-      gap: 24px;
-      border-top: 1px solid #d3ced5;
-    }
-    /* & > :nth-child() */
+    ${(props) => props.isSignup && lastChild}/* & > :nth-child() */
   }
 `
