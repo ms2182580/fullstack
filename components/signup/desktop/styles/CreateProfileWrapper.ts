@@ -4,7 +4,7 @@ export const CreateProfileWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 90px;
   background-image: url("/background/background2.svg");
   & > :nth-child(2) {
     margin-top: 40px;

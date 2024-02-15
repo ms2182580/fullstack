@@ -9,6 +9,7 @@ import {
   Signup_D_UploadSvg,
   Signup_ProfileSvg,
 } from "@/assets/icons"
+import { SignupLayout } from "./Layout"
 
 export const CreateProfile = () => {
   let data = [
@@ -29,40 +30,45 @@ export const CreateProfile = () => {
     },
   ]
   return (
-    <CreateProfileWrapper>
-      <div>
-        <H2>Connect your e-health records</H2>
-        <P>
-          Speed up profile creation by uploading your loved one’s health data.
-          Don’t have data to add?{" "}
-          <Link href={"/create-profile-manually"}> Build profile manually</Link>
-        </P>
-      </div>
-      <div>
+    <SignupLayout>
+      <CreateProfileWrapper>
         <div>
-          <span>
-            <Signup_D_UploadSvg />
-            <span>Import a file</span>
-            <span>Supported file types: .pdf, .docx (15 MB Max)</span>
-          </span>
-          {data.map((item, index) => (
-            <div key={index}>
-              <span>
-                <span>{item.icon}</span>
-                <span>{item.name}</span>
-              </span>
-              <span>{item.content}</span>
-            </div>
-          ))}
+          <H2>Connect your e-health records</H2>
+          <P>
+            Speed up profile creation by uploading your loved one’s health data.
+            Don’t have data to add?{" "}
+            <Link href={"/create-profile-manually"}>
+              {" "}
+              Build profile manually
+            </Link>
+          </P>
         </div>
         <div>
-          <Signup_ProfileSvg />
-          <span>
-            Inclusive only works with non-identifying information apart from zip
-            code.<Link href={""}> Learn more about HIPAA Compliance</Link>
-          </span>
+          <div>
+            <span>
+              <Signup_D_UploadSvg />
+              <span>Import a file</span>
+              <span>Supported file types: .pdf, .docx (15 MB Max)</span>
+            </span>
+            {data.map((item, index) => (
+              <div key={index}>
+                <span>
+                  <span>{item.icon}</span>
+                  <span>{item.name}</span>
+                </span>
+                <span>{item.content}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            <Signup_ProfileSvg />
+            <span>
+              Inclusive only works with non-identifying information apart from
+              zip code.<Link href={""}> Learn more about HIPAA Compliance</Link>
+            </span>
+          </div>
         </div>
-      </div>
-    </CreateProfileWrapper>
+      </CreateProfileWrapper>
+    </SignupLayout>
   )
 }

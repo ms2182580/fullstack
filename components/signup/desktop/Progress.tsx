@@ -1,10 +1,17 @@
 import { useSignup_Ctx } from "@/context/Ctx_Signup"
 import { HeaderProgressWrapper } from "./styles/HeaderProgressWrapper"
 
-export const HeaderProgress = () => {
+type Props = {
+  showLogo: boolean
+}
+export const HeaderProgress = ({ showLogo }: Props) => {
   const { step, setStep } = useSignup_Ctx()
   let progress = 25
-  if (step === "create_profile") {
+  if (
+    step === "create_profile" ||
+    step === "create_profile1" ||
+    step === "create_profile2"
+  ) {
     progress = 50
   } else if (step === "tell_us_your_story") {
     progress = 75
@@ -26,15 +33,25 @@ export const HeaderProgress = () => {
     },
   ]
   return (
-    <HeaderProgressWrapper progress={progress}>
-      <div></div>
-      <span></span>
+    <HeaderProgressWrapper progress={progress} isGap={showLogo}>
       <div>
-        {data.map((item) => (
-          <div key={item.name}>
-            <span>{item.name}</span>
-          </div>
-        ))}
+        {showLogo && (
+          <>
+            <span>Inclusive</span>
+            <span>BETA</span>
+          </>
+        )}
+      </div>
+      <div>
+        <div></div>
+        <span></span>
+        <div>
+          {data.map((item) => (
+            <div key={item.name}>
+              <span>{item.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </HeaderProgressWrapper>
   )

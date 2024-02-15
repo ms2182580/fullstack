@@ -4,6 +4,8 @@ type Step =
   | "signup"
   | "who_you_are"
   | "create_profile"
+  | "create_profile1"
+  | "create_profile2"
   | "tell_us_your_story"
   | "review_and_save"
 
