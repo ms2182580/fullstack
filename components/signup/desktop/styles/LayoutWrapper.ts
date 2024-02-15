@@ -22,7 +22,7 @@ export const LayoutWrapper = styled.div<Props>`
       display: flex;
       width: 1440;
       background-color: ${(props) =>
-        props.isShowSidebar ? "white" : "#fff8f5"};
+        props.isShowSidebar ? "white" : "#FFF2ED"};
       & > :nth-child(1) {
         gap: 24px;
         padding: 10px;
