@@ -15,7 +15,7 @@ import { useRouter } from "next/router.js"
 
 export const Footer_D = () => {
   const route = useRouter()
-  if (route.pathname === "/signup") {
+  if (route.pathname === "/signup" || route.pathname === "/login") {
     return null
   }
   return (

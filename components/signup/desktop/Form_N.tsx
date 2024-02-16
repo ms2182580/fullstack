@@ -116,7 +116,7 @@ export const Form_N = () => {
           </form>
           <div>
             <p>
-              Already have an account? <Link href="">Log in</Link>
+              Already have an account? <Link href="/login">Log in</Link>
             </p>
             <div>
               <span></span>

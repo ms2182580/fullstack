@@ -2,6 +2,7 @@ import { useState } from "react"
 // import { supabase } from "../../utils/supabaseClient"
 import { useRouter } from "next/router"
 import { useLoginCtx } from "../../context/LoginCtx"
+import { INDEX_D_Signin } from "@/components/signin/INDEX_D_Signin"
 
 const initialState = {
   email: "",
@@ -55,21 +56,16 @@ const Login = () => {
 
   return (
     <>
-      Login here
+      <INDEX_D_Signin />
+      {/* Login here */}
       {/* <form onSubmit={handleSubmit}> */}
-      <form>
+      {/* <form>
         <label>Email</label>
-        <input
-          type="email"
-          onChange={handleEmail}
-        />
+        <input type="email" onChange={handleEmail} />
         <label>Password</label>
-        <input
-          type="password"
-          onChange={handlePassword}
-        />
+        <input type="password" onChange={handlePassword} />
         <button>Submit</button>
-      </form>
+      </form> */}
       {/* <p onClick={copyEmail}>Email</p> */}
       {/* <p onClick={copyPassword}>Password</p> */}
     </>

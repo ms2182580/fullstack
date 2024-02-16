@@ -8,6 +8,9 @@ type Step =
   | "create_profile2"
   | "tell_us_your_story"
   | "review_and_save"
+  | "finish"
+  | "recentLogin"
+  | "login"
 
 interface Ctx_SignupContextProps {
   step: Step

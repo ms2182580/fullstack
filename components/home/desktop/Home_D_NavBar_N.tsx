@@ -13,7 +13,7 @@ export const Home_D_NavBar_N = () => {
       push(`${ALL_ROUTES.HOME}`)
     }
   }
-  if (pathname === "/signup") {
+  if (pathname === "/signup" || pathname === "/login") {
     return null
   }
   return (

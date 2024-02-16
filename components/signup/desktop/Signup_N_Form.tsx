@@ -10,6 +10,7 @@ import { Review } from "./Review"
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { Demography } from "./Demography"
 import { Situation } from "./Situation"
+import { Finish } from "./Finish"
 
 export const Signup_N_Form = () => {
   const { step, setStep } = useSignup_Ctx()
@@ -18,11 +19,7 @@ export const Signup_N_Form = () => {
       isSignup={step === "signup" ? false : true}
       isBgInFooter={step === "create_profile"}
     >
-      {/* {step === "tell_us_your_story" ? null : <LeftSide_N />} */}
       <div>
-        {/* {step === "tell_us_your_story"
-          ? null
-          : step !== "signup" && <HeaderProgress />} */}
         {step === "signup" && <Form_N />}
         {step === "who_you_are" && <WhoYouAre />}
         {step === "create_profile" && <CreateProfile />}
@@ -30,33 +27,7 @@ export const Signup_N_Form = () => {
         {step === "create_profile2" && <Situation />}
         {step === "tell_us_your_story" && <TellStory />}
         {step === "review_and_save" && <Review />}
-        {/* {step !== "signup" && (
-          <div>
-            <ButtonSmall
-              goToDynamic={() => {
-                setStep("create_profile")
-              }}
-              secondary
-            >
-              Back
-            </ButtonSmall>
-            <ButtonSmall
-              goToDynamic={() => {
-                if (step === "who_you_are") {
-                  setStep("create_profile")
-                } else if (step === "create_profile") {
-                  setStep("create_profile1")
-                } else if (step === "create_profile1") {
-                  setStep("create_profile2")
-                } else if (step === "create_profile2") {
-                  setStep("tell_us_your_story")
-                }
-              }}
-            >
-              Next
-            </ButtonSmall>
-          </div>
-        )} */}
+        {step === "finish" && <Finish />}
       </div>
     </Signup_N_FormWrapper>
   )

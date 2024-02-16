@@ -11,6 +11,7 @@ export const SignupLayout = (props: Props) => {
   const { step, setStep } = useSignup_Ctx()
   return (
     <LayoutWrapper
+      colorBottom={step === "review_and_save" ? true : false}
       isShowSidebar={
         step === "create_profile" || step === "tell_us_your_story"
           ? false
@@ -24,15 +25,18 @@ export const SignupLayout = (props: Props) => {
           <LeftSide_N />
         )}
         <div>
-          {step !== "signup" && (
-            <HeaderProgress
-              showLogo={
-                step === "create_profile" || step === "tell_us_your_story"
-                  ? true
-                  : false
-              }
-            />
-          )}
+          {step !== "signup" &&
+            step !== "finish" &&
+            step !== "recentLogin" &&
+            step !== "login" && (
+              <HeaderProgress
+                showLogo={
+                  step === "create_profile" || step === "tell_us_your_story"
+                    ? true
+                    : false
+                }
+              />
+            )}
           {props.children}
 
           <div className="bottom">
@@ -49,21 +53,29 @@ export const SignupLayout = (props: Props) => {
                       Back
                     </ButtonSmall>
                   ))}
-                <ButtonSmall
-                  goToDynamic={() => {
-                    if (step === "who_you_are") {
-                      setStep("create_profile")
-                    } else if (step === "create_profile") {
-                      setStep("create_profile1")
-                    } else if (step === "create_profile1") {
-                      setStep("create_profile2")
-                    } else if (step === "create_profile2") {
-                      setStep("tell_us_your_story")
-                    }
-                  }}
-                >
-                  Next
-                </ButtonSmall>
+                {step === "finish" ||
+                step === "recentLogin" ||
+                step === "login" ? null : (
+                  <ButtonSmall
+                    goToDynamic={() => {
+                      if (step === "who_you_are") {
+                        setStep("create_profile")
+                      } else if (step === "create_profile") {
+                        setStep("create_profile1")
+                      } else if (step === "create_profile1") {
+                        setStep("create_profile2")
+                      } else if (step === "create_profile2") {
+                        setStep("tell_us_your_story")
+                      } else if (step === "tell_us_your_story") {
+                        setStep("review_and_save")
+                      } else if (step === "review_and_save") {
+                        setStep("finish")
+                      }
+                    }}
+                  >
+                    {step === "review_and_save" ? "Finish" : "Next"}
+                  </ButtonSmall>
+                )}
               </div>
             )}
           </div>

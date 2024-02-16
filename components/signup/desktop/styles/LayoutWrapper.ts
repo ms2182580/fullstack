@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 type Props = {
   isShowSidebar: boolean
+  colorBottom: boolean
 }
 export const LayoutWrapper = styled.div<Props>`
   width: 1440px;
@@ -20,9 +21,9 @@ export const LayoutWrapper = styled.div<Props>`
       bottom: 0px;
       display: flex;
       display: flex;
-      width: 1440;
       background-color: ${(props) =>
         props.isShowSidebar ? "white" : "#FFF2ED"};
+      background-color: ${(props) => props.colorBottom && "#FFF2ED"};
       & > :nth-child(1) {
         gap: 24px;
         padding: 10px;
