@@ -11,8 +11,13 @@ import {
 } from "../../../assets/icons/index.js"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper"
+import { useRouter } from "next/router.js"
 
 export const Footer_D = () => {
+  const route = useRouter()
+  if (route.pathname === "/signup" || route.pathname === "/login") {
+    return null
+  }
   return (
     <Footer_DWrapper>
       <header>
