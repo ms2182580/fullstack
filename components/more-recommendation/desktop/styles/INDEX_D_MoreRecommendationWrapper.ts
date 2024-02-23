@@ -136,11 +136,13 @@ export const INDEX_D_MoreRecommendationWrapper = styled.div`
       white-space: nowrap;
       overflow-x: hidden;
 
-      cursor: ew-resize;
-
       position: relative;
 
       padding-right: 70px;
+
+      p {
+        white-space: nowrap;
+      }
     }
 
     & > :last-child {

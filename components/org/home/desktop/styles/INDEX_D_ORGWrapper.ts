@@ -141,15 +141,18 @@ export const INDEX_D_ORGWrapper = styled.div`
     & > :nth-child(2) {
       display: flex;
       flex-wrap: nowrap;
+
       gap: 12px;
       white-space: nowrap;
       overflow-x: hidden;
 
-      cursor: ew-resize;
-
       position: relative;
 
       padding-right: 70px;
+
+      p {
+        white-space: nowrap;
+      }
     }
 
     & > :last-child {
@@ -244,6 +247,8 @@ export const LI_Category = styled.li<Props_LI>`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
 
   text-transform: capitalize;
 
