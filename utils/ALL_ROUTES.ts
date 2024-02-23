@@ -4,6 +4,7 @@ export const ALL_ROUTES = {
   DETAIL: "detail",
   RECOMMENDED: "recommended",
   "MORE-RECOMMENDATION": "more-recommendation",
+  LOGIN: "login",
   SIGNUP: "signup",
   HOME: "/",
   DASHBOARD: "dashboard",
