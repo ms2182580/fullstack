@@ -1,3 +1,4 @@
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
 export const LoginWrapper = styled.div`
@@ -64,6 +65,8 @@ export const LoginWrapper = styled.div`
       & > :nth-child(3) {
         width: 100%;
         margin-bottom: 10px;
+
+        ${reusableButton({})}
       }
     }
     & > :nth-child(3) {

@@ -33,6 +33,7 @@ export default function Dashboard() {
   ]
 
   if (!isWindow) return <></>
+
   return (
     <TourProvider
       ContentComponent={(props) => <INDEX_D_TourIndividual {...props} />}

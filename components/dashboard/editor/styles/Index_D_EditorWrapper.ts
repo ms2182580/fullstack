@@ -1,3 +1,4 @@
+import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const INDEX_D_EditorWrapper = styled.div`
@@ -57,6 +58,45 @@ export const INDEX_D_EditorWrapper = styled.div`
     /* align-items: center; */
     justify-content: center;
     gap: 24px;
+
+    & > :nth-child(2) {
+      & > :nth-child(1) {
+        display: flex;
+
+        & > * {
+          padding: 12px 32px;
+
+          font-size: 14px;
+          font-weight: 400;
+
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+
+          text-transform: capitalize;
+        }
+
+        p {
+          background-color: ${NEUTRALS.OFF_WHITE};
+
+          color: #3a343c;
+        }
+
+        a {
+          background-color: ${NEUTRALS.LIGHT_GREY};
+
+          cursor: pointer;
+
+          color: #746779;
+
+          text-decoration: none;
+
+          &:hover,
+          &:focus-visible {
+            filter: drop-shadow(1px 2px 3px hsla(0, 0%, 0%, 0.15));
+          }
+        }
+      }
+    }
   }
 
   #editor {

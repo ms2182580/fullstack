@@ -1,13 +1,16 @@
 import { Dashboard_BubbleChatSvg } from "@/assets/icons"
 import { FirstStep } from "@/components/carePlan/components/stepper-part/first-step.component"
 import { Stepper } from "@/components/common/stepper/steper"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { useDashboardAIChatUploadFile_Ctx } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import "font-awesome/css/font-awesome.css"
 import "froala-editor/css/froala_editor.pkgd.min.css"
 import "froala-editor/css/froala_style.min.css"
+import Link from "next/link"
 import { useEffect, useState } from "react"
-import { INDEX_D_EditorWrapper } from "./styles/Index_D_EditorWrapper"
-import { useDashboardAIChatUploadFile_Ctx } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
 import { Editor_D_PlanInfo } from "./Editor_D_PlanInfo"
+import { INDEX_D_EditorWrapper } from "./styles/Index_D_EditorWrapper"
 
 interface Step {
   title: string
@@ -154,6 +157,7 @@ export const Index_D_Editor = () => {
       },
     })
   }
+
   useEffect(() => {
     async function init() {
       await initEditor()
@@ -164,28 +168,38 @@ export const Index_D_Editor = () => {
   if (isWindow === false) return <></>
 
   return (
-    <INDEX_D_EditorWrapper>
-      <div>
-        <span>File</span>
-        <div id="toolbar" />
-        <span>
-          <span id="optimize">Optimize</span>
+    <>
+      <INDEX_D_EditorWrapper>
+        <div>
+          <span>File</span>
+          <div id="toolbar" />
           <span>
-            <Dashboard_BubbleChatSvg /> AIChat
+            <span id="optimize">Optimize</span>
+            <span>
+              <Dashboard_BubbleChatSvg /> AIChat
+            </span>
           </span>
-        </span>
-      </div>
-
-      <div id="first">
-        <div className="stepper">
-          <Stepper steps={steps} />
         </div>
-        {planState === "EXISTING" ? (
-          <Editor_D_PlanInfo />
-        ) : (
-          <div id="editor" style={{ width: "100%", height: "100%" }}></div>
-        )}
-      </div>
-    </INDEX_D_EditorWrapper>
+        <div id="first">
+          <div className="stepper">
+            <Stepper steps={steps} />
+          </div>
+
+          {planState === "EXISTING" ? (
+            <Editor_D_PlanInfo />
+          ) : (
+            <div>
+              <div>
+                <P>John's care plan</P>
+                <Link href={`/${ALL_ROUTES.EDITOR_CARE_PLAN}`}>
+                  Resource Directory
+                </Link>
+              </div>
+              <div id="editor" style={{ width: "100%", height: "100%" }}></div>
+            </div>
+          )}
+        </div>
+      </INDEX_D_EditorWrapper>
+    </>
   )
 }

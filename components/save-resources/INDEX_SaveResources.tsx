@@ -1,14 +1,3 @@
-import { useRef, useState } from "react"
-import {
-  Model_Success_Wrapper,
-  Model_Wrapper,
-  SaveResource_Card,
-  SaveResource_Filter,
-  SaveResource_MainWrapper,
-  SaveResource_SearchDiv,
-} from "./styles/MainWrapper"
-import { ButtonSmall } from "../ui/buttons/general"
-import { Checkbox } from "../common/checkbox"
 import {
   Agencies_Icon_SVG,
   Close_Icon_SVG,
@@ -21,9 +10,22 @@ import {
   Single_Man_Icon_SVG,
   VerifiedTicket2Svg,
 } from "@/assets/icons"
-import { H2, H3, H4 } from "../ui/heading_body_text/HeaderFonts"
-import { P } from "../ui/heading_body_text/DesktopMobileFonts"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import { useRouter } from "next/navigation"
+import { useRef, useState } from "react"
+import { Checkbox } from "../common/checkbox"
 import useClickOutside from "../common/hooks/use-click-outside"
+import { ButtonSmall } from "../ui/buttons/general"
+import { P } from "../ui/heading_body_text/DesktopMobileFonts"
+import { H3, H4 } from "../ui/heading_body_text/HeaderFonts"
+import {
+  Model_Success_Wrapper,
+  Model_Wrapper,
+  SaveResource_Card,
+  SaveResource_Filter,
+  SaveResource_MainWrapper,
+  SaveResource_SearchDiv,
+} from "./styles/MainWrapper"
 
 export const INDEX_SaveResources = () => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false)
@@ -45,6 +47,8 @@ export const INDEX_SaveResources = () => {
     [refFilter, refAddCare, refViewCare],
     [setOpenFilterPopup, setOpenAddCarePopup, setOpenViewCarePopup]
   )
+
+  const { push } = useRouter()
 
   return (
     <SaveResource_MainWrapper>
@@ -463,7 +467,9 @@ export const INDEX_SaveResources = () => {
               </div>
               <div
                 className="footer"
-                onClick={() => handleCloseViewCarePopup()}
+                onClick={() => {
+                  push(`/${ALL_ROUTES.EDITOR_VIEW_PLAN}`)
+                }}
               >
                 <ButtonSmall>View care plan</ButtonSmall>
               </div>

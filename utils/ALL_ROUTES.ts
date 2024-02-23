@@ -6,4 +6,9 @@ export const ALL_ROUTES = {
   "MORE-RECOMMENDATION": "more-recommendation",
   SIGNUP: "signup",
   HOME: "/",
+  DASHBOARD: "dashboard",
+  AI_CHAT: "ai-chat",
+  SAVE_RESOURCES: "save-resources",
+  EDITOR_CARE_PLAN: "editor/care-plan",
+  EDITOR_VIEW_PLAN: "editor/view-plan",
 }

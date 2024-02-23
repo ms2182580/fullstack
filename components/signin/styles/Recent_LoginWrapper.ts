@@ -9,23 +9,23 @@ export const Recent_LoginWrapper = styled.div`
   gap: 24px;
 
   & > :nth-child(1) {
-    color: #1d1a1e;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 54px;
+    h3 {
+      color: #1d1a1e;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 54px;
+    }
+
+    p {
+      color: #746779;
+    }
   }
+
   & > :nth-child(2) {
-    margin-top: -30px;
-    color: #746779;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
-  }
-  & > :nth-child(3) {
     display: flex;
     gap: 16px;
+
     & > :nth-child(1) {
       display: flex;
       height: 283px;
@@ -53,6 +53,8 @@ export const Recent_LoginWrapper = styled.div`
     }
 
     & > :nth-child(2) {
+      cursor: pointer;
+
       & > :nth-child(1) {
         height: 224px;
         display: flex;

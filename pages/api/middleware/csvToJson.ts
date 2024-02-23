@@ -8,7 +8,8 @@ const transformData = (item) => ({
   /* 
   const filteredData = trpc.camp.getAll.useQuery({ limit: 3, filter: {recordSubtype: "Day Camp"} })
   * The magic string "Day Camp" is the subcategory
-  * Every subcategory is listed inside ALL_DATA object → "@/utils/org/categories/general/ALL_DATA"
+  * Every subcategory is listed inside ALL_DATA object → "@/utils/org/categories/general/ALL_DATA → «NamesSubcategories_KEY» object"
+  * The string "camp" and all other strings can be found on "@/serverr/routers/index.ts → «appRouter» variable"
   
    */
   listingType: item["Listing Type"],

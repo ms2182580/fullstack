@@ -2809,16 +2809,33 @@ export const Signup_MicSvg = (props) => (
     />
   </svg>
 )
-export const Sigin_RecentLoginScreen=props=><svg {...props} xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
-<g opacity="0.35" clip-path="url(#clip0_3881_24676)">
-<path d="M23.0808 4.24609C12.635 4.24609 4.15723 12.7239 4.15723 23.1697C4.15723 33.6155 12.635 42.0933 23.0808 42.0933C33.5267 42.0933 42.0044 33.6155 42.0044 23.1697C42.0044 12.7239 33.5267 4.24609 23.0808 4.24609ZM32.5426 25.0621H24.9732V32.6315H21.1885V25.0621H13.619V21.2773H21.1885V13.7079H24.9732V21.2773H32.5426V25.0621Z" fill="#1D1A1E"/>
-</g>
-<defs>
-<clipPath id="clip0_3881_24676">
-<rect width="45.4167" height="45.4167" fill="white" transform="translate(0.37207 0.460938)"/>
-</clipPath>
-</defs>
-</svg>
+export const Sigin_RecentLoginScreen = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="46"
+    height="46"
+    viewBox="0 0 46 46"
+    fill="none"
+  >
+    <g opacity="0.35" clip-path="url(#clip0_3881_24676)">
+      <path
+        d="M23.0808 4.24609C12.635 4.24609 4.15723 12.7239 4.15723 23.1697C4.15723 33.6155 12.635 42.0933 23.0808 42.0933C33.5267 42.0933 42.0044 33.6155 42.0044 23.1697C42.0044 12.7239 33.5267 4.24609 23.0808 4.24609ZM32.5426 25.0621H24.9732V32.6315H21.1885V25.0621H13.619V21.2773H21.1885V13.7079H24.9732V21.2773H32.5426V25.0621Z"
+        fill="#1D1A1E"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_3881_24676">
+        <rect
+          width="45.4167"
+          height="45.4167"
+          fill="white"
+          transform="translate(0.37207 0.460938)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+)
 export const Signup_FinishSvg = (props) => (
   <svg
     {...props}

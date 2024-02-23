@@ -219,6 +219,7 @@ export const CarePlaneComponent = () => {
                   </div>
                 </div>
               </div>
+
               <div className="tab_card">
                 <div className="tab_card_img">
                   <img src="/images/wheelchair.png" alt="bycycle" />
@@ -246,6 +247,7 @@ export const CarePlaneComponent = () => {
                   </div>
                 </div>
               </div>
+
               <div className="tab_card">
                 <div className="tab_card_img">
                   <img src="/images/bycycle.png" alt="bycycle" />
