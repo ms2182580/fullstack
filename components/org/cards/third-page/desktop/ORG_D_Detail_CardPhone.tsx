@@ -1,4 +1,4 @@
-import { PhoneSvg } from "../../../../../assets/icons/index.js"
+import { PhoneSvg } from "../../../../../assets/icons/index"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_CardPhoneWrapper } from "./styles/ORG_D_Detail_CardPhoneWrapper"
 

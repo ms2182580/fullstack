@@ -1,4 +1,4 @@
-import { LocationSvg } from "../../../../../assets/icons/index.js"
+import { LocationSvg } from "../../../../../assets/icons/index"
 import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_CardLocationWrapper } from "./styles/ORG_D_Detail_CardLocationWrapper"
 

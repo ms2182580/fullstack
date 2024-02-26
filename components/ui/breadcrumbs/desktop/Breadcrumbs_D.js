@@ -1,14 +1,11 @@
 import Breadcrumbs_Home from "@/assets/icons/Breadcrumbs_Home.svg"
 import Link from "next/link.js"
 import { Fragment } from "react"
-import { ArrowRightSvg } from "../../../../assets/icons/index.js"
+import { ArrowRightSvg } from "../../../../assets/icons/index"
 import { useTabIndex } from "../../../../utils/useTabindex.js"
 import { Breadcrumbs_DWrapper } from "./styles/Breadcrumbs_DWrapper"
 
-export const Breadcrumbs_D = ({
-  whichDisplay = [],
-  typedFlow = false,
-}) => {
+export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
   const useTab = useTabIndex()
 
   return (

@@ -1,4 +1,4 @@
-import { Navbar_AccessibilitySvg } from "@/assets/icons/index.js"
+import { Navbar_AccessibilitySvg } from "@/assets/icons/index"
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"
 import { useOutsideHide } from "@/utils/useOutsideHide.js"
@@ -7,7 +7,8 @@ import { NavBar_D_AccessibilityDropdown } from "./NavBar_D_AccessibilityDropdown
 import { NavBar_D_AccessibilityWrapper } from "./styles/NavBar_D_AccessibilityWrapper.js"
 
 export const NavBar_D_Accessibility = () => {
-  const [showDropdownAccessibility, setShowDropdownAccessibility] = useState(false)
+  const [showDropdownAccessibility, setShowDropdownAccessibility] =
+    useState(false)
 
   const refDropdownAccessibility = useRef()
 
@@ -37,7 +38,12 @@ export const NavBar_D_Accessibility = () => {
 
   const classNameToFocusLogic = "Accessibility"
   const { focusedElement } = useActiveElement()
-  useCloseNotActiveElementAnymore(focusedElement, setShowDropdownAccessibility, ["span", "ul", "li"], classNameToFocusLogic)
+  useCloseNotActiveElementAnymore(
+    focusedElement,
+    setShowDropdownAccessibility,
+    ["span", "ul", "li"],
+    classNameToFocusLogic
+  )
 
   return (
     <NavBar_D_AccessibilityWrapper>
@@ -45,7 +51,8 @@ export const NavBar_D_Accessibility = () => {
         onClick={handleToggleShowDropdownAccessibility}
         onKeyDown={handleToggleShowDropdownAccessibility}
         tabIndex={0}
-        className={classNameToFocusLogic}>
+        className={classNameToFocusLogic}
+      >
         <Navbar_AccessibilitySvg />
       </span>
 

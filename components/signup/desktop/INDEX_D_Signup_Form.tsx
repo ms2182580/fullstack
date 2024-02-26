@@ -1,11 +1,11 @@
-import { useSignup_Ctx } from "@/context/Ctx_Signup"
 import { CreateProfile } from "./CreateProfile"
 import { Review } from "./Review"
 import { Signup_D_Home } from "./Signup_D_Home"
 import { TellStory } from "./TellStory"
 import { WhoYouAre } from "./WhoYouAre"
-import { Signup_N_FormWrapper } from "./styles/Signup_N_FormWrapper"
+import { INDEX_D_Signup_FormWrapper } from "./styles/INDEX_D_Signup_FormWrapper"
 // import { HeaderProgress } from "./Progress"
+import { useSignup_Ctx } from "@/context/Ctx_Signup"
 import { Demography } from "./Demography"
 import { Finish } from "./Finish"
 import { Situation } from "./Situation"
@@ -13,7 +13,7 @@ import { Situation } from "./Situation"
 export const INDEX_D_Signup_Form = () => {
   const { step, setStep } = useSignup_Ctx()
   return (
-    <Signup_N_FormWrapper
+    <INDEX_D_Signup_FormWrapper
       isSignup={step === "signup" ? false : true}
       isBgInFooter={step === "create_profile"}
     >
@@ -27,6 +27,6 @@ export const INDEX_D_Signup_Form = () => {
         {step === "review_and_save" && <Review />}
         {step === "finish" && <Finish />}
       </div>
-    </Signup_N_FormWrapper>
+    </INDEX_D_Signup_FormWrapper>
   )
 }

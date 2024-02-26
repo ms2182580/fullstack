@@ -3,7 +3,7 @@ import { Fragment, useRef, useState } from "react"
 import {
   NavBar_D_WriteAReviewSvg,
   Navbar_D_AccessibilityModeSvg,
-} from "../../../assets/icons/index.js"
+} from "../../../assets/icons/index"
 import { useOutsideHideHover } from "../../../utils/useOutsideHideHover.js"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_HamburgerComponentDropdown_CC } from "./NavBar_D_HamburgerComponentDropdown_CC.js"

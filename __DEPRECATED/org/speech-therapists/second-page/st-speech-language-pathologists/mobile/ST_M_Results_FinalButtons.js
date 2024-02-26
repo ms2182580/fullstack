@@ -1,5 +1,8 @@
 import { useRouter } from "next/router.js"
-import { LeftArrowSvg, RightArrowSvg } from "../../../../../../../assets/icons/index.js"
+import {
+  LeftArrowSvg,
+  RightArrowSvg,
+} from "../../../../../../../assets/icons/index"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_ShowFiltersMobile } from "../../../../../../../context/ORG_Ctx_ShowFiltersMobile_Provider.js"
 import { useShouldTab } from "../../../../../../../utils/ORG_shouldTab.js"
@@ -42,11 +45,13 @@ export const ST_M_Results_FinalButtons = () => {
   return (
     <ST_M_Results_FinalButtonsWrapper
       mustShowFiltersMobile={mustShowFiltersMobile}
-      className={!isTouchScreen ? "canHover" : null}>
+      className={!isTouchScreen ? "canHover" : null}
+    >
       <>
         <ST_M_Results_FinalButtonsPrevButtonWrapper
           onClick={toPrevious}
-          tabIndex={shouldTab}>
+          tabIndex={shouldTab}
+        >
           <LeftArrowSvg />
         </ST_M_Results_FinalButtonsPrevButtonWrapper>
       </>
@@ -56,7 +61,8 @@ export const ST_M_Results_FinalButtons = () => {
       <>
         <ST_M_Results_FinalButtonsNextButtonWrapper
           onClick={toNext}
-          tabIndex={shouldTab}>
+          tabIndex={shouldTab}
+        >
           <RightArrowSvg />
         </ST_M_Results_FinalButtonsNextButtonWrapper>
       </>

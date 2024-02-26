@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { ChatAI_0_LogoSvg } from "../../../assets/icons/index.js"
+import { ChatAI_0_LogoSvg } from "../../../assets/icons/index"
 import { ChatAI_ComingSoon } from "./ChatAI_ComingSoon"
 import { ChatShowed } from "./ChatShowed.js"
 import { ChatAIWrapper } from "./styles/ChatAIWrapper"

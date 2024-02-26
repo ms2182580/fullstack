@@ -1,4 +1,4 @@
-import { XDesktopSvg } from "../../../../../../../assets/icons/index.js"
+import { XDesktopSvg } from "../../../../../../../assets/icons/index"
 import {
   ORG_FILTERS_DATA_M,
   ORG_FILTERS_KEYS_M,

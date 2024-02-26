@@ -10,7 +10,7 @@ import {
   NavBar_D_TooltipSvg,
   NavBar_D_UpgradeSvg,
   NavBar_D_UserDashboardSvg,
-} from "../../../assets/icons/index.js"
+} from "../../../assets/icons/index"
 import { ButtonSmall } from "../../ui/buttons/general/index"
 import { H4 } from "../../ui/heading_body_text/HeaderFonts"
 import { NavBar_D_SignComponentDropdownWrapper } from "./styles/NavBar_D_SignComponentDropdownWrapper"

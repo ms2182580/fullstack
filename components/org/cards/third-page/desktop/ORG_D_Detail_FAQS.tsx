@@ -6,7 +6,7 @@ import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesF
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useRef, useState } from "react"
-import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/icons/index.js"
+import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/icons/index"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
 import { ORG_ST_FAQS } from "../../../../../utils/ORG_ST_FAQS_D.js"

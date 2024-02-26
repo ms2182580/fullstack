@@ -1,4 +1,4 @@
-import { LocationSvg } from "../../../../../../assets/icons/index.js"
+import { LocationSvg } from "../../../../../../assets/icons/index"
 import { P } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ST_M_Detail_CardLocationWrapper } from "./styles/ST_M_Detail_CardLocationWrapper.js"
 

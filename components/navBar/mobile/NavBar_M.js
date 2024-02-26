@@ -2,7 +2,7 @@ import {
   ChatAILogo_M,
   NavBar_M_HamburgerSvg,
   NavBar_M_UserSvg,
-} from "@/assets/icons/index.js"
+} from "@/assets/icons/index"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router.js"
 import { useEffect, useState } from "react"

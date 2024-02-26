@@ -1,7 +1,7 @@
 import { useActiveElement } from "@/utils/useActiveElement.js"
 import { useCloseNotActiveElementAnymore } from "@/utils/useCloseNotActiveElementAnymore.js"
 import { useRef, useState } from "react"
-import { NavBar_D_HamburgerSvg } from "../../../assets/icons/index.js"
+import { NavBar_D_HamburgerSvg } from "../../../assets/icons/index"
 import { useOutsideHide } from "../../../utils/useOutsideHide.js"
 import { NavBar_D_HamburgerComponentDropdown } from "./NavBar_D_HamburgerComponentDropdown.js"
 import { NavBar_D_HamburgerComponentWrapper } from "./styles/NavBar_D_HamburgerComponentWrapper.js"

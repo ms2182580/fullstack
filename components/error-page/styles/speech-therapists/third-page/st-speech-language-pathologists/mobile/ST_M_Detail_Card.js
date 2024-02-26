@@ -1,5 +1,5 @@
 import Image from "next/image.js"
-import { BookmarkSaveSTMobileSvg } from "../../../../../../assets/icons/index.js"
+import { BookmarkSaveSTMobileSvg } from "../../../../../../assets/icons/index"
 import { Caption } from "../../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "../../../../../ui/heading_body_text/HeaderFonts"
 import { FriendlyDiagnoses } from "../../../../friendlyDiagnoses/FriendlyDiagnoses.js"

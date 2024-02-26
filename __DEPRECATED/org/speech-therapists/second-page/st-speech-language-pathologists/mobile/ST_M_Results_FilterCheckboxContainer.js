@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import {
   DownArrowSvg,
   UpArrowSvg,
-} from "../../../../../../../assets/icons/index.js"
+} from "../../../../../../../assets/icons/index"
 import { ORG_FILTERS_KEYS_M } from "../../../../../../../utils/ORG_FiltersCategories.js"
 import { P } from "../../../../../../ui/heading_body_text/DesktopMobileFonts.js"
 import { PatternStars } from "../../../../../stars-rating-review/PatternsStars.js"

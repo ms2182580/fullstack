@@ -4,7 +4,7 @@ import {
   LanguageIconSvg,
   LinkedinSvg,
   Twitter2Svg,
-} from "../../../assets/icons/index.js"
+} from "../../../assets/icons/index"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "../../ui/heading_body_text/HeaderFonts"
 import { Footer_MWrapper } from "./styles/Footer_MWrapper.js"

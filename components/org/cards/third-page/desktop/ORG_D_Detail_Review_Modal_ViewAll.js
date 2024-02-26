@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import {
   NavBar_D_WriteAReviewSvg,
   XSvg,
-} from "../../../../../assets/icons/index.js"
+} from "../../../../../assets/icons/index"
 import { ORG_D_Detail_Review_Modal_DetailRating } from "./ORG_D_Detail_Review_Modal_DetailRating.js"
 import { ORG_D_Detail_Review_Modal_DetailReviews } from "./ORG_D_Detail_Review_Modal_DetailReviews.js"
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention.js"

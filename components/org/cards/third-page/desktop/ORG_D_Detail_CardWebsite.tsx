@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { WebsiteSvg } from "../../../../../assets/icons/index.js"
+import { WebsiteSvg } from "../../../../../assets/icons/index"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Detail_CardWebsiteWrapper } from "./styles/ORG_D_Detail_CardWebsiteWrapper"
 

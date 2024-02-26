@@ -1,4 +1,4 @@
-import { VerifiedTicket2Svg } from "../../../assets/icons/index.js"
+import { VerifiedTicket2Svg } from "../../../assets/icons/index"
 import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { VerifiedWrapper } from "./styles/VerifiedWrapper.js"
 

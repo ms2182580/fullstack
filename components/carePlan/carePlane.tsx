@@ -23,7 +23,7 @@ import {
 } from "./carePlan.style"
 import { FirstStep } from "./components/stepper-part/first-step.component"
 
-import { ArrowRightSvg } from "@/assets/icons/index.js"
+import { ArrowRightSvg } from "@/assets/icons/index"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"

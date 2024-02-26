@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ORG_D_Results_HearthSvg } from "../../../../../assets/icons/index.js"
+import { ORG_D_Results_HearthSvg } from "../../../../../assets/icons/index"
 import { ORG_D_Results_Card_HearthWrapper } from "./styles/ORG_D_Results_Card_HearthWrapper"
 
 export const ORG_D_Results_Card_Hearth = () => {

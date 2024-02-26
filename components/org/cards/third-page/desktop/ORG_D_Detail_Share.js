@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ShareSvg } from "../../../../../assets/icons/index.js"
+import { ShareSvg } from "../../../../../assets/icons/index"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"

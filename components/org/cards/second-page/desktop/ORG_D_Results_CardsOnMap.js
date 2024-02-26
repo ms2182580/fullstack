@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { PinResultsSvg } from "../../../../../assets/icons/index.js"
+import { PinResultsSvg } from "../../../../../assets/icons/index"
 import { ORG_MapDefaultValue } from "../../../../../utils/ORG_MapValuesToShow.js"
 import { ORG_D_Results_CardsOnMapCard } from "./ORG_D_Results_CardsOnMapCard.js"
 import { ORG_D_Results_CardsOnMapWrapper } from "./styles/ORG_D_Results_CardsOnMapWrapper.js"
@@ -44,11 +44,16 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
 
   useEffect(() => {
     if (windowSizeShrink.prevWidth !== null) {
-      const shouldMoveX = Math.round(windowSizeShrink.currWidth - windowSizeShrink.prevWidth)
+      const shouldMoveX = Math.round(
+        windowSizeShrink.currWidth - windowSizeShrink.prevWidth
+      )
       setshouldMoveShrink({ x: shouldMoveX })
     }
 
-    if (windowSizeShrink.prevWidth !== null && windowSizeShrink.prevHeight !== null) {
+    if (
+      windowSizeShrink.prevWidth !== null &&
+      windowSizeShrink.prevHeight !== null
+    ) {
       setActualWidthAndHeight({
         width: Math.round(windowSizeShrink.currWidth),
         height: windowSizeShrink.currHeight,
@@ -73,12 +78,22 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   ])
 
   useEffect(() => {
-    if (actualWidthAndHeight !== undefined && isRenderAt === "ready" && positionsShrinked.length === 1) {
+    if (
+      actualWidthAndHeight !== undefined &&
+      isRenderAt === "ready" &&
+      positionsShrinked.length === 1
+    ) {
       const newPositions = []
       for (let i = 0; i < ORG_MapDefaultValue(); i++) {
-        const calcLeft = Math.floor(Math.random() * actualWidthAndHeight.width - PinResultsSvg().props.width)
+        const calcLeft = Math.floor(
+          Math.random() * actualWidthAndHeight.width -
+            PinResultsSvg().props.width
+        )
         const left = calcLeft < 0 ? 0 : calcLeft
-        const calcTop = Math.floor(Math.random() * actualWidthAndHeight.height - PinResultsSvg().props.height)
+        const calcTop = Math.floor(
+          Math.random() * actualWidthAndHeight.height -
+            PinResultsSvg().props.height
+        )
         const top = calcTop < 0 ? 0 : calcTop
         newPositions.push({ top, left })
       }
@@ -87,8 +102,13 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   }, [actualWidthAndHeight, isRenderAt])
 
   useEffect(() => {
-    if (actualWidthAndHeight !== undefined && isRenderAt === "ready" && positionsShrinked.length !== 1) {
-      const maxRight = actualWidthAndHeight.currWidth - PinResultsSvg().props.width
+    if (
+      actualWidthAndHeight !== undefined &&
+      isRenderAt === "ready" &&
+      positionsShrinked.length !== 1
+    ) {
+      const maxRight =
+        actualWidthAndHeight.currWidth - PinResultsSvg().props.width
 
       setPositionsShrinked((prevState) => {
         let newArr = prevState.map((x) => {
@@ -116,7 +136,8 @@ export const ORG_D_Results_CardsOnMap = ({ bottomOfButton }) => {
   return (
     <ORG_D_Results_CardsOnMapWrapper
       ref={myRef}
-      bottomOfButton={bottomOfButton}>
+      bottomOfButton={bottomOfButton}
+    >
       {isRenderAt === "ready" &&
         positionsShrinked.length !== 1 &&
         positionsShrinked.map(({ top, left }, i) => {

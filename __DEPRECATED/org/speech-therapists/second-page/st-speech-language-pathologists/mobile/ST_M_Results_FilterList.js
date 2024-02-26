@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react"
-import { ORG_STSearch_M_FilterIcon } from "../../../../../../../assets/icons/index.js"
+import { ORG_STSearch_M_FilterIcon } from "../../../../../../../assets/icons/index"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { useORG_Ctx_filtersLeftMobile } from "../../../../../../../context/ORG_CtxFiltersLeftMobile_Provider.js"
 import { useORG_Ctx_FiltersApplyMobile } from "../../../../../../../context/ORG_Ctx_FiltersApplyMobile.js"

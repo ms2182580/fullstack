@@ -2,7 +2,7 @@ import {
   LeftArrowLongSvg,
   Welcome_1Svg,
   XDesktopSvg,
-} from "@/assets/icons/index.js"
+} from "@/assets/icons/index"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"

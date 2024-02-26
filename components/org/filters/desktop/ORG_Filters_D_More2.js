@@ -1,7 +1,7 @@
 import { ButtonSmall } from "@/components/ui/buttons/general/index"
 import { AllMoreFilters_KEY } from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
 import { Fragment, cloneElement, useState } from "react"
-import { XDesktopSvg } from "../../../../assets/icons/index.js"
+import { XDesktopSvg } from "../../../../assets/icons/index"
 import { useShowFilters } from "../../../../utils/org/useShowFilters.js"
 import { ORG_Filters_D_MoreWrapper2 } from "./styles/ORG_Filters_D_MoreWrapper2.js"
 

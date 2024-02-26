@@ -1,4 +1,3 @@
-import { PRIMARY } from "@/assets/Colors"
 import styled, { css } from "styled-components"
 
 type Props = {
@@ -25,7 +24,7 @@ const lastChild = () => css`
     }
   }
 `
-export const Signup_N_FormWrapper = styled.div<Props>`
+export const INDEX_D_Signup_FormWrapper = styled.div<Props>`
   display: flex;
 
   & > :nth-child(2) {

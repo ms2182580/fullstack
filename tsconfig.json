@@ -38,4 +38,7 @@
   "exclude": [
     "node_modules"
   ],
+  "types": [
+    "vitest/importMeta"
+  ]
 }

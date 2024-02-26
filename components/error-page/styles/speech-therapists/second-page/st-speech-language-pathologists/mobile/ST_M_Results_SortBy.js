@@ -2,7 +2,7 @@ import { Fragment, useRef, useState } from "react"
 import {
   DownArrowSvg,
   UpArrowSvg,
-} from "../../../../../../../assets/icons/index.js"
+} from "../../../../../../../assets/icons/index"
 import { useORG_Ctx_FetchNoFiltersMobile } from "../../../../../../../context/ORG_CtxFetchNoFiltersMobile_Provider.js"
 import { useORG_Ctx_FetchWithFiltersMobile } from "../../../../../../../context/ORG_CtxFetchWithFiltersMobile_Provider.js"
 import { ORG_Sortby_Mobile } from "../../../../../../../utils/ORG_SortByData.js"

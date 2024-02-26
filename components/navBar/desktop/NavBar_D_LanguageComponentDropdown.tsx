@@ -1,7 +1,7 @@
 import {
   LanguageIconSvg,
   NavBar_D_AccessibilityModeSvg,
-} from "@/assets/icons/index.js"
+} from "@/assets/icons/index"
 import FLAG_CHINA from "@/assets/icons/nav-bar/FLAG_CHINA.png"
 import FLAG_EGIPT from "@/assets/icons/nav-bar/FLAG_EGIPT.png"
 import FLAG_FRANCE from "@/assets/icons/nav-bar/FLAG_FRANCE.png"

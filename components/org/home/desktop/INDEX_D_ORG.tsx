@@ -1,4 +1,4 @@
-import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index.js"
+import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index"
 import ORG_1_page from "@/assets/images/org/1_page/org_1_page.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"

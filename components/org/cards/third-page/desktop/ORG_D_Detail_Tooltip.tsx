@@ -1,7 +1,7 @@
 import {
   QuestionTooltip_AASvg,
   QuestionTooltip_DefaultSvg,
-} from "@/assets/icons/index.js"
+} from "@/assets/icons/index"
 import {
   Tooltip_KEYS,
   Tooltip_VALUES,
