@@ -32,8 +32,10 @@ export const SECONDARY_BG_BIGBLOCKS_TEXT = {
 export const NEUTRALS = {
   BLACK: "#00080B" /* Standard text */,
   DARK_GREY: "#6C6C6C" /* Informational text */,
+  DARK_GREY_2: "#3A343C" /* Informational text alternative 2 */,
   LIGHT_GREY: "#D3D6D7" /* Disabled color */,
   OFF_WHITE: "#FCFDFE" /* Overall Background */,
+  OFF_WHITE_2: "#F3F1F3" /* Overall Background alternative 2 */,
 }
 
 export const SEMANTICS = {

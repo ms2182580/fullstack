@@ -1,15 +1,17 @@
 import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const LeftSide_N_Wrapper = styled.div`
+export const LeftSide_N_Wrapper = styled.aside`
   display: flex;
-  width: 266px;
-  height: 100vh;
   align-items: flex-start;
-  padding: 0px 16px;
   flex-direction: column;
+
+  width: 266px;
+  padding: 0px 16px;
+
   border-radius: 0px 24px 0px 0px;
   background: ${PRIMARY.PRIMARY_CTA};
+
   color: white;
 
   & > :nth-child(1) {

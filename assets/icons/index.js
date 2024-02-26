@@ -1928,6 +1928,7 @@ export const Signup_N_GoogleSvg = (props) => (
     />
   </svg>
 )
+
 export const Signup_N_InfoSvg = (props) => (
   <svg
     {...props}

@@ -1,11 +1,11 @@
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { DemographyWrapper } from "./styles/DemographyWrapper"
-import { Input, Label } from "./styles/Form_NWrapper"
 import { Signup_N_InfoSvg } from "@/assets/icons"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { useState } from "react"
 import TagsInput from "react-tagsinput"
 import "react-tagsinput/react-tagsinput.css"
-import { useState } from "react"
 import { SignupLayout } from "./Layout"
+import { DemographyWrapper } from "./styles/DemographyWrapper"
+import { Input } from "./styles/Signup_D_HomeWrapper"
 export const Demography = () => {
   const [tags, setTags] = useState(["tag1", "tag2"])
   return (
@@ -14,26 +14,26 @@ export const Demography = () => {
         <H3>Profile 1 Demographics</H3>
         <span>Tell us about the indiviidual</span>
         <form>
-          <Label>First Name</Label>
+          <label>First Name</label>
           <Input placeholder="Ex John" />
-          <Label>
+          <label>
             Zip code
             <Input placeholder="Ex John" />
             <Signup_N_InfoSvg />
-          </Label>
-          <Label>Relationship to account holder</Label>
+          </label>
+          <label>Relationship to account holder</label>
           <Input placeholder="Ex. child, grandchild, nephew," />
-          <Label>
+          <label>
             Who does the individual live with? (select all that apply)
-          </Label>
+          </label>
           <TagsInput value={tags} onChange={(tag) => setTags(tag)} class />
           <div>
             <span>
-              <Label>Language(s) spoken</Label>
+              <label>Language(s) spoken</label>
               <TagsInput value={tags} onChange={(tag) => setTags(tag)} />
             </span>
             <span>
-              <Label>Language(s) understood</Label>
+              <label>Language(s) understood</label>
               <Input placeholder="Ex. parents, sibling, aunt" />
             </span>
           </div>

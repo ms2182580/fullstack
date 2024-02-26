@@ -1,7 +1,7 @@
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { LeftSide_N_Wrapper } from "./styles/LeftSide_N_Wrapper"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useSignup_Ctx } from "@/context/Ctx_Signup"
+import { LeftSide_N_Wrapper } from "./styles/LeftSide_N_Wrapper"
 
 export const LeftSide_N = () => {
   const { step, setStep } = useSignup_Ctx()

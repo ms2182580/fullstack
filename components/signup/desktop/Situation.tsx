@@ -1,9 +1,9 @@
 import { Signup_N_InfoSvg } from "@/assets/icons"
-import { Input, Label } from "./styles/Form_NWrapper"
-import { SituationSpan, SituationWrapper } from "./styles/SituationWrapper"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"
 import { SignupLayout } from "./Layout"
+import { Input } from "./styles/Signup_D_HomeWrapper"
+import { SituationSpan, SituationWrapper } from "./styles/SituationWrapper"
 
 export const Situation = () => {
   const [selected, setSelected] = useState([
@@ -28,13 +28,13 @@ export const Situation = () => {
         <H3>Profile 1 Situation</H3>
         <span>Tell us about the indiviidual</span>
         <form>
-          <Label>Diagnosis (select all that apply)</Label>
+          <label>Diagnosis (select all that apply)</label>
           <Input placeholder="Ex. Down’s Syndrome, Cerebral Palsy, ADHD" />
-          <Label>
+          <label>
             Care team (select all that apply)
             <Input placeholder="Ex John" />
             <Signup_N_InfoSvg />
-          </Label>
+          </label>
           <H3>
             Please select what pertains to your loved <br /> one’s situation
           </H3>

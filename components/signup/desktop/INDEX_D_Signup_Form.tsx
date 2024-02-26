@@ -1,18 +1,16 @@
 import { useSignup_Ctx } from "@/context/Ctx_Signup"
-import { Form_N } from "./Form_N"
-import { LeftSide_N } from "./LeftSide_N"
-import { Signup_N_FormWrapper } from "./styles/Signup_N_FormWrapper"
-import { WhoYouAre } from "./WhoYouAre"
 import { CreateProfile } from "./CreateProfile"
-import { TellStory } from "./TellStory"
 import { Review } from "./Review"
+import { Signup_D_Home } from "./Signup_D_Home"
+import { TellStory } from "./TellStory"
+import { WhoYouAre } from "./WhoYouAre"
+import { Signup_N_FormWrapper } from "./styles/Signup_N_FormWrapper"
 // import { HeaderProgress } from "./Progress"
-import { ButtonSmall } from "@/components/ui/buttons/general"
 import { Demography } from "./Demography"
-import { Situation } from "./Situation"
 import { Finish } from "./Finish"
+import { Situation } from "./Situation"
 
-export const Signup_N_Form = () => {
+export const INDEX_D_Signup_Form = () => {
   const { step, setStep } = useSignup_Ctx()
   return (
     <Signup_N_FormWrapper
@@ -20,7 +18,7 @@ export const Signup_N_Form = () => {
       isBgInFooter={step === "create_profile"}
     >
       <div>
-        {step === "signup" && <Form_N />}
+        {step === "signup" && <Signup_D_Home />}
         {step === "who_you_are" && <WhoYouAre />}
         {step === "create_profile" && <CreateProfile />}
         {step === "create_profile1" && <Demography />}

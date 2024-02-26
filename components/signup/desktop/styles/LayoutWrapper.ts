@@ -5,8 +5,10 @@ type Props = {
   colorBottom: boolean
 }
 export const LayoutWrapper = styled.div<Props>`
-  width: 1440px;
-  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 1440px;
+
   & > :nth-child(1) {
     display: flex;
     & > :nth-child(1) {
