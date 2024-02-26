@@ -6,6 +6,7 @@ import { ORG_D_Results_Choisepath } from "./ORG_D_Results_Choisepath"
 import { ORG_D_Results_FilterSortbyHeader } from "./ORG_D_Results_FilterSortbyHeader"
 import { ORG_D_Results_FinalButton } from "./ORG_D_Results_FinalButton"
 import { ORG_D_Results_MainEntryWrapper } from "./styles/ORG_D_Results_MainEntryWrapper"
+import { MapContainer } from "react-leaflet"
 
 export type ORG_D_Results_MainEntry_PROPS = {
   isTypedFlow?: boolean
@@ -25,10 +26,7 @@ export const ORG_D_Results_MainEntry = ({
   const [isFullMap, setIsFullMap] = useState(false)
 
   const handleIsFullMap = (e: any) => {
-    if (
-      e.type === "click" ||
-      (e.key === "Enter" && e.type === "keydown")
-    ) {
+    if (e.type === "click" || (e.key === "Enter" && e.type === "keydown")) {
       setIsFullMap((prevState) => !prevState)
     }
   }
@@ -41,14 +39,9 @@ export const ORG_D_Results_MainEntry = ({
       <ORG_D_Results_FilterSortbyHeader />
 
       <div>
-        <ORG_D_Results_Choisepath
-          isTypedFlow={isTypedFlow}
-        />
+        <ORG_D_Results_Choisepath isTypedFlow={isTypedFlow} />
 
-        <MapComponent
-          isFullMap={isFullMap}
-          handleIsFullMap={handleIsFullMap}
-        />
+        <MapComponent isFullMap={isFullMap} handleIsFullMap={handleIsFullMap} />
       </div>
 
       {pathname === "/org/typed-flow" ? null : (
