@@ -78,7 +78,6 @@ export const INDEX_ORG_Search_D = ({
     //     }
     //   }
     // )
-
     return (
       <>
         <INDEX_ORG_Search_DWrapper

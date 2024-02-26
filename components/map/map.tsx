@@ -1,9 +1,12 @@
 import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/icons"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter } from "next/router"
-import { Map, Marker } from "pigeon-maps"
+// import { Map, Marker } from "pigeon-maps"
+import "leaflet/dist/leaflet.css"
 import { useEffect, useRef } from "react"
 import { MapComponentWrapper } from "./styles/MapComponentWrapper"
+import { MapContainer, Popup, TileLayer, useMap, Marker } from "react-leaflet"
+import { Tile } from "./Tile"
 
 type Default_data_map_type = {
   coordinates: {
@@ -64,7 +67,14 @@ export const MapComponent = ({
         {...mapProps}
         isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
       >
-        <Map
+        <MapContainer
+          center={[51.505, -0.09]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <Tile isFullMap={isFullMap} handleIsFullMap={handleIsFullMap} />
+        </MapContainer>
+        {/* <Map
           defaultCenter={[
             default_data_map.coordinates.lat,
             default_data_map.coordinates.lon,
@@ -90,21 +100,7 @@ export const MapComponent = ({
             width={default_data_map.marker.defaultSize}
             anchor={[40.6804528, -73.9682071]}
           />
-        </Map>
-
-        <button onClick={handleIsFullMap} tabIndex={0}>
-          {isFullMap ? (
-            <>
-              Collapse map
-              <RightArrowTinySvg />
-            </>
-          ) : (
-            <>
-              <LeftArrowTinySvg />
-              Show map
-            </>
-          )}
-        </button>
+        </Map> */}
       </MapComponentWrapper>
     </>
   )
