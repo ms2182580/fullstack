@@ -18,7 +18,7 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
 
   cursor: default;
 
-  /* position: relative; */
+  position: relative;
   /* padding: 24px; */
 
   ${blurEffect({})}
