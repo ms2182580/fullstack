@@ -28,7 +28,11 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
   }
 
   .${ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP} {
+    width: 13.5rem;
+    height: 32vh;
     & > :nth-child(1) {
+      width: 100%;
+      height: 100%;
       border-radius: 8px;
     }
 

@@ -5,12 +5,6 @@ import {
 } from "@/assets/icons"
 import { Marker, Popup, TileLayer, useMap } from "react-leaflet"
 import * as leaflet from "leaflet"
-import { DATA_PMHSS_D } from "@/utils/org/pmhss/DATA_PMHSS_D"
-import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
-import { DATA_PST_D } from "@/utils/org/pst/DATA_PST_D"
-import { DATA_PCC_D } from "@/utils/org/pcc/DATA_PCC_D"
-import { DATA_PCMPS_D } from "@/utils/org/pcmps/DATA_PCMPS_D"
-import { DATA_PDCTR_D } from "@/utils/org/pdctr/DATA_PDCTR_D"
 import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import { trpc } from "@/utils/trpc"
 import Image from "next/image"
@@ -19,11 +13,9 @@ import { StarsRatingReview_D } from "../org/stars-rating-review/desktop/StarsRat
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
-import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { useRouter } from "next/router"
 import { CardContainer } from "./styles/TileWrapper"
-import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
-import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 type Props = {
   isFullMap: boolean
   handleIsFullMap: (e) => void
@@ -31,26 +23,18 @@ type Props = {
 
 export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
   const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
-  const legal = trpc.legal.getAll.useQuery({ limit: 3 })
-  console.log("mentalHealthData", mentalHealthData.data)
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
-  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const map = useMap()
   const icon = leaflet.icon({
     iconUrl: "/svg/pin.svg",
   })
-  let allBackendData = {
-    [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]:
-      mentalHealthData.data,
-  }
+
+  const { secondpageDataORG: secondpageDataORG_Backend }: any =
+    useORG_Ctx_D_SecondpageData_Backend()
   const { push } = useRouter()
   const Card = ({ xBackendData }: any) => {
-    console.log("xBackendData", xBackendData)
-
-    let indexBackend = 0
-    let category = "Assistive Software"
     return (
       <CardContainer key={`${xBackendData?.listingType}`}>
         <div>
@@ -77,12 +61,11 @@ export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
         <P>{xBackendData?.reviews?.[1] || "No reviews"}</P>
         <button
           onClick={(event) =>
-            handleMoveToThirdPage({
+            handleMoveToThirdPage_Backend({
               event,
-              categoryPosition: "Mental Health Providers & Services",
-              subcategoryPosition: 0,
-              resourcePosition: 0,
-              setThirdpageDataORG,
+              raw: xBackendData,
+              secondpageDataORG_Backend,
+              setThirdpageDataORG_Backend,
               push,
             })
           }
@@ -93,7 +76,6 @@ export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
       </CardContainer>
     )
   }
-  console.log("DATA", legal.data)
   return (
     <>
       <TileLayer
@@ -102,17 +84,23 @@ export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
       />
       <Marker position={[51.505, -0.09]} icon={icon}>
         <Popup maxWidth={200}>
-          {legal.data && <Card xBackendData={legal.data[0] as any} />}
+          {mentalHealthData.data && (
+            <Card xBackendData={mentalHealthData.data[0] as any} />
+          )}
         </Popup>
       </Marker>
       <Marker position={[51.51, -0.11]} icon={icon}>
         <Popup>
-          {legal.data && <Card xBackendData={legal.data[1] as any} />}
+          {mentalHealthData.data && (
+            <Card xBackendData={mentalHealthData.data[1] as any} />
+          )}
         </Popup>
       </Marker>
       <Marker position={[51.515, -0.1]} icon={icon}>
         <Popup>
-          {legal.data && <Card xBackendData={legal.data[2] as any} />}
+          {mentalHealthData.data && (
+            <Card xBackendData={mentalHealthData.data[2] as any} />
+          )}
         </Popup>
       </Marker>
       <button
