@@ -4,7 +4,7 @@ import "@testing-library/jest-dom/vitest"
 import { cleanup, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it } from "vitest"
-import { Signup_D_Home } from "../Signup_D_Home"
+import { Signup_D_Home, passwordStrength_Keys } from "../Signup_D_Home"
 
 describe("Testing Signup Desktop Home", (ctx_describe) => {
   afterEach(cleanup)
@@ -193,36 +193,6 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
       expect(getAll).toBeInTheDocument()
     })
 
-    /* 
-    !FH0
-    Test if the words inside the input is able to be seen. Test it recovering the input and checking if have the attribute type on text or password
-    */
-    it("Show and hide password is working", async (ctx) => {
-      const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <Signup_D_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
-      const getAll = screen.getByLabelText("show-hide-password")
-
-      await user.click(getAll)
-
-      const getOpenEye = screen.getByTestId("open_eye")
-      expect(getOpenEye).toBeInTheDocument()
-
-      await user.click(getAll)
-
-      const getCloseEye = screen.getByTestId("close_eye")
-      expect(getCloseEye).toBeInTheDocument()
-      expect(getOpenEye).not.toBeInTheDocument()
-    })
-
     it("Container of tooltip exist", (ctx) => {
       render(
         <>
@@ -237,6 +207,119 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
       const getContainerOfTooltip = screen.getByLabelText("password-rules")
 
       expect(getContainerOfTooltip).toBeInTheDocument()
+    })
+
+    it("Show and hide password is working", async (ctx) => {
+      const user = userEvent.setup()
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <Signup_D_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
+
+      const inputPassword = screen.getByPlaceholderText(/enter your password/i)
+
+      expect(inputPassword).toHaveAttribute("type", "password")
+
+      const showHidePassword = screen.getByLabelText("show-hide-password")
+
+      await user.click(showHidePassword)
+
+      const getOpenEyeSvg = screen.getByTestId("open_eye")
+
+      expect(getOpenEyeSvg).toBeInTheDocument()
+      expect(inputPassword).toHaveAttribute("type", "text")
+      expect(inputPassword).toHaveFocus()
+      expect(await screen.findByRole("tooltip")).toBeInTheDocument()
+
+      await user.click(showHidePassword)
+
+      const getCloseEyeSvg = screen.getByTestId("close_eye")
+
+      expect(getCloseEyeSvg).toBeInTheDocument()
+      expect(getOpenEyeSvg).not.toBeInTheDocument()
+      expect(inputPassword).toHaveAttribute("type", "password")
+      expect(inputPassword).toHaveFocus()
+      expect(await screen.findByRole("tooltip")).toBeInTheDocument()
+    })
+
+    it("Type on password input show strength of password ", async (ctx) => {
+      const user = userEvent.setup()
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <Signup_D_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
+
+      const typeCollection = {
+        "Very Weak": "1234567",
+        Weak: "12345678",
+        Strong: "12345678a",
+        "Very Strong": "0123456789Aa",
+      }
+
+      const inputPassword = screen.getByPlaceholderText(/enter your password/i)
+
+      await user.type(inputPassword, `${typeCollection["Very Weak"]}`)
+
+      const getPasswordStrength = screen.getByLabelText("password-strength")
+
+      expect(inputPassword).toHaveFocus()
+      expect(inputPassword).toHaveValue(typeCollection["Very Weak"])
+      expect(getPasswordStrength).toBeInTheDocument()
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Very Weak"]}$`)
+      )
+
+      await user.clear(inputPassword)
+
+      expect(inputPassword).toHaveValue("")
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Very Weak"]}$`)
+      )
+
+      await user.type(inputPassword, `${typeCollection["Weak"]}`)
+
+      expect(inputPassword).toHaveValue(typeCollection["Weak"])
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Weak"]}$`)
+      )
+
+      await user.clear(inputPassword)
+
+      expect(inputPassword).toHaveValue("")
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Very Weak"]}$`)
+      )
+
+      await user.type(inputPassword, `${typeCollection["Strong"]}`)
+
+      expect(inputPassword).toHaveValue(typeCollection["Strong"])
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Strong"]}$`)
+      )
+
+      await user.clear(inputPassword)
+
+      expect(inputPassword).toHaveValue("")
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Very Weak"]}$`)
+      )
+
+      await user.type(inputPassword, `${typeCollection["Very Strong"]}`)
+
+      expect(inputPassword).toHaveValue(typeCollection["Very Strong"])
+      expect(getPasswordStrength).toHaveTextContent(
+        new RegExp(`^${passwordStrength_Keys["Very Strong"]}$`)
+      )
     })
   })
 
@@ -277,6 +360,44 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
 
       expect(getConfirmPassword).toBeInTheDocument()
     })
+
+    it("Show and hide confirm password is working", async (ctx) => {
+      const user = userEvent.setup()
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <Signup_D_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
+
+      const inputPassword = screen.getByPlaceholderText(/confirm password/i)
+
+      expect(inputPassword).toHaveAttribute("type", "password")
+
+      const showHidePassword = screen.getByLabelText(
+        "show-hide-confirm-password"
+      )
+
+      await user.click(showHidePassword)
+
+      const getOpenEyeSvg = screen.getByTestId("open_eye")
+
+      expect(getOpenEyeSvg).toBeInTheDocument()
+      expect(inputPassword).toHaveAttribute("type", "text")
+      expect(inputPassword).toHaveFocus()
+
+      await user.click(showHidePassword)
+
+      const getCloseEyeSvg = screen.getByTestId("close_eye")
+
+      expect(getCloseEyeSvg).toBeInTheDocument()
+      expect(getOpenEyeSvg).not.toBeInTheDocument()
+      expect(inputPassword).toHaveAttribute("type", "password")
+      expect(inputPassword).toHaveFocus()
+    })
   })
 
   describe("Accept terms of use and Privacy Policy", (ctx_describe) => {
@@ -312,6 +433,34 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
       const getData = screen.getByRole("checkbox")
 
       expect(getData).toBeInTheDocument()
+    })
+
+    it("Click on text should check the input", async (ctx) => {
+      const user = userEvent.setup()
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <Signup_D_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
+
+      const textAcceptTerms = screen.getByLabelText(
+        /By creating an account, I agree to our Terms of use and Privacy Policy/i
+      )
+      const inputAcceptTerms = screen.getByRole("checkbox")
+      expect(inputAcceptTerms).not.toBeChecked()
+
+      await user.click(textAcceptTerms)
+      expect(inputAcceptTerms).toBeChecked()
+
+      await user.click(textAcceptTerms)
+      expect(inputAcceptTerms).not.toBeChecked()
+
+      await user.click(inputAcceptTerms)
+      expect(inputAcceptTerms).toBeChecked()
     })
   })
 

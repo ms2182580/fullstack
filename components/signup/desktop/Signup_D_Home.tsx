@@ -121,6 +121,8 @@ export const Signup_D_Home = () => {
                 onFocus={() => setPasswordIsFocus(true)}
                 onBlur={() => setPasswordIsFocus(false)}
                 required
+                minLength={12}
+                maxLength={64}
               />
               <span
                 tabIndex={0}
