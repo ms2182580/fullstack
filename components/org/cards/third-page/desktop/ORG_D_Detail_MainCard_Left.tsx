@@ -24,7 +24,6 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
   const { thirdpageDataORG: thirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
-
   const { query } = useRouter()
 
   const haveSomeBrandToShow = useMemo(() => {
@@ -128,7 +127,6 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
           />
         </aside>
 
-        <ORG_D_Detail_MapComponent howIsMap={howIsMap} />
         <ORG_D_Detail_MapComponent howIsMap={howIsMap} />
       </ORG_D_Detail_MainCard_LeftWrapper>
     )
