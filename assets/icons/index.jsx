@@ -1878,6 +1878,7 @@ export const Signup_N_FacebookSvg = (props) => (
     height="25"
     viewBox="0 0 25 25"
     fill="none"
+    aria-labelledby="facebook-icon"
   >
     <g clipPath="url(#clip0_3062_57299)">
       <path
@@ -1909,6 +1910,7 @@ export const Signup_N_GoogleSvg = (props) => (
     height="25"
     viewBox="0 0 25 25"
     fill="none"
+    aria-labelledby="google-icon"
   >
     <path
       d="M22.7944 12.7812C22.7944 12.0013 22.7244 11.2513 22.5944 10.5312H12.2344V14.7863H18.1544C17.8994 16.1613 17.1244 17.3263 15.9594 18.1063V20.8662H19.5144C21.5944 18.9512 22.7944 16.1312 22.7944 12.7812Z"

@@ -1,4 +1,5 @@
 import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 import { passwordStrength_Keys } from "../Signup_D_Home"
 
@@ -21,6 +22,8 @@ export const Signup_D_HomeWrapper = styled.div<Props>`
       border: 1px solid #908395;
 
       width: 100%;
+
+      font-size: 16px;
     }
   }
 
@@ -157,6 +160,8 @@ export const Signup_D_HomeWrapper = styled.div<Props>`
     & > :nth-child(7) {
       width: 100%;
       margin-bottom: 8px;
+
+      ${reusableButton({})};
     }
   }
 

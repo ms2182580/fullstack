@@ -7,7 +7,7 @@ import {
 } from "@/assets/icons"
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useSignup_Ctx } from "@/context/Ctx_Signup"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -93,24 +93,28 @@ export const Signup_D_Home = () => {
     <>
       <SignupLayout>
         <Signup_D_HomeWrapper passwordStrength={passwordStrength}>
-          <H3>Create an account</H3>
+          <H2>Create an account</H2>
           <form>
             <label>
               First Name
-              <input placeholder="Ex John" required />
+              <input placeholder="Ex: John" required />
             </label>
             <label>
               Last Name
-              <input placeholder="Ex John" required />
+              <input placeholder="Ex: Smith" required />
             </label>
             <label>
               Email
-              <input placeholder="Ex John" type="email" required />
+              <input
+                placeholder="Ex: jsmith123@gmail.com"
+                type="email"
+                required
+              />
             </label>
             <label>
               Password
               <input
-                placeholder="*****"
+                placeholder="Enter your password"
                 type={isShowPassword ? "text" : "password"}
                 value={password}
                 onChange={handleOnChangePassword}
@@ -122,11 +126,13 @@ export const Signup_D_Home = () => {
                 tabIndex={0}
                 onClick={handleIsShowPassword}
                 onKeyDown={handleIsShowPassword}
+                aria-label="show-hide-password"
+                aria-details="Clicking here you can toggle the visibility of the password in this input and the next input (confirm password)"
               >
                 {isShowPassword ? (
-                  <SignUp_N_EyeOpenSvg />
+                  <SignUp_N_EyeOpenSvg data-testid="open_eye" />
                 ) : (
-                  <SignUp_N_EyeCloseSvg />
+                  <SignUp_N_EyeCloseSvg data-testid="close_eye" />
                 )}
               </span>
               <div
@@ -135,7 +141,7 @@ export const Signup_D_Home = () => {
                 onMouseLeave={handleHideTooltip}
                 onBlur={handleHideTooltip}
                 tabIndex={0}
-                aria-describedby="passwordrules"
+                aria-label="password-rules"
               >
                 <Signup_N_InfoSvg />
                 {(tooltipState || passwordIsFocus) && (
@@ -160,12 +166,14 @@ export const Signup_D_Home = () => {
                 )}
               </div>
               {passwordStrength && <span></span>}
-              {passwordStrength && <span>{passwordStrength}</span>}
+              {passwordStrength && (
+                <span aria-label="password-strength">{passwordStrength}</span>
+              )}
             </label>
             <label>
               Confirm Password
               <input
-                placeholder="*****"
+                placeholder="Confirm password"
                 type={isShowPassword ? "text" : "password"}
                 required
               />
@@ -173,6 +181,8 @@ export const Signup_D_Home = () => {
                 tabIndex={0}
                 onClick={handleIsShowPassword}
                 onKeyDown={handleIsShowPassword}
+                aria-label="show-hide-confirm-password"
+                aria-details="Clicking here you can toggle the visibility of the confirm password in this input and the previous input (password)"
               >
                 {isShowPassword ? (
                   <SignUp_N_EyeOpenSvg />
@@ -189,10 +199,11 @@ export const Signup_D_Home = () => {
                 <Link href="">Privacy Policy</Link>
               </span>
             </label>
-            <ButtonSmall goToDynamic={() => setStep("who_you_are")}>
+            <button onClick={() => setStep("who_you_are")}>
               Create an account
-            </ButtonSmall>
+            </button>
           </form>
+
           <div>
             <p>
               Already have an account? <Link href="/login">Log in</Link>
@@ -205,11 +216,11 @@ export const Signup_D_Home = () => {
           </div>
 
           <ButtonSmall secondary>
-            <Signup_N_GoogleSvg />
+            <Signup_N_GoogleSvg data-testid="google-icon" />
             <span>Continue with Google</span>
           </ButtonSmall>
           <ButtonSmall secondary>
-            <Signup_N_FacebookSvg />
+            <Signup_N_FacebookSvg data-testid="facebook-icon" />
             <span>Continue with Facebook</span>
           </ButtonSmall>
         </Signup_D_HomeWrapper>{" "}
