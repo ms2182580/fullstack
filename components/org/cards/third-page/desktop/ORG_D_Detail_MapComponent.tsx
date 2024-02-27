@@ -14,6 +14,9 @@ import {
   ORG_D_Detail_MapComponentWrapper,
   ORG_D_Detail_MapComponent_CLASSES,
 } from "./styles/ORG_D_Detail_MapComponentWrapper"
+import "leaflet/dist/leaflet.css"
+import { MapContainer } from "react-leaflet"
+import { ORG_D_Map } from "./ORG_D_Map"
 
 export const enum MapProperties_KEYS {
   HEIGHT = "HEIGHT",
@@ -71,12 +74,13 @@ export const ORG_D_Detail_MapComponent = ({
               className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
               tabIndex={0}
             >
-              <Image
-                src={ORG_Map_231}
-                alt={"Map image"}
-                height={heighOfMap}
-                layout={"responsive"}
-              />
+              <MapContainer
+                center={[51.505, -0.09]}
+                zoom={13}
+                scrollWheelZoom={false}
+              >
+                <ORG_D_Map />
+              </MapContainer>
             </span>
           )}
         </ORG_D_Detail_MapComponentWrapper>

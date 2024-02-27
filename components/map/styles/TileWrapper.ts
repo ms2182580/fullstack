@@ -26,8 +26,8 @@ export const CardContainer = styled.article`
   }
   & > :nth-child(6) {
     margin-top: auto;
-    margin-inline: 24px;
-    width: 14.5rem;
+    margin-inline: 12px;
+    width: 15.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
