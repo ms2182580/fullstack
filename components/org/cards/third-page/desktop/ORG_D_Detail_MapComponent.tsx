@@ -132,6 +132,47 @@ export const ORG_D_Detail_MapComponent = ({
             </MapContainer>
           </span>
         </ORG_D_Detail_MapComponentWrapper>
+        <GetDirectionsWrapper>
+          <P>Get Directions</P>
+          <Navigation_Arrow />
+        </GetDirectionsWrapper>
+        <ORG_D_Detail_MapComponentWrapper
+          howIsMap={howIsMap}
+          className={ORG_D_Detail_MapComponent_CLASSES.AS_TWO_MAPS}
+          isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+        >
+          <span
+            className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
+            tabIndex={0}
+          >
+            <MapContainer
+              center={[51.505, -0.09]}
+              zoom={13}
+              scrollWheelZoom={false}
+            >
+              <ORG_D_Map />
+            </MapContainer>
+          </span>
+          <ORG_D_Detail_CardLocation
+            locationCity="Bellevue Mental Health"
+            locationState="Queens, NY "
+            locationStreetName="Bellevue Mental Health"
+            locationStreetNumber="25-12 30th Ave, Fl 2"
+            howFar={"15"}
+          />
+          <span
+            className={ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP}
+            tabIndex={0}
+          >
+            <MapContainer
+              center={[51.505, -0.09]}
+              zoom={13}
+              scrollWheelZoom={false}
+            >
+              <ORG_D_Map />
+            </MapContainer>
+          </span>
+        </ORG_D_Detail_MapComponentWrapper>
       </>
     )
   }
