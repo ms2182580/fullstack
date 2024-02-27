@@ -18,8 +18,8 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
 
   cursor: default;
 
-  position: relative;
-  padding: 24px;
+  /* position: relative; */
+  /* padding: 24px; */
 
   ${blurEffect({})}
 
@@ -28,7 +28,7 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
   }
 
   .${ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP} {
-    width: 13.5rem;
+    width: 16.5rem;
     height: 32vh;
     & > :nth-child(1) {
       width: 100%;
@@ -36,9 +36,9 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
       border-radius: 8px;
     }
 
-    &:hover {
+    /* &:hover {
       filter: brightness(90%);
-    }
+    } */
   }
 
   .${ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP} {
