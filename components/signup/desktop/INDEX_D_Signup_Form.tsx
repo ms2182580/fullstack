@@ -8,6 +8,7 @@ import { INDEX_D_Signup_FormWrapper } from "./styles/INDEX_D_Signup_FormWrapper"
 import { useSignup_Ctx } from "@/context/Ctx_Signup"
 import { Demography } from "./Demography"
 import { Finish } from "./Finish"
+import { SignupLayout } from "./Layout"
 import { Situation } from "./Situation"
 
 export const INDEX_D_Signup_Form = () => {
@@ -17,7 +18,7 @@ export const INDEX_D_Signup_Form = () => {
       isSignup={step === "signup" ? false : true}
       isBgInFooter={step === "create_profile"}
     >
-      <div>
+      <SignupLayout>
         {step === "signup" && <Signup_D_Home />}
         {step === "who_you_are" && <WhoYouAre />}
         {step === "create_profile" && <CreateProfile />}
@@ -26,7 +27,7 @@ export const INDEX_D_Signup_Form = () => {
         {step === "tell_us_your_story" && <TellStory />}
         {step === "review_and_save" && <Review />}
         {step === "finish" && <Finish />}
-      </div>
+      </SignupLayout>
     </INDEX_D_Signup_FormWrapper>
   )
 }

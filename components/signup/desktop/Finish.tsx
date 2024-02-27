@@ -1,13 +1,12 @@
 import { Signup_FinishSvg } from "@/assets/icons"
-import { SignupLayout } from "./Layout"
-import { FinishLayout } from "./styles/FinishLayout"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import Link from "next/link"
+import { FinishLayout } from "./styles/FinishLayout"
 
 export const Finish = () => {
   return (
-    <SignupLayout>
+    <>
       <FinishLayout>
         <Signup_FinishSvg />
         <H3>Your security is important</H3>
@@ -21,6 +20,6 @@ export const Finish = () => {
           <Link href={"#"}>Resend</Link>
         </span>
       </FinishLayout>
-    </SignupLayout>
+    </>
   )
 }

@@ -3,13 +3,12 @@ import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"
 import TagsInput from "react-tagsinput"
 import "react-tagsinput/react-tagsinput.css"
-import { SignupLayout } from "./Layout"
 import { DemographyWrapper } from "./styles/DemographyWrapper"
 import { Input } from "./styles/Signup_D_HomeWrapper"
 export const Demography = () => {
   const [tags, setTags] = useState(["tag1", "tag2"])
   return (
-    <SignupLayout>
+    <>
       <DemographyWrapper>
         <H3>Profile 1 Demographics</H3>
         <span>Tell us about the indiviidual</span>
@@ -39,6 +38,6 @@ export const Demography = () => {
           </div>
         </form>
       </DemographyWrapper>
-    </SignupLayout>
+    </>
   )
 }

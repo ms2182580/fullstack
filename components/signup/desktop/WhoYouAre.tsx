@@ -1,7 +1,6 @@
 import { Signup_D_Professional, Signup_N_ParentSvg } from "@/assets/icons"
-import { WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
 import { useState } from "react"
-import { SignupLayout } from "./Layout"
+import { WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
 
 export const WhoYouAre = () => {
   const [selected, setSelected] = useState(0)
@@ -18,7 +17,7 @@ export const WhoYouAre = () => {
     },
   ]
   return (
-    <SignupLayout>
+    <>
       <WhoYouAreWrapper selected={selected}>
         {data.map((item) => (
           <div onClick={() => setSelected(item.id)}>
@@ -27,6 +26,6 @@ export const WhoYouAre = () => {
           </div>
         ))}
       </WhoYouAreWrapper>
-    </SignupLayout>
+    </>
   )
 }

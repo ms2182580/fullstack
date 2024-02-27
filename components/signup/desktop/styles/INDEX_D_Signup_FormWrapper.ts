@@ -30,6 +30,8 @@ export const INDEX_D_Signup_FormWrapper = styled.div<Props>`
   & > :nth-child(2) {
     width: 100%;
     position: relative;
-    ${(props) => props.isSignup && lastChild()}/* & > :nth-child() */
+    ${(props) => props.isSignup && lastChild()} /* & > :nth-child() */
+    
+    border: 2px solid crimson;
   }
 `

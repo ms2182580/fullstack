@@ -3,12 +3,11 @@ import {
   Signup_ReviewPencilIcon,
   Signup_ReviewSvg,
 } from "@/assets/icons"
-import { SignupLayout } from "./Layout"
 import { ReviewWrapper } from "./styles/ReviewWrapper"
 
 export const Review = () => {
   return (
-    <SignupLayout>
+    <>
       <ReviewWrapper>
         <div>
           <span>
@@ -27,6 +26,6 @@ export const Review = () => {
           </span>
         </div>
       </ReviewWrapper>
-    </SignupLayout>
+    </>
   )
 }

@@ -1,7 +1,3 @@
-import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { CreateProfileWrapper } from "./styles/CreateProfileWrapper"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import Link from "next/link"
 import {
   Signup_ComingSoonDots,
   Signup_ComingSoonFileSvg,
@@ -9,7 +5,10 @@ import {
   Signup_D_UploadSvg,
   Signup_ProfileSvg,
 } from "@/assets/icons"
-import { SignupLayout } from "./Layout"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
+import Link from "next/link"
+import { CreateProfileWrapper } from "./styles/CreateProfileWrapper"
 
 export const CreateProfile = () => {
   let data = [
@@ -30,7 +29,7 @@ export const CreateProfile = () => {
     },
   ]
   return (
-    <SignupLayout>
+    <>
       <CreateProfileWrapper>
         <div>
           <H2>Connect your e-health records</H2>
@@ -69,6 +68,6 @@ export const CreateProfile = () => {
           </div>
         </div>
       </CreateProfileWrapper>
-    </SignupLayout>
+    </>
   )
 }

@@ -11,7 +11,6 @@ import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useSignup_Ctx } from "@/context/Ctx_Signup"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { SignupLayout } from "./Layout"
 import { Signup_D_HomeWrapper } from "./styles/Signup_D_HomeWrapper"
 
 export const passwordStrength_Keys = {
@@ -70,7 +69,6 @@ export const Signup_D_Home = () => {
   }
 
   const handleHideTooltip = (e) => {
-    console.log("e:", e)
     if (
       e.type === "mouseleave" ||
       e.type === "blur" ||
@@ -91,142 +89,140 @@ export const Signup_D_Home = () => {
 
   return (
     <>
-      <SignupLayout>
-        <Signup_D_HomeWrapper passwordStrength={passwordStrength}>
-          <H2>Create an account</H2>
-          <form>
-            <label>
-              First Name
-              <input placeholder="Ex: John" required />
-            </label>
-            <label>
-              Last Name
-              <input placeholder="Ex: Smith" required />
-            </label>
-            <label>
-              Email
-              <input
-                placeholder="Ex: jsmith123@gmail.com"
-                type="email"
-                required
-              />
-            </label>
-            <label>
-              Password
-              <input
-                placeholder="Enter your password"
-                type={isShowPassword ? "text" : "password"}
-                value={password}
-                onChange={handleOnChangePassword}
-                onFocus={() => setPasswordIsFocus(true)}
-                onBlur={() => setPasswordIsFocus(false)}
-                required
-                minLength={12}
-                maxLength={64}
-              />
-              <span
-                tabIndex={0}
-                onClick={handleIsShowPassword}
-                onKeyDown={handleIsShowPassword}
-                aria-label="show-hide-password"
-                aria-details="Clicking here you can toggle the visibility of the password in this input and the next input (confirm password)"
-              >
-                {isShowPassword ? (
-                  <SignUp_N_EyeOpenSvg data-testid="open_eye" />
-                ) : (
-                  <SignUp_N_EyeCloseSvg data-testid="close_eye" />
-                )}
-              </span>
-              <div
-                onMouseEnter={handleShowTooltip}
-                onFocus={handleShowTooltip}
-                onMouseLeave={handleHideTooltip}
-                onBlur={handleHideTooltip}
-                tabIndex={0}
-                aria-label="password-rules"
-              >
-                <Signup_N_InfoSvg />
-                {(tooltipState || passwordIsFocus) && (
-                  <>
-                    <span role="tooltip" id="passwordrules">
-                      <P>A strong password must:</P>
-                      <ul>
-                        <li>
-                          Be at least 12 characters long and no longer than 64
-                          characters
-                        </li>
-                        <li>Contain at least one uppercase letter</li>
-                        <li>Contain at least one lowercase letter</li>
-                        <li>Contain at least one number</li>
-                        <li>
-                          Contain at least one special character (
-                          {passwordStrength_Keys.specialCharacters})
-                        </li>
-                      </ul>
-                    </span>
-                  </>
-                )}
-              </div>
-              {passwordStrength && <span></span>}
-              {passwordStrength && (
-                <span aria-label="password-strength">{passwordStrength}</span>
+      <Signup_D_HomeWrapper passwordStrength={passwordStrength}>
+        <H2>Create an account</H2>
+        <form>
+          <label>
+            First Name
+            <input placeholder="Ex: John" required />
+          </label>
+          <label>
+            Last Name
+            <input placeholder="Ex: Smith" required />
+          </label>
+          <label>
+            Email
+            <input
+              placeholder="Ex: jsmith123@gmail.com"
+              type="email"
+              required
+            />
+          </label>
+          <label>
+            Password
+            <input
+              placeholder="Enter your password"
+              type={isShowPassword ? "text" : "password"}
+              value={password}
+              onChange={handleOnChangePassword}
+              onFocus={() => setPasswordIsFocus(true)}
+              onBlur={() => setPasswordIsFocus(false)}
+              required
+              minLength={12}
+              maxLength={64}
+            />
+            <span
+              tabIndex={0}
+              onClick={handleIsShowPassword}
+              onKeyDown={handleIsShowPassword}
+              aria-label="show-hide-password"
+              aria-details="Clicking here you can toggle the visibility of the password in this input and the next input (confirm password)"
+            >
+              {isShowPassword ? (
+                <SignUp_N_EyeOpenSvg data-testid="open_eye" />
+              ) : (
+                <SignUp_N_EyeCloseSvg data-testid="close_eye" />
               )}
-            </label>
-            <label>
-              Confirm Password
-              <input
-                placeholder="Confirm password"
-                type={isShowPassword ? "text" : "password"}
-                required
-              />
-              <span
-                tabIndex={0}
-                onClick={handleIsShowPassword}
-                onKeyDown={handleIsShowPassword}
-                aria-label="show-hide-confirm-password"
-                aria-details="Clicking here you can toggle the visibility of the confirm password in this input and the previous input (password)"
-              >
-                {isShowPassword ? (
-                  <SignUp_N_EyeOpenSvg />
-                ) : (
-                  <SignUp_N_EyeCloseSvg />
-                )}
-              </span>
-            </label>
-            <label>
-              <input type="checkbox" />
-              <span>
-                By creating an account, I agree to our{" "}
-                <Link href="">Terms of use</Link> and <br />
-                <Link href="">Privacy Policy</Link>
-              </span>
-            </label>
-            <button onClick={() => setStep("who_you_are")}>
-              Create an account
-            </button>
-          </form>
-
-          <div>
-            <p>
-              Already have an account? <Link href="/login">Log in</Link>
-            </p>
-            <div>
-              <span></span>
-              <span>OR</span>
-              <span></span>
+            </span>
+            <div
+              onMouseEnter={handleShowTooltip}
+              onFocus={handleShowTooltip}
+              onMouseLeave={handleHideTooltip}
+              onBlur={handleHideTooltip}
+              tabIndex={0}
+              aria-label="password-rules"
+            >
+              <Signup_N_InfoSvg />
+              {(tooltipState || passwordIsFocus) && (
+                <>
+                  <span role="tooltip" id="passwordrules">
+                    <P>A strong password must:</P>
+                    <ul>
+                      <li>
+                        Be at least 12 characters long and no longer than 64
+                        characters
+                      </li>
+                      <li>Contain at least one uppercase letter</li>
+                      <li>Contain at least one lowercase letter</li>
+                      <li>Contain at least one number</li>
+                      <li>
+                        Contain at least one special character (
+                        {passwordStrength_Keys.specialCharacters})
+                      </li>
+                    </ul>
+                  </span>
+                </>
+              )}
             </div>
-          </div>
+            {passwordStrength && <span></span>}
+            {passwordStrength && (
+              <span aria-label="password-strength">{passwordStrength}</span>
+            )}
+          </label>
+          <label>
+            Confirm Password
+            <input
+              placeholder="Confirm password"
+              type={isShowPassword ? "text" : "password"}
+              required
+            />
+            <span
+              tabIndex={0}
+              onClick={handleIsShowPassword}
+              onKeyDown={handleIsShowPassword}
+              aria-label="show-hide-confirm-password"
+              aria-details="Clicking here you can toggle the visibility of the confirm password in this input and the previous input (password)"
+            >
+              {isShowPassword ? (
+                <SignUp_N_EyeOpenSvg />
+              ) : (
+                <SignUp_N_EyeCloseSvg />
+              )}
+            </span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span>
+              By creating an account, I agree to our{" "}
+              <Link href="">Terms of use</Link> and <br />
+              <Link href="">Privacy Policy</Link>
+            </span>
+          </label>
+          <button onClick={() => setStep("who_you_are")}>
+            Create an account
+          </button>
+        </form>
 
-          <ButtonSmall secondary>
-            <Signup_N_GoogleSvg data-testid="google-icon" />
-            <span>Continue with Google</span>
-          </ButtonSmall>
-          <ButtonSmall secondary>
-            <Signup_N_FacebookSvg data-testid="facebook-icon" />
-            <span>Continue with Facebook</span>
-          </ButtonSmall>
-        </Signup_D_HomeWrapper>{" "}
-      </SignupLayout>
+        <div>
+          <p>
+            Already have an account? <Link href="/login">Log in</Link>
+          </p>
+          <div>
+            <span></span>
+            <span>OR</span>
+            <span></span>
+          </div>
+        </div>
+
+        <ButtonSmall secondary>
+          <Signup_N_GoogleSvg data-testid="google-icon" />
+          <span>Continue with Google</span>
+        </ButtonSmall>
+        <ButtonSmall secondary>
+          <Signup_N_FacebookSvg data-testid="facebook-icon" />
+          <span>Continue with Facebook</span>
+        </ButtonSmall>
+      </Signup_D_HomeWrapper>{" "}
     </>
   )
 }

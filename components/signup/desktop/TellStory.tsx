@@ -1,16 +1,13 @@
-import { ButtonSmall } from "@/components/ui/buttons/general"
-import { SignupLayout } from "./Layout"
-import { HeaderProgress } from "./Progress"
-import { InputWrapper, TellStoryWrapper } from "./styles/TellStoryWrapper"
 import {
-  ShareSvg,
   Signup_FileSvg,
   Signup_MicSvg,
   Signup_PlusSvg,
   Signup_StartsSvg,
   Signup_UserSvg,
 } from "@/assets/icons"
-import { H1, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { ButtonSmall } from "@/components/ui/buttons/general"
+import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { InputWrapper, TellStoryWrapper } from "./styles/TellStoryWrapper"
 
 export const TellStory = () => {
   let data = [
@@ -44,7 +41,7 @@ export const TellStory = () => {
     },
   ]
   return (
-    <SignupLayout>
+    <>
       <TellStoryWrapper>
         <div>
           <div>
@@ -127,7 +124,7 @@ export const TellStory = () => {
           </div>
         </div>
       </TellStoryWrapper>
-    </SignupLayout>
+    </>
   )
 }
 
