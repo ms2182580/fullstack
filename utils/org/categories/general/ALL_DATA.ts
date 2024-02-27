@@ -338,12 +338,6 @@ type ALL_DATA_Type = {
   }
 }
 
-/* 
-
-!FH
-- Implement also the filters
-*/
-
 export const namesCategoriesOrder = [
   [NamesCategories_KEY["AGENCIES"]],
   [NamesCategories_KEY["ASSISTIVE SOFTWARE"]],
