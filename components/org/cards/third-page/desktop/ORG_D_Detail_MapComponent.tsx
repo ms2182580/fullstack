@@ -61,13 +61,13 @@ export const ORG_D_Detail_MapComponent = ({
               className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
               tabIndex={0}
             >
-              <Image
-                src={ORG_Map_450}
-                alt={"Map image"}
-                height={heighOfMap}
-                layout={"responsive"}
-                objectFit={"cover"}
-              />
+              <MapContainer
+                center={[51.505, -0.09]}
+                zoom={13}
+                scrollWheelZoom={false}
+              >
+                <ORG_D_Map />
+              </MapContainer>
             </span>
           ) : (
             <span
@@ -104,13 +104,13 @@ export const ORG_D_Detail_MapComponent = ({
             className={ORG_D_Detail_MapComponent_CLASSES.FIRST_MAP}
             tabIndex={0}
           >
-            <Image
-              src={ORG_Map_2_231_A}
-              alt={"Map image"}
-              height={heighOfMap}
-              layout={"responsive"}
-              objectFit={"cover"}
-            />
+            <MapContainer
+              center={[51.505, -0.09]}
+              zoom={13}
+              scrollWheelZoom={false}
+            >
+              <ORG_D_Map />
+            </MapContainer>
           </span>
           <ORG_D_Detail_CardLocation
             locationCity="Bellevue Mental Health"
@@ -123,13 +123,13 @@ export const ORG_D_Detail_MapComponent = ({
             className={ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP}
             tabIndex={0}
           >
-            <Image
-              src={ORG_Map_2_231_B}
-              alt={"Map image"}
-              height={heighOfMap}
-              layout={"responsive"}
-              objectFit={"cover"}
-            />
+            <MapContainer
+              center={[51.505, -0.09]}
+              zoom={13}
+              scrollWheelZoom={false}
+            >
+              <ORG_D_Map />
+            </MapContainer>
           </span>
         </ORG_D_Detail_MapComponentWrapper>
       </>
