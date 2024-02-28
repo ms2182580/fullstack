@@ -35,7 +35,6 @@ export const WhoYouAreWrapper = styled.div<Props>`
 
     border-radius: 8px;
     border: 2px solid #d3ced5;
-    background: #fff;
 
     h5 {
       color: ${NEUTRALS.DARK_GREY_2};
@@ -47,4 +46,13 @@ export const WhoYouAreWrapper = styled.div<Props>`
       white-space: nowrap;
     }
   }
+`
+
+type PropsArticle = {
+  isSelected: boolean
+}
+
+export const ArticleWrapper = styled.article<PropsArticle>`
+  background-color: ${({ isSelected }) =>
+    isSelected ? `${PRIMARY.PRIMARY_BACKGROUND}` : `${NEUTRALS.OFF_WHITE}`};
 `

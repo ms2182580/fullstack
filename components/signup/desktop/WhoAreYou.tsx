@@ -1,6 +1,6 @@
 import { Signup_D_Professional, Signup_N_ParentSvg } from "@/assets/icons"
 import { ReactElement, useState } from "react"
-import { WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
+import { ArticleWrapper, WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
 
 type DataProps = {
   svg: () => ReactElement
@@ -33,8 +33,10 @@ export const WhoAreYou = () => {
     <>
       <WhoYouAreWrapper selected={selected}>
         {data.map(({ svg: SVG, name }, index) => {
+          let isSelected = index + 1 === selected
+
           return (
-            <article
+            <ArticleWrapper
               onClick={(e) =>
                 handleSelectCard({ event: e, payload: index + 1 })
               }
@@ -43,10 +45,12 @@ export const WhoAreYou = () => {
               }
               tabIndex={0}
               key={name}
+              data-testid={`article_${index + 1}_${isSelected}`}
+              isSelected={isSelected}
             >
               <SVG data-testid={`SVG_${index + 1}`} />
               <h5>{name}</h5>
-            </article>
+            </ArticleWrapper>
           )
         })}
       </WhoYouAreWrapper>

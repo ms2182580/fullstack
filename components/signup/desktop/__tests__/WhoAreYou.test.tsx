@@ -1,3 +1,4 @@
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
 import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import "@testing-library/jest-dom/vitest"
@@ -89,7 +90,7 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
     })
   })
 
-  it("Element is focusable", async (ctx) => {
+  it("Cards are focusable with keyboard", async (ctx) => {
     const user = userEvent.setup()
     render(
       <>
@@ -101,11 +102,61 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
       </>
     )
 
-    const getSVG = screen.getByTestId("SVG_1")
-
-    // screen.debug()
+    const getAllData = screen.getAllByRole("article")
 
     await user.tab()
-    expect(getSVG).toHaveFocus()
+    expect(getAllData[0]).toHaveFocus()
+
+    await user.tab()
+    expect(getAllData[1]).toHaveFocus()
+
+    await user.tab({ shift: true })
+    expect(getAllData[0]).toHaveFocus()
+  })
+
+  it("Styles of selection cards are working", async (ctx) => {
+    const user = userEvent.setup()
+    render(
+      <>
+        <Dashboard_Ctx_AICHAT_Provider>
+          <Ctx_Signup_Provider>
+            <WhoAreYou />
+          </Ctx_Signup_Provider>
+        </Dashboard_Ctx_AICHAT_Provider>
+      </>
+    )
+
+    const getBothArticles = screen.getAllByRole("article")
+
+    expect(getBothArticles[0]).toHaveStyle(`
+      background-color: ${NEUTRALS.OFF_WHITE};
+    `)
+    expect(getBothArticles[1]).toHaveStyle(`
+      background-color: ${NEUTRALS.OFF_WHITE};
+    `)
+
+    await user.click(getBothArticles[0])
+    expect(getBothArticles[0]).toHaveStyle(`
+      background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    `)
+    expect(getBothArticles[1]).toHaveStyle(`
+      background-color: ${NEUTRALS.OFF_WHITE};
+    `)
+
+    await user.click(getBothArticles[1])
+    expect(getBothArticles[0]).toHaveStyle(`
+      background-color: ${NEUTRALS.OFF_WHITE};
+    `)
+    expect(getBothArticles[1]).toHaveStyle(`
+      background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    `)
+
+    await user.click(getBothArticles[0])
+    expect(getBothArticles[0]).toHaveStyle(`
+      background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+    `)
+    expect(getBothArticles[1]).toHaveStyle(`
+      background-color: ${NEUTRALS.OFF_WHITE};
+    `)
   })
 })
