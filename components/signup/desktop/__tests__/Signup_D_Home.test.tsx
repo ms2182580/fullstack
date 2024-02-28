@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it } from "vitest"
 import { Signup_D_Home, passwordStrength_Keys } from "../Signup_D_Home"
 
-describe("Testing Signup Desktop Home", (ctx_describe) => {
+describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
   afterEach(cleanup)
 
   it("Signup Home is Render", (ctx_it) => {

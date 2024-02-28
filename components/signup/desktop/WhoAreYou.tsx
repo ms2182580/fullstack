@@ -42,6 +42,7 @@ export const WhoAreYou = () => {
                 handleSelectCard({ event: e, payload: index + 1 })
               }
               tabIndex={0}
+              key={name}
             >
               <SVG />
               <h5>{name}</h5>
