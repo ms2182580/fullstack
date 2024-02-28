@@ -28,31 +28,23 @@ export const ORG_D_Results_MainEntryWrapper = styled.div<Props>`
     grid-area: cardsAndMap;
     display: grid;
 
-    grid-template-columns: ${({ isFullMap }) =>
-      isFullMap ? "" : "1fr 1fr"};
+    grid-template-columns: ${({ isFullMap }) => (isFullMap ? "" : "1fr 1fr")};
 
-    margin-bottom: ${({ isFullMap }) =>
-      isFullMap ? `318px` : `189px`};
+    margin-bottom: ${({ isFullMap }) => (isFullMap ? `318px` : `189px`)};
 
     margin-left: ${({ isFullMap }) =>
-      isFullMap
-        ? ``
-        : `clamp(16px, calc(10vw - 80px), 96px)`};
+      isFullMap ? `` : `clamp(16px, calc(10vw - 80px), 96px)`};
     margin-inline: ${({ isFullMap }) =>
-      isFullMap
-        ? `clamp(16px, calc(10vw - 80px), 96px)`
-        : ``};
+      isFullMap ? `clamp(16px, calc(10vw - 80px), 96px)` : ``};
 
     & > :nth-child(1) {
-      display: ${({ isFullMap }) =>
-        isFullMap ? `none` : ``};
+      display: ${({ isFullMap }) => (isFullMap ? `none` : ``)};
     }
   }
 
   & > :nth-child(3) {
     grid-area: btns;
-    display: ${({ isFullMap }) =>
-      isFullMap ? `none` : ``};
+    display: ${({ isFullMap }) => (isFullMap ? `none` : ``)};
   }
 
   & > :nth-child(4) {

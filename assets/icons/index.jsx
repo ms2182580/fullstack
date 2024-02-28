@@ -2812,6 +2812,22 @@ export const Signup_MicSvg = (props) => (
     />
   </svg>
 )
+export const MapPin = (props) => (
+  <svg
+    {...props}
+    width="42"
+    height="61"
+    viewBox="0 0 42 61"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M21 0C9.43019 0 0 9.40285 0 20.9391C0 32.4754 21 61 21 61C21 61 42 32.4754 42 20.9391C42 9.40285 32.5698 0 21 0ZM21 31.7642C14.9774 31.7642 10.1434 26.9443 10.1434 20.9391C10.1434 14.9339 14.9774 10.114 21 10.114C27.0226 10.114 31.8566 14.9339 31.8566 20.9391C31.8566 26.9443 27.0226 31.7642 21 31.7642Z"
+      fill="#6E3A82"
+    />
+  </svg>
+)
+
 export const Sigin_RecentLoginScreen = (props) => (
   <svg
     {...props}

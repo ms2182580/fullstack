@@ -1,10 +1,16 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
-import { INDEX_D_ORG } from "@/components/org/home/desktop/INDEX_D_ORG"
+import dynamic from "next/dynamic"
 import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { getMentalHealth } from "@/utils/org/tRPC-fetch/getMentalHealth"
 import { trpc } from "@/utils/trpc"
 import { useCheckUserWidth } from "../../context/CheckUserWidth"
-
+const INDEX_D_ORG = dynamic(
+  () =>
+    import("@/components/org/home/desktop/INDEX_D_ORG").then(
+      (mod) => mod.INDEX_D_ORG
+    ),
+  { ssr: false }
+)
 // const INDEX_D_ORG_Search = dynamic(
 //   () =>
 //     import("../../components/org/home/desktop/INDEX_D_ORG").then(
