@@ -7,7 +7,11 @@ import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Pr
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import { KEYS_SUGGESTION_KEYWORDS } from "@/utils/org/typed-flow/suggestionKeywords"
-import { CheckTypeOfData, Keys_StructureDataToReturn, useTypedFlow_CheckDiagnosisChoosed } from "@/utils/org/useTypedFlow_CheckDiagnosisChoosed"
+import {
+  CheckTypeOfData,
+  Keys_StructureDataToReturn,
+  useTypedFlow_CheckDiagnosisChoosed,
+} from "@/utils/org/useTypedFlow_CheckDiagnosisChoosed"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
 import { Fragment, useEffect, useState } from "react"
@@ -52,25 +56,41 @@ export type Props = {
   categoryPosition: number
 }
 
-export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceived", dataToRender, toSecondPageData, categoryPosition }: Props) => {
+export const ORG_D_Results_CardTypedFlow_Individuals = ({
+  title = "noTitleReceived",
+  dataToRender,
+  toSecondPageData,
+  categoryPosition,
+}: Props) => {
   let { diagnosisChoosed }: any = useSessionStorage_typedFlow()
 
-  let { formatedDiagnosis, formatedSymptoms } = useTypedFlow_CheckDiagnosisChoosed(
-    diagnosisChoosed || {
-      [KEYS_SUGGESTION_KEYWORDS.DIAGNOSIS]: [],
-      [KEYS_SUGGESTION_KEYWORDS.SYMPTOMS]: [],
-    },
-  )
+  let { formatedDiagnosis, formatedSymptoms } =
+    useTypedFlow_CheckDiagnosisChoosed(
+      diagnosisChoosed || {
+        [KEYS_SUGGESTION_KEYWORDS.DIAGNOSIS]: [],
+        [KEYS_SUGGESTION_KEYWORDS.SYMPTOMS]: [],
+      }
+    )
 
   const [whichDataReturn, setWhichDataReturn] = useState<any>(null)
 
   useEffect(() => {
-    if (formatedDiagnosis[Keys_StructureDataToReturn.RETURNED_DATA_TYPEOF] !== CheckTypeOfData.FALSE) {
-      setWhichDataReturn(formatedDiagnosis[Keys_StructureDataToReturn.RETURNED_DATA])
+    if (
+      formatedDiagnosis[Keys_StructureDataToReturn.RETURNED_DATA_TYPEOF] !==
+      CheckTypeOfData.FALSE
+    ) {
+      setWhichDataReturn(
+        formatedDiagnosis[Keys_StructureDataToReturn.RETURNED_DATA]
+      )
     }
 
-    if (formatedSymptoms[Keys_StructureDataToReturn.RETURNED_DATA_TYPEOF] !== CheckTypeOfData.FALSE) {
-      setWhichDataReturn(formatedSymptoms[Keys_StructureDataToReturn.RETURNED_DATA])
+    if (
+      formatedSymptoms[Keys_StructureDataToReturn.RETURNED_DATA_TYPEOF] !==
+      CheckTypeOfData.FALSE
+    ) {
+      setWhichDataReturn(
+        formatedSymptoms[Keys_StructureDataToReturn.RETURNED_DATA]
+      )
     }
   }, [])
 
@@ -86,8 +106,18 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
       <div>
         <h2>{title} for:</h2>
         <span
-          onClick={(event) => handleMoveToSecondPage({ event, categoryPosition, subcategoryPosition: 0, setSecondpageFiltersORG, setSecondpageDataORG, push })}
-          tabIndex={0}>
+          onClick={(event) =>
+            handleMoveToSecondPage({
+              event,
+              categoryPosition,
+              subcategoryPosition: 0,
+              setSecondpageFiltersORG,
+              setSecondpageDataORG,
+              push,
+            })
+          }
+          tabIndex={0}
+        >
           See all (25)
         </span>
       </div>
@@ -121,7 +151,8 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({ title = "noTitleReceiv
                           setThirdpageDataORG,
                           push,
                         })
-                      }>
+                      }
+                    >
                       <ORG_D_Results_ViewProfileSvg />
                       View Profile
                     </button>

@@ -25,10 +25,7 @@ export const ORG_D_Results_MainEntry = ({
   const [isFullMap, setIsFullMap] = useState(false)
 
   const handleIsFullMap = (e: any) => {
-    if (
-      e.type === "click" ||
-      (e.key === "Enter" && e.type === "keydown")
-    ) {
+    if (e.type === "click" || (e.key === "Enter" && e.type === "keydown")) {
       setIsFullMap((prevState) => !prevState)
     }
   }
@@ -41,14 +38,9 @@ export const ORG_D_Results_MainEntry = ({
       <ORG_D_Results_FilterSortbyHeader />
 
       <div>
-        <ORG_D_Results_Choisepath
-          isTypedFlow={isTypedFlow}
-        />
+        <ORG_D_Results_Choisepath isTypedFlow={isTypedFlow} />
 
-        <MapComponent
-          isFullMap={isFullMap}
-          handleIsFullMap={handleIsFullMap}
-        />
+        <MapComponent isFullMap={isFullMap} handleIsFullMap={handleIsFullMap} />
       </div>
 
       {pathname === "/org/typed-flow" ? null : (

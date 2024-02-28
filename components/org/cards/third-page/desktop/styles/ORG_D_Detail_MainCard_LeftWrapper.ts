@@ -17,6 +17,7 @@ export type Props = {
 
 export const ORG_D_Detail_MainCard_LeftWrapper = styled.aside<Props>`
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
+
   display: flex;
   flex-direction: column;
 
