@@ -1,11 +1,10 @@
-import { LeftArrowTinySvg, RightArrowTinySvg } from "@/assets/icons"
+"use client"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter } from "next/router"
-// import { Map, Marker } from "pigeon-maps"
 import "leaflet/dist/leaflet.css"
 import { useEffect, useRef } from "react"
 import { MapComponentWrapper } from "./styles/MapComponentWrapper"
-import { MapContainer, Popup, TileLayer, useMap, Marker } from "react-leaflet"
+import { MapContainer } from "react-leaflet"
 import { Tile } from "./Tile"
 
 type Default_data_map_type = {
