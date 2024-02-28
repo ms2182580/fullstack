@@ -21,6 +21,22 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
     )
   })
 
+  it("Signup Home is stablished: nothing should change", (ctx_it) => {
+    let theActualJSXFile = render(
+      <>
+        <Dashboard_Ctx_AICHAT_Provider>
+          <Ctx_Signup_Provider>
+            <Signup_D_Home />
+          </Ctx_Signup_Provider>
+        </Dashboard_Ctx_AICHAT_Provider>
+      </>
+    )
+
+    expect(theActualJSXFile).toMatchFileSnapshot(
+      "./__snapshots__/Signup_D_Home.html"
+    )
+  })
+
   it("Title is there: «Create an account»", (ctx_it) => {
     render(
       <>
