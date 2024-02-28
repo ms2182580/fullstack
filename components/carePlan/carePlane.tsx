@@ -30,10 +30,14 @@ import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { MapComponent } from "../map/map"
+
 import { StarsRatingReview_D } from "../org/stars-rating-review/desktop/StarsRatingReview_D"
 import { ButtonSmall } from "../ui/buttons/general"
-// import { LI_Category } from "./styles/content-part.style"
+import dynamic from "next/dynamic"
+const MapComponent = dynamic(
+  () => import("../map/map").then((mod) => mod.MapComponent),
+  { ssr: false }
+)
 
 interface Step {
   title: string

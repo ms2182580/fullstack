@@ -1,4 +1,3 @@
-import { MapComponent } from "@/components/map/map"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { ORG_D_Results_Breadcrumbs } from "./ORG_D_Results_Breadcrumbs"
@@ -6,6 +5,13 @@ import { ORG_D_Results_Choisepath } from "./ORG_D_Results_Choisepath"
 import { ORG_D_Results_FilterSortbyHeader } from "./ORG_D_Results_FilterSortbyHeader"
 import { ORG_D_Results_FinalButton } from "./ORG_D_Results_FinalButton"
 import { ORG_D_Results_MainEntryWrapper } from "./styles/ORG_D_Results_MainEntryWrapper"
+import dynamic from "next/dynamic"
+const MapComponent = dynamic(
+  () => import("@/components/map/map").then((mod) => mod.MapComponent),
+  {
+    ssr: false,
+  }
+)
 
 export type ORG_D_Results_MainEntry_PROPS = {
   isTypedFlow?: boolean
