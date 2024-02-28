@@ -383,7 +383,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       gap: 24px;
 
       & > :nth-child(2) {
-        display: grid;
+        /* display: grid; */
         gap: 8px;
 
         position: relative;
@@ -394,6 +394,7 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
         & > :nth-child(2) {
           display: grid;
           gap: 8px;
+          margin-bottom: 10px;
         }
         & > :nth-child(3) {
           padding: 8px 16px;

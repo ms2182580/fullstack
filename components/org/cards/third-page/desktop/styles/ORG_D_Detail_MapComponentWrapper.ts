@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 
 type Props = {
@@ -18,10 +17,8 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
 
   cursor: default;
 
-  position: relative;
+  /* position: relative; */
   /* padding: 24px; */
-
-  ${blurEffect({})}
 
   & > :nth-child(1) {
     border-radius: 8px;
@@ -36,9 +33,9 @@ export const ORG_D_Detail_MapComponentWrapper = styled.div<Props>`
       border-radius: 8px;
     }
 
-    /* &:hover {
+    &:hover {
       filter: brightness(90%);
-    } */
+    }
   }
 
   .${ORG_D_Detail_MapComponent_CLASSES.SECOND_MAP} {

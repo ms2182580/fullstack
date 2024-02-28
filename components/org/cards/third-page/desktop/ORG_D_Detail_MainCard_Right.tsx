@@ -78,7 +78,6 @@ export const ORG_D_Detail_MainCard_Right = ({
 
     return null
   }, [isPVES])
-
   const [shouldShowTooltip, setShouldShowTooltip] = useState(false)
 
   let handleShowTooltip = () => {
@@ -116,7 +115,6 @@ export const ORG_D_Detail_MainCard_Right = ({
       mainCardText: null,
     }
   }, [thirdpageDataORG_Backend])
-
   if (query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
     return (
       <ORG_D_Detail_MainCard_RightWrapper
