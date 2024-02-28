@@ -57,7 +57,6 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
   if (query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
     return (
       <ORG_D_Detail_MainCard_LeftWrapper isBackend={true}>
-        {/* <ORG_D_Detail_MapComponent howIsMap={howIsMap} /> */}
         <div>
           <Image
             src={Backup_Image}
@@ -131,7 +130,6 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
       </ORG_D_Detail_MainCard_LeftWrapper>
     )
   }
-
   return (
     <ORG_D_Detail_MainCard_LeftWrapper
       isPVES={isPVES}
