@@ -1,5 +1,3 @@
-import { INDEX_ORG_Detail_D } from "@/components/org/cards/third-page/desktop/INDEX_ORG_Detail_D"
-import { INDEX_ORG_Detail_M } from "@/components/org/cards/third-page/mobile/INDEX_ORG_Details_M"
 import { useCheckUserWidth } from "@/context/CheckUserWidth"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -8,6 +6,25 @@ import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
 import { useEffect, useMemo } from "react"
+import dynamic from "next/dynamic"
+const INDEX_ORG_Detail_D = dynamic(
+  () =>
+    import("@/components/org/cards/third-page/desktop/INDEX_ORG_Detail_D").then(
+      (res) => res.INDEX_ORG_Detail_D
+    ),
+  {
+    ssr: false,
+  }
+)
+const INDEX_ORG_Detail_M = dynamic(
+  () =>
+    import("@/components/org/cards/third-page/mobile/INDEX_ORG_Details_M").then(
+      (res) => res.INDEX_ORG_Detail_M
+    ),
+  {
+    ssr: false,
+  }
+)
 
 export default function ORG_Detail() {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
