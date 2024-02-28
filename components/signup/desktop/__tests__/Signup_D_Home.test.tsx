@@ -21,7 +21,7 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
     )
   })
 
-  it("Signup Home is stablished: nothing should change", (ctx_it) => {
+  it("Signup Home is stablished: nothing should change", async (ctx_it) => {
     let theActualJSXFile = render(
       <>
         <Dashboard_Ctx_AICHAT_Provider>
@@ -32,7 +32,7 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
       </>
     )
 
-    expect(theActualJSXFile).toMatchFileSnapshot(
+    await expect(theActualJSXFile).toMatchFileSnapshot(
       "./__snapshots__/Signup_D_Home.html"
     )
   })
@@ -173,7 +173,7 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
     })
   })
 
-  describe("Checking all visible data on «Password»", (ctx_describe) => {
+  describe("Checking «Password»", (ctx_describe) => {
     it("Input label «Password» and his input exist", (ctx) => {
       render(
         <>
@@ -223,6 +223,43 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
       const getContainerOfTooltip = screen.getByLabelText("password-rules")
 
       expect(getContainerOfTooltip).toBeInTheDocument()
+    })
+
+    it("Tooltip is showed when is hover", async (ctx) => {
+      const user = userEvent.setup()
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <Signup_D_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
+
+      const getContainerOfTooltip = screen.getByLabelText("password-rules")
+      let isHover = false
+
+      getContainerOfTooltip.addEventListener("mouseover", () => {
+        isHover = true
+      })
+      getContainerOfTooltip.addEventListener("mouseout", () => {
+        isHover = false
+      })
+
+      expect(isHover).toBeFalsy()
+
+      await user.hover(getContainerOfTooltip)
+      expect(isHover).toBeTruthy()
+      expect(screen.getByRole("tooltip")).toBeInTheDocument()
+
+      await user.unhover(getContainerOfTooltip)
+      expect(isHover).toBeFalsy()
+      expect(screen.queryByRole("tooltip")).not.toBeInTheDocument()
+
+      await user.hover(getContainerOfTooltip)
+      expect(isHover).toBeTruthy()
+      expect(screen.getByRole("tooltip")).toBeInTheDocument()
     })
 
     it("Show and hide password is working", async (ctx) => {
@@ -339,7 +376,7 @@ describe("Testing Signup Desktop Home", (ctx_describe) => {
     })
   })
 
-  describe("Checking all visible data on «Confirm Password»", (ctx_describe) => {
+  describe("Checking «Confirm Password»", (ctx_describe) => {
     it("Input label «Confirm Password» and his input exist", (ctx) => {
       render(
         <>
