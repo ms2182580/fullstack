@@ -1,3 +1,4 @@
+"use client"
 import { Marker, Popup, TileLayer } from "react-leaflet"
 import { ORG_D_MapWrapper } from "./styles/ORG_D_MapWrapper"
 import leaflet from "leaflet"
