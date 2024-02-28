@@ -8,7 +8,7 @@ import {
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { useSignup_Ctx } from "@/context/Ctx_Signup"
+import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Signup_D_HomeWrapper } from "./styles/Signup_D_HomeWrapper"
@@ -198,7 +198,7 @@ export const Signup_D_Home = () => {
               <Link href="">Privacy Policy</Link>
             </span>
           </label>
-          <button onClick={() => setStep("who_you_are")}>
+          <button onClick={() => setStep(Steps_Enum["who_are_you"])}>
             Create an account
           </button>
         </form>

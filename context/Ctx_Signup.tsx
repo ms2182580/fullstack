@@ -1,20 +1,21 @@
 import { ReactNode, createContext, useContext, useState } from "react"
 
-type Step =
-  | "signup"
-  | "who_you_are"
-  | "create_profile"
-  | "create_profile1"
-  | "create_profile2"
-  | "tell_us_your_story"
-  | "review_and_save"
-  | "finish"
-  | "recentLogin"
-  | "login"
+export const enum Steps_Enum {
+  "home" = "home",
+  "who_are_you" = "who_are_you",
+  "create_profile" = "create_profile",
+  "create_profile1" = "create_profile1",
+  "create_profile2" = "create_profile2",
+  "tell_us_your_story" = "tell_us_your_story",
+  "review_and_save" = "review_and_save",
+  "finish" = "finish",
+  "recentLogin" = "recentLogin",
+  "login" = "login",
+}
 
 interface Ctx_SignupContextProps {
-  step: Step
-  setStep: (step: Step) => void
+  step: keyof typeof Steps_Enum
+  setStep: (step: keyof typeof Steps_Enum) => void
 }
 const Signup_Ctx = createContext<Ctx_SignupContextProps | null>(null)
 interface DashboardCtxAICHATProviderProps {
@@ -24,7 +25,7 @@ interface DashboardCtxAICHATProviderProps {
 export const Ctx_Signup_Provider = ({
   children,
 }: DashboardCtxAICHATProviderProps) => {
-  const [step, setStep] = useState<Step>("signup")
+  const [step, setStep] = useState<keyof typeof Steps_Enum>("home")
 
   return (
     <Signup_Ctx.Provider value={{ setStep, step }}>

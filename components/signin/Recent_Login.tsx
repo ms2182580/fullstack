@@ -25,7 +25,7 @@ export const Recent_Login = () => {
           <span>Jane Doe</span>
         </section>
 
-        {/*!FH This should be an anchor tag element, because it suposse to move the view of the user to a «Sign In» screen  */}
+        {/*!FH This should be an anchor tag element, because it suposse to move the view of the user to a «login» screen  */}
         <section onClick={() => setStep("login")}>
           <span>
             <Sigin_RecentLoginScreen />

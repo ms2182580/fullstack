@@ -2,32 +2,34 @@ import { CreateProfile } from "./CreateProfile"
 import { Review } from "./Review"
 import { Signup_D_Home } from "./Signup_D_Home"
 import { TellStory } from "./TellStory"
-import { WhoYouAre } from "./WhoYouAre"
-import { INDEX_D_Signup_FormWrapper } from "./styles/INDEX_D_Signup_FormWrapper"
+import { WhoAreYou } from "./WhoAreYou"
 // import { HeaderProgress } from "./Progress"
-import { useSignup_Ctx } from "@/context/Ctx_Signup"
+import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
+import { useMemo } from "react"
 import { Demography } from "./Demography"
 import { Finish } from "./Finish"
-import { SignupLayout } from "./Layout"
+import { Signup_D_Layout2 } from "./Signup_D_Layout2"
 import { Situation } from "./Situation"
 
 export const INDEX_D_Signup_Form = () => {
   const { step, setStep } = useSignup_Ctx()
+
+  const componentToRender = useMemo(() => {
+    if (step === Steps_Enum["home"]) return <Signup_D_Home />
+    if (step === Steps_Enum["who_are_you"]) return <WhoAreYou />
+    if (step === "create_profile") return <CreateProfile />
+    if (step === "create_profile1") return <Demography />
+    if (step === "create_profile2") return <Situation />
+    if (step === "tell_us_your_story") return <TellStory />
+    if (step === "review_and_save") return <Review />
+    if (step === "finish") return <Finish />
+
+    return null
+  }, [step])
+
   return (
-    <INDEX_D_Signup_FormWrapper
-      isSignup={step === "signup" ? false : true}
-      isBgInFooter={step === "create_profile"}
-    >
-      <SignupLayout>
-        {step === "signup" && <Signup_D_Home />}
-        {step === "who_you_are" && <WhoYouAre />}
-        {step === "create_profile" && <CreateProfile />}
-        {step === "create_profile1" && <Demography />}
-        {step === "create_profile2" && <Situation />}
-        {step === "tell_us_your_story" && <TellStory />}
-        {step === "review_and_save" && <Review />}
-        {step === "finish" && <Finish />}
-      </SignupLayout>
-    </INDEX_D_Signup_FormWrapper>
+    <>
+      <Signup_D_Layout2>{componentToRender}</Signup_D_Layout2>
+    </>
   )
 }

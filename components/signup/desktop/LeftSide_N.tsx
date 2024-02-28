@@ -1,6 +1,6 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { useSignup_Ctx } from "@/context/Ctx_Signup"
+import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
 import { LeftSide_N_Wrapper } from "./styles/LeftSide_N_Wrapper"
 
 export const LeftSide_N = () => {
@@ -9,7 +9,7 @@ export const LeftSide_N = () => {
   let message = "Sign up here for free access to all of our resources."
   let content =
     " With a free account, you’ll be able to create your care plan(s) and get full access to resources and providers near you."
-  if (step === "who_you_are") {
+  if (step === Steps_Enum["who_are_you"]) {
     message = "Let’s begin the journey by getting to know you!"
     content = "This information helps us customize your dashboard."
   }
