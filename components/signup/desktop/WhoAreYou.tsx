@@ -44,7 +44,7 @@ export const WhoAreYou = () => {
               tabIndex={0}
               key={name}
             >
-              <SVG />
+              <SVG data-testid={`SVG_${index + 1}`} />
               <h5>{name}</h5>
             </article>
           )
