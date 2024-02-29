@@ -7,7 +7,7 @@ import Image from "next/image"
 import { Home_HowItWorks_Left_D } from "./Home_HowItWorks_Left_D"
 import { Home_OurFeaturesWrapper } from "./styles/Home_OurFeaturesWrapper"
 
-const listToRender_1 = [
+const listToRender_1: string[] = [
   "Optimize plan for",
   "Cost",
   "Setting",
@@ -18,7 +18,7 @@ const listToRender_1 = [
   "Limited transportation",
 ]
 
-const listToRender_2 = [
+const listToRender_2: string[] = [
   "Update plan based on",
   "Life changes",
   "New vocations",
@@ -58,42 +58,30 @@ export const Home_OurFeatures = () => {
         <ul>
           {listToRender_1.map((x, index) => {
             if (index === 0) {
-              return (
-                <>
-                  <li key={x}>{x}</li>
-                </>
-              )
+              return <li key={x}>{x}</li>
             }
 
             return (
-              <>
-                <li key={x}>
-                  <Checkbox />
+              <li key={x}>
+                <Checkbox />
 
-                  {x}
-                </li>
-              </>
+                {x}
+              </li>
             )
           })}
         </ul>
         <ul>
           {listToRender_2.map((x, index) => {
             if (index === 0) {
-              return (
-                <>
-                  <li key={x}>{x}</li>
-                </>
-              )
+              return <li key={x}>{x}</li>
             }
 
             return (
-              <>
-                <li key={x}>
-                  <Checkbox />
+              <li key={x}>
+                <Checkbox />
 
-                  {x}
-                </li>
-              </>
+                {x}
+              </li>
             )
           })}
         </ul>

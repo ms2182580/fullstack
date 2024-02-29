@@ -80,15 +80,15 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                           <path
                             d="M25.7207 1H17.7207M25.7207 1L13.7207 13M25.7207 1V9"
                             stroke="#6C6C6C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M25.7207 14.3333V22.3333C25.7207 23.0406 25.4398 23.7189 24.9397 24.219C24.4396 24.719 23.7613 25 23.054 25H4.38737C3.68013 25 3.00185 24.719 2.50175 24.219C2.00165 23.7189 1.7207 23.0406 1.7207 22.3333V3.66667C1.7207 2.95942 2.00165 2.28115 2.50175 1.78105C3.00185 1.28095 3.68013 1 4.38737 1H12.3874"
                             stroke="#6C6C6C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
                           />
                         </svg>
                         Visit site
@@ -145,15 +145,15 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                           <path
                             d="M25.7207 1H17.7207M25.7207 1L13.7207 13M25.7207 1V9"
                             stroke="#6C6C6C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M25.7207 14.3333V22.3333C25.7207 23.0406 25.4398 23.7189 24.9397 24.219C24.4396 24.719 23.7613 25 23.054 25H4.38737C3.68013 25 3.00185 24.719 2.50175 24.219C2.00165 23.7189 1.7207 23.0406 1.7207 22.3333V3.66667C1.7207 2.95942 2.00165 2.28115 2.50175 1.78105C3.00185 1.28095 3.68013 1 4.38737 1H12.3874"
                             stroke="#6C6C6C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
                           />
                         </svg>
                         Visit site
@@ -210,15 +210,15 @@ export const ORG_D_Detail_HelpfulWebResources = () => {
                           <path
                             d="M25.7207 1H17.7207M25.7207 1L13.7207 13M25.7207 1V9"
                             stroke="#6C6C6C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                           <path
                             d="M25.7207 14.3333V22.3333C25.7207 23.0406 25.4398 23.7189 24.9397 24.219C24.4396 24.719 23.7613 25 23.054 25H4.38737C3.68013 25 3.00185 24.719 2.50175 24.219C2.00165 23.7189 1.7207 23.0406 1.7207 22.3333V3.66667C1.7207 2.95942 2.00165 2.28115 2.50175 1.78105C3.00185 1.28095 3.68013 1 4.38737 1H12.3874"
                             stroke="#6C6C6C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
                           />
                         </svg>
                         Visit site
