@@ -1,3 +1,5 @@
+import { NEUTRALS } from "@/assets/Colors"
+import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
@@ -27,10 +29,7 @@ export const LeftSide_N = () => {
   }
   return (
     <LeftSide_N_Wrapper>
-      <div>
-        <span>Inclusive</span>
-        <span>BETA</span>
-      </div>
+      <INDEX_Logo logoColor={NEUTRALS.OFF_WHITE} />
       <H3>{message}</H3>
       <P>{content}</P>
     </LeftSide_N_Wrapper>

@@ -17,7 +17,7 @@ export const INDEX_D_Signup_Form = () => {
   const componentToRender = useMemo(() => {
     if (step === Steps_Enum["home"]) return <Signup_D_Home />
     if (step === Steps_Enum["who_are_you"]) return <WhoAreYou />
-    if (step === "create_profile") return <CreateProfile />
+    if (step === Steps_Enum["create_profile"]) return <CreateProfile />
     if (step === "create_profile1") return <Demography />
     if (step === "create_profile2") return <Situation />
     if (step === "tell_us_your_story") return <TellStory />

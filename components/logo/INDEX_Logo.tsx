@@ -1,5 +1,6 @@
 import { Logo_HeaderWrapper } from "./styles/Logo_HeaderWrapper"
 
+import { PRIMARY } from "@/assets/Colors"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { ReactElement, useMemo } from "react"
@@ -31,7 +32,9 @@ const ChatAILogo = (props) => (
   </svg>
 )
 
-export const INDEX_Logo = (): ReactElement => {
+export const INDEX_Logo = ({
+  logoColor = PRIMARY.PRIMARY_LOGO,
+}): ReactElement => {
   const { pathname } = useRouter()
 
   const variableName = useMemo(() => {
@@ -41,7 +44,7 @@ export const INDEX_Logo = (): ReactElement => {
   }, [pathname])
 
   return (
-    <Logo_HeaderWrapper>
+    <Logo_HeaderWrapper logoColor={logoColor}>
       <Link href={variableName}>
         <H1>Inclusive</H1>
         <ChatAILogo />
