@@ -1,6 +1,7 @@
 import { Signup_D_Professional, Signup_N_ParentSvg } from "@/assets/icons"
-import { ReactElement, useState } from "react"
-import { ArticleWrapper, WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
+import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
+import { ReactElement } from "react"
+import { WhoYouAreWrapper } from "./styles/WhoYouAreWrapper"
 
 type DataProps = {
   svg: () => ReactElement
@@ -19,38 +20,30 @@ const data: DataProps = [
 ]
 
 export const WhoAreYou = () => {
-  const [selected, setSelected] = useState(0)
-  const handleSelectCard = ({ event, payload }) => {
+  const { setStep } = useSignup_Ctx()
+  const handleSelectCard = ({ event }) => {
     if (
       event.type === "click" ||
       (event.type === "keydown" && event.key === "Enter")
     ) {
-      setSelected(payload)
+      setStep(Steps_Enum["create_profile"])
     }
   }
 
   return (
     <>
-      <WhoYouAreWrapper selected={selected}>
+      <WhoYouAreWrapper>
         {data.map(({ svg: SVG, name }, index) => {
-          let isSelected = index + 1 === selected
-
           return (
-            <ArticleWrapper
-              onClick={(e) =>
-                handleSelectCard({ event: e, payload: index + 1 })
-              }
-              onKeyDown={(e) =>
-                handleSelectCard({ event: e, payload: index + 1 })
-              }
+            <article
               tabIndex={0}
               key={name}
-              data-testid={`article_${index + 1}_${isSelected}`}
-              isSelected={isSelected}
+              onClick={(e) => handleSelectCard({ event: e })}
+              onKeyDown={(e) => handleSelectCard({ event: e })}
             >
               <SVG data-testid={`SVG_${index + 1}`} />
               <h5>{name}</h5>
-            </ArticleWrapper>
+            </article>
           )
         })}
       </WhoYouAreWrapper>

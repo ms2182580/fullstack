@@ -1,25 +1,11 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-type Props = {
-  selected: number
-}
-export const WhoYouAreWrapper = styled.div<Props>`
+export const WhoYouAreWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 32px;
-
-  & > :nth-child(${({ selected }) => selected}) {
-    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-  }
-
-  & > :not(:nth-child(${({ selected }) => selected})) {
-    &:hover,
-    &:focus-visible {
-      background-color: hsla(282.9, 41.2%, 93.3%, 0.4);
-    }
-  }
 
   & > * {
     flex: 1;
@@ -35,6 +21,15 @@ export const WhoYouAreWrapper = styled.div<Props>`
 
     border-radius: 8px;
     border: 2px solid #d3ced5;
+
+    cursor: pointer;
+
+    background-color: ${NEUTRALS.OFF_WHITE};
+
+    &:hover,
+    &:focus-visible {
+      background-color: hsla(282.9, 41.2%, 93.3%, 0.4);
+    }
 
     h5 {
       color: ${NEUTRALS.DARK_GREY_2};
@@ -53,6 +48,6 @@ type PropsArticle = {
 }
 
 export const ArticleWrapper = styled.article<PropsArticle>`
-  background-color: ${({ isSelected }) =>
-    isSelected ? `${PRIMARY.PRIMARY_BACKGROUND}` : `${NEUTRALS.OFF_WHITE}`};
+  /* background-color: ${({ isSelected }) =>
+    isSelected ? `${PRIMARY.PRIMARY_BACKGROUND}` : `${NEUTRALS.OFF_WHITE}`}; */
 `
