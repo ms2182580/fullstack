@@ -35,7 +35,7 @@ export const Signup_D_HomeWrapper = styled.div<Props>`
     }
   }
 
-  & > :nth-child(2) {
+  form {
     margin-top: 20px;
 
     width: 535px;
@@ -160,6 +160,8 @@ export const Signup_D_HomeWrapper = styled.div<Props>`
     & > :nth-child(7) {
       width: 100%;
       margin-bottom: 8px;
+
+      cursor: pointer;
 
       ${reusableButton({})};
     }

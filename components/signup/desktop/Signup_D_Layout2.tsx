@@ -38,47 +38,47 @@ export const Signup_D_Layout2 = (props: Props) => {
 
           {props.children}
 
-          <div className="bottom">
-            {step !== "home" && (
-              <div>
-                {step === "create_profile" ||
-                  (step === "tell_us_your_story" && (
+          {step === Steps_Enum["who_are_you"] ? null : (
+            <div className="bottom">
+              {step !== "home" && (
+                <div>
+                  {step === "create_profile" ||
+                    (step === "tell_us_your_story" && (
+                      <ButtonSmall
+                        goToDynamic={() => {
+                          setStep("create_profile")
+                        }}
+                        secondary
+                      >
+                        Back
+                      </ButtonSmall>
+                    ))}
+
+                  {step === "finish" ||
+                  step === "recentLogin" ||
+                  step === "login" ? null : (
                     <ButtonSmall
                       goToDynamic={() => {
-                        setStep("create_profile")
+                        if (step === "create_profile") {
+                          setStep("create_profile1")
+                        } else if (step === "create_profile1") {
+                          setStep("create_profile2")
+                        } else if (step === "create_profile2") {
+                          setStep("tell_us_your_story")
+                        } else if (step === "tell_us_your_story") {
+                          setStep("review_and_save")
+                        } else if (step === "review_and_save") {
+                          setStep("finish")
+                        }
                       }}
-                      secondary
                     >
-                      Back
+                      {step === "review_and_save" ? "Finish" : "Next"}
                     </ButtonSmall>
-                  ))}
-
-                {step === "finish" ||
-                step === "recentLogin" ||
-                step === "login" ? null : (
-                  <ButtonSmall
-                    goToDynamic={() => {
-                      if (step === Steps_Enum["who_are_you"]) {
-                        setStep("create_profile")
-                      } else if (step === "create_profile") {
-                        setStep("create_profile1")
-                      } else if (step === "create_profile1") {
-                        setStep("create_profile2")
-                      } else if (step === "create_profile2") {
-                        setStep("tell_us_your_story")
-                      } else if (step === "tell_us_your_story") {
-                        setStep("review_and_save")
-                      } else if (step === "review_and_save") {
-                        setStep("finish")
-                      }
-                    }}
-                  >
-                    {step === "review_and_save" ? "Finish" : "Next"}
-                  </ButtonSmall>
-                )}
-              </div>
-            )}
-          </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </LayoutWrapper>
     </>

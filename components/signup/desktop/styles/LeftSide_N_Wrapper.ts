@@ -7,17 +7,18 @@ export const LeftSide_N_Wrapper = styled.aside`
   flex-direction: column;
 
   width: 266px;
+  min-height: 100vh;
+
   padding: 0px 16px;
 
   border-radius: 0px 24px 0px 0px;
   background: ${PRIMARY.PRIMARY_CTA};
 
-  color: white;
-
   & > :nth-child(1) {
     margin-top: 32px;
     display: flex;
     gap: 1px;
+
     & > :nth-child(1) {
       color: #f3f1f3;
       text-align: justify;
