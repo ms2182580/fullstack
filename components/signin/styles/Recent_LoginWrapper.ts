@@ -2,13 +2,10 @@ import styled from "styled-components"
 
 export const Recent_LoginWrapper = styled.div`
   display: flex;
-  width: 1174px;
-  padding: 160px 64px;
   flex-direction: column;
-  align-items: flex-start;
   gap: 24px;
 
-  & > :nth-child(1) {
+  header {
     h3 {
       color: #1d1a1e;
       font-size: 32px;
@@ -35,12 +32,16 @@ export const Recent_LoginWrapper = styled.div`
       align-items: flex-start;
       border-radius: 8px 8px 0px 0px;
       border: 1px solid #d3ced5;
-      border-radius: 0px 0px 8px 8px;
       border-right: 1px solid #d3ced5;
       border-bottom: 1px solid #d3ced5;
       border-left: 1px solid #d3ced5;
+
+      border-radius: 8px;
+
       & > :nth-child(1) {
         height: 222px;
+        border-top-right-radius: inherit;
+        border-top-left-radius: inherit;
       }
       & > :nth-child(2) {
         display: flex;
@@ -53,8 +54,6 @@ export const Recent_LoginWrapper = styled.div`
     }
 
     & > :nth-child(2) {
-      cursor: pointer;
-
       & > :nth-child(1) {
         height: 224px;
         display: flex;

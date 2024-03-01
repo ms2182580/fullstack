@@ -4,7 +4,7 @@ type Props = {
   isShowSidebar: boolean
   colorBottom: boolean
 }
-export const LayoutWrapper2 = styled.div<Props>`
+export const LayoutWrapper4 = styled.div<Props>`
   display: flex;
   justify-content: center;
 

@@ -6,7 +6,7 @@ export const LeftSide_N_Wrapper = styled.aside`
   align-items: flex-start;
   flex-direction: column;
 
-  /* width: 290px; */
+  width: 290px;
   min-height: 100vh;
 
   padding: 0px 16px;

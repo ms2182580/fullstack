@@ -8,10 +8,6 @@ import { Home_D_NavBar_NWrapper } from "./styles/Home_D_NavBar_NWrapper"
 export const Home_D_NavBar_N = () => {
   const { push, pathname } = useRouter()
 
-  if (pathname === "/signup" || pathname === "/login") {
-    return null
-  }
-
   return (
     <Home_D_NavBar_NWrapper>
       <div>
@@ -25,7 +21,9 @@ export const Home_D_NavBar_N = () => {
             </span>
           </span>
           <Link href={`/${ALL_ROUTES.ORG}`}>Resource Guide</Link>
-          <Link href={`/${ALL_ROUTES.LOGIN}`}>Log in</Link>
+          <Link href={`${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
+            Log in
+          </Link>
           <Link href={`/${ALL_ROUTES.SIGNUP}`}>Sign up</Link>
         </div>
       </div>

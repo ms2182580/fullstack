@@ -1,5 +1,6 @@
 import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
 import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import "@testing-library/jest-dom/vitest"
 import { cleanup, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
@@ -550,7 +551,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
       expect(getData.textContent).toBeDefined()
     })
 
-    it("«Log in» text inside an anchor", (ctx) => {
+    it("«Log in» text have correct href", (ctx) => {
       render(
         <>
           <Dashboard_Ctx_AICHAT_Provider>
@@ -564,7 +565,10 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
       const getData = screen.getByRole("link", { name: /log in/i })
 
       expect(getData).toBeInTheDocument()
-      expect(getData).toHaveAttribute("href", "/login")
+      expect(getData).toHaveAttribute(
+        "href",
+        `${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`
+      )
     })
   })
 

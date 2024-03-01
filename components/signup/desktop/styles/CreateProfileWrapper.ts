@@ -6,15 +6,27 @@ export const CreateProfileWrapper = styled.div`
   flex-direction: column;
   margin-top: 90px;
   background-image: url("/background/background2.svg");
+
+  border: 2px solid crimson;
+
+  width: 100%;
+
+  & > * {
+    /* border: 2px solid green; */
+  }
+
   & > :nth-child(2) {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
 
     & > :nth-child(1) {
-      margin-left: 130px;
-      margin-bottom: 92px;
+      width: 100%;
+      /* border: 2px solid crimson; */
+
+      /* margin-left: 130px; */
+      /* margin-bottom: 92px; */
 
       & > :nth-child(1) {
         display: flex;

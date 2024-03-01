@@ -1,12 +1,13 @@
 import { Sigin_RecentLoginScreen } from "@/assets/icons"
-import { useSignup_Ctx } from "@/context/Ctx_Signup"
+import recentLoginImage from "@/assets/images/signin/recent-login/recent-login.png"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Image from "next/image"
+import Link from "next/link"
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "../ui/heading_body_text/HeaderFonts"
 import { Recent_LoginWrapper } from "./styles/Recent_LoginWrapper"
 
 export const Recent_Login = () => {
-  const { setStep, step } = useSignup_Ctx()
   return (
     <Recent_LoginWrapper>
       <header>
@@ -15,23 +16,23 @@ export const Recent_Login = () => {
       </header>
 
       <div>
-        <section>
+        <Link href={`/${ALL_ROUTES.DASHBOARD}`}>
           <Image
-            src={"/images/permobil.png"}
+            src={recentLoginImage}
             alt=""
             width={250.956}
             height={265.74}
           />
           <span>Jane Doe</span>
-        </section>
+        </Link>
 
         {/*!FH This should be an anchor tag element, because it suposse to move the view of the user to a «login» screen  */}
-        <section onClick={() => setStep("login")}>
+        <Link href={`/${ALL_ROUTES.SIGNIN}`}>
           <span>
             <Sigin_RecentLoginScreen />
           </span>
           <span>Jane Doe</span>
-        </section>
+        </Link>
       </div>
     </Recent_LoginWrapper>
   )

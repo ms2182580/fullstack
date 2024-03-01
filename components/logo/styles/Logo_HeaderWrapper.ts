@@ -5,6 +5,8 @@ export type Props = {
 }
 
 export const Logo_HeaderWrapper = styled.header<Props>`
+  width: 100%;
+  width: fit-content;
   a {
     display: flex;
     justify-content: stretch;
@@ -13,6 +15,9 @@ export const Logo_HeaderWrapper = styled.header<Props>`
     text-decoration: none;
 
     user-select: none;
+
+    width: 100%;
+    width: fit-content;
 
     & > :nth-child(1) {
       color: ${({ logoColor }) => logoColor};

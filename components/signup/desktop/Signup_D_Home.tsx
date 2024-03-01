@@ -9,6 +9,7 @@ import { ButtonSmall } from "@/components/ui/buttons/general"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Signup_D_HomeWrapper } from "./styles/Signup_D_HomeWrapper"
@@ -205,7 +206,10 @@ export const Signup_D_Home = () => {
 
         <div>
           <p>
-            Already have an account? <Link href="/login">Log in</Link>
+            Already have an account?{" "}
+            <Link href={`${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
+              Log in
+            </Link>
           </p>
           <div>
             <span></span>
