@@ -5,23 +5,27 @@ export const Signup_D_Steps_CreateProfileWrapper = styled.section`
   align-items: center;
   flex-direction: column;
 
-  width: 100%;
+  & > * {
+    padding-inline: clamp(16px, 10vw - 80px, 150px);
+
+    width: 100%;
+  }
 
   & > header {
+    margin-bottom: 40px;
+
     p {
       display: flex;
       gap: 6px;
+      white-space: nowrap;
     }
   }
 
   & > :nth-child(2) {
-    margin-top: 40px;
     display: flex;
     justify-content: space-between;
 
     & > :nth-child(1) {
-      width: 100%;
-
       & > :nth-child(1) {
         display: flex;
         width: 544px;

@@ -1,6 +1,5 @@
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { useMemo } from "react"
 import { Layout_Signup_FooterWrapper } from "./styles/Layout_Signup_FooterWrapper"
 
@@ -20,22 +19,20 @@ export type Layout_Signup_Footer_Props = {
       }
     | undefined
   toWhere: keyof typeof ALL_ROUTES.SIGNUP_STEPS | string | undefined
+  toPrevious?:
+    | typeof ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU
+    | typeof ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE
+    | typeof ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1
+    | typeof ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2
+    | undefined
 }
 
 export const Layout_Signup_Footer = ({
   howManyButtons,
   textButtons,
   toWhere = "#",
+  toPrevious = "#",
 }: Layout_Signup_Footer_Props) => {
-  console.log(
-    "howManyButtons, textButtons:",
-    howManyButtons,
-    textButtons,
-    toWhere
-  )
-
-  const { back } = useRouter()
-
   const render = useMemo(() => {
     if (howManyButtons === 1) {
       return (
@@ -46,7 +43,7 @@ export const Layout_Signup_Footer = ({
     }
     return (
       <>
-        <button onClick={back}>{textButtons?.first || "back"}</button>
+        <Link href={toPrevious}>{textButtons?.first || "back"}</Link>
         <Link href={toWhere}>{textButtons?.second}</Link>
       </>
     )

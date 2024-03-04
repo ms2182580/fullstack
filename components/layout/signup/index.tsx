@@ -52,6 +52,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
         second: TextButtonsSecond_Enum["BUILD MANUALLY"],
       },
       toWhere: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1,
+      toPrevious: ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU,
     },
   },
   CREATE_PROFILE1: {
@@ -64,6 +65,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
         second: TextButtonsSecond_Enum["NEXT"],
       },
       toWhere: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2,
+      toPrevious: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE,
     },
   },
   CREATE_PROFILE2: {
@@ -76,6 +78,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
         second: TextButtonsSecond_Enum["NEXT"],
       },
       toWhere: ALL_ROUTES.SIGNUP_STEPS.TELL_US_YOUR_STORY,
+      toPrevious: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1,
     },
   },
   TELL_US_YOUR_STORY: {
@@ -87,6 +90,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
         second: TextButtonsSecond_Enum["SAVE"],
       },
       toWhere: ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE,
+      toPrevious: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2,
     },
   },
   REVIEW_AND_SAVE: {
@@ -182,6 +186,7 @@ export const Layout_Signup = ({ children }) => {
           howManyButtons={whichDataShouldDisplay.footerData?.howManyButtons}
           textButtons={whichDataShouldDisplay.footerData?.textButtons}
           toWhere={whichDataShouldDisplay.footerData?.toWhere}
+          toPrevious={whichDataShouldDisplay.footerData?.toPrevious}
         />
       )}
     </Layout_Signup_Wrapper>
