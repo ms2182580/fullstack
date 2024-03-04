@@ -5,9 +5,12 @@ import "@testing-library/jest-dom/vitest"
 import { cleanup, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it } from "vitest"
-import { Signup_D_Home, passwordStrength_Keys } from "../Signup_D_Home"
+import {
+  INDEX_D_Signup_Home,
+  passwordStrength_Keys,
+} from "../INDEX_D_Signup_Home"
 
-describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
+describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
   afterEach(cleanup)
 
   it("Signup Home is Render", (ctx_it) => {
@@ -15,7 +18,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <Signup_D_Home />
+            <INDEX_D_Signup_Home />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
@@ -27,7 +30,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <Signup_D_Home />
+            <INDEX_D_Signup_Home />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
@@ -43,7 +46,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <Signup_D_Home />
+            <INDEX_D_Signup_Home />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
@@ -60,7 +63,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -80,7 +83,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -100,7 +103,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -120,7 +123,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -140,7 +143,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -160,7 +163,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -180,7 +183,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -199,7 +202,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -215,7 +218,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -232,7 +235,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -269,7 +272,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -307,7 +310,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -383,7 +386,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -402,7 +405,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -421,7 +424,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -460,7 +463,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -478,7 +481,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -495,7 +498,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -518,20 +521,41 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
     })
   })
 
-  it("Create an account button", (ctx) => {
-    render(
-      <>
-        <Dashboard_Ctx_AICHAT_Provider>
-          <Ctx_Signup_Provider>
-            <Signup_D_Home />
-          </Ctx_Signup_Provider>
-        </Dashboard_Ctx_AICHAT_Provider>
-      </>
-    )
+  describe("Create an account button", (ctx_describe) => {
+    it("Button exist", (ctx) => {
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <INDEX_D_Signup_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
 
-    const getData = screen.getByRole("button", { name: /create an account/i })
+      const getData = screen.getByRole("link", { name: /create an account/i })
 
-    expect(getData).toBeInTheDocument()
+      expect(getData).toBeInTheDocument()
+    })
+
+    it("Button have the correct data to move the view of the user to the next step", (ctx) => {
+      render(
+        <>
+          <Dashboard_Ctx_AICHAT_Provider>
+            <Ctx_Signup_Provider>
+              <INDEX_D_Signup_Home />
+            </Ctx_Signup_Provider>
+          </Dashboard_Ctx_AICHAT_Provider>
+        </>
+      )
+
+      const getData = screen.getByRole("link", { name: /create an account/i })
+
+      expect(getData).toHaveAttribute(
+        "href",
+        `${ALL_ROUTES.SIGNUP}/${ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU}`
+      )
+    })
   })
 
   describe("«Already have an account? Log in» ", (ctx_describe) => {
@@ -540,7 +564,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -556,7 +580,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -578,7 +602,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -596,7 +620,7 @@ describe(`Testing ${Signup_D_Home.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <Signup_D_Home />
+              <INDEX_D_Signup_Home />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>

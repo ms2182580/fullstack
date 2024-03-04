@@ -1,9 +1,9 @@
-import { INDEX_D_Signup_Form } from "@/components/signup/desktop/INDEX_D_Signup_Form"
+import { Signup_D_Steps } from "@/components/signup/desktop/Signup_D_Steps"
 import { INDEX_M_Signup } from "@/components/signup/mobile/INDEX_M_Signup"
 import { useCheckUserWidth } from "@/context/CheckUserWidth"
 
-const Signup = () => {
-  const { isMobile } = useCheckUserWidth()
+export default function Index_Signup_Steps() {
+  const { isMobile }: any = useCheckUserWidth()
 
   return (
     <>
@@ -13,11 +13,9 @@ const Signup = () => {
         </>
       ) : (
         <>
-          <INDEX_D_Signup_Form />
+          <Signup_D_Steps />
         </>
       )}
     </>
   )
 }
-
-export default Signup

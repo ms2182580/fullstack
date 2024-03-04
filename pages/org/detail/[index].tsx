@@ -3,10 +3,10 @@ import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_Thirdpag
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import dynamic from "next/dynamic"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
 import { useEffect, useMemo } from "react"
-import dynamic from "next/dynamic"
 const INDEX_ORG_Detail_D = dynamic(
   () =>
     import("@/components/org/cards/third-page/desktop/INDEX_ORG_Detail_D").then(
@@ -32,8 +32,6 @@ export default function ORG_Detail() {
 
   const { thirdpageDataORG: thirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
-
-  console.log("thirdpageDataORG_Backend:", thirdpageDataORG_Backend)
 
   const { query } = useRouter()
   const { push } = useNavigation()

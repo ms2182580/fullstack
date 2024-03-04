@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export type Props = {
   logoColor: string
+  isSignFlow: boolean
 }
 
 export const Logo_HeaderWrapper = styled.header<Props>`
@@ -22,7 +23,7 @@ export const Logo_HeaderWrapper = styled.header<Props>`
     & > :nth-child(1) {
       color: ${({ logoColor }) => logoColor};
 
-      font-size: clamp(30px, 9vw - 96px, 56px);
+      font-size: ${({ isSignFlow }) => (isSignFlow ? "38px" : "56px")};
 
       font-weight: 800;
       font-style: normal;

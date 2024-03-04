@@ -1,7 +1,5 @@
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
-import { LeftSide_N } from "./LeftSide_N"
-import { HeaderProgress } from "./Progress"
 import { LayoutWrapper2 } from "./styles/LayoutWrapper2"
 
 type Props = {
@@ -17,23 +15,24 @@ export const Signup_D_Layout2 = (props: Props) => {
           step !== "create_profile" && step !== "tell_us_your_story"
         }
       >
-        {step === "create_profile" || step === "tell_us_your_story" ? null : (
-          <LeftSide_N />
-        )}
+        {step === "create_profile" || step === "tell_us_your_story"
+          ? null
+          : null}
 
         <div>
           {step !== "home" &&
             step !== "finish" &&
             step !== "recentLogin" &&
-            step !== "login" && (
-              <HeaderProgress
-                showLogo={
-                  step === "create_profile" || step === "tell_us_your_story"
-                    ? true
-                    : false
-                }
-              />
-            )}
+            step !== "login" &&
+            null
+            // <HeaderProgress
+            //   showLogo={
+            //     step === "create_profile" || step === "tell_us_your_story"
+            //       ? true
+            //       : false
+            //   }
+            // />
+          }
 
           {props.children}
 

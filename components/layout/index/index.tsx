@@ -31,14 +31,38 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
   }
 
   if (whichRouteState === WhichLayoutDisplay_Key.isDashboard) {
-    return <Layout_Dashboard>{children}</Layout_Dashboard>
+    return (
+      <>
+        <Head>
+          <title>{title} Dashboard</title>
+          <meta name="description" content="inclusive - website" />
+        </Head>
+        <Layout_Dashboard>{children}</Layout_Dashboard>
+      </>
+    )
   }
 
   if (whichRouteState === WhichLayoutDisplay_Key.isSignin) {
-    return <Layout_Signin>{children}</Layout_Signin>
+    return (
+      <>
+        <Head>
+          <title>{title} Signin</title>
+          <meta name="description" content="inclusive - website" />
+        </Head>
+        <Layout_Signin>{children}</Layout_Signin>
+      </>
+    )
   }
 
   if (whichRouteState === WhichLayoutDisplay_Key.isSignup) {
-    return <Layout_Signup>{children}</Layout_Signup>
+    return (
+      <>
+        <Head>
+          <title>{title} Signup</title>
+          <meta name="description" content="inclusive - website" />
+        </Head>
+        <Layout_Signup>{children}</Layout_Signup>
+      </>
+    )
   }
 }

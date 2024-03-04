@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 type Props = {
-  isShowSidebar: boolean
-  colorBottom: boolean
+  isShowSidebar?: boolean
+  colorBottom?: boolean
 }
 export const LayoutWrapper4 = styled.div<Props>`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 
   border: 2px solid crimson;
 

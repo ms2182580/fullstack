@@ -1,7 +1,6 @@
 import { Steps_Enum, useSignup_Ctx } from "@/context/Ctx_Signup"
 import { FC, useMemo } from "react"
 import { Signup_D_Layout_Home } from "./Signup_D_Layout_Home"
-import { Signup_D_Layout_WhoAreYou } from "./Signup_D_Layout_WhoAreYou"
 
 export const Signup_D_Layout3: FC<{ children: React.ReactNode }> = ({
   children,
@@ -15,7 +14,7 @@ export const Signup_D_Layout3: FC<{ children: React.ReactNode }> = ({
 
   const WhichLayoutSignup = useMemo(() => {
     if (step === Steps_Enum["home"]) return Signup_D_Layout_Home
-    if (step === Steps_Enum["who_are_you"]) return Signup_D_Layout_WhoAreYou
+    if (step === Steps_Enum["who_are_you"]) return null
 
     return null
   }, [step])

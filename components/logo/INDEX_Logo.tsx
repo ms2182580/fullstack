@@ -1,6 +1,7 @@
 import { Logo_HeaderWrapper } from "./styles/Logo_HeaderWrapper"
 
 import { PRIMARY } from "@/assets/Colors"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { ReactElement, useMemo } from "react"
@@ -37,15 +38,23 @@ export const INDEX_Logo = ({
 }): ReactElement => {
   const { pathname } = useRouter()
 
-  const variableName = useMemo(() => {
-    const whichRoute = pathname === "/" ? "" : "/"
+  const logoCanMoveTheUserToHome = useMemo(() => {
+    const isHome = pathname === "/" ? "" : "/"
 
-    return whichRoute
+    const isSignFlow =
+      pathname.startsWith(`/${ALL_ROUTES.SIGNIN}`) ||
+      pathname.startsWith(`/${ALL_ROUTES.SIGNUP}`) ||
+      pathname.startsWith(`/${ALL_ROUTES["RECENT-LOGIN"]}`)
+
+    return { isHome, isSignFlow }
   }, [pathname])
 
   return (
-    <Logo_HeaderWrapper logoColor={logoColor}>
-      <Link href={variableName}>
+    <Logo_HeaderWrapper
+      logoColor={logoColor}
+      isSignFlow={logoCanMoveTheUserToHome.isSignFlow}
+    >
+      <Link href={logoCanMoveTheUserToHome.isHome}>
         <H1>Inclusive</H1>
         <ChatAILogo />
       </Link>
