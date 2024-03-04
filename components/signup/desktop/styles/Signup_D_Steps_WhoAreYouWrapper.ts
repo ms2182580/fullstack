@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Signup_D_Steps_WhoAreYouWrapper = styled.div`
+export const Signup_D_Steps_WhoAreYouWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;

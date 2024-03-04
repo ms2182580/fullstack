@@ -1,20 +1,52 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
+import { defaultWidthWebsite } from "../../index/styles/DefaultWidthWebsite"
 
-export const Layout_Signup_Wrapper = styled.div`
+type Props = {
+  asideShouldShow: boolean
+}
+
+export const Layout_Signup_Wrapper = styled.div<Props>`
+  ${defaultWidthWebsite()};
+  position: relative;
+
   display: grid;
-  grid-template-rows: auto 1fr 1fr;
-  grid-template-areas:
-    "aside progress"
-    "aside children"
-    "aside buttons";
+  grid-template-rows: auto 1fr auto;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: ${({ asideShouldShow }) =>
+    asideShouldShow ? "" : 'url("/background/background2.svg")'};
+
+  grid-template-areas: ${({ asideShouldShow }) =>
+    asideShouldShow
+      ? `
+          "aside progress"
+          "aside children"
+          "aside buttons"
+        `
+      : `
+          " logo progress"
+          " children children"
+          " buttons buttons"
+        `};
 
   grid-template-columns: 266px 1fr;
 
-  & > :nth-child(1) {
+  & > header {
+    grid-area: logo;
+    margin-top: 32px;
+
+    margin-left: ${({ asideShouldShow }) => (asideShouldShow ? "" : "16px")};
+
+    position: sticky;
+    top: 10px;
+  }
+
+  aside {
     grid-area: aside;
 
-    display: flex;
+    display: ${({ asideShouldShow }) => (asideShouldShow ? "flex" : "none")};
     align-items: flex-start;
     flex-direction: column;
 
@@ -69,6 +101,9 @@ export const Layout_Signup_Wrapper = styled.div`
   & > :nth-child(2) {
     grid-area: progress;
     margin-bottom: 136px;
+
+    position: sticky;
+    top: 31px;
   }
 
   & > :nth-child(3) {
@@ -83,5 +118,10 @@ export const Layout_Signup_Wrapper = styled.div`
     border-top: 1px solid ${NEUTRALS.LIGHT_GREY};
     padding-top: 24px;
     padding-bottom: 24px;
+
+    position: sticky;
+    bottom: 0;
+
+    background-color: transparent;
   }
 `

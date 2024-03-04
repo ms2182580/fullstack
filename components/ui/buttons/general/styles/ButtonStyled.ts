@@ -69,19 +69,37 @@ export const reusableButton = ({
           font-size: 24px;
           height: 64px;
           padding: 20px 80px;
+        `};
+
+  ${() =>
+    secondary
+      ? css`
+          &:focus-visible {
+            border: 2px solid ${COLORS.HoverBgColor};
+            background-color: ${COLORS.HoverBgColor};
+
+            color: ${COLORS.Primary.TextColor};
+          }
+
+          &:hover {
+            border: 2px solid ${COLORS.HoverBgColor};
+
+            background-color: ${COLORS.HoverBgColor};
+
+            color: ${COLORS.Primary.TextColor};
+          }
+        `
+      : css`
+          &:focus-visible {
+            background-color: ${COLORS.HoverBgColor};
+            color: ${COLORS.Primary.TextColor};
+          }
+
+          &:hover {
+            background-color: ${COLORS.HoverBgColor};
+            color: ${COLORS.Primary.TextColor};
+          }
         `}
-
-  &:focus-visible {
-    outline: 4px solid ${COLORS.FocusOutline};
-
-    background-color: ${COLORS.HoverBgColor};
-    color: ${COLORS.Primary.TextColor};
-  }
-
-  &:hover {
-    background-color: ${COLORS.HoverBgColor};
-    color: ${COLORS.Primary.TextColor};
-  }
 
   &:active {
     outline: 4px solid ${COLORS.PressedOutline};

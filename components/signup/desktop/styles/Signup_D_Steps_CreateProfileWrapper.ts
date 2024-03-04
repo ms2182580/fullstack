@@ -1,32 +1,26 @@
 import styled from "styled-components"
 
-export const CreateProfileWrapper = styled.div`
+export const Signup_D_Steps_CreateProfileWrapper = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 90px;
-  background-image: url("/background/background2.svg");
-
-  border: 2px solid crimson;
 
   width: 100%;
 
-  & > * {
-    /* border: 2px solid green; */
+  & > header {
+    p {
+      display: flex;
+      gap: 6px;
+    }
   }
 
   & > :nth-child(2) {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
 
     & > :nth-child(1) {
       width: 100%;
-      /* border: 2px solid crimson; */
-
-      /* margin-left: 130px; */
-      /* margin-bottom: 92px; */
 
       & > :nth-child(1) {
         display: flex;
@@ -95,6 +89,7 @@ export const CreateProfileWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       & > :nth-child(2) {
         display: flex;
         flex-direction: column;
