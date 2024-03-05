@@ -2,9 +2,9 @@ import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Finish } from "./Finish"
-import { Review } from "./Review"
 import { Signup_D_Steps_CreateProfile } from "./Signup_D_Steps_CreateProfile"
 import { Signup_D_Steps_Demography } from "./Signup_D_Steps_Demography"
+import { Signup_D_Steps_Review } from "./Signup_D_Steps_Review"
 import { Signup_D_Steps_Situation } from "./Signup_D_Steps_Situation"
 import { Signup_D_Steps_TellUs } from "./Signup_D_Steps_TellUs"
 import { Signup_D_Steps_WhoAreYou } from "./Signup_D_Steps_WhoAreYou"
@@ -38,7 +38,7 @@ export const Signup_D_Steps = () => {
     }
 
     if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE) {
-      return <Review />
+      return <Signup_D_Steps_Review />
     }
 
     if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH) {

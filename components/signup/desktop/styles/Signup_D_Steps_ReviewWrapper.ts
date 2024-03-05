@@ -1,16 +1,24 @@
 import styled from "styled-components"
 
-export const ReviewWrapper = styled.div`
+export const Signup_D_Steps_ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* background-image: url("/background/background2.svg"); */
-  /* height: 72vh; */
-  margin-right: 10px;
+
+  gap: 8px;
+
+  & > * {
+    width: 596px;
+
+    h6 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
 
   & > :nth-child(1) {
     margin-left: 120px;
     display: flex;
-    width: 596px;
+
     padding: 40px 32px;
     justify-content: space-between;
     align-items: center;
@@ -37,16 +45,15 @@ export const ReviewWrapper = styled.div`
   }
 
   & > :nth-child(2) {
-    margin-top: 16px;
     margin-left: 120px;
     display: flex;
-    width: 596px;
     padding: 24px 32px;
     align-items: center;
     gap: 16px;
     border-radius: 8px;
     border: 2px solid #d3ced5;
     background: #f2eaf6;
+
     & > :nth-child(1) {
       display: flex;
       align-items: center;

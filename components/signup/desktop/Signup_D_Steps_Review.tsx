@@ -3,27 +3,28 @@ import {
   Signup_ReviewPencilIcon,
   Signup_ReviewSvg,
 } from "@/assets/icons"
-import { ReviewWrapper } from "./styles/ReviewWrapper"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { Signup_D_Steps_ReviewWrapper } from "./styles/Signup_D_Steps_ReviewWrapper"
 
-export const Review = () => {
+export const Signup_D_Steps_Review = () => {
   return (
-    <ReviewWrapper>
+    <Signup_D_Steps_ReviewWrapper>
       <div>
         <span>
           <Signup_ReviewSvg />
-          <span>Kohlil Doe</span>
+          <h6>Kohlil Doe</h6>
         </span>
         <span>
-          <span>Edit</span>
+          <P>Edit</P>
           <Signup_ReviewPencilIcon />
         </span>
       </div>
       <div>
         <span>
           <Signup_ReviewAddProfileSvg />
-          <span>Kohlil Doe</span>
+          <h6>Add another profile</h6>
         </span>
       </div>
-    </ReviewWrapper>
+    </Signup_D_Steps_ReviewWrapper>
   )
 }
