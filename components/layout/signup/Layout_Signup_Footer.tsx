@@ -37,7 +37,7 @@ export const Layout_Signup_Footer = ({
     if (howManyButtons === 1) {
       return (
         <>
-          <Link href="#">{textButtons?.second}</Link>
+          <Link href={toWhere}>{textButtons?.second}</Link>
         </>
       )
     }

@@ -84,6 +84,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
   TELL_US_YOUR_STORY: {
     title: null,
     paragraph: null,
+    progressBar: 3,
     footerData: {
       howManyButtons: 2,
       textButtons: {
@@ -96,7 +97,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
   REVIEW_AND_SAVE: {
     title: "Saved profiles",
     paragraph: "Review your profiles or create a new one",
-    progressBar: 3,
+    progressBar: 4,
     footerData: {
       howManyButtons: 1,
       textButtons: {
@@ -108,7 +109,6 @@ const stepsMessagessAside: StepsMessagess_Type = {
   FINISH: {
     title: "Almost there...",
     paragraph: "You’re one step away!",
-    progressBar: 4,
     footerData: null,
   },
 }

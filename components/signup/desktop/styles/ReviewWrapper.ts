@@ -1,11 +1,10 @@
 import styled from "styled-components"
 
 export const ReviewWrapper = styled.div`
-  margin-top: 112px;
   display: flex;
   flex-direction: column;
-  background-image: url("/background/background2.svg");
-  height: 72vh;
+  /* background-image: url("/background/background2.svg"); */
+  /* height: 72vh; */
   margin-right: 10px;
 
   & > :nth-child(1) {

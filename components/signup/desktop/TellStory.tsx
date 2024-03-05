@@ -41,90 +41,85 @@ export const TellStory = () => {
     },
   ]
   return (
-    <>
-      <TellStoryWrapper>
+    <TellStoryWrapper>
+      <div>
+        <div>
+          <H3>Tell us what helps Kahlil thrive!</H3>
+          <span>
+            Please review each section. Write your answers for the person
+            identified in the profile. To add to a section, you can <br />{" "}
+            either type or record audio. Drag and drop boxes to reorganize.
+          </span>
+        </div>
+        <ButtonSmall secondary>
+          <span>Share</span>
+        </ButtonSmall>
+      </div>
+      <div>
         <div>
           <div>
-            <H3>Tell us what helps Kahlil thrive!</H3>
             <span>
-              Please review each section. Write your answers for the person
-              identified in the profile. To add to a section, you can <br />{" "}
-              either type or record audio. Drag and drop boxes to reorganize.
+              <Signup_UserSvg />
+              <span>
+                <Signup_PlusSvg />
+              </span>
+            </span>
+            <span>
+              <span>Kahlil</span>
+              <span>
+                Location: <span>19130</span>
+              </span>
+              <span>
+                Language:<span>English, Tagalog</span>
+              </span>
+              <span>
+                I have: <span>ASD, ADHD</span>
+              </span>
             </span>
           </div>
-          <ButtonSmall secondary>
-            <span>Share</span>
-          </ButtonSmall>
-        </div>
-        <div>
-          <div>
-            <div>
-              <span>
-                <Signup_UserSvg />
-                <span>
-                  <Signup_PlusSvg />
-                </span>
-              </span>
-              <span>
-                <span>Kahlil</span>
-                <span>
-                  Location: <span>19130</span>
-                </span>
-                <span>
-                  Language:<span>English, Tagalog</span>
-                </span>
-                <span>
-                  I have: <span>ASD, ADHD</span>
-                </span>
-              </span>
-            </div>
 
-            <H4>Personality</H4>
-            <span>
-              {data.map((item) => {
-                return (
+          <H4>Personality</H4>
+          <span>
+            {data.map((item) => {
+              return (
+                <span>
                   <span>
-                    <span>
-                      <span>{item.first}</span>
-                      <span>{item.second}</span>
-                    </span>
-                    <input type="range" className="slider" />
+                    <span>{item.first}</span>
+                    <span>{item.second}</span>
                   </span>
-                )
-              })}
-            </span>
+                  <input type="range" className="slider" />
+                </span>
+              )
+            })}
+          </span>
+        </div>
+        <div>
+          <div>
+            <Input text="My Situation" placeholder="I need help with . . . " />
           </div>
           <div>
-            <div>
-              <Input
-                text="My Situation"
-                placeholder="I need help with . . . "
-              />
-            </div>
-            <div>
-              <Input text="Care needs" placeholder="My care needs are . . ." />
-              <Input
-                text="Cultural considerations"
-                placeholder="In my culture, it is important . . . "
-              />
-              <Input text="Skills" placeholder="I am skilled at . . ." />
-              <Input
-                text="Likes and dislikes"
-                placeholder="I like . . .  I don’t like . . ."
-              />
-              <Input
-                text="Health and medications"
-                placeholder="I take _ and _ twice per day . . . "
-              />
-              <Input
-                text="Aspirations"
-                placeholder="In the future I want to . . ."
-              />
-            </div>
+            <Input text="Care needs" placeholder="My care needs are . . ." />
+            <Input
+              text="Cultural considerations"
+              placeholder="In my culture, it is important . . . "
+            />
+            <Input text="Skills" placeholder="I am skilled at . . ." />
+            <Input
+              text="Likes and dislikes"
+              placeholder="I like . . .  I don’t like . . ."
+            />
+            <Input
+              text="Health and medications"
+              placeholder="I take _ and _ twice per day . . . "
+            />
+            <Input
+              text="Aspirations"
+              placeholder="In the future I want to . . ."
+            />
           </div>
         </div>
-      </TellStoryWrapper>
-    </>
+      </div>
+    </TellStoryWrapper>
   )
 }
 

@@ -2,10 +2,8 @@ import styled from "styled-components"
 
 export const TellStoryWrapper = styled.div`
   width: 1440px;
-  padding-top: 56px;
   padding-left: 69px;
   padding-right: 69px;
-  background-image: url("/background/background2.svg");
   padding-bottom: 50px;
   & > :nth-child(1) {
     width: 100%;

@@ -2,7 +2,7 @@ import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const SituationWrapper = styled.div`
-  padding: 80px 80px;
+  padding: 0px 80px;
 
   & > :nth-child(1) {
     font-size: 32px;

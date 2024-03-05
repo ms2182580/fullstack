@@ -5,6 +5,7 @@ import TagsInput from "react-tagsinput"
 import "react-tagsinput/react-tagsinput.css"
 import { DemographyWrapper } from "./styles/DemographyWrapper"
 import { Input } from "./styles/Signup_D_HomeWrapper"
+
 export const Demography = () => {
   const [tags, setTags] = useState(["tag1", "tag2"])
   return (
