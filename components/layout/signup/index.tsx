@@ -139,16 +139,18 @@ const formattingRoute = ({
 }
 
 export const Layout_Signup = ({ children }) => {
-  const { asPath } = useRouter()
+  const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
   useEffect(() => {
-    let { actualRouteIsValid } = formattingRoute({ routeToCheck: asPath })
+    if (isReady) {
+      let { actualRouteIsValid } = formattingRoute({ routeToCheck: asPath })
 
-    if (actualRouteIsValid === false) {
-      push("/404")
+      if (actualRouteIsValid === false) {
+        push("/404")
+      }
     }
-  }, [])
+  }, [isReady])
 
   const whichDataShouldDisplay = useMemo((): WhichDataShouldDisplay_Type => {
     let { actualRoute } = formattingRoute({ routeToCheck: asPath })

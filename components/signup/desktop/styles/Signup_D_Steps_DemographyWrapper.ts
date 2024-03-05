@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const DemographyWrapper = styled.div`
+export const Signup_D_Steps_DemographyWrapper = styled.div`
   padding: 0px 80px;
 
   & > :nth-child(1) {

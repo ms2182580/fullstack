@@ -2,9 +2,12 @@ import { Signup_N_InfoSvg } from "@/assets/icons"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"
 import { Input } from "./styles/Signup_D_HomeWrapper"
-import { SituationSpan, SituationWrapper } from "./styles/SituationWrapper"
+import {
+  Signup_D_Steps_SituationWrapper,
+  SituationSpan,
+} from "./styles/Signup_D_Steps_SituationWrapper"
 
-export const Situation = () => {
+export const Signup_D_Steps_Situation = () => {
   const [selected, setSelected] = useState([
     "Vision impaired",
     "Physically impaired",
@@ -22,9 +25,9 @@ export const Situation = () => {
     "I don’t know",
   ]
   return (
-    <SituationWrapper>
+    <Signup_D_Steps_SituationWrapper>
       <H3>Profile 1 Situation</H3>
-      <span>Tell us about the indiviidual</span>
+      <span>Tell us about the individual</span>
       <form>
         <label>Diagnosis (select all that apply)</label>
         <Input placeholder="Ex. Down’s Syndrome, Cerebral Palsy, ADHD" />
@@ -54,6 +57,6 @@ export const Situation = () => {
           ))}
         </div>
       </form>
-    </SituationWrapper>
+    </Signup_D_Steps_SituationWrapper>
   )
 }

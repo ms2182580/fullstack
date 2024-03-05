@@ -1,11 +1,11 @@
 import { Signup_N_InfoSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { DemographyWrapper } from "./styles/DemographyWrapper"
+import { Signup_D_Steps_DemographyWrapper } from "./styles/Signup_D_Steps_DemographyWrapper"
 
 export const Signup_D_Steps_Demography = () => {
   return (
-    <DemographyWrapper>
+    <Signup_D_Steps_DemographyWrapper>
       <H3>Profile 1 Demographics</H3>
       <P>Tell us about the individual</P>
       <form>
@@ -41,6 +41,6 @@ export const Signup_D_Steps_Demography = () => {
           </label>
         </div>
       </form>
-    </DemographyWrapper>
+    </Signup_D_Steps_DemographyWrapper>
   )
 }

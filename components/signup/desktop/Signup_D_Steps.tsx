@@ -5,8 +5,8 @@ import { Finish } from "./Finish"
 import { Review } from "./Review"
 import { Signup_D_Steps_CreateProfile } from "./Signup_D_Steps_CreateProfile"
 import { Signup_D_Steps_Demography } from "./Signup_D_Steps_Demography"
+import { Signup_D_Steps_Situation } from "./Signup_D_Steps_Situation"
 import { Signup_D_Steps_WhoAreYou } from "./Signup_D_Steps_WhoAreYou"
-import { Situation } from "./Situation"
 import { TellStory } from "./TellStory"
 
 export const Signup_D_Steps = () => {
@@ -30,7 +30,7 @@ export const Signup_D_Steps = () => {
     }
 
     if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.SITUATION) {
-      return <Situation />
+      return <Signup_D_Steps_Situation />
     }
 
     if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.TELL_US_YOUR_STORY) {
