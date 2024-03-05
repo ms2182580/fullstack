@@ -3,8 +3,9 @@ import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import {
   Layout_Signup_Footer,
   Layout_Signup_Footer_Props,
@@ -16,7 +17,13 @@ import {
 } from "./Layout_Signup_Progress"
 import { Layout_Signup_Wrapper } from "./styles/Layout_Signup_Wrapper"
 
-type HowIsData = {
+type TopBottomLayout_Type = {
+  shouldNotShowTop: boolean
+  shouldNotShowBottom: boolean
+  topProgressbarActualStep: Layout_Signup_Progress_Props
+}
+
+type WhichDataShouldDisplay_Type = {
   title: string | null
   paragraph: string | null
   progressBar?: Layout_Signup_Progress_Props
@@ -24,7 +31,7 @@ type HowIsData = {
 }
 
 export type StepsMessagess_Type = {
-  [Key in keyof typeof ALL_ROUTES.SIGNUP_STEPS]: HowIsData
+  [Key in keyof typeof ALL_ROUTES.SIGNUP_STEPS]: WhichDataShouldDisplay_Type
 }
 
 const stepsMessagessAside: StepsMessagess_Type = {
@@ -51,11 +58,11 @@ const stepsMessagessAside: StepsMessagess_Type = {
       textButtons: {
         second: TextButtonsSecond_Enum["BUILD MANUALLY"],
       },
-      toWhere: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1,
+      toWhere: ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY,
       toPrevious: ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU,
     },
   },
-  CREATE_PROFILE1: {
+  DEMOGRAPHY: {
     title: "Add profile information",
     paragraph: "Creating a profile helps us find what you need faster",
     progressBar: 2,
@@ -64,11 +71,11 @@ const stepsMessagessAside: StepsMessagess_Type = {
       textButtons: {
         second: TextButtonsSecond_Enum["NEXT"],
       },
-      toWhere: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2,
+      toWhere: ALL_ROUTES.SIGNUP_STEPS.SITUATION,
       toPrevious: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE,
     },
   },
-  CREATE_PROFILE2: {
+  SITUATION: {
     title: "Add profile information",
     paragraph: "Creating a profile helps us find what you need faster",
     progressBar: 2,
@@ -78,7 +85,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
         second: TextButtonsSecond_Enum["NEXT"],
       },
       toWhere: ALL_ROUTES.SIGNUP_STEPS.TELL_US_YOUR_STORY,
-      toPrevious: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1,
+      toPrevious: ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY,
     },
   },
   TELL_US_YOUR_STORY: {
@@ -91,7 +98,7 @@ const stepsMessagessAside: StepsMessagess_Type = {
         second: TextButtonsSecond_Enum["SAVE"],
       },
       toWhere: ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE,
-      toPrevious: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2,
+      toPrevious: ALL_ROUTES.SIGNUP_STEPS.SITUATION,
     },
   },
   REVIEW_AND_SAVE: {
@@ -113,20 +120,40 @@ const stepsMessagessAside: StepsMessagess_Type = {
   },
 }
 
-export const footerData = {}
-
-const formattingRoute = ({ routeToCheck }) => {
+const formattingRoute = ({
+  routeToCheck,
+}): {
+  actualRouteIsValid: boolean
+  actualRoute: string
+} => {
   const actualRoute = routeToCheck.split("/").at(-1)?.toUpperCase()
-  return actualRoute
+
+  const actualRouteIsValid = Object.keys(ALL_ROUTES.SIGNUP_STEPS).some(
+    (x) => x === actualRoute
+  )
+
+  return {
+    actualRouteIsValid,
+    actualRoute,
+  }
 }
 
 export const Layout_Signup = ({ children }) => {
   const { asPath } = useRouter()
+  const { push } = useNavigation()
 
-  const whichDataShouldDisplay = useMemo((): HowIsData => {
-    let formatRoute = formattingRoute({ routeToCheck: asPath })
+  useEffect(() => {
+    let { actualRouteIsValid } = formattingRoute({ routeToCheck: asPath })
 
-    let objectData = stepsMessagessAside[`${formatRoute}`]
+    if (actualRouteIsValid === false) {
+      push("/404")
+    }
+  }, [])
+
+  const whichDataShouldDisplay = useMemo((): WhichDataShouldDisplay_Type => {
+    let { actualRoute } = formattingRoute({ routeToCheck: asPath })
+
+    let objectData = stepsMessagessAside[`${actualRoute}`]
 
     return {
       title: objectData?.title || null,
@@ -135,20 +162,22 @@ export const Layout_Signup = ({ children }) => {
     }
   }, [asPath])
 
-  const topBottomLayout = useMemo(() => {
-    let formatRoute = formattingRoute({ routeToCheck: asPath }).toLowerCase()
+  const topBottomLayout = useMemo((): TopBottomLayout_Type => {
+    let { actualRoute } = formattingRoute({ routeToCheck: asPath })
+
+    let theRouteFormatted = actualRoute.toLowerCase()
 
     let shouldNotShowTop =
-      formatRoute === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
-      formatRoute === ALL_ROUTES.SIGNUP_STEPS.FINISH
+      theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
+      theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH
 
     let shouldNotShowBottom =
-      formatRoute === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
-      formatRoute === ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU ||
-      formatRoute === ALL_ROUTES.SIGNUP_STEPS.FINISH
+      theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
+      theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU ||
+      theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH
 
     let topProgressbarActualStep: Layout_Signup_Progress_Props =
-      stepsMessagessAside[`${formatRoute.toUpperCase()}`]?.progressBar
+      stepsMessagessAside[`${theRouteFormatted.toUpperCase()}`]?.progressBar
 
     return { shouldNotShowTop, shouldNotShowBottom, topProgressbarActualStep }
   }, [asPath])

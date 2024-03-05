@@ -22,8 +22,8 @@ export type Layout_Signup_Footer_Props = {
   toPrevious?:
     | typeof ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU
     | typeof ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE
-    | typeof ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1
-    | typeof ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2
+    | typeof ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY
+    | typeof ALL_ROUTES.SIGNUP_STEPS.SITUATION
     | undefined
 }
 

@@ -1,10 +1,10 @@
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
-import { Demography } from "./Demography"
 import { Finish } from "./Finish"
 import { Review } from "./Review"
 import { Signup_D_Steps_CreateProfile } from "./Signup_D_Steps_CreateProfile"
+import { Signup_D_Steps_Demography } from "./Signup_D_Steps_Demography"
 import { Signup_D_Steps_WhoAreYou } from "./Signup_D_Steps_WhoAreYou"
 import { Situation } from "./Situation"
 import { TellStory } from "./TellStory"
@@ -25,11 +25,11 @@ export const Signup_D_Steps = () => {
       return <Signup_D_Steps_CreateProfile />
     }
 
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1) {
-      return <Demography />
+    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY) {
+      return <Signup_D_Steps_Demography />
     }
 
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE2) {
+    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.SITUATION) {
       return <Situation />
     }
 

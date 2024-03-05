@@ -15,7 +15,7 @@ export const Finish = () => {
       </P>
       <span>
         <P>Resend verification email to jd**24@gmail.com?</P>
-        <span>Resend</span>
+        <a href="#">Resend</a>
       </span>
     </FinishLayout>
   )

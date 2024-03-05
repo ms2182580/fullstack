@@ -37,7 +37,7 @@ export const Signup_D_Steps_CreateProfile = () => {
         <P>
           Speed up profile creation by uploading your loved one’s health data.
           Don’t have data to add?
-          <Link href={`${ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE1}`}>
+          <Link href={`${ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY}`}>
             Build profile manually
           </Link>
         </P>

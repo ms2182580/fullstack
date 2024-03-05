@@ -14,7 +14,7 @@ export const Layout_Signup_Progress = ({ actualProgress = 1 }: Props) => {
         max="4"
         value={actualProgress !== null ? actualProgress : 1}
         aria-labelledby="progress bar"
-      ></progress>
+      />
       <ol>
         <li>
           <P>who are you</P>{" "}

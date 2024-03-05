@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const DemographyWrapper = styled.div`
-  padding: 80px 80px;
+  padding: 0px 80px;
 
   & > :nth-child(1) {
     font-size: 32px;
@@ -18,53 +18,52 @@ export const DemographyWrapper = styled.div`
   }
 
   & > :nth-child(3) {
-    & > :nth-child(3) {
-      margin-top: 16px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      & > :nth-child(2) {
-        position: absolute;
-        top: 0px;
-        left: 510px;
-        z-index: 1;
+    display: grid;
+    gap: 16px;
+
+    max-width: 560px;
+
+    & > * {
+      input {
+        width: 100%;
       }
     }
 
-    & > :nth-child(1),
-    & > :nth-child(4),
-    & > :nth-child(6) {
-      margin-top: 16px;
+    label {
       display: flex;
+      flex-direction: column;
     }
 
-    & > :nth-child(8) {
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      & > :nth-child(1),
+    label:nth-of-type(2) {
+      position: relative;
+
       & > :nth-child(2) {
-        & > :nth-child(2) {
-          display: flex;
-          width: 260px;
-        }
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    & > :last-child {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+
+      & > * {
+        flex: 1;
       }
     }
   }
 
   .react-tagsinput {
-    position: relative;
-    display: flex;
     height: 48px;
-    padding: 12px 16px;
-    align-items: center;
-    align-self: stretch;
+    padding: 8px 16px;
+
     border-radius: 8px;
     border: 1px solid #908395;
     background: white;
-    width: 535px;
   }
+
   .react-tagsinput-tag {
     padding: 4px 8px;
     gap: 4px;
