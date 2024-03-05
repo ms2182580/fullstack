@@ -6,8 +6,8 @@ import { Review } from "./Review"
 import { Signup_D_Steps_CreateProfile } from "./Signup_D_Steps_CreateProfile"
 import { Signup_D_Steps_Demography } from "./Signup_D_Steps_Demography"
 import { Signup_D_Steps_Situation } from "./Signup_D_Steps_Situation"
+import { Signup_D_Steps_TellUs } from "./Signup_D_Steps_TellUs"
 import { Signup_D_Steps_WhoAreYou } from "./Signup_D_Steps_WhoAreYou"
-import { TellStory } from "./TellStory"
 
 export const Signup_D_Steps = () => {
   const { asPath } = useRouter()
@@ -34,7 +34,7 @@ export const Signup_D_Steps = () => {
     }
 
     if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.TELL_US_YOUR_STORY) {
-      return <TellStory />
+      return <Signup_D_Steps_TellUs />
     }
 
     if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE) {
