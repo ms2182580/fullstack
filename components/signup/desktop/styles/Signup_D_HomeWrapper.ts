@@ -1,7 +1,7 @@
 import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
-import { passwordStrength_Keys } from "../Signup_D_Home"
+import { passwordStrength_Keys } from "../INDEX_D_Signup_Home"
 
 type Props = {
   passwordStrength: string

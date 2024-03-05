@@ -1,9 +1,11 @@
-import Dashboard_D_Layout from "@/components/dashboardLayout/DashboardLayout"
-import { Page_layout } from "@/components/pageLayout/pageLayout"
+import { Layout } from "@/components/layout/index/index"
+import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
+import { Dashboard_Ctx_AICHAT_UploadFile_Provider } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
+import { Dashboard_Ctx_Editor_AICHAT_Provider } from "@/context/Ctx_Dashboard_EditorChatModal"
+import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { ORG_Ctx_D_ThirdpageData_Backend_Provider } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
-import { useRouter } from "next/router.js"
 import { CheckUserWidth_Provider } from "../context/CheckUserWidth.js"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
@@ -27,16 +29,12 @@ import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFilter
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
-import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
-import { Dashboard_Ctx_Editor_AICHAT_Provider } from "@/context/Ctx_Dashboard_EditorChatModal"
-import { Dashboard_Ctx_AICHAT_UploadFile_Provider } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
-import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter()
-  const pathname = router.pathname
-  let isDashboard = !!pathname.includes("/dashboard")
-  let isEditor = !!pathname.includes("/editor")
+  // const router = useRouter()
+  // const pathname = router.pathname
+  // let isDashboard = !!pathname.includes("/dashboard")
+  // let isEditor = !!pathname.includes("/editor")
 
   return (
     <LoginCtxProvider>
@@ -67,7 +65,7 @@ function MyApp({ Component, pageProps }) {
                                                       <Dashboard_Ctx_Editor_AICHAT_Provider>
                                                         <Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                           <Ctx_Signup_Provider>
-                                                            {isDashboard ? (
+                                                            {/* {isDashboard ? (
                                                               <Dashboard_D_Layout>
                                                                 <GlobalStyle />
                                                                 <link
@@ -89,7 +87,18 @@ function MyApp({ Component, pageProps }) {
                                                                   {...pageProps}
                                                                 />
                                                               </Page_layout>
-                                                            )}
+                                                            )} */}
+
+                                                            <Layout>
+                                                              <GlobalStyle />
+                                                              <link
+                                                                rel="icon"
+                                                                href="/favicon.ico"
+                                                              />
+                                                              <Component
+                                                                {...pageProps}
+                                                              />
+                                                            </Layout>
                                                           </Ctx_Signup_Provider>
                                                         </Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                       </Dashboard_Ctx_Editor_AICHAT_Provider>

@@ -4,9 +4,9 @@ import "@testing-library/jest-dom/vitest"
 import { cleanup, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it } from "vitest"
-import { WhoAreYou } from "../WhoAreYou"
+import { Signup_D_Steps_WhoAreYou } from "../Signup_D_Steps_WhoAreYou"
 
-describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
+describe(`Testing ${Signup_D_Steps_WhoAreYou.name} component`, (ctx_describe) => {
   afterEach(cleanup)
 
   it("Component is render", (ctx_it) => {
@@ -14,7 +14,7 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <WhoAreYou />
+            <Signup_D_Steps_WhoAreYou />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
@@ -26,7 +26,7 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <WhoAreYou />
+            <Signup_D_Steps_WhoAreYou />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
@@ -42,12 +42,12 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <WhoAreYou />
+            <Signup_D_Steps_WhoAreYou />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
     )
-    const getAllArticles = screen.getAllByRole("article")
+    const getAllArticles = screen.getAllByRole("link")
 
     expect(getAllArticles).toHaveLength(2)
   })
@@ -58,7 +58,7 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <WhoAreYou />
+              <Signup_D_Steps_WhoAreYou />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -75,7 +75,7 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
         <>
           <Dashboard_Ctx_AICHAT_Provider>
             <Ctx_Signup_Provider>
-              <WhoAreYou />
+              <Signup_D_Steps_WhoAreYou />
             </Ctx_Signup_Provider>
           </Dashboard_Ctx_AICHAT_Provider>
         </>
@@ -95,13 +95,13 @@ describe(`Testing ${WhoAreYou.name} component`, (ctx_describe) => {
       <>
         <Dashboard_Ctx_AICHAT_Provider>
           <Ctx_Signup_Provider>
-            <WhoAreYou />
+            <Signup_D_Steps_WhoAreYou />
           </Ctx_Signup_Provider>
         </Dashboard_Ctx_AICHAT_Provider>
       </>
     )
 
-    const getAllData = screen.getAllByRole("article")
+    const getAllData = screen.getAllByRole("link")
 
     await user.tab()
     expect(getAllData[0]).toHaveFocus()

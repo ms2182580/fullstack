@@ -1,21 +1,31 @@
-import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Logo_HeaderWrapper = styled.header`
-  & > :nth-child(1) {
-    display: flex;
-    justify-content: center;
+export type Props = {
+  logoColor: string
+  isSignFlow: boolean
+}
 
+export const Logo_HeaderWrapper = styled.header<Props>`
+  width: 100%;
+  width: fit-content;
+  a {
+    display: flex;
+    justify-content: stretch;
     gap: 8px;
 
     text-decoration: none;
 
     user-select: none;
 
-    & > :nth-child(1) {
-      color: ${PRIMARY.PRIMARY_LOGO};
-      font-weight: 800;
+    width: 100%;
+    width: fit-content;
 
+    & > :nth-child(1) {
+      color: ${({ logoColor }) => logoColor};
+
+      font-size: ${({ isSignFlow }) => (isSignFlow ? "38px" : "56px")};
+
+      font-weight: 800;
       font-style: normal;
       font-weight: 800;
       line-height: 51px;
@@ -28,13 +38,16 @@ export const Logo_HeaderWrapper = styled.header`
     }
 
     & > :nth-child(2) {
-      font-size: 56px;
-      font-weight: 900;
+      /* font-weight: 900; */
 
       margin-bottom: auto;
 
+      /* max-width: 100%; */
+      height: auto;
+
+      color: ${({ logoColor }) => logoColor};
       & > * {
-        fill: ${PRIMARY.PRIMARY_LOGO};
+        fill: currentColor;
       }
     }
   }

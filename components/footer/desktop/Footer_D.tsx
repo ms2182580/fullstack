@@ -2,7 +2,6 @@ import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link.js"
-import { useRouter } from "next/router.js"
 import {
   Facebook3Svg,
   Instagram2Svg,
@@ -14,10 +13,6 @@ import { Caption } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper"
 
 export const Footer_D = () => {
-  const route = useRouter()
-  if (route.pathname === "/signup" || route.pathname === "/login") {
-    return null
-  }
   return (
     <Footer_DWrapper>
       <header>
