@@ -4,6 +4,7 @@ import { defaultWidthWebsite } from "../../index/styles/DefaultWidthWebsite"
 
 type Props = {
   asideShouldShow: boolean
+  shouldShowBackground: boolean
 }
 
 export const Layout_Signup_Wrapper = styled.div<Props>`
@@ -15,8 +16,11 @@ export const Layout_Signup_Wrapper = styled.div<Props>`
 
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: ${({ asideShouldShow }) =>
-    asideShouldShow ? "" : 'url("/background/background2.svg")'};
+  background-image: ${({ asideShouldShow, shouldShowBackground }) =>
+    asideShouldShow && !shouldShowBackground
+      ? ""
+      : (asideShouldShow === false || shouldShowBackground) &&
+        'url("/background/background2.svg")'};
 
   grid-template-areas: ${({ asideShouldShow }) =>
     asideShouldShow

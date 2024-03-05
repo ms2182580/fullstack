@@ -184,11 +184,17 @@ export const Layout_Signup = ({ children }) => {
     return { shouldNotShowTop, shouldNotShowBottom, topProgressbarActualStep }
   }, [asPath])
 
+  let { actualRoute } = formattingRoute({ routeToCheck: asPath })
+
   return (
     <Layout_Signup_Wrapper
       asideShouldShow={
         whichDataShouldDisplay.title !== null &&
         whichDataShouldDisplay.paragraph !== null
+      }
+      shouldShowBackground={
+        actualRoute.toLocaleLowerCase() ===
+        ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE
       }
     >
       {whichDataShouldDisplay.title !== null &&

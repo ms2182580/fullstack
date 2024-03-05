@@ -3,8 +3,9 @@ import styled from "styled-components"
 export const Signup_D_Steps_ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   gap: 8px;
+
+  background-image: url("/background/background2.svg");
 
   & > * {
     width: 596px;
