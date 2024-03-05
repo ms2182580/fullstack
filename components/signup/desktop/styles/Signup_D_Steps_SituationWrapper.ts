@@ -11,19 +11,56 @@ export const Signup_D_Steps_SituationWrapper = styled.div`
     line-height: normal;
   }
   & > :nth-child(2) {
-    color: #3a343c;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
+    margin-bottom: 24px;
   }
 
   & > :nth-child(3) {
+    label {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    & > label:nth-of-type(2) {
+      position: relative;
+
+      & > :nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    & > :nth-child(1),
+    & > :nth-child(2) {
+      max-width: 534px;
+    }
+
+    & > :nth-child(1) {
+      margin-bottom: 16px;
+    }
+
+    & > :nth-child(2) {
+      margin-bottom: 48px;
+    }
+
+    & > :nth-child(3),
+    & > :nth-child(4) {
+      max-width: 634px;
+    }
+
     & > :nth-child(3) {
-      margin-top: 16px;
       position: relative;
       display: flex;
       flex-direction: column;
+
+      font-size: 28px;
+
+      margin-bottom: 24px;
+
       & > :nth-child(2) {
         position: absolute;
         top: 0px;
@@ -31,39 +68,20 @@ export const Signup_D_Steps_SituationWrapper = styled.div`
         z-index: 1;
       }
     }
-    & > :nth-child(1) {
-      margin-top: 16px;
-      display: flex;
-    }
+
     & > :nth-child(4) {
-      margin-top: 48px;
-      margin-bottom: 24px;
-    }
-    & > :nth-child(5) {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      width: 70%;
-      /* & > * {
-        display: flex;
-        height: 48px;
-        min-width: 130px;
-        padding: 8px 16px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        border-radius: 999px;
-        border: 1px solid #6e3a82;
-        background: #fff;
-      } */
+
+      margin-bottom: 80px;
     }
   }
 `
 type SituationProps = {
   isSelected: boolean
 }
-export const SituationSpan = styled.span<SituationProps>`
-  cursor: pointer;
+export const SituationSpan = styled.li<SituationProps>`
   display: flex;
   height: 48px;
   min-width: 130px;
@@ -76,4 +94,11 @@ export const SituationSpan = styled.span<SituationProps>`
   background: ${(props) =>
     props.isSelected ? `${PRIMARY.PRIMARY_CTA}` : "white"};
   color: ${(props) => (props.isSelected ? "white" : `${PRIMARY.PRIMARY_CTA}`)};
+
+  cursor: default;
+
+  &:hover,
+  &:focus-visible {
+    filter: drop-shadow(1px 2px 5px hsla(0, 0%, 0%, 0.2));
+  }
 `
