@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const FinishLayout = styled.div`
+export const Signup_D_Steps_FinishWrapper = styled.div`
   margin-top: 120px;
   margin-left: 120px;
 

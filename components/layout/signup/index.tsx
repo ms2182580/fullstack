@@ -3,6 +3,7 @@ import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import Head from "next/head"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
 import { useEffect, useMemo } from "react"
@@ -138,7 +139,7 @@ const formattingRoute = ({
   }
 }
 
-export const Layout_Signup = ({ children }) => {
+export const Layout_Signup = ({ children, title }) => {
   const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
@@ -186,46 +187,57 @@ export const Layout_Signup = ({ children }) => {
 
   let { actualRoute } = formattingRoute({ routeToCheck: asPath })
 
+  const formatRouteToTitle: string = actualRoute.split("_").join(" ")
+
   return (
-    <Layout_Signup_Wrapper
-      asideShouldShow={
-        whichDataShouldDisplay.title !== null &&
-        whichDataShouldDisplay.paragraph !== null
-      }
-      shouldShowBackground={
-        actualRoute.toLocaleLowerCase() ===
-        ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE
-      }
-    >
-      {whichDataShouldDisplay.title !== null &&
-      whichDataShouldDisplay.paragraph !== null ? (
-        <>
-          <aside>
-            <INDEX_Logo logoColor={NEUTRALS.OFF_WHITE} />
-            <H3>{whichDataShouldDisplay.title}</H3>
-            <P>{whichDataShouldDisplay.paragraph}</P>
-          </aside>
-        </>
-      ) : (
-        <INDEX_Logo />
-      )}
+    <>
+      <Head>
+        <title>
+          {title} Signup
+          {actualRoute.toLocaleLowerCase() !== ALL_ROUTES.SIGNUP_STEPS.SIGNUP
+            ? ` - ${formatRouteToTitle}`
+            : null}
+        </title>
+        <meta name="description" content="inclusive - website" />
+      </Head>
 
-      {topBottomLayout.shouldNotShowTop ? null : (
-        <Layout_Signup_Progress
-          actualProgress={topBottomLayout.topProgressbarActualStep}
-        />
-      )}
-
-      <div>{children}</div>
-
-      {topBottomLayout.shouldNotShowBottom ? null : (
-        <Layout_Signup_Footer
-          howManyButtons={whichDataShouldDisplay.footerData?.howManyButtons}
-          textButtons={whichDataShouldDisplay.footerData?.textButtons}
-          toWhere={whichDataShouldDisplay.footerData?.toWhere}
-          toPrevious={whichDataShouldDisplay.footerData?.toPrevious}
-        />
-      )}
-    </Layout_Signup_Wrapper>
+      <Layout_Signup_Wrapper
+        asideShouldShow={
+          whichDataShouldDisplay.title !== null &&
+          whichDataShouldDisplay.paragraph !== null
+        }
+        shouldShowBackground={
+          actualRoute.toLocaleLowerCase() ===
+          ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE
+        }
+      >
+        {whichDataShouldDisplay.title !== null &&
+        whichDataShouldDisplay.paragraph !== null ? (
+          <>
+            <aside>
+              <INDEX_Logo logoColor={NEUTRALS.OFF_WHITE} />
+              <H3>{whichDataShouldDisplay.title}</H3>
+              <P>{whichDataShouldDisplay.paragraph}</P>
+            </aside>
+          </>
+        ) : (
+          <INDEX_Logo />
+        )}
+        {topBottomLayout.shouldNotShowTop ? null : (
+          <Layout_Signup_Progress
+            actualProgress={topBottomLayout.topProgressbarActualStep}
+          />
+        )}
+        <div>{children}</div>
+        {topBottomLayout.shouldNotShowBottom ? null : (
+          <Layout_Signup_Footer
+            howManyButtons={whichDataShouldDisplay.footerData?.howManyButtons}
+            textButtons={whichDataShouldDisplay.footerData?.textButtons}
+            toWhere={whichDataShouldDisplay.footerData?.toWhere}
+            toPrevious={whichDataShouldDisplay.footerData?.toPrevious}
+          />
+        )}
+      </Layout_Signup_Wrapper>
+    </>
   )
 }

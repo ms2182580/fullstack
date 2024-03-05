@@ -1,11 +1,11 @@
 import { Signup_FinishSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { FinishLayout } from "./styles/FinishLayout"
+import { Signup_D_Steps_FinishWrapper } from "./styles/Signup_D_Steps_FinishWrapper"
 
-export const Finish = () => {
+export const Signup_D_Steps_Finish = () => {
   return (
-    <FinishLayout>
+    <Signup_D_Steps_FinishWrapper>
       <Signup_FinishSvg />
       <H3>Your security is important</H3>
       <P>
@@ -17,6 +17,6 @@ export const Finish = () => {
         <P>Resend verification email to jd**24@gmail.com?</P>
         <a href="#">Resend</a>
       </span>
-    </FinishLayout>
+    </Signup_D_Steps_FinishWrapper>
   )
 }

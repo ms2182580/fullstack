@@ -11,7 +11,7 @@ import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { Signup_D_HomeWrapper } from "./styles/Signup_D_HomeWrapper"
+import { INDEX_D_Signup_HomeWrapper } from "./styles/INDEX_D_Signup_HomeWrapper"
 
 export const passwordStrength_Keys = {
   "Very Weak": "Very Weak",
@@ -87,7 +87,7 @@ export const INDEX_D_Signup_Home = () => {
   }, [])
 
   return (
-    <Signup_D_HomeWrapper passwordStrength={passwordStrength}>
+    <INDEX_D_Signup_HomeWrapper passwordStrength={passwordStrength}>
       <H2>Create an account</H2>
       <form>
         <label>
@@ -222,6 +222,6 @@ export const INDEX_D_Signup_Home = () => {
         <Signup_N_FacebookSvg data-testid="facebook-icon" />
         <span>Continue with Facebook</span>
       </ButtonSmall>
-    </Signup_D_HomeWrapper>
+    </INDEX_D_Signup_HomeWrapper>
   )
 }

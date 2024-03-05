@@ -57,11 +57,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
   if (whichRouteState === WhichLayoutDisplay_Key.isSignup) {
     return (
       <>
-        <Head>
-          <title>{title} Signup</title>
-          <meta name="description" content="inclusive - website" />
-        </Head>
-        <Layout_Signup>{children}</Layout_Signup>
+        <Layout_Signup title={title}>{children}</Layout_Signup>
       </>
     )
   }

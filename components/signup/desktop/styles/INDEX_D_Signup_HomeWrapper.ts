@@ -6,7 +6,7 @@ import { passwordStrength_Keys } from "../INDEX_D_Signup_Home"
 type Props = {
   passwordStrength: string
 }
-export const Signup_D_HomeWrapper = styled.div<Props>`
+export const INDEX_D_Signup_HomeWrapper = styled.div<Props>`
   margin-top: 40px;
   margin-bottom: 54px;
 

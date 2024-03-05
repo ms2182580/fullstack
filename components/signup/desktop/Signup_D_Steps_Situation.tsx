@@ -2,7 +2,7 @@ import { Signup_N_InfoSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"
-import { Input } from "./styles/Signup_D_HomeWrapper"
+import { Input } from "./styles/INDEX_D_Signup_HomeWrapper"
 import {
   Signup_D_Steps_SituationWrapper,
   SituationSpan,
