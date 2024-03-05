@@ -10,26 +10,26 @@ export const DemographyWrapper = styled.div`
     line-height: normal;
   }
   & > :nth-child(2) {
-    color: #3a343c;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
+    margin-bottom: 24px;
   }
 
   & > :nth-child(3) {
     display: grid;
     gap: 16px;
 
-    max-width: 560px;
+    max-width: 550px;
 
     & > * {
       input {
-        width: 100%;
+        height: 48px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1px solid #908395;
+        background: white;
       }
     }
 
-    label {
+    & > *:not(:last-child) {
       display: flex;
       flex-direction: column;
     }
@@ -46,30 +46,7 @@ export const DemographyWrapper = styled.div`
 
     & > :last-child {
       display: flex;
-      justify-content: center;
       gap: 16px;
-
-      & > * {
-        flex: 1;
-      }
     }
-  }
-
-  .react-tagsinput {
-    height: 48px;
-    padding: 8px 16px;
-
-    border-radius: 8px;
-    border: 1px solid #908395;
-    background: white;
-  }
-
-  .react-tagsinput-tag {
-    padding: 4px 8px;
-    gap: 4px;
-    border-radius: 12px;
-    background: #ffe7db;
-    border: none;
-    color: #3a343c;
   }
 `
