@@ -8,10 +8,10 @@ export const Signup_D_Steps_Demography = () => {
     <Signup_D_Steps_DemographyWrapper>
       <H3>Profile 1 Demographics</H3>
       <P>Tell us about the individual</P>
+
       <form>
         <label>
-          First Name
-          <input placeholder="Ex John" />
+          Firdadsst Nameadsadasd <input placeholder="Ex John" />
         </label>
 
         <label>

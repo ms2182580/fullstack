@@ -1,5 +1,3 @@
-import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
-import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import "@testing-library/jest-dom/vitest"
 import { cleanup, render, screen } from "@testing-library/react"
@@ -11,47 +9,22 @@ import {
 } from "../INDEX_D_Signup_Home"
 
 describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
-  afterEach(cleanup)
-
-  it("Signup Home is Render", (ctx_it) => {
-    render(
-      <>
-        <Dashboard_Ctx_AICHAT_Provider>
-          <Ctx_Signup_Provider>
-            <INDEX_D_Signup_Home />
-          </Ctx_Signup_Provider>
-        </Dashboard_Ctx_AICHAT_Provider>
-      </>
-    )
+  afterEach(async () => {
+    await cleanup()
+    render(<INDEX_D_Signup_Home />)
   })
 
-  it("Signup Home is stablished: nothing should change", async (ctx_it) => {
-    let theActualJSXFile = render(
-      <>
-        <Dashboard_Ctx_AICHAT_Provider>
-          <Ctx_Signup_Provider>
-            <INDEX_D_Signup_Home />
-          </Ctx_Signup_Provider>
-        </Dashboard_Ctx_AICHAT_Provider>
-      </>
-    )
+  it(`${INDEX_D_Signup_Home.name} is Render`, (ctx_it) => {
+    render(<INDEX_D_Signup_Home />)
+  })
 
-    await expect(theActualJSXFile).toMatchFileSnapshot(
-      "./__snapshots__/Signup_D_Home.html"
+  it(`${INDEX_D_Signup_Home.name} is stablished: nothing should change`, async (ctx_it) => {
+    await expect(render(<INDEX_D_Signup_Home />)).toMatchFileSnapshot(
+      `./__snapshots__/${INDEX_D_Signup_Home.name}.html`
     )
   })
 
   it("Title is there: «Create an account»", (ctx_it) => {
-    render(
-      <>
-        <Dashboard_Ctx_AICHAT_Provider>
-          <Ctx_Signup_Provider>
-            <INDEX_D_Signup_Home />
-          </Ctx_Signup_Provider>
-        </Dashboard_Ctx_AICHAT_Provider>
-      </>
-    )
-
     const getTitle = screen.getByRole("heading", { level: 2 })
 
     expect(getTitle).toBeInTheDocument()
@@ -59,16 +32,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Input label «First Name»", (ctx_describe) => {
     it("Text and input exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getFirstNameLabel = screen.getByLabelText(/first name/i)
       expect(getFirstNameLabel).toBeInTheDocument()
 
@@ -79,15 +42,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Clicking on label, the input is focus", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const getFirstNameLabel = screen.getByLabelText(/first name/i)
       const inputFirstName = screen.getByPlaceholderText(/ex: john/i)
@@ -99,16 +53,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Input label «Last Name»", (ctx_describe) => {
     it("Text and input exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getLastNameLabel = screen.getByLabelText(/last name/i)
       expect(getLastNameLabel).toBeInTheDocument()
 
@@ -119,15 +63,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Clicking on label, the input is focus", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const getLastNameLabel = screen.getByLabelText(/last name/i)
       const inputLastName = screen.getByPlaceholderText(/ex: smith/i)
@@ -139,16 +74,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Input label «Email»", (ctx_describe) => {
     it("Tex and input exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getEmailLabel = screen.getByLabelText(/email/i)
       expect(getEmailLabel).toBeInTheDocument()
 
@@ -159,15 +84,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Clicking on label, the input is focus", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const getEmailLabel = screen.getByLabelText(/email/i)
       const inputEmail = screen.getByPlaceholderText(/ex: jsmith123@gmail.com/i)
@@ -179,16 +95,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Checking «Password»", (ctx_describe) => {
     it("Input label «Password» and his input exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getPasswordLabel = screen.getByText("Password")
       expect(getPasswordLabel).toBeInTheDocument()
 
@@ -198,32 +104,12 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
     })
 
     it("Container of show and hide password exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getAll = screen.getByLabelText("show-hide-password")
 
       expect(getAll).toBeInTheDocument()
     })
 
     it("Container of tooltip exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getContainerOfTooltip = screen.getByLabelText("password-rules")
 
       expect(getContainerOfTooltip).toBeInTheDocument()
@@ -231,15 +117,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Tooltip is showed when is hover", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const getContainerOfTooltip = screen.getByLabelText("password-rules")
       let isHover = false
@@ -268,15 +145,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Show and hide password is working", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const inputPassword = screen.getByPlaceholderText(/enter your password/i)
 
@@ -306,15 +174,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Type on password input show strength of password ", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const typeCollection = {
         "Very Weak": "1234567",
@@ -382,16 +241,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Checking «Confirm Password»", (ctx_describe) => {
     it("Input label «Confirm Password» and his input exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getPasswordLabel = screen.getByText("Confirm Password")
       expect(getPasswordLabel).toBeInTheDocument()
 
@@ -401,16 +250,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
     })
 
     it("individual test", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getConfirmPassword = screen.getByLabelText(
         "show-hide-confirm-password"
       )
@@ -420,15 +259,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Show and hide confirm password is working", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const inputPassword = screen.getByPlaceholderText(/confirm password/i)
 
@@ -459,16 +289,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Accept terms of use and Privacy Policy", (ctx_describe) => {
     it("Text exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByLabelText(
         /By creating an account, I agree to our Terms of use and Privacy Policy/i
       )
@@ -477,16 +297,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
     })
 
     it("Input checkbox exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByRole("checkbox")
 
       expect(getData).toBeInTheDocument()
@@ -494,15 +304,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
     it("Click on text should check the input", async (ctx) => {
       const user = userEvent.setup()
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
 
       const textAcceptTerms = screen.getByLabelText(
         /By creating an account, I agree to our Terms of use and Privacy Policy/i
@@ -523,32 +324,12 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Create an account button", (ctx_describe) => {
     it("Button exist", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByRole("link", { name: /create an account/i })
 
       expect(getData).toBeInTheDocument()
     })
 
     it("Button have the correct data to move the view of the user to the next step", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByRole("link", { name: /create an account/i })
 
       expect(getData).toHaveAttribute(
@@ -560,32 +341,12 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("«Already have an account? Log in» ", (ctx_describe) => {
     it("«Already have an account?»", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByText(/Already have an account?/i)
 
       expect(getData.textContent).toBeDefined()
     })
 
     it("«Log in» text have correct href", (ctx) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByRole("link", { name: /log in/i })
 
       expect(getData).toBeInTheDocument()
@@ -598,16 +359,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
 
   describe("Access with Social Media", (ctx_describe) => {
     it("Google", (ctx_it) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getData = screen.getByText(/Continue with Google/i)
       expect(getData).toBeInTheDocument()
 
@@ -616,16 +367,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
     })
 
     it("Facebook", (ctx_it) => {
-      render(
-        <>
-          <Dashboard_Ctx_AICHAT_Provider>
-            <Ctx_Signup_Provider>
-              <INDEX_D_Signup_Home />
-            </Ctx_Signup_Provider>
-          </Dashboard_Ctx_AICHAT_Provider>
-        </>
-      )
-
       const getText = screen.getByText(/Continue with Facebook/i)
       expect(getText).toBeInTheDocument()
 

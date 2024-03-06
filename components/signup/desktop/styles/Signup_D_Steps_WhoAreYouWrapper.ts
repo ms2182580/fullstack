@@ -26,7 +26,7 @@ export const Signup_D_Steps_WhoAreYouWrapper = styled.section`
 
     &:hover,
     &:focus-visible {
-      background-color: hsla(282.9, 41.2%, 93.3%, 0.4);
+      background: #f2eaf6;
     }
 
     h5 {
