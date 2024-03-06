@@ -1,7 +1,7 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { passwordStrength_Keys } from "./INDEX_D_Signup_Home"
 
-export const Signup_Home_TooltipText = () => {
+export const INDEX_D_Signup_Home_TooltipText = () => {
   return (
     <>
       <P>A strong password must:</P>

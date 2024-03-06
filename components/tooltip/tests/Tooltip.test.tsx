@@ -65,7 +65,7 @@ describe(`Testing ${Tooltip.name}`, (ctx_describe) => {
     expect(Array.from(container.querySelectorAll("div")).length).toBe(1)
   })
 
-  it(`${Tooltip.name}  data is showed when is focus`, async (ctx) => {
+  it(`${Tooltip.name} data is showed when is focus`, async (ctx) => {
     render(<Tooltip />)
     const user = userEvent.setup()
 
