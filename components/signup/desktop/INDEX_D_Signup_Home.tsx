@@ -5,12 +5,13 @@ import {
   Signup_N_GoogleSvg,
   Signup_N_InfoSvg,
 } from "@/assets/icons"
+import { Tooltip } from "@/components/tooltip/Tooltip"
 import { ButtonSmall } from "@/components/ui/buttons/general"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { Signup_Home_TooltipText } from "./Signup_Home_TooltipText"
 import { INDEX_D_Signup_HomeWrapper } from "./styles/INDEX_D_Signup_HomeWrapper"
 
 export const passwordStrength_Keys = {
@@ -61,31 +62,6 @@ export const INDEX_D_Signup_Home = () => {
     }
   }
 
-  const [tooltipState, setTooltipState] = useState(false)
-
-  const handleShowTooltip = (e) => {
-    setTooltipState(true)
-  }
-
-  const handleHideTooltip = (e) => {
-    if (
-      e.type === "mouseleave" ||
-      e.type === "blur" ||
-      (e.type === "keydown" && e.key === "Escape")
-    ) {
-      setTooltipState(false)
-      setPasswordIsFocus(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleHideTooltip)
-
-    return () => {
-      window.removeEventListener("keydown", handleHideTooltip)
-    }
-  }, [])
-
   return (
     <INDEX_D_Signup_HomeWrapper passwordStrength={passwordStrength}>
       <H2>Create an account</H2>
@@ -128,36 +104,13 @@ export const INDEX_D_Signup_Home = () => {
               <SignUp_N_EyeCloseSvg data-testid="close_eye" />
             )}
           </span>
-          <div
-            onMouseEnter={handleShowTooltip}
-            onFocus={handleShowTooltip}
-            onMouseLeave={handleHideTooltip}
-            onBlur={handleHideTooltip}
-            tabIndex={0}
-            aria-label="password-rules"
-          >
-            <Signup_N_InfoSvg />
-            {(tooltipState || passwordIsFocus) && (
-              <>
-                <span role="tooltip" id="passwordrules">
-                  <P>A strong password must:</P>
-                  <ul>
-                    <li>
-                      Be at least 12 characters long and no longer than 64
-                      characters
-                    </li>
-                    <li>Contain at least one uppercase letter</li>
-                    <li>Contain at least one lowercase letter</li>
-                    <li>Contain at least one number</li>
-                    <li>
-                      Contain at least one special character (
-                      {passwordStrength_Keys.specialCharacters})
-                    </li>
-                  </ul>
-                </span>
-              </>
-            )}
-          </div>
+          <Tooltip
+            whichIconToUse={<Signup_N_InfoSvg />}
+            otherStateToHideTooltip={[setPasswordIsFocus]}
+            otherStateToShowTooltip={[passwordIsFocus]}
+            dataOnTooltip={<Signup_Home_TooltipText />}
+            whichAriaLabel="password-rules"
+          />
           {passwordStrength && <span></span>}
           {passwordStrength && (
             <span aria-label="password-strength">{passwordStrength}</span>

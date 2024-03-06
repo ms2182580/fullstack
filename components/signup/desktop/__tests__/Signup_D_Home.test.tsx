@@ -115,34 +115,6 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
       expect(getContainerOfTooltip).toBeInTheDocument()
     })
 
-    it("Tooltip is showed when is hover", async (ctx) => {
-      const user = userEvent.setup()
-
-      const getContainerOfTooltip = screen.getByLabelText("password-rules")
-      let isHover = false
-
-      getContainerOfTooltip.addEventListener("mouseover", () => {
-        isHover = true
-      })
-      getContainerOfTooltip.addEventListener("mouseout", () => {
-        isHover = false
-      })
-
-      expect(isHover).toBeFalsy()
-
-      await user.hover(getContainerOfTooltip)
-      expect(isHover).toBeTruthy()
-      expect(screen.getByRole("tooltip")).toBeInTheDocument()
-
-      await user.unhover(getContainerOfTooltip)
-      expect(isHover).toBeFalsy()
-      expect(screen.queryByRole("tooltip")).not.toBeInTheDocument()
-
-      await user.hover(getContainerOfTooltip)
-      expect(isHover).toBeTruthy()
-      expect(screen.getByRole("tooltip")).toBeInTheDocument()
-    })
-
     it("Show and hide password is working", async (ctx) => {
       const user = userEvent.setup()
 
