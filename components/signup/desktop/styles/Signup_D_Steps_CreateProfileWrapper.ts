@@ -23,7 +23,11 @@ export const Signup_D_Steps_CreateProfileWrapper = styled.section`
 
   & > :nth-child(2) {
     display: flex;
-    justify-content: space-between;
+    gap: 121px;
+
+    & > * {
+      flex: 1;
+    }
 
     & > :nth-child(1) {
       & > :nth-child(1) {
@@ -94,14 +98,14 @@ export const Signup_D_Steps_CreateProfileWrapper = styled.section`
       align-items: center;
       justify-content: center;
 
+      gap: 41px;
+
       & > :nth-child(2) {
         display: flex;
         flex-direction: column;
         padding: 0px 40px;
 
-        & > :nth-child(1) {
-          margin-top: 24px;
-        }
+        gap: 24px;
       }
     }
   }
