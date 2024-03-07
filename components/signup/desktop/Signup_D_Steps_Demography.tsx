@@ -1,9 +1,12 @@
 import { Tooltip } from "@/components/tooltip/Tooltip"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { Input_MultSelectListbox } from "@/components/ui/input/Input_MultSelectListbox"
 import { useState } from "react"
 import { Signup_D_Steps_Demography_TooltipText } from "./Signup_D_Steps_Demography_TooltipText"
 import { Signup_D_Steps_DemographyWrapper } from "./styles/Signup_D_Steps_DemographyWrapper"
+
+const renderThisOnInputFocus = ["fist item", "second item", "third item"]
 
 export const Signup_D_Steps_Demography = () => {
   const [zipCodeIsFocus, setZipCodeIsFocus] = useState(false)
@@ -20,6 +23,11 @@ export const Signup_D_Steps_Demography = () => {
     <Signup_D_Steps_DemographyWrapper>
       <H3>Profile 1 Demographics</H3>
       <P>Tell us about the individual</P>
+
+      <Input_MultSelectListbox
+        label="The Label"
+        listToShow={renderThisOnInputFocus}
+      />
 
       <form>
         <label>
