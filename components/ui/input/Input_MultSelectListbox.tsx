@@ -1,70 +1,91 @@
-import { useOutsideHide } from "@/utils/useOutsideHide"
-import { useRef, useState } from "react"
-import { Editable_5 } from "./Editable_5"
-import { List_Example } from "./example"
-import { Input_MultSelectListboxWrapper } from "./styles/Input_MultSelectListboxWrapper"
+import { useRef } from "react"
 
-export type Input_MultSelectListbox_Props = {
-  label?: string
-  listToShow: string[]
+import Select from "react-select"
+
+const IndicatorsContainer = () => {
+  return <div></div>
+}
+
+type Props = {
+  label: string
+  listToShow: { value: string; label: string }[]
+  placeholderText: string
 }
 
 export const Input_MultSelectListbox = ({
   label,
   listToShow,
-}: Input_MultSelectListbox_Props) => {
-  const [inputIsFocus, setInputIsFocus] = useState(false)
-  const handleInputIsFocus = () => {
-    setInputIsFocus(true)
-  }
-  const inputRef = useRef(null)
-  useOutsideHide(inputRef, setInputIsFocus)
+  placeholderText,
+}: Props) => {
+  const theRef = useRef<any>(null)
 
-  const [namesState, setNames] = useState<string[]>([])
-
-  const handleNameChange = (e) => {
-    let whichDataShouldUpdate =
-      e?.target?.value !== undefined ? e.target.value.split(" ") : e
-
-    console.log("whichDataShouldUpdate:", whichDataShouldUpdate)
-
-    // setNames((prevState) => [...prevState, whichDataShouldUpdate])
-    setNames(whichDataShouldUpdate)
-  }
-
-  const [dataOnInput, setDataOnInput] = useState<string[]>([])
-  const handleAddSomeDataOnInput = (e) => {
-    // console.log("e:", e)
-    if ((e.key === "Enter" || e.code === "Space") && e.type === "keydown") {
-      setDataOnInput((prevState) => [...prevState, e.target.value])
+  let handleIsClicked = (e) => {
+    if (theRef && e.type === "click") {
+      theRef?.current?.focus()
     }
   }
 
-  const [inputValue, setInputValue] = useState("")
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.textContent)
-  }
-
   return (
-    <Input_MultSelectListboxWrapper inputIsFocus={inputIsFocus} ref={inputRef}>
-      {!label || label}
-      {/* <input
-        type="text"
-        onFocus={handleInputIsFocus}
-        value={namesState}
-        onChange={handleNameChange}
-        onKeyDown={handleAddSomeDataOnInput}
-      /> */}
+    <div>
+      <label onClick={handleIsClicked}>{!label || label}</label>
+      <Select
+        ref={theRef}
+        closeMenuOnSelect={false}
+        components={{ IndicatorsContainer }}
+        isMulti
+        options={listToShow}
+        placeholder={placeholderText}
+        styles={{
+          control: (baseStyles, state) => ({
+            ...baseStyles,
+            // display: "flex",
+            // alignItems: "center",
+            // margin: "auto",
 
-      {/* <InputWithInnerLabel /> */}
+            height: "48px",
+            paddingInline: "8px",
 
-      <Editable_5 isFocus={handleInputIsFocus} />
+            borderRadius: "8px",
+            border: " 1px solid #908395",
+            background: " white",
+            fontSize: "12px",
+          }),
 
-      <List_Example
-        listToDisplay={listToShow}
-        handleNameChange={handleAddSomeDataOnInput}
+          placeholder: (baseStyles, state) => ({
+            ...baseStyles,
+
+            paddingBottom: "12px",
+          }),
+
+          multiValueLabel: (baseStyles, state) => ({
+            ...baseStyles,
+          }),
+          multiValue: (baseStyles, state) => ({
+            ...baseStyles,
+
+            backgroundColor: "#FFE7DB",
+            borderRadius: "12px",
+
+            padding: "4px 8px",
+            marginBottom: "16px",
+
+            textTransform: "capitalize",
+            fontSize: "12px",
+          }),
+          multiValueRemove: (baseStyles, state) => ({
+            ...baseStyles,
+
+            backgroundColor: "#FFE7DB",
+            borderRadius: "12px",
+
+            color: "black",
+            ":hover": {
+              backgroundColor: "hsla(20, 100%, 82.9%)",
+              color: "black",
+            },
+          }),
+        }}
       />
-    </Input_MultSelectListboxWrapper>
+    </div>
   )
 }

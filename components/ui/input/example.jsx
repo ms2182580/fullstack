@@ -31,6 +31,8 @@ function useRoveFocus(size) {
 }
 
 const Item = ({ character, focus, index, setFocus, handleNameChange }) => {
+  console.log("handleNameChange:", handleNameChange)
+
   const ref = useRef(null)
 
   useEffect(() => {
@@ -57,11 +59,10 @@ const Item = ({ character, focus, index, setFocus, handleNameChange }) => {
       tabIndex={focus ? 0 : -1}
       role="button"
       ref={ref}
-      onClick={() => {
+      onClick={(e) => {
         handleSelect()
-        handleNameChange(character)
+        handleNameChange({ event: e, dataToAdd: character })
       }}
-      onKeyDown={(e) => handleNameChange(character)}
     >
       {character}
     </li>

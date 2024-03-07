@@ -81,6 +81,33 @@ export const Signup_D_Steps_DemographyWrapper = styled.div`
     & > :last-child {
       display: flex;
       gap: 16px;
+
+      & > * {
+        input,
+        & > div {
+          /* border: 2px solid crimson; */
+          /* height: 48px; */
+        }
+      }
+
+      & > :nth-child(1) {
+        width: 100%;
+
+        /* border: 2px solid crimson; */
+      }
+
+      & > :nth-child(2) {
+        /* border: 2px solid green; */
+        /* align-items: flex-end; */
+
+        margin: auto;
+        input {
+          /* border: 2px solid crimson; */
+
+          /* height: 60px; */
+          /* height: 100%; */
+        }
+      }
     }
   }
 `

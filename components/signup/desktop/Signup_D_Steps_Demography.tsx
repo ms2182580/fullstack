@@ -6,7 +6,16 @@ import { useState } from "react"
 import { Signup_D_Steps_Demography_TooltipText } from "./Signup_D_Steps_Demography_TooltipText"
 import { Signup_D_Steps_DemographyWrapper } from "./styles/Signup_D_Steps_DemographyWrapper"
 
-const renderThisOnInputFocus = ["fist item", "second item", "third item"]
+let dropdownLiveWith = [
+  { value: "mom", label: "Mom" },
+  { value: "dad", label: "Dad" },
+  { value: "brother", label: "Brother" },
+  { value: "sister", label: "Sister" },
+]
+let dropdownLanguagesSpoken = [
+  { value: "english", label: "English" },
+  { value: "spanish", label: "Spanish" },
+]
 
 export const Signup_D_Steps_Demography = () => {
   const [zipCodeIsFocus, setZipCodeIsFocus] = useState(false)
@@ -23,11 +32,6 @@ export const Signup_D_Steps_Demography = () => {
     <Signup_D_Steps_DemographyWrapper>
       <H3>Profile 1 Demographics</H3>
       <P>Tell us about the individual</P>
-
-      <Input_MultSelectListbox
-        label="The Label"
-        listToShow={renderThisOnInputFocus}
-      />
 
       <form>
         <label>
@@ -53,16 +57,19 @@ export const Signup_D_Steps_Demography = () => {
           <input placeholder="Ex. child, grandchild, nephew," />
         </label>
 
-        <label>
-          Who does the individual live with? (select all that apply)
-          <input placeholder="Ex. parents, sibling, aunt" />
-        </label>
+        <Input_MultSelectListbox
+          label="Who does the individual live with? (select all that apply)"
+          listToShow={dropdownLiveWith}
+          placeholderText="Ex. parents, sibling, aunt"
+        />
 
         <div>
-          <label>
-            Language(s) spoken
-            <input placeholder="Ex. English, Spanish" />
-          </label>
+          <Input_MultSelectListbox
+            label="Language(s) spoken"
+            listToShow={dropdownLanguagesSpoken}
+            placeholderText="Ex. English, Spanish"
+          />
+
           <label>
             Language(s) understood{" "}
             <input placeholder="Ex. parents, sibling, aunt" />
