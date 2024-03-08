@@ -38,11 +38,20 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 16px;
 
-      /* font-size: 18px; */
+      ${reusableButton({ secondary: true })};
 
-      ${reusableButton({ secondary: true })}
+      padding: 10px 16px;
+
+      &:hover,
+      &:focus-visible {
+        & > :nth-child(1) {
+          & > * {
+            fill: ${NEUTRALS.OFF_WHITE};
+          }
+        }
+      }
     }
   }
 
@@ -161,6 +170,8 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
           }
           & > :nth-child(2) {
             width: 100%;
+
+            /* border: 2px solid crimson; */
           }
         }
       }
@@ -176,7 +187,6 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
     width: 100%;
     height: 15px;
     background: #f3f1f3;
-    outline: none;
     opacity: 0.7;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
@@ -192,7 +202,6 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
     width: 25px;
     height: 15px;
     background: #ae79c3;
-    cursor: pointer;
     border-radius: 4px;
   }
 
@@ -200,7 +209,6 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
     width: 25px;
     height: 25px;
     background: #04aa6d;
-    cursor: pointer;
   }
 `
 export const TellUs_CardsWrapper = styled.article`

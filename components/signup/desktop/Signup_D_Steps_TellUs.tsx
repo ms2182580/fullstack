@@ -94,7 +94,7 @@ export const Signup_D_Steps_TellUs = () => {
                     <span>{item.first}</span>
                     <span>{item.second}</span>
                   </span>
-                  <input type="range" className="slider" />
+                  <input tabIndex={0} type="range" className="slider" />
                 </span>
               )
             })}
