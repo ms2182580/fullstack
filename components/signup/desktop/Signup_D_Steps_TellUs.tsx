@@ -1,7 +1,9 @@
 import { ShareSvg, Signup_PlusSvg, Signup_UserSvg } from "@/assets/icons"
+import { Dialog_D } from "@/components/ui/dialog/Dialog_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { Fragment, useRef } from "react"
+import { useDialogLogic } from "@/utils/useDialogLogic"
+import { Fragment } from "react"
 import {
   Signup_D_Steps_TellUs_Cards,
   Signup_D_Steps_TellUs_Cards_Props,
@@ -72,27 +74,13 @@ const rightCardsData: Signup_D_Steps_TellUs_Cards_Props[] = [
 ]
 
 export const Signup_D_Steps_TellUs = () => {
-  const dialogRef = useRef<HTMLDialogElement>(null)
-
-  const openDialog = (e) => {
-    if (
-      e.type === "click" ||
-      (e.code === "Enter" && e.key === "Enter" && e.type === "keydown")
-    ) {
-      e.preventDefault()
-      dialogRef?.current?.showModal()
-    }
-  }
-
-  const closeDialog = (e) => {
-    if (
-      e.type === "mousedown" ||
-      e.type === "click" ||
-      (e.code === "Enter" && e.key === "Enter" && e.type === "keydown")
-    ) {
-      dialogRef?.current?.close()
-    }
-  }
+  const {
+    dialogRef,
+    openDialog,
+    closeDialog,
+    refToCloseDialogClickingOutside,
+    useHide,
+  } = useDialogLogic()
 
   return (
     <Signup_D_Steps_TellUsWrapper>
@@ -120,10 +108,16 @@ export const Signup_D_Steps_TellUs = () => {
                 <Signup_PlusSvg />
               </span>
 
-              <Signup_D_Steps_TellUs_Dialog
+              <Dialog_D
                 theRef={dialogRef}
                 handleCloseDialog={closeDialog}
-              />
+                refToCloseDialogClickingOutside={
+                  refToCloseDialogClickingOutside
+                }
+                useHide={useHide}
+              >
+                <Signup_D_Steps_TellUs_Dialog />
+              </Dialog_D>
             </div>
 
             <span>
