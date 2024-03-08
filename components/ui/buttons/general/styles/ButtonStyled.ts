@@ -49,6 +49,8 @@ export const reusableButton = ({
 
   font-weight: ${FontsWeights.SEMIBOLD_600};
 
+  transition: all 0.1s ease-in-out;
+
   ${() =>
     isSmall
       ? css`

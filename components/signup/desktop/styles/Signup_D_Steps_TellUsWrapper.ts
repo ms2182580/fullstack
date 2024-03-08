@@ -1,4 +1,4 @@
-import { NEUTRALS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
@@ -103,16 +103,34 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
           align-self: stretch;
           border-radius: 100px;
           background: #f3f1f3;
+
           & > :nth-child(2) {
             width: 24px;
             height: 24px;
             border-radius: 109px;
+
             background: #d3ced5;
+
             position: absolute;
             bottom: 5px;
             right: 5px;
+
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover,
+            &:focus-visible {
+              filter: drop-shadow(1px 1px 1px hsl(0, 0%, 0%, 0.2));
+
+              background-color: ${PRIMARY.PRIMARY_HOVER};
+              & > * {
+                & > * {
+                  fill: ${NEUTRALS.OFF_WHITE};
+                }
+              }
+            }
           }
         }
+
         & > :nth-child(2) {
           display: flex;
           flex-direction: column;
@@ -176,8 +194,6 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
           }
           & > :nth-child(2) {
             width: 100%;
-
-            /* border: 2px solid crimson; */
           }
         }
       }

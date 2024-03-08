@@ -33,9 +33,11 @@ export const NEUTRALS = {
   BLACK: "#00080B" /* Standard text */,
   DARK_GREY: "#6C6C6C" /* Informational text */,
   DARK_GREY_2: "#3A343C" /* Informational text alternative 2 */,
+  DARK_GREY_3: "#908395" /* Informational text alternative 3 */,
   LIGHT_GREY: "#D3D6D7" /* Disabled color */,
   OFF_WHITE: "#FCFDFE" /* Overall Background */,
   OFF_WHITE_2: "#F3F1F3" /* Overall Background alternative 2 */,
+  BORDER: "#D3CED5",
 }
 
 export const SEMANTICS = {
