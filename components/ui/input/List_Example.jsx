@@ -1,3 +1,9 @@
+/* 
+TODO
+* This component should be a TypeScript file in order to make it type safe
+
+*/
+
 import { useCallback, useEffect, useRef, useState } from "react"
 
 function useRoveFocus(size) {
@@ -31,8 +37,6 @@ function useRoveFocus(size) {
 }
 
 const Item = ({ character, focus, index, setFocus, handleNameChange }) => {
-  console.log("handleNameChange:", handleNameChange)
-
   const ref = useRef(null)
 
   useEffect(() => {
@@ -47,13 +51,6 @@ const Item = ({ character, focus, index, setFocus, handleNameChange }) => {
     setFocus(index)
   }, [character, index, setFocus])
 
-  /* 
-  !FH0
-  
-  Keep creating this with all the accessible good practices
-  - https://www.w3.org/WAI/ARIA/apg/patterns/listbox/#examples
-  - https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-rearrangeable/
-  */
   return (
     <li
       tabIndex={focus ? 0 : -1}

@@ -1,4 +1,4 @@
-import { PRIMARY } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const Signup_D_Steps_SituationWrapper = styled.div`
@@ -14,7 +14,7 @@ export const Signup_D_Steps_SituationWrapper = styled.div`
     margin-bottom: 24px;
   }
 
-  & > :nth-child(3) {
+  form {
     label {
       display: flex;
       flex-direction: column;
@@ -31,6 +31,44 @@ export const Signup_D_Steps_SituationWrapper = styled.div`
         position: absolute;
         top: 0;
         right: 0;
+
+        & > :nth-child(2) {
+          position: absolute;
+          bottom: 132%;
+          right: -94%;
+
+          width: 300px;
+          padding: 12px;
+          border-radius: 4px;
+
+          background-color: ${NEUTRALS.DARK_GREY_2};
+
+          & > * {
+            color: ${NEUTRALS.OFF_WHITE_2};
+            font-size: 12px;
+          }
+
+          & > p:nth-of-type(1) {
+            font-weight: 600;
+          }
+
+          & > p:nth-of-type(2) {
+            /* font-weight: 600; */
+
+            line-height: 20px;
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            right: 10%;
+
+            border: 8px solid ${NEUTRALS.DARK_GREY_2};
+            border-color: ${NEUTRALS.DARK_GREY_2} transparent transparent
+              transparent;
+          }
+        }
       }
     }
 

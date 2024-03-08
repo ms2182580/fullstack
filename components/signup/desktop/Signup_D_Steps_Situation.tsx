@@ -1,7 +1,8 @@
-import { Signup_N_InfoSvg } from "@/assets/icons"
+import { Tooltip } from "@/components/tooltip/Tooltip"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"
+import { Signup_D_Steps_Situation_TooltipText } from "./Signup_D_Steps_Situation_TooltipText"
 import { Input } from "./styles/INDEX_D_Signup_HomeWrapper"
 import {
   Signup_D_Steps_SituationWrapper,
@@ -40,6 +41,16 @@ export const Signup_D_Steps_Situation = () => {
     }
   }
 
+  const [careTeamIsFocus, setCareTeamIsFocus] = useState(false)
+
+  const handleCareTeamIsFocus = () => {
+    setCareTeamIsFocus(true)
+  }
+
+  const handleCareTeamIsBlur = () => {
+    setCareTeamIsFocus(false)
+  }
+
   return (
     <Signup_D_Steps_SituationWrapper>
       <H3>Profile 1 Situation</H3>
@@ -52,8 +63,16 @@ export const Signup_D_Steps_Situation = () => {
 
         <label>
           Care team (select all that apply)
-          <Input placeholder="Ex John" />
-          <Signup_N_InfoSvg />
+          <Input
+            placeholder="Ex John"
+            onFocus={handleCareTeamIsFocus}
+            onBlur={handleCareTeamIsBlur}
+          />
+          <Tooltip
+            otherStateToShowTooltip={[careTeamIsFocus]}
+            dataOnTooltip={<Signup_D_Steps_Situation_TooltipText />}
+            whichAriaLabel="careteam-explanation"
+          />
         </label>
         <H4>
           Please select what pertains to your loved <br /> one’s situation

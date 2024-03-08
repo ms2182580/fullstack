@@ -1,6 +1,15 @@
+/* 
+TODO
+* This component should be finished in order to work to put only one sentence on the input text and not more than one
+* Sources that explain the desired behavior (single-select listbox):
+  1. https://www.w3.org/WAI/ARIA/apg/patterns/listbox/#examples
+  2. https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-rearrangeable/
+
+*/
+
 import { useOutsideHide } from "@/utils/useOutsideHide"
 import { useRef, useState } from "react"
-import { List_Example } from "./example"
+import { List_Example } from "./List_Example"
 import { Input_MultSelectListboxWrapper } from "./styles/Input_MultSelectListboxWrapper"
 
 export type Input_MultSelectListbox_Props = {
