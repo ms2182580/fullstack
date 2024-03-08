@@ -1,46 +1,72 @@
-import {
-  ShareSvg,
-  Signup_FileSvg,
-  Signup_MicSvg,
-  Signup_PlusSvg,
-  Signup_StartsSvg,
-  Signup_UserSvg,
-} from "@/assets/icons"
+import { ShareSvg, Signup_PlusSvg, Signup_UserSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { Fragment } from "react"
 import {
-  Signup_D_Steps_TellUsWrapper,
-  TellUs_CardsWrapper,
-} from "./styles/Signup_D_Steps_TellUsWrapper"
+  Signup_D_Steps_TellUs_Cards,
+  Signup_D_Steps_TellUs_Cards_Props,
+} from "./Signup_D_Steps_TellUs_Cards"
+import { Signup_D_Steps_TellUsWrapper } from "./styles/Signup_D_Steps_TellUsWrapper"
 
-let data = [
+const leftCardPersonalityData: { left: string; right: string }[] = [
   {
-    first: "Introvert",
-    second: "Extrovert",
+    left: "Introvert",
+    right: "Extrovert",
   },
   {
-    first: "Creative",
-    second: "Logical",
+    left: "Creative",
+    right: "Logical",
   },
   {
-    first: "Sedentary",
-    second: "Active",
+    left: "Sedentary",
+    right: "Active",
   },
   {
-    first: "Cautions",
-    second: "Adventurous",
+    left: "Cautions",
+    right: "Adventurous",
   },
   {
-    first: "Calm",
-    second: "Anxious",
+    left: "Calm",
+    right: "Anxious",
   },
   {
-    first: "Disorganized",
-    second: "Organized",
+    left: "Disorganized",
+    right: "Organized",
   },
   {
-    first: "Reserved",
-    second: "Open book",
+    left: "Reserved",
+    right: "Open book",
+  },
+]
+
+const rightCardsData: Signup_D_Steps_TellUs_Cards_Props[] = [
+  {
+    titleText: "My Situation",
+    placeholder: "I need help with . . .",
+  },
+  {
+    titleText: "Care needs",
+    placeholder: "My care needs are . . .",
+  },
+  {
+    titleText: "Cultural considerations",
+    placeholder: "In my culture, it is important . . . ",
+  },
+  {
+    titleText: "Skills",
+    placeholder: "I am skilled at . . .",
+  },
+  {
+    titleText: "Likes and dislikes",
+    placeholder: "I like . . .  I don’t like . . .",
+  },
+  {
+    titleText: "Health and medications",
+    placeholder: "I take _ and _ twice per day . . . ",
+  },
+  {
+    titleText: "Aspirations",
+    placeholder: "In the future I want to . . .",
   },
 ]
 
@@ -86,67 +112,32 @@ export const Signup_D_Steps_TellUs = () => {
           </div>
 
           <H4>Personality</H4>
-          <span>
-            {data.map((item) => {
+          <div>
+            {leftCardPersonalityData.map(({ left, right }) => {
               return (
-                <span>
+                <div>
                   <span>
-                    <span>{item.first}</span>
-                    <span>{item.second}</span>
+                    <span>{left}</span>
+                    <span>{right}</span>
                   </span>
                   <input tabIndex={0} type="range" className="slider" />
-                </span>
+                </div>
               )
             })}
-          </span>
+          </div>
         </article>
 
-        <TellUs_Cards
-          text="My Situation"
-          placeholder="I need help with . . . "
-        />
-
-        <TellUs_Cards text="Care needs" placeholder="My care needs are . . ." />
-        <TellUs_Cards
-          text="Cultural considerations"
-          placeholder="In my culture, it is important . . . "
-        />
-        <TellUs_Cards text="Skills" placeholder="I am skilled at . . ." />
-        <TellUs_Cards
-          text="Likes and dislikes"
-          placeholder="I like . . .  I don’t like . . ."
-        />
-        <TellUs_Cards
-          text="Health and medications"
-          placeholder="I take _ and _ twice per day . . . "
-        />
-        <TellUs_Cards
-          text="Aspirations"
-          placeholder="In the future I want to . . ."
-        />
+        {rightCardsData.map(({ titleText, placeholder }, index) => {
+          return (
+            <Fragment key={`${titleText}_${index}`}>
+              <Signup_D_Steps_TellUs_Cards
+                titleText={titleText}
+                placeholder={placeholder}
+              />
+            </Fragment>
+          )
+        })}
       </div>
     </Signup_D_Steps_TellUsWrapper>
-  )
-}
-
-const TellUs_Cards = (props) => {
-  return (
-    <TellUs_CardsWrapper>
-      <P>{props.text}</P>
-      <div>
-        <textarea placeholder={props.placeholder} />
-        <ul>
-          <li>
-            <Signup_MicSvg />
-          </li>
-          <li>
-            <Signup_FileSvg />
-          </li>
-          <li>
-            <Signup_StartsSvg />
-          </li>
-        </ul>
-      </div>
-    </TellUs_CardsWrapper>
   )
 }

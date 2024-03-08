@@ -2,6 +2,12 @@ import { NEUTRALS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
+export const SliderDeclarationsCSS = {
+  height: "15px",
+  width: "25px",
+  buttonSliderColor: "#ae79c3",
+}
+
 export const Signup_D_Steps_TellUsWrapper = styled.div`
   margin-inline: 69px;
 
@@ -185,7 +191,7 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
   .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 15px;
+    height: ${SliderDeclarationsCSS.height};
     background: #f3f1f3;
     opacity: 0.7;
     -webkit-transition: 0.2s;
@@ -199,69 +205,15 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 15px;
-    background: #ae79c3;
+    width: ${SliderDeclarationsCSS.width};
+    height: ${SliderDeclarationsCSS.height};
+    background: ${SliderDeclarationsCSS.buttonSliderColor};
     border-radius: 4px;
   }
 
   .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #04aa6d;
-  }
-`
-export const TellUs_CardsWrapper = styled.article`
-  background-color: ${NEUTRALS.OFF_WHITE};
-  padding-inline: 16px;
-  padding-top: 16px;
-
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 16px;
-
-  & > :nth-child(1) {
-    color: #1d1a1e;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 27px;
-    margin-bottom: 8px;
-  }
-
-  & > :nth-child(2) {
-    position: relative;
-
-    flex: 1;
-
-    padding-bottom: 38px;
-
-    textarea {
-      height: 100%;
-
-      width: 100%;
-      border: none;
-
-      resize: none;
-    }
-
-    ul {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-
-      list-style: none;
-
-      li {
-        width: 34px;
-        height: 34px;
-        padding: 5px;
-        background-color: #f3f1f3;
-        border-radius: 50%;
-      }
-    }
+    width: ${SliderDeclarationsCSS.width};
+    height: ${SliderDeclarationsCSS.height};
+    background: ${SliderDeclarationsCSS.buttonSliderColor};
   }
 `
