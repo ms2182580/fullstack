@@ -1,8 +1,7 @@
 import { ShareSvg, Signup_PlusSvg, Signup_UserSvg } from "@/assets/icons"
-import { Dialog_D } from "@/components/ui/dialog/Dialog_D"
+import { Dialog_D, useDialogLogic } from "@/components/ui/dialog/Dialog_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { useDialogLogic } from "@/utils/useDialogLogic"
 import { Fragment } from "react"
 import {
   Signup_D_Steps_TellUs_Cards,
@@ -80,10 +79,11 @@ export const Signup_D_Steps_TellUs = () => {
     closeDialog,
     refToCloseDialogClickingOutside,
     useHide,
+    checkModalIsOpen,
   } = useDialogLogic()
 
   return (
-    <Signup_D_Steps_TellUsWrapper>
+    <Signup_D_Steps_TellUsWrapper checkModalIsOpen={checkModalIsOpen}>
       <div>
         <header>
           <H3>Tell us what helps Kahlil thrive!</H3>
@@ -104,13 +104,17 @@ export const Signup_D_Steps_TellUs = () => {
           <div>
             <div>
               <Signup_UserSvg />
-              <span onClick={openDialog} onKeyDown={openDialog} tabIndex={0}>
+              <span
+                onClick={(e) => openDialog({ event: e })}
+                onKeyDown={(e) => openDialog({ event: e })}
+                tabIndex={0}
+              >
                 <Signup_PlusSvg />
               </span>
 
               <Dialog_D
                 theRef={dialogRef}
-                handleCloseDialog={closeDialog}
+                handleCloseDialog={(e) => closeDialog({ event: e })}
                 refToCloseDialogClickingOutside={
                   refToCloseDialogClickingOutside
                 }
@@ -136,9 +140,9 @@ export const Signup_D_Steps_TellUs = () => {
 
           <H4>Personality</H4>
           <div>
-            {leftCardPersonalityData.map(({ left, right }) => {
+            {leftCardPersonalityData.map(({ left, right }, index) => {
               return (
-                <div>
+                <div key={`${left}_${right}`}>
                   <span>
                     <span>{left}</span>
                     <span>{right}</span>

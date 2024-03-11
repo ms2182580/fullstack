@@ -1,11 +1,17 @@
 import styled from "styled-components"
 
-export const Signup_D_Steps_ReviewWrapper = styled.div`
+type Props = {
+  isOpen: boolean
+}
+
+export const Signup_D_Steps_ReviewWrapper = styled.div<Props>`
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   background-image: url("/background/background2.svg");
+
+  border: ${({ isOpen }) => (isOpen ? "2px solid green" : "2px solid red")};
 
   & > * {
     width: 596px;

@@ -1,6 +1,6 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const SliderDeclarationsCSS = {
   height: "15px",
@@ -8,7 +8,11 @@ export const SliderDeclarationsCSS = {
   buttonSliderColor: "#ae79c3",
 }
 
-export const Signup_D_Steps_TellUsWrapper = styled.div`
+type Props = {
+  checkModalIsOpen: boolean
+}
+
+export const Signup_D_Steps_TellUsWrapper = styled.div<Props>`
   margin-inline: 69px;
 
   margin-bottom: 46px;
@@ -116,6 +120,19 @@ export const Signup_D_Steps_TellUsWrapper = styled.div`
             right: 5px;
 
             transition: background-color 0.2s ease-in-out;
+
+            ${({ checkModalIsOpen }) =>
+              checkModalIsOpen &&
+              css`
+                filter: drop-shadow(1px 1px 1px hsl(0, 0%, 0%, 0.2));
+
+                background-color: ${PRIMARY.PRIMARY_HOVER};
+                & > * {
+                  & > * {
+                    fill: ${NEUTRALS.OFF_WHITE};
+                  }
+                }
+              `};
 
             &:hover,
             &:focus-visible {
