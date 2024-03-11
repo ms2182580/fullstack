@@ -7,6 +7,16 @@ export type Dialog_D_Props = {
   refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
   useHide: (refToCloseDialogClickingOutside, handleCloseDialog) => void
   children: ReactElement
+
+  shouldOpenModalAlone?: boolean
+  // shouldOpenModalAloneFn?: ({ delayToOpen }: { delayToOpen: number }) => void
+  shouldOpenModalAloneDelay?: number
+
+  shouldCloseModalAlone?: boolean
+  // shouldCloseModalAloneFn?: ({ delayToClose }: { delayToClose: number }) => void
+  shouldCloseModalAloneDelay?: number
+
+  setCheckModalIsOpen?: (e: boolean) => void
 }
 
 export const Dialog_D = ({
@@ -15,8 +25,50 @@ export const Dialog_D = ({
   refToCloseDialogClickingOutside,
   useHide,
   children,
+
+  shouldOpenModalAlone = false,
+  shouldOpenModalAloneDelay = 0,
+
+  shouldCloseModalAlone = false,
+  shouldCloseModalAloneDelay = 1200,
+
+  setCheckModalIsOpen,
 }: Dialog_D_Props): ReactElement => {
   useHide(refToCloseDialogClickingOutside, handleCloseDialog)
+
+  useEffect(() => {
+    let timeoutId: any = null
+
+    if (theRef.current && shouldOpenModalAlone && setCheckModalIsOpen) {
+      timeoutId = setTimeout(() => {
+        theRef.current?.showModal()
+        setCheckModalIsOpen(true)
+      }, shouldOpenModalAloneDelay)
+    }
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    let timeoutId: any = null
+
+    if (theRef.current && shouldCloseModalAlone && setCheckModalIsOpen) {
+      timeoutId = setTimeout(() => {
+        theRef.current?.close()
+        setCheckModalIsOpen(false)
+      }, shouldCloseModalAloneDelay)
+    }
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
+  }, [])
 
   return (
     <Dialog_DWrapper ref={theRef}>
@@ -37,7 +89,7 @@ import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
 export const useDialogLogic = () => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const refToCloseDialogClickingOutside = useRef<HTMLDivElement>(null)
-  const [checkModalIsOpen, setCheckModalIsOpen] = useState(false)
+  const [checkModalIsOpen, setCheckModalIsOpen] = useState<Boolean | any>(false)
 
   const openDialog = ({ event: e }) => {
     if (
@@ -84,6 +136,7 @@ export const useDialogLogic = () => {
     closeDialog,
     refToCloseDialogClickingOutside,
     useHide,
+    setCheckModalIsOpen,
     checkModalIsOpen,
   }
 }

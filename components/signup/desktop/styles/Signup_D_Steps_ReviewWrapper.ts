@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 type Props = {
-  isOpen: boolean
+  checkModalIsOpen: boolean
 }
 
 export const Signup_D_Steps_ReviewWrapper = styled.div<Props>`
@@ -11,7 +11,8 @@ export const Signup_D_Steps_ReviewWrapper = styled.div<Props>`
 
   background-image: url("/background/background2.svg");
 
-  border: ${({ isOpen }) => (isOpen ? "2px solid green" : "2px solid red")};
+  border: ${({ checkModalIsOpen }) =>
+    checkModalIsOpen ? "2px solid green" : "2px solid red"};
 
   & > * {
     width: 596px;
