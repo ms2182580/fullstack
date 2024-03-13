@@ -10,10 +10,17 @@ export const Dialog_DWrapper = styled.dialog`
 
   & > :nth-child(1) {
     display: grid;
-    padding: 24px 32px;
+
+    position: relative;
 
     & > :nth-child(1) {
-      margin-left: auto;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+
+      &:hover {
+        filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.25));
+      }
     }
   }
 `

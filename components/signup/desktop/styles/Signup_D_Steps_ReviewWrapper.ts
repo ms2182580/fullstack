@@ -1,18 +1,11 @@
 import styled from "styled-components"
 
-type Props = {
-  checkModalIsOpen: boolean
-}
-
-export const Signup_D_Steps_ReviewWrapper = styled.div<Props>`
+export const Signup_D_Steps_ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   background-image: url("/background/background2.svg");
-
-  border: ${({ checkModalIsOpen }) =>
-    checkModalIsOpen ? "2px solid green" : "2px solid red"};
 
   & > * {
     width: 596px;

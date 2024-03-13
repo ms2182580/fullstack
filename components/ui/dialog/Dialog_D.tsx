@@ -9,11 +9,9 @@ export type Dialog_D_Props = {
   children: ReactElement
 
   shouldOpenModalAlone?: boolean
-  // shouldOpenModalAloneFn?: ({ delayToOpen }: { delayToOpen: number }) => void
   shouldOpenModalAloneDelay?: number
 
   shouldCloseModalAlone?: boolean
-  // shouldCloseModalAloneFn?: ({ delayToClose }: { delayToClose: number }) => void
   shouldCloseModalAloneDelay?: number
 
   setCheckModalIsOpen?: (e: boolean) => void
@@ -109,8 +107,8 @@ export const useDialogLogic = () => {
       (e.code === "Enter" && e.key === "Enter" && e.type === "keydown") ||
       e.code === "Escape"
     ) {
-      dialogRef?.current?.close()
       setCheckModalIsOpen(false)
+      dialogRef?.current?.close()
     }
   }
 
@@ -118,14 +116,24 @@ export const useDialogLogic = () => {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref?.current?.contains(event.target)) {
+          setCheckModalIsOpen(false)
+          handleStateOutside(event)
+        }
+      }
+
+      function handleKeydownEscape(event) {
+        if (ref.current && event.key === "Escape") {
+          setCheckModalIsOpen(false)
           handleStateOutside(event)
         }
       }
 
       document.addEventListener("mousedown", handleClickOutside)
+      document.addEventListener("keydown", handleKeydownEscape)
 
       return () => {
         document.removeEventListener("mousedown", handleClickOutside)
+        document.removeEventListener("keydown", handleKeydownEscape)
       }
     }, [refToCloseDialogClickingOutside])
   }

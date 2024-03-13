@@ -5,12 +5,9 @@ import {
 } from "@/assets/icons"
 import { Dialog_D, useDialogLogic } from "@/components/ui/dialog/Dialog_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { Signup_D_Steps_Review_Dialog } from "./Signup_D_Steps_Review_Dialog"
 import { Signup_D_Steps_ReviewWrapper } from "./styles/Signup_D_Steps_ReviewWrapper"
 
-/* 
-!FH0
-Create modal here!
-*/
 export const Signup_D_Steps_Review = () => {
   const {
     dialogRef,
@@ -21,15 +18,9 @@ export const Signup_D_Steps_Review = () => {
     checkModalIsOpen,
   } = useDialogLogic()
 
-  // useEffect(() => {
-  //   openDialog()
-
-  //   window.addEventListener("o")
-  // }, [])
-
   return (
     <>
-      <Signup_D_Steps_ReviewWrapper checkModalIsOpen={checkModalIsOpen}>
+      <Signup_D_Steps_ReviewWrapper>
         <div>
           <span>
             <Signup_ReviewSvg />
@@ -47,6 +38,7 @@ export const Signup_D_Steps_Review = () => {
           </span>
         </div>
       </Signup_D_Steps_ReviewWrapper>
+
       <Dialog_D
         theRef={dialogRef}
         handleCloseDialog={(e) => closeDialog({ event: e })}
@@ -57,10 +49,7 @@ export const Signup_D_Steps_Review = () => {
         shouldCloseModalAlone={true}
         shouldCloseModalAloneDelay={3000}
       >
-        <>
-          <h2>Modal here</h2>
-          <p>Some paragraph and so on</p>
-        </>
+        <Signup_D_Steps_Review_Dialog />
       </Dialog_D>
     </>
   )

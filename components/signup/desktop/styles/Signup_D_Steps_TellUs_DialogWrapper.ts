@@ -6,6 +6,8 @@ export const Signup_D_Steps_TellUs_DialogWrapper = styled.div`
   display: grid;
   gap: 8px;
 
+  padding: 56px 32px 24px;
+
   h6 {
     font-size: 20px;
     font-weight: 600;
@@ -13,7 +15,7 @@ export const Signup_D_Steps_TellUs_DialogWrapper = styled.div`
 
   & > :nth-child(3) {
     padding: 24px 12px;
-    border: 2px solid ${NEUTRALS.DARK_GREY_2};
+    border: 2px dotted ${NEUTRALS.DARK_GREY_2};
     border-radius: 16px;
 
     display: grid;
