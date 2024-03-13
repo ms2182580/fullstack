@@ -53,8 +53,6 @@ export const Signup_D_Steps_SituationWrapper = styled.div`
           }
 
           & > p:nth-of-type(2) {
-            /* font-weight: 600; */
-
             line-height: 20px;
           }
 
@@ -119,7 +117,7 @@ export const Signup_D_Steps_SituationWrapper = styled.div`
 type SituationProps = {
   isSelected: boolean
 }
-export const SituationSpan = styled.li<SituationProps>`
+export const SituationSpanWrapper = styled.li<SituationProps>`
   display: flex;
   height: 48px;
   min-width: 130px;
@@ -127,7 +125,7 @@ export const SituationSpan = styled.li<SituationProps>`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-radius: 999px;
+  border-radius: 100px;
   border: 1px solid ${PRIMARY.PRIMARY_CTA};
   background: ${(props) =>
     props.isSelected ? `${PRIMARY.PRIMARY_CTA}` : "white"};
@@ -138,5 +136,6 @@ export const SituationSpan = styled.li<SituationProps>`
   &:hover,
   &:focus-visible {
     filter: drop-shadow(1px 2px 5px hsla(0, 0%, 0%, 0.2));
+    border-radius: 100px;
   }
 `

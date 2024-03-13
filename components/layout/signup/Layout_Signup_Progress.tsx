@@ -9,7 +9,7 @@ export type Props = {
 
 export const Layout_Signup_Progress = ({ actualProgress = 1 }: Props) => {
   return (
-    <Layout_Signup_ProgressWrapper>
+    <Layout_Signup_ProgressWrapper endProgressBar={actualProgress === 4}>
       <progress
         max="4"
         value={actualProgress !== null ? actualProgress : 1}

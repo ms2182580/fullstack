@@ -35,13 +35,13 @@ export const Signup_D_Steps_Demography = () => {
 
       <form>
         <label>
-          Firt Name <input placeholder="Ex John" />
+          First Name <input placeholder="Ex. Jane Smith" />
         </label>
 
         <label>
           Zip code
           <input
-            placeholder="Ex John"
+            placeholder="Enter your zip"
             onFocus={handleZipCodeIsFocus}
             onBlur={handleZipCodeIsBlur}
           />

@@ -50,7 +50,7 @@ export const Signup_D_Steps_CreateProfile = () => {
             <span>Supported file types: .pdf, .docx (15 MB Max)</span>
           </article>
 
-          {data.map(({ icon: SVG, name, content }, index) => (
+          {data.map(({ icon: SVG, name, content }) => (
             <article key={name}>
               <div>
                 <SVG />

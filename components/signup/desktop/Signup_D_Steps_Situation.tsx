@@ -6,7 +6,7 @@ import { Signup_D_Steps_Situation_TooltipText } from "./Signup_D_Steps_Situation
 import { Input } from "./styles/INDEX_D_Signup_HomeWrapper"
 import {
   Signup_D_Steps_SituationWrapper,
-  SituationSpan,
+  SituationSpanWrapper,
 } from "./styles/Signup_D_Steps_SituationWrapper"
 
 let sitautions = [
@@ -79,7 +79,7 @@ export const Signup_D_Steps_Situation = () => {
         </H4>
         <ul>
           {sitautions.map((sitation) => (
-            <SituationSpan
+            <SituationSpanWrapper
               tabIndex={0}
               key={sitation}
               onClick={(e) =>
@@ -91,7 +91,7 @@ export const Signup_D_Steps_Situation = () => {
               isSelected={selected.includes(sitation)}
             >
               {sitation}
-            </SituationSpan>
+            </SituationSpanWrapper>
           ))}
         </ul>
       </form>

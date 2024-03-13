@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export const Layout_Signup_ProgressWrapper = styled.div`
+type Props = {
+  endProgressBar: boolean
+}
+
+export const Layout_Signup_ProgressWrapper = styled.div<Props>`
   display: flex;
   flex-direction: column;
 
@@ -12,7 +16,7 @@ export const Layout_Signup_ProgressWrapper = styled.div`
     border-radius: 0px;
     border: none;
 
-    background-color: #f3f1f3;
+    background: linear-gradient(90deg, #f3f1f3 88%, transparent 95%);
   }
 
   progress::-moz-progress-bar {
