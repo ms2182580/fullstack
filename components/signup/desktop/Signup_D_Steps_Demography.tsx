@@ -54,7 +54,7 @@ export const Signup_D_Steps_Demography = () => {
 
         <label>
           Relationship to account holder
-          <input placeholder="Ex. child, grandchild, nephew," />
+          <input placeholder="Ex. child, grandchild, nephew" />
         </label>
 
         <Input_MultSelectListbox
@@ -71,8 +71,8 @@ export const Signup_D_Steps_Demography = () => {
           />
 
           <label>
-            Language(s) understood{" "}
-            <input placeholder="Ex. parents, sibling, aunt" />
+            Language(s) understood
+            <input placeholder="Ex. English, Spanish" />
           </label>
         </div>
       </form>

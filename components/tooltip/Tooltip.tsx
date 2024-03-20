@@ -38,6 +38,7 @@ export const Tooltip = ({
         otherStateToHideTooltip.forEach((element: any) => {
           element(false)
         })
+        setTooltipState(false)
       }
     }
   }
@@ -53,8 +54,8 @@ export const Tooltip = ({
   return (
     <div
       onMouseEnter={handleShowTooltip}
-      onFocus={handleShowTooltip}
       onMouseLeave={handleHideTooltip}
+      onFocus={handleShowTooltip}
       onBlur={handleHideTooltip}
       tabIndex={0}
       aria-label={whichAriaLabel}

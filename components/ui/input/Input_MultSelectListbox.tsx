@@ -38,9 +38,6 @@ export const Input_MultSelectListbox = ({
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
-            // display: "flex",
-            // alignItems: "center",
-            // margin: "auto",
 
             height: "48px",
             paddingInline: "8px",
@@ -55,17 +52,13 @@ export const Input_MultSelectListbox = ({
             ...baseStyles,
 
             paddingBottom: "12px",
-            // height: "48px",
           }),
 
           multiValueLabel: (baseStyles, state) => ({
             ...baseStyles,
-            // height: "48px",
           }),
           multiValue: (baseStyles, state) => ({
             ...baseStyles,
-            //
-            // height: "48px",
             backgroundColor: "#FFE7DB",
             borderRadius: "12px",
 
