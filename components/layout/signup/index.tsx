@@ -213,13 +213,11 @@ export const Layout_Signup = ({ children, title }) => {
       >
         {whichDataShouldDisplay.title !== null &&
         whichDataShouldDisplay.paragraph !== null ? (
-          <>
-            <aside>
-              <INDEX_Logo logoColor={NEUTRALS.OFF_WHITE} />
-              <H3>{whichDataShouldDisplay.title}</H3>
-              <P>{whichDataShouldDisplay.paragraph}</P>
-            </aside>
-          </>
+          <aside>
+            <INDEX_Logo logoColor={NEUTRALS.OFF_WHITE} />
+            <H3>{whichDataShouldDisplay.title}</H3>
+            <P>{whichDataShouldDisplay.paragraph}</P>
+          </aside>
         ) : (
           <INDEX_Logo />
         )}

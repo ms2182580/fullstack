@@ -9,6 +9,7 @@ type Props = {
 
 export const Layout_Signup_Wrapper = styled.div<Props>`
   ${defaultWidthWebsite()};
+
   position: relative;
 
   display: grid;
