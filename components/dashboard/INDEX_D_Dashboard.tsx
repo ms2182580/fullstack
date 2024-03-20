@@ -37,8 +37,6 @@ export const INDEX_D_Dashboard = () => {
       )}
       {isChat && <INDEX_D_AIChatPopup showModalToggle={patchHotFix} />}
       {isUpload && <INDEX_D_UploadFile />}
-
-      <h2>where is this?</h2>
     </INDEX_D_DashboardWrapper>
   )
 }

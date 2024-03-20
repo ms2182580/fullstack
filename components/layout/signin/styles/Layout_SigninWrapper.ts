@@ -1,11 +1,13 @@
 import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
+import { defaultWidthWebsite } from "../../index/styles/DefaultWidthWebsite"
 
 type Props = {
   isShowSidebar?: boolean
   colorBottom?: boolean
 }
 export const Layout_SigninWrapper = styled.div<Props>`
+  ${defaultWidthWebsite()};
   display: flex;
 
   aside {
