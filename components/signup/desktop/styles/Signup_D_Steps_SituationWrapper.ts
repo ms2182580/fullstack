@@ -128,8 +128,9 @@ export const SituationSpanWrapper = styled.li<SituationProps>`
   border-radius: 100px;
   border: 1px solid ${PRIMARY.PRIMARY_CTA};
   background: ${(props) =>
-    props.isSelected ? `${PRIMARY.PRIMARY_CTA}` : "white"};
-  color: ${(props) => (props.isSelected ? "white" : `${PRIMARY.PRIMARY_CTA}`)};
+    props.isSelected ? `${PRIMARY.PRIMARY_CTA}` : `${NEUTRALS.OFF_WHITE}`};
+  color: ${(props) =>
+    props.isSelected ? `${NEUTRALS.OFF_WHITE}` : `${PRIMARY.PRIMARY_CTA}`};
 
   cursor: default;
 

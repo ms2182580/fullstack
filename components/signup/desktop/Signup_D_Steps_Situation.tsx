@@ -9,7 +9,7 @@ import {
   SituationSpanWrapper,
 } from "./styles/Signup_D_Steps_SituationWrapper"
 
-let sitautions = [
+export let Signup_D_Steps_Situation_Options = [
   "Vision impaired",
   "Mental health",
   "Self-destructive behavior",
@@ -23,16 +23,11 @@ let sitautions = [
 ]
 
 export const Signup_D_Steps_Situation = () => {
-  const [selected, setSelected] = useState([
-    "Vision impaired",
-    "Physically impaired",
-  ])
+  const [selected, setSelected] = useState([""])
 
   const handeSelectSituation = ({ event, situationSelected }) => {
-    if (
-      event.type === "click" ||
-      (event.key === "Enter" && event.type === "keydown")
-    ) {
+    // console.log("event:", event)
+    if (event.key === "Enter" || event.type === "click") {
       if (selected.includes(situationSelected)) {
         setSelected(selected.filter((s) => s !== situationSelected))
       } else {
@@ -77,20 +72,20 @@ export const Signup_D_Steps_Situation = () => {
         <H4>
           Please select what pertains to your loved <br /> one’s situation
         </H4>
-        <ul>
-          {sitautions.map((sitation) => (
+        <ul data-testid="options">
+          {Signup_D_Steps_Situation_Options.map((situation) => (
             <SituationSpanWrapper
               tabIndex={0}
-              key={sitation}
+              key={situation}
               onClick={(e) =>
-                handeSelectSituation({ event: e, situationSelected: sitation })
+                handeSelectSituation({ event: e, situationSelected: situation })
               }
               onKeyDown={(e) =>
-                handeSelectSituation({ event: e, situationSelected: sitation })
+                handeSelectSituation({ event: e, situationSelected: situation })
               }
-              isSelected={selected.includes(sitation)}
+              isSelected={selected.includes(situation)}
             >
-              {sitation}
+              {situation}
             </SituationSpanWrapper>
           ))}
         </ul>
