@@ -13,7 +13,7 @@ export const Layout_Signin = ({ children }) => {
         <P>Sign in to access your saved resources and care plan(s).</P>
       </aside>
 
-      <div>{children}</div>
+      <main>{children}</main>
     </Layout_SigninWrapper>
   )
 }

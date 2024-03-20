@@ -228,7 +228,9 @@ export const Layout_Signup = ({ children, title }) => {
             actualProgress={topBottomLayout.topProgressbarActualStep}
           />
         )}
-        <div>{children}</div>
+
+        <main>{children}</main>
+
         {topBottomLayout.shouldNotShowBottom ? null : (
           <Layout_Signup_Footer
             howManyButtons={whichDataShouldDisplay.footerData?.howManyButtons}

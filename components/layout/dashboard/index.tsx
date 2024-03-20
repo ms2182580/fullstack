@@ -11,7 +11,7 @@ export const Layout_Dashboard = ({ children }) => {
       <INDEX_D_Sidebar />
       <div>
         <INDEX_D_Dashboard_Header />
-        {children}
+        <main>{children}</main>
       </div>
     </Layout_DashboardWrapper>
   )

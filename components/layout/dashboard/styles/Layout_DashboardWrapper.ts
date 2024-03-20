@@ -4,7 +4,7 @@ import { defaultWidthWebsite } from "../../index/styles/DefaultWidthWebsite"
 type Props = {
   isCreatePlan: boolean
 }
-export const Layout_DashboardWrapper = styled.main<Props>`
+export const Layout_DashboardWrapper = styled.div<Props>`
   ${defaultWidthWebsite()};
   display: flex;
 

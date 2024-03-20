@@ -5,7 +5,7 @@ type Props = {
   isShowSidebar?: boolean
   colorBottom?: boolean
 }
-export const Layout_SigninWrapper = styled.main<Props>`
+export const Layout_SigninWrapper = styled.div<Props>`
   display: flex;
 
   aside {
