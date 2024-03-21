@@ -4,8 +4,8 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Fragment } from "react"
 import {
-  Signup_D_Steps_TellUs_Cards,
-  Signup_D_Steps_TellUs_Cards_Props,
+  Signup_D_Steps_TellUs_Input,
+  Signup_D_Steps_TellUs_Input_Props,
 } from "./Signup_D_Steps_TellUs_Cards"
 import { Signup_D_Steps_TellUs_Dialog } from "./Signup_D_Steps_TellUs_Dialog"
 import { Signup_D_Steps_TellUsWrapper } from "./styles/Signup_D_Steps_TellUsWrapper"
@@ -41,36 +41,37 @@ const leftCardPersonalityData: { left: string; right: string }[] = [
   },
 ]
 
-const rightCardsData: Signup_D_Steps_TellUs_Cards_Props[] = [
-  {
-    titleText: "My Situation",
-    placeholder: "I need help with . . .",
-  },
-  {
-    titleText: "Care needs",
-    placeholder: "My care needs are . . .",
-  },
-  {
-    titleText: "Cultural considerations",
-    placeholder: "In my culture, it is important . . . ",
-  },
-  {
-    titleText: "Skills",
-    placeholder: "I am skilled at . . .",
-  },
-  {
-    titleText: "Likes and dislikes",
-    placeholder: "I like . . .  I don’t like . . .",
-  },
-  {
-    titleText: "Health and medications",
-    placeholder: "I take _ and _ twice per day . . . ",
-  },
-  {
-    titleText: "Aspirations",
-    placeholder: "In the future I want to . . .",
-  },
-]
+export const Signup_D_Steps_TellUs_Input_Data: Signup_D_Steps_TellUs_Input_Props[] =
+  [
+    {
+      titleText: "My Situation",
+      placeholder: "I need help with . . .",
+    },
+    {
+      titleText: "Care needs",
+      placeholder: "My care needs are . . .",
+    },
+    {
+      titleText: "Cultural considerations",
+      placeholder: "In my culture, it is important . . . ",
+    },
+    {
+      titleText: "Skills",
+      placeholder: "I am skilled at . . .",
+    },
+    {
+      titleText: "Likes and dislikes",
+      placeholder: "I like . . .  I don’t like . . .",
+    },
+    {
+      titleText: "Health and medications",
+      placeholder: "I take _ and _ twice per day . . . ",
+    },
+    {
+      titleText: "Aspirations",
+      placeholder: "In the future I want to . . .",
+    },
+  ]
 
 export const Signup_D_Steps_TellUs = () => {
   const {
@@ -130,7 +131,7 @@ export const Signup_D_Steps_TellUs = () => {
                 Location: <span>19130</span>
               </span>
               <span>
-                Language:<span>English, Tagalog</span>
+                Language: <span>English, Tagalog</span>
               </span>
               <span>
                 I have: <span>ASD, ADHD</span>
@@ -140,7 +141,7 @@ export const Signup_D_Steps_TellUs = () => {
 
           <H4>Personality</H4>
           <div>
-            {leftCardPersonalityData.map(({ left, right }, index) => {
+            {leftCardPersonalityData.map(({ left, right }) => {
               return (
                 <div key={`${left}_${right}`}>
                   <span>
@@ -154,16 +155,18 @@ export const Signup_D_Steps_TellUs = () => {
           </div>
         </article>
 
-        {rightCardsData.map(({ titleText, placeholder }, index) => {
-          return (
-            <Fragment key={`${titleText}_${index}`}>
-              <Signup_D_Steps_TellUs_Cards
-                titleText={titleText}
-                placeholder={placeholder}
-              />
-            </Fragment>
-          )
-        })}
+        {Signup_D_Steps_TellUs_Input_Data.map(
+          ({ titleText, placeholder }, index) => {
+            return (
+              <Fragment key={`${titleText}_${index}`}>
+                <Signup_D_Steps_TellUs_Input
+                  titleText={titleText}
+                  placeholder={placeholder}
+                />
+              </Fragment>
+            )
+          }
+        )}
       </div>
     </Signup_D_Steps_TellUsWrapper>
   )

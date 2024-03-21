@@ -3,15 +3,15 @@ import { Tooltip } from "@/components/tooltip/Tooltip"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { Signup_D_Steps_TellUs_CardsWrapper } from "./styles/Signup_D_Steps_TellUs_CardsWrapper"
 
-export type Signup_D_Steps_TellUs_Cards_Props = {
+export type Signup_D_Steps_TellUs_Input_Props = {
   titleText: string
   placeholder: string
 }
 
-export const Signup_D_Steps_TellUs_Cards = ({
+export const Signup_D_Steps_TellUs_Input = ({
   titleText,
   placeholder,
-}: Signup_D_Steps_TellUs_Cards_Props) => {
+}: Signup_D_Steps_TellUs_Input_Props) => {
   return (
     <Signup_D_Steps_TellUs_CardsWrapper>
       <P>{titleText}</P>

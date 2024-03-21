@@ -29,7 +29,6 @@ export const Dialog_D = ({
 
   shouldCloseModalAlone = false,
   shouldCloseModalAloneDelay = 1200,
-
   setCheckModalIsOpen,
 }: Dialog_D_Props): ReactElement => {
   useHide(refToCloseDialogClickingOutside, handleCloseDialog)
@@ -101,11 +100,12 @@ export const useDialogLogic = () => {
   }
 
   const closeDialog = ({ event: e }) => {
+    console.log("e:", e)
     if (
-      e.type === "mousedown" ||
-      e.type === "click" ||
-      (e.code === "Enter" && e.key === "Enter" && e.type === "keydown") ||
-      e.code === "Escape"
+      e?.type === "mousedown" ||
+      e?.type === "click" ||
+      (e?.code === "Enter" && e?.key === "Enter" && e?.type === "keydown") ||
+      e?.code === "Escape"
     ) {
       setCheckModalIsOpen(false)
       dialogRef?.current?.close()
