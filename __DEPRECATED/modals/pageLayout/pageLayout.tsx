@@ -1,4 +1,3 @@
-import { useCheckUserWidth } from "@/context/CheckUserWidth.js"
 import {
   KEYS_VALUES_useSessionStorage,
   useSessionStorage_typedFlow,
@@ -35,7 +34,6 @@ const Footer_Mobile = dynamic(
 ) */
 
 export const Page_layout = ({ children, title = "INCLUSIVE" }) => {
-  const { isMobile }: any = useCheckUserWidth()
   const { push, pathname } = useRouter()
 
   let { actualSessionStorage }: any = useSessionStorage_typedFlow()

@@ -121,21 +121,39 @@ const stepsMessagessAside: StepsMessagess_Type = {
   },
 }
 
-const formattingRoute = ({
-  routeToCheck,
-}): {
-  actualRouteIsValid: boolean
-  actualRoute: string
-} => {
-  const actualRoute = routeToCheck.split("/").at(-1)?.toUpperCase()
+let SIGNUP_STEPS = {
+  SIGNUP: "signup",
+  WHO_ARE_YOU: "who_are_you",
+  CREATE_PROFILE: "create_profile",
+  DEMOGRAPHY: "demography",
+  SITUATION: "situation",
+  TELL_US_YOUR_STORY: "tell_us_your_story",
+  REVIEW_AND_SAVE: "review_and_save",
+  FINISH: "finish",
+}
 
-  const actualRouteIsValid = Object.keys(ALL_ROUTES.SIGNUP_STEPS).some(
-    (x) => x === actualRoute
-  )
+type TypeUseFormattingRoute = {
+  routeToCheck: string
+  acceptedRoutes: string[]
+}
+
+const useFormattingRoute = ({
+  routeToCheck,
+  acceptedRoutes,
+}: TypeUseFormattingRoute): {
+  actualRoute: string
+  formatRouteToTitle: string | null
+  actualRouteIsValid: boolean
+} => {
+  const actualRoute = routeToCheck?.split("/").at(-1)?.toUpperCase() || ""
+  const formatRouteToTitle = actualRoute?.split("_").join(" ") || null
+
+  const actualRouteIsValid = acceptedRoutes.some((x) => x === actualRoute)
 
   return {
-    actualRouteIsValid,
     actualRoute,
+    formatRouteToTitle,
+    actualRouteIsValid,
   }
 }
 
@@ -143,19 +161,19 @@ export const Layout_Signup = ({ children, title }) => {
   const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
-  useEffect(() => {
-    if (isReady) {
-      let { actualRouteIsValid } = formattingRoute({ routeToCheck: asPath })
+  const { actualRoute, formatRouteToTitle, actualRouteIsValid } =
+    useFormattingRoute({
+      acceptedRoutes: Object.keys(ALL_ROUTES.SIGNUP_STEPS),
+      routeToCheck: asPath,
+    })
 
-      if (actualRouteIsValid === false) {
-        push("/404")
-      }
+  useEffect(() => {
+    if (isReady && actualRouteIsValid === false) {
+      push("/404")
     }
   }, [isReady])
 
   const whichDataShouldDisplay = useMemo((): WhichDataShouldDisplay_Type => {
-    let { actualRoute } = formattingRoute({ routeToCheck: asPath })
-
     let objectData = stepsMessagessAside[`${actualRoute}`]
 
     return {
@@ -166,9 +184,7 @@ export const Layout_Signup = ({ children, title }) => {
   }, [asPath])
 
   const topBottomLayout = useMemo((): TopBottomLayout_Type => {
-    let { actualRoute } = formattingRoute({ routeToCheck: asPath })
-
-    let theRouteFormatted = actualRoute.toLowerCase()
+    let theRouteFormatted = actualRoute?.toLowerCase()
 
     let shouldNotShowTop =
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
@@ -180,21 +196,19 @@ export const Layout_Signup = ({ children, title }) => {
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH
 
     let topProgressbarActualStep: Layout_Signup_Progress_Props =
-      stepsMessagessAside[`${theRouteFormatted.toUpperCase()}`]?.progressBar
+      stepsMessagessAside[`${theRouteFormatted?.toUpperCase()}`]?.progressBar
 
     return { shouldNotShowTop, shouldNotShowBottom, topProgressbarActualStep }
   }, [asPath])
 
-  let { actualRoute } = formattingRoute({ routeToCheck: asPath })
-
-  const formatRouteToTitle: string = actualRoute.split("_").join(" ")
+  if (formatRouteToTitle === null || actualRouteIsValid === false) return null
 
   return (
     <>
       <Head>
         <title>
           {title} Signup
-          {actualRoute.toLocaleLowerCase() !== ALL_ROUTES.SIGNUP_STEPS.SIGNUP
+          {actualRoute?.toLocaleLowerCase() !== ALL_ROUTES.SIGNUP_STEPS.SIGNUP
             ? ` - ${formatRouteToTitle}`
             : null}
         </title>
@@ -207,7 +221,7 @@ export const Layout_Signup = ({ children, title }) => {
           whichDataShouldDisplay.paragraph !== null
         }
         shouldShowBackground={
-          actualRoute.toLocaleLowerCase() ===
+          actualRoute?.toLocaleLowerCase() ===
           ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE
         }
       >

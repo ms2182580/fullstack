@@ -100,7 +100,6 @@ export const useDialogLogic = () => {
   }
 
   const closeDialog = ({ event: e }) => {
-    console.log("e:", e)
     if (
       e?.type === "mousedown" ||
       e?.type === "click" ||

@@ -1,8 +1,9 @@
-import { useCheckUserWidth } from "@/context/CheckUserWidth"
+import { LoadingComponent } from "@/components/loading/LoadingComponent"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
+import { useWidthSize } from "@/utils/useWidthSize"
 import dynamic from "next/dynamic"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
@@ -28,7 +29,8 @@ const INDEX_ORG_Detail_M = dynamic(
 
 export default function ORG_Detail() {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
-  const { isMobile }: any = useCheckUserWidth()
+  // const { isMobile }: any = useCheckUserWidth()
+  const { isMobile } = useWidthSize()
 
   const { thirdpageDataORG: thirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
@@ -63,20 +65,14 @@ export default function ORG_Detail() {
     return false
   }, [thirdpageDataORG, query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]])
 
+  if (isMobile === undefined) {
+    return <LoadingComponent />
+  }
+
   return (
     <>
       {shouldRenderThePage && (
-        <>
-          {isMobile === false ? (
-            <>
-              <INDEX_ORG_Detail_D />
-            </>
-          ) : (
-            <>
-              <INDEX_ORG_Detail_M />
-            </>
-          )}
-        </>
+        <>{isMobile ? <INDEX_ORG_Detail_M /> : <INDEX_ORG_Detail_D />}</>
       )}
     </>
   )

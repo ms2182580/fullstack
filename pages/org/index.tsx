@@ -1,9 +1,10 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
-import dynamic from "next/dynamic"
 import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { getMentalHealth } from "@/utils/org/tRPC-fetch/getMentalHealth"
 import { trpc } from "@/utils/trpc"
-import { useCheckUserWidth } from "../../context/CheckUserWidth"
+import { useWidthSize } from "@/utils/useWidthSize"
+import dynamic from "next/dynamic"
+
 const INDEX_D_ORG = dynamic(
   () =>
     import("@/components/org/home/desktop/INDEX_D_ORG").then(
@@ -20,7 +21,8 @@ const INDEX_D_ORG = dynamic(
 // )
 
 const ORG_INDEX = () => {
-  const { isMobile }: any = useCheckUserWidth()
+  // const { isMobile }: any = useCheckUserWidth()
+  const { isMobile } = useWidthSize()
 
   const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
   // const filteredData = trpc.mentalHealth.getAll.useQuery({
@@ -60,12 +62,8 @@ const ORG_INDEX = () => {
   //   )
   // }
 
-  if (!mentalHealthData.data) {
-    return (
-      <>
-        <LoadingComponent />
-      </>
-    )
+  if (!mentalHealthData.data || isMobile === undefined) {
+    return <LoadingComponent />
   }
 
   return (

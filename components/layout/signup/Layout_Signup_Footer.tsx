@@ -35,12 +35,9 @@ export const Layout_Signup_Footer = ({
 }: Layout_Signup_Footer_Props) => {
   const render = useMemo(() => {
     if (howManyButtons === 1) {
-      return (
-        <>
-          <Link href={toWhere}>{textButtons?.second}</Link>
-        </>
-      )
+      return <Link href={toWhere}>{textButtons?.second}</Link>
     }
+
     return (
       <>
         <Link href={toPrevious}>{textButtons?.first || "back"}</Link>

@@ -6,7 +6,6 @@ import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { ORG_Ctx_D_ThirdpageData_Backend_Provider } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
-import { CheckUserWidth_Provider } from "../context/CheckUserWidth.js"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
 import { NavbarHomeHeight_Provider } from "../context/NavbarHome_Ctx_Height.js"
@@ -31,11 +30,6 @@ import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
 
 function MyApp({ Component, pageProps }) {
-  // const router = useRouter()
-  // const pathname = router.pathname
-  // let isDashboard = !!pathname.includes("/dashboard")
-  // let isEditor = !!pathname.includes("/editor")
-
   return (
     <LoginCtxProvider>
       <ORG_InputCtxProvider>
@@ -58,38 +52,14 @@ function MyApp({ Component, pageProps }) {
                                         <ORG_Ctx_D_ThirdpageData_Backend_Provider>
                                           <ORG_Ctx_D_ThirdpageData_Provider>
                                             <ORG_Ctx_2Page_Provider>
-                                              <CheckUserWidth_Provider>
-                                                <NavbarHomeHeight_Provider>
-                                                  <Ctx_sessionStorage_typedFlow_Provider>
-                                                    <Dashboard_Ctx_AICHAT_Provider>
-                                                      <Dashboard_Ctx_Editor_AICHAT_Provider>
-                                                        <Dashboard_Ctx_AICHAT_UploadFile_Provider>
-                                                          <Ctx_Signup_Provider>
-                                                            {/* {isDashboard ? (
-                                                              <Dashboard_D_Layout>
-                                                                <GlobalStyle />
-                                                                <link
-                                                                  rel="icon"
-                                                                  href="/favicon.ico"
-                                                                />
-                                                                <Component
-                                                                  {...pageProps}
-                                                                />
-                                                              </Dashboard_D_Layout>
-                                                            ) : (
-                                                              <Page_layout>
-                                                                <GlobalStyle />
-                                                                <link
-                                                                  rel="icon"
-                                                                  href="/favicon.ico"
-                                                                />
-                                                                <Component
-                                                                  {...pageProps}
-                                                                />
-                                                              </Page_layout>
-                                                            )} */}
-
-                                                            <Layout>
+                                              <NavbarHomeHeight_Provider>
+                                                <Ctx_sessionStorage_typedFlow_Provider>
+                                                  <Dashboard_Ctx_AICHAT_Provider>
+                                                    <Dashboard_Ctx_Editor_AICHAT_Provider>
+                                                      <Dashboard_Ctx_AICHAT_UploadFile_Provider>
+                                                        <Ctx_Signup_Provider>
+                                                          {/* {isDashboard ? (
+                                                            <Dashboard_D_Layout>
                                                               <GlobalStyle />
                                                               <link
                                                                 rel="icon"
@@ -98,14 +68,36 @@ function MyApp({ Component, pageProps }) {
                                                               <Component
                                                                 {...pageProps}
                                                               />
-                                                            </Layout>
-                                                          </Ctx_Signup_Provider>
-                                                        </Dashboard_Ctx_AICHAT_UploadFile_Provider>
-                                                      </Dashboard_Ctx_Editor_AICHAT_Provider>
-                                                    </Dashboard_Ctx_AICHAT_Provider>
-                                                  </Ctx_sessionStorage_typedFlow_Provider>
-                                                </NavbarHomeHeight_Provider>
-                                              </CheckUserWidth_Provider>
+                                                            </Dashboard_D_Layout>
+                                                          ) : (
+                                                            <Page_layout>
+                                                              <GlobalStyle />
+                                                              <link
+                                                                rel="icon"
+                                                                href="/favicon.ico"
+                                                              />
+                                                              <Component
+                                                                {...pageProps}
+                                                              />
+                                                            </Page_layout>
+                                                          )} */}
+
+                                                          <Layout>
+                                                            <GlobalStyle />
+                                                            <link
+                                                              rel="icon"
+                                                              href="/favicon.ico"
+                                                            />
+                                                            <Component
+                                                              {...pageProps}
+                                                            />
+                                                          </Layout>
+                                                        </Ctx_Signup_Provider>
+                                                      </Dashboard_Ctx_AICHAT_UploadFile_Provider>
+                                                    </Dashboard_Ctx_Editor_AICHAT_Provider>
+                                                  </Dashboard_Ctx_AICHAT_Provider>
+                                                </Ctx_sessionStorage_typedFlow_Provider>
+                                              </NavbarHomeHeight_Provider>
                                             </ORG_Ctx_2Page_Provider>
                                           </ORG_Ctx_D_ThirdpageData_Provider>
                                         </ORG_Ctx_D_ThirdpageData_Backend_Provider>
@@ -129,5 +121,19 @@ function MyApp({ Component, pageProps }) {
     </LoginCtxProvider>
   )
 }
+
+// export const getStaticProps = ({ req }) => {
+//   let userAgent
+//   if (req) {
+//     // if you are on the server and you get a 'req' property from your context
+//     userAgent = req.headers["user-agent"] // get the user-agent from the headers
+//   } else {
+//     userAgent = navigator.userAgent // if you are on the client you can access the navigator from the window object
+//   }
+
+//   return {
+//     props: { userAgent },
+//   }
+// }
 
 export default trpc.withTRPC(MyApp)

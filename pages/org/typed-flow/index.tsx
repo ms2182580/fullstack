@@ -1,7 +1,8 @@
 // import { INDEX_TypedFlow_D } from "@/components/org/typed-flow/desktop/INDEX_TypedFlow_D"
 // import { INDEX_TypedFlow_M } from "@/components/org/typed-flow/mobile/INDEX_TypedFlow_M"
-import { useCheckUserWidth } from "@/context/CheckUserWidth"
+import { useWidthSize } from "@/utils/useWidthSize"
 import dynamic from "next/dynamic"
+
 const INDEX_TypedFlow_D = dynamic(
   () =>
     import("@/components/org/typed-flow/desktop/INDEX_TypedFlow_D").then(
@@ -21,7 +22,8 @@ const INDEX_TypedFlow_M = dynamic(
   }
 )
 export default function INDEX_TypedFlow_Results_D() {
-  const { isMobile }: any = useCheckUserWidth()
+  // const { isMobile }: any = useCheckUserWidth()
+  const { isMobile } = useWidthSize()
   /* 
   - ❔If the user arrive here after completing the welcome path, should be move to pathname/org/ with a focus on the corresponding input to type // What does this mean?
   !FH
@@ -30,13 +32,13 @@ export default function INDEX_TypedFlow_Results_D() {
 
   return (
     <>
-      {isMobile === false ? (
+      {isMobile ? (
         <>
-          <INDEX_TypedFlow_D />
+          <INDEX_TypedFlow_M />
         </>
       ) : (
         <>
-          <INDEX_TypedFlow_M />
+          <INDEX_TypedFlow_D />
         </>
       )}
     </>
