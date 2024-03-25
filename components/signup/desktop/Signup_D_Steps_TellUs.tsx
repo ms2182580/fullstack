@@ -100,7 +100,7 @@ export const Signup_D_Steps_TellUs = () => {
         </button>
       </div>
 
-      <div>
+      <div data-testid="card-section">
         <article>
           <div>
             <div>

@@ -18,21 +18,21 @@ export const Signup_D_Steps_TellUs_Input = ({
       <div>
         <textarea placeholder={placeholder} />
         <ul>
-          <li>
+          <li data-testid="li-tooltip">
             <Tooltip
               whichIconToUse={<Signup_MicSvg />}
               dataOnTooltip="Record audio"
               whichAriaLabel="record audio"
             />
           </li>
-          <li>
+          <li data-testid="li-tooltip">
             <Tooltip
               whichIconToUse={<Signup_FileSvg />}
               dataOnTooltip="Attach file"
               whichAriaLabel="Attach file"
             />
           </li>
-          <li>
+          <li data-testid="li-tooltip">
             <Tooltip
               whichIconToUse={<Signup_StartsSvg />}
               dataOnTooltip={"Summarize with AI"}

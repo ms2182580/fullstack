@@ -172,7 +172,5 @@ describe(`Testing ${Signup_D_Steps_Demography.name}`, (ctx_describe) => {
         })
       })
     })
-    
-    
   })
 })

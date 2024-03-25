@@ -12,7 +12,7 @@ type Props = {
   checkModalIsOpen: boolean
 }
 
-export const Signup_D_Steps_TellUsWrapper = styled.div<Props>`
+export const Signup_D_Steps_TellUsWrapper = styled.article<Props>`
   margin-inline: 69px;
 
   margin-bottom: 46px;
@@ -218,6 +218,30 @@ export const Signup_D_Steps_TellUsWrapper = styled.div<Props>`
 
     & > :nth-child(2) {
       grid-area: mySituation;
+    }
+
+    & > :nth-child(3) {
+      grid-area: careNeeds;
+    }
+
+    & > :nth-child(4) {
+      grid-area: culturalConsiderations;
+    }
+
+    & > :nth-child(5) {
+      grid-area: skills;
+    }
+
+    & > :nth-child(6) {
+      grid-area: likesAndDislikes;
+    }
+
+    & > :nth-child(7) {
+      grid-area: healthAndMedication;
+    }
+
+    & > :nth-child(8) {
+      grid-area: aspirations;
     }
   }
 
