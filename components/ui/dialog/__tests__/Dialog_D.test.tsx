@@ -75,7 +75,7 @@ describe(`Testing ${Dialog_D.name}`, (ctx_describe) => {
   })
 
   describe("Dialog is open plus React state for open", (ctx_describe) => {
-    // !FH-Playwright → Do this with Playwright for better approach on the UI
+    // !FH-Playwright → Re do this with Playwright for better approach on the UI
 
     it("With click", async (ctx_it) => {
       const vOpenDialog = vi.fn()
