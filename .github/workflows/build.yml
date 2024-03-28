@@ -1,4 +1,4 @@
-name: "Tests Playwright"
+name: "Run Build"
 on:
   push:
     branches: [main, master]
