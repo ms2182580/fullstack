@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/vitest"
-import { cleanup, render, screen } from "@testing-library/react"
+import { cleanup, fireEvent, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it, vi } from "vitest"
 import { Dialog_D, useDialogLogic } from "../Dialog_D"
@@ -74,9 +74,28 @@ describe(`Testing ${Dialog_D.name}`, (ctx_describe) => {
     ).toMatchFileSnapshot(`./__snapshots__/${Dialog_D.name}.html`)
   })
 
-  /* !FH-Playwright Do this with Playwright for better approach on the UI  */
   describe("Dialog is open plus React state for open", (ctx_describe) => {
+    // !FH-Playwright → Re do this with Playwright for better approach on the UI
+
     it("With click", async (ctx_it) => {
+      const vOpenDialog = vi.fn()
+      const vCloseDialog = vi.fn()
+
+      render(
+        <TestingDialog vOpenDialog={vOpenDialog} vCloseDialog={vCloseDialog} />
+      )
+      const getData = screen.getByText("Open Dialog")
+
+      expect(getData).toBeInTheDocument()
+
+      const user = userEvent.setup()
+
+      await user.click(getData)
+
+      expect(vOpenDialog).toHaveBeenCalledTimes(1)
+    })
+
+    it("With enter key", async (ctx_it) => {
       const vOpenDialog = vi.fn()
       const vCloseDialog = vi.fn()
 
@@ -85,23 +104,24 @@ describe(`Testing ${Dialog_D.name}`, (ctx_describe) => {
       )
 
       const getData = screen.getByText("Open Dialog")
-
-      expect(getData).toBeVisible()
+      expect(getData).toBeInTheDocument()
 
       const user = userEvent.setup()
 
-      await user.click(getData)
+      await user.tab()
+      expect(getData).toHaveFocus()
 
+      fireEvent.keyDown(getData, { key: "Enter" })
       expect(vOpenDialog).toHaveBeenCalledTimes(1)
     })
-    /* !FH0 */
-    it("With enter key", (ctx_it) => {})
   })
 
   describe.todo(
     "Dialog is close plus React state for close",
     (ctx_describe) => {
-      it("Clicking on X", (ctx_it) => {})
+      // !FH-Playwright → Do this with Playwright for better approach on the UI
+
+      it("Clicking on X", async (ctx_it) => {})
       it("Clicking outside the modal", (ctx_it) => {})
 
       it("Pressing Enter on X when is focus", (ctx) => {})

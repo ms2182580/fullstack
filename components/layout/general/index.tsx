@@ -51,12 +51,6 @@ export const Layout_General = ({ children }) => {
     <>
       {isMobile ? <NavBar_M /> : <Home_D_NavBar_N />}
 
-      {/* {isMobile === true ? (
-        <NavBar_Mobile />
-      ) : isMobile === false ? (
-        <NavBar_Desktop />
-      ) : null} */}
-
       <MainWrapper isMainInHome={pathname === "/"}>
         {children}
 

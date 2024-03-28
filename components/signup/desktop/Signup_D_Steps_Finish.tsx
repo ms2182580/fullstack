@@ -13,10 +13,9 @@ export const Signup_D_Steps_Finish = () => {
         verification link to validate <br /> your account. The link will expire
         in 15 minutes.
       </P>
-      <span>
-        <P>Resend verification email to jd**24@gmail.com?</P>
-        <a href="#">Resend</a>
-      </span>
+      <P>
+        Resend verification email to jd**24@gmail.com? <a href="#">Resend</a>
+      </P>
     </Signup_D_Steps_FinishWrapper>
   )
 }

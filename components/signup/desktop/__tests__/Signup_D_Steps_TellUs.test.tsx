@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/vitest"
-import { cleanup, render } from "@testing-library/react"
+import { cleanup, render, screen } from "@testing-library/react"
 import { afterEach, describe, expect, it } from "vitest"
 import {
   Signup_D_Steps_TellUs,
@@ -22,17 +22,82 @@ describe(`Testing ${Signup_D_Steps_TellUs.name}`, (ctx_describe) => {
     )
   })
 
-  describe("Testing input text", (ctx_describe) => {
-    it("Amount of input text is correct", (ctx_it) => {
-      expect(Signup_D_Steps_TellUs_Input_Data).toHaveLength(7)
+  describe(`Component ${Signup_D_Steps_TellUs.name} is using grid and have an expected layout (this is an test of implementation)`, (ctx_describe) => {
+    it("Component is using grid and other grid styles", (ctx_it) => {
+      const getData = screen.getByTestId("card-section")
+
+      expect(getData).toHaveStyle({
+        display: "grid",
+        //!This next two test are particular fragile, becuase it needs to have this format
+        gridTemplateAreas: `"mainCard mySituation mySituation mySituation" "mainCard careNeeds culturalConsiderations skills" "mainCard likesAndDislikes healthAndMedication aspirations"`,
+        gridTemplateColumns: `minmax(250px,auto) repeat(3,1fr)`,
+      })
+    })
+    it("Main card is using all left space", (ctx_it) => {
+      render(<Signup_D_Steps_TellUs />)
+      const getAllData = screen.getAllByRole("article")
+
+      expect(getAllData[1]).toHaveStyle({
+        gridArea: "mainCard",
+      })
     })
 
-    it("All input text have: some kind of title", (ctx) => {})
-    it("All input text have: placeholder", (ctx) => {})
-    it("All input text have: three icons and a tooltip for every icon", (ctx) => {})
+    describe("Inputs are using the correct space on grid layout", (ctx_it) => {
+      let allGridAreas = [
+        "mySituation",
+        "careNeeds",
+        "culturalConsiderations",
+        "skills",
+        "likesAndDislikes",
+        "healthAndMedication",
+        "aspirations",
+      ]
 
-    it("All inputs can be focus and every icon with tab key", (ctx) => {})
+      for (const x in Signup_D_Steps_TellUs_Input_Data) {
+        let xToNumber = Number(x)
+        /*
+         * The reason to use the number 2 is because in the component, there is 2 articles before it start the inputs. Remember, this is an implementation test to check the UI
+         */
+        let whereToSearch = 2 + xToNumber
 
-    it("The user can type on every input text", (ctx) => {})
+        it(`Testing ${Signup_D_Steps_TellUs_Input_Data[x].titleText}: styles, tooltip, text and placeholder`, (ctx) => {
+          const getAllData = screen.getAllByRole("article")
+
+          expect(getAllData[whereToSearch]).toHaveStyle({
+            gridArea: allGridAreas[xToNumber],
+          })
+
+          expect(getAllData[whereToSearch]).toBeVisible()
+          expect(getAllData[whereToSearch]).toBeInTheDocument()
+
+          expect(getAllData[whereToSearch]).toHaveTextContent(
+            `${Signup_D_Steps_TellUs_Input_Data[x].titleText}`
+          )
+
+          const getAllLiTooltip = screen.getAllByTestId("li-tooltip")
+          /* So far:
+           * Every input card have 3 tooltip
+           * The total amount of card is 7
+           * The variable «allGridAreas» contains all the grid-areas used for all the card on the CSS for the UI
+           */
+          const expedtedTooltipsOnUI = allGridAreas.length * 3
+
+          expect(getAllData[whereToSearch]).toContainHTML(
+            'data-testid="li-tooltip"'
+          )
+          expect(getAllLiTooltip.length).toBe(expedtedTooltipsOnUI)
+
+          const getAllTextarea = screen.getAllByRole("textbox")
+          expect(getAllTextarea[x]).toHaveAttribute(
+            "placeholder",
+            Signup_D_Steps_TellUs_Input_Data[x].placeholder
+          )
+        })
+      }
+
+      it("Amount of input text is correct", (ctx_it) => {
+        expect(Signup_D_Steps_TellUs_Input_Data).toHaveLength(7)
+      })
+    })
   })
 })

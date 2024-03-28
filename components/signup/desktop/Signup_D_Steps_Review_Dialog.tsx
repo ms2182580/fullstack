@@ -6,7 +6,12 @@ import { Signup_D_Steps_Review_DialogWrapper } from "./styles/Signup_D_Steps_Rev
 export const Signup_D_Steps_Review_Dialog = () => {
   return (
     <Signup_D_Steps_Review_DialogWrapper>
-      <Image src={Signup_D_Steps_Review_Dialog_Image} alt="decorative image" />
+      <Image
+        src={Signup_D_Steps_Review_Dialog_Image}
+        alt="decorative image"
+        width={0}
+        height={0}
+      />
 
       <h6>Profile successfully created!</h6>
       <P>
