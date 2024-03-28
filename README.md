@@ -1,3 +1,6 @@
+[![Build](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/build.yml/badge.svg)](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/build.yml)
+[![Tests with Vitest plus React-Testing-Library](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/tests_unit-int.yml/badge.svg)](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/tests_unit-int.yml)
+
 # Here the code for INCLUSIVE project
 
 
