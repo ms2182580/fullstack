@@ -15,6 +15,10 @@ const PROPS = {
   BACKGROUND_COLOR: `${NEUTRALS.LIGHT_GREY}`,
 }
 
+let inner_props = {
+  max_width: "400px",
+}
+
 export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Props>`
   display: flex;
   flex-direction: column;
@@ -44,7 +48,10 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
       grid-area: cards;
 
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
       grid-auto-flow: column;
+
       gap: 24px;
 
       & > * {
@@ -55,15 +62,18 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
         padding-bottom: 24px;
 
-        max-width: 400px;
+        max-width: ${inner_props.max_width};
 
         & > :nth-child(1) {
           border-top-left-radius: 8px;
           border-top-right-radius: 8px;
 
-          overflow: hidden;
-
           position: relative;
+
+          & > :nth-child(1) {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+          }
 
           & > :nth-child(2) {
             position: absolute;
@@ -84,6 +94,14 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
         & > :nth-child(2),
         & > :nth-child(3) {
           padding-bottom: 8px;
+        }
+
+        & > :nth-child(6) {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: ${inner_props.max_width};
+          padding-bottom: 32px;
         }
 
         & > :nth-child(5),

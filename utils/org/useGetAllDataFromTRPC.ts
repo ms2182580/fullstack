@@ -1,4 +1,8 @@
-import { useEffect, useState } from "react"
+/* 
+This hook will not work because it trigger a hook inside another hook
+*/
+
+/* import { useEffect, useState } from "react"
 import { trpc } from "../trpc"
 
 let allListingTypes = ["agency", "camp", "class"]
@@ -30,6 +34,8 @@ type Props = {
   askEveryone?: boolean
 }
 
+let getQuery = "useQuery"
+
 export const useGetAllDataFromTRPC = ({ askEveryone = true }: Props) => {
   const [allData, setAllData] = useState(null)
 
@@ -41,17 +47,17 @@ export const useGetAllDataFromTRPC = ({ askEveryone = true }: Props) => {
 
       if (!askEveryone) {
         for (const subcategories of inside_ALL_Data.subcategories) {
-          let getEveryDataFromtRPC = trpc[theCategory][
-            theMethods.getAll
-          ].useQuery({ limite: 3, filter: { listingType: subcategories } })
+          let getEveryDataFromtRPC = trpc[theCategory][theMethods.getAll][
+            getQuery
+          ]({ limite: 3, filter: { listingType: subcategories } })
 
           all_tRPC.push(getEveryDataFromtRPC)
         }
       }
 
-      let getEveryCategoryFromtRPC = trpc[theCategory][
-        theMethods.getAll
-      ].useQuery({ limit: 3 })
+      let getEveryCategoryFromtRPC = trpc[theCategory][theMethods.getAll][
+        getQuery
+      ]({ limit: 3 })
 
       all_tRPC.push(getEveryCategoryFromtRPC)
     }
@@ -61,3 +67,4 @@ export const useGetAllDataFromTRPC = ({ askEveryone = true }: Props) => {
 
   return allData
 }
+ */

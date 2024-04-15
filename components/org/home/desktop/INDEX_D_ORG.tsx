@@ -135,33 +135,41 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           </div>
         </div>
 
-        {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
-          if (singleCardIsSelected === false) {
-            return (
-              <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
-                  category={CATEGORY}
-                  allSubcategories={SUB_CATEGORY}
-                  allBackendData={allBackendData}
-                />
-              </Fragment>
-            )
+        {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }, index) => {
+          console.log("CATEGORY:", allBackendData[CATEGORY], CATEGORY, index)
+
+          if (allBackendData[CATEGORY]) {
+            if (singleCardIsSelected === false) {
+              return (
+                <Fragment key={CATEGORY}>
+                  <INDEX_ORG_Search_D
+                    category={CATEGORY}
+                    allSubcategories={SUB_CATEGORY}
+                    allBackendData={allBackendData[CATEGORY]}
+                  />
+                </Fragment>
+              )
+            }
+
+            if (
+              singleCardIsSelected &&
+              matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
+            ) {
+              return (
+                <Fragment key={CATEGORY}>
+                  <INDEX_ORG_Search_D
+                    category={CATEGORY}
+                    allSubcategories={SUB_CATEGORY}
+                    allBackendData={allBackendData[CATEGORY]}
+                    isSelected={singleCardIsSelected}
+                  />
+                </Fragment>
+              )
+            }
           }
 
-          if (
-            singleCardIsSelected &&
-            matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
-          ) {
-            return (
-              <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
-                  category={CATEGORY}
-                  allSubcategories={SUB_CATEGORY}
-                  allBackendData={allBackendData}
-                  isSelected={singleCardIsSelected}
-                />
-              </Fragment>
-            )
+          if (allBackendData[CATEGORY].length === 0) {
+            return <h2>Data not found</h2>
           }
         })}
       </INDEX_D_ORGWrapper>

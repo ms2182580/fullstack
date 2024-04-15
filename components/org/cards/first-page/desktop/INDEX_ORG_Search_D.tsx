@@ -15,12 +15,11 @@ import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
 import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import {
@@ -72,12 +71,6 @@ export const INDEX_ORG_Search_D = ({
     useORG_Ctx_D_ThirdpageData_Backend()
 
   if (dataComesFromBackend) {
-    // let someData = Object.entries(allBackendData).map(
-    //   ([categoryTitle, categoryData]) => {
-    //     if (categoryTitle === category) {
-    //     }
-    //   }
-    // )
     return (
       <>
         <INDEX_ORG_Search_DWrapper
@@ -94,29 +87,21 @@ export const INDEX_ORG_Search_D = ({
                     </header>
 
                     <div>
-                      {allBackendData[
-                        NamesCategories_KEY[
-                          "MENTAL HEALTH PROVIDERS & SERVICES"
-                        ]
-                      ].map((xBackendData, indexBackend) => {
+                      {allBackendData.map((xBackendData, indexBackend) => {
                         return (
                           <>
                             <article key={`${x}_${xBackendData.listingType}`}>
                               <div>
                                 <Image
                                   src={Backup_Image}
-                                  alt={`backup image`}
-                                  layout="intrinsic"
-                                  objectFit="initial"
-                                  width="1200"
-                                  height="600"
+                                  alt={`${xBackendData.recordName}`}
                                 />
                               </div>
 
                               <H3>{xBackendData.recordName.toLowerCase()}</H3>
                               <H4>{xBackendData.recordSubtype}</H4>
 
-                              {/* <P>{xBackendData?.address[0].city}</P> */}
+                              <P>{xBackendData?.address[0].city || ""}</P>
 
                               <StarsRatingReview_D
                                 rating={xBackendData.ratings.length || 0}
@@ -128,11 +113,7 @@ export const INDEX_ORG_Search_D = ({
                                 onClick={(event) =>
                                   handleMoveToThirdPage_Backend({
                                     event,
-                                    raw: allBackendData[
-                                      NamesCategories_KEY[
-                                        "MENTAL HEALTH PROVIDERS & SERVICES"
-                                      ]
-                                    ][indexBackend],
+                                    raw: allBackendData[indexBackend],
                                     indexSubcategory: index,
                                     category,
                                     setThirdpageDataORG_Backend,
@@ -159,11 +140,7 @@ export const INDEX_ORG_Search_D = ({
                           event,
                           category,
                           theSubcategory: allSubcategories[index],
-                          raw: allBackendData[
-                            NamesCategories_KEY[
-                              "MENTAL HEALTH PROVIDERS & SERVICES"
-                            ]
-                          ],
+                          raw: allBackendData,
                           setSecondpageDataORG_Backend,
                           push,
                         })
