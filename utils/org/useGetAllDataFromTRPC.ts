@@ -68,3 +68,5 @@ export const useGetAllDataFromTRPC = ({ askEveryone = true }: Props) => {
   return allData
 }
  */
+
+export {}
