@@ -1,0 +1,69 @@
+import styled from "styled-components"
+import { NEUTRALS } from "../../../../../../assets/Colors"
+
+type Props = {
+  howManyRender: number
+}
+
+export const ORG_D_Detail_HeaderWrapper = styled.div<Props>`
+  & > :nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: calc(8px * 8);
+
+    margin-top: 64px;
+    margin-bottom: 16px;
+
+    background-color: ${NEUTRALS.LIGHT_GREY2};
+
+    & > li {
+      list-style: none;
+
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      & > a {
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        text-decoration: none;
+        color: ${NEUTRALS.BLACK};
+
+        text-transform: capitalize;
+
+        font-weight: 400;
+
+        font-size: 16px;
+
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          height: 4px;
+          width: calc(100% + 40%);
+          margin-left: -20%;
+          background-color: transparent;
+        }
+
+        &:hover {
+          &:before {
+            background-color: ${NEUTRALS.DARK_GREY_3};
+          }
+        }
+      }
+
+      span {
+        position: relative;
+
+        & > * {
+          & > * {
+            stroke: #6e3a82;
+          }
+        }
+      }
+    }
+  }
+`

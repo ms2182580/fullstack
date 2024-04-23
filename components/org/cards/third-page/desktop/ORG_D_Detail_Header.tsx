@@ -1,7 +1,5 @@
-import { NavBar_D_WriteAReviewSvg, SearchSVG } from "@/assets/icons"
+import { ORG_D_Results_AddtocareplanSvg } from "@/assets/icons"
 import { Breadcrumbs_D } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs_D"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
@@ -38,8 +36,13 @@ export const ORG_D_Detail_Header = ({
 
   const theURLFormatted = "#"
 
+  let howManyRender = sectionToRender.filter(
+    ({ toNavbar }) => toNavbar.id !== null
+  ).length
+  console.log("howManyRender:", howManyRender)
+
   return (
-    <ORG_D_Detail_HeaderWrapper>
+    <ORG_D_Detail_HeaderWrapper howManyRender={howManyRender + 1}>
       {!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? (
         <>
           <Breadcrumbs_D
@@ -84,10 +87,8 @@ export const ORG_D_Detail_Header = ({
 
               if (x.toNavbar.id !== null) {
                 return (
-                  <li key={`_${index}`}>
-                    <H3>
-                      <Link href={`#${x.toNavbar.id}`}>{toJSX}</Link>
-                    </H3>
+                  <li key={`_${toJSX}`}>
+                    <Link href={`#${x.toNavbar.id}`}>{toJSX}</Link>
                   </li>
                 )
               }
@@ -96,9 +97,7 @@ export const ORG_D_Detail_Header = ({
         ) : (
           <>
             <li>
-              <H3>
-                <Link href={`#${WhichDefaultId.about}`}>About</Link>
-              </H3>
+              <Link href={`#${WhichDefaultId.about}`}>About</Link>
             </li>
 
             {defaultSectionToRender.map((x, index) => {
@@ -106,9 +105,7 @@ export const ORG_D_Detail_Header = ({
 
               return (
                 <li key={`_${index}`}>
-                  <H3>
-                    <Link href={`#${x.toNavbar.id}`}>{toJSX}</Link>
-                  </H3>
+                  <Link href={`#${x.toNavbar.id}`}>{toJSX}</Link>
                 </li>
               )
             })}
@@ -116,17 +113,9 @@ export const ORG_D_Detail_Header = ({
         )}
 
         <li tabIndex={0}>
-          <div>
-            <SearchSVG />
-          </div>
-        </li>
-
-        <li tabIndex={0}>
-          <div>
-            {" "}
-            <NavBar_D_WriteAReviewSvg />
-            <P>Write a review</P>
-          </div>
+          <span>
+            <ORG_D_Results_AddtocareplanSvg />
+          </span>
         </li>
       </ul>
     </ORG_D_Detail_HeaderWrapper>

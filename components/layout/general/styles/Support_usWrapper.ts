@@ -5,7 +5,7 @@ export const Support_usWrapper = styled.div`
   position: absolute;
   top: 360px;
   right: calc(
-    0px - 53px
+    0px - 48px
   ); /*  0px to be at right and 53px because the height of the element */
   transform: rotate(-90deg);
 
