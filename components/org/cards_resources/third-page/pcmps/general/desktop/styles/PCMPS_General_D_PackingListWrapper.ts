@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 
 const enum PCMPS_General_D_PackingList_PROPS {
@@ -12,9 +11,6 @@ export const PCMPS_General_D_PackingListWrapper = styled.aside`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
   padding-bottom: ${PCMPS_General_D_PackingList_PROPS.BOTTOMTOP_MARGIN_PADDING};
-
-  position: relative;
-  ${blurEffect({})}
 
   ul {
     list-style: none;

@@ -29,29 +29,16 @@ export const ORG_D_Detail_HeaderWrapper = styled.div<Props>`
 
         text-decoration: none;
         color: ${NEUTRALS.BLACK};
-
         text-transform: capitalize;
-
         font-weight: 400;
-
         font-size: 16px;
 
-        position: relative;
+        padding-inline: 20px;
 
-        &:before {
-          content: "";
-          position: absolute;
-          top: 100%;
-          height: 4px;
-          width: calc(100% + 40%);
-          margin-left: -20%;
-          background-color: transparent;
-        }
+        border-bottom: 4px solid transparent;
 
         &:hover {
-          &:before {
-            background-color: ${NEUTRALS.DARK_GREY_3};
-          }
+          border-color: ${NEUTRALS.DARK_GREY_3};
         }
       }
 

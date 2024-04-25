@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 type Props = {
@@ -58,8 +57,6 @@ export const MapComponentWrapper = styled.div<Props>`
       & > * {
         border-radius: inherit;
       }
-
-      ${blurEffect({})}
 
       & > :last-child {
         z-index: 2;

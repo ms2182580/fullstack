@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 import {
   NEUTRALS,
@@ -84,8 +83,6 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
       css`
         padding-top: 16px;
         padding-bottom: 16px;
-
-        ${blurEffect({})}
       `}
 
     & > :nth-child(1) {

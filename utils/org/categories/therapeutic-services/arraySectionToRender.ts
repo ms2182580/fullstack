@@ -12,19 +12,17 @@ import {
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
 import { DATA_ORG_D_TYPES_KEYS } from "../../DATA_ORG_D"
+import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefault"
 
 export const arrayInnerNavBar_THRP: InnerNavBar_InnerData = [
-  { INNER_NAV_BAR_KEY: "about" },
+  arraySectionToRenderDefault[0],
   { INNER_NAV_BAR_KEY: "booking" },
   {
     INNER_NAV_BAR_KEY: "otherProviders",
     INNER_NAV_BAR_VALUE: "other providers",
   },
-  { INNER_NAV_BAR_KEY: "reviews" },
-  {
-    INNER_NAV_BAR_KEY: "faqs",
-    INNER_NAV_BAR_VALUE: "FAQs",
-  },
+  arraySectionToRenderDefault[2],
+  arraySectionToRenderDefault[3],
 ]
 
 export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type =

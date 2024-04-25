@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 
 const paddingInline = "32px"
@@ -8,9 +7,6 @@ export const PVES_General_D_GraphicsWrapper = styled.section`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding-bottom: 40px;
-
-  position: relative;
-  ${blurEffect({})}
 
   & > :nth-child(1) {
     padding: 24px;

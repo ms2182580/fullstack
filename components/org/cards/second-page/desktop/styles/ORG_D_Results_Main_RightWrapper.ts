@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 export type Props = {
@@ -64,7 +63,6 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
 
         position: relative;
         width: fit-content;
-        ${blurEffect({ zIndex: 2 })}
 
         & > :nth-child(2) {
           list-style: none;

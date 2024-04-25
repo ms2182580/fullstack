@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 type Props = {
@@ -39,8 +38,6 @@ export const ORG_D_Detail_AtTheSameClinicWrapper = styled.section<Props>`
       isBackend &&
       css`
         padding: 16px;
-
-        ${blurEffect({})}
       `}
 
     & > * {

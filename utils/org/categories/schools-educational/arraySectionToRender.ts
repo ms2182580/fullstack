@@ -14,16 +14,17 @@ import {
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
+import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefault"
 
 export const arrayInnerNavBar_SCHE: InnerNavBar_InnerData = [
-  { INNER_NAV_BAR_KEY: "about" },
-  { INNER_NAV_BAR_KEY: "contact", INNER_NAV_BAR_VALUE: "contact us" },
+  arraySectionToRenderDefault[0],
+  arraySectionToRenderDefault[1],
   {
     INNER_NAV_BAR_KEY: "schoolInformation",
     INNER_NAV_BAR_VALUE: "School information",
   },
-  { INNER_NAV_BAR_KEY: "reviews" },
-  { INNER_NAV_BAR_KEY: "faqs", INNER_NAV_BAR_VALUE: "FAQs" },
+  arraySectionToRenderDefault[2],
+  arraySectionToRenderDefault[3],
 ]
 
 export const arraySectionToRender_SchoolsEducational: ArraySectionToRender_Type =

@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
 import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
@@ -17,8 +16,6 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
       css`
         padding: 16px;
         width: fit-content;
-
-        ${blurEffect({})}
       `}
   }
 
@@ -36,11 +33,7 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
       position: relative;
       padding: 4px;
 
-      ${({ isBackend }) =>
-        isBackend &&
-        css`
-          ${blurEffect({})}
-        `}
+      ${({ isBackend }) => isBackend && css``}
 
       & > * {
         border: 1px solid #686868;
@@ -71,11 +64,7 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
 
       position: relative;
 
-      ${({ isBackend }) =>
-        isBackend &&
-        css`
-          ${blurEffect({})}
-        `}
+      ${({ isBackend }) => isBackend && css``}
     }
 
     &:after {
@@ -103,11 +92,7 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper = styled.div
 
         position: relative;
 
-        ${({ isBackend }) =>
-          isBackend &&
-          css`
-            ${blurEffect({})}
-          `}
+        ${({ isBackend }) => isBackend && css``}
 
         & > :nth-child(1) {
           border: solid 2px ${PRIMARY.PRIMARY_CTA};

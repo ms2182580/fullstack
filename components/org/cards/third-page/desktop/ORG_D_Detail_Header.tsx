@@ -39,7 +39,6 @@ export const ORG_D_Detail_Header = ({
   let howManyRender = sectionToRender.filter(
     ({ toNavbar }) => toNavbar.id !== null
   ).length
-  console.log("howManyRender:", howManyRender)
 
   return (
     <ORG_D_Detail_HeaderWrapper howManyRender={howManyRender + 1}>

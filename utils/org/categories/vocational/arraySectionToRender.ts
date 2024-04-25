@@ -12,13 +12,14 @@ import {
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
+import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefault"
 
 export const arrayInnerNavBar_VCTNL: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "jobDetails", INNER_NAV_BAR_VALUE: "job details" },
   { INNER_NAV_BAR_KEY: "aboutEmployer", INNER_NAV_BAR_VALUE: "about employer" },
   { INNER_NAV_BAR_KEY: "publicAid", INNER_NAV_BAR_VALUE: "public Aid" },
-  { INNER_NAV_BAR_KEY: "reviews" },
-  { INNER_NAV_BAR_KEY: "faqs", INNER_NAV_BAR_VALUE: "FAQs" },
+  arraySectionToRenderDefault[2],
+  arraySectionToRenderDefault[3],
 ]
 
 export const arraySectionToRender_Vocational: ArraySectionToRender_Type = [

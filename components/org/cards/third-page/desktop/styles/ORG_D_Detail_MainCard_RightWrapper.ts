@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 export const enum Layout_MainCardRight_KEY {
@@ -389,8 +388,6 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
         position: relative;
         padding: 16px;
 
-        ${blurEffect({})}
-
         & > :nth-child(2) {
           display: grid;
           gap: 8px;
@@ -445,8 +442,6 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
       & > :nth-child(3) {
         position: relative;
         padding: 16px;
-
-        ${blurEffect({})}
       }
       & > :last-child {
         position: relative;
@@ -454,8 +449,6 @@ export const ORG_D_Detail_MainCard_RightWrapper = styled.section<Props>`
         margin-left: auto;
 
         padding: 16px;
-
-        ${blurEffect({})}
 
         & > :nth-child(1) {
           gap: 16px;

@@ -12,12 +12,13 @@ import {
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
+import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefault"
 
 export const arrayInnerNavBar_PAG: InnerNavBar_InnerData = [
-  { INNER_NAV_BAR_KEY: "about" },
+  arraySectionToRenderDefault[0],
   { INNER_NAV_BAR_KEY: "appointments" },
-  { INNER_NAV_BAR_KEY: "reviews" },
-  { INNER_NAV_BAR_KEY: "faqs", INNER_NAV_BAR_VALUE: "FAQs" },
+  arraySectionToRenderDefault[2],
+  arraySectionToRenderDefault[3],
 ]
 
 export const arraySectionToRender_Agencies: ArraySectionToRender_Type = [

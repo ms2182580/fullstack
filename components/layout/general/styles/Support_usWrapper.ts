@@ -2,7 +2,7 @@ import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const Support_usWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 360px;
   right: calc(
     0px - 48px
@@ -16,7 +16,7 @@ export const Support_usWrapper = styled.div`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
-  z-index: 1;
+  z-index: 99;
 
   font-size: 20px;
   font-weight: 600;

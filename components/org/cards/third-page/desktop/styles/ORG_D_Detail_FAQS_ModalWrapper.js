@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
@@ -48,8 +47,6 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
       isBackend &&
       css`
         padding: 16px;
-
-        ${blurEffect({})}
       `}
 
     & > :nth-child(1) {

@@ -1,22 +1,23 @@
-import { ChatAI } from "@/components/org/ChatAI"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { useRouter } from "next/router"
-import { Fragment, useMemo } from "react"
+import { useMemo } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
 import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
+import { ORG_D_Detail_MainCard2 } from "./ORG_D_Detail_MainCard2"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
+import { ORG_Detail_D_SectionCustom } from "./ORG_Detail_D_SectionCustom"
+import { ORG_Detail_D_SectionDefault } from "./ORG_Detail_D_SectionDefault"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
 import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
+export const INDEX_ORG_Detail_D = () => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
   const { thirdpageDataORG: thirdpageDataORG_Backend } =
     useORG_Ctx_D_ThirdpageData_Backend()
@@ -130,65 +131,27 @@ export const INDEX_ORG_Detail_D = ({ selectTags = null }) => {
             howIsMap={getAllSpecificThirdPageData.howIsMap}
             tooltipDisplay={getAllSpecificThirdPageData.tooltip}
             buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
+            defaultId={
+              getAllSpecificThirdPageData.renderSections[0].toNavbar.id
+            }
           />
 
           {getAllSpecificThirdPageData.renderSections ? (
-            <>
-              {getAllSpecificThirdPageData.renderSections.map((x, index) => {
-                let theIdForComponent =
-                  x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ??
-                  "#"
-                let allProps = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
-
-                let allData = {
-                  theIdForComponent,
-                  ...allProps,
-                }
-
-                if (x.component) {
-                  return (
-                    <>
-                      <Fragment key={`${index}`}>
-                        <x.component
-                          {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
-                        />
-                      </Fragment>
-                    </>
-                  )
-                }
-              })}
-            </>
+            <ORG_Detail_D_SectionCustom
+              sectionCustom={getAllSpecificThirdPageData.renderSections}
+            />
           ) : (
-            <>
-              {defaultSectionToRender.map((x, index) => {
-                let theComponentName = x.component.name
-
-                let theIdForComponent =
-                  x?.[ArraySection_KEYS.TO_NAVBAR]?.[ArraySection_KEYS.ID] ??
-                  "#"
-                let customTitle = x?.[ArraySection_KEYS.PROPS_COMPONENT] ?? null
-
-                let allData = {
-                  theIdForComponent,
-                  ...customTitle,
-                }
-
-                return (
-                  <Fragment key={`${theComponentName}_${index}`}>
-                    <x.component
-                      {...{ [ArraySection_KEYS.ALL_DATA]: allData }}
-                    />
-                  </Fragment>
-                )
-              })}
-            </>
+            <ORG_Detail_D_SectionDefault />
           )}
 
           {/*  <ORG_D_Detail_BreadcrumbsLastUpdated
             thirdpageDataORG={thirdpageDataORG}
           />*/}
+          <ORG_D_Detail_MainCard2 />
         </div>
-        <ChatAI />
+        <div>More Resources</div>
+
+        {/* <ChatAI /> THIS NEED TO BE UPDATED */}
       </INDEX_ORG_Detail_DWrapper>
 
       <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />

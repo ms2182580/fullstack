@@ -10,13 +10,14 @@ import {
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
+import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefault"
 
 export const arrayInnerNavBar_RSNDT: InnerNavBar_InnerData = [
-  { INNER_NAV_BAR_KEY: "about" },
+  arraySectionToRenderDefault[0],
   { INNER_NAV_BAR_KEY: "location" },
-  { INNER_NAV_BAR_KEY: "contact", INNER_NAV_BAR_VALUE: "contact us" },
-  { INNER_NAV_BAR_KEY: "reviews" },
-  { INNER_NAV_BAR_KEY: "faqs", INNER_NAV_BAR_VALUE: "FAQs" },
+  arraySectionToRenderDefault[1],
+  arraySectionToRenderDefault[2],
+  arraySectionToRenderDefault[3],
 ]
 
 export const arraySectionToRender_ResidentialResources: ArraySectionToRender_Type =

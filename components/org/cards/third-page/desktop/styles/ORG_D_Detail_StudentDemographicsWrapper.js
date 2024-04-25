@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 import { PRIMARY } from "../../../../../../assets/Colors"
 
@@ -6,9 +5,6 @@ export const ORG_D_Detail_StudentDemographicsWrapper = styled.div`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-
-  position: relative;
-  ${blurEffect({})}
 
   header {
     padding: 24px;

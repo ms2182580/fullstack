@@ -13,25 +13,12 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
     & > * {
       &:not(:nth-child(1)),
       &:nth-child(1) > *:not(ul) {
-        margin-inline: clamp(16px, calc(10vw - 80px), 96px);
+        /* margin-inline: clamp(16px, calc(18vw - 100px), 170px); */
+        /* margin-inline: clamp(8px, calc(38vw - 368px), 170px); */
+        margin-inline: clamp(2px, calc(41vw - 416px), 170px);
+        /* margin-inline: 162px; */
       }
     }
-
-    /*
-    & > * {
-      margin-inline: clamp(16px, calc(10vw - 80px), 96px);
-
-      border: 2px solid green;
-
-      &:not(:nth-child(1)) {
-        border: 2px solid red;
-
-        &:not(:nth-child(2)) {
-          border: 2px solid black;
-        }
-      }
-    }
-    */
 
     & > :nth-child(1) {
       margin-bottom: 16px;

@@ -11,17 +11,15 @@ import {
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
+import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefault"
 
 export const arrayInnerNavBar_PAS: InnerNavBar_InnerData = [
-  { INNER_NAV_BAR_KEY: "about" },
+  arraySectionToRenderDefault[0],
   { INNER_NAV_BAR_KEY: "shop" },
-  { INNER_NAV_BAR_KEY: "contact" },
+  arraySectionToRenderDefault[1],
   { INNER_NAV_BAR_KEY: "compare" },
-  { INNER_NAV_BAR_KEY: "reviews" },
-  {
-    INNER_NAV_BAR_KEY: "faqs",
-    INNER_NAV_BAR_VALUE: "FAQs",
-  },
+  arraySectionToRenderDefault[2],
+  arraySectionToRenderDefault[3],
 ]
 
 export const arraySectionToRender_AssistiveSoftware: ArraySectionToRender_Type =

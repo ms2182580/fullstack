@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
@@ -13,9 +12,6 @@ export const ORG_D_Detail_ContactUsWrapper = styled.section<Props>`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
   padding-bottom: 52px;
-
-  position: relative;
-  ${blurEffect({})}
 
   & > *:not(:first-child) {
     margin-inline: 24px;

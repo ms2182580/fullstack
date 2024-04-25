@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 
 export const enum ORG_D_Detail_Reviews_IndividualComponent_Classes {
@@ -27,8 +26,6 @@ export const ORG_D_Detail_Reviews_IndividualComponentWrapper = styled.div<Props>
     css`
       padding-top: 16px;
       padding-bottom: 16px;
-
-      ${blurEffect({})}
     `}
 
   & > * {

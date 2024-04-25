@@ -1,4 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
@@ -40,13 +39,7 @@ export const ORG_D_Detail_FAQSWrapper = styled.section<Props>`
       position: relative;
       height: 100%;
 
-      ${({ isBackend }) =>
-        isBackend &&
-        css`
-          /* border: 2px solid crimson; */
-
-          ${blurEffect({})}
-        `}
+      ${({ isBackend }) => isBackend && css``}
 
       & > :nth-child(1) {
         position: absolute;
@@ -85,11 +78,7 @@ export const ORG_D_Detail_FAQSWrapper = styled.section<Props>`
 
     position: relative;
 
-    ${({ isBackend }) =>
-      isBackend &&
-      css`
-        ${blurEffect({})}
-      `}
+    ${({ isBackend }) => isBackend && css``}
   }
 
   & > div:not(:nth-child(2)):not(:nth-child(3)) {

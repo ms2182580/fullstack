@@ -1,5 +1,4 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { blurEffect } from "@/components/ui/blur/blur"
 import styled from "styled-components"
 import { ElementActiveHeight_KEYS } from "../PCMPS_General_D_Booking"
 
@@ -23,9 +22,6 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
   padding-bottom: 24px;
 
   display: grid;
-
-  position: relative;
-  ${blurEffect({})}
 
   & > :nth-child(1) {
     padding: 24px;
