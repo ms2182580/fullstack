@@ -1,3 +1,4 @@
+import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
@@ -10,7 +11,6 @@ import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_Thi
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
 import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
-import { ORG_D_Detail_MainCard2 } from "./ORG_D_Detail_MainCard2"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
 import { ORG_Detail_D_SectionCustom } from "./ORG_Detail_D_SectionCustom"
 import { ORG_Detail_D_SectionDefault } from "./ORG_Detail_D_SectionDefault"
@@ -117,41 +117,55 @@ export const INDEX_ORG_Detail_D = () => {
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>
+        <ORG_D_Detail_Header
+          thirdpageDataORG={thirdpageDataORG}
+          defaultSectionToRender={defaultSectionToRender}
+          sectionToRender={getAllSpecificThirdPageData.renderSections}
+        />
+
         <div>
-          <ORG_D_Detail_Header
-            thirdpageDataORG={thirdpageDataORG}
-            defaultSectionToRender={defaultSectionToRender}
-            sectionToRender={getAllSpecificThirdPageData.renderSections}
-          />
-
-          <ORG_D_Detail_MainCard
-            layout_MainCardRight={
-              getAllSpecificThirdPageData.layoutMainCardRight
-            }
-            howIsMap={getAllSpecificThirdPageData.howIsMap}
-            tooltipDisplay={getAllSpecificThirdPageData.tooltip}
-            buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
-            defaultId={
-              getAllSpecificThirdPageData.renderSections[0].toNavbar.id
-            }
-          />
-
-          {getAllSpecificThirdPageData.renderSections ? (
-            <ORG_Detail_D_SectionCustom
-              sectionCustom={getAllSpecificThirdPageData.renderSections}
+          <div>
+            <ORG_D_Detail_MainCard
+              layout_MainCardRight={
+                getAllSpecificThirdPageData.layoutMainCardRight
+              }
+              howIsMap={getAllSpecificThirdPageData.howIsMap}
+              tooltipDisplay={getAllSpecificThirdPageData.tooltip}
+              buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
+              defaultId={
+                getAllSpecificThirdPageData.renderSections[0].toNavbar.id
+              }
             />
-          ) : (
-            <ORG_Detail_D_SectionDefault />
-          )}
+            {getAllSpecificThirdPageData.renderSections ? (
+              <ORG_Detail_D_SectionCustom
+                sectionCustom={getAllSpecificThirdPageData.renderSections}
+              />
+            ) : (
+              <ORG_Detail_D_SectionDefault />
+            )}
+            {/*  <ORG_D_Detail_BreadcrumbsLastUpdated
+              thirdpageDataORG={thirdpageDataORG}
+            />*/}
+            {/* <ORG_D_Detail_MainCard2 /> */}
+          </div>
+          {/* <ChatAI /> */}
+          <div>
+            <article>
+              <H2>Contact the Organization</H2>
+              <div>...</div>
+            </article>
 
-          {/*  <ORG_D_Detail_BreadcrumbsLastUpdated
-            thirdpageDataORG={thirdpageDataORG}
-          />*/}
-          <ORG_D_Detail_MainCard2 />
+            <article>
+              <H2>AI Chat</H2>
+              <div>...</div>
+            </article>
+          </div>
         </div>
-        <div>More Resources</div>
 
-        {/* <ChatAI /> THIS NEED TO BE UPDATED */}
+        <article>
+          <H2>More Resources</H2>
+          <div>...</div>
+        </article>
       </INDEX_ORG_Detail_DWrapper>
 
       <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />

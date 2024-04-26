@@ -6,14 +6,18 @@ type Props = {
 }
 
 export const ORG_D_Detail_HeaderWrapper = styled.div<Props>`
+  display: grid;
+  gap: 26px;
+
+  & > :nth-child(1) {
+    margin-left: 81px;
+  }
+
   & > :nth-child(2) {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: calc(8px * 8);
-
-    margin-top: 64px;
-    margin-bottom: 16px;
 
     background-color: ${NEUTRALS.LIGHT_GREY2};
 
