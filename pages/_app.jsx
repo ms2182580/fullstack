@@ -28,6 +28,7 @@ import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFilter
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
+import { DataProvider } from "@/context/Ctx_Data"
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -58,7 +59,8 @@ function MyApp({ Component, pageProps }) {
                                                     <Dashboard_Ctx_Editor_AICHAT_Provider>
                                                       <Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                         <Ctx_Signup_Provider>
-                                                          {/* {isDashboard ? (
+                                                          <DataProvider>
+                                                            {/* {isDashboard ? (
                                                             <Dashboard_D_Layout>
                                                               <GlobalStyle />
                                                               <link
@@ -82,16 +84,17 @@ function MyApp({ Component, pageProps }) {
                                                             </Page_layout>
                                                           )} */}
 
-                                                          <Layout>
-                                                            <GlobalStyle />
-                                                            <link
-                                                              rel="icon"
-                                                              href="/favicon.ico"
-                                                            />
-                                                            <Component
-                                                              {...pageProps}
-                                                            />
-                                                          </Layout>
+                                                            <Layout>
+                                                              <GlobalStyle />
+                                                              <link
+                                                                rel="icon"
+                                                                href="/favicon.ico"
+                                                              />
+                                                              <Component
+                                                                {...pageProps}
+                                                              />
+                                                            </Layout>
+                                                          </DataProvider>
                                                         </Ctx_Signup_Provider>
                                                       </Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                     </Dashboard_Ctx_Editor_AICHAT_Provider>
