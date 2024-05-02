@@ -10,7 +10,7 @@ import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
-import { ORG_D_Detail_MainCard } from "./ORG_D_Detail_MainCard"
+import { ORG_D_Detail_MainCard2 } from "./ORG_D_Detail_MainCard2"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
 import { ORG_Detail_D_SectionCustom } from "./ORG_Detail_D_SectionCustom"
 import { ORG_Detail_D_SectionDefault } from "./ORG_Detail_D_SectionDefault"
@@ -125,7 +125,9 @@ export const INDEX_ORG_Detail_D = () => {
 
         <div>
           <div>
-            <ORG_D_Detail_MainCard
+            <ORG_D_Detail_MainCard2 />
+
+            {/* <ORG_D_Detail_MainCard
               layout_MainCardRight={
                 getAllSpecificThirdPageData.layoutMainCardRight
               }
@@ -135,7 +137,7 @@ export const INDEX_ORG_Detail_D = () => {
               defaultId={
                 getAllSpecificThirdPageData.renderSections[0].toNavbar.id
               }
-            />
+            /> */}
             {getAllSpecificThirdPageData.renderSections ? (
               <ORG_Detail_D_SectionCustom
                 sectionCustom={getAllSpecificThirdPageData.renderSections}

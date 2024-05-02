@@ -8,7 +8,6 @@ import { ORG_D_Detail_MainCard_Left } from "./ORG_D_Detail_MainCard_Left"
 import { ORG_D_Detail_MainCard_Right } from "./ORG_D_Detail_MainCard_Right"
 import { ORG_D_Detail_MainCardWrapper } from "./styles/ORG_D_Detail_MainCardWrapper"
 
-/* ORG_D_Detail_FirstCard */
 /* 
 
 !FH0 DELETE THIS COMPONENT, IS DEPRECATED

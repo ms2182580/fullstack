@@ -31,47 +31,25 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
       gap: 28px;
     }
 
-    & > *:not(:nth-child(1)):not(:nth-last-child(1)):not(:nth-last-child(2)) {
-      /* margin-bottom: 24px; */
-    }
-
-    & > :nth-last-child(2) {
-      /* margin-bottom: 44px; */
-    }
-
     & > :last-child {
       height: 100vh;
-      /* height: calc(500px + 400px); */
       width: 100%;
 
       position: sticky;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-
-      /* display: grid; */
-      /* gap: 36px; */
+      inset: 0;
 
       display: flex;
       flex-direction: column;
       gap: 36px;
 
       & > :nth-child(1) {
-        /* height: 60vh; */
         height: 50%;
-        /* flex: 1; */
         position: relative;
         ${blurEffect({})}
       }
 
       & > :nth-child(2) {
         height: 40%;
-        /* flex: 1; */
-        /* height: 320px; */
-        /* height: 30vh; */
-        /* margin-bottom: 36px; */
-        /* margin-bottom: auto; */
         position: relative;
         ${blurEffect({})}
       }

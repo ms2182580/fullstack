@@ -1,9 +1,12 @@
+import { NEUTRALS } from "@/assets/Colors"
 import { css } from "styled-components"
 
 export const ui_section_card = () => css`
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: 4px;
+
   padding-bottom: 40px;
+
+  border: 1px solid ${NEUTRALS.BORDER};
 
   & > :nth-child(2) {
     padding: 24px;
