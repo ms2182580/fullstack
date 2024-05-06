@@ -3,10 +3,7 @@ import ORG_1_page from "@/assets/images/org/1_page/org_1_page.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
-import {
-  ALL_DATA,
-  NamesCategories_KEY,
-} from "@/utils/org/categories/general/ALL_DATA"
+import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal.js"
 import Image from "next/image.js"
 import { Fragment, useEffect, useRef, useState } from "react"
@@ -139,43 +136,42 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
         </div>
 
         {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }, index) => {
-          if (singleCardIsSelected === false) {
-            return (
-              <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
-                  category={CATEGORY}
-                  allSubcategories={SUB_CATEGORY}
-                  allBackendData={
-                    allBackendData[
-                      NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
-                    ]
-                  }
-                />
-              </Fragment>
-            )
-          }
+          // if (singleCardIsSelected === false) {
+          //   return (
+          //     <Fragment key={CATEGORY}>
+          //       <INDEX_ORG_Search_D
+          //         category={CATEGORY}
+          //         allSubcategories={SUB_CATEGORY}
+          //         allBackendData={
+          //           allBackendData[
+          //             NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+          //           ]
+          //         }
+          //       />
+          //     </Fragment>
+          //   )
+          // }
 
-          if (
-            singleCardIsSelected &&
-            matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
-          ) {
-            return (
-              <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
-                  category={CATEGORY}
-                  allSubcategories={SUB_CATEGORY}
-                  allBackendData={
-                    allBackendData[
-                      NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
-                    ]
-                  }
-                  isSelected={singleCardIsSelected}
-                />
-              </Fragment>
-            )
-          }
+          // if (
+          //   singleCardIsSelected &&
+          //   matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
+          // ) {
+          //   return (
+          //     <Fragment key={CATEGORY}>
+          //       <INDEX_ORG_Search_D
+          //         category={CATEGORY}
+          //         allSubcategories={SUB_CATEGORY}
+          //         allBackendData={
+          //           allBackendData[
+          //             NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+          //           ]
+          //         }
+          //         isSelected={singleCardIsSelected}
+          //       />
+          //     </Fragment>
+          //   )
+          // }
 
-          /*
           if (allBackendData[CATEGORY]) {
             if (singleCardIsSelected === false) {
               return (
@@ -205,9 +201,11 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
               )
             }
           }
-          */
 
           /*
+          !FH0
+          Check how to display data that has 0 amount of resources
+          
           if (allBackendData[CATEGORY].length === 0) {
             return <h2>Data not found</h2>
           }

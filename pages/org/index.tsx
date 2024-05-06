@@ -1,7 +1,6 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 import { Data_Context } from "@/context/Ctx_Data"
 import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
-import { trpc } from "@/utils/trpc"
 import { useWidthSize } from "@/utils/useWidthSize"
 import dynamic from "next/dynamic"
 import { useContext } from "react"
@@ -29,7 +28,7 @@ const ORG_INDEX = () => {
   console.log("get all data", { data })
 
   // Put all data togheter
-  let allData = {
+  const allData = {
     [NamesCategories_KEY["AGENCIES"]]: data.agency.data,
     [NamesCategories_KEY["CAMPS"]]: data.camp.data,
     [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]]: data.classGet.data,
@@ -48,7 +47,7 @@ const ORG_INDEX = () => {
     [NamesCategories_KEY["VOCATIONAL RESOURCES"]]: data.vocation.data,
   }
   /* Check that at least one source is not undefined to put it in the UI */
-  let atLeastOneIsNotUndefined = Object.values(allData).some(
+  const atLeastOneIsNotUndefined = Object.values(allData).some(
     (x) => x !== undefined
   )
 
@@ -61,13 +60,9 @@ const ORG_INDEX = () => {
   return (
     <>
       {isMobile === false ? (
-        <>
-          <INDEX_D_ORG allBackendData={allData} />
-        </>
+        <INDEX_D_ORG allBackendData={allData} />
       ) : (
-        <>
-          <h1>1° page ORG on Mobile</h1>
-        </>
+        <h1>1° page ORG on Mobile</h1>
       )}
     </>
   )

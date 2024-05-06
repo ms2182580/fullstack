@@ -123,10 +123,6 @@ export const INDEX_ORG_Search_D = ({
                               >
                                 <ORG_D_Search_ViewProfileSvg />
                                 View Profile
-                                {/* {someLayoutSpecial === "like_PVES" &&
-                                  iData === 0
-                                    ? "View Listing"
-                                    : "View Profile"} */}
                               </button>
                             </article>
                           </>
