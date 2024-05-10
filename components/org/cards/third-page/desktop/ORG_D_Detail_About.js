@@ -3,11 +3,10 @@ import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ST_About } from "../../../../../utils/ORG_ST_About_D.js"
 import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_About_Modal } from "./ORG_D_Detail_About_Modal.js"
 import { ORG_D_Detail_AboutWrapper } from "./styles/ORG_D_Detail_AboutWrapper.js"
 
-export const ORG_D_Detail_About = ({ name, lastName, aboutRef }) => {
+export const ORG_D_Detail_About = ({ name, lastName, aboutRef = null }) => {
   const [aboutTextState, setAboutTextState] = useState(
     ORG_ST_About(name, lastName)
   )
@@ -37,7 +36,6 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef }) => {
 
   return (
     <ORG_D_Detail_AboutWrapper ref={aboutRef}>
-      <H4>About</H4>
       <div>
         <P>
           {isTruncated ? formattedText : aboutTextState}

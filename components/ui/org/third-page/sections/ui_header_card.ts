@@ -8,7 +8,6 @@ export const ui_header_card = () => css`
   border-top-right-radius: inherit;
 
   background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-  margin-bottom: 24px;
 
   font-weight: 600;
   font-size: 20px;

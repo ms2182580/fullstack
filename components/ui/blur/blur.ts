@@ -19,7 +19,7 @@ export const blurEffect = ({
     inset: 0;
 
     box-shadow: 1px 1px 13px hsla(0, 0%, 0%, 0.2);
-    border-radius: 16px;
+    border-radius: inherit;
     backdrop-filter: blur(${pixelsBackdropFilter}px);
     -webkit-backdrop-filter: blur(${pixelsBackdropFilter}px);
     background-color: hsl(0, 0%, 100%, 0.4);

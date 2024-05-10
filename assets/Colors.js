@@ -19,6 +19,7 @@ export const SECONDARY_ORG_PLUS = {
   YELLOW: "#FBFBA4",
   ASH_BLUE: "#C4E7FD",
   PINK: "#FEE0D3",
+  PINK_2: "#FFE7DB",
 }
 
 /* Background on big blocks of text (like landing page, SNT etc) */

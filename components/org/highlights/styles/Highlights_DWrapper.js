@@ -4,18 +4,19 @@ import { SECONDARY_ORG_PLUS } from "../../../../assets/Colors"
 export const Highlights_DWrapper = styled.div`
   display: flex;
   align-items: center;
-
   flex-wrap: wrap;
   gap: 8px;
 
+  text-transform: capitalize;
+
   & > * {
-    background-color: ${SECONDARY_ORG_PLUS.ASH_BLUE};
-    border-radius: 8px;
-    padding: 5px 10px;
+    background-color: ${SECONDARY_ORG_PLUS.PINK_2};
+    border-radius: 4px;
+    padding: 8px 12px;
 
     p {
-      font-size: 14px;
-      letter-spacing: 0.21px;
+      font-size: 12px;
+      line-height: 12px;
     }
   }
 `

@@ -8,6 +8,7 @@ import dynamic from "next/dynamic"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
 import { useEffect, useMemo } from "react"
+
 const INDEX_ORG_Detail_D = dynamic(
   () =>
     import("@/components/org/cards/third-page/desktop/INDEX_ORG_Detail_D").then(

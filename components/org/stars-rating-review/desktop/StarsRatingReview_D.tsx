@@ -16,19 +16,13 @@ export const StarsRatingReview_D = ({
   return (
     <StarsRatingReview_DWrapper isDetail={isDetail} rating={rating}>
       {rating ? (
-        <>
-          <div>
-            <PatternStars rating={rating} />
-            <P>{rating}.0</P>
-          </div>
-        </>
+        <div>
+          <PatternStars rating={rating} />
+          <P>{rating}.0</P>
+        </div>
       ) : null}
 
-      {reviews ? (
-        <>
-          <P>({reviews} reviews)</P>
-        </>
-      ) : null}
+      {reviews ? <P>({reviews} reviews)</P> : null}
     </StarsRatingReview_DWrapper>
   )
 }
