@@ -20,7 +20,6 @@ import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wr
 */
 export const ORG_D_Detail_MainCard2 = () => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData_Backend()
-  console.log("thirdpageDataORG:", thirdpageDataORG)
 
   const dataOnCard = useMemo(() => {
     const thirdPageData =

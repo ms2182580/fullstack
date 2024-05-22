@@ -1,7 +1,7 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 // import { INDEX_D_Recommended } from "@/components/recommended/desktop/INDEX_D_Recommended"
 import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
-import { trpc } from "@/utils/trpc"
+import { useFetchData } from "@/utils/org/useFetchData"
 import dynamic from "next/dynamic"
 const INDEX_D_Recommended = dynamic(
   () =>
@@ -13,21 +13,19 @@ const INDEX_D_Recommended = dynamic(
   }
 )
 export default function INDEX_Recommmended() {
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
+  // const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
 
-  if (!mentalHealthData.data) {
-    return (
-      <>
-        <LoadingComponent />
-      </>
-    )
+  const theData = useFetchData()
+
+  if (theData === null) {
+    return <LoadingComponent />
   }
+
   return (
     <>
       <INDEX_D_Recommended
         allBackendData={{
-          [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]:
-            mentalHealthData.data,
+          [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: theData,
         }}
       />
     </>

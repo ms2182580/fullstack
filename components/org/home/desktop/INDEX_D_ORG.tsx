@@ -140,6 +140,11 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
 
         {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }, index) => {
           if (singleCardIsSelected === false) {
+            /* 
+            !FH0
+            Implement the dummy data
+            */
+
             return (
               <Fragment key={CATEGORY}>
                 <INDEX_ORG_Search_D

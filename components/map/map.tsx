@@ -1,11 +1,12 @@
 "use client"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
-import { useRouter } from "next/router"
 import "leaflet/dist/leaflet.css"
+import { useRouter } from "next/router"
 import { useEffect, useRef } from "react"
-import { MapComponentWrapper } from "./styles/MapComponentWrapper"
 import { MapContainer } from "react-leaflet"
 import { Tile } from "./Tile"
+import { MapComponentWrapper } from "./styles/MapComponentWrapper"
+// import { Tile } from "./Tile"
 
 type Default_data_map_type = {
   coordinates: {

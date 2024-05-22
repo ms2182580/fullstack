@@ -73,6 +73,11 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           & > :nth-child(1) {
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
+
+            height: 250px;
+
+            object-fit: cover;
+            object-position: 50% 40%;
           }
 
           & > :nth-child(2) {

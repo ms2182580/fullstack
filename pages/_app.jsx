@@ -2,7 +2,6 @@ import { Layout } from "@/components/layout/index/index"
 import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
 import { Dashboard_Ctx_AICHAT_UploadFile_Provider } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
 import { Dashboard_Ctx_Editor_AICHAT_Provider } from "@/context/Ctx_Dashboard_EditorChatModal"
-import { DataProvider } from "@/context/Ctx_Data"
 import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
@@ -59,18 +58,16 @@ function MyApp({ Component, pageProps }) {
                                                     <Dashboard_Ctx_Editor_AICHAT_Provider>
                                                       <Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                         <Ctx_Signup_Provider>
-                                                          <DataProvider>
-                                                            <Layout>
-                                                              <GlobalStyle />
-                                                              <link
-                                                                rel="icon"
-                                                                href="/favicon.ico"
-                                                              />
-                                                              <Component
-                                                                {...pageProps}
-                                                              />
-                                                            </Layout>
-                                                          </DataProvider>
+                                                          <Layout>
+                                                            <GlobalStyle />
+                                                            <link
+                                                              rel="icon"
+                                                              href="/favicon.ico"
+                                                            />
+                                                            <Component
+                                                              {...pageProps}
+                                                            />
+                                                          </Layout>
                                                         </Ctx_Signup_Provider>
                                                       </Dashboard_Ctx_AICHAT_UploadFile_Provider>
                                                     </Dashboard_Ctx_Editor_AICHAT_Provider>

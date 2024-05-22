@@ -3,26 +3,25 @@ import {
   ORG_D_Search_ViewProfileSvg,
   RightArrowTinySvg,
 } from "@/assets/icons"
-import { Marker, Popup, TileLayer, useMap } from "react-leaflet"
-import * as leaflet from "leaflet"
 import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
-import { trpc } from "@/utils/trpc"
+import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
+import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
+import { useFetchData } from "@/utils/org/useFetchData"
+import * as leaflet from "leaflet"
 import Image from "next/image"
-import { H3, H4 } from "../ui/heading_body_text/HeaderFonts"
+import { useRouter } from "next/router"
+import { Marker, Popup, TileLayer, useMap } from "react-leaflet"
 import { StarsRatingReview_D } from "../org/stars-rating-review/desktop/StarsRatingReview_D"
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
-import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
-import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
-import { useRouter } from "next/router"
+import { H3, H4 } from "../ui/heading_body_text/HeaderFonts"
 import { CardContainer } from "./styles/TileWrapper"
-import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 type Props = {
   isFullMap: boolean
   handleIsFullMap: (e) => void
 }
 
 export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
 
@@ -34,6 +33,16 @@ export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
   const { secondpageDataORG: secondpageDataORG_Backend }: any =
     useORG_Ctx_D_SecondpageData_Backend()
   const { push } = useRouter()
+
+  // const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
+
+  const theData = useFetchData()
+  console.log("theData:", theData)
+
+  // if (theData === null) {
+  //   return <LoadingComponent />
+  // }
+
   const Card = ({ xBackendData }: any) => {
     return (
       <CardContainer key={`${xBackendData?.listingType}`}>
@@ -76,6 +85,7 @@ export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
       </CardContainer>
     )
   }
+
   return (
     <>
       <TileLayer
@@ -84,24 +94,14 @@ export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
       />
       <Marker position={[51.505, -0.09]} icon={icon}>
         <Popup maxWidth={200}>
-          {mentalHealthData.data && (
-            <Card xBackendData={mentalHealthData.data[0] as any} />
-          )}
+          {theData && <Card xBackendData={theData[0] as any} />}
         </Popup>
       </Marker>
       <Marker position={[51.51, -0.11]} icon={icon}>
-        <Popup>
-          {mentalHealthData.data && (
-            <Card xBackendData={mentalHealthData.data[1] as any} />
-          )}
-        </Popup>
+        <Popup>{theData && <Card xBackendData={theData[1] as any} />}</Popup>
       </Marker>
       <Marker position={[51.515, -0.1]} icon={icon}>
-        <Popup>
-          {mentalHealthData.data && (
-            <Card xBackendData={mentalHealthData.data[2] as any} />
-          )}
-        </Popup>
+        <Popup>{theData && <Card xBackendData={theData[2] as any} />}</Popup>
       </Marker>
       <button
         onClick={(e) => {

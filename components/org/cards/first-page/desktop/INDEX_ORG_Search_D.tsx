@@ -1,5 +1,7 @@
 import { ORG_D_Search_ViewProfileSvg } from "@/assets/icons"
 import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
+import Backup_Image_1 from "@/assets/images/org/backup/backup_image_1.jpg"
+import Backup_Image_2 from "@/assets/images/org/backup/backup_image_2.jpg"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
@@ -26,6 +28,8 @@ import {
   All_Layouts_Accepted,
   INDEX_ORG_Search_DWrapper,
 } from "./styles/INDEX_ORG_Search_DWrapper"
+
+const imagesToUse = [Backup_Image, Backup_Image_1, Backup_Image_2]
 
 type Props = {
   positionInArray?: number
@@ -93,7 +97,7 @@ export const INDEX_ORG_Search_D = ({
                             <article key={`${x}_${xBackendData.listingType}`}>
                               <div>
                                 <Image
-                                  src={Backup_Image}
+                                  src={imagesToUse[indexBackend]}
                                   alt={`${xBackendData.recordName}`}
                                 />
                               </div>

@@ -1,6 +1,5 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
-import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
-import { trpc } from "@/utils/trpc"
+import { useFetchData } from "@/utils/org/useFetchData"
 import { useWidthSize } from "@/utils/useWidthSize"
 import dynamic from "next/dynamic"
 
@@ -46,28 +45,32 @@ const ORG_INDEX = () => {
   //   [NamesCategories_KEY["VOCATIONAL RESOURCES"]]: data.vocation.data,
   // }
 
-  const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
+  // const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
 
-  const allData = {
-    [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]:
-      mentalHealthData.data,
-  }
+  // const allData = {
+  //   [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]:
+  //     mentalHealthData.data,
+  // }
 
   /* Check that at least one source is not undefined to put it in the UI */
-  const atLeastOneIsNotUndefined = Object.values(allData).some(
-    (x) => x !== undefined
-  )
+  // const atLeastOneIsNotUndefined = Object.values(allData).some(
+  //   (x) => x !== undefined
+  // )
 
+  const theData = useFetchData()
   /* Wait for all data be fetched */
-  if (!atLeastOneIsNotUndefined || isMobile === undefined) {
+  if (theData === null) {
     return <LoadingComponent />
   }
+  // if (!atLeastOneIsNotUndefined || isMobile === undefined) {
+  //   return <LoadingComponent />
+  // }
 
   /* Render on the UI everything */
   return (
     <>
       {isMobile === false ? (
-        <INDEX_D_ORG allBackendData={allData} />
+        <INDEX_D_ORG allBackendData={theData} />
       ) : (
         <h1>1° page ORG on Mobile</h1>
       )}
