@@ -128,8 +128,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
       grid-area: finalButton;
       justify-self: flex-end;
 
-      /* border: 2px solid crimson; */
-
       ${reusableButton({ secondary: true })}
 
       cursor: pointer;

@@ -86,10 +86,8 @@ export const INDEX_ORG_Search_D = ({
                             <H4>{xBackendData.recordSubtype}</H4>
 
                             <P>
-                              <span>
-                                {xBackendData?.address[0].city || ""},{" "}
-                                {xBackendData?.address[0].state || ""}
-                              </span>
+                              {xBackendData?.address[0].city || ""},{" "}
+                              {xBackendData?.address[0].state || ""}
                             </P>
 
                             <StarsRatingReview_D
