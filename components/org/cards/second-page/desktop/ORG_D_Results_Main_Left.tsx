@@ -15,14 +15,12 @@ import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_Left
 
 type Props = {
   renderThisCard?: number
-  renderThisContact?: number
   backendData?: any
   theIndex: number
 }
 
 export const ORG_D_Results_Main_Left = ({
   renderThisCard = 0,
-  renderThisContact = 0,
   backendData,
   theIndex,
 }: Props) => {
@@ -69,24 +67,20 @@ export const ORG_D_Results_Main_Left = ({
         </div>
 
         <div>
-          <ORG_D_Results_Cardphone
-            phoneNumber={backendData.onlinePresence.telephoneNumber}
-          />
+          <ORG_D_Results_Cardphone phoneNumber={"(123)456-7890"} />
 
-          <ORG_D_Results_CardEmail
-          // email={backendData.onlinePresence.email}
-          />
+          <ORG_D_Results_CardEmail email={"hello@email.com"} />
 
           <ORG_D_Results_CardWebsite
             backendData={backendData}
-            // website={backendData.onlinePresence.website}
+            website={"www.website.com"}
           />
 
           <ORG_D_Results_CardLocation
             backendData={backendData}
-            locationCity={backendData.address[0].city}
-            locationStreetName_Backend={backendData.address[0].street}
-            locationState={backendData.address[0].state}
+            locationCity={"City"}
+            locationStreetName_Backend={"Street 888 St"}
+            locationState={"ST"}
           />
         </div>
       </ORG_D_Results_Main_LeftWrapper>
