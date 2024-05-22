@@ -8,12 +8,12 @@ export const ORG_D_Results_Card_HearthWrapper = styled.div<Props>`
   & > * {
     & > * {
       fill: ${({ clickOnHearth }) =>
-        clickOnHearth ? `#e8675f` : ``};
+        clickOnHearth ? `hsl(3.5, 74.9%, 54.1%)` : ``};
     }
 
     &:hover > * {
       fill: ${({ clickOnHearth }) =>
-        clickOnHearth ? `` : `hsl(3.5, 74.9%, 54.1%)`};
+        clickOnHearth ? `` : `hsl(3.5, 74.9%, 64.1%)`};
     }
   }
 `

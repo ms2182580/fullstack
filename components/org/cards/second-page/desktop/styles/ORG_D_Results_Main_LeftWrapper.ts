@@ -1,5 +1,8 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { LAYOUT_RESULTS_MAIN_CARD_VALUES, SPECIFIC_DATA_KEY } from "@/utils/org/second-page/desktop/specificData"
+import {
+  LAYOUT_RESULTS_MAIN_CARD_VALUES,
+  SPECIFIC_DATA_KEY,
+} from "@/utils/org/second-page/desktop/specificData"
 import styled, { css } from "styled-components"
 
 const isATLayout = () => css`
@@ -24,22 +27,24 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
   & > :nth-child(1) {
     position: relative;
 
-    padding-inline: 20%;
-    overflow: hidden;
-
     border-radius: 16px;
 
     margin-bottom: 28px;
 
-    height: 158px;
-
     background-color: ${NEUTRALS.OFF_WHITE};
+
+    & > :nth-child(1) {
+      height: 175px;
+      border-radius: inherit;
+
+      object-fit: cover;
+      object-position: 50% 35%;
+    }
 
     & > :nth-child(2) {
       position: absolute;
       top: 1rem;
       left: 1rem;
-      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -52,7 +57,10 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
       z-index: 3;
 
       ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
-        (LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE || LAYOUT_RESULTS_MAIN_CARD === LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE) &&
+        (LAYOUT_RESULTS_MAIN_CARD ===
+          LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE ||
+          LAYOUT_RESULTS_MAIN_CARD ===
+            LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE) &&
         css`
           ${isATLayout()}
 

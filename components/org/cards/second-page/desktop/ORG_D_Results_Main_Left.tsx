@@ -1,11 +1,10 @@
-import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
-import { Verified } from "@/components/org/verified/Verified"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
+import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
 import {
   LAYOUT_RESULTS_MAIN_CARD_VALUES,
   SPECIFIC_DATA_KEY,
 } from "@/utils/org/second-page/desktop/specificData"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useMemo } from "react"
 import { ORG_D_Results_CardEmail } from "./ORG_D_Results_CardEmail"
 import { ORG_D_Results_CardLocation } from "./ORG_D_Results_CardLocation"
@@ -18,22 +17,22 @@ type Props = {
   renderThisCard?: number
   renderThisContact?: number
   backendData?: any
+  theIndex: number
 }
 
 export const ORG_D_Results_Main_Left = ({
   renderThisCard = 0,
   renderThisContact = 0,
   backendData,
+  theIndex,
 }: Props) => {
-  const { secondpageDataORG }: any =
-    useORG_Ctx_D_SecondpageData()
+  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const isVES_Like = useMemo(() => {
     return (
-      secondpageDataORG?.[
-        SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY
-      ]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ===
-      LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
+      secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[
+        SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD
+      ] === LAYOUT_RESULTS_MAIN_CARD_VALUES.VES_LIKE
     )
   }, [])
 
@@ -46,20 +45,14 @@ export const ORG_D_Results_Main_Left = ({
   }, [])
 
   const isOpenPositionAndThirdPosition = useMemo(() => {
-    return (
-      isVES_Like &&
-      !isDefault &&
-      isOpenPosition &&
-      renderThisCard > 1
-    )
+    return isVES_Like && !isDefault && isOpenPosition && renderThisCard > 1
   }, [])
 
   const layout = useMemo(() => {
     const theLayout =
-      secondpageDataORG?.[
-        SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY
-      ]?.[SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD] ??
-      null
+      secondpageDataORG?.[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY]?.[
+        SPECIFIC_DATA_KEY.LAYOUT_RESULTS_MAIN_CARD
+      ] ?? null
 
     return theLayout
   }, [])
@@ -69,8 +62,7 @@ export const ORG_D_Results_Main_Left = ({
       <ORG_D_Results_Main_LeftWrapper>
         <div>
           <Image
-            src={Backup_Image}
-            layout="fill"
+            src={imagesToUse_backup[theIndex]}
             alt={`Image of ${backendData.recordName}`}
           />
           <ORG_D_Results_Card_Hearth />
@@ -78,9 +70,7 @@ export const ORG_D_Results_Main_Left = ({
 
         <div>
           <ORG_D_Results_Cardphone
-            phoneNumber={
-              backendData.onlinePresence.telephoneNumber
-            }
+            phoneNumber={backendData.onlinePresence.telephoneNumber}
           />
 
           <ORG_D_Results_CardEmail
@@ -95,9 +85,7 @@ export const ORG_D_Results_Main_Left = ({
           <ORG_D_Results_CardLocation
             backendData={backendData}
             locationCity={backendData.address[0].city}
-            locationStreetName_Backend={
-              backendData.address[0].street
-            }
+            locationStreetName_Backend={backendData.address[0].street}
             locationState={backendData.address[0].state}
           />
         </div>
@@ -105,136 +93,5 @@ export const ORG_D_Results_Main_Left = ({
     )
   }
 
-  return (
-    <ORG_D_Results_Main_LeftWrapper
-      isOpenPositionAndThirdPosition={
-        isOpenPositionAndThirdPosition
-      }
-      className={
-        isOpenPositionAndThirdPosition
-          ? "isOpenPositionAndThirdPosition"
-          : ""
-      }
-      LAYOUT_RESULTS_MAIN_CARD={layout}
-    >
-      <div>
-        <Image
-          src={
-            secondpageDataORG.cardData[renderThisCard]
-              .imageToUse.src
-          }
-          layout={
-            isVES_Like && isDefault && !isOpenPosition
-              ? "fill"
-              : isVES_Like && !isDefault && !isOpenPosition
-              ? "fill"
-              : isOpenPositionAndThirdPosition
-              ? "fill"
-              : !isOpenPositionAndThirdPosition
-              ? "fill"
-              : "responsive"
-          }
-          objectFit={
-            isVES_Like && isDefault && !isOpenPosition
-              ? "fill"
-              : isVES_Like && !isDefault && !isOpenPosition
-              ? "scale-down"
-              : isOpenPositionAndThirdPosition
-              ? "fill"
-              : !isOpenPositionAndThirdPosition
-              ? "contain"
-              : "contain"
-          }
-          alt={`Image of ${secondpageDataORG.cardData[renderThisCard].title} ${secondpageDataORG.cardData[renderThisCard].textReview} `}
-          width={1}
-          height={1}
-        />
-        <ORG_D_Results_Card_Hearth />
-
-        <Verified />
-      </div>
-
-      {isVES_Like ? (
-        <>
-          <div>
-            <ORG_D_Results_CardLocation
-              locationCity={
-                secondpageDataORG.left[renderThisContact]
-                  .location.city
-              }
-              locationStreetNumber={
-                secondpageDataORG.left[renderThisContact]
-                  .location.streetNumber
-              }
-              locationStreetName={
-                secondpageDataORG.left[renderThisContact]
-                  .location.streetName
-              }
-              locationState={
-                secondpageDataORG.left[renderThisContact]
-                  .location.state
-              }
-              howFar={
-                secondpageDataORG.left[renderThisContact]
-                  .location.howFar
-              }
-              isVES_Like={true}
-            />
-          </div>
-        </>
-      ) : (
-        <>
-          <div>
-            <ORG_D_Results_Cardphone
-              phoneNumber={
-                secondpageDataORG.left[renderThisContact]
-                  .phone
-              }
-            />
-
-            <ORG_D_Results_CardEmail
-              email={
-                secondpageDataORG.left[renderThisContact]
-                  .email
-              }
-            />
-
-            <ORG_D_Results_CardWebsite
-              firstName={
-                secondpageDataORG.left[renderThisContact]
-                  .web?.fistName || ""
-              }
-              lastName={
-                secondpageDataORG.left[renderThisContact]
-                  .web?.lastName || ""
-              }
-            />
-
-            <ORG_D_Results_CardLocation
-              locationCity={
-                secondpageDataORG.left[renderThisContact]
-                  .location.city
-              }
-              locationStreetNumber={
-                secondpageDataORG.left[renderThisContact]
-                  .location.streetNumber
-              }
-              locationStreetName={
-                secondpageDataORG.left[renderThisContact]
-                  .location.streetName
-              }
-              locationState={
-                secondpageDataORG.left[renderThisContact]
-                  .location.state
-              }
-              howFar={
-                secondpageDataORG.left[renderThisContact]
-                  .location.howFar
-              }
-            />
-          </div>
-        </>
-      )}
-    </ORG_D_Results_Main_LeftWrapper>
-  )
+  return null
 }

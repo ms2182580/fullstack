@@ -34,7 +34,7 @@ export const ORG_D_Results_CardNoFilters = () => {
 
           return (
             <ORG_D_Results_CardWrapper key={theKey}>
-              <ORG_D_Results_Main_Left backendData={x} />
+              <ORG_D_Results_Main_Left backendData={x} theIndex={index} />
               <ORG_D_Results_Main_Right backendData={x} />
               <ORG_D_Results_Main_BottomButtons
                 backendData={x}
@@ -43,40 +43,6 @@ export const ORG_D_Results_CardNoFilters = () => {
             </ORG_D_Results_CardWrapper>
           )
         })}
-      </>
-    )
-  }
-
-  if (secondpageDataORG !== undefined) {
-    return (
-      <>
-        {Array(10)
-          .fill(0)
-          .map((x, i) => {
-            let renderThisCard = i % secondpageDataORG.right.length
-            let renderThisFilter = i % secondpageDataORG.right.length
-            let renderThisContact = i % secondpageDataORG.left.length
-
-            let thisKey = `${secondpageDataORG.cardData[renderThisCard].title}_${i}`
-
-            return (
-              <ORG_D_Results_CardWrapper key={thisKey}>
-                <ORG_D_Results_Main_Left
-                  renderThisCard={renderThisCard}
-                  renderThisContact={renderThisContact}
-                />
-
-                <ORG_D_Results_Main_Right
-                  renderThisFilter={renderThisFilter}
-                  renderThisCard={renderThisCard}
-                />
-
-                <ORG_D_Results_Main_BottomButtons
-                  renderThisContact={renderThisContact}
-                />
-              </ORG_D_Results_CardWrapper>
-            )
-          })}
       </>
     )
   }
