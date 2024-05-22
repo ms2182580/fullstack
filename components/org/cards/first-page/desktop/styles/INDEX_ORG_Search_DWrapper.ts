@@ -1,4 +1,5 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import { NEUTRALS } from "@/assets/Colors"
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled, { css } from "styled-components"
 
 export enum All_Layouts_Accepted {
@@ -13,10 +14,7 @@ type INDEX_ORG_Search_DWrapper_Props = {
 const PROPS = {
   HEIGHT: "4px",
   BACKGROUND_COLOR: `${NEUTRALS.LIGHT_GREY}`,
-}
-
-let inner_props = {
-  max_width: "400px",
+  MAX_WIDTH: "400px",
 }
 
 export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Props>`
@@ -62,7 +60,7 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
 
         padding-bottom: 24px;
 
-        max-width: ${inner_props.max_width};
+        max-width: ${PROPS.MAX_WIDTH};
 
         & > :nth-child(1) {
           border-top-left-radius: 8px;
@@ -96,55 +94,32 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           font-weight: 800;
         }
 
-        & > :nth-child(2),
-        & > :nth-child(3) {
-          padding-bottom: 8px;
+        & > :nth-child(3),
+        & > :nth-child(4) {
+          padding-top: 8px;
         }
 
         & > :nth-child(6) {
+          padding-top: 32px;
+
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
-          max-width: ${inner_props.max_width};
+          max-width: ${PROPS.MAX_WIDTH};
           padding-bottom: 32px;
-        }
-
-        & > :nth-child(5),
-        & > :nth-child(6) {
-          /* padding-bottom: 32px; */
         }
 
         & > :last-child {
           margin-top: auto;
           margin-inline: 24px;
 
+          ${reusableButton({})}
           display: flex;
           align-items: center;
           justify-content: center;
 
           gap: 16px;
-
-          font-size: 16px;
-          font-weight: 600;
-          color: hsl(210, 50%, 99.2%);
-          line-height: 19.2px;
-          letter-spacing: 0.256px;
-
-          background-color: ${PRIMARY.PRIMARY_CTA};
-          padding-top: 9px;
-          padding-bottom: 9px;
-
-          border-radius: 6.2px;
-          border: medium;
-
           cursor: pointer;
-
-          white-space: nowrap;
-
-          &:hover,
-          &:focus-visible {
-            background-color: ${PRIMARY.PRIMARY_HOVER};
-          }
         }
       }
     }
@@ -152,6 +127,12 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
     & > :nth-child(3) {
       grid-area: finalButton;
       justify-self: flex-end;
+
+      /* border: 2px solid crimson; */
+
+      ${reusableButton({ secondary: true })}
+
+      cursor: pointer;
     }
 
     &::after {
@@ -247,31 +228,4 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
         }
       }
     `}
-
-  &.dataComesFromBackend {
-    & > * {
-      & > :nth-child(2) {
-        display: flex;
-        justify-content: space-between;
-
-        & > * {
-          & > :nth-child(2) {
-            text-transform: capitalize;
-          }
-
-          & > :nth-child(4) {
-            color: ${NEUTRALS.DARK_GREY};
-          }
-          & > :nth-child(5) {
-            margin: 32px 0px;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 30px; /* 187.5% */
-            letter-spacing: 0.32px;
-          }
-        }
-      }
-    }
-  }
 `

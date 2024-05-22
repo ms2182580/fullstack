@@ -19,14 +19,6 @@ type Props = {
 }
 
 export const INDEX_D_ORG = ({ allBackendData }: Props) => {
-  /* //?TODO:BUG
-  * There's a bug here when you change something in development here and save it, it trigger useFormatData or something and new dataToORG is created in the UI
-  
-   */
-  // const { dataToORG }: { dataToORG: object[] } = useFormatData({
-  //   allBackendData,
-  // })
-
   const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
   const [matchNameState, setMatchNameState] = useState("All")
 
@@ -138,13 +130,8 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           </div>
         </div>
 
-        {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }, index) => {
+        {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
           if (singleCardIsSelected === false) {
-            /* 
-            !FH0
-            Implement the dummy data
-            */
-
             return (
               <Fragment key={CATEGORY}>
                 <INDEX_ORG_Search_D
