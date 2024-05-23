@@ -1,5 +1,4 @@
 import { ShareSvg_2 } from "@/assets/icons"
-import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified_Detail } from "@/components/org/verified/Verified_Detail"
@@ -7,7 +6,9 @@ import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
+import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
@@ -20,6 +21,8 @@ import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wr
 */
 export const ORG_D_Detail_MainCard2 = () => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData_Backend()
+  const { query } =
+    useRouter() /* The only purpose of this is display the correct dummy photo */
 
   const dataOnCard = useMemo(() => {
     const thirdPageData =
@@ -56,10 +59,17 @@ export const ORG_D_Detail_MainCard2 = () => {
       <article>
         <div>
           <span>
-            <Image src={Backup_Image} alt={`Placeholder image`} />
-            <ORG_D_Results_Card_Hearth />
-            <Verified_Detail />
+            <span>
+              <Image
+                src={imagesToUse_backup[Number(query?.whichPhoto)]}
+                alt={`Placeholder image`}
+              />
+              <ORG_D_Results_Card_Hearth />
+              <Verified_Detail />
+            </span>
+            <p>{dataOnCard.showPhotos} photos</p>
           </span>
+
           <span>
             <H2>{dataOnCard.title}</H2>
             <H3>{dataOnCard.subtitle}</H3>
@@ -77,8 +87,6 @@ export const ORG_D_Detail_MainCard2 = () => {
              */}
             <ShareSvg_2 />
           </span>
-
-          <p>{dataOnCard.showPhotos} photos</p>
         </div>
         <div>
           <H3>Class focus</H3>

@@ -49,7 +49,7 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
       }
 
       & > :nth-child(2) {
-        height: 40%;
+        height: 45%;
         position: relative;
         ${blurEffect({})}
       }

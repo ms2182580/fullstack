@@ -114,6 +114,12 @@ export const INDEX_ORG_Detail_D = () => {
     }
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
 
+  /* 
+  !FH0
+  Make this look good
+  https://www.figma.com/design/GtVzCwbU95yX7U0ZubrS7W/Screenshots-for-Promo?node-id=229-108349&t=FxUibRG8Xl2ywV0N-4
+  */
+
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>

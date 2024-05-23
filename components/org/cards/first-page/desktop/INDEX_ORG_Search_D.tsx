@@ -27,8 +27,6 @@ type Props = {
 }
 
 export const INDEX_ORG_Search_D = ({
-  positionInArray,
-  theData = [],
   someLayoutSpecial,
   dataComesFromBackend = true,
   isSelected = false,
@@ -105,6 +103,7 @@ export const INDEX_ORG_Search_D = ({
                                   category,
                                   setThirdpageDataORG_Backend,
                                   push,
+                                  indexBackend,
                                 })
                               }
                             >

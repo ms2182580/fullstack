@@ -14,6 +14,7 @@ type Props = {
   secondpageDataORG_Backend?: object[]
   setThirdpageDataORG_Backend: (allData) => void
   push
+  indexBackend?: number
 }
 
 export const handleMoveToThirdPage_Backend = ({
@@ -24,6 +25,7 @@ export const handleMoveToThirdPage_Backend = ({
   secondpageDataORG_Backend,
   setThirdpageDataORG_Backend,
   push,
+  indexBackend,
 }: Props) => {
   if (
     event.type === "click" ||
@@ -61,6 +63,7 @@ export const handleMoveToThirdPage_Backend = ({
         query: {
           [QUERY_BREADCRUMBS.TITLE]: checkedToURL,
           [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: true,
+          whichPhoto: indexBackend,
         },
       },
       toWhere
