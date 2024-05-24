@@ -23,7 +23,7 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
     position: relative;
 
     display: grid;
-    grid-template-columns: 700px 1fr;
+    grid-template-columns: 700px auto;
     gap: 40px;
 
     & > :nth-child(1) {
@@ -33,7 +33,7 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
 
     & > :last-child {
       height: 100vh;
-      width: 100%;
+      max-width: 365px;
 
       position: sticky;
       inset: 0;
@@ -41,26 +41,6 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
       display: flex;
       flex-direction: column;
       gap: 36px;
-
-      & > :nth-child(1) {
-        height: 50%;
-        position: relative;
-        ${blurEffect({})}
-      }
-
-      & > :nth-child(2) {
-        height: 45%;
-        position: relative;
-        ${blurEffect({})}
-      }
-
-      & > * {
-        ${ui_section_card()}
-
-        & > :nth-child(1) {
-          ${ui_header_card()}
-        }
-      }
     }
   }
 

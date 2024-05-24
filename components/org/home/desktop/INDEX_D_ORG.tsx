@@ -198,9 +198,6 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           // }
 
           /*
-          !FH0
-          Check how to display data that has 0 amount of resources
-          
           if (allBackendData[CATEGORY].length === 0) {
             return <h2>Data not found</h2>
           }

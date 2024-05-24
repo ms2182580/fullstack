@@ -17,11 +17,11 @@ import { P } from "../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../ui/heading_body_text/HeaderFonts"
 import { CardContainer } from "./styles/TileWrapper"
 type Props = {
-  isFullMap: boolean
+  isFullMap?: boolean
   handleIsFullMap: (e) => void
 }
 
-export const Tile = ({ isFullMap, handleIsFullMap }: Props) => {
+export const Tile = ({ isFullMap = false, handleIsFullMap }: Props) => {
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
 

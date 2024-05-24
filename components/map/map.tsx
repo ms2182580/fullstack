@@ -31,13 +31,13 @@ const default_data_map: Default_data_map_type = {
 }
 
 type Props = {
-  isFullMap: boolean
+  isFullMap?: boolean
   handleIsFullMap: (e: any) => void
   isMobile?: boolean
 }
 
 export const MapComponent = ({
-  isFullMap,
+  isFullMap = false,
   handleIsFullMap,
   isMobile = false,
 }: Props) => {

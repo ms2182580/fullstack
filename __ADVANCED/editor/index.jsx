@@ -25,7 +25,7 @@ export const Editor = () => {
     selection.addRange(range)
   }
   /* 
-  !FH0
+  !FH1
   Example on how to work:
   
   - If the text selected doesn't have bold, apply bold
@@ -36,7 +36,7 @@ export const Editor = () => {
 
   const handleToBold = (e) => {
     /* 
-    !FH0
+    !FH1
     - Avoid nesting HTML elements
     - Make a toggle bold
     */
@@ -251,7 +251,7 @@ export const Editor = () => {
       // console.log("textWithTags:", textWithTags)
 
       /* 
-      !FH0
+      !FH1
       - Start looking up the three with target.parentElement, if at some point it encounter a nodeType === 1 && tagName === "DIV" stop, and use everything it encounter to re made the HTML based on class styles
       - If a class is repeated, do not put it in the final string
       - Maybe it should take a look element by element to know if it have the corresponding HTML tag. With this said: it should change the behavior from classes to HTML tags. Other optin is apply element by element the corresponding class
@@ -350,7 +350,7 @@ export const Editor = () => {
     e.preventDefault()
 
     /* 
-    !FH0
+    !FH1
     Take in mind the user can copy not only a link but also:
       - ✅bold
       - ✅italic
@@ -460,7 +460,7 @@ export const Editor = () => {
   const handleFont24px = async (e) => {
     e.preventDefault()
     /* 
-    !FH0
+    !FH1
     - If the text already have this style do nothing
     - Eliminate the previous ID if a new style is applied
     - Prevent the nesting when the user click more times when the text keep selected after the to24px style
@@ -702,7 +702,7 @@ export const Editor = () => {
     // console.log("window.getSelection():", window.getSelection())
 
     /* 
-    !FH0 
+    !FH1 
     Stop make anything if nothing is selected
      */
     if (whichHTMLElementShouldRender === "A") {

@@ -9,6 +9,8 @@ import { useMemo } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
+import { ORG_D_Detail_AIChat } from "./ORG_D_Detail_AIChat"
+import { ORG_D_Detail_Contact } from "./ORG_D_Detail_Contact"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
 import { ORG_D_Detail_MainCard2 } from "./ORG_D_Detail_MainCard2"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
@@ -114,12 +116,6 @@ export const INDEX_ORG_Detail_D = () => {
     }
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
 
-  /* 
-  !FH0
-  Make this look good
-  https://www.figma.com/design/GtVzCwbU95yX7U0ZubrS7W/Screenshots-for-Promo?node-id=229-108349&t=FxUibRG8Xl2ywV0N-4
-  */
-
   return (
     <>
       <INDEX_ORG_Detail_DWrapper>
@@ -158,15 +154,8 @@ export const INDEX_ORG_Detail_D = () => {
           </div>
           {/* <ChatAI /> */}
           <div>
-            <article>
-              <H2>Contact the Organization</H2>
-              <div>...</div>
-            </article>
-
-            <article>
-              <H2>AI Chat</H2>
-              <div>...</div>
-            </article>
+            <ORG_D_Detail_Contact />
+            <ORG_D_Detail_AIChat />
           </div>
         </div>
 

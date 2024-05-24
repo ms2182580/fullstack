@@ -48,7 +48,7 @@ h6 {
   text-wrap: balance;
 }
 
-p {
+p, span, li, a {
   text-wrap: pretty;
 }
 

@@ -167,6 +167,21 @@ export const EmailSvg = (props) => (
   </svg>
 )
 
+export const Email2Svg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={20}
+    height={16}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#6E3A82"
+      d="M19 .5H1a.75.75 0 0 0-.75.75V14a1.5 1.5 0 0 0 1.5 1.5h16.5a1.5 1.5 0 0 0 1.5-1.5V1.25A.75.75 0 0 0 19 .5ZM18.25 14H1.75V2.955l7.743 7.098a.75.75 0 0 0 1.014 0l7.743-7.098V14Z"
+    />
+  </svg>
+)
+
 export const EmailResultsSvg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -2759,6 +2774,22 @@ export const WebsiteSvg = (props) => (
     />
   </svg>
 )
+
+export const Website2Svg = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={20}
+    height={20}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="#6E3A82"
+      d="M10 .25A9.75 9.75 0 1 0 19.75 10 9.76 9.76 0 0 0 10 .25Zm7.347 6h-3.321a13.349 13.349 0 0 0-1.9-4.219 8.285 8.285 0 0 1 5.221 4.219ZM10 1.76c1.125 1.22 1.969 2.77 2.472 4.49H7.528C8.03 4.53 8.875 2.98 10 1.76ZM7 10c0-.754.063-1.506.188-2.25h5.625c.248 1.49.248 3.01 0 4.5H7.186A13.622 13.622 0 0 1 7 10Zm.528 3.75h4.944c-.503 1.72-1.347 3.27-2.472 4.49-1.125-1.22-1.969-2.77-2.472-4.49Zm4.598 4.219a13.35 13.35 0 0 0 1.9-4.219h3.321a8.286 8.286 0 0 1-5.22 4.219Zm2.206-5.719a15.171 15.171 0 0 0 0-4.5h3.606a8.263 8.263 0 0 1 0 4.5h-3.606Z"
+    />
+  </svg>
+)
+
 export const Signup_UserSvg = (props) => (
   <svg
     {...props}
