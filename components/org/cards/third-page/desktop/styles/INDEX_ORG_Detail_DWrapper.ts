@@ -27,10 +27,9 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
 
     column-gap: clamp(8px, calc(7.711vw - 72px), 40px);
 
-    & > * {
-    }
     & > :nth-child(1) {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       row-gap: 28px;
     }
 
