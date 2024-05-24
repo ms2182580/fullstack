@@ -21,6 +21,8 @@ export const ORG_D_Detail_ContactWrapper = styled.article`
   }
 
   & > :nth-child(2) {
+    padding-top: 8px;
+
     ul {
       list-style: none;
       display: grid;
@@ -44,6 +46,15 @@ export const ORG_D_Detail_ContactWrapper = styled.article`
           font-weight: 600;
           color: ${SEMANTICS.HYPERLINK_NORMAL};
         }
+      }
+
+      & > li:nth-of-type(1) > span:nth-of-type(1),
+      & > li:nth-of-type(2) > span:nth-of-type(1),
+      & > li:nth-of-type(3) > span:nth-of-type(1),
+      & > li > p:nth-of-type(2) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 

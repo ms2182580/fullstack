@@ -15,6 +15,7 @@ export const ORG_D_Detail_AIChatWrapper = styled.article`
   }
 
   & > div:nth-of-type(1) {
+    padding-top: 8px;
     display: grid;
     gap: 24px;
 

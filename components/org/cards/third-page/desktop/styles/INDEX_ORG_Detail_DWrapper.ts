@@ -32,7 +32,7 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
     }
 
     & > :last-child {
-      height: 100vh;
+      height: 102vh;
       max-width: 365px;
 
       position: sticky;

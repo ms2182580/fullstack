@@ -2,6 +2,10 @@ import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Fragment } from "react"
 
+/* 
+!FH0
+Re make the default section
+*/
 export const ORG_Detail_D_SectionDefault = () => {
   return (
     <>
