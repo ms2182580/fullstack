@@ -53,4 +53,9 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
       ${blurEffect({})}
     }
   }
+
+  & > :nth-child(4) {
+    margin-top: 266px;
+    margin-inline: clamp(2px, calc(41vw - 416px), 142px);
+  }
 `

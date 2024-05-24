@@ -1,8 +1,8 @@
+import Breadcrumbs_CaretRight from "@/assets/icons/Breadcrumbs_CaretRight.svg"
 import Breadcrumbs_Home from "@/assets/icons/Breadcrumbs_Home.svg"
+import { useTabIndex } from "@/utils/useTabindex"
 import Link from "next/link.js"
 import { Fragment } from "react"
-import { ArrowRightSvg } from "../../../../assets/icons/index"
-import { useTabIndex } from "../../../../utils/useTabindex.js"
 import { Breadcrumbs_DWrapper } from "./styles/Breadcrumbs_DWrapper"
 
 export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
@@ -21,7 +21,7 @@ export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
         if (defaultRoute !== "") {
           return (
             <Fragment key={x[0]}>
-              <ArrowRightSvg />
+              <Breadcrumbs_CaretRight />
 
               <Link href={defaultRoute} tabIndex={useTab}>
                 {x[0]}
@@ -33,7 +33,7 @@ export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
         if (defaultRoute === "") {
           return (
             <Fragment key={x[0]}>
-              <ArrowRightSvg />
+              <Breadcrumbs_CaretRight />
 
               <span>
                 {typedFlow && <span>Results for: </span>}

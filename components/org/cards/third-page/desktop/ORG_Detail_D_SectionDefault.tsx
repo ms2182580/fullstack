@@ -6,7 +6,7 @@ export const ORG_Detail_D_SectionDefault = () => {
   return (
     <>
       {defaultSectionToRender.map(
-        ({ name, component, props_component, toNavbar }, index) => {
+        ({ component, props_component, toNavbar }, index) => {
           const TheComponent = component as any
           const theComponentName = component?.name
 

@@ -4,6 +4,7 @@ import { SEMANTICS } from "../../../../../assets/Colors"
 export const Breadcrumbs_DWrapper = styled.div`
   display: flex;
   align-items: center;
+  gap: 8px;
 
   a,
   span {
@@ -30,10 +31,6 @@ export const Breadcrumbs_DWrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
-
-    :not(:last-child) {
-      margin-right: 32px;
-    }
   }
 
   & > *:not(svg) {

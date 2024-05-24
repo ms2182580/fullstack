@@ -10,6 +10,7 @@ import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ORG_D_Detail_AIChat } from "./ORG_D_Detail_AIChat"
+import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
 import { ORG_D_Detail_Contact } from "./ORG_D_Detail_Contact"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
 import { ORG_D_Detail_MainCard2 } from "./ORG_D_Detail_MainCard2"
@@ -129,7 +130,10 @@ export const INDEX_ORG_Detail_D = () => {
           <div>
             <ORG_D_Detail_MainCard2 />
 
-            {/* <ORG_D_Detail_MainCard
+            {/* 
+            //!FH0
+            Eliminate this component and all their dependencies
+            <ORG_D_Detail_MainCard
               layout_MainCardRight={
                 getAllSpecificThirdPageData.layoutMainCardRight
               }
@@ -152,7 +156,6 @@ export const INDEX_ORG_Detail_D = () => {
             />*/}
             {/* <ORG_D_Detail_MainCard2 /> */}
           </div>
-          {/* <ChatAI /> */}
           <div>
             <ORG_D_Detail_Contact />
             <ORG_D_Detail_AIChat />
@@ -163,6 +166,10 @@ export const INDEX_ORG_Detail_D = () => {
           <H2>More Resources</H2>
           <div>...</div>
         </article>
+
+        <div>
+          <ORG_D_Detail_BreadcrumbsLastUpdated />
+        </div>
       </INDEX_ORG_Detail_DWrapper>
 
       <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />

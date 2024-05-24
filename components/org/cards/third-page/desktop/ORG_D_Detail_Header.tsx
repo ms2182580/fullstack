@@ -53,35 +53,33 @@ export const ORG_D_Detail_Header = ({
           />
         </>
       ) : (
-        <>
-          <Breadcrumbs_D
-            whichDisplay={[
-              ["Resource Directory", `${ALL_ROUTES.ORG}`],
-              [
-                `${
-                  thirdpageDataORG_Backend[
-                    DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY
-                  ]
-                }`,
-                ``,
-              ],
-              [
-                `${
-                  thirdpageDataORG_Backend[
-                    DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
-                  ].recordName
-                }`,
-                "",
-              ],
-            ]}
-          />
-        </>
+        <Breadcrumbs_D
+          whichDisplay={[
+            ["Resource Directory", `${ALL_ROUTES.ORG}`],
+            [
+              `${
+                thirdpageDataORG_Backend[
+                  DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY
+                ]
+              }`,
+              ``,
+            ],
+            [
+              `${
+                thirdpageDataORG_Backend[
+                  DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA
+                ].recordName
+              }`,
+              "",
+            ],
+          ]}
+        />
       )}
 
       <ul>
         {sectionToRender !== null ? (
           <>
-            {sectionToRender.map((x: any, index: number) => {
+            {sectionToRender.map((x: any) => {
               const toJSX = x?.toNavbar?.jsx ? x.toNavbar.jsx : x.toNavbar.id
 
               if (x.toNavbar.id !== null) {

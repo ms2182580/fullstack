@@ -9,7 +9,7 @@ export const ORG_D_Detail_BreadcrumbsLastUpdatedWrapper = styled.div`
   }
 
   & > :nth-child(1) {
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 
   & > :last-child {
