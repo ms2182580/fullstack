@@ -9,8 +9,6 @@ export const ORG_D_Detail_ContactWrapper = styled.article`
   & > :nth-child(1) {
     ${ui_header_card()};
 
-    white-space: nowrap;
-    height: 56px;
     display: flex;
     align-items: center;
   }

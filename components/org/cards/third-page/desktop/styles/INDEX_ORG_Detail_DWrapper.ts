@@ -23,17 +23,19 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
     position: relative;
 
     display: grid;
-    grid-template-columns: 700px auto;
-    gap: 40px;
+    grid-template-columns: 700px minmax(0, 1fr);
 
+    column-gap: clamp(8px, calc(7.711vw - 72px), 40px);
+
+    & > * {
+    }
     & > :nth-child(1) {
       display: grid;
-      gap: 28px;
+      row-gap: 28px;
     }
 
     & > :last-child {
       height: 102vh;
-      max-width: 365px;
 
       position: sticky;
       inset: 0;
@@ -41,6 +43,12 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
       display: flex;
       flex-direction: column;
       gap: 36px;
+
+      & > * {
+        & > :nth-child(1) {
+          padding: 0 clamp(2px, 3.373vw - 34px, 16px);
+        }
+      }
     }
   }
 
