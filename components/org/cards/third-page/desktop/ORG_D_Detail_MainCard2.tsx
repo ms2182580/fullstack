@@ -16,7 +16,6 @@ import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wr
 
 /* 
 !FH0
-- Create the new main card
 - This component should be renamed to "Overview"
 */
 export const ORG_D_Detail_MainCard2 = () => {

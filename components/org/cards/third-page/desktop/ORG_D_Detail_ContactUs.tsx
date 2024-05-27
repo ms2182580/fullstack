@@ -175,13 +175,9 @@ export const ORG_D_Detail_ContactUs = ({
         <button tabIndex={sendMessageButton ? 0 : -1}>
           {sendMessageButton ? <Send_Message_UsableSvg /> : <SendMessageSvg />}
 
-          <p>Send Message</p>
+          <span>Send Message</span>
         </button>
-        <span
-          // onClick={handlePushTo404}
-          // onKeyDown={handlePushTo404}
-          tabIndex={0}
-        >
+        <span tabIndex={0}>
           {textBesideButton ? textBesideButton : "Is this product a good fit?"}
         </span>
       </div>

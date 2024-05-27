@@ -1,5 +1,5 @@
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled, { css } from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../../../assets/Colors"
 
 type Props = {
   contactUsCustomValue: boolean
@@ -143,12 +143,12 @@ export const ORG_D_Detail_ContactUsWrapper = styled.section<Props>`
       textBesideButton_isLikeButton
         ? css`
             & > * {
-              padding-inline: 48px;
+              padding-inline: 24px;
             }
           `
         : css`
             & > :nth-child(1) {
-              padding-inline: 48px;
+              padding-inline: 24px;
             }
           `}
 

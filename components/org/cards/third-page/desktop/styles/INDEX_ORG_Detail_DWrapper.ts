@@ -33,7 +33,7 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
       row-gap: 28px;
     }
 
-    & > :last-child {
+    & > :nth-child(2) {
       height: 102vh;
 
       position: sticky;

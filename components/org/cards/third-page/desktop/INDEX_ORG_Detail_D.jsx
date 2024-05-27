@@ -131,8 +131,7 @@ export const INDEX_ORG_Detail_D = () => {
             <ORG_D_Detail_MainCard2 />
 
             {/* 
-            //!FH0
-            Eliminate this component and all their dependencies
+            //!FH0 Eliminate this component and all their dependencies
             <ORG_D_Detail_MainCard
               layout_MainCardRight={
                 getAllSpecificThirdPageData.layoutMainCardRight
@@ -144,6 +143,11 @@ export const INDEX_ORG_Detail_D = () => {
                 getAllSpecificThirdPageData.renderSections[0].toNavbar.id
               }
             /> */}
+
+            {/* 
+            //!FH0 re make all the sections to fit the new layout and design
+            */}
+
             {getAllSpecificThirdPageData.renderSections ? (
               <ORG_Detail_D_SectionCustom
                 sectionCustom={getAllSpecificThirdPageData.renderSections}
@@ -151,10 +155,6 @@ export const INDEX_ORG_Detail_D = () => {
             ) : (
               <ORG_Detail_D_SectionDefault />
             )}
-            {/*  <ORG_D_Detail_BreadcrumbsLastUpdated
-              thirdpageDataORG={thirdpageDataORG}
-            />*/}
-            {/* <ORG_D_Detail_MainCard2 /> */}
           </div>
           <div>
             <ORG_D_Detail_Contact />

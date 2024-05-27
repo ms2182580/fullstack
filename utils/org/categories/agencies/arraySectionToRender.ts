@@ -1,14 +1,8 @@
-import {
-  ContactUsCustomProperties_KEY,
-  ORG_D_Detail_ContactUs,
-  SEND_MESSAGE_BUTTON,
-  TEXT_BESIDE_BUTTON,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   ArraySectionToRender_Type,
-  ArraySection_KEYS,
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
@@ -37,24 +31,8 @@ export const arraySectionToRender_Agencies: ArraySectionToRender_Type = [
     },
   },
   {
-    name: ORG_D_Detail_ContactUs.name,
-    component: ORG_D_Detail_ContactUs,
-    [ArraySection_KEYS.PROPS_COMPONENT]: {
-      [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: {
-        [ContactUsCustomProperties_KEY.TITLE]: "I’m interested in improving",
-        [ContactUsCustomProperties_KEY.DATA]: [
-          "Housing help",
-          "Rent relief",
-          "Funding help",
-          "Intake process",
-          "Interpreter services",
-          "Other",
-        ],
-      },
-      [TEXT_BESIDE_BUTTON.KEY]: "Find out if  we’re a good fit for you",
-      [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: true,
-      [SEND_MESSAGE_BUTTON.IS_USABLE]: true,
-    },
+    name: ORG_D_Detail_OverviewDetails.name,
+    component: ORG_D_Detail_OverviewDetails,
     toNavbar: {
       id: null,
     },

@@ -356,6 +356,9 @@ export const namesCategoriesOrder = [
 ]
 
 // * The actual implementation on the UI rely on the order of this object
+/* 
+!FH0
+Change all the CONACTUS array section for "Class Details" */
 export const ALL_DATA: ALL_DATA_Type = {
   [NamesCategories_KEY["AGENCIES"]]: {
     CATEGORY: NamesCategories_KEY["AGENCIES"],
