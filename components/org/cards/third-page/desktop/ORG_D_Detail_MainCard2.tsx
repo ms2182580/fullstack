@@ -44,7 +44,7 @@ export const ORG_D_Detail_MainCard2 = () => {
       showPhotos: 6,
       about: {
         name: allData.recordName,
-        lastName: "",
+        lastName: "last_name",
       },
       lastUpdated: "Last updated February 13, 2024",
     }
@@ -54,7 +54,7 @@ export const ORG_D_Detail_MainCard2 = () => {
 
   return (
     <ORG_D_Detail_MainCard2Wrapper id={dataOnCard.theID}>
-      <H2>Overview</H2>
+      <H2>overview</H2>
       <article>
         <div>
           <span>

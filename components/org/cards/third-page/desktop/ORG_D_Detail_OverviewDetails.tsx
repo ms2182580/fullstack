@@ -7,7 +7,9 @@ import {
 } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { useRef, useState } from "react"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
+import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import { useMemo, useRef, useState } from "react"
 import { ORG_D_Detail_OverviewDetailsWrapper } from "./styles/ORG_D_Detail_OverviewDetailsWrapper"
 
 const DATA = [
@@ -67,7 +69,17 @@ const DATA = [
 
 const INITIAL_STATE = 4
 
-export const ORG_D_Detail_OverviewDetails = () => {
+type Props = {
+  [ArraySection_KEYS.ALL_DATA]: {
+    theIdForComponent: string
+  }
+}
+
+export const ORG_D_Detail_OverviewDetails = ({
+  [ArraySection_KEYS.ALL_DATA]: allProps,
+}: Props) => {
+  const { theIdForComponent = "#" } = allProps || {}
+
   const [howMuchShow, setHowMuchShow] = useState<number>(INITIAL_STATE)
 
   const handleHowMuchShow = (e) => {
@@ -89,13 +101,24 @@ export const ORG_D_Detail_OverviewDetails = () => {
     }
   }
 
+  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData_Backend()
+
+  const dataOnCard = useMemo(() => {
+    const allData = thirdpageDataORG.ALL_DATA
+
+    return {
+      actualRecordName: allData.recordName,
+    }
+  }, [])
+
   return (
     <ORG_D_Detail_OverviewDetailsWrapper
+      id={theIdForComponent}
       ref={toMoveTheView}
       isViewMore={howMuchShow < DATA.length}
     >
       <header>
-        <H2>Class Details</H2>
+        <H2>{dataOnCard.actualRecordName} Details</H2>
       </header>
       <div>
         <ul>

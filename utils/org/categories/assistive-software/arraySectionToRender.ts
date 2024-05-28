@@ -1,8 +1,5 @@
-import {
-  ContactUsCustomProperties_KEY,
-  ORG_D_Detail_ContactUs,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_AT_WCMD_SimilarProducts } from "@/components/org/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_SimilarProducts"
 import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/org/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_WhereToBuy"
@@ -43,12 +40,8 @@ export const arraySectionToRender_AssistiveSoftware: ArraySectionToRender_Type =
       },
     },
     {
-      name: ORG_D_Detail_ContactUs.name,
-      component: ORG_D_Detail_ContactUs,
-      props_component: {
-        [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]:
-          "no_display_UI",
-      },
+      name: ORG_D_Detail_OverviewDetails.name,
+      component: ORG_D_Detail_OverviewDetails,
       toNavbar: {
         id: arrayInnerNavBar_PAS[2][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY

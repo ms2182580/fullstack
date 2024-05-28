@@ -7,8 +7,6 @@ export const Highlights_DWrapper = styled.div`
   flex-wrap: wrap;
   gap: 8px;
 
-  text-transform: capitalize;
-
   & > * {
     background-color: ${SECONDARY_ORG_PLUS.PINK_2};
     border-radius: 4px;
@@ -17,6 +15,7 @@ export const Highlights_DWrapper = styled.div`
     p {
       font-size: 12px;
       line-height: 12px;
+      text-transform: capitalize;
     }
   }
 `

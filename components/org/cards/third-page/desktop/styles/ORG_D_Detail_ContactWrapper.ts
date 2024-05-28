@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 export const ORG_D_Detail_ContactWrapper = styled.article`
   ${ui_section_card()}
+  background-color: ${NEUTRALS.OFF_WHITE};
 
   & > :nth-child(1) {
     ${ui_header_card()};

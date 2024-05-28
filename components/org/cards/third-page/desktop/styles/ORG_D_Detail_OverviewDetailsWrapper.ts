@@ -14,6 +14,7 @@ export const ORG_D_Detail_OverviewDetailsWrapper = styled.section<Props>`
 
     h2 {
       font-size: 20px;
+      text-transform: capitalize;
     }
   }
 

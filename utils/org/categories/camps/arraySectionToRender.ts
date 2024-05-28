@@ -1,15 +1,10 @@
-import {
-  ContactUsCustomProperties_KEY,
-  ORG_D_Detail_ContactUs,
-  TEXT_BESIDE_BUTTON,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { PCMPS_General_D_Booking } from "@/components/org/cards_resources/third-page/pcmps/general/desktop/PCMPS_General_D_Booking"
 import { PCMPS_General_D_PackingList } from "@/components/org/cards_resources/third-page/pcmps/general/desktop/PCMPS_General_D_PackingList"
 import {
   ArraySectionToRender_Type,
-  ArraySection_KEYS,
   InnerNavBar_InnerData,
   InnerNavBar_InnerData_KEYS,
 } from "@/utils/org/third-page/InnerNavBar"
@@ -56,28 +51,11 @@ export const arraySectionToRender_Camps: ArraySectionToRender_Type = [
     },
   },
   {
-    name: ORG_D_Detail_ContactUs.name,
-    component: ORG_D_Detail_ContactUs,
-    [ArraySection_KEYS.PROPS_COMPONENT]: {
-      [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: {
-        [ContactUsCustomProperties_KEY.TITLE]: "I have questions about",
-        [ContactUsCustomProperties_KEY.DATA]: [
-          "Payment",
-          "Accessibility Options",
-          "Inclusion",
-          "Accomodations",
-          "Sports requirements",
-          "Something else",
-        ],
-      },
-      [TEXT_BESIDE_BUTTON.KEY]: "Are we a good fit?",
-    },
+    name: ORG_D_Detail_OverviewDetails.name,
+    component: ORG_D_Detail_OverviewDetails,
     toNavbar: {
       id: arrayInnerNavBar_PCMPS[3][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
-      ],
-      jsx: arrayInnerNavBar_PCMPS[3][
-        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
       ],
     },
   },

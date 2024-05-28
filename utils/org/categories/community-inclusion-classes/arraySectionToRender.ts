@@ -1,9 +1,5 @@
-import {
-  ContactUsCustomProperties_KEY,
-  ORG_D_Detail_ContactUs,
-  TEXT_BESIDE_BUTTON,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
 import { PCC_General_D_UsersAlsoViewed } from "@/components/org/cards_resources/third-page/pcc/general/desktop/PCC_General_D_UsersAlsoViewed"
@@ -44,34 +40,11 @@ export const arraySectionToRender_CommunityInclusionClasses: ArraySectionToRende
       },
     },
     {
-      name: ORG_D_Detail_ContactUs.name,
-      component: ORG_D_Detail_ContactUs,
-      props_component: {
-        [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: {
-          [ContactUsCustomProperties_KEY.TITLE]: "I’m interested in improving",
-          [ContactUsCustomProperties_KEY.DATA]: [
-            "Coordination",
-            "Strength",
-            "Endurance",
-            "Weigh management",
-            "Flexibilty",
-            "Improved posture",
-            "Socialization",
-            "Independence",
-            "Self-esteem",
-            "behavioral improvement",
-            "Verbal Skills",
-            "Other",
-          ],
-        },
-        [TEXT_BESIDE_BUTTON.KEY]: "Is this class a good fit for you?",
-      },
+      name: ORG_D_Detail_OverviewDetails.name,
+      component: ORG_D_Detail_OverviewDetails,
       toNavbar: {
         id: arrayInnerNavBar_PCIC[2][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
-        ],
-        jsx: arrayInnerNavBar_PCIC[2][
-          InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
         ],
       },
     },

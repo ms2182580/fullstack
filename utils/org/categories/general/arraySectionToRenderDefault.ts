@@ -5,7 +5,7 @@ export const arraySectionToRenderDefault: InnerNavBar_InnerData = [
     INNER_NAV_BAR_KEY: "Overview",
   },
 
-  { INNER_NAV_BAR_KEY: "contact", INNER_NAV_BAR_VALUE: "contact us" },
+  { INNER_NAV_BAR_KEY: "details" },
 
   { INNER_NAV_BAR_KEY: "reviews" },
 

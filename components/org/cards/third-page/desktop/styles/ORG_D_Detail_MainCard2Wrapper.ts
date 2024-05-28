@@ -14,7 +14,7 @@ export const ORG_D_Detail_MainCard2Wrapper = styled.section`
   ${ui_section_card()}
 
   & > :nth-child(1) {
-    ${ui_header_card()}
+    ${ui_header_card()};
   }
 
   & > article {

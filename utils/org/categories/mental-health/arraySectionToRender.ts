@@ -1,4 +1,5 @@
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   HEADER_TITLE,
@@ -16,6 +17,7 @@ import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefa
 export const arrayInnerNavBar_MHPS: InnerNavBar_InnerData = [
   arraySectionToRenderDefault[0],
   { INNER_NAV_BAR_KEY: "booking" },
+  arraySectionToRenderDefault[1],
   {
     INNER_NAV_BAR_KEY: "otherProviders",
     INNER_NAV_BAR_VALUE: "other providers",
@@ -48,13 +50,22 @@ export const arraySectionToRender_MentalHealth: ArraySectionToRender_Type = [
     },
   },
   {
-    name: ORG_D_Detail_AtTheSameClinic.name,
-    component: ORG_D_Detail_AtTheSameClinic,
+    name: ORG_D_Detail_OverviewDetails.name,
+    component: ORG_D_Detail_OverviewDetails,
     toNavbar: {
       id: arrayInnerNavBar_MHPS[2][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
       ],
-      jsx: arrayInnerNavBar_MHPS[2][
+    },
+  },
+  {
+    name: ORG_D_Detail_AtTheSameClinic.name,
+    component: ORG_D_Detail_AtTheSameClinic,
+    toNavbar: {
+      id: arrayInnerNavBar_MHPS[3][
+        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
+      ],
+      jsx: arrayInnerNavBar_MHPS[3][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
       ],
     },
@@ -63,7 +74,7 @@ export const arraySectionToRender_MentalHealth: ArraySectionToRender_Type = [
     name: ORG_D_Detail_Reviews.name,
     component: ORG_D_Detail_Reviews,
     toNavbar: {
-      id: arrayInnerNavBar_MHPS[3][
+      id: arrayInnerNavBar_MHPS[4][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
       ],
     },
@@ -72,10 +83,10 @@ export const arraySectionToRender_MentalHealth: ArraySectionToRender_Type = [
     name: ORG_D_Detail_FAQS.name,
     component: ORG_D_Detail_FAQS,
     toNavbar: {
-      id: arrayInnerNavBar_MHPS[4][
+      id: arrayInnerNavBar_MHPS[5][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
       ],
-      jsx: arrayInnerNavBar_MHPS[4][
+      jsx: arrayInnerNavBar_MHPS[5][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
       ],
     },
