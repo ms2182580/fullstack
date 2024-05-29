@@ -1,9 +1,12 @@
-import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "@/assets/Colors"
+import { SECONDARY_ORG_PLUS } from "@/assets/Colors"
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
 export const ORG_D_Detail_AT_WCMD_WhereToBuy_SectionWrapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
+  /* display: grid;
+  grid-auto-flow: column; */
+  display: flex;
+  /* flex-direction: column; */
 
   padding-top: 65px;
   padding-bottom: 65px;
@@ -20,12 +23,11 @@ export const ORG_D_Detail_AT_WCMD_WhereToBuy_SectionWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 26px;
+    /* 
+    flex-shrink: 0;
+    flex-basis: 200px; */
 
     flex-wrap: wrap;
-
-    max-width: 100%;
-
-    border: 2px solid green;
 
     & > :nth-child(1) {
       font-weight: 800;
@@ -51,25 +53,10 @@ export const ORG_D_Detail_AT_WCMD_WhereToBuy_SectionWrapper = styled.div`
 
     & > :nth-child(3) {
       text-decoration: none;
-      cursor: pointer;
 
-      color: ${PRIMARY.PRIMARY_CTA};
-      font-weight: 600;
-      text-align: center;
-      white-space: nowrap;
+      ${reusableButton({ secondary: true })};
 
-      border-radius: 8px;
-      border: 2px solid ${PRIMARY.PRIMARY_CTA};
-
-      padding: 8px 48px;
-
-      &:hover {
-        color: ${NEUTRALS.OFF_WHITE};
-
-        border: 2px solid ${PRIMARY.PRIMARY_CTA};
-
-        background-color: ${PRIMARY.PRIMARY_CTA};
-      }
+      width: 100%;
     }
   }
 `

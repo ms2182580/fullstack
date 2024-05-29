@@ -17,7 +17,12 @@ export type Section_Props = {
   linkToVisit?: string
 }
 
-export const ORG_D_Detail_AT_WCMD_WhereToBuy_Section = ({ imageSource = "", amountOfMoney = 999, productSpecifications = [], linkToVisit = "#" }: Section_Props) => {
+export const ORG_D_Detail_AT_WCMD_WhereToBuy_Section = ({
+  imageSource = "",
+  amountOfMoney = 999,
+  productSpecifications = [],
+  linkToVisit = "#",
+}: Section_Props) => {
   let amountOfMoneyFormat = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -48,7 +53,9 @@ export const ORG_D_Detail_AT_WCMD_WhereToBuy_Section = ({ imageSource = "", amou
           ))}
         </ul>
 
-        <Link href={`${linkToVisit}`}>Visit Site</Link>
+        <Link href={`${linkToVisit}`} target="_blank">
+          Visit Site
+        </Link>
       </span>
     </ORG_D_Detail_AT_WCMD_WhereToBuy_SectionWrapper>
   )
