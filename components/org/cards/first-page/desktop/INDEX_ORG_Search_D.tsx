@@ -80,8 +80,12 @@ export const INDEX_ORG_Search_D = ({
                               />
                             </div>
 
-                            <H3>{xBackendData.recordName.toLowerCase()}</H3>
-                            <H4>{xBackendData.recordSubtype}</H4>
+                            <H3 title={xBackendData.recordName.toLowerCase()}>
+                              {xBackendData.recordName.toLowerCase()}
+                            </H3>
+                            <H4 title={xBackendData.recordSubtype}>
+                              {xBackendData.recordSubtype}
+                            </H4>
 
                             <P>
                               {xBackendData?.address[0].city || ""},{" "}

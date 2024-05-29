@@ -11,7 +11,7 @@ export const ORG_D_Detail_AT_WCMD_WhereToBuyWrapper = styled.section`
     border-radius: 8px 8px 0 0;
   }
 
-  & > header ~ div {
+  & > :first-child ~ *:not(:last-child) {
     border-bottom: 1px solid rgba(108, 108, 108, 0.6);
   }
 

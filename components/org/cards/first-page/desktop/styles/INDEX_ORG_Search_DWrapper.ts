@@ -56,11 +56,13 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
         box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
         background-color: white;
-        display: grid;
 
         padding-bottom: 24px;
 
-        max-width: ${PROPS.MAX_WIDTH};
+        min-width: 100%;
+
+        display: flex;
+        flex-direction: column;
 
         & > :nth-child(1) {
           border-top-left-radius: 8px;
@@ -71,7 +73,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           & > :nth-child(1) {
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
-
             height: 250px;
 
             object-fit: cover;
@@ -85,13 +86,23 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           }
         }
 
-        & > *:not(:first-child) {
+        & > :not(:first-child) {
           padding-inline: 24px;
         }
 
         & > :nth-child(2) {
           padding-top: 24px;
           font-weight: 800;
+
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        & > :nth-child(3) {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
 
         & > :nth-child(3),
@@ -105,7 +116,6 @@ export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Pr
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
-          max-width: ${PROPS.MAX_WIDTH};
           padding-bottom: 32px;
         }
 
