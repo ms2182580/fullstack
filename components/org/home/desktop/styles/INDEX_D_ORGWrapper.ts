@@ -25,21 +25,6 @@ export const INDEX_D_ORGWrapper = styled.div`
   & > :nth-child(1) {
     position: relative;
 
-    & > :nth-child(4) {
-      margin-top: 109rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    & > :nth-child(5) {
-      margin-top: 185rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  & > :nth-child(1) {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
@@ -69,6 +54,19 @@ export const INDEX_D_ORGWrapper = styled.div`
     & > :nth-child(3) {
       padding-top: 73px;
       grid-area: search;
+    }
+
+    & > :nth-child(4) {
+      margin-top: 109rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    & > :nth-child(5) {
+      margin-top: 185rem;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
@@ -133,7 +131,7 @@ export const INDEX_D_ORGWrapper = styled.div`
         background: linear-gradient(
           -90deg,
           hsla(0, 0%, 100%, 20%) 0%,
-          hsl(0, 0%, 100%) 8%
+          hsl(16.7, 100%, 96.5%) 8%
         );
       }
     }
@@ -222,7 +220,7 @@ export const INDEX_D_ORGWrapper = styled.div`
         background: linear-gradient(
           90deg,
           hsla(0, 0%, 100%, 20%) 0%,
-          hsl(0, 0%, 100%) 8%
+          hsl(16.7, 100%, 96.5%) 8%
         );
       }
     }

@@ -1,4 +1,5 @@
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   HEADER_TITLE,
@@ -23,6 +24,7 @@ export const arrayInnerNavBar_THRP: InnerNavBar_InnerData = [
   },
   arraySectionToRenderDefault[2],
   arraySectionToRenderDefault[3],
+  arraySectionToRenderDefault[1],
 ]
 
 export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type =
@@ -32,6 +34,15 @@ export const arraySectionToRender_TherapeuticServices: ArraySectionToRender_Type
       component: null,
       toNavbar: {
         id: arrayInnerNavBar_THRP[0][
+          InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
+        ],
+      },
+    },
+    {
+      name: ORG_D_Detail_OverviewDetails.name,
+      component: ORG_D_Detail_OverviewDetails,
+      toNavbar: {
+        id: arrayInnerNavBar_THRP[5][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
       },

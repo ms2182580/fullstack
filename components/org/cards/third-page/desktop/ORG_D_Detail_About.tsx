@@ -13,24 +13,6 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef = null }) => {
     aboutTextState.substring(0, 220) + "..."
   )
 
-  const [showModal, setShowModal] = useState(false)
-  // const { lockScroll, unlockScroll } = useScrollLock()
-  // const { setModalShowedCtx } = useCtx_ShowModal()
-
-  // const handleShowModal = (e) => {
-  //   if (e.type === "click" || e.key === "Enter") {
-  //     lockScroll()
-  //     setShowModal(true)
-  //     setModalShowedCtx(true)
-  //   }
-  // }
-
-  // const handleHideModal = () => {
-  //   unlockScroll()
-  //   setShowModal(false)
-  //   setModalShowedCtx(false)
-  // }
-
   const {
     dialogRef,
     openDialog,
@@ -62,11 +44,7 @@ export const ORG_D_Detail_About = ({ name, lastName, aboutRef = null }) => {
           refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
           useHide={useHide}
         >
-          <ORG_D_Detail_About_Modal
-            // showModal={showModal}
-            // handleHideModal={handleHideModal}
-            aboutTextState={aboutTextState}
-          />
+          <ORG_D_Detail_About_Modal aboutTextState={aboutTextState} />
         </Dialog_D>
       </div>
     </ORG_D_Detail_AboutWrapper>

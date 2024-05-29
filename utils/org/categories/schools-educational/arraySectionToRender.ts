@@ -5,6 +5,7 @@ import {
   TEXT_BESIDE_BUTTON,
 } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_SchoolAcademics } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_SchoolAcademics"
 import { ORG_D_Detail_StudentDemographics } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_StudentDemographics"
@@ -25,6 +26,7 @@ export const arrayInnerNavBar_SCHE: InnerNavBar_InnerData = [
   },
   arraySectionToRenderDefault[2],
   arraySectionToRenderDefault[3],
+  arraySectionToRenderDefault[4],
 ]
 
 export const arraySectionToRender_SchoolsEducational: ArraySectionToRender_Type =
@@ -39,6 +41,15 @@ export const arraySectionToRender_SchoolsEducational: ArraySectionToRender_Type 
       },
     },
     {
+      name: ORG_D_Detail_OverviewDetails.name,
+      component: ORG_D_Detail_OverviewDetails,
+      toNavbar: {
+        id: arrayInnerNavBar_SCHE[1][
+          InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
+        ],
+      },
+    },
+    {
       name: ORG_D_Detail_ContactUs.name,
       component: ORG_D_Detail_ContactUs,
       [ArraySection_KEYS.PROPS_COMPONENT]: {
@@ -47,10 +58,10 @@ export const arraySectionToRender_SchoolsEducational: ArraySectionToRender_Type 
         [TEXT_BESIDE_BUTTON.KEY]: "Is this product a good fit?",
       },
       toNavbar: {
-        id: arrayInnerNavBar_SCHE[1][
+        id: arrayInnerNavBar_SCHE[5][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
-        jsx: arrayInnerNavBar_SCHE[1][
+        jsx: arrayInnerNavBar_SCHE[5][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
         ],
       },

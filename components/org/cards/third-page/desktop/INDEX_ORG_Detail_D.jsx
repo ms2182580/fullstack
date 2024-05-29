@@ -31,48 +31,7 @@ export const INDEX_ORG_Detail_D = () => {
 
   const getAllSpecificThirdPageData = useMemo(() => {
     if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
-      const dataObj =
-        thirdpageDataORG?.[DATA_ORG_KeyNamesForCards_D_KEYS.CARD]?.[
-          `rightPart`
-        ]?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE_DATA]?.[
-          DATA_ORG_KeyNamesForCards_D_KEYS.CARD
-        ]
-
-      const renderSections =
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
-
-      const arrayInnerNavBar =
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.NAVIGATION_BAR] ?? null
-
-      const tooltip =
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??
-        Tooltip_VALUES.DEFAULT
-
-      const layoutMainCardRight =
-        dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT] ??
-        Layout_MainCardRight_VALUES.DEFAULT
-
-      const howIsMap = dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.HOW_IS_MAP] ?? {
-        [MapProperties_KEYS.HOW_MANY]: 1,
-      }
-
-      const buttonMainCard = {
-        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]:
-          dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT] ??
-          "add to care plan",
-        [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]:
-          dataObj[DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON] ??
-          false,
-      }
-
-      return {
-        renderSections,
-        arrayInnerNavBar,
-        tooltip,
-        layoutMainCardRight,
-        howIsMap,
-        buttonMainCard,
-      }
+      return null
     }
 
     const dataThirdPage =
@@ -80,7 +39,8 @@ export const INDEX_ORG_Detail_D = () => {
       null
 
     const renderSections =
-      dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ?? null
+      dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS] ??
+      defaultSectionToRender
 
     const tooltip =
       dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP] ??

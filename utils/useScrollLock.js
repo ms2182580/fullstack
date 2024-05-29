@@ -1,5 +1,7 @@
 import { useCallback, useLayoutEffect } from "react"
 
+/*//!FH1 Eliminate te use of this hook on all the website. Use the dialog html instead  */
+
 export const useScrollLock = () => {
   const lockScroll = useCallback(() => {
     // document.body.style.overflow = "hidden"
@@ -14,11 +16,11 @@ export const useScrollLock = () => {
   }, [])
 
   useLayoutEffect(() => {
-    const scrollBarCompensation = window.innerWidth - document.body.offsetWidth
-    document.body.style.setProperty(
-      "--scrollbar-compensation",
-      `${scrollBarCompensation}px`
-    )
+    // const scrollBarCompensation = window.innerWidth - document.body.offsetWidth
+    // document.body.style.setProperty(
+    //   "--scrollbar-compensation",
+    //   `${scrollBarCompensation}px`
+    // )
   }, [])
 
   return {

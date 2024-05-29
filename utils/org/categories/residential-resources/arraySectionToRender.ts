@@ -4,6 +4,7 @@ import {
   TEXT_BESIDE_BUTTON,
 } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   ArraySectionToRender_Type,
@@ -15,9 +16,10 @@ import { arraySectionToRenderDefault } from "../general/arraySectionToRenderDefa
 export const arrayInnerNavBar_RSNDT: InnerNavBar_InnerData = [
   arraySectionToRenderDefault[0],
   { INNER_NAV_BAR_KEY: "location" },
-  arraySectionToRenderDefault[1],
+  arraySectionToRenderDefault[4],
   arraySectionToRenderDefault[2],
   arraySectionToRenderDefault[3],
+  arraySectionToRenderDefault[1],
 ]
 
 export const arraySectionToRender_ResidentialResources: ArraySectionToRender_Type =
@@ -36,6 +38,15 @@ export const arraySectionToRender_ResidentialResources: ArraySectionToRender_Typ
       component: null,
       toNavbar: {
         id: arrayInnerNavBar_RSNDT[1][
+          InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
+        ],
+      },
+    },
+    {
+      name: ORG_D_Detail_OverviewDetails.name,
+      component: ORG_D_Detail_OverviewDetails,
+      toNavbar: {
+        id: arrayInnerNavBar_RSNDT[5][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
       },
