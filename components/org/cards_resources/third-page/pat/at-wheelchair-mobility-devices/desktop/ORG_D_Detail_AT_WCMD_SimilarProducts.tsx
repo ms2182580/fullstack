@@ -178,13 +178,8 @@ export const ORG_D_Detail_AT_WCMD_SimilarProducts = ({
 
         <ul className={Grid_KEYS.KEYS}>
           {categoriesOfProducts.map((xCategories, indexCategories) => {
-            let isOdd = indexCategories % 2 === 0
-
             return (
-              <li
-                key={`${xCategories.key}_${indexCategories}`}
-                className={isOdd ? "isOdd" : "isEven"}
-              >
+              <li key={`${xCategories.key}_${indexCategories}`}>
                 <span>{xCategories.key}</span>
 
                 <span>

@@ -2,13 +2,13 @@ import styled, { css } from "styled-components"
 import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
-  visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
+  /* visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(0vw, -150%);
   background-color: ${NEUTRALS.OFF_WHITE};
-  z-index: 5;
+  z-index: 5; */
   cursor: default;
   padding-top: 43px;
   padding-inline: 76px;
@@ -17,6 +17,7 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  /*
   & > :nth-child(1) {
     position: absolute;
     right: 29px;
@@ -33,11 +34,12 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
       border: 2px solid crimson;
     }
   }
+  */
 
-  & > :nth-child(2) {
+  & > :nth-child(1) {
     margin-bottom: 11px;
   }
-  & > :nth-child(3) {
+  & > :nth-child(2) {
     display: flex;
     flex-direction: column;
 
@@ -69,7 +71,7 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
     }
   }
 
-  & > :nth-child(4) {
+  & > :nth-child(3) {
     margin-bottom: 95px;
 
     width: fit-content;

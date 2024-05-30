@@ -1,3 +1,4 @@
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
@@ -33,13 +34,10 @@ export const ORG_D_Detail_FAQSWrapper = styled.section<Props>`
     position: relative;
     justify-content: space-between;
     margin-bottom: 24px;
-    /* gap: 25%; */
 
     & > :nth-child(1) {
       position: relative;
       height: 100%;
-
-      ${({ isBackend }) => isBackend && css``}
 
       & > :nth-child(1) {
         position: absolute;
@@ -60,6 +58,10 @@ export const ORG_D_Detail_FAQSWrapper = styled.section<Props>`
           border: 1px solid transparent;
         }
       }
+    }
+
+    & > :nth-child(2) {
+      ${reusableButton({ secondary: true })};
     }
   }
 

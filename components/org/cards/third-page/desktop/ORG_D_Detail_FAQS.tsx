@@ -1,4 +1,4 @@
-import { ButtonSmall } from "@/components/ui/buttons/general/index"
+import { Dialog_D, useDialogLogic } from "@/components/ui/dialog/Dialog_D"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider.js"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
@@ -7,11 +7,9 @@ import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router.js"
 import { Fragment, useRef, useState } from "react"
 import { ORG_Detail_SearchFAQSSVG } from "../../../../../assets/icons/index"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal.js"
 import { ORG_ReviewsUsersName } from "../../../../../utils/ORG_ReviewsUsersName.js"
 import { ORG_ST_FAQS } from "../../../../../utils/ORG_ST_FAQS_D.js"
 import { ORG_ST_Review_Months } from "../../../../../utils/ORG_ST_Review_D.js"
-import { useScrollLock } from "../../../../../utils/useScrollLock.js"
 import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "../../../../ui/heading_body_text/HeaderFonts"
 import { ORG_D_Detail_FAQS_Modal } from "./ORG_D_Detail_FAQS_Modal.js"
@@ -37,27 +35,18 @@ export const ORG_D_Detail_FAQS = ({
     useORG_Ctx_D_ThirdpageData_Backend()
 
   const [faqsData, setFaqsData] = useState(
-    !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
-      ? ORG_ST_FAQS(
-          card.leftPart.title,
-          "",
-          card.leftPart.location.city,
-          card.leftPart.location.streetNumber,
-          card.leftPart.location.streetName,
-          card.leftPart.location.state
-        )
-      : ORG_ST_FAQS(
-          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
-            .recordName,
-          "",
-          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
-            .address[0].city,
-          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
-            .address[0].street,
-          "",
-          thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
-            .address[0].state
-        )
+    ORG_ST_FAQS(
+      thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        .recordName,
+      "",
+      thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        .address[0].city,
+      thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        .address[0].street,
+      "",
+      thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        .address[0].state
+    )
   )
 
   const handleShowAll = (e) => {
@@ -76,30 +65,14 @@ export const ORG_D_Detail_FAQS = ({
     }
   }
 
-  const [showModal, setShowModal] = useState(false)
-  const { lockScroll, unlockScroll } = useScrollLock()
-  const { setModalShowedCtx }: any = useCtx_ShowModal()
-
-  const handleShowModal = (e) => {
-    if (e.type === "click" || e.key === "Enter") {
-      lockScroll()
-      setShowModal(true)
-      setModalShowedCtx(true)
-    }
-  }
-
-  const handleHideModal = (e) => {
-    if (
-      e.key === "Enter" ||
-      e.key === "Escape" ||
-      e.type === "mousedown" ||
-      e.type === "click"
-    ) {
-      unlockScroll()
-      setShowModal(false)
-      setModalShowedCtx(false)
-    }
-  }
+  const {
+    dialogRef,
+    openDialog,
+    closeDialog,
+    refToCloseDialogClickingOutside,
+    useHide,
+    checkModalIsOpen,
+  } = useDialogLogic()
 
   return (
     <>
@@ -115,9 +88,12 @@ export const ORG_D_Detail_FAQS = ({
             <ORG_Detail_SearchFAQSSVG />
             <input type="text" placeholder="Search in Q&A..." />
           </div>
-          <span onClick={handleShowModal}>
-            <ButtonSmall secondary>Ask a Question</ButtonSmall>
-          </span>
+          <button
+            onClick={(e) => openDialog({ event: e })}
+            onKeyDown={(e) => openDialog({ event: e })}
+          >
+            Ask a Question
+          </button>
         </div>
 
         <div>
@@ -181,10 +157,13 @@ export const ORG_D_Detail_FAQS = ({
         )}
       </ORG_D_Detail_FAQSWrapper>
 
-      {showModal && (
+      <Dialog_D
+        theRef={dialogRef}
+        handleCloseDialog={(e) => closeDialog({ event: e })}
+        refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
+        useHide={useHide}
+      >
         <ORG_D_Detail_FAQS_Modal
-          showModal={showModal}
-          handleHideModal={handleHideModal}
           name={
             !Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])
               ? card.leftPart.title
@@ -194,8 +173,9 @@ export const ORG_D_Detail_FAQS = ({
           }
           lastName={""}
           setFaqsData={setFaqsData}
+          hide={closeDialog}
         />
-      )}
+      </Dialog_D>
     </>
   )
 }

@@ -13,11 +13,11 @@ export const ORG_D_Detail_AT_WCMD_SimilarProductsWrapper = styled.aside`
 
   & > :nth-child(2) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     grid-template-areas:
-      ". card card card"
-      " specifications specifications specifications specifications";
+      "card card card"
+      "specifications specifications specifications";
 
     padding: 32px 0;
     font-size: 18px;
@@ -29,7 +29,7 @@ export const ORG_D_Detail_AT_WCMD_SimilarProductsWrapper = styled.aside`
       gap: 52px;
       justify-content: center;
 
-      padding-right: 45px;
+      padding-inline: 45px;
 
       margin-bottom: 30px;
     }
@@ -39,13 +39,14 @@ export const ORG_D_Detail_AT_WCMD_SimilarProductsWrapper = styled.aside`
       display: flex;
       flex-direction: column;
 
-      .isOdd {
+      & > :nth-child(odd) {
         background-color: #f6f7f7;
       }
 
       & > li {
         padding-top: 16px;
         padding-bottom: 16px;
+        padding-inline: 8px;
 
         display: grid;
         grid-template-columns: 180px 1fr 1fr 1fr;
@@ -57,8 +58,6 @@ export const ORG_D_Detail_AT_WCMD_SimilarProductsWrapper = styled.aside`
           font-weight: 700;
           color: ${PRIMARY.PRIMARY_HOVER};
 
-          margin-left: 45px;
-
           width: 180px;
         }
 
@@ -66,10 +65,7 @@ export const ORG_D_Detail_AT_WCMD_SimilarProductsWrapper = styled.aside`
           grid-area: specification;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 52px;
-
-          margin-right: 45px;
-          margin-left: 13.4%;
+          column-gap: 8px;
         }
       }
     }
