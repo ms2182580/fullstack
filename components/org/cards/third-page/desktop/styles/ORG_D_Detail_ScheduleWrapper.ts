@@ -18,6 +18,9 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
 
   padding-bottom: 24px;
 
+  /* display: flex;
+  flex-direction: column; */
+
   ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
     !isUsable &&
     css`
@@ -32,7 +35,7 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
     `}
 
   & > :not(:first-child) {
-    padding-inline: clamp(24px, 10vw - 48px, 106px);
+    padding-inline: 16px;
   }
 
   & > :nth-child(1) {
@@ -87,16 +90,24 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
 
     & > :nth-child(1) {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      align-items: flex-start;
+
+      /* display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: row; */
+
+      gap: 16px;
+
+      flex-direction: column;
 
       margin-bottom: 35px;
 
       & > * {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-start;
+
+        width: 100%;
 
         h4 {
           color: ${NEUTRALS.DARK_GREY};
@@ -104,11 +115,11 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
         }
 
         & > :nth-child(2) {
-          padding-inline: clamp(34px, 10vw - 80px, 48px);
-
           border: 2px solid ${NEUTRALS.DARK_GREY};
 
           font-weight: 400;
+
+          width: fit-content;
 
           & > * {
             display: flex;
@@ -156,12 +167,11 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
 
     & > :nth-child(2) {
       position: relative;
+
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 
-      column-gap: 24px;
-
-      margin-bottom: 48px;
+      column-gap: 4px;
 
       & > :not(:first-child):not(:last-child) {
         display: flex;
@@ -215,8 +225,8 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
     }
 
     & > :last-child {
+      margin-top: 48px;
       margin-left: auto;
-      margin-right: clamp(24px, 10vw - 48px, 106px);
     }
   }
 `

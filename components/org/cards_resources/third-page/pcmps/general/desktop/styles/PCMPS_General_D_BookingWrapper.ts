@@ -41,9 +41,6 @@ export const PCMPS_General_D_BookingWrapper = styled.section<Props>`
     padding-inline: ${VARS.padding};
 
     & > * {
-      /* display: flex;
-      align-items: center; */
-
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
