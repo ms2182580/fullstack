@@ -15,13 +15,18 @@ type Props = {
   shouldShowMoldal?: boolean
 }
 
-export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
+const VARS = {
+  padding: "32px",
+}
+
+export const PCMPS_General_D_BookingWrapper = styled.section<Props>`
   border-radius: 8px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
 
   padding-bottom: 24px;
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
 
   & > :nth-child(1) {
     padding: 24px;
@@ -31,21 +36,27 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
   }
 
   & > :nth-child(2) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: clamp(32px, 8vw, 106px);
-    margin-bottom: 38px;
+    display: grid;
+    row-gap: 16px;
+    padding-inline: ${VARS.padding};
 
     & > * {
-      display: flex;
-      align-items: center;
+      /* display: flex;
+      align-items: center; */
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
       gap: 8px;
 
       & > :nth-child(2) {
         display: flex;
-        align-items: inherit;
+        align-items: center;
+        /* align-items: inherit; */
         gap: 12px;
+
+        width: fit-content;
+        /* margin-left: auto; */
 
         padding: 8px 24px;
         background-color: ${NEUTRALS.OFF_WHITE};
@@ -69,6 +80,8 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
   }
 
   & > :nth-child(3) {
+    margin-top: 38px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,7 +102,7 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
   & > :nth-child(4) {
     display: grid;
 
-    margin-inline: clamp(32px, 8vw, 106px);
+    padding-inline: ${VARS.padding};
 
     margin-bottom: 48px;
 
@@ -166,6 +179,9 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
         visibility: ${({ distanceModal, shouldShowMoldal }) =>
           distanceModal !== null && shouldShowMoldal ? "visible" : "hidden"};
 
+        width: calc(100% + (${VARS.padding} * 2));
+        left: -${VARS.padding};
+
         display: grid;
         gap: 18px;
 
@@ -228,7 +244,7 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
           display: grid;
           grid-template-columns: auto repeat(2, 1fr);
 
-          column-gap: 16px;
+          column-gap: 8px;
           row-gap: 8px;
 
           grid-template-areas:
@@ -238,8 +254,6 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
             "title IS_LEFT_3 IS_RIGHT_7";
 
           & > * {
-            justify-self: flex-start;
-
             font-size: 20px;
           }
 
@@ -249,10 +263,14 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
 
           & > *:not(:first-child) {
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, 1fr);
             grid-auto-flow: column;
 
-            gap: 16px;
+            gap: 8px;
+
+            & > * {
+              white-space: nowrap;
+            }
 
             & > :nth-child(2) {
               font-weight: 500;
@@ -263,10 +281,11 @@ export const PCMPS_General_D_BookingWrapper = styled.aside<Props>`
     }
   }
 
-  & > :nth-child(5) {
+  & > :last-child {
     justify-self: flex-end;
 
-    margin-right: clamp(32px, 8vw, 106px);
+    margin-right: ${VARS.padding};
+    margin-left: auto;
     padding: 16px 64px;
 
     font-size: 20px;

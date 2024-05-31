@@ -43,14 +43,14 @@ const modalData = {
   itinerary: {
     value: "Itinerary",
     data: [
-      { time: "8 - 10 am", value: "Arts & crafts" },
-      { time: "10 - 12 pm", value: "Swimming" },
-      { time: "12 - 1 pm", value: "Lunch" },
-      { time: "1 - 3 pm", value: "Archery" },
-      { time: "3 - 3:30 pm", value: "Snack Time" },
-      { time: "3:30 - 5:30  pm", value: "Arts & crafts" },
-      { time: "5:30 - 6:45  pm", value: "Tennis" },
-      { time: "6:45 - 7  pm", value: "Clean up" },
+      { time: "8:00-10:00 am", value: "Arts & crafts" },
+      { time: "10:00-12:00 pm", value: "Swimming" },
+      { time: "12:00-1:00 pm", value: "Lunch" },
+      { time: "1:00-3:00 pm", value: "Archery" },
+      { time: "3:00-3:30 pm", value: "Snack Time" },
+      { time: "3:30-5:30  pm", value: "Arts & crafts" },
+      { time: "5:30-6:45  pm", value: "Tennis" },
+      { time: "6:45-7:00  pm", value: "Clean up" },
     ],
   },
 }
@@ -79,7 +79,7 @@ export const PCMPS_General_D_Booking = ({
 
   let handleGetData = (e, thisDayOfTheMonth: number): void => {
     if (e.type === "click" || e.code === "Enter") {
-      const date = new Date(`2023-05-${thisDayOfTheMonth + 1}`)
+      const date = new Date(`2024-05-${thisDayOfTheMonth + 1}`)
       const fullNameOfTheDay = new Intl.DateTimeFormat("en-US", {
         weekday: "long",
       }).format(date)
@@ -180,7 +180,7 @@ export const PCMPS_General_D_Booking = ({
         <span tabIndex={0}>
           <LeftArrowSvg />
         </span>
-        <H4>May 2023</H4>
+        <H4>May 2024</H4>
         <span tabIndex={0}>
           <RightArrowSvg />
         </span>
@@ -237,7 +237,7 @@ export const PCMPS_General_D_Booking = ({
               <span>
                 <H4>
                   {dataToModal !== null &&
-                    `${dataToModal.nameDayOfTheMonth}, May ${dataToModal.numberDayOfTheMonth}, 2023`}
+                    `${dataToModal.nameDayOfTheMonth}, May ${dataToModal.numberDayOfTheMonth}, 2024`}
                 </H4>
                 <span
                   tabIndex={0}
