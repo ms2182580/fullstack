@@ -2,7 +2,6 @@ import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG
 import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
-import { PCC_General_D_UsersAlsoViewed } from "@/components/org/cards_resources/third-page/pcc/general/desktop/PCC_General_D_UsersAlsoViewed"
 import {
   ArraySectionToRender_Type,
   InnerNavBar_InnerData,
@@ -44,15 +43,6 @@ export const arraySectionToRender_CommunityInclusionClasses: ArraySectionToRende
       component: ORG_D_Detail_OverviewDetails,
       toNavbar: {
         id: arrayInnerNavBar_PCIC[2][
-          InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
-        ],
-      },
-    },
-    {
-      name: PCC_General_D_UsersAlsoViewed.name,
-      component: PCC_General_D_UsersAlsoViewed,
-      toNavbar: {
-        id: arrayInnerNavBar_PCIC[3][
           InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY
         ],
       },

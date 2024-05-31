@@ -81,6 +81,12 @@ export const arraySectionToRender_LegalResources: ArraySectionToRender_Type = [
       ],
     },
   },
+
+  /* 
+  !FH0
+  Fix this custom section
+  */
+
   {
     name: ORG_D_Detail_AditionalResources.name,
     component: ORG_D_Detail_AditionalResources,

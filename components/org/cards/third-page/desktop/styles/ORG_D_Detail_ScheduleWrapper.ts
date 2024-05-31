@@ -18,9 +18,6 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
 
   padding-bottom: 24px;
 
-  /* display: flex;
-  flex-direction: column; */
-
   ${({ [IS_USABLE_SECTION.KEY]: isUsable }) =>
     !isUsable &&
     css`
@@ -91,10 +88,6 @@ export const ORG_D_Detail_ScheduleWrapper = styled.section<Props>`
     & > :nth-child(1) {
       display: flex;
       align-items: flex-start;
-
-      /* display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-flow: row; */
 
       gap: 16px;
 

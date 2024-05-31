@@ -49,11 +49,9 @@ export const PCMPS_General_D_BookingWrapper = styled.section<Props>`
       & > :nth-child(2) {
         display: flex;
         align-items: center;
-        /* align-items: inherit; */
         gap: 12px;
 
         width: fit-content;
-        /* margin-left: auto; */
 
         padding: 8px 24px;
         background-color: ${NEUTRALS.OFF_WHITE};

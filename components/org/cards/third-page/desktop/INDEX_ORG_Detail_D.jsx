@@ -1,4 +1,4 @@
-import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { PCC_General_D_UsersAlsoViewed } from "@/components/org/cards_resources/third-page/pcc/general/desktop/PCC_General_D_UsersAlsoViewed"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
@@ -122,10 +122,7 @@ export const INDEX_ORG_Detail_D = () => {
           </div>
         </div>
 
-        <article>
-          <H2>More Resources</H2>
-          <div>...</div>
-        </article>
+        <PCC_General_D_UsersAlsoViewed />
 
         <div>
           <ORG_D_Detail_BreadcrumbsLastUpdated />

@@ -44,6 +44,11 @@ const userAlsoViewedData: UserAlsoViewedData_Type = [
   },
 ]
 
+/* 
+!FH
+Re make this component
+*/
+
 export const PCC_General_D_UsersAlsoViewed = ({
   [ArraySection_KEYS.ALL_DATA]: allProps,
 }) => {
@@ -51,7 +56,7 @@ export const PCC_General_D_UsersAlsoViewed = ({
 
   return (
     <PCC_General_D_UsersAlsoViewedWrapper id={theIdForComponent}>
-      <H3>Users also viewed</H3>
+      <H3>More resources</H3>
       <ul>
         {tags.map((xElement, index) => {
           const isLastIndex = tags.length - 1 !== index
