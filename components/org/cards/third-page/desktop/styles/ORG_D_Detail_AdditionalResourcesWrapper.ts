@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_AdditionalResourcesWrapper = styled.div`
+export const ORG_D_Detail_AdditionalResourcesWrapper = styled.section`
   background: #fcfdfe;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;

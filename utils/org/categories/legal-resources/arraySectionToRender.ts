@@ -1,4 +1,3 @@
-import { ORG_D_Detail_AditionalResources } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_AditionalResources"
 import {
   ContactUsCustomProperties_KEY,
   ORG_D_Detail_ContactUs,
@@ -21,10 +20,6 @@ export const arrayInnerNavBar_PLR: InnerNavBar_InnerData = [
   arraySectionToRenderDefault[1],
   arraySectionToRenderDefault[2],
   arraySectionToRenderDefault[3],
-  {
-    INNER_NAV_BAR_KEY: "additionalResources",
-    INNER_NAV_BAR_VALUE: "additional Resources",
-  },
 ]
 
 export const arraySectionToRender_LegalResources: ArraySectionToRender_Type = [
@@ -82,21 +77,6 @@ export const arraySectionToRender_LegalResources: ArraySectionToRender_Type = [
     },
   },
 
-  /* 
-  !FH0
-  Fix this custom section
-  */
-
-  {
-    name: ORG_D_Detail_AditionalResources.name,
-    component: ORG_D_Detail_AditionalResources,
-    toNavbar: {
-      id: arrayInnerNavBar_PLR[5][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PLR[5][
-        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
-      ],
-    },
-  },
   {
     name: ORG_D_Detail_HelpfulWebResources.name,
     component: ORG_D_Detail_HelpfulWebResources,
