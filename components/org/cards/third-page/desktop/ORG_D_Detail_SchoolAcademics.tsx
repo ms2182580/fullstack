@@ -1,6 +1,6 @@
 import bar1 from "@/assets/images/org/special-education-schools/bar_AllStudents.png"
 import bar2 from "@/assets/images/org/special-education-schools/bar_StudentsDIsabilities.png"
-import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { H2, H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import {
   CategoriesToDisplay_Data,
@@ -62,14 +62,14 @@ export const ORG_D_Detail_SchoolAcademics = ({
   const { theIdForComponent = "#" } = allProps || {}
 
   return (
-    <>
-      <ORG_D_Detail_SchoolAcademicsWrapper id={theIdForComponent}>
-        <header>
-          <H3>School Academics</H3>
-        </header>
+    <ORG_D_Detail_SchoolAcademicsWrapper id={theIdForComponent}>
+      <header>
+        <H2>School Academics</H2>
+      </header>
 
+      <div>
         <section>
-          <H4>
+          <H3>
             Ungraded Curriculum &nbsp;{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ export const ORG_D_Detail_SchoolAcademics = ({
                 fill="#3366CC"
               />
             </svg>
-          </H4>
+          </H3>
 
           <ORG_D_Detail_TableCake
             tableTitle={schoolAcademicsUpgradedCurriculum.tableTitle}
@@ -93,14 +93,12 @@ export const ORG_D_Detail_SchoolAcademics = ({
           />
         </section>
 
-        <section>
-          <ORG_D_Detail_Bars
-            title={testScores.title}
-            subtitle={testScores.subtitle}
-            categoriesToDisplay={testScores.categoriesToDisplay}
-          />
-        </section>
-      </ORG_D_Detail_SchoolAcademicsWrapper>
-    </>
+        <ORG_D_Detail_Bars
+          title={testScores.title}
+          subtitle={testScores.subtitle}
+          categoriesToDisplay={testScores.categoriesToDisplay}
+        />
+      </div>
+    </ORG_D_Detail_SchoolAcademicsWrapper>
   )
 }

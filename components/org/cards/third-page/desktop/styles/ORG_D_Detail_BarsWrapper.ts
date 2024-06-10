@@ -4,20 +4,20 @@ import { shouldDisplayTooltip } from "../ORG_D_Detail_Bars"
 type Props = {} & shouldDisplayTooltip
 
 export const ORG_D_Detail_BarsWrapper = styled.section<Props>`
-  & > :nth-child(1) {
-    h4 {
-      text-transform: capitalize;
-    }
+  header {
+    margin-bottom: 8px;
 
     h3 {
+    }
+
+    h4 {
       font-weight: 400;
+      text-transform: lowercase;
 
       &::first-letter {
         text-transform: capitalize;
       }
     }
-
-    margin-bottom: 8px;
 
     & > * {
       font-size: 18px;

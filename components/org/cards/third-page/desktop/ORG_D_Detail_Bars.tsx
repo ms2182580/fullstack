@@ -18,20 +18,21 @@ export type ORG_D_Detail_Bars_Props = {
   categoriesToDisplay: CategoriesToDisplay_Data
 } & shouldDisplayTooltip
 
-export const ORG_D_Detail_Bars = ({ title, subtitle, shouldDisplayTooltip = false, categoriesToDisplay = X_Svg }: ORG_D_Detail_Bars_Props) => {
+export const ORG_D_Detail_Bars = ({
+  title,
+  subtitle,
+  shouldDisplayTooltip = false,
+  categoriesToDisplay = X_Svg,
+}: ORG_D_Detail_Bars_Props) => {
   return (
     <ORG_D_Detail_BarsWrapper shouldDisplayTooltip={shouldDisplayTooltip}>
-      <div>
+      <header>
         <span>
-          <H4>{title}</H4>
-          {shouldDisplayTooltip ? (
-            <>
-              <Tooltip />
-            </>
-          ) : null}
+          <H3>{title}</H3>
+          {shouldDisplayTooltip ? <Tooltip /> : null}
         </span>
-        <H3>{subtitle}</H3>
-      </div>
+        <H4>{subtitle}</H4>
+      </header>
 
       <ul>
         {categoriesToDisplay.map((x) => {
@@ -39,16 +40,12 @@ export const ORG_D_Detail_Bars = ({ title, subtitle, shouldDisplayTooltip = fals
             <li key={`${x.category}`}>
               <P>{x.category}</P>
               {x.whichGraphic ? (
-                <>
-                  <Image
-                    src={x.whichGraphic}
-                    alt={`Image with graphic for ${x.category}`}
-                  />
-                </>
+                <Image
+                  src={x.whichGraphic}
+                  alt={`Image with graphic for ${x.category}`}
+                />
               ) : (
-                <>
-                  <X_Svg />
-                </>
+                <X_Svg />
               )}
             </li>
           )
