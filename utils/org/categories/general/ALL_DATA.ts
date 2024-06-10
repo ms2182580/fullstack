@@ -368,6 +368,10 @@ export const ALL_DATA: ALL_DATA_Type = {
       NamesSubcategories_KEY[NamesCategories_KEY["AGENCIES"]]
     ),
 
+    SECOND_PAGE: {
+      FILTERS: filtersUI_Agencies,
+    },
+
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_Agencies,
       TOOLTIP: tooltipToRender_Agencies,
