@@ -17,7 +17,7 @@ export const ORG_D_Detail_HeaderWrapper = styled.div<Props>`
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: calc(8px * 8);
+    column-gap: calc(8px * 2);
 
     background-color: ${NEUTRALS.LIGHT_GREY2};
 
