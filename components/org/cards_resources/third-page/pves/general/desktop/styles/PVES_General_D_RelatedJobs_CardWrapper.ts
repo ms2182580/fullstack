@@ -5,10 +5,9 @@ export const PVES_General_D_RelatedJobs_CardWrapper = styled.article`
   display: grid;
   gap: 16px;
 
-  justify-items: flex-start;
+  justify-items: center;
 
   height: 100%;
-  width: 250px;
 
   & > :nth-child(1) {
     width: 150px;
@@ -46,6 +45,7 @@ export const PVES_General_D_RelatedJobs_CardWrapper = styled.article`
     overflow: hidden;
     -webkit-line-clamp: 2;
     width: 100%;
+    text-align: center;
   }
 
   & > :nth-child(4) {

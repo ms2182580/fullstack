@@ -21,11 +21,9 @@ export const PVES_General_D_RelatedJobsWrapper = styled.article`
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center;
 
-    row-gap: calc(8px * 8);
+    gap: calc(8px * 8);
 
-    padding-inline: 24px;
     padding-bottom: 24px;
   }
 `
