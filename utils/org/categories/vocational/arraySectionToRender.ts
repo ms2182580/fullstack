@@ -1,4 +1,5 @@
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import {
   KEYS_FOR_PROPS,
   ORG_D_Detail_Reviews,
@@ -31,6 +32,13 @@ export const arraySectionToRender_Vocational: ArraySectionToRender_Type = [
       jsx: arrayInnerNavBar_VCTNL[0][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
       ],
+    },
+  },
+  {
+    name: ORG_D_Detail_OverviewDetails.name,
+    component: ORG_D_Detail_OverviewDetails,
+    toNavbar: {
+      id: null,
     },
   },
   {
