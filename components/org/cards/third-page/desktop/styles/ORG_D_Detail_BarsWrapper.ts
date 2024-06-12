@@ -4,11 +4,10 @@ import { shouldDisplayTooltip } from "../ORG_D_Detail_Bars"
 type Props = {} & shouldDisplayTooltip
 
 export const ORG_D_Detail_BarsWrapper = styled.section<Props>`
+  display: grid;
+  gap: 24px;
   header {
     margin-bottom: 8px;
-
-    h3 {
-    }
 
     h4 {
       font-weight: 400;

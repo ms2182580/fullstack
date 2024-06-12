@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const paddingInline = "32px"
 
-export const PVES_General_D_GraphicsWrapper = styled.section`
+export const PVES_General_D_GraphicsWrapper = styled.article`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding-bottom: 40px;
@@ -71,20 +71,6 @@ export const PVES_General_D_GraphicsWrapper = styled.section`
       );
 
       border-radius: 50%;
-    }
-  }
-
-  & > :nth-child(3) {
-    & > :nth-child(1) {
-      margin-bottom: 24px;
-
-      & > :nth-child(1) {
-        margin-bottom: 8px;
-      }
-    }
-
-    & > :nth-child(2) {
-      width: 700px;
     }
   }
 `
