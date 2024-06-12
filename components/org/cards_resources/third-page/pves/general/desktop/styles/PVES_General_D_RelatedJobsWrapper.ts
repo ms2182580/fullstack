@@ -1,7 +1,7 @@
 import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const PVES_General_D_RelatedJobsWrapper = styled.section`
+export const PVES_General_D_RelatedJobsWrapper = styled.article`
   border-radius: 8px;
 
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
@@ -20,9 +20,10 @@ export const PVES_General_D_RelatedJobsWrapper = styled.section`
     list-style: none;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
 
-    gap: 48px;
+    row-gap: calc(8px * 8);
 
     padding-inline: 24px;
     padding-bottom: 24px;

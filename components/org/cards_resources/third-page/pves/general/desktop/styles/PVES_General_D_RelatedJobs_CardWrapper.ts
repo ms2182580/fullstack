@@ -5,10 +5,10 @@ export const PVES_General_D_RelatedJobs_CardWrapper = styled.article`
   display: grid;
   gap: 16px;
 
-  justify-content: center;
   justify-items: flex-start;
 
   height: 100%;
+  width: 250px;
 
   & > :nth-child(1) {
     width: 150px;

@@ -93,11 +93,6 @@ const bars: ORG_D_Detail_Bars_Props = {
   categoriesToDisplay: bars_Data,
 }
 
-/* 
-!FH0
-Fix the overflow
-*/
-
 export const PVES_General_D_Graphics = ({
   [ArraySection_KEYS.ALL_DATA]: allProps,
 }) => {
