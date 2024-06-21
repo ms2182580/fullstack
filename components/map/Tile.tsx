@@ -37,7 +37,7 @@ export const Tile = ({ isFullMap = false, handleIsFullMap }: Props) => {
   // const mentalHealthData = trpc.mentalHealth.getAll.useQuery({ limit: 3 })
 
   const theData = useFetchData()
-  console.log("theData:", theData)
+  // console.log("theData:", theData)
 
   // if (theData === null) {
   //   return <LoadingComponent />

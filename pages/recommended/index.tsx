@@ -1,6 +1,5 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 // import { INDEX_D_Recommended } from "@/components/recommended/desktop/INDEX_D_Recommended"
-import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { useFetchData } from "@/utils/org/useFetchData"
 import dynamic from "next/dynamic"
 const INDEX_D_Recommended = dynamic(
@@ -23,11 +22,7 @@ export default function INDEX_Recommmended() {
 
   return (
     <>
-      <INDEX_D_Recommended
-        allBackendData={{
-          [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: theData,
-        }}
-      />
+      <INDEX_D_Recommended allBackendData={theData} />
     </>
   )
 }
