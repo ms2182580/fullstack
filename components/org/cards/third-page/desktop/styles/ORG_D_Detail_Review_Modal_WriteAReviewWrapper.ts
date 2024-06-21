@@ -2,46 +2,18 @@ import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const ORG_D_Detail_Review_Modal_WriteAReviewWrapper = styled.div`
-  position: fixed;
-  z-index: 5;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: clamp(932px, 91%, 1310px);
-
-  background-color: ${NEUTRALS.OFF_WHITE};
-
   padding-top: 42px;
   padding-bottom: 118px;
-
-  border-radius: 8px;
 
   display: flex;
   flex-direction: column;
   gap: 32px;
 
   & > :nth-child(1) {
-    position: absolute;
-    right: 29px;
-    top: 26px;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-
-    & > :nth-child(1) > path {
-      fill: ${NEUTRALS.BLACK};
-    }
-  }
-
-  & > :nth-child(2) {
     color: ${PRIMARY.PRIMARY_HOVER};
   }
 
-  & > :nth-child(3) {
+  & > :nth-child(2) {
     font-weight: 400;
 
     strong {
@@ -49,12 +21,12 @@ export const ORG_D_Detail_Review_Modal_WriteAReviewWrapper = styled.div`
     }
   }
 
-  & > :nth-child(2),
-  & > :nth-child(3) {
+  & > :nth-child(1),
+  & > :nth-child(2) {
     padding-inline: 31px;
   }
 
-  & > :nth-child(4) {
+  & > :nth-child(3) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 

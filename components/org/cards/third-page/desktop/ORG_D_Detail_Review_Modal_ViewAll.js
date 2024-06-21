@@ -11,10 +11,16 @@ import { ORG_D_Detail_Review_Modal_DetailReviews } from "./ORG_D_Detail_Review_M
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention.js"
 import { ORG_D_Detail_Review_Modal_ViewAllWrapper } from "./styles/ORG_D_Detail_Review_Modal_ViewAllWrapper.js"
 
+/* 
+
+!FH0
+Eliminate this component and all their dependencies
+*/
+
 export const ORG_D_Detail_Review_Modal_ViewAll = ({
   showModal,
   handleHideModal,
-  handleShowModal_WriteAReview,
+  handleShowModal_WriteAReview = () => {},
   rating,
   reviews,
   getReviews,

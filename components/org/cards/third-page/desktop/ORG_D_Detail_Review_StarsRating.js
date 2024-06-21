@@ -12,9 +12,9 @@ export const ORG_D_Detail_Review_StarsRating = ({
     <ORG_D_Detail_Review_StarsRatingWrapper
       className={isModal ? `${Classes_ORG_D_Detail_IsModal.IS_MODAL}` : ""}
     >
-      <P semibold>{rating}.0</P>
+      <P>{rating}.0</P>
       <PatternStars rating={rating} />
-      <Caption bold>{reviews} reviews</Caption>
+      <Caption>{reviews} reviews</Caption>
     </ORG_D_Detail_Review_StarsRatingWrapper>
   )
 }

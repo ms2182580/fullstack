@@ -1,20 +1,22 @@
 import { NavBar_D_WriteAReviewSvg } from "@/assets/icons"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { Dialog_D, useDialogLogic } from "@/components/ui/dialog/Dialog_D"
+import {
+  Caption,
+  P,
+} from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
-import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
+import { ORG_ST_Review } from "@/utils/ORG_ST_Review_D"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { ArraySection_KEYS } from "@/utils/org/third-page/InnerNavBar"
 import { useRouter } from "next/router"
-import { Fragment, useMemo, useState } from "react"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
-import { ORG_ST_Review } from "../../../../../utils/ORG_ST_Review_D"
-import { useScrollLock } from "../../../../../utils/useScrollLock"
-import { Caption, P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { ORG_D_Detail_Review_Modal_ViewAll } from "./ORG_D_Detail_Review_Modal_ViewAll"
+import { Fragment, useMemo, useRef, useState } from "react"
 import { ORG_D_Detail_Review_Modal_WriteAReview } from "./ORG_D_Detail_Review_Modal_WriteAReview"
+import { ORG_D_Detail_Review_StarsRating } from "./ORG_D_Detail_Review_StarsRating"
 import { ORG_D_Detail_Reviews_IndividualComponent } from "./ORG_D_Detail_Reviews_IndividualComponent"
-import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention } from "./ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention"
+import { ORG_D_Detail_Reviews_Mention } from "./ORG_D_Detail_Reviews_Mention"
+import { ORG_D_Detail_Reviews_Rating } from "./ORG_D_Detail_Reviews_Rating"
 import { ORG_D_Detail_ReviewsWrapper } from "./styles/ORG_D_Detail_ReviewsWrapper"
 
 export const enum KEYS_FOR_PROPS {
@@ -26,13 +28,16 @@ export type Type_Props_TITLE_ON_HEADER = {
   highlight: string[] | string
 }
 
+const MANY_SHOW = {
+  INITIAL: 2,
+}
+
 export const ORG_D_Detail_Reviews = ({
   [ArraySection_KEYS.ALL_DATA]: allProps,
 }) => {
   const {
     theIdForComponent = "#",
     [KEYS_FOR_PROPS.TITLE_ON_HEADER]: customTitle = null,
-    // [DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]: backendComponent = false,
   } = allProps || {}
 
   const customTitleFormat = useMemo(() => {
@@ -51,153 +56,106 @@ export const ORG_D_Detail_Reviews = ({
     }
   }, [customTitle])
 
-  const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
-
   const { thirdpageDataORG: thirdpageDataORG_backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
-
-  const { fullName, card } = thirdpageDataORG
 
   const { query } = useRouter()
 
   const theReviews = useMemo(() => {
     if (!Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])) {
-      return ORG_ST_Review(fullName.first, fullName.last)
+      return null
     }
 
     return ORG_ST_Review(
       thirdpageDataORG_backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
         .recordName,
-      ""
+      "",
+      8
     )
   }, [])
 
-  const [showModal_ViewAll, setShowModal_ViewAll] = useState(false)
-  const { lockScroll, unlockScroll } = useScrollLock()
-  const { setModalShowedCtx }: any = useCtx_ShowModal()
+  const [howManyShow, setHowManyShow] = useState(MANY_SHOW.INITIAL)
+  const handleHowManyShow = (e) => {
+    if (e.type === "click" || e.code === "Enter" || e.key === "Enter") {
+      if (
+        howManyShow === MANY_SHOW.INITIAL &&
+        theReviews &&
+        theReviews !== null &&
+        theReviews !== undefined
+      ) {
+        setHowManyShow(theReviews?.length)
+      } else {
+        setHowManyShow(MANY_SHOW.INITIAL)
 
-  const handleShowModal_ViewAll = (e: any) => {
-    if (e.type === "click" || e.key === "Enter") {
-      lockScroll()
-      setShowModal_ViewAll(true)
-      setModalShowedCtx(true)
-      setShowModal_WriteAReview(false)
+        theRef?.current?.scrollIntoView()
+      }
     }
   }
 
-  const handleHideModal_ViewAll = (e: any) => {
-    if (e.key === "Enter" || e.key === "Escape" || e.type === "mousedown") {
-      unlockScroll()
-      setShowModal_ViewAll(false)
-      setModalShowedCtx(false)
-    }
-  }
+  const theRef = useRef<HTMLElement>(null)
 
-  const [showModal_WriteAReview, setShowModal_WriteAReview] = useState(false)
-
-  const handleShowModal_WriteAReview = (e: any) => {
-    if (e.type === "click" || e.key === "Enter") {
-      lockScroll()
-      setShowModal_WriteAReview(true)
-      setModalShowedCtx(true)
-
-      setShowModal_ViewAll(false)
-    }
-  }
-
-  const handleHideModal_WriteAReview = (e: any) => {
-    if (
-      e.key === "Enter" ||
-      e.key === "Escape" ||
-      e.type === "mousedown" ||
-      e.type === "click"
-    ) {
-      unlockScroll()
-      setShowModal_WriteAReview(false)
-      setModalShowedCtx(false)
-    }
-  }
+  const {
+    dialogRef,
+    openDialog,
+    closeDialog,
+    refToCloseDialogClickingOutside,
+    useHide,
+    checkModalIsOpen,
+  } = useDialogLogic()
 
   return (
     <>
-      <ORG_D_Detail_ReviewsWrapper id={theIdForComponent}>
+      <ORG_D_Detail_ReviewsWrapper id={theIdForComponent} ref={theRef}>
         <header>
-          <H3>{!customTitle ? "Reviews" : customTitleFormat}</H3>
+          <H2>{!customTitle ? "Reviews" : customTitleFormat}</H2>
           <button
             type="button"
             tabIndex={0}
-            onClick={handleShowModal_WriteAReview}
-            onKeyDown={handleShowModal_WriteAReview}
+            onClick={(e) => openDialog({ event: e })}
+            onKeyDown={(e) => openDialog({ event: e })}
           >
             <NavBar_D_WriteAReviewSvg />
             Write a review
           </button>
         </header>
-        <Caption>
-          Your trust is our top concern, so providers can’t pay to alter or
-          remove reviews. We also don’t publish reviews that contain <br /> any
-          private patient health information.{" "}
-          <Caption tabIndex={0}>Learn more here.</Caption>
-        </Caption>
 
-        <ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention
-          rating={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
-              ? card.leftPart.rating
-              : ""
-          }
-          reviews={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
-              ? card.leftPart.reviews
-              : ""
-          }
-        />
-        <ORG_D_Detail_Reviews_IndividualComponent getReviews={theReviews} />
-        <P
-          onClick={handleShowModal_ViewAll}
-          onKeyDown={handleShowModal_ViewAll}
-          tabIndex={0}
-        >
-          View All
-        </P>
+        <div>
+          <Caption>
+            Your trust is our top concern, so providers can’t pay to alter or
+            remove reviews. We also don’t publish reviews that contain any
+            private patient health information.{" "}
+            <Caption tabIndex={0}>Learn more here.</Caption>
+          </Caption>
+
+          <ORG_D_Detail_Review_StarsRating rating={5} reviews={99} />
+
+          <ORG_D_Detail_Reviews_Rating />
+
+          <ORG_D_Detail_Reviews_Mention />
+
+          <ORG_D_Detail_Reviews_IndividualComponent
+            getReviews={theReviews}
+            howManyShow={howManyShow}
+          />
+
+          <P
+            tabIndex={0}
+            onClick={handleHowManyShow}
+            onKeyDown={handleHowManyShow}
+          >
+            {howManyShow === MANY_SHOW.INITIAL ? "View All" : "View less"}
+          </P>
+        </div>
       </ORG_D_Detail_ReviewsWrapper>
 
-      {showModal_ViewAll && (
-        <ORG_D_Detail_Review_Modal_ViewAll
-          showModal={showModal_ViewAll}
-          handleHideModal={handleHideModal_ViewAll}
-          handleShowModal_WriteAReview={handleShowModal_WriteAReview}
-          rating={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
-              ? card.leftPart.rating
-              : ""
-          }
-          reviews={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
-              ? card.leftPart.reviews
-              : ""
-          }
-          getReviews={theReviews}
-          name={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.first : ""
-          }
-          lastName={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.last : ""
-          }
-        />
-      )}
-
-      {showModal_WriteAReview && (
-        <ORG_D_Detail_Review_Modal_WriteAReview
-          name={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.first : ""
-          }
-          lastName={
-            !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND] ? fullName.last : ""
-          }
-          handleHideModal_WriteAReview={handleHideModal_WriteAReview}
-        />
-      )}
+      <Dialog_D
+        theRef={dialogRef}
+        handleCloseDialog={(e) => closeDialog({ event: e })}
+        refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
+        useHide={useHide}
+      >
+        <ORG_D_Detail_Review_Modal_WriteAReview name="" lastName="" />
+      </Dialog_D>
     </>
   )
 }

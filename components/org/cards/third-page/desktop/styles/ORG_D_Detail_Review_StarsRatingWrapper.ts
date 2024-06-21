@@ -7,6 +7,7 @@ export const ORG_D_Detail_Review_StarsRatingWrapper = styled.div`
 
   & > :nth-child(1) {
     margin-right: 8px;
+    font-weight: 600;
   }
 
   & > :nth-child(2) {
@@ -15,6 +16,7 @@ export const ORG_D_Detail_Review_StarsRatingWrapper = styled.div`
 
   & > span {
     color: #939090;
+    font-weight: 600;
   }
 
   &.${Classes_ORG_D_Detail_IsModal.IS_MODAL} {

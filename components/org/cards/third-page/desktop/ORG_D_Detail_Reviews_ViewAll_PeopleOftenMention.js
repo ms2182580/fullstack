@@ -1,10 +1,15 @@
+import { ArrowDownSvg } from "@/assets/icons/index.jsx"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { Classes_ORG_D_Detail_IsModal } from "@/utils/org/third-page/IsModal"
 import { useRouter } from "next/router.js"
-import { ArrowDownSvg } from "../../../../../assets/icons/index"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { ORG_D_Detail_Review_StarsRating } from "./ORG_D_Detail_Review_StarsRating.js"
 import { ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper } from "./styles/ORG_D_Detail_Reviews_ViewAll_PeopleOftenMentionWrapper"
+
+/* 
+!FH0
+
+Eliminate this component and all their dependencies
+*/
 
 export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention = ({
   rating,
@@ -18,12 +23,6 @@ export const ORG_D_Detail_Reviews_ViewAll_PeopleOftenMention = ({
       className={isModal ? `${Classes_ORG_D_Detail_IsModal.IS_MODAL}` : ""}
       isBackend={query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]}
     >
-      <ORG_D_Detail_Review_StarsRating
-        rating={rating || 5}
-        reviews={reviews || 99}
-        isModal={isModal}
-      />
-
       <P semibold>People often mention</P>
       <ul>
         <li>
