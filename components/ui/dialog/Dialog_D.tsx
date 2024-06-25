@@ -69,14 +69,14 @@ export const Dialog_D = ({
 
   return (
     <Dialog_DWrapper ref={theRef}>
-      <div ref={refToCloseDialogClickingOutside}>
+      <span ref={refToCloseDialogClickingOutside}>
         <Close_Icon_SVG
           onClick={handleCloseDialog}
           onKeyDown={handleCloseDialog}
           tabIndex={0}
         />
         {children}
-      </div>
+      </span>
     </Dialog_DWrapper>
   )
 }
@@ -106,6 +106,7 @@ export const useDialogLogic = () => {
       (e?.code === "Enter" && e?.key === "Enter" && e?.type === "keydown") ||
       e?.code === "Escape"
     ) {
+      e.preventDefault()
       setCheckModalIsOpen(false)
       dialogRef?.current?.close()
     }

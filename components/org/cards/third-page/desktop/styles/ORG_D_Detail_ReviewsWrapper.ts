@@ -7,8 +7,6 @@ import styled from "styled-components"
 export const ORG_D_Detail_ReviewsWrapper = styled.article`
   ${ui_section_card()};
 
-  border-radius: 8px;
-
   & > header {
     ${ui_header_card()};
 
