@@ -12,8 +12,8 @@ export const ORG_D_Detail_FAQS_ModalWrapper = styled.div`
   & > :nth-child(1) {
     ${ui_header_card()};
 
-    h3 {
-      font-size: 20px;
+    h2 {
+      font-size: 24px;
     }
   }
 

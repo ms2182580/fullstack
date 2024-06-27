@@ -1,4 +1,4 @@
-import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
 import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
@@ -40,10 +40,6 @@ export const ORG_D_Detail_FAQSWrapper = styled.article`
           background: ${NEUTRALS.OFF_WHITE};
           border: 1px solid ${NEUTRALS.BLACK};
           border-radius: 16px;
-
-          &[type="text"]:focus {
-            border: 1px solid transparent;
-          }
         }
       }
 
@@ -57,6 +53,12 @@ export const ORG_D_Detail_FAQSWrapper = styled.article`
       justify-content: space-between;
       align-items: center;
       margin-bottom: 24px;
+
+      h4 {
+        font-weight: 700;
+
+        color: ${PRIMARY.PRIMARY_HOVER};
+      }
     }
 
     & > :nth-child(3) {

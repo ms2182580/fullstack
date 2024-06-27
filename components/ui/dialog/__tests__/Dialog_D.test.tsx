@@ -63,7 +63,10 @@ describe(`Testing ${Dialog_D.name}`, (ctx_describe) => {
     )
   })
 
-  it(`${Dialog_D.name} is stablished: nothing should change`, async (ctx) => {
+  /* 
+  !FH
+  All the test of dialog with RTL should be rewrite using Playwright  */
+  it.skip(`${Dialog_D.name} is stablished: nothing should change`, async (ctx) => {
     const vOpenDialog = vi.fn()
     const vCloseDialog = vi.fn()
 

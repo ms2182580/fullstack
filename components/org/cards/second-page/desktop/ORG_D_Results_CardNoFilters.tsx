@@ -1,5 +1,4 @@
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
-import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { useRouter } from "next/router"
@@ -16,8 +15,6 @@ export const ORG_D_Results_CardNoFilters = () => {
   useEffect(() => {
     setThirdpageDataORG("")
   }, [])
-
-  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const { query } = useRouter()
 

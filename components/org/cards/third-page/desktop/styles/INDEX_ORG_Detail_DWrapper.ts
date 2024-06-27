@@ -1,6 +1,3 @@
-import { blurEffect } from "@/components/ui/blur/blur"
-import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
-import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
 import styled from "styled-components"
 
 export const INDEX_ORG_Detail_DWrapper = styled.div`
@@ -48,16 +45,6 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
           padding: 0 clamp(2px, 3.373vw - 34px, 16px);
         }
       }
-    }
-  }
-
-  & > :nth-child(3) {
-    ${ui_section_card()}
-    position: relative;
-    & > :nth-child(1) {
-      ${ui_header_card()}
-
-      ${blurEffect({})}
     }
   }
 

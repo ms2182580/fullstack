@@ -1,4 +1,7 @@
-import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
+import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
+import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
+import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
 import styled from "styled-components"
 
 let leftMarginTags = "32px"
@@ -7,161 +10,172 @@ let rightMarginTags = "123px"
 let leftMarginTagsLineBelow = "79px"
 let rightMarginTagsLineBelow = "169px"
 
-export const PCC_General_D_UsersAlsoViewedWrapper = styled.section`
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding-bottom: 24px;
+export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
+  ${ui_section_card()}
 
   & > :nth-child(1) {
-    padding: 24px;
-    background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-    margin-bottom: 66px;
+    ${ui_header_card()};
 
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    h2 {
+      font-size: 24px;
+    }
   }
 
   & > :nth-child(2) {
-    list-style: none;
-    margin-left: ${leftMarginTags};
-    margin-right: ${rightMarginTags};
-    margin-bottom: 66px;
-
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    gap: 24px;
-
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-
-      bottom: -38px;
-      left: 0;
-      right: 0;
-
-      background-color: ${NEUTRALS.LIGHT_GREY};
-      height: 1px;
-      margin-left: calc(${leftMarginTagsLineBelow} - ${leftMarginTags});
-      margin-right: calc(${rightMarginTagsLineBelow} - ${rightMarginTags});
+    ul {
+      list-style: none;
     }
 
-    & > * {
-      border-radius: 16px;
-      border: 2px solid ${PRIMARY.PRIMARY_CTA};
-      background-color: ${NEUTRALS.OFF_WHITE};
-      padding: 8px 16px;
+    & > :nth-child(1) {
+      display: flex;
+      align-items: center;
 
-      color: ${PRIMARY.PRIMARY_CTA};
+      justify-content: space-between;
 
-      font-weight: 600;
+      span {
+        position: relative;
+        height: 100%;
 
-      cursor: pointer;
-    }
-
-    & > :last-child {
-      border: 2px solid ${NEUTRALS.DARK_GREY};
-      background-color: ${NEUTRALS.LIGHT_GREY};
-      color: ${NEUTRALS.DARK_GREY};
-
-      cursor: not-allowed;
-    }
-  }
-
-  & > :nth-child(3) {
-    margin-left: 24px;
-    margin-right: 84px;
-
-    & > * {
-      display: grid;
-      grid-template-columns: auto 1fr;
-
-      & > :nth-child(1) {
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        border-radius: 8px;
-        overflow: hidden;
-        width: 391px;
-        height: 232px;
-        margin-right: 24px;
-      }
-
-      & > :nth-child(2) {
-        margin-right: 8px;
-        & > * {
-          font-size: 18px;
-        }
+        width: 60%;
 
         & > :nth-child(1) {
-          font-weight: 600;
-          margin-bottom: 11px;
+          position: absolute;
+          left: 16px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
         }
 
         & > :nth-child(2) {
-          margin-bottom: 9px;
-          flex-direction: row-reverse;
-          justify-content: flex-end;
+          width: 100%;
+          padding: 10px 10px 10px calc(16px + 32px);
+
+          background: ${NEUTRALS.OFF_WHITE};
+          border: 1px solid ${NEUTRALS.BLACK};
+          border-radius: 8px;
+        }
+      }
+
+      button {
+        ${reusableButton({ secondary: true })};
+      }
+    }
+
+    & > :nth-child(2),
+    & > :nth-child(3) {
+      display: grid;
+      gap: calc(8px * 4);
+
+      & > h3 {
+        font-weight: 800;
+        color: #746779;
+      }
+
+      & > ul {
+        display: flex;
+        gap: 53px;
+
+        & > li {
+          & > :nth-child(2) {
+            margin-top: 16px;
+          }
+
+          & > span {
+            position: relative;
+
+            & > img {
+              border-radius: 8px;
+            }
+
+            & > :nth-child(2) {
+              position: absolute;
+              top: 100%;
+              z-index: 1;
+
+              width: max-content;
+              margin-left: auto;
+            }
+          }
+
+          a {
+            ${reusableButton({ secondary: true })};
+            text-transform: capitalize;
+
+            width: fit-content;
+            margin-top: 24px;
+          }
+        }
+      }
+
+      & > p {
+        margin-left: auto;
+        color: ${SEMANTICS.HYPERLINK_NORMAL};
+        text-decoration: underline;
+
+        font-weight: 600;
+
+        cursor: default;
+
+        :hover,
+        :focus-visible {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    & > :nth-child(2) {
+      margin-top: 68px;
+      padding-bottom: 68px;
+      border-bottom: 1px solid #746779;
+
+      li {
+        p {
+          text-transform: capitalize;
         }
 
-        & > :nth-child(3) {
-          display: flex;
-          justify-content: space-between;
-          gap: 56px;
-
+        & > :nth-child(2) {
           & > :nth-child(1) {
-            font-style: italic;
+            font-size: 20px;
+            font-weight: 600;
           }
 
           & > :nth-child(2) {
-            align-self: flex-start;
+            color: ${NEUTRALS.DARK_GREY_2};
+          }
 
-            padding: 8px 48px;
-            border: 2px solid ${NEUTRALS.DARK_GREY};
-            border-radius: 8px;
+          & > :nth-child(3) {
+            font-size: 14px;
+            color: #746779;
+          }
 
-            background-color: ${NEUTRALS.LIGHT_GREY};
-            color: ${NEUTRALS.DARK_GREY};
-
-            font-weight: 600;
-
-            cursor: not-allowed;
+          & > :last-child {
           }
         }
       }
     }
 
-    & > *:not(:last-child) {
-      margin-bottom: 24px;
-      position: relative;
+    & > :nth-child(3) {
+      padding-top: 68px;
 
-      &:before {
-        content: "";
-        position: absolute;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
 
-        bottom: -12px;
-        left: 0;
-        right: 0;
+        li {
+          max-width: 229px;
+        }
 
-        background-color: ${NEUTRALS.LIGHT_GREY};
-        height: 1px;
+        & > :nth-child(2),
+        & > :nth-child(4) {
+          margin-top: 60px;
+        }
+
+        p {
+          font-size: 17px;
+          font-weight: 600;
+          white-space: nowrap;
+        }
       }
-    }
-  }
-
-  & > :nth-child(4) {
-    margin-right: 84px;
-    margin-left: auto;
-    width: fit-content;
-
-    color: ${SEMANTICS.HYPERLINK_NORMAL};
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
-
-    &:hover {
-      color: ${SEMANTICS.FOCUS_RING};
     }
   }
 `
