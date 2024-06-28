@@ -7,7 +7,7 @@ const hideElement = keyframes`
     transform: translateY(-20%);
     opacity:1;
   }
-  100% {
+  150% {
     transform: translateY(20%);
     opacity:0;
   }
