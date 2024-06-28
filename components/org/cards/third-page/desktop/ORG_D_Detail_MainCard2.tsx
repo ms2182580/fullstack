@@ -1,4 +1,3 @@
-import { ShareSvg_2 } from "@/assets/icons"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified_Detail } from "@/components/org/verified/Verified_Detail"
@@ -13,6 +12,7 @@ import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
 import { ORG_D_Detail_MainCardPhotos } from "./ORG_D_Detail_MainCardPhotos"
+import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wrapper"
 
 /* 
@@ -92,7 +92,12 @@ export const ORG_D_Detail_MainCard2 = () => {
             Re make the Share here with the proper modal with dialog
             
              */}
-            <ShareSvg_2 />
+            <ORG_D_Detail_Share
+              picture={imagesToUse_backup[Number(query?.whichPhoto)]}
+              name={dataOnCard.title}
+              lastName={""}
+            />
+            {/* <ShareSvg_2 /> */}
           </span>
         </div>
 
