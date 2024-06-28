@@ -1,7 +1,7 @@
 import { SECONDARY_ORG_PLUS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const SPAN = styled.span`
+export const Verified_DetailWrapper = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,4 +1,3 @@
-import { SEMANTICS } from "@/assets/Colors"
 import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
 import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
 import styled from "styled-components"
@@ -54,9 +53,7 @@ export const ORG_D_Detail_MainCard2Wrapper = styled.section`
 
         & > :nth-child(2) {
           margin-top: 4px;
-
           text-align: center;
-          color: ${SEMANTICS.HYPERLINK_NORMAL};
         }
       }
 

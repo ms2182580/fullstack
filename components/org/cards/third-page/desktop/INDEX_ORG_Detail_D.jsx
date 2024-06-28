@@ -129,6 +129,9 @@ export const INDEX_ORG_Detail_D = () => {
         </div>
       </INDEX_ORG_Detail_DWrapper>
 
+      {/* //!FH0
+Eliminate all "InFrontModal_D_Wrapper" component because is only used for "Diaglog" purpose
+*/}
       <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
     </>
   )

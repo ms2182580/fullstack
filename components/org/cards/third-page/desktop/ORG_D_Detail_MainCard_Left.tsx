@@ -16,7 +16,6 @@ import { ORG_D_Detail_CardEmail } from "./ORG_D_Detail_CardEmail"
 import { ORG_D_Detail_CardLocation } from "./ORG_D_Detail_CardLocation"
 import { ORG_D_Detail_CardPhone } from "./ORG_D_Detail_CardPhone"
 import { ORG_D_Detail_CardWebsite } from "./ORG_D_Detail_CardWebsite"
-import { ORG_D_Detail_MainCardLeftPhotos } from "./ORG_D_Detail_MainCardLeftPhotos"
 import { ORG_D_Detail_MapComponent } from "./ORG_D_Detail_MapComponent"
 import { ORG_D_Detail_MainCard_LeftWrapper } from "./styles/ORG_D_Detail_MainCard_LeftWrapper"
 
@@ -70,14 +69,14 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
           <Verified />
         </div>
 
-        <ORG_D_Detail_MainCardLeftPhotos
+        {/* <ORG_D_Detail_MainCardPhotos
           photo={Backup_Image}
           name={
             thirdpageDataORG_Backend[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
               .recordName
           }
           lastName={""}
-        />
+        /> */}
 
         <P>Contact Information</P>
 
@@ -148,11 +147,11 @@ export const ORG_D_Detail_MainCard_Left = ({ howIsMap, isPVES }: any) => {
         <Verified />
       </div>
 
-      <ORG_D_Detail_MainCardLeftPhotos
+      {/* <ORG_D_Detail_MainCardPhotos
         photo={thirdpageDataORG.card.leftPart.photo.src}
         name={thirdpageDataORG.card.leftPart.title}
         lastName={""}
-      />
+      /> */}
 
       <aside>
         {haveSomeBrandToShow && (

@@ -12,6 +12,7 @@ import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
+import { ORG_D_Detail_MainCardPhotos } from "./ORG_D_Detail_MainCardPhotos"
 import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wrapper"
 
 /* 
@@ -20,8 +21,9 @@ import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wr
 */
 export const ORG_D_Detail_MainCard2 = () => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData_Backend()
-  const { query } =
-    useRouter() /* The only purpose of this is display the correct dummy photo */
+
+  /* The only purpose of this is display the correct dummy photo */
+  const { query } = useRouter()
 
   const dataOnCard = useMemo(() => {
     const thirdPageData =
@@ -66,7 +68,13 @@ export const ORG_D_Detail_MainCard2 = () => {
               <ORG_D_Results_Card_Hearth />
               <Verified_Detail />
             </span>
-            <p>{dataOnCard.showPhotos} photos</p>
+
+            <ORG_D_Detail_MainCardPhotos
+              amountOfPhotos={dataOnCard.showPhotos}
+              name={dataOnCard.title}
+              lastName={""}
+              photo={imagesToUse_backup[Number(query?.whichPhoto)]}
+            />
           </span>
 
           <span>
@@ -87,6 +95,7 @@ export const ORG_D_Detail_MainCard2 = () => {
             <ShareSvg_2 />
           </span>
         </div>
+
         <div>
           <H3>Class focus</H3>
           <ul>

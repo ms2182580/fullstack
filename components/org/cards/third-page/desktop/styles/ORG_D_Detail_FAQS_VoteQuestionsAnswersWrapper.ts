@@ -1,5 +1,5 @@
+import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
-import { PRIMARY } from "../../../../../../assets/Colors"
 
 type Props = {
   alreadyVoteUp: boolean
@@ -10,9 +10,6 @@ export const ORG_D_Detail_FAQS_VoteQuestionsAnswersWrapper = styled.div<Props>`
   grid-template-columns: 1fr 9fr;
   gap: 40px;
   align-items: center;
-
-  margin-right: 25%;
-  margin-left: 24px;
 
   & > :nth-child(1) {
     display: flex;

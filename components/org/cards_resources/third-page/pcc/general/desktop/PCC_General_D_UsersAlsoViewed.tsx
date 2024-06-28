@@ -116,6 +116,11 @@ const popularData: PopularData_Type = [
   },
 ]
 
+/* 
+!FH0
+
+Chane the name of this component and their location on the folder
+*/
 export const PCC_General_D_UsersAlsoViewed = ({
   [ArraySection_KEYS.ALL_DATA]: allProps,
 }) => {
