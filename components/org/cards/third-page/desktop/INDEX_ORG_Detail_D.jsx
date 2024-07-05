@@ -33,7 +33,6 @@ export const INDEX_ORG_Detail_D = () => {
     if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {
       return null
     }
-
     const dataThirdPage =
       thirdpageDataORG_Backend?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE] ??
       null
@@ -68,8 +67,9 @@ export const INDEX_ORG_Detail_D = () => {
         ] ?? false,
     }
 
-    const howIsChatAI =
-      dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.CHAT_AI] || "DEFAULT"
+    const category =
+      thirdpageDataORG_Backend?.[DATA_ORG_KeyNamesForCards_D_KEYS.CATEGORY] ||
+      null
 
     return {
       renderSections,
@@ -77,7 +77,7 @@ export const INDEX_ORG_Detail_D = () => {
       layoutMainCardRight,
       howIsMap,
       buttonMainCard,
-      howIsChatAI,
+      category,
     }
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
 
@@ -123,12 +123,14 @@ export const INDEX_ORG_Detail_D = () => {
           <div>
             <ORG_D_Detail_Contact />
             <ORG_D_Detail_AIChat
-              howIsChatAI={getAllSpecificThirdPageData.howIsChatAI}
+              whichCategory={getAllSpecificThirdPageData.category}
             />
           </div>
         </div>
 
-        <PCC_General_D_UsersAlsoViewed />
+        <PCC_General_D_UsersAlsoViewed
+          whichCategory={getAllSpecificThirdPageData.category}
+        />
 
         <div>
           <ORG_D_Detail_BreadcrumbsLastUpdated />

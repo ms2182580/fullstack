@@ -2,9 +2,13 @@ import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
 import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
+type Props = {
+  isVocational: boolean
+}
+
+export const PCC_General_D_UsersAlsoViewedWrapper = styled.article<Props>`
   ${ui_section_card()}
 
   & > :nth-child(1) {
@@ -52,7 +56,20 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
       }
 
       button {
-        ${reusableButton({ secondary: true })};
+        ${({ isVocational }) =>
+          isVocational
+            ? css`
+                ${reusableButton({})}
+
+                display: grid;
+                grid-auto-flow: column;
+                align-content: center;
+
+                gap: 12px;
+              `
+            : css`
+                ${reusableButton({ secondary: true })}
+              `}
       }
     }
 
@@ -115,8 +132,9 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
 
     & > :nth-child(2) {
       margin-top: 68px;
-      padding-bottom: 68px;
-      border-bottom: 1px solid ${NEUTRALS.DARK_GREY_3};
+      border-bottom: ${({ isVocational }) => (isVocational ? "" : `68px`)};
+      border-bottom: ${({ isVocational }) =>
+        isVocational ? "" : `1px solid ${NEUTRALS.DARK_GREY_3}`};
 
       li {
         p {

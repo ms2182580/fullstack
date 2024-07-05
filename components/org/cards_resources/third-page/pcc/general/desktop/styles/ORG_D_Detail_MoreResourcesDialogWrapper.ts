@@ -1,36 +1,95 @@
 import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "@/assets/Colors"
-import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
 import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const ORG_D_Detail_AIChatWrapper = styled.section`
-  ${ui_section_card()};
-  background-color: ${NEUTRALS.OFF_WHITE};
+type Props = {
+  shouldDisplayLeftArrow: boolean
+  shouldArrowRightBeDisabled: boolean
+}
+
+export const ORG_D_Detail_MoreResourcesDialogWrapper = styled.article<Props>`
+  ${ui_section_card()}
+
+  width: 700px;
 
   & > :nth-child(1) {
     ${ui_header_card()};
-    height: 56px;
-    display: flex;
-    align-items: center;
+
+    h3 {
+      font-size: 20px;
+    }
   }
 
   article {
-    padding-top: 8px;
     display: grid;
-    gap: 24px;
+    gap: 14px;
 
-    textarea {
-      resize: none;
+    h4 {
+      font-weight: 700;
 
-      width: 100%;
+      color: ${PRIMARY.PRIMARY_HOVER};
 
-      padding: 12px 16px;
-      border-radius: 8px;
-
-      border: 2px solid ${NEUTRALS.DARK_GREY_3};
+      text-transform: lowercase;
+      &:first-letter {
+        text-transform: capitalize;
+      }
     }
 
+    & > :nth-child(2) {
+      display: flex;
+      position: relative;
+
+      & > :nth-child(1) {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 16px;
+      }
+
+      & > :nth-child(2) {
+        width: 100%;
+        height: 80px;
+
+        position: relative;
+        z-index: 1;
+
+        resize: none;
+
+        border-radius: 8px;
+
+        border: 2px solid ${NEUTRALS.DARK_GREY_3};
+
+        padding-left: 82px;
+        padding-inline: 82px 40px;
+        padding-top: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      & > :last-child {
+        position: absolute;
+        z-index: 2;
+
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 16px;
+      }
+    }
     & > :nth-child(3) {
       display: flex;
 
@@ -85,32 +144,29 @@ export const ORG_D_Detail_AIChatWrapper = styled.section`
         top: 0;
         bottom: 0;
         left: 0px;
-        /* margin: auto; */
 
         visibility: hidden;
 
-        &.navBarLeftArrowShouldDisplay {
-          visibility: visible;
+        ${({ shouldDisplayLeftArrow }) =>
+          shouldDisplayLeftArrow &&
+          css`
+            visibility: visible;
 
-          & > :nth-child(1) {
-            &:after {
-              content: "";
-              position: absolute;
-              z-index: -1;
-              top: 0;
-              bottom: 0;
-              left: 8px;
+            & > :nth-child(1) {
+              &:after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 8px;
 
-              width: 33px;
-              height: 100%;
-              background: linear-gradient(
-                -90deg,
-                hsla(0, 0%, 100%, 20%) 0%,
-                hsl(16.7, 100%, 96.5%) 8%
-              );
+                width: 33px;
+                height: 100%;
+                background: linear-gradient(-90deg, transparent 0%, white 8%);
+              }
             }
-          }
-        }
+          `}
       }
 
       ul {
@@ -124,7 +180,7 @@ export const ORG_D_Detail_AIChatWrapper = styled.section`
         position: relative;
         z-index: 1;
 
-        padding-right: 33px;
+        padding-right: 55px;
 
         li {
           display: flex;
@@ -156,20 +212,23 @@ export const ORG_D_Detail_AIChatWrapper = styled.section`
         bottom: 0;
         margin: auto;
 
-        &.navBarRightArrowShouldDisable {
-          & > :nth-child(1) {
-            cursor: not-allowed;
+        ${({ shouldArrowRightBeDisabled }) =>
+          shouldArrowRightBeDisabled &&
+          css`
+            & > :nth-child(1) {
+              cursor: not-allowed;
 
-            border: 2px solid ${NEUTRALS.LIGHT_GREY};
-            background-color: ${NEUTRALS.LIGHT_GREY};
+              border: 2px solid ${NEUTRALS.LIGHT_GREY};
+              background-color: ${NEUTRALS.LIGHT_GREY};
 
-            & > * {
               & > * {
                 fill: ${NEUTRALS.BLACK};
+                & > * {
+                  fill: ${NEUTRALS.BLACK};
+                }
               }
             }
-          }
-        }
+          `}
 
         &:after {
           content: "";
@@ -179,25 +238,11 @@ export const ORG_D_Detail_AIChatWrapper = styled.section`
           bottom: 0;
           right: 8px;
 
-          width: 33px;
+          width: 44px;
           height: 100%;
-          background: linear-gradient(
-            90deg,
-            hsla(0, 0%, 100%, 20%) 0%,
-            hsl(16.7, 100%, 96.5%) 8%
-          );
+          background: linear-gradient(90deg, transparent 0%, white 16%);
         }
       }
-    }
-
-    button {
-      ${reusableButton({})};
-
-      padding: 8px 32px !important;
-      width: fit-content;
-
-      display: flex;
-      column-gap: 12px;
     }
   }
 `

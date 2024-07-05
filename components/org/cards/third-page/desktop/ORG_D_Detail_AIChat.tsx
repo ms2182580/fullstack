@@ -3,7 +3,7 @@ import MagicWandSVG from "@/assets/icons/org/third-page/magic-wand.svg"
 import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { CHAT_AI_ENUM } from "@/utils/org/categories/general/ALL_DATA"
+import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
 import { useMemo, useRef } from "react"
 import { ORG_D_Detail_AIChatWrapper } from "./styles/ORG_D_Detail_AIChatWrapper"
@@ -14,10 +14,10 @@ const optionsAI = [
   "Get contact information",
 ]
 
-export const ORG_D_Detail_AIChat = ({ howIsChatAI }) => {
-  const shouldAddIcon = useMemo(() => {
-    return howIsChatAI === CHAT_AI_ENUM.IS_VOCATIONAL
-  }, [howIsChatAI])
+export const ORG_D_Detail_AIChat = ({ whichCategory }) => {
+  const isVocational = useMemo(() => {
+    return whichCategory === NamesCategories_KEY["VOCATIONAL RESOURCES"]
+  }, [whichCategory])
 
   const refULElements = useRef<HTMLUListElement | null>(null)
 
@@ -30,7 +30,7 @@ export const ORG_D_Detail_AIChat = ({ howIsChatAI }) => {
       <article>
         <P>Have questions about community classes?</P>
         <textarea placeholder="Ask me anything about services." />
-        {shouldAddIcon ? (
+        {isVocational ? (
           <div>
             <div
               className={`${
@@ -57,6 +57,7 @@ export const ORG_D_Detail_AIChat = ({ howIsChatAI }) => {
                 </li>
               ))}
             </ul>
+
             <div
               className={`${
                 stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
@@ -75,7 +76,7 @@ export const ORG_D_Detail_AIChat = ({ howIsChatAI }) => {
           </div>
         ) : null}
 
-        <button>{shouldAddIcon ? <MagicWandSVG /> : null} Ask</button>
+        <button>{isVocational ? <MagicWandSVG /> : null} Ask</button>
       </article>
     </ORG_D_Detail_AIChatWrapper>
   )

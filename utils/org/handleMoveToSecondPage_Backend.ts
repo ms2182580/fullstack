@@ -30,6 +30,7 @@ export const handleMoveToSecondPage_Backend = ({
 
   setSecondpageDataORG_Backend({
     [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: raw,
+    [DATA_ORG_KeyNamesForCards_D_KEYS.CATEGORY]: category,
     [DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY]: theSubcategory,
     [SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]:
       getSpecificData?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE] ?? {},

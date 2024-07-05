@@ -46,6 +46,7 @@ export const handleMoveToThirdPage_Backend = ({
 
     setThirdpageDataORG_Backend({
       [DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]: raw,
+      [DATA_ORG_KeyNamesForCards_D_KEYS.CATEGORY]: category,
       [DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY]: subCategoryName,
       [DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE]:
         gettingThirdPageData?.[DATA_ORG_KeyNamesForCards_D_KEYS.THIRD_PAGE] ??

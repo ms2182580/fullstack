@@ -100,7 +100,7 @@ export const PVES_General_D_Graphics = ({
 
   return (
     <PVES_General_D_GraphicsWrapper id={theIdForComponent}>
-      <H3>Employer Diversity, Equity & Inclusion</H3>
+      <H3>Statistics</H3>
 
       <section>
         <header>
