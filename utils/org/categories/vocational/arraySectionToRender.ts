@@ -6,7 +6,6 @@ import {
 } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { PVES_General_D_Graphics } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_Graphics"
 import { PVES_General_D_PublicAssistanceApplicants } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_PublicAssistanceApplicants"
-import { PVES_General_D_RelatedJobs } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_RelatedJobs"
 import {
   ArraySectionToRender_Type,
   ArraySection_KEYS,
@@ -63,13 +62,6 @@ export const arraySectionToRender_Vocational: ArraySectionToRender_Type = [
       jsx: arrayInnerNavBar_VCTNL[2][
         InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
       ],
-    },
-  },
-  {
-    name: PVES_General_D_RelatedJobs.name,
-    component: PVES_General_D_RelatedJobs,
-    toNavbar: {
-      id: null,
     },
   },
   {
