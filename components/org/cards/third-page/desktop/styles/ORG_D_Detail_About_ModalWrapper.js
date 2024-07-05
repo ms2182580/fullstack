@@ -1,15 +1,7 @@
+import { PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
 
 export const ORG_D_Detail_About_ModalWrapper = styled.div`
-  /* visibility: ${({ showModal }) => (showModal ? `visible` : `hidden`)};
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(932px, 91%, 1200px);
-  background-color: ${NEUTRALS.OFF_WHITE};
-  z-index: 5; */
   cursor: default;
   padding: 73px;
   border-radius: 8px;
@@ -25,5 +17,21 @@ export const ORG_D_Detail_About_ModalWrapper = styled.div`
     justify-content: flex-start;
     flex-direction: column;
     gap: 30px;
+  }
+
+  & > :nth-child(2) {
+    & > :nth-child(2) {
+      width: 100%;
+      height: 100%;
+
+      border-bottom-left-radius: 24px;
+      border-top-right-radius: 24px;
+
+      background: linear-gradient(
+        45deg,
+        ${PRIMARY.DARK_MAROON} 35%,
+        ${PRIMARY.LIGHT_MAROON} 88%
+      );
+    }
   }
 `

@@ -304,6 +304,13 @@ export const enum BUTTON_MAIN_CARD_TEXT_VALUES_ENUM {
 
 type BUTTON_MAIN_CARD_TEXT_VALUES = BUTTON_MAIN_CARD_TEXT_VALUES_ENUM
 
+export const enum CHAT_AI_ENUM {
+  DEFAULT = "DEFAULT",
+  IS_VOCATIONAL = "IS_VOCATIONAL",
+}
+
+export type CHAT_AI_VALUES = keyof typeof CHAT_AI_ENUM | null
+
 type ALL_DATA_Type = {
   [value in NamesCategories_KEY | string]: {
     [DATA_ORG_KeyNamesForCards_D_KEYS.CATEGORY]: NamesCategories_KEY | string
@@ -334,6 +341,7 @@ type ALL_DATA_Type = {
       }
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_ICON]?: boolean
       [DATA_ORG_KeyNamesForCards_D_KEYS.BUTTON_MAIN_CARD_TEXT]?: BUTTON_MAIN_CARD_TEXT_VALUES
+      [DATA_ORG_KeyNamesForCards_D_KEYS.CHAT_AI]?: CHAT_AI_VALUES
     }
   }
 }
@@ -592,6 +600,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     THIRD_PAGE: {
       SECTIONS: arraySectionToRender_Vocational,
       TOOLTIP: tooltipToRender_Vocational,
+      CHAT_AI: "IS_VOCATIONAL",
     },
   },
 

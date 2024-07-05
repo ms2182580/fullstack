@@ -41,4 +41,5 @@ export const enum DATA_ORG_KeyNamesForCards_D_KEYS {
   SUB_CATEGORY = "SUB_CATEGORY",
   THIRD_PAGE = "THIRD_PAGE",
   ALL_DATA = "ALL_DATA",
+  CHAT_AI = "CHAT_AI",
 }

@@ -44,166 +44,162 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
   }, [])
 
   return (
-    <>
-      <INDEX_D_ORGWrapper>
-        <header>
-          <H1>
-            Find exactly what <br /> you're looking for
-          </H1>
-          <Image
-            src={ORG_1_page}
-            alt="Image of doctors and patients looking forward, smiling and shaking hands"
-          />
-          <ORG_D_SearchComponent />
-          <Image
-            src={"/background/background2.svg"}
-            width={1}
-            height={1}
-            alt="Background Image"
-          />
-          <Image
-            src={"/background/background3.svg"}
-            width={1}
-            height={1}
-            alt="Background Image"
-          />
-        </header>
+    <INDEX_D_ORGWrapper>
+      <header>
+        <H1>
+          Find exactly what <br /> you're looking for
+        </H1>
+        <Image
+          src={ORG_1_page}
+          alt="Image of doctors and patients looking forward, smiling and shaking hands"
+        />
+        <ORG_D_SearchComponent />
+        <Image
+          src={"/background/background2.svg"}
+          width={1}
+          height={1}
+          alt="Background Image"
+        />
+        <Image
+          src={"/background/background3.svg"}
+          width={1}
+          height={1}
+          alt="Background Image"
+        />
+      </header>
 
-        <div>
-          <div
-            className={`${
-              stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
-            }`}
-          >
-            <div onClick={moveToLeft}>
-              <LeftArrowSvg />
-            </div>
-            <div />
+      <div>
+        <div
+          className={`${
+            stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
+          }`}
+        >
+          <div onClick={moveToLeft}>
+            <LeftArrowSvg />
           </div>
-          <ul
-            ref={(el: any) => {
-              setListRef(el)
-              refOfORGSelections.current = el
-            }}
+        </div>
+        <ul
+          ref={(el: any) => {
+            setListRef(el)
+            refOfORGSelections.current = el
+          }}
+        >
+          <LI_Category
+            onClick={handleShowAll}
+            isActiveCategory={!singleCardIsSelected}
           >
-            <LI_Category
-              onClick={handleShowAll}
-              isActiveCategory={!singleCardIsSelected}
-            >
-              <P primary_cta semibold>
-                All
-              </P>
-            </LI_Category>
+            <P primary_cta semibold>
+              All
+            </P>
+          </LI_Category>
 
-            {Object.values(ALL_DATA).map(({ CATEGORY }, index) => {
-              return (
-                <LI_Category
-                  key={`${CATEGORY}_${index}`}
-                  data-name={CATEGORY}
-                  onClick={handleShowOneCard}
-                  isActiveCategory={
-                    singleCardIsSelected && matchNameState === CATEGORY
-                  }
-                >
-                  <P primary_cta semibold data-name={CATEGORY}>
-                    {CATEGORY}
-                  </P>
-                </LI_Category>
-              )
-            })}
-          </ul>
+          {Object.values(ALL_DATA).map(({ CATEGORY }, index) => {
+            return (
+              <LI_Category
+                key={`${CATEGORY}_${index}`}
+                data-name={CATEGORY}
+                onClick={handleShowOneCard}
+                isActiveCategory={
+                  singleCardIsSelected && matchNameState === CATEGORY
+                }
+              >
+                <P primary_cta semibold data-name={CATEGORY}>
+                  {CATEGORY}
+                </P>
+              </LI_Category>
+            )
+          })}
+        </ul>
 
+        <div
+          className={`${
+            stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
+          }`}
+        >
           <div
+            onClick={moveToRight}
             className={`${
               stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
             }`}
           >
-            <div
-              onClick={moveToRight}
-              className={`${
-                stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
-              }`}
-            >
-              <ArrowRightSvg />
-            </div>
-            <div />
+            <ArrowRightSvg />
           </div>
         </div>
+      </div>
 
-        {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
-          if (singleCardIsSelected === false) {
-            return (
-              <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
-                  category={CATEGORY}
-                  allSubcategories={SUB_CATEGORY}
-                  allBackendData={
-                    allBackendData[
-                      NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
-                    ]
-                  }
-                />
-              </Fragment>
-            )
-          }
+      {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
+        if (singleCardIsSelected === false) {
+          return (
+            <Fragment key={CATEGORY}>
+              <INDEX_ORG_Search_D
+                category={CATEGORY}
+                allSubcategories={SUB_CATEGORY}
+                allBackendData={
+                  allBackendData[
+                    NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+                  ]
+                }
+              />
+            </Fragment>
+          )
+        }
 
-          if (
-            singleCardIsSelected &&
-            matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
-          ) {
-            return (
-              <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
-                  category={CATEGORY}
-                  allSubcategories={SUB_CATEGORY}
-                  allBackendData={
-                    allBackendData[
-                      NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
-                    ]
-                  }
-                  isSelected={singleCardIsSelected}
-                />
-              </Fragment>
-            )
-          }
+        if (
+          singleCardIsSelected &&
+          matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
+        ) {
+          return (
+            <Fragment key={CATEGORY}>
+              <INDEX_ORG_Search_D
+                category={CATEGORY}
+                allSubcategories={SUB_CATEGORY}
+                allBackendData={
+                  allBackendData[
+                    NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+                  ]
+                }
+                isSelected={singleCardIsSelected}
+              />
+            </Fragment>
+          )
+        }
 
-          // if (allBackendData[CATEGORY]) {
-          //   if (singleCardIsSelected === false) {
-          //     return (
-          //       <Fragment key={CATEGORY}>
-          //         <INDEX_ORG_Search_D
-          //           category={CATEGORY}
-          //           allSubcategories={SUB_CATEGORY}
-          //           allBackendData={allBackendData[CATEGORY]}
-          //         />
-          //       </Fragment>
-          //     )
-          //   }
+        // if (allBackendData[CATEGORY]) {
+        //   if (singleCardIsSelected === false) {
+        //     return (
+        //       <Fragment key={CATEGORY}>
+        //         <INDEX_ORG_Search_D
+        //           category={CATEGORY}
+        //           allSubcategories={SUB_CATEGORY}
+        //           allBackendData={allBackendData[CATEGORY]}
+        //         />
+        //       </Fragment>
+        //     )
+        //   }
 
-          //   if (
-          //     singleCardIsSelected &&
-          //     matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
-          //   ) {
-          //     return (
-          //       <Fragment key={CATEGORY}>
-          //         <INDEX_ORG_Search_D
-          //           category={CATEGORY}
-          //           allSubcategories={SUB_CATEGORY}
-          //           allBackendData={allBackendData[CATEGORY]}
-          //           isSelected={singleCardIsSelected}
-          //         />
-          //       </Fragment>
-          //     )
-          //   }
-          // }
+        //   if (
+        //     singleCardIsSelected &&
+        //     matchNameState?.toLowerCase() === CATEGORY.toLowerCase()
+        //   ) {
+        //     return (
+        //       <Fragment key={CATEGORY}>
+        //         <INDEX_ORG_Search_D
+        //           category={CATEGORY}
+        //           allSubcategories={SUB_CATEGORY}
+        //           allBackendData={allBackendData[CATEGORY]}
+        //           isSelected={singleCardIsSelected}
+        //         />
+        //       </Fragment>
+        //     )
+        //   }
+        // }
 
-          /*
-          if (allBackendData[CATEGORY].length === 0) {
-            return <h2>Data not found</h2>
-          }
-          */
-        })}
-      </INDEX_D_ORGWrapper>
-    </>
+        /*
+        if (allBackendData[CATEGORY].length === 0) {
+          return <h2>Data not found</h2>
+        }
+        */
+      })}
+    </INDEX_D_ORGWrapper>
   )
 }

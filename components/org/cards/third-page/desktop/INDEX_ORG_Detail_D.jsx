@@ -13,8 +13,8 @@ import { ORG_D_Detail_AIChat } from "./ORG_D_Detail_AIChat"
 import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
 import { ORG_D_Detail_Contact } from "./ORG_D_Detail_Contact"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
-import { ORG_D_Detail_MainCard2 } from "./ORG_D_Detail_MainCard2"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
+import { ORG_D_Detail_Overview } from "./ORG_D_Detail_Overview"
 import { ORG_Detail_D_SectionCustom } from "./ORG_Detail_D_SectionCustom"
 import { ORG_Detail_D_SectionDefault } from "./ORG_Detail_D_SectionDefault"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
@@ -68,12 +68,16 @@ export const INDEX_ORG_Detail_D = () => {
         ] ?? false,
     }
 
+    const howIsChatAI =
+      dataThirdPage?.[DATA_ORG_KeyNamesForCards_D_KEYS.CHAT_AI] || "DEFAULT"
+
     return {
       renderSections,
       tooltip,
       layoutMainCardRight,
       howIsMap,
       buttonMainCard,
+      howIsChatAI,
     }
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
 
@@ -88,7 +92,7 @@ export const INDEX_ORG_Detail_D = () => {
 
         <div>
           <div>
-            <ORG_D_Detail_MainCard2 />
+            <ORG_D_Detail_Overview />
 
             {/* 
             //!FH0 Eliminate this component and all their dependencies
@@ -118,7 +122,9 @@ export const INDEX_ORG_Detail_D = () => {
           </div>
           <div>
             <ORG_D_Detail_Contact />
-            <ORG_D_Detail_AIChat />
+            <ORG_D_Detail_AIChat
+              howIsChatAI={getAllSpecificThirdPageData.howIsChatAI}
+            />
           </div>
         </div>
 

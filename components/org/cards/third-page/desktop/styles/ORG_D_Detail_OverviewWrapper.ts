@@ -10,7 +10,7 @@ const CONST = {
   },
 }
 
-export const ORG_D_Detail_MainCard2Wrapper = styled.section`
+export const ORG_D_Detail_OverviewWrapper = styled.section`
   ${ui_section_card()}
 
   & > :nth-child(1) {

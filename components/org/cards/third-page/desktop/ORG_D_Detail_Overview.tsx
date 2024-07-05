@@ -13,13 +13,13 @@ import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Resul
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
 import { ORG_D_Detail_MainCardPhotos } from "./ORG_D_Detail_MainCardPhotos"
 import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
-import { ORG_D_Detail_MainCard2Wrapper } from "./styles/ORG_D_Detail_MainCard2Wrapper"
+import { ORG_D_Detail_OverviewWrapper } from "./styles/ORG_D_Detail_OverviewWrapper"
 
 /* 
 !FH0
 - This component should be renamed to "Overview"
 */
-export const ORG_D_Detail_MainCard2 = () => {
+export const ORG_D_Detail_Overview = () => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData_Backend()
 
   /* The only purpose of this is display the correct dummy photo */
@@ -55,7 +55,7 @@ export const ORG_D_Detail_MainCard2 = () => {
   }, [thirdpageDataORG])
 
   return (
-    <ORG_D_Detail_MainCard2Wrapper id={dataOnCard.theID}>
+    <ORG_D_Detail_OverviewWrapper id={dataOnCard.theID}>
       <H2>overview</H2>
       <article>
         <div>
@@ -116,6 +116,6 @@ export const ORG_D_Detail_MainCard2 = () => {
         />
         <Caption>{dataOnCard.lastUpdated}</Caption>
       </article>
-    </ORG_D_Detail_MainCard2Wrapper>
+    </ORG_D_Detail_OverviewWrapper>
   )
 }

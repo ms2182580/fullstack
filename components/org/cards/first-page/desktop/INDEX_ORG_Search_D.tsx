@@ -3,10 +3,7 @@ import { StarsRatingReview_D } from "@/components/org/stars-rating-review/deskto
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2, H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
-import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
-import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
-import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
 import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
@@ -45,13 +42,9 @@ export const INDEX_ORG_Search_D = ({
   }, [isSelected])
 
   const { push } = useRouter()
-  const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
-  const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
 
   const { setSecondpageDataORG: setSecondpageDataORG_Backend }: any =
     useORG_Ctx_D_SecondpageData_Backend()
-
-  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
