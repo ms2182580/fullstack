@@ -135,7 +135,7 @@ export const PCC_General_D_UsersAlsoViewed = ({
       <header>
         <H2>More resources</H2>
       </header>
-      <div>
+      <article>
         <div>
           <span>
             <ORG_Detail_SearchFAQSSVG />
@@ -205,7 +205,7 @@ export const PCC_General_D_UsersAlsoViewed = ({
           </ul>
           <P tabIndex={0}>View All</P>
         </div>
-      </div>
+      </article>
     </PCC_General_D_UsersAlsoViewedWrapper>
   )
 }

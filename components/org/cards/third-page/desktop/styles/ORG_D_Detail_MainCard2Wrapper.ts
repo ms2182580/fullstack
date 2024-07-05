@@ -1,3 +1,4 @@
+import { PRIMARY } from "@/assets/Colors"
 import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
 import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
 import styled from "styled-components"
@@ -24,6 +25,8 @@ export const ORG_D_Detail_MainCard2Wrapper = styled.section`
       display: grid;
       grid-template-columns: 150px 1fr auto;
       column-gap: 24px;
+
+      padding-bottom: 24px;
 
       & > :nth-child(1) {
         position: relative;
@@ -60,6 +63,20 @@ export const ORG_D_Detail_MainCard2Wrapper = styled.section`
       & > :nth-child(2) {
         display: grid;
         gap: 4px;
+
+        h2 {
+          color: ${PRIMARY.DARK_MAROON};
+          font-size: 20px;
+
+          line-height: 30px;
+        }
+
+        h3,
+        h4 {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 24px;
+        }
       }
     }
 

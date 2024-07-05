@@ -1,14 +1,8 @@
-import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
 import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
 import styled from "styled-components"
-
-let leftMarginTags = "32px"
-let rightMarginTags = "123px"
-
-let leftMarginTagsLineBelow = "79px"
-let rightMarginTagsLineBelow = "169px"
 
 export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
   ${ui_section_card()}
@@ -21,7 +15,7 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
     }
   }
 
-  & > :nth-child(2) {
+  article {
     ul {
       list-style: none;
     }
@@ -52,6 +46,7 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
 
           background: ${NEUTRALS.OFF_WHITE};
           border: 1px solid ${NEUTRALS.BLACK};
+
           border-radius: 8px;
         }
       }
@@ -68,7 +63,7 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
 
       & > h3 {
         font-weight: 800;
-        color: #746779;
+        color: ${PRIMARY.LIGHT_MAROON};
       }
 
       & > ul {
@@ -76,10 +71,6 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
         gap: 53px;
 
         & > li {
-          & > :nth-child(2) {
-            margin-top: 16px;
-          }
-
           & > span {
             position: relative;
 
@@ -102,7 +93,6 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
             text-transform: capitalize;
 
             width: fit-content;
-            margin-top: 24px;
           }
         }
       }
@@ -126,14 +116,27 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
     & > :nth-child(2) {
       margin-top: 68px;
       padding-bottom: 68px;
-      border-bottom: 1px solid #746779;
+      border-bottom: 1px solid ${NEUTRALS.DARK_GREY_3};
 
       li {
         p {
           text-transform: capitalize;
         }
 
+        & > :nth-child(1) {
+          display: block;
+          position: relative;
+
+          & > :nth-child(2) {
+            position: absolute;
+            right: 7px;
+            top: 0px;
+          }
+        }
+
         & > :nth-child(2) {
+          margin-top: 16px;
+
           & > :nth-child(1) {
             font-size: 20px;
             font-weight: 600;
@@ -145,10 +148,18 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
 
           & > :nth-child(3) {
             font-size: 14px;
-            color: #746779;
+            color: ${PRIMARY.LIGHT_MAROON};
+          }
+
+          & > :nth-child(4) {
+            & > :nth-child(2) {
+              color: ${NEUTRALS.DARK_GREY_2};
+              text-decoration: none;
+            }
           }
 
           & > :last-child {
+            margin-top: 16px;
           }
         }
       }
@@ -165,6 +176,22 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
           max-width: 229px;
         }
 
+        & > *:nth-of-type(odd) {
+          display: grid;
+          gap: 16px;
+
+          span:nth-of-type(1) {
+            display: block;
+            position: relative;
+
+            & > :nth-child(2) {
+              position: absolute;
+              right: 7px;
+              top: 0px;
+            }
+          }
+        }
+
         & > :nth-child(2),
         & > :nth-child(4) {
           margin-top: 60px;
@@ -172,7 +199,7 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article`
 
         p {
           font-size: 17px;
-          font-weight: 600;
+          font-weight: 500;
           white-space: nowrap;
         }
       }

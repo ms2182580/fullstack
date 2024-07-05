@@ -42,7 +42,9 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
 
       & > * {
         & > :nth-child(1) {
-          padding: 0 clamp(2px, 3.373vw - 34px, 16px);
+          padding: 8px 2px 8px 24px;
+
+          font-weight: 500;
         }
       }
     }

@@ -1,6 +1,6 @@
+import { NEUTRALS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled, { css, keyframes } from "styled-components"
-import { NEUTRALS } from "../../../../../../assets/Colors"
 
 const hideElement = keyframes`
 0% {

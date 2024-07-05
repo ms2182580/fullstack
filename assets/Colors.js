@@ -4,6 +4,7 @@ export const PRIMARY = {
   PRIMARY_HOVER: "#4B348B" /* Primary CTA (hover state) */,
   PRIMARY_BACKGROUND: "#F1E7F5",
   DARK_MAROON: "#312138",
+  LIGHT_MAROON: "#746779",
 }
 
 export const SECONDARY_SNT = {
