@@ -66,6 +66,7 @@ export const ORG_D_Detail_MoreResourcesDialog = () => {
             </div>
             <div />
           </div>
+
           <ul
             ref={(el: any) => {
               setListRef(el)

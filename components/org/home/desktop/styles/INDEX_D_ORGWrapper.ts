@@ -1,7 +1,16 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled, { css } from "styled-components"
 
-export const INDEX_D_ORGWrapper = styled.div`
+type Props = {
+  shouldDisplayLeftArrow: boolean
+  shouldArrowRightBeDisabled: boolean
+}
+
+const Variables = {
+  widthArrows: "48px",
+}
+
+export const INDEX_D_ORGWrapper = styled.div<Props>`
   background-color: ${NEUTRALS.OFF_WHITE};
   margin-bottom: 56px;
   margin-top: 64px;
@@ -71,6 +80,138 @@ export const INDEX_D_ORGWrapper = styled.div`
   }
 
   & > :nth-child(2) {
+    display: flex;
+
+    white-space: nowrap;
+    overflow-x: hidden;
+
+    position: relative;
+    z-index: 99;
+
+    margin-bottom: 40px;
+
+    & > :nth-child(1),
+    & > :last-child {
+      background-color: ${NEUTRALS.OFF_WHITE};
+
+      border-radius: 5px;
+
+      width: ${Variables.widthArrows};
+      height: 100%;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      z-index: 99;
+
+      & > :nth-child(1) {
+        width: 100%;
+        height: 100%;
+        background-color: ${NEUTRALS.OFF_WHITE};
+        border: 2px solid ${PRIMARY.PRIMARY_CTA};
+        border-radius: inherit;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > * {
+          & > * {
+            fill: ${PRIMARY.PRIMARY_CTA};
+          }
+        }
+      }
+    }
+
+    & > :nth-child(1) {
+      position: absolute;
+      z-index: 3;
+
+      top: 0;
+      bottom: 0;
+      left: 0px;
+
+      visibility: hidden;
+
+      ${({ shouldDisplayLeftArrow }) =>
+        shouldDisplayLeftArrow &&
+        css`
+          visibility: visible;
+
+          & > :nth-child(1) {
+            &:after {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              bottom: 0;
+              left: 0px;
+
+              width: calc(${Variables.widthArrows} + 20px);
+              height: 100%;
+              background: linear-gradient(-90deg, transparent 0%, white 22%);
+            }
+          }
+        `}
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+
+      white-space: nowrap;
+      overflow-x: hidden;
+
+      position: relative;
+      z-index: 1;
+
+      padding-right: 55px;
+    }
+
+    & > :last-child {
+      position: absolute;
+      z-index: 2;
+      right: 0px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      ${({ shouldArrowRightBeDisabled }) =>
+        shouldArrowRightBeDisabled &&
+        css`
+          & > :nth-child(1) {
+            cursor: not-allowed;
+
+            border: 2px solid ${NEUTRALS.LIGHT_GREY};
+            background-color: ${NEUTRALS.LIGHT_GREY};
+
+            & > * {
+              & > * {
+                fill: ${NEUTRALS.DARK_GREY};
+              }
+            }
+          }
+        `}
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0px;
+
+        width: calc(${Variables.widthArrows} + 20px);
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, white 22%);
+      }
+    }
+
+    /*
     margin-top: 0px;
     margin-bottom: 40px;
     position: relative;
@@ -192,7 +333,6 @@ export const INDEX_D_ORGWrapper = styled.div`
 
         cursor: default;
 
-        /* border: 2px solid green !important; */
 
         & > * {
           & > * {
@@ -224,10 +364,8 @@ export const INDEX_D_ORGWrapper = styled.div`
         );
       }
     }
+    */
   }
-  /* & > :nth-child(4) {
-    margin-bottom: 20px;
-  } */
 `
 
 type Props_LI = {

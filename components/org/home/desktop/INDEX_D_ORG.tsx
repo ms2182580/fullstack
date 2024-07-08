@@ -44,7 +44,10 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
   }, [])
 
   return (
-    <INDEX_D_ORGWrapper>
+    <INDEX_D_ORGWrapper
+      shouldDisplayLeftArrow={stateToCss.scrollRight}
+      shouldArrowRightBeDisabled={stateToCss.reachFinal}
+    >
       <header>
         <H1>
           Find exactly what <br /> you're looking for
@@ -69,15 +72,13 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
       </header>
 
       <div>
-        <div
-          className={`${
-            stateToCss.scrollRight ? "navBarLeftArrowShouldDisplay" : ""
-          }`}
-        >
+        <div>
           <div onClick={moveToLeft}>
             <LeftArrowSvg />
           </div>
+          <div />
         </div>
+
         <ul
           ref={(el: any) => {
             setListRef(el)
@@ -111,17 +112,8 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
           })}
         </ul>
 
-        <div
-          className={`${
-            stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
-          }`}
-        >
-          <div
-            onClick={moveToRight}
-            className={`${
-              stateToCss.reachFinal ? "navBarRightArrowShouldDisable" : ""
-            }`}
-          >
+        <div>
+          <div onClick={moveToRight}>
             <ArrowRightSvg />
           </div>
         </div>

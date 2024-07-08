@@ -90,6 +90,7 @@ export const ORG_D_Detail_MoreResourcesDialogWrapper = styled.article<Props>`
         margin-right: 16px;
       }
     }
+
     & > :nth-child(3) {
       display: flex;
 
