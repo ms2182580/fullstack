@@ -31,16 +31,6 @@ export default function INDEX_TypedFlow_Results_D() {
   */
 
   return (
-    <>
-      {isMobile ? (
-        <>
-          <INDEX_TypedFlow_M />
-        </>
-      ) : (
-        <>
-          <INDEX_TypedFlow_D />
-        </>
-      )}
-    </>
+    <>{isMobile ? <>{/* <INDEX_TypedFlow_M /> */}</> : <INDEX_TypedFlow_D />}</>
   )
 }
