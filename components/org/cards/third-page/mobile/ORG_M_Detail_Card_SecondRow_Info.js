@@ -1,10 +1,14 @@
-import { ORG_D_Detail_Card_SecondRow_InfoWrapper } from "./styles/ORG_D_Detail_Card_SecondRow_InfoWrapper.js"
-
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Fragment, useEffect, useState } from "react"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
-import { H4 } from "../../../../ui/heading_body_text/HeaderFonts"
+import { ORG_M_Detail_Card_SecondRow_InfoWrapper } from "./styles/ORG_M_Detail_Card_SecondRow_Info.js"
 
-export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackground = false, displayBlock = false }) => {
+export const ORG_M_Detail_Card_SecondRow_Info = ({
+  title,
+  dataToShow,
+  withBackground = false,
+  displayBlock = false,
+}) => {
   const [dataObj, setDataObj] = useState(null)
 
   const [howToRender, setHowToRender] = useState(() => {
@@ -29,7 +33,11 @@ export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackgr
   }, [howToRender])
 
   return (
-    <ORG_D_Detail_Card_SecondRow_InfoWrapper className={`${withBackground ? "withBackground" : ""} ${displayBlock ? "DISPLAY_BLOCK" : ""}`}>
+    <ORG_M_Detail_Card_SecondRow_InfoWrapper
+      className={`${withBackground ? "withBackground" : ""} ${
+        displayBlock ? "DISPLAY_BLOCK" : ""
+      }`}
+    >
       <H4 primary_hover>{title}:</H4>
 
       {howToRender === "array" && !displayBlock ? (
@@ -64,6 +72,6 @@ export const ORG_D_Detail_Card_SecondRow_Info = ({ title, dataToShow, withBackgr
           <P>❌{howToRender}❌</P>
         </>
       )}
-    </ORG_D_Detail_Card_SecondRow_InfoWrapper>
+    </ORG_M_Detail_Card_SecondRow_InfoWrapper>
   )
 }

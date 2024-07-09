@@ -1,10 +1,10 @@
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { ORG_M_Detail_MainCard_AboutWrapper } from "./styles/ORG_M_Detail_MainCard_About"
+import { capitalizeWords } from "@/utils/capitalizeWords"
 import { DATA_ORG_KeyNamesForCards_D } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { Fragment } from "react"
-import { ORG_D_Detail_Card_SecondRow_Info } from "../desktop/ORG_D_Detail_Card_SecondRow_Info"
-import { capitalizeWords } from "@/utils/capitalizeWords"
 import { ORG_D_Detail_About } from "../desktop/ORG_D_Detail_About"
+import { ORG_M_Detail_Card_SecondRow_Info } from "./ORG_M_Detail_Card_SecondRow_Info"
+import { ORG_M_Detail_MainCard_AboutWrapper } from "./styles/ORG_M_Detail_MainCard_About"
 
 export const ORG_M_Detail_MainCard_About = () => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
@@ -32,7 +32,7 @@ export const ORG_M_Detail_MainCard_About = () => {
                   DATA_ORG_KeyNamesForCards_D.VALUE_NAME
                 ].join(", ")}_${index}`}
               >
-                <ORG_D_Detail_Card_SecondRow_Info
+                <ORG_M_Detail_Card_SecondRow_Info
                   title={capitalizeWords(
                     x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]
                   )}
@@ -63,7 +63,7 @@ export const ORG_M_Detail_MainCard_About = () => {
                   DATA_ORG_KeyNamesForCards_D.VALUE_NAME
                 ].join(", ")}`}
               >
-                <ORG_D_Detail_Card_SecondRow_Info
+                <ORG_M_Detail_Card_SecondRow_Info
                   title={capitalizeWords(
                     x[1][DATA_ORG_KeyNamesForCards_D.KEY_NAME]
                   )}

@@ -38,7 +38,7 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
 
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: calc(8px * 1);
 
       & > * {
         & > :nth-child(1) {

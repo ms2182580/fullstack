@@ -8,7 +8,6 @@ import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
-import { InFrontModal_D_Wrapper } from "../../../../inFront_D/styles/InFrontModal_D_Wrapper"
 import { ORG_D_Detail_AIChat } from "./ORG_D_Detail_AIChat"
 import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
 import { ORG_D_Detail_Contact } from "./ORG_D_Detail_Contact"
@@ -94,24 +93,6 @@ export const INDEX_ORG_Detail_D = () => {
           <div>
             <ORG_D_Detail_Overview />
 
-            {/* 
-            //!FH0 Eliminate this component and all their dependencies
-            <ORG_D_Detail_MainCard
-              layout_MainCardRight={
-                getAllSpecificThirdPageData.layoutMainCardRight
-              }
-              howIsMap={getAllSpecificThirdPageData.howIsMap}
-              tooltipDisplay={getAllSpecificThirdPageData.tooltip}
-              buttonMainCard={getAllSpecificThirdPageData.buttonMainCard}
-              defaultId={
-                getAllSpecificThirdPageData.renderSections[0].toNavbar.id
-              }
-            /> */}
-
-            {/* 
-            //!FH0 re make all the sections to fit the new layout and design
-            */}
-
             {getAllSpecificThirdPageData.renderSections ? (
               <ORG_Detail_D_SectionCustom
                 sectionCustom={getAllSpecificThirdPageData.renderSections}
@@ -120,6 +101,19 @@ export const INDEX_ORG_Detail_D = () => {
               <ORG_Detail_D_SectionDefault />
             )}
           </div>
+          {/* 
+          //!FH0
+          Check when the resource is "Vocational" is possible the detail conact and AIChat be overflowed. The less height, the more overflowed.
+          
+          Possible solution 1:
+            - Make those card toggleable and only one can be open at time. This for screen from 720px height to 926px height. For every else, display it boths
+                * The reason to do this comes from the popular screen resolution for Desktop in 2024 (https://www.browserstack.com/guide/common-screen-resolutions) being the smaller: 720px
+                * Use "window.innerHeight" to check the height
+            
+             
+            - Just make them smaller
+          
+          */}
           <div>
             <ORG_D_Detail_Contact />
             <ORG_D_Detail_AIChat
@@ -136,11 +130,6 @@ export const INDEX_ORG_Detail_D = () => {
           <ORG_D_Detail_BreadcrumbsLastUpdated />
         </div>
       </INDEX_ORG_Detail_DWrapper>
-
-      {/* //!FH0
-Eliminate all "InFrontModal_D_Wrapper" component because is only used for "Diaglog" purpose
-*/}
-      <InFrontModal_D_Wrapper modalShowedCtx={modalShowedCtx} />
     </>
   )
 }

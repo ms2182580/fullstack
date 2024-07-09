@@ -1,3 +1,4 @@
+/* Important: this file is here only for legacy reasons, it should be deleted at some point */
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import styled, { css } from "styled-components"
 

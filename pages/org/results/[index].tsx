@@ -46,13 +46,5 @@ export default function ORG_RESULTS() {
 
   if (!shouldRenderThePage) return null
 
-  return (
-    <>
-      {shouldRenderThePage && (
-        <>
-          <INDEX_ORG_Results_D />
-        </>
-      )}
-    </>
-  )
+  return <>{shouldRenderThePage && <INDEX_ORG_Results_D />}</>
 }

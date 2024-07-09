@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { PRIMARY } from "../../../../../../assets/Colors"
 
-export const ORG_D_Detail_Card_SecondRow_InfoWrapper = styled.div`
+export const ORG_M_Detail_Card_SecondRow_InfoWrapper = styled.div`
   &.withBackground {
     border-radius: 8px;
     background-color: ${PRIMARY.PRIMARY_BACKGROUND};
