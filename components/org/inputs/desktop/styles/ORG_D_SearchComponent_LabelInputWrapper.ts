@@ -1,6 +1,10 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const ORG_D_SearchComponent_LabelInputWrapper = styled.label`
+type Props = {
+  shouldDisplayDropdown: boolean
+}
+
+export const ORG_D_SearchComponent_LabelInputWrapper = styled.label<Props>`
   display: flex;
   flex-direction: column;
 
@@ -43,8 +47,18 @@ export const ORG_D_SearchComponent_LabelInputWrapper = styled.label`
         color: #908395;
       }
     }
-  }
 
-  & > :nth-child(2) {
+    ${({ shouldDisplayDropdown }) =>
+      shouldDisplayDropdown &&
+      css`
+        & > :nth-child(3) {
+          position: absolute;
+          z-index: 2;
+          width: max-content;
+          max-width: 450px;
+          top: 100%;
+          left: 0%;
+        }
+      `}
   }
 `

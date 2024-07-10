@@ -10,7 +10,13 @@ export const KEYS_VALUES_useSessionStorage = {
 const SessionStorage_typedFlow = createContext(null)
 
 export const Ctx_sessionStorage_typedFlow_Provider = ({ children }) => {
-  const [actualSessionStorage, setActualSessionStorage] = useState(KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST)
+  /* 
+  !FH
+  The typed flow with modals at the beginning is not part of the actual design. Everything that has to do with that should be deleted
+  */
+  const [actualSessionStorage, setActualSessionStorage] = useState(
+    KEYS_VALUES_useSessionStorage.SESSION_STORAGE_FIRST
+  )
 
   const [reachWelcome, setReachWelcome] = useState(false)
   const [reachTypedFlow, setReachTypedFlow] = useState(false)
@@ -35,7 +41,8 @@ export const Ctx_sessionStorage_typedFlow_Provider = ({ children }) => {
         setInputTypesByUser,
         cancelWelcomePath,
         setCancelWelcomePath,
-      }}>
+      }}
+    >
       {children}
     </SessionStorage_typedFlow.Provider>
   )

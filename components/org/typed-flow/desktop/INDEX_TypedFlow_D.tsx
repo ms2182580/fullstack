@@ -18,6 +18,8 @@ export const INDEX_TypedFlow_D = () => {
     inputTypesByUser,
   }: any = useSessionStorage_typedFlow()
 
+  console.log("✨", diagnosisChoosed, inputTypesByUser)
+
   // const router = useRouter()
 
   const { secondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()

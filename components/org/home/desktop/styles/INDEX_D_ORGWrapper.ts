@@ -86,7 +86,6 @@ export const INDEX_D_ORGWrapper = styled.div<Props>`
     overflow-x: hidden;
 
     position: relative;
-    z-index: 99;
 
     margin-bottom: 40px;
 

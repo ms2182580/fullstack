@@ -1,8 +1,11 @@
 import { PRIMARY } from "@/assets/Colors"
-import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const ORG_D_SearchComponentWrapper = styled.div`
+export type Props = {
+  isPointerButton?: boolean
+}
+
+export const ORG_D_SearchComponentWrapper = styled.div<Props>`
   display: grid;
   grid-template-columns: 7fr 1fr 1fr 56px;
   gap: 16px;
@@ -53,10 +56,10 @@ export const ORG_D_SearchComponentWrapper = styled.div`
       fill: currentColor;
     }
 
-    /* ${reusableButton({})}; */
-
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    ${({ isPointerButton }) =>
+      isPointerButton &&
+      css`
+        cursor: pointer;
+      `}
   }
 `

@@ -2,6 +2,7 @@ export const ALL_ROUTES = {
   ORG: "org",
   RESULTS: "results",
   DETAIL: "detail",
+  "TYPED-FLOW": "typed-flow",
   RECOMMENDED: "recommended",
   "MORE-RECOMMENDATION": "more-recommendation",
   SIGNIN: "signin",
