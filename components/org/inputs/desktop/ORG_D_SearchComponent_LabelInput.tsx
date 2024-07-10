@@ -42,8 +42,14 @@ export const ORG_D_SearchComponent_LabelInput = ({
 }: ORG_D_SearchComponent_LabelInput_Type & TypedFlowProps) => {
   let TheIcon = icon
 
-  const [isFocus, setIsFocus] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
+  /* 
+  !FH0
+  1. Put all the logic of the dropdown into a separate file
+  2. All the "setState" should be inside a function
+  */
+
+  const [isFocus, setIsFocus] = useState<boolean>(false)
+  const [isHovered, setIsHovered] = useState<boolean>(false)
 
   const inputRef = useRef(null)
 
@@ -53,42 +59,52 @@ export const ORG_D_SearchComponent_LabelInput = ({
 
   const [haveAtLeastOneMatchState, setHaveAtLeastOneMatchState] =
     useState(false)
-  const [userClickOnSuggestion, setUserClickOnSuggestion] = useState(false)
+  const [userClickOnSuggestion, setUserClickOnSuggestion] =
+    useState<boolean>(false)
 
-  const [userPressEnter, setUserPressEnter] = useState(false)
+  const [userPressEnter, setUserPressEnter] = useState<boolean>(false)
 
-  // const [showMessageToUserByEmptyInput, setShowMessageToUserByEmptyInput] =
-  //   useState(false)
-
-  const handleShowDropdown = () => {
-    setIsFocus(true)
+  const handleIsFocus = (toUpdate: boolean) => {
+    setIsFocus(toUpdate)
   }
+  const handleIsHovered = (toUpdate: boolean) => {
+    setIsHovered(toUpdate)
+  }
+
+  const handleHaveAtLeastOneMatchState = (updateTo: boolean) => {
+    setHaveAtLeastOneMatchState(updateTo)
+  }
+
+  // const handleShowDropdown = () => {
+  //   setIsFocus(true)
+  // }
 
   const handleCloseDropdown = () => {
     if (!isHovered) {
-      setIsFocus(false)
+      handleIsFocus(false)
     }
   }
 
-  const handleUserPressEnter = (event) => {
+  const handleUserPressEnter = (toUpdate: boolean) => {
+    setUserPressEnter(toUpdate)
+  }
+
+  const handleUserPressEnter_JSX = (event) => {
     if (event.code === "Enter" && isFocus) {
-      setUserPressEnter(true)
+      handleUserPressEnter(true)
     }
   }
 
-  const handleUserUnpressEnter = () => {
-    setUserPressEnter(false)
+  const handleUserClickOnSuggestion = (updateTo: boolean) => {
+    setUserClickOnSuggestion(updateTo)
   }
 
-  const handleUserUnpClick = () => {
-    setUserClickOnSuggestion(false)
-  }
-
-  let handleSetDiagnosis = (e) => {
-    handleUserUnpressEnter()
-    handleUserUnpClick()
+  const handleSetDiagnosis = (e) => {
+    handleUserPressEnter(false)
+    handleUserClickOnSuggestion(false)
+    // setDiagnosisChoosed({})
+    // setInputTypesByUser("")
     setDiagnosisSearchedByUser(e.target.value)
-    // setInputTypesByUser(e.target.value)
   }
 
   const handleWhichMatch = (e) => {
@@ -112,66 +128,53 @@ export const ORG_D_SearchComponent_LabelInput = ({
         finalObj.diagnosis.push(diagnosis)
       }
     })
-    // console.log("finalObj:", finalObj)
-    let haveAtLeastOneMatchDiagnosis = finalObj.diagnosis.length > 0
-    let haveAtLeastOneMatchSymptoms = finalObj.symptoms.length > 0
+    const haveAtLeastOneMatchDiagnosis = finalObj.diagnosis.length > 0
+    const haveAtLeastOneMatchSymptoms = finalObj.symptoms.length > 0
 
     if (haveAtLeastOneMatchDiagnosis) {
       setDiagnosisCategory((prevState: any) => ({
         ...prevState,
         diagnosis: [finalObj.diagnosis],
       }))
-      setHaveAtLeastOneMatchState(true)
+      handleHaveAtLeastOneMatchState(true)
     }
     if (haveAtLeastOneMatchSymptoms) {
       setDiagnosisCategory((prevState: any) => ({
         ...prevState,
         symptoms: [finalObj.symptoms],
       }))
-      setHaveAtLeastOneMatchState(true)
+      handleHaveAtLeastOneMatchState(true)
     }
     if (haveAtLeastOneMatchDiagnosis && !haveAtLeastOneMatchSymptoms) {
       setDiagnosisCategory(() => ({
         diagnosis: [finalObj.diagnosis],
         symptoms: [],
       }))
-      setHaveAtLeastOneMatchState(true)
+      handleHaveAtLeastOneMatchState(true)
     }
     if (!haveAtLeastOneMatchDiagnosis && haveAtLeastOneMatchSymptoms) {
       setDiagnosisCategory(() => ({
         diagnosis: [],
         symptoms: [finalObj.symptoms],
       }))
-      setHaveAtLeastOneMatchState(true)
+      handleHaveAtLeastOneMatchState(true)
     }
-    if (
-      !haveAtLeastOneMatchDiagnosis &&
-      !haveAtLeastOneMatchSymptoms &&
-      diagnosisSearchedByUser === ""
-    ) {
+    if (!haveAtLeastOneMatchDiagnosis && !haveAtLeastOneMatchSymptoms) {
       setDiagnosisCategory({})
-      setHaveAtLeastOneMatchState(false)
+      handleHaveAtLeastOneMatchState(false)
 
       setDiagnosisChoosed({})
       setInputTypesByUser("")
     }
   }
 
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.keyCode === 27 && isFocus) {
-        setIsFocus(false)
-      }
-    }
+  const handleMoveToTypedFlow = () => {
+    console.log(
+      "haveAtLeastOneMatchState:",
+      haveAtLeastOneMatchState,
+      diagnosisCategory
+    )
 
-    window.addEventListener("keydown", handleKeyPress)
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyPress)
-    }
-  }, [])
-
-  useEffect(() => {
     if (
       diagnosisSearchedByUser !== "" &&
       haveAtLeastOneMatchState &&
@@ -187,6 +190,26 @@ export const ORG_D_SearchComponent_LabelInput = ({
       setDiagnosisChoosed(diagnosisCategory)
       setInputTypesByUser(diagnosisSearchedByUser)
     }
+  }
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 27) {
+        handleIsFocus(false)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyPress)
+    // window.addEventListener("keydown", handleMoveToTypedFlow)
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress)
+      // window.removeEventListener("keydown", handleMoveToTypedFlow)
+    }
+  }, [])
+
+  useEffect(() => {
+    handleMoveToTypedFlow()
   }, [
     haveAtLeastOneMatchState,
     userClickOnSuggestion,
@@ -216,32 +239,33 @@ export const ORG_D_SearchComponent_LabelInput = ({
             <input
               type="text"
               placeholder={placeholder}
-              onFocus={handleShowDropdown}
+              onFocus={() => {
+                handleIsFocus(true)
+              }}
               onBlur={() => {
                 handleCloseDropdown()
-                // handleNothingSelected()
-                setUserClickOnSuggestion(false)
-                handleUserUnpressEnter()
+                handleUserPressEnter(false)
+                handleUserPressEnter(false)
               }}
               onChange={(e) => {
                 handleSetDiagnosis(e)
                 handleWhichMatch(e)
               }}
-              onKeyDown={handleUserPressEnter}
+              onKeyDown={handleUserPressEnter_JSX}
               value={diagnosisSearchedByUser}
               ref={inputRef}
             />
             <ORG_D_SearchComponent_LabelInput_Dropdown
               isFocus={isFocus}
-              setIsHovered={setIsHovered}
+              handleIsHovered={handleIsHovered}
               diagnosisSearchedByUser={diagnosisSearchedByUser}
               setDiagnosisSearchedByUser={setDiagnosisSearchedByUser}
               // setInputTypesByUser={setInputTypesByUser}
               setDiagnosisCategory={setDiagnosisCategory}
-              setHaveAtLeastOneMatchState={setHaveAtLeastOneMatchState}
+              handleHaveAtLeastOneMatchState={handleHaveAtLeastOneMatchState}
               suggestionKeywords={suggestionKeywords}
               inputRefFocus={inputRef}
-              setUserClickOnSuggestion={setUserClickOnSuggestion}
+              handleUserClickOnSuggestion={handleUserClickOnSuggestion}
             />
           </>
         )}
@@ -249,7 +273,3 @@ export const ORG_D_SearchComponent_LabelInput = ({
     </ORG_D_SearchComponent_LabelInputWrapper>
   )
 }
-
-/* 
-
-*/

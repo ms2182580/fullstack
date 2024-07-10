@@ -13,15 +13,16 @@ export const enum CLASSNAME_ISDIAGNOSIS {
 
 export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   isFocus,
-  setIsHovered,
+  handleIsHovered,
   diagnosisSearchedByUser,
   setDiagnosisSearchedByUser,
   // setInputTypesByUser,
   setDiagnosisCategory,
-  setHaveAtLeastOneMatchState,
+  // setHaveAtLeastOneMatchState,
+  handleHaveAtLeastOneMatchState,
   suggestionKeywords,
   inputRefFocus,
-  setUserClickOnSuggestion,
+  handleUserClickOnSuggestion,
 }: any) => {
   const handleSelecOption = (e) => {
     const isDiagnosis = e.target.className === "DIAGNOSIS_SPAN"
@@ -30,14 +31,14 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
         diagnosis: [e.target.textContent],
         symptoms: [],
       }))
-      setHaveAtLeastOneMatchState(true)
+      handleHaveAtLeastOneMatchState({ updateTo: true })
     }
     if (!isDiagnosis) {
       setDiagnosisCategory(() => ({
         diagnosis: [],
         symptoms: [e.target.textContent],
       }))
-      setHaveAtLeastOneMatchState(true)
+      handleHaveAtLeastOneMatchState({ updateTo: true })
     }
   }
 
@@ -46,10 +47,10 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
       {isFocus && (
         <div
           onMouseEnter={() => {
-            setIsHovered(true)
+            handleIsHovered(true)
           }}
           onMouseLeave={() => {
-            setIsHovered(false)
+            handleIsHovered(false)
           }}
           onClick={() => {
             inputRefFocus.current.focus()
@@ -103,7 +104,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                           setDiagnosisSearchedByUser(diagnosis)
                           // setInputTypesByUser(diagnosis)
                           inputRefFocus.current.focus()
-                          setUserClickOnSuggestion(true)
+                          handleUserClickOnSuggestion(true)
                         }}
                         data-content={
                           highlightWordDiagnosis
@@ -176,7 +177,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                                   // setInputTypesByUser(suggestion)
 
                                   inputRefFocus.current.focus()
-                                  setUserClickOnSuggestion(true)
+                                  handleUserClickOnSuggestion(true)
                                 }}
                                 data-content={
                                   highlightWord

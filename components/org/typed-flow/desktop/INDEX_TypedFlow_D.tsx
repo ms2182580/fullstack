@@ -19,6 +19,14 @@ export const INDEX_TypedFlow_D = () => {
   }: any = useSessionStorage_typedFlow()
 
   console.log("✨", diagnosisChoosed, inputTypesByUser)
+  /* 
+  !FH0
+  Make this components work. Actual problems:
+  1. Is not possible to reach 2° page of ORG
+  2. Is not possible to reach 3° page of ORG
+  3. The horizontal scroll is not working
+  4. Check the correct design
+  */
 
   // const router = useRouter()
 
