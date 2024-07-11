@@ -1,14 +1,14 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { Fragment } from "react"
-import { ORG_D_SearchComponent_LabelInput_DropdownWrapper } from "./styles/ORG_D_SearchComponent_LabelInput_DropdownWrapper"
+import {
+  ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS,
+  ORG_D_SearchComponent_LabelInput_Dropdown_LI,
+  ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS,
+  ORG_D_SearchComponent_LabelInput_DropdownWrapper,
+} from "./styles/ORG_D_SearchComponent_LabelInput_DropdownWrapper"
 
 export const enum CLASSNAME_ISDIAGNOSIS {
   DIAGNOSIS = "DIAGNOSIS",
-  DIAGNOSIS_SPAN = "DIAGNOSIS_SPAN",
-  BOLD = "BOLD",
-  IN_SYMPTOMS = "IN_SYMPTOMS",
-  SUGGESTION = "SUGGESTION",
-  SUGGESTION_LI = "SUGGESTION_LI",
 }
 
 export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
@@ -16,29 +16,30 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   handleIsHovered,
   diagnosisSearchedByUser,
   setDiagnosisSearchedByUser,
-  // setInputTypesByUser,
   setDiagnosisCategory,
-  // setHaveAtLeastOneMatchState,
   handleHaveAtLeastOneMatchState,
   suggestionKeywords,
   inputRefFocus,
   handleUserClickOnSuggestion,
 }: any) => {
   const handleSelecOption = (e) => {
-    const isDiagnosis = e.target.className === "DIAGNOSIS_SPAN"
+    const isDiagnosis =
+      e.target.attributes?.["data-diagnosis"]?.value ===
+      CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]
+
     if (isDiagnosis) {
       setDiagnosisCategory(() => ({
         diagnosis: [e.target.textContent],
         symptoms: [],
       }))
-      handleHaveAtLeastOneMatchState({ updateTo: true })
+      handleHaveAtLeastOneMatchState(true)
     }
     if (!isDiagnosis) {
       setDiagnosisCategory(() => ({
         diagnosis: [],
         symptoms: [e.target.textContent],
       }))
-      handleHaveAtLeastOneMatchState({ updateTo: true })
+      handleHaveAtLeastOneMatchState(true)
     }
   }
 
@@ -56,7 +57,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
             inputRefFocus.current.focus()
           }}
         >
-          <div className="DIAGNOSIS" onClick={handleSelecOption}>
+          <ul onClick={handleSelecOption}>
             {suggestionKeywords.map(({ diagnosis, symptoms }, indexData) => {
               const isMatchDiagnosis =
                 diagnosis
@@ -67,15 +68,14 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
               let leftSideOfWordDiagnosis
               let rightSideOfWordDiagnosis
 
-              let theRegex = new RegExp(
+              const theRegex = new RegExp(
                 diagnosisSearchedByUser.replace(
                   /[-\/\\^$*+?.()|[\]{}]/g,
                   "\\$&"
                 ),
                 "gi"
               )
-              let matchHighlight = diagnosis.match(theRegex)
-              // console.log("matchHighlight:", matchHighlight)
+              const matchHighlight = diagnosis.match(theRegex)
 
               if (
                 isMatchDiagnosis &&
@@ -98,84 +98,73 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
               return (
                 <Fragment key={theKey}>
                   {isMatchDiagnosis && (
-                    <>
-                      <li
-                        onClick={() => {
-                          setDiagnosisSearchedByUser(diagnosis)
-                          // setInputTypesByUser(diagnosis)
-                          inputRefFocus.current.focus()
-                          handleUserClickOnSuggestion(true)
-                        }}
-                        data-content={
-                          highlightWordDiagnosis
-                            ? `${leftSideOfWordDiagnosis}${highlightWordDiagnosis}${rightSideOfWordDiagnosis}`
-                            : diagnosis
-                        }
-                        className="DIAGNOSIS_SPAN"
-                      >
-                        {highlightWordDiagnosis ? (
-                          <>
-                            {leftSideOfWordDiagnosis}
-                            <span className="BOLD">
-                              {highlightWordDiagnosis}
-                            </span>
-                            {rightSideOfWordDiagnosis}
-                          </>
-                        ) : (
-                          diagnosis
-                        )}
-                      </li>
-                    </>
-                  )}
-                  <P className="IN_SYMPTOMS">In symptoms ({diagnosis})</P>
-                  <ul className="SUGGESTION" onClick={handleSelecOption}>
-                    {symptoms.map((suggestion, indexSymptoms) => {
-                      const isMatch =
-                        suggestion
-                          .toLowerCase()
-                          .indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
-
-                      let highlightWord
-                      let leftSideOfWord
-                      let rightSideOfWord
-
-                      let theRegex = new RegExp(
-                        diagnosisSearchedByUser.replace(
-                          /[-\/\\^$*+?.()|[\]{}]/g,
-                          "\\$&"
-                        ),
-                        "gi"
-                      )
-
-                      let isThis = `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
-
-                      let matchHighlightSuggestion = suggestion.match(theRegex)
-
-                      if (
-                        isMatch &&
-                        matchHighlightSuggestion[0] !== "" &&
-                        matchHighlightSuggestion !== null
-                      ) {
-                        highlightWord = matchHighlightSuggestion[0]
-
-                        let indexOfWord = suggestion.indexOf(highlightWord)
-
-                        leftSideOfWord = suggestion.slice(0, indexOfWord)
-
-                        rightSideOfWord = suggestion.slice(
-                          indexOfWord + highlightWord.length,
-                          suggestion.length
-                        )
+                    <ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS
+                      onClick={() => {
+                        setDiagnosisSearchedByUser(diagnosis)
+                        inputRefFocus.current.focus()
+                        handleUserClickOnSuggestion(true)
+                      }}
+                      data-content={
+                        highlightWordDiagnosis
+                          ? `${leftSideOfWordDiagnosis}${highlightWordDiagnosis}${rightSideOfWordDiagnosis}`
+                          : diagnosis
                       }
-                      return (
-                        <Fragment key={indexSymptoms}>
-                          {isMatch && (
-                            <>
+                      data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
+                      className="DIAGNOSIS"
+                    >
+                      {highlightWordDiagnosis ? (
+                        <>
+                          {leftSideOfWordDiagnosis}
+                          <strong>{highlightWordDiagnosis}</strong>
+                          {rightSideOfWordDiagnosis}
+                        </>
+                      ) : (
+                        diagnosis
+                      )}
+                    </ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS>
+                  )}
+                  <ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
+                    <P>In symptoms ({diagnosis})</P>
+                  </ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
+                  <ORG_D_SearchComponent_LabelInput_Dropdown_LI>
+                    <ul onClick={handleSelecOption}>
+                      {symptoms.map((suggestion, indexSymptoms) => {
+                        const isMatch =
+                          suggestion
+                            .toLowerCase()
+                            .indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
+                        let highlightWord
+                        let leftSideOfWord
+                        let rightSideOfWord
+                        const theRegex = new RegExp(
+                          diagnosisSearchedByUser.replace(
+                            /[-\/\^$*+?.()|[\]{}]/g,
+                            "$&"
+                          ),
+                          "gi"
+                        )
+                        const matchHighlightSuggestion =
+                          suggestion.match(theRegex)
+
+                        if (
+                          isMatch &&
+                          matchHighlightSuggestion[0] !== "" &&
+                          matchHighlightSuggestion !== null
+                        ) {
+                          highlightWord = matchHighlightSuggestion[0]
+                          let indexOfWord = suggestion.indexOf(highlightWord)
+                          leftSideOfWord = suggestion.slice(0, indexOfWord)
+                          rightSideOfWord = suggestion.slice(
+                            indexOfWord + highlightWord.length,
+                            suggestion.length
+                          )
+                        }
+                        return (
+                          <Fragment key={indexSymptoms}>
+                            {isMatch && (
                               <li
                                 onClick={() => {
                                   setDiagnosisSearchedByUser(suggestion)
-                                  // setInputTypesByUser(suggestion)
-
                                   inputRefFocus.current.focus()
                                   handleUserClickOnSuggestion(true)
                                 }}
@@ -184,30 +173,27 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                                     ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
                                     : suggestion
                                 }
-                                className="SUGGESTION_LI"
                               >
                                 {highlightWord ? (
                                   <>
                                     {leftSideOfWord}
-                                    <span className="BOLD">
-                                      {highlightWord}
-                                    </span>
+                                    <strong>{highlightWord}</strong>
                                     {rightSideOfWord}
                                   </>
                                 ) : (
                                   suggestion
                                 )}
                               </li>
-                            </>
-                          )}
-                        </Fragment>
-                      )
-                    })}
-                  </ul>
+                            )}
+                          </Fragment>
+                        )
+                      })}
+                    </ul>
+                  </ORG_D_SearchComponent_LabelInput_Dropdown_LI>
                 </Fragment>
               )
             })}
-          </div>
+          </ul>
         </div>
       )}
     </ORG_D_SearchComponent_LabelInput_DropdownWrapper>

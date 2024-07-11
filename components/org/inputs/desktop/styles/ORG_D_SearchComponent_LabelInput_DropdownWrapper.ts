@@ -10,84 +10,83 @@ export const ORG_D_SearchComponent_LabelInput_DropdownWrapper = styled.div`
 
     font-size: 16px;
 
-    .SUGGESTION {
-      list-style: none;
-      padding-bottom: 16px;
-
-      & > :first-child {
-        padding-top: 8px;
-      }
-
-      & > * {
-        word-break: break-all;
-      }
-
-      & > li {
-        padding: 8px 8px 8px 21px;
-
-        .BOLD {
-          font-weight: 700;
-        }
-
-        &::after {
-          display: block;
-          content: attr(data-content);
-          font-weight: 700;
-          height: 0;
-          overflow: hidden;
-          visibility: hidden;
-          user-select: none;
-          pointer-events: none;
-        }
-
-        &:hover {
-          background-color: ${PRIMARY.PRIMARY_CTA};
-          color: ${NEUTRALS.OFF_WHITE};
-          font-weight: 700;
-          transform: scale(1);
-        }
+    & > :nth-child(1) {
+      ul,
+      li {
+        list-style: none;
       }
     }
+  }
+`
 
-    .DIAGNOSIS {
-      .DIAGNOSIS_SPAN {
-        padding-bottom: 4px;
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
+export const ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS = styled.li`
+  padding-left: 21px;
 
-        padding: 4px 8px 0px 21px;
+  text-decoration: underline;
 
-        list-style: none;
+  text-decoration-thickness: 2px;
 
-        .BOLD {
-          font-weight: 700;
-        }
+  &::after {
+    display: block;
+    content: attr(data-content);
+    font-weight: 700;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+  }
 
-        &::after {
-          display: block;
-          content: attr(data-content);
-          font-weight: 700;
-          height: 0;
-          overflow: hidden;
-          visibility: hidden;
-          user-select: none;
-          pointer-events: none;
-        }
+  &:hover {
+    background-color: ${PRIMARY.PRIMARY_CTA};
+    color: ${NEUTRALS.OFF_WHITE};
+    font-weight: 700;
+  }
+`
 
-        &:hover {
-          background-color: ${PRIMARY.PRIMARY_CTA};
-          color: ${NEUTRALS.OFF_WHITE};
-          font-weight: 700;
-        }
+export const ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS = styled.li`
+  & > p {
+    white-space: break-spaces;
+
+    font-size: 14px;
+    padding-inline: 16px;
+    color: ${NEUTRALS.DARK_GREY};
+    font-style: italic;
+  }
+`
+
+export const ORG_D_SearchComponent_LabelInput_Dropdown_LI = styled.li`
+  & > ul {
+    list-style: none;
+    padding-bottom: 16px;
+
+    & > :first-child {
+      padding-top: 8px;
+    }
+
+    & > * {
+      word-break: break-all;
+    }
+
+    & > li {
+      padding: 8px 8px 8px 21px;
+
+      &::after {
+        display: block;
+        content: attr(data-content);
+        font-weight: 700;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        user-select: none;
+        pointer-events: none;
       }
 
-      .IN_SYMPTOMS {
-        white-space: break-spaces;
-
-        font-size: 14px;
-        padding-inline: 16px;
-        color: ${NEUTRALS.DARK_GREY};
-        font-style: italic;
+      &:hover {
+        background-color: ${PRIMARY.PRIMARY_CTA};
+        color: ${NEUTRALS.OFF_WHITE};
+        font-weight: 700;
+        transform: scale(1);
       }
     }
   }
