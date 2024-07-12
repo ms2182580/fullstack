@@ -1,5 +1,5 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const ORG_D_SearchComponent_LabelInput_DropdownWrapper = styled.div`
   & > :nth-child(1) {
@@ -19,12 +19,22 @@ export const ORG_D_SearchComponent_LabelInput_DropdownWrapper = styled.div`
   }
 `
 
-export const ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS = styled.li`
+type Props_DIAGNOSIS = {
+  isTitle?: boolean
+}
+
+export const ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS = styled.li<Props_DIAGNOSIS>`
   padding-left: 21px;
 
   text-decoration: underline;
 
   text-decoration-thickness: 2px;
+
+  ${({ isTitle }) =>
+    isTitle &&
+    css`
+      margin-top: 16px;
+    `}
 
   &::after {
     display: block;
@@ -37,7 +47,8 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS = styled.li`
     pointer-events: none;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: ${PRIMARY.PRIMARY_CTA};
     color: ${NEUTRALS.OFF_WHITE};
     font-weight: 700;
@@ -82,12 +93,38 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown_LI = styled.li`
         pointer-events: none;
       }
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background-color: ${PRIMARY.PRIMARY_CTA};
         color: ${NEUTRALS.OFF_WHITE};
         font-weight: 700;
         transform: scale(1);
       }
     }
+  }
+`
+
+export const LI_2Wrapper = styled.li`
+  word-break: break-all;
+
+  padding: 8px 8px 8px 21px;
+
+  &::after {
+    display: block;
+    content: attr(data-content);
+    font-weight: 700;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: ${PRIMARY.PRIMARY_CTA};
+    color: ${NEUTRALS.OFF_WHITE};
+    font-weight: 700;
+    transform: scale(1);
   }
 `

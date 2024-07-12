@@ -1,5 +1,5 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { Fragment } from "react"
+import { Fragment, useCallback, useEffect, useRef, useState } from "react"
 import {
   ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS,
   ORG_D_SearchComponent_LabelInput_Dropdown_LI,
@@ -52,6 +52,36 @@ export const enum CLASSNAME_ISDIAGNOSIS {
   DIAGNOSIS = "DIAGNOSIS",
 }
 
+function useRoveFocus(size) {
+  const [currentFocus, setCurrentFocus] = useState(0)
+
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.code === "ArrowDown") {
+        /* Prevent move the whole view of the user on the page */
+        e.preventDefault()
+        setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1)
+      }
+
+      if (e.code === "ArrowUp") {
+        /* Prevent move the whole view of the user on the page */
+        e.preventDefault()
+        setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1)
+      }
+    },
+    [size, currentFocus, setCurrentFocus]
+  )
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown)
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [handleKeyDown])
+
+  return { currentFocus, setCurrentFocus }
+}
+
 export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   isFocus,
   handleIsHovered,
@@ -64,6 +94,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   handleUserClickOnSuggestion,
 }: any) => {
   const handleSelecOption = (e) => {
+    console.log("e 🟩:", e)
     const isDiagnosis =
       e.target.attributes?.["data-diagnosis"]?.value ===
       CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]
@@ -98,8 +129,11 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
             inputRefFocus.current.focus()
           }}
         >
-          <ul onClick={handleSelecOption}>
+          <ul>
             {suggestionKeywords.map(({ diagnosis, symptoms }, indexData) => {
+              /*
+              console.log("indexData:", indexData)
+              */
               const {
                 isMatch,
                 highlightWord,
@@ -110,14 +144,42 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                 toCheck: diagnosis,
               })
 
+              const { currentFocus: focus } = useRoveFocus(13)
+              // console.log("focus:", focus, setFocus)
+
+              const shouldFocus = focus === indexData
+              console.log("shouldFocus:", shouldFocus, focus, indexData)
+              /* console.log("shouldFocus:", shouldFocus, indexData, focus)
+              console.log() */
+
+              const theRef = useRef<HTMLLIElement>(null)
+              // console.log("theRef:", theRef)
+
+              useEffect(() => {
+                if (shouldFocus) {
+                  // Move element into view when it is focused
+                  theRef?.current?.focus()
+                }
+              }, [shouldFocus])
+
               return (
                 <Fragment key={`${diagnosis}_${indexData}`}>
                   {isMatch && (
                     <ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS
-                      onClick={() => {
+                      onClick={(e) => {
                         setDiagnosisSearchedByUser(diagnosis)
                         inputRefFocus.current.focus()
                         handleUserClickOnSuggestion(true)
+                        handleSelecOption(e)
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.code === "Enter") {
+                          e.preventDefault()
+                          setDiagnosisSearchedByUser(diagnosis)
+                          inputRefFocus.current.focus()
+                          handleUserClickOnSuggestion(true)
+                          handleSelecOption(e)
+                        }
                       }}
                       data-content={
                         highlightWord
@@ -125,7 +187,9 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                           : diagnosis
                       }
                       data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
-                      className="DIAGNOSIS"
+                      // tabIndex={0}
+                      tabIndex={shouldFocus ? 0 : -1}
+                      ref={theRef}
                     >
                       {highlightWord ? (
                         <>
@@ -142,7 +206,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                     <P>In symptoms ({diagnosis})</P>
                   </ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
                   <ORG_D_SearchComponent_LabelInput_Dropdown_LI>
-                    <ul onClick={handleSelecOption}>
+                    <ul>
                       {symptoms.map((suggestion, indexSymptoms) => {
                         const {
                           isMatch,
@@ -154,20 +218,43 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                           toCheck: suggestion,
                         })
 
+                        const { currentFocus: focus2 } = useRoveFocus(
+                          symptoms.length
+                        )
+                        // console.log("focus2:", focus2, setFocus)
+
+                        const shouldFocus2 = focus2 === indexSymptoms
+                        /* console.log("shouldFocus2:", shouldFocus2, indexData, focus)
+                        console.log() */
+
+                        const theRef2 = useRef<HTMLLIElement>(null)
+                        // console.log("theRef:", theRef)
+
+                        useEffect(() => {
+                          if (shouldFocus2) {
+                            // Move element into view when it is focused
+                            theRef2?.current?.focus()
+                          }
+                        }, [shouldFocus2])
+
                         return (
                           <Fragment key={`${suggestion}_${indexSymptoms}`}>
                             {isMatch && (
                               <li
-                                onClick={() => {
+                                onClick={(e) => {
                                   setDiagnosisSearchedByUser(suggestion)
                                   inputRefFocus.current.focus()
                                   handleUserClickOnSuggestion(true)
+                                  handleSelecOption(e)
                                 }}
                                 data-content={
                                   highlightWord
                                     ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
                                     : suggestion
                                 }
+                                tabIndex={shouldFocus ? 0 : -1}
+                                ref={theRef}
+                                // tabIndex={0}
                               >
                                 {highlightWord ? (
                                   <>

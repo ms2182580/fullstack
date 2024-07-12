@@ -86,6 +86,7 @@ export const ORG_D_SearchComponent = (): ReactElement => {
                 setDiagnosisChoosed={setDiagnosisChoosed}
                 setInputTypesByUser={setInputTypesByUser}
                 pushToTypedFlow={pushToTypedFlow}
+                index={index}
               />
             </Fragment>
           )

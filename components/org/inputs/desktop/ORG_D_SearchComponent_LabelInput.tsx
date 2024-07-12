@@ -1,7 +1,10 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { suggestionKeywords } from "@/utils/org/typed-flow/suggestionKeywords"
+import {
+  suggestionKeywords,
+  suggestionKeywords2,
+} from "@/utils/org/typed-flow/suggestionKeywords"
 import { useTypedFlowLogicSelection } from "@/utils/org/typed-flow/useTypedFlowLogicSelection"
-import { ORG_D_SearchComponent_LabelInput_Dropdown } from "./ORG_D_SearchComponent_LabelInput_Dropdown"
+import { ORG_D_SearchComponent_LabelInput_Dropdown2 } from "./ORG_D_SearchComponent_LabelInput_Dropdown2"
 import { ORG_D_SearchComponent_LabelInputWrapper } from "./styles/ORG_D_SearchComponent_LabelInputWrapper"
 
 export type ORG_D_SearchComponent_LabelInput_Type = {
@@ -27,7 +30,9 @@ export const ORG_D_SearchComponent_LabelInput = ({
   setDiagnosisChoosed,
   setInputTypesByUser,
   pushToTypedFlow,
-}: ORG_D_SearchComponent_LabelInput_Type & TypedFlowProps) => {
+  index,
+}: ORG_D_SearchComponent_LabelInput_Type &
+  TypedFlowProps & { index: number }) => {
   let TheIcon = icon
 
   const {
@@ -71,7 +76,9 @@ export const ORG_D_SearchComponent_LabelInput = ({
                 handleIsFocus(true)
               }}
               onBlur={() => {
-                handleCloseDropdown()
+                if (!isFocus) {
+                  handleCloseDropdown()
+                }
                 handleUserPressEnter(false)
               }}
               onChange={(e) => {
@@ -82,16 +89,18 @@ export const ORG_D_SearchComponent_LabelInput = ({
               value={diagnosisSearchedByUser}
               ref={inputRef}
             />
-            <ORG_D_SearchComponent_LabelInput_Dropdown
+            <ORG_D_SearchComponent_LabelInput_Dropdown2
               isFocus={isFocus}
               handleIsHovered={handleIsHovered}
               diagnosisSearchedByUser={diagnosisSearchedByUser}
               setDiagnosisSearchedByUser={setDiagnosisSearchedByUser}
               setDiagnosisCategory={setDiagnosisCategory}
               handleHaveAtLeastOneMatchState={handleHaveAtLeastOneMatchState}
-              suggestionKeywords={suggestionKeywords}
+              suggestionKeywords={suggestionKeywords2}
               inputRefFocus={inputRef}
               handleUserClickOnSuggestion={handleUserClickOnSuggestion}
+              handleCloseDropdown={handleCloseDropdown}
+              handleIsFocus={handleIsFocus}
             />
           </>
         )}

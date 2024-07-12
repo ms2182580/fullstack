@@ -1,6 +1,7 @@
 export const enum KEYS_SUGGESTION_KEYWORDS {
   DIAGNOSIS = "diagnosis",
   SYMPTOMS = "symptoms",
+  DIAGNOSYS_SYMPTOMS = "diagnosis_symptoms",
 }
 
 type SuggestionKeywords_Type = {
@@ -35,3 +36,21 @@ export const suggestionKeywords: SuggestionKeywords_Type = [
     ],
   },
 ]
+
+type SuggestionKeywords_Type2 = {
+  [key: string]: string[]
+}
+
+export const suggestionKeywords2: SuggestionKeywords_Type2 = {
+  ADHD: ["Attention Deficit (AD)", "Hyperactivity", "Impulsivity", "ADD"],
+  "Cognitive Impairments": [
+    "Problem Solving",
+    "Reasoning",
+    "Abstract thinking",
+  ],
+  ODD: [
+    "Frequent Anger and Irritability",
+    "Argumentative and Defiant Behavior",
+    "Vindictiveness",
+  ],
+}

@@ -71,6 +71,7 @@ export const useTypedFlowLogicSelection = ({
   }
 
   const handleWhichMatch = (e) => {
+    console.log("e:", e)
     const userInputLower = e.target.value.toLowerCase()
     type FinalObjType = {
       diagnosis: string[]
@@ -95,6 +96,7 @@ export const useTypedFlowLogicSelection = ({
     const haveAtLeastOneMatchDiagnosis = finalObj.diagnosis.length > 0
     const haveAtLeastOneMatchSymptoms = finalObj.symptoms.length > 0
 
+    console.log("haveAtLeastOneMatchDiagnosis:", haveAtLeastOneMatchDiagnosis)
     if (haveAtLeastOneMatchDiagnosis) {
       setDiagnosisCategory((prevState: any) => ({
         ...prevState,
@@ -102,6 +104,7 @@ export const useTypedFlowLogicSelection = ({
       }))
       handleHaveAtLeastOneMatchState(true)
     }
+    console.log("haveAtLeastOneMatchSymptoms:", haveAtLeastOneMatchSymptoms)
     if (haveAtLeastOneMatchSymptoms) {
       setDiagnosisCategory((prevState: any) => ({
         ...prevState,
