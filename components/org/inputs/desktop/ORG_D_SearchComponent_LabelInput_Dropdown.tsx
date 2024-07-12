@@ -7,6 +7,47 @@ import {
   ORG_D_SearchComponent_LabelInput_DropdownWrapper,
 } from "./styles/ORG_D_SearchComponent_LabelInput_DropdownWrapper"
 
+const formatForMatch = ({
+  diagnosisSearchedByUser,
+  toCheck,
+}: {
+  diagnosisSearchedByUser: string
+  toCheck: string
+}) => {
+  const format = diagnosisSearchedByUser.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+
+  const theRegex = new RegExp(format, "gi")
+  const matchHighlight = toCheck.match(theRegex)
+
+  const isMatch =
+    toCheck.toLowerCase().indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
+
+  let highlightWord
+  let leftSideOfWord
+  let rightSideOfWord
+
+  if (isMatch && matchHighlight && matchHighlight?.[0] !== "") {
+    highlightWord = matchHighlight[0]
+
+    const indexOfWord = toCheck.indexOf(highlightWord)
+
+    leftSideOfWord = toCheck.slice(0, indexOfWord)
+
+    rightSideOfWord = toCheck.slice(
+      indexOfWord + highlightWord.length,
+      toCheck.length
+    )
+  }
+
+  return {
+    matchHighlight,
+    isMatch,
+    highlightWord,
+    leftSideOfWord,
+    rightSideOfWord,
+  }
+}
+
 export const enum CLASSNAME_ISDIAGNOSIS {
   DIAGNOSIS = "DIAGNOSIS",
 }
@@ -59,45 +100,19 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
         >
           <ul onClick={handleSelecOption}>
             {suggestionKeywords.map(({ diagnosis, symptoms }, indexData) => {
-              const isMatchDiagnosis =
-                diagnosis
-                  .toLowerCase()
-                  .indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
+              const {
+                isMatch,
+                highlightWord,
+                leftSideOfWord,
+                rightSideOfWord,
+              } = formatForMatch({
+                diagnosisSearchedByUser,
+                toCheck: diagnosis,
+              })
 
-              let highlightWordDiagnosis
-              let leftSideOfWordDiagnosis
-              let rightSideOfWordDiagnosis
-
-              const theRegex = new RegExp(
-                diagnosisSearchedByUser.replace(
-                  /[-\/\\^$*+?.()|[\]{}]/g,
-                  "\\$&"
-                ),
-                "gi"
-              )
-              const matchHighlight = diagnosis.match(theRegex)
-
-              if (
-                isMatchDiagnosis &&
-                matchHighlight[0] !== "" &&
-                matchHighlight !== null
-              ) {
-                highlightWordDiagnosis = matchHighlight[0]
-
-                let indexOfWord = diagnosis.indexOf(highlightWordDiagnosis)
-
-                leftSideOfWordDiagnosis = diagnosis.slice(0, indexOfWord)
-
-                rightSideOfWordDiagnosis = diagnosis.slice(
-                  indexOfWord + highlightWordDiagnosis.length,
-                  diagnosis.length
-                )
-              }
-
-              let theKey = `${diagnosis}_${indexData}`
               return (
-                <Fragment key={theKey}>
-                  {isMatchDiagnosis && (
+                <Fragment key={`${diagnosis}_${indexData}`}>
+                  {isMatch && (
                     <ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS
                       onClick={() => {
                         setDiagnosisSearchedByUser(diagnosis)
@@ -105,18 +120,18 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                         handleUserClickOnSuggestion(true)
                       }}
                       data-content={
-                        highlightWordDiagnosis
-                          ? `${leftSideOfWordDiagnosis}${highlightWordDiagnosis}${rightSideOfWordDiagnosis}`
+                        highlightWord
+                          ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
                           : diagnosis
                       }
                       data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
                       className="DIAGNOSIS"
                     >
-                      {highlightWordDiagnosis ? (
+                      {highlightWord ? (
                         <>
-                          {leftSideOfWordDiagnosis}
-                          <strong>{highlightWordDiagnosis}</strong>
-                          {rightSideOfWordDiagnosis}
+                          {leftSideOfWord}
+                          <strong>{highlightWord}</strong>
+                          {rightSideOfWord}
                         </>
                       ) : (
                         diagnosis
@@ -129,38 +144,18 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                   <ORG_D_SearchComponent_LabelInput_Dropdown_LI>
                     <ul onClick={handleSelecOption}>
                       {symptoms.map((suggestion, indexSymptoms) => {
-                        const isMatch =
-                          suggestion
-                            .toLowerCase()
-                            .indexOf(diagnosisSearchedByUser.toLowerCase()) > -1
-                        let highlightWord
-                        let leftSideOfWord
-                        let rightSideOfWord
-                        const theRegex = new RegExp(
-                          diagnosisSearchedByUser.replace(
-                            /[-\/\^$*+?.()|[\]{}]/g,
-                            "$&"
-                          ),
-                          "gi"
-                        )
-                        const matchHighlightSuggestion =
-                          suggestion.match(theRegex)
+                        const {
+                          isMatch,
+                          highlightWord,
+                          leftSideOfWord,
+                          rightSideOfWord,
+                        } = formatForMatch({
+                          diagnosisSearchedByUser,
+                          toCheck: suggestion,
+                        })
 
-                        if (
-                          isMatch &&
-                          matchHighlightSuggestion[0] !== "" &&
-                          matchHighlightSuggestion !== null
-                        ) {
-                          highlightWord = matchHighlightSuggestion[0]
-                          let indexOfWord = suggestion.indexOf(highlightWord)
-                          leftSideOfWord = suggestion.slice(0, indexOfWord)
-                          rightSideOfWord = suggestion.slice(
-                            indexOfWord + highlightWord.length,
-                            suggestion.length
-                          )
-                        }
                         return (
-                          <Fragment key={indexSymptoms}>
+                          <Fragment key={`${suggestion}_${indexSymptoms}`}>
                             {isMatch && (
                               <li
                                 onClick={() => {
