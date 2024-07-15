@@ -188,19 +188,26 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                 }
               }, [shouldFocus])
 
+              /* 
+              !FH0
+              Make the dropdown close when user click outside the input or the dropdown
+              */
               useEffect(() => {
                 const closeDropdown = (e) => {
                   if (isFocus && e.code === "Tab" && !e.shiftKey) {
                     // e.preventDefault()
-                    // handleIsFocus(false)
-                    handleCloseDropdown()
-                    setCurrentFocus(-1)
+                    handleIsFocus(false)
+                    // handleCloseDropdown()
+                    // setCurrentFocus(-1)
                   }
 
-                  if (isFocus && e.shiftKey === true && e.code === "Tab") {
-                    // e.preventDefault()
-                    setCurrentFocus(-1)
-                    // handleCloseDropdown()
+                  if (
+                    inputRefFocus?.current?.contains(document.activeElement) &&
+                    isFocus &&
+                    e.shiftKey === true &&
+                    e.code === "Tab"
+                  ) {
+                    handleIsFocus(false)
                   }
                 }
 
