@@ -91,6 +91,7 @@ function useRoveFocus(size) {
 let theIndexTitle = 0
 export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
   isFocus,
+  isHovered,
   handleIsHovered,
   diagnosisSearchedByUser,
   setDiagnosisSearchedByUser,
@@ -98,6 +99,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
   handleHaveAtLeastOneMatchState,
   suggestionKeywords,
   inputRefFocus,
+  refLabel,
   handleUserClickOnSuggestion,
   handleCloseDropdown,
   handleIsFocus,
@@ -130,11 +132,13 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
     }
   }
 
+  /*
   const listToRender = Object.entries(suggestionKeywords)
     .map(([key, values]) => {
       return [key, ...(values as Array<string>)]
     })
     .flat()
+  */
 
   const entries = Object.entries(suggestionKeywords)
   const listToRender99 = ["0"]
@@ -193,39 +197,111 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
               Make the dropdown close when user click outside the input or the dropdown
               */
               useEffect(() => {
-                const closeDropdown = (e) => {
+                const closeDropdownKeyboard = (e) => {
                   if (isFocus && e.code === "Tab" && !e.shiftKey) {
-                    // e.preventDefault()
                     handleIsFocus(false)
-                    // handleCloseDropdown()
-                    // setCurrentFocus(-1)
                   }
 
                   if (
                     inputRefFocus?.current?.contains(document.activeElement) &&
                     isFocus &&
-                    e.shiftKey === true &&
+                    e.shiftKey &&
                     e.code === "Tab"
                   ) {
                     handleIsFocus(false)
                   }
                 }
 
-                document.addEventListener("keydown", closeDropdown)
+                /*
+                const closeDropdownClick = (event: MouseEvent) => {
+                  if (
+                    inputRefFocus.current &&
+                    !inputRefFocus.current.contains(event.target as Node) &&
+                    theRef.current &&
+                    !theRef.current.contains(event.target as Node)
+                  ) {
+                    handleIsFocus(false)
+                  } else {
+                    // console.log("click something!", event)
+                  }
+                }
+                */
+
+                document.addEventListener("keydown", closeDropdownKeyboard)
+                // document.addEventListener("click", closeDropdownClick)
 
                 return () => {
-                  document.removeEventListener("keydown", closeDropdown)
+                  document.removeEventListener("keydown", closeDropdownKeyboard)
+                  // document.removeEventListener("click", closeDropdownClick)
                 }
               }, [])
 
               for (const y in listToRender99) {
                 if (indexData === Number(listToRender99[y])) {
+                  useEffect(() => {
+                    /*
+                    const closeDropdownKeyboard = (e) => {
+                      if (isFocus && e.code === "Tab" && !e.shiftKey) {
+                        handleIsFocus(false)
+                      }
+
+                      if (
+                        inputRefFocus?.current?.contains(
+                          document.activeElement
+                        ) &&
+                        isFocus &&
+                        e.shiftKey &&
+                        e.code === "Tab"
+                      ) {
+                        handleIsFocus(false)
+                      }
+                    }
+                    */
+
+                    const closeDropdownClick = (event: MouseEvent) => {
+                      console.log(
+                        "Ref here🚝",
+                        inputRefFocus?.current,
+                        refLabel,
+                        event
+                      )
+
+                      if (
+                        inputRefFocus.current &&
+                        !inputRefFocus.current.contains(event.target as Node) &&
+                        theRef.current &&
+                        !theRef.current.contains(event.target as Node) &&
+                        refLabel.current &&
+                        !refLabel.current.contains(event.target as Node)
+                      ) {
+                        // handleSelecOption({
+                        //   e: event,
+                        //   whatToUpdate: "ADHD",
+                        // })
+                        handleIsFocus(false)
+                        // console.log("🟥 SHOULD CLOSE!")
+                      }
+                    }
+
+                    // document.addEventListener("keydown", closeDropdownKeyboard)
+                    document.addEventListener("click", closeDropdownClick)
+
+                    return () => {
+                      // document.removeEventListener(
+                      //   "keydown",
+                      //   closeDropdownKeyboard
+                      // )
+                      document.removeEventListener("click", closeDropdownClick)
+                    }
+                  }, [])
+
                   return (
                     <Fragment key={`${x}_${indexData}`}>
                       <ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS
                         isTitle={Number(y) > 0}
                         onClick={(e) => {
                           handleSelecOption({ e, whatToUpdate: x })
+                          // handleIsFocus(false)
                         }}
                         onKeyDown={(e) => {
                           if (e.code === "Enter") {
