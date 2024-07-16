@@ -71,7 +71,6 @@ export const useTypedFlowLogicSelection = ({
   }
 
   const handleWhichMatch = (e) => {
-    console.log("e:", e)
     const userInputLower = e.target.value.toLowerCase()
     type FinalObjType = {
       diagnosis: string[]

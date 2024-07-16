@@ -4,7 +4,7 @@ import {
   suggestionKeywords2,
 } from "@/utils/org/typed-flow/suggestionKeywords"
 import { useTypedFlowLogicSelection } from "@/utils/org/typed-flow/useTypedFlowLogicSelection"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ORG_D_SearchComponent_LabelInput_Dropdown2 } from "./ORG_D_SearchComponent_LabelInput_Dropdown2"
 import { ORG_D_SearchComponent_LabelInputWrapper } from "./styles/ORG_D_SearchComponent_LabelInputWrapper"
 
@@ -65,6 +65,27 @@ export const ORG_D_SearchComponent_LabelInput = ({
   Clean the mess to achieve the same logic
   */
 
+  const [listToRender, setListToRender] = useState<null | {}>(null)
+
+  useEffect(() => {
+    const entries = Object.entries(suggestionKeywords2)
+    const listToRender99 = ["0"]
+
+    for (let i = 0; i < entries.length; i++) {
+      const [, value] = entries[i]
+      const currentLength = (value as Array<string>).length + 1
+      const previousValue = parseInt(listToRender99[listToRender99.length - 1])
+      listToRender99.push((previousValue + currentLength).toString())
+    }
+
+    const listToRender3 = Object.entries(suggestionKeywords2).flat(Infinity)
+
+    setListToRender(() => ({
+      symptoms: listToRender99,
+      allData: listToRender3,
+    }))
+  }, [suggestionKeywords2])
+
   return (
     <ORG_D_SearchComponent_LabelInputWrapper
       shouldDisplayDropdown={shouldDisplayDropdown}
@@ -72,8 +93,6 @@ export const ORG_D_SearchComponent_LabelInput = ({
       <P
         ref={refLabel}
         onClick={() => {
-          // handleIsFocus(true)
-          // handleIsHovered(true)
           if (inputRef?.current) {
             inputRef?.current.focus()
           }
@@ -100,11 +119,6 @@ export const ORG_D_SearchComponent_LabelInput = ({
                 }
               }}
               onBlur={() => {
-                // console.log("isFocus:", isFocus)
-                if (!isFocus) {
-                  // handleCloseDropdown()
-                  // handleIsFocus(false)
-                }
                 handleUserPressEnter(false)
               }}
               onMouseDown={() => {
@@ -137,6 +151,7 @@ export const ORG_D_SearchComponent_LabelInput = ({
               handleUserClickOnSuggestion={handleUserClickOnSuggestion}
               handleCloseDropdown={handleCloseDropdown}
               handleIsFocus={handleIsFocus}
+              listToRender={listToRender}
             />
           </>
         )}
