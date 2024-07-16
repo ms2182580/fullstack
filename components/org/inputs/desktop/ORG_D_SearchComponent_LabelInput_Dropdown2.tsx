@@ -59,21 +59,23 @@ export const enum CLASSNAME_ISDIAGNOSIS {
   DIAGNOSIS = "DIAGNOSIS",
 }
 
-function useRoveFocus(size) {
-  const [currentFocus, setCurrentFocus] = useState(0)
+function useRoveFocus({ size }: { size: number }) {
+  const [currentFocus, setCurrentFocus] = useState(-1)
 
   const handleKeyDown = useCallback(
     (e) => {
-      if (e.code === "ArrowDown") {
-        /* Prevent move the whole view of the user on the page */
-        e.preventDefault()
-        setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1)
-      }
+      if (e.target.dataset["dropdown"] === "dropdown") {
+        if (e.code === "ArrowDown") {
+          /* Prevent move the whole view of the user on the page */
+          e.preventDefault()
+          setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1)
+        }
 
-      if (e.code === "ArrowUp") {
-        /* Prevent move the whole view of the user on the page */
-        e.preventDefault()
-        setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1)
+        if (e.code === "ArrowUp") {
+          /* Prevent move the whole view of the user on the page */
+          e.preventDefault()
+          setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1)
+        }
       }
     },
     [size, currentFocus, setCurrentFocus]
@@ -88,7 +90,7 @@ function useRoveFocus(size) {
 
   return { currentFocus, setCurrentFocus }
 }
-let theIndexTitle = 0
+
 export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
   isFocus,
   isHovered,
@@ -179,7 +181,9 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                 toCheck: x as string,
               })
 
-              const { currentFocus: focus, setCurrentFocus } = useRoveFocus(13)
+              const { currentFocus: focus, setCurrentFocus } = useRoveFocus({
+                size: listToRender3.length,
+              })
 
               const shouldFocus = focus === indexData
 
@@ -192,10 +196,6 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                 }
               }, [shouldFocus])
 
-              /* 
-              !FH0
-              Make the dropdown close when user click outside the input or the dropdown
-              */
               useEffect(() => {
                 const closeDropdownKeyboard = (e) => {
                   if (isFocus && e.code === "Tab" && !e.shiftKey) {
@@ -212,60 +212,17 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                   }
                 }
 
-                /*
-                const closeDropdownClick = (event: MouseEvent) => {
-                  if (
-                    inputRefFocus.current &&
-                    !inputRefFocus.current.contains(event.target as Node) &&
-                    theRef.current &&
-                    !theRef.current.contains(event.target as Node)
-                  ) {
-                    handleIsFocus(false)
-                  } else {
-                    // console.log("click something!", event)
-                  }
-                }
-                */
-
                 document.addEventListener("keydown", closeDropdownKeyboard)
-                // document.addEventListener("click", closeDropdownClick)
 
                 return () => {
                   document.removeEventListener("keydown", closeDropdownKeyboard)
-                  // document.removeEventListener("click", closeDropdownClick)
                 }
               }, [])
 
               for (const y in listToRender99) {
                 if (indexData === Number(listToRender99[y])) {
                   useEffect(() => {
-                    /*
-                    const closeDropdownKeyboard = (e) => {
-                      if (isFocus && e.code === "Tab" && !e.shiftKey) {
-                        handleIsFocus(false)
-                      }
-
-                      if (
-                        inputRefFocus?.current?.contains(
-                          document.activeElement
-                        ) &&
-                        isFocus &&
-                        e.shiftKey &&
-                        e.code === "Tab"
-                      ) {
-                        handleIsFocus(false)
-                      }
-                    }
-                    */
-
                     const closeDropdownClick = (event: MouseEvent) => {
-                      console.log(
-                        "Ref here🚝",
-                        inputRefFocus?.current,
-                        refLabel,
-                        event
-                      )
-
                       if (
                         inputRefFocus.current &&
                         !inputRefFocus.current.contains(event.target as Node) &&
@@ -274,23 +231,13 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                         refLabel.current &&
                         !refLabel.current.contains(event.target as Node)
                       ) {
-                        // handleSelecOption({
-                        //   e: event,
-                        //   whatToUpdate: "ADHD",
-                        // })
                         handleIsFocus(false)
-                        // console.log("🟥 SHOULD CLOSE!")
                       }
                     }
 
-                    // document.addEventListener("keydown", closeDropdownKeyboard)
                     document.addEventListener("click", closeDropdownClick)
 
                     return () => {
-                      // document.removeEventListener(
-                      //   "keydown",
-                      //   closeDropdownKeyboard
-                      // )
                       document.removeEventListener("click", closeDropdownClick)
                     }
                   }, [])
@@ -301,7 +248,6 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                         isTitle={Number(y) > 0}
                         onClick={(e) => {
                           handleSelecOption({ e, whatToUpdate: x })
-                          // handleIsFocus(false)
                         }}
                         onKeyDown={(e) => {
                           if (e.code === "Enter") {
@@ -314,7 +260,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                             : x
                         }
                         data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
-                        // tabIndex={0}
+                        data-dropdown="dropdown"
                         tabIndex={shouldFocus ? 0 : -1}
                         ref={theRef}
                       >
@@ -353,6 +299,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown2 = ({
                           ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
                           : theReactNode
                       }
+                      data-dropdown="dropdown"
                       tabIndex={shouldFocus ? 0 : -1}
                       ref={theRef}
                       // tabIndex={0}

@@ -60,47 +60,10 @@ export const ORG_D_SearchComponent_LabelInput = ({
 
   const refLabel = useRef(null)
 
-  /*
-  useEffect(() => {
-    console.log("isHovered, isFocus:", isHovered, isFocus)
-
-    if ((isFocus || isHovered) && inputRef?.current !== null) {
-      inputRef?.current.focus()
-    }
-  }, [isHovered, isFocus])
+  /* 
+  !FH0
+  Clean the mess to achieve the same logic
   */
-  /*
-useEffect(() => {
-    const closeDropdownClick = (event: MouseEvent) => {
-      console.log("Ref here🚝", inputRef?.current, refLabel)
-
-      if (
-        inputRef.current &&
-        !inputRef.current.contains(event.target as Node)
-      ) {
-        handleIsFocus(false)
-      } else if (
-        isFocus &&
-        inputRef?.current == document.activeElement
-        // isHovered
-      ) {
-        console.log("click something on INPUT✅!", event)
-        // inputRefFocus?.current.focus()
-      }
-    }
-
-    // document.addEventListener("keydown", closeDropdownKeyboard)
-    document.addEventListener("mousedown", closeDropdownClick)
-
-    return () => {
-      // document.removeEventListener(
-      //   "keydown",
-      //   closeDropdownKeyboard
-      // )
-      document.removeEventListener("mousedown", closeDropdownClick)
-    }
-  }, [isFocus])
-*/
 
   return (
     <ORG_D_SearchComponent_LabelInputWrapper
@@ -129,12 +92,15 @@ useEffect(() => {
             <input
               type="text"
               placeholder={placeholder}
+              data-dropdown="dropdown"
               onFocus={() => {
                 handleIsFocus(true)
-                // inputRef?.current.focus()
+                if (inputRef?.current) {
+                  inputRef?.current.focus()
+                }
               }}
               onBlur={() => {
-                console.log("isFocus:", isFocus)
+                // console.log("isFocus:", isFocus)
                 if (!isFocus) {
                   // handleCloseDropdown()
                   // handleIsFocus(false)
