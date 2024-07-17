@@ -1,7 +1,9 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useFetchData } from "@/utils/org/useFetchData"
 import { useWidthSize } from "@/utils/useWidthSize"
 import dynamic from "next/dynamic"
+import { useEffect } from "react"
 
 const INDEX_D_ORG = dynamic(
   () =>
@@ -20,6 +22,12 @@ const INDEX_D_ORG = dynamic(
 
 const ORG_INDEX = () => {
   const { isMobile } = useWidthSize()
+
+  const { setReachTypedFlow }: any = useSessionStorage_typedFlow()
+
+  useEffect(() => {
+    setReachTypedFlow(false)
+  }, [])
 
   // Get all data
   // const data = useContext(Data_Context)

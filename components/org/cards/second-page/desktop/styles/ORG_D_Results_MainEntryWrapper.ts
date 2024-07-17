@@ -28,7 +28,7 @@ export const ORG_D_Results_MainEntryWrapper = styled.div<Props>`
     grid-area: cardsAndMap;
     display: grid;
 
-    grid-template-columns: ${({ isFullMap }) => (isFullMap ? "" : "1fr 1fr")};
+    grid-template-columns: ${({ isFullMap }) => (isFullMap ? "" : "2fr 1fr")};
 
     margin-bottom: ${({ isFullMap }) => (isFullMap ? `318px` : `189px`)};
 

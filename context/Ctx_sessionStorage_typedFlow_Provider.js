@@ -26,6 +26,8 @@ export const Ctx_sessionStorage_typedFlow_Provider = ({ children }) => {
 
   const [cancelWelcomePath, setCancelWelcomePath] = useState(false)
 
+  const [backendDataState, setBackendDataState] = useState(null)
+
   return (
     <SessionStorage_typedFlow.Provider
       value={{
@@ -41,6 +43,8 @@ export const Ctx_sessionStorage_typedFlow_Provider = ({ children }) => {
         setInputTypesByUser,
         cancelWelcomePath,
         setCancelWelcomePath,
+        backendDataState,
+        setBackendDataState,
       }}
     >
       {children}

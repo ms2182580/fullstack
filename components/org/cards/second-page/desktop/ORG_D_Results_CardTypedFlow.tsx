@@ -1,3 +1,8 @@
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
+import {
+  ALL_DATA,
+  NamesCategories_KEY,
+} from "@/utils/org/categories/general/ALL_DATA"
 import { DATA_ORG_D } from "@/utils/org/DATA_ORG_D"
 import { DATA_PCC_D } from "@/utils/org/pcc/DATA_PCC_D"
 import { DATA_PCMPS_D } from "@/utils/org/pcmps/DATA_PCMPS_D"
@@ -48,25 +53,37 @@ const Resources = [
   },
 ]
 
+const Resources_ALL_DATA = {
+  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]:
+    ALL_DATA[NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]],
+  [NamesCategories_KEY["THERAPEUTIC SERVICES"]]:
+    ALL_DATA[NamesCategories_KEY["THERAPEUTIC SERVICES"]],
+  [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]]:
+    ALL_DATA[NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]],
+  [NamesCategories_KEY["CAMPS"]]: ALL_DATA[NamesCategories_KEY["CAMPS"]],
+}
+
 export const ORG_D_Results_CardTypedFlow = () => {
+  const { backendDataState }: any = useSessionStorage_typedFlow()
+
   return (
     <ORG_D_Results_CardTypedFlowWrapper>
-      {Resources.map((x) => {
-        let theTitle: any = x.title
-
-        let dataToRender: any = x.dataToRender
-
-        return (
-          <Fragment key={theTitle}>
-            <ORG_D_Results_CardTypedFlow_Individuals
-              title={theTitle}
-              dataToRender={dataToRender}
-              toSecondPageData={x.toSecondPageData}
-              categoryPosition={x.categoryPosition}
-            />
-          </Fragment>
-        )
-      })}
+      {backendDataState &&
+        Object.values(Resources_ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
+          return (
+            <Fragment key={CATEGORY}>
+              <ORG_D_Results_CardTypedFlow_Individuals
+                category={CATEGORY}
+                allSubcategories={SUB_CATEGORY}
+                allBackendData={
+                  backendDataState?.[
+                    NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
+                  ]
+                }
+              />
+            </Fragment>
+          )
+        })}
     </ORG_D_Results_CardTypedFlowWrapper>
   )
 }

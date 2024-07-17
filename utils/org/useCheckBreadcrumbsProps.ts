@@ -1,9 +1,13 @@
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useEffect, useState } from "react"
 
 type TitleToFormat_Type = string
 type isTypedFlow = boolean
 
-export const useCheckBreadcrumbsProps = (titleToFormat: TitleToFormat_Type, isTypedFlow: isTypedFlow = false) => {
+export const useCheckBreadcrumbsProps = () => {
+  const { reachTypedFlow, diagnosisChoosed, inputTypesByUser }: any =
+    useSessionStorage_typedFlow()
+
   const [titleFormatted, setTitleFormatted] = useState("")
 
   // ? This is used when the data that arrived is not a string and comes from a query string from useRouter(). This behavior is implemented in "useCheckBreadcrumbs.js"
@@ -21,8 +25,8 @@ export const useCheckBreadcrumbsProps = (titleToFormat: TitleToFormat_Type, isTy
   // }, [])
 
   useEffect(() => {
-    if (isTypedFlow) {
-      setTitleFormatted(titleToFormat)
+    if (reachTypedFlow) {
+      setTitleFormatted(inputTypesByUser)
     }
   }, [])
 

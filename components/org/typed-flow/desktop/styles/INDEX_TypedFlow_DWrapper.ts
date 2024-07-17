@@ -5,6 +5,4 @@ type Props = {
   path?: any
 }
 
-export const INDEX_TypedFlow_DWrapper = styled.div<Props>`
-  position: relative;
-`
+export const INDEX_TypedFlow_DWrapper = styled.div<Props>``

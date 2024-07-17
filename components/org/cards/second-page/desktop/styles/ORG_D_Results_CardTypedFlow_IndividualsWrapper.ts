@@ -33,13 +33,15 @@ export const ORG_D_Results_CardTypedFlow_IndividualsWrapper = styled.section`
   & > :nth-child(3) {
     display: grid;
 
-    overflow-x: scroll;
-
     & > :nth-child(1) {
       display: flex;
       gap: 12px;
 
-      & > * {
+      overflow-x: scroll;
+
+      list-style: none;
+
+      & > li > article {
         box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
 
