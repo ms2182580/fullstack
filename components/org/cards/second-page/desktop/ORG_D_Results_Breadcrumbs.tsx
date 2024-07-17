@@ -1,3 +1,4 @@
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { useCheckBreadcrumbsProps } from "@/utils/org/useCheckBreadcrumbsProps"
@@ -16,15 +17,18 @@ export const ORG_D_Results_Breadcrumbs = () => {
     query?.[QUERY_BREADCRUMBS.TITLE]
   )
 
+  const { reachTypedFlow, diagnosisChoosed, inputTypesByUser }: any =
+    useSessionStorage_typedFlow()
+
   const { titleFormatted: titleFormatted_TypedFlow } =
     useCheckBreadcrumbsProps()
 
   const whichWordOnBreadcrumb = useMemo(() => {
     const whichFinalWord = titleFormatted
       ? titleFormatted
-      : `Typed by user: ${titleFormatted_TypedFlow}`
+      : `Typed by user: ${inputTypesByUser}`
     return whichFinalWord
-  }, [titleFormatted, titleFormatted_TypedFlow])
+  }, [titleFormatted, titleFormatted_TypedFlow, inputTypesByUser])
 
   return (
     <Breadcrumbs_D
