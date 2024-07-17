@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useRef, useState } from "react"
+import { KeyboardEvent, RefObject, useEffect, useRef, useState } from "react"
 
 type DiagnosisCategoryObj_Type = {
   diagnosis: string[]
@@ -28,6 +28,17 @@ export const useTypedFlowLogicSelection = ({
     useState<boolean>(false)
 
   const [userPressEnter, setUserPressEnter] = useState<boolean>(false)
+  const handleFocusInputRef = ({
+    theRef = null,
+  }: {
+    theRef?: RefObject<HTMLInputElement> | null
+  } = {}) => {
+    if (theRef?.current) {
+      theRef?.current.focus()
+    } else if (inputRef?.current) {
+      inputRef?.current.focus()
+    }
+  }
 
   const handleIsFocus = (toUpdate: boolean) => {
     setIsFocus(toUpdate)
@@ -232,5 +243,6 @@ export const useTypedFlowLogicSelection = ({
     setDiagnosisCategory,
     handleHaveAtLeastOneMatchState,
     handleUserClickOnSuggestion,
+    handleFocusInputRef,
   }
 }

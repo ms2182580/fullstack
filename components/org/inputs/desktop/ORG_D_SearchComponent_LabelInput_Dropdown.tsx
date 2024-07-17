@@ -1,8 +1,15 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { Fragment, useCallback, useEffect, useRef, useState } from "react"
 import {
+  Fragment,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
+import {
+  LI_2Wrapper,
   ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS,
-  ORG_D_SearchComponent_LabelInput_Dropdown_LI,
   ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS,
   ORG_D_SearchComponent_LabelInput_DropdownWrapper,
 } from "./styles/ORG_D_SearchComponent_LabelInput_DropdownWrapper"
@@ -52,21 +59,23 @@ export const enum CLASSNAME_ISDIAGNOSIS {
   DIAGNOSIS = "DIAGNOSIS",
 }
 
-function useRoveFocus(size) {
-  const [currentFocus, setCurrentFocus] = useState(0)
+function useRoveFocus({ size }: { size: number }) {
+  const [currentFocus, setCurrentFocus] = useState(-1)
 
   const handleKeyDown = useCallback(
     (e) => {
-      if (e.code === "ArrowDown") {
-        /* Prevent move the whole view of the user on the page */
-        e.preventDefault()
-        setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1)
-      }
+      if (e.target.dataset["dropdown"] === "dropdown") {
+        if (e.code === "ArrowDown") {
+          /* Prevent move the whole view of the user on the page */
+          e.preventDefault()
+          setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1)
+        }
 
-      if (e.code === "ArrowUp") {
-        /* Prevent move the whole view of the user on the page */
-        e.preventDefault()
-        setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1)
+        if (e.code === "ArrowUp") {
+          /* Prevent move the whole view of the user on the page */
+          e.preventDefault()
+          setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1)
+        }
       }
     },
     [size, currentFocus, setCurrentFocus]
@@ -84,6 +93,7 @@ function useRoveFocus(size) {
 
 export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   isFocus,
+  isHovered,
   handleIsHovered,
   diagnosisSearchedByUser,
   setDiagnosisSearchedByUser,
@@ -91,10 +101,19 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   handleHaveAtLeastOneMatchState,
   suggestionKeywords,
   inputRefFocus,
+  refLabel,
   handleUserClickOnSuggestion,
+  handleCloseDropdown,
+  handleIsFocus,
+  listToRender = [],
+  handleFocusInputRef,
 }: any) => {
-  const handleSelecOption = (e) => {
-    console.log("e 🟩:", e)
+  const handleSelecOption = ({ e, whatToUpdate }) => {
+    // e.preventDefault()
+    setDiagnosisSearchedByUser(whatToUpdate)
+    inputRefFocus.current.focus()
+    handleUserClickOnSuggestion(true)
+
     const isDiagnosis =
       e.target.attributes?.["data-diagnosis"]?.value ===
       CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]
@@ -115,6 +134,75 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
     }
   }
 
+  /*
+  useEffect(() => {
+    const closeDropdownKeyboard = (e) => {
+      if (isFocus && e.code === "Tab" && !e.shiftKey) {
+        handleIsFocus(false)
+      }
+
+      if (
+        inputRefFocus?.current?.contains(document.activeElement) &&
+        isFocus &&
+        e.shiftKey &&
+        e.code === "Tab"
+      ) {
+        handleIsFocus(false)
+      }
+    }
+
+    document.addEventListener("keydown", closeDropdownKeyboard)
+
+    return () => {
+      document.removeEventListener("keydown", closeDropdownKeyboard)
+    }
+  }, [])
+
+  useEffect(() => {
+    const closeDropdownClick = (event: MouseEvent) => {
+      if (
+        inputRefFocus.current &&
+        !inputRefFocus.current.contains(event.target as Node) &&
+        theRef.current &&
+        !theRef.current.contains(event.target as Node) &&
+        refLabel.current &&
+        !refLabel.current.contains(event.target as Node)
+      ) {
+        handleIsFocus(false)
+      }
+    }
+
+    document.addEventListener("click", closeDropdownClick)
+
+    return () => {
+      document.removeEventListener("click", closeDropdownClick)
+    }
+  }, [])
+  */
+
+  /*
+  const listToRender = Object.entries(suggestionKeywords)
+    .map(([key, values]) => {
+      return [key, ...(values as Array<string>)]
+    })
+    .flat()
+  */
+
+  /*
+  const entries = Object.entries(suggestionKeywords)
+  const listToRender99 = ["0"]
+
+  for (let i = 0; i < entries.length; i++) {
+    const [, value] = entries[i]
+    const currentLength = (value as Array<string>).length + 1
+    const previousValue = parseInt(listToRender99[listToRender99.length - 1])
+    listToRender99.push((previousValue + currentLength).toString())
+  }
+
+  const listToRender3 = Object.entries(suggestionKeywords).flat(Infinity)
+
+  */
+
   return (
     <ORG_D_SearchComponent_LabelInput_DropdownWrapper>
       {isFocus && (
@@ -125,15 +213,11 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
           onMouseLeave={() => {
             handleIsHovered(false)
           }}
-          onClick={() => {
-            inputRefFocus.current.focus()
-          }}
+          onClick={() => handleFocusInputRef()}
         >
           <ul>
-            {suggestionKeywords.map(({ diagnosis, symptoms }, indexData) => {
-              /*
-              console.log("indexData:", indexData)
-              */
+            {listToRender.allData.map((x, indexData) => {
+              const theReactNode = x as ReactNode
               const {
                 isMatch,
                 highlightWord,
@@ -141,19 +225,24 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                 rightSideOfWord,
               } = formatForMatch({
                 diagnosisSearchedByUser,
-                toCheck: diagnosis,
+                toCheck: x as string,
               })
 
-              const { currentFocus: focus } = useRoveFocus(13)
-              // console.log("focus:", focus, setFocus)
+              /* 
+              !FH1
+              Bug here: 
+              
+              1. If the user search for some word, the user should do more "arrow down" and "arrow up" press key in order to change the focus because the current focus is not the same as the changed list
+              
+              2. When the user focus on some dropdown element, the pointer is not in the input and the input remains unchange. The idea is have the same input behave like youtube input search have
+              */
+              const { currentFocus: focus } = useRoveFocus({
+                size: listToRender.allData.length,
+              })
 
               const shouldFocus = focus === indexData
-              console.log("shouldFocus:", shouldFocus, focus, indexData)
-              /* console.log("shouldFocus:", shouldFocus, indexData, focus)
-              console.log() */
 
               const theRef = useRef<HTMLLIElement>(null)
-              // console.log("theRef:", theRef)
 
               useEffect(() => {
                 if (shouldFocus) {
@@ -162,32 +251,110 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                 }
               }, [shouldFocus])
 
+              useEffect(() => {
+                const closeDropdownKeyboard = (e) => {
+                  if (isFocus && e.code === "Tab" && !e.shiftKey) {
+                    handleIsFocus(false)
+                  }
+
+                  if (
+                    inputRefFocus?.current?.contains(document.activeElement) &&
+                    isFocus &&
+                    e.shiftKey &&
+                    e.code === "Tab"
+                  ) {
+                    handleIsFocus(false)
+                  }
+                }
+
+                document.addEventListener("keydown", closeDropdownKeyboard)
+
+                return () => {
+                  document.removeEventListener("keydown", closeDropdownKeyboard)
+                }
+              }, [])
+
+              useEffect(() => {
+                const closeDropdownClick = (event: MouseEvent) => {
+                  if (
+                    inputRefFocus.current &&
+                    !inputRefFocus.current.contains(event.target as Node) &&
+                    theRef.current &&
+                    !theRef.current.contains(event.target as Node) &&
+                    refLabel.current &&
+                    !refLabel.current.contains(event.target as Node)
+                  ) {
+                    handleIsFocus(false)
+                  }
+                }
+
+                document.addEventListener("click", closeDropdownClick)
+
+                return () => {
+                  document.removeEventListener("click", closeDropdownClick)
+                }
+              }, [])
+
+              for (const y in listToRender.symptoms) {
+                if (indexData === Number(listToRender.symptoms[y])) {
+                  return (
+                    <Fragment key={`${x}_${indexData}`}>
+                      <ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS
+                        isTitle={Number(y) > 0}
+                        onClick={(e) => {
+                          handleSelecOption({ e, whatToUpdate: x })
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.code === "Enter") {
+                            handleSelecOption({ e, whatToUpdate: x })
+                          }
+                        }}
+                        data-content={
+                          highlightWord
+                            ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
+                            : x
+                        }
+                        data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
+                        data-dropdown="dropdown"
+                        tabIndex={shouldFocus ? 0 : -1}
+                        ref={theRef}
+                      >
+                        {highlightWord ? (
+                          <>
+                            {leftSideOfWord}
+                            <strong>{highlightWord}</strong>
+                            {rightSideOfWord}
+                          </>
+                        ) : (
+                          theReactNode
+                        )}
+                      </ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS>
+                      <ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
+                        <P>In symptoms ({theReactNode as ReactNode})</P>
+                      </ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
+                    </Fragment>
+                  )
+                }
+              }
+
               return (
-                <Fragment key={`${diagnosis}_${indexData}`}>
+                <Fragment>
                   {isMatch && (
-                    <ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS
+                    <LI_2Wrapper
                       onClick={(e) => {
-                        setDiagnosisSearchedByUser(diagnosis)
-                        inputRefFocus.current.focus()
-                        handleUserClickOnSuggestion(true)
-                        handleSelecOption(e)
+                        handleSelecOption({ e, whatToUpdate: x })
                       }}
                       onKeyDown={(e) => {
                         if (e.code === "Enter") {
-                          e.preventDefault()
-                          setDiagnosisSearchedByUser(diagnosis)
-                          inputRefFocus.current.focus()
-                          handleUserClickOnSuggestion(true)
-                          handleSelecOption(e)
+                          handleSelecOption({ e, whatToUpdate: x })
                         }
                       }}
                       data-content={
                         highlightWord
                           ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
-                          : diagnosis
+                          : theReactNode
                       }
-                      data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
-                      // tabIndex={0}
+                      data-dropdown="dropdown"
                       tabIndex={shouldFocus ? 0 : -1}
                       ref={theRef}
                     >
@@ -198,80 +365,10 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                           {rightSideOfWord}
                         </>
                       ) : (
-                        diagnosis
+                        theReactNode
                       )}
-                    </ORG_D_SearchComponent_LabelInput_Dropdown_DIAGNOSIS>
+                    </LI_2Wrapper>
                   )}
-                  <ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
-                    <P>In symptoms ({diagnosis})</P>
-                  </ORG_D_SearchComponent_LabelInput_Dropdown_SYMPTOMS>
-                  <ORG_D_SearchComponent_LabelInput_Dropdown_LI>
-                    <ul>
-                      {symptoms.map((suggestion, indexSymptoms) => {
-                        const {
-                          isMatch,
-                          highlightWord,
-                          leftSideOfWord,
-                          rightSideOfWord,
-                        } = formatForMatch({
-                          diagnosisSearchedByUser,
-                          toCheck: suggestion,
-                        })
-
-                        const { currentFocus: focus2 } = useRoveFocus(
-                          symptoms.length
-                        )
-                        // console.log("focus2:", focus2, setFocus)
-
-                        const shouldFocus2 = focus2 === indexSymptoms
-                        /* console.log("shouldFocus2:", shouldFocus2, indexData, focus)
-                        console.log() */
-
-                        const theRef2 = useRef<HTMLLIElement>(null)
-                        // console.log("theRef:", theRef)
-
-                        useEffect(() => {
-                          if (shouldFocus2) {
-                            // Move element into view when it is focused
-                            theRef2?.current?.focus()
-                          }
-                        }, [shouldFocus2])
-
-                        return (
-                          <Fragment key={`${suggestion}_${indexSymptoms}`}>
-                            {isMatch && (
-                              <li
-                                onClick={(e) => {
-                                  setDiagnosisSearchedByUser(suggestion)
-                                  inputRefFocus.current.focus()
-                                  handleUserClickOnSuggestion(true)
-                                  handleSelecOption(e)
-                                }}
-                                data-content={
-                                  highlightWord
-                                    ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
-                                    : suggestion
-                                }
-                                tabIndex={shouldFocus ? 0 : -1}
-                                ref={theRef}
-                                // tabIndex={0}
-                              >
-                                {highlightWord ? (
-                                  <>
-                                    {leftSideOfWord}
-                                    <strong>{highlightWord}</strong>
-                                    {rightSideOfWord}
-                                  </>
-                                ) : (
-                                  suggestion
-                                )}
-                              </li>
-                            )}
-                          </Fragment>
-                        )
-                      })}
-                    </ul>
-                  </ORG_D_SearchComponent_LabelInput_Dropdown_LI>
                 </Fragment>
               )
             })}
