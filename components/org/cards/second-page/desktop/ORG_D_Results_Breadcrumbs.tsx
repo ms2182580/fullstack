@@ -1,4 +1,3 @@
-import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useCheckBreadcrumbs } from "@/utils/org/useCheckBreadcrumbs"
 import { useCheckBreadcrumbsProps } from "@/utils/org/useCheckBreadcrumbsProps"
@@ -11,13 +10,10 @@ export const enum QUERY_BREADCRUMBS {
 }
 
 export const ORG_D_Results_Breadcrumbs = () => {
-  const { reachTypedFlow, diagnosisChoosed, inputTypesByUser }: any =
-    useSessionStorage_typedFlow()
-
   const { query } = useRouter()
 
   const { titleFormatted } = useCheckBreadcrumbs(
-    query?.[QUERY_BREADCRUMBS.TITLE] || inputTypesByUser
+    query?.[QUERY_BREADCRUMBS.TITLE]
   )
 
   const { titleFormatted: titleFormatted_TypedFlow } =

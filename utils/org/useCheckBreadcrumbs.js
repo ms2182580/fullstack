@@ -4,13 +4,13 @@ import { useEffect, useState } from "react"
 import { DATA_ORG_CheckPaths_Results_D } from "./DATA_ORG_CheckPaths_Results_D"
 
 export const useCheckBreadcrumbs = (titleToFormat) => {
-  const { reachTypedFlow } = useSessionStorage_typedFlow()
+  const { reachTypedFlow, inputTypesByUser } = useSessionStorage_typedFlow()
 
   const router = useRouter()
   const [titleFormatted, setTitleFormatted] = useState(null)
 
   useEffect(() => {
-    if (!titleToFormat && !reachTypedFlow) {
+    if (!titleToFormat && !reachTypedFlow && inputTypesByUser === "") {
       let theRoute = router.asPath.split("/").at(-1)
       let index = `p${theRoute.split("-")[0]}`
       let fullName =

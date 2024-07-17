@@ -2,9 +2,11 @@ import { ORG_D_Results_ViewProfileSvg } from "@/assets/icons"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
+import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
 import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
 import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
+import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import { KEYS_SUGGESTION_KEYWORDS } from "@/utils/org/typed-flow/suggestionKeywords"
 import {
   CheckTypeOfData,
@@ -21,40 +23,6 @@ import { ORG_D_Results_CardTypedFlow_IndividualsWrapper } from "./styles/ORG_D_R
 export type TypeOfObjectInProp = { [key: string]: string | number }[]
 
 export type TypeOfDataArrInProp = (string | number)[]
-
-type ImageInfo = {
-  src: string
-  height: number
-  width: number
-  blurDataURL: string
-  blurWidth: number
-  blurHeight: number
-}
-type FullName = {
-  first: string
-  last: string
-}
-type Item = {
-  imageToUse: ImageInfo
-  title: string
-  fullName: FullName
-  subtitle: string
-  city: string
-  rating: number
-  reviews: number
-  textReview: string
-  goToThirdPage: {
-    folder_name: string
-    id: number
-  }
-}
-
-// export type Props = {
-//   title: string
-//   dataToRender: Item[]
-//   toSecondPageData: object
-//   categoryPosition: number
-// }
 
 type ORG_D_Results_CardTypedFlow_Individuals_Props = {
   category: string
@@ -105,6 +73,9 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
   // const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
   const { setSecondpageDataORG: setSecondpageDataORG_Backend }: any =
     useORG_Ctx_D_SecondpageData_Backend()
+
+  const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
+    useORG_Ctx_D_ThirdpageData_Backend()
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
@@ -161,18 +132,19 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
                           />
                         </span>
                         <button
-                        /*
-                        onClick={(event) =>
-                          handleMoveToThirdPage({
-                            event,
-                            categoryPosition,
-                            subcategoryPosition: 0,
-                            resourcePosition: index,
-                            setThirdpageDataORG,
-                            push,
-                          })
-                        }
-                        */
+                          onClick={(event) => {
+                            setReachTypedFlow(true)
+
+                            handleMoveToThirdPage_Backend({
+                              event,
+                              raw: allBackendData[index],
+                              indexSubcategory: index,
+                              category,
+                              setThirdpageDataORG_Backend,
+                              push,
+                              indexBackend: index,
+                            })
+                          }}
                         >
                           <ORG_D_Results_ViewProfileSvg />
                           View Profile

@@ -23,10 +23,12 @@ const INDEX_D_ORG = dynamic(
 const ORG_INDEX = () => {
   const { isMobile } = useWidthSize()
 
-  const { setReachTypedFlow }: any = useSessionStorage_typedFlow()
+  const { setReachTypedFlow, setInputTypesByUser }: any =
+    useSessionStorage_typedFlow()
 
   useEffect(() => {
     setReachTypedFlow(false)
+    setInputTypesByUser("")
   }, [])
 
   // Get all data
@@ -70,11 +72,7 @@ const ORG_INDEX = () => {
   if (theData === null) {
     return <LoadingComponent />
   }
-  // if (!atLeastOneIsNotUndefined || isMobile === undefined) {
-  //   return <LoadingComponent />
-  // }
 
-  /* Render on the UI everything */
   return (
     <>
       {isMobile === false ? (

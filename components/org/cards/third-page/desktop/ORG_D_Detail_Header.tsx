@@ -17,7 +17,6 @@ export const ORG_D_Detail_Header = ({
   sectionToRender = null,
 }: any) => {
   const { query } = useRouter()
-  console.log("query:", query)
   const { titleFormatted } = useCheckBreadcrumbs(query.title)
   const formattedActualRoute = useMemo(() => {
     if (!query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]) {

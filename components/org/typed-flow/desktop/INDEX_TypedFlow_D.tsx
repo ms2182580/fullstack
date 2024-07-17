@@ -5,9 +5,6 @@ import { ORG_D_Results_MainEntry } from "../../cards/second-page/desktop/ORG_D_R
 import { INDEX_TypedFlow_DWrapper } from "./styles/INDEX_TypedFlow_DWrapper"
 
 export const INDEX_TypedFlow_D = ({ allBackendData }) => {
-  /* 
-  Change this context for other with just what the user type
-  */
   const {
     reachTypedFlow,
     diagnosisChoosed,
