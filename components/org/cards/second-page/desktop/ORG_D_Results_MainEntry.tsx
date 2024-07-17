@@ -1,3 +1,4 @@
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -22,10 +23,7 @@ export const enum ORG_D_Results_MainEntry_ID {
   TOP_OF_ORG_ID = "topOfORG",
 }
 
-export const ORG_D_Results_MainEntry = ({
-  titleToFormat = "nothing",
-  isTypedFlow = false,
-}: ORG_D_Results_MainEntry_PROPS) => {
+export const ORG_D_Results_MainEntry = () => {
   const { pathname } = useRouter()
 
   const [isFullMap, setIsFullMap] = useState(false)
@@ -44,34 +42,18 @@ export const ORG_D_Results_MainEntry = ({
       <ORG_D_Results_FilterSortbyHeader />
 
       <div>
-        <ORG_D_Results_Choisepath isTypedFlow={isTypedFlow} />
+        <ORG_D_Results_Choisepath />
 
         <MapComponent isFullMap={isFullMap} handleIsFullMap={handleIsFullMap} />
       </div>
 
-      {pathname === "/org/typed-flow" ? null : (
+      {pathname === `/${ALL_ROUTES.ORG}/${ALL_ROUTES["TYPED-FLOW"]}` ? null : (
         <>
           <ORG_D_Results_FinalButton />
         </>
       )}
 
-      <ORG_D_Results_Breadcrumbs
-        isTypedFlow={isTypedFlow}
-        titleToFormat={titleToFormat}
-      />
-
-      {/* 
-
-      {pathname === "/org/typed-flow" ? null : (
-        <>
-          <ORG_D_Results_FinalButton />
-        </>
-      )}
-
-      <ORG_D_Results_Breadcrumbs
-        isTypedFlow={isTypedFlow}
-        titleToFormat={titleToFormat}
-      /> */}
+      <ORG_D_Results_Breadcrumbs />
     </ORG_D_Results_MainEntryWrapper>
   )
 }

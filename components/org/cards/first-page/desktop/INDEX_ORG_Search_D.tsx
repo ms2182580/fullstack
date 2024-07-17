@@ -55,80 +55,76 @@ export const INDEX_ORG_Search_D = ({
         {allSubcategories.map((x, index) => {
           while (howMuchDisplay > index) {
             return (
-              <>
-                <section key={x}>
-                  <header>
-                    <H2>{x}</H2>
-                  </header>
+              <section key={x}>
+                <header>
+                  <H2>{x}</H2>
+                </header>
 
-                  <div>
-                    {allBackendData.map((xBackendData, indexBackend) => {
-                      return (
-                        <>
-                          <article key={`${x}_${xBackendData.listingType}`}>
-                            <div>
-                              <Image
-                                src={imagesToUse_backup[indexBackend]}
-                                alt={`${xBackendData.recordName}`}
-                              />
-                            </div>
+                <div>
+                  {allBackendData.map((xBackendData, indexBackend) => {
+                    return (
+                      <article key={`${x}_${xBackendData.listingType}`}>
+                        <div>
+                          <Image
+                            src={imagesToUse_backup[indexBackend]}
+                            alt={`${xBackendData.recordName}`}
+                          />
+                        </div>
 
-                            <H3 title={xBackendData.recordName.toLowerCase()}>
-                              {xBackendData.recordName.toLowerCase()}
-                            </H3>
-                            <H4 title={xBackendData.recordSubtype}>
-                              {xBackendData.recordSubtype}
-                            </H4>
+                        <H3 title={xBackendData.recordName.toLowerCase()}>
+                          {xBackendData.recordName.toLowerCase()}
+                        </H3>
+                        <H4 title={xBackendData.recordSubtype}>
+                          {xBackendData.recordSubtype}
+                        </H4>
 
-                            <P>
-                              {xBackendData?.address[0].city || ""},{" "}
-                              {xBackendData?.address[0].state || ""}
-                            </P>
+                        <P>
+                          {xBackendData?.address[0].city || ""},{" "}
+                          {xBackendData?.address[0].state || ""}
+                        </P>
 
-                            <StarsRatingReview_D
-                              rating={5}
-                              reviews={147 + indexBackend}
-                            />
+                        <StarsRatingReview_D
+                          rating={5}
+                          reviews={147 + indexBackend}
+                        />
 
-                            <P>{xBackendData?.reviews?.[1]}</P>
-                            <button
-                              onClick={(event) =>
-                                handleMoveToThirdPage_Backend({
-                                  event,
-                                  raw: allBackendData[indexBackend],
-                                  indexSubcategory: index,
-                                  category,
-                                  setThirdpageDataORG_Backend,
-                                  push,
-                                  indexBackend,
-                                })
-                              }
-                            >
-                              <ORG_D_Search_ViewProfileSvg />
-                              View Profile
-                            </button>
-                          </article>
-                        </>
-                      )
-                    })}
-                  </div>
+                        <P>{xBackendData?.reviews?.[1]}</P>
+                        <button
+                          onClick={(event) =>
+                            handleMoveToThirdPage_Backend({
+                              event,
+                              raw: allBackendData[indexBackend],
+                              indexSubcategory: index,
+                              category,
+                              setThirdpageDataORG_Backend,
+                              push,
+                              indexBackend,
+                            })
+                          }
+                        >
+                          <ORG_D_Search_ViewProfileSvg />
+                          View Profile
+                        </button>
+                      </article>
+                    )
+                  })}
+                </div>
 
-                  <button
-                    onClick={(event) =>
-                      handleMoveToSecondPage_Backend({
-                        event,
-                        category,
-                        theSubcategory: allSubcategories[index],
-                        raw: allBackendData,
-                        setSecondpageDataORG_Backend,
-                        push,
-                      })
-                    }
-                  >
-                    See all (25)
-                  </button>
-                </section>
-              </>
+                <button
+                  onClick={(event) =>
+                    handleMoveToSecondPage_Backend({
+                      event,
+                      category,
+                      theSubcategory: allSubcategories[index],
+                      raw: allBackendData,
+                      setSecondpageDataORG_Backend,
+                      push,
+                    })
+                  }
+                >
+                  See all (25)
+                </button>
+              </section>
             )
           }
         })}

@@ -35,15 +35,6 @@ const searchComponentData: Type_Data = [
 ]
 
 export const ORG_D_SearchComponent = (): ReactElement => {
-  /* 
-  !FH
-  Create all the Typed Flow
-  
-  - Collect here all the data from all the inputs
-  - Pass the data to some context after the user click on search icon or press Enter
-  
-  */
-
   const { push } = useRouter()
 
   const pushToTypedFlow = () => {

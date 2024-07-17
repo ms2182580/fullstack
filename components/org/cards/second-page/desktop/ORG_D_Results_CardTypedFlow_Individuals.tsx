@@ -1,20 +1,20 @@
 import { ORG_D_Results_ViewProfileSvg } from "@/assets/icons"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
-import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
-import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
+import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { handleMoveToSecondPage } from "@/utils/org/handleMoveToSecondPage"
-import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
+import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
+import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { KEYS_SUGGESTION_KEYWORDS } from "@/utils/org/typed-flow/suggestionKeywords"
 import {
   CheckTypeOfData,
   Keys_StructureDataToReturn,
   useTypedFlow_CheckDiagnosisChoosed,
 } from "@/utils/org/useTypedFlow_CheckDiagnosisChoosed"
+import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
 import Image from "next/legacy/image"
 import { useRouter } from "next/router"
-import { Fragment, useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ORG_D_Results_CardTypedFlow_IndividualsWrapper } from "./styles/ORG_D_Results_CardTypedFlow_IndividualsWrapper"
 
 // [key: string]: string | number
@@ -49,22 +49,28 @@ type Item = {
   }
 }
 
-export type Props = {
-  title: string
-  dataToRender: Item[]
-  toSecondPageData: object
-  categoryPosition: number
+// export type Props = {
+//   title: string
+//   dataToRender: Item[]
+//   toSecondPageData: object
+//   categoryPosition: number
+// }
+
+type ORG_D_Results_CardTypedFlow_Individuals_Props = {
+  category: string
+  allSubcategories: string[]
+  allBackendData: object[]
 }
 
 export const ORG_D_Results_CardTypedFlow_Individuals = ({
-  title = "noTitleReceived",
-  dataToRender,
-  toSecondPageData,
-  categoryPosition,
-}: Props) => {
-  let { diagnosisChoosed }: any = useSessionStorage_typedFlow()
+  category,
+  allSubcategories,
+  allBackendData,
+}: ORG_D_Results_CardTypedFlow_Individuals_Props) => {
+  const { diagnosisChoosed, setReachTypedFlow }: any =
+    useSessionStorage_typedFlow()
 
-  let { formatedDiagnosis, formatedSymptoms } =
+  const { formatedDiagnosis, formatedSymptoms } =
     useTypedFlow_CheckDiagnosisChoosed(
       diagnosisChoosed || {
         [KEYS_SUGGESTION_KEYWORDS.DIAGNOSIS]: [],
@@ -96,26 +102,32 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
 
   const { push } = useRouter()
 
-  const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
-  const { setSecondpageDataORG }: any = useORG_Ctx_D_SecondpageData()
+  // const { setSecondpageFiltersORG }: any = useORG_Ctx_D_SecondpageFilters()
+  const { setSecondpageDataORG: setSecondpageDataORG_Backend }: any =
+    useORG_Ctx_D_SecondpageData_Backend()
 
   const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+
+  const refUlList = useRef<HTMLUListElement | null>(null)
+
+  const { setListRef } = useScrollHorizontal(refUlList)
 
   return (
     <ORG_D_Results_CardTypedFlow_IndividualsWrapper>
       <div>
-        <h2>{title} for:</h2>
+        <h2>{category} for:</h2>
         <span
-          onClick={(event) =>
-            handleMoveToSecondPage({
+          onClick={(event) => {
+            setReachTypedFlow(false)
+            handleMoveToSecondPage_Backend({
               event,
-              categoryPosition,
-              subcategoryPosition: 0,
-              setSecondpageFiltersORG,
-              setSecondpageDataORG,
+              category,
+              theSubcategory: allSubcategories[0],
+              raw: allBackendData,
+              setSecondpageDataORG_Backend,
               push,
             })
-          }
+          }}
           tabIndex={0}
         >
           See all (25)
@@ -124,57 +136,61 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
       <h3>{whichDataReturn && whichDataReturn}</h3>
 
       <div>
-        <div>
-          {dataToRender.map((x, index) => {
-            return (
-              <Fragment>
-                <article>
-                  <div>
-                    <span>
-                      <Image
-                        src={x.imageToUse}
-                        layout="responsive"
-                        objectFit="cover"
-                        width={1}
-                        height={1}
-                        /* !FH change this. Put a proper alt */
-                        alt="someImage"
-                      />
-                    </span>
-                    <button
-                      onClick={(event) =>
-                        handleMoveToThirdPage({
-                          event,
-                          categoryPosition,
-                          subcategoryPosition: 0,
-                          resourcePosition: index,
-                          setThirdpageDataORG,
-                          push,
-                        })
-                      }
-                    >
-                      <ORG_D_Results_ViewProfileSvg />
-                      View Profile
-                    </button>
-                  </div>
-                  <span>
-                    <p>
-                      {x.fullName.first} {x.fullName.last}
-                    </p>
-
-                    <span>{x.subtitle}</span>
-                    <span>{x.city}</span>
-
-                    <StarsRatingReview_D
-                      rating={x.rating}
-                      reviews={x.reviews}
-                    />
-                  </span>
-                </article>
-              </Fragment>
-            )
-          })}
-        </div>
+        <ul
+          ref={(el: any) => {
+            setListRef(el)
+            refUlList.current = el
+          }}
+        >
+          {allBackendData &&
+            allBackendData.map(
+              ({ id, recordName, recordSubtype, address }: any, index) => {
+                return (
+                  <li key={`key_${id}`}>
+                    <article>
+                      <div>
+                        <span>
+                          <Image
+                            src={imagesToUse_backup[index]}
+                            layout="responsive"
+                            objectFit="cover"
+                            width={1}
+                            height={1}
+                            /* !FH change this. Put a proper alt */
+                            alt="someImage"
+                          />
+                        </span>
+                        <button
+                        /*
+                        onClick={(event) =>
+                          handleMoveToThirdPage({
+                            event,
+                            categoryPosition,
+                            subcategoryPosition: 0,
+                            resourcePosition: index,
+                            setThirdpageDataORG,
+                            push,
+                          })
+                        }
+                        */
+                        >
+                          <ORG_D_Results_ViewProfileSvg />
+                          View Profile
+                        </button>
+                      </div>
+                      <span>
+                        <p>{recordName.toLowerCase()}</p>
+                        <span>{recordSubtype.toLowerCase()}</span>
+                        <span>{address[0].city || ""}</span>
+                        <span>{address[0].state || ""}</span>
+                        <StarsRatingReview_D rating={5} reviews={147 + index} />
+                      </span>
+                    </article>
+                  </li>
+                )
+              }
+            )}
+        </ul>
       </div>
     </ORG_D_Results_CardTypedFlow_IndividualsWrapper>
   )

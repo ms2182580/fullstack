@@ -1,3 +1,4 @@
+import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import {
   DATA_ORG_KeyNamesForFilters_D_ENUM,
@@ -8,10 +9,12 @@ import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_Filt
 
 export const ORG_D_Results_FilterListMain = () => {
   const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData_Backend()
+  const { reachTypedFlow }: any = useSessionStorage_typedFlow()
 
   return (
     <ORG_D_Results_FilterListMainWrapper>
-      {secondpageDataORG?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?.[
+      {!reachTypedFlow &&
+      secondpageDataORG?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?.[
         SPECIFIC_DATA_SECOND_PAGE.FILTERS
       ]
         ? secondpageDataORG?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?.[
@@ -33,17 +36,6 @@ export const ORG_D_Results_FilterListMain = () => {
             )
           })
         : null}
-
-      {/* {secondpageFiltersORG && !query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND]
-        ? secondpageFiltersORG.map((x, index) => (
-            <Fragment key={`${x.parameters.buttonName}_${index}`}>
-              <x.component
-                props={x.parameters}
-                shouldAddClassName={x.shouldAddClassName}
-              />
-            </Fragment>
-          ))
-        : null} */}
     </ORG_D_Results_FilterListMainWrapper>
   )
 }
