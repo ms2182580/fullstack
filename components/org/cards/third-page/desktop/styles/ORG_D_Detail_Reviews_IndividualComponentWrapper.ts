@@ -85,7 +85,6 @@ export const ORG_D_Detail_Reviews_IndividualComponentWrapper = styled.div`
               filter: drop-shadow(1px 3px 8px rgba(0, 0, 0, 0.2));
 
               font-size: 14px;
-              /* color: ${NEUTRALS.DARK_GREY}; */
 
               &:after {
                 content: "";

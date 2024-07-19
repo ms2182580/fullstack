@@ -1,5 +1,6 @@
 import { ORG_D_Results_ViewProfileSvg } from "@/assets/icons"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
+import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
@@ -14,7 +15,7 @@ import {
   useTypedFlow_CheckDiagnosisChoosed,
 } from "@/utils/org/useTypedFlow_CheckDiagnosisChoosed"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 import { ORG_D_Results_CardTypedFlow_IndividualsWrapper } from "./styles/ORG_D_Results_CardTypedFlow_IndividualsWrapper"
@@ -116,6 +117,8 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
           {allBackendData &&
             allBackendData.map(
               ({ id, recordName, recordSubtype, address }: any, index) => {
+                const [showTooltip, setShowTooltip] = useState(false)
+
                 return (
                   <li key={`key_${id}`}>
                     <article>
@@ -123,10 +126,6 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
                         <span>
                           <Image
                             src={imagesToUse_backup[index]}
-                            layout="responsive"
-                            objectFit="cover"
-                            width={1}
-                            height={1}
                             /* !FH change this. Put a proper alt */
                             alt="someImage"
                           />
@@ -151,11 +150,27 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
                         </button>
                       </div>
                       <span>
-                        <p>{recordName.toLowerCase()}</p>
-                        <span>{recordSubtype.toLowerCase()}</span>
-                        <span>{address[0].city || ""}</span>
-                        <span>{address[0].state || ""}</span>
-                        <StarsRatingReview_D rating={5} reviews={147 + index} />
+                        <div>
+                          <H3
+                            title={recordName.toLowerCase()}
+                            tabIndex={0}
+                            onFocus={() => setShowTooltip(true)}
+                            onBlur={() => setShowTooltip(false)}
+                          >
+                            {recordName.toLowerCase()}
+                          </H3>
+                          {showTooltip && <p>{recordName.toLowerCase()}</p>}
+                        </div>
+                        <div>
+                          <H4>{recordSubtype.toLowerCase()}</H4>
+                          <H4>
+                            {address[0].city || ""}, {address[0].state || ""}
+                          </H4>
+                          <StarsRatingReview_D
+                            rating={5}
+                            reviews={147 + index}
+                          />
+                        </div>
                       </span>
                     </article>
                   </li>

@@ -71,7 +71,7 @@ export const ORG_D_Detail_Reviews_IndividualComponent = ({
                         "*Review Source*"
                       ) : (
                         <Tooltip
-                          whichIconToUse={<UserCheckedSVG />}
+                          triggerTheTooltip={<UserCheckedSVG />}
                           dataOnTooltip={<p>"Verified Review"</p>}
                         />
                       )}

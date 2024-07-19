@@ -2,7 +2,7 @@ import { Signup_N_InfoSvg } from "@/assets/icons"
 import { ReactElement, useEffect, useState } from "react"
 
 type Tooltip_Props = {
-  whichIconToUse?: ReactElement
+  triggerTheTooltip?: ReactElement | string | null
   otherStateToHideTooltip?: Function[]
   otherStateToShowTooltip?: boolean[]
   dataOnTooltip?: ReactElement | string
@@ -10,7 +10,7 @@ type Tooltip_Props = {
 }
 
 export const Tooltip = ({
-  whichIconToUse = <Signup_N_InfoSvg />,
+  triggerTheTooltip = <Signup_N_InfoSvg />,
   otherStateToHideTooltip,
   otherStateToShowTooltip = [false],
   dataOnTooltip = "Data inside the tooltip itself",
@@ -60,7 +60,7 @@ export const Tooltip = ({
       tabIndex={0}
       aria-label={whichAriaLabel}
     >
-      {whichIconToUse}
+      {triggerTheTooltip && triggerTheTooltip}
 
       {(tooltipState || fromOutsideAnyStateShouldShowTooltip) && (
         <div role="tooltip">{dataOnTooltip}</div>

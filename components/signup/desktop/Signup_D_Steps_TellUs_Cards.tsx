@@ -20,21 +20,21 @@ export const Signup_D_Steps_TellUs_Input = ({
         <ul>
           <li data-testid="li-tooltip">
             <Tooltip
-              whichIconToUse={<Signup_MicSvg />}
+              triggerTheTooltip={<Signup_MicSvg />}
               dataOnTooltip="Record audio"
               whichAriaLabel="record audio"
             />
           </li>
           <li data-testid="li-tooltip">
             <Tooltip
-              whichIconToUse={<Signup_FileSvg />}
+              triggerTheTooltip={<Signup_FileSvg />}
               dataOnTooltip="Attach file"
               whichAriaLabel="Attach file"
             />
           </li>
           <li data-testid="li-tooltip">
             <Tooltip
-              whichIconToUse={<Signup_StartsSvg />}
+              triggerTheTooltip={<Signup_StartsSvg />}
               dataOnTooltip={"Summarize with AI"}
               whichAriaLabel="Summarize with AI"
             />
