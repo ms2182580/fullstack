@@ -53,7 +53,6 @@ export const Layout_General = ({ children }) => {
 
       <MainWrapper isMainInHome={pathname === "/"}>
         {children}
-
         {shouldShowSupportUs && <Support_us />}
       </MainWrapper>
 

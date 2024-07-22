@@ -1,9 +1,11 @@
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import { useMatchMedia } from "@/utils/useMatchMedia"
 import Head from "next/head.js"
 import { useRouter } from "next/router.js"
 import { useMemo } from "react"
 import { Layout_Dashboard } from "../dashboard"
 import { Layout_General } from "../general"
+import { OnlyDesktopLayout } from "../general/only-desktop-layout"
 import { Layout_Signin } from "../signin"
 import { Layout_Signup } from "../signup"
 
@@ -49,6 +51,8 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
     return toReturn
   }, [pathname])
 
+  const { isMobile } = useMatchMedia()
+
   if (
     actualRoute === WhichLayoutDisplay_Key.isHome ||
     actualRoute === WhichLayoutDisplay_Key.isORGLike
@@ -60,7 +64,13 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
           <meta name="description" content="inclusive - website" />
         </Head>
 
-        <Layout_General>{children}</Layout_General>
+        {isMobile ? (
+          <OnlyDesktopLayout />
+        ) : (
+          <Layout_General>
+            <>{children}</>
+          </Layout_General>
+        )}
       </>
     )
   }
@@ -72,7 +82,12 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
           <title>{title} Dashboard</title>
           <meta name="description" content="inclusive - website" />
         </Head>
-        <Layout_Dashboard>{children}</Layout_Dashboard>
+
+        {isMobile ? (
+          <OnlyDesktopLayout />
+        ) : (
+          <Layout_Dashboard>{children}</Layout_Dashboard>
+        )}
       </>
     )
   }
@@ -84,7 +99,12 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
           <title>{title} Signin</title>
           <meta name="description" content="inclusive - website" />
         </Head>
-        <Layout_Signin>{children}</Layout_Signin>
+
+        {isMobile ? (
+          <OnlyDesktopLayout />
+        ) : (
+          <Layout_Signin>{children}</Layout_Signin>
+        )}
       </>
     )
   }
@@ -92,7 +112,11 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
   if (actualRoute === WhichLayoutDisplay_Key.isSignup) {
     return (
       <>
-        <Layout_Signup title={title}>{children}</Layout_Signup>
+        {isMobile ? (
+          <OnlyDesktopLayout />
+        ) : (
+          <Layout_Signup title={title}>{children}</Layout_Signup>
+        )}
       </>
     )
   }
