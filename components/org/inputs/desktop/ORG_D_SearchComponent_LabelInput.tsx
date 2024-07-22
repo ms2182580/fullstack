@@ -31,21 +31,18 @@ export const ORG_D_SearchComponent_LabelInput = ({
   setDiagnosisChoosed,
   setInputTypesByUser,
   pushToTypedFlow,
-  index,
 }: ORG_D_SearchComponent_LabelInput_Type &
   TypedFlowProps & { index: number }) => {
   let TheIcon = icon
 
   const {
     handleIsFocus,
-    handleCloseDropdown,
     handleUserPressEnter,
     handleSetDiagnosis,
     handleWhichMatch,
     diagnosisSearchedByUser,
     inputRef,
     isFocus,
-    isHovered,
     handleIsHovered,
     setDiagnosisSearchedByUser,
     setDiagnosisCategory,
@@ -63,7 +60,7 @@ export const ORG_D_SearchComponent_LabelInput = ({
 
   /* 
     !FH1
-    * This code of "listToRender" state and his useEffect should be look at it to work when the data ccome from the API.
+    * This code of "listToRender" state and his useEffect should be look at it to work when the data come from the API.
     * The expected behavior should be the same of the input search of youtube, this mean:
     * 1. The list to render should be the data from the API
     * 2. The list should be usable with arrow keys, down and up. When it reach the final bottom list suggestion, and press arrow down it should return to the input
@@ -135,17 +132,14 @@ export const ORG_D_SearchComponent_LabelInput = ({
 
             <ORG_D_SearchComponent_LabelInput_Dropdown
               isFocus={isFocus}
-              isHovered={isHovered}
               handleIsHovered={handleIsHovered}
               diagnosisSearchedByUser={diagnosisSearchedByUser}
               setDiagnosisSearchedByUser={setDiagnosisSearchedByUser}
               setDiagnosisCategory={setDiagnosisCategory}
               handleHaveAtLeastOneMatchState={handleHaveAtLeastOneMatchState}
-              suggestionKeywords={suggestionKeywords2}
               inputRefFocus={inputRef}
               refLabel={refLabel}
               handleUserClickOnSuggestion={handleUserClickOnSuggestion}
-              handleCloseDropdown={handleCloseDropdown}
               handleIsFocus={handleIsFocus}
               listToRender={listToRender}
               handleFocusInputRef={handleFocusInputRef}

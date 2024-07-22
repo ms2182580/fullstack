@@ -55,16 +55,17 @@ const formatForMatch = ({
   }
 }
 
-export const enum CLASSNAME_ISDIAGNOSIS {
-  DIAGNOSIS = "DIAGNOSIS",
+const enum KEYS {
+  DIAGNOSIS = "diagnosis",
+  DROPDOWN = "dropdown",
 }
 
-function useRoveFocus({ size }: { size: number }) {
+const useRoveFocus = ({ size }: { size: number }) => {
   const [currentFocus, setCurrentFocus] = useState(-1)
 
   const handleKeyDown = useCallback(
     (e) => {
-      if (e.target.dataset["dropdown"] === "dropdown") {
+      if (e.target.dataset[KEYS["DROPDOWN"]] === KEYS["DROPDOWN"]) {
         if (e.code === "ArrowDown") {
           /* Prevent move the whole view of the user on the page */
           e.preventDefault()
@@ -93,17 +94,14 @@ function useRoveFocus({ size }: { size: number }) {
 
 export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
   isFocus,
-  isHovered,
   handleIsHovered,
   diagnosisSearchedByUser,
   setDiagnosisSearchedByUser,
   setDiagnosisCategory,
   handleHaveAtLeastOneMatchState,
-  suggestionKeywords,
   inputRefFocus,
   refLabel,
   handleUserClickOnSuggestion,
-  handleCloseDropdown,
   handleIsFocus,
   listToRender = [],
   handleFocusInputRef,
@@ -115,8 +113,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
     handleUserClickOnSuggestion(true)
 
     const isDiagnosis =
-      e.target.attributes?.["data-diagnosis"]?.value ===
-      CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]
+      e.target.attributes?.[KEYS["DIAGNOSIS"]]?.value === KEYS["DIAGNOSIS"]
 
     if (isDiagnosis) {
       setDiagnosisCategory(() => ({
@@ -133,75 +130,6 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
       handleHaveAtLeastOneMatchState(true)
     }
   }
-
-  /*
-  useEffect(() => {
-    const closeDropdownKeyboard = (e) => {
-      if (isFocus && e.code === "Tab" && !e.shiftKey) {
-        handleIsFocus(false)
-      }
-
-      if (
-        inputRefFocus?.current?.contains(document.activeElement) &&
-        isFocus &&
-        e.shiftKey &&
-        e.code === "Tab"
-      ) {
-        handleIsFocus(false)
-      }
-    }
-
-    document.addEventListener("keydown", closeDropdownKeyboard)
-
-    return () => {
-      document.removeEventListener("keydown", closeDropdownKeyboard)
-    }
-  }, [])
-
-  useEffect(() => {
-    const closeDropdownClick = (event: MouseEvent) => {
-      if (
-        inputRefFocus.current &&
-        !inputRefFocus.current.contains(event.target as Node) &&
-        theRef.current &&
-        !theRef.current.contains(event.target as Node) &&
-        refLabel.current &&
-        !refLabel.current.contains(event.target as Node)
-      ) {
-        handleIsFocus(false)
-      }
-    }
-
-    document.addEventListener("click", closeDropdownClick)
-
-    return () => {
-      document.removeEventListener("click", closeDropdownClick)
-    }
-  }, [])
-  */
-
-  /*
-  const listToRender = Object.entries(suggestionKeywords)
-    .map(([key, values]) => {
-      return [key, ...(values as Array<string>)]
-    })
-    .flat()
-  */
-
-  /*
-  const entries = Object.entries(suggestionKeywords)
-  const listToRender99 = ["0"]
-
-  for (let i = 0; i < entries.length; i++) {
-    const [, value] = entries[i]
-    const currentLength = (value as Array<string>).length + 1
-    const previousValue = parseInt(listToRender99[listToRender99.length - 1])
-    listToRender99.push((previousValue + currentLength).toString())
-  }
-
-  const listToRender3 = Object.entries(suggestionKeywords).flat(Infinity)
-
-  */
 
   return (
     <ORG_D_SearchComponent_LabelInput_DropdownWrapper>
@@ -314,8 +242,8 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                             ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
                             : x
                         }
-                        data-diagnosis={CLASSNAME_ISDIAGNOSIS["DIAGNOSIS"]}
-                        data-dropdown="dropdown"
+                        data-diagnosis={KEYS["DIAGNOSIS"]}
+                        data-dropdown={KEYS["DROPDOWN"]}
                         tabIndex={shouldFocus ? 0 : -1}
                         ref={theRef}
                       >
@@ -354,7 +282,7 @@ export const ORG_D_SearchComponent_LabelInput_Dropdown = ({
                           ? `${leftSideOfWord}${highlightWord}${rightSideOfWord}`
                           : theReactNode
                       }
-                      data-dropdown="dropdown"
+                      data-dropdown={KEYS["DROPDOWN"]}
                       tabIndex={shouldFocus ? 0 : -1}
                       ref={theRef}
                     >
