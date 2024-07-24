@@ -126,7 +126,6 @@ const popularData: PopularData_Type = [
 Chane the name of this component and their location on the folder
 */
 export const PCC_General_D_UsersAlsoViewed = ({ whichCategory }) => {
-  // console.log("whichCategory:", whichCategory)
   const isVocational = useMemo(() => {
     return whichCategory === NamesCategories_KEY["VOCATIONAL RESOURCES"]
   }, [whichCategory])
@@ -144,9 +143,6 @@ export const PCC_General_D_UsersAlsoViewed = ({ whichCategory }) => {
     checkModalIsOpen,
   } = useDialogLogic()
 
-  /* 
-  
-  */
   return (
     <div>
       <PCC_General_D_UsersAlsoViewedWrapper isVocational={isVocational}>
@@ -159,12 +155,13 @@ export const PCC_General_D_UsersAlsoViewed = ({ whichCategory }) => {
               <ORG_Detail_SearchFAQSSVG />
               <input type="text" placeholder="Find other useful resources" />
             </span>
+
             {isVocational ? (
               <button
                 onClick={(e) => openDialog({ event: e })}
                 onKeyDown={(e) => openDialog({ event: e })}
               >
-                <MagicWandSVG /> <span>Get recommendations</span>
+                <MagicWandSVG /> <p>Get recommendations</p>
               </button>
             ) : (
               <button>Recommend resource</button>

@@ -201,6 +201,7 @@ export const ORG_D_Detail_MoreResourcesDialogWrapper = styled.article<Props>`
 
           & > :nth-child(2) {
             font-size: 14px;
+            white-space: nowrap;
           }
         }
       }

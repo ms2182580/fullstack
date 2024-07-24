@@ -1,7 +1,7 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
 import More_recommended from "@/assets/images/recommended/more-recommended.png"
 import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
-import { LI_Category } from "@/components/org/home/desktop/styles/INDEX_D_ORGWrapper"
+import { LI_Wrapper } from "@/components/org/home/desktop/styles/INDEX_D_ORGWrapper"
 import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -86,18 +86,16 @@ export const INDEX_D_MoreRecommendation = ({ allBackendData }: Props) => {
               refOfORGSelections.current = el
             }}
           >
-            <LI_Category
+            <LI_Wrapper
               onClick={handleShowAll}
               isActiveCategory={!singleCardIsSelected}
             >
-              <P primary_cta semibold>
-                All
-              </P>
-            </LI_Category>
+              <P>All</P>
+            </LI_Wrapper>
 
             {Object.values(ALL_DATA).map(({ CATEGORY }, index) => {
               return (
-                <LI_Category
+                <LI_Wrapper
                   key={`${CATEGORY}_${index}`}
                   data-name={CATEGORY}
                   onClick={handleShowOneCard}
@@ -105,10 +103,8 @@ export const INDEX_D_MoreRecommendation = ({ allBackendData }: Props) => {
                     singleCardIsSelected && matchNameState === CATEGORY
                   }
                 >
-                  <P primary_cta semibold data-name={CATEGORY}>
-                    {CATEGORY}
-                  </P>
-                </LI_Category>
+                  <P data-name={CATEGORY}>{CATEGORY}</P>
+                </LI_Wrapper>
               )
             })}
           </ul>

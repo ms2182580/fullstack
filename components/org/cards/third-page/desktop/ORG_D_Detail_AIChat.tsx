@@ -30,7 +30,7 @@ export const ORG_D_Detail_AIChat = ({ whichCategory }) => {
       <article>
         <P>Have questions about community classes?</P>
         <textarea placeholder="Ask me anything about services." />
-        {isVocational ? (
+        {isVocational && (
           <div>
             <div
               className={`${
@@ -42,6 +42,7 @@ export const ORG_D_Detail_AIChat = ({ whichCategory }) => {
               </div>
               <div />
             </div>
+
             <ul
               ref={(el: any) => {
                 setListRef(el)
@@ -74,9 +75,9 @@ export const ORG_D_Detail_AIChat = ({ whichCategory }) => {
               <div />
             </div>
           </div>
-        ) : null}
+        )}
 
-        <button>{isVocational ? <MagicWandSVG /> : null} Ask</button>
+        <button>{isVocational && <MagicWandSVG />} Ask</button>
       </article>
     </ORG_D_Detail_AIChatWrapper>
   )

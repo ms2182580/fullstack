@@ -85,7 +85,6 @@ export const ORG_D_Detail_AIChatWrapper = styled.section`
         top: 0;
         bottom: 0;
         left: 0px;
-        /* margin: auto; */
 
         visibility: hidden;
 
@@ -144,6 +143,7 @@ export const ORG_D_Detail_AIChatWrapper = styled.section`
 
           & > :nth-child(2) {
             font-size: 14px;
+            white-space: nowrap;
           }
         }
       }

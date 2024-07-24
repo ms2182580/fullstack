@@ -59,7 +59,7 @@ export const PCC_General_D_UsersAlsoViewedWrapper = styled.article<Props>`
         ${({ isVocational }) =>
           isVocational
             ? css`
-                ${reusableButton({})}
+                ${reusableButton({})};
 
                 display: grid;
                 grid-auto-flow: column;

@@ -12,7 +12,7 @@ import Image from "next/image.js"
 import { Fragment, useEffect, useRef, useState } from "react"
 import { INDEX_ORG_Search_D } from "../../cards/first-page/desktop/INDEX_ORG_Search_D"
 import { ORG_D_SearchComponent } from "../../inputs/desktop/ORG_D_SearchComponent"
-import { INDEX_D_ORGWrapper, LI_Category } from "./styles/INDEX_D_ORGWrapper"
+import { INDEX_D_ORGWrapper, LI_Wrapper } from "./styles/INDEX_D_ORGWrapper"
 
 type Props = {
   allBackendData: object[] | any
@@ -85,18 +85,16 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
             refOfORGSelections.current = el
           }}
         >
-          <LI_Category
+          <LI_Wrapper
             onClick={handleShowAll}
             isActiveCategory={!singleCardIsSelected}
           >
-            <P primary_cta semibold>
-              All
-            </P>
-          </LI_Category>
+            <P>All</P>
+          </LI_Wrapper>
 
           {Object.values(ALL_DATA).map(({ CATEGORY }, index) => {
             return (
-              <LI_Category
+              <LI_Wrapper
                 key={`${CATEGORY}_${index}`}
                 data-name={CATEGORY}
                 onClick={handleShowOneCard}
@@ -104,10 +102,8 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
                   singleCardIsSelected && matchNameState === CATEGORY
                 }
               >
-                <P primary_cta semibold data-name={CATEGORY}>
-                  {CATEGORY}
-                </P>
-              </LI_Category>
+                <P data-name={CATEGORY}>{CATEGORY}</P>
+              </LI_Wrapper>
             )
           })}
         </ul>

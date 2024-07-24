@@ -196,6 +196,7 @@ export const INDEX_D_ORGWrapper = styled.div<Props>`
             }
           }
         `}
+
       &:after {
         content: "";
         position: absolute;
@@ -209,169 +210,14 @@ export const INDEX_D_ORGWrapper = styled.div<Props>`
         background: linear-gradient(90deg, transparent 0%, white 22%);
       }
     }
-
-    /*
-    margin-top: 0px;
-    margin-bottom: 40px;
-    position: relative;
-
-    & > :first-child {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0px;
-      margin: auto;
-
-      visibility: hidden;
-
-      &.navBarLeftArrowShouldDisplay {
-        visibility: visible;
-      }
-
-      & > :nth-child(1) {
-        border: 2px solid ${PRIMARY.PRIMARY_CTA};
-        border-radius: 8px;
-
-        background-color: ${NEUTRALS.OFF_WHITE};
-
-        height: 100%;
-        padding: 12px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-        z-index: 2;
-
-        cursor: default;
-
-        & > * {
-          & > * {
-            fill: ${PRIMARY.PRIMARY_CTA};
-          }
-        }
-
-        &:hover {
-          background-color: ${PRIMARY.PRIMARY_CTA};
-          & > * {
-            & > * {
-              fill: ${NEUTRALS.OFF_WHITE};
-            }
-          }
-        }
-      }
-
-      & > :nth-child(2) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        height: 100%;
-        width: 75px;
-        background: linear-gradient(
-          -90deg,
-          hsla(0, 0%, 100%, 20%) 0%,
-          hsl(16.7, 100%, 96.5%) 8%
-        );
-      }
-    }
-
-    & > :nth-child(2) {
-      display: flex;
-      flex-wrap: nowrap;
-
-      gap: 12px;
-      white-space: nowrap;
-      overflow-x: hidden;
-
-      position: relative;
-
-      padding-right: 70px;
-
-      p {
-        white-space: nowrap;
-      }
-    }
-
-    & > :last-child {
-      position: absolute;
-      right: 0px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-
-      &.navBarRightArrowShouldDisable {
-        & > :nth-child(1) {
-          border: 2px solid ${NEUTRALS.LIGHT_GREY};
-          background-color: ${NEUTRALS.LIGHT_GREY};
-
-          cursor: not-allowed;
-
-          & > * {
-            & > * {
-              fill: ${NEUTRALS.BLACK};
-            }
-          }
-        }
-      }
-
-      & > :nth-child(1) {
-        border: 2px solid ${PRIMARY.PRIMARY_CTA};
-        border-radius: 8px;
-        height: 100%;
-
-        background-color: ${NEUTRALS.OFF_WHITE};
-
-        padding: 12px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-        z-index: 2;
-
-        cursor: default;
-
-
-        & > * {
-          & > * {
-            fill: ${PRIMARY.PRIMARY_CTA};
-          }
-        }
-
-        &:not(.navBarRightArrowShouldDisable):hover {
-          background-color: ${PRIMARY.PRIMARY_CTA};
-          & > * {
-            & > * {
-              fill: ${NEUTRALS.OFF_WHITE};
-            }
-          }
-        }
-      }
-
-      & > :nth-child(2) {
-        position: absolute;
-        top: 0;
-        right: 0px;
-        z-index: 1;
-        height: 100%;
-        width: 75px;
-        background: linear-gradient(
-          90deg,
-          hsla(0, 0%, 100%, 20%) 0%,
-          hsl(16.7, 100%, 96.5%) 8%
-        );
-      }
-    }
-    */
   }
 `
 
-type Props_LI = {
+type Props_LI_Wrapper = {
   isActiveCategory?: boolean
 }
 
-export const LI_Category = styled.li<Props_LI>`
+export const LI_Wrapper = styled.li<Props_LI_Wrapper>`
   list-style: none;
   border: 2px solid ${PRIMARY.PRIMARY_CTA};
   padding: 8px 16px;
@@ -385,9 +231,15 @@ export const LI_Category = styled.li<Props_LI>`
 
   width: 100%;
 
-  text-transform: capitalize;
-
   cursor: default;
+
+  & > p {
+    text-transform: capitalize;
+    color: ${PRIMARY.PRIMARY_CTA};
+    font-weight: 600;
+
+    white-space: nowrap;
+  }
 
   ${({ isActiveCategory }) =>
     isActiveCategory &&
