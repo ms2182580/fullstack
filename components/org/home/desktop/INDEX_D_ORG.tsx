@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index"
 import ORG_1_page from "@/assets/images/org/1_page/org_1_page.png"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
@@ -47,6 +48,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
     <INDEX_D_ORGWrapper
       shouldDisplayLeftArrow={stateToCss.scrollRight}
       shouldArrowRightBeDisabled={stateToCss.reachFinal}
+      data-testid={KEYS_DATA_TESTID.INDEX_D_ORG_HOME}
     >
       <header>
         <H1>
