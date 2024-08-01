@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import {
   Signup_ComingSoonDots,
   Signup_ComingSoonFileSvg,
@@ -11,7 +12,7 @@ import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { Signup_D_Steps_CreateProfileWrapper } from "./styles/Signup_D_Steps_CreateProfileWrapper"
 
-let data = [
+const data = [
   {
     name: "Connect MyChart app",
     content: "Coming soon!",
@@ -31,7 +32,9 @@ let data = [
 
 export const Signup_D_Steps_CreateProfile = () => {
   return (
-    <Signup_D_Steps_CreateProfileWrapper>
+    <Signup_D_Steps_CreateProfileWrapper
+      data-testid={KEYS_DATA_TESTID.SIGNUP_STEPS.SUS_CREATE_PROFILE}
+    >
       <header>
         <H2>Connect your e-health records</H2>
         <P>

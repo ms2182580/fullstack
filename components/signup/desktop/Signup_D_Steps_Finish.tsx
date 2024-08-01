@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { Signup_FinishSvg } from "@/assets/icons"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -5,7 +6,9 @@ import { Signup_D_Steps_FinishWrapper } from "./styles/Signup_D_Steps_FinishWrap
 
 export const Signup_D_Steps_Finish = () => {
   return (
-    <Signup_D_Steps_FinishWrapper>
+    <Signup_D_Steps_FinishWrapper
+      data-testid={KEYS_DATA_TESTID.SIGNUP_STEPS.SUS_FINISH}
+    >
       <Signup_FinishSvg />
       <H3>Your security is important</H3>
       <P>

@@ -15,10 +15,6 @@ import { ORG_D_Detail_MainCardPhotos } from "./ORG_D_Detail_MainCardPhotos"
 import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
 import { ORG_D_Detail_OverviewWrapper } from "./styles/ORG_D_Detail_OverviewWrapper"
 
-/* 
-!FH0
-- This component should be renamed to "Overview"
-*/
 export const ORG_D_Detail_Overview = () => {
   const { thirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData_Backend()
 
@@ -106,10 +102,7 @@ export const ORG_D_Detail_Overview = () => {
             <li>Stretchinig</li>
           </ul>
         </div>
-        {/* //!FH0
-        Re make the About with the proper modal with dialog
-        
-         */}
+
         <ORG_D_Detail_About
           name={dataOnCard.about.name}
           lastName={dataOnCard.about.lastName}

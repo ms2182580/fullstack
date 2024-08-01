@@ -1,3 +1,45 @@
+/* 
+!FH1
+Change this component to work without javascript. Source: https://x.com/midudev/status/1817920581389406465
+
+// HTML
+<div class="dropdown">
+  <input
+    id="dropdown-toggle"
+    type="checkbox"
+    aria-hidden="true"
+    hidden
+  />
+  
+  <label
+    for="dropdown-toggle"
+    aria-haspopup="true"
+    aria-expanded="false">
+    Show menu
+  </label>
+  
+  <nav class="dropdown-content" aria-label="submenu">
+    <a href="#" role="menuitem">Item 1</a>
+    <a href="#" role="menuitem">Item 2</a>
+    <a href="#" role="menuitem">Item 3</a>
+  </nav>
+</div>
+
+//CSS
+.dropdown{
+  position: relative;
+}
+  
+  .dropdown-content{
+    display:none;
+    position: absolute;
+  }
+  
+  .dropdown input[type="checkbox"]:checked ~ .dropdown-content{
+    display: block;
+  }
+*/
+
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { useRouter } from "next/router"
 import { Fragment, useEffect, useRef, useState } from "react"

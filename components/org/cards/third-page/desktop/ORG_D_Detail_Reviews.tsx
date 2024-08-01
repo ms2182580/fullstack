@@ -92,6 +92,28 @@ export const ORG_D_Detail_Reviews = ({
     }
   }
 
+  console.log("theReviews:", theReviews)
+
+  const formattedReviews = useMemo(() => {
+    if (howManyShow === MANY_SHOW.INITIAL) {
+      return (theReviews as string[]).map((x) => {
+        if (typeof x === "string") {
+          if (x.length < 110) {
+            return x
+          }
+
+          return x.substring(0, 110) + "..."
+        }
+
+        return x
+      })
+    }
+
+    return theReviews
+  }, [howManyShow])
+
+  console.log("formattedReviews:", formattedReviews)
+
   const theRef = useRef<HTMLElement>(null)
 
   const {
@@ -134,8 +156,9 @@ export const ORG_D_Detail_Reviews = ({
           <ORG_D_Detail_Reviews_Mention />
 
           <ORG_D_Detail_Reviews_IndividualComponent
-            getReviews={theReviews}
+            getReviews={formattedReviews}
             howManyShow={howManyShow}
+            isFullDisplayed={howManyShow === MANY_SHOW.INITIAL}
           />
 
           <P

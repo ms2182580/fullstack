@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { Tooltip } from "@/components/tooltip/Tooltip"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -9,7 +10,7 @@ import {
   SituationSpanWrapper,
 } from "./styles/Signup_D_Steps_SituationWrapper"
 
-export let Signup_D_Steps_Situation_Options = [
+export const Signup_D_Steps_Situation_Options = [
   "Vision impaired",
   "Mental health",
   "Self-destructive behavior",
@@ -26,7 +27,6 @@ export const Signup_D_Steps_Situation = () => {
   const [selected, setSelected] = useState([""])
 
   const handeSelectSituation = ({ event, situationSelected }) => {
-    // console.log("event:", event)
     if (event.key === "Enter" || event.type === "click") {
       if (selected.includes(situationSelected)) {
         setSelected(selected.filter((s) => s !== situationSelected))
@@ -47,7 +47,9 @@ export const Signup_D_Steps_Situation = () => {
   }
 
   return (
-    <Signup_D_Steps_SituationWrapper>
+    <Signup_D_Steps_SituationWrapper
+      data-testid={KEYS_DATA_TESTID.SIGNUP_STEPS.SUS_SITUATION}
+    >
       <H3>Profile 1 Situation</H3>
       <P>Tell us about the individual</P>
       <form>

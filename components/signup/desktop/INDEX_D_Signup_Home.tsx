@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import {
   SignUp_N_EyeCloseSvg,
   SignUp_N_EyeOpenSvg,
@@ -62,7 +63,10 @@ export const INDEX_D_Signup_Home = () => {
   }
 
   return (
-    <INDEX_D_Signup_HomeWrapper passwordStrength={passwordStrength}>
+    <INDEX_D_Signup_HomeWrapper
+      passwordStrength={passwordStrength}
+      data-testid={KEYS_DATA_TESTID.INDEX_D_SIGNUP}
+    >
       <H2>Create an account</H2>
       <form>
         <label>

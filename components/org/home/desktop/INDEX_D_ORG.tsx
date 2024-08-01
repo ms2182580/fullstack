@@ -117,7 +117,7 @@ export const INDEX_D_ORG = ({ allBackendData }: Props) => {
         </div>
       </div>
 
-      {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }) => {
+      {Object.values(ALL_DATA).map(({ CATEGORY, SUB_CATEGORY }, index) => {
         if (singleCardIsSelected === false) {
           return (
             <Fragment key={CATEGORY}>

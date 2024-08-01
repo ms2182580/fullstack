@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { Tooltip } from "@/components/tooltip/Tooltip"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -6,13 +7,13 @@ import { useState } from "react"
 import { Signup_D_Steps_Demography_TooltipText } from "./Signup_D_Steps_Demography_TooltipText"
 import { Signup_D_Steps_DemographyWrapper } from "./styles/Signup_D_Steps_DemographyWrapper"
 
-let dropdownLiveWith = [
+const dropdownLiveWith = [
   { value: "mom", label: "Mom" },
   { value: "dad", label: "Dad" },
   { value: "brother", label: "Brother" },
   { value: "sister", label: "Sister" },
 ]
-let dropdownLanguagesSpoken = [
+const dropdownLanguagesSpoken = [
   { value: "english", label: "English" },
   { value: "spanish", label: "Spanish" },
 ]
@@ -29,7 +30,9 @@ export const Signup_D_Steps_Demography = () => {
   }
 
   return (
-    <Signup_D_Steps_DemographyWrapper>
+    <Signup_D_Steps_DemographyWrapper
+      data-testid={KEYS_DATA_TESTID.SIGNUP_STEPS.SUS_DEMOGRAPHY}
+    >
       <H3>Profile 1 Demographics</H3>
       <P>Tell us about the individual</P>
 

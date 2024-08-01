@@ -8,8 +8,6 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider"
 import { useORG_Ctx_D_SecondpageData } from "@/context/ORG_Ctx_D_SecondpageData_Provider"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
-import { useORG_Ctx_D_ThirdpageData } from "@/context/ORG_Ctx_D_ThirdpageData_Provider"
-import { handleMoveToThirdPage } from "@/utils/org/handleMoveToThirdPage"
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import {
   BRAND_OPTION_DEFAULT,
@@ -31,7 +29,13 @@ export const ORG_D_Results_Main_BottomButtons = ({
   backendData,
   whichResource,
 }: Props) => {
-  const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
+  const toDataTestId = backendData["recordName"]
+    .replaceAll(/[\s-]/g, "_")
+    .toLowerCase()
+
+  console.log("toDataTestId:", toDataTestId)
+
+  // const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
 
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
@@ -88,10 +92,13 @@ export const ORG_D_Results_Main_BottomButtons = ({
     secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
   ])
 
+  console.log("toDataTestId:", toDataTestId)
+
   if (backendData && whichResource !== undefined) {
     return (
       <ORG_D_Results_Main_BottomButtonsWrapper>
         <div
+          data-testid={toDataTestId}
           tabIndex={0}
           onClick={(event) =>
             handleMoveToThirdPage_Backend({
@@ -130,53 +137,5 @@ export const ORG_D_Results_Main_BottomButtons = ({
     )
   }
 
-  return (
-    <ORG_D_Results_Main_BottomButtonsWrapper>
-      <div
-        onClick={(event) =>
-          handleMoveToThirdPage({
-            event,
-            categoryPosition: secondpageDataORG.categoryPosition,
-            subcategoryPosition: secondpageDataORG.subcategoryPosition,
-            resourcePosition: renderThisContact,
-            setThirdpageDataORG,
-            push,
-          })
-        }
-        onKeyDown={(event) =>
-          handleMoveToThirdPage({
-            event,
-            categoryPosition: secondpageDataORG.categoryPosition,
-            subcategoryPosition: secondpageDataORG.subcategoryPosition,
-            resourcePosition: renderThisContact,
-            setThirdpageDataORG,
-            push,
-          })
-        }
-        tabIndex={0}
-      >
-        <ORG_D_Results_ViewProfileSvg />
-        <P>View Profile</P>
-      </div>
-      <div>
-        {buttonJSXAndSVGCustom ? (
-          <>
-            <buttonJSXAndSVGCustom.ComponentSvg />
-
-            <P>{buttonJSXAndSVGCustom.nameToJSX}</P>
-          </>
-        ) : (
-          <>
-            <ORG_D_Results_RequestConsultationSvg />
-            <P>see availability</P>
-          </>
-        )}
-      </div>
-      <div>
-        <ORG_D_Results_AddtocareplanSvg />
-
-        <P>Add to Care Plan</P>
-      </div>
-    </ORG_D_Results_Main_BottomButtonsWrapper>
-  )
+  return null
 }

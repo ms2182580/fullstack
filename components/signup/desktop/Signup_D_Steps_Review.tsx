@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import {
   Signup_ReviewAddProfileSvg,
   Signup_ReviewPencilIcon,
@@ -20,7 +21,9 @@ export const Signup_D_Steps_Review = () => {
 
   return (
     <>
-      <Signup_D_Steps_ReviewWrapper>
+      <Signup_D_Steps_ReviewWrapper
+        data-testid={KEYS_DATA_TESTID.SIGNUP_STEPS.SUS_REVIEW_AND_SAVE}
+      >
         <div>
           <span>
             <Signup_ReviewSvg />

@@ -53,6 +53,8 @@ export const INDEX_ORG_Search_D = ({
     return (
       <INDEX_ORG_Search_DWrapper someLayoutSpecial={someLayoutSpecial}>
         {allSubcategories.map((x, index) => {
+          const toDataTestId_2Page = x.replaceAll(/[\s-]/g, "_").toLowerCase()
+
           while (howMuchDisplay > index) {
             return (
               <section key={x}>
@@ -62,6 +64,13 @@ export const INDEX_ORG_Search_D = ({
 
                 <div>
                   {allBackendData.map((xBackendData, indexBackend) => {
+                    const toDataTestId_3Page = xBackendData.recordName
+                      .toLowerCase()
+                      .replaceAll(/[\s-]/g, "_")
+                      .toLowerCase()
+
+                    console.log("toDataTestId_3Page:", toDataTestId_3Page)
+
                     return (
                       <article key={`${x}_${xBackendData.listingType}`}>
                         <div>
@@ -90,6 +99,7 @@ export const INDEX_ORG_Search_D = ({
 
                         <P>{xBackendData?.reviews?.[1]}</P>
                         <button
+                          data-testid={`${toDataTestId_2Page}_${toDataTestId_3Page}`}
                           onClick={(event) =>
                             handleMoveToThirdPage_Backend({
                               event,
@@ -111,6 +121,7 @@ export const INDEX_ORG_Search_D = ({
                 </div>
 
                 <button
+                  data-testid={toDataTestId_2Page}
                   onClick={(event) =>
                     handleMoveToSecondPage_Backend({
                       event,

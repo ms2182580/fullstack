@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { PCC_General_D_UsersAlsoViewed } from "@/components/org/cards_resources/third-page/pcc/general/desktop/PCC_General_D_UsersAlsoViewed"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
@@ -6,7 +7,6 @@ import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToR
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
-import { useCtx_ShowModal } from "../../../../../context/Ctx_ShowModal"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
 import { ORG_D_Detail_AIChat } from "./ORG_D_Detail_AIChat"
 import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
@@ -24,7 +24,7 @@ export const INDEX_ORG_Detail_D = () => {
   const { thirdpageDataORG: thirdpageDataORG_Backend } =
     useORG_Ctx_D_ThirdpageData_Backend()
 
-  const { modalShowedCtx } = useCtx_ShowModal()
+  // const { modalShowedCtx } = useCtx_ShowModal()
 
   const { query } = useRouter()
 
@@ -81,55 +81,55 @@ export const INDEX_ORG_Detail_D = () => {
   }, [thirdpageDataORG, thirdpageDataORG_Backend])
 
   return (
-    <>
-      <INDEX_ORG_Detail_DWrapper>
-        <ORG_D_Detail_Header
-          thirdpageDataORG={thirdpageDataORG}
-          defaultSectionToRender={defaultSectionToRender}
-          sectionToRender={getAllSpecificThirdPageData.renderSections}
-        />
+    <INDEX_ORG_Detail_DWrapper
+      data-testid={KEYS_DATA_TESTID.INDEX_D_ORG_DETAILS}
+    >
+      <ORG_D_Detail_Header
+        thirdpageDataORG={thirdpageDataORG}
+        defaultSectionToRender={defaultSectionToRender}
+        sectionToRender={getAllSpecificThirdPageData.renderSections}
+      />
 
+      <div>
         <div>
-          <div>
-            <ORG_D_Detail_Overview />
+          <ORG_D_Detail_Overview />
 
-            {getAllSpecificThirdPageData.renderSections ? (
-              <ORG_Detail_D_SectionCustom
-                sectionCustom={getAllSpecificThirdPageData.renderSections}
-              />
-            ) : (
-              <ORG_Detail_D_SectionDefault />
-            )}
-          </div>
-          {/* 
-          //!FH0
-          Check when the resource is "Vocational" is possible the detail conact and AIChat be overflowed. The less height, the more overflowed.
+          {getAllSpecificThirdPageData.renderSections ? (
+            <ORG_Detail_D_SectionCustom
+              sectionCustom={getAllSpecificThirdPageData.renderSections}
+            />
+          ) : (
+            <ORG_Detail_D_SectionDefault />
+          )}
+        </div>
+        {/* 
+        //!FH0
+        Check when the resource is "Vocational" is possible the detail conact and AIChat be overflowed. The less height, the more overflowed.
           
-          Possible solution 1:
-            - Make those card toggleable and only one can be open at time. This for screen from 720px height to 926px height. For every else, display it boths
-                * The reason to do this comes from the popular screen resolution for Desktop in 2024 (https://www.browserstack.com/guide/common-screen-resolutions) being the smaller: 720px
-                * Use "window.innerHeight" to check the height
+        Possible solution 1:
+          - Make those card toggleable and only one can be open at time. This for screen from 720px height to 926px height. For every else, display it boths
+              * The reason to do this comes from the popular screen resolution for Desktop in 2024 (https://www.browserstack.com/guide/common-screen-resolutions) being the smaller: 720px
+              * Use "window.innerHeight" to check the height
             
              
-            - Just make them smaller
+          - Just make them smaller
           
-          */}
-          <div>
-            <ORG_D_Detail_Contact />
-            <ORG_D_Detail_AIChat
-              whichCategory={getAllSpecificThirdPageData.category}
-            />
-          </div>
-        </div>
-
-        <PCC_General_D_UsersAlsoViewed
-          whichCategory={getAllSpecificThirdPageData.category}
-        />
-
+        */}
         <div>
-          <ORG_D_Detail_BreadcrumbsLastUpdated />
+          <ORG_D_Detail_Contact />
+          <ORG_D_Detail_AIChat
+            whichCategory={getAllSpecificThirdPageData.category}
+          />
         </div>
-      </INDEX_ORG_Detail_DWrapper>
-    </>
+      </div>
+
+      <PCC_General_D_UsersAlsoViewed
+        whichCategory={getAllSpecificThirdPageData.category}
+      />
+
+      <div>
+        <ORG_D_Detail_BreadcrumbsLastUpdated />
+      </div>
+    </INDEX_ORG_Detail_DWrapper>
   )
 }

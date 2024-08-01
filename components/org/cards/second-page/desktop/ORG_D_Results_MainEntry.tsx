@@ -48,9 +48,7 @@ export const ORG_D_Results_MainEntry = () => {
       </div>
 
       {pathname === `/${ALL_ROUTES.ORG}/${ALL_ROUTES["TYPED-FLOW"]}` ? null : (
-        <>
-          <ORG_D_Results_FinalButton />
-        </>
+        <ORG_D_Results_FinalButton />
       )}
 
       <ORG_D_Results_Breadcrumbs />

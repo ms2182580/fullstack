@@ -1,5 +1,6 @@
 import { Logo_HeaderWrapper } from "./styles/Logo_HeaderWrapper"
 
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { PRIMARY } from "@/assets/Colors"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
@@ -53,6 +54,7 @@ export const INDEX_Logo = ({
     <Logo_HeaderWrapper
       logoColor={logoColor}
       isSignFlow={logoCanMoveTheUserToHome.isSignFlow}
+      data-testid={KEYS_DATA_TESTID.LOGO}
     >
       <Link href={logoCanMoveTheUserToHome.isHome}>
         <H1>Inclusive</H1>

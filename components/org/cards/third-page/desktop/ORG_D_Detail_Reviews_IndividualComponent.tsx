@@ -22,11 +22,13 @@ Eliminate "isModal" from here
 type Props = {
   getReviews: (string | { review: string; stars: number })[] | any
   howManyShow: number
+  isFullDisplayed: boolean
 }
 
 export const ORG_D_Detail_Reviews_IndividualComponent = ({
   getReviews,
   howManyShow,
+  isFullDisplayed,
 }: Props) => {
   const allUserNames = useMemo(() => {
     if (Array.isArray(getReviews)) {

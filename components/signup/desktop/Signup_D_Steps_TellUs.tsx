@@ -1,3 +1,4 @@
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import { ShareSvg, Signup_PlusSvg, Signup_UserSvg } from "@/assets/icons"
 import { Dialog_D, useDialogLogic } from "@/components/ui/dialog/Dialog_D"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
@@ -84,7 +85,10 @@ export const Signup_D_Steps_TellUs = () => {
   } = useDialogLogic()
 
   return (
-    <Signup_D_Steps_TellUsWrapper checkModalIsOpen={checkModalIsOpen}>
+    <Signup_D_Steps_TellUsWrapper
+      checkModalIsOpen={checkModalIsOpen}
+      data-testid={KEYS_DATA_TESTID.SIGNUP_STEPS.SUS_TELL_US_YOUR_STORY}
+    >
       <div>
         <header>
           <H3>Tell us what helps Kahlil thrive!</H3>

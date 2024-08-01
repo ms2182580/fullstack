@@ -7,7 +7,6 @@ export const INDEX_HomeNWrapper = styled.div`
   background-position-y: 180px;
 
   margin-top: 77px;
-  /* padding-bottom: 56px; */
 
   display: grid;
   gap: 77px;

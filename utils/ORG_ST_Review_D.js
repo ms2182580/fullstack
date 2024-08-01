@@ -32,13 +32,13 @@ const AboutCollection = {
 
     "Absolutely blown away by the exceptional service provided. Professional, efficient and exceeded my expectations. Highly recommend!",
 
-    "I couldn't be happier with the results. The service was top-notch, and __NAMEHERE__ went above and beyond to make sure I was satisfied.",
+    "I couldn't be happier with the results. The service was top-notch, and __NAMEHERE__ went above and beyond to make sure I was satisfied",
 
-    "The level of professionalism and expertise shown by __NAMEHERE__ is unmatched. I highly recommend them to anyone in need of their services.",
+    "The level of professionalism and expertise shown by __NAMEHERE__ is unmatched. I highly recommend them to anyone in need of their services",
 
-    "I was impressed by the quality of service provided. __FULLNAMEHERE__ was knowledgeable, responsive and a pleasure to work with.",
+    "I was impressed by the quality of service provided. __FULLNAMEHERE__ was knowledgeable, responsive and a pleasure to work with",
 
-    "I highly recommend this service for their exceptional work and attention to detail. __FULLNAMEHERE__ went above and beyond to ensure my satisfaction.",
+    "I highly recommend this service for their exceptional work and attention to detail. __FULLNAMEHERE__ went above and beyond to ensure my satisfaction",
 
     "The service provided was outstanding. The __NAMEHERE__ was professional, courteous and delivered beyond my expectations. Highly recommend!",
   ],
@@ -50,7 +50,7 @@ const AboutCollection = {
 
     "I can't say that I was overly impressed with this professional I saw. The service was fine, but not exceptional",
 
-    "I was not particularly impressed with __NAMEHERE__. The service was satisfactory, but nothing special.",
+    "I was not particularly impressed with __NAMEHERE__. The service was satisfactory, but nothing special",
   ],
 }
 
@@ -68,7 +68,9 @@ export const getAllReviews = (amountOfReviews = 3) => {
 
     shuffledArr = arrayWithAllElements
   } else {
-    shuffledArr = [...AboutCollection.FiveStars].sort(() => 0.5 - Math.random()).slice(0, amountOfReviews)
+    shuffledArr = [...AboutCollection.FiveStars]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, amountOfReviews)
   }
 
   const starOfFourReview = pickJustOne(["FiveStars", "ThreeStars"])
@@ -76,7 +78,9 @@ export const getAllReviews = (amountOfReviews = 3) => {
     const getLastReview = pickJustOne(AboutCollection[starOfFourReview])
     shuffledArr.push({ review: getLastReview, stars: 3 })
   } else {
-    let randomIndex = Math.floor(Math.random() * AboutCollection.FiveStars.length)
+    let randomIndex = Math.floor(
+      Math.random() * AboutCollection.FiveStars.length
+    )
     const finalFiveStarRandom = [...AboutCollection.FiveStars][randomIndex]
     shuffledArr.push(finalFiveStarRandom)
   }
@@ -119,7 +123,20 @@ export const ORG_ST_Review_Map = (name, lastName, review) => {
   return <div>ORG_ST_Review_Map</div>
 }
 
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+]
 
 export const ORG_ST_Review_Months = (howMuch = 1) => {
   if (howMuch === 1) {
