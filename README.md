@@ -1,8 +1,7 @@
 [![Build](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/build.yml/badge.svg)](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/build.yml)
 [![Tests with Vitest plus React-Testing-Library](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/tests_unit-int.yml/badge.svg)](https://github.com/The-INCLUSIVE-Group-Inc/fullstack/actions/workflows/tests_unit-int.yml)
 
-https://www.instagram.com/lavikingamexicana/# Here the code for INCLUSIVE project
-
+Here the code for INCLUSIVE project
 
 
 - Nextjs 14 (using page folder). By force this means also we use React 18 with a functional approach with hooks.
