@@ -22,6 +22,8 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
     display: grid;
     grid-template-columns: 700px minmax(0, 1fr);
 
+    align-items: flex-start;
+
     column-gap: clamp(8px, calc(7.711vw - 72px), 40px);
 
     & > :nth-child(1) {
@@ -31,10 +33,8 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
     }
 
     & > :nth-child(2) {
-      height: 102vh;
-
       position: sticky;
-      inset: 0;
+      top: 0;
 
       display: flex;
       flex-direction: column;
