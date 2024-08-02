@@ -8,10 +8,9 @@ import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
-import { ORG_D_Detail_AIChat } from "./ORG_D_Detail_AIChat"
 import { ORG_D_Detail_BreadcrumbsLastUpdated } from "./ORG_D_Detail_BreadcrumbsLastUpdated"
-import { ORG_D_Detail_Contact } from "./ORG_D_Detail_Contact"
 import { ORG_D_Detail_Header } from "./ORG_D_Detail_Header"
+import { ORG_D_Detail_Header_RightSticky } from "./ORG_D_Detail_Header_RightSticky"
 import { MapProperties_KEYS } from "./ORG_D_Detail_MapComponent"
 import { ORG_D_Detail_Overview } from "./ORG_D_Detail_Overview"
 import { ORG_Detail_D_SectionCustom } from "./ORG_Detail_D_SectionCustom"
@@ -116,8 +115,7 @@ export const INDEX_ORG_Detail_D = () => {
           
         */}
         <div>
-          <ORG_D_Detail_Contact />
-          <ORG_D_Detail_AIChat
+          <ORG_D_Detail_Header_RightSticky
             whichCategory={getAllSpecificThirdPageData.category}
           />
         </div>

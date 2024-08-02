@@ -34,19 +34,12 @@ export const INDEX_ORG_Detail_DWrapper = styled.div`
 
     & > :nth-child(2) {
       position: sticky;
-      top: 0;
+      inset: 0;
 
       display: flex;
       flex-direction: column;
+
       gap: calc(8px * 1);
-
-      & > * {
-        & > :nth-child(1) {
-          padding: 8px 2px 8px 24px;
-
-          font-weight: 500;
-        }
-      }
     }
   }
 

@@ -8,45 +8,59 @@ import { ORG_D_Detail_ContactWrapper } from "./styles/ORG_D_Detail_ContactWrappe
 
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { useEffect, useState } from "react"
 import { ORG_D_Map2 } from "./ORG_D_Map2"
 
 export const ORG_D_Detail_Contact = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(true)
+
+  useEffect(() => {
+    if (window.innerHeight <= 843) {
+      setIsOpen(false)
+    } else {
+      setIsOpen(true)
+    }
+  }, [])
+
   return (
     <ORG_D_Detail_ContactWrapper>
-      <H2>Contact the Organization</H2>
-      <div>
-        <ul>
-          <li>
-            <span>(123) 456-7890 </span>
-            <span>
-              <Phone_Icon_SVG />
-            </span>
-          </li>
-          <li>
-            <span>www.website.com</span>
-            <span>
-              <Website2Svg />
-            </span>
-          </li>
-          <li>
-            <span>info@email.com</span>
-            <span>
-              <Email2Svg />
-            </span>
-          </li>
-          <li>
-            <P>get direction</P>
-            <span>
-              <Direction_Icon_SVG />
-            </span>
-            <P>50 Lexington Ave New York, NY 01011</P>
-          </li>
-        </ul>
-
+      <details open={isOpen}>
+        <summary tabIndex={0}>
+          <H2>Contact the Organization</H2>
+        </summary>
         <div>
-          <ORG_D_Map2 />
+          <ul>
+            <li>
+              <span>(123) 456-7890 </span>
+              <span>
+                <Phone_Icon_SVG />
+              </span>
+            </li>
+            <li>
+              <span>www.website.com</span>
+              <span>
+                <Website2Svg />
+              </span>
+            </li>
+            <li>
+              <span>info@email.com</span>
+              <span>
+                <Email2Svg />
+              </span>
+            </li>
+            <li>
+              <P>get direction</P>
+              <span>
+                <Direction_Icon_SVG />
+              </span>
+              <P>50 Lexington Ave New York, NY 01011</P>
+            </li>
+          </ul>
+          <div>
+            <ORG_D_Map2 />
+          </div>
         </div>
-      </div>
+      </details>
     </ORG_D_Detail_ContactWrapper>
   )
 }

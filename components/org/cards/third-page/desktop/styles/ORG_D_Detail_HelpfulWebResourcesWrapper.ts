@@ -5,6 +5,7 @@ import styled from "styled-components"
 export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.section`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  background-color: cornflowerblue;
 
   &:has(details[open]) {
     border-radius: 8px;
