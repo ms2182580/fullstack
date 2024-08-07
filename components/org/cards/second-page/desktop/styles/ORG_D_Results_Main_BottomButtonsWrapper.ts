@@ -29,8 +29,6 @@ export const ORG_D_Results_Main_BottomButtonsWrapper = styled.div`
 
   & > :nth-child(1) {
     cursor: pointer;
-
-    border: 2px solid crimson;
   }
 
   & > :nth-child(2) {

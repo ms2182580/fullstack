@@ -69,8 +69,6 @@ export const INDEX_ORG_Search_D = ({
                       .replaceAll(/[\s-]/g, "_")
                       .toLowerCase()
 
-                    console.log("toDataTestId_3Page:", toDataTestId_3Page)
-
                     return (
                       <article key={`${x}_${xBackendData.listingType}`}>
                         <div>

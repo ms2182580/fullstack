@@ -1,20 +1,8 @@
 import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import { ui_header_card } from "@/components/ui/org/third-page/sections/ui_header_card"
-import { ui_section_card } from "@/components/ui/org/third-page/sections/ui_section_card"
 import styled from "styled-components"
 
 export const ORG_D_Detail_AIChatWrapper = styled.section`
-  ${ui_section_card()};
-  background-color: ${NEUTRALS.OFF_WHITE};
-
-  & > :nth-child(1) {
-    ${ui_header_card()};
-    height: 56px;
-    display: flex;
-    align-items: center;
-  }
-
   article {
     padding-top: 8px;
     display: grid;

@@ -33,10 +33,6 @@ export const ORG_D_Results_Main_BottomButtons = ({
     .replaceAll(/[\s-]/g, "_")
     .toLowerCase()
 
-  console.log("toDataTestId:", toDataTestId)
-
-  // const { setThirdpageDataORG }: any = useORG_Ctx_D_ThirdpageData()
-
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
 
@@ -91,8 +87,6 @@ export const ORG_D_Results_Main_BottomButtons = ({
     secondpageDataORG[SPECIFIC_DATA_KEY.SPECIFIC_DATA_KEY],
     secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
   ])
-
-  console.log("toDataTestId:", toDataTestId)
 
   if (backendData && whichResource !== undefined) {
     return (

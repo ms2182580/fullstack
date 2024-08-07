@@ -5,7 +5,6 @@ import styled from "styled-components"
 export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.section`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background-color: cornflowerblue;
 
   &:has(details[open]) {
     border-radius: 8px;
@@ -21,8 +20,6 @@ export const ORG_D_Detail_HelpfulWebResourcesWrapper = styled.section`
       border-radius: 8px;
 
       summary {
-        background-color: hsl(282.9, 41.2%, 91.3%);
-
         & > :nth-child(2) {
           transform: rotate(180deg);
         }

@@ -2,7 +2,6 @@ import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
 import MagicWandSVG from "@/assets/icons/org/third-page/magic-wand.svg"
 import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
 import { useMemo, useRef } from "react"
@@ -24,9 +23,13 @@ export const ORG_D_Detail_AIChat = ({ whichCategory }) => {
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
     useScrollHorizontal(refULElements)
 
+  /* 
+  !FH0
+  Make this toggable as well, like "ORG_D_Detail_Contact" component
+  */
+
   return (
     <ORG_D_Detail_AIChatWrapper>
-      <H2>AI Chat</H2>
       <article>
         <P>Have questions about community classes?</P>
         <textarea placeholder="Ask me anything about services." />

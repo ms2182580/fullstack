@@ -5,6 +5,7 @@ import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { defaultSectionToRender } from "@/utils/org/third-page/defaultSectionToRender"
 import { Tooltip_VALUES } from "@/utils/org/third-page/tooltip"
+import { useToggableOnDetails } from "@/utils/useToggableOnDetails"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { useORG_Ctx_D_ThirdpageData } from "../../../../../context/ORG_Ctx_D_ThirdpageData_Provider"
@@ -18,7 +19,11 @@ import { ORG_Detail_D_SectionDefault } from "./ORG_Detail_D_SectionDefault"
 import { INDEX_ORG_Detail_DWrapper } from "./styles/INDEX_ORG_Detail_DWrapper"
 import { Layout_MainCardRight_VALUES } from "./styles/ORG_D_Detail_MainCard_RightWrapper"
 
-export const INDEX_ORG_Detail_D = () => {
+const theState = {
+  state: useToggableOnDetails,
+}
+
+export const INDEX_ORG_Detail_D = ({ stateToToggle = theState }) => {
   const { thirdpageDataORG } = useORG_Ctx_D_ThirdpageData()
   const { thirdpageDataORG: thirdpageDataORG_Backend } =
     useORG_Ctx_D_ThirdpageData_Backend()

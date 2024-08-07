@@ -92,8 +92,6 @@ export const ORG_D_Detail_Reviews = ({
     }
   }
 
-  console.log("theReviews:", theReviews)
-
   const formattedReviews = useMemo(() => {
     if (howManyShow === MANY_SHOW.INITIAL) {
       return (theReviews as string[]).map((x) => {
@@ -111,8 +109,6 @@ export const ORG_D_Detail_Reviews = ({
 
     return theReviews
   }, [howManyShow])
-
-  console.log("formattedReviews:", formattedReviews)
 
   const theRef = useRef<HTMLElement>(null)
 

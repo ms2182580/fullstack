@@ -78,7 +78,6 @@ export const ORG_M_Detail_MainCard_About = () => {
       <ORG_D_Detail_About
         name={thirdpageDataORG.fullName.first}
         lastName={thirdpageDataORG.fullName.last}
-        aboutRef={null}
       />
       <button>Book Appointment</button>
     </ORG_M_Detail_MainCard_AboutWrapper>

@@ -1,6 +1,6 @@
 import { NEUTRALS } from "@/assets/Colors"
+import { FontsWeights } from "@/assets/fonts/Weights"
 import styled, { css } from "styled-components"
-import { FontsWeights } from "../../../../../assets/fonts/Weights"
 import { COLORS } from "../../variables"
 
 const SharedVariables = {
