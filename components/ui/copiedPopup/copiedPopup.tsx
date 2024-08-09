@@ -11,11 +11,14 @@ type Props = {
   refDialog: RefObject<HTMLDialogElement>
 }
 
+/*
+ * To correct use this component the father should have a "position: relative;" on itself
+ */
 export const CopiedPopup = ({ textCopied, showDialog, refDialog }: Props) => {
   useShouldShowComponent({ showDialog, refDialog })
 
   return (
-    <CopiedPopupWrapper showDialog={showDialog} ref={refDialog}>
+    <CopiedPopupWrapper showDialog={showDialog} ref={refDialog} tabIndex={-1}>
       <div>
         <p>Copied on clipboard!</p>
         <p>{textCopied}</p>
