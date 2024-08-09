@@ -298,27 +298,6 @@ export const BackArrow = (props) => (
   </svg>
 )
 
-/* 
-!FH
-This could be deleted
-*/
-
-export const VerifiedTicketSvg = (props) => (
-  <svg
-    width="13px"
-    height="12px"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <circle cx={6} cy={6} r={5} stroke="#6C6C6C" />
-    <path
-      d="M11.154 1.5 6.202 6.682 3.846 4.217 2.5 5.626 6.202 9.5 12.5 2.909 11.154 1.5Z"
-      fill="#026600"
-    />
-  </svg>
-)
-
 export const VerifiedTicket2Svg = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

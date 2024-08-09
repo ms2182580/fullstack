@@ -79,6 +79,8 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
       grid-template-columns: 33px 1fr;
       gap: 8px;
 
+      width: fit-content;
+
       & > :nth-child(1) {
         justify-self: center;
       }

@@ -1,9 +1,20 @@
+import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
-import { SEMANTICS } from "../../../../../../assets/Colors"
 
 export const ORG_D_Results_CardPhoneWrapper = styled.div`
-  & > :nth-child(2) {
-    color: ${SEMANTICS.HYPERLINK_NORMAL};
-    text-decoration-line: underline;
+  position: relative;
+
+  & > p {
+    ${Paragraph({
+      color: "hyperlink_normal",
+      textDecoration: "underline",
+    })};
+
+    cursor: default;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.9;
+    }
   }
 `

@@ -8,7 +8,7 @@ test.describe("Flow_ORG", () => {
   - The problem: the test does not wait until images get loaded
   */
 
-  test.skip("1° page", async ({ page }) => {
+  test("1° page", async ({ page }) => {
     await page.goto(`/${ALL_ROUTES.ORG}`)
 
     await page

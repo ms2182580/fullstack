@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../assets/Colors"
 import { FontsDesktopAndMobile } from "../../../assets/fonts/HeadingValues"
 import { FontsWeights } from "../../../assets/fonts/Weights"
@@ -14,6 +14,7 @@ const SharedVariables = {
   Underline: "underline",
   LineThrough: "line-through",
 }
+
 type PType = {
   bolder?: boolean
   bold?: boolean
@@ -30,6 +31,7 @@ type PType = {
   hyperlink_normal?: boolean
   white?: boolean
 }
+
 export const P = styled.p<PType>`
   line-height: 32px;
   font-size: ${SharedVariables.FontSizeBody};
@@ -109,5 +111,68 @@ export const Caption = styled.span<PType>`
       ? PRIMARY.PRIMARY_HOVER
       : x.hyperlink_normal
       ? SEMANTICS.HYPERLINK_NORMAL
+      : NEUTRALS.BLACK};
+`
+
+type Paragraph_Props = {
+  fontWeight?: "bolder" | "bold" | "semibold" | "medium" | "normal"
+  textDecoration?: "underline" | "linethrough" | "underline linethrough" | ""
+  color?:
+    | "dark_gray"
+    | "light_gray"
+    | "success"
+    | "error"
+    | "primary_cta"
+    | "primary_hover"
+    | "hyperlink_normal"
+    | "off_white"
+    | "black"
+}
+
+export const Paragraph = ({
+  fontWeight = "normal",
+  textDecoration = "",
+  color = "hyperlink_normal",
+}: Paragraph_Props) => css`
+  line-height: 32px;
+  font-size: ${SharedVariables.FontSizeBody};
+
+  font-weight: ${() =>
+    fontWeight === "bolder"
+      ? SharedVariables.FontWeight_800
+      : fontWeight === "bold"
+      ? SharedVariables.FontWeight_700
+      : fontWeight === "semibold"
+      ? SharedVariables.FontWeight_600
+      : fontWeight === "medium"
+      ? SharedVariables.FontWeight_500
+      : fontWeight === "normal" && SharedVariables.FontWeight_400};
+
+  text-decoration: ${() =>
+    textDecoration === "underline"
+      ? "underline"
+      : textDecoration === "linethrough"
+      ? "line-through"
+      : textDecoration === "underline linethrough"
+      ? "underline line-through"
+      : ""};
+
+  color: ${() =>
+    color === "dark_gray"
+      ? NEUTRALS.DARK_GREY
+      : color === "light_gray"
+      ? NEUTRALS.LIGHT_GREY
+      : color === "success"
+      ? SEMANTICS.SUCCESS_STATE
+      : color === "error"
+      ? SEMANTICS.ERROR_STATE
+      : color === "primary_cta"
+      ? PRIMARY.PRIMARY_CTA
+      : color === "primary_hover"
+      ? PRIMARY.PRIMARY_HOVER
+      : color === "hyperlink_normal"
+      ? SEMANTICS.HYPERLINK_NORMAL
+      : color === "off_white"
+      ? NEUTRALS.OFF_WHITE
       : NEUTRALS.BLACK};
 `

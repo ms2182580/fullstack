@@ -32,12 +32,10 @@ export const ORG_D_Results_CardWebsite = ({
     : `https://www.${firstPart}${secondPart}.com`
 
   return (
-    <>
-      <ORG_D_Results_CardWebsiteWrapper>
-        <WebsiteResultsSvg />
-        {/* !FH Add the feature of copy the formattedResult with Enter key */}
-        <P tabIndex={0}>{formattedResult}</P>
-      </ORG_D_Results_CardWebsiteWrapper>
-    </>
+    <ORG_D_Results_CardWebsiteWrapper>
+      <WebsiteResultsSvg />
+      {/* !FH Add the feature of copy the formattedResult with Enter key */}
+      <P tabIndex={0}>{formattedResult}</P>
+    </ORG_D_Results_CardWebsiteWrapper>
   )
 }

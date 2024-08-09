@@ -1,5 +1,6 @@
+import { CopiedPopup } from "@/components/ui/copiedPopup/copiedPopup"
+import { useCopyText } from "@/utils/useCopiedpopupHooks"
 import { PhoneResultsSvg } from "../../../../../assets/icons/index"
-import { P } from "../../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_Results_CardPhoneWrapper } from "./styles/ORG_D_Results_CardPhoneWrapper"
 
 type Props = {
@@ -7,11 +8,27 @@ type Props = {
 }
 
 export const ORG_D_Results_Cardphone = ({ phoneNumber = "_" }: Props) => {
+  const { handleCopyTextAndShowDialog, textCopied, showDialog, refDialog } =
+    useCopyText()
+
   return (
-    <ORG_D_Results_CardPhoneWrapper>
-      <PhoneResultsSvg />
-      {/* !FH Add the feature of copy the phoneNumber with Enter key */}
-      <P tabIndex={0}>{phoneNumber}</P>
-    </ORG_D_Results_CardPhoneWrapper>
+    <>
+      <ORG_D_Results_CardPhoneWrapper>
+        <PhoneResultsSvg />
+        {/* !FH Add the feature of copy the phoneNumber with Enter key */}
+        <p
+          tabIndex={0}
+          onClick={handleCopyTextAndShowDialog}
+          onKeyDown={handleCopyTextAndShowDialog}
+        >
+          {phoneNumber}
+        </p>
+        <CopiedPopup
+          textCopied={textCopied}
+          showDialog={showDialog}
+          refDialog={refDialog}
+        />
+      </ORG_D_Results_CardPhoneWrapper>
+    </>
   )
 }
