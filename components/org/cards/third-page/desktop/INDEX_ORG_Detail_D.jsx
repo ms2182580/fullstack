@@ -1,5 +1,5 @@
 import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
-import { PCC_General_D_UsersAlsoViewed } from "@/components/org/cards_resources/third-page/pcc/general/desktop/PCC_General_D_UsersAlsoViewed"
+import { ORG_D_Detail_LastSection } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_LastSection"
 import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider"
 import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
@@ -106,19 +106,6 @@ export const INDEX_ORG_Detail_D = ({ stateToToggle = theState }) => {
             <ORG_Detail_D_SectionDefault />
           )}
         </div>
-        {/* 
-        //!FH0
-        Check when the resource is "Vocational" is possible the detail conact and AIChat be overflowed. The less height, the more overflowed.
-          
-        Possible solution 1:
-          - Make those card toggleable and only one can be open at time. This for screen from 720px height to 926px height. For every else, display it boths
-              * The reason to do this comes from the popular screen resolution for Desktop in 2024 (https://www.browserstack.com/guide/common-screen-resolutions) being the smaller: 720px
-              * Use "window.innerHeight" to check the height
-            
-             
-          - Just make them smaller
-          
-        */}
         <div>
           <ORG_D_Detail_Header_RightSticky
             whichCategory={getAllSpecificThirdPageData.category}
@@ -126,7 +113,7 @@ export const INDEX_ORG_Detail_D = ({ stateToToggle = theState }) => {
         </div>
       </div>
 
-      <PCC_General_D_UsersAlsoViewed
+      <ORG_D_Detail_LastSection
         whichCategory={getAllSpecificThirdPageData.category}
       />
 

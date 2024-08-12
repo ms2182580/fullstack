@@ -8,7 +8,7 @@ type Props = {
   shouldArrowRightBeDisabled: boolean
 }
 
-export const ORG_D_Detail_MoreResourcesDialogWrapper = styled.article<Props>`
+export const ORG_D_Detail_LastSectionDialogWrapper = styled.article<Props>`
   ${ui_section_card()}
 
   width: 700px;

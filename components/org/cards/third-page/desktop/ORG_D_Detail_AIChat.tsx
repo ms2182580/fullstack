@@ -23,11 +23,6 @@ export const ORG_D_Detail_AIChat = ({ whichCategory }) => {
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
     useScrollHorizontal(refULElements)
 
-  /* 
-  !FH0
-  Make this toggable as well, like "ORG_D_Detail_Contact" component
-  */
-
   return (
     <ORG_D_Detail_AIChatWrapper>
       <article>

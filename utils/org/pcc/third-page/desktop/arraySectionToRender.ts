@@ -1,9 +1,17 @@
-import { ContactUsCustomProperties_KEY, ORG_D_Detail_ContactUs, TEXT_BESIDE_BUTTON } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
+import {
+  ContactUsCustomProperties_KEY,
+  ORG_D_Detail_ContactUs,
+  TEXT_BESIDE_BUTTON,
+} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
 import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_LastSection } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_LastSection"
 import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
 import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
-import { PCC_General_D_UsersAlsoViewed } from "@/components/org/cards_resources/third-page/pcc/general/desktop/PCC_General_D_UsersAlsoViewed"
-import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import {
+  ArraySectionToRender_Type,
+  InnerNavBar_InnerData,
+  InnerNavBar_InnerData_KEYS,
+} from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PCC: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "about" },
@@ -54,12 +62,14 @@ export const arraySectionToRender_PCC: ArraySectionToRender_Type = [
     },
     toNavbar: {
       id: arrayInnerNavBar_PCC[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PCC[2][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
+      jsx: arrayInnerNavBar_PCC[2][
+        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
+      ],
     },
   },
   {
-    name: PCC_General_D_UsersAlsoViewed.name,
-    component: PCC_General_D_UsersAlsoViewed,
+    name: ORG_D_Detail_LastSection.name,
+    component: ORG_D_Detail_LastSection,
     toNavbar: {
       id: arrayInnerNavBar_PCC[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
     },
@@ -76,7 +86,9 @@ export const arraySectionToRender_PCC: ArraySectionToRender_Type = [
     component: ORG_D_Detail_FAQS,
     toNavbar: {
       id: arrayInnerNavBar_PCC[5][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PCC[5][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
+      jsx: arrayInnerNavBar_PCC[5][
+        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
+      ],
     },
   },
 ]

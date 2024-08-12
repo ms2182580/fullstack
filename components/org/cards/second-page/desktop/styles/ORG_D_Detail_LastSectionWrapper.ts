@@ -8,7 +8,7 @@ type Props = {
   isVocational: boolean
 }
 
-export const PCC_General_D_UsersAlsoViewedWrapper = styled.article<Props>`
+export const ORG_D_Detail_LastSectionWrapper = styled.article<Props>`
   ${ui_section_card()}
 
   & > :nth-child(1) {

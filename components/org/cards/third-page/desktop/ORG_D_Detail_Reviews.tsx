@@ -154,7 +154,6 @@ export const ORG_D_Detail_Reviews = ({
           <ORG_D_Detail_Reviews_IndividualComponent
             getReviews={formattedReviews}
             howManyShow={howManyShow}
-            isFullDisplayed={howManyShow === MANY_SHOW.INITIAL}
           />
 
           <P

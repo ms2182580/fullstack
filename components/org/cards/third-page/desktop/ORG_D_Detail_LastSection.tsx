@@ -13,8 +13,8 @@ import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_Thirdpag
 import { NamesCategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import Image, { StaticImageData } from "next/image"
 import { useMemo } from "react"
-import { ORG_D_Detail_MoreResourcesDialog } from "./ORG_D_Detail_MoreResourcesDialog"
-import { PCC_General_D_UsersAlsoViewedWrapper } from "./styles/PCC_General_D_UsersAlsoViewedWrapper"
+import { ORG_D_Detail_LastSectionWrapper } from "../../second-page/desktop/styles/ORG_D_Detail_LastSectionWrapper"
+import { ORG_D_Detail_LastSectionDialog } from "./ORG_D_Detail_LastSectionDialog"
 
 const tags = [
   "All",
@@ -120,12 +120,7 @@ const popularData: PopularData_Type = [
   },
 ]
 
-/* 
-!FH0
-
-Chane the name of this component and their location on the folder
-*/
-export const PCC_General_D_UsersAlsoViewed = ({ whichCategory }) => {
+export const ORG_D_Detail_LastSection = ({ whichCategory }) => {
   const isVocational = useMemo(() => {
     return whichCategory === NamesCategories_KEY["VOCATIONAL RESOURCES"]
   }, [whichCategory])
@@ -145,7 +140,7 @@ export const PCC_General_D_UsersAlsoViewed = ({ whichCategory }) => {
 
   return (
     <div>
-      <PCC_General_D_UsersAlsoViewedWrapper isVocational={isVocational}>
+      <ORG_D_Detail_LastSectionWrapper isVocational={isVocational}>
         <header>
           <H2>{isVocational ? "Similar Employers" : "More resources"} </H2>
         </header>
@@ -230,14 +225,14 @@ export const PCC_General_D_UsersAlsoViewed = ({ whichCategory }) => {
             </div>
           )}
         </article>
-      </PCC_General_D_UsersAlsoViewedWrapper>
+      </ORG_D_Detail_LastSectionWrapper>
       <Dialog_D
         theRef={dialogRef}
         handleCloseDialog={(e) => closeDialog({ event: e })}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >
-        <ORG_D_Detail_MoreResourcesDialog />
+        <ORG_D_Detail_LastSectionDialog />
       </Dialog_D>
     </div>
   )

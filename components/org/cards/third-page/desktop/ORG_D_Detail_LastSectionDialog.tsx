@@ -7,14 +7,14 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
 import { useRef, useState } from "react"
-import { ORG_D_Detail_MoreResourcesDialogWrapper } from "./styles/ORG_D_Detail_MoreResourcesDialogWrapper"
+import { ORG_D_Detail_LastSectionDialogWrapper } from "../../second-page/desktop/styles/ORG_D_Detail_MoreResourcesDialogWrapper"
 
 const optionsAI = [
   "Calculate Jeremy’s salary",
   "Get tax reduction to hire Jeremy",
   "Hire Jeremy at no cost",
 ]
-export const ORG_D_Detail_MoreResourcesDialog = () => {
+export const ORG_D_Detail_LastSectionDialog = () => {
   const [stateTextarea, setStateTextarea] = useState("")
 
   const handleStateTextarea = (e) => {
@@ -32,7 +32,7 @@ export const ORG_D_Detail_MoreResourcesDialog = () => {
   }
 
   return (
-    <ORG_D_Detail_MoreResourcesDialogWrapper
+    <ORG_D_Detail_LastSectionDialogWrapper
       shouldDisplayLeftArrow={stateToCss.scrollRight}
       shouldArrowRightBeDisabled={stateToCss.reachFinal}
     >
@@ -90,6 +90,6 @@ export const ORG_D_Detail_MoreResourcesDialog = () => {
           </div>
         </div>
       </article>
-    </ORG_D_Detail_MoreResourcesDialogWrapper>
+    </ORG_D_Detail_LastSectionDialogWrapper>
   )
 }
