@@ -84,16 +84,7 @@ import { Head, Html, Main, NextScript } from "next/document"
 export default function Document() {
   return (
     <Html lang="en">
-      <Head>
-        {/* 
-        !FH0
-        Change this, this should not be a link and should be already on the app
-        */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head></Head>
       <body>
         <Main />
         <NextScript />
