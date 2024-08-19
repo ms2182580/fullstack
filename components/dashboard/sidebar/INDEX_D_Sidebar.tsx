@@ -1,20 +1,20 @@
 import {
   ChatAILogo_M,
+  Dashboard_D_AIChatSvg,
   Dashboard_D_CreateNewSvg,
   Dashboard_D_HomeSvg,
-  Dashboard_DocumentsSvg,
-  Dashboard_UpgradePremiumArrowSvg,
   Dashboard_D_Resource,
   Dashboard_D_SavedSvg,
-  Dashboard_D_AIChatSvg,
+  Dashboard_DocumentsSvg,
+  Dashboard_UpgradePremiumArrowSvg,
 } from "@/assets/icons"
-import { INDEX_D_SidebarWrapper } from "./styles/INDEX_D_SidebarWrapper"
-import { useRouter } from "next/router"
-import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
-import Link from "next/link"
+import { H2 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
+import { useRouter } from "next/router"
 import { CreatePlan_D_Sidebar } from "./CreatePlan_D_Sidebar"
+import { Dashboard_Sidebar_D_ActiveLink } from "./Dashboard_Sidebar_D_ActiveLink"
+import { INDEX_D_SidebarWrapper } from "./styles/INDEX_D_SidebarWrapper"
 
 export const INDEX_D_Sidebar = () => {
   const { isPlan } = useDashboardAIChat_Ctx()
@@ -52,11 +52,9 @@ export const INDEX_D_Sidebar = () => {
       icon: <Dashboard_D_SavedSvg />,
     },
   ]
-  let currentDashboardIndex =
-    navigations.findIndex((i) => i.path.includes(pathname)) + 1
 
   return (
-    <INDEX_D_SidebarWrapper currentDashboardPath={currentDashboardIndex}>
+    <INDEX_D_SidebarWrapper>
       {!isPlan ? (
         <>
           <div>
@@ -73,14 +71,18 @@ export const INDEX_D_Sidebar = () => {
               <span>Create New</span>
             </ButtonSmall>
             <ul>
-              {navigations.map((li) => (
-                <li key={li.name}>
-                  <Link href={li.path}>
-                    <span>{li.icon}</span>
-                    <span>{li.name}</span>
-                  </Link>
-                </li>
-              ))}
+              {navigations.map((li) => {
+                const isActive = li.path === pathname
+
+                return (
+                  <Dashboard_Sidebar_D_ActiveLink
+                    path={li.path}
+                    icon={li.icon}
+                    name={li.name}
+                    isActive={isActive}
+                  />
+                )
+              })}
             </ul>
           </div>
           <span>

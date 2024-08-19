@@ -104,6 +104,13 @@ export const CopiedPopupWrapper = styled.dialog<Props>`
   &[open] {
     /* animation: ${appear} ${timeToAnimate}ms; */
 
+    scale: 1;
+    transition: scale 0.3s ease;
+
+    @starting-style {
+      scale: 0;
+    }
+
     animation: ${({ showDialog }) =>
       showDialog
         ? css`
@@ -115,6 +122,11 @@ export const CopiedPopupWrapper = styled.dialog<Props>`
 
     display: block;
     visibility: visible;
+  }
+
+  & {
+    transition: scale 0.3s ease, display 0.3s ease allow-discrete;
+    scale: 0;
   }
 `
 

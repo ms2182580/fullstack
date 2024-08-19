@@ -1,5 +1,4 @@
 import { PRIMARY } from "@/assets/Colors"
-import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import styled, { css } from "styled-components"
 
 const logo = () => css`
@@ -33,10 +32,7 @@ const button = () => css`
   }
 `
 
-type Props = {
-  currentDashboardPath: number
-}
-export const INDEX_D_SidebarWrapper = styled.div<Props>`
+export const INDEX_D_SidebarWrapper = styled.div`
   & > :nth-child(1) {
     width: 100%;
     border-right: 1px solid #e4e4e4;
@@ -52,27 +48,6 @@ export const INDEX_D_SidebarWrapper = styled.div<Props>`
     & > :nth-child(3) {
       list-style: none;
       padding-top: 40px;
-      & > :nth-child(${(props) => props.currentDashboardPath}) {
-        background-color: ${PRIMARY.PRIMARY_BACKGROUND};
-      }
-      & > li > * {
-        display: flex;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        text-decoration: none;
-        color: black;
-        & > :nth-child(1) {
-          margin-left: 24px;
-          margin-right: 10px;
-        }
-        & > :nth-child(2) {
-          border: none;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 27px; /* 168.75% */
-        }
-      }
     }
   }
 

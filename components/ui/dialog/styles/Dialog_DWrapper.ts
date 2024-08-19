@@ -8,6 +8,18 @@ export const Dialog_DWrapper = styled.dialog`
   border-radius: 8px;
   border: 2px solid ${NEUTRALS.BORDER};
 
+  transition: scale 0.3s ease, display 0.3s ease allow-discrete;
+  scale: 0;
+
+  &[open] {
+    scale: 1;
+    transition: scale 290ms ease;
+
+    @starting-style {
+      scale: 0;
+    }
+  }
+
   & > :nth-child(1) {
     display: grid;
 
