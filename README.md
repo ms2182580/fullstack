@@ -31,7 +31,7 @@ Here the code for INCLUSIVE project
 >## Git commits
 
  - In the commit use a prefix to other developer understand what is about the commit, with `Added`, `Changed`, `Removed` and `Fixed`. Examples:
-   1.  `Added` - On `<some_place|some_component>`: `<detail>` → Example: Added - On Dialog Component: animation to open and cclose
+   1.  `Added` - On `<some_place|some_component>`: `<detail>` → Example: Added - On Dialog Component: animation to open and close
    2.  `Changed` - On `<some_place|some_component>`: `<detail>` → Example: Changed - On Dashboard: home active link is now working  
    3.  `Removed` - On `<some_place|some_component>`: `<detail>` → Example: Removed - On Home page: list items 
    4.  `Fixed` - On `<some_place|some_component>`: `<detail>` → Example: Fixed - On Editor: now can be add links
