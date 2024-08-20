@@ -12,9 +12,7 @@ Here the code for INCLUSIVE project
 
 - Git and github to keep track of the code
   
-- For documentation: the vast majority of the code is not commented and is written in JavaScript, not a single test is in the code
-
-- The code is ready to fetch but the actual backend connection should be done to make adjustments
+- For documentation: right now we have some test and typescript files. Please, prefer to use TypeScrip instead JavaScript
 
 
 > [!IMPORTANT]
@@ -33,7 +31,7 @@ Here the code for INCLUSIVE project
 >## Git commits
 
  - In the commit use a prefix to other developer understand what is about the commit, with `Added`, `Changed`, `Removed` and `Fixed`. Examples:
-   1.  `Added` - `<feature>` in `<some_place>`
-   2.  `Changed` - `<feature>` in `<some_place>`
-   3.  `Removed` - `<feature>` in `<some_place>`
-   4.  `Fixed` - `<what_was_solved>`
+   1.  `Added` - On `<some_place|some_component>`: `<detail>` → Example: Added - On Dialog Component: animation to open and close
+   2.  `Changed` - On `<some_place|some_component>`: `<detail>` → Example: Changed - On Dashboard: home active link is now working  
+   3.  `Removed` - On `<some_place|some_component>`: `<detail>` → Example: Removed - On Home page: list items 
+   4.  `Fixed` - On `<some_place|some_component>`: `<detail>` → Example: Fixed - On Editor: now can be add links
