@@ -2,10 +2,11 @@ import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const MasterHome_D_Comment_NWrapper = styled.div`
-  background-image: url("/background/background2.svg");
+  background-image: url("/background/background8.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
-
+  background-position-y: -180px;
+  
   padding-top: 77px;
   padding-bottom: 100px;
 
