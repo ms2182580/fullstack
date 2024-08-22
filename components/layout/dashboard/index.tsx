@@ -1,18 +1,45 @@
-import { INDEX_D_Dashboard_Header } from "@/components/dashboard/header/INDEX_D_DashboardHeader"
-import { INDEX_D_Sidebar } from "@/components/dashboard/sidebar/INDEX_D_Sidebar"
-import { useDashboardAIChat_Ctx } from "@/context/Ctx_Dashboard_AIChat"
+import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import { useFormattingRoute } from "@/utils/useFormattingRoute"
+import Head from "next/head"
+import { useRouter as useNavigation } from "next/navigation"
+import { useRouter } from "next/router"
+import { useMemo } from "react"
+import { Layout_Dashboard_CarePlan } from "./Layout_Dashboard_CarePlan"
+import { Layout_Dashboard_General } from "./Layout_Dashboard_General"
 import { Layout_DashboardWrapper } from "./styles/Layout_DashboardWrapper"
 
-export const Layout_Dashboard = ({ children }) => {
-  const { isPlan } = useDashboardAIChat_Ctx()
+export const Layout_Dashboard = ({ title, children }) => {
+  const { asPath, isReady } = useRouter()
+  const { push } = useNavigation()
 
+  const { actualRoute, formatRouteToTitle, actualRouteIsValid, toTitleText } =
+    useFormattingRoute({
+      acceptedRoutes: Object.keys(ALL_ROUTES.DASHBOARD_SECTIONS),
+      routeToCheck: asPath,
+      isReady,
+      push,
+    })
+
+  const layoutPlusChildren = useMemo(() => {
+    const theRouteFormatted = actualRoute?.toLowerCase()
+    if (theRouteFormatted === ALL_ROUTES.DASHBOARD_SECTIONS.CARE_PLAN) {
+      return <Layout_Dashboard_CarePlan>{children}</Layout_Dashboard_CarePlan>
+    }
+
+    return <Layout_Dashboard_General>{children}</Layout_Dashboard_General>
+  }, [asPath])
+
+  if (formatRouteToTitle === null || actualRouteIsValid === false) return null
   return (
-    <Layout_DashboardWrapper isCreatePlan={isPlan}>
-      <INDEX_D_Sidebar />
-      <div>
-        <INDEX_D_Dashboard_Header />
-        <main>{children}</main>
-      </div>
-    </Layout_DashboardWrapper>
+    <>
+      <Head>
+        <title>
+          {title} Dashboard {toTitleText}
+        </title>
+        <meta name="description" content="inclusive - website" />
+      </Head>
+
+      <Layout_DashboardWrapper>{layoutPlusChildren}</Layout_DashboardWrapper>
+    </>
   )
 }

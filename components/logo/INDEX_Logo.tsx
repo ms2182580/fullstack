@@ -7,7 +7,6 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { ReactElement, useMemo } from "react"
 import { H1 } from "../ui/heading_body_text/HeaderFonts"
-// import ChatLogo from "./chatAILogo.svg"
 
 const ChatAILogo = (props) => (
   <svg

@@ -1,7 +1,4 @@
 import { Layout } from "@/components/layout/index/index"
-import { Dashboard_Ctx_AICHAT_Provider } from "@/context/Ctx_Dashboard_AIChat"
-import { Dashboard_Ctx_AICHAT_UploadFile_Provider } from "@/context/Ctx_Dashboard_CarePlanUploadFile"
-import { Dashboard_Ctx_Editor_AICHAT_Provider } from "@/context/Ctx_Dashboard_EditorChatModal"
 import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
@@ -60,29 +57,23 @@ function MyApp({ Component, pageProps }) {
                                             <ORG_Ctx_2Page_Provider>
                                               <NavbarHomeHeight_Provider>
                                                 <Ctx_sessionStorage_typedFlow_Provider>
-                                                  <Dashboard_Ctx_AICHAT_Provider>
-                                                    <Dashboard_Ctx_Editor_AICHAT_Provider>
-                                                      <Dashboard_Ctx_AICHAT_UploadFile_Provider>
-                                                        <Ctx_Signup_Provider>
-                                                          <Layout>
-                                                            <link
-                                                              rel="icon"
-                                                              href="/favicon.ico"
-                                                            />
-                                                            <GlobalStyle
-                                                              font={
-                                                                poppins.style
-                                                                  .fontFamily
-                                                              }
-                                                            />
-                                                            <Component
-                                                              {...pageProps}
-                                                            />
-                                                          </Layout>
-                                                        </Ctx_Signup_Provider>
-                                                      </Dashboard_Ctx_AICHAT_UploadFile_Provider>
-                                                    </Dashboard_Ctx_Editor_AICHAT_Provider>
-                                                  </Dashboard_Ctx_AICHAT_Provider>
+                                                  <Ctx_Signup_Provider>
+                                                    <Layout>
+                                                      <link
+                                                        rel="icon"
+                                                        href="/favicon.ico"
+                                                      />
+                                                      <GlobalStyle
+                                                        font={
+                                                          poppins.style
+                                                            .fontFamily
+                                                        }
+                                                      />
+                                                      <Component
+                                                        {...pageProps}
+                                                      />
+                                                    </Layout>
+                                                  </Ctx_Signup_Provider>
                                                 </Ctx_sessionStorage_typedFlow_Provider>
                                               </NavbarHomeHeight_Provider>
                                             </ORG_Ctx_2Page_Provider>

@@ -48,5 +48,7 @@ export const SEMANTICS = {
   ERROR_STATE: "#D50000" /* Only for error state */,
   HYPERLINK_NORMAL: "#3366CC" /* Only for hyperlinked text */,
   HYPERLINK_VISITED: "#884488" /* Only for visited hyperlinked text */,
+  NAVIGATION_ACTIVE: "#E3D1EB",
+  NAVIGATION_HOVER_FOCUS: "hsl(281.5, 39.4%, 77.1%)",
   FOCUS_RING: "#64AFFB" /* Focus state ring around components */,
 }

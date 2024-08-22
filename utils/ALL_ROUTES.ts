@@ -20,8 +20,12 @@ export const ALL_ROUTES = {
   },
   HOME: "/",
   DASHBOARD: "dashboard",
-  AI_CHAT: "ai-chat",
-  SAVE_RESOURCES: "save-resources",
-  EDITOR_CARE_PLAN: "editor/care-plan",
-  EDITOR_VIEW_PLAN: "editor/view-plan",
+  DASHBOARD_SECTIONS: {
+    DASHBOARD: "dashboard",
+    DOCUMENTS: "documents",
+    AI_CHAT: "ai_chat",
+    RESOURCE_DIRECTORY: "resource_directory",
+    SAVED: "saved",
+    CARE_PLAN: "care_plan",
+  },
 }

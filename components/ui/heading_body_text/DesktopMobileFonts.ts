@@ -133,7 +133,7 @@ export const Paragraph = ({
   fontWeight = "normal",
   textDecoration = "",
   color = "hyperlink_normal",
-}: Paragraph_Props) => css`
+}: Paragraph_Props = {}) => css`
   line-height: 32px;
   font-size: ${SharedVariables.FontSizeBody};
 

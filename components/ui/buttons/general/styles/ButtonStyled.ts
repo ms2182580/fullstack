@@ -27,7 +27,7 @@ export const reusableButton = ({
   isSmall = true /* By default, every button is a Small Button */,
   isMedium = false,
   isLarge = false,
-}: Props_Reusable) => css`
+}: Props_Reusable = {}) => css`
   display: flex;
   justify-content: center;
   align-items: center;

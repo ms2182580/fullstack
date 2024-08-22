@@ -1,6 +1,6 @@
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useMatchMedia } from "@/utils/useMatchMedia"
-import Head from "next/head.js"
+import Head from "next/head"
 import { useRouter } from "next/router.js"
 import { useMemo } from "react"
 import { Layout_Dashboard } from "../dashboard"
@@ -9,13 +9,13 @@ import { OnlyDesktopLayout } from "../general/only-desktop-layout"
 import { Layout_Signin } from "../signin"
 import { Layout_Signup } from "../signup"
 
-const enum WhichLayoutDisplay_Key {
-  isORGLike = "isORGLike",
-  isDashboard = "isDashboard",
-  isRegistration = "isRegistration",
-  isSignin = "isSignin",
-  isSignup = "isSignup",
-  isHome = "/",
+const WhichLayoutDisplay_Key = {
+  isORGLike: "isORGLike",
+  isDashboard: "isDashboard",
+  isRegistration: "isRegistration",
+  isSignin: "isSignin",
+  isSignup: "isSignup",
+  isHome: "/",
 }
 
 export const Layout = ({ children, title = "INCLUSIVE" }) => {
@@ -67,9 +67,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
         {isMobile ? (
           <OnlyDesktopLayout />
         ) : (
-          <Layout_General>
-            <>{children}</>
-          </Layout_General>
+          <Layout_General>{children}</Layout_General>
         )}
       </>
     )
@@ -78,15 +76,10 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
   if (actualRoute === WhichLayoutDisplay_Key.isDashboard) {
     return (
       <>
-        <Head>
-          <title>{title} Dashboard</title>
-          <meta name="description" content="inclusive - website" />
-        </Head>
-
         {isMobile ? (
           <OnlyDesktopLayout />
         ) : (
-          <Layout_Dashboard>{children}</Layout_Dashboard>
+          <Layout_Dashboard title={title}>{children}</Layout_Dashboard>
         )}
       </>
     )

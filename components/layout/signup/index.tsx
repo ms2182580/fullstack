@@ -3,10 +3,11 @@ import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import { useFormattingRoute } from "@/utils/useFormattingRoute"
 import Head from "next/head"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
-import { useEffect, useMemo } from "react"
+import { useMemo } from "react"
 import {
   Layout_Signup_Footer,
   Layout_Signup_Footer_Props,
@@ -121,60 +122,20 @@ const stepsMessagessAside: StepsMessagess_Type = {
   },
 }
 
-let SIGNUP_STEPS = {
-  SIGNUP: "signup",
-  WHO_ARE_YOU: "who_are_you",
-  CREATE_PROFILE: "create_profile",
-  DEMOGRAPHY: "demography",
-  SITUATION: "situation",
-  TELL_US_YOUR_STORY: "tell_us_your_story",
-  REVIEW_AND_SAVE: "review_and_save",
-  FINISH: "finish",
-}
-
-type TypeUseFormattingRoute = {
-  routeToCheck: string
-  acceptedRoutes: string[]
-}
-
-const useFormattingRoute = ({
-  routeToCheck,
-  acceptedRoutes,
-}: TypeUseFormattingRoute): {
-  actualRoute: string
-  formatRouteToTitle: string | null
-  actualRouteIsValid: boolean
-} => {
-  const actualRoute = routeToCheck?.split("/").at(-1)?.toUpperCase() || ""
-  const formatRouteToTitle = actualRoute?.split("_").join(" ") || null
-
-  const actualRouteIsValid = acceptedRoutes.some((x) => x === actualRoute)
-
-  return {
-    actualRoute,
-    formatRouteToTitle,
-    actualRouteIsValid,
-  }
-}
-
 export const Layout_Signup = ({ children, title }) => {
   const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
-  const { actualRoute, formatRouteToTitle, actualRouteIsValid } =
+  const { actualRoute, formatRouteToTitle, actualRouteIsValid, toTitleText } =
     useFormattingRoute({
       acceptedRoutes: Object.keys(ALL_ROUTES.SIGNUP_STEPS),
       routeToCheck: asPath,
+      isReady,
+      push,
     })
 
-  useEffect(() => {
-    if (isReady && actualRouteIsValid === false) {
-      push("/404")
-    }
-  }, [isReady])
-
   const whichDataShouldDisplay = useMemo((): WhichDataShouldDisplay_Type => {
-    let objectData = stepsMessagessAside[`${actualRoute}`]
+    const objectData = stepsMessagessAside[`${actualRoute}`]
 
     return {
       title: objectData?.title || null,
@@ -184,18 +145,18 @@ export const Layout_Signup = ({ children, title }) => {
   }, [asPath])
 
   const topBottomLayout = useMemo((): TopBottomLayout_Type => {
-    let theRouteFormatted = actualRoute?.toLowerCase()
+    const theRouteFormatted = actualRoute?.toLowerCase()
 
-    let shouldNotShowTop =
+    const shouldNotShowTop =
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH
 
-    let shouldNotShowBottom =
+    const shouldNotShowBottom =
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.SIGNUP ||
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU ||
       theRouteFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH
 
-    let topProgressbarActualStep: Layout_Signup_Progress_Props =
+    const topProgressbarActualStep: Layout_Signup_Progress_Props =
       stepsMessagessAside[`${theRouteFormatted?.toUpperCase()}`]?.progressBar
 
     return { shouldNotShowTop, shouldNotShowBottom, topProgressbarActualStep }
@@ -207,10 +168,7 @@ export const Layout_Signup = ({ children, title }) => {
     <>
       <Head>
         <title>
-          {title} Signup
-          {actualRoute?.toLocaleLowerCase() !== ALL_ROUTES.SIGNUP_STEPS.SIGNUP
-            ? ` - ${formatRouteToTitle}`
-            : null}
+          {title} Signup {toTitleText}
         </title>
         <meta name="description" content="inclusive - website" />
       </Head>
@@ -235,6 +193,7 @@ export const Layout_Signup = ({ children, title }) => {
         ) : (
           <INDEX_Logo />
         )}
+
         {topBottomLayout.shouldNotShowTop ? null : (
           <Layout_Signup_Progress
             actualProgress={topBottomLayout.topProgressbarActualStep}
