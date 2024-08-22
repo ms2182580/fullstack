@@ -7,9 +7,15 @@ export const MasterHome_D_Contribute_NWrapper = styled.div`
   padding-bottom: 56px;
   display: grid;
 
+  @media (max-width: 1430px) {
+    padding-inline: 20px;
+  }
+
   & > :nth-child(1) {
     display: grid;
     gap: 24px;
+    padding-left: 42px;
+    // margin-left: auto
 
     & > :nth-child(1) {
       font-size: 20px;
@@ -36,6 +42,9 @@ export const MasterHome_D_Contribute_NWrapper = styled.div`
         border-radius: 11px;
         display: grid;
         gap: 32px;
+        @media (max-width: 1080px) {
+          padding-inline: 38px !important;
+        }
 
         & > :nth-child(1) {
           display: grid;
