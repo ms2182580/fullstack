@@ -38,11 +38,8 @@ export const Logo_HeaderWrapper = styled.header<Props>`
     }
 
     & > :nth-child(2) {
-      /* font-weight: 900; */
-
       margin-bottom: auto;
 
-      /* max-width: 100%; */
       height: auto;
 
       color: ${({ logoColor }) => logoColor};

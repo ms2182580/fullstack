@@ -1,6 +1,9 @@
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
-import { useRouter } from "next/router"
-import { useMemo } from "react"
+import {
+  ComponentsToRenderAvailable_Type,
+  useDynamicComponentToRender,
+} from "@/utils/useDynamicComponentToRender"
+import { cloneElement, isValidElement } from "react"
 import { Signup_D_Steps_CreateProfile } from "./Signup_D_Steps_CreateProfile"
 import { Signup_D_Steps_Demography } from "./Signup_D_Steps_Demography"
 import { Signup_D_Steps_Finish } from "./Signup_D_Steps_Finish"
@@ -9,43 +12,46 @@ import { Signup_D_Steps_Situation } from "./Signup_D_Steps_Situation"
 import { Signup_D_Steps_TellUs } from "./Signup_D_Steps_TellUs"
 import { Signup_D_Steps_WhoAreYou } from "./Signup_D_Steps_WhoAreYou"
 
+const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU,
+    component: <Signup_D_Steps_WhoAreYou />,
+  },
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE,
+    component: <Signup_D_Steps_CreateProfile />,
+  },
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY,
+    component: <Signup_D_Steps_Demography />,
+  },
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.SITUATION,
+    component: <Signup_D_Steps_Situation />,
+  },
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.TELL_US_YOUR_STORY,
+    component: <Signup_D_Steps_TellUs />,
+  },
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE,
+    component: <Signup_D_Steps_Review />,
+  },
+  {
+    route: ALL_ROUTES.SIGNUP_STEPS.FINISH,
+    component: <Signup_D_Steps_Finish />,
+  },
+]
+
 export const Signup_D_Steps = () => {
-  const { asPath } = useRouter()
+  const { componentToRender, propsToComponent } = useDynamicComponentToRender({
+    componentsToRenderAvailable,
+  })
 
-  const actualStepFormatted = useMemo(() => {
-    return asPath.split("/").at(-1)
-  }, [asPath])
-
-  const componentToRender = useMemo(() => {
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU) {
-      return <Signup_D_Steps_WhoAreYou />
-    }
-
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.CREATE_PROFILE) {
-      return <Signup_D_Steps_CreateProfile />
-    }
-
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.DEMOGRAPHY) {
-      return <Signup_D_Steps_Demography />
-    }
-
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.SITUATION) {
-      return <Signup_D_Steps_Situation />
-    }
-
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.TELL_US_YOUR_STORY) {
-      return <Signup_D_Steps_TellUs />
-    }
-
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.REVIEW_AND_SAVE) {
-      return <Signup_D_Steps_Review />
-    }
-
-    if (actualStepFormatted === ALL_ROUTES.SIGNUP_STEPS.FINISH) {
-      return <Signup_D_Steps_Finish />
-    }
-    return null
-  }, [actualStepFormatted])
-
-  return <>{componentToRender}</>
+  return (
+    <>
+      {isValidElement(componentToRender) &&
+        cloneElement(componentToRender, propsToComponent)}
+    </>
+  )
 }

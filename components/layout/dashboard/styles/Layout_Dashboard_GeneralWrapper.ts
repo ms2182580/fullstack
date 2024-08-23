@@ -26,6 +26,6 @@ export const Layout_Dashboard_GeneralWrapper = styled.div`
   & > :nth-child(3) {
     grid-area: children;
 
-    height: 200vh;
+    height: 120vh;
   }
 `

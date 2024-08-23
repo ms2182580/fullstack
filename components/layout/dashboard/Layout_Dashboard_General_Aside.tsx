@@ -32,6 +32,11 @@ const svgIcons = [
 ]
 
 const formattedRoutes = allRoutesAcceptedToURL.map((x, index) => {
+  const formattedURLBecauseDashboard =
+    x === ALL_ROUTES.DASHBOARD
+      ? `/${ALL_ROUTES.DASHBOARD}`
+      : `/${ALL_ROUTES.DASHBOARD}/${x}`
+
   const svgs = {
     default: svgIcons[index].default,
     active: svgIcons[index].active,
@@ -39,23 +44,11 @@ const formattedRoutes = allRoutesAcceptedToURL.map((x, index) => {
 
   return {
     formattedToUI: x.replaceAll("_", " "),
-    formattedToURL: `/${ALL_ROUTES.DASHBOARD}/${x}`,
+    formattedToURL: formattedURLBecauseDashboard,
     svgDefault: svgs.default,
     svgActive: svgs.active,
   }
 })
-
-/*
-const allRoutesAcceptedToUI = allRoutesAcceptedToURL.map((x) =>
-  x.replaceAll("_", " ")
-)
-*/
-
-/* 
-  !FH0
-  Create the UI of dashboard general: aside
-   */
-// console.log("dashboardRoutesFormatted:", dashboardRoutesFormatted)
 
 const stylesForActive = () => css`
   background-color: ${SEMANTICS.NAVIGATION_ACTIVE};

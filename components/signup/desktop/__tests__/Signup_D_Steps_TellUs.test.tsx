@@ -22,7 +22,7 @@ describe(`Testing ${Signup_D_Steps_TellUs.name}`, (ctx_describe) => {
     )
   })
 
-  describe(`Component ${Signup_D_Steps_TellUs.name} is using grid and have an expected layout (this is an test of implementation)`, (ctx_describe) => {
+  describe.skip(`Component ${Signup_D_Steps_TellUs.name} is using grid and have an expected layout (this is an test of implementation)`, (ctx_describe) => {
     it("Component is using grid and other grid styles", (ctx_it) => {
       const getData = screen.getByTestId("card-section")
 

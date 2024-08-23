@@ -8,7 +8,7 @@ import { useRouter } from "next/router"
 import { ReactElement, useMemo } from "react"
 import { H1 } from "../ui/heading_body_text/HeaderFonts"
 
-const ChatAILogo = (props) => (
+export const ChatAILogo = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={32}

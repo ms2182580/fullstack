@@ -1,7 +1,5 @@
-import { useRouter } from "next/router"
+import { Dashboard_D_Sections } from "@/components/dashboard/Dashboard_D_Sections"
 
 export default function Index_Dashboard_Sections() {
-  const { asPath } = useRouter()
-
-  return <div>Index_Signup_Steps - {asPath}</div>
+  return <Dashboard_D_Sections />
 }
