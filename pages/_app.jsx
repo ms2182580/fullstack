@@ -26,7 +26,6 @@ import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
 
-// import { Poppins } from "@next/font/google"
 import { Poppins } from "next/font/google"
 const poppins = Poppins({
   subsets: ["latin"],

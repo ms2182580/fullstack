@@ -1,3 +1,4 @@
+import SvgArrowEllipse from "@/assets/icons/arrow_ellipse.svg"
 import { Layout_Dashboard_General_HeaderWrapper } from "./styles/Layout_Dashboard_General_HeaderWrapper"
 
 /* 
@@ -13,7 +14,12 @@ import { Layout_Dashboard_General_HeaderWrapper } from "./styles/Layout_Dashboar
 export const Layout_Dashboard_General_Header = () => {
   return (
     <Layout_Dashboard_General_HeaderWrapper>
-      Layout_Dashboard_General_Header
+      <span>
+        JD
+        <span>
+          <SvgArrowEllipse />
+        </span>
+      </span>
     </Layout_Dashboard_General_HeaderWrapper>
   )
 }
