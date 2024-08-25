@@ -22,8 +22,9 @@ export const Home_D_Step_NWrapper = styled.div`
     }
 
     & > :nth-child(2) {
-      display: flex;
+      display: grid;
       justify-content: space-between;
+      grid-template-columns: 1fr 0.3fr 1fr;
       align-items: center;
       gap: 24px;
       & > :nth-child(1) {
@@ -35,6 +36,8 @@ export const Home_D_Step_NWrapper = styled.div`
         & > :nth-child(2),
         & > :nth-child(3) {
           height: 559px;
+          max-width: 500px;
+          width: 100%;
           object-fit: contain;
         }
       }
