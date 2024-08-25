@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { MasterHome_D_Step_NWrapper } from "./styles/MasterHome_D_Steps_NWrapper"
+import { Home_D_Step_NWrapper } from "./styles/Home_D_Steps_NWrapper"
 import Image from "next/image"
 import Step1 from "../../../assets/images/masterHome/MasterHome_Step1.png"
 import Step2 from "../../../assets/images/masterHome/MasterHome_Step2.png"
@@ -9,6 +9,7 @@ import { ButtonMedium } from "@/components/ui/buttons/general"
 import step1_icon from "../../../assets/icons/master-home/master_home_flash.svg"
 import CheckedCircle from "@/assets/icons/master-home/CheckedCircle.svg"
 import GrayCircle from "@/assets/icons/master-home/grayCircle.svg"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 
 const Card = ({
   title,
@@ -61,7 +62,7 @@ const Card = ({
   )
 }
 
-const MasterHome_Steps_D = () => {
+const Home_Steps_D = () => {
   const step1Ref = useRef<HTMLDivElement | null>(null)
   const step2Ref = useRef<HTMLDivElement | null>(null)
   const step3Ref = useRef<HTMLDivElement | null>(null)
@@ -113,99 +114,107 @@ const MasterHome_Steps_D = () => {
   }, [currentStep])
 
   return (
-    <MasterHome_D_Step_NWrapper>
+    <Home_D_Step_NWrapper>
       <div>
         <div>
-          <Image src={Step1} alt="Park." />
-          <Image src={Step2} alt="Park." />
-          <Image src={Step3} alt="Park." />
+          <P primary_cta={true} semibold={true}>
+            How Oddy works for families
+          </P>
+          <H3>Get resources, services, supports and plans: </H3>
         </div>
         <div>
-          {/* Progress Bar */}
-          <svg
-            width="3"
-            height="1415"
-            viewBox="0 0 3 1415"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              width="1414.8"
-              height="1.8"
-              transform="matrix(0 -1 1 0 0.5 1414.8)"
-              fill="#6E3A82"
-              fill-opacity="0.7"
-            />
-            <rect
-              width="353.7"
-              height="1.8"
-              transform="matrix(0 -1 1 0 0.5 1414.8)"
-              fill="#6E3A82"
-            />
-            <rect
-              width="353.7"
-              height="1.8"
-              transform="matrix(0 -1 1 0 0.5 1061.1)"
-              fill="#6E3A82"
-            />
-            <rect
-              width="353.7"
-              height="1.8"
-              transform="matrix(0 -1 1 0 0.5 707.401)"
-              fill="#6E3A82"
-            />
-            <rect
-              width="353.7"
-              height="1.8"
-              transform="matrix(0 -1 1 0 0.5 353.701)"
-              fill="#6E3A82"
-            />
-          </svg>
-          {/* Step 1 */}
-          {currentStep === "Step1" ? <CheckedCircle /> : <GrayCircle />}
-          {/* Step2 */}
-          {currentStep === "Step2" ? <CheckedCircle /> : <GrayCircle />}
-          {/* Step 3 */}
-          {currentStep === "Step3" ? <CheckedCircle /> : <GrayCircle />}
-        </div>
-        <div>
-          <div ref={step1Ref} >
-            <Card
-              title="Upload (drag and drop) an evaluation or service plan, telling us about your needs"
-              step_number="1"
-              caption_title="Share details"
-              description="The more you share, the more Oddy works."
-              icon={step1_icon}
-              cta_text="Share your details through text or voice memo"
-              button_text="Upload"
-            />
+          <div>
+            <Image src={Step1} alt="Park." />
+            <Image src={Step2} alt="Park." />
+            <Image src={Step3} alt="Park." />
           </div>
-          <div ref={step2Ref}>
-            <Card
-              title="Discover and choose the best services and supports for you"
-              step_number="2"
-              caption_title="Explore your options"
-              description="Browse millions of our resources and find the  therapists, jobs or  housing  and save them."
-              icon={step1_icon}
-              cta_text="Create a collection of saved resources"
-              button_text="Search resources"
-            />
+          <div>
+            {/* Progress Bar */}
+            <svg
+              width="3"
+              height="1415"
+              viewBox="0 0 3 1415"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="1414.8"
+                height="1.8"
+                transform="matrix(0 -1 1 0 0.5 1414.8)"
+                fill="#6E3A82"
+                fill-opacity="0.7"
+              />
+              <rect
+                width="353.7"
+                height="1.8"
+                transform="matrix(0 -1 1 0 0.5 1414.8)"
+                fill="#6E3A82"
+              />
+              <rect
+                width="353.7"
+                height="1.8"
+                transform="matrix(0 -1 1 0 0.5 1061.1)"
+                fill="#6E3A82"
+              />
+              <rect
+                width="353.7"
+                height="1.8"
+                transform="matrix(0 -1 1 0 0.5 707.401)"
+                fill="#6E3A82"
+              />
+              <rect
+                width="353.7"
+                height="1.8"
+                transform="matrix(0 -1 1 0 0.5 353.701)"
+                fill="#6E3A82"
+              />
+            </svg>
+            {/* Step 1 */}
+            {currentStep === "Step1" ? <CheckedCircle /> : <GrayCircle />}
+            {/* Step2 */}
+            {currentStep === "Step2" ? <CheckedCircle /> : <GrayCircle />}
+            {/* Step 3 */}
+            {currentStep === "Step3" ? <CheckedCircle /> : <GrayCircle />}
           </div>
-          <div ref={step3Ref}>
-            <Card
-              title="Get guidance to services, and treatment and so much more."
-              step_number="3"
-              caption_title="Get your plan"
-              description="Let the system revise your plan based on your goals, future plans and the life you want to live."
-              icon={step1_icon}
-              cta_text="Get  a complete care plan instantly "
-              button_text="Customize a document"
-            />
+          <div>
+            <div ref={step1Ref}>
+              <Card
+                title="Upload (drag and drop) an evaluation or service plan, telling us about your needs"
+                step_number="1"
+                caption_title="Share details"
+                description="The more you share, the more Oddy works."
+                icon={step1_icon}
+                cta_text="Share your details through text or voice memo"
+                button_text="Upload"
+              />
+            </div>
+            <div ref={step2Ref}>
+              <Card
+                title="Discover and choose the best services and supports for you"
+                step_number="2"
+                caption_title="Explore your options"
+                description="Browse millions of our resources and find the  therapists, jobs or  housing  and save them."
+                icon={step1_icon}
+                cta_text="Create a collection of saved resources"
+                button_text="Search resources"
+              />
+            </div>
+            <div ref={step3Ref}>
+              <Card
+                title="Get guidance to services, and treatment and so much more."
+                step_number="3"
+                caption_title="Get your plan"
+                description="Let the system revise your plan based on your goals, future plans and the life you want to live."
+                icon={step1_icon}
+                cta_text="Get  a complete care plan instantly "
+                button_text="Customize a document"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </MasterHome_D_Step_NWrapper>
+    </Home_D_Step_NWrapper>
   )
 }
 
-export default MasterHome_Steps_D
+export default Home_Steps_D

@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const MasterHome_D_Contribute_NWrapper = styled.div`
+export const Home_D_Contribute_NWrapper = styled.div`
   background-color: #fff8f5;
   padding-top: 56px;
   padding-bottom: 56px;
@@ -14,8 +14,13 @@ export const MasterHome_D_Contribute_NWrapper = styled.div`
   & > :nth-child(1) {
     display: grid;
     gap: 24px;
-    padding-left: 42px;
-    // margin-left: auto
+    padding-left 98px;
+    padding-right: 42px;
+
+    @media (max-width: 1040px) {
+      padding-left: 80px;
+    }
+
 
     & > :nth-child(1) {
       font-size: 20px;

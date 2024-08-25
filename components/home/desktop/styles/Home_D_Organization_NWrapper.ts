@@ -1,7 +1,7 @@
 import { NEUTRALS, SECONDARY_ORG_PLUS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const MasterHome_D_Organization_NWrapper = styled.div`
+export const Home_D_Organization_NWrapper = styled.div`
   background-image: url("/background/background8.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -12,7 +12,7 @@ export const MasterHome_D_Organization_NWrapper = styled.div`
   & > :nth-child(1) {
     display: grid;
     gap: 24px;
-    padding-inline: 42px;
+    padding-inline: 98px;
 
     & > :nth-child(1) {
       font-size: 20px;
@@ -88,6 +88,8 @@ export const MasterHome_D_Organization_NWrapper = styled.div`
   & > :nth-child(2) {
     display: flex;
     margin-left: auto;
+    margin-right: 98px;
+    padding-inline: 98px;
     background-color: ${SECONDARY_ORG_PLUS.PINK_2};
     padding: 8px 16px;
     border-radius: 16px;

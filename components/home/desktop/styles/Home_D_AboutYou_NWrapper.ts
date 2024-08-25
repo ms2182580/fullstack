@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const MasterHome_D_AboutYou_NWrapper = styled.div`
+export const Home_D_AboutYou_NWrapper = styled.div`
   padding-top: 79px;
   padding-bottom: 79px;
   display: grid;
@@ -11,11 +11,12 @@ export const MasterHome_D_AboutYou_NWrapper = styled.div`
     display: flex;
     gap: 16px;
     background-color: #fff8f5;
-    margin-left: 32px;
-    padding-left: 46px;
-    // margin-right: 64px;
+    padding-left: 36px;
     padding-top: 34px;
     padding-bottom: 26px;
+    margin-right: 138px;
+    margin-left: 98px;
+
     & > :nth-child(1) {
       display: grid;
       gap: 10px;

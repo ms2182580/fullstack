@@ -1,5 +1,5 @@
 import React from "react"
-import { MasterHome_D_Contribute_NWrapper } from "./styles/MasterHomer_D_Contribute_NWrapper"
+import { Home_D_Contribute_NWrapper } from "./styles/Home_D_Contribute_NWrapper"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
 
@@ -18,9 +18,9 @@ const Card = ({ title, paymentType }: any) => {
   )
 }
 
-const MasterHome_Contribute_D = () => {
+const Home_Contribute_D = () => {
   return (
-    <MasterHome_D_Contribute_NWrapper>
+    <Home_D_Contribute_NWrapper>
       <div>
         <P primary_cta={true}>Consider supporting Oddy</P>
         <P>Ways to contribute to and improve Oddy..</P>
@@ -43,8 +43,8 @@ const MasterHome_Contribute_D = () => {
           Oddy.
         </P>
       </div>
-    </MasterHome_D_Contribute_NWrapper>
+    </Home_D_Contribute_NWrapper>
   )
 }
 
-export default MasterHome_Contribute_D
+export default Home_Contribute_D

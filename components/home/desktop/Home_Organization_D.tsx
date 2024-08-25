@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
-import { MasterHome_D_Organization_NWrapper } from "./styles/MasterHome_D_Organization_NWrapper"
+import { Home_D_Organization_NWrapper } from "./styles/Home_D_Organization_NWrapper"
 import HowItWorkIcon from "@/assets/icons/home/home_how-it-works_3.svg"
 import Magic_Wand from "@/assets/icons/home/home_magic_wand.svg"
 import Flash from "@/assets/icons/master-home/master_home_flash.svg"
@@ -20,9 +20,9 @@ const Card = ({ title, description }: any) => {
   )
 }
 
-const MasterHome_Organization_D = () => {
+const Home_Organization_D = () => {
   return (
-    <MasterHome_D_Organization_NWrapper>
+    <Home_D_Organization_NWrapper>
       <div>
         <P primary_cta={true}>
           Oddy for professionals, businesses, and organizations
@@ -63,8 +63,8 @@ const MasterHome_Organization_D = () => {
         Learn about Oddy's AI-powered data insights
         <Flash />
       </P>
-    </MasterHome_D_Organization_NWrapper>
+    </Home_D_Organization_NWrapper>
   )
 }
 
-export default MasterHome_Organization_D
+export default Home_Organization_D
