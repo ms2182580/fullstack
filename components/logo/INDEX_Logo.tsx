@@ -6,7 +6,8 @@ import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { ReactElement, useMemo } from "react"
-import { H1 } from "../ui/heading_body_text/HeaderFonts"
+import OddyLogo from "../../assets/icons/OddyLogo.svg"
+// import ChatLogo from "./chatAILogo.svg"
 
 export const ChatAILogo = (props) => (
   <svg
@@ -56,8 +57,7 @@ export const INDEX_Logo = ({
       data-testid={KEYS_DATA_TESTID.LOGO}
     >
       <Link href={logoCanMoveTheUserToHome.isHome}>
-        <H1>Inclusive</H1>
-        <ChatAILogo />
+        <OddyLogo />
       </Link>
     </Logo_HeaderWrapper>
   )
