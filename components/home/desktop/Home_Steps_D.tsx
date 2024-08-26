@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react"
-import { Home_D_Step_NWrapper } from "./styles/Home_D_Steps_NWrapper"
+import CheckedCircle from "@/assets/icons/master-home/CheckedCircle.svg"
+import GrayCircle from "@/assets/icons/master-home/GrayCircle.svg"
+import { ButtonMedium } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
+import step1_icon from "../../../assets/icons/master-home/master_home_flash.svg"
 import Step1 from "../../../assets/images/masterHome/MasterHome_Step1.png"
 import Step2 from "../../../assets/images/masterHome/MasterHome_Step2.png"
 import Step3 from "../../../assets/images/masterHome/MasterHome_Step3.png"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { ButtonMedium } from "@/components/ui/buttons/general"
-import step1_icon from "../../../assets/icons/master-home/master_home_flash.svg"
-import CheckedCircle from "@/assets/icons/master-home/CheckedCircle.svg"
-import GrayCircle from "@/assets/icons/master-home/grayCircle.svg"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
+import { Home_D_Step_NWrapper } from "./styles/Home_D_Steps_NWrapper"
 
 const Card = ({
   title,
