@@ -1,12 +1,12 @@
 import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
-import styled, { css } from "styled-components"
+import styled, { css, FlattenSimpleInterpolation } from "styled-components"
 
-type Props = {
+export type Active_Navigation_LinkWrapper_Props = {
   isActive: boolean
-  stylesForActive: any
+  stylesForActive: () => FlattenSimpleInterpolation
 }
 
-export const Active_Navigation_LinkWrapper = styled.li<Props>`
+export const Active_Navigation_LinkWrapper = styled.li<Active_Navigation_LinkWrapper_Props>`
   list-style: none;
 
   & > a {
