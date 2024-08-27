@@ -41,7 +41,7 @@ export const Layout_Dashboard_General_AsideWrapper = styled.div`
         display: flex;
         gap: 12px;
 
-        padding: 24px;
+        padding: 16px 24px;
       }
     }
   }
