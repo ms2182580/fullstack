@@ -127,6 +127,7 @@ type Paragraph_Props = {
     | "hyperlink_normal"
     | "off_white"
     | "black"
+    | "dark_maroon"
 }
 
 export const Paragraph = ({
@@ -174,5 +175,7 @@ export const Paragraph = ({
       ? SEMANTICS.HYPERLINK_NORMAL
       : color === "off_white"
       ? NEUTRALS.OFF_WHITE
+      : color === "dark_maroon"
+      ? PRIMARY.DARK_MAROON
       : NEUTRALS.BLACK};
 `

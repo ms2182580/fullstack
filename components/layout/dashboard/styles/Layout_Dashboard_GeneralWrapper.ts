@@ -21,11 +21,13 @@ export const Layout_Dashboard_GeneralWrapper = styled.div`
     grid-area: header;
     position: sticky;
     inset: 0;
+
+    height: fit-content;
   }
 
   & > :nth-child(3) {
     grid-area: children;
 
-    height: 120vh;
+    padding-block: calc(8px * 4);
   }
 `

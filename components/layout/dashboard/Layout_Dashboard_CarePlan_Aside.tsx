@@ -1,9 +1,8 @@
+import { BackArrow, ChatAILogo } from "@/assets/icons"
 import FileUp_Active from "@/assets/icons/file_upload_active.svg"
 import FileUp from "@/assets/icons/file_upload_default.svg"
 import MagicWand_Active from "@/assets/icons/magic_wand_active.svg"
 import MagicWand from "@/assets/icons/org/third-page/magic-wand.svg"
-
-import { BackArrow, ChatAILogo } from "@/assets/icons"
 import Star_Active from "@/assets/icons/star_active.svg"
 import Star_Default from "@/assets/icons/star_default.svg"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
@@ -36,6 +35,12 @@ const asideOptions = [
 export const Layout_Dashboard_CarePlan_Aside = () => {
   const { push } = useRouter()
 
+  const handlePushBack = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      push(`/${ALL_ROUTES.DASHBOARD}`)
+    }
+  }
+
   return (
     <Layout_Dashboard_CarePlan_AsideWrapper>
       <Link href={ALL_ROUTES.HOME}>
@@ -57,7 +62,8 @@ export const Layout_Dashboard_CarePlan_Aside = () => {
               <li
                 key={string}
                 tabIndex={0}
-                onClick={() => push(`/${ALL_ROUTES.DASHBOARD}`)}
+                onClick={handlePushBack}
+                onKeyDown={handlePushBack}
                 style={{ cursor: "pointer" }}
               >
                 <SVGDefault />

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { NEUTRALS, PRIMARY, SEMANTICS } from "../../../assets/Colors"
 import {
   FontsDesktopAndMobile,
@@ -42,6 +42,7 @@ type Type = {
   dark_maroon?: boolean
   lineHeight?: string
 }
+
 export const D1 = styled.p<Type>`
   font-size: ${FontsHeadDesktop.DISPLAY_1};
   line-height: ${LineHeightHeadDesktop.DISPLAY_1};
@@ -397,4 +398,98 @@ export const H4 = styled.h4<Type>`
 
     letter-spacing: ${LetterSpacingHeadMobile.HEADING_4};
   }
+`
+
+type HeaderCSS_Props = {
+  fontSize?: "h1" | "h2" | "h3" | "h4" | "d1"
+  fontWeight?:
+    | "800"
+    | "700"
+    | "600"
+    | "500"
+    | "400"
+    | "bolder"
+    | "bold"
+    | "semibold"
+    | "medium"
+    | "normal"
+  color?:
+    | "dark_gray"
+    | "light_gray"
+    | "success"
+    | "error"
+    | "primary_cta"
+    | "primary_hover"
+    | "hyperlink_normal"
+    | "off_white"
+    | "black"
+    | "dark_maroon"
+}
+
+export const HeaderCSS = ({
+  fontSize = "h1",
+  fontWeight = "600",
+  color = "black",
+}: HeaderCSS_Props = {}) => css`
+  ${fontSize === "h1"
+    ? css`
+        font-size: ${FontsHeadMobile.HEADING_1};
+        line-height: ${LineHeightHeadMobile.HEADING_1};
+        letter-spacing: ${LetterSpacingHeadMobile.HEADING_1};
+      `
+    : fontSize === "h2"
+    ? css`
+        font-size: ${FontsHeadMobile.HEADING_2};
+        line-height: ${LineHeightHeadMobile.HEADING_2};
+        letter-spacing: ${LetterSpacingHeadMobile.HEADING_2};
+      `
+    : fontSize === "h3"
+    ? css`
+        font-size: ${FontsHeadMobile.HEADING_3};
+        line-height: ${LineHeightHeadMobile.HEADING_3};
+        letter-spacing: ${LetterSpacingHeadMobile.HEADING_3};
+      `
+    : fontSize === "h4"
+    ? css`
+        font-size: ${FontsHeadMobile.HEADING_4};
+        line-height: ${LineHeightHeadMobile.HEADING_4};
+        letter-spacing: ${LetterSpacingHeadMobile.HEADING_4};
+      `
+    : fontSize === "d1" &&
+      css`
+        font-size: ${FontsHeadMobile.DISPLAY_1};
+        line-height: ${LineHeightHeadMobile.DISPLAY_1};
+        letter-spacing: ${LetterSpacingHeadMobile.DISPLAY_1};
+      `}
+
+  font-weight: ${() =>
+    fontWeight === "bolder" || fontWeight === "800"
+      ? SharedVariables.FontWeight_800
+      : fontWeight === "bold" || fontWeight === "700"
+      ? SharedVariables.FontWeight_700
+      : fontWeight === "semibold" || fontWeight === "600"
+      ? SharedVariables.FontWeight_600
+      : fontWeight === "medium" || fontWeight === "500"
+      ? SharedVariables.FontWeight_500
+      : (fontWeight === "normal" || fontWeight === "400") &&
+        SharedVariables.FontWeight_400};
+
+  color: ${() =>
+    color === "dark_gray"
+      ? NEUTRALS.DARK_GREY
+      : color === "light_gray"
+      ? NEUTRALS.LIGHT_GREY
+      : color === "success"
+      ? SEMANTICS.SUCCESS_STATE
+      : color === "error"
+      ? SEMANTICS.ERROR_STATE
+      : color === "primary_cta"
+      ? PRIMARY.PRIMARY_CTA
+      : color === "primary_hover"
+      ? PRIMARY.PRIMARY_HOVER
+      : color === "hyperlink_normal"
+      ? SEMANTICS.HYPERLINK_NORMAL
+      : color === "off_white"
+      ? NEUTRALS.OFF_WHITE
+      : NEUTRALS.BLACK};
 `
