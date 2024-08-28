@@ -16,4 +16,5 @@ export const KEYS_DATA_TESTID = {
     SUS_FINISH: "sus_finish",
   },
   LOGO: "logo",
+  INDEX_D_DASHBOARD_HOME: "index_d_dashboard_home",
 }

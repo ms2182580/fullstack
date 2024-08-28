@@ -1,5 +1,6 @@
 import { ArrowDownSvg } from "@/assets/icons"
-import SVGFileUp_Active from "@/assets/icons/file_upload_active.svg"
+// import SVGFileUp_Active from "@/assets/icons/file_upload_active.svg"
+import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import SVGFileUp_Default from "@/assets/icons/file_upload_default.svg"
 import SvgPlus from "@/assets/icons/org/third-page/org_plus.svg"
 import SVGSung from "@/assets/icons/sun.svg"
@@ -16,14 +17,14 @@ import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
 - Create visual testing with playwright for this screen
 
 */
-SVGFileUp_Active
-SVGFileUp_Default
 
 export const INDEX_D_Dashboard = () => {
   const { asPath } = useRouter()
 
   return (
-    <INDEX_D_DashboardWrapper>
+    <INDEX_D_DashboardWrapper
+      data-testid={KEYS_DATA_TESTID.INDEX_D_DASHBOARD_HOME}
+    >
       <header>
         <h3>
           Nice to meet you, Jane
