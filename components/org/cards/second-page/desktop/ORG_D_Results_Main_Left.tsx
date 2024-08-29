@@ -8,16 +8,11 @@ import { ORG_D_Results_Cardphone } from "./ORG_D_Results_Cardphone"
 import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_LeftWrapper"
 
 type Props = {
-  renderThisCard?: number
   backendData?: any
   theIndex: number
 }
 
-export const ORG_D_Results_Main_Left = ({
-  renderThisCard = 0,
-  backendData,
-  theIndex,
-}: Props) => {
+export const ORG_D_Results_Main_Left = ({ backendData, theIndex }: Props) => {
   if (backendData) {
     return (
       <ORG_D_Results_Main_LeftWrapper>

@@ -81,9 +81,37 @@ export const Dialog_D = ({
   )
 }
 
-import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
+import {
+  Dispatch,
+  KeyboardEvent,
+  MouseEvent,
+  ReactElement,
+  RefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 
-export const useDialogLogic = () => {
+/* MouseEvent<HTMLSpanElement, MouseEvent>
+    KeyboardEvent<HTMLSpanElement>
+    
+    */
+
+type UseDialogLogic_Return = {
+  dialogRef: RefObject<HTMLDialogElement>
+  openDialog: ({
+    event,
+  }: {
+    event: MouseEvent | KeyboardEvent<HTMLElement>
+  }) => void
+  closeDialog: ({ event }: { event: Event }) => void
+  refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
+  useHide: (ref: RefObject<HTMLElement>, handleStateOutside: () => void) => void
+  setCheckModalIsOpen: Dispatch<any>
+  checkModalIsOpen: Boolean | any
+}
+
+export const useDialogLogic = (): UseDialogLogic_Return => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const refToCloseDialogClickingOutside = useRef<HTMLDivElement>(null)
   const [checkModalIsOpen, setCheckModalIsOpen] = useState<Boolean | any>(false)
