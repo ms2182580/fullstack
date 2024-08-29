@@ -1,9 +1,9 @@
+import { SaveResourceDialog } from "@/components/org/save-resource-hearth/SaveResourceHearth"
 import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
 import Image from "next/image"
 import { ORG_D_Results_CardEmail } from "./ORG_D_Results_CardEmail"
 import { ORG_D_Results_CardLocation } from "./ORG_D_Results_CardLocation"
 import { ORG_D_Results_CardWebsite } from "./ORG_D_Results_CardWebsite"
-import { ORG_D_Results_Card_Hearth } from "./ORG_D_Results_Card_Hearth"
 import { ORG_D_Results_Cardphone } from "./ORG_D_Results_Cardphone"
 import { ORG_D_Results_Main_LeftWrapper } from "./styles/ORG_D_Results_Main_LeftWrapper"
 
@@ -21,7 +21,8 @@ export const ORG_D_Results_Main_Left = ({ backendData, theIndex }: Props) => {
             src={imagesToUse_backup[theIndex]}
             alt={`Image of ${backendData.recordName}`}
           />
-          <ORG_D_Results_Card_Hearth />
+          {/* <ORG_D_Results_Card_Hearth /> */}
+          <SaveResourceDialog nameOfResource={backendData.recordName} />
         </div>
 
         <div>

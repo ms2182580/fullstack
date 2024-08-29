@@ -50,23 +50,27 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
       justify-content: center;
     }
 
+    /*
     & > :nth-child(3) {
+      border: 2px solid crimson;
+
       position: absolute;
       bottom: 16px;
       right: 16px;
       z-index: 3;
 
       ${({ LAYOUT_RESULTS_MAIN_CARD }) =>
-        (LAYOUT_RESULTS_MAIN_CARD ===
-          LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE ||
-          LAYOUT_RESULTS_MAIN_CARD ===
-            LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE) &&
-        css`
-          ${isATLayout()}
+      (LAYOUT_RESULTS_MAIN_CARD ===
+        LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_WCMD_LIKE ||
+        LAYOUT_RESULTS_MAIN_CARD ===
+          LAYOUT_RESULTS_MAIN_CARD_VALUES.AT_ACS_LIKE) &&
+      css`
+        ${isATLayout()}
 
-          border: 2px solid crimson;
-        `}
+        border: 2px solid crimson;
+      `}
     }
+    */
   }
 
   & > :nth-child(2) {
