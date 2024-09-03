@@ -1,4 +1,5 @@
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
+import { SaveResourceDialog } from "@/components/org/save-resource-hearth/SaveResourceDialog"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"
 import { Verified_Detail } from "@/components/org/verified/Verified_Detail"
 import { Caption } from "@/components/ui/heading_body_text/DesktopMobileFonts"
@@ -9,7 +10,6 @@ import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_b
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
-import { ORG_D_Results_Card_Hearth } from "../../second-page/desktop/ORG_D_Results_Card_Hearth"
 import { ORG_D_Detail_About } from "./ORG_D_Detail_About"
 import { ORG_D_Detail_MainCardPhotos } from "./ORG_D_Detail_MainCardPhotos"
 import { ORG_D_Detail_Share } from "./ORG_D_Detail_Share"
@@ -61,7 +61,9 @@ export const ORG_D_Detail_Overview = () => {
                 src={imagesToUse_backup[Number(query?.whichPhoto)]}
                 alt={`Placeholder image`}
               />
-              <ORG_D_Results_Card_Hearth />
+              <span>
+                <SaveResourceDialog nameOfResource={dataOnCard.title} />
+              </span>
               <Verified_Detail />
             </span>
 

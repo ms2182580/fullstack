@@ -1,39 +1,35 @@
-import styled, { css, keyframes } from "styled-components"
+import { COLORS_TYPE } from "@/assets/Colors"
+import styled, { css, FlattenSimpleInterpolation } from "styled-components"
+
+export type SaveResourceHearthWrapper_SVGStyles_Type = {
+  forActive: COLORS_TYPE["HEX"] | COLORS_TYPE["HSL"]
+  forHoverAndFocusVisible: string
+  forModalOpen: () => FlattenSimpleInterpolation
+}
 
 type Props = {
   clickOnSVG?: boolean
   checkModalIsOpen: boolean
+  SVGStyles?: SaveResourceHearthWrapper_SVGStyles_Type
 }
-
-const keyFrames_modalIsOpen = keyframes`
-  0% {
-    transform: scale(0.9) translateX(0) translateY(0);
-  }
-  50% {
-    transform: scale(1.1) translateX(-1px) translateY(-1px);
-  }
-  100% {
-    transform: scale(0.9) translateX(0) translateY(0);
-  }
-`
 
 export const SaveResourceHearthWrapper = styled.div<Props>`
   & > * {
-    ${({ checkModalIsOpen }) =>
+    ${({ checkModalIsOpen, SVGStyles }) =>
       checkModalIsOpen &&
       css`
-        filter: drop-shadow(3px 3px 8px hsl(3.5, 74.9%, 64.1%));
-
-        animation: 2s ease-in-out infinite alternate ${keyFrames_modalIsOpen};
+        ${SVGStyles?.forModalOpen()};
       `}
 
     & > * {
-      fill: ${({ clickOnSVG }) => (clickOnSVG ? `hsl(3.5, 74.9%, 54.1%)` : ``)};
+      fill: ${({ clickOnSVG, SVGStyles }) =>
+        clickOnSVG ? `${SVGStyles?.forActive}` : ``};
     }
   }
 
   & > * > *:hover,
   &:focus-visible > * > * {
-    fill: ${({ clickOnSVG }) => (clickOnSVG ? `` : `hsl(3.5, 74.9%, 64.1%)`)};
+    fill: ${({ clickOnSVG, SVGStyles }) =>
+      clickOnSVG ? `` : `${SVGStyles?.forHoverAndFocusVisible}`};
   }
 `

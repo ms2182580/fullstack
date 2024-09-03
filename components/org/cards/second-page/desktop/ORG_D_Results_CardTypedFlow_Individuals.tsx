@@ -141,7 +141,7 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
                               category,
                               setThirdpageDataORG_Backend,
                               push,
-                              indexBackend: index,
+                              indexBackendToDisplayDummyImage: index,
                             })
                           }}
                         >

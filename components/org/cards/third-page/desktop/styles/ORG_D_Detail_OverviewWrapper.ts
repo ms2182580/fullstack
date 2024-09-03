@@ -34,6 +34,7 @@ export const ORG_D_Detail_OverviewWrapper = styled.section`
         height: ${CONST.IMAGE.height};
 
         & > :nth-child(1) {
+          padding: relative;
           & > :nth-child(1) {
             object-fit: cover;
 

@@ -35,7 +35,7 @@ export const ORG_D_Results_CardNoFilters = () => {
               <ORG_D_Results_Main_Right backendData={x} theIndex={index} />
               <ORG_D_Results_Main_BottomButtons
                 backendData={x}
-                whichResource={index}
+                indexBackendToDisplayDummyImage={index}
               />
             </ORG_D_Results_CardWrapper>
           )

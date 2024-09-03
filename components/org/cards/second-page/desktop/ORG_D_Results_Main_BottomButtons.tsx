@@ -21,13 +21,13 @@ import { ORG_D_Results_Main_BottomButtonsWrapper } from "./styles/ORG_D_Results_
 type Props = {
   renderThisContact?: number
   backendData?: any
-  whichResource?: number
+  indexBackendToDisplayDummyImage?: number
 }
 
 export const ORG_D_Results_Main_BottomButtons = ({
   renderThisContact,
   backendData,
-  whichResource,
+  indexBackendToDisplayDummyImage,
 }: Props) => {
   const toDataTestId = backendData["recordName"]
     .replaceAll(/[\s-]/g, "_")
@@ -88,7 +88,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
     secondpageDataORG_Backend[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE],
   ])
 
-  if (backendData && whichResource !== undefined) {
+  if (backendData && indexBackendToDisplayDummyImage !== undefined) {
     return (
       <ORG_D_Results_Main_BottomButtonsWrapper>
         <div
@@ -101,6 +101,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
               secondpageDataORG_Backend,
               setThirdpageDataORG_Backend,
               push,
+              indexBackendToDisplayDummyImage,
             })
           }
           onKeyDown={(event) =>
@@ -110,6 +111,7 @@ export const ORG_D_Results_Main_BottomButtons = ({
               secondpageDataORG_Backend,
               setThirdpageDataORG_Backend,
               push,
+              indexBackendToDisplayDummyImage,
             })
           }
         >

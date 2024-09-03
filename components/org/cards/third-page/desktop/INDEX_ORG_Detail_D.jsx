@@ -28,8 +28,6 @@ export const INDEX_ORG_Detail_D = ({ stateToToggle = theState }) => {
   const { thirdpageDataORG: thirdpageDataORG_Backend } =
     useORG_Ctx_D_ThirdpageData_Backend()
 
-  // const { modalShowedCtx } = useCtx_ShowModal()
-
   const { query } = useRouter()
 
   const getAllSpecificThirdPageData = useMemo(() => {

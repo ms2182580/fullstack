@@ -12,12 +12,6 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
 
-/* 
-!FH0
-- Create visual testing with playwright for this screen
-
-*/
-
 export const INDEX_D_Dashboard = () => {
   const { asPath } = useRouter()
 
