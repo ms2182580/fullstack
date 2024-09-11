@@ -8,14 +8,12 @@ export const Layout_Dashboard_CarePlanWrapper = styled.div`
 
   & > :nth-child(1) {
     grid-area: aside;
-    height: 100vh;
+    height: 100dvh;
     position: sticky;
     inset: 0;
   }
 
   & > :nth-child(2) {
     grid-area: children;
-
-    height: 120vh;
   }
 `

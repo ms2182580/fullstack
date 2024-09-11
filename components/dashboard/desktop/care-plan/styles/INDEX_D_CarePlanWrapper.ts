@@ -1,3 +1,4 @@
+import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const INDEX_D_CarePlanWrapper = styled.div`
@@ -7,10 +8,16 @@ export const INDEX_D_CarePlanWrapper = styled.div`
     "editorHeader editorHeader"
     "steper tabs";
 
-  background-color: #f3f1f3;
+  row-gap: 28px;
+
+  background-color: ${NEUTRALS.OFF_WHITE_2};
 
   & > :nth-child(1) {
     grid-area: editorHeader;
+    position: sticky;
+    inset: 0;
+
+    background-color: #fff;
   }
 
   & > :nth-child(2) {

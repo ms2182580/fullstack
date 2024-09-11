@@ -14,15 +14,15 @@ export type DataTabs_Type = {
 const dataTabs: DataTabs_Type = [
   {
     title: "Tab 1",
-    component: <div>Component Tab 1</div>,
+    component: <div style={{ minHeight: "200dvh" }}>Component Tab 1</div>,
   },
   {
     title: "Tab 2",
-    component: <div>Component Tab 2</div>,
+    component: <div style={{ minHeight: "150dvh" }}>Component Tab 2</div>,
   },
   {
     title: "Tab 3",
-    component: <div>Component Tab 3</div>,
+    component: <div style={{ minHeight: "120dvh" }}>Component Tab 3</div>,
   },
 ]
 
