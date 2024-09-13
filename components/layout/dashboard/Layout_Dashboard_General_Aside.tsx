@@ -1,16 +1,16 @@
 import { SEMANTICS } from "@/assets/Colors"
-import AI_Chat_Active from "@/assets/icons/ai_chat_active.svg"
-import AI_Chat_Default from "@/assets/icons/ai_chat_default.svg"
-import SvgArrow from "@/assets/icons/arrow_up.svg"
-import Documents_Active from "@/assets/icons/documents_active.svg"
-import Documents_Default from "@/assets/icons/documents_default.svg"
-import HomeSvg_Default from "@/assets/icons/home_default.svg"
-import HomeSvg_Active from "@/assets/icons/home_fill.svg"
-import Magnifying_Glass_Active from "@/assets/icons/magnifying_glass_active.svg"
-import Magnifying_Glass_Default from "@/assets/icons/magnifying_glass_default.svg"
-import SvgPlus from "@/assets/icons/org/third-page/org_plus.svg"
-import Star_Active from "@/assets/icons/star_active.svg"
-import Star_Default from "@/assets/icons/star_default.svg"
+import SVG_AI_Chat_Active from "@/assets/icons/ai_chat_active.svg"
+import SVG_AI_Chat_Default from "@/assets/icons/ai_chat_default.svg"
+import SVG_Arrow from "@/assets/icons/arrow_up.svg"
+import SVG_Documents_Active from "@/assets/icons/documents_active.svg"
+import SVG_Documents_Default from "@/assets/icons/documents_default.svg"
+import SVG_Home_Default from "@/assets/icons/home_default.svg"
+import SVG_Home_Active from "@/assets/icons/home_fill.svg"
+import SVG_Magnifying_Glass_Active from "@/assets/icons/magnifying_glass_active.svg"
+import SVG_Magnifying_Glass_Default from "@/assets/icons/magnifying_glass_default.svg"
+import SVG_Plus from "@/assets/icons/org/third-page/org_plus.svg"
+import SVG_Star_Active from "@/assets/icons/star_active.svg"
+import SVG_Star_Default from "@/assets/icons/star_default.svg"
 import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { Active_Navigation_Link } from "@/components/ui/active_navigation_link/Active_Navigation_Link"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
@@ -24,11 +24,14 @@ const allRoutesAcceptedToURL = Object.values(
 ).slice(0, -1)
 
 const svgIcons = [
-  { default: HomeSvg_Default, active: HomeSvg_Active },
-  { default: Documents_Default, active: Documents_Active },
-  { default: AI_Chat_Default, active: AI_Chat_Active },
-  { default: Magnifying_Glass_Default, active: Magnifying_Glass_Active },
-  { default: Star_Default, active: Star_Active },
+  { default: SVG_Home_Default, active: SVG_Home_Active },
+  { default: SVG_Documents_Default, active: SVG_Documents_Active },
+  { default: SVG_AI_Chat_Default, active: SVG_AI_Chat_Active },
+  {
+    default: SVG_Magnifying_Glass_Default,
+    active: SVG_Magnifying_Glass_Active,
+  },
+  { default: SVG_Star_Default, active: SVG_Star_Active },
 ]
 
 const formattedRoutes = allRoutesAcceptedToURL.map((x, index) => {
@@ -64,7 +67,7 @@ export const Layout_Dashboard_General_Aside = () => {
       <Link
         href={`/${ALL_ROUTES.DASHBOARD}/${ALL_ROUTES.DASHBOARD_SECTIONS.CARE_PLAN}`}
       >
-        <SvgPlus /> Create new
+        <SVG_Plus /> Create new
       </Link>
 
       <ul>
@@ -87,7 +90,7 @@ export const Layout_Dashboard_General_Aside = () => {
         )}
       </ul>
       <p>
-        Support us <SvgArrow />
+        Support us <SVG_Arrow />
       </p>
     </Layout_Dashboard_General_AsideWrapper>
   )

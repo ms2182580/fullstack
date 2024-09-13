@@ -16,8 +16,6 @@ export const INDEX_D_CarePlanWrapper = styled.div`
     grid-area: editorHeader;
     position: sticky;
     inset: 0;
-
-    background-color: #fff;
   }
 
   & > :nth-child(2) {
