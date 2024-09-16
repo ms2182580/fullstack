@@ -26,12 +26,12 @@ export const Editor_Header_Row2Wrapper = styled.div`
         & > * {
           fill: #343330;
           stroke: ${NEUTRALS.DARK_GREY};
+          stroke-width: 0%;
         }
       }
     }
 
     & > *:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
-      margin-right: 14px;
       margin-right: clamp(2px, 2.9vw - 28px, 14px);
 
       position: relative;
@@ -49,12 +49,10 @@ export const Editor_Header_Row2Wrapper = styled.div`
     }
 
     & > *:not(:first-child):not(:last-child):not(:nth-child(2)) {
-      margin-left: 14px;
       margin-left: clamp(2px, 2.9vw - 28px, 14px);
     }
 
     & > :first-child {
-      margin-right: 1px;
       margin-right: clamp(1px, 9.2vw - 92px, 40px);
     }
 
@@ -63,7 +61,7 @@ export const Editor_Header_Row2Wrapper = styled.div`
 
       &::before,
       & > span::before {
-        left: -50%;
+        left: clamp(-50px, 6.1vw - 112px, -25px);
       }
     }
   }
