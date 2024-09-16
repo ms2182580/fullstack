@@ -29,8 +29,7 @@ export const Editor_Header_Row1Wrapper = styled.div`
     display: flex;
     gap: 8px;
 
-    &:hover,
-    &:focus-visible {
+    :is(:hover, :focus-visible) {
       & > svg {
         & > * {
           fill: ${NEUTRALS.OFF_WHITE};
@@ -38,10 +37,7 @@ export const Editor_Header_Row1Wrapper = styled.div`
       }
     }
 
-    &:hover,
-    &:focus-visible,
-    &:not(:hover),
-    &:not(:focus-visible) {
+    :is(:hover, :focus-visible, :not(:hover), :not(:focus-visible)) {
       & > svg {
         & > * {
           transition: fill 0.1s ease-in-out;
