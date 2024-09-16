@@ -37,6 +37,7 @@ type TheSVGStructure = {
 
 type EditorTools_Type = {
   text?: string
+  customTitle?: string
   svg?: TheSVGStructure | TheSVGStructure[]
   customStyles?: Editor_Header_Row2_LI_Props["customStyles"]
 }[]
@@ -85,57 +86,97 @@ const customStylesCollection = {
 const editorTools: EditorTools_Type = [
   {
     text: "file",
+    customTitle: "upload a file | ctrl/cmd + o",
   },
   {
     svg: [
-      { svgToUI: SVG_arrow_previous, svgNameToTitle: "previous" },
-      { svgToUI: SVG_arrow_next, svgNameToTitle: "next" },
+      {
+        svgToUI: SVG_arrow_previous,
+        svgNameToTitle: "previous | ctrl/cmd + z ",
+      },
+      { svgToUI: SVG_arrow_next, svgNameToTitle: "next | ctrl/cmd + y" },
     ],
     customStyles: customStylesCollection[3],
   },
   {
     svg: [
-      { svgToUI: SVG_text_bold, svgNameToTitle: "bold the text" },
-      { svgToUI: SVG_text_italic, svgNameToTitle: "italic the text" },
-      { svgToUI: SVG_text_underline, svgNameToTitle: "underline the text" },
+      {
+        svgToUI: SVG_text_bold,
+        svgNameToTitle: "bold the text | ctrl/cmd + b",
+      },
+      {
+        svgToUI: SVG_text_italic,
+        svgNameToTitle: "italic the text | ctrl/cmd + i",
+      },
+      {
+        svgToUI: SVG_text_underline,
+        svgNameToTitle: "underline the text | ctrl/cmd + u",
+      },
     ],
     customStyles: customStylesCollection[3],
   },
   {
     text: "size",
-    svg: { svgToUI: DownArrowTinySvg, svgNameToTitle: "size" },
+    svg: {
+      svgToUI: DownArrowTinySvg,
+      svgNameToTitle: "change font size | ctrl/cmd + s",
+    },
     customStyles: customStylesCollection[2],
   },
   {
     svg: [
-      { svgToUI: SVG_align_left, svgNameToTitle: "align to left" },
-      { svgToUI: SVG_align_center, svgNameToTitle: "align to center" },
-      { svgToUI: SVG_align_right, svgNameToTitle: "align to right" },
+      {
+        svgToUI: SVG_align_left,
+        svgNameToTitle: "align to left | ctrl/cmd + j",
+      },
+      {
+        svgToUI: SVG_align_center,
+        svgNameToTitle: "align to center | ctrl/cmd + k",
+      },
+      {
+        svgToUI: SVG_align_right,
+        svgNameToTitle: "align to right | ctrl/cmd + l",
+      },
     ],
     customStyles: customStylesCollection[3],
   },
   {
-    svg: { svgToUI: SVG_list_bullets, svgNameToTitle: "list bullets" },
+    svg: {
+      svgToUI: SVG_list_bullets,
+      svgNameToTitle: "list bullets | ctrl/cmd + a",
+    },
     customStyles: customStylesCollection[3],
   },
   {
     svg: [
-      { svgToUI: SVG_add_hyperlink, svgNameToTitle: "add hyperlink" },
-      { svgToUI: SVG_add_attachment, svgNameToTitle: "add attachment" },
-      { svgToUI: SVG_add_image, svgNameToTitle: "add image" },
+      {
+        svgToUI: SVG_add_hyperlink,
+        svgNameToTitle: "add hyperlink | ctrl/cmd + d",
+      },
+      {
+        svgToUI: SVG_add_attachment,
+        svgNameToTitle: "add attachment | ctrl/cmd + f",
+      },
+      { svgToUI: SVG_add_image, svgNameToTitle: "add image | ctrl/cmd + g" },
     ],
     customStyles: customStylesCollection[3],
   },
   {
     svg: [
-      { svgToUI: SVG_translate, svgNameToTitle: "translate" },
-      { svgToUI: SVG_add_signature, svgNameToTitle: "add signature" },
+      {
+        svgToUI: SVG_add_signature,
+        svgNameToTitle: "add signature | ctrl/cmd + r",
+      },
+      { svgToUI: SVG_translate, svgNameToTitle: "translate | ctrl/cmd + t" },
     ],
     customStyles: customStylesCollection[3],
   },
   {
     text: "view",
-    svg: { svgToUI: DownArrowTinySvg, svgNameToTitle: "view" },
+    svg: {
+      svgToUI: DownArrowTinySvg,
+      svgNameToTitle: "toggle sections | ctrl/cmd + w",
+    },
     customStyles: customStylesCollection[2],
   },
   {
@@ -144,7 +185,10 @@ const editorTools: EditorTools_Type = [
   },
   {
     text: "AI Chat",
-    svg: { svgToUI: SVG_AI_Chat_Default, svgNameToTitle: "AI Chat" },
+    svg: {
+      svgToUI: SVG_AI_Chat_Default,
+      svgNameToTitle: "Chat with AI | f1",
+    },
     customStyles: customStylesCollection[1],
   },
 ]
@@ -154,14 +198,20 @@ export const Editor_Header_Row2 = () => {
     <Editor_Header_Row2Wrapper>
       <ul>
         {editorTools.map((tool, index_editorTools) => {
-          const { text, svg: TheSVG = null, customStyles = null } = tool
+          const {
+            text,
+            customTitle = null,
+            svg: TheSVG = null,
+            customStyles = null,
+          } = tool
 
           if (text && TheSVG === null) {
             return (
               <Editor_Header_Row2_LIWrapper
                 key={text}
+                title={customTitle || text}
+                data-content={customTitle || text}
                 customStyles={customStyles}
-                title={text}
                 tabIndex={0}
               >
                 {text}
@@ -182,6 +232,7 @@ export const Editor_Header_Row2 = () => {
                     <span
                       key={svgNameToTitle}
                       title={svgNameToTitle}
+                      data-content={svgNameToTitle}
                       tabIndex={0}
                     >
                       <SVG_Deep1 />
@@ -206,8 +257,9 @@ export const Editor_Header_Row2 = () => {
             return (
               <Editor_Header_Row2_LIWrapper
                 key={text}
-                customStyles={customStyles}
                 title={svgNameToTitle}
+                data-content={svgNameToTitle}
+                customStyles={customStyles}
                 tabIndex={0}
               >
                 <span>{text}</span>
