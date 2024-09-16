@@ -63,7 +63,7 @@ export const Editor_Header_Row2Wrapper = styled.div`
 
       &::before,
       & > span::before {
-        left: -150%;
+        left: -50%;
       }
     }
   }
