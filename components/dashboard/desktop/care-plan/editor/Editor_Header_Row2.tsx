@@ -15,7 +15,6 @@ import SVG_text_bold from "@/assets/icons/editor/text_bold.svg"
 import SVG_text_italic from "@/assets/icons/editor/text_italic.svg"
 import SVG_text_underline from "@/assets/icons/editor/text_underline.svg"
 import SVG_translate from "@/assets/icons/editor/translate.svg"
-import { format_string } from "@/utils/format_string"
 import { SVGProps } from "react"
 import { css } from "styled-components"
 import {
@@ -25,16 +24,20 @@ import {
 } from "./styles/Editor_Header_Row2Wrapper"
 
 /* 
-!FH0
+!FH1
 - Create this component
 - https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?node-id=1-7869&node-type=frame&t=QQetIBOlT8rKmrY4-0
 */
 
 type TheSVG_Type = (props: SVGProps<SVGSVGElement>) => JSX.Element
+type TheSVGStructure = {
+  svgToUI: TheSVG_Type
+  svgNameToTitle: string
+}
 
 type EditorTools_Type = {
   text?: string
-  svg?: TheSVG_Type | TheSVG_Type[]
+  svg?: TheSVGStructure | TheSVGStructure[]
   customStyles?: Editor_Header_Row2_LI_Props["customStyles"]
 }[]
 
@@ -84,37 +87,55 @@ const editorTools: EditorTools_Type = [
     text: "file",
   },
   {
-    svg: [SVG_arrow_previous, SVG_arrow_next],
+    svg: [
+      { svgToUI: SVG_arrow_previous, svgNameToTitle: "previous" },
+      { svgToUI: SVG_arrow_next, svgNameToTitle: "next" },
+    ],
     customStyles: customStylesCollection[3],
   },
   {
-    svg: [SVG_text_bold, SVG_text_italic, SVG_text_underline],
+    svg: [
+      { svgToUI: SVG_text_bold, svgNameToTitle: "bold the text" },
+      { svgToUI: SVG_text_italic, svgNameToTitle: "italic the text" },
+      { svgToUI: SVG_text_underline, svgNameToTitle: "underline the text" },
+    ],
     customStyles: customStylesCollection[3],
   },
   {
     text: "size",
-    svg: DownArrowTinySvg,
+    svg: { svgToUI: DownArrowTinySvg, svgNameToTitle: "size" },
     customStyles: customStylesCollection[2],
   },
   {
-    svg: [SVG_align_left, SVG_align_center, SVG_align_right],
+    svg: [
+      { svgToUI: SVG_align_left, svgNameToTitle: "align to left" },
+      { svgToUI: SVG_align_center, svgNameToTitle: "align to center" },
+      { svgToUI: SVG_align_right, svgNameToTitle: "align to right" },
+    ],
     customStyles: customStylesCollection[3],
   },
   {
-    svg: SVG_list_bullets,
+    svg: { svgToUI: SVG_list_bullets, svgNameToTitle: "list bullets" },
     customStyles: customStylesCollection[3],
   },
   {
-    svg: [SVG_add_hyperlink, SVG_add_attachment, SVG_add_image],
+    svg: [
+      { svgToUI: SVG_add_hyperlink, svgNameToTitle: "add hyperlink" },
+      { svgToUI: SVG_add_attachment, svgNameToTitle: "add attachment" },
+      { svgToUI: SVG_add_image, svgNameToTitle: "add image" },
+    ],
     customStyles: customStylesCollection[3],
   },
   {
-    svg: [SVG_translate, SVG_add_signature],
+    svg: [
+      { svgToUI: SVG_translate, svgNameToTitle: "translate" },
+      { svgToUI: SVG_add_signature, svgNameToTitle: "add signature" },
+    ],
     customStyles: customStylesCollection[3],
   },
   {
     text: "view",
-    svg: DownArrowTinySvg,
+    svg: { svgToUI: DownArrowTinySvg, svgNameToTitle: "view" },
     customStyles: customStylesCollection[2],
   },
   {
@@ -123,7 +144,7 @@ const editorTools: EditorTools_Type = [
   },
   {
     text: "AI Chat",
-    svg: SVG_AI_Chat_Default,
+    svg: { svgToUI: SVG_AI_Chat_Default, svgNameToTitle: "AI Chat" },
     customStyles: customStylesCollection[1],
   },
 ]
@@ -137,35 +158,33 @@ export const Editor_Header_Row2 = () => {
 
           if (text && TheSVG === null) {
             return (
-              <>
-                <Editor_Header_Row2_LIWrapper
-                  key={text}
-                  customStyles={customStyles}
-                  title={text}
-                  tabIndex={0}
-                >
-                  {text}
-                </Editor_Header_Row2_LIWrapper>
-              </>
+              <Editor_Header_Row2_LIWrapper
+                key={text}
+                customStyles={customStyles}
+                title={text}
+                tabIndex={0}
+              >
+                {text}
+              </Editor_Header_Row2_LIWrapper>
             )
           }
 
-          if (!text && Array.isArray(TheSVG)) {
+          if (!text && TheSVG && Array.isArray(TheSVG)) {
             return (
               <Editor_Header_Row2_LIWrapper
                 key={index_editorTools}
                 customStyles={customStyles}
               >
-                {TheSVG.map((svg, index_TheSVG) => {
-                  const SVG_Deep1 = svg
-                  const svgName = format_string({
-                    stringToFormat: SVG_Deep1.name,
-                    removeSequence: "Svg",
-                  }) //Remove the SVG at the beginning of the string
+                {TheSVG.map(({ svgToUI, svgNameToTitle }) => {
+                  const SVG_Deep1 = svgToUI
 
                   return (
-                    <span title={svgName} tabIndex={0}>
-                      <SVG_Deep1 key={index_TheSVG} />
+                    <span
+                      key={svgNameToTitle}
+                      title={svgNameToTitle}
+                      tabIndex={0}
+                    >
+                      <SVG_Deep1 />
                     </span>
                   )
                 })}
@@ -173,16 +192,26 @@ export const Editor_Header_Row2 = () => {
             )
           }
 
-          if (text && TheSVG && !Array.isArray(TheSVG)) {
+          if (
+            text &&
+            TheSVG &&
+            !Array.isArray(TheSVG) &&
+            typeof TheSVG === "object" &&
+            TheSVG !== null
+          ) {
+            const { svgToUI, svgNameToTitle } = TheSVG
+
+            const TheSVGToUI = svgToUI
+
             return (
               <Editor_Header_Row2_LIWrapper
                 key={text}
                 customStyles={customStyles}
-                title={text}
+                title={svgNameToTitle}
                 tabIndex={0}
               >
                 <span>{text}</span>
-                <TheSVG />
+                <TheSVGToUI />
               </Editor_Header_Row2_LIWrapper>
             )
           }
