@@ -76,6 +76,8 @@ export type Editor_Header_Row2_LI_Props = {
 export const Editor_Header_Row2_LIWrapper = styled.li<Editor_Header_Row2_LI_Props>`
   ${({ customStyles }) => customStyles && customStyles()};
 
+  height: 32px;
+
   &,
   & > span {
     position: relative;
