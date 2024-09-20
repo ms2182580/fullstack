@@ -8,7 +8,7 @@ export const INDEX_D_CarePlanWrapper = styled.div`
     "editorHeader editorHeader"
     "steper tabs";
 
-  row-gap: 28px;
+  gap: calc(8px * 3);
 
   background-color: ${NEUTRALS.OFF_WHITE_2};
 
@@ -24,5 +24,13 @@ export const INDEX_D_CarePlanWrapper = styled.div`
 
   & > :nth-child(3) {
     grid-area: steper;
+    /* 
+    This will allow to make the editor sticky in the same spot
+    If the editor should be sticky, consider to pass a prop using the styled-components approach to know how much height have the header here. And with that, use it in the "top" property
+    */
+    /*
+    position: sticky;
+    top: 163px;
+    */
   }
 `

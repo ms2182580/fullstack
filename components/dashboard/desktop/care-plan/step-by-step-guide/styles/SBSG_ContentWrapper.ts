@@ -1,7 +1,9 @@
-import styled from "@emotion/styled"
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
+import styled from "styled-components"
 
-export const SBSG_ContentWrapper = styled.div`
-  border: 2px solid crimson;
-
-  height: 100%;
+export const SBSG_ContentWrapper = styled.article`
+  & > :last-child {
+    ${reusableButton()};
+    width: 100%;
+  }
 `

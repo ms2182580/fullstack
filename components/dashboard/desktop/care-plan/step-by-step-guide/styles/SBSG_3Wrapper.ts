@@ -1,5 +1,3 @@
-import styled from "@emotion/styled"
+import styled from "styled-components"
 
-export const SBSG_3Wrapper = styled.div`
-  border: 2px solid green;
-`
+export const SBSG_3Wrapper = styled.div``

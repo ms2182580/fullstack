@@ -128,6 +128,7 @@ type Paragraph_Props = {
     | "off_white"
     | "black"
     | "dark_maroon"
+    | "light_maroon"
 }
 
 export const Paragraph = ({
@@ -177,5 +178,7 @@ export const Paragraph = ({
       ? NEUTRALS.OFF_WHITE
       : color === "dark_maroon"
       ? PRIMARY.DARK_MAROON
+      : color === "light_maroon"
+      ? PRIMARY.LIGHT_MAROON
       : NEUTRALS.BLACK};
 `

@@ -6,7 +6,7 @@ import { ComponentSteps_Type } from "."
 type Props = {
   componentSteps: ComponentSteps_Type
   activeStep: number
-  handleNextStep: ({ e, index }) => void
+  handleNextStep: (e) => void
 }
 
 export const SBSG_Content = ({
@@ -19,10 +19,15 @@ export const SBSG_Content = ({
       {componentSteps.map(({ component, props }, index) => {
         if (index !== activeStep) return null
 
+        const propsWithHandler = { ...props, handleNextStep }
+
         return (
           <Fragment key={index}>
-            {isValidElement(component) && cloneElement(component, props)}
-            <button onClick={(e) => handleNextStep({ e, index })}>Next</button>
+            {isValidElement(component) &&
+              cloneElement(component, propsWithHandler)}
+            <button onClick={handleNextStep} onKeyDown={handleNextStep}>
+              Next
+            </button>
           </Fragment>
         )
       })}
