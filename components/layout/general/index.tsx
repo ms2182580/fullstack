@@ -1,7 +1,7 @@
 import { Home_D_NavBar_N } from "@/components/home/desktop/Home_D_NavBar_N"
 import { NavBar_M } from "@/components/navBar/mobile/NavBar_M"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
-import { useWidthSize } from "@/utils/useWidthSize"
+import { childrenWithPropsFn } from "@/utils/childrenWithPropsFn"
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
@@ -32,8 +32,7 @@ const Footer_Mobile = dynamic(
   { ssr: false }
 )
 
-export const Layout_General = ({ children }) => {
-  const { isMobile } = useWidthSize()
+export const Layout_General = ({ children, isMobile }) => {
   const { pathname } = useRouter()
 
   const shouldShowSupportUs = useMemo(() => {
@@ -45,14 +44,14 @@ export const Layout_General = ({ children }) => {
     return acceptedPath
   }, [pathname])
 
-  if (isMobile === undefined) return null
+  const childrenWithProps = childrenWithPropsFn({ children, isMobile })
 
   return (
     <>
       {isMobile ? <NavBar_M /> : <Home_D_NavBar_N />}
 
       <MainWrapper isMainInHome={pathname === "/"}>
-        {children}
+        {childrenWithProps}
         {shouldShowSupportUs && <Support_us />}
       </MainWrapper>
 
