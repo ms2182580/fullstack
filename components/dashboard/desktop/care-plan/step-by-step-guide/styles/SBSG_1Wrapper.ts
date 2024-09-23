@@ -4,11 +4,9 @@ import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import styled from "styled-components"
 
 export const SBSG_1Wrapper = styled.article`
-  padding-bottom: calc(8px * 4);
-
   & > header {
     h5 {
-      ${HeaderCSS({ fontSize: "16px" })}
+      ${HeaderCSS({ fontSize: "16px", fontWeight: "600" })}
     }
   }
 
@@ -31,7 +29,9 @@ export const SBSG_1Wrapper = styled.article`
         display: grid;
         justify-items: center;
 
-        cursor: pointer;
+        img {
+          border-radius: 4px 4px 0px 0px;
+        }
 
         p {
           ${Paragraph({ color: "black" })};

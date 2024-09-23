@@ -5,5 +5,7 @@ export const SBSG_ContentWrapper = styled.article`
   & > :last-child {
     ${reusableButton()};
     width: 100%;
+
+    margin-top: calc(8px * 4);
   }
 `

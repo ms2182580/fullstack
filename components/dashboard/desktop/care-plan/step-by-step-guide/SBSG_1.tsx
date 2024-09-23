@@ -12,6 +12,13 @@ type Props = {
   handleNextStep?: () => void
 }
 
+/* 
+!FH0
+- Check this component, everything okay?
+- Follow with the next component
+
+*/
+
 export const SBSG_1 = ({ handleNextStep }: Props) => {
   return (
     <SBSG_1Wrapper>

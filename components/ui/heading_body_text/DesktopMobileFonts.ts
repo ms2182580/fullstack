@@ -115,7 +115,12 @@ export const Caption = styled.span<PType>`
 `
 
 type Paragraph_Props = {
-  fontWeight?: "bolder" | "bold" | "semibold" | "medium" | "normal"
+  fontWeight?:
+    | ("bolder" | 800 | "800")
+    | ("bold" | 700 | "700")
+    | ("semibold" | 600 | "600")
+    | ("medium" | 500 | "500")
+    | ("normal" | 400 | "400")
   textDecoration?: "underline" | "linethrough" | "underline linethrough" | ""
   color?:
     | "dark_gray"
@@ -140,15 +145,18 @@ export const Paragraph = ({
   font-size: ${SharedVariables.FontSizeBody};
 
   font-weight: ${() =>
-    fontWeight === "bolder"
+    fontWeight === "bolder" || fontWeight === "800" || fontWeight === 800
       ? SharedVariables.FontWeight_800
-      : fontWeight === "bold"
+      : fontWeight === "bold" || fontWeight === "700" || fontWeight === 700
       ? SharedVariables.FontWeight_700
-      : fontWeight === "semibold"
+      : fontWeight === "semibold" || fontWeight === "600" || fontWeight === 600
       ? SharedVariables.FontWeight_600
-      : fontWeight === "medium"
+      : fontWeight === "medium" || fontWeight === "500" || fontWeight === 500
       ? SharedVariables.FontWeight_500
-      : fontWeight === "normal" && SharedVariables.FontWeight_400};
+      : (fontWeight === "normal" ||
+          fontWeight === "400" ||
+          fontWeight === 400) &&
+        SharedVariables.FontWeight_400};
 
   text-decoration: ${() =>
     textDecoration === "underline"

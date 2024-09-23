@@ -17,6 +17,8 @@ export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
 
   & > header {
+    margin-bottom: 8px;
+
     & > span {
       display: flex;
       align-items: center;
@@ -53,6 +55,8 @@ export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.div`
     & > p {
       ${Paragraph({ color: "light_maroon" })};
       font-size: 12px;
+
+      margin-left: 4px;
     }
 
     & > div {
@@ -62,8 +66,8 @@ export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.div`
       align-items: center;
       justify-content: space-between;
 
-      h5 {
-        ${HeaderCSS({ fontSize: "20px" })}
+      h4 {
+        ${HeaderCSS({ fontSize: "20px" })};
       }
 
       button {
@@ -76,6 +80,5 @@ export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.div`
 
   & > :nth-child(2) {
     padding-inline: 16px;
-    padding-top: 8px;
   }
 `
