@@ -13,36 +13,37 @@ export const Footer_DWrapper = styled.footer`
     margin-inline: auto;
   }
 
-  & > header {
-    background-color: ${PRIMARY.PRIMARY_LOGO};
+  // & > header {
+  //   background-color: ${PRIMARY.PRIMARY_LOGO};
 
-    display: flex;
-    justify-content: center;
-    gap: 32px;
+  //   display: flex;
+  //   justify-content: center;
+  //   gap: 32px;
 
-    padding-top: 56px;
-    padding-bottom: 56px;
+  //   padding-top: 56px;
+  //   padding-bottom: 56px;
 
-    & > :nth-child(1) {
-      color: ${NEUTRALS.OFF_WHITE};
-      font-size: 28px;
-      font-weight: 600;
-      line-height: 48px;
-    }
-    & > :nth-child(2) {
-      ${reusableButton({ secondary: true })}
+  //   & > :nth-child(1) {
+  //     color: ${NEUTRALS.OFF_WHITE};
+  //     font-size: 28px;
+  //     font-weight: 600;
+  //     line-height: 48px;
+  //   }
+  //   & > :nth-child(2) {
+  //     ${reusableButton({ secondary: true })}
 
-      border-color: ${NEUTRALS.OFF_WHITE};
+  //     border-color: ${NEUTRALS.OFF_WHITE};
 
-      &:hover,
-      &:focus-visible {
-        border-color: ${PRIMARY.PRIMARY_HOVER};
-      }
-    }
-  }
+  //     &:hover,
+  //     &:focus-visible {
+  //       border-color: ${PRIMARY.PRIMARY_HOVER};
+  //     }
+  //   }
+  // }
 
-  & > :nth-child(2) {
-    padding: 41px 185px;
+  & > :nth-child(1) {
+    // padding: 41px 185px;
+     padding: 76px 185px;
     display: grid;
     gap: 48px;
 
@@ -52,9 +53,9 @@ export const Footer_DWrapper = styled.footer`
       & > :nth-child(1) {
         display: grid;
         gap: 2px;
-        & > :nth-child(3) {
+        & > :nth-child(4) {
           & > :nth-child(1) {
-            color: ${PRIMARY.PRIMARY_CTA};
+            color: #ae79c3;
           }
         }
       }
@@ -129,12 +130,14 @@ export const Footer_DWrapper = styled.footer`
       & > :nth-child(3) {
         position: absolute;
         right: 0px;
-        bottom: -41px;
+        bottom: -76px;
+        height: 260px;
+        width: 180px;
       }
     }
   }
 
-  & > :nth-child(3) {
+  & > :nth-child(2) {
     background-image: url("/background/background3.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -151,6 +154,16 @@ export const Footer_DWrapper = styled.footer`
       flex-direction: column;
       align-items: flex-start;
       gap: 5px;
+      & > :nth-child(1) {
+        position: relative;
+
+        & > :nth-child(2) {
+          position: absolute;
+          top: 0.8rem;
+          right: -3rem;
+          font-weight: 600;
+        }
+      }
     }
 
     & > :nth-child(2) {
@@ -162,18 +175,25 @@ export const Footer_DWrapper = styled.footer`
 
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 20px;
 
         & > :nth-child(1) {
           font-size: 20px;
           font-weight: 600;
         }
       }
+      & > :last-child {
+        & > :last-child {
+          width: max-content;
+          background-color: transparent;
+          padding-inline: 24px;
+        }
+      }
     }
   }
 
   & > :last-child {
-    background-color: ${PRIMARY.PRIMARY_HOVER};
+    background-color: ${PRIMARY.PRIMARY_CTA};
 
     & > :nth-child(1) {
       padding-inline: clamp(16px, calc(10vw - 80px), 96px);

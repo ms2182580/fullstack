@@ -1,12 +1,14 @@
 export const COLORS = {
   Primary:{
-    BgColor: "#6E3A82",
+    // BgColor: "#6E3A82",
+    BgColor: "#006886",
     TextColor: "#F9FCFD",  
   },
   
   Secondary :{
     BgColor: "#F9FCFD",
-    TextColor: "#6E3A82",  
+    // TextColor: "#6E3A82",  
+    TextColor: "#006886",  
   },
   
   FocusOutline:"#64AFFB",
