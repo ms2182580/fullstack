@@ -4,7 +4,7 @@ import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import styled from "styled-components"
 
-export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.div`
+export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.aside`
   margin-inline: 24px;
 
   height: fit-content;
@@ -59,7 +59,7 @@ export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.div`
       margin-left: 4px;
     }
 
-    & > div {
+    & > section {
       padding-inline: 16px;
 
       display: flex;

@@ -124,7 +124,10 @@ type Paragraph_Props = {
   textDecoration?: "underline" | "linethrough" | "underline linethrough" | ""
   color?:
     | "dark_gray"
+    | "dark_gray_2"
+    | "dark_gray_3"
     | "light_gray"
+    | "light_gray_2"
     | "success"
     | "error"
     | "primary_cta"
@@ -170,8 +173,14 @@ export const Paragraph = ({
   color: ${() =>
     color === "dark_gray"
       ? NEUTRALS.DARK_GREY
+      : color === "dark_gray_2"
+      ? NEUTRALS.DARK_GREY_2
+      : color === "dark_gray_3"
+      ? NEUTRALS.DARK_GREY_3
       : color === "light_gray"
       ? NEUTRALS.LIGHT_GREY
+      : color === "light_gray_2"
+      ? NEUTRALS.LIGHT_GREY2
       : color === "success"
       ? SEMANTICS.SUCCESS_STATE
       : color === "error"

@@ -9,7 +9,8 @@ const planFor = [
 ]
 
 type Props = {
-  handleNextStep?: () => void
+  handleNextStep?: (e) => void
+  handleNameProfileSelected?: (e) => void
 }
 
 /* 
@@ -19,7 +20,10 @@ type Props = {
 
 */
 
-export const SBSG_1 = ({ handleNextStep }: Props) => {
+export const SBSG_1 = ({
+  handleNextStep,
+  handleNameProfileSelected,
+}: Props) => {
   return (
     <SBSG_1Wrapper>
       <header>
@@ -34,8 +38,18 @@ export const SBSG_1 = ({ handleNextStep }: Props) => {
               <li
                 key={name}
                 tabIndex={0}
-                onClick={handleNextStep}
-                onKeyDown={handleNextStep}
+                onClick={(e) => {
+                  if (handleNextStep) handleNextStep(e)
+
+                  if (handleNameProfileSelected)
+                    handleNameProfileSelected({ e, nameProfile: name })
+                }}
+                onKeyDown={(e) => {
+                  if (handleNextStep) handleNextStep(e)
+
+                  if (handleNameProfileSelected)
+                    handleNameProfileSelected({ e, nameProfile: name })
+                }}
               >
                 <Image src={image} alt={name} />
                 <p>{name}</p>
