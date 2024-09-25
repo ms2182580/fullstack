@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import Image from "next/image"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -9,7 +10,7 @@ import LockIcon from "@/assets/icons/org/organization/lock.svg"
 import SidebarIcon from "@/assets/icons/org/organization/sidebar.svg"
 
 type CardPropsType = {
-  Icon?: React.ReactElement
+  Icon?: ReactElement
   heading?: string
   description?: string
 }

@@ -17,7 +17,7 @@ export const Organization_About_Oddy_D = () => {
           <div>
             <P>
               Oddy is an organization founded by families, indiviudals, siblings
-              and parents. Our journeys to care have been complex, yet we’re
+              and parents.Our journeys to care have been complex, yet we’re
               working through the kinks--We created Oddy to offer the DD
               community the tool we wish we existed as we navigate the DD care
               landscape

@@ -1,6 +1,5 @@
 import Image from "next/image"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { Organization_D_Dive_Right_NWrapper } from "./styles/Organization_D_Dive_Right_NWrapper"
 import Organization_7 from "@/assets/images/org/organization/organization_7.png"
 import { Search_Icon_SVG } from "@/assets/icons"
@@ -52,7 +51,7 @@ export const Organization_Dive_Right_D = () => {
               <input type="text" name="location" placeholder="19130" required />
             </div>
           </div>
-          <button onClick={() => {}}>
+          <button>
             <Search_Icon_SVG style={{ width: "24px", height: "24px" }} />
           </button>
         </div>

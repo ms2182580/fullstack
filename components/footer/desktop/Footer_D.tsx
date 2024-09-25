@@ -24,7 +24,7 @@ export const Footer_D = () => {
         <H4>Join today and get started with your free forever account!</H4>
         <Link href={`${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
       </header> */}
-
+      
       <div>
         <div>
           <div>
