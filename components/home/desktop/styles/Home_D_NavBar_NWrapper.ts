@@ -109,7 +109,7 @@ export const Home_D_NavBar_NWrapper = styled.nav`
 
         & > :nth-child(2) {
           font-weight: 600;
-          color: #6e3a82;
+          color: #006886;
         }
 
         & > :nth-child(3) {

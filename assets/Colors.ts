@@ -1,6 +1,7 @@
 export const PRIMARY = {
   PRIMARY_LOGO: "#A461BB" /* Only for INCLUSIVE logo */,
-  PRIMARY_CTA: "#6E3A82" /* Primary CTA (default state) */,
+  // PRIMARY_CTA: "#6E3A82" /* Primary CTA (default state) */,
+  PRIMARY_CTA: "#006886" /* New Color Scheme Primary CTA (default state) */,
   PRIMARY_HOVER: "#4B348B" /* Primary CTA (hover state) */,
   PRIMARY_BACKGROUND: "#F1E7F5",
   DARK_MAROON: "#312138",
@@ -38,6 +39,7 @@ export const NEUTRALS = {
   DARK_GREY_3: "#908395" /* Informational text alternative 3 */,
   LIGHT_GREY: "#D3D6D7" /* Disabled color */,
   LIGHT_GREY2: "#E9E6EA80" /* Disabled color */,
+  LIGHT_GREY3: "#979797" /* New Color Scheme Disabled color */,
   OFF_WHITE: "#FCFDFE" /* Overall Background */,
   OFF_WHITE_2: "#F3F1F3" /* Overall Background alternative 2 */,
   BORDER: "#D3CED5",
