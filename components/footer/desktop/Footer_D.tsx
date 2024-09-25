@@ -13,24 +13,26 @@ import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper"
 import { ButtonSmall } from "@/components/ui/buttons/general"
 import { PRIMARY } from "@/assets/Colors"
+import No_Messages from "../../../assets/images/home/no_messages.png"
 import No_Email from "../../../assets/images/home/no-email.png"
 import Image from "next/image"
 
 export const Footer_D = () => {
   return (
     <Footer_DWrapper>
-      <header>
+      {/* <header>
         <H4>Join today and get started with your free forever account!</H4>
         <Link href={`${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
-      </header>
-
+      </header> */}
+      
       <div>
         <div>
           <div>
             <H1>Let's join forces. We're here to help.</H1>
-            <H1>Ask Oddy. Search Oddy.</H1>
+            <H1>Ask Oddy. Search Oddy. Try Oddy</H1>
+            <H1>Connect with Oddy</H1>
             <H1>
-              Then Tweet / Follow/ Like / Share <span>Oddy</span>
+              Tweet / Follow/ Like / Share <span>Oddy</span>
             </H1>
           </div>
           <div>
@@ -98,8 +100,8 @@ export const Footer_D = () => {
             </div>
           </div>
           <Image
-            src={No_Email}
-            alt="Man looking for email in email box."
+            src={No_Messages}
+            alt="No message in email box."
             width={257}
             height={257}
           />
@@ -108,7 +110,10 @@ export const Footer_D = () => {
 
       <div>
         <div>
-          <INDEX_Logo />
+          <div>
+            <INDEX_Logo />
+            <P>BETA</P>
+          </div>
           <Caption>
             The public benefit company connecting parents with the I/DD
             community.
@@ -123,16 +128,17 @@ export const Footer_D = () => {
           </ul>
           <ul>
             <h6>Tools</h6>
-            <li>Resource Directory</li>
+            <li>Oddy Resource Directory</li>
             <li>AI Chat</li>
-            <li>Plans</li>
+            <li>Service Plan Generator</li>
+            <li>Oddy Employ</li>
           </ul>
           <ul>
             <h6>Support us</h6>
             <li>Donate</li>
-            <li>Contribute</li>
+            <li>Repeat contributions</li>
             <li>Give feedback</li>
-            <ButtonSmall>Sign up</ButtonSmall>
+            <ButtonSmall secondary>Sign up</ButtonSmall>
           </ul>
         </div>
       </div>
