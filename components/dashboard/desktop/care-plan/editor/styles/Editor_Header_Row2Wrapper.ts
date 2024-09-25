@@ -3,7 +3,6 @@ import styled, { FlattenSimpleInterpolation } from "styled-components"
 
 export const Editor_Header_Row2Wrapper = styled.div`
   padding-block: 10px;
-  /* padding-inline: 4px; */
   padding-inline: clamp(8px, 4.9vw - 46px, 24px);
 
   ul {
@@ -27,12 +26,12 @@ export const Editor_Header_Row2Wrapper = styled.div`
         & > * {
           fill: #343330;
           stroke: ${NEUTRALS.DARK_GREY};
+          stroke-width: 0%;
         }
       }
     }
 
     & > *:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
-      margin-right: 14px;
       margin-right: clamp(2px, 2.9vw - 28px, 14px);
 
       position: relative;
@@ -48,19 +47,22 @@ export const Editor_Header_Row2Wrapper = styled.div`
         background-color: ${NEUTRALS.BORDER};
       }
     }
+
     & > *:not(:first-child):not(:last-child):not(:nth-child(2)) {
-      margin-left: 14px;
       margin-left: clamp(2px, 2.9vw - 28px, 14px);
     }
 
     & > :first-child {
-      margin-right: 1px;
-      /* margin-right: clamp(4px, 5.8vw - 43px, 40px); */
       margin-right: clamp(1px, 9.2vw - 92px, 40px);
     }
 
     & > :last-child {
       margin-left: auto;
+
+      &::before,
+      & > span::before {
+        left: clamp(-50px, 6.1vw - 112px, -25px);
+      }
     }
   }
 `
@@ -71,4 +73,41 @@ export type Editor_Header_Row2_LI_Props = {
 
 export const Editor_Header_Row2_LIWrapper = styled.li<Editor_Header_Row2_LI_Props>`
   ${({ customStyles }) => customStyles && customStyles()};
+
+  height: 32px;
+
+  &,
+  & > span {
+    position: relative;
+  }
+
+  &::before,
+  & > span::before {
+    content: attr(data-content);
+    font-weight: 600;
+    height: max-content;
+    width: max-content;
+
+    position: absolute;
+    top: calc(-100% - calc(8px * 1.5));
+    left: 0%;
+
+    background-color: ${NEUTRALS.BORDER};
+    color: ${NEUTRALS.BLACK};
+    border-radius: 8px;
+
+    padding: 4px 8px;
+
+    overflow: hidden;
+    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  :is(:focus-visible),
+  & > span:focus-visible {
+    &::before {
+      visibility: visible;
+    }
+  }
 `

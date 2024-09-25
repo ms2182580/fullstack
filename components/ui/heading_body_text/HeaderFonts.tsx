@@ -401,7 +401,12 @@ export const H4 = styled.h4<Type>`
 `
 
 type HeaderCSS_Props = {
-  fontSize?: "h1" | "h2" | "h3" | "h4" | "d1"
+  fontSize?:
+    | ("h1" | "34px")
+    | ("h2" | "24px")
+    | ("h3" | "20px")
+    | ("h4" | "16px")
+    | ("d1" | "48px")
   fontWeight?:
     | "800"
     | "700"
@@ -431,31 +436,31 @@ export const HeaderCSS = ({
   fontWeight = "600",
   color = "black",
 }: HeaderCSS_Props = {}) => css`
-  ${fontSize === "h1"
+  ${fontSize === "h1" || fontSize === "34px"
     ? css`
         font-size: ${FontsHeadMobile.HEADING_1};
         line-height: ${LineHeightHeadMobile.HEADING_1};
         letter-spacing: ${LetterSpacingHeadMobile.HEADING_1};
       `
-    : fontSize === "h2"
+    : fontSize === "h2" || fontSize === "24px"
     ? css`
         font-size: ${FontsHeadMobile.HEADING_2};
         line-height: ${LineHeightHeadMobile.HEADING_2};
         letter-spacing: ${LetterSpacingHeadMobile.HEADING_2};
       `
-    : fontSize === "h3"
+    : fontSize === "h3" || fontSize === "20px"
     ? css`
         font-size: ${FontsHeadMobile.HEADING_3};
         line-height: ${LineHeightHeadMobile.HEADING_3};
         letter-spacing: ${LetterSpacingHeadMobile.HEADING_3};
       `
-    : fontSize === "h4"
+    : fontSize === "h4" || fontSize === "16px"
     ? css`
         font-size: ${FontsHeadMobile.HEADING_4};
         line-height: ${LineHeightHeadMobile.HEADING_4};
         letter-spacing: ${LetterSpacingHeadMobile.HEADING_4};
       `
-    : fontSize === "d1" &&
+    : (fontSize === "d1" || fontSize === "48px") &&
       css`
         font-size: ${FontsHeadMobile.DISPLAY_1};
         line-height: ${LineHeightHeadMobile.DISPLAY_1};

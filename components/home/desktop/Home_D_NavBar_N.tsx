@@ -31,7 +31,6 @@
 //   )
 // }
 
-import { InclusiveLogo_D_DownArrow } from "@/assets/icons"
 import Magic_Wand from "@/assets/icons/home/home_magic_wand.svg"
 import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
@@ -66,7 +65,7 @@ export const Home_D_NavBar_N = () => {
               </span>
               AI Chat
             </span>
-            <Link href={`${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
+            <Link href={`/${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
               Sign in
             </Link>
             <Link href={`/${ALL_ROUTES.SIGNUP}`}>Sign up</Link>

@@ -53,6 +53,8 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
 
   const { isMobile } = useMatchMedia()
 
+  if (isMobile === undefined) return null
+
   if (
     actualRoute === WhichLayoutDisplay_Key.isHome ||
     actualRoute === WhichLayoutDisplay_Key.isORGLike
@@ -67,7 +69,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
         {isMobile ? (
           <OnlyDesktopLayout />
         ) : (
-          <Layout_General>{children}</Layout_General>
+          <Layout_General isMobile={isMobile}>{children}</Layout_General>
         )}
       </>
     )

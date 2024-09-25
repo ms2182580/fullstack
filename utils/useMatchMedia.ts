@@ -3,24 +3,26 @@ import { useEffect, useState } from "react"
 
 const desktopSize = `(max-width: ${size.laptop}px)`
 
-/* //!FH1
- * Bug here:
-  - Is not possible to block the render of the page until the app get the window width. This make a problem on the first render of the components for mobile versions (from 1024 and less)
-  - This bug is only on developer mode, on production everything goes well
-
-*/
-
 export const useMatchMedia = () => {
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" && window?.matchMedia(desktopSize)?.matches
-  )
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined)
+
   useEffect(() => {
-    const mediaQuery = window.matchMedia(desktopSize)
-    const handleChange = (event: MediaQueryListEvent) => {
-      setIsMobile(event?.matches)
+    if (typeof window === "undefined") {
+      // If window is undefined, it's server-side rendering (SSR), so we don't run the media query
+      return
     }
+
+    const mediaQuery = window.matchMedia(desktopSize)
+    setIsMobile(mediaQuery.matches)
+
+    const handleChange = (event: MediaQueryListEvent): void => {
+      setIsMobile(event.matches)
+    }
+
+    // Add event listener for media query changes
     mediaQuery.addEventListener("change", handleChange)
 
+    // Clean up the event listener on component unmount
     return () => {
       mediaQuery.removeEventListener("change", handleChange)
     }
