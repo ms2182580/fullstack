@@ -1,6 +1,3 @@
-import { useState } from "react"
-import styles from "./AI_1CSS.module.css"
-
 /* 
 Reusable component
 - All the styles of this component should have a default style but it should be styled from the parent component
@@ -15,8 +12,13 @@ Reusable component
 
 */
 
-export const AI_1 = () => {
+import { useRef, useState } from "react"
+import { InputTagsWrapper } from "./styles/InputTagsWrapper"
+
+export const InputTags = () => {
   const [tags, setTags] = useState<string[]>([])
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(false)
 
   function handleKeyDown(e) {
     if (e.key !== "Enter") return
@@ -29,23 +31,38 @@ export const AI_1 = () => {
     setTags(tags.filter((el, i) => i !== index))
   }
 
+  function handleContainerClick() {
+    if (inputRef.current) {
+      inputRef.current.focus() // Focus the input when container is clicked
+    }
+  }
+
+  function handleFocus() {
+    setIsInputFocused(true) // Set focus state to true
+  }
+
+  function handleBlur() {
+    setIsInputFocused(false) // Set focus state to false
+  }
+
   return (
-    <div className={styles.tags_input_container}>
+    <InputTagsWrapper
+      onClick={handleContainerClick}
+      isInputFocused={isInputFocused}
+    >
       {tags.map((tag, index) => (
-        <div
-          className={styles.tag_item}
-          key={index}
-          onClick={() => removeTag(index)}
-        >
-          <span className={styles.text}>{tag}</span>
+        <div key={index} onClick={() => removeTag(index)}>
+          <span>{tag}</span>
         </div>
       ))}
       <input
+        ref={inputRef}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         onKeyDown={handleKeyDown}
         type="text"
-        className={styles.tags_input}
-        placeholder="Type somthing"
+        placeholder="Type anything..."
       />
-    </div>
+    </InputTagsWrapper>
   )
 }

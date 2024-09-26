@@ -36,9 +36,14 @@
 
 .tags_input {
   flex-grow: 1;
+  flex-basis: 0;
   padding: 0.5em 0;
   border: none;
   outline: none;
+
+  border: 2px solid crimson;
+
+  width: min-content;
 }
 
 .tags_item:focus-visible {
