@@ -11,6 +11,7 @@ const planFor = [
 type Props = {
   handleNextStep?: (e) => void
   handleNameProfileSelected?: (e) => void
+  handleNoProfileSelected?: () => void
 }
 
 /* 

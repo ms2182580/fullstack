@@ -1,4 +1,10 @@
-import { InputTags } from "@/components/ui/input/input-tags"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
+import {
+  dropdownElementsToSelect_Type,
+  InputTags,
+} from "@/components/ui/input/input-tags"
+import { css } from "styled-components"
 import { NameProfileSelected_Type } from "."
 import { SBSG_2Wrapper } from "./styles/SBSG_2Wrapper"
 
@@ -13,15 +19,93 @@ type Props = {
   nameProfileSelected?: NameProfileSelected_Type
 }
 
+const dropdownElementsCSS = () => css`
+  color: ${PRIMARY.PRIMARY_CTA};
+  font-weight: 500;
+
+  width: fit-content;
+  cursor: default;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+`
+
+const dropdownContainerCSS = () => css`
+  background-color: ${NEUTRALS.OFF_WHITE_2};
+  margin-top: 24px;
+
+  padding: 12px 8px;
+
+  border-radius: 8px;
+
+  display: grid;
+  gap: 16px;
+
+  & > li {
+    & > span {
+      display: flex;
+      gap: 10px;
+
+      font-weight: 400;
+      color: ${PRIMARY.LIGHT_MAROON};
+
+      & > span {
+        text-transform: lowercase;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+
+      &:is(:hover, :focus-visible) {
+        filter: unset;
+      }
+    }
+  }
+`
+
+const optionsToSelect: dropdownElementsToSelect_Type = [
+  {
+    value: (
+      <span>
+        <ThunderSVG /> <span>Quick Picks:</span>
+      </span>
+    ),
+    shouldBeSelected: false,
+  },
+  {
+    value: "make new friends",
+    shouldBeSelected: true,
+    elementStyles: dropdownElementsCSS,
+  },
+  {
+    value: "play on a sport team",
+    shouldBeSelected: true,
+    elementStyles: dropdownElementsCSS,
+  },
+  {
+    value: "improve mobility",
+    shouldBeSelected: true,
+    elementStyles: dropdownElementsCSS,
+  },
+]
+
 export const SBSG_2 = ({ nameProfileSelected }: Props) => {
   return (
     <SBSG_2Wrapper>
       <header>
         <h5>Goals</h5>
       </header>
-      <p>
-        I’d like to <span>{nameProfileSelected}</span> to work on these goals:
-      </p>
+
+      {nameProfileSelected ? (
+        <p>
+          I’d like to <span>{nameProfileSelected}</span> to work on these goals:
+        </p>
+      ) : (
+        <p>I’d like to work on these goals:</p>
+      )}
+
       {/* 
       //!FH0
       AI_1 component work. Next steps:
@@ -32,10 +116,12 @@ export const SBSG_2 = ({ nameProfileSelected }: Props) => {
       - Compare the logic with «TagInput.tsx»
       
       */}
-      {/* <AI_1 /> */}
-      <InputTags />
-
-      <div>Options here</div>
+      <InputTags
+        dropdownData={{
+          dropdownElementsToSelect: optionsToSelect,
+          dropdownContainerStyles: dropdownContainerCSS,
+        }}
+      />
     </SBSG_2Wrapper>
   )
 }

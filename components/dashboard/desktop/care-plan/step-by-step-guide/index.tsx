@@ -63,6 +63,12 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     }
   }
 
+  const handleNoProfileSelected = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      setNameProfileSelected(null)
+    }
+  }
+
   return (
     <INDEX_D_CarePlan_StepByStepGuideWrapper>
       <header>
@@ -97,6 +103,7 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         handleNextStep={handleNextStep}
         nameProfileSelected={nameProfileSelected}
         handleNameProfileSelected={handleNameProfileSelected}
+        handleNoProfileSelected={handleNoProfileSelected}
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )

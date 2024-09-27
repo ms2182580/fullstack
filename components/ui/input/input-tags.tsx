@@ -9,26 +9,128 @@ Reusable component
       - If the list of options is showed in a dropdown, the user should be able to select an option with arrow keys: up and down
   * The  list of suggested tag should be "raw" of styles by default and should be styled by the parent component
   * The list of suggestion should be the child of the component
+    + The list of options should have the function add be added to the input
+    + The list of options should have the function to be added only on the desired elements, because it can have some sort of "titles" for every category option
+  * 
 
+  
+      
+      
 */
 
-import { useRef, useState } from "react"
-import { InputTagsWrapper } from "./styles/InputTagsWrapper"
+import { ReactElement, useRef, useState } from "react"
+import {
+  DropdownElementsWrapper,
+  DropdownElementsWrapper_Props,
+  DropdownWrapper,
+  DropdownWrapper_Props,
+  InputTagsWrapper,
+} from "./styles/InputTagsWrapper"
 
-export const InputTags = () => {
-  const [tags, setTags] = useState<string[]>([])
+export type dropdownElementsToSelect_Type = {
+  value: ReactElement | string
+  shouldBeSelected: boolean
+  elementStyles?: DropdownElementsWrapper_Props["elementStyles"]
+}[]
+
+type InputTags_Props = {
+  dropdownData?: {
+    dropdownElementsToSelect: dropdownElementsToSelect_Type
+    dropdownContainerStyles?: DropdownWrapper_Props["dropdownStyles"]
+  }
+}
+
+const optionsToSelect_Default = [
+  {
+    value: "option one",
+    shouldBeSelected: true,
+  },
+  {
+    value: "option two",
+    shouldBeSelected: true,
+  },
+  {
+    value: "option three",
+    shouldBeSelected: true,
+  },
+]
+
+export const InputTags = ({ dropdownData }: InputTags_Props) => {
+  const [tags, setTags] = useState<(ReactElement | string)[]>([])
+  const [tagsShouldReturnToDropdown, setTagsShouldReturnToDropdown] =
+    useState<dropdownElementsToSelect_Type>([])
   const inputRef = useRef<HTMLInputElement>(null)
   const [isInputFocused, setIsInputFocused] = useState<boolean>(false)
+  const [options, setOptions] = useState(
+    dropdownData?.dropdownElementsToSelect || optionsToSelect_Default
+  )
 
   function handleKeyDown(e) {
-    if (e.key !== "Enter") return
-    const value = e.target.value
-    if (!value.trim()) return
-    setTags([...tags, value])
-    e.target.value = ""
+    const selectedValue = e.target.value
+    if (e.key === "Enter" && selectedValue.trim() !== "") {
+      const addLikeAReactElement = (
+        <span data-should-return={false}>{selectedValue}</span>
+      )
+
+      setTags((prevStatus) => [...prevStatus, addLikeAReactElement])
+      e.target.value = ""
+    }
   }
-  function removeTag(index) {
-    setTags(tags.filter((el, i) => i !== index))
+
+  const handleSelectOption = ({
+    e,
+    shouldReturnToDropdown = false,
+    elementStyles,
+  }) => {
+    if (e.type === "click" || e.key === "Enter") {
+      const selectedValue = e.target.textContent
+
+      const elementToReturnToDropdown = {
+        value: selectedValue,
+        shouldBeSelected: shouldReturnToDropdown,
+        elementStyles,
+      }
+
+      const addLikeAReactElement = (
+        <span data-should-return={true}>{selectedValue}</span>
+      )
+
+      setTags((prevStatus) => [...prevStatus, addLikeAReactElement])
+      setTagsShouldReturnToDropdown((prevStatus) => [
+        ...prevStatus,
+        elementToReturnToDropdown,
+      ])
+
+      setOptions((prevStatus: dropdownElementsToSelect_Type) =>
+        prevStatus.filter((option) => {
+          if ("value" in option) {
+            return option.value !== selectedValue
+          }
+          return false
+        })
+      )
+    }
+  }
+
+  function removeTag({ e, tag, index }) {
+    if (e.type === "click" || e.key === "Enter") {
+      const dataShouldReturn = tag.props?.["data-should-return"]
+
+      if (dataShouldReturn) {
+        const foundIndex = tagsShouldReturnToDropdown.findIndex(
+          (el) => el.value === tag.props?.children
+        )
+
+        const dataFounded = tagsShouldReturnToDropdown[foundIndex]
+
+        setOptions((prevStatus) => [...prevStatus, dataFounded])
+        setTagsShouldReturnToDropdown((prevStatus) =>
+          prevStatus.filter((el) => el.value !== tag.props?.children)
+        )
+      }
+
+      setTags((prevStatus) => prevStatus.filter((el, i) => i !== index))
+    }
   }
 
   function handleContainerClick() {
@@ -38,31 +140,78 @@ export const InputTags = () => {
   }
 
   function handleFocus() {
-    setIsInputFocused(true) // Set focus state to true
+    setIsInputFocused(true)
   }
 
   function handleBlur() {
-    setIsInputFocused(false) // Set focus state to false
+    setIsInputFocused(false)
   }
 
   return (
-    <InputTagsWrapper
-      onClick={handleContainerClick}
-      isInputFocused={isInputFocused}
-    >
-      {tags.map((tag, index) => (
-        <div key={index} onClick={() => removeTag(index)}>
-          <span>{tag}</span>
-        </div>
-      ))}
-      <input
-        ref={inputRef}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
-        type="text"
-        placeholder="Type anything..."
-      />
+    <InputTagsWrapper isInputFocused={isInputFocused}>
+      <div onClick={handleContainerClick}>
+        {tags.length > 0 && (
+          <ul>
+            {tags.map((tag, index) => (
+              <li
+                key={index}
+                onClick={(e) => removeTag({ e, tag, index })}
+                onKeyDown={(e) => removeTag({ e, tag, index })}
+                tabIndex={0}
+              >
+                {tag} <span>x</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <input
+          ref={inputRef}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onKeyDown={handleKeyDown}
+          type="text"
+          placeholder="Type anything..."
+        />
+      </div>
+
+      <DropdownWrapper dropdownStyles={dropdownData?.dropdownContainerStyles}>
+        {options?.map(({ value, shouldBeSelected, ...props }, index) => {
+          const { elementStyles = false } = props
+
+          return (
+            <DropdownElementsWrapper
+              elementStyles={elementStyles}
+              shouldBeSelected={shouldBeSelected}
+              key={`${value}_${index}`}
+              onClick={
+                shouldBeSelected
+                  ? (e) => {
+                      handleSelectOption({
+                        e,
+                        shouldReturnToDropdown: shouldBeSelected,
+                        elementStyles,
+                      })
+                    }
+                  : undefined
+              }
+              onKeyDown={
+                shouldBeSelected
+                  ? (e) => {
+                      handleSelectOption({
+                        e,
+                        shouldReturnToDropdown: shouldBeSelected,
+                        elementStyles,
+                      })
+                    }
+                  : undefined
+              }
+              tabIndex={shouldBeSelected ? 0 : -1}
+            >
+              {value}
+            </DropdownElementsWrapper>
+          )
+        })}
+      </DropdownWrapper>
     </InputTagsWrapper>
   )
 }

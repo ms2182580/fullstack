@@ -9,6 +9,7 @@ type Props = {
   handleNextStep: (e) => void
   handleNameProfileSelected: (e) => void
   nameProfileSelected: NameProfileSelected_Type
+  handleNoProfileSelected: (e) => void
 }
 
 export const SBSG_Content = ({
@@ -17,6 +18,7 @@ export const SBSG_Content = ({
   handleNextStep,
   handleNameProfileSelected,
   nameProfileSelected,
+  handleNoProfileSelected,
 }: Props) => {
   return (
     <SBSG_ContentWrapper>
@@ -34,7 +36,16 @@ export const SBSG_Content = ({
           <Fragment key={index}>
             {isValidElement(component) &&
               cloneElement(component, propsWithHandler)}
-            <button onClick={handleNextStep} onKeyDown={handleNextStep}>
+            <button
+              onClick={(e) => {
+                handleNoProfileSelected(e)
+                handleNextStep(e)
+              }}
+              onKeyDown={(e) => {
+                handleNoProfileSelected(e)
+                handleNextStep(e)
+              }}
+            >
               Next
             </button>
           </Fragment>

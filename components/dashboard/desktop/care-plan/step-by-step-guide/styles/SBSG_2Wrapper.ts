@@ -22,17 +22,4 @@ export const SBSG_2Wrapper = styled.article`
   & > :nth-child(3) {
     margin-top: 8px;
   }
-
-  & > :last-child {
-    margin-top: 24px;
-    /* border: 2px solid green; */
-
-    background-color: hsl(300, 100%, 15.1%);
-
-    padding: 24px;
-
-    color: white;
-
-    border-radius: 8px;
-  }
 `
