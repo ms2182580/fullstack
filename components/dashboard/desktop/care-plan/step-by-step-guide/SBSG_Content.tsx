@@ -1,41 +1,28 @@
+import { cloneElement, Fragment, isValidElement } from "react"
 import { SBSG_ContentWrapper } from "./styles/SBSG_ContentWrapper"
 
-import { cloneElement, Fragment, isValidElement } from "react"
-import { ComponentSteps_Type, NameProfileSelected_Type } from "."
+export const SBSG_Content = (...allProps) => {
+  const {
+    componentSteps,
+    activeStep,
+    handleNextStep,
+    handleNoProfileSelected,
+  }: any = allProps[0]
 
-type Props = {
-  componentSteps: ComponentSteps_Type
-  activeStep: number
-  handleNextStep: (e) => void
-  handleNameProfileSelected: (e) => void
-  nameProfileSelected: NameProfileSelected_Type
-  handleNoProfileSelected: (e) => void
-}
-
-export const SBSG_Content = ({
-  componentSteps,
-  activeStep,
-  handleNextStep,
-  handleNameProfileSelected,
-  nameProfileSelected,
-  handleNoProfileSelected,
-}: Props) => {
   return (
     <SBSG_ContentWrapper>
       {componentSteps.map(({ component, props }, index) => {
         if (index !== activeStep) return null
 
-        const propsWithHandler = {
+        const propsToComponent = {
           ...props,
-          handleNextStep,
-          handleNameProfileSelected,
-          nameProfileSelected,
+          ...allProps[0],
         }
 
         return (
           <Fragment key={index}>
             {isValidElement(component) &&
-              cloneElement(component, propsWithHandler)}
+              cloneElement(component, propsToComponent)}
             <button
               onClick={(e) => {
                 handleNoProfileSelected(e)

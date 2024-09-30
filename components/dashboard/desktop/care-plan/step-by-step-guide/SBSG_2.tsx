@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
 import {
-  dropdownElementsToSelect_Type,
+  DropdownElementsToSelect_Type,
   InputTags,
 } from "@/components/ui/input/input-tags"
 import { css } from "styled-components"
@@ -17,6 +17,10 @@ https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?no
 
 type Props = {
   nameProfileSelected?: NameProfileSelected_Type
+  tags?: any
+  handleKeyDown?: any
+  handleSelectOption?: any
+  removeTag?: any
 }
 
 const dropdownElementsCSS = () => css`
@@ -65,7 +69,7 @@ const dropdownContainerCSS = () => css`
   }
 `
 
-const optionsToSelect: dropdownElementsToSelect_Type = [
+const optionsToSelect: DropdownElementsToSelect_Type = [
   {
     value: (
       <span>
@@ -91,7 +95,13 @@ const optionsToSelect: dropdownElementsToSelect_Type = [
   },
 ]
 
-export const SBSG_2 = ({ nameProfileSelected }: Props) => {
+export const SBSG_2 = ({
+  nameProfileSelected,
+  tags,
+  handleKeyDown,
+  handleSelectOption,
+  removeTag,
+}: Props) => {
   return (
     <SBSG_2Wrapper>
       <header>
@@ -117,6 +127,9 @@ export const SBSG_2 = ({ nameProfileSelected }: Props) => {
       
       */}
       <InputTags
+        tags={tags}
+        removeTag={removeTag}
+        handleKeyDown={handleKeyDown}
         dropdownData={{
           dropdownElementsToSelect: optionsToSelect,
           dropdownContainerStyles: dropdownContainerCSS,

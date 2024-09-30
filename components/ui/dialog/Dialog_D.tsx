@@ -92,11 +92,6 @@ import {
   useState,
 } from "react"
 
-/* MouseEvent<HTMLSpanElement, MouseEvent>
-    KeyboardEvent<HTMLSpanElement>
-    
-    */
-
 type UseDialogLogic_Return = {
   dialogRef: RefObject<HTMLDialogElement>
   openDialog: ({

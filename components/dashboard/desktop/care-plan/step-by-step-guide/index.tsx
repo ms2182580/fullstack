@@ -1,4 +1,5 @@
 import { BackArrow } from "@/assets/icons"
+import { useInputTagsLogic } from "@/components/ui/input/input-tags"
 import { ReactElement, useState } from "react"
 import { SBSG_1 } from "./SBSG_1"
 import { SBSG_2 } from "./SBSG_2"
@@ -68,6 +69,8 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       setNameProfileSelected(null)
     }
   }
+  const { tags, handleKeyDown, handleSelectOption, removeTag } =
+    useInputTagsLogic()
 
   return (
     <INDEX_D_CarePlan_StepByStepGuideWrapper>
@@ -104,6 +107,10 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         nameProfileSelected={nameProfileSelected}
         handleNameProfileSelected={handleNameProfileSelected}
         handleNoProfileSelected={handleNoProfileSelected}
+        tags={tags}
+        handleKeyDown={handleKeyDown}
+        handleSelectOption={handleSelectOption}
+        removeTag={removeTag}
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )
