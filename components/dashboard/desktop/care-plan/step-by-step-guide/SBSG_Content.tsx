@@ -1,5 +1,13 @@
 import { cloneElement, Fragment, isValidElement } from "react"
+import { ComponentSteps_Type } from "."
 import { SBSG_ContentWrapper } from "./styles/SBSG_ContentWrapper"
+
+type SBSG_ContentPropsType = {
+  componentSteps: ComponentSteps_Type
+  activeStep: number
+  handleNextStep: (e) => void
+  handleNoProfileSelected: (e) => void
+}
 
 export const SBSG_Content = (...allProps) => {
   const {
@@ -7,7 +15,7 @@ export const SBSG_Content = (...allProps) => {
     activeStep,
     handleNextStep,
     handleNoProfileSelected,
-  }: any = allProps[0]
+  }: SBSG_ContentPropsType = allProps[0]
 
   return (
     <SBSG_ContentWrapper>

@@ -1,6 +1,12 @@
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { BackArrow } from "@/assets/icons"
-import { useInputTagsLogic } from "@/components/ui/input/input-tags"
+import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
+import {
+  DropdownElementsToSelect_Type,
+  useInputTagsLogic,
+} from "@/components/ui/input/input-tags"
 import { ReactElement, useState } from "react"
+import { css } from "styled-components"
 import { SBSG_1 } from "./SBSG_1"
 import { SBSG_2 } from "./SBSG_2"
 import { SBSG_3 } from "./SBSG_3"
@@ -72,6 +78,78 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
   const { tags, handleKeyDown, handleSelectOption, removeTag } =
     useInputTagsLogic()
 
+  const dropdownElementsCSS = () => css`
+    color: ${PRIMARY.PRIMARY_CTA};
+    font-weight: 500;
+
+    width: fit-content;
+    cursor: default;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  `
+
+  const dropdownContainerCSS = () => css`
+    background-color: ${NEUTRALS.OFF_WHITE_2};
+    margin-top: 24px;
+
+    padding: 12px 8px;
+
+    border-radius: 8px;
+
+    display: grid;
+    gap: 16px;
+
+    & > li {
+      & > span {
+        display: flex;
+        gap: 10px;
+
+        font-weight: 400;
+        color: ${PRIMARY.LIGHT_MAROON};
+
+        & > span {
+          text-transform: lowercase;
+
+          &::first-letter {
+            text-transform: capitalize;
+          }
+        }
+
+        &:is(:hover, :focus-visible) {
+          filter: unset;
+        }
+      }
+    }
+  `
+
+  const optionsToSelect: DropdownElementsToSelect_Type = [
+    {
+      value: (
+        <span>
+          <ThunderSVG /> <span>Quick Picks:</span>
+        </span>
+      ),
+      shouldBeSelected: false,
+    },
+    {
+      value: "make new friends",
+      shouldBeSelected: true,
+      elementStyles: dropdownElementsCSS,
+    },
+    {
+      value: "play on a sport team",
+      shouldBeSelected: true,
+      elementStyles: dropdownElementsCSS,
+    },
+    {
+      value: "improve mobility",
+      shouldBeSelected: true,
+      elementStyles: dropdownElementsCSS,
+    },
+  ]
+
   return (
     <INDEX_D_CarePlan_StepByStepGuideWrapper>
       <header>
@@ -111,6 +189,8 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         handleKeyDown={handleKeyDown}
         handleSelectOption={handleSelectOption}
         removeTag={removeTag}
+        optionsToSelect={optionsToSelect}
+        dropdownContainerCSS={dropdownContainerCSS}
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )

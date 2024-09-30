@@ -1,10 +1,4 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
-import {
-  DropdownElementsToSelect_Type,
-  InputTags,
-} from "@/components/ui/input/input-tags"
-import { css } from "styled-components"
+import { InputTags } from "@/components/ui/input/input-tags"
 import { NameProfileSelected_Type } from "."
 import { SBSG_2Wrapper } from "./styles/SBSG_2Wrapper"
 
@@ -21,79 +15,9 @@ type Props = {
   handleKeyDown?: any
   handleSelectOption?: any
   removeTag?: any
+  optionsToSelect?: any
+  dropdownContainerCSS?: any
 }
-
-const dropdownElementsCSS = () => css`
-  color: ${PRIMARY.PRIMARY_CTA};
-  font-weight: 500;
-
-  width: fit-content;
-  cursor: default;
-
-  &::first-letter {
-    text-transform: capitalize;
-  }
-`
-
-const dropdownContainerCSS = () => css`
-  background-color: ${NEUTRALS.OFF_WHITE_2};
-  margin-top: 24px;
-
-  padding: 12px 8px;
-
-  border-radius: 8px;
-
-  display: grid;
-  gap: 16px;
-
-  & > li {
-    & > span {
-      display: flex;
-      gap: 10px;
-
-      font-weight: 400;
-      color: ${PRIMARY.LIGHT_MAROON};
-
-      & > span {
-        text-transform: lowercase;
-
-        &::first-letter {
-          text-transform: capitalize;
-        }
-      }
-
-      &:is(:hover, :focus-visible) {
-        filter: unset;
-      }
-    }
-  }
-`
-
-const optionsToSelect: DropdownElementsToSelect_Type = [
-  {
-    value: (
-      <span>
-        <ThunderSVG /> <span>Quick Picks:</span>
-      </span>
-    ),
-    shouldBeSelected: false,
-  },
-  {
-    value: "make new friends",
-    shouldBeSelected: true,
-    elementStyles: dropdownElementsCSS,
-  },
-  {
-    value: "play on a sport team",
-    shouldBeSelected: true,
-    elementStyles: dropdownElementsCSS,
-  },
-  {
-    value: "improve mobility",
-    shouldBeSelected: true,
-    elementStyles: dropdownElementsCSS,
-  },
-]
 
 export const SBSG_2 = ({
   nameProfileSelected,
@@ -101,6 +25,8 @@ export const SBSG_2 = ({
   handleKeyDown,
   handleSelectOption,
   removeTag,
+  optionsToSelect,
+  dropdownContainerCSS,
 }: Props) => {
   return (
     <SBSG_2Wrapper>
@@ -134,6 +60,7 @@ export const SBSG_2 = ({
           dropdownElementsToSelect: optionsToSelect,
           dropdownContainerStyles: dropdownContainerCSS,
         }}
+        handleSelectOption={handleSelectOption}
       />
     </SBSG_2Wrapper>
   )

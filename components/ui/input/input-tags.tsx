@@ -32,9 +32,11 @@ Finish all the features of this component:
 
 */
 
-import { ReactElement, useRef, useState } from "react"
+import { ReactElement, useEffect, useRef, useState } from "react"
 import {
+  DropdownElementsWrapper,
   DropdownElementsWrapper_Props,
+  DropdownWrapper,
   DropdownWrapper_Props,
   InputTagsWrapper,
 } from "./styles/InputTagsWrapper"
@@ -48,13 +50,18 @@ export type DropdownElementsToSelect_Type = {
 }[]
 
 type InputTags_Props = {
-  tags: DropdownElementsToSelect_Type
+  tags: Tags_Type[]
   removeTag: ({ e, index }) => void
   handleKeyDown: (e) => void
   dropdownData?: {
     dropdownElementsToSelect: DropdownElementsToSelect_Type
     dropdownContainerStyles?: DropdownWrapper_Props["dropdownStyles"]
   }
+  handleSelectOption: (
+    { e, shouldReturnToDropdown, elementStyles },
+    { setOptions }
+  ) => void
+  optionsToSelect?: any
 }
 
 const optionsToSelect_Default = [
@@ -104,10 +111,11 @@ const useInputTagsLogicOnlyFocus = () => {
 }
 
 export const InputTags = ({
-  tags = optionsToSelect_Default,
+  tags,
   removeTag,
   handleKeyDown,
   dropdownData = undefined,
+  handleSelectOption,
 }: InputTags_Props) => {
   const {
     inputRef,
@@ -117,21 +125,32 @@ export const InputTags = ({
     handleBlur,
   } = useInputTagsLogicOnlyFocus()
 
+  const [options, setOptions] = useState(
+    dropdownData?.dropdownElementsToSelect || optionsToSelect_Default
+  )
+
+  useEffect(() => {
+    /*_codeHere_*/
+    console.log("options:", options)
+  }, [options])
+
   return (
     <InputTagsWrapper isInputFocused={isInputFocused}>
       <div onClick={handleContainerClick}>
         {tags.length > 0 && (
           <ul>
-            {tags.map(({ value }, index) => (
-              <li
-                key={index}
-                onClick={(e) => removeTag({ e, index })}
-                onKeyDown={(e) => removeTag({ e, index })}
-                tabIndex={0}
-              >
-                {value} <span>x</span>
-              </li>
-            ))}
+            {tags.map((value, index) => {
+              return (
+                <li
+                  key={index}
+                  onClick={(e) => removeTag({ e, index })}
+                  onKeyDown={(e) => removeTag({ e, index })}
+                  tabIndex={0}
+                >
+                  {value} <span>x</span>
+                </li>
+              )
+            })}
           </ul>
         )}
         <input
@@ -144,9 +163,9 @@ export const InputTags = ({
         />
       </div>
 
-      {/* <DropdownWrapper dropdownStyles={dropdownData?.dropdownContainerStyles}>
-        {options?.map(({ value, shouldBeSelected, ...props }, index) => {
-          const { elementStyles = false } = props
+      <DropdownWrapper dropdownStyles={dropdownData?.dropdownContainerStyles}>
+        {options.map(({ value, shouldBeSelected, ...props }, index) => {
+          const { elementStyles = null } = props
 
           return (
             <DropdownElementsWrapper
@@ -156,22 +175,28 @@ export const InputTags = ({
               onClick={
                 shouldBeSelected
                   ? (e) => {
-                      handleSelectOption({
-                        e,
-                        shouldReturnToDropdown: shouldBeSelected,
-                        elementStyles,
-                      })
+                      handleSelectOption(
+                        {
+                          e,
+                          shouldReturnToDropdown: shouldBeSelected,
+                          elementStyles,
+                        },
+                        { setOptions }
+                      )
                     }
                   : undefined
               }
               onKeyDown={
                 shouldBeSelected
                   ? (e) => {
-                      handleSelectOption({
-                        e,
-                        shouldReturnToDropdown: shouldBeSelected,
-                        elementStyles,
-                      })
+                      handleSelectOption(
+                        {
+                          e,
+                          shouldReturnToDropdown: shouldBeSelected,
+                          elementStyles,
+                        },
+                        { setOptions }
+                      )
                     }
                   : undefined
               }
@@ -181,112 +206,71 @@ export const InputTags = ({
             </DropdownElementsWrapper>
           )
         })}
-      </DropdownWrapper> */}
+      </DropdownWrapper>
     </InputTagsWrapper>
   )
 }
 
 type UseInputTagsLogic_Return = {
-  tags: DropdownElementsToSelect_Type
+  tags: (ReactElement | string)[]
   removeTag: ({ e, index }) => void
   handleKeyDown: (e) => void
-  handleSelectOption: ({ e, shouldReturnToDropdown, elementStyles }) => void
+  handleSelectOption: (
+    { e, shouldReturnToDropdown, elementStyles },
+    { setOptions }
+  ) => void
+  // options: DropdownElementsToSelect_Type
 }
 
 export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
-  const [tags, setTags] = useState<DropdownElementsToSelect_Type>([])
+  const [tags, setTags] = useState<(ReactElement | string)[]>([])
+
+  const [tagsShouldReturnToDropdown, setTagsShouldReturnToDropdown] =
+    useState<DropdownElementsToSelect_Type>([])
 
   const handleKeyDown = (e) => {
     const selectedValue = e.target.value
     if (e.key === "Enter" && selectedValue.trim() !== "") {
-      const addedTag: DropdownElementsToSelect_Type[0] = {
-        value: selectedValue,
-        shouldBeSelected: false,
-        elementStyles: undefined,
-      }
-      setTags((prevStatus) => [...prevStatus, addedTag])
+      const addLikeAReactElement = (
+        <span data-should-return={false}>{selectedValue}</span>
+      )
 
-      // const addedLikeAReactElement = (
-      //   <span data-should-return={false}>{selectedValue}</span>
-      // )
-
-      // // console.log("addedLikeAReactElement:", addedLikeAReactElement)
-      // setTags((prevStatus) => [...prevStatus, addedLikeAReactElement])
-      // setTags((prevStatus) =>
-      //   prevStatus.length !== 0
-      //     ? [...prevStatus, addedLikeAReactElement]
-      //     : [addedLikeAReactElement]
-      // )
-      /*
-      const addedTag: DropdownElementsToSelect_Type[0] = {
-        value: selectedValue,
-        shouldBeSelected: false,
-        elementStyles: undefined,
-      }
-      setTags((prevStatus) => [...prevStatus, addedTag])
-      */
+      setTags((prevStatus) => [...prevStatus, addLikeAReactElement])
       e.target.value = ""
     }
   }
 
-  const handleSelectOption = ({
-    e,
-    shouldReturnToDropdown = false,
-    elementStyles,
-  }) => {
-    if ((e.type === "click" || e.key === "Enter") && tags.length !== 0) {
+  const handleSelectOption = (
+    { e, shouldReturnToDropdown = false, elementStyles },
+    { setOptions }
+  ) => {
+    if (e.type === "click" || e.key === "Enter") {
       const selectedValue = e.target.textContent
 
-      // const addLikeAReactElement = (
-      //   <span data-should-return={true}>{selectedValue}</span>
-      // )
-
-      // setTags((prevStatus) => [...prevStatus, addLikeAReactElement])
-
-      const addedTag: DropdownElementsToSelect_Type[0] = {
-        value: selectedValue,
-        shouldBeSelected: true,
-        elementStyles: undefined,
-      }
-      setTags((prevStatus) => [...prevStatus, addedTag])
-
-      /*
-      setTags((prevStatus) =>
-        prevStatus.length !== 0
-          ? [...prevStatus, addLikeAReactElement]
-          : [addLikeAReactElement]
+      const addLikeAReactElement = (
+        <span data-should-return={true}>{selectedValue}</span>
       )
-      */
 
-      /*
-      const addedTag: DropdownElementsToSelect_Type[0] = {
-        value: selectedValue,
-        shouldBeSelected: false,
-        elementStyles: undefined,
-      }
-      setTags((prevStatus) => [...prevStatus, addedTag])
-      */
+      setTags((prevStatus) => {
+        return [...prevStatus, addLikeAReactElement]
+      })
 
-      /*
-      setTagsShouldReturnToDropdown((prevStatus) => [
-        ...prevStatus,
-        elementToReturnToDropdown,
-      ])
-
-      setOptions((prevStatus: DropdownElementsToSelect_Type) =>
-        prevStatus.filter((option) => {
+      setOptions((prevStatus) => {
+        return prevStatus.filter((option) => {
+          console.log("option:", option)
           if ("value" in option) {
             return option.value !== selectedValue
           }
           return false
         })
-      )
-      */
+      })
     }
   }
 
   const removeTag = ({ e, index }) => {
     if (e.type === "click" || e.key === "Enter") {
+      console.log("e:", e)
+
       // const dataShouldReturn = tag.props?.["data-should-return"]
 
       /* if (dataShouldReturn) {
