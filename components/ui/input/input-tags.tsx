@@ -22,17 +22,18 @@ Reusable component
 !FH0
 Finish all the features of this component:
 
+- Centralize the types for all of this
+- Create methods for the use of the "sets"
 - Dropdown from input
+- When dropdown from input exist, the options should selectable with arrow keys
 - And the use as a reusable component, should maintain the state on the input already typed
+- 
 
 
-- Input typed by user should maintain the state. The state of what was typed by the user should come from outside. In general, what is, and what is not already tagged
-- The dropdown options should come from outside. What was selected should be added to the state of the outside parent, maintaining the logic and the state
-- The dropdown should be passed and say if is going to be a dropdown when the user focus on the input or it would be a list below or above the input
 
 */
 
-import { ReactElement, useEffect, useRef, useState } from "react"
+import { ReactElement, useRef, useState } from "react"
 import {
   DropdownElementsWrapper,
   DropdownElementsWrapper_Props,
@@ -51,7 +52,7 @@ export type DropdownElementsToSelect_Type = {
 
 type InputTags_Props = {
   tags: Tags_Type[]
-  removeTag: ({ e, index }) => void
+  removeTag: ({ e, theTag, index }, { setOptions }) => void
   handleKeyDown: (e) => void
   dropdownData?: {
     dropdownElementsToSelect: DropdownElementsToSelect_Type
@@ -126,28 +127,27 @@ export const InputTags = ({
   } = useInputTagsLogicOnlyFocus()
 
   const [options, setOptions] = useState(
-    dropdownData?.dropdownElementsToSelect || optionsToSelect_Default
+    dropdownData?.dropdownElementsToSelect || null
   )
-
-  useEffect(() => {
-    /*_codeHere_*/
-    console.log("options:", options)
-  }, [options])
 
   return (
     <InputTagsWrapper isInputFocused={isInputFocused}>
       <div onClick={handleContainerClick}>
         {tags.length > 0 && (
           <ul>
-            {tags.map((value, index) => {
+            {tags.map((theTag, index) => {
               return (
                 <li
                   key={index}
-                  onClick={(e) => removeTag({ e, index })}
-                  onKeyDown={(e) => removeTag({ e, index })}
+                  onClick={(e) =>
+                    removeTag({ e, theTag, index }, { setOptions })
+                  }
+                  onKeyDown={(e) =>
+                    removeTag({ e, theTag, index }, { setOptions })
+                  }
                   tabIndex={0}
                 >
-                  {value} <span>x</span>
+                  {theTag} <span>x</span>
                 </li>
               )
             })}
@@ -163,49 +163,52 @@ export const InputTags = ({
         />
       </div>
 
-      <DropdownWrapper dropdownStyles={dropdownData?.dropdownContainerStyles}>
-        {options.map(({ value, shouldBeSelected, ...props }, index) => {
-          const { elementStyles = null } = props
+      <DropdownWrapper
+        dropdownStyles={options ? dropdownData?.dropdownContainerStyles : null}
+      >
+        {options &&
+          options.map(({ value, shouldBeSelected, ...props }, index) => {
+            const { elementStyles = null } = props
 
-          return (
-            <DropdownElementsWrapper
-              elementStyles={elementStyles}
-              shouldBeSelected={shouldBeSelected}
-              key={`${value}_${index}`}
-              onClick={
-                shouldBeSelected
-                  ? (e) => {
-                      handleSelectOption(
-                        {
-                          e,
-                          shouldReturnToDropdown: shouldBeSelected,
-                          elementStyles,
-                        },
-                        { setOptions }
-                      )
-                    }
-                  : undefined
-              }
-              onKeyDown={
-                shouldBeSelected
-                  ? (e) => {
-                      handleSelectOption(
-                        {
-                          e,
-                          shouldReturnToDropdown: shouldBeSelected,
-                          elementStyles,
-                        },
-                        { setOptions }
-                      )
-                    }
-                  : undefined
-              }
-              tabIndex={shouldBeSelected ? 0 : -1}
-            >
-              {value}
-            </DropdownElementsWrapper>
-          )
-        })}
+            return (
+              <DropdownElementsWrapper
+                elementStyles={elementStyles}
+                shouldBeSelected={shouldBeSelected}
+                key={`${value}_${index}`}
+                onClick={
+                  shouldBeSelected
+                    ? (e) => {
+                        handleSelectOption(
+                          {
+                            e,
+                            shouldReturnToDropdown: shouldBeSelected,
+                            elementStyles,
+                          },
+                          { setOptions }
+                        )
+                      }
+                    : undefined
+                }
+                onKeyDown={
+                  shouldBeSelected
+                    ? (e) => {
+                        handleSelectOption(
+                          {
+                            e,
+                            shouldReturnToDropdown: shouldBeSelected,
+                            elementStyles,
+                          },
+                          { setOptions }
+                        )
+                      }
+                    : undefined
+                }
+                tabIndex={shouldBeSelected ? 0 : -1}
+              >
+                {value}
+              </DropdownElementsWrapper>
+            )
+          })}
       </DropdownWrapper>
     </InputTagsWrapper>
   )
@@ -213,13 +216,12 @@ export const InputTags = ({
 
 type UseInputTagsLogic_Return = {
   tags: (ReactElement | string)[]
-  removeTag: ({ e, index }) => void
+  removeTag: ({ e, theTag, index }, { setOptions }) => void
   handleKeyDown: (e) => void
   handleSelectOption: (
     { e, shouldReturnToDropdown, elementStyles },
     { setOptions }
   ) => void
-  // options: DropdownElementsToSelect_Type
 }
 
 export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
@@ -247,6 +249,12 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
     if (e.type === "click" || e.key === "Enter") {
       const selectedValue = e.target.textContent
 
+      const elementToReturnToDropdown = {
+        value: selectedValue,
+        shouldBeSelected: shouldReturnToDropdown,
+        elementStyles,
+      }
+
       const addLikeAReactElement = (
         <span data-should-return={true}>{selectedValue}</span>
       )
@@ -255,9 +263,13 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
         return [...prevStatus, addLikeAReactElement]
       })
 
+      setTagsShouldReturnToDropdown((prevStatus) => [
+        ...prevStatus,
+        elementToReturnToDropdown,
+      ])
+
       setOptions((prevStatus) => {
         return prevStatus.filter((option) => {
-          console.log("option:", option)
           if ("value" in option) {
             return option.value !== selectedValue
           }
@@ -267,50 +279,24 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
     }
   }
 
-  const removeTag = ({ e, index }) => {
+  const removeTag = ({ e, theTag, index }, { setOptions }) => {
     if (e.type === "click" || e.key === "Enter") {
-      console.log("e:", e)
+      const dataShouldReturn = theTag.props?.["data-should-return"]
 
-      // const dataShouldReturn = tag.props?.["data-should-return"]
-
-      /* if (dataShouldReturn) {
-        const foundIndex = tagsShouldReturnToDropdown.findIndex(
-          (el) => el.value === tag.props?.children
-        )
-
-        const dataFounded = tagsShouldReturnToDropdown[foundIndex]
-
-        setOptions((prevStatus) => [...prevStatus, dataFounded])
-        setTagsShouldReturnToDropdown((prevStatus) =>
-          prevStatus.filter((el) => el.value !== tag.props?.children)
-        )
-      } */
-
-      setTags((prevStatus) => prevStatus.filter((el, i) => i !== index))
-    }
-  }
-
-  const useOptionsDropdown = ({
-    optionsToSelect = optionsToSelect_Default,
-  }) => {
-    const [options, setOptions] =
-      useState<DropdownElementsToSelect_Type>(optionsToSelect)
-    const [tagsShouldReturnToDropdown, setTagsShouldReturnToDropdown] =
-      useState<DropdownElementsToSelect_Type>([])
-
-    const removeTagCustomOptions = ({ dataShouldReturn, tag }) => {
       if (dataShouldReturn) {
         const foundIndex = tagsShouldReturnToDropdown.findIndex(
-          (el) => el.value === tag.props?.children
+          (el) => el.value === theTag.props?.children
         )
 
         const dataFounded = tagsShouldReturnToDropdown[foundIndex]
 
         setOptions((prevStatus) => [...prevStatus, dataFounded])
         setTagsShouldReturnToDropdown((prevStatus) =>
-          prevStatus.filter((el) => el.value !== tag.props?.children)
+          prevStatus.filter((el) => el.value !== theTag.props?.children)
         )
       }
+
+      setTags((prevStatus) => prevStatus.filter((el, i) => i !== index))
     }
   }
 

@@ -81,7 +81,7 @@ export const InputTagsWrapper = styled.div<InputTagsWrapper_Props>`
 `
 
 export type DropdownWrapper_Props = {
-  dropdownStyles?: () => FlattenSimpleInterpolation
+  dropdownStyles?: (() => FlattenSimpleInterpolation) | null
 }
 
 export const DropdownWrapper = styled.ul<DropdownWrapper_Props>`

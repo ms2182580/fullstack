@@ -45,11 +45,9 @@ export const SBSG_2 = ({
       {/* 
       //!FH0
       AI_1 component work. Next steps:
-      - Pass all the flow to styled-components
-      - disable the focus-visible of the input here and put the focus-visible on the container instead
       - Make it a re usable component
       
-      - Compare the logic with «TagInput.tsx»
+      - Compare the logic with «TagInput.tsx» for dropdown options when it comes from the input focus
       
       */}
       <InputTags
