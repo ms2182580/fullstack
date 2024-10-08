@@ -89,11 +89,11 @@ export const DropdownWrapper = styled.ul<DropdownWrapper_Props>`
 `
 
 export type DropdownElementsWrapper_Props = {
-  shouldBeSelected: boolean
+  shouldBeSelected?: boolean
   elementStyles?: (() => FlattenSimpleInterpolation) | null
 }
 
 export const DropdownElementsWrapper = styled.li<DropdownElementsWrapper_Props>`
-  ${({ shouldBeSelected, elementStyles }) =>
+  ${({ shouldBeSelected = true, elementStyles }) =>
     shouldBeSelected && elementStyles && elementStyles()};
 `

@@ -22,18 +22,15 @@ Reusable component
 !FH0
 Finish all the features of this component:
 
-- Centralize the types for all of this
+- ✅Centralize the types for all of this
 - Create methods for the use of the "sets"
 - Dropdown from input
 - When dropdown from input exist, the options should selectable with arrow keys
 - And the use as a reusable component, should maintain the state on the input already typed
-- 
-
-
 
 */
 
-import { ReactElement, useRef, useState } from "react"
+import { ReactElement, useEffect, useRef, useState } from "react"
 import {
   DropdownElementsWrapper,
   DropdownElementsWrapper_Props,
@@ -42,179 +39,7 @@ import {
   InputTagsWrapper,
 } from "./styles/InputTagsWrapper"
 
-type Tags_Type = ReactElement | string
-
-export type DropdownElementsToSelect_Type = {
-  value: Tags_Type
-  shouldBeSelected: boolean
-  elementStyles?: DropdownElementsWrapper_Props["elementStyles"]
-}[]
-
-type InputTags_Props = {
-  tags: Tags_Type[]
-  removeTag: ({ e, theTag, index }, { setOptions }) => void
-  handleKeyDown: (e) => void
-  dropdownData?: {
-    dropdownElementsToSelect: DropdownElementsToSelect_Type
-    dropdownContainerStyles?: DropdownWrapper_Props["dropdownStyles"]
-  }
-  handleSelectOption: (
-    { e, shouldReturnToDropdown, elementStyles },
-    { setOptions }
-  ) => void
-  optionsToSelect?: any
-}
-
-const optionsToSelect_Default = [
-  {
-    value: "title 1",
-    shouldBeSelected: false,
-  },
-  {
-    value: "option one",
-    shouldBeSelected: true,
-  },
-  {
-    value: "option two",
-    shouldBeSelected: true,
-  },
-  {
-    value: "option three",
-    shouldBeSelected: true,
-  },
-]
-
-const useInputTagsLogicOnlyFocus = () => {
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [isInputFocused, setIsInputFocused] = useState<boolean>(false)
-
-  const handleContainerClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus()
-    }
-  }
-
-  const handleFocus = () => {
-    setIsInputFocused(true)
-  }
-
-  const handleBlur = () => {
-    setIsInputFocused(false)
-  }
-
-  return {
-    inputRef,
-    isInputFocused,
-    handleContainerClick,
-    handleFocus,
-    handleBlur,
-  }
-}
-
-export const InputTags = ({
-  tags,
-  removeTag,
-  handleKeyDown,
-  dropdownData = undefined,
-  handleSelectOption,
-}: InputTags_Props) => {
-  const {
-    inputRef,
-    isInputFocused,
-    handleContainerClick,
-    handleFocus,
-    handleBlur,
-  } = useInputTagsLogicOnlyFocus()
-
-  const [options, setOptions] = useState(
-    dropdownData?.dropdownElementsToSelect || null
-  )
-
-  return (
-    <InputTagsWrapper isInputFocused={isInputFocused}>
-      <div onClick={handleContainerClick}>
-        {tags.length > 0 && (
-          <ul>
-            {tags.map((theTag, index) => {
-              return (
-                <li
-                  key={index}
-                  onClick={(e) =>
-                    removeTag({ e, theTag, index }, { setOptions })
-                  }
-                  onKeyDown={(e) =>
-                    removeTag({ e, theTag, index }, { setOptions })
-                  }
-                  tabIndex={0}
-                >
-                  {theTag} <span>x</span>
-                </li>
-              )
-            })}
-          </ul>
-        )}
-        <input
-          ref={inputRef}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          onKeyDown={handleKeyDown}
-          type="text"
-          placeholder="Type anything..."
-        />
-      </div>
-
-      <DropdownWrapper
-        dropdownStyles={options ? dropdownData?.dropdownContainerStyles : null}
-      >
-        {options &&
-          options.map(({ value, shouldBeSelected, ...props }, index) => {
-            const { elementStyles = null } = props
-
-            return (
-              <DropdownElementsWrapper
-                elementStyles={elementStyles}
-                shouldBeSelected={shouldBeSelected}
-                key={`${value}_${index}`}
-                onClick={
-                  shouldBeSelected
-                    ? (e) => {
-                        handleSelectOption(
-                          {
-                            e,
-                            shouldReturnToDropdown: shouldBeSelected,
-                            elementStyles,
-                          },
-                          { setOptions }
-                        )
-                      }
-                    : undefined
-                }
-                onKeyDown={
-                  shouldBeSelected
-                    ? (e) => {
-                        handleSelectOption(
-                          {
-                            e,
-                            shouldReturnToDropdown: shouldBeSelected,
-                            elementStyles,
-                          },
-                          { setOptions }
-                        )
-                      }
-                    : undefined
-                }
-                tabIndex={shouldBeSelected ? 0 : -1}
-              >
-                {value}
-              </DropdownElementsWrapper>
-            )
-          })}
-      </DropdownWrapper>
-    </InputTagsWrapper>
-  )
-}
-
-type UseInputTagsLogic_Return = {
+export type UseInputTagsLogic_Return = {
   tags: (ReactElement | string)[]
   removeTag: ({ e, theTag, index }, { setOptions }) => void
   handleKeyDown: (e) => void
@@ -300,5 +125,182 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
     }
   }
 
-  return { tags, handleKeyDown, handleSelectOption, removeTag }
+  return {
+    tags,
+    handleKeyDown,
+    handleSelectOption,
+    removeTag,
+    // tagsShouldReturnToDropdown,
+  }
+}
+
+type Tags_Type = ReactElement | string
+
+export type DropdownElementsToSelect_Type = {
+  value: Tags_Type
+  shouldBeSelected?: boolean
+  elementStyles?: DropdownElementsWrapper_Props["elementStyles"]
+}[]
+
+export type InputTags_Props = {
+  dropdownElementsToSelect?: DropdownElementsToSelect_Type
+  dropdownContainerStyles?: DropdownWrapper_Props["dropdownStyles"]
+} & UseInputTagsLogic_Return
+
+const useInputTagsLogicOnlyFocus = () => {
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(false)
+
+  const handleContainerClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }
+
+  const handleFocus = () => {
+    setIsInputFocused(true)
+  }
+
+  const handleBlur = () => {
+    setIsInputFocused(false)
+  }
+
+  return {
+    inputRef,
+    isInputFocused,
+    handleContainerClick,
+    handleFocus,
+    handleBlur,
+  }
+}
+
+const filterFirstArray = (firstArray: any[], secondArray: any[]): any[] => {
+  // Step 1: Create a set of unique string values from the first array
+  const childrenValues = secondArray.map((item) => item.props.children)
+
+  // Step 2 & 3: Filter firstArray
+  const filteredFirstArray = firstArray.filter((item) => {
+    // Check if item.value is a string and if it exists in childrenValues
+    return (
+      typeof item.value !== "string" || !childrenValues.includes(item.value)
+    )
+  })
+
+  return filteredFirstArray
+}
+
+export const InputTags = ({
+  tags,
+  removeTag,
+  handleKeyDown,
+  dropdownElementsToSelect,
+  dropdownContainerStyles,
+  handleSelectOption,
+}: InputTags_Props) => {
+  const {
+    inputRef,
+    isInputFocused,
+    handleContainerClick,
+    handleFocus,
+    handleBlur,
+  } = useInputTagsLogicOnlyFocus()
+
+  const [options, setOptions] = useState(dropdownElementsToSelect)
+  const [checkingOptionDone, setCheckingOptionDone] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (tags.length > 0 && options && options.length > 0) {
+      const result = filterFirstArray(options, tags)
+      setOptions(result)
+    }
+    setCheckingOptionDone(true)
+  }, [])
+
+  return (
+    <InputTagsWrapper isInputFocused={isInputFocused}>
+      <div onClick={handleContainerClick}>
+        {tags.length > 0 && (
+          <ul>
+            {tags.map((theTag, index) => {
+              return (
+                <li
+                  key={index}
+                  onClick={(e) =>
+                    removeTag({ e, theTag, index }, { setOptions })
+                  }
+                  onKeyDown={(e) =>
+                    removeTag({ e, theTag, index }, { setOptions })
+                  }
+                  tabIndex={0}
+                >
+                  {theTag} <span>x</span>
+                </li>
+              )
+            })}
+          </ul>
+        )}
+        <input
+          ref={inputRef}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onKeyDown={handleKeyDown}
+          type="text"
+          placeholder="Type anything..."
+        />
+      </div>
+
+      <DropdownWrapper
+        dropdownStyles={
+          dropdownElementsToSelect && dropdownContainerStyles
+            ? dropdownContainerStyles
+            : null
+        }
+      >
+        {checkingOptionDone &&
+          options &&
+          options.map(({ value, shouldBeSelected = true, ...props }, index) => {
+            const { elementStyles = null } = props
+
+            return (
+              <DropdownElementsWrapper
+                elementStyles={elementStyles}
+                shouldBeSelected={shouldBeSelected}
+                key={`${value}_${index}`}
+                onClick={
+                  shouldBeSelected
+                    ? (e) => {
+                        handleSelectOption(
+                          {
+                            e,
+                            shouldReturnToDropdown: shouldBeSelected,
+                            elementStyles,
+                          },
+                          { setOptions }
+                        )
+                      }
+                    : undefined
+                }
+                onKeyDown={
+                  shouldBeSelected
+                    ? (e) => {
+                        handleSelectOption(
+                          {
+                            e,
+                            shouldReturnToDropdown: shouldBeSelected,
+                            elementStyles,
+                          },
+                          { setOptions }
+                        )
+                      }
+                    : undefined
+                }
+                tabIndex={shouldBeSelected ? 0 : -1}
+              >
+                {value}
+              </DropdownElementsWrapper>
+            )
+          })}
+      </DropdownWrapper>
+    </InputTagsWrapper>
+  )
 }

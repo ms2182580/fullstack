@@ -90,7 +90,7 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     }
   `
 
-  const dropdownContainerCSS = () => css`
+  const dropdownContainerStyles = () => css`
     background-color: ${NEUTRALS.OFF_WHITE_2};
     margin-top: 24px;
 
@@ -124,7 +124,7 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     }
   `
 
-  const optionsToSelect: DropdownElementsToSelect_Type = [
+  const dropdownElementsToSelect: DropdownElementsToSelect_Type = [
     {
       value: (
         <span>
@@ -135,17 +135,14 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     },
     {
       value: "make new friends",
-      shouldBeSelected: true,
       elementStyles: dropdownElementsCSS,
     },
     {
       value: "play on a sport team",
-      shouldBeSelected: true,
       elementStyles: dropdownElementsCSS,
     },
     {
       value: "improve mobility",
-      shouldBeSelected: true,
       elementStyles: dropdownElementsCSS,
     },
   ]
@@ -189,8 +186,8 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         handleKeyDown={handleKeyDown}
         handleSelectOption={handleSelectOption}
         removeTag={removeTag}
-        optionsToSelect={optionsToSelect}
-        dropdownContainerCSS={dropdownContainerCSS}
+        dropdownElementsToSelect={dropdownElementsToSelect}
+        dropdownContainerStyles={dropdownContainerStyles}
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )

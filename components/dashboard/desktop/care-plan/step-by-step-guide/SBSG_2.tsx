@@ -1,4 +1,9 @@
-import { InputTags } from "@/components/ui/input/input-tags"
+import {
+  DropdownElementsToSelect_Type,
+  InputTags,
+  UseInputTagsLogic_Return,
+} from "@/components/ui/input/input-tags"
+import { DropdownWrapper_Props } from "@/components/ui/input/styles/InputTagsWrapper"
 import { NameProfileSelected_Type } from "."
 import { SBSG_2Wrapper } from "./styles/SBSG_2Wrapper"
 
@@ -11,23 +16,24 @@ https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?no
 
 type Props = {
   nameProfileSelected?: NameProfileSelected_Type
-  tags?: any
-  handleKeyDown?: any
-  handleSelectOption?: any
-  removeTag?: any
-  optionsToSelect?: any
-  dropdownContainerCSS?: any
+  dropdownElementsToSelect?: DropdownElementsToSelect_Type
+  dropdownContainerStyles?: DropdownWrapper_Props["dropdownStyles"]
 }
 
 export const SBSG_2 = ({
   nameProfileSelected,
-  tags,
-  handleKeyDown,
-  handleSelectOption,
-  removeTag,
-  optionsToSelect,
-  dropdownContainerCSS,
+  dropdownElementsToSelect,
+  dropdownContainerStyles,
+  ...restOfProps
 }: Props) => {
+  const {
+    tags,
+    removeTag,
+    handleSelectOption,
+    handleKeyDown,
+    // tagsShouldReturnToDropdown,
+  } = restOfProps as UseInputTagsLogic_Return
+
   return (
     <SBSG_2Wrapper>
       <header>
@@ -42,22 +48,12 @@ export const SBSG_2 = ({
         <p>I’d like to work on these goals:</p>
       )}
 
-      {/* 
-      //!FH0
-      AI_1 component work. Next steps:
-      - Make it a re usable component
-      
-      - Compare the logic with «TagInput.tsx» for dropdown options when it comes from the input focus
-      
-      */}
       <InputTags
         tags={tags}
         removeTag={removeTag}
         handleKeyDown={handleKeyDown}
-        dropdownData={{
-          dropdownElementsToSelect: optionsToSelect,
-          dropdownContainerStyles: dropdownContainerCSS,
-        }}
+        dropdownElementsToSelect={dropdownElementsToSelect}
+        dropdownContainerStyles={dropdownContainerStyles}
         handleSelectOption={handleSelectOption}
       />
     </SBSG_2Wrapper>
