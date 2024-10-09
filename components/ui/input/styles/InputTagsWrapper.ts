@@ -1,11 +1,14 @@
 import { NEUTRALS, SECONDARY_ORG_PLUS } from "@/assets/Colors"
-import styled, { FlattenSimpleInterpolation } from "styled-components"
+import styled, { css, FlattenSimpleInterpolation } from "styled-components"
 
 type InputTagsWrapper_Props = {
   isInputFocused: boolean
+  shouldDropdownDisplayOnFocus: boolean
 }
 
 export const InputTagsWrapper = styled.div<InputTagsWrapper_Props>`
+  position: relative;
+
   & > :nth-child(1) {
     display: grid;
     align-items: flex-start;
@@ -75,6 +78,32 @@ export const InputTagsWrapper = styled.div<InputTagsWrapper_Props>`
     list-style: none;
   }
 
+  ${({ shouldDropdownDisplayOnFocus }) =>
+    shouldDropdownDisplayOnFocus
+      ? css`
+          :nth-child(1) {
+            border: 2px solid crimson;
+
+            div:nth-of-type(1) {
+              border: 2px solid green !important;
+            }
+          }
+        `
+      : css`
+          :nth-child(1) {
+            border: 2px solid crimson;
+
+            div:nth-of-type(1) {
+              /* display: none; */
+              border: 2px solid green !important;
+            }
+          }
+
+          /* display: none; */
+
+          /* border: 2px solid crimson; */
+        `}
+
   & > * {
     /* outline: 2px solid crimson; */
   }
@@ -88,12 +117,23 @@ export const DropdownWrapper = styled.ul<DropdownWrapper_Props>`
   ${({ dropdownStyles }) => dropdownStyles && dropdownStyles()};
 `
 
+type DropdownShowOnInputWrapper_Props = {
+  shouldDropdownDisplayOnFocus?: boolean
+} & DropdownWrapper_Props
+
+export const DropdownShowOnInputWrapper = styled(
+  DropdownWrapper
+)<DropdownShowOnInputWrapper_Props>`
+  display: ${({ shouldDropdownDisplayOnFocus }) =>
+    shouldDropdownDisplayOnFocus ? "" : "none"};
+`
+
 export type DropdownElementsWrapper_Props = {
   shouldBeSelected?: boolean
   elementStyles?: (() => FlattenSimpleInterpolation) | null
 }
 
 export const DropdownElementsWrapper = styled.li<DropdownElementsWrapper_Props>`
-  ${({ shouldBeSelected = true, elementStyles }) =>
+  ${({ shouldBeSelected, elementStyles }) =>
     shouldBeSelected && elementStyles && elementStyles()};
 `

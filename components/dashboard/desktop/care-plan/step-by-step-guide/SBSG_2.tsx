@@ -26,13 +26,8 @@ export const SBSG_2 = ({
   dropdownContainerStyles,
   ...restOfProps
 }: Props) => {
-  const {
-    tags,
-    removeTag,
-    handleSelectOption,
-    handleKeyDown,
-    // tagsShouldReturnToDropdown,
-  } = restOfProps as UseInputTagsLogic_Return
+  const { tags, removeTag, handleSelectOption, handleKeyDown, ...rest } =
+    restOfProps as UseInputTagsLogic_Return
 
   return (
     <SBSG_2Wrapper>
@@ -55,6 +50,10 @@ export const SBSG_2 = ({
         dropdownElementsToSelect={dropdownElementsToSelect}
         dropdownContainerStyles={dropdownContainerStyles}
         handleSelectOption={handleSelectOption}
+        shouldDropdownDisplayOnFocus={rest["shouldDropdownDisplayOnFocus"]}
+        setShouldDropdownDisplayOnFocus={
+          rest["setShouldDropdownDisplayOnFocus"]
+        }
       />
     </SBSG_2Wrapper>
   )

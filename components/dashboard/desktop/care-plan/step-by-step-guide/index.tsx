@@ -75,8 +75,14 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       setNameProfileSelected(null)
     }
   }
-  const { tags, handleKeyDown, handleSelectOption, removeTag } =
-    useInputTagsLogic()
+  const {
+    tags,
+    handleKeyDown,
+    handleSelectOption,
+    removeTag,
+    shouldDropdownDisplayOnFocus,
+    setShouldDropdownDisplayOnFocus,
+  } = useInputTagsLogic()
 
   const dropdownElementsCSS = () => css`
     color: ${PRIMARY.PRIMARY_CTA};
@@ -84,6 +90,8 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
 
     width: fit-content;
     cursor: default;
+
+    display: grid;
 
     &::first-letter {
       text-transform: capitalize;
@@ -124,6 +132,44 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     }
   `
 
+  // const dropdownContainerStyles = () => css`
+  //   position: absolute;
+  //   top: 100%;
+  //   left: 0;
+  //   width: 100%;
+  //   list-style: none;
+
+  //   background-color: ${NEUTRALS.OFF_WHITE_2};
+  //   padding: 12px 8px;
+
+  //   border-radius: 8px;
+
+  //   display: grid;
+  //   gap: 16px;
+
+  //   & > li {
+  //     & > span {
+  //       display: flex;
+  //       gap: 10px;
+
+  //       font-weight: 400;
+  //       color: ${PRIMARY.LIGHT_MAROON};
+
+  //       & > span {
+  //         text-transform: lowercase;
+
+  //         &::first-letter {
+  //           text-transform: capitalize;
+  //         }
+  //       }
+
+  //       &:is(:hover, :focus-visible) {
+  //         filter: unset;
+  //       }
+  //     }
+  //   }
+  // `
+
   const dropdownElementsToSelect: DropdownElementsToSelect_Type = [
     {
       value: (
@@ -134,15 +180,15 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       shouldBeSelected: false,
     },
     {
-      value: "make new friends",
+      value: "Make new friends",
       elementStyles: dropdownElementsCSS,
     },
     {
-      value: "play on a sport team",
+      value: "Play on a sport team",
       elementStyles: dropdownElementsCSS,
     },
     {
-      value: "improve mobility",
+      value: "Improve mobility",
       elementStyles: dropdownElementsCSS,
     },
   ]
