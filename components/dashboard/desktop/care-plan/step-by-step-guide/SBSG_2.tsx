@@ -7,13 +7,6 @@ import { DropdownWrapper_Props } from "@/components/ui/input/styles/InputTagsWra
 import { NameProfileSelected_Type } from "."
 import { SBSG_2Wrapper } from "./styles/SBSG_2Wrapper"
 
-/* 
-!FH0
-Create this next component
-https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?node-id=1-8087&t=HT2B1YrJM4dLVKOW-4
-
-*/
-
 type Props = {
   nameProfileSelected?: NameProfileSelected_Type
   dropdownElementsToSelect?: DropdownElementsToSelect_Type

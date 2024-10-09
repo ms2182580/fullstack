@@ -1,35 +1,3 @@
-/* 
-Reusable component
-- All the styles of this component should have a default style but it should be styled from the parent component
-- Should be a input that allow to put tags on it (and remove them if the user click on them or make a focus-visible and press the backspace or suppress the focus-visible)
-- You should be able to provide a suggested tags (optional)
-  * The suggested that should be:
-    + A list of options showed below or above the input
-    + Or a list of options showed in a dropdown when the user click or focus-visible on the input
-      - If the list of options is showed in a dropdown, the user should be able to select an option with arrow keys: up and down
-  * The  list of suggested tag should be "raw" of styles by default and should be styled by the parent component
-  * The list of suggestion should be the child of the component
-    + The list of options should have the function add be added to the input
-    + The list of options should have the function to be added only on the desired elements, because it can have some sort of "titles" for every category option
-  * 
-
-  
-      
-      
-*/
-
-/* 
-!FH0
-Finish all the features of this component:
-
-- ✅Centralize the types for all of this
-- Create methods for the use of the "sets"
-- Dropdown from input
-- When dropdown from input exist, the options should selectable with arrow keys
-- And the use as a reusable component, should maintain the state on the input already typed
-
-*/
-
 import { useOutsideHide } from "@/utils/useOutsideHide"
 import { ReactElement, useCallback, useEffect, useRef, useState } from "react"
 import {
@@ -423,14 +391,10 @@ export const InputTags = ({
 
   const [showDopdownInFocusInput, setShowDopdownInFocusInput] = useState(false)
 
-  console.log("showDopdownInFocusInput:", showDopdownInFocusInput)
-
   useOutsideHide(
     [theRefInput, theRefDropdown],
     shouldDropdownDisplayOnFocus ? setShowDopdownInFocusInput : () => {}
   )
-
-  console.log("options:", shouldDropdownDisplayOnFocus)
 
   return (
     <InputTagsWrapper
@@ -491,22 +455,6 @@ export const InputTags = ({
               setShouldDropdownDisplayOnFocus={setShowDopdownInFocusInput}
             />
           )}
-
-          {/* {checkingOptionDone && shouldDropdownDisplayOnFocus && (
-            <DropdownArrowKeysContainer
-              listToDisplay={options}
-              dropdownStyles={
-                dropdownElementsToSelect && dropdownContainerStyles
-                  ? dropdownContainerStyles
-                  : null
-              }
-              shouldDropdownDisplayOnFocus={shouldDropdownDisplayOnFocus}
-              handleSelectOption={handleSelectOption}
-              setOptions={setOptions}
-              theRefDropdown={theRefDropdown}
-              setShouldDropdownDisplayOnFocus={setShouldDropdownDisplayOnFocus}
-            />
-          )} */}
         </div>
       </div>
 
