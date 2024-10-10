@@ -9,18 +9,28 @@ import { SBSG_2Wrapper } from "./styles/SBSG_2Wrapper"
 
 type Props = {
   nameProfileSelected?: NameProfileSelected_Type
-  dropdownElementsToSelect?: DropdownElementsToSelect_Type
-  dropdownContainerStyles?: DropdownWrapper_Props["dropdownStyles"]
+  dropdownElementsToSelectSBSG2?: DropdownElementsToSelect_Type
+  dropdownContainerStylesSBSG2?: DropdownWrapper_Props["dropdownStyles"]
 }
 
+type UseInputTagsLogic_ReturnSBSG2 = {
+  tagsSBSG2: UseInputTagsLogic_Return["tags"]
+  removeTagSBSG2: UseInputTagsLogic_Return["removeTag"]
+  handleKeyDownSBSG2: UseInputTagsLogic_Return["handleKeyDown"]
+  handleSelectOptionSBSG2: UseInputTagsLogic_Return["handleSelectOption"]
+}
 export const SBSG_2 = ({
   nameProfileSelected,
-  dropdownElementsToSelect,
-  dropdownContainerStyles,
+  dropdownElementsToSelectSBSG2,
+  dropdownContainerStylesSBSG2,
   ...restOfProps
 }: Props) => {
-  const { tags, removeTag, handleSelectOption, handleKeyDown, ...rest } =
-    restOfProps as UseInputTagsLogic_Return
+  const {
+    tagsSBSG2,
+    removeTagSBSG2,
+    handleSelectOptionSBSG2,
+    handleKeyDownSBSG2,
+  } = restOfProps as UseInputTagsLogic_ReturnSBSG2
 
   return (
     <SBSG_2Wrapper>
@@ -37,16 +47,12 @@ export const SBSG_2 = ({
       )}
 
       <InputTags
-        tags={tags}
-        removeTag={removeTag}
-        handleKeyDown={handleKeyDown}
-        dropdownElementsToSelect={dropdownElementsToSelect}
-        dropdownContainerStyles={dropdownContainerStyles}
-        handleSelectOption={handleSelectOption}
-        shouldDropdownDisplayOnFocus={rest["shouldDropdownDisplayOnFocus"]}
-        setShouldDropdownDisplayOnFocus={
-          rest["setShouldDropdownDisplayOnFocus"]
-        }
+        tags={tagsSBSG2}
+        removeTag={removeTagSBSG2}
+        handleKeyDown={handleKeyDownSBSG2}
+        handleSelectOption={handleSelectOptionSBSG2}
+        dropdownElementsToSelect={dropdownElementsToSelectSBSG2}
+        dropdownContainerStyles={dropdownContainerStylesSBSG2}
       />
     </SBSG_2Wrapper>
   )

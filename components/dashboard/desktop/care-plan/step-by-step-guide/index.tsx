@@ -75,13 +75,12 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       setNameProfileSelected(null)
     }
   }
+
   const {
-    tags,
-    handleKeyDown,
-    handleSelectOption,
-    removeTag,
-    shouldDropdownDisplayOnFocus,
-    setShouldDropdownDisplayOnFocus,
+    tags: tagsSBSG2,
+    handleKeyDown: handleKeyDownSBSG2,
+    handleSelectOption: handleSelectOptionSBSG2,
+    removeTag: removeTagSBSG2,
   } = useInputTagsLogic()
 
   const dropdownElementsCSS = () => css`
@@ -131,45 +130,6 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       }
     }
   `
-
-  // const dropdownContainerStyles = () => css`
-  //   position: absolute;
-  //   top: 100%;
-  //   left: 0;
-  //   width: 100%;
-  //   list-style: none;
-
-  //   background-color: ${NEUTRALS.OFF_WHITE_2};
-  //   padding: 12px 8px;
-
-  //   border-radius: 8px;
-
-  //   display: grid;
-  //   gap: 16px;
-
-  //   & > li {
-  //     & > span {
-  //       display: flex;
-  //       gap: 10px;
-
-  //       font-weight: 400;
-  //       color: ${PRIMARY.LIGHT_MAROON};
-
-  //       & > span {
-  //         text-transform: lowercase;
-
-  //         &::first-letter {
-  //           text-transform: capitalize;
-  //         }
-  //       }
-
-  //       &:is(:hover, :focus-visible) {
-  //         filter: unset;
-  //       }
-  //     }
-  //   }
-  // `
-
   const dropdownElementsToSelect: DropdownElementsToSelect_Type = [
     {
       value: (
@@ -192,6 +152,26 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       elementStyles: dropdownElementsCSS,
     },
   ]
+
+  const SBSG2Props = {
+    nameProfileSelected: {
+      state: nameProfileSelected,
+      setState: {
+        selectedProfile: handleNameProfileSelected,
+        noProfileSelected: handleNoProfileSelected,
+      },
+    },
+    inputTagLogic: {
+      tags: tagsSBSG2,
+      removeTag: removeTagSBSG2,
+      handleKeyDown: handleKeyDownSBSG2,
+      handleSelectOption: handleSelectOptionSBSG2,
+      dropdownElementsToSelect,
+      dropdownContainerStyles,
+    },
+  }
+
+  const SBSG3Props = {}
 
   return (
     <INDEX_D_CarePlan_StepByStepGuideWrapper>
@@ -225,15 +205,23 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         componentSteps={componentSteps}
         activeStep={activeStep}
         handleNextStep={handleNextStep}
-        nameProfileSelected={nameProfileSelected}
-        handleNameProfileSelected={handleNameProfileSelected}
-        handleNoProfileSelected={handleNoProfileSelected}
-        tags={tags}
-        handleKeyDown={handleKeyDown}
-        handleSelectOption={handleSelectOption}
-        removeTag={removeTag}
-        dropdownElementsToSelect={dropdownElementsToSelect}
-        dropdownContainerStyles={dropdownContainerStyles}
+        nameProfileSelected={SBSG2Props.nameProfileSelected.state}
+        handleNameProfileSelected={
+          SBSG2Props.nameProfileSelected.setState.selectedProfile
+        }
+        handleNoProfileSelected={
+          SBSG2Props.nameProfileSelected.setState.noProfileSelected
+        }
+        tagsSBSG2={SBSG2Props.inputTagLogic.tags}
+        removeTagSBSG2={SBSG2Props.inputTagLogic.removeTag}
+        handleKeyDownSBSG2={SBSG2Props.inputTagLogic.handleKeyDown}
+        handleSelectOptionSBSG2={SBSG2Props.inputTagLogic.handleSelectOption}
+        dropdownElementsToSelectSBSG2={
+          SBSG2Props.inputTagLogic.dropdownElementsToSelect
+        }
+        dropdownContainerStylesSBSG2={
+          SBSG2Props.inputTagLogic.dropdownContainerStyles
+        }
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )

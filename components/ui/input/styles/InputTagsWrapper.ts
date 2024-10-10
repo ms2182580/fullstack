@@ -1,9 +1,9 @@
 import { NEUTRALS, SECONDARY_ORG_PLUS } from "@/assets/Colors"
-import styled, { css, FlattenSimpleInterpolation } from "styled-components"
+import styled, { FlattenSimpleInterpolation } from "styled-components"
 
 type InputTagsWrapper_Props = {
   isInputFocused: boolean
-  shouldDropdownDisplayOnFocus: boolean
+  // shouldDropdownDisplayOnFocus: boolean
 }
 
 export const InputTagsWrapper = styled.div<InputTagsWrapper_Props>`
@@ -77,32 +77,6 @@ export const InputTagsWrapper = styled.div<InputTagsWrapper_Props>`
   & > :nth-child(2) {
     list-style: none;
   }
-
-  ${({ shouldDropdownDisplayOnFocus }) =>
-    shouldDropdownDisplayOnFocus
-      ? css`
-          :nth-child(1) {
-            border: 2px solid crimson;
-
-            div:nth-of-type(1) {
-              border: 2px solid green !important;
-            }
-          }
-        `
-      : css`
-          :nth-child(1) {
-            border: 2px solid crimson;
-
-            div:nth-of-type(1) {
-              /* display: none; */
-              border: 2px solid green !important;
-            }
-          }
-
-          /* display: none; */
-
-          /* border: 2px solid crimson; */
-        `}
 
   & > * {
     /* outline: 2px solid crimson; */

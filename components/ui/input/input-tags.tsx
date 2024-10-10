@@ -17,8 +17,6 @@ export type UseInputTagsLogic_Return = {
     { e, shouldReturnToDropdown, elementStyles },
     { setOptions }
   ) => void
-  shouldDropdownDisplayOnFocus: boolean
-  setShouldDropdownDisplayOnFocus: Function
 }
 
 export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
@@ -26,9 +24,6 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
 
   const [tagsShouldReturnToDropdown, setTagsShouldReturnToDropdown] =
     useState<DropdownElementsToSelect_Type>([])
-
-  const [shouldDropdownDisplayOnFocus, setShouldDropdownDisplayOnFocus] =
-    useState(false)
 
   const handleKeyDown = (e) => {
     const selectedValue = e.target.value
@@ -105,8 +100,6 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
     handleKeyDown,
     handleSelectOption,
     removeTag,
-    shouldDropdownDisplayOnFocus,
-    setShouldDropdownDisplayOnFocus,
   }
 }
 
@@ -360,11 +353,10 @@ export const InputTags = ({
   tags,
   removeTag,
   handleKeyDown,
+  handleSelectOption,
   dropdownElementsToSelect,
   dropdownContainerStyles,
-  handleSelectOption,
   shouldDropdownDisplayOnFocus = false,
-  setShouldDropdownDisplayOnFocus,
 }: InputTags_Props) => {
   const {
     inputRef,
@@ -399,7 +391,7 @@ export const InputTags = ({
   return (
     <InputTagsWrapper
       isInputFocused={isInputFocused}
-      shouldDropdownDisplayOnFocus={shouldDropdownDisplayOnFocus}
+      // shouldDropdownDisplayOnFocus={shouldDropdownDisplayOnFocus}
     >
       <div
         onClick={(e) => {
@@ -435,7 +427,7 @@ export const InputTags = ({
           ref={inputRef}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          onKeyDown={handleKeyDown}
+          onKeyDown={(e) => handleKeyDown(e)}
           type="text"
           placeholder="Type anything..."
         />
