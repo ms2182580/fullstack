@@ -1,5 +1,6 @@
 import { NEUTRALS, PRIMARY, SEMANTICS } from "@/assets/Colors"
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { CreatePlanVisibility_Types } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
 import styled from "styled-components"
 
 export const Layout_Dashboard_CarePlan_AsideWrapper = styled.div`
@@ -67,4 +68,15 @@ export const Layout_Dashboard_CarePlan_AsideWrapper = styled.div`
       }
     }
   }
+`
+
+type CarePlan_Aside_LIWrapper_Props = {
+  isCreatePlanVisibible: CreatePlanVisibility_Types["isCreatePlanVisibible"]
+}
+
+export const CarePlan_Aside_LIWrapper = styled.li<CarePlan_Aside_LIWrapper_Props>`
+  background-color: ${({ isCreatePlanVisibible }) =>
+    isCreatePlanVisibible ? `${SEMANTICS.NAVIGATION_ACTIVE}` : ""};
+
+  cursor: default;
 `

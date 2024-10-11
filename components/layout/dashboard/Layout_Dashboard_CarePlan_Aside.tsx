@@ -5,10 +5,14 @@ import MagicWand_Active from "@/assets/icons/magic_wand_active.svg"
 import MagicWand from "@/assets/icons/org/third-page/magic-wand.svg"
 import Star_Active from "@/assets/icons/star_active.svg"
 import Star_Default from "@/assets/icons/star_default.svg"
+import { useCtxCreatePlanVisibility } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Layout_Dashboard_CarePlan_AsideWrapper } from "./styles/Layout_Dashboard_CarePlan_AsideWrapper"
+import {
+  CarePlan_Aside_LIWrapper,
+  Layout_Dashboard_CarePlan_AsideWrapper,
+} from "./styles/Layout_Dashboard_CarePlan_AsideWrapper"
 
 const asideOptions = [
   {
@@ -41,6 +45,13 @@ export const Layout_Dashboard_CarePlan_Aside = () => {
     }
   }
 
+  const { isCreatePlanVisibible, handleShowCreateCarePlan } =
+    useCtxCreatePlanVisibility()
+
+  const handleShowCreateCarePlanLocal = () => {
+    handleShowCreateCarePlan()
+  }
+
   return (
     <Layout_Dashboard_CarePlan_AsideWrapper>
       <Link href={ALL_ROUTES.HOME}>
@@ -54,6 +65,9 @@ export const Layout_Dashboard_CarePlan_Aside = () => {
         {asideOptions.map(({ string, svgDefault, svgActive }) => {
           const SVGDefault = svgDefault
           // const SVGActive = svgActive
+          const isCreate = string === "create"
+
+          const isCreateActive = isCreate && isCreatePlanVisibible
 
           const isBack = string === "back"
 
@@ -73,10 +87,19 @@ export const Layout_Dashboard_CarePlan_Aside = () => {
           }
 
           return (
-            <li key={string} tabIndex={0}>
+            <CarePlan_Aside_LIWrapper
+              key={string}
+              tabIndex={0}
+              isCreatePlanVisibible={isCreateActive}
+              onClick={
+                isCreate && !isCreatePlanVisibible
+                  ? handleShowCreateCarePlanLocal
+                  : undefined
+              }
+            >
               <SVGDefault />
               <p>{string}</p>
-            </li>
+            </CarePlan_Aside_LIWrapper>
           )
         })}
       </ul>

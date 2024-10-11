@@ -31,7 +31,7 @@ type SBSG3 = {
 // Define context type properly
 const CtxDataCreatePlan = createContext<SBSG3 | null>(null)
 
-export const CtxDataCreatePlan_Provider = ({
+export const CtxCreatePlanData_Provider = ({
   children,
 }: {
   children: ReactNode
@@ -64,7 +64,7 @@ export const useCtxDataCreatePlan = () => {
   const context = useContext(CtxDataCreatePlan)
   if (!context) {
     throw new Error(
-      "useCtxDataCreatePlan must be used within a CtxDataCreatePlan_Provider"
+      "useCtxDataCreatePlan must be used within a CtxCreatePlanData_Provider"
     )
   }
   return context

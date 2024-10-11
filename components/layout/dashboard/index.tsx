@@ -1,3 +1,4 @@
+import { CtxCreatePlanVisibility_Provider } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useFormattingRoute } from "@/utils/useFormattingRoute"
 import Head from "next/head"
@@ -39,7 +40,11 @@ export const Layout_Dashboard = ({ title, children }) => {
         <meta name="description" content="inclusive - website" />
       </Head>
 
-      <Layout_DashboardWrapper>{layoutPlusChildren}</Layout_DashboardWrapper>
+      <Layout_DashboardWrapper>
+        <CtxCreatePlanVisibility_Provider>
+          {layoutPlusChildren}
+        </CtxCreatePlanVisibility_Provider>
+      </Layout_DashboardWrapper>
     </>
   )
 }

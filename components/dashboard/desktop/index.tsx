@@ -6,6 +6,7 @@ import SvgPlus from "@/assets/icons/org/third-page/org_plus.svg"
 import SVGSung from "@/assets/icons/sun.svg"
 import ImageFamily from "@/assets/images/Dashboard/dashboard_home_family.png"
 import IMGEmptyDocuments from "@/assets/images/Dashboard/dashboard_index_emptyDocuments.png"
+import { useCtxCreatePlanVisibility } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Image from "next/image"
 import Link from "next/link"
@@ -14,6 +15,11 @@ import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
 
 export const INDEX_D_Dashboard = () => {
   const { asPath } = useRouter()
+
+  const { useSetInitialState, isCreatePlanVisibible } =
+    useCtxCreatePlanVisibility()
+
+  useSetInitialState()
 
   return (
     <INDEX_D_DashboardWrapper

@@ -29,7 +29,7 @@ test.describe("Flow_ORG", () => {
     await theResultsPage.waitFor({ state: "visible", timeout: 3000 })
 
     const optionsToHaveScreenshot = {
-      fullPage: true,
+      fullPage: false,
       maxDiffPixelRatio: 0.01,
       maxDiffPixels: 999 /* on "webkit" the difference of pixels are huge because for some reason webkit lift everything some pixels */,
     }

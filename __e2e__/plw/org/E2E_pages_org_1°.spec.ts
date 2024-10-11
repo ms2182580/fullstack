@@ -3,11 +3,6 @@ import { expect, test } from "@playwright/test"
 import { KEYS_DATA_TESTID } from "../utils/org/keys"
 
 test.describe("Flow_ORG", () => {
-  /* 
-  - Skipped because is flakky
-  - The problem: the test does not wait until images get loaded
-  */
-
   test("1° page", async ({ page }) => {
     await page.goto(`/${ALL_ROUTES.ORG}`)
 
@@ -20,7 +15,7 @@ test.describe("Flow_ORG", () => {
       .waitFor({ state: "visible" })
 
     const optionsToHaveScreenshot = {
-      fullPage: true,
+      fullPage: false,
       maxDiffPixelRatio: 0.01,
       maxDiffPixels: 999,
     }

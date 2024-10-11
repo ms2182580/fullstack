@@ -1,7 +1,7 @@
 export const PRIMARY = {
   PRIMARY_LOGO: "#A461BB" /* Only for INCLUSIVE logo */,
-  // PRIMARY_CTA: "#6E3A82" /* Primary CTA (default state) */,
   PRIMARY_CTA: "#006886" /* New Color Scheme Primary CTA (default state) */,
+  PRIMARY_CTA_2: "#6E3A82" /* --Deprecated-- Primary CTA (default state) */,
   PRIMARY_HOVER: "#4B348B" /* Primary CTA (hover state) */,
   PRIMARY_BACKGROUND: "#F1E7F5",
   DARK_MAROON: "#312138",

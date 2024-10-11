@@ -5,8 +5,8 @@ import {
   DropdownElementsToSelect_Type,
   useInputTagsLogic,
 } from "@/components/ui/input/input-tags"
-import { CtxDataCreatePlan_Provider } from "@/context/dashboard/care_plan/ctx-data-create-plan"
-import { ReactElement, useState } from "react"
+import { CtxCreatePlanData_Provider } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { ReactElement, useMemo, useState } from "react"
 import { css } from "styled-components"
 import { SBSG_1 } from "./SBSG_1"
 import { SBSG_2 } from "./SBSG_2"
@@ -202,6 +202,10 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     },
   ]
 
+  const shouldDisplaySkipButton = useMemo(() => {
+    return activeStep === 2 || activeStep === 3
+  }, [activeStep])
+
   const SBSG3Props = {
     inputTagLogic: {
       tags: tagsSBSG3,
@@ -241,11 +245,12 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         </section>
       </header>
 
-      <CtxDataCreatePlan_Provider>
+      <CtxCreatePlanData_Provider>
         <SBSG_Content
           componentSteps={componentSteps}
           activeStep={activeStep}
           handleNextStep={handleNextStep}
+          shouldDisplaySkipButton={shouldDisplaySkipButton}
           nameProfileSelected={SBSG2Props.nameProfileSelected.state}
           handleNameProfileSelected={
             SBSG2Props.nameProfileSelected.setState.selectedProfile
@@ -274,7 +279,7 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
             SBSG3Props.inputTagLogic.dropdownContainerStyles
           }
         />
-      </CtxDataCreatePlan_Provider>
+      </CtxCreatePlanData_Provider>
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )
 }

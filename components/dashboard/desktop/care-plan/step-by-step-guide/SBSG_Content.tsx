@@ -1,5 +1,6 @@
 import { cloneElement, Fragment, isValidElement } from "react"
 import { ComponentSteps_Type } from "."
+import { SBSGContentSkip } from "./sbsg-content-skip"
 import { SBSG_ContentWrapper } from "./styles/SBSG_ContentWrapper"
 
 type SBSG_ContentPropsType = {
@@ -7,6 +8,7 @@ type SBSG_ContentPropsType = {
   activeStep: number
   handleNextStep: (e) => void
   handleNoProfileSelected: (e) => void
+  shouldDisplaySkipButton: boolean
 }
 
 export const SBSG_Content = (...allProps) => {
@@ -15,6 +17,7 @@ export const SBSG_Content = (...allProps) => {
     activeStep,
     handleNextStep,
     handleNoProfileSelected,
+    shouldDisplaySkipButton,
   }: SBSG_ContentPropsType = allProps[0]
 
   return (
@@ -46,6 +49,7 @@ export const SBSG_Content = (...allProps) => {
           </Fragment>
         )
       })}
+      {shouldDisplaySkipButton && <SBSGContentSkip />}
     </SBSG_ContentWrapper>
   )
 }

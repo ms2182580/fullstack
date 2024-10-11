@@ -32,13 +32,16 @@ export const useOutsideHide = (ref, handleStateOutside, ...rest) => {
 import { useEffect } from "react"
 
 export const useOutsideHide = (theRef, handleStateOutside, ...rest) => {
+  const theRefIsArray = Array.isArray(theRef)
+
   useEffect(() => {
     function handleClickOutside(event) {
       // Check if the click is outside all refs
       if (
-        theRef.every(
-          (ref) => ref.current && !ref.current.contains(event.target)
-        ) ||
+        (theRefIsArray &&
+          theRef?.every(
+            (ref) => ref.current && !ref.current.contains(event.target)
+          )) ||
         (theRef.current && !theRef.current.contains(event.target))
       ) {
         handleStateOutside(false)
@@ -48,9 +51,10 @@ export const useOutsideHide = (theRef, handleStateOutside, ...rest) => {
     function handleFocus(event) {
       // Check if focus is not on any of the referenced elements
       if (
-        theRef.every(
-          (ref) => ref.current && !ref.current.contains(event.target)
-        ) ||
+        (theRefIsArray &&
+          theRef?.every(
+            (ref) => ref.current && !ref.current.contains(event.target)
+          )) ||
         (theRef.current && !theRef.current.contains(event.target))
       ) {
         handleStateOutside(false)

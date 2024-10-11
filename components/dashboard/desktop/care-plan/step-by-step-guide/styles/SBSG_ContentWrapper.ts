@@ -2,7 +2,7 @@ import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonSty
 import styled from "styled-components"
 
 export const SBSG_ContentWrapper = styled.div`
-  & > :last-child {
+  & > button {
     ${reusableButton()};
     width: 100%;
 

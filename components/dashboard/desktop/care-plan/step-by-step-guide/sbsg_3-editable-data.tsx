@@ -1,4 +1,4 @@
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-data-create-plan"
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { FunctionComponent, SVGProps, useRef } from "react"
 import { SBSG3_EditableDataWrapper } from "./styles/SBSG3_EditableDataWrapper"
 

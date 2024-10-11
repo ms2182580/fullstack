@@ -1,7 +1,12 @@
 import { NEUTRALS } from "@/assets/Colors"
-import styled from "styled-components"
+import { CreatePlanVisibility_Types } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
+import styled, { css } from "styled-components"
 
-export const INDEX_D_CarePlanWrapper = styled.div`
+type Props = {
+  isCreatePlanVisibible: CreatePlanVisibility_Types["isCreatePlanVisibible"]
+}
+
+export const INDEX_D_CarePlanWrapper = styled.div<Props>`
   display: grid;
   grid-template-columns: 400px auto;
   grid-template-areas:
@@ -28,9 +33,28 @@ export const INDEX_D_CarePlanWrapper = styled.div`
     This will allow to make the editor sticky in the same spot
     If the editor should be sticky, consider to pass a prop using the styled-components approach to know how much height have the header here. And with that, use it in the "top" property
     */
-    /*
-    position: sticky;
-    top: 163px;
-    */
+    /* position: sticky;
+    top: 163px; */
   }
+
+  ${({ isCreatePlanVisibible }) =>
+    !isCreatePlanVisibible &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      & > :nth-child(1) {
+        width: 100%;
+      }
+
+      & > :nth-child(2) {
+        width: 100%;
+      }
+
+      & > :nth-child(3) {
+        display: none;
+      }
+    `}
 `
