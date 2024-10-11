@@ -1,3 +1,3 @@
 import styled from "styled-components"
 
-export const SBSG_4Wrapper = styled.article``
+export const SBSG_4Wrapper = styled.section``

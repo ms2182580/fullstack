@@ -3,7 +3,7 @@ import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import styled from "styled-components"
 
-export const SBSG_1Wrapper = styled.article`
+export const SBSG_1Wrapper = styled.section`
   & > header {
     h5 {
       ${HeaderCSS({ fontSize: "16px", fontWeight: "600" })}

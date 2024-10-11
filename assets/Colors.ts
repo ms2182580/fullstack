@@ -34,6 +34,7 @@ export const SECONDARY_BG_BIGBLOCKS_TEXT = {
 
 export const NEUTRALS = {
   BLACK: "#00080B" /* Standard text */,
+  BLACK_2: "#1d1a1e" /* Standard text */,
   DARK_GREY: "#6C6C6C" /* Informational text */,
   DARK_GREY_2: "#3A343C" /* Informational text alternative 2 */,
   DARK_GREY_3: "#908395" /* Informational text alternative 3 */,
