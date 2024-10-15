@@ -46,6 +46,11 @@ export const SBSG_2 = ({
         <p>I’d like to work on these goals:</p>
       )}
 
+      {/* 
+
+//!FH0
+Check the z-index of this component
+*/}
       <InputTags
         tags={tagsSBSG2}
         removeTag={removeTagSBSG2}

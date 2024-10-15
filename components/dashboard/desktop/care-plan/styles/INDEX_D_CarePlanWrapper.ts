@@ -21,6 +21,8 @@ export const INDEX_D_CarePlanWrapper = styled.div<Props>`
     grid-area: editorHeader;
     position: sticky;
     inset: 0;
+
+    z-index: 1;
   }
 
   & > :nth-child(2) {
