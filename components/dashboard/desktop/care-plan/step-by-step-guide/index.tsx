@@ -5,7 +5,6 @@ import {
   DropdownElementsToSelect_Type,
   useInputTagsLogic,
 } from "@/components/ui/input/input-tags"
-import { CtxCreatePlanData_Provider } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { ReactElement, useMemo, useState } from "react"
 import { css } from "styled-components"
 import { SBSG_1 } from "./SBSG_1"
@@ -59,21 +58,6 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
       if (activeStep > 0 && activeStep <= componentSteps.length - 1) {
         return setActiveStep((prevState) => prevState - 1)
       }
-    }
-  }
-
-  const [nameProfileSelected, setNameProfileSelected] =
-    useState<NameProfileSelected_Type>(null)
-
-  const handleNameProfileSelected = ({ e, nameProfile }) => {
-    if (e.type === "click" || e.key === "Enter") {
-      setNameProfileSelected(nameProfile)
-    }
-  }
-
-  const handleNoProfileSelected = (e) => {
-    if (e.type === "click" || e.key === "Enter") {
-      setNameProfileSelected(null)
     }
   }
 
@@ -156,10 +140,10 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
 
   const SBSG2Props = {
     nameProfileSelected: {
-      state: nameProfileSelected,
+      // state: nameProfileSelected,
       setState: {
-        selectedProfile: handleNameProfileSelected,
-        noProfileSelected: handleNoProfileSelected,
+        // selectedProfile: handleNameProfileSelected,
+        // noProfileSelected: handleNoProfileSelected,
       },
     },
     inputTagLogic: {
@@ -245,41 +229,32 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         </section>
       </header>
 
-      <CtxCreatePlanData_Provider>
-        <SBSG_Content
-          componentSteps={componentSteps}
-          activeStep={activeStep}
-          handleNextStep={handleNextStep}
-          shouldDisplaySkipButton={shouldDisplaySkipButton}
-          nameProfileSelected={SBSG2Props.nameProfileSelected.state}
-          handleNameProfileSelected={
-            SBSG2Props.nameProfileSelected.setState.selectedProfile
-          }
-          handleNoProfileSelected={
-            SBSG2Props.nameProfileSelected.setState.noProfileSelected
-          }
-          tagsSBSG2={SBSG2Props.inputTagLogic.tags}
-          removeTagSBSG2={SBSG2Props.inputTagLogic.removeTag}
-          handleKeyDownSBSG2={SBSG2Props.inputTagLogic.handleKeyDown}
-          handleSelectOptionSBSG2={SBSG2Props.inputTagLogic.handleSelectOption}
-          dropdownElementsToSelectSBSG2={
-            SBSG2Props.inputTagLogic.dropdownElementsToSelectSBSG2
-          }
-          dropdownContainerStylesSBSG2={
-            SBSG2Props.inputTagLogic.dropdownContainerStyles
-          }
-          tagsSBSG3={SBSG3Props.inputTagLogic.tags}
-          removeTagSBSG3={SBSG3Props.inputTagLogic.removeTag}
-          handleKeyDownSBSG3={SBSG3Props.inputTagLogic.handleKeyDown}
-          handleSelectOptionSBSG3={SBSG3Props.inputTagLogic.handleSelectOption}
-          dropdownElementsToSelectSBSG3={
-            SBSG3Props.inputTagLogic.dropdownElementsToSelectSBSG3
-          }
-          dropdownContainerStylesSBSG3={
-            SBSG3Props.inputTagLogic.dropdownContainerStyles
-          }
-        />
-      </CtxCreatePlanData_Provider>
+      <SBSG_Content
+        componentSteps={componentSteps}
+        activeStep={activeStep}
+        handleNextStep={handleNextStep}
+        shouldDisplaySkipButton={shouldDisplaySkipButton}
+        tagsSBSG2={SBSG2Props.inputTagLogic.tags}
+        removeTagSBSG2={SBSG2Props.inputTagLogic.removeTag}
+        handleKeyDownSBSG2={SBSG2Props.inputTagLogic.handleKeyDown}
+        handleSelectOptionSBSG2={SBSG2Props.inputTagLogic.handleSelectOption}
+        dropdownElementsToSelectSBSG2={
+          SBSG2Props.inputTagLogic.dropdownElementsToSelectSBSG2
+        }
+        dropdownContainerStylesSBSG2={
+          SBSG2Props.inputTagLogic.dropdownContainerStyles
+        }
+        tagsSBSG3={SBSG3Props.inputTagLogic.tags}
+        removeTagSBSG3={SBSG3Props.inputTagLogic.removeTag}
+        handleKeyDownSBSG3={SBSG3Props.inputTagLogic.handleKeyDown}
+        handleSelectOptionSBSG3={SBSG3Props.inputTagLogic.handleSelectOption}
+        dropdownElementsToSelectSBSG3={
+          SBSG3Props.inputTagLogic.dropdownElementsToSelectSBSG3
+        }
+        dropdownContainerStylesSBSG3={
+          SBSG3Props.inputTagLogic.dropdownContainerStyles
+        }
+      />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )
 }

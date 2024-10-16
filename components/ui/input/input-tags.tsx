@@ -117,6 +117,7 @@ export type InputTags_Props = {
   shouldDropdownDisplayOnFocus?:
     | ShouldDropdownDisplayOnFocus_Type
     | "is not working, do not use this"
+  handleExtractSelectedData?: (e: any) => void
 } & UseInputTagsLogic_Return
 
 const useInputTagsLogicOnlyFocus = () => {
@@ -357,6 +358,7 @@ export const InputTags = ({
   dropdownElementsToSelect,
   dropdownContainerStyles,
   shouldDropdownDisplayOnFocus = false,
+  handleExtractSelectedData,
 }: InputTags_Props) => {
   const {
     inputRef,
@@ -387,6 +389,12 @@ export const InputTags = ({
     [theRefInput, theRefDropdown],
     shouldDropdownDisplayOnFocus ? setShowDopdownInFocusInput : () => {}
   )
+
+  useEffect(() => {
+    if (tags.length > 0 && handleExtractSelectedData) {
+      handleExtractSelectedData(tags)
+    }
+  }, [tags])
 
   return (
     <InputTagsWrapper

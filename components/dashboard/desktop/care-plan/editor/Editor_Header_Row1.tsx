@@ -1,26 +1,30 @@
 import { ShareSvg } from "@/assets/icons"
 import HomeSvg_Default from "@/assets/icons/home_default.svg"
-import { useEffect, useState } from "react"
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useEffect } from "react"
 import { Editor_Header_Row1Wrapper } from "./styles/Editor_Header_Row1Wrapper"
 
-const CAREPLANTITLE_PLACEHOLDER: string =
-  "▀▄ Placeholder: my care plan title here ▄▀"
+const CAREPLANTITLE_PLACEHOLDER: string = "Untitled Document"
 
 export const Editor_Header_Row1 = () => {
-  const [carePlanTitle, setCarePlanTitle] = useState("Kahlil’s Care Plan")
+  const { stateProfileSelectedSBSG1, handleProfileSelectedSBSG1 } =
+    useCtxDataCreatePlan().SBSG1
 
   const handleChange = (event) => {
-    setCarePlanTitle(event.target.value)
+    handleProfileSelectedSBSG1({ nameProfile: event.target.value })
   }
 
   useEffect(() => {
-    if (carePlanTitle === "") {
-      setCarePlanTitle(CAREPLANTITLE_PLACEHOLDER)
+    if (
+      stateProfileSelectedSBSG1 === null ||
+      stateProfileSelectedSBSG1 === ""
+    ) {
+      handleProfileSelectedSBSG1({ nameProfile: CAREPLANTITLE_PLACEHOLDER })
     }
-  }, [carePlanTitle])
+  }, [stateProfileSelectedSBSG1])
 
   const handleOnSelectCarePlanTitlePlaceholder = (event) => {
-    if (carePlanTitle === CAREPLANTITLE_PLACEHOLDER) {
+    if (stateProfileSelectedSBSG1 === CAREPLANTITLE_PLACEHOLDER) {
       event.target.select()
     }
   }
@@ -31,7 +35,7 @@ export const Editor_Header_Row1 = () => {
         <HomeSvg_Default />
 
         <input
-          value={carePlanTitle}
+          value={`${stateProfileSelectedSBSG1}` || ""}
           onChange={handleChange}
           onClick={handleOnSelectCarePlanTitlePlaceholder}
         />

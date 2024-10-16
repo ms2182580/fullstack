@@ -13,7 +13,6 @@ export type CreatePlanVisibility_Types = {
   useSetInitialState: () => void
 }
 
-// Define context type properly
 const CtxCreatePlanVisibility =
   createContext<CreatePlanVisibility_Types | null>(null)
 
@@ -56,7 +55,7 @@ export const useCtxCreatePlanVisibility = () => {
   const context = useContext(CtxCreatePlanVisibility)
   if (!context) {
     throw new Error(
-      "useCtxCreatePlanVisibility must be used within a CtxCreatePlan_ProviderVisibility"
+      `${useCtxCreatePlanVisibility.name} must be used within a ${CtxCreatePlanVisibility_Provider.name}`
     )
   }
   return context

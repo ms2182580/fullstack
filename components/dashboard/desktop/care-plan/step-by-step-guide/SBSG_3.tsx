@@ -8,10 +8,7 @@ import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-p
 import { SBSG3_EditableData } from "./sbsg_3-editable-data"
 import { SBSG_3Wrapper } from "./styles/SBSG_3Wrapper"
 
-/* 
-!FH0
-https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?node-id=1-8354&t=uxkQcuqhgTnPrbHv-4
-*/ type Props = {
+type Props = {
   dropdownElementsToSelectSBSG3?: DropdownElementsToSelect_Type
   dropdownContainerStylesSBSG3?: DropdownWrapper_Props["dropdownStyles"]
 }
@@ -35,7 +32,8 @@ export const SBSG_3 = ({
     handleKeyDownSBSG3,
   } = restOfProps as UseInputTagsLogic_ReturnSBSG3
 
-  const { stateEditableDataSBSG3 } = useCtxDataCreatePlan()
+  const { stateEditableDataSBSG3 } = useCtxDataCreatePlan().SBSG3
+  // console.log("stateEditableDataSBSG3:", stateEditableDataSBSG3)
 
   return (
     <SBSG_3Wrapper>
@@ -53,6 +51,7 @@ export const SBSG_3 = ({
         handleSelectOption={handleSelectOptionSBSG3}
         dropdownElementsToSelect={dropdownElementsToSelectSBSG3}
         dropdownContainerStyles={dropdownContainerStylesSBSG3}
+        // handleExtractSelectedData={handleExtractSelectedData}
       />
 
       <ul>

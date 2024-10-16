@@ -1,5 +1,6 @@
 import ProfilePicture1 from "@/assets/images/Dashboard/care-plan/sbsg/profile-picture-1.png"
 import ProfilePicture2 from "@/assets/images/Dashboard/care-plan/sbsg/profile-picture-2.png"
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import Image from "next/image"
 import { SBSG_1Wrapper } from "./styles/SBSG_1Wrapper"
 
@@ -8,16 +9,19 @@ const planFor = [
   { image: ProfilePicture2, name: "John Doe" },
 ]
 
-type Props = {
+export type SBSG_1Props = {
   handleNextStep?: (e) => void
-  handleNameProfileSelected?: (e) => void
-  handleNoProfileSelected?: () => void
 }
 
-export const SBSG_1 = ({
-  handleNextStep,
-  handleNameProfileSelected,
-}: Props) => {
+export const SBSG_1 = ({ handleNextStep }: SBSG_1Props) => {
+  const { handleProfileSelectedSBSG1 } = useCtxDataCreatePlan().SBSG1
+
+  const handleUseProfileSelectedSBSG1 = ({ e, nameProfileSelected }) => {
+    if (e.type === "click" || e.key === "Enter") {
+      handleProfileSelectedSBSG1({ nameProfile: nameProfileSelected })
+    }
+  }
+
   return (
     <SBSG_1Wrapper>
       <header>
@@ -35,14 +39,18 @@ export const SBSG_1 = ({
                 onClick={(e) => {
                   if (handleNextStep) handleNextStep(e)
 
-                  if (handleNameProfileSelected)
-                    handleNameProfileSelected({ e, nameProfile: name })
+                  handleUseProfileSelectedSBSG1({
+                    e,
+                    nameProfileSelected: name,
+                  })
                 }}
                 onKeyDown={(e) => {
                   if (handleNextStep) handleNextStep(e)
 
-                  if (handleNameProfileSelected)
-                    handleNameProfileSelected({ e, nameProfile: name })
+                  handleUseProfileSelectedSBSG1({
+                    e,
+                    nameProfileSelected: name,
+                  })
                 }}
               >
                 <Image src={image} alt={name} />

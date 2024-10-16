@@ -16,14 +16,19 @@ export const SBSGContentSkipWrapper = styled.div`
     &::first-letter {
       text-transform: capitalize;
     }
+
+    &:is(:hover, :focus-visible) {
+      cursor: default;
+      opacity: 0.8;
+    }
   }
 
   & > :nth-child(2) {
     position: relative;
+
     & > :nth-child(2) {
       position: absolute;
       left: 150%;
-      /* top: 0; */
       bottom: 0;
 
       width: max-content;

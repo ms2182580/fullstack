@@ -13,7 +13,7 @@ export const SBSG3_EditableData = ({
   defaultValue,
   icon: SVG,
 }: SBSG3_EditableData_Type) => {
-  const { handleChangeEditableDataSBSG3 } = useCtxDataCreatePlan()
+  const { handleChangeEditableDataSBSG3 } = useCtxDataCreatePlan().SBSG3
 
   const inputRef = useRef<HTMLInputElement>(null)
 

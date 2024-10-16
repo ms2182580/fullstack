@@ -1,3 +1,4 @@
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { DataTabs_Type } from "./INDEX_D_CarePlan_Tabs"
 import { Tabs_Title_LI, Tabs_TitleWrapper } from "./styles/Tabs_TitleWrapper"
 
@@ -8,6 +9,8 @@ type Props = {
 }
 
 export const Tabs_Title = ({ dataTabs, activeTab, handleActiveTab }: Props) => {
+  const { stateEditableDataSBSG3 } = useCtxDataCreatePlan().SBSG3
+
   return (
     <Tabs_TitleWrapper>
       {dataTabs.map((xDataTabs, index) => {
