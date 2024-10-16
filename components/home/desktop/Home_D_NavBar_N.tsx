@@ -47,23 +47,23 @@ export const Home_D_NavBar_N = () => {
         <INDEX_Logo />
 
         <div>
-          <div>
+          {/* <div>
             <span>
               About Us
-              {/* <span>
+              <span>
               <InclusiveLogo_D_DownArrow />
-            </span> */}
+            </span>
             </span>
             <span>Businesses</span>
             <span>Pricing</span>
             <Link href={`/${ALL_ROUTES.ORG}`}>Resource Guide</Link>
-          </div>
+          </div> */}
           <div>
             <span>
-              <span>
+              {/* <span>
                 <Magic_Wand />
-              </span>
-              AI Chat
+              </span> */}
+              Find a resource
             </span>
             <Link href={`/${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
               Sign in

@@ -25,7 +25,7 @@ export const Footer_D = () => {
         <Link href={`${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
       </header> */}
       
-      <div>
+      {/* <div>
         <div>
           <div>
             <H1>Let's join forces. We're here to help.</H1>
@@ -106,7 +106,7 @@ export const Footer_D = () => {
             height={257}
           />
         </div>
-      </div>
+      </div> */}
 
       <div>
         <div>
@@ -122,21 +122,23 @@ export const Footer_D = () => {
 
         <div>
           <ul>
-            <h6>About us</h6>
-            <li>Inclusive’s story</li>
-            <li>Contact us</li>
+            {/* <h6>About us</h6> */}
+            {/* <li>Inclusive’s story</li> */}
+            {/* <li>Contact us</li> */}
+            <h6>Find a resource</h6>
           </ul>
           <ul>
-            <h6>Tools</h6>
+            {/* <h6>Tools</h6>
             <li>Oddy Resource Directory</li>
             <li>AI Chat</li>
             <li>Service Plan Generator</li>
-            <li>Oddy Employ</li>
+            <li>Oddy Employ</li> */}
+            <h6>Help a family</h6>
           </ul>
           <ul>
             <h6>Support us</h6>
             <li>Donate</li>
-            <li>Repeat contributions</li>
+            {/* <li>Repeat contributions</li> */}
             <li>Give feedback</li>
             <ButtonSmall secondary>Sign up</ButtonSmall>
           </ul>
