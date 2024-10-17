@@ -10,7 +10,7 @@ import {
 } from "./styles/InputTagsWrapper"
 
 export type UseInputTagsLogic_Return = {
-  tags: (ReactElement | string)[]
+  tags: ReactElement[]
   removeTag: ({ e, theTag, index }, { setOptions }) => void
   handleKeyDown: (e) => void
   handleSelectOption: (
@@ -20,7 +20,7 @@ export type UseInputTagsLogic_Return = {
 }
 
 export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
-  const [tags, setTags] = useState<(ReactElement | string)[]>([])
+  const [tags, setTags] = useState<ReactElement[]>([])
 
   const [tagsShouldReturnToDropdown, setTagsShouldReturnToDropdown] =
     useState<DropdownElementsToSelect_Type>([])
@@ -391,16 +391,20 @@ export const InputTags = ({
   )
 
   useEffect(() => {
-    if (tags.length > 0 && handleExtractSelectedData) {
-      handleExtractSelectedData(tags)
+    if (handleExtractSelectedData && tags.length > 0) {
+      const tasgFormatted = tags.map((xTag) => {
+        return {
+          value: xTag.props.children,
+          comesFromSuggestions: xTag.props["data-should-return"],
+        }
+      })
+
+      handleExtractSelectedData(tasgFormatted)
     }
   }, [tags])
 
   return (
-    <InputTagsWrapper
-      isInputFocused={isInputFocused}
-      // shouldDropdownDisplayOnFocus={shouldDropdownDisplayOnFocus}
-    >
+    <InputTagsWrapper isInputFocused={isInputFocused}>
       <div
         onClick={(e) => {
           handleContainerClick()

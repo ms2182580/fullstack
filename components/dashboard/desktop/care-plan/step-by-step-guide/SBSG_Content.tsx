@@ -25,11 +25,6 @@ export const SBSG_Content = (...allProps) => {
   const { stateProfileSelectedSBSG1, handleNoProfileSelectedSBSG1 } =
     useCtxDataCreatePlan().SBSG1
 
-  /* 
-    !FH0
-    If (stateProfileSelectedSBSG1 === CAREPLANTITLE_PLACEHOLDER) the function handleNoProfileSelectedSBSG1() should be trigger
-    */
-
   const handleUseNoProfileSelectedSBSG1 = ({ e, componentStepIndex }) => {
     if (
       (e.type === "click" || e.key === "Enter") &&

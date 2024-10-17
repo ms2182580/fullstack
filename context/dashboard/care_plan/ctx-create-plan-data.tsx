@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext } from "react"
 import { AllDataType } from "./ctx_create_plan_data_helpers/all-types"
 import { SBSG1Props } from "./ctx_create_plan_data_helpers/sbsg1"
+import { SBSG2Props } from "./ctx_create_plan_data_helpers/sbsg2"
 import { SBSG3Props } from "./ctx_create_plan_data_helpers/sbsg3"
 
 const CtxDataCreatePlan = createContext<AllDataType | null>(null)
@@ -16,6 +17,8 @@ export const CtxCreatePlanData_Provider = ({
     handleNoProfileSelected,
   } = SBSG1Props.hooks()
 
+  const { goalsOfUser, handleGoalsOfUser } = SBSG2Props.hooks()
+
   const {
     stateEditableDataSBSG3,
     setEditableDataSBSG3,
@@ -29,6 +32,11 @@ export const CtxCreatePlanData_Provider = ({
           stateProfileSelectedSBSG1: nameProfileSelected,
           handleProfileSelectedSBSG1: handleNameProfileSelected,
           handleNoProfileSelectedSBSG1: handleNoProfileSelected,
+        },
+
+        SBSG2: {
+          stateGoalsOfUserSBSG2: goalsOfUser,
+          handleGoalsOfUserSBSG2: handleGoalsOfUser,
         },
 
         SBSG3: {
