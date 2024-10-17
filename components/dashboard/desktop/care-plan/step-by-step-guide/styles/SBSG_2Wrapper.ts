@@ -16,6 +16,7 @@ export const SBSG_2Wrapper = styled.section`
     span {
       font-weight: 600;
       font-style: italic;
+      overflow-wrap: break-word;
     }
   }
 
