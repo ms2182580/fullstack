@@ -1,6 +1,7 @@
 import { ShareSvg } from "@/assets/icons"
 import HomeSvg_Default from "@/assets/icons/home_default.svg"
 import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { getDate } from "@/utils/getDate"
 import { useEffect, useState } from "react"
 import { Editor_Header_Row1Wrapper } from "./styles/Editor_Header_Row1Wrapper"
 
@@ -26,7 +27,6 @@ export const Editor_Header_Row1 = () => {
       stateProfileSelectedSBSG1 === "" ||
       stateProfileSelectedSBSG1 === CAREPLANTITLE_PLACEHOLDER
     ) {
-      // handleProfileSelectedSBSG1(null)
       handleNoProfileSelectedSBSG1()
       setShouldDisplayPlaceholder(true)
     } else {
@@ -40,27 +40,26 @@ export const Editor_Header_Row1 = () => {
     }
   }
 
+  const { month, day, daySuffix, year } = getDate()
+
   return (
     <Editor_Header_Row1Wrapper>
-      <span>
+      <header>
         <HomeSvg_Default />
 
-        <input
-          value={
-            shouldDisplayPlaceholder
-              ? CAREPLANTITLE_PLACEHOLDER
-              : `${stateProfileSelectedSBSG1}`
-          }
-          onChange={handleChange}
-          onClick={handleOnSelectCarePlanTitlePlaceholder}
-          /* 
-          !FH0
-          Add onBlur:
-            * date of creation of the document: today
-            * `{name_of_the_user} — care plan {today_date}`
-          */
-        />
-      </span>
+        <span>
+          <input
+            value={
+              shouldDisplayPlaceholder
+                ? CAREPLANTITLE_PLACEHOLDER
+                : `${stateProfileSelectedSBSG1}`
+            }
+            onChange={handleChange}
+            onClick={handleOnSelectCarePlanTitlePlaceholder}
+          />
+          <p>Document created: {`${month} ${day}${daySuffix}, ${year}`}</p>
+        </span>
+      </header>
       <button>
         <ShareSvg /> Share
       </button>
