@@ -1,29 +1,36 @@
 import { ShareSvg } from "@/assets/icons"
 import HomeSvg_Default from "@/assets/icons/home_default.svg"
 import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Editor_Header_Row1Wrapper } from "./styles/Editor_Header_Row1Wrapper"
 
 const CAREPLANTITLE_PLACEHOLDER = "Untitled Document"
 
 export const Editor_Header_Row1 = () => {
-  const { stateProfileSelectedSBSG1, handleProfileSelectedSBSG1 } =
-    useCtxDataCreatePlan().SBSG1
+  const {
+    stateProfileSelectedSBSG1,
+    handleProfileSelectedSBSG1,
+    handleNoProfileSelectedSBSG1,
+  } = useCtxDataCreatePlan().SBSG1
 
   const handleChange = (event) => {
-    /* 
-    !FH0
-    Limit the ammount of character to 100
-    */
     handleProfileSelectedSBSG1({ nameProfile: event.target.value })
   }
+
+  const [shouldDisplayPlaceholder, setShouldDisplayPlaceholder] =
+    useState(false)
 
   useEffect(() => {
     if (
       stateProfileSelectedSBSG1 === null ||
-      stateProfileSelectedSBSG1 === ""
+      stateProfileSelectedSBSG1 === "" ||
+      stateProfileSelectedSBSG1 === CAREPLANTITLE_PLACEHOLDER
     ) {
-      handleProfileSelectedSBSG1({ nameProfile: CAREPLANTITLE_PLACEHOLDER })
+      // handleProfileSelectedSBSG1(null)
+      handleNoProfileSelectedSBSG1()
+      setShouldDisplayPlaceholder(true)
+    } else {
+      setShouldDisplayPlaceholder(false)
     }
   }, [stateProfileSelectedSBSG1])
 
@@ -39,7 +46,11 @@ export const Editor_Header_Row1 = () => {
         <HomeSvg_Default />
 
         <input
-          value={`${stateProfileSelectedSBSG1}` || ""}
+          value={
+            shouldDisplayPlaceholder
+              ? CAREPLANTITLE_PLACEHOLDER
+              : `${stateProfileSelectedSBSG1}`
+          }
           onChange={handleChange}
           onClick={handleOnSelectCarePlanTitlePlaceholder}
           /* 
