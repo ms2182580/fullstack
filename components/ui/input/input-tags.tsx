@@ -391,15 +391,19 @@ export const InputTags = ({
   )
 
   useEffect(() => {
-    if (handleExtractSelectedData && tags.length > 0) {
-      const tasgFormatted = tags.map((xTag) => {
-        return {
-          value: xTag.props.children,
-          comesFromSuggestions: xTag.props["data-should-return"],
-        }
-      })
+    if (handleExtractSelectedData) {
+      if (tags.length > 0) {
+        const tasgFormatted = tags.map((xTag) => {
+          return {
+            value: xTag.props.children,
+            comesFromSuggestions: xTag.props["data-should-return"],
+          }
+        })
 
-      handleExtractSelectedData(tasgFormatted)
+        handleExtractSelectedData(tasgFormatted)
+      } else {
+        handleExtractSelectedData(null)
+      }
     }
   }, [tags])
 

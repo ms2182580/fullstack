@@ -6,15 +6,23 @@ const NAME_STATES_SBSG1 = {
   HANDLER_GOALS_OF_USER: `handleGoalsOfUser${NAME_COMPONENTS}2`,
 } as const
 
+type GoalsOfUserType =
+  | {
+      value: string
+      comesFromSuggestions: boolean
+    }[]
+  | null
+
 type SBSG2Types = {
-  [NAME_STATES_SBSG1.GOALS_OF_USER]: any
+  [NAME_STATES_SBSG1.GOALS_OF_USER]: GoalsOfUserType
   [NAME_STATES_SBSG1.HANDLER_GOALS_OF_USER]: (
-    allGoalsSelected: { value: string; comesFromSuggestions: boolean }[]
+    allGoalsSelected: GoalsOfUserType
   ) => void
 }
 
 const useHooksSBSG2 = () => {
-  const [goalsOfUser, setGoalsOfUser] = useState(null)
+  const [goalsOfUser, setGoalsOfUser] =
+    useState<SBSG2Types["stateGoalsOfUserSBSG2"]>(null)
 
   const handleGoalsOfUser = (allGoalsSelected) => {
     setGoalsOfUser(allGoalsSelected)
