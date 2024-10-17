@@ -35,6 +35,7 @@ export const SBSG_2 = ({
   } = restOfProps as UseInputTagsLogic_ReturnSBSG2
 
   const { stateProfileSelectedSBSG1 } = useCtxDataCreatePlan().SBSG1
+  const { handleGoalsOfUserSBSG2 } = useCtxDataCreatePlan().SBSG2
 
   return (
     <SBSG_2Wrapper>
@@ -57,6 +58,7 @@ export const SBSG_2 = ({
         handleSelectOption={handleSelectOptionSBSG2}
         dropdownElementsToSelect={dropdownElementsToSelectSBSG2}
         dropdownContainerStyles={dropdownContainerStylesSBSG2}
+        handleTagsExtracted={handleGoalsOfUserSBSG2}
       />
     </SBSG_2Wrapper>
   )

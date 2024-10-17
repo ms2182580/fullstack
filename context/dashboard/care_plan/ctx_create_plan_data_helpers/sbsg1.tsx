@@ -8,6 +8,7 @@ const NAME_STATES_SBSG1 = {
 } as const
 
 type NameProfileSelected_Type = string | null | ""
+const MAX_LENGTH_PROFILE_SELECTED = 100
 
 type SBSG1Types = {
   [NAME_STATES_SBSG1.STATE_PROFILE_SELECTED]: NameProfileSelected_Type
@@ -24,7 +25,9 @@ const useHooksSBSG1 = () => {
     useState<NameProfileSelected_Type>(null)
 
   const handleNameProfileSelected = ({ nameProfile }) => {
-    setNameProfileSelected(nameProfile)
+    if (nameProfile.length <= MAX_LENGTH_PROFILE_SELECTED) {
+      setNameProfileSelected(nameProfile)
+    }
   }
 
   const handleNoProfileSelected = () => {

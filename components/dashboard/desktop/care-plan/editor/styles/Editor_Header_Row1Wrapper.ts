@@ -1,5 +1,6 @@
 import { NEUTRALS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
+import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
 
 export const Editor_Header_Row1Wrapper = styled.div`
@@ -9,18 +10,28 @@ export const Editor_Header_Row1Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  & > span {
+  & > header {
     display: flex;
     align-items: center;
     gap: 16px;
 
-    & > input {
-      width: 500px;
-      height: 44px;
+    & > span {
+      & > input {
+        width: 500px;
+        height: 44px;
 
-      font-size: 20px;
+        font-size: 20px;
 
-      border: none;
+        border: none;
+      }
+
+      & > p {
+        ${Paragraph({ color: "dark_gray_3" })}
+
+        font-size: 12px;
+        font-style: italic;
+        line-height: normal;
+      }
     }
   }
 
