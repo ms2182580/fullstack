@@ -1,5 +1,12 @@
 import { useOutsideHide } from "@/utils/useOutsideHide"
-import { ReactElement, useCallback, useEffect, useRef, useState } from "react"
+import {
+  JSXElementConstructor,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 import {
   DropdownElementsWrapper,
   DropdownElementsWrapper_Props,
@@ -9,6 +16,13 @@ import {
   InputTagsWrapper,
 } from "./styles/InputTagsWrapper"
 
+type TagsExtractedToOutsideType =
+  | {
+      value: string
+      comesFromSuggestions: boolean
+    }[]
+  | null
+
 export type UseInputTagsLogic_Return = {
   tags: ReactElement[]
   removeTag: ({ e, theTag, index }, { setOptions }) => void
@@ -17,13 +31,19 @@ export type UseInputTagsLogic_Return = {
     { e, shouldReturnToDropdown, elementStyles },
     { setOptions }
   ) => void
+  stateTagsExtractedToOutside?: TagsExtractedToOutsideType
+  handleTagsExtracted?: (
+    tagsArrToExtract: ReactElement<any, string | JSXElementConstructor<any>>[]
+  ) => void
 }
 
 export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
   const [tags, setTags] = useState<ReactElement[]>([])
-
   const [tagsShouldReturnToDropdown, setTagsShouldReturnToDropdown] =
     useState<DropdownElementsToSelect_Type>([])
+
+  const [stateTagsExtractedToOutside, setStateTagsExtractedToOutside] =
+    useState<TagsExtractedToOutsideType>(null)
 
   const handleKeyDown = (e) => {
     const selectedValue = e.target.value
@@ -95,11 +115,28 @@ export const useInputTagsLogic = (): UseInputTagsLogic_Return => {
     }
   }
 
+  const handleTagsExtracted = (tagsArrToExtract) => {
+    if (tagsArrToExtract.length > 0) {
+      const tasgFormatted = tagsArrToExtract.map((xTag) => {
+        return {
+          value: xTag.props.children,
+          comesFromSuggestions: xTag.props["data-should-return"],
+        }
+      })
+
+      setStateTagsExtractedToOutside(tasgFormatted)
+    } else {
+      setStateTagsExtractedToOutside(null)
+    }
+  }
+
   return {
     tags,
     handleKeyDown,
     handleSelectOption,
     removeTag,
+    stateTagsExtractedToOutside,
+    handleTagsExtracted,
   }
 }
 
@@ -117,7 +154,6 @@ export type InputTags_Props = {
   shouldDropdownDisplayOnFocus?:
     | ShouldDropdownDisplayOnFocus_Type
     | "is not working, do not use this"
-  handleExtractSelectedData?: (e: any) => void
 } & UseInputTagsLogic_Return
 
 const useInputTagsLogicOnlyFocus = () => {
@@ -358,7 +394,7 @@ export const InputTags = ({
   dropdownElementsToSelect,
   dropdownContainerStyles,
   shouldDropdownDisplayOnFocus = false,
-  handleExtractSelectedData,
+  handleTagsExtracted,
 }: InputTags_Props) => {
   const {
     inputRef,
@@ -391,19 +427,8 @@ export const InputTags = ({
   )
 
   useEffect(() => {
-    if (handleExtractSelectedData) {
-      if (tags.length > 0) {
-        const tasgFormatted = tags.map((xTag) => {
-          return {
-            value: xTag.props.children,
-            comesFromSuggestions: xTag.props["data-should-return"],
-          }
-        })
-
-        handleExtractSelectedData(tasgFormatted)
-      } else {
-        handleExtractSelectedData(null)
-      }
+    if (handleTagsExtracted) {
+      handleTagsExtracted(tags)
     }
   }, [tags])
 

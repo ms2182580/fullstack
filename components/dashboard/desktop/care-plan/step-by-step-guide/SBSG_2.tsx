@@ -58,7 +58,7 @@ export const SBSG_2 = ({
         handleSelectOption={handleSelectOptionSBSG2}
         dropdownElementsToSelect={dropdownElementsToSelectSBSG2}
         dropdownContainerStyles={dropdownContainerStylesSBSG2}
-        handleExtractSelectedData={handleGoalsOfUserSBSG2}
+        handleTagsExtracted={handleGoalsOfUserSBSG2}
       />
     </SBSG_2Wrapper>
   )

@@ -1,4 +1,7 @@
-import { useState } from "react"
+import {
+  useInputTagsLogic,
+  UseInputTagsLogic_Return,
+} from "@/components/ui/input/input-tags"
 import { NAME_COMPONENTS } from "./consts"
 
 const NAME_STATES_SBSG1 = {
@@ -6,31 +9,18 @@ const NAME_STATES_SBSG1 = {
   HANDLER_GOALS_OF_USER: `handleGoalsOfUser${NAME_COMPONENTS}2`,
 } as const
 
-type GoalsOfUserType =
-  | {
-      value: string
-      comesFromSuggestions: boolean
-    }[]
-  | null
-
 type SBSG2Types = {
-  [NAME_STATES_SBSG1.GOALS_OF_USER]: GoalsOfUserType
-  [NAME_STATES_SBSG1.HANDLER_GOALS_OF_USER]: (
-    allGoalsSelected: GoalsOfUserType
-  ) => void
+  [NAME_STATES_SBSG1.GOALS_OF_USER]: UseInputTagsLogic_Return["stateTagsExtractedToOutside"]
+  [NAME_STATES_SBSG1.HANDLER_GOALS_OF_USER]: UseInputTagsLogic_Return["handleTagsExtracted"]
 }
 
-const useHooksSBSG2 = () => {
-  const [goalsOfUser, setGoalsOfUser] =
-    useState<SBSG2Types["stateGoalsOfUserSBSG2"]>(null)
-
-  const handleGoalsOfUser = (allGoalsSelected) => {
-    setGoalsOfUser(allGoalsSelected)
-  }
+const useHooksSBSG2 = (): SBSG2Types => {
+  const { stateTagsExtractedToOutside, handleTagsExtracted } =
+    useInputTagsLogic()
 
   return {
-    goalsOfUser,
-    handleGoalsOfUser,
+    stateGoalsOfUserSBSG2: stateTagsExtractedToOutside,
+    handleGoalsOfUserSBSG2: handleTagsExtracted,
   }
 }
 
