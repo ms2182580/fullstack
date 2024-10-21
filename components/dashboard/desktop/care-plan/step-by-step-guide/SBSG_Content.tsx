@@ -35,6 +35,7 @@ export const SBSG_Content = ({
         if (index !== activeStep) return null
 
         const propsToComponent = {
+          handleNextStep,
           ...props,
         }
 
