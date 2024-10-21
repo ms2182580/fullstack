@@ -1,4 +1,4 @@
-import { NEUTRALS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const SBSG3_EditableDataWrapper = styled.li`
@@ -23,13 +23,17 @@ export const SBSG3_EditableDataWrapper = styled.li`
 
     border: none;
 
-    transition: background-color 0.3s ease-in-out;
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
     font-size: inherit;
     color: ${NEUTRALS.DARK_GREY_3};
 
-    &:hover {
-      background-color: hsl(208, 100%, 90.1%);
+    &:hover,
+    &:focus-visible {
+      background-color: ${PRIMARY.PRIMARY_CTA};
+      color: ${NEUTRALS.OFF_WHITE};
     }
   }
 

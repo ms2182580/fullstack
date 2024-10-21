@@ -9,6 +9,9 @@ export const SBSGContentSkip = () => {
   const handleHideCreateCarePlanLocal = (e) => {
     if (e.type === "click" || e.key === "Enter") {
       handleHideCreateCarePlan()
+      window.scrollTo({
+        top: 0,
+      })
     }
   }
 

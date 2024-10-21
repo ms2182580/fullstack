@@ -33,7 +33,6 @@ export const SBSG_3 = ({
   } = restOfProps as UseInputTagsLogic_ReturnSBSG3
 
   const { stateEditableDataSBSG3 } = useCtxDataCreatePlan().SBSG3
-  // console.log("stateEditableDataSBSG3:", stateEditableDataSBSG3)
 
   return (
     <SBSG_3Wrapper>
