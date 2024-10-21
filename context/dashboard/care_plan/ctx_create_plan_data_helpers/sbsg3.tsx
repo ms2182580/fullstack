@@ -39,12 +39,12 @@ type SBSG3Types = {
 - Keep with SBSG4
 */
 
-const useHooksSBSG3 = () => {
-  const [stateEditableDataSBSG3, setEditableDataSBSG3] =
+const useHooksSBSG3 = (): SBSG3Types => {
+  const [stateEditableData, setEditableData] =
     useState<StateSBSG3_Type>(SBSG3DefaultList)
 
-  const handleChangeEditableDataSBSG3 = ({ label, defaultValue }) => {
-    setEditableDataSBSG3((prevState) => {
+  const handleChangeEditableData = ({ label, defaultValue }) => {
+    setEditableData((prevState) => {
       return prevState.map((item) =>
         item.label === label ? { ...item, defaultValue } : item
       )
@@ -52,9 +52,9 @@ const useHooksSBSG3 = () => {
   }
 
   return {
-    stateEditableDataSBSG3,
-    setEditableDataSBSG3,
-    handleChangeEditableDataSBSG3,
+    stateEditableDataSBSG3: stateEditableData,
+    setEditableDataSBSG3: setEditableData,
+    handleChangeEditableDataSBSG3: handleChangeEditableData,
   }
 }
 

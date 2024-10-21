@@ -12,9 +12,9 @@ export const CtxCreatePlanData_Provider = ({
   children: ReactNode
 }) => {
   const {
-    nameProfileSelected,
-    handleNameProfileSelected,
-    handleNoProfileSelected,
+    stateProfileSelectedSBSG1,
+    handleProfileSelectedSBSG1,
+    handleNoProfileSelectedSBSG1,
   } = SBSG1Props.hooks()
 
   const { stateGoalsOfUserSBSG2, handleGoalsOfUserSBSG2 } = SBSG2Props.hooks()
@@ -29,9 +29,9 @@ export const CtxCreatePlanData_Provider = ({
     <CtxDataCreatePlan.Provider
       value={{
         SBSG1: {
-          stateProfileSelectedSBSG1: nameProfileSelected,
-          handleProfileSelectedSBSG1: handleNameProfileSelected,
-          handleNoProfileSelectedSBSG1: handleNoProfileSelected,
+          stateProfileSelectedSBSG1,
+          handleProfileSelectedSBSG1,
+          handleNoProfileSelectedSBSG1,
         },
 
         SBSG2: {
@@ -40,9 +40,9 @@ export const CtxCreatePlanData_Provider = ({
         },
 
         SBSG3: {
-          stateEditableDataSBSG3: stateEditableDataSBSG3,
-          setEditableDataSBSG3: setEditableDataSBSG3,
-          handleChangeEditableDataSBSG3: handleChangeEditableDataSBSG3,
+          stateEditableDataSBSG3,
+          setEditableDataSBSG3,
+          handleChangeEditableDataSBSG3,
         },
       }}
     >

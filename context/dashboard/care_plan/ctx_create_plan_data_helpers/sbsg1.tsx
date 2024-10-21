@@ -20,7 +20,7 @@ type SBSG1Types = {
   [NAME_STATES_SBSG1.HANDLER_NO_PROFILE_SELECTED]: () => void
 }
 
-const useHooksSBSG1 = () => {
+const useHooksSBSG1 = (): SBSG1Types => {
   const [nameProfileSelected, setNameProfileSelected] =
     useState<NameProfileSelected_Type>(null)
 
@@ -35,9 +35,9 @@ const useHooksSBSG1 = () => {
   }
 
   return {
-    nameProfileSelected,
-    handleNameProfileSelected,
-    handleNoProfileSelected,
+    stateProfileSelectedSBSG1: nameProfileSelected,
+    handleProfileSelectedSBSG1: handleNameProfileSelected,
+    handleNoProfileSelectedSBSG1: handleNoProfileSelected,
   }
 }
 
