@@ -25,7 +25,7 @@ export const SBSG3_EditableDataWrapper = styled.li`
 
     border-radius: 8px;
 
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 
     font-size: inherit;
     color: ${NEUTRALS.DARK_GREY_3};

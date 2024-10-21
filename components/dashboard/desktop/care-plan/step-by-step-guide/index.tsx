@@ -1,5 +1,4 @@
 import { BackArrow } from "@/assets/icons"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { ReactElement, useMemo, useState } from "react"
 import { SBSG_1 } from "./SBSG_1"
 import { SBSG_2 } from "./SBSG_2"
@@ -55,10 +54,6 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     }
   }
 
-  const { inputTagsLogicSBSG2 } = useCtxDataCreatePlan().SBSG2
-
-  const { inputTagsLogicSBSG3 } = useCtxDataCreatePlan().SBSG3
-
   const shouldDisplaySkipButton = useMemo(() => {
     return activeStep === 2 || activeStep === 3
   }, [activeStep])
@@ -96,26 +91,6 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         activeStep={activeStep}
         handleNextStep={handleNextStep}
         shouldDisplaySkipButton={shouldDisplaySkipButton}
-        tagsSBSG2={inputTagsLogicSBSG2.tags}
-        removeTagSBSG2={inputTagsLogicSBSG2.removeTag}
-        handleKeyDownSBSG2={inputTagsLogicSBSG2.handleKeyDown}
-        handleSelectOptionSBSG2={inputTagsLogicSBSG2.handleSelectOption}
-        dropdownElementsToSelectSBSG2={
-          inputTagsLogicSBSG2.dropdownElementsToSelect
-        }
-        dropdownContainerStylesSBSG2={
-          inputTagsLogicSBSG2.dropdownContainerStyles
-        }
-        tagsSBSG3={inputTagsLogicSBSG3.tags}
-        removeTagSBSG3={inputTagsLogicSBSG3.removeTag}
-        handleKeyDownSBSG3={inputTagsLogicSBSG3.handleKeyDown}
-        handleSelectOptionSBSG3={inputTagsLogicSBSG3.handleSelectOption}
-        dropdownElementsToSelectSBSG3={
-          inputTagsLogicSBSG3.dropdownElementsToSelect
-        }
-        dropdownContainerStylesSBSG3={
-          inputTagsLogicSBSG3.dropdownContainerStyles
-        }
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
   )

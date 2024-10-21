@@ -4,7 +4,6 @@ import {
   DropdownElementsToSelect_Type,
   InputTags_Props,
   useInputTagsLogic,
-  UseInputTagsLogic_Return,
 } from "@/components/ui/input/input-tags"
 import { css } from "styled-components"
 import { NAME_COMPONENTS } from "./consts"
@@ -16,18 +15,15 @@ const NAME_STATES_SBSG2 = {
 } as const
 
 type SBSG2Types = {
-  [NAME_STATES_SBSG2.GOALS_OF_USER]: UseInputTagsLogic_Return["stateTagsExtractedToOutside"]
-  [NAME_STATES_SBSG2.HANDLER_GOALS_OF_USER]: UseInputTagsLogic_Return["handleTagsExtracted"]
-  [NAME_STATES_SBSG2.INPUT_TAGS_LOGIC]: UseInputTagsLogic_Return &
-    InputTags_Props
+  [NAME_STATES_SBSG2.INPUT_TAGS_LOGIC]: InputTags_Props
 }
 
 const useHooksSBSG2 = (): SBSG2Types => {
   const {
-    tags: tagsSBSG2,
-    handleKeyDown: handleKeyDownSBSG2,
-    handleSelectOption: handleSelectOptionSBSG2,
-    removeTag: removeTagSBSG2,
+    tags,
+    handleKeyDown,
+    handleSelectOption,
+    removeTag,
     stateTagsExtractedToOutside,
     handleTagsExtracted,
   } = useInputTagsLogic()
@@ -46,7 +42,7 @@ const useHooksSBSG2 = (): SBSG2Types => {
     }
   `
 
-  const dropdownContainerStylesSBSG2 = () => css`
+  const dropdownContainerStyles = () => css`
     background-color: ${NEUTRALS.OFF_WHITE_2};
     margin-top: 24px;
 
@@ -79,7 +75,7 @@ const useHooksSBSG2 = (): SBSG2Types => {
       }
     }
   `
-  const dropdownElementsToSelectSBSG2: DropdownElementsToSelect_Type = [
+  const dropdownElementsToSelect: DropdownElementsToSelect_Type = [
     {
       value: (
         <span>
@@ -103,17 +99,17 @@ const useHooksSBSG2 = (): SBSG2Types => {
   ]
 
   const inputTagLogic = {
-    tags: tagsSBSG2,
-    removeTag: removeTagSBSG2,
-    handleKeyDown: handleKeyDownSBSG2,
-    handleSelectOption: handleSelectOptionSBSG2,
-    dropdownElementsToSelect: dropdownElementsToSelectSBSG2,
-    dropdownContainerStyles: dropdownContainerStylesSBSG2,
+    tags,
+    removeTag,
+    handleKeyDown,
+    handleSelectOption,
+    dropdownElementsToSelect,
+    dropdownContainerStyles,
+    handleTagsExtracted,
+    stateTagsExtractedToOutside,
   }
 
   return {
-    stateGoalsOfUserSBSG2: stateTagsExtractedToOutside,
-    handleGoalsOfUserSBSG2: handleTagsExtracted,
     inputTagsLogicSBSG2: inputTagLogic,
   }
 }

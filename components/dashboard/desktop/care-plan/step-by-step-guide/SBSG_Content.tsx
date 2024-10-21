@@ -9,23 +9,18 @@ type SBSG_ContentPropsType = {
   activeStep: number
   handleNextStep: (e) => void
   shouldDisplaySkipButton: boolean
-  stateProfileSelectedSBSG1: any
-  handleProfileSelectedSBSG1: any
-  handleNoProfileSelectedSBSG1: any
 }
 
-export const SBSG_Content = (...allProps) => {
-  const {
-    componentSteps,
-    activeStep,
-    handleNextStep,
-    shouldDisplaySkipButton,
-  }: SBSG_ContentPropsType = allProps[0]
-
+export const SBSG_Content = ({
+  componentSteps,
+  activeStep,
+  handleNextStep,
+  shouldDisplaySkipButton,
+}: SBSG_ContentPropsType) => {
   const { stateProfileSelectedSBSG1, handleNoProfileSelectedSBSG1 } =
     useCtxDataCreatePlan().SBSG1
 
-  const handleUseNoProfileSelectedSBSG1 = ({ e, componentStepIndex }) => {
+  const handleUseNoProfileSelectedSBSG1 = (e) => {
     if (
       (e.type === "click" || e.key === "Enter") &&
       stateProfileSelectedSBSG1 === null
@@ -41,7 +36,6 @@ export const SBSG_Content = (...allProps) => {
 
         const propsToComponent = {
           ...props,
-          ...allProps[0],
         }
 
         return (
@@ -50,17 +44,11 @@ export const SBSG_Content = (...allProps) => {
               cloneElement(component, propsToComponent)}
             <button
               onClick={(e) => {
-                handleUseNoProfileSelectedSBSG1({
-                  e,
-                  componentStepIndex: index,
-                })
+                handleUseNoProfileSelectedSBSG1(e)
                 handleNextStep(e)
               }}
               onKeyDown={(e) => {
-                handleUseNoProfileSelectedSBSG1({
-                  e,
-                  componentStepIndex: index,
-                })
+                handleUseNoProfileSelectedSBSG1(e)
                 handleNextStep(e)
               }}
             >
