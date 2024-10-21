@@ -17,12 +17,14 @@ export const CtxCreatePlanData_Provider = ({
     handleNoProfileSelectedSBSG1,
   } = SBSG1Props.hooks()
 
-  const { stateGoalsOfUserSBSG2, handleGoalsOfUserSBSG2 } = SBSG2Props.hooks()
+  const { stateGoalsOfUserSBSG2, handleGoalsOfUserSBSG2, inputTagsLogicSBSG2 } =
+    SBSG2Props.hooks()
 
   const {
     stateEditableDataSBSG3,
     setEditableDataSBSG3,
     handleChangeEditableDataSBSG3,
+    inputTagsLogicSBSG3,
   } = SBSG3Props.hooks()
 
   return (
@@ -37,12 +39,14 @@ export const CtxCreatePlanData_Provider = ({
         SBSG2: {
           stateGoalsOfUserSBSG2,
           handleGoalsOfUserSBSG2,
+          inputTagsLogicSBSG2,
         },
 
         SBSG3: {
           stateEditableDataSBSG3,
           setEditableDataSBSG3,
           handleChangeEditableDataSBSG3,
+          inputTagsLogicSBSG3,
         },
       }}
     >

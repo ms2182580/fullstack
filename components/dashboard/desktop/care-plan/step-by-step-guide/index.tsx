@@ -1,12 +1,6 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { BackArrow } from "@/assets/icons"
-import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
-import {
-  DropdownElementsToSelect_Type,
-  useInputTagsLogic,
-} from "@/components/ui/input/input-tags"
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { ReactElement, useMemo, useState } from "react"
-import { css } from "styled-components"
 import { SBSG_1 } from "./SBSG_1"
 import { SBSG_2 } from "./SBSG_2"
 import { SBSG_3 } from "./SBSG_3"
@@ -61,145 +55,13 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     }
   }
 
-  const {
-    tags: tagsSBSG2,
-    handleKeyDown: handleKeyDownSBSG2,
-    handleSelectOption: handleSelectOptionSBSG2,
-    removeTag: removeTagSBSG2,
-  } = useInputTagsLogic()
+  const { inputTagsLogicSBSG2 } = useCtxDataCreatePlan().SBSG2
 
-  const dropdownElementsCSS = () => css`
-    color: ${PRIMARY.PRIMARY_CTA};
-    font-weight: 500;
-
-    width: fit-content;
-    cursor: default;
-
-    display: grid;
-
-    &::first-letter {
-      text-transform: capitalize;
-    }
-  `
-
-  const dropdownContainerStyles = () => css`
-    background-color: ${NEUTRALS.OFF_WHITE_2};
-    margin-top: 24px;
-
-    padding: 12px 8px;
-
-    border-radius: 8px;
-
-    display: grid;
-    gap: 16px;
-
-    & > li {
-      & > span {
-        display: flex;
-        gap: 10px;
-
-        font-weight: 400;
-        color: ${PRIMARY.LIGHT_MAROON};
-
-        & > span {
-          text-transform: lowercase;
-
-          &::first-letter {
-            text-transform: capitalize;
-          }
-        }
-
-        &:is(:hover, :focus-visible) {
-          filter: unset;
-        }
-      }
-    }
-  `
-  const dropdownElementsToSelectSBSG2: DropdownElementsToSelect_Type = [
-    {
-      value: (
-        <span>
-          <ThunderSVG /> <span>Quick Picks:</span>
-        </span>
-      ),
-      shouldBeSelected: false,
-    },
-    {
-      value: "Make new friends",
-      elementStyles: dropdownElementsCSS,
-    },
-    {
-      value: "Play on a sport team",
-      elementStyles: dropdownElementsCSS,
-    },
-    {
-      value: "Improve mobility",
-      elementStyles: dropdownElementsCSS,
-    },
-  ]
-
-  const SBSG2Props = {
-    nameProfileSelected: {
-      // state: nameProfileSelected,
-      setState: {
-        // selectedProfile: handleNameProfileSelected,
-        // noProfileSelected: handleNoProfileSelected,
-      },
-    },
-    inputTagLogic: {
-      tags: tagsSBSG2,
-      removeTag: removeTagSBSG2,
-      handleKeyDown: handleKeyDownSBSG2,
-      handleSelectOption: handleSelectOptionSBSG2,
-      dropdownElementsToSelectSBSG2,
-      dropdownContainerStyles,
-    },
-  }
-
-  const {
-    tags: tagsSBSG3,
-    handleKeyDown: handleKeyDownSBSG3,
-    handleSelectOption: handleSelectOptionSBSG3,
-    removeTag: removeTagSBSG3,
-  } = useInputTagsLogic()
-
-  const dropdownElementsToSelectSBSG3: DropdownElementsToSelect_Type = [
-    {
-      value: (
-        <span>
-          <ThunderSVG /> <span>Quick Picks:</span>
-        </span>
-      ),
-      shouldBeSelected: false,
-    },
-    {
-      value: "Day camps",
-      elementStyles: dropdownElementsCSS,
-    },
-    {
-      value: "Mobility aids",
-      elementStyles: dropdownElementsCSS,
-    },
-    {
-      value: "Physical therapy",
-      elementStyles: dropdownElementsCSS,
-    },
-  ]
+  const { inputTagsLogicSBSG3 } = useCtxDataCreatePlan().SBSG3
 
   const shouldDisplaySkipButton = useMemo(() => {
     return activeStep === 2 || activeStep === 3
   }, [activeStep])
-
-  const SBSG3Props = {
-    inputTagLogic: {
-      tags: tagsSBSG3,
-      removeTag: removeTagSBSG3,
-      handleKeyDown: handleKeyDownSBSG3,
-      handleSelectOption: handleSelectOptionSBSG3,
-      dropdownElementsToSelectSBSG3,
-      dropdownContainerStyles,
-    },
-  }
 
   return (
     <INDEX_D_CarePlan_StepByStepGuideWrapper>
@@ -234,25 +96,25 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
         activeStep={activeStep}
         handleNextStep={handleNextStep}
         shouldDisplaySkipButton={shouldDisplaySkipButton}
-        tagsSBSG2={SBSG2Props.inputTagLogic.tags}
-        removeTagSBSG2={SBSG2Props.inputTagLogic.removeTag}
-        handleKeyDownSBSG2={SBSG2Props.inputTagLogic.handleKeyDown}
-        handleSelectOptionSBSG2={SBSG2Props.inputTagLogic.handleSelectOption}
+        tagsSBSG2={inputTagsLogicSBSG2.tags}
+        removeTagSBSG2={inputTagsLogicSBSG2.removeTag}
+        handleKeyDownSBSG2={inputTagsLogicSBSG2.handleKeyDown}
+        handleSelectOptionSBSG2={inputTagsLogicSBSG2.handleSelectOption}
         dropdownElementsToSelectSBSG2={
-          SBSG2Props.inputTagLogic.dropdownElementsToSelectSBSG2
+          inputTagsLogicSBSG2.dropdownElementsToSelect
         }
         dropdownContainerStylesSBSG2={
-          SBSG2Props.inputTagLogic.dropdownContainerStyles
+          inputTagsLogicSBSG2.dropdownContainerStyles
         }
-        tagsSBSG3={SBSG3Props.inputTagLogic.tags}
-        removeTagSBSG3={SBSG3Props.inputTagLogic.removeTag}
-        handleKeyDownSBSG3={SBSG3Props.inputTagLogic.handleKeyDown}
-        handleSelectOptionSBSG3={SBSG3Props.inputTagLogic.handleSelectOption}
+        tagsSBSG3={inputTagsLogicSBSG3.tags}
+        removeTagSBSG3={inputTagsLogicSBSG3.removeTag}
+        handleKeyDownSBSG3={inputTagsLogicSBSG3.handleKeyDown}
+        handleSelectOptionSBSG3={inputTagsLogicSBSG3.handleSelectOption}
         dropdownElementsToSelectSBSG3={
-          SBSG3Props.inputTagLogic.dropdownElementsToSelectSBSG3
+          inputTagsLogicSBSG3.dropdownElementsToSelect
         }
         dropdownContainerStylesSBSG3={
-          SBSG3Props.inputTagLogic.dropdownContainerStyles
+          inputTagsLogicSBSG3.dropdownContainerStyles
         }
       />
     </INDEX_D_CarePlan_StepByStepGuideWrapper>
