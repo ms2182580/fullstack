@@ -351,6 +351,49 @@ const DropdownArrowKeysContainer = ({
 
   // const [focus, setFocus] = useRoveFocus(listToDisplay.length, arraySelectable)
 
+  /* 
+  !FH1
+  In order to have a dropdown that can be use with arrow keys, just use the correct html semantic: select, optgroup and option. In plain HTML with Javascript it would look like this:
+  
+  
+  * HTML
+  <select id="mySelect">
+    <optgroup label="Human Resources">
+        <option value="recruitment">Recruitment</option>
+        <option value="training">Training</option>
+    </optgroup>
+    <optgroup label="Sales">
+        <option value="domestic">Domestic Sales</option>
+        <option value="international">International Sales</option>
+    </optgroup>
+</select>
+
+<input type="text" id="inputField" placeholder="Click here to open dropdown">
+  
+* JS
+// Get references to the input field and select element
+const inputField = document.getElementById('inputField');
+const selectElement = document.getElementById('mySelect');
+
+// Add a click event listener to the input field
+inputField.addEventListener('click', function() {
+    // Focus on the select element
+    selectElement.focus();
+    
+    // Open the dropdown
+    selectElement.size = selectElement.options.length; // Show all options
+    selectElement.addEventListener('blur', function() {
+        // Reset size when focus is lost
+        selectElement.size = 1; // Collapse back to default
+    });
+});
+
+  
+  
+  
+  
+  */
+
   return (
     <DropdownShowOnInputWrapper
       dropdownStyles={dropdownStyles}

@@ -1,9 +1,9 @@
-import Breadcrumbs_CaretRight from "@/assets/icons/Breadcrumbs_CaretRight.svg"
 import SBSG4_0 from "@/assets/images/Dashboard/care-plan/sbsg/SBSG4_0.png"
 import SBSG4_1 from "@/assets/images/Dashboard/care-plan/sbsg/SBSG4_1.png"
 import SBSG4_2 from "@/assets/images/Dashboard/care-plan/sbsg/SBSG4_2.png"
-import { SBSG_4Options } from "./sbsg_4-options"
-import { SBSG_4Wrapper } from "./styles/SBSG_4Wrapper"
+import Image from "next/image"
+import { SBSG_4OptionsDropdown } from "./sbsg_4-options-dropdown"
+import { SBSG_4OptionsWrapper } from "./styles/SBSG_4OptionsWrapper"
 
 /* 
 !FH0
@@ -31,20 +31,20 @@ const listOfResources = [
   },
 ]
 
-export const SBSG_4 = () => {
+export const SBSG_4Options = () => {
   return (
-    <SBSG_4Wrapper>
-      <header>
-        <h5>Services</h5>
-      </header>
-
-      <p>Here are the services that best fit your needs:</p>
-
-      <SBSG_4Options />
-
-      <p tabIndex={0}>
-        Search the directory instead <Breadcrumbs_CaretRight />
-      </p>
-    </SBSG_4Wrapper>
+    <SBSG_4OptionsWrapper>
+      {listOfResources.map(({ image, title, subtitle, location }, index) => {
+        return (
+          <li key={`${title}_${index}`} tabIndex={0}>
+            <Image src={image} alt={title} />
+            <p title={title}>{title}</p>
+            <p title={subtitle}>{subtitle}</p>
+            <p title={location}>{location}</p>
+            <SBSG_4OptionsDropdown />
+          </li>
+        )
+      })}
+    </SBSG_4OptionsWrapper>
   )
 }
