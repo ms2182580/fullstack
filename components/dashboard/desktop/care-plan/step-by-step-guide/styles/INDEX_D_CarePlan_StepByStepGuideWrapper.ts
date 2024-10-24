@@ -4,7 +4,11 @@ import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import styled from "styled-components"
 
-export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.aside`
+type Props = {
+  backArrowIsUsable: boolean
+}
+
+export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.aside<Props>`
   margin-inline: 24px;
 
   height: fit-content;
@@ -26,6 +30,9 @@ export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.aside`
 
       margin-left: calc(8px * 3);
       width: fit-content;
+
+      visibility: ${({ backArrowIsUsable }) =>
+        backArrowIsUsable ? "visible" : "hidden"};
     }
 
     & > progress {

@@ -39,6 +39,7 @@ export const SBSG3_EditableDataWrapper = styled.li`
 
   & > :nth-child(3) {
     grid-area: icon;
+    margin-left: auto;
 
     & > svg {
       & > * {

@@ -58,18 +58,22 @@ export const INDEX_D_CarePlan_StepByStepGuide = () => {
     return activeStep === 2 || activeStep === 3
   }, [activeStep])
 
+  const backArrowIsUsable = useMemo(() => {
+    return activeStep > 0
+  }, [activeStep])
+
   return (
-    <INDEX_D_CarePlan_StepByStepGuideWrapper>
+    <INDEX_D_CarePlan_StepByStepGuideWrapper
+      backArrowIsUsable={backArrowIsUsable}
+    >
       <header>
-        {activeStep > 0 && (
-          <span
-            onClick={handlePreviousStep}
-            onKeyDown={handlePreviousStep}
-            tabIndex={0}
-          >
-            <BackArrow />
-          </span>
-        )}
+        <span
+          onClick={handlePreviousStep}
+          onKeyDown={handlePreviousStep}
+          tabIndex={0}
+        >
+          <BackArrow />
+        </span>
 
         <progress
           max={componentSteps.length}
