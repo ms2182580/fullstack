@@ -13,7 +13,7 @@ test.describe("On Dashboard Testing Home ", () => {
     await expect(page).toHaveURL(`${ALL_ROUTES.DASHBOARD}`)
 
     const optionsToHaveScreenshot = {
-      fullPage: false,
+      fullPage: true,
       maxDiffPixelRatio: 0.01,
       maxDiffPixels: 999,
     }

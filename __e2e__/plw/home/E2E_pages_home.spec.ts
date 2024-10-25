@@ -13,7 +13,7 @@ test.describe("Testing Home", () => {
     await expect(page).toHaveURL("/")
 
     const optionsToHaveScreenshot = {
-      fullPage: false,
+      fullPage: true,
       maxDiffPixelRatio: 0.01,
       maxDiffPixels: 999,
     }

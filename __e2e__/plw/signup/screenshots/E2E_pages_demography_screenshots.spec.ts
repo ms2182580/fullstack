@@ -17,7 +17,7 @@ test.describe("Screenshot", () => {
       .waitFor({ state: "visible" })
 
     const optionsToHaveScreenshot = {
-      fullPage: false,
+      fullPage: true,
       maxDiffPixelRatio: 0.01,
       maxDiffPixels: 999,
     }

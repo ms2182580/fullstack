@@ -29,7 +29,7 @@ test.describe("Flow_ORG", () => {
       .waitFor({ state: "visible" })
 
     const optionsToHaveScreenshot = {
-      fullPage: false,
+      fullPage: true,
       maxDiffPixelRatio: 0.02,
       maxDiffPixels: 999,
     }
