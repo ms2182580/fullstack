@@ -9,4 +9,6 @@ export const MainWrapper = styled.main<Props>`
   ${defaultWidthWebsite()};
 
   position: relative;
+
+  min-height: 100dvh;
 `
