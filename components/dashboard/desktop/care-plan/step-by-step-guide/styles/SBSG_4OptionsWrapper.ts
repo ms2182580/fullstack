@@ -1,4 +1,4 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors"
+import { NEUTRALS } from "@/assets/Colors"
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
 
@@ -62,19 +62,6 @@ export const SBSG_4OptionsWrapper = styled.ul`
 
     & > :nth-child(5) {
       grid-area: options;
-
-      position: relative;
-
-      & > :nth-child(2) {
-        position: absolute;
-      }
-
-      :is(:hover, :focus-visible) {
-        opacity: 0.8;
-        & > * {
-          fill: ${PRIMARY.PRIMARY_CTA};
-        }
-      }
     }
   }
 `

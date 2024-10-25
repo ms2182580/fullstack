@@ -1,8 +1,10 @@
-import { useRef, useState } from "react"
-import { SBSG_4OptionsDropdownWrapper } from "./styles/SBSG_4OptionsDropdownWrapper"
-
+import SVGArrowClockWise from "@/assets/icons/arrow-clock-wise.svg"
 import SVGMenuDropdown from "@/assets/icons/menu-dropdown.svg"
+import SVGTrash from "@/assets/icons/trash.svg"
+import SVGUserCircle from "@/assets/icons/user-circle.svg"
 import { useOutsideHide } from "@/utils/useOutsideHide"
+import { useEffect, useRef, useState } from "react"
+import { SBSG_4OptionsDropdownWrapper } from "./styles/SBSG_4OptionsDropdownWrapper"
 
 export const SBSG_4OptionsDropdown = () => {
   const [shouldShow, setShouldShow] = useState(false)
@@ -10,15 +12,24 @@ export const SBSG_4OptionsDropdown = () => {
   const handleShouldShow = (e) => {
     if (e.type === "click" || e.key === "Enter") {
       setShouldShow(true)
-      console.log("🔰")
     }
   }
+
+  useEffect(() => {
+    console.log("shouldShow:", shouldShow)
+  }, [shouldShow])
 
   const theDivContainer = useRef<HTMLDivElement>(null)
   const theDropdownSelect = useRef<HTMLDivElement>(null)
 
-  const allRefs = [theDivContainer, theDropdownSelect]
   useOutsideHide([theDivContainer, theDropdownSelect], setShouldShow)
+
+  /* 
+  !FH0
+  - Finish the logic and styles of the dropdown
+  - Create the "Search the directory instead" logic
+  - Create the "show the 3° page of ORG when the user click or press keydown enter on some card" logic
+  */
 
   return (
     <SBSG_4OptionsDropdownWrapper
@@ -31,9 +42,17 @@ export const SBSG_4OptionsDropdown = () => {
       <SVGMenuDropdown />
 
       <div ref={theDropdownSelect}>
-        <p>View Profile</p>
-        <p>Remove Suggestion</p>
-        <p>Regenerate Results</p>
+        <p tabIndex={0}>
+          <SVGUserCircle /> View profile
+        </p>
+        <p tabIndex={0}>
+          <SVGTrash />
+          Remove suggestion
+        </p>
+        <p tabIndex={0}>
+          <SVGArrowClockWise />
+          Regenerate results
+        </p>
       </div>
     </SBSG_4OptionsDropdownWrapper>
   )
