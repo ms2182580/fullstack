@@ -7,7 +7,16 @@ import { SBSG_4OptionsWrapper } from "./styles/SBSG_4OptionsWrapper"
 
 /* 
 !FH0
-https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?node-id=1-8354&t=uxkQcuqhgTnPrbHv-4
+https://www.figma.com/design/dQTBLDVXlAMPMI5zeAmC4b/Jill-1%2C2%2C3%2C4-(Copy)?node-id=1-8660&t=mQ2YRV9aybHYcx6i-4
+
+- Create the logic of "Search the directory instead" → 1° page of ORG
+
+- Create the logic of "View Profile" → 3° page of ORG
+- Create the logic of "Remove suggestion"
+- Create the logic of "Regenerate results"
+
+- Create a new logic that's not in the figma file "Regenerate results" but now for the whole results
+
 */
 
 const listOfResources = [

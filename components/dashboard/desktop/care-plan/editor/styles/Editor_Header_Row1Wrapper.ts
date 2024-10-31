@@ -1,6 +1,5 @@
-import { NEUTRALS } from "@/assets/Colors"
+import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
 
 export const Editor_Header_Row1Wrapper = styled.div`
@@ -16,21 +15,34 @@ export const Editor_Header_Row1Wrapper = styled.div`
     gap: 16px;
 
     & > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 20px;
+      font-weight: 500;
+
       & > input {
-        width: 500px;
+        max-width: 500px;
         height: 44px;
+
+        padding-inline: 1px;
+
+        margin-left: auto;
 
         font-size: 20px;
 
         border: none;
-      }
+        border-radius: 8px;
 
-      & > p {
-        ${Paragraph({ color: "dark_gray_3" })}
+        transition: width 0.2s ease;
 
-        font-size: 12px;
-        font-style: italic;
-        line-height: normal;
+        font-size: 20px;
+        font-weight: 500;
+
+        :is(:hover, :focus-visible) {
+          outline: 4px solid ${SEMANTICS.FOCUS_RING};
+        }
       }
     }
   }

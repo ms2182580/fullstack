@@ -7,7 +7,13 @@ import { Editor_Header_Row1Wrapper } from "./styles/Editor_Header_Row1Wrapper"
 
 const CAREPLANTITLE_PLACEHOLDER = "Untitled Document"
 
+const INPUT_WIDTH_CONST = {
+  MIN: CAREPLANTITLE_PLACEHOLDER.length,
+}
+
 export const Editor_Header_Row1 = () => {
+  const [inputWidth, setInputWidth] = useState(INPUT_WIDTH_CONST.MIN)
+
   const {
     stateProfileSelectedSBSG1,
     handleProfileSelectedSBSG1,
@@ -15,11 +21,10 @@ export const Editor_Header_Row1 = () => {
   } = useCtxDataCreatePlan().SBSG1
 
   const handleChange = (event) => {
-    handleProfileSelectedSBSG1({ nameProfile: event.target.value })
-  }
+    const newValue = event.target.value
 
-  const [shouldDisplayPlaceholder, setShouldDisplayPlaceholder] =
-    useState(false)
+    handleProfileSelectedSBSG1({ nameProfile: newValue })
+  }
 
   useEffect(() => {
     if (
@@ -28,14 +33,15 @@ export const Editor_Header_Row1 = () => {
       stateProfileSelectedSBSG1 === CAREPLANTITLE_PLACEHOLDER
     ) {
       handleNoProfileSelectedSBSG1()
-      setShouldDisplayPlaceholder(true)
+      setInputWidth(INPUT_WIDTH_CONST.MIN + 185)
     } else {
-      setShouldDisplayPlaceholder(false)
+      const theNewValue = (stateProfileSelectedSBSG1.length + 2) * 10
+      setInputWidth(theNewValue)
     }
-  }, [stateProfileSelectedSBSG1])
+  }, [stateProfileSelectedSBSG1, handleNoProfileSelectedSBSG1])
 
   const handleOnSelectCarePlanTitlePlaceholder = (event) => {
-    if (stateProfileSelectedSBSG1 === CAREPLANTITLE_PLACEHOLDER) {
+    if (event.target.value === CAREPLANTITLE_PLACEHOLDER) {
       event.target.select()
     }
   }
@@ -49,15 +55,14 @@ export const Editor_Header_Row1 = () => {
 
         <span>
           <input
-            value={
-              shouldDisplayPlaceholder
-                ? CAREPLANTITLE_PLACEHOLDER
-                : `${stateProfileSelectedSBSG1}`
-            }
+            style={{
+              width: `${inputWidth}px`,
+            }}
+            value={stateProfileSelectedSBSG1 || CAREPLANTITLE_PLACEHOLDER}
             onChange={handleChange}
             onClick={handleOnSelectCarePlanTitlePlaceholder}
           />
-          <p>Document created: {`${month} ${day}${daySuffix}, ${year}`}</p>
+          <p>— {`${month} ${day}${daySuffix}, ${year}`}</p>
         </span>
       </header>
       <button>
