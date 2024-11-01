@@ -23,7 +23,7 @@ export const Editor_Header_Row1Wrapper = styled.div`
       font-weight: 500;
 
       & > input {
-        max-width: 500px;
+        max-width: 400px;
         height: 44px;
 
         padding-inline: 1px;

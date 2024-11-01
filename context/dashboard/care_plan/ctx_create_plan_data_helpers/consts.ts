@@ -1,1 +1,8 @@
 export const NAME_COMPONENTS = "SBSG" as const
+
+export const NAME_COMPONENTS_EDITOR = {
+  HEADER_ROW1: "HEADER_ROW1",
+  HEADER_ROW2: "HEADER_ROW2",
+  TABS: "TABS",
+  EDITOR: "EDITOR",
+} as const

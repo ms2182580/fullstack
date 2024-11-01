@@ -1,8 +1,23 @@
 import Breadcrumbs_CaretRight from "@/assets/icons/Breadcrumbs_CaretRight.svg"
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { SBSG_4Options } from "./sbsg_4-options"
 import { SBSG_4Wrapper } from "./styles/SBSG_4Wrapper"
 
 export const SBSG_4 = () => {
+  const {
+    dataTabsStateTABS,
+    dataActiveTabsTABS,
+    handleActiveTabTABS,
+    handleRemoveORGTABS,
+    handleAddORGTABS,
+  } = useCtxDataCreatePlan().TABS
+
+  const theHandleAddORGTABS = (e) => {
+    if (e.type === "click" || e.key === "Enter") {
+      handleAddORGTABS()
+    }
+  }
+
   return (
     <SBSG_4Wrapper>
       <header>
@@ -13,7 +28,11 @@ export const SBSG_4 = () => {
 
       <SBSG_4Options />
 
-      <p tabIndex={0}>
+      <p
+        onClick={theHandleAddORGTABS}
+        onKeyDown={theHandleAddORGTABS}
+        tabIndex={0}
+      >
         Search the directory instead <Breadcrumbs_CaretRight />
       </p>
     </SBSG_4Wrapper>

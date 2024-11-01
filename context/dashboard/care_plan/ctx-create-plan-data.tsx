@@ -3,6 +3,7 @@ import { AllDataType } from "./ctx_create_plan_data_helpers/all-types"
 import { SBSG1Props } from "./ctx_create_plan_data_helpers/sbsg1"
 import { SBSG2Props } from "./ctx_create_plan_data_helpers/sbsg2"
 import { SBSG3Props } from "./ctx_create_plan_data_helpers/sbsg3"
+import { TABSTitleChooserProps } from "./ctx_create_plan_data_helpers/tabs-title-chooser"
 
 const CtxDataCreatePlan = createContext<AllDataType | null>(null)
 
@@ -26,6 +27,14 @@ export const CtxCreatePlanData_Provider = ({
     inputTagsLogicSBSG3,
   } = SBSG3Props.hooks()
 
+  const {
+    dataTabsStateTABS,
+    dataActiveTabsTABS,
+    handleActiveTabTABS,
+    handleRemoveORGTABS,
+    handleAddORGTABS,
+  } = TABSTitleChooserProps.hooks()
+
   return (
     <CtxDataCreatePlan.Provider
       value={{
@@ -42,6 +51,14 @@ export const CtxCreatePlanData_Provider = ({
           setEditableDataSBSG3,
           handleChangeEditableDataSBSG3,
           inputTagsLogicSBSG3,
+        },
+
+        TABS: {
+          dataTabsStateTABS,
+          dataActiveTabsTABS,
+          handleActiveTabTABS,
+          handleRemoveORGTABS,
+          handleAddORGTABS,
         },
       }}
     >

@@ -8,7 +8,7 @@ const NAME_STATES_SBSG1 = {
 } as const
 
 type NameProfileSelected_Type = string | null | ""
-const MAX_LENGTH_PROFILE_SELECTED = 100
+const MAX_LENGTH_PROFILE_SELECTED = 60
 
 type SBSG1Types = {
   [NAME_STATES_SBSG1.STATE_PROFILE_SELECTED]: NameProfileSelected_Type
