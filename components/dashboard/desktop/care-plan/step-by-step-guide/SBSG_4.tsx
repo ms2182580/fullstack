@@ -10,11 +10,15 @@ export const SBSG_4 = () => {
     handleActiveTabTABS,
     handleRemoveORGTABS,
     handleAddORGTABS,
+    handleFocusTargetElementTABSORG,
   } = useCtxDataCreatePlan().TABS
 
   const theHandleAddORGTABS = (e) => {
     if (e.type === "click" || e.key === "Enter") {
       handleAddORGTABS()
+      handleFocusTargetElementTABSORG()
+
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }
 

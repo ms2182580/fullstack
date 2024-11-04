@@ -22,7 +22,7 @@ export const INDEX_D_CarePlanWrapper = styled.div<Props>`
     position: sticky;
     inset: 0;
 
-    z-index: 1;
+    z-index: 99;
   }
 
   & > :nth-child(2) {

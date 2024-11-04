@@ -1,19 +1,11 @@
-import { NEUTRALS } from "@/assets/Colors"
+import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
 import styled, { css } from "styled-components"
 
-/* tabs-title-wrapper */
-
-export const TabsTitleChooserWrapper = styled.ul`
-  list-style: none;
-
-  display: flex;
-`
-
-type Tabs_Title_LI_Props = {
+type Props = {
   isActiveTab: boolean
 }
 
-export const Tabs_Title_LIWrapper = styled.li<Tabs_Title_LI_Props>`
+export const TabsTitleLiWrapper = styled.li<Props>`
   padding-inline: 16px;
 
   display: flex;
@@ -30,6 +22,10 @@ export const Tabs_Title_LIWrapper = styled.li<Tabs_Title_LI_Props>`
 
   cursor: default;
 
+  &:focus {
+    outline: 4px solid ${SEMANTICS.FOCUS_RING};
+  }
+
   & > p {
     color: ${NEUTRALS.DARK_GREY_2};
   }
@@ -40,7 +36,8 @@ export const Tabs_Title_LIWrapper = styled.li<Tabs_Title_LI_Props>`
       background-color: ${NEUTRALS.OFF_WHITE};
     `}
 
-  &:focus-visible {
-    z-index: 1;
+  &:focus-visible,
+  &:focus {
+    z-index: 3;
   }
 `

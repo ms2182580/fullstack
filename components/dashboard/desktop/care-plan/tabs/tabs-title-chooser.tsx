@@ -1,10 +1,7 @@
-import SVGTabsTitleChooser from "@/assets/icons/file-text.svg"
 import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { Fragment, useMemo } from "react"
-import {
-  Tabs_Title_LI,
-  TabsTitleChooserWrapper,
-} from "./styles/tabs-title-chooser-wrapper"
+import { TabsTitleChooserWrapper } from "./styles/tabs-title-chooser-wrapper"
+import { TabsTitleChooserLI } from "./tabs-title-chooser-li"
 
 const DEFAULT_CARE_PLAN_NAME = "My Care Plan"
 
@@ -46,9 +43,8 @@ export const TabsTitleChooser = () => {
         const customTitle = title === "Editor" ? profileSelected : title
 
         return (
-          <Fragment>
-            <Tabs_Title_LI
-              key={`${title}_${index}`}
+          <Fragment key={`${title}_${index}`}>
+            {/* <Tabs_Title_LIWrapper
               isActiveTab={isActiveTab}
               onClick={(e) => handleTheActiveTab({ e, index })}
               onKeyDown={(e) => handleTheActiveTab({ e, index })}
@@ -67,7 +63,13 @@ export const TabsTitleChooser = () => {
                   X
                 </p>
               )}
-            </Tabs_Title_LI>
+            </Tabs_Title_LIWrapper> */}
+
+            <TabsTitleChooserLI
+              actualIndex={index}
+              title={title}
+              // handleTheActiveTab={handleTheActiveTab}
+            />
           </Fragment>
         )
       })}

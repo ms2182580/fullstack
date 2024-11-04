@@ -2,7 +2,7 @@ import {
   Editor,
   ORG_PLACEHOLDER,
 } from "@/components/dashboard/desktop/care-plan/editor"
-import { ReactElement, useEffect, useState } from "react"
+import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
 import { NAME_COMPONENTS_EDITOR } from "./consts"
 
 const NAME_STATES_TABS = {
@@ -11,6 +11,8 @@ const NAME_STATES_TABS = {
   HANDLE_ACTIVE_TAB: `handleActiveTab${NAME_COMPONENTS_EDITOR.TABS}`,
   HANDLE_REMOVE_ORG: `handleRemoveORG${NAME_COMPONENTS_EDITOR.TABS}`,
   HANDLE_ADD_ORG: `handleAddORG${NAME_COMPONENTS_EDITOR.TABS}`,
+  FOCUS_TARGET_ELEMENT_TABS_ORG: `focusTargetElementTABSORG`,
+  HANDLE_FOCUS_TARGET_ELEMENT_TABS_ORG: `handleFocusTargetElementTABSORG`,
 } as const
 
 type TabsTitleChooserTypes = {
@@ -19,6 +21,8 @@ type TabsTitleChooserTypes = {
   [NAME_STATES_TABS.HANDLE_ACTIVE_TAB]: ({ index }: { index: number }) => void
   [NAME_STATES_TABS.HANDLE_REMOVE_ORG]: () => void
   [NAME_STATES_TABS.HANDLE_ADD_ORG]: () => void
+  [NAME_STATES_TABS.FOCUS_TARGET_ELEMENT_TABS_ORG]: RefObject<HTMLLIElement>
+  [NAME_STATES_TABS.HANDLE_FOCUS_TARGET_ELEMENT_TABS_ORG]: () => void
 }
 
 type Component_Type = ReactElement
@@ -40,15 +44,17 @@ const dataTabs: DataTabs_Type = [
   },
 ]
 
-/* 
-!FH0
-Somehow, make some tab be active and focused all the time. Maybe use the "activeTab" state on the component to render it
-*/
-
 const useHooksTabsTitleChooser = (): TabsTitleChooserTypes => {
   const [dataTabsState, setDataTabsState] = useState(dataTabs)
-
   const [activeTab, setActiveTab] = useState(0)
+
+  const focusTargetElement = useRef<HTMLLIElement>(null)
+
+  const handleFocusTargetElement = () => {
+    if (focusTargetElement.current) {
+      focusTargetElement.current.focus()
+    }
+  }
 
   const handleActiveTab = ({ index }) => {
     setActiveTab(index)
@@ -69,29 +75,11 @@ const useHooksTabsTitleChooser = (): TabsTitleChooserTypes => {
           component: <ORG_PLACEHOLDER />,
         },
       ])
-
-      setActiveTab(1)
     }
-
-    // setDataTabsState((prevState) => {
-    //   if (prevState.length === 1) {
-    //     return [
-    //       ...prevState,
-    //       {
-    //         title: "Resource Directory",
-    //         component: <ORG_PLACEHOLDER />,
-    //       },
-    //     ]
-    //   } else {
-    //     return prevState
-    //   }
-    // })
+    setActiveTab(1)
   }
 
   useEffect(() => {
-    /*_codeHere_*/
-    console.log("dataTabsState:", dataTabsState)
-
     if (dataTabsState.length === 1) {
       setActiveTab(0)
     }
@@ -103,6 +91,8 @@ const useHooksTabsTitleChooser = (): TabsTitleChooserTypes => {
     handleActiveTabTABS: handleActiveTab,
     handleRemoveORGTABS: handleRemoveORG,
     handleAddORGTABS: handleAddORG,
+    focusTargetElementTABSORG: focusTargetElement,
+    handleFocusTargetElementTABSORG: handleFocusTargetElement,
   }
 }
 

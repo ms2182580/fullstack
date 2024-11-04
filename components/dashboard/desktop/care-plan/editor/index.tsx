@@ -1,5 +1,5 @@
 import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { EditorWrapper } from "./styles/EditorWrapper"
 
 const PLACEHOLDER =
@@ -76,12 +76,28 @@ export const ORG_PLACEHOLDER = ({ currentPosition }: Props_PLACEHOLDER) => {
 
   const isVisible = currentPosition === dataActiveTabsTABS
 
+  const theRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (theRef.current) {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [])
+
+  const handleMoveSight = (e) => {
+    if (e.key === "Enter") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }
+
   return (
     <div
+      ref={theRef}
       style={{
         minHeight: "150dvh",
         display: isVisible ? "block" : "none",
       }}
+      onKeyDown={handleMoveSight}
     >
       ORG_PLACEHOLDER
     </div>

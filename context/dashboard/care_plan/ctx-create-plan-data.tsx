@@ -33,6 +33,8 @@ export const CtxCreatePlanData_Provider = ({
     handleActiveTabTABS,
     handleRemoveORGTABS,
     handleAddORGTABS,
+    focusTargetElementTABSORG,
+    handleFocusTargetElementTABSORG,
   } = TABSTitleChooserProps.hooks()
 
   return (
@@ -59,6 +61,8 @@ export const CtxCreatePlanData_Provider = ({
           handleActiveTabTABS,
           handleRemoveORGTABS,
           handleAddORGTABS,
+          focusTargetElementTABSORG,
+          handleFocusTargetElementTABSORG,
         },
       }}
     >
