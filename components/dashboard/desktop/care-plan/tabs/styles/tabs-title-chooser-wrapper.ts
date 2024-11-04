@@ -38,6 +38,9 @@ export const Tabs_Title_LI = styled.li<Tabs_Title_LI_Props>`
     isActiveTab &&
     css`
       background-color: ${NEUTRALS.OFF_WHITE};
-      /* background-color: green; */
     `}
+
+  &:focus-visible {
+    z-index: 1;
+  }
 `
