@@ -1,5 +1,8 @@
-import { Editor } from "@/components/dashboard/desktop/care-plan/editor"
-import { ReactElement, useState } from "react"
+import {
+  Editor,
+  ORG_PLACEHOLDER,
+} from "@/components/dashboard/desktop/care-plan/editor"
+import { ReactElement, useEffect, useState } from "react"
 import { NAME_COMPONENTS_EDITOR } from "./consts"
 
 const NAME_STATES_TABS = {
@@ -33,9 +36,14 @@ const dataTabs: DataTabs_Type = [
   },
   {
     title: "Resource Directory",
-    component: <div style={{ minHeight: "150dvh" }}>Component ORG</div>,
+    component: <ORG_PLACEHOLDER />,
   },
 ]
+
+/* 
+!FH0
+Somehow, make some tab be active and focused all the time. Maybe use the "activeTab" state on the component to render it
+*/
 
 const useHooksTabsTitleChooser = (): TabsTitleChooserTypes => {
   const [dataTabsState, setDataTabsState] = useState(dataTabs)
@@ -53,23 +61,41 @@ const useHooksTabsTitleChooser = (): TabsTitleChooserTypes => {
   }
 
   const handleAddORG = () => {
-    setDataTabsState((prevState) => {
-      if (prevState.length === 1) {
-        return [
-          ...prevState,
-          {
-            title: "Resource Directory",
-            component: <div style={{ minHeight: "150dvh" }}>Component ORG</div>,
-          },
-        ]
-      } else {
-        return prevState
-      }
-    })
+    if (dataTabsState.length === 1) {
+      setDataTabsState((prevState) => [
+        ...prevState,
+        {
+          title: "Resource Directory",
+          component: <ORG_PLACEHOLDER />,
+        },
+      ])
+
+      setActiveTab(1)
+    }
+
+    // setDataTabsState((prevState) => {
+    //   if (prevState.length === 1) {
+    //     return [
+    //       ...prevState,
+    //       {
+    //         title: "Resource Directory",
+    //         component: <ORG_PLACEHOLDER />,
+    //       },
+    //     ]
+    //   } else {
+    //     return prevState
+    //   }
+    // })
   }
-  // useEffect(() => {
-  //   console.log("Render this!!", dataTabsState)
-  // }, [dataTabsState])
+
+  useEffect(() => {
+    /*_codeHere_*/
+    console.log("dataTabsState:", dataTabsState)
+
+    if (dataTabsState.length === 1) {
+      setActiveTab(0)
+    }
+  }, [dataTabsState])
 
   return {
     dataTabsStateTABS: dataTabsState,

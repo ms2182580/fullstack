@@ -1,10 +1,23 @@
+import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { useRef, useState } from "react"
 import { EditorWrapper } from "./styles/EditorWrapper"
 
 const PLACEHOLDER =
   "Your care plan will generate here after answering a few questions!"
 
-export const Editor = () => {
+type Props = {
+  currentPosition?: number
+}
+
+export const Editor = ({ currentPosition }: Props) => {
+  const {
+    dataTabsStateTABS,
+    dataActiveTabsTABS,
+    handleActiveTabTABS,
+    handleRemoveORGTABS,
+    handleAddORGTABS,
+  } = useCtxDataCreatePlan().TABS
+
   const refContentEditable = useRef<HTMLDivElement | null>(null)
 
   const handleFocusOnContenteditable = () => {
@@ -21,7 +34,11 @@ export const Editor = () => {
   }
 
   return (
-    <EditorWrapper onClick={handleFocusOnContenteditable} isEmpty={isEmpty}>
+    <EditorWrapper
+      onClick={handleFocusOnContenteditable}
+      isEmpty={isEmpty}
+      isVisible={currentPosition === dataActiveTabsTABS}
+    >
       <div
         suppressContentEditableWarning
         contentEditable
@@ -43,3 +60,30 @@ export const Editor = () => {
 
 https://codepen.io/JuanPastenCastillo/pen/qBzpJmb
 */
+
+type Props_PLACEHOLDER = {
+  currentPosition?: number
+}
+
+export const ORG_PLACEHOLDER = ({ currentPosition }: Props_PLACEHOLDER) => {
+  const {
+    dataTabsStateTABS,
+    dataActiveTabsTABS,
+    handleActiveTabTABS,
+    handleRemoveORGTABS,
+    handleAddORGTABS,
+  } = useCtxDataCreatePlan().TABS
+
+  const isVisible = currentPosition === dataActiveTabsTABS
+
+  return (
+    <div
+      style={{
+        minHeight: "150dvh",
+        display: isVisible ? "block" : "none",
+      }}
+    >
+      ORG_PLACEHOLDER
+    </div>
+  )
+}

@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 type Props = {
   isEmpty: boolean
+  isVisible: boolean
 }
 
 export const EditorWrapper = styled.div<Props>`
@@ -12,6 +13,8 @@ export const EditorWrapper = styled.div<Props>`
 
   min-height: 100dvh;
   cursor: text;
+
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
 
   & > div[contenteditable="true"] {
     outline: none;

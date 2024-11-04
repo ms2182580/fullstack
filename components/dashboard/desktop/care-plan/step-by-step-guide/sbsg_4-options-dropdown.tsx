@@ -3,7 +3,7 @@ import SVGMenuDropdown from "@/assets/icons/menu-dropdown.svg"
 import SVGTrash from "@/assets/icons/trash.svg"
 import SVGUserCircle from "@/assets/icons/user-circle.svg"
 import { useOutsideHide } from "@/utils/useOutsideHide"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { SBSG_4OptionsDropdownWrapper } from "./styles/SBSG_4OptionsDropdownWrapper"
 
 export const SBSG_4OptionsDropdown = () => {
@@ -15,9 +15,9 @@ export const SBSG_4OptionsDropdown = () => {
     }
   }
 
-  useEffect(() => {
-    console.log("shouldShow:", shouldShow)
-  }, [shouldShow])
+  // useEffect(() => {
+  //   console.log("shouldShow:", shouldShow)
+  // }, [shouldShow])
 
   const theDivContainer = useRef<HTMLDivElement>(null)
   const theDropdownSelect = useRef<HTMLDivElement>(null)

@@ -6,20 +6,7 @@ import {
   TabsTitleChooserWrapper,
 } from "./styles/tabs-title-chooser-wrapper"
 
-// type Props = {
-//   dataTabs: DataTabs_Type
-//   activeTab: number
-//   handleActiveTab: ({ index }) => void
-//   handleRemoveORG: () => void
-// }
-
 const DEFAULT_CARE_PLAN_NAME = "My Care Plan"
-
-/* 
-!FH0
-Make the first tab of the editor change with the selected profile
-
-*/
 
 export const TabsTitleChooser = () => {
   const {

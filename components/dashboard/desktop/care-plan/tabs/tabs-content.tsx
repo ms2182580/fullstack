@@ -2,13 +2,6 @@ import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-p
 import { cloneElement, Fragment, isValidElement } from "react"
 import { TabsContentWrapper } from "./styles/tabs-content-wrapper"
 
-// type Props = {
-//   dataTabs: DataTabs_Type
-//   activeTab: number
-// }
-
-/* tabs-content */
-
 export const TabsContent = () => {
   const {
     dataTabsStateTABS,
@@ -23,10 +16,11 @@ export const TabsContent = () => {
   return (
     <TabsContentWrapper>
       {dataTabsStateTABS.map(({ component, props }, index) => {
-        if (index !== dataActiveTabsTABS) return null
+        // if (index !== dataActiveTabsTABS) return null
 
         const propsToComponent = {
           stateProfileSelectedSBSG1,
+          currentPosition: index,
           ...props,
         }
 
