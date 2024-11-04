@@ -29,12 +29,6 @@ export const TabsTitleChooser = () => {
     return stateProfileSelectedSBSG1 || DEFAULT_CARE_PLAN_NAME
   }, [stateProfileSelectedSBSG1])
 
-  const theHandleRemoveORG = (e) => {
-    if (e.type === "click" || e.key === "Enter") {
-      handleRemoveORGTABS()
-    }
-  }
-
   return (
     <TabsTitleChooserWrapper>
       {dataTabsStateTABS.map(({ title }, index) => {
@@ -44,32 +38,7 @@ export const TabsTitleChooser = () => {
 
         return (
           <Fragment key={`${title}_${index}`}>
-            {/* <Tabs_Title_LIWrapper
-              isActiveTab={isActiveTab}
-              onClick={(e) => handleTheActiveTab({ e, index })}
-              onKeyDown={(e) => handleTheActiveTab({ e, index })}
-              tabIndex={0}
-            >
-              <SVGTabsTitleChooser />
-
-              <p>{customTitle}</p>
-
-              {customTitle === "Resource Directory" && (
-                <p
-                  onClick={theHandleRemoveORG}
-                  onKeyDown={theHandleRemoveORG}
-                  tabIndex={0}
-                >
-                  X
-                </p>
-              )}
-            </Tabs_Title_LIWrapper> */}
-
-            <TabsTitleChooserLI
-              actualIndex={index}
-              title={title}
-              // handleTheActiveTab={handleTheActiveTab}
-            />
+            <TabsTitleChooserLI actualIndex={index} title={title} />
           </Fragment>
         )
       })}

@@ -40,10 +40,6 @@ export const TabsTitleChooserLI = ({ title, actualIndex }) => {
 
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
-
-    if (e.key === "Tab") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }
   }
 
   useEffect(() => {

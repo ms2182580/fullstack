@@ -16,8 +16,6 @@ export const TabsContent = () => {
   return (
     <TabsContentWrapper>
       {dataTabsStateTABS.map(({ component, props }, index) => {
-        // if (index !== dataActiveTabsTABS) return null
-
         const propsToComponent = {
           stateProfileSelectedSBSG1,
           currentPosition: index,
