@@ -1,8 +1,8 @@
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
-import { PCMPS_General_D_Booking } from "@/components/org/cards_resources/third-page/pcmps/general/desktop/PCMPS_General_D_Booking"
-import { PCMPS_General_D_PackingList } from "@/components/org/cards_resources/third-page/pcmps/general/desktop/PCMPS_General_D_PackingList"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_OverviewDetails"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
+import { PCMPS_General_D_Booking } from "@/components/org/flow_resources/third-page/pcmps/general/desktop/PCMPS_General_D_Booking"
+import { PCMPS_General_D_PackingList } from "@/components/org/flow_resources/third-page/pcmps/general/desktop/PCMPS_General_D_PackingList"
 import {
   ArraySectionToRender_Type,
   InnerNavBar_InnerData,

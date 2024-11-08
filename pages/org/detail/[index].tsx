@@ -9,7 +9,7 @@ import { useEffect } from "react"
 
 const INDEX_ORG_Detail_D = dynamic(
   () =>
-    import("@/components/org/cards/third-page/desktop/INDEX_ORG_Detail_D").then(
+    import("@/components/org/flow/third-page/desktop/INDEX_ORG_Detail_D").then(
       (res) => res.INDEX_ORG_Detail_D
     ),
   {
@@ -18,7 +18,7 @@ const INDEX_ORG_Detail_D = dynamic(
 )
 const INDEX_ORG_Detail_M = dynamic(
   () =>
-    import("@/components/org/cards/third-page/mobile/INDEX_ORG_Details_M").then(
+    import("@/components/org/flow/third-page/mobile/INDEX_ORG_Details_M").then(
       (res) => res.INDEX_ORG_Detail_M
     ),
   {

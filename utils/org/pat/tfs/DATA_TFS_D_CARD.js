@@ -1,14 +1,23 @@
-import { MapProperties_KEYS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_MapComponent"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { MapProperties_KEYS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_MapComponent"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "../../DATA_ORG_KeyNamesForCards_D"
 import { DATA_PAT_D_KEYS } from "../DATA_PAT_D"
-import { arrayInnerNavBar_PAT, arraySectionToRender_PAT } from "../third-page/desktop/arraySectionToRender"
+import {
+  arrayInnerNavBar_PAT,
+  arraySectionToRender_PAT,
+} from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PAT } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_TFS_D_CardRight = [
   {
     input: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Buttons",
+        "Voice recognition",
+      ],
     },
     sensors: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
@@ -28,13 +37,21 @@ export const DATA_TFS_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           input: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Buttons",
+              "Voice recognition",
+            ],
           },
           sensors: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
@@ -51,23 +68,39 @@ export const DATA_TFS_D_CardRight = [
         },
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           dataCollectionAndAnalysis: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Data Collection and Analysis",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Interaction Data", "Machine Learning"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]:
+              "Data Collection and Analysis",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "User Interaction Data",
+              "Machine Learning",
+            ],
           },
 
           thirdPartyIntegration: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Third Party Integration",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Health services", "Smart Home Integration", "Content Platforms"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Health services",
+              "Smart Home Integration",
+              "Content Platforms",
+            ],
           },
 
           securityAndPrivacy: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Security and Privacy",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Data Encryption", "Authentication Mechanisms", "Privacy Controls"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Data Encryption",
+              "Authentication Mechanisms",
+              "Privacy Controls",
+            ],
           },
 
           supportAndDocumentation: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support and Documentation",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Manuals", "Online Forums and Communities", "Help Center and Customer Support"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "User Manuals",
+              "Online Forums and Communities",
+              "Help Center and Customer Support",
+            ],
           },
         },
 
@@ -83,7 +116,10 @@ export const DATA_TFS_D_CardRight = [
   {
     input: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Buttons",
+        "Voice recognition",
+      ],
     },
     sensors: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
@@ -103,13 +139,21 @@ export const DATA_TFS_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           input: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Buttons",
+              "Voice recognition",
+            ],
           },
           sensors: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
@@ -126,23 +170,39 @@ export const DATA_TFS_D_CardRight = [
         },
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           dataCollectionAndAnalysis: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Data Collection and Analysis",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Interaction Data", "Machine Learning"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]:
+              "Data Collection and Analysis",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "User Interaction Data",
+              "Machine Learning",
+            ],
           },
 
           thirdPartyIntegration: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Third Party Integration",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Health services", "Smart Home Integration", "Content Platforms"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Health services",
+              "Smart Home Integration",
+              "Content Platforms",
+            ],
           },
 
           securityAndPrivacy: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Security and Privacy",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Data Encryption", "Authentication Mechanisms", "Privacy Controls"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Data Encryption",
+              "Authentication Mechanisms",
+              "Privacy Controls",
+            ],
           },
 
           supportAndDocumentation: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support and Documentation",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Manuals", "Online Forums and Communities", "Help Center and Customer Support"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "User Manuals",
+              "Online Forums and Communities",
+              "Help Center and Customer Support",
+            ],
           },
         },
 
@@ -158,7 +218,10 @@ export const DATA_TFS_D_CardRight = [
   {
     input: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Buttons",
+        "Voice recognition",
+      ],
     },
     sensors: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
@@ -178,13 +241,21 @@ export const DATA_TFS_D_CardRight = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           input: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "input",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Buttons", "Voice recognition"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Buttons",
+              "Voice recognition",
+            ],
           },
           sensors: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "sensors",
@@ -201,23 +272,39 @@ export const DATA_TFS_D_CardRight = [
         },
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           dataCollectionAndAnalysis: {
-            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Data Collection and Analysis",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Interaction Data", "Machine Learning"],
+            [DATA_ORG_KeyNamesForCards_D.KEY_NAME]:
+              "Data Collection and Analysis",
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "User Interaction Data",
+              "Machine Learning",
+            ],
           },
 
           thirdPartyIntegration: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Third Party Integration",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Health services", "Smart Home Integration", "Content Platforms"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Health services",
+              "Smart Home Integration",
+              "Content Platforms",
+            ],
           },
 
           securityAndPrivacy: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Security and Privacy",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Data Encryption", "Authentication Mechanisms", "Privacy Controls"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Data Encryption",
+              "Authentication Mechanisms",
+              "Privacy Controls",
+            ],
           },
 
           supportAndDocumentation: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support and Documentation",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["User Manuals", "Online Forums and Communities", "Help Center and Customer Support"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "User Manuals",
+              "Online Forums and Communities",
+              "Help Center and Customer Support",
+            ],
           },
         },
 

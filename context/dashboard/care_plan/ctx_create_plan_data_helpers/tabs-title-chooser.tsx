@@ -1,7 +1,5 @@
-import {
-  Editor,
-  ORG_PLACEHOLDER,
-} from "@/components/dashboard/desktop/care-plan/editor"
+import { Editor } from "@/components/dashboard/desktop/care-plan/editor/editor"
+import { INDEX_D_OrgOnTab } from "@/components/dashboard/desktop/care-plan/org-on-tabs"
 import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
 import { NAME_COMPONENTS_EDITOR } from "./consts"
 
@@ -38,9 +36,10 @@ const dataTabs: DataTabs_Type = [
     title: "Editor",
     component: <Editor />,
   },
+
   {
     title: "Resource Directory",
-    component: <ORG_PLACEHOLDER />,
+    component: <INDEX_D_OrgOnTab />,
   },
 ]
 
@@ -72,7 +71,7 @@ const useHooksTabsTitleChooser = (): TabsTitleChooserTypes => {
         ...prevState,
         {
           title: "Resource Directory",
-          component: <ORG_PLACEHOLDER />,
+          component: <INDEX_D_OrgOnTab />,
         },
       ])
     }

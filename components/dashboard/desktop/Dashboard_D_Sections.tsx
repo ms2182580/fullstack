@@ -6,8 +6,8 @@ import {
 import { cloneElement, isValidElement } from "react"
 import { INDEX_D_AIChat } from "./ai-chat"
 import { INDEX_D_CarePlan } from "./care-plan"
+import { INDEX_D_OrgOnTab } from "./care-plan/org-on-tabs"
 import { INDEX_D_Documents } from "./documents"
-import { INDEX_D_ORG } from "./resource-directory"
 import { INDEX_D_Saved } from "./saved"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
@@ -21,7 +21,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
   {
     route: ALL_ROUTES.DASHBOARD_SECTIONS.RESOURCE_DIRECTORY,
-    component: <INDEX_D_ORG />,
+    component: <INDEX_D_OrgOnTab />,
   },
   {
     route: ALL_ROUTES.DASHBOARD_SECTIONS.SAVED,

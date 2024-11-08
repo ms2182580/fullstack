@@ -2,11 +2,11 @@ import {
   ContactUsCustomProperties_KEY,
   ORG_D_Detail_ContactUs,
   TEXT_BESIDE_BUTTON,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_LastSection } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_LastSection"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
-import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_LastSection } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_LastSection"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
+import { ORG_D_Detail_Schedule } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Schedule"
 import {
   ArraySectionToRender_Type,
   InnerNavBar_InnerData,

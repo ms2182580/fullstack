@@ -1,7 +1,7 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
 import More_recommended from "@/assets/images/recommended/more-recommended.png"
-import { INDEX_ORG_Search_D } from "@/components/org/cards/first-page/desktop/INDEX_ORG_Search_D"
-import { LI_Wrapper } from "@/components/org/home/desktop/styles/INDEX_D_ORGWrapper"
+import { OrgCardsFirst } from "@/components/org/flow/first-page/desktop/org-cards-first"
+import { LI_Wrapper } from "@/components/org/flow/first-page/desktop/styles/index-wrapper"
 import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"
@@ -130,7 +130,7 @@ export const INDEX_D_MoreRecommendation = ({ allBackendData }: Props) => {
           if (singleCardIsSelected === false) {
             return (
               <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
+                <OrgCardsFirst
                   category={CATEGORY}
                   allSubcategories={SUB_CATEGORY}
                   allBackendData={allBackendData}
@@ -145,7 +145,7 @@ export const INDEX_D_MoreRecommendation = ({ allBackendData }: Props) => {
           ) {
             return (
               <Fragment key={CATEGORY}>
-                <INDEX_ORG_Search_D
+                <OrgCardsFirst
                   category={CATEGORY}
                   allSubcategories={SUB_CATEGORY}
                   allBackendData={allBackendData}

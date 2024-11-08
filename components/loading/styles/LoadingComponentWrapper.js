@@ -5,8 +5,11 @@ export const LoadingComponentWrapper = styled.div`
   background-color: ${NEUTRALS.OFF_WHITE};
   display: grid;
   align-self: start;
-  margin-top: 5rem;
+  margin-top: calc(8px * 4);
   padding-bottom: 4.978rem;
+
+  height: 100dvh;
+
   & > * {
     justify-self: center;
   }

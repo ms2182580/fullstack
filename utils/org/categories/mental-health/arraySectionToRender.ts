@@ -1,12 +1,12 @@
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_OverviewDetails"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   HEADER_TITLE,
   IS_USABLE_SECTION,
   ORG_D_Detail_Schedule,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
-import { ORG_D_Detail_AtTheSameClinic } from "@/components/org/cards_resources/third-page/general/desktop/ORG_D_Detail_AtTheSameClinic"
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Schedule"
+import { ORG_D_Detail_AtTheSameClinic } from "@/components/org/flow_resources/third-page/general/desktop/ORG_D_Detail_AtTheSameClinic"
 import {
   ArraySectionToRender_Type,
   InnerNavBar_InnerData,

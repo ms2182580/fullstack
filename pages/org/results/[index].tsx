@@ -8,7 +8,7 @@ import { useMemo } from "react"
 const INDEX_ORG_Results_D = dynamic(
   () =>
     import(
-      "@/components/org/cards/second-page/desktop/INDEX_ORG_Results_D"
+      "@/components/org/flow/second-page/desktop/INDEX_ORG_Results_D"
     ).then((mod) => mod.INDEX_ORG_Results_D),
   { ssr: false }
 )

@@ -1,5 +1,8 @@
-import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { Layout_MainCardRight_VALUES } from "@/components/org/flow/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "../../DATA_ORG_KeyNamesForCards_D"
 import { arraySectionToRender_PRP } from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PRP } from "../third-page/desktop/tooltipToRender"
 
@@ -22,18 +25,29 @@ const contactUsCustomProperties = {
 export const DATA_CardRight_PRP = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT_PLUS]: {
-      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS],
-      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: ["Accepting new residents"],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D_KEYS.HIGHLIGHT_PLUS,
+      ],
+      [DATA_ORG_KeyNamesForCards_D_KEYS.VALUE_NAME]: [
+        "Accepting new residents",
+      ],
     },
 
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Referral Required", "Does Evaluations"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Referral Required",
+        "Does Evaluations",
+      ],
     },
 
     cost: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Cost",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assisted Living Starting At: $4300/month"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Assisted Living Starting At: $4300/month",
+      ],
     },
 
     agesServed: {
@@ -67,49 +81,73 @@ export const DATA_CardRight_PRP = [
 
           languagesSpokenByStaff: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages Spoken By Staff",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English",
+              "Spanish",
+              "French",
+            ],
           },
 
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Temporary or Permanent"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Temporary or Permanent",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           price: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assisted Living Starting At: $4300/month", "Independent Living Starting At: $3800/month"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Assisted Living Starting At: $4300/month",
+              "Independent Living Starting At: $3800/month",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
 
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Private Pay",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
 
           specializedProgramming: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Specialized programming",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Behavior therapy, speech and language therapy, occupational therapy, and sensory integration therapy, ... more"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Behavior therapy, speech and language therapy, occupational therapy, and sensory integration therapy, ... more",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PRP,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PRP,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.CONTACT_US_CUSTOM_PROPERTIES]: contactUsCustomProperties,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.CONTACT_US_CUSTOM_PROPERTIES]:
+          contactUsCustomProperties,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Referral Required", "Does Evaluations"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Referral Required",
+        "Does Evaluations",
+      ],
     },
 
     cost: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Cost",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assisted Living Starting At: $4300/month"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Assisted Living Starting At: $4300/month",
+      ],
     },
 
     agesServed: {
@@ -143,49 +181,73 @@ export const DATA_CardRight_PRP = [
 
           languagesSpokenByStaff: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages Spoken By Staff",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English",
+              "Spanish",
+              "French",
+            ],
           },
 
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Temporary or Permanent"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Temporary or Permanent",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           price: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assisted Living Starting At: $4300/month", "Independent Living Starting At: $3800/month"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Assisted Living Starting At: $4300/month",
+              "Independent Living Starting At: $3800/month",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
 
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Private Pay",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
 
           specializedProgramming: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Specialized programming",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Behavior therapy, speech and language therapy, occupational therapy, and sensory integration therapy, ... more"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Behavior therapy, speech and language therapy, occupational therapy, and sensory integration therapy, ... more",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PRP,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PRP,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.CONTACT_US_CUSTOM_PROPERTIES]: contactUsCustomProperties,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.CONTACT_US_CUSTOM_PROPERTIES]:
+          contactUsCustomProperties,
       },
     },
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Referral Required", "Does Evaluations"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Referral Required",
+        "Does Evaluations",
+      ],
     },
 
     cost: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Cost",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assisted Living Starting At: $4300/month"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Assisted Living Starting At: $4300/month",
+      ],
     },
 
     agesServed: {
@@ -219,37 +281,54 @@ export const DATA_CardRight_PRP = [
 
           languagesSpokenByStaff: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Languages Spoken By Staff",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["English", "Spanish", "French"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "English",
+              "Spanish",
+              "French",
+            ],
           },
 
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Temporary or Permanent"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Temporary or Permanent",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           price: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Price",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Assisted Living Starting At: $4300/month", "Independent Living Starting At: $3800/month"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Assisted Living Starting At: $4300/month",
+              "Independent Living Starting At: $3800/month",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
 
           paymentOptions: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment options",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Private Pay", "Medicaid", "DOE Contract"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Private Pay",
+              "Medicaid",
+              "DOE Contract",
+            ],
           },
 
           specializedProgramming: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Specialized programming",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Behavior therapy, speech and language therapy, occupational therapy, and sensory integration therapy, ... more"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Behavior therapy, speech and language therapy, occupational therapy, and sensory integration therapy, ... more",
+            ],
           },
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PRP,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PRP,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.CONTACT_US_CUSTOM_PROPERTIES]: contactUsCustomProperties,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.CONTACT_US_CUSTOM_PROPERTIES]:
+          contactUsCustomProperties,
       },
     },
   },

@@ -1,8 +1,18 @@
-import { ContactUsCustomProperties_KEY, ORG_D_Detail_ContactUs, SEND_MESSAGE_BUTTON, TEXT_BESIDE_BUTTON } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
-import { ORG_D_Detail_Schedule } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
-import { ArraySectionToRender_Type, ArraySection_KEYS, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import {
+  ContactUsCustomProperties_KEY,
+  ORG_D_Detail_ContactUs,
+  SEND_MESSAGE_BUTTON,
+  TEXT_BESIDE_BUTTON,
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
+import { ORG_D_Detail_Schedule } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Schedule"
+import {
+  ArraySectionToRender_Type,
+  ArraySection_KEYS,
+  InnerNavBar_InnerData,
+  InnerNavBar_InnerData_KEYS,
+} from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PST: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "about" },
@@ -40,7 +50,15 @@ export const arraySectionToRender_PST: ArraySectionToRender_Type = [
     [ArraySection_KEYS.PROPS_COMPONENT]: {
       [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: {
         [ContactUsCustomProperties_KEY.TITLE]: "I’m interested in improving",
-        [ContactUsCustomProperties_KEY.DATA]: ["conversation", "Enunciation", "Swallowing", "Expressive Speech", "Receptive Speech", "AAC Device", "Other"],
+        [ContactUsCustomProperties_KEY.DATA]: [
+          "conversation",
+          "Enunciation",
+          "Swallowing",
+          "Expressive Speech",
+          "Receptive Speech",
+          "AAC Device",
+          "Other",
+        ],
       },
       [TEXT_BESIDE_BUTTON.KEY]: "I’m interested in improving",
       [TEXT_BESIDE_BUTTON.IS_LIKE_BUTTON]: true,
@@ -62,7 +80,9 @@ export const arraySectionToRender_PST: ArraySectionToRender_Type = [
     component: ORG_D_Detail_FAQS,
     toNavbar: {
       id: arrayInnerNavBar_PST[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PST[3][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
+      jsx: arrayInnerNavBar_PST[3][
+        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
+      ],
     },
   },
 ]

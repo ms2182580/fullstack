@@ -2,11 +2,11 @@ import {
   ContactUsCustomProperties_KEY,
   ORG_D_Detail_ContactUs,
   TEXT_BESIDE_BUTTON,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_HelpfulWebResources } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_HelpfulWebResources"
-import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_HelpfulWebResources } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_HelpfulWebResources"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_OverviewDetails"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   ArraySectionToRender_Type,
   InnerNavBar_InnerData,

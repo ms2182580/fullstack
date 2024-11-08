@@ -1,17 +1,28 @@
 import ORG_Detail_CC_Karate_Photo_1 from "@/assets/images/org/community-classes/ORG_Detail_CC_Karate_Photo_1.png"
 import ORG_Detail_CC_Karate_Photo_2 from "@/assets/images/org/community-classes/ORG_Detail_CC_Karate_Photo_2.png"
 import ORG_Detail_CC_Karate_Photo_3 from "@/assets/images/org/community-classes/ORG_Detail_CC_Karate_Photo_3.png"
-import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { Layout_MainCardRight_VALUES } from "@/components/org/flow/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { generateRandomNumber } from "@/utils/generateRandomNumber"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
 import { arraySectionToRender_PCC } from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PCC } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_CardRight_PCC = [
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Trial", "Consistent Routine", "Stretching", "Calisthenics", "Punching/Kicking"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Free Trial",
+        "Consistent Routine",
+        "Stretching",
+        "Calisthenics",
+        "Punching/Kicking",
+      ],
     },
 
     typeOfMartialArts: {
@@ -28,13 +39,17 @@ export const DATA_CardRight_PCC = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Japanese Shotokan Karate"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Japanese Shotokan Karate",
+          ],
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           typeOfMartialArts: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Type of Martial Arts",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Japanese Shotokan Karate"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Japanese Shotokan Karate",
+            ],
           },
           agesServed: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
@@ -46,7 +61,11 @@ export const DATA_CardRight_PCC = [
           },
           operationHours: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Mon-Fri: 3PM - 7PM", "Saturday: 9AM-1PM", "Sunday: 10AM-1PM"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Mon-Fri: 3PM - 7PM",
+              "Saturday: 9AM-1PM",
+              "Sunday: 10AM-1PM",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           classDuration: {
@@ -58,7 +77,9 @@ export const DATA_CardRight_PCC = [
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           payment: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$50/class (package deals and private lessons)"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "$50/class (package deals and private lessons)",
+            ],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
@@ -66,11 +87,17 @@ export const DATA_CardRight_PCC = [
           },
           classSize: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Class Size",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["4 - 11 Students", "1 Teacher", "1 ABA Therapist"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "4 - 11 Students",
+              "1 Teacher",
+              "1 ABA Therapist",
+            ],
           },
           classSchedule: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Class Schedule",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Rolling Basis, package of classes/private lessons can be used within anytime within the year"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
+            ],
           },
           additionalCredentials: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional Credentials",
@@ -85,7 +112,8 @@ export const DATA_CardRight_PCC = [
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCC,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCC,
       },
 
@@ -94,7 +122,8 @@ export const DATA_CardRight_PCC = [
           image: ORG_Detail_CC_Karate_Photo_1,
           title: "Integrated Classes",
           rating: generateRandomNumber(4, 5),
-          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
+          review:
+            "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
         },
         {
           image: ORG_Detail_CC_Karate_Photo_2,
@@ -115,8 +144,13 @@ export const DATA_CardRight_PCC = [
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Class", "Occupational Therapist"],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Free Class",
+        "Occupational Therapist",
+      ],
     },
 
     typeOfArt: {
@@ -134,13 +168,17 @@ export const DATA_CardRight_PCC = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Japanese Shotokan Karate"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Japanese Shotokan Karate",
+          ],
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           typeOfMartialArts: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Type of Martial Arts",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Japanese Shotokan Karate"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Japanese Shotokan Karate",
+            ],
           },
           agesServed: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
@@ -152,7 +190,11 @@ export const DATA_CardRight_PCC = [
           },
           operationHours: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Mon-Fri: 3PM - 7PM", "Saturday: 9AM-1PM", "Sunday: 10AM-1PM"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Mon-Fri: 3PM - 7PM",
+              "Saturday: 9AM-1PM",
+              "Sunday: 10AM-1PM",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           classDuration: {
@@ -164,7 +206,9 @@ export const DATA_CardRight_PCC = [
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           payment: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$50/class (package deals and private lessons)"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "$50/class (package deals and private lessons)",
+            ],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
@@ -172,11 +216,17 @@ export const DATA_CardRight_PCC = [
           },
           classSize: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Class Size",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["4 - 11 Students", "1 Teacher", "1 ABA Therapist"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "4 - 11 Students",
+              "1 Teacher",
+              "1 ABA Therapist",
+            ],
           },
           classSchedule: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Class Schedule",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Rolling Basis, package of classes/private lessons can be used within anytime within the year"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
+            ],
           },
           additionalCredentials: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional Credentials",
@@ -191,7 +241,8 @@ export const DATA_CardRight_PCC = [
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCC,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCC,
       },
 
@@ -200,7 +251,8 @@ export const DATA_CardRight_PCC = [
           image: ORG_Detail_CC_Karate_Photo_1,
           title: "Integrated Classes",
           rating: generateRandomNumber(4, 5),
-          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
+          review:
+            "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
         },
         {
           image: ORG_Detail_CC_Karate_Photo_2,
@@ -221,7 +273,9 @@ export const DATA_CardRight_PCC = [
   },
   {
     [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT]: {
-      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [DATA_ORG_KeyNamesForCards_D.HIGHLIGHT],
+      [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: [
+        DATA_ORG_KeyNamesForCards_D.HIGHLIGHT,
+      ],
       [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Free Class"],
     },
 
@@ -240,13 +294,17 @@ export const DATA_CardRight_PCC = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Practice Areas",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Japanese Shotokan Karate"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Japanese Shotokan Karate",
+          ],
         },
 
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           typeOfMartialArts: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Type of Martial Arts",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Japanese Shotokan Karate"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Japanese Shotokan Karate",
+            ],
           },
           agesServed: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Ages Served",
@@ -258,7 +316,11 @@ export const DATA_CardRight_PCC = [
           },
           operationHours: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Operation Hours",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Mon-Fri: 3PM - 7PM", "Saturday: 9AM-1PM", "Sunday: 10AM-1PM"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Mon-Fri: 3PM - 7PM",
+              "Saturday: 9AM-1PM",
+              "Sunday: 10AM-1PM",
+            ],
             [DATA_ORG_KeyNamesForCards_D.DISPLAY_BLOCK]: true,
           },
           classDuration: {
@@ -270,7 +332,9 @@ export const DATA_CardRight_PCC = [
         [DATA_ORG_KeyNamesForCards_D.RIGHT]: {
           payment: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Payment",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["$50/class (package deals and private lessons)"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "$50/class (package deals and private lessons)",
+            ],
           },
           setting: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Setting",
@@ -278,11 +342,17 @@ export const DATA_CardRight_PCC = [
           },
           classSize: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Class Size",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["4 - 11 Students", "1 Teacher", "1 ABA Therapist"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "4 - 11 Students",
+              "1 Teacher",
+              "1 ABA Therapist",
+            ],
           },
           classSchedule: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Class Schedule",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Rolling Basis, package of classes/private lessons can be used within anytime within the year"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Rolling Basis, package of classes/private lessons can be used within anytime within the year",
+            ],
           },
           additionalCredentials: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional Credentials",
@@ -297,7 +367,8 @@ export const DATA_CardRight_PCC = [
         },
 
         [DATA_ORG_KeyNamesForCards_D_KEYS.SECTIONS]: arraySectionToRender_PCC,
-        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]: Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
+        [DATA_ORG_KeyNamesForCards_D_KEYS.LAYOUT_MAIN_CARD_RIGHT]:
+          Layout_MainCardRight_VALUES.LIKE_COMMUNITY_CLASSES,
         [DATA_ORG_KeyNamesForCards_D_KEYS.TOOLTIP]: tooltipToRender_PCC,
       },
 
@@ -306,7 +377,8 @@ export const DATA_CardRight_PCC = [
           image: ORG_Detail_CC_Karate_Photo_1,
           title: "Integrated Classes",
           rating: generateRandomNumber(4, 5),
-          review: "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
+          review:
+            "“I attended a local karate class with a positive and energetic atmosphere that made me feel strong and inspired.” ",
         },
         {
           image: ORG_Detail_CC_Karate_Photo_2,

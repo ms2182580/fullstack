@@ -1,11 +1,11 @@
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_OverviewDetails"
 import {
   KEYS_FOR_PROPS,
   ORG_D_Detail_Reviews,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
-import { PVES_General_D_Graphics } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_Graphics"
-import { PVES_General_D_PublicAssistanceApplicants } from "@/components/org/cards_resources/third-page/pves/general/desktop/PVES_General_D_PublicAssistanceApplicants"
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
+import { PVES_General_D_Graphics } from "@/components/org/flow_resources/third-page/pves/general/desktop/PVES_General_D_Graphics"
+import { PVES_General_D_PublicAssistanceApplicants } from "@/components/org/flow_resources/third-page/pves/general/desktop/PVES_General_D_PublicAssistanceApplicants"
 import {
   ArraySectionToRender_Type,
   ArraySection_KEYS,

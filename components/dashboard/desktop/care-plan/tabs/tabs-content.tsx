@@ -1,6 +1,9 @@
 import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
-import { cloneElement, Fragment, isValidElement } from "react"
-import { TabsContentWrapper } from "./styles/tabs-content-wrapper"
+import { cloneElement, isValidElement } from "react"
+import {
+  DataContentComponentWrapper,
+  TabsContentWrapper,
+} from "./styles/tabs-content-wrapper"
 
 export const TabsContent = () => {
   const {
@@ -18,15 +21,16 @@ export const TabsContent = () => {
       {dataTabsStateTABS.map(({ component, props }, index) => {
         const propsToComponent = {
           stateProfileSelectedSBSG1,
-          currentPosition: index,
           ...props,
         }
 
+        const isVisible = index === dataActiveTabsTABS
+
         return (
-          <Fragment key={index}>
+          <DataContentComponentWrapper key={index} isVisible={isVisible}>
             {isValidElement(component) &&
               cloneElement(component, propsToComponent)}
-          </Fragment>
+          </DataContentComponentWrapper>
         )
       })}
     </TabsContentWrapper>

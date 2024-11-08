@@ -5,8 +5,8 @@ import { useORG_CtxShowFiltersDesktop } from "@/context/ORG_CtxShowFiltersDeskto
 import { useORG_Ctx_D_SecondpageFilters } from "@/context/ORG_Ctx_D_SecondpageFilters_Provider"
 import { useRouter } from "next/router.js"
 import { useEffect } from "react"
-import { ORG_M_Results_Header } from "../../cards/second-page/mobile/ORG_M_Results_Header"
-import { ORG_M_Results_MainEntry } from "../../cards/second-page/mobile/ORG_M_Results_MainEntry"
+import { ORG_M_Results_Header } from "../../flow/second-page/mobile/ORG_M_Results_Header"
+import { ORG_M_Results_MainEntry } from "../../flow/second-page/mobile/ORG_M_Results_MainEntry"
 
 export const INDEX_TypedFlow_M = () => {
   let {

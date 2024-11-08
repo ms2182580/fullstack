@@ -1,8 +1,8 @@
 import DEFAULT_SVG from "@/assets/icons/org/second-page/DEFAULT_Button_To_Third_Page.svg"
 import PAT_SVG from "@/assets/icons/org/second-page/PAT_Button_To_Third_Page.svg"
 import PRP_SVG from "@/assets/icons/org/second-page/PRP_Button_To_Third_Page.svg"
-import { MapProperties } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_MapComponent"
-import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { MapProperties } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_MapComponent"
+import { Layout_MainCardRight_VALUES } from "@/components/org/flow/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
 import { Type_FiltersToUI } from "../../DATA_ORG_KeyNamesForFilters_D"
 import {

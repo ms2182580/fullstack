@@ -1,4 +1,4 @@
-import { Layout_MainCardRight_VALUES } from "@/components/org/cards/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
+import { Layout_MainCardRight_VALUES } from "@/components/org/flow/third-page/desktop/styles/ORG_D_Detail_MainCard_RightWrapper"
 import {
   DATA_ORG_KeyNamesForCards_D,
   DATA_ORG_KeyNamesForCards_D_KEYS,

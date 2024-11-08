@@ -3,7 +3,7 @@ import Backup_Image from "@/assets/images/org/backup/backup_image.jpg"
 import {
   All_Layouts_Accepted,
   INDEX_ORG_Search_DWrapper,
-} from "@/components/org/cards/first-page/desktop/styles/INDEX_ORG_Search_DWrapper"
+} from "@/components/org/flow/first-page/desktop/styles/INDEX_ORG_Search_DWrapper"
 import { Highlights_2_D } from "@/components/org/highlights/Highlights_2_D"
 import { Highlights_D } from "@/components/org/highlights/Highlights_D"
 import { StarsRatingReview_D } from "@/components/org/stars-rating-review/desktop/StarsRatingReview_D"

@@ -1,11 +1,11 @@
-import { ORG_D_Detail_ContactUs } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_OverviewDetails } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_OverviewDetails"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
+import { ORG_D_Detail_ContactUs } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_OverviewDetails } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_OverviewDetails"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
 import {
   HEADER_TITLE,
   ORG_D_Detail_Schedule,
-} from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Schedule"
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Schedule"
 import { ArraySectionToRender_Type } from "./InnerNavBar"
 
 export const defaultSectionToRender: ArraySectionToRender_Type = [

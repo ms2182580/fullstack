@@ -6,3 +6,11 @@ export const TabsContentWrapper = styled.div`
 
   background-color: ${NEUTRALS.OFF_WHITE};
 `
+
+type DataContentComponentWrapperProps = {
+  isVisible: boolean
+}
+
+export const DataContentComponentWrapper = styled.div<DataContentComponentWrapperProps>`
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+`

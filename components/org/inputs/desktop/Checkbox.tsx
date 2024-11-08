@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { CheckAllCheckbox_KEYS } from "../../cards/third-page/desktop/ORG_D_Detail_Review_Modal_WriteAReview_Form"
+import { CheckAllCheckbox_KEYS } from "../../flow/third-page/desktop/ORG_D_Detail_Review_Modal_WriteAReview_Form"
 import { CheckboxWrapper } from "./styles/CheckboxWrapper"
 
 export const Checkbox = ({

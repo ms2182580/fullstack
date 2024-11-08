@@ -1,7 +1,13 @@
-import { MapProperties_KEYS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_MapComponent"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
+import { MapProperties_KEYS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_MapComponent"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "../../DATA_ORG_KeyNamesForCards_D"
 import { DATA_PAT_D_KEYS } from "../DATA_PAT_D"
-import { arrayInnerNavBar_PAT, arraySectionToRender_PAT } from "../third-page/desktop/arraySectionToRender"
+import {
+  arrayInnerNavBar_PAT,
+  arraySectionToRender_PAT,
+} from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PAT } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_CardRight_PAT = [
@@ -31,7 +37,12 @@ export const DATA_CardRight_PAT = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           speed: {
@@ -62,7 +73,9 @@ export const DATA_CardRight_PAT = [
           },
           additionalInformation: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional information",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Available in 24 different colors, Advanced control system with full color LCD display... "],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Available in 24 different colors, Advanced control system with full color LCD display... ",
+            ],
           },
         },
 
@@ -101,7 +114,12 @@ export const DATA_CardRight_PAT = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           speed: {
@@ -132,7 +150,9 @@ export const DATA_CardRight_PAT = [
           },
           additionalInformation: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional information",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Available in 24 different colors, Advanced control system with full color LCD display... "],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Available in 24 different colors, Advanced control system with full color LCD display... ",
+            ],
           },
         },
 
@@ -171,7 +191,12 @@ export const DATA_CardRight_PAT = [
       [DATA_ORG_KeyNamesForCards_D.CARD]: {
         [DATA_ORG_KeyNamesForCards_D.WITH_BACKGROUND]: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
         [DATA_ORG_KeyNamesForCards_D.LEFT]: {
           speed: {
@@ -202,7 +227,9 @@ export const DATA_CardRight_PAT = [
           },
           additionalInformation: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Additional information",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Available in 24 different colors, Advanced control system with full color LCD display... "],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Available in 24 different colors, Advanced control system with full color LCD display... ",
+            ],
           },
         },
 

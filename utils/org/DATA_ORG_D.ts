@@ -1,4 +1,4 @@
-import { All_Layouts_Accepted } from "@/components/org/cards/first-page/desktop/styles/INDEX_ORG_Search_DWrapper"
+import { All_Layouts_Accepted } from "@/components/org/flow/first-page/desktop/styles/INDEX_ORG_Search_DWrapper"
 import { DATA_PAA_D } from "./paa/DATA_PCR_D"
 import { DATA_PAT_D } from "./pat/DATA_PAT_D"
 import { DATA_PCC_D } from "./pcc/DATA_PCC_D"

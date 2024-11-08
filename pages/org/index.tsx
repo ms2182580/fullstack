@@ -7,14 +7,14 @@ import { useEffect } from "react"
 
 const INDEX_D_ORG = dynamic(
   () =>
-    import("@/components/org/home/desktop/INDEX_D_ORG").then(
-      (mod) => mod.INDEX_D_ORG
+    import("@/components/org/flow/first-page/desktop").then(
+      (mod) => mod.INDEX_D_ORGHome
     ),
   { ssr: false }
 )
 // const INDEX_D_ORG_Search = dynamic(
 //   () =>
-//     import("../../components/org/home/desktop/INDEX_D_ORG").then(
+//     import("../../components/org/flow/first-page/desktop/INDEX_D_ORG").then(
 //       (mod) => mod.INDEX_D_ORG
 //     ),
 //   { ssr: false }

@@ -1,9 +1,16 @@
-import { ContactUsCustomProperties_KEY, ORG_D_Detail_ContactUs } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_ContactUs"
-import { ORG_D_Detail_FAQS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_FAQS"
-import { ORG_D_Detail_Reviews } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_Reviews"
-import { ORG_D_Detail_AT_WCMD_SimilarProducts } from "@/components/org/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_SimilarProducts"
-import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/org/cards_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_WhereToBuy"
-import { ArraySectionToRender_Type, InnerNavBar_InnerData, InnerNavBar_InnerData_KEYS } from "@/utils/org/third-page/InnerNavBar"
+import {
+  ContactUsCustomProperties_KEY,
+  ORG_D_Detail_ContactUs,
+} from "@/components/org/flow/third-page/desktop/ORG_D_Detail_ContactUs"
+import { ORG_D_Detail_FAQS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_FAQS"
+import { ORG_D_Detail_Reviews } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_Reviews"
+import { ORG_D_Detail_AT_WCMD_SimilarProducts } from "@/components/org/flow_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_SimilarProducts"
+import { ORG_D_Detail_AT_WCMD_WhereToBuy } from "@/components/org/flow_resources/third-page/pat/at-wheelchair-mobility-devices/desktop/ORG_D_Detail_AT_WCMD_WhereToBuy"
+import {
+  ArraySectionToRender_Type,
+  InnerNavBar_InnerData,
+  InnerNavBar_InnerData_KEYS,
+} from "@/utils/org/third-page/InnerNavBar"
 
 export const arrayInnerNavBar_PAT: InnerNavBar_InnerData = [
   { INNER_NAV_BAR_KEY: "about" },
@@ -26,11 +33,14 @@ export const arraySectionToRender_PAT: ArraySectionToRender_Type = [
     name: ORG_D_Detail_ContactUs.name,
     component: ORG_D_Detail_ContactUs,
     props_component: {
-      [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]: "no_display_UI",
+      [ContactUsCustomProperties_KEY.ContactUsCustomProperties_KEY]:
+        "no_display_UI",
     },
     toNavbar: {
       id: arrayInnerNavBar_PAT[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PAT[1][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
+      jsx: arrayInnerNavBar_PAT[1][
+        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
+      ],
     },
   },
   {
@@ -52,7 +62,9 @@ export const arraySectionToRender_PAT: ArraySectionToRender_Type = [
     component: ORG_D_Detail_FAQS,
     toNavbar: {
       id: arrayInnerNavBar_PAT[4][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_KEY],
-      jsx: arrayInnerNavBar_PAT[4][InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE],
+      jsx: arrayInnerNavBar_PAT[4][
+        InnerNavBar_InnerData_KEYS.INNER_NAV_BAR_VALUE
+      ],
     },
   },
 ]

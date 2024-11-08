@@ -1,13 +1,23 @@
-import { MapProperties_KEYS } from "@/components/org/cards/third-page/desktop/ORG_D_Detail_MapComponent"
-import { DATA_ORG_KeyNamesForCards_D, DATA_ORG_KeyNamesForCards_D_KEYS } from "../../DATA_ORG_KeyNamesForCards_D"
-import { arrayInnerNavBar_PAT, arraySectionToRender_PAT } from "../third-page/desktop/arraySectionToRender"
+import { MapProperties_KEYS } from "@/components/org/flow/third-page/desktop/ORG_D_Detail_MapComponent"
+import {
+  DATA_ORG_KeyNamesForCards_D,
+  DATA_ORG_KeyNamesForCards_D_KEYS,
+} from "../../DATA_ORG_KeyNamesForCards_D"
+import {
+  arrayInnerNavBar_PAT,
+  arraySectionToRender_PAT,
+} from "../third-page/desktop/arraySectionToRender"
 import { tooltipToRender_PAT } from "../third-page/desktop/tooltipToRender"
 
 export const DATA_SDAT_D_CardRight = [
   {
     accessibilityFeatures: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "accessibility features",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Text-to-speech (TTS)",
+        "Speech-to-text (STT)",
+        "Screen magnification",
+      ],
     },
     platform: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "platform compatibility",
@@ -15,7 +25,10 @@ export const DATA_SDAT_D_CardRight = [
     },
     support: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Online documentation",
+        "Community Forums",
+      ],
     },
     payMethod: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
@@ -27,20 +40,36 @@ export const DATA_SDAT_D_CardRight = [
       card: {
         withBackground: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
         left: {
           accessibilityFeatures: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Text-to-speech (TTS)",
+              "Speech-to-text (STT)",
+              "Screen magnification",
+            ],
           },
           platform: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Windows", "Android", "Linux"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Windows",
+              "Android",
+              "Linux",
+            ],
           },
           support: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Online documentation",
+              "Community Forums",
+            ],
           },
           payMethod: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
@@ -50,11 +79,18 @@ export const DATA_SDAT_D_CardRight = [
         right: {
           inputMethods: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Keyboard input",
+              "Mouse Input",
+              "Gesture Input",
+            ],
           },
           platform: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Customizable settings",
+              "Adaptive interfaces",
+            ],
           },
         },
 
@@ -70,7 +106,11 @@ export const DATA_SDAT_D_CardRight = [
   {
     accessibilityFeatures: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Text-to-speech (TTS)",
+        "Speech-to-text (STT)",
+        "Screen magnification",
+      ],
     },
     platform: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
@@ -78,7 +118,10 @@ export const DATA_SDAT_D_CardRight = [
     },
     support: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Online documentation",
+        "Community Forums",
+      ],
     },
     payMethod: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
@@ -90,13 +133,22 @@ export const DATA_SDAT_D_CardRight = [
       card: {
         withBackground: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
 
         left: {
           accessibilityFeatures: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Text-to-speech (TTS)",
+              "Speech-to-text (STT)",
+              "Screen magnification",
+            ],
           },
           platform: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
@@ -104,7 +156,10 @@ export const DATA_SDAT_D_CardRight = [
           },
           support: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Online documentation",
+              "Community Forums",
+            ],
           },
           payMethod: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
@@ -114,11 +169,18 @@ export const DATA_SDAT_D_CardRight = [
         right: {
           inputMethods: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Keyboard input",
+              "Mouse Input",
+              "Gesture Input",
+            ],
           },
           platform: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Customizable settings",
+              "Adaptive interfaces",
+            ],
           },
         },
 
@@ -137,7 +199,11 @@ export const DATA_SDAT_D_CardRight = [
   {
     accessibilityFeatures: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Text-to-speech (TTS)",
+        "Speech-to-text (STT)",
+        "Screen magnification",
+      ],
     },
     platform: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
@@ -145,7 +211,10 @@ export const DATA_SDAT_D_CardRight = [
     },
     support: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
-      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
+      [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+        "Online documentation",
+        "Community Forums",
+      ],
     },
     payMethod: {
       [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
@@ -157,13 +226,22 @@ export const DATA_SDAT_D_CardRight = [
       card: {
         withBackground: {
           [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Diagnosis Served",
-          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Cognitive", "Learning", "Mobility", "Physical"],
+          [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+            "Cognitive",
+            "Learning",
+            "Mobility",
+            "Physical",
+          ],
         },
 
         left: {
           accessibilityFeatures: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Accessibility features",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Text-to-speech (TTS)", "Speech-to-text (STT)", "Screen magnification"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Text-to-speech (TTS)",
+              "Speech-to-text (STT)",
+              "Screen magnification",
+            ],
           },
           platform: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Platform compatibility",
@@ -171,7 +249,10 @@ export const DATA_SDAT_D_CardRight = [
           },
           support: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Support",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Online documentation", "Community Forums"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Online documentation",
+              "Community Forums",
+            ],
           },
           payMethod: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Pay Method",
@@ -181,11 +262,18 @@ export const DATA_SDAT_D_CardRight = [
         right: {
           inputMethods: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "Input Methods",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Keyboard input", "Mouse Input", "Gesture Input"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Keyboard input",
+              "Mouse Input",
+              "Gesture Input",
+            ],
           },
           platform: {
             [DATA_ORG_KeyNamesForCards_D.KEY_NAME]: "User Customization",
-            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: ["Customizable settings", "Adaptive interfaces"],
+            [DATA_ORG_KeyNamesForCards_D.VALUE_NAME]: [
+              "Customizable settings",
+              "Adaptive interfaces",
+            ],
           },
         },
 
