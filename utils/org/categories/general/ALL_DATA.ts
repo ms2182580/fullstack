@@ -311,9 +311,9 @@ export const enum CHAT_AI_ENUM {
 
 export type CHAT_AI_VALUES = keyof typeof CHAT_AI_ENUM | null
 
-type ALL_DATA_Type = {
-  [value in NamesCategories_KEY | string]: {
-    [DATA_ORG_KeyNamesForCards_D_KEYS.CATEGORY]: NamesCategories_KEY | string
+export type ALL_DATA_ORG_Type = {
+  [value in NamesCategories_KEY]: {
+    [DATA_ORG_KeyNamesForCards_D_KEYS.CATEGORY]: NamesCategories_KEY
     [DATA_ORG_KeyNamesForCards_D_KEYS.SUB_CATEGORY]: string[]
 
     [SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?: {
@@ -364,8 +364,8 @@ export const namesCategoriesOrder = [
 ]
 
 // * The actual implementation on the UI rely on the order of this object
-export const ALL_DATA: ALL_DATA_Type = {
-  [NamesCategories_KEY["AGENCIES"]]: {
+export const ALL_DATA: ALL_DATA_ORG_Type = {
+  Agencies: {
     CATEGORY: NamesCategories_KEY["AGENCIES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["AGENCIES"]]
@@ -381,7 +381,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["ASSISTIVE SOFTWARE"]]: {
+  "Assistive Software": {
     CATEGORY: NamesCategories_KEY["ASSISTIVE SOFTWARE"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["ASSISTIVE SOFTWARE"]]
@@ -403,7 +403,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"]]: {
+  "Assistive technology hardware": {
     CATEGORY: NamesCategories_KEY["ASSISTIVE TECHNOLOGY HARDWARE"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[
@@ -430,7 +430,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["CAMPS"]]: {
+  Camps: {
     CATEGORY: NamesCategories_KEY["CAMPS"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["CAMPS"]]
@@ -446,7 +446,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["LEGAL RESOURCES"]]: {
+  "Legal resources": {
     CATEGORY: NamesCategories_KEY["LEGAL RESOURCES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["LEGAL RESOURCES"]]
@@ -464,7 +464,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"]]: {
+  "Community Inclusion & Classes": {
     CATEGORY: NamesCategories_KEY["COMMUNITY INCLUSION & CLASSES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[
@@ -482,7 +482,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["FOUNDATIONS"]]: {
+  Foundations: {
     CATEGORY: NamesCategories_KEY["FOUNDATIONS"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["FOUNDATIONS"]]
@@ -493,7 +493,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]]: {
+  "Mental health providers & services": {
     CATEGORY: NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[
@@ -512,7 +512,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["PHYSICIANS"]]: {
+  Physicians: {
     CATEGORY: NamesCategories_KEY["PHYSICIANS"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["PHYSICIANS"]]
@@ -528,7 +528,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["RESIDENTIAL RESOURCES"]]: {
+  "Residential Resources": {
     CATEGORY: NamesCategories_KEY["RESIDENTIAL RESOURCES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["RESIDENTIAL RESOURCES"]]
@@ -546,7 +546,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"]]: {
+  "Schools & Educational Services": {
     CATEGORY: NamesCategories_KEY["SCHOOLS & EDUCATIONAL SERVICES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[
@@ -563,7 +563,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["THERAPEUTIC SERVICES"]]: {
+  "Therapeutic Services": {
     CATEGORY: NamesCategories_KEY["THERAPEUTIC SERVICES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["THERAPEUTIC SERVICES"]]
@@ -581,7 +581,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["VOCATIONAL RESOURCES"]]: {
+  "Vocational Resources": {
     CATEGORY: NamesCategories_KEY["VOCATIONAL RESOURCES"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["VOCATIONAL RESOURCES"]]
@@ -599,7 +599,7 @@ export const ALL_DATA: ALL_DATA_Type = {
     },
   },
 
-  [NamesCategories_KEY["OTHER"]]: {
+  Other: {
     CATEGORY: NamesCategories_KEY["OTHER"],
     SUB_CATEGORY: Object.values(
       NamesSubcategories_KEY[NamesCategories_KEY["OTHER"]]

@@ -1,10 +1,15 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons/index"
+import { ALL_DATA_ORG_Type } from "@/utils/org/categories/general/ALL_DATA"
 import { useScrollHorizontal } from "@/utils/useScrollHorizontal"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import {
   INDEX_D_HorizontalNavigationNavWrapper,
   LI_Wrapper,
 } from "./styles/index-wrapper"
+
+type Props = {
+  dataToDisplay: ALL_DATA_ORG_Type
+} & any
 
 export const INDEX_D_HorizontalNavigationNav = ({
   dataToDisplay,
@@ -12,20 +17,7 @@ export const INDEX_D_HorizontalNavigationNav = ({
   handleShowOneCard,
   singleCardIsSelected,
   matchNameState,
-}) => {
-  // const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
-  // const [matchNameState, setMatchNameState] = useState("All")
-
-  // const handleShowAll = () => {
-  //   setSingleCardIsSelected(false)
-  //   setMatchNameState("All")
-  // }
-
-  // const handleShowOneCard = (e) => {
-  //   setSingleCardIsSelected(true)
-  //   setMatchNameState(e.target.dataset.name)
-  // }
-
+}: Props) => {
   const refOfORGSelections = useRef<HTMLUListElement | null>(null)
 
   const { moveToLeft, moveToRight, stateToCss, setListRef } =
@@ -55,7 +47,6 @@ export const INDEX_D_HorizontalNavigationNav = ({
         >
           <p>All</p>
         </LI_Wrapper>
-
         {Object.values(dataToDisplay).map(({ CATEGORY }: any, index) => {
           return (
             <LI_Wrapper
@@ -80,3 +71,33 @@ export const INDEX_D_HorizontalNavigationNav = ({
     </INDEX_D_HorizontalNavigationNavWrapper>
   )
 }
+
+type UseHorizontalNavigationNavLogic_Return = {
+  singleCardIsSelected: boolean
+  matchNameState: string
+  handleShowAll: () => void
+  handleShowOneCard: (e: any) => void
+}
+
+export const useHorizontalNavigationNavLogic =
+  (): UseHorizontalNavigationNavLogic_Return => {
+    const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
+    const [matchNameState, setMatchNameState] = useState("All")
+
+    const handleShowAll = () => {
+      setSingleCardIsSelected(false)
+      setMatchNameState("All")
+    }
+
+    const handleShowOneCard = (e) => {
+      setSingleCardIsSelected(true)
+      setMatchNameState(e.target.dataset.name)
+    }
+
+    return {
+      singleCardIsSelected,
+      matchNameState,
+      handleShowAll,
+      handleShowOneCard,
+    }
+  }

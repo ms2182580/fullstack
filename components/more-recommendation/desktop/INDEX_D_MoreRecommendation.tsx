@@ -1,7 +1,7 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
 import More_recommended from "@/assets/images/recommended/more-recommended.png"
+import { LI_Wrapper } from "@/components/horizontal-navigation-nav/styles/index-wrapper"
 import { OrgCardsFirst } from "@/components/org/flow/first-page/desktop/org-cards-first"
-import { LI_Wrapper } from "@/components/org/flow/first-page/desktop/styles/index-wrapper"
 import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "@/components/ui/heading_body_text/HeaderFonts"

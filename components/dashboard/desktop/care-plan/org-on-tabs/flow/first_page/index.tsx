@@ -1,28 +1,27 @@
-import UnderConstructionImagePurple from "@/assets/images/UnderConstructionImagePurple.png"
-import { INDEX_D_HorizontalNavigationNav } from "@/components/horizontal-navigation-nav"
+import {
+  INDEX_D_HorizontalNavigationNav,
+  useHorizontalNavigationNavLogic,
+} from "@/components/horizontal-navigation-nav"
+import { OrgCardsList } from "@/components/org/flow/first-page/desktop/org-cards-list"
 import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
-import Image from "next/image"
-import { useState } from "react"
 import { INDEX_D_OrgOnTabsFirstPageWrapper } from "./styles/index-wrapper"
 
 /* 
 !FH0 Keep creating all the UI here: 
 check the file "@/components/org/flow/first-page/desktop/index.tsx" to make a reusable component of the rest of the UI
+
+- Make the "INDEX_D_HorizontalNavigationNav" a hook to use it
+
+- Fix the visual bug when the "Create care plan" is toggled off
 */
 
 export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }) => {
-  const [singleCardIsSelected, setSingleCardIsSelected] = useState(false)
-  const [matchNameState, setMatchNameState] = useState("All")
-
-  const handleShowAll = () => {
-    setSingleCardIsSelected(false)
-    setMatchNameState("All")
-  }
-
-  const handleShowOneCard = (e) => {
-    setSingleCardIsSelected(true)
-    setMatchNameState(e.target.dataset.name)
-  }
+  const {
+    singleCardIsSelected,
+    matchNameState,
+    handleShowAll,
+    handleShowOneCard,
+  } = useHorizontalNavigationNavLogic()
 
   return (
     <INDEX_D_OrgOnTabsFirstPageWrapper>
@@ -36,9 +35,11 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }) => {
         matchNameState={matchNameState}
       />
 
-      <Image
-        src={UnderConstructionImagePurple}
-        alt="under construction image"
+      <OrgCardsList
+        dataToDisplay={ALL_DATA}
+        allBackendData={allBackendData}
+        matchNameState={matchNameState}
+        singleCardIsSelected={singleCardIsSelected}
       />
     </INDEX_D_OrgOnTabsFirstPageWrapper>
   )
