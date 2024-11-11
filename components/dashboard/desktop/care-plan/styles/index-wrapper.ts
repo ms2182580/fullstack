@@ -45,18 +45,11 @@ export const INDEX_D_CarePlanWrapper = styled.div<Props>`
   ${({ isCreatePlanVisibible }) =>
     !isCreatePlanVisibible &&
     css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      grid-template-columns: auto;
 
-      & > :nth-child(1) {
-        width: 100%;
-      }
-
-      & > :nth-child(2) {
-        width: 100%;
-      }
+      grid-template-areas:
+        "editorHeader"
+        "tabs";
 
       & > :nth-child(3) {
         display: none;
