@@ -9,7 +9,7 @@ import {
 
 type Props = {
   dataToDisplay: ALL_DATA_ORG_Type
-} & any
+} & UseHorizontalNavigationNavLogic_Return
 
 export const INDEX_D_HorizontalNavigationNav = ({
   dataToDisplay,
@@ -72,7 +72,7 @@ export const INDEX_D_HorizontalNavigationNav = ({
   )
 }
 
-type UseHorizontalNavigationNavLogic_Return = {
+export type UseHorizontalNavigationNavLogic_Return = {
   singleCardIsSelected: boolean
   matchNameState: string
   handleShowAll: () => void

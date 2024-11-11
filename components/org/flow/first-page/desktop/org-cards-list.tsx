@@ -1,3 +1,4 @@
+import { UseHorizontalNavigationNavLogic_Return } from "@/components/horizontal-navigation-nav"
 import {
   ALL_DATA_ORG_Type,
   NamesCategories_KEY,
@@ -8,8 +9,8 @@ import { OrgCardsFirst } from "./org-cards-first"
 type Props = {
   dataToDisplay: ALL_DATA_ORG_Type
   allBackendData: object[] | any
-  singleCardIsSelected: boolean
-  matchNameState: string
+  singleCardIsSelected: UseHorizontalNavigationNavLogic_Return["singleCardIsSelected"]
+  matchNameState: UseHorizontalNavigationNavLogic_Return["matchNameState"]
 }
 
 export const OrgCardsList = ({
