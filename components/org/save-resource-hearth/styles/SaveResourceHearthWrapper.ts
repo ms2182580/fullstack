@@ -1,4 +1,4 @@
-import { COLORS_TYPE } from "@/assets/Colors"
+import { COLORS_TYPE } from "@/utils/colors"
 import styled, { css, FlattenSimpleInterpolation } from "styled-components"
 
 export type SaveResourceHearthWrapper_SVGStyles_Type = {

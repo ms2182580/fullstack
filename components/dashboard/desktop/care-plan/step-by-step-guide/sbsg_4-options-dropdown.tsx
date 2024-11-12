@@ -15,10 +15,6 @@ export const SBSG_4OptionsDropdown = () => {
     }
   }
 
-  // useEffect(() => {
-  //   console.log("shouldShow:", shouldShow)
-  // }, [shouldShow])
-
   const theDivContainer = useRef<HTMLDivElement>(null)
   const theDropdownSelect = useRef<HTMLDivElement>(null)
 
@@ -43,15 +39,15 @@ export const SBSG_4OptionsDropdown = () => {
 
       <div ref={theDropdownSelect}>
         <p tabIndex={0}>
-          <SVGUserCircle /> View profile
+          <SVGUserCircle /> <span>View profile</span>
         </p>
         <p tabIndex={0}>
           <SVGTrash />
-          Remove suggestion
+          <span>Remove suggestion</span>
         </p>
         <p tabIndex={0}>
           <SVGArrowClockWise />
-          Regenerate results
+          <span>Regenerate results</span>
         </p>
       </div>
     </SBSG_4OptionsDropdownWrapper>

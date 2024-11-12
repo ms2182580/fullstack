@@ -21,6 +21,8 @@ type Props = {
   category: string
   allSubcategories: string[]
   allBackendData: any
+  handleMoveToSecondPage?: () => void
+  handleMoveToThirdPage?: () => void
 }
 
 export const OrgCardsFirst = ({
@@ -30,6 +32,8 @@ export const OrgCardsFirst = ({
   category,
   allSubcategories,
   allBackendData,
+  handleMoveToSecondPage,
+  handleMoveToThirdPage,
 }: Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 

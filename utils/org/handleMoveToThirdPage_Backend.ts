@@ -31,7 +31,7 @@ export const handleMoveToThirdPage_Backend = ({
     event.type === "click" ||
     (event.type === "keydown" && (event as KeyboardEvent).code === "Enter")
   ) {
-    let gettingThirdPageData = secondpageDataORG_Backend
+    const gettingThirdPageData = secondpageDataORG_Backend
       ? secondpageDataORG_Backend
       : getAllData({
           whoToFound: category,

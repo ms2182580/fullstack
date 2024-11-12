@@ -17,7 +17,7 @@ const PROPS = {
   MAX_WIDTH: "400px",
 }
 
-export const INDEX_ORG_Search_DWrapper = styled.div<INDEX_ORG_Search_DWrapper_Props>`
+export const INDEX_ORG_Search_DWrapper = styled.article<INDEX_ORG_Search_DWrapper_Props>`
   display: flex;
   flex-direction: column;
   gap: 40px;
