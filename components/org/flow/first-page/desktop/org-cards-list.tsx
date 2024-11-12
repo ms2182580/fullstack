@@ -3,28 +3,33 @@ import {
   ALL_DATA_ORG_Type,
   NamesCategories_KEY,
 } from "@/utils/org/categories/general/ALL_DATA"
-import { OrgCardsFirst } from "./org-cards-first"
+import { OrgCardsFirst, OrgCardsFirst_Props } from "./org-cards-first"
 
 type Props = {
   dataToDisplay: ALL_DATA_ORG_Type
   allBackendData: object[] | any
   singleCardIsSelected: UseHorizontalNavigationNavLogic_Return["singleCardIsSelected"]
   matchNameState: UseHorizontalNavigationNavLogic_Return["matchNameState"]
-}
+} & Pick<
+  OrgCardsFirst_Props,
+  "handleMoveToSecondPage" | "handleMoveToThirdPage"
+>
 
 export const OrgCardsList = ({
   dataToDisplay,
   allBackendData,
   singleCardIsSelected,
   matchNameState,
+  handleMoveToSecondPage,
+  handleMoveToThirdPage,
 }: Props) => {
+  console.log(handleMoveToSecondPage, handleMoveToThirdPage)
   return (
     <>
       {Object.values(dataToDisplay).map(({ CATEGORY, SUB_CATEGORY }: any) => {
         if (singleCardIsSelected === false) {
           return (
             <OrgCardsFirst
-              key={CATEGORY}
               category={CATEGORY}
               allSubcategories={SUB_CATEGORY}
               allBackendData={
@@ -32,6 +37,8 @@ export const OrgCardsList = ({
                   NamesCategories_KEY["MENTAL HEALTH PROVIDERS & SERVICES"]
                 ]
               }
+              handleMoveToSecondPage={handleMoveToSecondPage}
+              handleMoveToThirdPage={handleMoveToThirdPage}
             />
           )
         }
@@ -42,7 +49,6 @@ export const OrgCardsList = ({
         ) {
           return (
             <OrgCardsFirst
-              key={CATEGORY}
               category={CATEGORY}
               allSubcategories={SUB_CATEGORY}
               allBackendData={

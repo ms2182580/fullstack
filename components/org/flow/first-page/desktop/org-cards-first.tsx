@@ -9,10 +9,10 @@ import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPa
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { INDEX_ORG_Search_DWrapper } from "./styles/INDEX_ORG_Search_DWrapper"
 
-type Props = {
+export type OrgCardsFirst_Props = {
   positionInArray?: number
   theData?: object[]
   someLayoutSpecial?: any
@@ -34,7 +34,7 @@ export const OrgCardsFirst = ({
   allBackendData,
   handleMoveToSecondPage,
   handleMoveToThirdPage,
-}: Props) => {
+}: OrgCardsFirst_Props) => {
   const [howMuchDisplay, setHowMuchDisplay] = useState(1)
 
   useEffect(() => {
@@ -52,6 +52,21 @@ export const OrgCardsFirst = ({
 
   const { setThirdpageDataORG: setThirdpageDataORG_Backend }: any =
     useORG_Ctx_D_ThirdpageData_Backend()
+
+  const handleToMoveView = useMemo(() => {
+    const moveToSecondPage = handleMoveToSecondPage
+      ? handleMoveToSecondPage
+      : handleMoveToSecondPage_Backend
+
+    const moveToThirdPage = handleMoveToThirdPage
+      ? handleMoveToThirdPage
+      : handleMoveToThirdPage_Backend
+
+    return {
+      moveToSecondPage,
+      moveToThirdPage,
+    }
+  }, [])
 
   if (dataComesFromBackend) {
     return (
@@ -103,7 +118,7 @@ export const OrgCardsFirst = ({
                         <button
                           data-testid={`${toDataTestId_2Page}_${toDataTestId_3Page}`}
                           onClick={(event) =>
-                            handleMoveToThirdPage_Backend({
+                            handleToMoveView.moveToThirdPage({
                               event,
                               raw: allBackendData[indexBackend],
                               indexSubcategory: index,
@@ -125,7 +140,7 @@ export const OrgCardsFirst = ({
                 <button
                   data-testid={toDataTestId_2Page}
                   onClick={(event) =>
-                    handleMoveToSecondPage_Backend({
+                    handleToMoveView.moveToSecondPage({
                       event,
                       category,
                       theSubcategory: allSubcategories[index],

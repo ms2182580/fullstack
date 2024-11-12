@@ -4,7 +4,7 @@ import IdentificationCardSVG from "@/assets/icons/org/search-input/Identificatio
 import { useSessionStorage_typedFlow } from "@/context/Ctx_sessionStorage_typedFlow_Provider"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/navigation"
-import { Fragment, ReactElement } from "react"
+import { Fragment } from "react"
 import {
   ORG_D_SearchComponent_LabelInput,
   ORG_D_SearchComponent_LabelInput_Type,
@@ -34,11 +34,17 @@ const searchComponentData: Type_Data = [
   },
 ]
 
-export const ORG_D_SearchComponent = (): ReactElement => {
+type Props = {
+  handleMoveView?: () => void
+}
+
+export const ORG_D_SearchComponent = ({ handleMoveView }: Props) => {
   const { push } = useRouter()
 
   const pushToTypedFlow = () => {
-    push(`${ALL_ROUTES.ORG}/${ALL_ROUTES["TYPED-FLOW"]}`)
+    return handleMoveView
+      ? handleMoveView()
+      : push(`/${ALL_ROUTES.ORG}/${ALL_ROUTES["TYPED-FLOW"]}`)
   }
 
   const {

@@ -3,7 +3,9 @@ import {
   useHorizontalNavigationNavLogic,
 } from "@/components/horizontal-navigation-nav"
 import { OrgCardsList } from "@/components/org/flow/first-page/desktop/org-cards-list"
+import { ORG_D_SearchComponent } from "@/components/org/inputs/desktop/ORG_D_SearchComponent"
 import { ALL_DATA } from "@/utils/org/categories/general/ALL_DATA"
+import { useMemo } from "react"
 import { INDEX_D_OrgOnTabsFirstPageWrapper } from "./styles/index-wrapper"
 
 /* 
@@ -23,9 +25,33 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }) => {
     handleShowOneCard,
   } = useHorizontalNavigationNavLogic()
 
+  const handleMoveView = useMemo(() => {
+    const handleMoveToSecondPageORG = () => {
+      return
+    }
+
+    const handleMoveToThirdPageORG = () => {
+      return
+    }
+
+    const handleMoveToTypedFlowORG = () => {
+      return
+    }
+
+    return {
+      handleMoveToSecondPageORG,
+      handleMoveToThirdPageORG,
+      handleMoveToTypedFlowORG,
+    }
+  }, [])
+
   return (
     <INDEX_D_OrgOnTabsFirstPageWrapper>
       <h1>More recommendations</h1>
+
+      <ORG_D_SearchComponent
+        handleMoveView={handleMoveView.handleMoveToTypedFlowORG}
+      />
 
       <INDEX_D_HorizontalNavigationNav
         dataToDisplay={ALL_DATA}
@@ -40,6 +66,8 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }) => {
         allBackendData={allBackendData}
         matchNameState={matchNameState}
         singleCardIsSelected={singleCardIsSelected}
+        handleMoveToSecondPage={handleMoveView.handleMoveToSecondPageORG}
+        handleMoveToThirdPage={handleMoveView.handleMoveToThirdPageORG}
       />
     </INDEX_D_OrgOnTabsFirstPageWrapper>
   )

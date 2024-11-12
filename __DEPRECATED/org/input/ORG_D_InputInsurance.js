@@ -1,9 +1,9 @@
+import ORGDesktop_InsuranceIcon from "@/assets/icons/ORGDesktop_InsuranceIcon.png"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { useORG_InputCtx } from "@/context/ORG_Input"
+import { useShouldTab } from "@/utils/ORG_shouldTab"
 import Image from "next/legacy/image"
 import { useEffect, useRef, useState } from "react"
-import ORGDesktop_InsuranceIcon from "../../../../assets/icons/ORGDesktop_InsuranceIcon.png"
-import { useORG_InputCtx } from "../../../../context/ORG_Input"
-import { useShouldTab } from "../../../../utils/ORG_shouldTab"
-import { P } from "../../../ui/heading_body_text/DesktopMobileFonts"
 import { ORG_D_DropdownSuggestionComponent } from "./ORG_D_DropdownSuggestionComponent"
 import { ORG_D_DropdownSuggestionWrapper } from "./styles/ORG_D_DropdownSuggestionWrapper"
 

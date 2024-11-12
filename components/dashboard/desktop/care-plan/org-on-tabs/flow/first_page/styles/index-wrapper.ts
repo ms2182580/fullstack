@@ -9,8 +9,4 @@ export const INDEX_D_OrgOnTabsFirstPageWrapper = styled.div`
   & > :nth-child(2) {
     margin-top: calc(8px * 4);
   }
-
-  & > :nth-child(3) {
-    margin: auto;
-  }
 `
