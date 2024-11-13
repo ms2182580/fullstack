@@ -23,7 +23,6 @@ export const OrgCardsList = ({
   handleMoveToSecondPage,
   handleMoveToThirdPage,
 }: Props) => {
-  console.log(handleMoveToSecondPage, handleMoveToThirdPage)
   return (
     <>
       {Object.values(dataToDisplay).map(({ CATEGORY, SUB_CATEGORY }: any) => {

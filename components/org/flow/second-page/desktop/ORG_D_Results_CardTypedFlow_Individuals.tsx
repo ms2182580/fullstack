@@ -92,7 +92,6 @@ export const ORG_D_Results_CardTypedFlow_Individuals = ({
           onClick={(event) => {
             setReachTypedFlow(false)
             handleMoveToSecondPage_Backend({
-              event,
               category,
               theSubcategory: allSubcategories[0],
               raw: allBackendData,

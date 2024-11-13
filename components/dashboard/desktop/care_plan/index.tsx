@@ -1,7 +1,7 @@
 import { CtxCreatePlanData_Provider } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { useCtxCreatePlanVisibility } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
 import { Editor_Header } from "./editor/Editor_Header"
-import { INDEX_D_CarePlan_StepByStepGuide } from "./step-by-step-guide"
+import { INDEX_D_CarePlan_StepByStepGuide } from "./step_by_step_guide"
 import { INDEX_D_CarePlanWrapper } from "./styles/index-wrapper"
 import { INDEX_D_CarePlanTabs } from "./tabs"
 

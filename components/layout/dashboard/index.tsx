@@ -40,11 +40,9 @@ export const Layout_Dashboard = ({ title, children }) => {
         <meta name="description" content="inclusive - website" />
       </Head>
 
-      <Layout_DashboardWrapper>
-        <CtxCreatePlanVisibility_Provider>
-          {layoutPlusChildren}
-        </CtxCreatePlanVisibility_Provider>
-      </Layout_DashboardWrapper>
+      <CtxCreatePlanVisibility_Provider>
+        <Layout_DashboardWrapper>{layoutPlusChildren}</Layout_DashboardWrapper>
+      </CtxCreatePlanVisibility_Provider>
     </>
   )
 }

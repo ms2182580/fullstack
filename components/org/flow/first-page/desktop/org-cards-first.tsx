@@ -139,9 +139,8 @@ export const OrgCardsFirst = ({
 
                 <button
                   data-testid={toDataTestId_2Page}
-                  onClick={(event) =>
+                  onClick={() =>
                     handleToMoveView.moveToSecondPage({
-                      event,
                       category,
                       theSubcategory: allSubcategories[index],
                       raw: allBackendData,

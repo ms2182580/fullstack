@@ -5,8 +5,8 @@ import {
 } from "@/utils/useDynamicComponentToRender"
 import { cloneElement, isValidElement } from "react"
 import { INDEX_D_AIChat } from "./ai-chat"
-import { INDEX_D_CarePlan } from "./care-plan"
-import { INDEX_D_OrgOnTab } from "./care-plan/org-on-tabs"
+import { INDEX_D_CarePlan } from "./care_plan"
+import { INDEX_D_OrgOnTab } from "./care_plan/org_on_tabs"
 import { INDEX_D_Documents } from "./documents"
 import { INDEX_D_Saved } from "./saved"
 

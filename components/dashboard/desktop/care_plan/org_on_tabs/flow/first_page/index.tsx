@@ -17,7 +17,11 @@ check the file "@/components/org/flow/first-page/desktop/index.tsx" to make a re
 - Fix the visual bug when the "Create care plan" is toggled off
 */
 
-export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }) => {
+type Props = {
+  allBackendData?: object[]
+}
+
+export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }: Props) => {
   const {
     singleCardIsSelected,
     matchNameState,

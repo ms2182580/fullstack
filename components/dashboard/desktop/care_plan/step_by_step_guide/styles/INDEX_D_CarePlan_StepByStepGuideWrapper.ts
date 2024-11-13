@@ -9,7 +9,7 @@ type Props = {
 }
 
 export const INDEX_D_CarePlan_StepByStepGuideWrapper = styled.aside<Props>`
-  margin-inline: 24px;
+  margin-left: clamp(1px, 10.602vw - 104.672px, 24px);
 
   height: fit-content;
 

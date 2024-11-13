@@ -1,5 +1,4 @@
 import { QUERY_BREADCRUMBS } from "@/components/org/flow/second-page/desktop/ORG_D_Results_Breadcrumbs"
-import { MouseEvent } from "react"
 import { ALL_ROUTES } from "../ALL_ROUTES"
 import { DATA_ORG_D_TYPES_KEYS } from "./DATA_ORG_D"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "./DATA_ORG_KeyNamesForCards_D"
@@ -8,7 +7,6 @@ import { checkStringToURL } from "./checkStringToURL"
 import { SPECIFIC_DATA_SECOND_PAGE } from "./second-page/desktop/specificData"
 
 type Props = {
-  event: MouseEvent
   category: string
   theSubcategory: string
   raw?: any
@@ -17,7 +15,6 @@ type Props = {
 }
 
 export const handleMoveToSecondPage_Backend = ({
-  event,
   category,
   theSubcategory,
   raw,

@@ -122,8 +122,12 @@ export const INDEX_ORG_Search_DWrapper = styled.article<INDEX_ORG_Search_DWrappe
           align-items: center;
           justify-content: center;
 
-          gap: 16px;
+          gap: 8px;
           cursor: pointer;
+
+          & > :nth-child(1) {
+            flex-shrink: 0;
+          }
         }
       }
     }

@@ -25,12 +25,16 @@ export const ORG_D_SearchComponent_LabelInputWrapper = styled.label<Props>`
   & > :nth-child(2) {
     position: relative;
 
+    display: flex;
+
     & > :nth-child(1) {
       position: absolute;
       top: 50%;
-      left: 4%;
+      left: 24px;
 
       transform: translate(-50%, -50%);
+
+      flex-shrink: 0;
 
       & > * {
         fill: black;
@@ -38,6 +42,8 @@ export const ORG_D_SearchComponent_LabelInputWrapper = styled.label<Props>`
     }
 
     & > :nth-child(2) {
+      flex-grow: 1;
+
       border-radius: 8px;
 
       border: 1px solid #908395;

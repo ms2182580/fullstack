@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { NavBar_D_WriteAReviewSvg } from "@/assets/icons"
 import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
-import { SBSG3_EditableData_Type } from "@/components/dashboard/desktop/care-plan/step-by-step-guide/sbsg_3-editable-data"
+import { SBSG3_EditableData_Type } from "@/components/dashboard/desktop/care_plan/step_by_step_guide/sbsg_3-editable-data"
 import {
   DropdownElementsToSelect_Type,
   InputTags_Props,
