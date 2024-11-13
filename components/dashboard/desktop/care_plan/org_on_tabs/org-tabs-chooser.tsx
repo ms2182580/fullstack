@@ -1,4 +1,4 @@
-import { cloneElement, Fragment, isValidElement } from "react"
+import { cloneElement, Fragment, isValidElement, useEffect } from "react"
 import { ComponentList_Type } from "."
 import { OrgTabsChooserWrapper } from "./styles/org-tabs-chooser-wrapper"
 
@@ -15,6 +15,16 @@ export const OrgTabsChooser = ({
   handleNextComponent,
   allBackendData,
 }: Props) => {
+  useEffect(() => {
+    console.log("🔰")
+
+    /* 
+    !FH0
+    Make this scroll to top work
+    */
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }, [actualComponentShowed])
+
   return (
     <OrgTabsChooserWrapper>
       {componentList.map(({ component, props }, index) => {

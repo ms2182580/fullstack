@@ -19,9 +19,13 @@ check the file "@/components/org/flow/first-page/desktop/index.tsx" to make a re
 
 type Props = {
   allBackendData?: object[]
+  handleNextComponent?: (e) => void
 }
 
-export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }: Props) => {
+export const INDEX_D_OrgOnTabsFirstPage = ({
+  allBackendData,
+  handleNextComponent,
+}: Props) => {
   const {
     singleCardIsSelected,
     matchNameState,
@@ -30,7 +34,11 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ allBackendData }: Props) => {
   } = useHorizontalNavigationNavLogic()
 
   const handleMoveView = useMemo(() => {
-    const handleMoveToSecondPageORG = () => {
+    const handleMoveToSecondPageORG = (e) => {
+      if (handleNextComponent) {
+        handleNextComponent(e)
+      }
+
       return
     }
 

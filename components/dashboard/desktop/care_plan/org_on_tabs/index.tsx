@@ -58,18 +58,19 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
   }
 
   const theData = useFetchData()
-  console.log("theData:", theData)
 
   const [actualComponentShowed, setActualComponentShowed] = useState(0)
 
   const handleNextComponent = (e) => {
-    if (e.type === "click" || e.key === "Enter") {
-      if (
-        actualComponentShowed >= 0 &&
-        actualComponentShowed < componentList.length - 1
-      ) {
-        return setActualComponentShowed((prevState) => prevState + 1)
-      }
+    if (
+      actualComponentShowed >= 0 &&
+      actualComponentShowed < componentList.length - 1
+    ) {
+      /* 
+      !FH Make all validations to pass the data to the second page
+      */
+
+      return setActualComponentShowed((prevState) => prevState + 1)
     }
   }
 
@@ -101,14 +102,3 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
     </INDEX_D_OrgOnTabWrapper>
   )
 }
-
-/* 
-
-import styled from "styled-components"
-
-export const INDEX_D_OrgOnTabsWrapper = styled.div`
-  margin-inline: clamp(16px, 3.855vw - 23.52px, 32px);
-
-  padding-top: calc(8px * 4);
-`
-*/

@@ -21,8 +21,8 @@ export type OrgCardsFirst_Props = {
   category: string
   allSubcategories: string[]
   allBackendData: any
-  handleMoveToSecondPage?: () => void
-  handleMoveToThirdPage?: () => void
+  handleMoveToSecondPage?: (e) => void
+  handleMoveToThirdPage?: (e) => void
 }
 
 export const OrgCardsFirst = ({
@@ -139,15 +139,15 @@ export const OrgCardsFirst = ({
 
                 <button
                   data-testid={toDataTestId_2Page}
-                  onClick={() =>
-                    handleToMoveView.moveToSecondPage({
+                  onClick={() => {
+                    return handleToMoveView.moveToSecondPage({
                       category,
                       theSubcategory: allSubcategories[index],
                       raw: allBackendData,
                       setSecondpageDataORG_Backend,
                       push,
                     })
-                  }
+                  }}
                 >
                   See all (25)
                 </button>

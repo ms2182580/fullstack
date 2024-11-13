@@ -8,8 +8,6 @@ type Props = {
 
 export const INDEX_D_CarePlanWrapper = styled.div<Props>`
   display: grid;
-  /* grid-template-columns: 400px auto; */
-  /* grid-template-columns: minmax(200px, 400px) auto; */
   grid-template-columns: clamp(290px, 26.506vw - 18.32px, 400px) auto;
 
   grid-template-areas:
