@@ -6,6 +6,8 @@ type Props = {
   componentList: ComponentList_Type
   actualComponentShowed: number
   handleNextComponent: (e) => void
+  handlePreviousComponent: (e) => void
+  handleMoveCustom: ({ customMovement }) => void
   allBackendData: object[]
 }
 
@@ -13,11 +15,11 @@ export const OrgTabsChooser = ({
   componentList,
   actualComponentShowed,
   handleNextComponent,
+  handlePreviousComponent,
+  handleMoveCustom,
   allBackendData,
 }: Props) => {
   useEffect(() => {
-    console.log("🔰")
-
     /* 
     !FH0
     Make this scroll to top work
@@ -32,6 +34,8 @@ export const OrgTabsChooser = ({
 
         const propsToComponent = {
           handleNextComponent,
+          handlePreviousComponent,
+          handleMoveCustom,
           allBackendData,
           ...props,
         }

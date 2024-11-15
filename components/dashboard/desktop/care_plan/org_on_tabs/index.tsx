@@ -5,6 +5,8 @@ import { ReactElement, useEffect, useRef, useState } from "react"
 import { INDEX_D_OrgOnTabsFirstPage } from "./flow/first_page"
 import { INDEX_D_OrgOnTabWrapper } from "./styles/index-wrapper"
 // import { INDEX_D_OrgOnTabsWrapper } from "./flow/styles/index-wrapper"
+import { INDEX_D_OrgOnTabsSecondPage } from "./flow/second_page"
+import { INDEX_D_OrgOnTabsThirdPage } from "./flow/third_page"
 import { OrgTabsChooser } from "./org-tabs-chooser"
 
 type Component_Type = ReactElement
@@ -19,18 +21,10 @@ const componentList: ComponentList_Type = [
     component: <INDEX_D_OrgOnTabsFirstPage />,
   },
   {
-    component: (
-      <div style={{ height: "100dvh", border: "2px solid red" }}>
-        Second page
-      </div>
-    ),
+    component: <INDEX_D_OrgOnTabsSecondPage />,
   },
   {
-    component: (
-      <div style={{ height: "100dvh", border: "2px solid green" }}>
-        Third page
-      </div>
-    ),
+    component: <INDEX_D_OrgOnTabsThirdPage />,
   },
 ]
 
@@ -85,6 +79,10 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
     }
   }
 
+  const handleMoveCustom = ({ customMovement }) => {
+    return setActualComponentShowed(customMovement)
+  }
+
   return (
     <INDEX_D_OrgOnTabWrapper ref={theRef} onKeyDown={handleMoveSight}>
       {theData === null ? (
@@ -96,6 +94,8 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
           componentList={componentList}
           actualComponentShowed={actualComponentShowed}
           handleNextComponent={handleNextComponent}
+          handlePreviousComponent={handlePreviousComponent}
+          handleMoveCustom={handleMoveCustom}
           allBackendData={theData}
         />
       )}
