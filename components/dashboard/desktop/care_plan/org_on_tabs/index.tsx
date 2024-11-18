@@ -1,7 +1,7 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { useFetchData } from "@/utils/org/useFetchData"
-import { ReactElement, useEffect, useRef, useState } from "react"
+import { ReactElement, useState } from "react"
 import { INDEX_D_OrgOnTabsFirstPage } from "./flow/first_page"
 import { INDEX_D_OrgOnTabWrapper } from "./styles/index-wrapper"
 // import { INDEX_D_OrgOnTabsWrapper } from "./flow/styles/index-wrapper"
@@ -36,14 +36,6 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
     handleRemoveORGTABS,
     handleAddORGTABS,
   } = useCtxDataCreatePlan().TABS
-
-  const theRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (theRef.current) {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }
-  }, [])
 
   const handleMoveSight = (e) => {
     if (e.key === "Enter") {
@@ -84,7 +76,7 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
   }
 
   return (
-    <INDEX_D_OrgOnTabWrapper ref={theRef} onKeyDown={handleMoveSight}>
+    <INDEX_D_OrgOnTabWrapper onKeyDown={handleMoveSight}>
       {theData === null ? (
         <LoadingComponent />
       ) : (

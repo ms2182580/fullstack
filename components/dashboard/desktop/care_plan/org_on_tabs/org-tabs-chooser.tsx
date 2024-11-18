@@ -20,11 +20,7 @@ export const OrgTabsChooser = ({
   allBackendData,
 }: Props) => {
   useEffect(() => {
-    /* 
-    !FH0
-    Make this scroll to top work
-    */
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0 })
   }, [actualComponentShowed])
 
   return (
