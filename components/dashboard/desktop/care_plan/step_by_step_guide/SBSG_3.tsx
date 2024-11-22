@@ -1,11 +1,11 @@
 import { InputTags } from "@/components/ui/input/input-tags"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { SBSG3_EditableData } from "./sbsg_3-editable-data"
 import { SBSG_3Wrapper } from "./styles/SBSG_3Wrapper"
 
 export const SBSG_3 = () => {
   const { stateEditableDataSBSG3, inputTagsLogicSBSG3 } =
-    useCtxDataCreatePlan().SBSG3
+    useCtxCreatePlanData().SBSG3
 
   return (
     <SBSG_3Wrapper>

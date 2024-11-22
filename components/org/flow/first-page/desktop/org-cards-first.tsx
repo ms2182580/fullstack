@@ -7,6 +7,7 @@ import { useORG_Ctx_D_ThirdpageData_Backend } from "@/context/ORG_Ctx_D_Thirdpag
 import { imagesToUse_backup } from "@/utils/org/categories/general/imagesToUse_backup"
 import { handleMoveToSecondPage_Backend } from "@/utils/org/handleMoveToSecondPage_Backend"
 import { handleMoveToThirdPage_Backend } from "@/utils/org/handleMoveToThirdPage_Backend"
+import { preferFirstDefaultSecondFn } from "@/utils/org/prefer-first-default-second-fn"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useMemo, useState } from "react"
@@ -54,13 +55,15 @@ export const OrgCardsFirst = ({
     useORG_Ctx_D_ThirdpageData_Backend()
 
   const handleToMoveView = useMemo(() => {
-    const moveToSecondPage = handleMoveToSecondPage
-      ? handleMoveToSecondPage
-      : handleMoveToSecondPage_Backend
+    const moveToSecondPage = preferFirstDefaultSecondFn(
+      handleMoveToSecondPage,
+      handleMoveToSecondPage_Backend
+    )
 
-    const moveToThirdPage = handleMoveToThirdPage
-      ? handleMoveToThirdPage
-      : handleMoveToThirdPage_Backend
+    const moveToThirdPage = preferFirstDefaultSecondFn(
+      handleMoveToThirdPage,
+      handleMoveToThirdPage_Backend
+    )
 
     return {
       moveToSecondPage,

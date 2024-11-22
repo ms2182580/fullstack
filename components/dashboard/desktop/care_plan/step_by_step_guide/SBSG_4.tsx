@@ -1,5 +1,5 @@
 import Breadcrumbs_CaretRight from "@/assets/icons/Breadcrumbs_CaretRight.svg"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { SBSG_4Options } from "./sbsg_4-options"
 import { SBSG_4Wrapper } from "./styles/SBSG_4Wrapper"
 
@@ -11,7 +11,7 @@ export const SBSG_4 = () => {
     handleRemoveORGTABS,
     handleAddORGTABS,
     handleFocusTargetElementTABSORG,
-  } = useCtxDataCreatePlan().TABS
+  } = useCtxCreatePlanData().TABS
 
   const theHandleAddORGTABS = (e) => {
     if (e.type === "click" || e.key === "Enter") {

@@ -3,6 +3,8 @@ import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { ORG_Ctx_D_ThirdpageData_Backend_Provider } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
+import { CtxOrgTabsFlow_Provider } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
+import { Poppins } from "next/font/google"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
 import { NavbarHomeHeight_Provider } from "../context/NavbarHome_Ctx_Height.js"
@@ -25,8 +27,6 @@ import { ORG_CtxShowFiltersMobile_Provider } from "../context/ORG_Ctx_ShowFilter
 import { ORG_InputCtxProvider } from "../context/ORG_Input.js"
 import { trpc } from "../utils/trpc"
 import GlobalStyle from "./styles/index.js"
-
-import { Poppins } from "next/font/google"
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -58,21 +58,23 @@ function MyApp({ Component, pageProps }) {
                                               <NavbarHomeHeight_Provider>
                                                 <Ctx_sessionStorage_typedFlow_Provider>
                                                   <Ctx_Signup_Provider>
-                                                    <Layout>
-                                                      <link
-                                                        rel="icon"
-                                                        href="/favicon.ico"
-                                                      />
-                                                      <GlobalStyle
-                                                        font={
-                                                          poppins.style
-                                                            .fontFamily
-                                                        }
-                                                      />
-                                                      <Component
-                                                        {...pageProps}
-                                                      />
-                                                    </Layout>
+                                                    <CtxOrgTabsFlow_Provider>
+                                                      <Layout>
+                                                        <link
+                                                          rel="icon"
+                                                          href="/favicon.ico"
+                                                        />
+                                                        <GlobalStyle
+                                                          font={
+                                                            poppins.style
+                                                              .fontFamily
+                                                          }
+                                                        />
+                                                        <Component
+                                                          {...pageProps}
+                                                        />
+                                                      </Layout>
+                                                    </CtxOrgTabsFlow_Provider>
                                                   </Ctx_Signup_Provider>
                                                 </Ctx_sessionStorage_typedFlow_Provider>
                                               </NavbarHomeHeight_Provider>

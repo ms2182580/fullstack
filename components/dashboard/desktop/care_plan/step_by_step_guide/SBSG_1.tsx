@@ -1,6 +1,6 @@
 import ProfilePicture1 from "@/assets/images/Dashboard/care-plan/sbsg/profile-picture-1.png"
 import ProfilePicture2 from "@/assets/images/Dashboard/care-plan/sbsg/profile-picture-2.png"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import Image from "next/image"
 import { SBSG_1Wrapper } from "./styles/SBSG_1Wrapper"
 
@@ -14,7 +14,7 @@ export type SBSG_1Props = {
 }
 
 export const SBSG_1 = ({ handleNextStep }: SBSG_1Props) => {
-  const { handleProfileSelectedSBSG1 } = useCtxDataCreatePlan().SBSG1
+  const { handleProfileSelectedSBSG1 } = useCtxCreatePlanData().SBSG1
 
   const handleUseProfileSelectedSBSG1 = ({ e, nameProfileSelected }) => {
     if (e.type === "click" || e.key === "Enter") {

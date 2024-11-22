@@ -1,4 +1,4 @@
-import { Editor } from "@/components/dashboard/desktop/care_plan/editor/editor"
+import { Editor } from "@/components/dashboard/desktop/care_plan/editor"
 import { INDEX_D_OrgOnTab } from "@/components/dashboard/desktop/care_plan/org_on_tabs"
 import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
 import { NAME_COMPONENTS_EDITOR } from "./consts"

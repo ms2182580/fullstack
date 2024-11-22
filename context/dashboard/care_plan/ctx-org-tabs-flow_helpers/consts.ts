@@ -1,0 +1,6 @@
+export const ORG_TABS_FLOW = {
+  BASE: "ORG_TABS_FLOW",
+  FIRST_PAGE: "FIRST_PAGE",
+  SECOND_PAGE: "SECOND_PAGE",
+  THIRD_PAGE: "THIRD_PAGE",
+} as const

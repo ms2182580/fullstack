@@ -1,4 +1,4 @@
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { cloneElement, Fragment, isValidElement } from "react"
 import { ComponentSteps_Type } from "."
 import { SBSGContentSkip } from "./sbsg-content-skip"
@@ -18,7 +18,7 @@ export const SBSG_Content = ({
   shouldDisplaySkipButton,
 }: SBSG_ContentPropsType) => {
   const { stateProfileSelectedSBSG1, handleNoProfileSelectedSBSG1 } =
-    useCtxDataCreatePlan().SBSG1
+    useCtxCreatePlanData().SBSG1
 
   const handleUseNoProfileSelectedSBSG1 = (e) => {
     if (

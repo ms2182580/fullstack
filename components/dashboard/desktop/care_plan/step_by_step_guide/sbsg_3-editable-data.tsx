@@ -1,4 +1,4 @@
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { FunctionComponent, SVGProps, useRef } from "react"
 import { SBSG3_EditableDataWrapper } from "./styles/SBSG3_EditableDataWrapper"
 
@@ -13,7 +13,7 @@ export const SBSG3_EditableData = ({
   defaultValue,
   icon: SVG,
 }: SBSG3_EditableData_Type) => {
-  const { handleChangeEditableDataSBSG3 } = useCtxDataCreatePlan().SBSG3
+  const { handleChangeEditableDataSBSG3 } = useCtxCreatePlanData().SBSG3
 
   const inputRef = useRef<HTMLInputElement>(null)
 

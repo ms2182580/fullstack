@@ -5,7 +5,7 @@ import { SBSG2Props } from "./ctx_create_plan_data_helpers/sbsg2"
 import { SBSG3Props } from "./ctx_create_plan_data_helpers/sbsg3"
 import { TABSTitleChooserProps } from "./ctx_create_plan_data_helpers/tabs-title-chooser"
 
-const CtxDataCreatePlan = createContext<AllDataType | null>(null)
+const CtxCreatePlanData = createContext<AllDataType | null>(null)
 
 export const CtxCreatePlanData_Provider = ({
   children,
@@ -38,7 +38,7 @@ export const CtxCreatePlanData_Provider = ({
   } = TABSTitleChooserProps.hooks()
 
   return (
-    <CtxDataCreatePlan.Provider
+    <CtxCreatePlanData.Provider
       value={{
         SBSG1: {
           stateProfileSelectedSBSG1,
@@ -67,15 +67,15 @@ export const CtxCreatePlanData_Provider = ({
       }}
     >
       {children}
-    </CtxDataCreatePlan.Provider>
+    </CtxCreatePlanData.Provider>
   )
 }
 
-export const useCtxDataCreatePlan = () => {
-  const context = useContext(CtxDataCreatePlan)
+export const useCtxCreatePlanData = () => {
+  const context = useContext(CtxCreatePlanData)
   if (!context) {
     throw new Error(
-      "useCtxDataCreatePlan must be used within a CtxCreatePlanData_Provider"
+      `${useCtxCreatePlanData.name} must be used within a ${CtxCreatePlanData_Provider.name}`
     )
   }
   return context

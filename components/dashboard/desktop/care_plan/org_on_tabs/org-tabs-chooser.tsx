@@ -8,7 +8,6 @@ type Props = {
   handleNextComponent: (e) => void
   handlePreviousComponent: (e) => void
   handleMoveCustom: ({ customMovement }) => void
-  allBackendData: object[]
 }
 
 export const OrgTabsChooser = ({
@@ -17,7 +16,6 @@ export const OrgTabsChooser = ({
   handleNextComponent,
   handlePreviousComponent,
   handleMoveCustom,
-  allBackendData,
 }: Props) => {
   useEffect(() => {
     window.scrollTo({ top: 0 })
@@ -27,15 +25,12 @@ export const OrgTabsChooser = ({
     <OrgTabsChooserWrapper>
       {componentList.map(({ component, props }, index) => {
         if (index !== actualComponentShowed) return null
-
         const propsToComponent = {
           handleNextComponent,
           handlePreviousComponent,
           handleMoveCustom,
-          allBackendData,
           ...props,
         }
-
         return (
           <Fragment key={index}>
             {isValidElement(component) &&

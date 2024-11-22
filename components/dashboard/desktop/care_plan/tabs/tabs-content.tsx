@@ -1,4 +1,4 @@
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { cloneElement, isValidElement } from "react"
 import {
   DataContentComponentWrapper,
@@ -12,9 +12,9 @@ export const TabsContent = () => {
     handleActiveTabTABS,
     handleRemoveORGTABS,
     handleAddORGTABS,
-  } = useCtxDataCreatePlan().TABS
+  } = useCtxCreatePlanData().TABS
 
-  const { stateProfileSelectedSBSG1 } = useCtxDataCreatePlan().SBSG1
+  const { stateProfileSelectedSBSG1 } = useCtxCreatePlanData().SBSG1
 
   return (
     <TabsContentWrapper>

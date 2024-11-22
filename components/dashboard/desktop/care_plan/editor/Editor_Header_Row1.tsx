@@ -1,6 +1,6 @@
 import { ShareSvg } from "@/assets/icons"
 import HomeSvg_Default from "@/assets/icons/home_default.svg"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { getDate } from "@/utils/getDate"
 import { useEffect, useState } from "react"
 import { Editor_Header_Row1Wrapper } from "./styles/Editor_Header_Row1Wrapper"
@@ -18,7 +18,7 @@ export const Editor_Header_Row1 = () => {
     stateProfileSelectedSBSG1,
     handleProfileSelectedSBSG1,
     handleNoProfileSelectedSBSG1,
-  } = useCtxDataCreatePlan().SBSG1
+  } = useCtxCreatePlanData().SBSG1
 
   const handleChange = (event) => {
     const newValue = event.target.value

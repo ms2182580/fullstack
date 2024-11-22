@@ -1,4 +1,4 @@
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { Fragment, useMemo } from "react"
 import { TabsTitleChooserWrapper } from "./styles/tabs-title-chooser-wrapper"
 import { TabsTitleChooserLI } from "./tabs-title-chooser-li"
@@ -12,12 +12,12 @@ export const TabsTitleChooser = () => {
     handleActiveTabTABS,
     handleRemoveORGTABS,
     handleAddORGTABS,
-  } = useCtxDataCreatePlan().TABS
+  } = useCtxCreatePlanData().TABS
 
   const { stateProfileSelectedSBSG1, handleProfileSelectedSBSG1 } =
-    useCtxDataCreatePlan().SBSG1
+    useCtxCreatePlanData().SBSG1
 
-  const { stateEditableDataSBSG3 } = useCtxDataCreatePlan().SBSG3
+  const { stateEditableDataSBSG3 } = useCtxCreatePlanData().SBSG3
 
   const handleTheActiveTab = ({ e, index }) => {
     if (e.type === "click" || e.key === "Enter") {

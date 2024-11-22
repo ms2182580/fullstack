@@ -1,13 +1,12 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
-import { useFetchData } from "@/utils/org/useFetchData"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxOrgTabsFlow } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
 import { ReactElement, useState } from "react"
 import { INDEX_D_OrgOnTabsFirstPage } from "./flow/first_page"
-import { INDEX_D_OrgOnTabWrapper } from "./styles/index-wrapper"
-// import { INDEX_D_OrgOnTabsWrapper } from "./flow/styles/index-wrapper"
 import { INDEX_D_OrgOnTabsSecondPage } from "./flow/second_page"
 import { INDEX_D_OrgOnTabsThirdPage } from "./flow/third_page"
 import { OrgTabsChooser } from "./org-tabs-chooser"
+import { INDEX_D_OrgOnTabWrapper } from "./styles/index-wrapper"
 
 type Component_Type = ReactElement
 
@@ -35,15 +34,13 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
     handleActiveTabTABS,
     handleRemoveORGTABS,
     handleAddORGTABS,
-  } = useCtxDataCreatePlan().TABS
+  } = useCtxCreatePlanData().TABS
 
   const handleMoveSight = (e) => {
     if (e.key === "Enter") {
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }
-
-  const theData = useFetchData()
 
   const [actualComponentShowed, setActualComponentShowed] = useState(0)
 
@@ -75,9 +72,11 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
     return setActualComponentShowed(customMovement)
   }
 
+  const { FETCHED } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
+
   return (
     <INDEX_D_OrgOnTabWrapper onKeyDown={handleMoveSight}>
-      {theData === null ? (
+      {FETCHED === null ? (
         <LoadingComponent />
       ) : (
         /* Create the "chooser" here, like «SBSG_Content.tsx» */
@@ -88,7 +87,6 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
           handleNextComponent={handleNextComponent}
           handlePreviousComponent={handlePreviousComponent}
           handleMoveCustom={handleMoveCustom}
-          allBackendData={theData}
         />
       )}
     </INDEX_D_OrgOnTabWrapper>

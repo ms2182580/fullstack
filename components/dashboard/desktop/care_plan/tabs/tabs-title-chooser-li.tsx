@@ -1,5 +1,5 @@
 import SVGTabsTitleChooser from "@/assets/icons/file-text.svg"
-import { useCtxDataCreatePlan } from "@/context/dashboard/care_plan/ctx-create-plan-data"
+import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { useEffect, useMemo, useRef } from "react"
 import { TabsTitleLiWrapper } from "./styles/tabs-title-chooser-li-wrapper"
 
@@ -14,10 +14,10 @@ export const TabsTitleChooserLI = ({ title, actualIndex }) => {
     handleAddORGTABS,
     focusTargetElementTABSORG,
     handleFocusTargetElementTABSORG,
-  } = useCtxDataCreatePlan().TABS
+  } = useCtxCreatePlanData().TABS
 
   const { stateProfileSelectedSBSG1, handleProfileSelectedSBSG1 } =
-    useCtxDataCreatePlan().SBSG1
+    useCtxCreatePlanData().SBSG1
 
   const profileSelected = useMemo(() => {
     return stateProfileSelectedSBSG1 || DEFAULT_CARE_PLAN_NAME
