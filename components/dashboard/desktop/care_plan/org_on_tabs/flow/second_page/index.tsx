@@ -16,7 +16,7 @@ export const INDEX_D_OrgOnTabsSecondPage = ({
   return (
     <INDEX_D_OrgOnTabsSecondPageWrapper>
       <div>
-        <ORG_D_Results_HowMuchShowing dataComesFromDashboard={DATA} />
+        <ORG_D_Results_HowMuchShowing dataComesFromParent={DATA} />
       </div>
 
       <button onClick={handleNextComponent}>To Next Component</button>

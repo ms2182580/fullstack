@@ -3,6 +3,7 @@ import { Ctx_Signup_Provider } from "@/context/Ctx_Signup"
 import { Ctx_sessionStorage_typedFlow_Provider } from "@/context/Ctx_sessionStorage_typedFlow_Provider.js"
 import { ORG_Ctx_D_SecondpageData_Backend_Provider } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { ORG_Ctx_D_ThirdpageData_Backend_Provider } from "@/context/ORG_Ctx_D_ThirdpageData_Backend_Provider.js"
+import { CtxOrgTabsFlow_Provider } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
 import { Poppins } from "next/font/google"
 import { Ctx_ShowModal_Provider } from "../context/Ctx_ShowModal.js"
 import { LoginCtxProvider } from "../context/LoginCtx.js"
@@ -56,23 +57,25 @@ function MyApp({ Component, pageProps }) {
                                             <ORG_Ctx_2Page_Provider>
                                               <NavbarHomeHeight_Provider>
                                                 <Ctx_sessionStorage_typedFlow_Provider>
-                                                  <Ctx_Signup_Provider>
-                                                    <Layout>
-                                                      <link
-                                                        rel="icon"
-                                                        href="/favicon.ico"
-                                                      />
-                                                      <GlobalStyle
-                                                        font={
-                                                          poppins.style
-                                                            .fontFamily
-                                                        }
-                                                      />
-                                                      <Component
-                                                        {...pageProps}
-                                                      />
-                                                    </Layout>
-                                                  </Ctx_Signup_Provider>
+                                                  <CtxOrgTabsFlow_Provider>
+                                                    <Ctx_Signup_Provider>
+                                                      <Layout>
+                                                        <link
+                                                          rel="icon"
+                                                          href="/favicon.ico"
+                                                        />
+                                                        <GlobalStyle
+                                                          font={
+                                                            poppins.style
+                                                              .fontFamily
+                                                          }
+                                                        />
+                                                        <Component
+                                                          {...pageProps}
+                                                        />
+                                                      </Layout>
+                                                    </Ctx_Signup_Provider>
+                                                  </CtxOrgTabsFlow_Provider>
                                                 </Ctx_sessionStorage_typedFlow_Provider>
                                               </NavbarHomeHeight_Provider>
                                             </ORG_Ctx_2Page_Provider>

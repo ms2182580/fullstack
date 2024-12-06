@@ -35,7 +35,7 @@ export const LoadingComponent = () => {
       <P semibold dark_gray>
         Please wait, our machines are working hard to provide your results!
       </P>
-      <LoadingLottieComponentWithNoSSR />
+      {/* <LoadingLottieComponentWithNoSSR /> */}
       <div>
         <Image src={RobotLoading} layout="intrinsic" alt="" />
       </div>

@@ -1,28 +1,20 @@
-import { useORG_Ctx_D_SecondpageData_Backend } from "@/context/ORG_Ctx_D_SecondpageData_Backend_Provider.js"
 import { DATA_ORG_KeyNamesForCards_D_KEYS } from "@/utils/org/DATA_ORG_KeyNamesForCards_D"
-import { preferFirstDefaultSecondFn } from "@/utils/org/prefer-first-default-second-fn"
 import { ORG_D_Results_HowMuchShowingWrapper } from "./styles/ORG_D_Results_HowMuchShowingWrapper"
 
 type Props = {
-  dataComesFromDashboard?: object[] | any
+  dataComesFromParent?: object[] | any
 }
 
 export const ORG_D_Results_HowMuchShowing = ({
-  dataComesFromDashboard,
+  dataComesFromParent,
 }: Props) => {
-  const { secondpageDataORG }: any = useORG_Ctx_D_SecondpageData_Backend()
-
-  const whichFuncUse = preferFirstDefaultSecondFn(
-    dataComesFromDashboard,
-    secondpageDataORG
-  )
-
   return (
     <ORG_D_Results_HowMuchShowingWrapper>
       <p>
-        {whichFuncUse?.[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+        {dataComesFromParent?.[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
           ? `Showing ${
-              whichFuncUse?.[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA].length
+              dataComesFromParent?.[DATA_ORG_KeyNamesForCards_D_KEYS.ALL_DATA]
+                .length
             } results`
           : "Showing 10 of 50 results"}
       </p>

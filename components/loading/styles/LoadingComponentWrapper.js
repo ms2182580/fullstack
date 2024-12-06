@@ -22,12 +22,12 @@ export const LoadingComponentWrapper = styled.div`
     text-align: center;
     margin-bottom: 3rem;
   }
-  & > :nth-child(3) {
+  /* & > :nth-child(3) {
     width: 10rem;
     margin-bottom: 3rem;
-  }
+  } */
 
-  & > :nth-child(4) {
+  & > :nth-child(3) {
     margin-inline: 24px;
   }
 `
