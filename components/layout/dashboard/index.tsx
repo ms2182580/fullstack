@@ -1,4 +1,5 @@
 import { CtxCreatePlanVisibility_Provider } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
+import { CtxOrgTabsFlow_Provider } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import { useFormattingRoute } from "@/utils/useFormattingRoute"
 import Head from "next/head"
@@ -41,7 +42,11 @@ export const Layout_Dashboard = ({ title, children }) => {
       </Head>
 
       <CtxCreatePlanVisibility_Provider>
-        <Layout_DashboardWrapper>{layoutPlusChildren}</Layout_DashboardWrapper>
+        <CtxOrgTabsFlow_Provider>
+          <Layout_DashboardWrapper>
+            {layoutPlusChildren}
+          </Layout_DashboardWrapper>
+        </CtxOrgTabsFlow_Provider>
       </CtxCreatePlanVisibility_Provider>
     </>
   )

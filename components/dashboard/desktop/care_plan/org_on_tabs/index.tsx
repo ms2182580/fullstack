@@ -1,7 +1,7 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { useCtxOrgTabsFlow } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
-import { ReactElement, useState } from "react"
+import { ReactElement, useEffect, useState } from "react"
 import { INDEX_D_OrgOnTabsFirstPage } from "./flow/first_page"
 import { INDEX_D_OrgOnTabsSecondPage } from "./flow/second_page"
 import { INDEX_D_OrgOnTabsThirdPage } from "./flow/third_page"
@@ -27,7 +27,11 @@ const componentList: ComponentList_Type = [
   },
 ]
 
-export const INDEX_D_OrgOnTab = (allBackendData) => {
+type Props = {
+  isVisible?: boolean
+}
+
+export const INDEX_D_OrgOnTab = ({ isVisible }: Props) => {
   const {
     dataTabsStateTABS,
     dataActiveTabsTABS,
@@ -72,23 +76,33 @@ export const INDEX_D_OrgOnTab = (allBackendData) => {
     return setActualComponentShowed(customMovement)
   }
 
+  const [shouldShow, setShouldShow] = useState(false)
+
+  useEffect(() => {
+    if (isVisible) {
+      setShouldShow(true)
+    }
+  }, [isVisible])
+
+  if (shouldShow === false) {
+    return null
+  }
+
   const { FETCHED } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
+
+  if (FETCHED === null) {
+    return <LoadingComponent />
+  }
 
   return (
     <INDEX_D_OrgOnTabWrapper onKeyDown={handleMoveSight}>
-      {FETCHED === null ? (
-        <LoadingComponent />
-      ) : (
-        /* Create the "chooser" here, like «SBSG_Content.tsx» */
-        // <INDEX_D_OrgOnTabsFirstPage allBackendData={theData} />
-        <OrgTabsChooser
-          componentList={componentList}
-          actualComponentShowed={actualComponentShowed}
-          handleNextComponent={handleNextComponent}
-          handlePreviousComponent={handlePreviousComponent}
-          handleMoveCustom={handleMoveCustom}
-        />
-      )}
+      <OrgTabsChooser
+        componentList={componentList}
+        actualComponentShowed={actualComponentShowed}
+        handleNextComponent={handleNextComponent}
+        handlePreviousComponent={handlePreviousComponent}
+        handleMoveCustom={handleMoveCustom}
+      />
     </INDEX_D_OrgOnTabWrapper>
   )
 }

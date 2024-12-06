@@ -19,12 +19,13 @@ export const TabsContent = () => {
   return (
     <TabsContentWrapper>
       {dataTabsStateTABS.map(({ component, props }, index) => {
+        const isVisible = index === dataActiveTabsTABS
+
         const propsToComponent = {
           stateProfileSelectedSBSG1,
+          isVisible,
           ...props,
         }
-
-        const isVisible = index === dataActiveTabsTABS
 
         return (
           <DataContentComponentWrapper key={index} isVisible={isVisible}>

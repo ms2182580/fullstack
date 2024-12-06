@@ -25,6 +25,7 @@ export const OrgTabsChooser = ({
     <OrgTabsChooserWrapper>
       {componentList.map(({ component, props }, index) => {
         if (index !== actualComponentShowed) return null
+
         const propsToComponent = {
           handleNextComponent,
           handlePreviousComponent,

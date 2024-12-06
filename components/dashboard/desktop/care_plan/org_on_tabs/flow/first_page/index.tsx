@@ -72,6 +72,8 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ handleNextComponent }: Props) => {
     }
   }, [])
 
+  console.log("🔰Rendered")
+
   return (
     <INDEX_D_OrgOnTabsFirstPageWrapper>
       <h1>More recommendations</h1>

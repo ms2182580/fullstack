@@ -1,11 +1,21 @@
 import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
-import LottieLoading from "@/assets/icons/LottieLoading.json"
 import RobotLoading from "@/assets/icons/RobotLoading.png"
-import { Player } from "@lottiefiles/react-lottie-player"
-import Image from "next/legacy/image"
+import dynamic from "next/dynamic"
+import Image from "next/image"
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "../ui/heading_body_text/HeaderFonts"
 import { LoadingComponentWrapper } from "./styles/LoadingComponentWrapper"
+
+/* 
+!FH0
+- Fix this
+- Put the provider of context org flow closer to dashboard components, maybe in the layout
+*/
+
+const LoadingLottieComponentWithNoSSR = dynamic(
+  () => import("./loading-lottie-component"),
+  { ssr: false }
+)
 
 export const LoadingComponent = () => {
   return (
@@ -14,7 +24,7 @@ export const LoadingComponent = () => {
       <P semibold dark_gray>
         Please wait, our machines are working hard to provide your results!
       </P>
-      <Player src={LottieLoading} loop autoplay />
+      <LoadingLottieComponentWithNoSSR />
       <div>
         <Image src={RobotLoading} layout="intrinsic" alt="" />
       </div>
