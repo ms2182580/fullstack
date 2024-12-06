@@ -23,7 +23,7 @@ type Props = {
 }
 
 export const INDEX_D_OrgOnTabsFirstPage = ({ handleNextComponent }: Props) => {
-  const { FETCHED } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
+  const { fetchedData } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
 
   const {
     singleCardIsSelected,
@@ -32,14 +32,14 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ handleNextComponent }: Props) => {
     handleShowOneCard,
   } = useHorizontalNavigationNavLogic()
 
-  const { HANDLER } = useCtxOrgTabsFlow().ORG_TABS_FLOW_SECOND_PAGE
+  const { handlerToSecondPage } = useCtxOrgTabsFlow().ORG_TABS_FLOW_SECOND_PAGE
 
   const handleMoveView = useMemo(() => {
     const handleMoveToSecondPageORG = (e) => {
       if (handleNextComponent) {
         const { category, theSubcategory, raw } = e
 
-        HANDLER({
+        handlerToSecondPage({
           category,
           theSubcategory,
           raw,
@@ -72,8 +72,6 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ handleNextComponent }: Props) => {
     }
   }, [])
 
-  console.log("🔰Rendered")
-
   return (
     <INDEX_D_OrgOnTabsFirstPageWrapper>
       <h1>More recommendations</h1>
@@ -92,7 +90,7 @@ export const INDEX_D_OrgOnTabsFirstPage = ({ handleNextComponent }: Props) => {
 
       <OrgCardsList
         dataToDisplay={ALL_DATA}
-        allBackendData={FETCHED}
+        allBackendData={fetchedData}
         matchNameState={matchNameState}
         singleCardIsSelected={singleCardIsSelected}
         handleMoveToSecondPage={handleMoveView.handleMoveToSecondPageORG}

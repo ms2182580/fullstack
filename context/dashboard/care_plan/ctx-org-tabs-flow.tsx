@@ -10,20 +10,20 @@ export const CtxOrgTabsFlow_Provider = ({
 }: {
   children: ReactNode
 }) => {
-  const { FETCHED } = FirstPageProps.hooks()
+  const { fetchedData } = FirstPageProps.hooks()
 
-  const { DATA, HANDLER } = SecondPageProps.hooks()
+  const { dataToSecondPage, handlerToSecondPage } = SecondPageProps.hooks()
 
   return (
     <CtxOrgTabsFlow.Provider
       value={{
         ORG_TABS_FLOW_FIRST_PAGE: {
-          FETCHED,
+          fetchedData,
         },
 
         ORG_TABS_FLOW_SECOND_PAGE: {
-          DATA,
-          HANDLER,
+          dataToSecondPage,
+          handlerToSecondPage,
         },
       }}
     >

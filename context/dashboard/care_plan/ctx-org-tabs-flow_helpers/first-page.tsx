@@ -2,7 +2,7 @@ import { useFetchData } from "@/utils/org/useFetchData"
 import { ORG_TABS_FLOW } from "./consts"
 
 const NAME_STATES_ORG_TABS_FLOW_FIRST_PAGE = {
-  THE_FETCH: `FETCHED`,
+  THE_FETCH: `fetchedData`,
 } as const
 
 type OrgTabsFlowFirstPageTypes = {
@@ -13,7 +13,7 @@ const useHooksOrgTabsFlowFirstPage = (): OrgTabsFlowFirstPageTypes => {
   const theData = useFetchData()
 
   return {
-    FETCHED: theData,
+    fetchedData: theData,
   }
 }
 

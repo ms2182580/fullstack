@@ -10,14 +10,14 @@ export const useCheckBreadcrumbs = (titleToFormat) => {
   const router = useRouter()
   const [titleFormatted, setTitleFormatted] = useState(null)
 
-  const { DATA } = useCtxOrgTabsFlow().ORG_TABS_FLOW_SECOND_PAGE
+  const { dataToSecondPage } = useCtxOrgTabsFlow().ORG_TABS_FLOW_SECOND_PAGE
 
   useEffect(() => {
     if (
       !titleToFormat &&
       !reachTypedFlow &&
       inputTypesByUser === "" &&
-      DATA === null
+      dataToSecondPage === null
     ) {
       let theRoute = router.asPath.split("/").at(-1)
       let index = `p${theRoute.split("-")[0]}`

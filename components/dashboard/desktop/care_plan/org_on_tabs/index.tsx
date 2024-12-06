@@ -76,9 +76,9 @@ export const INDEX_D_OrgOnTab = ({ isVisible }: Props) => {
     return setActualComponentShowed(customMovement)
   }
 
-  const { FETCHED } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
+  const { fetchedData } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
 
-  if (FETCHED === null) {
+  if (fetchedData === null) {
     return <LoadingComponent />
   }
 

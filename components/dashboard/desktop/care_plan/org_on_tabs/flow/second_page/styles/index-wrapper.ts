@@ -1,22 +1,16 @@
 import styled from "styled-components"
 
 export const INDEX_D_OrgOnTabsSecondPageWrapper = styled.article`
-  & > fieldset {
-    display: grid;
-    place-items: center;
-    gap: calc(8px * 4);
+  & > :nth-child(2) {
+    display: flex;
+    gap: calc(8px * 2);
 
-    padding: calc(8px * 6);
+    margin-bottom: calc(8px * 4);
+  }
+`
 
-    button {
-      width: fit-content;
-      padding-inline: 16px;
-    }
-
-    & > div {
-      h3 {
-        text-align: center;
-      }
-    }
+export const OrgOnTabsHowMuchShowingWrapper = styled.div`
+  & > aside {
+    padding-bottom: 0;
   }
 `

@@ -16,14 +16,13 @@ import { useState } from "react"
 import { ORG_TABS_FLOW } from "./consts"
 
 const NAME_STATES_ORG_TABS_FLOW_SECOND_PAGE = {
-  DATA: `DATA`,
-  HANDLER: `HANDLER`,
-  // THE_FETCH: `${ORG_TABS_FLOW.BASE}_${ORG_TABS_FLOW.SECOND_PAGE}`,
+  DATA: `dataToSecondPage`,
+  HANDLER_TO_SECOND_PAGE: `handlerToSecondPage`,
 } as const
 
 type OrgTabsFlowSecondPageTypes = {
   [NAME_STATES_ORG_TABS_FLOW_SECOND_PAGE.DATA]: object[] | any
-  [NAME_STATES_ORG_TABS_FLOW_SECOND_PAGE.HANDLER]: ({
+  [NAME_STATES_ORG_TABS_FLOW_SECOND_PAGE.HANDLER_TO_SECOND_PAGE]: ({
     category,
     theSubcategory,
     raw,
@@ -65,8 +64,8 @@ const useHooksOrgTabsFlowSecondPage = (): OrgTabsFlowSecondPageTypes => {
   }
 
   return {
-    DATA: secondpageDataORGTabs,
-    HANDLER: handleSecondpageDataORGTabs,
+    dataToSecondPage: secondpageDataORGTabs,
+    handlerToSecondPage: handleSecondpageDataORGTabs,
   }
 }
 

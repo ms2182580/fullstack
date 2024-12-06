@@ -17,7 +17,7 @@ export const ORG_Filters_D_MoreWrapper2 = styled.div`
     left: clamp(16px, calc(10vw - 80px), 96px);
     right: clamp(16px, calc(10vw - 80px), 96px);
 
-    z-index: 5;
+    z-index: calc(99 + 1);
     background-color: white;
 
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
