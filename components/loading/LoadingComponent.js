@@ -2,6 +2,7 @@ import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
 import RobotLoading from "@/assets/icons/RobotLoading.png"
 import dynamic from "next/dynamic"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 import { P } from "../ui/heading_body_text/DesktopMobileFonts"
 import { H1 } from "../ui/heading_body_text/HeaderFonts"
 import { LoadingComponentWrapper } from "./styles/LoadingComponentWrapper"
@@ -18,6 +19,16 @@ const LoadingLottieComponentWithNoSSR = dynamic(
 )
 
 export const LoadingComponent = () => {
+  const [shouldShow, setShouldShow] = useState(false)
+
+  useEffect(() => {
+    setShouldShow(true)
+  }, [])
+
+  if (shouldShow === false) {
+    return null
+  }
+
   return (
     <LoadingComponentWrapper data-testid={KEYS_DATA_TESTID.LOADING_COMPONENT}>
       <H1 cta>Loading ...</H1>

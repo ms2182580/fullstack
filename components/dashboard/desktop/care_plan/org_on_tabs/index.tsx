@@ -1,7 +1,7 @@
 import { LoadingComponent } from "@/components/loading/LoadingComponent"
 import { useCtxCreatePlanData } from "@/context/dashboard/care_plan/ctx-create-plan-data"
 import { useCtxOrgTabsFlow } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
-import { ReactElement, useEffect, useState } from "react"
+import { ReactElement, useState } from "react"
 import { INDEX_D_OrgOnTabsFirstPage } from "./flow/first_page"
 import { INDEX_D_OrgOnTabsSecondPage } from "./flow/second_page"
 import { INDEX_D_OrgOnTabsThirdPage } from "./flow/third_page"
@@ -74,18 +74,6 @@ export const INDEX_D_OrgOnTab = ({ isVisible }: Props) => {
 
   const handleMoveCustom = ({ customMovement }) => {
     return setActualComponentShowed(customMovement)
-  }
-
-  const [shouldShow, setShouldShow] = useState(false)
-
-  useEffect(() => {
-    if (isVisible) {
-      setShouldShow(true)
-    }
-  }, [isVisible])
-
-  if (shouldShow === false) {
-    return null
   }
 
   const { FETCHED } = useCtxOrgTabsFlow().ORG_TABS_FLOW_FIRST_PAGE
