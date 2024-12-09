@@ -40,14 +40,11 @@ Change this component to work without javascript. Source: https://x.com/midudev/
   }
 */
 
-import { DATA_ORG_D_TYPES_KEYS } from "@/utils/org/DATA_ORG_D"
-import { useRouter } from "next/router"
+import { ArrowDownSvg, ArrowUpSvg } from "@/assets/icons"
+import { useORG_Ctx_FiltersApplyDesktop } from "@/context/ORG_Ctx_FiltersApplyDesktop"
+import { useShouldTab } from "@/utils/ORG_shouldTab"
+import { useOutsideHide } from "@/utils/useOutsideHide"
 import { Fragment, useEffect, useRef, useState } from "react"
-import { ArrowDownSvg, ArrowUpSvg } from "../../../assets/icons"
-import { useORG_Ctx_FiltersApplyDesktop } from "../../../context/ORG_Ctx_FiltersApplyDesktop"
-import { useShouldTab } from "../../../utils/ORG_shouldTab"
-import { useOutsideHide } from "../../../utils/useOutsideHide"
-import { P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { CustomC, SingleDropdownWrapper } from "./styles/Singledropdown"
 
 type CustomDropdownFilters_Props = {
@@ -85,23 +82,18 @@ export const CustomDropdownFilters = ({
     // let elementSelected = e.target.textContent
     // setWhichTitle(elementSelected)
     // setActualSort(elementSelected)
-
     // const { newOrderData, newOrderFilters } = ORG_SortybyFunction_D(elementSelected, filtersST, userFetched, "CustomDropdownFilters. Fetch no filters")
-
     // setData((prevState) => ({
     //   ...prevState,
     //   allData: newOrderData,
     // }))
     // setFilters(newOrderFilters)
-
     // const { newOrderData: newOrderDataF, newOrderFilters: newOrderFiltersF } = ORG_SortybyFunction_D(elementSelected, filtersF, dataF, "CustomDropdownFilters. Fetch with filters")
-
     // setDataF((prevState) => ({
     //   ...prevState,
     //   allData: newOrderDataF,
     // }))
     // setFiltersF(newOrderFiltersF)
-
     handleDropdownClick()
   }
 
@@ -127,37 +119,23 @@ export const CustomDropdownFilters = ({
   const refDropdown = useRef(null)
   useOutsideHide(refDropdown, setShowDropdown)
 
-  const { query } = useRouter()
-
   return (
-    <>
-      <SingleDropdownWrapper
-        className="SingleDropdownWrapper"
-        ref={refDropdown}
-        isBackend={Boolean(query[DATA_ORG_D_TYPES_KEYS.IS_FROM_BACKEND])}
+    <SingleDropdownWrapper ref={refDropdown} showDropdown={showDropdown}>
+      <div
+        onClick={getSelection}
+        onKeyDown={handleDropdownKey}
+        tabIndex={shouldTab}
       >
-        <span
-          onClick={handleDropdownClick}
-          onKeyDown={(e) => {
-            handleDropdownKey(e)
-          }}
-          tabIndex={shouldTab}
-        >
-          <P>
-            {/* primary_cta semibold */}
-            {whichTitle}
-          </P>
-          <span>{showDropdown ? <ArrowDownSvg /> : <ArrowUpSvg />}</span>
-        </span>
-        <div className="dropdownSuggestions">
+        <p>{whichTitle}</p>
+        <span>{showDropdown ? <ArrowDownSvg /> : <ArrowUpSvg />}</span>
+
+        <>
           {showDropdown &&
             suggestions.length !== 0 &&
             suggestionsValidated !== "Coming soon" && (
-              <>
+              <div>
                 <div></div>
                 {suggestionsValidated.map((x) => {
-                  // let highlight = whichTitle === defaultWord ? false : x === actualSort
-
                   return (
                     <Fragment key={x}>
                       {
@@ -166,7 +144,35 @@ export const CustomDropdownFilters = ({
                             // highlight={highlight}
                             onClick={(e) => {
                               getSelection(e)
+                              handleDropdownClick() /* //!FH2 This is a bug because I need to use «handleDropdownClick()» here and inside «getSelection(e)»  */
                             }}
+                          >
+                            {x}
+                          </CustomC>
+                        </Fragment>
+                      }
+                    </Fragment>
+                  )
+                })}
+                <div></div>
+              </div>
+            )}
+        </>
+
+        {/* <div>
+          {showDropdown &&
+            suggestions.length !== 0 &&
+            suggestionsValidated !== "Coming soon" && (
+              <>
+                <div></div>
+                {suggestionsValidated.map((x) => {
+                  return (
+                    <Fragment key={x}>
+                      {
+                        <Fragment>
+                          <CustomC
+                            // highlight={highlight}
+                            onClick={getSelection}
                           >
                             {x}
                           </CustomC>
@@ -178,8 +184,36 @@ export const CustomDropdownFilters = ({
                 <div></div>
               </>
             )}
-        </div>
-      </SingleDropdownWrapper>
-    </>
+        </div> */}
+      </div>
+      {/* <div>
+        {showDropdown &&
+          suggestions.length !== 0 &&
+          suggestionsValidated !== "Coming soon" && (
+            <>
+              <div></div>
+              {suggestionsValidated.map((x) => {
+                return (
+                  <Fragment key={x}>
+                    {
+                      <Fragment>
+                        <CustomC
+                          // highlight={highlight}
+                          onClick={(e) => {
+                            getSelection(e)
+                          }}
+                        >
+                          {x}
+                        </CustomC>
+                      </Fragment>
+                    }
+                  </Fragment>
+                )
+              })}
+              <div></div>
+            </>
+          )}
+      </div> */}
+    </SingleDropdownWrapper>
   )
 }

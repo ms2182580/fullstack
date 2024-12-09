@@ -3,25 +3,19 @@ import {
   FiltersRangeKeys,
 } from "@/utils/org/DATA_ORG_KeyNamesForFilters_D"
 import { SPECIFIC_DATA_SECOND_PAGE } from "@/utils/org/second-page/desktop/specificData"
-import {
-  ORG_D_Results_FilterListMainWrapper,
-  ORG_D_Results_FilterListMainWrapperProps,
-} from "./styles/ORG_D_Results_FilterListMainWrapper"
+import { ORG_D_Results_FilterListMainWrapper } from "./styles/ORG_D_Results_FilterListMainWrapper"
 
 type Props = {
   dataComesFromParent: object[] | any
   reachTypedFlow?: any
-} & Pick<ORG_D_Results_FilterListMainWrapperProps, "someStylesComeFromOutside">
+}
 
 export const ORG_D_Results_FilterListMain = ({
   dataComesFromParent,
   reachTypedFlow = false,
-  someStylesComeFromOutside,
 }: Props) => {
   return (
-    <ORG_D_Results_FilterListMainWrapper
-      someStylesComeFromOutside={someStylesComeFromOutside}
-    >
+    <ORG_D_Results_FilterListMainWrapper>
       {!reachTypedFlow &&
       dataComesFromParent?.[SPECIFIC_DATA_SECOND_PAGE.SECOND_PAGE]?.[
         SPECIFIC_DATA_SECOND_PAGE.FILTERS
