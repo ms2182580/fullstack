@@ -1,5 +1,6 @@
 import { ORG_D_Results_HowMuchShowing } from "@/components/org/flow/second-page/desktop/ORG_D_Results_HowMuchShowing"
 import { useCtxOrgTabsFlow } from "@/context/dashboard/care_plan/ctx-org-tabs-flow"
+import { OrgOnTabsSecondPageCardPlusMap } from "./org-on-tabs-second-page-card-plus-map"
 import { OrgOnTabsSecondPageFilterPlusSortby } from "./org-on-tabs-second-page-filter-plus-sortby"
 import {
   INDEX_D_OrgOnTabsSecondPageWrapper,
@@ -38,6 +39,8 @@ export const INDEX_D_OrgOnTabsSecondPage = ({
       */}
 
       <OrgOnTabsSecondPageFilterPlusSortby />
+
+      <OrgOnTabsSecondPageCardPlusMap />
 
       <button onClick={handleNextComponent}>To Next Component</button>
       <button onClick={handlePreviousComponent}>To Previous Component</button>

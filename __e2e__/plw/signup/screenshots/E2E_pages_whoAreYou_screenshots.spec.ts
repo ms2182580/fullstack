@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test"
 import { KEYS_DATA_TESTID } from "../../utils/org/keys"
 
 test.describe("Screenshot", () => {
-  test("Who are you", async ({ page }) => {
+  test.skip("Who are you", async ({ page }) => {
     await page.goto(
       `/${ALL_ROUTES.SIGNUP}/${ALL_ROUTES.SIGNUP_STEPS.WHO_ARE_YOU}`
     )

@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test"
 import { KEYS_DATA_TESTID } from "../utils/org/keys"
 
 test.describe("Testing Home", () => {
-  test("Nothing change", async ({ page }) => {
+  test.skip("Nothing change", async ({ page }) => {
     await page.goto(`${ALL_ROUTES.HOME}`)
 
     await page

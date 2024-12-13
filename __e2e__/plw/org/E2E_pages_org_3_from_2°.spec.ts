@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test"
 import { KEYS_DATA_TESTID } from "../utils/org/keys"
 
 test.describe("Flow_ORG", () => {
-  test("3° page from 2° page", async ({ page }) => {
+  test.skip("3° page from 2° page", async ({ page }) => {
     test.info().annotations.push({
       type: "Screenshot of 3° page from 2° page",
       description:

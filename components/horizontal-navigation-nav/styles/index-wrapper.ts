@@ -14,7 +14,7 @@ type Props = {
 export const INDEX_D_HorizontalNavigationNavWrapper = styled.div<Props>`
   display: flex;
 
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow-x: hidden;
 
   position: relative;
@@ -95,7 +95,7 @@ export const INDEX_D_HorizontalNavigationNavWrapper = styled.div<Props>`
     display: flex;
     gap: 16px;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow-x: hidden;
 
     position: relative;

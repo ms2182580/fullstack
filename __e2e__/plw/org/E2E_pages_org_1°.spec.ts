@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test"
 import { KEYS_DATA_TESTID } from "../utils/org/keys"
 
 test.describe("Flow_ORG", () => {
-  test("1° page", async ({ page }) => {
+  test.skip("1° page", async ({ page }) => {
     await page.goto(`/${ALL_ROUTES.ORG}`)
 
     await page

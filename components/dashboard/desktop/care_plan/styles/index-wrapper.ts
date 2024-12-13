@@ -30,8 +30,6 @@ export const INDEX_D_CarePlanWrapper = styled.div<Props>`
   & > :nth-child(2) {
     grid-area: tabs;
     min-height: 100dvh;
-
-    overflow-x: hidden;
   }
 
   & > :nth-child(3) {
