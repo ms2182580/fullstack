@@ -8,7 +8,7 @@ type Props = {
 export const ORG_D_Results_Cardphone = ({ phoneNumber = "_" }: Props) => {
   return (
     <>
-      <ORG_D_Results_CardPhoneWrapper>
+      <ORG_D_Results_CardPhoneWrapper title={phoneNumber}>
         <PhoneResultsSvg />
         <p tabIndex={0}>{phoneNumber}</p>
       </ORG_D_Results_CardPhoneWrapper>

@@ -61,7 +61,7 @@ export const ORG_D_Results_Main_Right = ({ backendData, theIndex }: Props) => {
         <div>
           <ul>
             {dataList.map(({ key, value }, index) => {
-              let theValueOnMap =
+              const theValueOnMap =
                 typeof value === "string"
                   ? value
                   : Array.isArray(value)

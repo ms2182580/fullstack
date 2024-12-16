@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ORG_D_Results_CardWrapper = styled.div`
+export const ORG_D_Results_CardWrapper = styled.article`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:

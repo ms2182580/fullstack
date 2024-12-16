@@ -20,6 +20,7 @@ export const ORG_D_Results_Main_Left = ({ backendData, theIndex }: Props) => {
           <Image
             src={imagesToUse_backup[theIndex]}
             alt={`Image of ${backendData.recordName}`}
+            title={`Image of ${backendData.recordName}`}
           />
           <SaveResourceDialog nameOfResource={backendData.recordName} />
         </div>

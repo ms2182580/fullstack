@@ -24,6 +24,10 @@ type Props = {
   indexBackendToDisplayDummyImage?: number
 }
 
+/* 
+!FH0
+Make this component reusable to be usable on org and also on dashboard care plan, the main idea is extract all the event handles to the parent and pass it by props
+*/
 export const ORG_D_Results_Main_BottomButtons = ({
   renderThisContact,
   backendData,

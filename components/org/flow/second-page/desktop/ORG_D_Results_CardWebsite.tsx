@@ -23,18 +23,17 @@ export const ORG_D_Results_CardWebsite = ({
     return <></>
   }
 
-  let firstPart = firstName.toLowerCase()
-  let secondPart = `${lastName === "" ? "" : `-${lastName.toLowerCase()}`}`
+  const firstPart = firstName.toLowerCase()
+  const secondPart = `${lastName === "" ? "" : `-${lastName.toLowerCase()}`}`
 
   // let formattedResult = !backendData ? `https://www.${firstPart}${secondPart}.com` : website
-  let formattedResult = backendData
+  const formattedResult = backendData
     ? website
     : `https://www.${firstPart}${secondPart}.com`
 
   return (
-    <ORG_D_Results_CardWebsiteWrapper>
+    <ORG_D_Results_CardWebsiteWrapper title={formattedResult}>
       <WebsiteResultsSvg />
-      {/* !FH Add the feature of copy the formattedResult with Enter key */}
       <P tabIndex={0}>{formattedResult}</P>
     </ORG_D_Results_CardWebsiteWrapper>
   )

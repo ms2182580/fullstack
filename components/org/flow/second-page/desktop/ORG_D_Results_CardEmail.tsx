@@ -10,7 +10,7 @@ export const ORG_D_Results_CardEmail = ({ email = "_" }: Props) => {
     <>
       {email !== "_" && (
         <>
-          <ORG_D_Results_CardEmailWrapper shouldBeDisplayed={email !== "_"}>
+          <ORG_D_Results_CardEmailWrapper title={email}>
             <EmailResultsSvg />
             <p tabIndex={0}>{email}</p>
           </ORG_D_Results_CardEmailWrapper>

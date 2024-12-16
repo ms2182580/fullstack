@@ -1,11 +1,7 @@
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
 
-type Props = {
-  shouldBeDisplayed?: boolean
-}
-
-export const ORG_D_Results_CardEmailWrapper = styled.div<Props>`
+export const ORG_D_Results_CardEmailWrapper = styled.div`
   position: relative;
   & > p {
     ${Paragraph({

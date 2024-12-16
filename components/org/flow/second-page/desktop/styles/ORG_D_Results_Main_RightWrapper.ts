@@ -15,6 +15,13 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
   flex-direction: column;
   gap: 8px;
 
+  & > h3,
+  & > h4 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   & > :nth-child(1) {
     font-weight: 700;
   }
@@ -29,7 +36,10 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
     gap: 24px;
 
     position: relative;
-    width: fit-content;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     & > :nth-child(1) {
       list-style: none;
@@ -42,15 +52,20 @@ export const ORG_D_Results_Main_RightWrapper = styled.div<Props>`
       & > * {
         display: flex;
         align-items: center;
-
         gap: 8px;
 
         text-transform: capitalize;
-        white-space: nowrap;
+        overflow: hidden;
 
         & > :nth-child(1) {
           color: ${PRIMARY.PRIMARY_HOVER};
+
           font-weight: 600;
+        }
+
+        & > :nth-child(2) {
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }

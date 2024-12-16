@@ -20,7 +20,7 @@ export const ORG_D_Results_Main_LeftWrapper = styled.div<Props>`
   display: flex;
   flex-direction: column;
 
-  padding: 24px;
+  padding: calc(8px * 3);
 
   border-top-left-radius: inherit;
 
