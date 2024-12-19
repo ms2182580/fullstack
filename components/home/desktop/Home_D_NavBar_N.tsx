@@ -31,8 +31,7 @@
 //   )
 // }
 
-import Magic_Wand from "@/assets/icons/home/home_magic_wand.svg"
-import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
+import { INDEX_Logo } from "@/components/logo"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useRouter } from "next/router"

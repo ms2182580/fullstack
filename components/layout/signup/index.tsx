@@ -1,5 +1,4 @@
-import { NEUTRALS } from "@/assets/Colors"
-import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
+import { INDEX_Logo } from "@/components/logo"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
@@ -186,7 +185,7 @@ export const Layout_Signup = ({ children, title }) => {
         {whichDataShouldDisplay.title !== null &&
         whichDataShouldDisplay.paragraph !== null ? (
           <aside>
-            <INDEX_Logo logoColor={NEUTRALS.OFF_WHITE} />
+            <INDEX_Logo whichOneShouldDisplay="white" />
             <H3>{whichDataShouldDisplay.title}</H3>
             <P>{whichDataShouldDisplay.paragraph}</P>
           </aside>

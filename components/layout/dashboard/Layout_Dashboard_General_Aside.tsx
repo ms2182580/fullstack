@@ -11,7 +11,7 @@ import SVG_Magnifying_Glass_Default from "@/assets/icons/magnifying_glass_defaul
 import SVG_Plus from "@/assets/icons/org/third-page/org_plus.svg"
 import SVG_Star_Active from "@/assets/icons/star_active.svg"
 import SVG_Star_Default from "@/assets/icons/star_default.svg"
-import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
+import { INDEX_Logo } from "@/components/logo"
 import { Active_Navigation_Link } from "@/components/ui/active_navigation_link/Active_Navigation_Link"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"

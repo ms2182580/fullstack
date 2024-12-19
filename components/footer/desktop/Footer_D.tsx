@@ -1,7 +1,5 @@
-import { INDEX_Logo } from "@/components/logo/INDEX_Logo"
-import { H1, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
-import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
-import Link from "next/link.js"
+import { INDEX_Logo } from "@/components/logo"
+import { ButtonSmall } from "@/components/ui/buttons/general"
 import {
   Facebook3Svg,
   Instagram2Svg,
@@ -11,11 +9,6 @@ import {
 } from "../../../assets/icons/index"
 import { Caption, P } from "../../ui/heading_body_text/DesktopMobileFonts"
 import { Footer_DWrapper } from "./styles/Footer_DWrapper"
-import { ButtonSmall } from "@/components/ui/buttons/general"
-import { PRIMARY } from "@/assets/Colors"
-import No_Messages from "../../../assets/images/home/no_messages.png"
-import No_Email from "../../../assets/images/home/no-email.png"
-import Image from "next/image"
 
 export const Footer_D = () => {
   return (
@@ -24,7 +17,7 @@ export const Footer_D = () => {
         <H4>Join today and get started with your free forever account!</H4>
         <Link href={`${ALL_ROUTES.SIGNUP}`}>Sign Up</Link>
       </header> */}
-      
+
       {/* <div>
         <div>
           <div>
