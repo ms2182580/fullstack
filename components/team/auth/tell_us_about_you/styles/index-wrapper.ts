@@ -1,5 +1,5 @@
 import styled from "styled-components"
 
-export const INDEX_TeamDashboardWrapper = styled.div`
+export const TellUsAboutYouWrapper = styled.div`
   border: 2px solid green;
 `

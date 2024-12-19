@@ -1,5 +1,5 @@
-import { INDEX_TeamDashboard } from "@/components/team/dashboard/desktop/authentication/dashboard"
+import { INDEX_Dashboard } from "@/components/team/dashboard"
 
 export default function PAGES_TeamDashboard() {
-  return <INDEX_TeamDashboard />
+  return <INDEX_Dashboard />
 }

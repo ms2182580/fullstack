@@ -4,23 +4,26 @@ import {
   useDynamicComponentToRender,
 } from "@/utils/useDynamicComponentToRender"
 import { cloneElement, isValidElement } from "react"
+import { Signin } from "./signin"
+import { Signup } from "./signup"
+import { TellUsAboutYou } from "./tell_us_about_you"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   {
     route: ALL_ROUTES_INTERNAL.AUTHENTICATION.TELL_US_ABOUT_YOU,
-    component: <h1>TELL_US_ABOUT_YOU</h1>,
+    component: <TellUsAboutYou />,
   },
   {
     route: ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNIN,
-    component: <h1>SIGNIN</h1>,
+    component: <Signin />,
   },
   {
     route: ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNUP,
-    component: <h1>SIGNUP</h1>,
+    component: <Signup />,
   },
 ]
 
-export const TeamDashboardDynamic = (parameters) => {
+export const TeamDashboardDynamic = () => {
   const { componentToRender, propsToComponent } = useDynamicComponentToRender({
     componentsToRenderAvailable,
   })
