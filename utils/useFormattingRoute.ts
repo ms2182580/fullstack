@@ -1,6 +1,4 @@
-import { useEffect } from "react"
-
-type TypeUseFormattingRoute = {
+export type TypeUseFormattingRoute = {
   routeToCheck: string
   acceptedRoutes: string[]
   isReady: boolean
@@ -18,16 +16,19 @@ export const useFormattingRoute = ({
   actualRouteIsValid: boolean
   toTitleText: string | null
 } => {
-  const actualRoute = routeToCheck?.split("/").at(-1)?.toUpperCase() || ""
+  const routeToCheckFormatted = routeToCheck.split("/")
+  const isRepeatedUrl = routeToCheckFormatted[1] === routeToCheckFormatted[2]
+  const actualRoute = routeToCheckFormatted.at(-1)?.toUpperCase() || ""
   const formatRouteToTitle = actualRoute?.split("_").join(" ") || null
 
-  const actualRouteIsValid = acceptedRoutes.some((x) => x === actualRoute)
+  const actualRouteIsValid =
+    acceptedRoutes.some(
+      (x) => x.toLocaleLowerCase() === actualRoute.toLocaleLowerCase()
+    ) && isRepeatedUrl === false
 
-  useEffect(() => {
-    if (isReady && actualRouteIsValid === false) {
-      push("/404")
-    }
-  }, [isReady])
+  if (isReady && actualRouteIsValid === false) {
+    push("/404")
+  }
 
   const toTitleText =
     actualRoute?.toLocaleLowerCase() !== acceptedRoutes[0]

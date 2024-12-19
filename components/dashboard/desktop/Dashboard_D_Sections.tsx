@@ -4,10 +4,10 @@ import {
   useDynamicComponentToRender,
 } from "@/utils/useDynamicComponentToRender"
 import { cloneElement, isValidElement } from "react"
-import { INDEX_D_AIChat } from "./ai-chat"
+import { INDEX_D_AIChat } from "./ai_chat"
 import { INDEX_D_CarePlan } from "./care_plan"
-import { INDEX_D_OrgOnTab } from "./care_plan/org_on_tabs"
 import { INDEX_D_Documents } from "./documents"
+import { INDEX_D_OrgDashboard } from "./org_dashboard"
 import { INDEX_D_Saved } from "./saved"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
@@ -21,7 +21,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
   {
     route: ALL_ROUTES.DASHBOARD_SECTIONS.RESOURCE_DIRECTORY,
-    component: <INDEX_D_OrgOnTab />,
+    component: <INDEX_D_OrgDashboard />,
   },
   {
     route: ALL_ROUTES.DASHBOARD_SECTIONS.SAVED,

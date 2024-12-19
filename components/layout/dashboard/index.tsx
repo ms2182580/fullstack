@@ -13,6 +13,11 @@ export const Layout_Dashboard = ({ title, children }) => {
   const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
+  /* 
+  !FH0
+  Use this customHook "useFormattingRoute" on the layout of "Layout_Team". Also, take a look on how this Layout "Layout_Dashboard" handle two different layout inside it "Layout_Dashboard_CarePlan" and "Layout_Dashboard_General"
+  
+  */
   const { actualRoute, formatRouteToTitle, actualRouteIsValid, toTitleText } =
     useFormattingRoute({
       acceptedRoutes: Object.keys(ALL_ROUTES.DASHBOARD_SECTIONS),
@@ -31,6 +36,7 @@ export const Layout_Dashboard = ({ title, children }) => {
   }, [asPath])
 
   if (formatRouteToTitle === null || actualRouteIsValid === false) return null
+
   return (
     <>
       <Head>

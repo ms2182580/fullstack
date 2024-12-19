@@ -1,4 +1,4 @@
-import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
+import { ALL_ROUTES, ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import { useMatchMedia } from "@/utils/useMatchMedia"
 import Head from "next/head"
 import { useRouter } from "next/router.js"
@@ -8,6 +8,7 @@ import { Layout_General } from "../general"
 import { OnlyDesktopLayout } from "../general/only-desktop-layout"
 import { Layout_Signin } from "../signin"
 import { Layout_Signup } from "../signup"
+import { Layout_Team } from "../team"
 
 const WhichLayoutDisplay_Key = {
   isORGLike: "isORGLike",
@@ -16,36 +17,48 @@ const WhichLayoutDisplay_Key = {
   isSignin: "isSignin",
   isSignup: "isSignup",
   isHome: "/",
+  isTeam: "isTeam",
 }
 
 export const Layout = ({ children, title = "INCLUSIVE" }) => {
-  const { pathname } = useRouter()
+  const { pathname, asPath } = useRouter()
+  // console.log(
+  //   "✨pathname:",
+  //   pathname,
+  //   asPath,
+  //   pathname.startsWith(`/${ALL_ROUTES_INTERNAL.TEAMS}`)
+  // )
 
   const actualRoute = useMemo(() => {
-    let isORG =
+    const isORG =
       (pathname.startsWith(`/${ALL_ROUTES.ORG}`) ||
         pathname.startsWith(`/${ALL_ROUTES.RECOMMENDED}`) ||
         pathname.startsWith(`/${ALL_ROUTES["MORE-RECOMMENDATION"]}`)) &&
       WhichLayoutDisplay_Key.isORGLike
 
-    let isDashboard =
+    const isDashboard =
       pathname.startsWith(`/${ALL_ROUTES.DASHBOARD}`) &&
       WhichLayoutDisplay_Key.isDashboard
 
-    let isSignup =
+    const isSignup =
       pathname.startsWith(`/${ALL_ROUTES.SIGNUP}`) &&
       WhichLayoutDisplay_Key.isSignup
 
-    let isSignin =
+    const isSignin =
       (pathname.startsWith(`/${ALL_ROUTES.SIGNIN}`) ||
         pathname.startsWith(`/${ALL_ROUTES["RECENT-LOGIN"]}`)) &&
       WhichLayoutDisplay_Key.isSignin
 
-    let toReturn =
+    const isTeam =
+      pathname.startsWith(`/${ALL_ROUTES_INTERNAL.TEAMS}`) &&
+      WhichLayoutDisplay_Key.isTeam
+
+    const toReturn =
       isORG ||
       isDashboard ||
       isSignup ||
       isSignin ||
+      isTeam ||
       WhichLayoutDisplay_Key.isHome
 
     return toReturn
@@ -111,6 +124,18 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
           <OnlyDesktopLayout />
         ) : (
           <Layout_Signup title={title}>{children}</Layout_Signup>
+        )}
+      </>
+    )
+  }
+
+  if (actualRoute === WhichLayoutDisplay_Key.isTeam) {
+    return (
+      <>
+        {isMobile ? (
+          <OnlyDesktopLayout />
+        ) : (
+          <Layout_Team title={title}>{children}</Layout_Team>
         )}
       </>
     )
