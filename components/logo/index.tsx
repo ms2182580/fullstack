@@ -7,7 +7,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { Logo_HeaderWrapper } from "./styles/Logo_HeaderWrapper"
 
-type Props = {
+export type INDEX_LogoType = {
   whichOneShouldDisplay?: "dark" | "white" | "dark-beta" | "white-beta"
 }
 
@@ -18,7 +18,9 @@ const logoToShow = {
   "white-beta": OddyLogoWhiteBeta,
 }
 
-export const INDEX_Logo = ({ whichOneShouldDisplay = "dark" }: Props) => {
+export const INDEX_Logo = ({
+  whichOneShouldDisplay = "dark",
+}: INDEX_LogoType) => {
   const { pathname } = useRouter()
 
   const Logo = logoToShow[whichOneShouldDisplay]

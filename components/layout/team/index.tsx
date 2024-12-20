@@ -1,7 +1,7 @@
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import {
-  TypeUseFormattingRoute,
   useFormattingRoute,
+  UseFormattingRouteType,
 } from "@/utils/useFormattingRoute"
 import Head from "next/head"
 import { useRouter as useNavigation } from "next/navigation"
@@ -12,7 +12,7 @@ import { LayoutDashboardGeneral } from "./layout-dashboard-general"
 import { Layout_TeamWrapper } from "./styles/layout-team-wrapper"
 
 const allRoutesAccepted: Pick<
-  TypeUseFormattingRoute,
+  UseFormattingRouteType,
   "acceptedRoutes"
 >["acceptedRoutes"] = [
   ...Object.keys(ALL_ROUTES_INTERNAL.AUTHENTICATION),
@@ -38,7 +38,7 @@ export const Layout_Team = ({ children, title }) => {
       return <LayoutDashboardGeneral>{children}</LayoutDashboardGeneral>
     }
 
-    return <LayoutAuth>{children}</LayoutAuth>
+    return <LayoutAuth actualRoute={actualRoute}>{children}</LayoutAuth>
   }, [asPath])
 
   if (formatRouteToTitle === null || actualRouteIsValid === false) return null
@@ -47,7 +47,7 @@ export const Layout_Team = ({ children, title }) => {
     <>
       <Head>
         <title>
-          {title} Signup {toTitleText}
+          {title} Teams {toTitleText}
         </title>
         <meta name="description" content="inclusive - website" />
       </Head>

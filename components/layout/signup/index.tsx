@@ -43,7 +43,6 @@ const stepsMessagessAside: StepsMessagess_Type = {
     progressBar: null,
     footerData: null,
   },
-
   WHO_ARE_YOU: {
     title: "Let’s begin the journey by getting to know you!",
     paragraph: "This information helps us customize your dashboard",

@@ -1,8 +1,15 @@
-export type TypeUseFormattingRoute = {
+export type UseFormattingRouteType = {
   routeToCheck: string
   acceptedRoutes: string[]
   isReady: boolean
   push: (e: string) => void
+}
+
+export type UseFormattingRouteReturn = {
+  actualRoute: string
+  formatRouteToTitle: string | null
+  actualRouteIsValid: boolean
+  toTitleText: string | null
 }
 
 export const useFormattingRoute = ({
@@ -10,12 +17,7 @@ export const useFormattingRoute = ({
   acceptedRoutes,
   isReady,
   push,
-}: TypeUseFormattingRoute): {
-  actualRoute: string
-  formatRouteToTitle: string | null
-  actualRouteIsValid: boolean
-  toTitleText: string | null
-} => {
+}: UseFormattingRouteType): UseFormattingRouteReturn => {
   const routeToCheckFormatted = routeToCheck.split("/")
   const isRepeatedUrl = routeToCheckFormatted[1] === routeToCheckFormatted[2]
   const actualRoute = routeToCheckFormatted.at(-1)?.toUpperCase() || ""

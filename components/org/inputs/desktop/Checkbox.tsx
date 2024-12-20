@@ -31,7 +31,6 @@ export const Checkbox = ({
           type="checkbox"
           checked={isChecked}
           onChange={handleOnChange}
-          className={isChecked ? "CHECKED" : ""}
           {...props}
         />
         <span>{label}</span>

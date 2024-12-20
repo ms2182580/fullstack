@@ -413,13 +413,20 @@ type HeaderCSS_Props = {
     | "600"
     | "500"
     | "400"
+    | 800
+    | 700
+    | 600
+    | 500
+    | 400
     | "bolder"
     | "bold"
     | "semibold"
     | "medium"
     | "normal"
+
   color?:
     | "dark_gray"
+    | "dark_gray2"
     | "light_gray"
     | "success"
     | "error"
@@ -482,6 +489,8 @@ export const HeaderCSS = ({
   color: ${() =>
     color === "dark_gray"
       ? NEUTRALS.DARK_GREY
+      : color === "dark_gray2"
+      ? NEUTRALS.DARK_GREY_2
       : color === "light_gray"
       ? NEUTRALS.LIGHT_GREY
       : color === "success"

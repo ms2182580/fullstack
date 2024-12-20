@@ -13,12 +13,11 @@ export const CheckboxWrapper = styled.span`
       appearance: none;
 
       /* creating a custom design */
-
-      padding: 11px; // With this pading, the checkbox get 24px of width and height
+      padding: 11px; // With this pading, the checkbox get 28px of width and height
       border: 3px solid ${NEUTRALS.BLACK};
       border-radius: 4px;
 
-      cursor: pointer;
+      cursor: default;
 
       &:checked {
         border-radius: 4px;
