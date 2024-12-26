@@ -1,4 +1,4 @@
-import { PRIMARY } from "@/assets/Colors"
+import { PRIMARY, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
@@ -14,13 +14,17 @@ type Props = {
 
 export const LayoutAuthWrapper = styled.div<Props>`
   display: flex;
+  gap: calc(8px * 2);
 
-  & > :nth-child(1) {
+  & > aside {
     flex: 0 0 564px;
     padding-inline: calc(8px * 8);
     padding-block: 32px 100px;
 
-    background-color: #e6e780;
+    background-color: ${SECONDARY_BG_BIGBLOCKS_TEXT.YELLOW_2};
+
+    border-top-right-radius: calc(8px * 3);
+    border-bottom-right-radius: calc(8px * 3);
 
     min-height: 100dvh;
 
@@ -80,7 +84,7 @@ export const LayoutAuthWrapper = styled.div<Props>`
     }
   }
 
-  & > :nth-child(2) {
+  & > main {
     flex-grow: 1;
   }
 

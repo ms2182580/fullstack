@@ -1,7 +1,7 @@
+import { NEUTRALS, PRIMARY, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
-import { NEUTRALS, PRIMARY } from "../../../../assets/Colors"
 
 export const Footer_DWrapper = styled.footer`
   position: relative;
@@ -141,7 +141,7 @@ export const Footer_DWrapper = styled.footer`
     // background-image: url("/background/background3.svg");
     // background-repeat: no-repeat;
     // background-size: 100% auto;
-    background-color: #E6E780;
+    background-color: ${SECONDARY_BG_BIGBLOCKS_TEXT.YELLOW_2};
 
     padding-top: 47px;
 

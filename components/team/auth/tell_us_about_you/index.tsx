@@ -1,5 +1,7 @@
+import Signin from "@/assets/images/teams/signin.png"
+import Signup from "@/assets/images/teams/signup.png"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
-import Link from "next/link"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { TellUsAboutYouWrapper } from "./styles/index-wrapper"
 
@@ -11,20 +13,48 @@ import { TellUsAboutYouWrapper } from "./styles/index-wrapper"
 */
 
 export const TellUsAboutYou = () => {
-  const { asPath } = useRouter()
+  const { asPath, push } = useRouter()
 
   const getRoot = asPath.split("/")[1]
 
-  const toSignin = `/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNIN}`
-  const toSignup = `/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNUP}`
+  const handleMoveToSignin = (e) => {
+    if (e.key === "Enter" || e.type === "click") {
+      push(`/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNIN}`)
+    }
+  }
+
+  const handleMoveToSignup = (e) => {
+    if (e.key === "Enter" || e.type === "click") {
+      push(`/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNUP}`)
+    }
+  }
 
   return (
     <TellUsAboutYouWrapper>
-      <Link href={`${toSignin}`}>To sign in</Link>
+      <header>
+        <h1>Tell us about you: </h1>
+      </header>
 
-      <Link href={`${toSignup}`}>To sign up</Link>
-
-      <Link href={`/${getRoot}`}>To dashboard Team</Link>
+      <article
+        tabIndex={0}
+        onClick={handleMoveToSignin}
+        onKeyDown={handleMoveToSignin}
+      >
+        <Image src={Signin} alt="computer image with some pop up" />
+        <p>
+          I’m an <span>Oddy Advocate</span>
+        </p>
+      </article>
+      <article
+        tabIndex={0}
+        onClick={handleMoveToSignup}
+        onKeyDown={handleMoveToSignup}
+      >
+        <Image src={Signup} alt="two hand shaking together" />
+        <p>
+          I’m an <span>Oddy Contractor</span>
+        </p>
+      </article>
     </TellUsAboutYouWrapper>
   )
 }

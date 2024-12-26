@@ -29,6 +29,7 @@ export const SECONDARY_ORG_PLUS = {
 export const SECONDARY_BG_BIGBLOCKS_TEXT = {
   MINT: "#F8FFFC",
   YELLOW: "#FEFEED",
+  YELLOW_2: "#E6E780",
   ASH_BLUE: "#F3FAFF",
   PINK: "#FFF3ED",
 }
