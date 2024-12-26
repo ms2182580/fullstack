@@ -4,7 +4,7 @@ import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { H3, H4 } from "@/components/ui/heading_body_text/HeaderFonts"
 import { useState } from "react"
 import { Signup_D_Steps_Situation_TooltipText } from "./Signup_D_Steps_Situation_TooltipText"
-import { Input } from "./styles/INDEX_D_Signup_HomeWrapper"
+import { Input } from "./styles/index-wrapper"
 import {
   Signup_D_Steps_SituationWrapper,
   SituationSpanWrapper,

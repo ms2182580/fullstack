@@ -12,7 +12,7 @@ import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { useState } from "react"
 import { INDEX_D_Signup_Home_TooltipText } from "./INDEX_D_Signup_Home_TooltipText"
-import { INDEX_D_Signup_HomeWrapper } from "./styles/INDEX_D_Signup_HomeWrapper"
+import { INDEX_D_Signup_HomeWrapper } from "./styles/index-wrapper"
 
 export const passwordStrength_Keys = {
   "Very Weak": "Very Weak",
