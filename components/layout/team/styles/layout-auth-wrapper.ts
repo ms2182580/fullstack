@@ -1,4 +1,4 @@
-import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { PRIMARY } from "@/assets/Colors"
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
@@ -56,49 +56,15 @@ export const LayoutAuthWrapper = styled.div<Props>`
 
       column-gap: 8px;
 
-      input[type="checkbox"] {
-        margin-top: 6px;
+      accent-color: ${PRIMARY.PRIMARY_CTA};
 
-        border: 2px solid crimson;
-
-        -webkit-appearance: none;
-        appearance: none;
-
-        border: 2px solid ${NEUTRALS.BLACK};
-        padding: 6px;
-
-        background-color: ${NEUTRALS.OFF_WHITE};
-
-        border-radius: 4px;
-
-        &:checked {
-          position: relative;
-
-          &::before {
-            content: "L";
-            font-family: arial;
-            font-weight: 600;
-            transform: scaleX(-1) rotate(-37deg);
-            scale: 1;
-
-            position: absolute;
-            left: 3px;
-            top: -2px;
-
-            /* top: 0px; */
-
-            /* left: 8px; */
-          }
-        }
-
-        :is(:hover, :focus-visible) {
-          box-shadow: 0px 0px 1px 1px ${SEMANTICS.HYPERLINK_NORMAL};
-        }
+      & > input[type="checkbox"] {
+        margin-top: 5px;
       }
 
-      & > span {
-        ${Paragraph({ color: "dark_gray_2", fontWeight: 400 })}
-        font-size:12px;
+      & > p {
+        ${Paragraph({ color: "dark_gray_2", fontWeight: 400 })};
+        font-size: 12px;
         line-height: 18px;
         letter-spacing: 0.3px;
         font-style: italic;

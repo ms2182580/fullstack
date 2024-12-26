@@ -2,7 +2,7 @@ import { INDEX_Logo, INDEX_LogoType } from "@/components/logo"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import { UseFormattingRouteReturn } from "@/utils/useFormattingRoute"
 import { useRouter } from "next/router"
-import { ReactNode, useMemo } from "react"
+import { ReactElement, ReactNode, useMemo } from "react"
 import { LayoutAuthWrapper } from "./styles/layout-auth-wrapper"
 
 /* 
@@ -14,7 +14,7 @@ import { LayoutAuthWrapper } from "./styles/layout-auth-wrapper"
 
 type AsideDataShape = {
   title?: string
-  paragraph: string[]
+  paragraph: (string | ReactElement)[]
   checkText?: string
   howIsLogo?: INDEX_LogoType["whichOneShouldDisplay"]
 }
@@ -28,7 +28,11 @@ const AsideData: AsideDataType = {
     title: "Welcome to Oddy’s partner portal !",
     paragraph: [
       "At Oddy, we’re on a mission to connect families with developmental disabilities to the resources they need to thrive—whether it’s legal aid, housing, education, mental health support, or assistive technology.  Since 2012, we’ve been empowering families and amplifying the impact of incredible resources like yours.",
-      "The Partner Portal is your space to make a difference: Here, you can update listings, share feedback, and help us grow the world’s largest directory of developmental disability resources.",
+      <>
+        The <strong>Partner Portal</strong> is your space to make a difference:
+        Here, you can update listings, share feedback, and help us grow the
+        world’s largest directory of developmental disability resources.
+      </>,
       "Together, we’re tearing down barriers and building connections that change lives. Your dedication is what drives this mission forward, and we couldn’t do it without you. Thank you for being a vital part of the Oddy family—let’s keep making a real impact, one connection at a time!",
     ],
     checkText:
@@ -55,7 +59,7 @@ type Props = {
 } & Pick<UseFormattingRouteReturn, "actualRoute">
 
 export const LayoutAuth = ({ children, actualRoute }: Props) => {
-  const { asPath, isReady } = useRouter()
+  const { asPath } = useRouter()
 
   const whichDataShouldDisplay = useMemo((): AsideDataShape => {
     const objectData = AsideData[`${actualRoute}`]
@@ -80,17 +84,18 @@ export const LayoutAuth = ({ children, actualRoute }: Props) => {
         </header>
 
         <div>
-          {whichDataShouldDisplay.paragraph.map((xData) => {
-            return <p key={xData}>{xData}</p>
+          {whichDataShouldDisplay.paragraph.map((xData, index) => {
+            return <p key={`${xData}_${index}`}>{xData}</p>
           })}
         </div>
 
         {whichDataShouldDisplay.checkText !== null && (
           <label>
             <input type="checkbox" />
-            <span>
-              {whichDataShouldDisplay.checkText} <span>*</span>
-            </span>
+            <p>
+              {whichDataShouldDisplay.checkText}
+              <span>*</span>
+            </p>
           </label>
         )}
       </aside>

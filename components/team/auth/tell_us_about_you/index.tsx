@@ -6,12 +6,12 @@ import { TellUsAboutYouWrapper } from "./styles/index-wrapper"
 /* 
 !FH0
 
-Create the whole flow, in this case: "Tell Us About You"
+- Create the whole flow, in this case: "Tell Us About You"
+- Check the file "layout-auth-wrapper.ts" the checkbox is weird
 */
 
 export const TellUsAboutYou = () => {
   const { asPath } = useRouter()
-  // console.log("pathname:", pathname, all)
 
   const getRoot = asPath.split("/")[1]
 
