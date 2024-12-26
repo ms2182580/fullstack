@@ -43,7 +43,13 @@ function checkPasswordStrength(password) {
   }
 }
 
-export const INDEX_D_Signup_Home = () => {
+type Props = {
+  customSigninRoute?: string
+}
+
+export const INDEX_D_Signup_Home = ({
+  customSigninRoute = ALL_ROUTES.SIGNIN,
+}: Props) => {
   let [isShowPassword, setIsShowPassword] = useState(false)
   const [password, setPassword] = useState("")
   const [passwordStrength, setPasswordStrenth] = useState("")
@@ -158,9 +164,7 @@ export const INDEX_D_Signup_Home = () => {
       <div>
         <p>
           Already have an account?{" "}
-          <Link href={`${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
-            Log in
-          </Link>
+          <Link href={`${customSigninRoute}`}>Log in</Link>
         </p>
         <div>
           <span></span>

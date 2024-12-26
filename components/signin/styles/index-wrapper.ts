@@ -1,7 +1,8 @@
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
+import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
 
-export const LoginWrapper = styled.div`
+export const IndexWrapper = styled.div`
   form {
     margin-top: 20px;
 
@@ -61,15 +62,9 @@ export const LoginWrapper = styled.div`
       ${reusableButton({})}
     }
   }
+
   & > :nth-child(3) {
     & > :nth-child(1) {
-      display: flex;
-      justify-content: center;
-      & > :nth-child(1) {
-        margin-left: 5px;
-      }
-    }
-    & > :nth-child(2) {
       margin-top: 32px;
       margin-bottom: 32px;
       display: flex;
@@ -94,18 +89,24 @@ export const LoginWrapper = styled.div`
   & > :nth-child(5) {
     margin: 16px 0px;
     width: 100%;
-    display: flex;
-    align-items: center;
     border-radius: 8px;
     border: 2px solid #3a343c;
-    background: #fff;
     gap: 8px;
-    & > :nth-child(1) {
-      display: flex;
-      padding-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-block: 8px;
+
+    background: #fff;
+
+    & > p {
+      ${Paragraph({ color: "black" })};
     }
-    & > :hover {
-      color: #3a343c;
+
+    &:is(:hover, :focus-visible) {
+      background: #f5f5f5;
     }
   }
 

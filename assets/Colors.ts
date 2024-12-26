@@ -31,6 +31,8 @@ export const SECONDARY_BG_BIGBLOCKS_TEXT = {
   YELLOW: "#FEFEED",
   YELLOW_2: "#E6E780",
   ASH_BLUE: "#F3FAFF",
+  ASH_BLUE_2: "#006987",
+
   PINK: "#FFF3ED",
 }
 

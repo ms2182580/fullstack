@@ -3,10 +3,7 @@ import "@testing-library/jest-dom/vitest"
 import { cleanup, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { afterEach, describe, expect, it } from "vitest"
-import {
-  INDEX_D_Signup_Home,
-  passwordStrength_Keys,
-} from "../INDEX_D_Signup_Home"
+import { INDEX_D_Signup_Home, passwordStrength_Keys } from ".."
 
 describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
   afterEach(async () => {
@@ -322,10 +319,7 @@ describe(`Testing ${INDEX_D_Signup_Home.name} component`, (ctx_describe) => {
       const getData = screen.getByRole("link", { name: /log in/i })
 
       expect(getData).toBeInTheDocument()
-      expect(getData).toHaveAttribute(
-        "href",
-        `${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`
-      )
+      expect(getData).toHaveAttribute("href", `${ALL_ROUTES.SIGNIN}`)
     })
   })
 

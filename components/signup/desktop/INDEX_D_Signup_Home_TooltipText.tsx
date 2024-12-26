@@ -1,5 +1,5 @@
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { passwordStrength_Keys } from "./INDEX_D_Signup_Home"
+import { passwordStrength_Keys } from "."
 
 export const INDEX_D_Signup_Home_TooltipText = () => {
   return (

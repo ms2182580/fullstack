@@ -1,4 +1,4 @@
-import { TeamDashboardDynamic } from "@/components/team/auth/dynamic"
+import { TeamDashboardDynamic } from "@/components/teams/auth/dynamic"
 
 export default function PAGES_Dynamic() {
   return <TeamDashboardDynamic />

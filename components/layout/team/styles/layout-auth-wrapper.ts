@@ -1,4 +1,4 @@
-import { PRIMARY, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
@@ -91,8 +91,24 @@ export const LayoutAuthWrapper = styled.div<Props>`
   ${({ actualRoute }) =>
     (actualRoute === "SIGNIN" || actualRoute === "SIGNUP") &&
     css`
-      & > * {
-        border: 20px solid lightseagreen !important;
+      & > aside {
+        flex: 0 0 280px;
+        padding-inline: 20px;
+        padding-top: 20px;
+
+        background-color: ${SECONDARY_BG_BIGBLOCKS_TEXT.ASH_BLUE_2};
+
+        & > header {
+          h1 {
+            color: ${NEUTRALS.OFF_WHITE};
+          }
+        }
+
+        & > :nth-child(3) {
+          p {
+            color: ${NEUTRALS.OFF_WHITE};
+          }
+        }
       }
     `}
 `
