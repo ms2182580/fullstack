@@ -1,7 +1,7 @@
 import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
-import OddyLogoDarkR from "@/assets/icons/logo/dark-r.svg"
 import OddyLogoDark from "@/assets/icons/logo/dark.svg"
 import OddyLogoDarkBeta from "@/assets/icons/logo/darkBeta.svg"
+import OddyLogoDarkR from "@/assets/icons/logo/darkR.svg"
 import OddyLogoWhite from "@/assets/icons/logo/white.svg"
 import OddyLogoWhiteBeta from "@/assets/icons/logo/whiteBeta.svg"
 import Link from "next/link"
