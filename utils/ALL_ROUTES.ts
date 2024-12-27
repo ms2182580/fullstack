@@ -35,13 +35,13 @@ export const ALL_ROUTES_INTERNAL = {
   DASHBOARD: "dashboard",
   DASHBOARD_SECTIONS: {
     DASHBOARD: "dashboard",
-    DOCUMENTS: "documents",
-    AI_CHAT: "ai_chat",
-    RESOURCE_DIRECTORY: "resource_directory",
+    RESOURCES: "resources",
+    CATEGORIES: "categories",
+    WRITE_CONTENT: "write_content",
     SAVED: "saved",
-    CARE_PLAN: "care_plan",
   },
-  AUTHENTICATION: {
+  AUTHENTICATION: "auth",
+  AUTHENTICATION_SECTIONS: {
     TELL_US_ABOUT_YOU: "tell_us_about_you",
     SIGNIN: "signin",
     SIGNUP: "signup",

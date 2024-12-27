@@ -8,58 +8,59 @@ import { Layout_General } from "../general"
 import { OnlyDesktopLayout } from "../general/only-desktop-layout"
 import { Layout_Signin } from "../signin"
 import { Layout_Signup } from "../signup"
-import { Layout_Team } from "../team"
+import { Layout_Team } from "../teams"
 
-const WhichLayoutDisplay_Key = {
+export const whichLayoutDisplayKey = {
   isORGLike: "isORGLike",
   isDashboard: "isDashboard",
   isRegistration: "isRegistration",
   isSignin: "isSignin",
   isSignup: "isSignup",
   isHome: "/",
-  isTeam: "isTeam",
+  isTeamsDashboard: "isTeamsDashboard",
+  isTeamsAuth: "isTeamsAuth",
 }
 
 export const Layout = ({ children, title = "INCLUSIVE" }) => {
-  const { pathname, asPath } = useRouter()
-  // console.log(
-  //   "✨pathname:",
-  //   pathname,
-  //   asPath,
-  //   pathname.startsWith(`/${ALL_ROUTES_INTERNAL.TEAMS}`)
-  // )
+  const { pathname } = useRouter()
 
   const actualRoute = useMemo(() => {
     const isORG =
       (pathname.startsWith(`/${ALL_ROUTES.ORG}`) ||
         pathname.startsWith(`/${ALL_ROUTES.RECOMMENDED}`) ||
         pathname.startsWith(`/${ALL_ROUTES["MORE-RECOMMENDATION"]}`)) &&
-      WhichLayoutDisplay_Key.isORGLike
+      whichLayoutDisplayKey.isORGLike
 
     const isDashboard =
       pathname.startsWith(`/${ALL_ROUTES.DASHBOARD}`) &&
-      WhichLayoutDisplay_Key.isDashboard
+      whichLayoutDisplayKey.isDashboard
 
     const isSignup =
       pathname.startsWith(`/${ALL_ROUTES.SIGNUP}`) &&
-      WhichLayoutDisplay_Key.isSignup
+      whichLayoutDisplayKey.isSignup
 
     const isSignin =
       (pathname.startsWith(`/${ALL_ROUTES.SIGNIN}`) ||
         pathname.startsWith(`/${ALL_ROUTES["RECENT-LOGIN"]}`)) &&
-      WhichLayoutDisplay_Key.isSignin
+      whichLayoutDisplayKey.isSignin
 
-    const isTeam =
+    const isTeamsDashboard =
+      pathname.startsWith(
+        `/${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.DASHBOARD}`
+      ) && whichLayoutDisplayKey.isTeamsDashboard
+
+    const isTeamsAuth =
       pathname.startsWith(`/${ALL_ROUTES_INTERNAL.TEAMS}`) &&
-      WhichLayoutDisplay_Key.isTeam
+      whichLayoutDisplayKey.isTeamsAuth
 
     const toReturn =
       isORG ||
       isDashboard ||
       isSignup ||
       isSignin ||
-      isTeam ||
-      WhichLayoutDisplay_Key.isHome
+      isTeamsDashboard ||
+      isTeamsAuth ||
+      whichLayoutDisplayKey.isHome
 
     return toReturn
   }, [pathname])
@@ -69,8 +70,8 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
   if (isMobile === undefined) return null
 
   if (
-    actualRoute === WhichLayoutDisplay_Key.isHome ||
-    actualRoute === WhichLayoutDisplay_Key.isORGLike
+    actualRoute === whichLayoutDisplayKey.isHome ||
+    actualRoute === whichLayoutDisplayKey.isORGLike
   ) {
     return (
       <>
@@ -88,7 +89,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
     )
   }
 
-  if (actualRoute === WhichLayoutDisplay_Key.isDashboard) {
+  if (actualRoute === whichLayoutDisplayKey.isDashboard) {
     return (
       <>
         {isMobile ? (
@@ -100,7 +101,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
     )
   }
 
-  if (actualRoute === WhichLayoutDisplay_Key.isSignin) {
+  if (actualRoute === whichLayoutDisplayKey.isSignin) {
     return (
       <>
         <Head>
@@ -117,7 +118,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
     )
   }
 
-  if (actualRoute === WhichLayoutDisplay_Key.isSignup) {
+  if (actualRoute === whichLayoutDisplayKey.isSignup) {
     return (
       <>
         {isMobile ? (
@@ -129,13 +130,18 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
     )
   }
 
-  if (actualRoute === WhichLayoutDisplay_Key.isTeam) {
+  if (
+    actualRoute === whichLayoutDisplayKey.isTeamsDashboard ||
+    actualRoute === whichLayoutDisplayKey.isTeamsAuth
+  ) {
     return (
       <>
         {isMobile ? (
           <OnlyDesktopLayout />
         ) : (
-          <Layout_Team title={title}>{children}</Layout_Team>
+          <Layout_Team title={title} theRoot={actualRoute}>
+            {children}
+          </Layout_Team>
         )}
       </>
     )

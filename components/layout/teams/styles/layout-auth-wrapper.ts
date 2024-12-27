@@ -5,8 +5,8 @@ import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import styled, { css } from "styled-components"
 
 type AcceptedRoutes =
-  | keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION
-  | (typeof ALL_ROUTES_INTERNAL.AUTHENTICATION)[keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION]
+  | keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS
+  | (typeof ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS)[keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS]
 
 type Props = {
   actualRoute: AcceptedRoutes

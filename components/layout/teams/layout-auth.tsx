@@ -14,13 +14,13 @@ import { LayoutAuthWrapper } from "./styles/layout-auth-wrapper"
 
 type AsideDataShape = {
   title?: string
-  paragraph: (string | ReactElement)[]
+  paragraph?: (string | ReactElement)[]
   checkText?: string
   howIsLogo?: INDEX_LogoType["whichOneShouldDisplay"]
 }
 
 type AsideDataType = {
-  [key in keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION]: AsideDataShape
+  [key in keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS]: AsideDataShape
 }
 
 const AsideData: AsideDataType = {
@@ -84,9 +84,10 @@ export const LayoutAuth = ({ children, actualRoute }: Props) => {
         </header>
 
         <div>
-          {whichDataShouldDisplay.paragraph.map((xData, index) => {
-            return <p key={`${xData}_${index}`}>{xData}</p>
-          })}
+          {whichDataShouldDisplay.paragraph &&
+            whichDataShouldDisplay.paragraph.map((xData, index) => {
+              return <p key={`${xData}_${index}`}>{xData}</p>
+            })}
         </div>
 
         {whichDataShouldDisplay.checkText !== null && (

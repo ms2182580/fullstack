@@ -1,36 +1,18 @@
 import { NEUTRALS } from "@/assets/Colors"
-import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import styled from "styled-components"
 
-export const Layout_Dashboard_General_AsideWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const LayoutDashboardGeneralAsideWrapper = styled.div`
+  padding-inline: 12px;
+  padding-top: calc(8px * 4);
 
   border-right: 1px solid ${NEUTRALS.BORDER};
 
-  & > :nth-child(1) {
-    padding: 16px 30px;
-  }
+  display: flex;
+  flex-direction: column;
 
-  & > :nth-child(2) {
-    ${reusableButton()};
-
-    margin-top: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-inline: auto;
-
-    & > * {
-      & > * {
-        fill: ${NEUTRALS.OFF_WHITE};
-      }
-    }
+  & > button {
+    margin-top: calc(8px * 6);
   }
 
   & > ul {
@@ -45,10 +27,8 @@ export const Layout_Dashboard_General_AsideWrapper = styled.div`
       }
     }
   }
-
   & > :last-child {
     margin-top: auto;
-    margin-inline: 12px;
 
     border-top: 1px solid ${NEUTRALS.BORDER};
 

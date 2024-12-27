@@ -14,18 +14,21 @@ import { TellUsAboutYouWrapper } from "./styles/index-wrapper"
 
 export const TellUsAboutYou = () => {
   const { asPath, push } = useRouter()
+  console.log("asPath:", asPath)
 
-  const getRoot = asPath.split("/")[1]
+  const getRoot = `${asPath.split("/")[1]}/${
+    ALL_ROUTES_INTERNAL.AUTHENTICATION
+  }`
 
   const handleMoveToSignin = (e) => {
     if (e.key === "Enter" || e.type === "click") {
-      push(`/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNIN}`)
+      push(`/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS.SIGNIN}`)
     }
   }
 
   const handleMoveToSignup = (e) => {
     if (e.key === "Enter" || e.type === "click") {
-      push(`/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION.SIGNUP}`)
+      push(`/${getRoot}/${ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS.SIGNUP}`)
     }
   }
 

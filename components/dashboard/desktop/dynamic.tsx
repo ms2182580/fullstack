@@ -33,7 +33,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
 ]
 
-export const Dashboard_D_Sections = () => {
+export const DashboardDynamic = () => {
   const { componentToRender, propsToComponent } = useDynamicComponentToRender({
     componentsToRenderAvailable,
   })

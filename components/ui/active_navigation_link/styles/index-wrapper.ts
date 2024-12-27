@@ -1,12 +1,11 @@
 import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
-import styled, { css, FlattenSimpleInterpolation } from "styled-components"
+import styled, { css } from "styled-components"
 
-export type Active_Navigation_LinkWrapper_Props = {
+export type ActiveNavigationLinkWrapperProps = {
   isActive: boolean
-  stylesForActive: () => FlattenSimpleInterpolation
 }
 
-export const Active_Navigation_LinkWrapper = styled.li<Active_Navigation_LinkWrapper_Props>`
+export const ActiveNavigationLinkWrapper = styled.li<ActiveNavigationLinkWrapperProps>`
   list-style: none;
 
   & > a {
@@ -23,13 +22,9 @@ export const Active_Navigation_LinkWrapper = styled.li<Active_Navigation_LinkWra
     }
   }
 
-  ${({ isActive, stylesForActive }) =>
+  ${({ isActive }) =>
     isActive &&
     css`
-      ${stylesForActive()}
-
-      & > * {
-        ${stylesForActive()}
-      }
+      background-color: ${SEMANTICS.NAVIGATION_ACTIVE};
     `}
 `

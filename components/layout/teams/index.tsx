@@ -7,6 +7,7 @@ import Head from "next/head"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
+import { whichLayoutDisplayKey } from "../index"
 import { LayoutAuth } from "./layout-auth"
 import { LayoutDashboardGeneral } from "./layout-dashboard-general"
 import { Layout_TeamWrapper } from "./styles/layout-team-wrapper"
@@ -15,11 +16,13 @@ const allRoutesAccepted: Pick<
   UseFormattingRouteType,
   "acceptedRoutes"
 >["acceptedRoutes"] = [
-  ...Object.keys(ALL_ROUTES_INTERNAL.AUTHENTICATION),
+  ...Object.keys(ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS),
+  ...Object.keys(ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS),
   ALL_ROUTES_INTERNAL.TEAMS,
+  ALL_ROUTES_INTERNAL.AUTHENTICATION,
 ]
 
-export const Layout_Team = ({ children, title }) => {
+export const Layout_Team = ({ children, title, theRoot }) => {
   const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
@@ -32,9 +35,7 @@ export const Layout_Team = ({ children, title }) => {
     })
 
   const layoutPlusChildren = useMemo(() => {
-    const theRouteFormatted = actualRoute?.toLowerCase()
-
-    if (theRouteFormatted === ALL_ROUTES_INTERNAL.TEAMS) {
+    if (theRoot === whichLayoutDisplayKey.isTeamsDashboard) {
       return <LayoutDashboardGeneral>{children}</LayoutDashboardGeneral>
     }
 

@@ -1,5 +1,3 @@
-import { INDEX_DashboardWrapper } from "./styles/index-wrapper"
-
-export const INDEX_Dashboard = () => {
-  return <INDEX_DashboardWrapper>INDEX_TeamDashboard</INDEX_DashboardWrapper>
+export const INDEX_TeamsDashboard = () => {
+  return <h1>DASHBOARD Index on a component</h1>
 }
