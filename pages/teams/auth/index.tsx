@@ -1,9 +1,5 @@
-import { useRouter } from "next/navigation"
+import { TellUsAboutYou } from "@/components/teams/auth/tell_us_about_you"
 
 export default function PAGES_Auth() {
-  const { push } = useRouter()
-
-  push("/teams/auth/tell_us_about_you")
-
-  return null
+  return <TellUsAboutYou />
 }

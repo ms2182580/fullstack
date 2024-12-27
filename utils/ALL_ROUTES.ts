@@ -42,7 +42,6 @@ export const ALL_ROUTES_INTERNAL = {
   },
   AUTHENTICATION: "auth",
   AUTHENTICATION_SECTIONS: {
-    TELL_US_ABOUT_YOU: "tell_us_about_you",
     SIGNIN: "signin",
     SIGNUP: "signup",
   },

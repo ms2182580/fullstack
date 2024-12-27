@@ -19,12 +19,16 @@ type AsideDataShape = {
   howIsLogo?: INDEX_LogoType["whichOneShouldDisplay"]
 }
 
+type KeysAuth =
+  | keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS
+  | "AUTH"
+
 type AsideDataType = {
-  [key in keyof typeof ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS]: AsideDataShape
+  [key in KeysAuth]: AsideDataShape
 }
 
 const AsideData: AsideDataType = {
-  TELL_US_ABOUT_YOU: {
+  AUTH: {
     title: "Welcome to Oddy’s partner portal !",
     paragraph: [
       "At Oddy, we’re on a mission to connect families with developmental disabilities to the resources they need to thrive—whether it’s legal aid, housing, education, mental health support, or assistive technology.  Since 2012, we’ve been empowering families and amplifying the impact of incredible resources like yours.",

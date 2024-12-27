@@ -14,7 +14,6 @@ import { TellUsAboutYouWrapper } from "./styles/index-wrapper"
 
 export const TellUsAboutYou = () => {
   const { asPath, push } = useRouter()
-  console.log("asPath:", asPath)
 
   const getRoot = `${asPath.split("/")[1]}/${
     ALL_ROUTES_INTERNAL.AUTHENTICATION

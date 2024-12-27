@@ -6,13 +6,8 @@ import {
 import { cloneElement, isValidElement } from "react"
 import { Signin } from "./signin"
 import { Signup } from "./signup"
-import { TellUsAboutYou } from "./tell_us_about_you"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
-  {
-    route: ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS.TELL_US_ABOUT_YOU,
-    component: <TellUsAboutYou />,
-  },
   {
     route: ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS.SIGNIN,
     component: <Signin />,
