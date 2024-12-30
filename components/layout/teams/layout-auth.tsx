@@ -63,7 +63,9 @@ type Props = {
 } & Pick<UseFormattingRouteReturn, "actualRoute">
 
 export const LayoutAuth = ({ children, actualRoute }: Props) => {
+  console.log("children:", children)
   const { asPath } = useRouter()
+  console.log("asPath:", asPath)
 
   const whichDataShouldDisplay = useMemo((): AsideDataShape => {
     const objectData = AsideData[`${actualRoute}`]
