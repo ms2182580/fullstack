@@ -11,6 +11,7 @@ export const LayoutDashboardGeneralAsideWrapper = styled.div`
 
   & > :nth-child(1) {
     padding: 16px 30px;
+    margin-inline: auto;
   }
 
   & > :nth-child(2) {
