@@ -1,4 +1,5 @@
 import SVGArrow from "@/assets/icons/arrow_up.svg"
+import SVGPlus from "@/assets/icons/org/third-page/org_plus.svg"
 import { INDEX_Logo } from "@/components/logo"
 import { ActiveNavigationLink } from "@/components/ui/active_navigation_link"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
@@ -44,7 +45,11 @@ export const LayoutDashboardGeneralAside = () => {
     <LayoutDashboardGeneralAsideWrapper>
       <INDEX_Logo whichOneShouldDisplay="dark-r" />
 
-      <button>New Search</button>
+      <button>
+        <SVGPlus />
+
+        <span>New Search</span>
+      </button>
 
       <ul>
         {formattedRoutes.map(
