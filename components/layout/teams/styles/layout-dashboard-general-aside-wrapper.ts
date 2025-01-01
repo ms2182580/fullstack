@@ -78,6 +78,8 @@ export const LayoutDashboardGeneralAsideWrapper = styled.div`
         color: ${NEUTRALS.DARK_GREY_3};
         font-weight: 400;
 
+        position: relative;
+
         & > svg {
           & > path {
             fill: currentColor;
@@ -86,6 +88,22 @@ export const LayoutDashboardGeneralAsideWrapper = styled.div`
 
         &:is(:hover, :focus-visible) {
           background-color: transparent;
+
+          &::after {
+            content: "Route on construction!";
+            position: absolute;
+
+            left: 0;
+            top: -50%;
+            left: 18%;
+
+            width: max-content;
+            padding: calc(8px * 1);
+            border-radius: 8px 8px 8px 0;
+
+            background-color: ${NEUTRALS.DARK_GREY_3};
+            color: white;
+          }
         }
       }
     }

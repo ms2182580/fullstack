@@ -20,7 +20,7 @@ export const ActiveNavigationLink = ({
   return (
     <ActiveNavigationLinkWrapper isActive={isActive}>
       {isDisabledRoute ? (
-        <a href="#" tabIndex={-1}>
+        <a href="#" tabIndex={0}>
           {children}
         </a>
       ) : (
