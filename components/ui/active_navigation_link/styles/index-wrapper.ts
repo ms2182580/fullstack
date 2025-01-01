@@ -1,4 +1,4 @@
-import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
+import { NEUTRALS, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import styled, { css } from "styled-components"
 
 export type ActiveNavigationLinkWrapperProps = {
@@ -15,16 +15,23 @@ export const ActiveNavigationLinkWrapper = styled.li<ActiveNavigationLinkWrapper
     font-size: 16px;
     color: ${NEUTRALS.BLACK};
 
-    &:hover,
-    &:focus-visible {
+    &:is(:hover, :focus-visible) {
       background-color: ${({ isActive }) =>
-        !isActive && `${SEMANTICS.NAVIGATION_HOVER_FOCUS}`};
+        !isActive && `${NEUTRALS.BORDER_HOVER}`};
     }
   }
 
   ${({ isActive }) =>
     isActive &&
     css`
-      background-color: ${SEMANTICS.NAVIGATION_ACTIVE};
+      background-color: ${NEUTRALS.BORDER};
+
+      & > a {
+        & > svg {
+          & > path {
+            fill: ${SECONDARY_BG_BIGBLOCKS_TEXT.ASH_BLUE_2};
+          }
+        }
+      }
     `}
 `

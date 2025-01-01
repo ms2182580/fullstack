@@ -10,6 +10,11 @@ const allRoutesAcceptedToURL = Object.values(
   ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS
 )
 
+const routesDisabled = {
+  [ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.WRITE_CONTENT]:
+    ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.WRITE_CONTENT,
+}
+
 const formattedRoutes = allRoutesAcceptedToURL.map((x) => {
   const theRoot = `/${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.DASHBOARD}`
 
@@ -21,11 +26,14 @@ const formattedRoutes = allRoutesAcceptedToURL.map((x) => {
       ? dashboardAsideIcons!._get(x)
       : undefined
 
+  const isDisabledRoute = routesDisabled[x] ? true : false
+
   return {
     formattedToUI: x.replaceAll("_", " "),
     formattedToURL: formattedURLBecauseDashboard,
     svgDefault: svgRetrieved?.default,
     svgActive: svgRetrieved?.active,
+    isDisabledRoute,
   }
 })
 
@@ -40,8 +48,13 @@ export const LayoutDashboardGeneralAside = () => {
 
       <ul>
         {formattedRoutes.map(
-          ({ formattedToUI, formattedToURL, svgDefault, svgActive }) => {
-            console.log("asPath:", asPath, formattedToURL)
+          ({
+            formattedToUI,
+            formattedToURL,
+            svgDefault,
+            svgActive,
+            isDisabledRoute,
+          }) => {
             const isActive = asPath === formattedToURL
             const SVGToUI = isActive ? svgActive : svgDefault
 
@@ -49,6 +62,7 @@ export const LayoutDashboardGeneralAside = () => {
               <ActiveNavigationLink
                 key={formattedToURL}
                 toURL={formattedToURL}
+                isDisabledRoute={isDisabledRoute}
                 isActive={isActive}
               >
                 {SVGToUI && <SVGToUI />}

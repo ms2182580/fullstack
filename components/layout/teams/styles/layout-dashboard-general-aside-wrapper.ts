@@ -19,11 +19,35 @@ export const LayoutDashboardGeneralAsideWrapper = styled.div`
     margin-top: calc(8px * 3);
 
     & > li {
+      border-radius: 6px;
+
       & > a {
         display: flex;
         gap: 12px;
 
         padding: 16px 24px;
+        border-radius: inherit;
+
+        font-weight: 500;
+      }
+    }
+
+    & > :nth-child(4) {
+      & > a {
+        cursor: not-allowed;
+
+        color: ${NEUTRALS.DARK_GREY_3};
+        font-weight: 400;
+
+        & > svg {
+          & > path {
+            fill: currentColor;
+          }
+        }
+
+        &:is(:hover, :focus-visible) {
+          background-color: transparent;
+        }
       }
     }
   }

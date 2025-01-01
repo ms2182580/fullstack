@@ -5,11 +5,14 @@ import Link from "next/link.js"
 import { Fragment } from "react"
 import { Breadcrumbs_DWrapper } from "./styles/Breadcrumbs_DWrapper"
 
-export const Breadcrumbs_D = ({ whichDisplay = [], typedFlow = false }) => {
+export const Breadcrumbs_D = ({
+  whichDisplay = [],
+  typedFlow = false,
+}: any) => {
   const useTab = useTabIndex()
 
   return (
-    <Breadcrumbs_DWrapper typedFlow={typedFlow}>
+    <Breadcrumbs_DWrapper>
       <Link href="/" tabIndex={useTab}>
         <Breadcrumbs_Home />
         Home

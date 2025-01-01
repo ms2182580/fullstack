@@ -49,6 +49,7 @@ export const NEUTRALS = {
   OFF_WHITE: "#FCFDFE" /* Overall Background */,
   OFF_WHITE_2: "#F3F1F3" /* Overall Background alternative 2 */,
   BORDER: "#D3CED5",
+  BORDER_HOVER: "hsl(282.9, 7.7%, 72.2%)",
 }
 
 export const SEMANTICS = {

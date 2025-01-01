@@ -8,12 +8,24 @@ import {
 type Props = {
   toURL: string
   children: ReactNode
-} & ActiveNavigationLinkWrapperProps
+  isDisabledRoute?: boolean
+} & Pick<ActiveNavigationLinkWrapperProps, "isActive">
 
-export const ActiveNavigationLink = ({ toURL, children, isActive }: Props) => {
+export const ActiveNavigationLink = ({
+  toURL,
+  children,
+  isDisabledRoute = false,
+  isActive,
+}: Props) => {
   return (
     <ActiveNavigationLinkWrapper isActive={isActive}>
-      <Link href={toURL}>{children}</Link>
+      {isDisabledRoute ? (
+        <a href="#" tabIndex={-1}>
+          {children}
+        </a>
+      ) : (
+        <Link href={toURL}>{children}</Link>
+      )}
     </ActiveNavigationLinkWrapper>
   )
 }

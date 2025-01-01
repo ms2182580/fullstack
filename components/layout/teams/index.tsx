@@ -24,7 +24,6 @@ const allRoutesAccepted: Pick<
 
 export const Layout_Team = ({ children, title, theRoot }) => {
   const { asPath, isReady } = useRouter()
-  console.log("asPath:", asPath)
   const { push } = useNavigation()
 
   const { actualRoute, formatRouteToTitle, actualRouteIsValid, toTitleText } =
