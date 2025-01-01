@@ -14,6 +14,10 @@ export const LayoutDashboardGeneralAsideWrapper = styled.div`
 
   min-width: 264px;
 
+  & > :nth-child(1) {
+    margin-inline: auto;
+  }
+
   & > button {
     ${reusableButton({ secondary: true })};
     margin-top: calc(8px * 6);
