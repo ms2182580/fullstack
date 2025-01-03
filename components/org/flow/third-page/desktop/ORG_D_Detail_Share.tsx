@@ -16,8 +16,8 @@ export const ORG_D_Detail_Share = ({ picture, name, lastName }) => {
   return (
     <>
       <ORG_D_Detail_ShareWrapper
-        onClick={(e) => openDialog({ event: e })}
-        onKeyDown={(e) => openDialog({ event: e })}
+        onClick={openDialog}
+        onKeyDown={openDialog}
         tabIndex={0}
       >
         <ShareSvg_2 />
@@ -25,7 +25,7 @@ export const ORG_D_Detail_Share = ({ picture, name, lastName }) => {
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

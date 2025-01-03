@@ -9,7 +9,7 @@ import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { whichLayoutDisplayKey } from "../index"
 import { LayoutAuth } from "./layout-auth"
-import { LayoutDashboardGeneral } from "./layout-dashboard-general"
+import { INDEX_LayoutDashboardGeneral } from "./layout-dashboard-general"
 import { Layout_TeamWrapper } from "./styles/layout-team-wrapper"
 
 const allRoutesAccepted: Pick<
@@ -36,7 +36,9 @@ export const Layout_Team = ({ children, title, theRoot }) => {
 
   const layoutPlusChildren = useMemo(() => {
     if (theRoot === whichLayoutDisplayKey.isTeamsDashboard) {
-      return <LayoutDashboardGeneral>{children}</LayoutDashboardGeneral>
+      return (
+        <INDEX_LayoutDashboardGeneral>{children}</INDEX_LayoutDashboardGeneral>
+      )
     }
 
     return <LayoutAuth actualRoute={actualRoute}>{children}</LayoutAuth>

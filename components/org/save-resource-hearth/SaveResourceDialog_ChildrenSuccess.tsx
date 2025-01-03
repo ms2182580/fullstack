@@ -7,7 +7,7 @@ import { SaveResourceDialog_ChildrenSuccessWrapper } from "./styles/SaveResource
 
 export type SaveResourceDialog_ChildrenSuccess_Props = {
   nameOfResource: string
-  closeDialog: ({ event }) => void
+  closeDialog: (e) => void
 }
 
 export const SaveResourceDialog_ChildrenSuccess = ({
@@ -22,10 +22,7 @@ export const SaveResourceDialog_ChildrenSuccess = ({
         <span>'{nameOfResource}'</span> Resource has been saved!
       </p>
       <div>
-        <button
-          onClick={(e) => closeDialog({ event: e })}
-          onKeyDown={(e) => closeDialog({ event: e })}
-        >
+        <button onClick={closeDialog} onKeyDown={closeDialog}>
           Continue Browsing
         </button>
         <Link

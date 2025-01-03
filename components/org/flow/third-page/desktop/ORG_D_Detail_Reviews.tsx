@@ -129,8 +129,8 @@ export const ORG_D_Detail_Reviews = ({
           <button
             type="button"
             tabIndex={0}
-            onClick={(e) => openDialog({ event: e })}
-            onKeyDown={(e) => openDialog({ event: e })}
+            onClick={openDialog}
+            onKeyDown={openDialog}
           >
             <NavBar_D_WriteAReviewSvg />
             Write a review
@@ -168,7 +168,7 @@ export const ORG_D_Detail_Reviews = ({
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

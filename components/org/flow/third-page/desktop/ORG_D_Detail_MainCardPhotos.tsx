@@ -21,8 +21,8 @@ export const ORG_D_Detail_MainCardPhotos = ({
   return (
     <>
       <ORG_D_Detail_MainCardLeftPhotosWrapper
-        onClick={(e) => openDialog({ event: e })}
-        onKeyDown={(e) => openDialog({ event: e })}
+        onClick={openDialog}
+        onKeyDown={openDialog}
         tabIndex={0}
       >
         <Caption>{amountOfPhotos} photos</Caption>
@@ -30,7 +30,7 @@ export const ORG_D_Detail_MainCardPhotos = ({
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

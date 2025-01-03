@@ -77,13 +77,13 @@ export const SaveResourceDialog = ({
         onClick={(e) => {
           handleClickOnSVG(e)
           if (!clickOnSVG) {
-            openDialog({ event: e })
+            openDialog(e)
           }
         }}
         onKeyDown={(e) => {
           handleClickOnSVG(e)
           if (!clickOnSVG) {
-            openDialog({ event: e })
+            openDialog(e)
           }
         }}
         clickOnSVG={clickOnSVG}
@@ -96,7 +96,7 @@ export const SaveResourceDialog = ({
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

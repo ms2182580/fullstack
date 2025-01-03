@@ -152,10 +152,7 @@ export const ORG_D_Detail_LastSection = ({ whichCategory }) => {
             </span>
 
             {isVocational ? (
-              <button
-                onClick={(e) => openDialog({ event: e })}
-                onKeyDown={(e) => openDialog({ event: e })}
-              >
+              <button onClick={openDialog} onKeyDown={openDialog}>
                 <MagicWandSVG /> <p>Get recommendations</p>
               </button>
             ) : (
@@ -228,7 +225,7 @@ export const ORG_D_Detail_LastSection = ({ whichCategory }) => {
       </ORG_D_Detail_LastSectionWrapper>
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

@@ -78,10 +78,7 @@ export const ORG_D_Detail_FAQS = ({
               <ORG_Detail_SearchFAQSSVG />
               <input type="text" placeholder="Search in Q&A..." />
             </div>
-            <button
-              onClick={(e) => openDialog({ event: e })}
-              onKeyDown={(e) => openDialog({ event: e })}
-            >
+            <button onClick={openDialog} onKeyDown={openDialog}>
               Ask a Question
             </button>
           </div>
@@ -147,7 +144,7 @@ export const ORG_D_Detail_FAQS = ({
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

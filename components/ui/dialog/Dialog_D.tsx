@@ -68,19 +68,29 @@ export const Dialog_D = ({
   }, [])
 
   return (
-    <Dialog_DWrapper ref={theRef}>
-      <span ref={refToCloseDialogClickingOutside}>
-        <Close_Icon_SVG
-          onClick={handleCloseDialog}
-          onKeyDown={handleCloseDialog}
-          tabIndex={0}
-        />
-        {children}
-      </span>
-    </Dialog_DWrapper>
+    <>
+      {/* 
+      //!FH1
+      Bug here, the dialog is exposed on the document.body, some conditional render should be applied
+      */}
+      {createPortal(
+        <Dialog_DWrapper ref={theRef}>
+          <span ref={refToCloseDialogClickingOutside}>
+            <Close_Icon_SVG
+              onClick={handleCloseDialog}
+              onKeyDown={handleCloseDialog}
+              tabIndex={0}
+            />
+            {children}
+          </span>
+        </Dialog_DWrapper>,
+        document.body
+      )}
+    </>
   )
 }
 
+//useDialogLogic ↓
 import {
   Dispatch,
   KeyboardEvent,
@@ -91,38 +101,35 @@ import {
   useRef,
   useState,
 } from "react"
+import { createPortal } from "react-dom"
 
 type UseDialogLogic_Return = {
   dialogRef: RefObject<HTMLDialogElement>
-  openDialog: ({
-    event,
-  }: {
-    event: MouseEvent | KeyboardEvent<HTMLElement>
-  }) => void
-  closeDialog: ({ event }: { event: Event }) => void
+  openDialog: (event: MouseEvent | KeyboardEvent<HTMLElement>) => void
+  closeDialog: (event: Event) => void
   refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
   useHide: (ref: RefObject<HTMLElement>, handleStateOutside: () => void) => void
   setCheckModalIsOpen: Dispatch<any>
-  checkModalIsOpen: Boolean | any
+  checkModalIsOpen: boolean | any
 }
 
 export const useDialogLogic = (): UseDialogLogic_Return => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const refToCloseDialogClickingOutside = useRef<HTMLDivElement>(null)
-  const [checkModalIsOpen, setCheckModalIsOpen] = useState<Boolean | any>(false)
+  const [checkModalIsOpen, setCheckModalIsOpen] = useState<boolean | any>(false)
 
-  const openDialog = ({ event: e }) => {
+  const openDialog = (e) => {
     if (
       e.type === "click" ||
       (e.code === "Enter" && e.key === "Enter" && e.type === "keydown")
     ) {
       e.preventDefault()
-      dialogRef?.current?.showModal()
       setCheckModalIsOpen(true)
+      dialogRef?.current?.showModal()
     }
   }
 
-  const closeDialog = ({ event: e }) => {
+  const closeDialog = (e) => {
     if (
       e?.type === "mousedown" ||
       e?.type === "click" ||
@@ -130,8 +137,8 @@ export const useDialogLogic = (): UseDialogLogic_Return => {
       e?.code === "Escape"
     ) {
       e.preventDefault()
-      setCheckModalIsOpen(false)
       dialogRef?.current?.close()
+      setCheckModalIsOpen(false)
     }
   }
 

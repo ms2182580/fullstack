@@ -1,11 +1,11 @@
-import SVGArrow from "@/assets/icons/arrow_up.svg"
 import SVGPlus from "@/assets/icons/org/third-page/org_plus.svg"
 import { INDEX_Logo } from "@/components/logo"
 import { ActiveNavigationLink } from "@/components/ui/active_navigation_link"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import { dashboardAsideIcons } from "@/utils/dashboard/aside/icons"
 import { useRouter } from "next/router"
-import { LayoutDashboardGeneralAsideWrapper } from "./styles/layout-dashboard-general-aside-wrapper"
+import { ContactUs } from "./contact-us"
+import { AsideWrapper } from "./styles/aside-wrapper"
 
 const allRoutesAcceptedToURL = Object.values(
   ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS
@@ -38,11 +38,11 @@ const formattedRoutes = allRoutesAcceptedToURL.map((x) => {
   }
 })
 
-export const LayoutDashboardGeneralAside = () => {
+export const Aside = () => {
   const { asPath } = useRouter()
 
   return (
-    <LayoutDashboardGeneralAsideWrapper>
+    <AsideWrapper>
       <INDEX_Logo whichOneShouldDisplay="dark-r" />
 
       <button>
@@ -78,9 +78,7 @@ export const LayoutDashboardGeneralAside = () => {
         )}
       </ul>
 
-      <p>
-        Contact us <SVGArrow />
-      </p>
-    </LayoutDashboardGeneralAsideWrapper>
+      <ContactUs />
+    </AsideWrapper>
   )
 }

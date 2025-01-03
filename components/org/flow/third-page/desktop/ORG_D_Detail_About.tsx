@@ -23,18 +23,14 @@ export const ORG_D_Detail_About = ({ name, lastName }) => {
     <ORG_D_Detail_AboutWrapper>
       <P>
         {aboutTextStateMemo.substring(0, 120) + "..."}
-        <span
-          onClick={(e) => openDialog({ event: e })}
-          onKeyDown={(e) => openDialog({ event: e })}
-          tabIndex={0}
-        >
+        <span onClick={openDialog} onKeyDown={openDialog} tabIndex={0}>
           show more
         </span>
       </P>
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
       >

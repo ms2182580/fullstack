@@ -44,7 +44,7 @@ export const Signup_D_Steps_Review = () => {
 
       <Dialog_D
         theRef={dialogRef}
-        handleCloseDialog={(e) => closeDialog({ event: e })}
+        handleCloseDialog={closeDialog}
         refToCloseDialogClickingOutside={refToCloseDialogClickingOutside}
         useHide={useHide}
         shouldOpenModalAlone={true}

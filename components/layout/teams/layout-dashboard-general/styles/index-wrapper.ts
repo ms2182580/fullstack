@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const LayoutDashboardGeneralWrapper = styled.div`
+export const IndexWrapper = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
 

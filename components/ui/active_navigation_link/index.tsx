@@ -5,7 +5,7 @@ import {
   ActiveNavigationLinkWrapperProps,
 } from "./styles/index-wrapper"
 
-type Props = {
+export type Props = {
   toURL: string
   children: ReactNode
   isDisabledRoute?: boolean
@@ -18,9 +18,12 @@ export const ActiveNavigationLink = ({
   isActive,
 }: Props) => {
   return (
-    <ActiveNavigationLinkWrapper isActive={isActive}>
+    <ActiveNavigationLinkWrapper
+      isActive={isActive}
+      isDisabledRoute={isDisabledRoute}
+    >
       {isDisabledRoute ? (
-        <a href="#" tabIndex={0}>
+        <a href="#" tabIndex={0} data-content="Route on construction!">
           {children}
         </a>
       ) : (
