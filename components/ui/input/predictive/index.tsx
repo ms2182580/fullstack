@@ -47,7 +47,12 @@ export const InlineSuggestionInput = ({
         e.preventDefault()
         const suggestionOneByOne = suggestion.split(" ")
 
-        setInputValue(inputValue + suggestionOneByOne[0])
+        const addEmptySpaceOrWord =
+          suggestionOneByOne[0] === ""
+            ? ` ${suggestionOneByOne[1]}`
+            : suggestionOneByOne[0]
+
+        setInputValue(inputValue + addEmptySpaceOrWord)
 
         if (suggestionOneByOne.length === 1) {
           setSuggestion("")

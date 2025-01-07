@@ -7,6 +7,10 @@ import { ContactUsFormWrapper } from "./styles/contact-us-form-wrapper"
 
 /* 
 !FH0
+- Fix bug: when the user type something and the next character is a empty space, does not fill the empty space and the word
+- Add the styles
+- Keep with dashboard
+- Keep with chatAI
 
 */
 
