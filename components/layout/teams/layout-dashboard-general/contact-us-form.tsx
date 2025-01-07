@@ -1,4 +1,18 @@
+import {
+  InlineSuggestionInput,
+  SuggestionsType,
+} from "@/components/ui/input/predictive"
+import { NamesSubcategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { ContactUsFormWrapper } from "./styles/contact-us-form-wrapper"
+
+/* 
+!FH0
+
+*/
+
+const categoriesSuggestions: SuggestionsType = Object.keys(
+  NamesSubcategories_KEY
+)
 
 export const ContactUsForm = () => {
   return (
@@ -20,15 +34,19 @@ export const ContactUsForm = () => {
           <datalist id="contact-reasons">
             <option value="I have a question" />
             <option value="I want to share a resource" />
-            <option value="I want to suggest a resource" />
             <option value="I want to report a problem" />
-            <option value="I want to report a bug" />
+            <option value="I want to congrats the team" />
+            <option value="I want to say that The Frontend Team is too handsome" />
+            <option value="I just want to say Thanks for all of this" />
           </datalist>
         </label>
 
         <label>
           Record Name
-          <input type="text" placeholder="Ex: ABC Speech Therapy" required />
+          <InlineSuggestionInput
+            suggestions={categoriesSuggestions}
+            placeholder="Ex: Mental Health Providers & Services"
+          />
         </label>
 
         <label>

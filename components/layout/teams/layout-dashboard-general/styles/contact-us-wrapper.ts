@@ -19,8 +19,11 @@ export const ContactUsWrapper = styled.div`
 
       & > * {
         fill: ${NEUTRALS.BLACK};
-        stroke: white;
       }
+    }
+
+    :is(:hover, :focus-visible) {
+      background-color: ${NEUTRALS.BORDER_HOVER};
     }
   }
 `

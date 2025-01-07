@@ -73,5 +73,11 @@ export const AsideWrapper = styled.div`
 
   & > :last-child {
     margin-top: auto;
+
+    cursor: default;
+
+    & > p {
+      border-radius: 6px;
+    }
   }
 `
