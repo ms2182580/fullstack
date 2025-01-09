@@ -23,8 +23,6 @@ export const ContactUs = () => {
     acceptedHash: ["contact-us", "contactus", "contact"],
   })
 
-  console.log("foundedHash:", foundedHash)
-
   return (
     <ContactUsWrapper>
       <p onClick={openDialog} onKeyDown={openDialog} tabIndex={0}>
