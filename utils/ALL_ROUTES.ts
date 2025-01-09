@@ -45,4 +45,14 @@ export const ALL_ROUTES_INTERNAL = {
     SIGNIN: "signin",
     SIGNUP: "signup",
   },
+  NEW_SEARCH: "new-search",
+  NEW_SEARCH_SECTIONS: {
+    CATEGORIES: "categories",
+    RESOURCES: "resources",
+  },
+  RESOURCES_SECTION: {
+    FIRST: "first",
+    SECOND: "second",
+    THIRD: "third",
+  },
 }

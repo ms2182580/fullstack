@@ -19,6 +19,7 @@ export const whichLayoutDisplayKey = {
   isHome: "/",
   isTeamsDashboard: "isTeamsDashboard",
   isTeamsAuth: "isTeamsAuth",
+  isTeamsNewSearch: "isTeamsNewSearch",
 }
 
 export const Layout = ({ children, title = "INCLUSIVE" }) => {
@@ -49,9 +50,15 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
         `/${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.DASHBOARD}`
       ) && whichLayoutDisplayKey.isTeamsDashboard
 
+    const isTeamsNewSearch =
+      pathname.startsWith(
+        `/${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.NEW_SEARCH}`
+      ) && whichLayoutDisplayKey.isTeamsNewSearch
+
     const isTeamsAuth =
-      pathname.startsWith(`/${ALL_ROUTES_INTERNAL.TEAMS}`) &&
-      whichLayoutDisplayKey.isTeamsAuth
+      pathname.startsWith(
+        `/${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.AUTHENTICATION}`
+      ) && whichLayoutDisplayKey.isTeamsAuth
 
     const toReturn =
       isORG ||
@@ -60,6 +67,7 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
       isSignin ||
       isTeamsDashboard ||
       isTeamsAuth ||
+      isTeamsNewSearch ||
       whichLayoutDisplayKey.isHome
 
     return toReturn
@@ -132,7 +140,8 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
 
   if (
     actualRoute === whichLayoutDisplayKey.isTeamsDashboard ||
-    actualRoute === whichLayoutDisplayKey.isTeamsAuth
+    actualRoute === whichLayoutDisplayKey.isTeamsAuth ||
+    actualRoute === whichLayoutDisplayKey.isTeamsNewSearch
   ) {
     return (
       <>

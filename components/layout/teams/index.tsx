@@ -18,8 +18,11 @@ const allRoutesAccepted: Pick<
 >["acceptedRoutes"] = [
   ...Object.keys(ALL_ROUTES_INTERNAL.AUTHENTICATION_SECTIONS),
   ...Object.keys(ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS),
+  ...Object.keys(ALL_ROUTES_INTERNAL.NEW_SEARCH_SECTIONS),
+  ...Object.keys(ALL_ROUTES_INTERNAL.RESOURCES_SECTION),
   ALL_ROUTES_INTERNAL.TEAMS,
   ALL_ROUTES_INTERNAL.AUTHENTICATION,
+  ALL_ROUTES_INTERNAL.NEW_SEARCH,
 ]
 
 export const Layout_Teams = ({ children, title, theRoot }) => {
@@ -34,14 +37,23 @@ export const Layout_Teams = ({ children, title, theRoot }) => {
       push,
     })
 
+  console.log("theRoot:", theRoot)
+
   const layoutPlusChildren = useMemo(() => {
-    if (theRoot === whichLayoutDisplayKey.isTeamsDashboard) {
+    if (theRoot === whichLayoutDisplayKey.isTeamsAuth) {
+      return <LayoutAuth actualRoute={actualRoute}>{children}</LayoutAuth>
+    }
+
+    if (
+      theRoot === whichLayoutDisplayKey.isTeamsDashboard ||
+      theRoot === whichLayoutDisplayKey.isTeamsNewSearch
+    ) {
       return (
         <INDEX_LayoutDashboardGeneral>{children}</INDEX_LayoutDashboardGeneral>
       )
     }
 
-    return <LayoutAuth actualRoute={actualRoute}>{children}</LayoutAuth>
+    return null
   }, [asPath])
 
   if (formatRouteToTitle === null || actualRouteIsValid === false) return null
