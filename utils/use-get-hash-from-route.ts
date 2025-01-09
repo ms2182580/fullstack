@@ -17,12 +17,12 @@ export const useGetHashFromRoute = ({
 
   const getHash = routeToCheck.split("#")[1].toLowerCase()
 
-  const conditionsAcceptedHash =
+  const routeHaveHash =
     (Array.isArray(acceptedHash) &&
       acceptedHash.some((x) => x.toLowerCase() === getHash)) ||
     (typeof acceptedHash === "string" && acceptedHash.toLowerCase() === getHash)
 
-  if (conditionsAcceptedHash) {
+  if (routeHaveHash) {
     return { foundedHash: true }
   } else {
     return { foundedHash: false }
