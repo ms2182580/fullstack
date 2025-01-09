@@ -1,6 +1,6 @@
 import { INDEX_Logo, INDEX_LogoType } from "@/components/logo"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
-import { UseFormattingRouteReturn } from "@/utils/useFormattingRoute"
+import { UseFormattingRouteReturn } from "@/utils/use-formatting-route"
 import { useRouter } from "next/router"
 import { ReactElement, ReactNode, useMemo } from "react"
 import { LayoutAuthWrapper } from "./styles/layout-auth-wrapper"

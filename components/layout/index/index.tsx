@@ -8,7 +8,7 @@ import { Layout_General } from "../general"
 import { OnlyDesktopLayout } from "../general/only-desktop-layout"
 import { Layout_Signin } from "../signin"
 import { Layout_Signup } from "../signup"
-import { Layout_Team } from "../teams"
+import { Layout_Teams } from "../teams"
 
 export const whichLayoutDisplayKey = {
   isORGLike: "isORGLike",
@@ -139,9 +139,9 @@ export const Layout = ({ children, title = "INCLUSIVE" }) => {
         {isMobile ? (
           <OnlyDesktopLayout />
         ) : (
-          <Layout_Team title={title} theRoot={actualRoute}>
+          <Layout_Teams title={title} theRoot={actualRoute}>
             {children}
-          </Layout_Team>
+          </Layout_Teams>
         )}
       </>
     )

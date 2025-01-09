@@ -2,7 +2,7 @@ import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import {
   useFormattingRoute,
   UseFormattingRouteType,
-} from "@/utils/useFormattingRoute"
+} from "@/utils/use-formatting-route"
 import Head from "next/head"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"
@@ -10,7 +10,7 @@ import { useMemo } from "react"
 import { whichLayoutDisplayKey } from "../index"
 import { LayoutAuth } from "./layout-auth"
 import { INDEX_LayoutDashboardGeneral } from "./layout-dashboard-general"
-import { Layout_TeamWrapper } from "./styles/layout-team-wrapper"
+import { Layout_TeamsWrapper } from "./styles/layout-teams-wrapper"
 
 const allRoutesAccepted: Pick<
   UseFormattingRouteType,
@@ -22,7 +22,7 @@ const allRoutesAccepted: Pick<
   ALL_ROUTES_INTERNAL.AUTHENTICATION,
 ]
 
-export const Layout_Team = ({ children, title, theRoot }) => {
+export const Layout_Teams = ({ children, title, theRoot }) => {
   const { asPath, isReady } = useRouter()
   const { push } = useNavigation()
 
@@ -55,7 +55,7 @@ export const Layout_Team = ({ children, title, theRoot }) => {
         <meta name="description" content="inclusive - website" />
       </Head>
 
-      <Layout_TeamWrapper>{layoutPlusChildren}</Layout_TeamWrapper>
+      <Layout_TeamsWrapper>{layoutPlusChildren}</Layout_TeamsWrapper>
     </>
   )
 }

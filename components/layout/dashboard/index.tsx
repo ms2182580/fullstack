@@ -1,6 +1,6 @@
 import { CtxCreatePlanVisibility_Provider } from "@/context/dashboard/care_plan/ctx-create-plan-visibility"
 import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
-import { useFormattingRoute } from "@/utils/useFormattingRoute"
+import { useFormattingRoute } from "@/utils/use-formatting-route"
 import Head from "next/head"
 import { useRouter as useNavigation } from "next/navigation"
 import { useRouter } from "next/router"

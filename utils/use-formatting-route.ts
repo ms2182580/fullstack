@@ -21,24 +21,38 @@ export const useFormattingRoute = ({
   const routeToCheckFormatted = routeToCheck.split("/")
   const isRepeatedUrl = routeToCheckFormatted[1] === routeToCheckFormatted[2]
   const actualRoute = routeToCheckFormatted.at(-1)?.toUpperCase() || ""
-  const formatRouteToTitle = actualRoute?.split("_").join(" ") || null
+  const actualRouteHaveHash = actualRoute.split("#")
+  const actualRouteFormatted = {
+    routeToCheck: actualRouteHaveHash[0],
+    routeWithHash:
+      actualRouteHaveHash.length > 1 ? actualRouteHaveHash[1] : null,
+  }
+
+  const formatRouteToTitle =
+    actualRouteFormatted.routeToCheck?.split("_").join(" ") || null
 
   const actualRouteIsValid =
-    acceptedRoutes.some(
-      (x) => x.toLocaleLowerCase() === actualRoute.toLocaleLowerCase()
-    ) && isRepeatedUrl === false
+    acceptedRoutes.some((x) => {
+      const foundedRoute =
+        x.toLocaleLowerCase() ===
+        actualRouteFormatted.routeToCheck.toLocaleLowerCase()
+
+      return (
+        foundedRoute || (foundedRoute && actualRouteFormatted.routeWithHash)
+      )
+    }) && isRepeatedUrl === false
 
   if (isReady && actualRouteIsValid === false) {
     push("/404")
   }
 
   const toTitleText =
-    actualRoute?.toLocaleLowerCase() !== acceptedRoutes[0]
+    actualRouteFormatted.routeToCheck?.toLocaleLowerCase() !== acceptedRoutes[0]
       ? ` - ${formatRouteToTitle}`
       : null
 
   return {
-    actualRoute,
+    actualRoute: actualRouteFormatted.routeToCheck,
     formatRouteToTitle,
     actualRouteIsValid,
     toTitleText,
