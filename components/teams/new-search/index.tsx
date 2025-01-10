@@ -65,6 +65,6 @@ export const INDEX_Newsearch = () => {
 
 const featuresForThisPage = (
   <>
-    Expected features for <strong>{INDEX_Newsearch.name}</strong> component
+    Expected features for <strong>New Search</strong> component
   </>
 )

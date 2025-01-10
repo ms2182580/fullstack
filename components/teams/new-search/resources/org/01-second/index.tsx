@@ -53,7 +53,7 @@ export const OrgSecond = () => {
 
 const titleForFeatures = (
   <>
-    Expected features for <strong>{OrgSecond.name}</strong> component
+    Expected features for <strong>OrgSecond</strong> component
   </>
 )
 

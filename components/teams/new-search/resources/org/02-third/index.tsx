@@ -48,7 +48,7 @@ export const OrgThird = () => {
 
 const titleForFeatures = (
   <>
-    Expected features for <strong>{OrgThird.name}</strong> component
+    Expected features for <strong>OrgThird</strong> component
   </>
 )
 

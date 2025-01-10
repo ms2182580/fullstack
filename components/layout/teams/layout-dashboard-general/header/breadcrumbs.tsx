@@ -49,7 +49,7 @@ export const Breadcrumbs = () => {
 
 const titleForFeatures = (
   <>
-    Expected features for <strong>{Breadcrumbs.name}</strong> component
+    Expected features for <strong>Breadcrumbs</strong> component
   </>
 )
 

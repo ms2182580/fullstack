@@ -47,7 +47,7 @@ export const Searcher = () => {
 
 const featuresForThisPage = (
   <>
-    Expected features for <strong>{Searcher.name}</strong> component
+    Expected features for <strong>Searcher</strong> component
   </>
 )
 
