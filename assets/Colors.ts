@@ -60,4 +60,5 @@ export const SEMANTICS = {
   NAVIGATION_ACTIVE: "#E3D1EB",
   NAVIGATION_HOVER_FOCUS: "hsl(281.5, 39.4%, 77.1%)",
   FOCUS_RING: "#64AFFB" /* Focus state ring around components */,
+  USER_AUTHENTICATED: "#0069874d",
 }

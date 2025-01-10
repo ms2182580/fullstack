@@ -37,8 +37,6 @@ export const Layout_Teams = ({ children, title, theRoot }) => {
       push,
     })
 
-  console.log("theRoot:", theRoot)
-
   const layoutPlusChildren = useMemo(() => {
     if (theRoot === whichLayoutDisplayKey.isTeamsAuth) {
       return <LayoutAuth actualRoute={actualRoute}>{children}</LayoutAuth>

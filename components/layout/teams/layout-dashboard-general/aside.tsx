@@ -1,10 +1,10 @@
-import SVGPlus from "@/assets/icons/org/third-page/org_plus.svg"
 import { INDEX_Logo } from "@/components/logo"
 import { ActiveNavigationLink } from "@/components/ui/active_navigation_link"
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import { dashboardAsideIcons } from "@/utils/dashboard/aside/icons"
 import { useRouter } from "next/router"
 import { ContactUs } from "./contact-us"
+import { NewSearchButton } from "./new-search"
 import { AsideWrapper } from "./styles/aside-wrapper"
 
 const allRoutesAcceptedToURL = Object.values(
@@ -45,11 +45,7 @@ export const Aside = () => {
     <AsideWrapper>
       <INDEX_Logo whichOneShouldDisplay="dark-r" />
 
-      <button>
-        <SVGPlus />
-
-        <span>New Search</span>
-      </button>
+      <NewSearchButton />
 
       <ul>
         {formattedRoutes.map(

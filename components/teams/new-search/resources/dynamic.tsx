@@ -4,19 +4,22 @@ import {
   useDynamicComponentToRender,
 } from "@/utils/useDynamicComponentToRender"
 import { cloneElement, isValidElement } from "react"
+import { OrgFirst } from "./org/00-first"
+import { OrgSecond } from "./org/01-second"
+import { OrgThird } from "./org/02-third"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   {
     route: ALL_ROUTES_INTERNAL.RESOURCES_SECTION.FIRST,
-    component: <h1>Resources First here</h1>,
+    component: <OrgFirst />,
   },
   {
     route: ALL_ROUTES_INTERNAL.RESOURCES_SECTION.SECOND,
-    component: <h1>Resources SECOND here</h1>,
+    component: <OrgSecond />,
   },
   {
     route: ALL_ROUTES_INTERNAL.RESOURCES_SECTION.THIRD,
-    component: <h1>Resources THIRD here</h1>,
+    component: <OrgThird />,
   },
 ]
 

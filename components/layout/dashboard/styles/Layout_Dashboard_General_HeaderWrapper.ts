@@ -2,7 +2,6 @@ import { NEUTRALS, SEMANTICS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const Layout_Dashboard_General_HeaderWrapper = styled.header`
-  /* border: 2px solid crimson; */
   box-shadow: 0px 0px 10px 0px #7b7b7b40;
 
   display: flex;

@@ -47,8 +47,8 @@ export const ALL_ROUTES_INTERNAL = {
   },
   NEW_SEARCH: "new-search",
   NEW_SEARCH_SECTIONS: {
-    CATEGORIES: "categories",
     RESOURCES: "resources",
+    CATEGORIES: "categories",
   },
   RESOURCES_SECTION: {
     FIRST: "first",
