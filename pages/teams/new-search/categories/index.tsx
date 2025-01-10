@@ -1,3 +1,5 @@
+import { INDEX_Categories } from "@/components/teams/new-search/categories"
+
 export default function PAGE_Categories() {
-  return <div>PAGE_Categories</div>
+  return <INDEX_Categories />
 }
