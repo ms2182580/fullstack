@@ -3,8 +3,9 @@ import styled from "styled-components"
 
 export const INDEX_NewsearchWrapper = styled.div`
   display: grid;
-
   gap: 16px;
+
+  border: 2px solid black;
 
   & > div {
     display: flex;
