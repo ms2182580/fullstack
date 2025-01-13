@@ -3,9 +3,13 @@ import { Dialog_DWrapper } from "./styles/Dialog_DWrapper"
 
 export type Dialog_D_Props = {
   theRef: RefObject<HTMLDialogElement>
-  handleCloseDialog: (event: Event) => void
+  handleCloseDialog: (event: Event, doNotCloseWithEscapeKey?: boolean) => void
   refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
-  useHide: (refToCloseDialogClickingOutside, handleCloseDialog) => void
+  useHide: (
+    refToCloseDialogClickingOutside,
+    handleCloseDialog,
+    doNotCloseWithEscapeKey
+  ) => void
   children: ReactElement
 
   shouldOpenModalAlone?: boolean
@@ -15,6 +19,8 @@ export type Dialog_D_Props = {
   shouldCloseModalAloneDelay?: number
 
   setCheckModalIsOpen?: (e: boolean) => void
+
+  doNotCloseWithEscapeKey?: boolean
 }
 
 export const Dialog_D = ({
@@ -30,8 +36,14 @@ export const Dialog_D = ({
   shouldCloseModalAlone = false,
   shouldCloseModalAloneDelay = 1200,
   setCheckModalIsOpen,
+
+  doNotCloseWithEscapeKey = false,
 }: Dialog_D_Props): ReactElement => {
-  useHide(refToCloseDialogClickingOutside, handleCloseDialog)
+  useHide(
+    refToCloseDialogClickingOutside,
+    handleCloseDialog,
+    doNotCloseWithEscapeKey
+  )
 
   useEffect(() => {
     let timeoutId: any = null
@@ -108,7 +120,11 @@ type UseDialogLogic_Return = {
   openDialog: (event: MouseEvent | KeyboardEvent<HTMLElement>) => void
   closeDialog: (event: Event) => void
   refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
-  useHide: (ref: RefObject<HTMLElement>, handleStateOutside: () => void) => void
+  useHide: (
+    ref: RefObject<HTMLElement>,
+    handleStateOutside: () => void,
+    doNotCloseWithEscapeKey?: boolean
+  ) => void
   setCheckModalIsOpen: Dispatch<any>
   checkModalIsOpen: boolean | any
 }
@@ -129,12 +145,12 @@ export const useDialogLogic = (): UseDialogLogic_Return => {
     }
   }
 
-  const closeDialog = (e) => {
+  const closeDialog = (e, doNotCloseWithEscapeKey = false) => {
     if (
       e?.type === "mousedown" ||
       e?.type === "click" ||
       (e?.code === "Enter" && e?.key === "Enter" && e?.type === "keydown") ||
-      e?.code === "Escape"
+      (e?.code === "Escape" && !doNotCloseWithEscapeKey)
     ) {
       e.preventDefault()
       dialogRef?.current?.close()
@@ -142,7 +158,11 @@ export const useDialogLogic = (): UseDialogLogic_Return => {
     }
   }
 
-  const useHide = (ref, handleStateOutside) => {
+  const useHide = (
+    ref,
+    handleStateOutside,
+    doNotCloseWithEscapeKey = false
+  ) => {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref?.current?.contains(event.target)) {
@@ -152,9 +172,13 @@ export const useDialogLogic = (): UseDialogLogic_Return => {
       }
 
       function handleKeydownEscape(event) {
-        if (ref.current && event.key === "Escape") {
+        if (ref.current && ref.current && event.key === "Escape") {
+          if (doNotCloseWithEscapeKey) {
+            event.preventDefault()
+          }
+
           setCheckModalIsOpen(false)
-          handleStateOutside(event)
+          handleStateOutside(event, doNotCloseWithEscapeKey)
         }
       }
 

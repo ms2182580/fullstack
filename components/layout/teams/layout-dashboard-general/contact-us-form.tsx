@@ -45,7 +45,7 @@ export const ContactUsForm = () => {
           </datalist>
         </label>
 
-        <label>
+        <label data-label="record-name">
           Record Name
           <InlineSuggestionInput
             suggestions={categoriesSuggestions}
