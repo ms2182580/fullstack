@@ -5,15 +5,6 @@ import {
 import { NamesSubcategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
 import { ContactUsFormWrapper } from "./styles/contact-us-form-wrapper"
 
-/* 
-!FH0
-
-- Add the styles
-- Keep with dashboard
-- Keep with chatAI
-
-*/
-
 const categoriesSuggestions: SuggestionsType = Object.keys(
   NamesSubcategories_KEY
 )
