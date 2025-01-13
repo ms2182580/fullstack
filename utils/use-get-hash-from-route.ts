@@ -1,5 +1,5 @@
 type Props = {
-  routeToCheck: string
+  hashToCheck: string | ""
   acceptedHash: string | string[] | null
 }
 
@@ -8,14 +8,14 @@ type Return = {
 }
 
 export const useGetHashFromRoute = ({
-  routeToCheck,
+  hashToCheck = "",
   acceptedHash = null,
 }: Props): Return => {
-  if (!routeToCheck.includes("#")) {
+  if (hashToCheck === "") {
     return { foundedHash: false }
   }
 
-  const getHash = routeToCheck.split("#")[1].toLowerCase()
+  const getHash = hashToCheck.split("#")[1].toLowerCase()
 
   const routeHaveHash =
     (Array.isArray(acceptedHash) &&
@@ -23,8 +23,12 @@ export const useGetHashFromRoute = ({
     (typeof acceptedHash === "string" && acceptedHash.toLowerCase() === getHash)
 
   if (routeHaveHash) {
-    return { foundedHash: true }
+    return {
+      foundedHash: true,
+    }
   } else {
-    return { foundedHash: false }
+    return {
+      foundedHash: false,
+    }
   }
 }

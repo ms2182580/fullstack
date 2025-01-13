@@ -1,9 +1,10 @@
 import SVGArrow from "@/assets/icons/arrow_up.svg"
 import { Dialog_D, useDialogLogic } from "@/components/ui/dialog/Dialog_D"
 import { useGetHashFromRoute } from "@/utils/use-get-hash-from-route"
-import { useRouter } from "next/router"
 import { ContactUsForm } from "./contact-us-form"
 import { ContactUsWrapper } from "./styles/contact-us-wrapper"
+
+const aceptedHashes = ["contact-us", "contactus", "contact"]
 
 export const ContactUs = () => {
   const {
@@ -16,11 +17,9 @@ export const ContactUs = () => {
     checkModalIsOpen,
   } = useDialogLogic()
 
-  const { asPath, ...all } = useRouter()
-
   const { foundedHash } = useGetHashFromRoute({
-    routeToCheck: asPath,
-    acceptedHash: ["contact-us", "contactus", "contact"],
+    hashToCheck: window.location.hash,
+    acceptedHash: aceptedHashes,
   })
 
   return (
