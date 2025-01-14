@@ -31,5 +31,7 @@ export const IndexWrapper = styled.div`
     padding-block: calc(8px * 4);
 
     min-height: 100dvh; // This height is to make the children and the header fit the expected layout. After code the screens this can be deleted
+
+    background-color: #fefcff;
   }
 `

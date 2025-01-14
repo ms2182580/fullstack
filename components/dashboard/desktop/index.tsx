@@ -1,6 +1,5 @@
-import { ArrowDownSvg } from "@/assets/icons"
-// import SVGFileUp_Active from "@/assets/icons/file_upload_active.svg"
 import { KEYS_DATA_TESTID } from "@/__e2e__/plw/utils/org/keys"
+import { ArrowDownSvg } from "@/assets/icons"
 import SVGFileUp_Default from "@/assets/icons/file_upload_default.svg"
 import SvgPlus from "@/assets/icons/org/third-page/org_plus.svg"
 import SVGSung from "@/assets/icons/sun.svg"
@@ -11,7 +10,7 @@ import { ALL_ROUTES } from "@/utils/ALL_ROUTES"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { INDEX_D_DashboardWrapper } from "./styles/INDEX_D_DashboardWrapper"
+import { INDEX_D_DashboardWrapper } from "./styles/index-wrapper"
 
 export const INDEX_D_Dashboard = () => {
   const { asPath } = useRouter()
