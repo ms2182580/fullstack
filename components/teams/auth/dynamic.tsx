@@ -18,7 +18,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
 ]
 
-export const AuthDynamic = () => {
+export const DYNAMIC_AuthDynamic = () => {
   const { componentToRender, propsToComponent } = useDynamicComponentToRender({
     componentsToRenderAvailable,
   })

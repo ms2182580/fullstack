@@ -23,7 +23,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
 ]
 
-export const TeamsNewSearchResourcesDynamic = () => {
+export const DYNAMIC_TeamsNewSearchResources = () => {
   const { componentToRender, propsToComponent } = useDynamicComponentToRender({
     componentsToRenderAvailable,
   })

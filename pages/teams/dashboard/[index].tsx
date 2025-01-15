@@ -1,5 +1,5 @@
-import { TeamsDashboardDynamic } from "@/components/teams/dashboard/dynamic"
+import { DYNAMIC_TeamsDashboard } from "@/components/teams/dashboard/dynamic"
 
 export default function PAGES_DashboardSections() {
-  return <TeamsDashboardDynamic />
+  return <DYNAMIC_TeamsDashboard />
 }

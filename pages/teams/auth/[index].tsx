@@ -1,5 +1,5 @@
-import { AuthDynamic } from "@/components/teams/auth/dynamic"
+import { DYNAMIC_AuthDynamic } from "@/components/teams/auth/dynamic"
 
 export default function PAGES_Dynamic() {
-  return <AuthDynamic />
+  return <DYNAMIC_AuthDynamic />
 }

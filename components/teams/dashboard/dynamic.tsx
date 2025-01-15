@@ -28,7 +28,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
 ]
 
-export const TeamsDashboardDynamic = () => {
+export const DYNAMIC_TeamsDashboard = () => {
   const { componentToRender, propsToComponent } = useDynamicComponentToRender({
     componentsToRenderAvailable,
   })

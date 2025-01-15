@@ -1,5 +1,5 @@
-import { DashboardDynamic } from "@/components/dashboard/desktop/dynamic"
+import { DYNAMIC_Dashboard } from "@/components/dashboard/desktop/dynamic"
 
 export default function PAGES_Dashboard_Sections() {
-  return <DashboardDynamic />
+  return <DYNAMIC_Dashboard />
 }
