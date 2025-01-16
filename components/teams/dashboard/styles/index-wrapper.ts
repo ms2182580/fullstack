@@ -4,6 +4,9 @@ import styled from "styled-components"
 export const IndexWrapper = styled.div`
   margin-inline: clamp(16px, 26.988vw - 260.624px, 128px);
 
+  display: grid;
+  gap: 24px;
+
   & > :nth-child(1) {
     display: flex;
     justify-content: space-between;

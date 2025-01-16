@@ -2,6 +2,7 @@ import SvgMagnifyingGlassDefault from "@/assets/icons/magnifying_glass_default.s
 import SvgMagicWand from "@/assets/icons/org/third-page/magic-wand.svg"
 import SvgTeamsDashboard from "@/assets/images/teams/teams-dashboard.svg"
 import { Card, CardType } from "./card"
+import { RequestInput } from "./request-input"
 import { IndexWrapper } from "./styles/index-wrapper"
 
 /* 
@@ -56,6 +57,8 @@ export const INDEX_TeamsDashboard = () => {
           )
         })}
       </ul>
+
+      <RequestInput />
     </IndexWrapper>
   )
 }
