@@ -8,22 +8,8 @@ import { useMemo } from "react"
 import { Support_us } from "./Support_us"
 import { MainWrapper } from "./styles/MainWrapper"
 
-// const NavBar_Desktop = dynamic(
-//   () =>
-//     import("@/components/home/desktop/Home_D_NavBar_N").then(
-//       (mod) => mod.Home_D_NavBar_N
-//     ),
-//   { ssr: false }
-// )
-// const NavBar_Mobile = dynamic(
-//   () =>
-//     import("@/components/navBar/mobile/NavBar_M").then((mod) => mod.NavBar_M),
-//   { ssr: false }
-// )
-
 const Footer_Desktop = dynamic(
-  () =>
-    import("@/components/footer/desktop/Footer_D").then((mod) => mod.Footer_D),
+  () => import("@/components/footer/desktop/footer").then((mod) => mod.Footer),
   { ssr: false }
 )
 const Footer_Mobile = dynamic(
