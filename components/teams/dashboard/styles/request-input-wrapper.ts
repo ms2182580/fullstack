@@ -1,6 +1,5 @@
 import { NEUTRALS, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
 import styled from "styled-components"
 
 export const RequestInputWrapper = styled.div`
@@ -38,7 +37,6 @@ export const RequestInputWrapper = styled.div`
     display: grid;
     gap: 24px;
 
-    ${HeaderCSS()};
     text-wrap: balance;
     font-size: 24px;
     font-weight: 600;
