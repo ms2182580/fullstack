@@ -21,7 +21,7 @@ export const Card = ({
         <span>
           <SVG />
         </span>
-        <h4>{title}</h4>
+        <h2>{title}</h2>
         <span>
           <SVGArrow />
         </span>
