@@ -21,6 +21,7 @@ export const IndexWrapper = styled.div`
     grid-area: header;
     position: sticky;
     inset: 0;
+    z-index: 99;
 
     height: fit-content;
   }
