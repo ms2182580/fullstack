@@ -8,6 +8,8 @@ export type ActiveNavigationLinkWrapperProps = {
 
 export const ActiveNavigationLinkWrapper = styled.li<ActiveNavigationLinkWrapperProps>`
   list-style: none;
+  background-color: ${({ isActive }) =>
+    isActive ? `${NEUTRALS.BORDER}` : "transparent"};
 
   & > a {
     width: 100%;
@@ -25,8 +27,6 @@ export const ActiveNavigationLinkWrapper = styled.li<ActiveNavigationLinkWrapper
   ${({ isActive }) =>
     isActive &&
     css`
-      background-color: ${NEUTRALS.BORDER};
-
       & > a {
         & > svg {
           & > path {

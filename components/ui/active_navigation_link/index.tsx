@@ -23,7 +23,7 @@ export const ActiveNavigationLink = ({
       isDisabledRoute={isDisabledRoute}
     >
       {isDisabledRoute ? (
-        <a href="#" tabIndex={0} data-content="Route on construction!">
+        <a href="#" tabIndex={0} data-content="Coming soon!">
           {children}
         </a>
       ) : (
