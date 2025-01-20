@@ -13,4 +13,6 @@ type DataContentComponentWrapperProps = {
 
 export const DataContentComponentWrapper = styled.div<DataContentComponentWrapperProps>`
   display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  min-width: 656px;
+  max-width: 940px;
 `
