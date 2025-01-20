@@ -7,7 +7,13 @@ import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import Link from "next/link"
 import { OrgSecondWrapper } from "./styles/org-second-wrapper"
 
-export const OrgSecond = () => {
+// const rootRoute = `${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.NEW_SEARCH}/${ALL_ROUTES_INTERNAL.NEW_SEARCH_SECTIONS.RESOURCES}`
+
+type Props = {
+  theRootRoute?: string
+}
+
+export const OrgSecond = ({ theRootRoute }: Props) => {
   const {
     dialogRef,
     openDialog,
@@ -20,9 +26,14 @@ export const OrgSecond = () => {
   return (
     <>
       <OrgSecondWrapper style={{ position: "relative" }}>
-        <h1>Org Second</h1>{" "}
+        <h1>Org Second Component</h1>{" "}
         <Link
-          href={`/${ALL_ROUTES_INTERNAL.TEAMS}/${ALL_ROUTES_INTERNAL.NEW_SEARCH}/${ALL_ROUTES_INTERNAL.NEW_SEARCH_SECTIONS.RESOURCES}/${ALL_ROUTES_INTERNAL.RESOURCES_SECTION.THIRD}`}
+          href={`/${theRootRoute}/${ALL_ROUTES_INTERNAL.RESOURCES_SECTION.FIRST}`}
+        >
+          To First page, search
+        </Link>
+        <Link
+          href={`/${theRootRoute}/${ALL_ROUTES_INTERNAL.RESOURCES_SECTION.THIRD}`}
         >
           To Third page, details
         </Link>

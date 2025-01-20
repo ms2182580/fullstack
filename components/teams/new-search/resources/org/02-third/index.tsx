@@ -4,8 +4,15 @@ import {
   ButtonDisplayFeaturesExpected,
   ExpectedFeatures,
 } from "@/components/ui/expected_features"
+import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
+import Link from "next/link"
+import { OrgThirdWrapper } from "./styles/org-third-wrapper"
 
-export const OrgThird = () => {
+type Props = {
+  theRootRoute?: string
+}
+
+export const OrgThird = ({ theRootRoute }: Props) => {
   const {
     dialogRef,
     openDialog,
@@ -18,14 +25,20 @@ export const OrgThird = () => {
 
   return (
     <>
-      <div style={{ position: "relative" }}>
-        <h2>Org Third</h2>
+      <OrgThirdWrapper style={{ position: "relative" }}>
+        <h1>Org Third Component</h1>
+
+        <Link
+          href={`/${theRootRoute}/${ALL_ROUTES_INTERNAL.RESOURCES_SECTION.SECOND}`}
+        >
+          To Second screen, results
+        </Link>
 
         <ButtonDisplayFeaturesExpected
           openDialog={openDialog}
           checkModalIsOpen={checkModalIsOpen}
         />
-      </div>
+      </OrgThirdWrapper>
 
       <Dialog_D
         theRef={dialogRef}
