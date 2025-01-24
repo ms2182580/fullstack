@@ -1,9 +1,9 @@
 import SvgMagnifyingGlassDefault from "@/assets/icons/magnifying_glass_default.svg"
 import SvgMagicWand from "@/assets/icons/org/third-page/magic-wand.svg"
 import SvgTeamsDashboard from "@/assets/images/teams/teams-dashboard.svg"
-import { Card, CardType } from "./card"
-import { RequestInput } from "./request-input"
-import { Saved } from "./saved"
+import { Card, CardType } from "./index_components/card"
+import { RequestInput } from "./index_components/request-input"
+import { Saved } from "./index_components/saved"
 import { IndexWrapper } from "./styles/index-wrapper"
 
 /* 

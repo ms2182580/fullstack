@@ -4,23 +4,27 @@ import {
   useDynamicComponentToRender,
 } from "@/utils/useDynamicComponentToRender"
 import { cloneElement, isValidElement } from "react"
+import { INDEX_Categories } from "./categories"
+import { INDEX_Resources } from "./resources"
+import { INDEX_Saved } from "./saved"
+import { INDEX_WriteContent } from "./write_content"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   {
     route: ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.RESOURCES,
-    component: <h1>ORG HERE</h1>,
+    component: <INDEX_Resources />,
   },
   {
     route: ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.CATEGORIES,
-    component: <h1>AI HERE</h1>,
+    component: <INDEX_Categories />,
   },
   {
     route: ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.WRITE_CONTENT,
-    component: <h1>Write content</h1>,
+    component: <INDEX_WriteContent />,
   },
   {
     route: ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.SAVED,
-    component: <h1>SAVED content</h1>,
+    component: <INDEX_Saved />,
   },
 ]
 
