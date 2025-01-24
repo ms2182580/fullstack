@@ -7,10 +7,6 @@ import { cloneElement, isValidElement } from "react"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   {
-    route: ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.DASHBOARD,
-    component: <h1>Dashboard here</h1>,
-  },
-  {
     route: ALL_ROUTES_INTERNAL.DASHBOARD_SECTIONS.RESOURCES,
     component: <h1>ORG HERE</h1>,
   },

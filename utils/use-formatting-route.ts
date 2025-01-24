@@ -19,7 +19,8 @@ export const useFormattingRoute = ({
   push,
 }: UseFormattingRouteType): UseFormattingRouteReturn => {
   const routeToCheckFormatted = routeToCheck.split("/")
-  const isRepeatedUrl = routeToCheckFormatted[1] === routeToCheckFormatted[2]
+  const isRepeatedUrl =
+    routeToCheckFormatted.at(-1) === routeToCheckFormatted.at(-2)
   const actualRoute = routeToCheckFormatted.at(-1)?.toUpperCase() || ""
   const actualRouteHaveHash = actualRoute.split("#")
   const actualRouteFormatted = {
