@@ -8,16 +8,19 @@ export const Navbar = () => {
     <NavbarWrapper>
       <div>
         <INDEX_Logo />
-
-        <div>
-          <div>
-            <span>Find a resource</span>
+        <ul>
+          <li>
+            <Link href={`/${ALL_ROUTES.ORG}`}>Find a resource</Link>
+          </li>
+          <li>
             <Link href={`/${ALL_ROUTES.SIGNIN}/${ALL_ROUTES["RECENT-LOGIN"]}`}>
               Sign in
             </Link>
+          </li>
+          <li>
             <Link href={`/${ALL_ROUTES.SIGNUP}`}>Sign up</Link>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </NavbarWrapper>
   )

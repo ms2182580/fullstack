@@ -1,3 +1,4 @@
+import { NEUTRALS } from "@/assets/Colors"
 import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
@@ -20,18 +21,41 @@ export const NavbarWrapper = styled.nav`
     margin-inline: auto;
     padding: 0px 56px;
 
-    & > :nth-child(2) {
+    & > ul {
       display: flex;
       align-items: center;
-      gap: 58px;
+      gap: 48px;
+
+      list-style: none;
 
       & > :nth-child(1) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 48px;
-
         & > a {
+          ${reusableButton({ secondary: true })};
+        }
+      }
+
+      & > :nth-child(2) {
+        & > a {
+          ${reusableButton()};
+
+          background-color: transparent;
+          color: ${NEUTRALS.BLACK_2};
+
+          padding: 12px 32px;
+        }
+      }
+
+      & > :nth-child(3) {
+        & > a {
+          ${reusableButton()};
+        }
+      }
+
+      & > li {
+        & > span {
+        }
+
+        a {
           text-decoration: none;
           font-size: 16px;
           color: #312138;
@@ -42,8 +66,19 @@ export const NavbarWrapper = styled.nav`
           justify-content: space-between;
           align-items: center;
           gap: 9px;
-          ${reusableButton({ secondary: true })};
         }
+
+        & > :nth-child(1) {
+          /* border: 2px solid green; */
+          /* ${reusableButton({ secondary: true })}; */
+        }
+      }
+
+      & > :nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
 
         & > :nth-child(2) {
           font-weight: 600;
