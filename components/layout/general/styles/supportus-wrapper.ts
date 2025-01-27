@@ -1,7 +1,7 @@
 import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Support_usWrapper = styled.div`
+export const SupportusWrapper = styled.div`
   position: fixed;
   top: 360px;
   right: calc(

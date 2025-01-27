@@ -4,9 +4,9 @@ import { childrenWithPropsFn } from "@/utils/childrenWithPropsFn"
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
-import { Support_us } from "./Support_us"
 import { Navbar } from "./navbar"
 import { MainWrapper } from "./styles/main-wrapper"
+import { Supportus } from "./supportus"
 
 const Footer_Desktop = dynamic(
   () => import("@/components/footer/desktop/footer").then((mod) => mod.Footer),
@@ -38,7 +38,7 @@ export const Layout_General = ({ children, isMobile }) => {
 
       <MainWrapper isMainInHome={pathname === "/"}>
         {childrenWithProps}
-        {shouldShowSupportUs && <Support_us />}
+        {shouldShowSupportUs && <Supportus />}
       </MainWrapper>
 
       {isMobile ? <Footer_Mobile /> : <Footer_Desktop />}

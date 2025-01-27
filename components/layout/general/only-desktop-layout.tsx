@@ -1,5 +1,5 @@
 import { UnderConstruction } from "@/components/under-construction/UnderConstruction"
-import { OnlyDesktopLayoutWrapper } from "./styles/OnlyDesktopLayoutWrapper"
+import { OnlyDesktopLayoutWrapper } from "./styles/only-desktop-layout-wrapper"
 
 const message = [
   "Please, use the desktop version",
