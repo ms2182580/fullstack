@@ -49,6 +49,29 @@ export const CardWrapper = styled.li<Props>`
   ${({ allowFocus }) =>
     !allowFocus &&
     css`
+      position: relative;
+
+      box-shadow: none;
+      cursor: not-allowed;
+
+      & > * {
+        opacity: 0.4;
+      }
+
+      & > :nth-child(3) {
+        & > li {
+          background-color: hsl(0, 0%, 50.2%, 0.4);
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        border-radius: inherit;
+      }
+
       &:is(:hover, :focus-visible) {
         &::after {
           content: attr(data-content);

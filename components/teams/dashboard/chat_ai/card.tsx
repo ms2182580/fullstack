@@ -4,7 +4,7 @@ import { CardWrapper } from "./styles/card-wrapper"
 
 export type CardProps = {
   svg: FC<SVGProps<SVGSVGElement>> | StaticImageData
-  title: string
+  title: "See Categories" | "Get Listing" | "Create Content"
   listOfOptions: string[]
   allowFocus?: boolean
 }
