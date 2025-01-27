@@ -1,4 +1,4 @@
-import { NEUTRALS } from "@/assets/Colors"
+import { PRIMARY } from "@/assets/Colors"
 import { maxDesktopScreenSize } from "@/assets/screen-sizes/ScreenSizes"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
@@ -24,7 +24,7 @@ export const NavbarWrapper = styled.nav`
     & > ul {
       display: flex;
       align-items: center;
-      gap: 48px;
+      gap: calc(8px * 2);
 
       list-style: none;
 
@@ -39,7 +39,7 @@ export const NavbarWrapper = styled.nav`
           ${reusableButton()};
 
           background-color: transparent;
-          color: ${NEUTRALS.BLACK_2};
+          color: ${PRIMARY.PRIMARY_CTA};
 
           padding: 12px 32px;
         }
