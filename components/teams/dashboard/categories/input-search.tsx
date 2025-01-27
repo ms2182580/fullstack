@@ -1,5 +1,5 @@
 import SvgMic from "@/assets/icons/org/third-page/mic.svg"
-import SvgSend from "@/assets/icons/org/third-page/paper-plane-right.svg"
+import SvgSend from "@/assets/icons/org/third-page/paper-plane.svg"
 import SvgPaperClip from "@/assets/icons/org/third-page/paperclip.svg"
 import { useRef } from "react"
 import { InputSearchWrapper } from "./styles/input-search-wrapper"

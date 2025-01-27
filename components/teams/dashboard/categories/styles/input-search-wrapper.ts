@@ -15,6 +15,8 @@ export const InputSearchWrapper = styled.div`
 
   padding: 8px 24px;
 
+  height: 48px;
+
   & > :nth-child(1) {
     display: flex;
     gap: calc(8px * 2);

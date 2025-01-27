@@ -1,6 +1,6 @@
 import { ArrowRightSvg, LeftArrowSvg } from "@/assets/icons"
 import MicSVG from "@/assets/icons/org/third-page/mic.svg"
-import PaperPlaneRightSVG from "@/assets/icons/org/third-page/paper-plane-right.svg"
+import PaperPlaneRightSVG from "@/assets/icons/org/third-page/paper-plane.svg"
 import PaperclipSVG from "@/assets/icons/org/third-page/paperclip.svg"
 import ThunderSVG from "@/assets/icons/org/third-page/thunder.svg"
 import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
