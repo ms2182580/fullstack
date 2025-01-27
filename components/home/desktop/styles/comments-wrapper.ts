@@ -1,7 +1,7 @@
 import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Home_D_Comment_NWrapper = styled.div`
+export const CommentsWrapper = styled.div`
   background-image: url("/background/background8.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;

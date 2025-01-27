@@ -1,8 +1,7 @@
-import React from "react"
-import { Home_D_Comment_NWrapper } from "./styles/Home_D_Comment_NWrapper"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import Quotation from "@/assets/icons/master-home/master_home_quotation.svg"
 import { ButtonSmall } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { CommentsWrapper } from "./styles/comments-wrapper"
 
 const Card = () => {
   return (
@@ -23,9 +22,9 @@ const Card = () => {
   )
 }
 
-const MasterHome_Comment_D = () => {
+export const Comments = () => {
   return (
-    <Home_D_Comment_NWrapper>
+    <CommentsWrapper>
       <div>
         <div>
           <div>
@@ -42,8 +41,6 @@ const MasterHome_Comment_D = () => {
           <ButtonSmall secondary>Read More</ButtonSmall>
         </div>
       </div>
-    </Home_D_Comment_NWrapper>
+    </CommentsWrapper>
   )
 }
-
-export default MasterHome_Comment_D

@@ -1,7 +1,7 @@
 import { NEUTRALS, SECONDARY_ORG_PLUS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Home_D_Organization_NWrapper = styled.div`
+export const OrganizationWrapper = styled.div`
   background-image: url("/background/background8.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;

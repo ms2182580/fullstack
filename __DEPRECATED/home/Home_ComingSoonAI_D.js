@@ -1,6 +1,6 @@
 import { Home_SecuritySvg } from "../../assets/icons/index"
-import { Home_ComingSoonAISVG } from "../../components/home/desktop/Home_ComingSoonAISVG"
 import { H3 } from "../../components/ui/heading_body_text/HeaderFonts"
+import { Home_ComingSoonAISVG } from "./Home_ComingSoonAISVG"
 import { Home_ComingSoonAI_DWrapper } from "./styles/Home_ComingSoonAI_DWrapper.js"
 
 export const Home_ComingSoonAI_D = () => {

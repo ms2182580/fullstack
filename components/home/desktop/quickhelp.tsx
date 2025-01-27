@@ -1,10 +1,9 @@
-import React from "react"
-import Image from "next/image"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { Home_QuickHelp_NWrapper } from "./styles/Home_QuickHelp_NWrapper"
-import Master_Home_3 from "@/assets/images/masterHome/Master_Home_3.png"
 import Home_our_features_2 from "@/assets/icons/home/home_our-features_2.svg"
+import Master_Home_3 from "@/assets/images/masterHome/Master_Home_3.png"
 import { ButtonSmall } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import Image from "next/image"
+import { QuickhelpWrapper } from "./styles/quickhelp-wrapper"
 
 type CardType = {
   Svg: any
@@ -33,9 +32,9 @@ const Card = ({
   )
 }
 
-export const Home_QuickHelp_D = () => {
+export const Quickhelp = () => {
   return (
-    <Home_QuickHelp_NWrapper>
+    <QuickhelpWrapper>
       <div>
         <P semibold={true} primary_cta={true}>
           Dive right in
@@ -71,6 +70,6 @@ export const Home_QuickHelp_D = () => {
           </div>
         </div>
       </div>
-    </Home_QuickHelp_NWrapper>
+    </QuickhelpWrapper>
   )
 }

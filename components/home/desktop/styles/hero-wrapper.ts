@@ -2,7 +2,7 @@ import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
-export const Home_D_Hero_NWrapper = styled.section`
+export const Hero_Wrapper = styled.section`
   display: grid;
   gap: 56px;
   padding-top: 77px;

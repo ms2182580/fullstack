@@ -1,7 +1,6 @@
-import React from "react"
-import { Home_D_Contribute_NWrapper } from "./styles/Home_D_Contribute_NWrapper"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
 import { ButtonSmall } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import { ContributeWrapper } from "./styles/contribute-wrapper"
 
 const Card = ({ title, paymentType }: any) => {
   return (
@@ -18,9 +17,9 @@ const Card = ({ title, paymentType }: any) => {
   )
 }
 
-const Home_Contribute_D = () => {
+export const Contribute = () => {
   return (
-    <Home_D_Contribute_NWrapper>
+    <ContributeWrapper>
       <div>
         <P primary_cta={true}>Consider supporting Oddy</P>
         <P>Ways to contribute to and improve Oddy..</P>
@@ -43,8 +42,6 @@ const Home_Contribute_D = () => {
           Oddy.
         </P>
       </div>
-    </Home_D_Contribute_NWrapper>
+    </ContributeWrapper>
   )
 }
-
-export default Home_Contribute_D

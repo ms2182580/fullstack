@@ -9,7 +9,7 @@ import step1_icon from "../../../assets/icons/master-home/master_home_flash.svg"
 import Step1 from "../../../assets/images/masterHome/MasterHome_Step1.png"
 import Step2 from "../../../assets/images/masterHome/MasterHome_Step2.png"
 import Step3 from "../../../assets/images/masterHome/MasterHome_Step3.png"
-import { Home_D_Step_NWrapper } from "./styles/Home_D_Steps_NWrapper"
+import { StepsWrapper } from "./styles/steps-wrapper"
 
 const Card = ({
   title,
@@ -62,7 +62,7 @@ const Card = ({
   )
 }
 
-const Home_Steps_D = () => {
+export const Steps = () => {
   const step1Ref = useRef<HTMLDivElement | null>(null)
   const step2Ref = useRef<HTMLDivElement | null>(null)
   const step3Ref = useRef<HTMLDivElement | null>(null)
@@ -107,14 +107,8 @@ const Home_Steps_D = () => {
     }
   }, [])
 
-  useEffect(() => {
-    if (currentStep) {
-      console.log(`${currentStep}`)
-    }
-  }, [currentStep])
-
   return (
-    <Home_D_Step_NWrapper>
+    <StepsWrapper>
       <div>
         <div>
           <P primary_cta={true} semibold={true}>
@@ -213,8 +207,6 @@ const Home_Steps_D = () => {
           </div>
         </div>
       </div>
-    </Home_D_Step_NWrapper>
+    </StepsWrapper>
   )
 }
-
-export default Home_Steps_D

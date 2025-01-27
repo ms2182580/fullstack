@@ -1,13 +1,12 @@
-import React from "react"
-import Image from "next/image"
-import { Home_D_AboutYou_NWrapper } from "./styles/Home_D_AboutYou_NWrapper"
-import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { ButtonSmall } from "@/components/ui/buttons/general"
 import Master_Home_5 from "@/assets/images/masterHome/Master_Home_5.png"
+import { ButtonSmall } from "@/components/ui/buttons/general"
+import { P } from "@/components/ui/heading_body_text/DesktopMobileFonts"
+import Image from "next/image"
+import { AboutyouWrapper } from "./styles/aboutyou-wrapper"
 
-const Home_AboutYou_D = () => {
+export const Aboutyou = () => {
   return (
-    <Home_D_AboutYou_NWrapper>
+    <AboutyouWrapper>
       <div>
         <div>
           <P primary_cta={true}>Tell Us About You</P>
@@ -28,8 +27,6 @@ const Home_AboutYou_D = () => {
         </div>
         <Image src={Master_Home_5} alt="Success." width={554} height={554} />
       </div>
-    </Home_D_AboutYou_NWrapper>
+    </AboutyouWrapper>
   )
 }
-
-export default Home_AboutYou_D

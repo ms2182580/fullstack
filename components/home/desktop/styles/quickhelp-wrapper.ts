@@ -1,7 +1,7 @@
 import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Home_QuickHelp_NWrapper = styled.div`
+export const QuickhelpWrapper = styled.div`
   background-image: url("/background/background7.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -38,7 +38,10 @@ export const Home_QuickHelp_NWrapper = styled.div`
         gap: 16px;
         height: auto;
 
-        & > :nth-child(1), & > :nth-child(2), & > :nth-child(3), & > :nth-child(4) {
+        & > :nth-child(1),
+        & > :nth-child(2),
+        & > :nth-child(3),
+        & > :nth-child(4) {
           background-color: white;
           border: 1px solid ${NEUTRALS.OFF_WHITE_2};
           padding: 33px 34px;
@@ -58,8 +61,8 @@ export const Home_QuickHelp_NWrapper = styled.div`
               margin-bottom: 8px;
             }
             & > :nth-child(3) {
-              line-height 24px;
-              color: ${NEUTRALS.DARK_GREY_2}
+              line-height: 24px;
+              color: ${NEUTRALS.DARK_GREY_2};
             }
           }
           & > :nth-child(2) {

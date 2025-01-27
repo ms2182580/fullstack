@@ -1,7 +1,7 @@
-import { NEUTRALS, PRIMARY, SECONDARY_ORG_PLUS } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Home_D_AboutYou_NWrapper = styled.div`
+export const AboutyouWrapper = styled.div`
   padding-top: 79px;
   padding-bottom: 79px;
   display: grid;

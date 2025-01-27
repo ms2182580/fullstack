@@ -1,7 +1,7 @@
 import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
-export const Home_D_Step_NWrapper = styled.div`
+export const StepsWrapper = styled.div`
   background-image: url("/background/background1.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
