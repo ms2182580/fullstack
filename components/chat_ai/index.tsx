@@ -1,8 +1,11 @@
 import SvgMagicWand from "@/assets/icons/magic_wand_active.svg"
 import SvgMagnifying from "@/assets/icons/magnifying_glass_default.svg"
 import ImgLightbulb from "@/assets/images/teams/img-lightbulb.png"
-import { StaticImageData } from "next/image"
-import { CardProps } from "./card"
+import Image, { StaticImageData } from "next/image"
+import { FC, SVGProps } from "react"
+import { Card, CardProps } from "./card"
+import { InputSearch } from "./input-search"
+import { INDEX_ChatAIWrapper } from "./styles/index-wrapper"
 
 const cardsData: CardProps[] = [
   {
@@ -32,26 +35,31 @@ const cardsData: CardProps[] = [
 ]
 
 type Props = {
-  img: StaticImageData
-  activeCardProp: CardProps["title"]
+  img: FC<SVGProps<SVGSVGElement>> | StaticImageData
+  activeCardProp?: CardProps["title"] | null
   whatUserWantToday: "categories" | "resources"
   alt: string
+  cardsDataProps?: CardProps[]
 }
 
-/* export const INDEX_ChatAI = ({
-  img,
-  activeCardProp,
+export const INDEX_ChatAI = ({
+  img: Img,
+  activeCardProp = null,
   whatUserWantToday,
   alt,
+  cardsDataProps = cardsData,
 }: Props) => {
+  const isSvg = typeof Img === "function"
+
   return (
     <INDEX_ChatAIWrapper>
-      <Image src={img} alt={alt} />
+      {!isSvg ? <Image src={Img} alt={alt} /> : <Img />}
 
       <h1>What {whatUserWantToday} do you need today?</h1>
       <ul>
-        {cardsData.map(({ svg, title, listOfOptions }, index) => {
-          const activeCard = activeCardProp === title
+        {cardsDataProps.map(({ svg, title, listOfOptions }, index) => {
+          const activeCard =
+            activeCardProp === null ? true : activeCardProp === title
 
           return (
             <Card
@@ -69,4 +77,3 @@ type Props = {
     </INDEX_ChatAIWrapper>
   )
 }
- */

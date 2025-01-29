@@ -2,7 +2,11 @@ import { NEUTRALS, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
-export const RequestInputWrapper = styled.div`
+type Props = {
+  shouldHidePlaceholder?: boolean
+}
+
+export const RequestInputWrapper = styled.div<Props>`
   display: grid;
   gap: 24px;
 
@@ -68,6 +72,9 @@ export const RequestInputWrapper = styled.div`
         color: #999;
         font-size: 16px;
         font-weight: 400;
+
+        visibility: ${({ shouldHidePlaceholder }) =>
+          shouldHidePlaceholder && "hidden"};
       }
     }
   }

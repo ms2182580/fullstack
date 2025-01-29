@@ -1,5 +1,5 @@
 import ImgResources from "@/assets/images/teams/img-resources.png"
-import { INDEX_ChatAI } from "../chat_ai"
+import { INDEX_ChatAI } from "@/components/chat_ai"
 import { INDEX_ResourcesWrapper } from "./styles/index-wrapper"
 
 export const INDEX_Resources = () => {

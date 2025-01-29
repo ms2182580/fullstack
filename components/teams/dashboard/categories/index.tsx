@@ -1,5 +1,5 @@
 import ImgCategories from "@/assets/images/teams/img-categories.png"
-import { INDEX_ChatAI } from "../chat_ai"
+import { INDEX_ChatAI } from "@/components/chat_ai"
 import { INDEX_CategoriesWrapper } from "./styles/index-wrapper"
 
 export const INDEX_Categories = () => {
