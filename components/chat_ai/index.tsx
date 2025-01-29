@@ -35,7 +35,7 @@ const cardsData: CardProps[] = [
 ]
 
 type Props = {
-  img: FC<SVGProps<SVGSVGElement>> | StaticImageData
+  svgOrImage: FC<SVGProps<SVGSVGElement>> | StaticImageData
   activeCardProp?: CardProps["title"] | null
   whatUserWantToday: "categories" | "resources"
   alt: string
@@ -43,17 +43,19 @@ type Props = {
 }
 
 export const INDEX_ChatAI = ({
-  img: Img,
+  svgOrImage: SvgImage,
   activeCardProp = null,
   whatUserWantToday,
   alt,
   cardsDataProps = cardsData,
 }: Props) => {
-  const isSvg = typeof Img === "function"
-
   return (
     <INDEX_ChatAIWrapper>
-      {!isSvg ? <Image src={Img} alt={alt} /> : <Img />}
+      {typeof SvgImage === "function" ? (
+        <SvgImage />
+      ) : (
+        <Image src={SvgImage} alt={alt} />
+      )}
 
       <h1>What {whatUserWantToday} do you need today?</h1>
       <ul>

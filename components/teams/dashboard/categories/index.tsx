@@ -6,7 +6,7 @@ export const INDEX_Categories = () => {
   return (
     <INDEX_CategoriesWrapper>
       <INDEX_ChatAI
-        img={ImgCategories}
+        svgOrImage={ImgCategories}
         alt={"image of a megaphone and two bubble chats"}
         whatUserWantToday={"categories"}
         activeCardProp="See Categories"

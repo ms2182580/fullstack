@@ -25,11 +25,10 @@ export const RequestInput = () => {
   }
 
   const [dataInputState, setDataInputState] = useState("")
-  console.log("dataInputState:", dataInputState)
+  // console.log("dataInputState:", dataInputState)
 
   useEffect(() => {
-    /*_codeHere_*/
-    console.log("dataInputState:", dataInputState)
+    // console.log("dataInputState:", dataInputState)
   }, [dataInputState])
 
   const handleOnChange = (e) => {
@@ -52,10 +51,10 @@ export const RequestInput = () => {
       console.log("💫data:", data)
       setTheDataToUse((prevState) => {
         if (prevState.length === 0) {
-          console.log("🔰prevState:", prevState, 0)
+          // console.log("🔰prevState:", prevState, 0)
           return [...prevState, data]
         } else {
-          console.log("🚝prevState:", prevState, 1)
+          // console.log("🚝prevState:", prevState, 1)
           return [...prevState, data]
         }
       })
@@ -63,11 +62,11 @@ export const RequestInput = () => {
   }, [data])
 
   useEffect(() => {
-    console.log("theDataToUse, data:", theDataToUse, data)
+    // console.log("theDataToUse, data:", theDataToUse, data)
   }, [theDataToUse, data])
 
   useEffect(() => {
-    console.log("isFetching:", isFetching)
+    // console.log("isFetching:", isFetching)
   }, [isFetching])
 
   return (

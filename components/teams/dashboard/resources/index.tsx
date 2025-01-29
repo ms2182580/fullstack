@@ -6,7 +6,7 @@ export const INDEX_Resources = () => {
   return (
     <INDEX_ResourcesWrapper>
       <INDEX_ChatAI
-        img={ImgResources}
+        svgOrImage={ImgResources}
         alt={"two bubble icon, two emails icons and one picture"}
         whatUserWantToday={"resources"}
         activeCardProp={"Get Listing"}

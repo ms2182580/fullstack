@@ -21,8 +21,6 @@ export const Card = ({
   listOfOptions,
   allowFocus,
 }: CardProps) => {
-  const isSvg = typeof Svg === "function"
-
   return (
     <CardWrapper
       tabIndex={allowFocus ? 0 : -1}
@@ -30,7 +28,11 @@ export const Card = ({
       allowFocus={allowFocus}
     >
       <div>
-        {isSvg ? <Svg /> : <Image src={Svg} alt={`icon of ${title}`} />}
+        {typeof Svg === "function" ? (
+          <Svg />
+        ) : (
+          <Image src={Svg} alt={`icon of ${title}`} />
+        )}
       </div>
 
       <h2>{title}</h2>

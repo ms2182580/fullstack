@@ -31,7 +31,7 @@ export const INDEX_D_AIChat = () => {
   return (
     <INDEX_D_AIChatWrapper>
       <INDEX_ChatAI
-        img={SVGChatAIDefault}
+        svgOrImage={SVGChatAIDefault}
         alt={"two bubble icon, two emails icons and one picture"}
         whatUserWantToday={"resources"}
         cardsDataProps={cardsData}
