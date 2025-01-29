@@ -15,7 +15,8 @@ export const CardWrapper = styled.li<Props>`
 
   box-shadow: 0 4px 4px var(--box-shadow-color, hsl(0, 0%, 0%, 0.5));
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: calc(8px * 2);
 
   position: relative;
