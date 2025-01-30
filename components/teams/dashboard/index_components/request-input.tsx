@@ -4,7 +4,10 @@ import {
   LinkedinSvg,
   Twitter2Svg,
 } from "@/assets/icons/index"
-import { usePosts } from "@/utils/org/use-fetch-data-tanstack"
+import {
+  FetchMongoReturnType,
+  usePosts,
+} from "@/utils/org/use-fetch-data-tanstack"
 import { useEffect, useRef, useState } from "react"
 import { RequestInputWrapper } from "./styles/request-input-wrapper"
 
@@ -14,6 +17,24 @@ const socialMediaArray = [
   { name: "Instagram", icon: Instagram2Svg },
   { name: "Linkedin", icon: LinkedinSvg },
 ]
+
+type theDateType = {
+  day: number
+  dayOfTheWeek: number
+  hour: number
+  milliseconds: number
+  minute: number
+  month: number
+  second: number
+  timeZone: string
+  year: number
+}
+
+type MongoDataUI = {
+  whenTheUserMakeTheQuery: theDateType
+  queryTypedByUser: string
+  theData: FetchMongoReturnType
+}
 
 export const RequestInput = () => {
   const refInput = useRef<HTMLInputElement>(null)
@@ -25,17 +46,18 @@ export const RequestInput = () => {
   }
 
   const [dataInputState, setDataInputState] = useState("")
-  // console.log("dataInputState:", dataInputState)
-
-  useEffect(() => {
-    // console.log("dataInputState:", dataInputState)
-  }, [dataInputState])
 
   const handleOnChange = (e) => {
     setDataInputState(e.target.value)
   }
 
-  const [theDataToUse, setTheDataToUse] = useState<any[]>([])
+  const handleOnKeyDown = (e) => {
+    if (e.code === "Enter") {
+      handleClick()
+    }
+  }
+
+  const [theDataToUse, setTheDataToUse] = useState<MongoDataUI[]>([])
 
   const { data, isFetching, refetch } = usePosts({
     internalKey: `${dataInputState}`,
@@ -48,21 +70,35 @@ export const RequestInput = () => {
 
   useEffect(() => {
     if (data) {
-      console.log("💫data:", data)
+      const actualDate = new Date()
+
+      const nowDate = {
+        year: actualDate.getFullYear(),
+        month: actualDate.getMonth() + 1,
+        day: actualDate.getDate(),
+        hour: actualDate.getHours(),
+        minute: actualDate.getMinutes(),
+        second: actualDate.getSeconds(),
+        milliseconds: actualDate.getMilliseconds(),
+        dayOfTheWeek: actualDate.getDay(),
+        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      }
+
+      const dataToState = {
+        theData: data,
+        queryTypedByUser: dataInputState,
+        whenTheUserMakeTheQuery: nowDate,
+      }
+
       setTheDataToUse((prevState) => {
-        if (prevState.length === 0) {
-          // console.log("🔰prevState:", prevState, 0)
-          return [...prevState, data]
-        } else {
-          // console.log("🚝prevState:", prevState, 1)
-          return [...prevState, data]
-        }
+        return [...prevState, dataToState]
       })
     }
   }, [data])
 
   useEffect(() => {
-    // console.log("theDataToUse, data:", theDataToUse, data)
+    // console.log("theDataToUse, data:", theDataToUse, data, )
+    // console.log("theDataToUse", theDataToUse, theDataToUse.at(-1))
   }, [theDataToUse, data])
 
   useEffect(() => {
@@ -87,6 +123,7 @@ export const RequestInput = () => {
             placeholder={`E.g.: “Hi, all, I’m having problems with my son’s school...”`}
             ref={refInput}
             onChange={handleOnChange}
+            onKeyDown={handleOnKeyDown}
           />
           <span>
             E.g.: <i>“Hi, all, I’m having problems with my son’s school...”</i>
