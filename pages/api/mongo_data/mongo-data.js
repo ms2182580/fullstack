@@ -1,4 +1,4 @@
-export const mongoData = {
+export const recordData = {
   record000: {
     distance: 1.3949532508850098,
     mongo: {
@@ -579,5 +579,33 @@ export const mongoData = {
     node_id: "72e8c40b52049639186601fdb6f93e99",
     rank: 0.04395511746406555,
     record: "4bc58f674ae526c562563ef1",
+  },
+}
+
+export const categoryData = {
+  category000: {
+    category: "61111012 - US - Schools for Cognitive disabilities",
+    distance: 1.2180181741714478,
+    node_id: "0db4ca3bf110db5e3256c3fbd6d754ab",
+  },
+  category001: {
+    category: "71121902 - Sports Motivational Training",
+    distance: 1.1862711906433105,
+    node_id: "f49a25852cb4a1195443795b2246d66d",
+  },
+  category002: {
+    category: "62139970 - US - Educative Therapy",
+    distance: 1.181437611579895,
+    node_id: "2dbd9432db9d0584396407f0fcbae250",
+  },
+  category003: {
+    category: "62134009 -US - SLP & Speech Therapy",
+    distance: 1.248762607574463,
+    node_id: "cb9d43567b93b83f1b9f148e240b61f5",
+  },
+  category004: {
+    category: "62134017 - US - Speech & hearing disorders information",
+    distance: 1.2359063625335693,
+    node_id: "63a002df1af509851422d3ee81566f19",
   },
 }

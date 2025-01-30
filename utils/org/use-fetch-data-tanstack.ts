@@ -63,7 +63,7 @@ type Mongo = {
   "ZIP Code": number
 }
 
-export type FetchMongoReturnType = {
+export type RecordReturnType = {
   distance: number
   mongo: Mongo
   node_id: string
@@ -71,23 +71,41 @@ export type FetchMongoReturnType = {
   record: string
 }
 
-export const fetchPosts = async (): Promise<FetchMongoReturnType> => {
-  const response = await fetch(`/api/mongo_data`)
+export type CategoryReturnType = {
+  category: string
+  distance: number
+  node_id: string
+}
+
+export const fetchPosts = async ({
+  recordOrCategory,
+}: {
+  recordOrCategory?: UsePostsType["recordOrCategory"]
+}): Promise<RecordReturnType | CategoryReturnType> => {
+  const endpoint = `/api/mongo_data?type=${recordOrCategory}`
+
+  const response = await fetch(endpoint)
+
+  if (!response.ok) {
+    throw new Error("Network response was not ok")
+  }
+
   const data = await response.json()
   return data
 }
 
 type UsePostsType = {
   internalKey?: string
-  lastIndex?: number
+  recordOrCategory?: "record" | "category"
 }
 
 export const usePosts = ({
   internalKey = "getMongoData",
+  recordOrCategory = "record",
 }: UsePostsType = {}) => {
   return useQuery({
     queryKey: [internalKey],
-    queryFn: () => fetchPosts(),
+    queryFn: () => fetchPosts({ recordOrCategory }),
     enabled: false,
     refetchOnWindowFocus: false,
   })

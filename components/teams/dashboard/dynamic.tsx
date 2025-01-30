@@ -3,7 +3,8 @@ import {
   ComponentsToRenderAvailable_Type,
   useDynamicComponentToRender,
 } from "@/utils/useDynamicComponentToRender"
-import { cloneElement, isValidElement } from "react"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { cloneElement, Fragment, isValidElement, useState } from "react"
 import { INDEX_Categories } from "./categories"
 import { INDEX_Resources } from "./resources"
 import { INDEX_Saved } from "./saved"
@@ -33,10 +34,23 @@ export const DYNAMIC_TeamsDashboard = () => {
     componentsToRenderAvailable,
   })
 
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+          },
+        },
+      })
+  )
+
   return (
-    <>
-      {isValidElement(componentToRender) &&
-        cloneElement(componentToRender, propsToComponent)}
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Fragment>
+        {isValidElement(componentToRender) &&
+          cloneElement(componentToRender, propsToComponent)}
+      </Fragment>
+    </QueryClientProvider>
   )
 }

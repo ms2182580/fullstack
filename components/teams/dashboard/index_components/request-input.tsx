@@ -5,7 +5,8 @@ import {
   Twitter2Svg,
 } from "@/assets/icons/index"
 import {
-  FetchMongoReturnType,
+  CategoryReturnType,
+  RecordReturnType,
   usePosts,
 } from "@/utils/org/use-fetch-data-tanstack"
 import { useEffect, useRef, useState } from "react"
@@ -31,9 +32,9 @@ type theDateType = {
 }
 
 type MongoDataUI = {
-  whenTheUserMakeTheQuery: theDateType
+  whenTheUserMadeTheQuery: theDateType
   queryTypedByUser: string
-  theData: FetchMongoReturnType
+  theData: RecordReturnType | CategoryReturnType
 }
 
 export const RequestInput = () => {
@@ -87,7 +88,7 @@ export const RequestInput = () => {
       const dataToState = {
         theData: data,
         queryTypedByUser: dataInputState,
-        whenTheUserMakeTheQuery: nowDate,
+        whenTheUserMadeTheQuery: nowDate,
       }
 
       setTheDataToUse((prevState) => {
@@ -98,7 +99,7 @@ export const RequestInput = () => {
 
   useEffect(() => {
     // console.log("theDataToUse, data:", theDataToUse, data, )
-    // console.log("theDataToUse", theDataToUse, theDataToUse.at(-1))
+    console.log("theDataToUse", theDataToUse, theDataToUse.at(-1))
   }, [theDataToUse, data])
 
   useEffect(() => {
@@ -138,3 +139,12 @@ export const RequestInput = () => {
     </RequestInputWrapper>
   )
 }
+
+/* 
+!FH0
+Make the chat work. Expected features:
+- chat like UI
+- UI should be like what it's get from the chat AI: the cards and the move to different views
+
+Check this URL to make how it would look like: https://www.figma.com/design/bF5zcHk2wGGueHZHHTtkoi/12.2024---Directory---Search-Listing-and-Yellow-Pages-app---upload?node-id=210-21975&t=MjJcEqyBwCrTMrRN-4
+*/
