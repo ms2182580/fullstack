@@ -4,7 +4,7 @@ import SvgPaperClip from "@/assets/icons/org/third-page/paperclip.svg"
 import { useRef } from "react"
 import { InputSearchWrapper } from "./styles/input-search-wrapper"
 
-export const InputSearch = () => {
+export const InputSearch = ({ theOnchange, theOnKeyDown }) => {
   const theRefInput = useRef<HTMLInputElement>(null)
 
   const handleFocusInput = (e) => {
@@ -40,6 +40,8 @@ export const InputSearch = () => {
       <input
         ref={theRefInput}
         placeholder="Type or paste a new resource request..."
+        onChange={theOnchange}
+        onKeyDown={theOnKeyDown}
       />
       <SvgSend tabIndex={0} />
     </InputSearchWrapper>
