@@ -1,14 +1,13 @@
-import SvgMagicWand from "@/assets/icons/magic_wand_active.svg"
-import SvgMagnifying from "@/assets/icons/magnifying_glass_default.svg"
-import ImgLightbulb from "@/assets/images/teams/img-lightbulb.png"
 import {
   CategoryReturnType,
   RecordReturnType,
-  usePosts,
+  useGetMongoData,
 } from "@/utils/org/use-fetch-data-tanstack"
-import Image, { StaticImageData } from "next/image"
+import { StaticImageData } from "next/image"
 import { FC, SVGProps, useEffect, useState } from "react"
-import { Card, CardProps } from "./card"
+import { CardProps } from "./card"
+import { ChatLike } from "./chat-like"
+import { Default } from "./default"
 import { InputSearch } from "./input-search"
 import { INDEX_ChatAIWrapper } from "./styles/index-wrapper"
 
@@ -24,38 +23,11 @@ type theDateType = {
   year: number
 }
 
-type FetchedData = {
+export type INDEX_ChatAIFetchedDataType = {
   whenTheUserMadeTheQuery: theDateType
   queryTypedByUser: string
-  theData: RecordReturnType | CategoryReturnType
+  theData: RecordReturnType[] | CategoryReturnType[]
 }
-
-const cardsData: CardProps[] = [
-  {
-    svg: ImgLightbulb,
-    title: "See Categories",
-    listOfOptions: [
-      "Categories behavioral health?",
-      "10 most popular categories in NYC",
-    ],
-  },
-  {
-    svg: SvgMagnifying,
-    title: "Get Listing",
-    listOfOptions: [
-      "Yoga providers in NY, NY 10027",
-      "Autism resources in 18302",
-    ],
-  },
-  {
-    svg: SvgMagicWand,
-    title: "Create Content",
-    listOfOptions: [
-      "Respond to a FB resource request",
-      "Request help from a provider on IG",
-    ],
-  },
-]
 
 type Props = {
   svgOrImage: FC<SVGProps<SVGSVGElement>> | StaticImageData
@@ -66,27 +38,33 @@ type Props = {
 }
 
 export const INDEX_ChatAI = ({
-  svgOrImage: SvgImage,
+  svgOrImage,
   activeCardProp = null,
   whatUserWantToday,
   alt,
-  cardsDataProps = cardsData,
+  cardsDataProps,
 }: Props) => {
   const [dataInputState, setDataInputState] = useState("")
+  const [queriesFromUserState, setQueriesFromUserState] = useState<string[]>([])
 
   const handleOnChange = (e) => {
     setDataInputState(e.target.value)
   }
 
   const handleOnKeyDown = (e) => {
-    if (e.code === "Enter") {
+    if (e.key === "Enter") {
       handleClick()
+      setQueriesFromUserState((prevState) => {
+        return [...prevState, dataInputState]
+      })
     }
   }
 
-  const [theDataToUse, setTheDataToUse] = useState<FetchedData[]>([])
+  const [theDataToUse, setTheDataToUse] = useState<
+    INDEX_ChatAIFetchedDataType[]
+  >([])
 
-  const { data, isFetching, refetch } = usePosts({
+  const { data, isFetching, refetch } = useGetMongoData({
     internalKey: `${dataInputState}`,
   })
 
@@ -112,57 +90,60 @@ export const INDEX_ChatAI = ({
       }
 
       const dataToState = {
-        theData: data,
+        theData: Object.entries(data),
         queryTypedByUser: dataInputState,
         whenTheUserMadeTheQuery: nowDate,
       }
-
       setTheDataToUse((prevState) => {
         return [...prevState, dataToState]
       })
     }
   }, [data])
 
-  useEffect(() => {
-    // console.log("theDataToUse, data:", theDataToUse, data, )
-    // console.log("theDataToUse", theDataToUse, theDataToUse.at(-1))
-  }, [theDataToUse, data])
-
-  useEffect(() => {
-    // console.log("isFetching:", isFetching)
-  }, [isFetching])
-
   return (
-    <INDEX_ChatAIWrapper>
-      {typeof SvgImage === "function" ? (
-        <SvgImage />
-      ) : (
-        <Image src={SvgImage} alt={alt} />
+    <>
+      <INDEX_ChatAIWrapper>
+        {!isFetching && theDataToUse.length === 0 ? (
+          <Default
+            svgOrImage={svgOrImage}
+            activeCardProp={activeCardProp}
+            whatUserWantToday={whatUserWantToday}
+            alt={alt}
+            cardsDataProps={cardsDataProps}
+          />
+        ) : (
+          <ChatLike
+            theDataToUse={theDataToUse}
+            isFetching={isFetching}
+            queriesFromUserState={queriesFromUserState}
+          />
+        )}
+        <InputSearch
+          theOnchange={handleOnChange}
+          theOnKeyDown={handleOnKeyDown}
+          dataInputState={dataInputState}
+        />
+      </INDEX_ChatAIWrapper>
+      {theDataToUse.length !== 0 && (
+        <ul style={{ marginTop: "calc(8px * 8)", border: "2px solid green" }}>
+          <li>
+            <h1>Things to bear in mind:</h1>
+          </li>
+          <li>
+            Is not possible to fecth again with the same query because the
+            library we are using for that: Tan Stack Query
+          </li>
+          <li>
+            Right now the "backend" we are using is a mock of what is expected
+            to receive
+          </li>
+          <li>The actual implementation return always 5 records</li>
+          <li>
+            More UI and UX should be handled in order to add a better experience
+          </li>
+        </ul>
       )}
-
-      <h1>What {whatUserWantToday} do you need today?</h1>
-      <ul>
-        {cardsDataProps.map(({ svg, title, listOfOptions }, index) => {
-          const activeCard =
-            activeCardProp === null ? true : activeCardProp === title
-
-          return (
-            <Card
-              key={title}
-              svg={svg}
-              title={title}
-              listOfOptions={listOfOptions}
-              allowFocus={activeCard}
-            />
-          )
-        })}
-      </ul>
-
-      <InputSearch
-        theOnchange={handleOnChange}
-        theOnKeyDown={handleOnKeyDown}
-      />
-    </INDEX_ChatAIWrapper>
+    </>
   )
 }
 
