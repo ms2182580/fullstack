@@ -1,11 +1,6 @@
-import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
-type Props = {
-  isDataInputStateEmpty?: boolean
-}
-
-export const InputSearchWrapper = styled.div<Props>`
+export const InputSearchWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,10 +30,6 @@ export const InputSearchWrapper = styled.div<Props>`
   }
 
   & > :nth-child(3) {
-    & > * {
-      fill: ${({ isDataInputStateEmpty }) =>
-        isDataInputStateEmpty && `${NEUTRALS.BLACK_2}`};
-    }
   }
 
   &:has(:nth-child(2):focus) {
