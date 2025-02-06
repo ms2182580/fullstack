@@ -1,32 +1,4 @@
-// import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-// import styled from "styled-components"
-
-// export const INDEX_NewsearchWrapper = styled.div`
-//   display: grid;
-//   gap: 16px;
-
-//   border: 2px solid black;
-
-//   & > div {
-//     display: flex;
-
-//     gap: 16px;
-
-//     & > :nth-child(1) {
-//       ${reusableButton()}
-//     }
-
-//     & > :nth-child(2) {
-//       ${reusableButton({ secondary: true })}
-//     }
-
-//     a {
-//       padding: 8px 16px;
-//     }
-//   }
-// `
-
-
+import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -100,9 +72,9 @@ export const SearchContainer = styled.div`
   width: 83%;
 `
 
-export const SearchLabel = styled.label`
+export const SearchLabel = styled.span`
   display: block;
-  fontSize:16px;
+  font-size:16px;
   font-weight:400;
   margin-bottom: 0.5rem;
   color: #3A343C;
@@ -127,12 +99,17 @@ export const SearchInput = styled.input`
   padding: 0.75rem 2rem 0.75rem 2.5rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
-  
   margin-bottom: 1rem;
   font-size: 1rem;
   background-color: white;
   &::placeholder {
     color: #999;
+  }
+
+  &:focus{
+    box-shadow: none;
+    outline:none;
+    border: 1.5px solid #ddd;
   }
 `;
 
@@ -143,31 +120,12 @@ export const ButtonContainer = styled.div`
   margin-top: 2rem;
 `
 
-export const Button = styled.button<{ primary?: boolean }>`
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  
-  ${(props) =>
-    props.primary
-      ? `
-    background-color: #008080;
-    color: white;
-    border: none;
-    &:hover {
-      background-color: #006666;
-    }
-  `
-      : `
-    background-color: white;
-    color: #008080;
-    border: 1px solid #008080;
-    
-    &:hover {
-      background-color: #f0f0f0;
-    }
-  `}
+export const ButtonPrimary = styled.button<{ primary?: boolean }>`
+cursor: pointer;
+  ${reusableButton({ secondary: false })}
+`
+export const ButtonSecondary = styled.button<{ primary?: boolean }>`
+cursor: pointer;
+  ${reusableButton({ secondary: true })}
 `
 

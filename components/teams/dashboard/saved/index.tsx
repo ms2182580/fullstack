@@ -1,23 +1,16 @@
-// import { INDEX_SavedWrapper } from "./styles/index-wrapper"
-
-// export const INDEX_Saved = () => {
-//   return <INDEX_SavedWrapper>INDEX_Saved lkjlk</INDEX_SavedWrapper>
-// }
-
-"use client"
 import { useRouter } from "next/router"
 import {
   IconWrapper,
-  ModalContainer,
-  ModalItem,
-  PageButtons,
-  PageNumbers,
-  PaginationWrap,
+  ModalContainerWrapper,
+  ModalItemWrapper,
+  PageButtonsWrapper,
+  PageNumbersWrapper,
+  PaginationWrapper,
   SavedWrapper,
-  SearchBar,
-  Table,
-  TableBody,
-  TableHeader,
+  SearchBarWrapper,
+  TableWrapper,
+  TableBodyWrapper,
+  TableHeaderWrapper,
 } from "./styles/index-wrapper"
 import SVGUploadFile from "@/assets/icons/uploadfile.svg"
 import SearchSVG from "@/assets/icons/search.svg"
@@ -30,7 +23,7 @@ import SDuplicateSVG from "@/assets/icons/sDuplicate.svg"
 import SDeleteSVG from "@/assets/icons/sDelete.svg"
 import { Fragment, useState } from "react"
 import { usePathname } from "next/navigation"
-
+import { Breadcrumbs } from "@/components/layout/teams/layout-dashboard-general/header/breadcrumbs"
 export const INDEX_Saved = () => {
   const router = useRouter()
   const pathname = usePathname()
@@ -40,9 +33,12 @@ export const INDEX_Saved = () => {
     setVisibleModalRow((prev) => (prev === rowIndex ? null : rowIndex))
   }
 
+  const testData = [1, 2, 3, 4, 5, 6, 7]
+
   return (
     <>
       <SavedWrapper>
+          <Breadcrumbs/>
         <nav>
           <span onClick={() => router.back()}> &lt;&lt;Go Back</span>
           <span>{pathname}</span>
@@ -63,15 +59,15 @@ export const INDEX_Saved = () => {
           </small>
         </div>
 
-        <SearchBar>
+        <SearchBarWrapper>
           <i>
             <SearchSVG />
           </i>
           <input type="text" placeholder="Search documents" />
-        </SearchBar>
+        </SearchBarWrapper>
 
-        <Table>
-          <TableHeader>
+        <TableWrapper>
+          <TableHeaderWrapper>
             <th>
               <input type="checkbox" />
             </th>
@@ -112,46 +108,11 @@ export const INDEX_Saved = () => {
               </div>
             </th>
             <th></th>
-          </TableHeader>
-          <TableBody>
-            {Array.from({ length: 6 }, (len, idx) => (
-              <tr key={idx}>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SfileSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SpersonSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <span>1 Minute Ago</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <small>{idx === 3 ? "Completed" : "Draft"}</small>
-                  </div>
-                </td>
-                <td>
-                  <span onClick={() => handleAction(idx)}>...</span>{" "}
-                </td>
-              </tr>
-            )).map((_, idx) => (
-              <Fragment key={idx}>
-                <tr>
+          </TableHeaderWrapper>
+          <TableBodyWrapper>
+            {testData
+              .map((len, idx) => (
+                <tr key={idx}>
                   <td>
                     <input type="checkbox" />
                   </td>
@@ -182,189 +143,91 @@ export const INDEX_Saved = () => {
                     </div>
                   </td>
                   <td>
-                    <span onClick={() => handleAction(idx)}>...</span>
+                    <span onClick={() => handleAction(idx)}>...</span>{" "}
                   </td>
                 </tr>
-                {visibleModalRow === idx && (
-                  <ModalContainer>
-                    <ModalItem onClick={() => alert("Share clicked")}>
-                      <IconWrapper>
-                        <SShareSVG />
-                      </IconWrapper>
-                      <span>Share</span>
-                    </ModalItem>
-                    <ModalItem onClick={() => alert("Rename clicked")}>
-                      <IconWrapper>
-                        <SRenamSVG />
-                      </IconWrapper>
-                      <span>Rename</span>
-                    </ModalItem>
-                    <ModalItem onClick={() => alert("Duplicate clicked")}>
-                      <IconWrapper>
-                        <SDuplicateSVG />
-                      </IconWrapper>
-                      <span>Duplicate</span>
-                    </ModalItem>
-                    <ModalItem
-                      className="danger"
-                      onClick={() => alert("Delete clicked")}
-                    >
-                      <IconWrapper>
-                        <SDeleteSVG />
-                      </IconWrapper>
-                      <span>Delete</span>
-                    </ModalItem>
-                  </ModalContainer>
-                )}
-              </Fragment>
-            ))}
-
-            {/* <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SfileSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SpersonSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <span>1 Minute Ago</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <small>Draft</small>
-                  </div>
-                </td>
-                <td>
-                  <span>...</span>{" "}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SfileSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SpersonSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <span>1 Minute Ago</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <small>Completed</small>
-                  </div>
-                </td>
-                <td>
-                  <span>...</span>{" "}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SfileSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SpersonSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <span>1 Minute Ago</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <small>Draft</small>
-                  </div>
-                </td>
-                <td>
-                  <span>...</span>{" "}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SfileSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <i>
-                      <SpersonSVG />
-                    </i>
-                    <span>Kahlil’s Care Plan</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <span>1 Minute Ago</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <small>Draft</small>
-                  </div>
-                </td>
-                <td>
-                  <span>...</span>{" "}
-                </td>
-              </tr> */}
-          </TableBody>
-        </Table>
-        <PaginationWrap>
-          <PageNumbers>1-10 of 10</PageNumbers>
-          <PageButtons>
+              ))
+              .map((_, idx) => (
+                <Fragment key={idx}>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <div>
+                        <i>
+                          <SfileSVG />
+                        </i>
+                        <span>Kahlil’s Care Plan</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i>
+                          <SpersonSVG />
+                        </i>
+                        <span>Kahlil’s Care Plan</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <span>1 Minute Ago</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <small>{idx === 3 ? "Completed" : "Draft"}</small>
+                      </div>
+                    </td>
+                    <td>
+                      <span onClick={() => handleAction(idx)}>...</span>
+                    </td>
+                  </tr>
+                  {visibleModalRow === idx && (
+                    <ModalContainerWrapper>
+                      <ModalItemWrapper onClick={() => alert("Share clicked")}>
+                        <IconWrapper>
+                          <SShareSVG />
+                        </IconWrapper>
+                        <span>Share</span>
+                      </ModalItemWrapper>
+                      <ModalItemWrapper onClick={() => alert("Rename clicked")}>
+                        <IconWrapper>
+                          <SRenamSVG />
+                        </IconWrapper>
+                        <span>Rename</span>
+                      </ModalItemWrapper>
+                      <ModalItemWrapper
+                        onClick={() => alert("Duplicate clicked")}
+                      >
+                        <IconWrapper>
+                          <SDuplicateSVG />
+                        </IconWrapper>
+                        <span>Duplicate</span>
+                      </ModalItemWrapper>
+                      <ModalItemWrapper
+                        className="danger"
+                        onClick={() => alert("Delete clicked")}
+                      >
+                        <IconWrapper>
+                          <SDeleteSVG />
+                        </IconWrapper>
+                        <span>Delete</span>
+                      </ModalItemWrapper>
+                    </ModalContainerWrapper>
+                  )}
+                </Fragment>
+              ))}
+          </TableBodyWrapper>
+        </TableWrapper>
+        <PaginationWrapper>
+          <PageNumbersWrapper>1-10 of 10</PageNumbersWrapper>
+          <PageButtonsWrapper>
             <span>&lt;</span>
             <button>1</button>
             <span>&gt;</span>
-          </PageButtons>
-        </PaginationWrap>
+          </PageButtonsWrapper>
+        </PaginationWrapper>
       </SavedWrapper>
     </>
   )

@@ -11,13 +11,14 @@ import {
   SearchLabel,
   SearchInput,
   ButtonContainer,
-  Button,
   SearchIcon,
   SearchInputWrapper,
+  ButtonPrimary,
+  ButtonSecondary,
 } from "./styles/index-wrapper"
 import { useState } from "react"
 
-export default function INDEX_Newsearch() {
+export const  INDEX_NewSearch = () => {
   const [inputValue, setInputValue] = useState("")
 
   return (
@@ -32,7 +33,8 @@ export default function INDEX_Newsearch() {
             The ultimate guide to the world's developmental disability resources
           </Title>
           <SearchContainer>
-            <SearchLabel htmlFor="keyword">Keyword</SearchLabel>
+            <SearchLabel>Keyword</SearchLabel>
+            <span>Keyword</span>
             <SearchInputWrapper>
               <SearchIcon>
                 <svg
@@ -51,6 +53,7 @@ export default function INDEX_Newsearch() {
               <SearchInput
                 id="keyword"
                 type="text"
+                autoFocus
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="ADHD, speech therapy, NAICS Code 12132 etc."
@@ -59,8 +62,8 @@ export default function INDEX_Newsearch() {
           </SearchContainer>
 
           <ButtonContainer>
-            <Button primary>Search Resources</Button>
-            <Button>Search Categories</Button>
+            <ButtonPrimary>Search Resources</ButtonPrimary>
+            <ButtonSecondary>Search Categories</ButtonSecondary>
           </ButtonContainer>
         </MainContent>
       </Extradiv>
