@@ -4,7 +4,7 @@ import SvgPaperClip from "@/assets/icons/org/third-page/paperclip.svg"
 import { useRef } from "react"
 import { InputSearchWrapper } from "./styles/input-search-wrapper"
 
-export const InputSearch = ({ theOnchange, theOnKeyDown }) => {
+export const InputSearch = ({ theOnchange, theOnKeyDown, dataInputState }) => {
   const theRefInput = useRef<HTMLInputElement>(null)
 
   const handleFocusInput = (e) => {
@@ -24,7 +24,10 @@ export const InputSearch = ({ theOnchange, theOnKeyDown }) => {
   }
 
   return (
-    <InputSearchWrapper onClick={handleFocusInput}>
+    <InputSearchWrapper
+      onClick={handleFocusInput}
+      isDataInputStateEmpty={dataInputState !== ""}
+    >
       <div>
         <SvgPaperClip
           onClick={handleInteractWithClip}
@@ -42,6 +45,7 @@ export const InputSearch = ({ theOnchange, theOnKeyDown }) => {
         placeholder="Type or paste a new resource request..."
         onChange={theOnchange}
         onKeyDown={theOnKeyDown}
+        value={dataInputState}
       />
       <SvgSend tabIndex={0} />
     </InputSearchWrapper>
