@@ -15,12 +15,11 @@ export const InputSearchWrapper = styled.div<Props>`
   border: 2px solid gray;
   border-radius: 8px;
 
-  max-width: 880px;
-  width: 100%;
-
-  padding: 8px 24px;
+  background-color: ${NEUTRALS.OFF_WHITE};
 
   height: 48px;
+
+  padding: 8px 24px;
 
   & > :nth-child(1) {
     display: flex;

@@ -1,3 +1,4 @@
+import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const IndexWrapper = styled.div`
@@ -12,7 +13,7 @@ export const IndexWrapper = styled.div`
 
   & > :nth-child(1) {
     grid-area: aside;
-    height: 100vh;
+    height: 100dvh;
     position: sticky;
     inset: 0;
   }
@@ -20,8 +21,8 @@ export const IndexWrapper = styled.div`
   & > :nth-child(2) {
     grid-area: header;
     position: sticky;
-    inset: 0;
     z-index: 99;
+    inset: 0;
 
     height: fit-content;
   }
@@ -29,8 +30,8 @@ export const IndexWrapper = styled.div`
   & > :nth-child(3) {
     grid-area: children;
 
-    min-height: 100dvh; // This height is to make the children and the header fit the expected layout. After code the screens this can be deleted
+    padding-bottom: calc(8px * 6);
 
-    background-color: #fefcff;
+    background-color: ${NEUTRALS.OFF_WHITE};
   }
 `

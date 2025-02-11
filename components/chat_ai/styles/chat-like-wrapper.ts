@@ -10,11 +10,12 @@ const keyFramesRotation = keyframes`
 `
 
 export const ChatLikeWrapper = styled.div`
-  /* border: 2px solid green; */
   display: grid;
   place-items: center;
 
   width: 100%;
+
+  position: relative;
 
   & > ul {
     list-style: none;

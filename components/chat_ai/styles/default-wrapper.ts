@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const DefaultWrapper = styled.div`
-  /* min-height: 100dvh; */
   margin-block: calc(8px * 23) calc(8px * 14);
 
   & > :nth-child(1) {
@@ -10,6 +9,8 @@ export const DefaultWrapper = styled.div`
 
   & > :nth-child(2) {
     margin-top: calc(8px * 6);
+
+    text-align: center;
   }
 
   & > :nth-child(3) {
@@ -22,14 +23,16 @@ export const DefaultWrapper = styled.div`
     flex-wrap: wrap;
 
     gap: calc(8px * 2);
-    max-width: 1200px;
 
-    @media (max-width: 1302px) {
+    & > * {
+      max-width: 290px;
+    }
+
+    @media (max-width: 1285px) {
       flex-direction: column;
 
-      min-width: 77%;
-
       & > * {
+        max-width: 100%;
         & > :nth-child(3) {
           grid-auto-flow: column;
           width: max-content;

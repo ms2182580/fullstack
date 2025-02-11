@@ -6,8 +6,6 @@ type Props = {
 }
 
 export const CardWrapper = styled.li<Props>`
-  min-width: 330px;
-
   border-radius: 14px;
   border: 1px solid ${NEUTRALS.BORDER};
 

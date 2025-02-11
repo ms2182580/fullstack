@@ -57,6 +57,10 @@ export const INDEX_ChatAI = ({
       setQueriesFromUserState((prevState) => {
         return [...prevState, dataInputState]
       })
+
+      const randomUUID = crypto.randomUUID()
+
+      history.pushState(null, "", `/${randomUUID}?chat-open=true`)
     }
   }
 
@@ -101,49 +105,30 @@ export const INDEX_ChatAI = ({
   }, [data])
 
   return (
-    <>
-      <INDEX_ChatAIWrapper>
-        {!isFetching && theDataToUse.length === 0 ? (
-          <Default
-            svgOrImage={svgOrImage}
-            activeCardProp={activeCardProp}
-            whatUserWantToday={whatUserWantToday}
-            alt={alt}
-            cardsDataProps={cardsDataProps}
-          />
-        ) : (
-          <ChatLike
-            theDataToUse={theDataToUse}
-            isFetching={isFetching}
-            queriesFromUserState={queriesFromUserState}
-          />
-        )}
+    <INDEX_ChatAIWrapper>
+      {!isFetching && theDataToUse.length === 0 ? (
+        <Default
+          svgOrImage={svgOrImage}
+          activeCardProp={activeCardProp}
+          whatUserWantToday={whatUserWantToday}
+          alt={alt}
+          cardsDataProps={cardsDataProps}
+        />
+      ) : (
+        <ChatLike
+          theDataToUse={theDataToUse}
+          isFetching={isFetching}
+          queriesFromUserState={queriesFromUserState}
+        />
+      )}
+      <div>
         <InputSearch
           theOnchange={handleOnChange}
           theOnKeyDown={handleOnKeyDown}
           dataInputState={dataInputState}
         />
-      </INDEX_ChatAIWrapper>
-      {theDataToUse.length !== 0 && (
-        <ul style={{ marginTop: "calc(8px * 8)", border: "2px solid green" }}>
-          <li>
-            <h1>Things to bear in mind:</h1>
-          </li>
-          <li>
-            Is not possible to fecth again with the same query because the
-            library we are using for that: Tan Stack Query
-          </li>
-          <li>
-            Right now the "backend" we are using is a mock of what is expected
-            to receive
-          </li>
-          <li>The actual implementation return always 5 records</li>
-          <li>
-            More UI and UX should be handled in order to add a better experience
-          </li>
-        </ul>
-      )}
-    </>
+      </div>
+    </INDEX_ChatAIWrapper>
   )
 }
 
@@ -151,6 +136,7 @@ export const INDEX_ChatAI = ({
 !FH0
 Make the chat work. Expected features:
 - chat like UI
+- chat input should be always to the bottom as a sticky component
 - UI should be like what it's get from the chat AI: the cards and the move to different views
 
 Check this URL to make how it would look like: https://www.figma.com/design/bF5zcHk2wGGueHZHHTtkoi/12.2024---Directory---Search-Listing-and-Yellow-Pages-app---upload?node-id=210-21975&t=MjJcEqyBwCrTMrRN-4

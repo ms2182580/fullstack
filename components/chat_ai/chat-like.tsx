@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { INDEX_ChatAIFetchedDataType } from "."
 import { ChatLikeWrapper } from "./styles/chat-like-wrapper"
 
@@ -5,7 +6,9 @@ import { ChatLikeWrapper } from "./styles/chat-like-wrapper"
 !FH0
 
 Keep working on this feature. Expected features:
-- The chat should not refresed for data that is already displayed
+- Do not make a new query if the actual query is the same as the previous one
+- Implement the expected UI
+
 */
 export const ChatLike = ({
   theDataToUse,
@@ -16,12 +19,17 @@ export const ChatLike = ({
   isFetching: boolean
   queriesFromUserState: string[]
 }) => {
-  console.log(
-    "queriesFromUserState, theDataToUse:",
-    queriesFromUserState,
-    theDataToUse,
-    isFetching
-  )
+  // console.log(
+  //   "queriesFromUserState, theDataToUse:",
+  //   queriesFromUserState,
+  //   theDataToUse,
+  //   isFetching
+  // )
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }, [])
+
   return (
     <ChatLikeWrapper>
       <ul>
