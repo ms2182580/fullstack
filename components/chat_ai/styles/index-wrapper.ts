@@ -4,7 +4,6 @@ export const INDEX_ChatAIWrapper = styled.div`
   display: grid;
   place-items: center;
 
-  margin-block: calc(8px * 23) calc(8px * 14);
   margin-inline: 8px;
 
   & > :nth-child(2) {
