@@ -4,6 +4,7 @@ import {
   useGetMongoData,
 } from "@/utils/org/use-fetch-data-tanstack"
 import { StaticImageData } from "next/image"
+import { useRouter } from "next/router"
 import { FC, SVGProps, useEffect, useState } from "react"
 import { CardProps } from "./card"
 import { ChatLike } from "./chat-like"
@@ -44,6 +45,8 @@ export const INDEX_ChatAI = ({
   alt,
   cardsDataProps,
 }: Props) => {
+  const { asPath, replace, ...all } = useRouter()
+  console.log("all:", all)
   const [dataInputState, setDataInputState] = useState("")
   const [queriesFromUserState, setQueriesFromUserState] = useState<string[]>([])
 
@@ -60,7 +63,7 @@ export const INDEX_ChatAI = ({
 
       const randomUUID = crypto.randomUUID()
 
-      history.pushState(null, "", `/${randomUUID}?chat-open=true`)
+      history.pushState(null, "", `${asPath}/${randomUUID}?chat-open=true`)
     }
   }
 
