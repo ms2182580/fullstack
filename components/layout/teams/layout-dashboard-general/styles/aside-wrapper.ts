@@ -42,9 +42,5 @@ export const AsideWrapper = styled.div`
     margin-top: auto;
 
     cursor: default;
-
-    & > p {
-      border-radius: 6px;
-    }
   }
 `
