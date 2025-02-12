@@ -40,9 +40,7 @@ export const ChatLike = ({
 
           return (
             <li key={query}>
-              <p>
-                Typed by user: <strong>{query}</strong>
-              </p>
+              <p>{query}</p>
               <ul>
                 {theDataFetched !== undefined &&
                   theDataFetched.map(([theKey, value], index2) => {

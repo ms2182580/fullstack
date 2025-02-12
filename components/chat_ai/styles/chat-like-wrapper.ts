@@ -1,3 +1,4 @@
+import { NEUTRALS, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import styled, { keyframes } from "styled-components"
 
 const keyFramesRotation = keyframes`
@@ -25,12 +26,17 @@ export const ChatLikeWrapper = styled.div`
     width: 100%;
 
     & > li {
-      /* border: 2px solid crimson; */
-
       & > :nth-child(odd) {
-        /* border: 2px solid red; */
-        /* justify-content: end; */
-        text-align: end;
+        width: fit-content;
+        margin-left: auto;
+
+        background-color: ${SECONDARY_BG_BIGBLOCKS_TEXT.ASH_BLUE_2};
+        padding: calc(8px * 2);
+        border-radius: 12px;
+
+        color: ${NEUTRALS.OFF_WHITE_2};
+
+        margin-block: calc(8px * 2);
       }
 
       & > :nth-child(even) {

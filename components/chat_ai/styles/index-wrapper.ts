@@ -6,15 +6,15 @@ export const INDEX_ChatAIWrapper = styled.div`
 
   display: grid;
   place-items: center;
-  /* justify-items: center; */
 
   position: relative;
 
   min-height: 100dvh;
-  /* border: 2px solid crimson; */
 
   & > :nth-child(1) {
     padding-inline: var(--inline-padding);
+
+    margin-bottom: auto;
   }
 
   & > :nth-child(2) {

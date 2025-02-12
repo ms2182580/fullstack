@@ -45,8 +45,7 @@ export const INDEX_ChatAI = ({
   alt,
   cardsDataProps,
 }: Props) => {
-  const { asPath, replace, ...all } = useRouter()
-  console.log("all:", all)
+  const { asPath } = useRouter()
   const [dataInputState, setDataInputState] = useState("")
   const [queriesFromUserState, setQueriesFromUserState] = useState<string[]>([])
 
