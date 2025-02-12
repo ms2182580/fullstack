@@ -39,6 +39,7 @@ type Props = {
   whatUserWantToday: "categories" | "resources"
   alt: string
   cardsDataProps?: CardProps[]
+  isFetching: boolean
 }
 
 export const Default = ({
@@ -47,7 +48,10 @@ export const Default = ({
   whatUserWantToday,
   alt,
   cardsDataProps = cardsData,
+  isFetching,
 }: Props) => {
+  if (isFetching) return null
+
   return (
     <DefaultWrapper>
       {typeof SvgImage === "function" ? (

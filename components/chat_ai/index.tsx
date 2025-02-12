@@ -55,7 +55,7 @@ export const INDEX_ChatAI = ({
 
   const handleOnKeyDown = (e) => {
     if (e.key === "Enter") {
-      handleClick()
+      refetch()
       setQueriesFromUserState((prevState) => {
         return [...prevState, dataInputState]
       })
@@ -73,11 +73,6 @@ export const INDEX_ChatAI = ({
   const { data, isFetching, refetch } = useGetMongoData({
     internalKey: `${dataInputState}`,
   })
-
-  const handleClick = () => {
-    // manually refetch
-    refetch()
-  }
 
   useEffect(() => {
     if (data) {
@@ -108,13 +103,14 @@ export const INDEX_ChatAI = ({
 
   return (
     <INDEX_ChatAIWrapper>
-      {!isFetching && theDataToUse.length === 0 ? (
+      {!isFetching && theDataToUse.length === 0 && data === undefined ? (
         <Default
           svgOrImage={svgOrImage}
           activeCardProp={activeCardProp}
           whatUserWantToday={whatUserWantToday}
           alt={alt}
           cardsDataProps={cardsDataProps}
+          isFetching={isFetching}
         />
       ) : (
         <ChatLike
@@ -139,6 +135,7 @@ export const INDEX_ChatAI = ({
 Make the chat work. Expected features:
 - chat like UI
 - chat input should be always to the bottom as a sticky component
+  + Fix the layout shift that is happening when the user search the first, second and so on query. This stop happening when the user search enough to fill the height of the screen
 - UI should be like what it's get from the chat AI: the cards and the move to different views
 
 Check this URL to make how it would look like: https://www.figma.com/design/bF5zcHk2wGGueHZHHTtkoi/12.2024---Directory---Search-Listing-and-Yellow-Pages-app---upload?node-id=210-21975&t=MjJcEqyBwCrTMrRN-4

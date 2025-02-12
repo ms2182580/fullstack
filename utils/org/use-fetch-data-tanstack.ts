@@ -118,6 +118,7 @@ export const useGetMongoData = ({
     queryFn: () => fetchPosts({ recordOrCategory }),
     enabled: false,
     refetchOnWindowFocus: false,
+
     // retryDelay: 3000,
   })
 }
