@@ -59,10 +59,6 @@ export const INDEX_ChatAI = ({
       setQueriesFromUserState((prevState) => {
         return [...prevState, dataInputState]
       })
-
-      const randomUUID = crypto.randomUUID()
-
-      history.pushState(null, "", `${asPath}/${randomUUID}?chat-open=true`)
     }
   }
 
