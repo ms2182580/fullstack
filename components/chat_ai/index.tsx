@@ -121,6 +121,7 @@ export const INDEX_ChatAI = ({
           theOnKeyDown={handleOnKeyDown}
           dataInputState={dataInputState}
         />
+        <div />
       </div>
     </INDEX_ChatAIWrapper>
   )

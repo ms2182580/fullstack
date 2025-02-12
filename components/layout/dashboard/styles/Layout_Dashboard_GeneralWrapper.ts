@@ -30,7 +30,6 @@ export const Layout_Dashboard_GeneralWrapper = styled.div`
   & > :nth-child(3) {
     grid-area: children;
 
-    padding-bottom: calc(8px * 6);
     background-color: ${NEUTRALS.OFF_WHITE};
   }
 `

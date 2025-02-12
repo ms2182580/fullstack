@@ -12,9 +12,10 @@ const keyFramesRotation = keyframes`
 
 export const ChatLikeWrapper = styled.div`
   display: grid;
-  place-items: center;
+  place-items: start;
 
   width: 100%;
+  min-height: 100dvh;
 
   position: relative;
 

@@ -15,28 +15,25 @@ export const INDEX_ChatAIWrapper = styled.div`
     padding-inline: var(--inline-padding);
 
     margin-bottom: auto;
+
+    padding-bottom: calc(8px * 6);
   }
 
   & > :nth-child(2) {
     width: 100%;
 
     position: sticky;
-    inset: 0;
-    bottom: 26px;
+    bottom: 0;
 
     & > :nth-child(1) {
       margin-inline: var(--inline-padding);
     }
 
-    &:before {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      bottom: -48px;
-      z-index: -1;
+    & > :nth-child(2) {
+      width: 100%;
+      height: 48px;
+      display: flex;
 
-      height: 68px;
       background-color: ${NEUTRALS.OFF_WHITE};
     }
   }
