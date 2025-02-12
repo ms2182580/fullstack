@@ -1,42 +1,34 @@
 "use client"
 import Link from "next/link"
 import {
-  Container,
-  Navigation,
-  Breadcrumb,
-  MainContent,
-  Extradiv,
-  Title,
-  SearchContainer,
-  SearchLabel,
   SearchInput,
-  ButtonContainer,
-  SearchIcon,
   SearchInputWrapper,
-  ButtonPrimary,
-  ButtonSecondary,
+  ContainerWrapper,
+  ExtradivWrapper,
+  MainContentWrapper,
+  TitleWrapper,
+  SearchContainerWrapper,
+  SearchIconWrapper,
+  ButtonContainerWrapper,
+  ButtonPrimaryWrapper,
+  ButtonSecondaryWrapper,
 } from "./styles/index-wrapper"
 import { useState } from "react"
-
 export const  INDEX_NewSearch = () => {
   const [inputValue, setInputValue] = useState("")
 
   return (
-    <Container>
-      <Extradiv>
-        <Navigation>
-          <Link href="/">← Go Back</Link>
-          <Breadcrumb> / Dashboard / Category / Category Search</Breadcrumb>
-        </Navigation>
-        <MainContent>
-          <Title>
+    <>
+    <ContainerWrapper>
+      <ExtradivWrapper>
+        <MainContentWrapper>
+          <TitleWrapper>
             The ultimate guide to the world's developmental disability resources
-          </Title>
-          <SearchContainer>
-            <SearchLabel>Keyword</SearchLabel>
+          </TitleWrapper>
+          <SearchContainerWrapper>
             <span>Keyword</span>
             <SearchInputWrapper>
-              <SearchIcon>
+              <SearchIconWrapper>
                 <svg
                   width="20"
                   height="20"
@@ -49,24 +41,24 @@ export const  INDEX_NewSearch = () => {
                     fill="#3A343C"
                   />
                 </svg>
-              </SearchIcon>
+              </SearchIconWrapper>
               <SearchInput
                 id="keyword"
                 type="text"
-                autoFocus
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="ADHD, speech therapy, NAICS Code 12132 etc."
               />
             </SearchInputWrapper>
-          </SearchContainer>
+          </SearchContainerWrapper>
 
-          <ButtonContainer>
-            <ButtonPrimary>Search Resources</ButtonPrimary>
-            <ButtonSecondary>Search Categories</ButtonSecondary>
-          </ButtonContainer>
-        </MainContent>
-      </Extradiv>
-    </Container>
+          <ButtonContainerWrapper>
+            <ButtonPrimaryWrapper>Search Resources</ButtonPrimaryWrapper>
+            <ButtonSecondaryWrapper>Search Categories</ButtonSecondaryWrapper>
+          </ButtonContainerWrapper>
+        </MainContentWrapper>
+      </ExtradivWrapper>
+    </ContainerWrapper>
+    </>
   )
 }
