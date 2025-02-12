@@ -19,13 +19,6 @@ export const ChatLike = ({
   isFetching: boolean
   queriesFromUserState: string[]
 }) => {
-  // console.log(
-  //   "queriesFromUserState, theDataToUse:",
-  //   queriesFromUserState,
-  //   theDataToUse,
-  //   isFetching
-  // )
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }, [])
