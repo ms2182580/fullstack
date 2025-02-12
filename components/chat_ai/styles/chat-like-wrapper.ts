@@ -1,13 +1,14 @@
-import { NEUTRALS, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
+import { NEUTRALS, PRIMARY, SECONDARY_BG_BIGBLOCKS_TEXT } from "@/assets/Colors"
 import styled, { keyframes } from "styled-components"
 
-const keyFramesRotation = keyframes`
-  0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+const keyFramesRotation_l30 = keyframes`
+   0%,20% {transform: rotate(0)}
+   100%   {transform: rotate(360deg)}
+`
+
+const keyFramesRotation_l31 = keyframes`
+   50% {transform: rotate(var(--s,90deg))}
+   100% {transform: rotate(0)}
 `
 
 export const ChatLikeWrapper = styled.div`
@@ -29,6 +30,7 @@ export const ChatLikeWrapper = styled.div`
     & > li {
       & > :nth-child(odd) {
         width: fit-content;
+        max-width: 80%;
         margin-left: auto;
 
         background-color: ${SECONDARY_BG_BIGBLOCKS_TEXT.ASH_BLUE_2};
@@ -38,6 +40,8 @@ export const ChatLikeWrapper = styled.div`
         color: ${NEUTRALS.OFF_WHITE_2};
 
         margin-block: calc(8px * 2);
+
+        word-break: break-all;
       }
 
       & > :nth-child(even) {
@@ -52,13 +56,28 @@ export const ChatLikeWrapper = styled.div`
   }
 
   .loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid black;
-    border-bottom-color: green;
+    margin-top: 48px;
+
+    width: 28px;
+    aspect-ratio: 1;
     border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: ${keyFramesRotation} 1s linear infinite;
+    background: #f896d8;
+    transform-origin: top;
+    display: grid;
+    animation: ${keyFramesRotation_l30} 1.9s infinite ease-in-out;
+  }
+  .loader::before,
+  .loader::after {
+    content: "";
+    grid-area: 1/1;
+    background: #edf67d;
+    border-radius: 50%;
+    transform-origin: top;
+    animation: inherit;
+    animation-name: ${keyFramesRotation_l31};
+  }
+  .loader::after {
+    background: ${PRIMARY.PRIMARY_CTA};
+    --s: 180deg;
   }
 `

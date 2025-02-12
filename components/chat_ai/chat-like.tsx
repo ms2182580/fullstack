@@ -1,13 +1,18 @@
 import { useEffect } from "react"
 import { INDEX_ChatAIFetchedDataType } from "."
+import { ChatAnswer } from "./chat-answer"
 import { ChatLikeWrapper } from "./styles/chat-like-wrapper"
+import { UserPrompt } from "./user-prompt"
 
 /* 
 !FH0
 
 Keep working on this feature. Expected features:
-- Do not make a new query if the actual query is the same as the previous one
 - Implement the expected UI
+  + Loader should not make a Layout Shift
+  + Think how much space should use the chat response taking in mind the header and the bottom component
+
+- Do not make a new query if the actual query is the same as the previous one
 
 */
 export const ChatLike = ({
@@ -33,26 +38,11 @@ export const ChatLike = ({
 
           return (
             <li key={query}>
-              <p>{query}</p>
-              <ul>
-                {theDataFetched !== undefined &&
-                  theDataFetched.map(([theKey, value], index2) => {
-                    const {
-                      "Years In Database": years,
-                      City: city,
-                      ...all
-                    } = value["mongo"]
-
-                    return (
-                      <li key={`${forTheKey}_${index2}`}>
-                        <p>
-                          Results from the database (only keys for now):{" "}
-                          <strong>{theKey}</strong>
-                        </p>
-                      </li>
-                    )
-                  })}
-              </ul>
+              <UserPrompt>{query}</UserPrompt>
+              <ChatAnswer
+                theDataFetched={theDataFetched}
+                forTheKey={forTheKey}
+              />
             </li>
           )
         })}
