@@ -9,7 +9,6 @@ import { UserPrompt } from "./user-prompt"
 
 Keep working on this feature. Expected features:
 - Implement the expected UI
-  + Loader should not make a Layout Shift
   + Think how much space should use the chat response taking in mind the header and the bottom component
 
 - Do not make a new query if the actual query is the same as the previous one
