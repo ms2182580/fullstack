@@ -3,13 +3,9 @@ import { Dialog_DWrapper } from "./styles/Dialog_DWrapper"
 
 export type Dialog_D_Props = {
   theRef: RefObject<HTMLDialogElement>
-  handleCloseDialog: (event: Event, doNotCloseWithEscapeKey?: boolean) => void
+  handleCloseDialog: (event: Event) => void
   refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
-  useHide: (
-    refToCloseDialogClickingOutside,
-    handleCloseDialog,
-    doNotCloseWithEscapeKey
-  ) => void
+  useHide: (refToCloseDialogClickingOutside, handleCloseDialog) => void
   children: ReactElement
 
   shouldOpenModalAlone?: boolean
@@ -19,8 +15,6 @@ export type Dialog_D_Props = {
   shouldCloseModalAloneDelay?: number
 
   setCheckModalIsOpen?: (e: boolean) => void
-
-  doNotCloseWithEscapeKey?: boolean
 }
 
 export const Dialog_D = ({
@@ -36,14 +30,8 @@ export const Dialog_D = ({
   shouldCloseModalAlone = false,
   shouldCloseModalAloneDelay = 1200,
   setCheckModalIsOpen,
-
-  doNotCloseWithEscapeKey = false,
 }: Dialog_D_Props): ReactElement => {
-  useHide(
-    refToCloseDialogClickingOutside,
-    handleCloseDialog,
-    doNotCloseWithEscapeKey
-  )
+  useHide(refToCloseDialogClickingOutside, handleCloseDialog)
 
   useEffect(() => {
     let timeoutId: any = null
@@ -80,25 +68,16 @@ export const Dialog_D = ({
   }, [])
 
   return (
-    <>
-      {/* 
-      //!FH1
-      Bug here, the dialog is exposed on the document.body, some conditional render should be applied
-      */}
-      {createPortal(
-        <Dialog_DWrapper ref={theRef}>
-          <span ref={refToCloseDialogClickingOutside}>
-            <Close_Icon_SVG
-              onClick={handleCloseDialog}
-              onKeyDown={handleCloseDialog}
-              tabIndex={0}
-            />
-            {children}
-          </span>
-        </Dialog_DWrapper>,
-        document.body
-      )}
-    </>
+    <Dialog_DWrapper ref={theRef}>
+      <span ref={refToCloseDialogClickingOutside}>
+        <Close_Icon_SVG
+          onClick={handleCloseDialog}
+          onKeyDown={handleCloseDialog}
+          tabIndex={0}
+        />
+        {children}
+      </span>
+    </Dialog_DWrapper>
   )
 }
 
@@ -113,18 +92,13 @@ import {
   useRef,
   useState,
 } from "react"
-import { createPortal } from "react-dom"
 
 type UseDialogLogic_Return = {
   dialogRef: RefObject<HTMLDialogElement>
   openDialog: (event: MouseEvent | KeyboardEvent<HTMLElement>) => void
   closeDialog: (event: Event) => void
   refToCloseDialogClickingOutside: RefObject<HTMLDivElement>
-  useHide: (
-    ref: RefObject<HTMLElement>,
-    handleStateOutside: () => void,
-    doNotCloseWithEscapeKey?: boolean
-  ) => void
+  useHide: (ref: RefObject<HTMLElement>, handleCloseDialog: () => void) => void
   setCheckModalIsOpen: Dispatch<any>
   checkModalIsOpen: boolean | any
 }
@@ -145,40 +119,30 @@ export const useDialogLogic = (): UseDialogLogic_Return => {
     }
   }
 
-  const closeDialog = (e, doNotCloseWithEscapeKey = false) => {
+  const closeDialog = (e) => {
     if (
       e?.type === "mousedown" ||
       e?.type === "click" ||
-      (e?.code === "Enter" && e?.key === "Enter" && e?.type === "keydown") ||
-      (e?.code === "Escape" && !doNotCloseWithEscapeKey)
+      (e?.code === "Enter" && e?.key === "Enter" && e?.type === "keydown")
     ) {
-      e.preventDefault()
-      dialogRef?.current?.close()
       setCheckModalIsOpen(false)
+      dialogRef?.current?.close()
     }
   }
 
-  const useHide = (
-    ref,
-    handleStateOutside,
-    doNotCloseWithEscapeKey = false
-  ) => {
+  const useHide = (ref, handleCloseDialog) => {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref?.current?.contains(event.target)) {
           setCheckModalIsOpen(false)
-          handleStateOutside(event)
+          handleCloseDialog(event)
         }
       }
 
       function handleKeydownEscape(event) {
         if (ref.current && ref.current && event.key === "Escape") {
-          if (doNotCloseWithEscapeKey) {
-            event.preventDefault()
-          }
-
           setCheckModalIsOpen(false)
-          handleStateOutside(event, doNotCloseWithEscapeKey)
+          handleCloseDialog(event)
         }
       }
 

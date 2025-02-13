@@ -35,7 +35,6 @@ export const ContactUs = () => {
         useHide={useHide}
         setCheckModalIsOpen={setCheckModalIsOpen}
         shouldOpenModalAlone={foundedHash}
-        doNotCloseWithEscapeKey={true}
       >
         <ContactUsForm />
       </Dialog_D>
