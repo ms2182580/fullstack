@@ -29,7 +29,7 @@ export const ChatLike = ({
   }, [])
 
   return (
-    <ChatLikeWrapper>
+    <ChatLikeWrapper isFetching={isFetching}>
       <ul>
         {queriesFromUserState.map((query, index) => {
           const forTheKey = new Date().toString()
@@ -47,7 +47,7 @@ export const ChatLike = ({
           )
         })}
       </ul>
-      {isFetching && <p className="loader"></p>}
+      {isFetching && <div />}
     </ChatLikeWrapper>
   )
 }

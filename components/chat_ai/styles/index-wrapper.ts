@@ -25,6 +25,8 @@ export const INDEX_ChatAIWrapper = styled.div`
     position: sticky;
     bottom: 0;
 
+    z-index: 2;
+
     & > :nth-child(1) {
       margin-inline: var(--inline-padding);
     }
