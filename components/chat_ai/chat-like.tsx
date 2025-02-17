@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { INDEX_ChatAIFetchedDataType } from "."
-import { ChatAnswer } from "./chat-answer"
+import { ChatAnswer } from "./chat_answer"
 import { ChatLikeWrapper } from "./styles/chat-like-wrapper"
 import { UserPrompt } from "./user-prompt"
 
