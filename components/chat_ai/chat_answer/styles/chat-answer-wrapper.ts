@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 export const ChatAnswerWrapper = styled.ul`
   & > li {
+    width: fit-content;
     & > section {
       border: 2px solid green;
-      width: 405px;
       padding: calc(8px * 2);
 
       border: 2px solid ${NEUTRALS.DARK_GREY_3};
@@ -13,6 +13,8 @@ export const ChatAnswerWrapper = styled.ul`
 
       display: grid;
       gap: calc(8px * 2);
+
+      width: 100%;
 
       & > :nth-child(1) {
         h2 {
@@ -22,7 +24,8 @@ export const ChatAnswerWrapper = styled.ul`
       }
 
       & > :nth-child(2) {
-        border: 2px solid crimson;
+        display: grid;
+        gap: calc(8px * 2);
       }
     }
   }
