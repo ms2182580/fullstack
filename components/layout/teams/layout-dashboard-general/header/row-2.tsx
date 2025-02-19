@@ -1,6 +1,5 @@
 import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 import { useRouter } from "next/router"
-import { Breadcrumbs } from "./breadcrumbs"
 import { Searcher } from "./searcher"
 import { Row2Wrapper } from "./styles/row-2-wrapper"
 
@@ -20,7 +19,6 @@ export const Row2 = () => {
 
   return (
     <Row2Wrapper>
-      <Breadcrumbs />
       {!ifFalseShowSearchComponent && <Searcher />}
     </Row2Wrapper>
   )

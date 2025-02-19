@@ -23,7 +23,7 @@ import SDuplicateSVG from "@/assets/icons/sDuplicate.svg"
 import SDeleteSVG from "@/assets/icons/sDelete.svg"
 import { Fragment, useState } from "react"
 import { usePathname } from "next/navigation"
-import { Breadcrumbs } from "@/components/layout/teams/layout-dashboard-general/header/breadcrumbs"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs-1"
 export const INDEX_Saved = () => {
   const router = useRouter()
   const pathname = usePathname()
@@ -39,11 +39,6 @@ export const INDEX_Saved = () => {
     <>
       <SavedWrapper>
           <Breadcrumbs/>
-        <nav>
-          <span onClick={() => router.back()}> &lt;&lt;Go Back</span>
-          <span>{pathname}</span>
-        </nav>
-
         <div>
           <h2>Documents</h2>
           <button>

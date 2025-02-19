@@ -2,15 +2,9 @@ import styled from "styled-components"
 
 export const SavedWrapper = styled.div`
   padding-inline: 3.5rem;
-
-  nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    span:first-child {
-      cursor: pointer;
-    }
+  
+  & > :nth-child(1) {
+   margin-top: 1rem;
   }
 
   div {

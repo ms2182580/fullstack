@@ -20,7 +20,12 @@ export const IndexWrapper = styled.div`
 
   & > :nth-child(2) {
     grid-area: header;
+<<<<<<< Updated upstream
     position: sticky;
+=======
+    position: relitive;
+    inset: 0;
+>>>>>>> Stashed changes
     z-index: 99;
     inset: 0;
 
