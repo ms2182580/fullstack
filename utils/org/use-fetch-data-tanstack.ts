@@ -63,25 +63,35 @@ type Mongo = {
   "ZIP Code": number
 }
 
-export type RecordReturnType = {
-  distance: number
-  mongo: Mongo
-  node_id: string
-  rank: number
-  record: string
-}
+export type RecordReturnType = [
+  string,
+  {
+    distance: number
+    mongo: Mongo
+    node_id: string
+    rank: number
+    record: string
+  }
+]
 
-export type CategoryReturnType = {
-  category: string
-  distance: number
-  node_id: string
-}
+export type CategoryReturnType = [
+  string,
+  {
+    category: string
+    distance: number
+    node_id: string
+  }
+]
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const fetchPosts = async ({
   recordOrCategory,
 }: {
   recordOrCategory?: UsePostsType["recordOrCategory"]
 }): Promise<RecordReturnType | CategoryReturnType> => {
+  await delay(1000)
+
   const endpoint = `/api/mongo_data?type=${recordOrCategory}`
 
   const response = await fetch(endpoint)
@@ -99,7 +109,7 @@ type UsePostsType = {
   recordOrCategory?: "record" | "category"
 }
 
-export const usePosts = ({
+export const useGetMongoData = ({
   internalKey = "getMongoData",
   recordOrCategory = "record",
 }: UsePostsType = {}) => {
@@ -108,5 +118,7 @@ export const usePosts = ({
     queryFn: () => fetchPosts({ recordOrCategory }),
     enabled: false,
     refetchOnWindowFocus: false,
+
+    // retryDelay: 3000,
   })
 }

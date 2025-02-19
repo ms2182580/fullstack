@@ -31,37 +31,33 @@ const cardsData: CardType[] = [
 
 export const INDEX_TeamsDashboard = () => {
   return (
-    <>
-      <IndexWrapper>
-        <header>
-          <div>
-            <h1>
-              Hi there,
-              <br />
-              How will you help a family today?
-            </h1>
-          </div>
-          <SvgTeamsDashboard />
-        </header>
-        <ul>
-          {cardsData.map(
-            ({ icon, title, paragraph, buttonIsPrimary }, index) => {
-              return (
-                <li key={index}>
-                  <Card
-                    icon={icon}
-                    title={title}
-                    paragraph={paragraph}
-                    buttonIsPrimary={buttonIsPrimary}
-                  />
-                </li>
-              )
-            }
-          )}
-        </ul>
-        <RequestInput />
-        <Saved />
-      </IndexWrapper>
-    </>
+    <IndexWrapper>
+      <header>
+        <div>
+          <h1>
+            Hi there,
+            <br />
+            How will you help a family today?
+          </h1>
+        </div>
+        <SvgTeamsDashboard />
+      </header>
+      <ul>
+        {cardsData.map(({ icon, title, paragraph, buttonIsPrimary }, index) => {
+          return (
+            <li key={index}>
+              <Card
+                icon={icon}
+                title={title}
+                paragraph={paragraph}
+                buttonIsPrimary={buttonIsPrimary}
+              />
+            </li>
+          )
+        })}
+      </ul>
+      <RequestInput />
+      <Saved />
+    </IndexWrapper>
   )
 }

@@ -24,6 +24,7 @@ export const ContactUsWrapper = styled.div`
 
     :is(:hover, :focus-visible) {
       background-color: ${NEUTRALS.BORDER_HOVER};
+      border-radius: 6px;
     }
   }
 `

@@ -1,3 +1,4 @@
+import { NEUTRALS } from "@/assets/Colors"
 import styled from "styled-components"
 
 export const Layout_Dashboard_GeneralWrapper = styled.div`
@@ -12,7 +13,7 @@ export const Layout_Dashboard_GeneralWrapper = styled.div`
 
   & > :nth-child(1) {
     grid-area: aside;
-    height: 100vh;
+    height: 100dvh;
     position: sticky;
     inset: 0;
   }
@@ -20,6 +21,7 @@ export const Layout_Dashboard_GeneralWrapper = styled.div`
   & > :nth-child(2) {
     grid-area: header;
     position: sticky;
+    z-index: 99;
     inset: 0;
 
     height: fit-content;
@@ -28,6 +30,6 @@ export const Layout_Dashboard_GeneralWrapper = styled.div`
   & > :nth-child(3) {
     grid-area: children;
 
-    padding-block: calc(8px * 4);
+    background-color: ${NEUTRALS.OFF_WHITE};
   }
 `

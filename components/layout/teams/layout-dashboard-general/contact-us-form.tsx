@@ -3,6 +3,7 @@ import {
   SuggestionsType,
 } from "@/components/ui/input/predictive"
 import { NamesSubcategories_KEY } from "@/utils/org/categories/general/ALL_DATA"
+import { useEffect } from "react"
 import { ContactUsFormWrapper } from "./styles/contact-us-form-wrapper"
 
 const categoriesSuggestions: SuggestionsType = Object.keys(
@@ -10,6 +11,20 @@ const categoriesSuggestions: SuggestionsType = Object.keys(
 )
 
 export const ContactUsForm = () => {
+  useEffect(() => {
+    function handleKeydownEscape(event) {
+      if (event.key === "Escape") {
+        event.preventDefault()
+      }
+    }
+
+    document.addEventListener("keydown", handleKeydownEscape)
+
+    return () => {
+      document.removeEventListener("keydown", handleKeydownEscape)
+    }
+  }, [])
+
   return (
     <ContactUsFormWrapper>
       <h1>Contact Us</h1>

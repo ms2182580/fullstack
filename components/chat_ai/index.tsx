@@ -1,14 +1,14 @@
-import SvgMagicWand from "@/assets/icons/magic_wand_active.svg"
-import SvgMagnifying from "@/assets/icons/magnifying_glass_default.svg"
-import ImgLightbulb from "@/assets/images/teams/img-lightbulb.png"
 import {
   CategoryReturnType,
   RecordReturnType,
-  usePosts,
+  useGetMongoData,
 } from "@/utils/org/use-fetch-data-tanstack"
-import Image, { StaticImageData } from "next/image"
+import { StaticImageData } from "next/image"
+import { useRouter } from "next/router"
 import { FC, SVGProps, useEffect, useState } from "react"
-import { Card, CardProps } from "./card"
+import { CardProps } from "./card"
+import { ChatLike } from "./chat-like"
+import { Default } from "./default"
 import { InputSearch } from "./input-search"
 import { INDEX_ChatAIWrapper } from "./styles/index-wrapper"
 
@@ -24,38 +24,11 @@ type theDateType = {
   year: number
 }
 
-type FetchedData = {
+export type INDEX_ChatAIFetchedDataType = {
   whenTheUserMadeTheQuery: theDateType
   queryTypedByUser: string
-  theData: RecordReturnType | CategoryReturnType
+  theData: RecordReturnType[] | CategoryReturnType[]
 }
-
-const cardsData: CardProps[] = [
-  {
-    svg: ImgLightbulb,
-    title: "See Categories",
-    listOfOptions: [
-      "Categories behavioral health?",
-      "10 most popular categories in NYC",
-    ],
-  },
-  {
-    svg: SvgMagnifying,
-    title: "Get Listing",
-    listOfOptions: [
-      "Yoga providers in NY, NY 10027",
-      "Autism resources in 18302",
-    ],
-  },
-  {
-    svg: SvgMagicWand,
-    title: "Create Content",
-    listOfOptions: [
-      "Respond to a FB resource request",
-      "Request help from a provider on IG",
-    ],
-  },
-]
 
 type Props = {
   svgOrImage: FC<SVGProps<SVGSVGElement>> | StaticImageData
@@ -66,34 +39,36 @@ type Props = {
 }
 
 export const INDEX_ChatAI = ({
-  svgOrImage: SvgImage,
+  svgOrImage,
   activeCardProp = null,
   whatUserWantToday,
   alt,
-  cardsDataProps = cardsData,
+  cardsDataProps,
 }: Props) => {
+  const { asPath } = useRouter()
   const [dataInputState, setDataInputState] = useState("")
+  const [queriesFromUserState, setQueriesFromUserState] = useState<string[]>([])
 
   const handleOnChange = (e) => {
     setDataInputState(e.target.value)
   }
 
   const handleOnKeyDown = (e) => {
-    if (e.code === "Enter") {
-      handleClick()
+    if (e.key === "Enter") {
+      refetch()
+      setQueriesFromUserState((prevState) => {
+        return [...prevState, dataInputState]
+      })
     }
   }
 
-  const [theDataToUse, setTheDataToUse] = useState<FetchedData[]>([])
+  const [theDataToUse, setTheDataToUse] = useState<
+    INDEX_ChatAIFetchedDataType[]
+  >([])
 
-  const { data, isFetching, refetch } = usePosts({
+  const { data, isFetching, refetch } = useGetMongoData({
     internalKey: `${dataInputState}`,
   })
-
-  const handleClick = () => {
-    // manually refetch
-    refetch()
-  }
 
   useEffect(() => {
     if (data) {
@@ -112,56 +87,42 @@ export const INDEX_ChatAI = ({
       }
 
       const dataToState = {
-        theData: data,
+        theData: Object.entries(data),
         queryTypedByUser: dataInputState,
         whenTheUserMadeTheQuery: nowDate,
       }
-
       setTheDataToUse((prevState) => {
         return [...prevState, dataToState]
       })
     }
   }, [data])
 
-  useEffect(() => {
-    // console.log("theDataToUse, data:", theDataToUse, data, )
-    // console.log("theDataToUse", theDataToUse, theDataToUse.at(-1))
-  }, [theDataToUse, data])
-
-  useEffect(() => {
-    // console.log("isFetching:", isFetching)
-  }, [isFetching])
-
   return (
     <INDEX_ChatAIWrapper>
-      {typeof SvgImage === "function" ? (
-        <SvgImage />
+      {!isFetching && theDataToUse.length === 0 && data === undefined ? (
+        <Default
+          svgOrImage={svgOrImage}
+          activeCardProp={activeCardProp}
+          whatUserWantToday={whatUserWantToday}
+          alt={alt}
+          cardsDataProps={cardsDataProps}
+          isFetching={isFetching}
+        />
       ) : (
-        <Image src={SvgImage} alt={alt} />
+        <ChatLike
+          theDataToUse={theDataToUse}
+          isFetching={isFetching}
+          queriesFromUserState={queriesFromUserState}
+        />
       )}
-
-      <h1>What {whatUserWantToday} do you need today?</h1>
-      <ul>
-        {cardsDataProps.map(({ svg, title, listOfOptions }, index) => {
-          const activeCard =
-            activeCardProp === null ? true : activeCardProp === title
-
-          return (
-            <Card
-              key={title}
-              svg={svg}
-              title={title}
-              listOfOptions={listOfOptions}
-              allowFocus={activeCard}
-            />
-          )
-        })}
-      </ul>
-
-      <InputSearch
-        theOnchange={handleOnChange}
-        theOnKeyDown={handleOnKeyDown}
-      />
+      <div>
+        <InputSearch
+          theOnchange={handleOnChange}
+          theOnKeyDown={handleOnKeyDown}
+          dataInputState={dataInputState}
+        />
+        <div />
+      </div>
     </INDEX_ChatAIWrapper>
   )
 }
@@ -170,6 +131,8 @@ export const INDEX_ChatAI = ({
 !FH0
 Make the chat work. Expected features:
 - chat like UI
+- chat input should be always to the bottom as a sticky component
+  + Fix the layout shift that is happening when the user search the first, second and so on query. This stop happening when the user search enough to fill the height of the screen
 - UI should be like what it's get from the chat AI: the cards and the move to different views
 
 Check this URL to make how it would look like: https://www.figma.com/design/bF5zcHk2wGGueHZHHTtkoi/12.2024---Directory---Search-Listing-and-Yellow-Pages-app---upload?node-id=210-21975&t=MjJcEqyBwCrTMrRN-4

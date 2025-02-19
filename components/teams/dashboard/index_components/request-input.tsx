@@ -4,7 +4,7 @@ import {
   LinkedinSvg,
   Twitter2Svg,
 } from "@/assets/icons/index"
-import { usePosts } from "@/utils/org/use-fetch-data-tanstack"
+import { useGetMongoData } from "@/utils/org/use-fetch-data-tanstack"
 import { useEffect, useRef, useState } from "react"
 import { RequestInputWrapper } from "./styles/request-input-wrapper"
 
@@ -37,7 +37,7 @@ export const RequestInput = () => {
 
   const [theDataToUse, setTheDataToUse] = useState<any[]>([])
 
-  const { data, isFetching, refetch } = usePosts({
+  const { data, isFetching, refetch } = useGetMongoData({
     internalKey: `${dataInputState}`,
   })
 
