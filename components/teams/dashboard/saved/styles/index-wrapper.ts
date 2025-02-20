@@ -45,7 +45,7 @@ export const SavedWrapper = styled.div`
 `
 
 export const SearchBarWrapper = styled.div`
-  width: 25rem !important;
+  width: 25rem ;
   margin-bottom: 20px;
   border: 1.5px solid #908395;
   border-radius: 8px;
@@ -69,11 +69,11 @@ export const SearchBarWrapper = styled.div`
 export const TableWrapper = styled.table`
   width: 100%;
   border-radius: 8px;
-  border-collapse: separate; /* Change to separate */
-  border-spacing: 0; /* Ensures no extra spacing */
+  border-collapse: separate; 
+  border-spacing: 0; 
   background-color: #fff;
   border: 1.5px solid #ddd;
-  overflow: hidden; /* Ensures border-radius applies */
+  overflow: hidden; 
 
   input {
     width: 15px;
@@ -83,11 +83,11 @@ export const TableWrapper = styled.table`
 
 export const TableHeaderWrapper = styled.thead`
   background-color: #f3f1f3;
-  width: 100% !important;
+  width: 100% ;
 
   th:first-child {
     width: 15px;
-    padding-top: 0.5rem !important;
+    padding-top: 0.5rem ;
   }
   th {
     padding-inline: 10px !important;
@@ -115,14 +115,13 @@ export const TableHeaderWrapper = styled.thead`
 
 export const TableBodyWrapper = styled.tbody`
   position: relative;
-  tr {
-  }
+ 
   td {
     border-bottom: 1px solid #ddd;
     padding-block: 0rem;
-    padding-inline: 10px !important;
+    padding-inline: 10px ;
     div {
-      padding: 0rem !important;
+      padding: 0rem ;
       display: flex;
       align-items: center;
       justify-content: start;
@@ -182,7 +181,7 @@ export const PageButtonsWrapper = styled.div`
 
 export const ModalContainerWrapper = styled.div`
   position: absolute;
-  top: 40px; // Adjust as needed
+  top: 40px; 
   right: 0%;
   width: 240px !important;
   background-color: #fff;

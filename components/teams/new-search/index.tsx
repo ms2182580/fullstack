@@ -13,16 +13,11 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs/desktop/Breadcrumbs-1"
+import { ALL_ROUTES_INTERNAL } from "@/utils/ALL_ROUTES"
 export const  INDEX_NewSearch = () => {
 
   const [inputValue, setInputValue] = useState("")
-  const theInputRef = useRef<HTMLInputElement>(null)
 
-  const handleClickInput = () => {
-    if (theInputRef.current) {
-      theInputRef.current.focus()
-    }
-  }
 
   return (
     <>
@@ -43,16 +38,14 @@ export const  INDEX_NewSearch = () => {
                 id="keyword"
                 type="text"
                 value={inputValue}
-                ref={theInputRef}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="ADHD, speech therapy, NAICS Code 12132 etc."
-                onClick={handleClickInput}
               />
             </SearchInputWrapper>
           </SearchContainerWrapper>
           <ButtonContainerWrapper>
-              <Link href="/teams/new-search/resources/second">Search Resources</Link>
-              <Link href="/teams/new-search/categories">Search Categories</Link>
+              <Link href={`${ALL_ROUTES_INTERNAL.NEW_SEARCH}/${ALL_ROUTES_INTERNAL.NEW_SEARCH_SECTIONS.RESOURCES}/${ALL_ROUTES_INTERNAL.RESOURCES_SECTION.SECOND}`}>Search Resources</Link>
+              <Link href={`${ALL_ROUTES_INTERNAL.NEW_SEARCH}/${ALL_ROUTES_INTERNAL.NEW_SEARCH_SECTIONS.CATEGORIES}`}>Search Categories</Link>
             </ButtonContainerWrapper>
         </MainContentWrapper>
       </ExtradivWrapper>

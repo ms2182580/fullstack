@@ -21,7 +21,7 @@ export const ExtradivWrapper = styled.div`
   margin: 0 auto;
 `
 
-export const MainContentWrapper = styled.main`
+export const MainContentWrapper = styled.div`
   max-width: 1200px;
   margin: 5.5rem auto;
   padding: 0 2rem;

@@ -8,7 +8,7 @@ export const BreadcrumbNav = styled.nav`
   display: flex;
   align-items: center;
   gap: 8px;
-`;
+`
 
 export const BreadcrumbList = styled.ul`
   list-style: none;
@@ -16,20 +16,20 @@ export const BreadcrumbList = styled.ul`
   gap: 5px;
   margin: 0;
   padding: 0;
-`;
+`
 
 export const BreadcrumbItem = styled.li`
   display: flex;
   align-items: center;
-`;
+`
 
 export const BreadcrumbButton = styled.button`
   background: none;
   border: none;
   color: #000;
   cursor: pointer;
-`;
+`
 
 export const Separator = styled.span`
   margin: 0 5px;
-`;
+`
