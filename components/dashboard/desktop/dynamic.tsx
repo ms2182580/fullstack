@@ -9,6 +9,7 @@ import { INDEX_D_CarePlan } from "./care_plan"
 import { INDEX_D_Documents } from "./documents"
 import { INDEX_D_OrgDashboard } from "./org_dashboard"
 import { INDEX_D_Saved } from "./saved"
+import INDEX_D_ResourceDirectory from "../resource_directory"
 
 const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   {
@@ -21,7 +22,7 @@ const componentsToRenderAvailable: ComponentsToRenderAvailable_Type = [
   },
   {
     route: ALL_ROUTES.DASHBOARD_SECTIONS.RESOURCE_DIRECTORY,
-    component: <INDEX_D_OrgDashboard />,
+    component: <INDEX_D_ResourceDirectory />,
   },
   {
     route: ALL_ROUTES.DASHBOARD_SECTIONS.SAVED,
