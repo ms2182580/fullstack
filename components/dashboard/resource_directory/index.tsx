@@ -74,8 +74,8 @@ const INDEX_D_ResourceDirectory = () => {
               <label>Location*</label>
               <div>
                 <i>
-                  {" "}
-                  <World />{" "}
+
+                  <World />
                 </i>
                 <input type="text" placeholder="19130" />
               </div>
@@ -275,13 +275,13 @@ const INDEX_D_ResourceDirectory = () => {
             </div>
           </>
         )
-         : activeTab === "Reviews" ? (
-          <Reviews />
-        ) : activeTab === "FAQ" ? (
-          <Faqs />
-        ) : (
-          <Similar />
-        )
+          : activeTab === "Reviews" ? (
+            <Reviews />
+          ) : activeTab === "FAQ" ? (
+            <Faqs />
+          ) : (
+            <Similar />
+          )
         }
       </CategoryWrapper>
     </div>

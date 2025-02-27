@@ -4,6 +4,7 @@ import {
   FaqsWrapper,
   FifthQueWrapper,
   FourthQueWrapper,
+  LessWrapper,
   QueOneWrapper,
   SecOneWrapper,
   ThirdQueWrapper,
@@ -154,7 +155,12 @@ const faqs = () => {
               </p>
             </div>
           </div>
+
         </FifthQueWrapper>
+        <LessWrapper>
+          <p>See Less</p>
+        </LessWrapper>
+
       </FaqsWrapper>
     </>
   )

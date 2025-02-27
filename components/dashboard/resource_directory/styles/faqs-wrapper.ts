@@ -16,6 +16,7 @@ export const FaqsWrapper = styled.div`
       width: 100%;
       margin-bottom: 20px;
       border: 0px;
+      outline: none;
     }
   }
 `
@@ -66,7 +67,9 @@ export const QueOneWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    align-items: flex-start;
+    justify-content: start;
+
+    align-items: center;
 
     & > :nth-child(2) {
       font-family: Poppins;
@@ -256,7 +259,7 @@ export const ThirdQueWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    align-items: flex-start;
+    align-items: center;
 
     & > :nth-child(2) {
       font-family: Poppins;
@@ -360,7 +363,7 @@ export const FourthQueWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    align-items: flex-start;
+    align-items: center;
 
     & > :nth-child(2) {
       font-family: Poppins;
@@ -464,7 +467,9 @@ export const FifthQueWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    align-items: flex-start;
+    align-items: center;
+
+    justify-content: center;
 
     & > :nth-child(2) {
       font-family: Poppins;
@@ -557,5 +562,23 @@ export const FifthQueWrapper = styled.div`
         }
       }
     }
+  }
+`
+export const LessWrapper = styled.div`
+  display: flex;
+  margin-top: 140px;
+  justify-content: end;
+
+  & > :nth-child(1) {
+    color: #3366cc;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: Auto;
+    text-decoration-thickness: Auto;
   }
 `

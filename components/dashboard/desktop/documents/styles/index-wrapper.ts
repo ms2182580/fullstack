@@ -43,7 +43,6 @@ export const SavedWrapper = styled.div`
     }
   }
 `
-
 export const SearchBarWrapper = styled.div`
   width: 25rem;
   margin-bottom: 20px;
@@ -80,36 +79,27 @@ export const TableWrapper = styled.table`
     height: 15px;
   }
 `
+export const StyleTableWrapper = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  border: 1.5px solid #908395;
+  border-radius: 8px !important;
+`
 
 export const TableHeaderWrapper = styled.thead`
-  background-color: #f3f1f3;
+  background-color: #f3f1f3; /* Full header background */
   width: 100%;
 
-  th:first-child {
-    width: 15px;
-    padding-top: 0.5rem;
+  & > tr {
+    background-color: inherit; /* Inherit from thead */
   }
-  th {
-    padding-inline: 10px !important;
-    text-align: left;
-    background-color: #f7f7f7;
-    color: #666;
-    font-weight: 600;
-    top: 0;
-    z-index: 1;
-    font-size: 0.8rem;
+
+  & > tr > th {
+    background-color: inherit; /* Ensures all ths have the same background */
     color: #908395;
-    div {
-      display: flex;
-      justify-content: start;
-      gap: 1rem;
-      i {
-        margin-top: 0.2rem;
-      }
-    }
-    th:last-child {
-      text-align: right;
-    }
+    padding: 10px;
+    text-align: left;
+    border: none; /* Removes unwanted borders */
   }
 `
 
@@ -153,21 +143,33 @@ export const PaginationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-top: 16px;
 `
 
 export const PageNumbersWrapper = styled.div`
   display: flex;
   color: rgb(80, 80, 80);
   width: 100%;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
 `
 
 export const PageButtonsWrapper = styled.div`
   width: 100px !important;
   margin-right: 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   span {
     font-size: 20px;
-    color: rgb(80, 80, 80);
+    // color: rgb(80, 80, 80);
+    color: red;
   }
   button {
     background: #006987 !important;
@@ -176,6 +178,11 @@ export const PageButtonsWrapper = styled.div`
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
+    width: 44px;
+    height: 44px;
+    gap: 10px;
+    border-radius: 8px;
+    padding: 10px;
   }
 `
 

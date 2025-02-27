@@ -23,6 +23,7 @@ export const SimilarWrappers = styled.div`
 
       width: 100%;
       margin-bottom: 20px;
+      outline: none;
     }
   }
 `

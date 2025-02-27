@@ -1,8 +1,8 @@
-import { NEUTRALS, PRIMARY } from "@/assets/Colors"
-import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import { Paragraph } from "@/components/ui/heading_body_text/DesktopMobileFonts"
-import { HeaderCSS } from "@/components/ui/heading_body_text/HeaderFonts"
-import styled from "styled-components"
+import { NEUTRALS, PRIMARY } from '@/assets/Colors'
+import { reusableButton } from '@/components/ui/buttons/general/styles/ButtonStyled'
+import { Paragraph } from '@/components/ui/heading_body_text/DesktopMobileFonts'
+import { HeaderCSS } from '@/components/ui/heading_body_text/HeaderFonts'
+import styled from 'styled-components'
 
 export const INDEX_D_DashboardWrapper = styled.div`
   padding-inline: clamp(16px, 33vw - 336px, 142px);
@@ -17,7 +17,7 @@ export const INDEX_D_DashboardWrapper = styled.div`
 
   & > header {
     h3 {
-      ${HeaderCSS({ fontSize: "h3" })};
+      ${HeaderCSS({ fontSize: 'h3' })};
 
       text-transform: none;
 
@@ -27,7 +27,7 @@ export const INDEX_D_DashboardWrapper = styled.div`
     }
 
     p {
-      ${Paragraph({ color: "dark_maroon" })}
+      ${Paragraph({ color: 'dark_maroon' })}
       margin-top: 10px;
     }
   }
@@ -50,7 +50,7 @@ export const INDEX_D_DashboardWrapper = styled.div`
     }
 
     p {
-      ${Paragraph({ color: "dark_maroon" })};
+      ${Paragraph({ color: 'dark_maroon' })};
       margin-top: 16px;
     }
 
@@ -124,7 +124,7 @@ export const INDEX_D_DashboardWrapper = styled.div`
       justify-content: space-between;
 
       h3 {
-        ${HeaderCSS({ fontSize: "h3" })}
+        ${HeaderCSS({ fontSize: 'h3' })}
       }
 
       a {
@@ -150,11 +150,11 @@ export const INDEX_D_DashboardWrapper = styled.div`
       place-items: center;
 
       h4 {
-        ${HeaderCSS({ fontSize: "h4" })}
+        ${HeaderCSS({ fontSize: 'h4' })}
       }
 
       p {
-        ${Paragraph({ color: "black" })}
+        ${Paragraph({ color: 'black' })}
       }
 
       img {

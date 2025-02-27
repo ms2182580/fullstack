@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const ReviewWrappers = styled.div`
-  border: 1px solid #0000001a;
+  // border: 0.5px solid rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0px 0px 10px 1px #0000000d;
   width: 911px;
 
   border-bottom-right-radius: 8px;
@@ -133,7 +135,7 @@ export const StarWrapper = styled.div`
         }
       }
       // first border end
-      &> :nth-child(3) {
+      & > :nth-child(3) {
         color: black;
         display: flex;
         gap: 5px;
@@ -393,6 +395,7 @@ export const ReviewMentionWrapper = styled.div`
     & > :nth-child(3) {
       border: none !important;
       background-color: #f3f1f3;
+
       padding: 9px 9px !important;
 
       & > :nth-child(1) {
@@ -565,7 +568,8 @@ export const StarGorupWrapper = styled.div`
     & > :nth-child(1) {
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
 
@@ -608,7 +612,7 @@ export const StarGorupWrapper = styled.div`
     & > :nth-child(2) {
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
       & > :nth-child(1) {
@@ -658,12 +662,12 @@ export const StarGorupWrapper = styled.div`
     & > :nth-child(1) {
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
 
@@ -706,7 +710,7 @@ export const StarGorupWrapper = styled.div`
     & > :nth-child(2) {
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
       & > :nth-child(1) {
@@ -756,12 +760,12 @@ export const StarGorupWrapper = styled.div`
     & > :nth-child(1) {
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
 
@@ -804,12 +808,12 @@ export const StarGorupWrapper = styled.div`
     & > :nth-child(2) {
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
       flex: 1;
       padding: 16px 12px;
-      background-color: #90839580;
+      background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
 

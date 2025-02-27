@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const CategoryWrapper = styled.div`
   padding: 33px 57px;
@@ -50,7 +50,7 @@ export const CategoryWrapper = styled.div`
           font-size: 11.2px;
           line-height: 18.9px;
           font-weight: 400;
-          font-family: "Poppins", sans-serif;
+          font-family: 'Poppins', sans-serif;
           color: 3A343C;
         }
         & > div {
@@ -93,7 +93,7 @@ export const CategoryWrapper = styled.div`
           font-size: 11.2px;
           line-height: 18.9px;
           font-weight: 400;
-          font-family: "Poppins", sans-serif;
+          font-family: 'Poppins', sans-serif;
           color: 3A343C;
         }
         & > div {
@@ -140,7 +140,7 @@ export const CategoryWrapper = styled.div`
           font-size: 11.2px;
           line-height: 18.9px;
           font-weight: 400;
-          font-family: "Poppins", sans-serif;
+          font-family: 'Poppins', sans-serif;
           color: 3A343C;
         }
         & > div {
@@ -211,10 +211,13 @@ export const CategoryWrapper = styled.div`
 
   & > :nth-child(4) {
     margin-left: 47px;
-    width: 80%;
+    width: 911px;
 
     & > :nth-child(1) {
       border: 1px solid #0000001a;
+
+      box-shadow: 0px 0px 10px 1px #0000000d;
+
       align-items: center;
       padding: 48px 36px;
 
@@ -222,11 +225,10 @@ export const CategoryWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 24px;
-
-    }
-    i {
+      }
+      i {
         width: 30px;
-    }
+      }
 
       & > :nth-child(2) {
         display: flex;
@@ -247,7 +249,7 @@ export const CategoryWrapper = styled.div`
 
       & > :nth-child(2) {
         margin-top: 24px;
-        
+
         & > p {
           color: #00080b;
           font-weight: 400;
@@ -309,6 +311,7 @@ export const CategoryWrapper = styled.div`
 
           & > :nth-child(1) {
             border: 1px solid #00000033;
+
             border-radius: 20px;
             padding: 11px 24px;
             display: flex;
@@ -373,6 +376,8 @@ export const CategoryWrapper = styled.div`
 export const FocusAreasWrapper = styled.div`
   margin-top: 26px;
   border: 1px solid #00000033;
+  box-shadow: 0px 0px 10px 1px #0000000d;
+
   border-radius: 4px;
   padding: 36px 48px;
 
@@ -578,6 +583,8 @@ export const FocusAreasWrapper = styled.div`
 export const InformationWrapper = styled.div`
   margin-top: 26px;
   border: 1px solid #00000033;
+
+  box-shadow: 0px 0px 10px 1px #0000000d;
   padding: 36px;
   font-family: poppins;
 
@@ -592,13 +599,13 @@ export const InformationWrapper = styled.div`
     display: flex;
     gap: 36px;
     margin-top: 24px;
-  
+
     // left parent
     & > :nth-child(1) {
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-    
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
       // left child start
       & > :nth-child(1) {
         display: flex;
@@ -614,45 +621,39 @@ export const InformationWrapper = styled.div`
       }
       & > :nth-child(2) {
         display: flex;
-        align-items:center;
-          gap: 16px;
-               & > p {
-      
+        align-items: center;
+        gap: 16px;
+        & > p {
           font-weight: 400;
           font-size: 16px;
           line-height: 34px;
           color: black;
         }
-       
-    }
-& > :nth-child(1) {
+      }
+      & > :nth-child(1) {
         display: flex;
         align-items: center;
         gap: 16px;
-
       }
-      
+
       & > :nth-child(3) {
         display: flex;
-    
+
         align-items: center;
         gap: 16px;
-           & > p {
-          
+        & > p {
           font-weight: 400;
           font-size: 16px;
           line-height: 34px;
           color: black;
         }
-        
       }
       & > :nth-child(4) {
         display: flex;
-        align-items:Center;
+        align-items: Center;
         gap: 16px;
 
         & > p {
-          
           font-weight: 400;
           font-size: 16px;
           line-height: 34px;
@@ -664,39 +665,38 @@ export const InformationWrapper = styled.div`
     //right parent
 
     & > :nth-child(2) {
-       
-       display:flex;
-       flex-direction:column;
-       gap:24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
 
-       &>:nth-child(1){
-          &>:nth-child(1){
-        color: red;
-        font-weight:400;
-        font-size:16px;
-        line-height:24px;
-        font-size:16px;
-        letter-spacing:2%;
-        
-        &>:nth-child(1){ 
-        color: #3366CC;
-        }
+      & > :nth-child(1) {
+        & > :nth-child(1) {
+          color: red;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          font-size: 16px;
+          letter-spacing: 2%;
+
+          & > :nth-child(1) {
+            color: #3366cc;
           }
-       }
-          //child 2
-          &>:nth-child(2){
-          font-weight:400;
-        font-size:16px;
-        line-height:27px;        
-          
-          } 
+        }
+      }
+      //child 2
+      & > :nth-child(2) {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+      }
     }
-
-}
+  }
 `
 
 export const LocationWrapper = styled.div`
   border: 1px solid #00000033;
+
+  box-shadow: 0px 0px 10px 1px #0000000d;
   margin-top: 26px;
   border-radius: 4px;
   padding: 36px;

@@ -38,7 +38,7 @@ export const INDEX_Saved = () => {
   return (
     <>
       <SavedWrapper>
-          <Breadcrumbs/>
+        <Breadcrumbs />
         <div>
           <h2>Documents</h2>
           <button>
@@ -97,7 +97,7 @@ export const INDEX_Saved = () => {
               <div>
                 <span>Status</span>
                 <i>
-                  {" "}
+
                   <SortSVG />
                 </i>
               </div>
