@@ -8,22 +8,23 @@ import {
     useReactTable,
     getFilteredRowModel
 } from '@tanstack/react-table'
-import { rankItem } from '@tanstack/match-sorter-utils'
-import { PageButtonsWrapper, PageNumbersWrapper, PaginationWrapper, SavedWrapper, StyledTableHeader, StyleTableWrapper, TableHeaderWrapper } from './styles/index-wrapper'
-import { SearchBarWrapper, TableBodyWrapper, TableWrapper } from '@/components/teams/dashboard/saved/styles/index-wrapper'
+import { RankingInfo, rankItem } from '@tanstack/match-sorter-utils'
+import { HeaderHeadWrapper, HeaderRowWrapper, PageButtonsWrapper, PageNumbersWrapper, PaginationWrapper, StyleTableWrapper, TableCell, TableHeaderWrapper, TableRow, TableWrapper } from './styles/index-wrapper'
+import { SearchBarWrapper, TableBodyWrapper } from '@/components/teams/dashboard/saved/styles/index-wrapper'
 import TableGreater from "@/assets/icons/tableGreater.svg"
 import TableLess from "@/assets/icons/TableLess.svg"
 import SfileSVG from "@/assets/icons/sfile.svg"
 import SpersonSVG from "@/assets/icons/sperson.svg"
+import DotsMenu from './dotMenu'
 
 // Define the Person type
 type Person = {
     firstName: string
     lastName: string
-    age: number
-    visits: number
-    status: string
-    progress: number
+    age: string
+    visits: string
+
+
 }
 
 // Sample Data
@@ -31,8 +32,9 @@ const defaultData: Person[] = [
     {
         firstName: 'Kahlil’s Care Plan',
         lastName: 'john',
-        age: "1 Minute ago",
+        age: '1 Minute ago',
         visits: "Draft",
+
 
     },
     {
@@ -73,13 +75,11 @@ const defaultData: Person[] = [
 ]
 
 // Column Helper
-const columnHelper = createColumnHelper<Person>()
+const columnHelper = createColumnHelper();
 
-// Table Columns
 const columns = [
     columnHelper.accessor('firstName', {
         cell: info => (
-
             <div>
                 <input type='checkbox' />
                 <SfileSVG />
@@ -89,40 +89,43 @@ const columns = [
         header: () => (
             <div>
                 <input type='checkbox' />
-
-                Document  <SortSVG /></div>
+                Document <SortSVG />
+            </div>
         ),
         footer: info => info.column.id
     }),
     columnHelper.accessor(row => row.lastName, {
         id: 'lastName',
-        cell: info => (<div>
-
-            <SpersonSVG />
-            {info.getValue()}</div>),
-        header: () => (
-
-            <div>Created For<SortSVG /></div>
+        cell: info => (
+            <div>
+                <SpersonSVG />
+                {info.getValue()}
+            </div>
         ),
+        header: () => <div>Created For <SortSVG /></div>,
         footer: info => info.column.id
     }),
     columnHelper.accessor('age', {
-        header: () => (
-            <div>Last Modified <SortSVG /></div>
-        ),
+        header: () => <div>Last Modified <SortSVG /></div>,
         cell: info => info.renderValue(),
         footer: info => info.column.id
     }),
     columnHelper.accessor('visits', {
         header: () => <div>Status <SortSVG /></div>,
+        cell: info => info.renderValue(),
         footer: info => info.column.id
     }),
+    {
+        id: 'dots',
+        cell: ({ row }) => <DotsMenu rowIndex={row.index} />, // Pass rowIndex
+        header: () => '',
+    }
+];
 
 
-]
 
 // Fuzzy Filtering Function
-const fuzzyFilter = (row, columnId, value, addMeta) => {
+const fuzzyFilter = (row: { getValue: (arg0: any) => any }, columnId: any, value: string, addMeta: (arg0: RankingInfo) => void) => {
     const itemRank = rankItem(row.getValue(columnId), value)
     addMeta(itemRank)
     return itemRank.passed
@@ -149,7 +152,7 @@ function Table() {
     })
 
     return (
-        <div>
+        <TableWrapper>
             {/* Global Search Input */}
 
 
@@ -166,49 +169,53 @@ function Table() {
 
 
             <StyleTableWrapper>
-                <table>
-                    <TableHeaderWrapper>
 
-                        {table.getHeaderGroups().map(headerGroup => (
-                            <tr key={headerGroup.id}>
-                                {headerGroup.headers.map(header => (
-                                    <th key={header.id}>
-                                        {header.isPlaceholder
-                                            ? null
-                                            : flexRender(
-                                                header.column.columnDef.header,
-                                                header.getContext()
-                                            )}
-                                    </th>
+
+                <TableHeaderWrapper>
+                    {table.getHeaderGroups().map(headerGroup => (
+                        <HeaderRowWrapper key={headerGroup.id}>
+
+                            {headerGroup.headers.map(header => (
+                                <HeaderHeadWrapper key={header.id}>
+
+                                    {header.isPlaceholder
+                                        ? null
+                                        : flexRender(
+                                            header.column.columnDef.header,
+                                            header.getContext()
+                                        )}
+
+                                </HeaderHeadWrapper>
+                            ))}
+
+                        </HeaderRowWrapper>
+                    ))}
+                </TableHeaderWrapper>
+
+
+
+                <TableBodyWrapper>
+                    {table.getRowModel().rows.length === 0 ? (
+                        <TableRow>
+                            <TableCell colSpan={columns.length}>
+                                <UnderConstruction />
+                            </TableCell>
+                        </TableRow>
+                    ) : (
+                        table.getRowModel().rows.map(row => (
+                            <TableRow key={row.id}>
+                                {row.getVisibleCells().map(cell => (
+                                    <TableCell key={cell.id}>
+                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </TableCell>
                                 ))}
-                            </tr>
-                        ))}
+                            </TableRow>
+                        ))
+                    )}
+                </TableBodyWrapper>
 
-                    </TableHeaderWrapper>
 
 
-                    <TableBodyWrapper>
-                        <tbody>
-                            {table.getRowModel().rows.length === 0 ? (
-                                <tr>
-                                    <td colSpan={columns.length}>
-                                        <UnderConstruction />
-                                    </td>
-                                </tr>
-                            ) : (
-                                table.getRowModel().rows.map(row => (
-                                    <tr key={row.id}>
-                                        {row.getVisibleCells().map(cell => (
-                                            <td key={cell.id}>
-                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                            </td>
-                                        ))}
-                                    </tr>
-                                ))
-                            )}
-                        </tbody>
-                    </TableBodyWrapper >
-                </table>
             </StyleTableWrapper>
 
             <PaginationWrapper>
@@ -222,7 +229,7 @@ function Table() {
 
             <div />
             {/* <button onClick={() => rerender()}>Rerender</button> */}
-        </div >
+        </TableWrapper >
     )
 }
 

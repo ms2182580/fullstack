@@ -37,10 +37,10 @@ export const SavedWrapper = styled.div`
         background-color: #e0e0e0;
       }
     }
+  }
 
-    small {
-      color: #908395;
-    }
+  small {
+    color: #908395;
   }
 `
 export const SearchBarWrapper = styled.div`
@@ -66,76 +66,93 @@ export const SearchBarWrapper = styled.div`
 `
 
 export const TableWrapper = styled.table`
+  padding-inline: 3.5rem;
   width: 100%;
-  border-radius: 8px;
-  border-collapse: separate;
-  border-spacing: 0;
-  background-color: #fff;
-  border: 1.5px solid #ddd;
-  overflow: hidden;
-
-  input {
-    width: 15px;
-    height: 15px;
-  }
 `
 export const StyleTableWrapper = styled.table`
   width: 100%;
   border-collapse: collapse;
-  border: 1.5px solid #908395;
+  // border: 1px solid #d3ced5;
   border-radius: 8px !important;
+  border: 1px solid var(--Neutrals-Background-light, #d3ced5);
 `
+
+// export const TableHeaderWrapper = styled.thead`
+//   background-color: #f3f1f3;
+//   border-bottom: 2px solid #908395;
+//   width: 100%;
+
+//   & > tr {
+//     // background-color: red;
+//     color: #908395;
+//     padding: 10px;
+//     text-align: left;
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+
+//     & > th > div > div {
+//       display: flex;
+
+//       justify-content: center;
+//       align-items: center;
+//       gap: 15px;
+//     }
+//   }
+// `
 
 export const TableHeaderWrapper = styled.thead`
-  background-color: #f3f1f3; /* Full header background */
+  color: green;
   width: 100%;
-
-  & > tr {
-    background-color: inherit; /* Inherit from thead */
-  }
-
-  & > tr > th {
-    background-color: inherit; /* Ensures all ths have the same background */
-    color: #908395;
-    padding: 10px;
-    text-align: left;
-    border: none; /* Removes unwanted borders */
-  }
+  border-radius: 8px !important;
+  border-bottom: 1px solid #d3ced5;
+  background-color: #f3f1f3;
+`
+export const HeaderRowWrapper = styled.tr`
+  background-color: F3F1F3;
+  height: 56px;
+  width: 100%;
 `
 
-export const TableBodyWrapper = styled.tbody`
-  position: relative;
-
-  td {
-    border-bottom: 1px solid #ddd;
-    padding-block: 0rem;
-    padding-inline: 10px;
-    div {
-      padding: 0rem;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      gap: 0.5rem;
-      color: #908395;
-
-      span {
-        font-size: 0.8rem;
-      }
-
-      small {
-        border-radius: 20px;
-        background-color: #f2eaf6;
-        padding-inline: 0.5rem;
-        padding-block: 0.25rem;
-      }
-    }
+export const HeaderHeadWrapper = styled.th`
+  padding: 10px;
+  & > div {
+    color: #908395;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    // border: 1px solid red;
   }
-  td:last-child {
-    position: relative;
-    text-align: right;
-    span {
-      cursor: pointer;
-    }
+`
+export const TableBodyWrapper = styled.tbody`
+  width: 100%;
+`
+
+export const TableRow = styled.tr`
+  color: white;
+  width: 100% !important;
+  height: 56px;
+  // border: 1px solid green !important;
+`
+
+export const TableCell = styled.td`
+  color: var(--Neutrals-Text-Icons-caption, #908395);
+  // border: 1px solid red;
+
+  & > div {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: var(--Neutrals-Text-Icons-caption, #908395);
+
+    // border: 1px solid red;
   }
 `
 
@@ -165,10 +182,10 @@ export const PageButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 15px;
   span {
     font-size: 20px;
-    // color: rgb(80, 80, 80);
+
     color: red;
   }
   button {
@@ -180,7 +197,7 @@ export const PageButtonsWrapper = styled.div`
     cursor: pointer;
     width: 44px;
     height: 44px;
-    gap: 10px;
+
     border-radius: 8px;
     padding: 10px;
   }
