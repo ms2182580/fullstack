@@ -8,6 +8,7 @@ import Search from "@/assets/icons/saved/Search.svg"
 import ChevronRight from "@/assets/icons/saved/ChevronRight.svg"
 import Delete from "@/assets/icons/saved/Delete.svg"
 import ListingLeft from "@/assets/icons/saved/ListingLeft.svg"
+
 const similar = () => {
   return (
     <SimilarWrappers>

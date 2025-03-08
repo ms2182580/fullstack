@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const SimilarWrappers = styled.div`
   box-shadow: 0px 2px 6px 0px #00000033;
-  padding: 72px 59px;
+  padding: 59.2px 72px;
+  border-radius: 0px 0px 8px 8px;
   & > :nth-child(1) {
     border: 0.5px solid black !important;
     border-radius: 8px;
@@ -10,6 +11,7 @@ export const SimilarWrappers = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 51px;
 
     position: relative;
     & > :nth-child(1) {
@@ -28,7 +30,7 @@ export const SimilarWrappers = styled.div`
   }
 `
 export const AdvocacyWrapper = styled.div`
-  margin-top: 45px;
+  margin-top: 32px;
 
   & > :nth-child(1) {
     display: flex;

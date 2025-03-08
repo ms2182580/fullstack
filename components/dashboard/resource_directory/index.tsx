@@ -122,7 +122,7 @@ const INDEX_D_ResourceDirectory = () => {
 
                 <div>
                   <p>About Me:</p>
-                  <p>Education: New York University</p>
+                  <p><span>Education:</span> New York University</p>
                   <p>Languages:English,Mandarin,Cantonese</p>
                   <p>Years in Practice: 10</p>
                   <p>License Number: 1409990926</p>
@@ -148,11 +148,11 @@ const INDEX_D_ResourceDirectory = () => {
                       <i>
                         <SavedEmail />
                       </i>
-                      <Link href="#">kristieleung@bellevue.com </Link>
+                      <Link href="#">kristieleung@bellevuehealth.com </Link>
                     </div>
                     <div>
                       <i>
-                        {" "}
+
                         <SavedDirection />
                       </i>
                       <p>Directions</p>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ReviewWrappers = styled.div`
-  // border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   box-shadow: 0px 0px 10px 1px #0000000d;
   width: 911px;
@@ -10,6 +10,7 @@ export const ReviewWrappers = styled.div`
   border-bottom-left-radius: 8px;
 
   & > :nth-child(1) {
+    padding: 24px !important;
     & > :nth-child(1) {
       display: flex;
       justify-content: space-between;
@@ -42,6 +43,12 @@ export const ReviewWrappers = styled.div`
           background-color: transparent;
           display: flex;
           align-items: center;
+          font-family: poppins;
+          color: #6c6c6c;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: 1.5%;
+          font-size: 16px;
         }
       }
     }
@@ -100,11 +107,12 @@ export const StarWrapper = styled.div`
       font-size: 13.03px;
       line-height: 24.43px;
       letter-spacing: 2%;
+
       color: #6c6c6c;
     }
   }
   & > :nth-child(2) {
-    margin-top: 25.6px;
+    margin-top: 22.87px;
     display: flex;
     justify-content: space-between;
     line-height: 0px;
@@ -116,7 +124,14 @@ export const StarWrapper = styled.div`
 
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      color: red;
+
+      & > :nth-child(1) {
+        color: black;
+        font-weight: 500;
+        font-size: 13px;
+      }
 
       & > :nth-child(2) {
         color: black;
@@ -126,7 +141,9 @@ export const StarWrapper = styled.div`
         gap: 5px;
         align-items: center;
         & > :nth-child(1) {
-          font-size: 13px;
+          font-size: 12px;
+
+          font-weight: 200;
         }
 
         & > :nth-child(2) {
@@ -142,7 +159,9 @@ export const StarWrapper = styled.div`
         line-height: 0px;
         align-items: center;
         & > :nth-child(1) {
-          font-size: 13px;
+          font-size: 12px;
+
+          font-weight: 200;
         }
         & > :nth-child(2) {
           border-bottom: 3px solid #e0dde0;
@@ -158,7 +177,9 @@ export const StarWrapper = styled.div`
         line-height: 0px;
         align-items: center;
         & > :nth-child(1) {
-          font-size: 13px;
+          font-size: 12px;
+
+          font-weight: 200;
         }
         & > :nth-child(2) {
           border-bottom: 3px solid #e0dde0;
@@ -190,7 +211,9 @@ export const StarWrapper = styled.div`
 
         padding: 0px 0px !important;
         & > :nth-child(1) {
-          font-size: 13px;
+          font-size: 12px;
+
+          font-weight: 200;
         }
         & > :nth-child(2) {
           border-bottom: 3px solid #e0dde0;
@@ -205,15 +228,15 @@ export const StarWrapper = styled.div`
       flex: 1;
       flex-direction: column;
       align-items: center;
+      gap: 7px;
 
       & > :nth-child(1) {
-        color: black;
-
         font-family: Poppins;
         font-weight: 400;
         font-size: 16px;
         line-height: 25.6px;
         letter-spacing: 0%;
+        text-align: center;
       }
       & > :nth-child(2) {
         color: black;
@@ -233,6 +256,7 @@ export const StarWrapper = styled.div`
       flex: 1;
       flex-direction: column;
       align-items: center;
+      gap: 7px;
 
       & > :nth-child(1) {
         color: black;
@@ -261,15 +285,15 @@ export const StarWrapper = styled.div`
       flex: 1;
       flex-direction: column;
       align-items: center;
+      gap: 7px;
 
       & > :nth-child(1) {
-        color: black;
-
         font-family: Poppins;
         font-weight: 400;
         font-size: 16px;
         line-height: 25.6px;
         letter-spacing: 0%;
+        text-align: center;
       }
       & > :nth-child(2) {
         color: black;
@@ -289,6 +313,7 @@ export const StarWrapper = styled.div`
       flex: 1;
       flex-direction: column;
       align-items: center;
+      gap: 7px;
 
       & > :nth-child(1) {
         color: black;
@@ -319,13 +344,12 @@ export const ReviewMentionWrapper = styled.div`
 
   // para
 
-  & > :nthchild(1) {
+  & > :nth-child(1) {
     font-family: Poppins;
     font-weight: 600;
     font-size: 16px;
     line-height: 32px;
     letter-spacing: 0%;
-    color: black;
   }
   // second service quality
 
@@ -531,7 +555,7 @@ export const PositiveWrapper = styled.div`
 
 export const BorderWrapper = styled.div`
   border-bottom: 0.5px solid #686868;
-  margin-top: 31px;
+  margin-top: 24px;
 `
 export const MostRelevantWrapper = styled.div`
   display: flex;
@@ -574,13 +598,16 @@ export const StarGorupWrapper = styled.div`
       border-radius: 8px;
 
       & > :nth-child(1) {
-        color: red;
         display: flex;
         gap: 8px;
       }
       & > :nth-child(2) {
-        color: #00080b;
-        margin-top: 8px;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        margin-top: 16px;
       }
       & > :nth-child(3) {
         display: flex;
@@ -593,9 +620,16 @@ export const StarGorupWrapper = styled.div`
           font-size: 16px;
           line-height: 32px;
           letter-spacing: 0%;
+          display: flex;
+          gap: 10px;
 
           & > :nth-child(1) {
             font-weight: 700;
+            font-family: Poppins;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0%;
           }
         }
         & > :nth-child(2) {
@@ -605,6 +639,7 @@ export const StarGorupWrapper = styled.div`
           line-height: 27px;
           letter-spacing: 0px;
           text-align: right;
+          padding-left: 8px;
         }
       }
     }
@@ -616,13 +651,19 @@ export const StarGorupWrapper = styled.div`
       border: 1px solid #0069860d;
       border-radius: 8px;
       & > :nth-child(1) {
-        color: red;
         display: flex;
         gap: 8px;
       }
       & > :nth-child(2) {
         color: #00080b;
+
         margin-top: 8px;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        margin-top: 16px;
       }
       & > :nth-child(3) {
         display: flex;
@@ -634,8 +675,14 @@ export const StarGorupWrapper = styled.div`
           font-size: 16px;
           line-height: 32px;
           letter-spacing: 0%;
+
           & > :nth-child(1) {
             font-weight: 700;
+            font-family: Poppins;
+
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0%;
           }
         }
         & > :nth-child(2) {
@@ -665,20 +712,23 @@ export const StarGorupWrapper = styled.div`
       background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
-      flex: 1;
+
       padding: 16px 12px;
       background: #0069860d;
       border: 1px solid #0069860d;
       border-radius: 8px;
 
       & > :nth-child(1) {
-        color: red;
         display: flex;
         gap: 8px;
       }
       & > :nth-child(2) {
-        color: #00080b;
-        margin-top: 8px;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        margin-top: 16px;
       }
       & > :nth-child(3) {
         display: flex;
@@ -691,9 +741,16 @@ export const StarGorupWrapper = styled.div`
           font-size: 16px;
           line-height: 32px;
           letter-spacing: 0%;
+          display: flex;
+          gap: 10px;
 
           & > :nth-child(1) {
             font-weight: 700;
+            font-family: Poppins;
+
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0%;
           }
         }
         & > :nth-child(2) {
@@ -714,13 +771,19 @@ export const StarGorupWrapper = styled.div`
       border: 1px solid #0069860d;
       border-radius: 8px;
       & > :nth-child(1) {
-        color: red;
         display: flex;
         gap: 8px;
       }
       & > :nth-child(2) {
         color: #00080b;
+
         margin-top: 8px;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        margin-top: 16px;
       }
       & > :nth-child(3) {
         display: flex;
@@ -733,9 +796,16 @@ export const StarGorupWrapper = styled.div`
           font-size: 16px;
           line-height: 32px;
           letter-spacing: 0%;
+          display: flex;
+          gap: 8px;
 
           & > :nth-child(1) {
             font-weight: 700;
+            font-family: Poppins;
+
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0%;
           }
         }
         & > :nth-child(2) {
@@ -770,12 +840,20 @@ export const StarGorupWrapper = styled.div`
       border-radius: 8px;
 
       & > :nth-child(1) {
-        color: red;
         display: flex;
         gap: 8px;
       }
       & > :nth-child(2) {
         color: #00080b;
+
+        margin-top: 8px;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        margin-top: 16px;
+
         margin-top: 8px;
       }
       & > :nth-child(3) {
@@ -792,6 +870,11 @@ export const StarGorupWrapper = styled.div`
 
           & > :nth-child(1) {
             font-weight: 700;
+            font-family: Poppins;
+
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0%;
           }
         }
         & > :nth-child(2) {
@@ -818,12 +901,20 @@ export const StarGorupWrapper = styled.div`
       border-radius: 8px;
 
       & > :nth-child(1) {
-        color: red;
         display: flex;
         gap: 8px;
       }
       & > :nth-child(2) {
         color: #00080b;
+
+        margin-top: 8px;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        margin-top: 16px;
+
         margin-top: 8px;
       }
       & > :nth-child(3) {
@@ -840,6 +931,11 @@ export const StarGorupWrapper = styled.div`
 
           & > :nth-child(1) {
             font-weight: 700;
+            font-family: Poppins;
+
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0%;
           }
         }
         & > :nth-child(2) {
@@ -858,6 +954,15 @@ export const StarGorupWrapper = styled.div`
 export const ViewAllWrapper = styled.div`
   display: flex;
   justify-content: end;
-  color: red;
+
   margin-top: 24px;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
 `

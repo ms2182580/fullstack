@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export const FaqsWrapper = styled.div`
-  padding: 72px 55px;
+  padding: 55px 72px;
   box-shadow: 0px 2px 6px 0px #00000033;
+
+  font-family: 'poppins';
 
   & > :nth-child(1) {
     padding: 0px 13px !important;
@@ -11,6 +13,8 @@ export const FaqsWrapper = styled.div`
     gap: 16px;
     border: 1px solid black !important;
     border-radius: 8px;
+
+    height: 51px;
 
     & > :nth-child(2) {
       width: 100%;
@@ -26,6 +30,7 @@ export const AskQuestionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'poppins';
 
   & > :nth-child(1) {
     font-family: Poppins;
@@ -38,6 +43,7 @@ export const AskQuestionWrapper = styled.div`
   & > :nth-child(2) {
     width: 178;
     height: 48;
+
     top: 134px;
     left: 661px;
     gap: 8px;
@@ -64,6 +70,7 @@ export const QueOneWrapper = styled.div`
   margin-top: 53px;
 
   & > :nth-child(1) {
+    margin-top: 7px;
     display: flex;
     flex-direction: column;
 
@@ -71,23 +78,23 @@ export const QueOneWrapper = styled.div`
 
     align-items: center;
 
+    gap: 5px;
+
     & > :nth-child(2) {
       font-family: Poppins;
       font-weight: 600;
       font-size: 16px;
-      line-height: 32px;
+      // line-height: 32px;
       letter-spacing: 1%;
-      text-align: center;
-      color: black;
+      // text-align: center;
     }
     & > :nth-child(3) {
       font-family: Poppins;
       font-weight: 600;
       font-size: 16px;
-      line-height: 32px;
+      // line-height: 32px;
       letter-spacing: 1%;
       text-align: center;
-      color: black;
     }
   }
   // question 1 question answer

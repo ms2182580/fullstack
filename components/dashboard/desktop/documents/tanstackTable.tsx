@@ -9,13 +9,17 @@ import {
     getFilteredRowModel
 } from '@tanstack/react-table'
 import { RankingInfo, rankItem } from '@tanstack/match-sorter-utils'
-import { HeaderHeadWrapper, HeaderRowWrapper, PageButtonsWrapper, PageNumbersWrapper, PaginationWrapper, StyleTableWrapper, TableCell, TableHeaderWrapper, TableRow, TableWrapper } from './styles/index-wrapper'
+import { HeaderHeadWrapper, HeaderRowWrapper, ImageWrapper, PageButtonsWrapper, PageNumbersWrapper, PaginationWrapper, StyleTableWrapper, TableCell, TableHeaderWrapper, TableRow, TableWrapper } from './styles/index-wrapper'
 import { SearchBarWrapper, TableBodyWrapper } from '@/components/teams/dashboard/saved/styles/index-wrapper'
 import TableGreater from "@/assets/icons/tableGreater.svg"
 import TableLess from "@/assets/icons/TableLess.svg"
 import SfileSVG from "@/assets/icons/sfile.svg"
 import SpersonSVG from "@/assets/icons/sperson.svg"
 import DotsMenu from './dotMenu'
+// import searchTable from "@/assets/icons/searchTable.svg"
+import Search from "@/assets/icons/search.svg";
+import TableImage from "@/assets/images/TableImage.svg"
+
 
 // Define the Person type
 type Person = {
@@ -157,13 +161,15 @@ function Table() {
 
 
             <SearchBarWrapper>
+                <Search />
                 <input
                     type='text'
-                    placeholder='Search...'
+                    placeholder='Search documents'
                     value={globalFilter}
                     onChange={e => setGlobalFilter(e.target.value)}
                     className='border p-2 mb-4 w-full'
                 />
+
             </SearchBarWrapper>
             {/* Table */}
 
@@ -198,7 +204,11 @@ function Table() {
                     {table.getRowModel().rows.length === 0 ? (
                         <TableRow>
                             <TableCell colSpan={columns.length}>
-                                <UnderConstruction />
+                                <ImageWrapper>
+                                    <p>You haven’t created any plans yet!</p>
+                                    <p><span>Log in</span> to create a plan</p>
+                                    < TableImage />
+                                </ImageWrapper >
                             </TableCell>
                         </TableRow>
                     ) : (

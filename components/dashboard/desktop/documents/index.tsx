@@ -8,7 +8,7 @@ export const INDEX_D_Documents = () => {
   return (
     <>
       <SavedWrapper>
-        <Breadcrumbs />
+        {/* <Breadcrumbs /> */}
         <div>
           <h2>Documents</h2>
           <button>

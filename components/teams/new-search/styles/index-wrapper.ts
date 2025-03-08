@@ -1,24 +1,37 @@
-import { reusableButton } from "@/components/ui/buttons/general/styles/ButtonStyled"
-import styled from "styled-components"
+import { reusableButton } from '@/components/ui/buttons/general/styles/ButtonStyled'
+import styled from 'styled-components'
 
 export const ContainerWrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(to bottom, #e6e780e3, #ffffff);
   position: relative;
   overflow: hidden;
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
 `
 
 export const ExtradivWrapper = styled.div`
-  min-height: 100vh;
-  background-image: url("/background/newSerchImage.png");
+  height: 100vh;
+  background-image: url('/background/newSerchImage.png');
   background-size: 100%;
-  background-position:  bottom;
   background-repeat: no-repeat;
+  background-position: center 35%;
   display: flex;
   flex-direction: column;
   width: 95%;
   margin: 0 auto;
+
+  /* Ensure max-width queries come first */
+  @media (max-width: 1440px) {
+    background-position: center 30%;
+  }
+
+  @media (max-width: 1024px) {
+    background-position: center 50%;
+  }
+
+  @media (min-width: 1540px) {
+    background-position: center 30%;
+  }
 `
 
 export const MainContentWrapper = styled.div`
@@ -53,6 +66,7 @@ export const SearchContainerWrapper = styled.div`
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 83%;
+  // border: 1px solid red;
 `
 
 export const SearchLabel = styled.span`
@@ -67,7 +81,7 @@ export const SearchLabel = styled.span`
 export const SearchInputWrapper = styled.div`
   position: relative;
   width: 100%;
-`;
+`
 
 export const SearchIconWrapper = styled.span`
   position: absolute;
@@ -75,7 +89,7 @@ export const SearchIconWrapper = styled.span`
   left: 10px;
   transform: translateY(-50%); /* Vertically center the icon */
   z-index: 3; /* Ensure the icon is above the input */
-`;
+`
 
 export const SearchInput = styled.input`
   width: 100%;
@@ -110,5 +124,3 @@ export const ButtonContainerWrapper = styled.div`
     ${reusableButton({ secondary: true })};
   }
 `
-
-

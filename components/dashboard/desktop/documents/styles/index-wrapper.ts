@@ -72,8 +72,6 @@ export const TableWrapper = styled.table`
 export const StyleTableWrapper = styled.table`
   width: 100%;
   border-collapse: collapse;
-  // border: 1px solid #d3ced5;
-  border-radius: 8px !important;
   border: 1px solid var(--Neutrals-Background-light, #d3ced5);
 `
 
@@ -106,6 +104,7 @@ export const TableHeaderWrapper = styled.thead`
   width: 100%;
   border-radius: 8px !important;
   border-bottom: 1px solid #d3ced5;
+
   background-color: #f3f1f3;
 `
 export const HeaderRowWrapper = styled.tr`
@@ -116,6 +115,7 @@ export const HeaderRowWrapper = styled.tr`
 
 export const HeaderHeadWrapper = styled.th`
   padding: 10px;
+
   & > div {
     color: #908395;
     display: flex;
@@ -126,23 +126,23 @@ export const HeaderHeadWrapper = styled.th`
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0px;
-    // border: 1px solid red;
   }
 `
 export const TableBodyWrapper = styled.tbody`
   width: 100%;
+  border-radius: 10px;
 `
 
 export const TableRow = styled.tr`
   color: white;
   width: 100% !important;
   height: 56px;
+
   // border: 1px solid green !important;
 `
 
 export const TableCell = styled.td`
   color: var(--Neutrals-Text-Icons-caption, #908395);
-  // border: 1px solid red;
 
   & > div {
     font-family: Poppins;
@@ -151,8 +151,6 @@ export const TableCell = styled.td`
     line-height: 24px;
     letter-spacing: 0px;
     color: var(--Neutrals-Text-Icons-caption, #908395);
-
-    // border: 1px solid red;
   }
 `
 
@@ -162,6 +160,8 @@ export const PaginationWrapper = styled.div`
   align-items: center;
 
   margin-top: 16px;
+
+  margin-bottom: 25px;
 `
 
 export const PageNumbersWrapper = styled.div`
@@ -261,4 +261,37 @@ export const IconWrapper = styled.div`
   font-size: 16px;
   width: 20px !important;
   color: inherit;
+`
+export const ImageWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  & > :nth-child(1) {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #1d1a1e;
+  }
+  & > :nth-child(2) {
+    font-family: Poppins;
+    & > :nth-child(1) {
+      font-family: Poppins;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-decoration-offset: 0%;
+      text-decoration-thickness: 0%;
+    }
+  }
 `

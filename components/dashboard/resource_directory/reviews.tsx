@@ -166,7 +166,7 @@ const reviews = () => {
                 <p>“Kristie is kind, perceptive, and patient with my son.”</p>
                 <div>
                   <p>
-                    <span>-Ava J.</span>July 2022
+                    <span>-Ava J.</span><span>July 2022</span>
                   </p>
                   <p>Sourced from Yelp</p>
                 </div>
@@ -183,7 +183,7 @@ const reviews = () => {
                 <p>“Kristie is kind, perceptive, and patient with my son.”</p>
                 <div>
                   <p>
-                    <span>-Ava J.</span>July 2022
+                    <span>-Ava J.</span><span>July 2022</span>
                   </p>
                   <p>Sourced from Yelp</p>
                 </div>
@@ -202,7 +202,7 @@ const reviews = () => {
                 <p>“Kristie is kind, perceptive, and patient with my son.”</p>
                 <div>
                   <p>
-                    <span>-Ava J.</span>July 2022
+                    <span>-Ava J.</span><span>July 2022</span>
                   </p>
                   <p>Sourced from Yelp</p>
                 </div>
@@ -219,7 +219,7 @@ const reviews = () => {
                 <p>“Kristie is kind, perceptive, and patient with my son.”</p>
                 <div>
                   <p>
-                    <span>-Ava J.</span>July 2022
+                    <span>-Ava J.</span><span>July 2022</span>
                   </p>
                   <p>Sourced from Yelp</p>
                 </div>
@@ -238,7 +238,7 @@ const reviews = () => {
                 <p>“Kristie is kind, perceptive, and patient with my son.”</p>
                 <div>
                   <p>
-                    <span>-Ava J.</span>July 2022
+                    <span>-Ava J.</span><span>July 2022</span>
                   </p>
                   <p>Sourced from Yelp</p>
                 </div>
@@ -256,7 +256,7 @@ const reviews = () => {
                 <p>“Kristie is kind, perceptive, and patient with my son.”</p>
                 <div>
                   <p>
-                    <span>-Ava J.</span>July 2022
+                    <span>-Ava J.</span><span>July 2022</span>
                   </p>
                   <p>Sourced from Yelp</p>
                 </div>
@@ -274,3 +274,106 @@ const reviews = () => {
 }
 
 export default reviews
+// < SecOneWrapper >
+//         <div>
+//           <ArrowTop />
+//           <p>9 </p>
+//           <p>votes </p>
+//           <ArrowBottom />
+//         </div>
+//         <div>
+//           <div>
+//             <p>Q: </p>
+//             <p>How can I schedule a consult call with Mary Jane?</p>
+//           </div>
+//           <div>
+//             <p>A: </p>
+//             <p>No Response yet. What’s your answer ?.</p>
+//           </div>
+//         </div>
+//       </ >
+
+//       <ThirdQueWrapper>
+//         <div>
+//           <ArrowTop />
+//           <p>3 </p>
+//           <p>votes </p>
+//           <ArrowBottom />
+//         </div>
+
+//         <div>
+//           <div>
+//             <p>Q: </p>
+//             <p>Does Mary Jane offer weekend visits?</p>
+//           </div>
+//           <div>
+//             <p>A: </p>
+//             <p>
+//               To make an appointment you can call the number listed or fill
+//               out the contact form and someone will reach out to get you
+//               scheduled. You do NOT need a referral to book an appointment
+//               with Mary Jane.
+//             </p>
+//           </div>
+//           <div>
+//             <p>
+//               By Leslie S.<span>January 2023</span>
+//             </p>
+//           </div>
+//         </div>
+//       </ThirdQueWrapper>
+//       <FourthQueWrapper>
+//         <div>
+//           <ArrowTop />
+//           <p>10 </p>
+//           <p>votes </p>
+//           <ArrowBottom />
+//         </div>
+
+//         <div>
+//           <div>
+//             <p>Q: </p>
+//             <p>Is Mary Jane accepting new patients?</p>
+//           </div>
+//           <div>
+//             <p>A: </p>
+//             <p>
+//               Mary Jane generally accepts new patients. You can fill out the
+//               contact form or call to schedule an appointment.
+//             </p>
+//           </div>
+//           <div>
+//             <p>
+//               By Leslie S.<span>January 2023</span>
+//             </p>
+//           </div>
+//         </div>
+//       </FourthQueWrapper>
+//       <FifthQueWrapper>
+//         <div>
+//           <ArrowTop />
+//           <p>5</p>
+//           <p>votes </p>
+//           <ArrowBottom />
+//         </div>
+
+//         <div>
+//           <div>
+//             <p>Q: </p>
+//             <p>Where is Mary Jane’s office located?</p>
+//           </div>
+//           <div>
+//             <p>A: </p>
+//             <p>
+//               Mary Jane’s office is located In NY. Brooklyn Speech Therapy 307
+//               President St Brooklyn, NY
+//             </p>
+//           </div>
+//           <div>
+//             <p>
+//               By Leslie S.<span>January 2023</span>
+//             </p>
+//           </div>
+//         </div>
+
+//       </FifthQueWrapper>

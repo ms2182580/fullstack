@@ -10,7 +10,7 @@ export const CategoryWrapper = styled.div`
     justify-content: space-between;
 
     img {
-      margin-top: 2rem;
+      margin-top: 25.49px;
     }
 
     & > div {
@@ -50,7 +50,7 @@ export const CategoryWrapper = styled.div`
           font-size: 11.2px;
           line-height: 18.9px;
           font-weight: 400;
-          font-family: 'Poppins', sans-serif;
+          font-family: 'Poppins';
           color: 3A343C;
         }
         & > div {
@@ -93,7 +93,7 @@ export const CategoryWrapper = styled.div`
           font-size: 11.2px;
           line-height: 18.9px;
           font-weight: 400;
-          font-family: 'Poppins', sans-serif;
+          font-family: 'Poppins';
           color: 3A343C;
         }
         & > div {
@@ -140,7 +140,7 @@ export const CategoryWrapper = styled.div`
           font-size: 11.2px;
           line-height: 18.9px;
           font-weight: 400;
-          font-family: 'Poppins', sans-serif;
+          font-family: 'Poppins';
           color: 3A343C;
         }
         & > div {
@@ -162,6 +162,7 @@ export const CategoryWrapper = styled.div`
             font-size: 11.2px;
             line-height: 18.9px;
             font-weight: 400;
+            font-family: 'Poppins';
 
             overflow: auto;
             &::placeholder {
@@ -193,13 +194,19 @@ export const CategoryWrapper = styled.div`
       & > button {
         background-color: #f3f1f3;
         // background-color:red;
-        padding: 16px 50px;
+        padding: 16px 53px;
+        height: 51px;
         border: 0px;
         font-size: 18px;
         line-height: 27px;
         font-weight: normal;
         color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
+        font-family: 'poppins';
+
         &:active {
           background-color: white;
           border: 1px solid #0000001a;
@@ -219,12 +226,30 @@ export const CategoryWrapper = styled.div`
       box-shadow: 0px 0px 10px 1px #0000000d;
 
       align-items: center;
-      padding: 48px 36px;
+      padding: 36px 48px;
 
       & > :nth-child(1) {
         display: flex;
         align-items: center;
         gap: 24px;
+
+        font-family: 'poppins';
+        & > :nth-child(2) {
+          & > h1 {
+            font-family: Poppins;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 54px;
+            letter-spacing: 0px;
+          }
+          & > p {
+            font-family: Lexend;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 34px;
+            letter-spacing: 0px;
+          }
+        }
       }
       i {
         width: 30px;
@@ -255,7 +280,9 @@ export const CategoryWrapper = styled.div`
           font-weight: 400;
           line-height: 27px;
           font-size: 16px;
-          letter-spacing: 0;
+          letter-spacing: 0px;
+          font-family: 'Poppins';
+          width: 815px;
         }
       }
 
@@ -264,15 +291,29 @@ export const CategoryWrapper = styled.div`
         display: flex;
         flex-direction: column;
 
+        gap: 8px;
+
         & > :nth-child(1) {
-          font-size: 20px;
+          font-family: Poppins;
           font-weight: 600;
+          font-size: 20px;
           line-height: 34px;
+          letter-spacing: 0px;
         }
         & > :nth-child(2) {
+          font-family: Poppins;
           font-weight: 400;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 27px;
+          letter-spacing: 0px;
+
+          & > :nth-child(1) {
+            font-family: Lexend;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 27px;
+            letter-spacing: 0px;
+          }
         }
         & > :nth-child(3) {
           font-weight: 400;
@@ -298,31 +339,38 @@ export const CategoryWrapper = styled.div`
       & > :nth-child(4) {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+
         margin-top: 36px;
+
         & > p {
+          font-family: Poppins;
+          font-weight: 600;
           font-size: 20px;
           line-height: 34px;
-          font-weight: 600;
+          letter-spacing: 0px;
         }
         & > div {
           display: flex;
           gap: 12px;
 
+          margin-top: 12px;
+
           & > :nth-child(1) {
             border: 1px solid #00000033;
 
             border-radius: 20px;
-            padding: 11px 24px;
+            padding: 13px 24px 13px 20px;
             display: flex;
             align-items: center;
             gap: 8px;
 
             & > p {
-              font-size: 12px;
+              font-family: Poppins;
               font-weight: 400;
+              font-size: 12px;
               line-height: 20px;
-              white-space: nowrap;
+              letter-spacing: 0px;
+              text-wrap: nowrap;
             }
           }
 
@@ -330,7 +378,7 @@ export const CategoryWrapper = styled.div`
             border: 1px solid #00000033;
 
             border-radius: 20px;
-            padding: 11px 24px;
+            padding: 13px 24px 13px 20px;
             font-size: 12px;
             line-height: 20px;
             font-weight: 400;
@@ -341,31 +389,51 @@ export const CategoryWrapper = styled.div`
             & > a {
               color: #3366cc !important;
               white-space: nowrap;
+              font-family: Poppins;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+              letter-spacing: 0px;
             }
           }
           & > :nth-child(3) {
             border: 1px solid #00000033;
+
             border-radius: 20px;
-            padding: 11px 10px;
+            padding: 13px 24px 13px 16px;
             font-size: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
-            width: 217px;
+            // width: 217px;
 
             & > a {
               color: #3366cc !important;
               white-space: nowrap;
+              font-family: Poppins;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+              letter-spacing: 0px;
             }
           }
           & > :nth-child(4) {
             border: 1px solid #00000033;
+
             border-radius: 20px;
-            padding: 11px 24px;
+            padding: 13px 24px 13px 20px;
             font-size: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
+
+            & > p {
+              font-family: Poppins;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 20px;
+              letter-spacing: 0px;
+            }
           }
         }
       }
@@ -382,10 +450,11 @@ export const FocusAreasWrapper = styled.div`
   padding: 36px 48px;
 
   & > p {
+    font-family: Poppins;
+    font-weight: 600;
     font-size: 24px;
     line-height: 41px;
-    font-weight: 600;
-    color: black;
+    letter-spacing: 0px;
   }
   & > :nth-child(2) {
     display: flex;
@@ -401,6 +470,7 @@ export const FocusAreasWrapper = styled.div`
         display: flex;
         gap: 16px;
         align-items: center;
+
         & > :nth-child(1) {
           width: 24px;
           height: 24px;
@@ -415,7 +485,14 @@ export const FocusAreasWrapper = styled.div`
           font-size: 16px;
           font-weight: 400;
           line-height: 27px;
-          color: #000;
+          color: black;
+          white-space: nowrap;
+          width: 102px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          font-family: Poppins;
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(2) {
@@ -433,7 +510,11 @@ export const FocusAreasWrapper = styled.div`
           flex-shrink: 0;
         }
         & > :nth-child(2) {
-          white-space: nowrap;
+          font-family: Poppins;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 27px;
+          letter-spacing: 0px;
         }
       }
     }
@@ -465,6 +546,10 @@ export const FocusAreasWrapper = styled.div`
           width: 102px;
           overflow: hidden;
           text-overflow: ellipsis;
+
+          font-family: Poppins;
+
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(2) {
@@ -483,6 +568,12 @@ export const FocusAreasWrapper = styled.div`
         }
         & > :nth-child(2) {
           white-space: nowrap;
+
+          font-family: Poppins;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 27px;
+          letter-spacing: 0px;
         }
       }
     }
@@ -505,10 +596,11 @@ export const FocusAreasWrapper = styled.div`
           flex-shrink: 0;
         }
         & > :nth-child(2) {
-          font-size: 16px;
+          font-family: Poppins;
           font-weight: 400;
+          font-size: 16px;
           line-height: 27px;
-          color: black;
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(2) {
@@ -527,7 +619,11 @@ export const FocusAreasWrapper = styled.div`
           flex-shrink: 0;
         }
         & > :nth-child(2) {
-          white-space: nowrap;
+          font-family: Poppins;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 27px;
+          letter-spacing: 0px;
         }
       }
     }
@@ -551,10 +647,11 @@ export const FocusAreasWrapper = styled.div`
           flex-shrink: 0;
         }
         & > :nth-child(2) {
-          font-size: 16px;
+          font-family: Poppins;
           font-weight: 400;
+          font-size: 16px;
           line-height: 27px;
-          color: black;
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(2) {
@@ -574,6 +671,11 @@ export const FocusAreasWrapper = styled.div`
         }
         & > :nth-child(2) {
           white-space: nowrap;
+          font-family: Poppins;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 27px;
+          letter-spacing: 0px;
         }
       }
     }
@@ -587,11 +689,14 @@ export const InformationWrapper = styled.div`
   box-shadow: 0px 0px 10px 1px #0000000d;
   padding: 36px;
   font-family: poppins;
+  border-radius: 4px;
 
   & > p {
-    font-size: 24px;
+    font-family: Poppins;
     font-weight: 600;
+    font-size: 24px;
     line-height: 41px;
+    letter-spacing: 0px;
   }
 
   // information below section parent
@@ -599,6 +704,8 @@ export const InformationWrapper = styled.div`
     display: flex;
     gap: 36px;
     margin-top: 24px;
+
+    align-items: center;
 
     // left parent
     & > :nth-child(1) {
@@ -613,10 +720,11 @@ export const InformationWrapper = styled.div`
         gap: 16px;
 
         & > p {
+          font-family: Lexend;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 20px;
           line-height: 34px;
-          color: black;
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(2) {
@@ -624,10 +732,11 @@ export const InformationWrapper = styled.div`
         align-items: center;
         gap: 16px;
         & > p {
+          font-family: Lexend;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 20px;
           line-height: 34px;
-          color: black;
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(1) {
@@ -642,10 +751,11 @@ export const InformationWrapper = styled.div`
         align-items: center;
         gap: 16px;
         & > p {
+          font-family: Lexend;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 20px;
           line-height: 34px;
-          color: black;
+          letter-spacing: 0px;
         }
       }
       & > :nth-child(4) {
@@ -654,10 +764,11 @@ export const InformationWrapper = styled.div`
         gap: 16px;
 
         & > p {
+          font-family: Lexend;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 20px;
           line-height: 34px;
-          color: black;
+          letter-spacing: 0px;
         }
       }
     }
@@ -671,23 +782,28 @@ export const InformationWrapper = styled.div`
 
       & > :nth-child(1) {
         & > :nth-child(1) {
-          color: red;
+          font-family: Poppins;
           font-weight: 400;
           font-size: 16px;
           line-height: 24px;
-          font-size: 16px;
           letter-spacing: 2%;
 
           & > :nth-child(1) {
             color: #3366cc;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-offset: 0%;
+            text-decoration-thickness: 0%;
           }
         }
       }
       //child 2
       & > :nth-child(2) {
+        font-family: Poppins;
         font-weight: 400;
         font-size: 16px;
         line-height: 27px;
+        letter-spacing: 0px;
       }
     }
   }
@@ -703,22 +819,28 @@ export const LocationWrapper = styled.div`
 
   & > :nth-child(1) {
     color: black;
+    font-family: Poppins;
     font-weight: 600;
     font-size: 24px;
+    line-height: 41px;
+    letter-spacing: 0px;
   }
 
   & > :nth-child(2) {
-    color: #00080b;
     width: 179px;
     margin-top: 24px;
     font-size: 16px;
     line-height: 27px;
     font-weight: 400;
-    font-family: Lexend;
+    font-family: poppins;
     color: #00080b;
 
     & > :nth-child(1) {
-      font-weight: 600;
+      font-family: Lexend;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+      letter-spacing: 0px;
     }
   }
 
